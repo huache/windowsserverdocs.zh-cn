@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 93b02f79753f4e861c141ced84b29efd078fd227
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 78e245767857111f71a6252094ef0e74fda7f714
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961049"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965264"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2016"></a>将域控制器升级到 Windows Server 2016
 
@@ -93,7 +91,7 @@ Windows Server 2016 需要 Windows Server 2003 林功能级别。 也就是说�
 
 ### <a name="rolling-back-functional-levels"></a>回退功能级别
 
-将林功能级别（FFL）设置为某个值之后，就不能回滚或降低林功能级别，但以下情况例外：
+将林功能级别设置 (FFL) 为某个值之后，就不能回滚或降低林功能级别，但以下情况例外：
 
 - 如果是从 Windows Server 2012 R2 FFL 升级，则可以将其降低回 Windows Server 2012 R2。
 - 如果是从 Windows Server 2008 R2 FFL 升级，则可以将其降低回 Windows Server 2008 R2。
@@ -143,7 +141,7 @@ Windows Server 2016 需要 Windows Server 2003 林功能级别。 也就是说�
 
    ![升级](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade5.png)
 
-1. 在 "**域控制器选项**" 屏幕上，输入**目录服务还原模式（DSRM）** 密码，然后单击 "下一步"。
+1. 在 "**域控制器选项**" 屏幕上，输入**目录服务还原模式 (DSRM) **密码，然后单击 "下一步"。
 1. 对于其余屏幕，请单击 "**下一步**"。
 1. 在 "**先决条件检查**" 屏幕上，单击 "**安装**"。 重新启动完成后，可以重新登录。
 1. 在 Windows Server 2012 R2 服务器上的 "工具" 下的 "**服务器管理器**" 中，选择 " **Active Directory Module for Windows PowerShell**"。
@@ -171,4 +169,4 @@ Windows Server 2016 需要 Windows Server 2003 林功能级别。 也就是说�
 
 - [Active Directory 域服务安装和删除的新功能](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md)
 - [安装 Active Directory 域服务 &#40;级别 100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)
-- [Windows Server 2016 功能级别](../active-directory-functional-levels.md)  
+- [Windows Server 2016 功能级别](../active-directory-functional-levels.md)

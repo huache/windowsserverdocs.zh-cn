@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 9238cb27-0020-42f7-90d6-fcebf7e3c0bc
-ms.technology: identity-adds
-ms.openlocfilehash: 5083e6987edc353b373b1048ceeaeb28b5790d23
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 675b8edd5425238b838df2c2bb7e09d0c0232c92
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519024"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956884"
 ---
 # <a name="ad-forest-recovery---backing-up-the-system-state-data"></a>AD 林恢复-备份系统状态数据
 
@@ -35,7 +33,7 @@ ms.locfileid: "87519024"
 
    ![安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
-6. 在 "**选择备份配置**" 页上，单击 "**自定义**"，然后单击 "**下一步**"。
+6. 在 "**选择备份配置**" 页上，单击 "**自定义) **"，然后单击 "**下一步**"。
 7. 在 "**选择备份项**" 屏幕上，单击 "**添加项**" 并选择 "**系统状态**"，然后单击 **"确定"**。
    - 在 Windows Server 2008 R2 和 Windows Server 2008 中，选择要包含在备份中的卷。 如果选中 "**启用系统恢复**" 复选框，则所有关键卷都处于选中状态。
 

@@ -1,25 +1,23 @@
 ---
 title: 故障转移群集系统日志事件
 description: Windows Server 系统日志中的故障转移群集事件的列表。 这些事件可用于对群集进行故障排除。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: 5988842ef2a88687bca95781b996babb4e4f3faa
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 17d61291822586013fa77bb1c7c399ab87dfef17
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181703"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957154"
 ---
 # <a name="failover-clustering-system-log-events"></a>故障转移群集系统日志事件
 
 > 适用于：Windows Server 2019、Windows Server 2016
 
-本主题列出了 Windows Server 系统日志中的故障转移群集事件（可在事件查看器中查看）。 这些事件都共享**FailoverClustering**的事件源，并在排查群集问题时非常有用。
+本主题列出了 Windows Server 系统日志中的故障转移群集事件 (可在事件查看器) 中查看。 这些事件都共享**FailoverClustering**的事件源，并在排查群集问题时非常有用。
 
 ## <a name="critical-events"></a>关键事件
 
@@ -50,7 +48,7 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1080-cs_diskwrite_failure"></a>事件1080： CS_DISKWRITE_FAILURE
 
-群集服务无法更新群集数据库（错误代码 "%1"）。
+群集服务无法更新群集数据库 (错误代码 "%1" ) 。
 可能的原因是磁盘空间不足或文件系统损坏。
 
 ### <a name="event-1090-cs_event_reg_operation_failed"></a>事件1090： CS_EVENT_REG_OPERATION_FAILED
@@ -69,7 +67,7 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1105-cs_event_rpc_init_failed"></a>事件1105： CS_EVENT_RPC_INIT_FAILED
 
-群集服务无法启动，因为它无法向 RPC 服务注册接口。 错误代码为 "%1"。
+群集服务无法启动，因为它无法向 RPC 服务注册接口)  (。 错误代码为 "%1"。
 
 ### <a name="event-1135-event_node_down"></a>事件1135： EVENT_NODE_DOWN
 
@@ -78,7 +76,7 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1146-rcm_event_resmon_died"></a>事件1146： RCM_EVENT_RESMON_DIED
 
-群集资源宿主子系统（RHS）进程已终止，将重新启动。 这通常与群集运行状况检测和资源恢复关联。 请参阅系统事件日志，确定导致此问题的资源和资源 DLL。
+群集资源宿主子系统 (RHS) 进程已终止并将重新启动。 这通常与群集运行状况检测和资源恢复关联。 请参阅系统事件日志，确定导致此问题的资源和资源 DLL。
 
 ### <a name="event-1177-mm_event_arbitration_failed"></a>事件1177： MM_EVENT_ARBITRATION_FAILED
 
@@ -92,11 +90,11 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1247-cluster_event_invalid_service_sid_type"></a>事件1247： CLUSTER_EVENT_INVALID_SERVICE_SID_TYPE
 
-群集服务的安全标识符（SID）类型配置为 "%1"，但预期 SID 类型为 "不受限制"。 群集服务使用服务控制管理器（SCM）自动修改其 SID 类型配置，并将重新启动以使此更改生效。
+群集服务 (SID) 类型的安全标识符配置为 "%1"，但预期 SID 类型为 "不受限制"。 群集服务使用服务控制管理器 (SCM) 自动修改其 SID 类型配置，并将重新启动以使此更改生效。
 
 ### <a name="event-1248-cluster_event_service_sid_missing"></a>事件1248： CLUSTER_EVENT_SERVICE_SID_MISSING
 
-与群集服务关联的安全标识符（SID） "%1" 在进程令牌中不存在。 群集服务将自动更正此问题并重新启动。
+与群集服务关联的 SID) "%1" (的安全标识符在进程令牌中不存在。 群集服务将自动更正此问题并重新启动。
 
 ### <a name="event-1282-sm_event_handshake_timeout"></a>事件1282： SM_EVENT_HANDSHAKE_TIMEOUT
 
@@ -108,7 +106,7 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1543-service_postrestore_failed"></a>事件1543： SERVICE_POSTRESTORE_FAILED
 
-群集配置数据的还原操作失败。 此还原在 "还原后" 阶段失败，通常表示构成群集的某些节点当前未运行。 建议将当前群集配置数据文件（ClusDB）替换为 "%1"。
+群集配置数据的还原操作失败。 此还原在 "还原后" 阶段失败，通常表示构成群集的某些节点当前未运行。 建议使用 "%1" 将当前群集配置数据文件 (ClusDB) 替换为 "%1"。
 
 ### <a name="event-1546-service_form_version_incompatible"></a>事件1546： SERVICE_FORM_VERSION_INCOMPATIBLE
 
@@ -136,7 +134,7 @@ ms.locfileid: "87181703"
 
 #### <a name="guidance"></a>指南
 
-尝试在群集中的所有节点上启动群集服务，使具有群集配置数据的最新副本的节点能够首先形成群集。 然后，此节点将能够加入群集，并将自动获取更新后的群集配置数据。 如果群集配置数据的最新副本没有可用节点，请运行 "Start-clusternode-FQ" Windows PowerShell cmdlet。 使用 ForceQuorum （FQ）参数将启动群集服务，并将此节点的群集配置数据副本标记为权威。 如果在具有过时群集数据库副本的节点上强制仲裁，可能会导致在节点未加入群集时所发生的群集配置更改。
+尝试在群集中的所有节点上启动群集服务，使具有群集配置数据的最新副本的节点能够首先形成群集。 然后，此节点将能够加入群集，并将自动获取更新后的群集配置数据。 如果群集配置数据的最新副本没有可用节点，请运行 "Start-clusternode-FQ" Windows PowerShell cmdlet。 使用 ForceQuorum (FQ) 参数将启动群集服务，并将此节点的群集配置数据副本标记为权威。 如果在具有过时群集数据库副本的节点上强制仲裁，可能会导致在节点未加入群集时所发生的群集配置更改。
 
 ### <a name="event-1564-res_fsw_arbitratefailure"></a>事件1564： RES_FSW_ARBITRATEFAILURE
 
@@ -163,7 +161,7 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1575-dm_database_corrupt_or_missing_fixquorum"></a>事件1575： DM_DATABASE_CORRUPT_OR_MISSING_FIXQUORUM
 
-尝试强制启动群集服务失败，因为此节点上的群集配置数据已丢失或损坏。 请先在具有完整且有效的群集配置数据副本的另一个节点上启动群集服务。 然后，重新尝试此节点上的启动操作（这将尝试自动获取更新的有效配置信息）。 如果没有其他节点可用，请使用 WBAdmin 执行此节点的系统状态还原，以便还原配置数据。
+尝试强制启动群集服务失败，因为此节点上的群集配置数据已丢失或损坏。 请先在具有完整且有效的群集配置数据副本的另一个节点上启动群集服务。 然后，在此节点上重新尝试启动操作 (该操作将尝试自动获取已更新的有效配置信息) 。 如果没有其他节点可用，请使用 WBAdmin 执行此节点的系统状态还原，以便还原配置数据。
 
 ### <a name="event-1593-dm_could_not_discard_changes"></a>事件1593： DM_COULD_NOT_DISCARD_CHANGES
 
@@ -191,7 +189,7 @@ ms.locfileid: "87181703"
 ### <a name="event-1034-res_disk_missing"></a>事件1034： RES_DISK_MISSING
 
 群集物理磁盘资源 "%1" 无法联机，因为找不到关联的磁盘。 磁盘的预期签名为 "%2"。
-如果磁盘已被替换或还原，则在故障转移群集管理器管理单元中，可以使用 Repair 函数（在磁盘的属性表中）来修复新磁盘或已还原的磁盘。 如果磁盘不会被替换，请删除关联的磁盘资源。
+如果磁盘已被替换或还原，则在故障转移群集管理器管理单元中，可以使用磁盘) 的属性表中的 "修复" 功能 (来修复新磁盘或已还原磁盘。 如果磁盘不会被替换，请删除关联的磁盘资源。
 
 ### <a name="event-1035-res_disk_mount_failed"></a>事件1035： RES_DISK_MOUNT_FAILED
 
@@ -207,15 +205,15 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1039-res_genapp_create_failed"></a>事件1039： RES_GENAPP_CREATE_FAILED
 
-在尝试创建进程期间，一般应用程序 "%1" 无法联机（错误为 "%2"）。 可能的原因包括：此节点上可能不存在应用程序，路径名称可能指定不正确，二进制名称可能指定不正确。
+在尝试创建进程的过程中，不能将一般应用程序 "%1" 联机 () "%2"。 可能的原因包括：此节点上可能不存在应用程序，路径名称可能指定不正确，二进制名称可能指定不正确。
 
 ### <a name="event-1040-res_gensvc_open_failed"></a>事件1040： RES_GENSVC_OPEN_FAILED
 
-尝试打开服务期间，一般服务 "%1" 无法联机（错误为 "%2"）。 可能的原因包括：未安装服务或指定的服务名称无效。
+在尝试打开服务的过程中，不能将通用服务 "%1" 与 "%2" () 联机。 可能的原因包括：未安装服务或指定的服务名称无效。
 
 ### <a name="event-1041-res_gensvc_start_failed"></a>事件1041： RES_GENSVC_START_FAILED
 
-在尝试启动服务期间，一般服务 "%1" 无法联机（错误为 "%2"）。 可能的原因：指定的服务参数可能无效。
+在尝试启动服务期间，不能将通用服务 "%1" 与 ) "%2" 联机 (。 可能的原因：指定的服务参数可能无效。
 
 ### <a name="event-1042-res_gensvc_failed_after_start"></a>事件1042： RES_GENSVC_FAILED_AFTER_START
 
@@ -223,7 +221,7 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1044-res_ipaddr_nbt_interface_create_failed"></a>事件1044： RES_IPADDR_NBT_INTERFACE_CREATE_FAILED
 
-尝试在将资源 "%1" 联机时创建新的 NetBIOS 接口时遇到错误（错误代码为 "%2"）。 最多可以超过 NetBIOS 名称。
+在将资源 "%1" 联机时尝试创建新的 NetBIOS 接口时遇到失败 )  (错误代码 "%2"。 最多可以超过 NetBIOS 名称。
 
 ### <a name="event-1046-res_ipaddr_invalid_subnet"></a>事件1046： RES_IPADDR_INVALID_SUBNET
 
@@ -235,7 +233,7 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1048-res_ipaddr_invalid_adapter"></a>事件1048： RES_IPADDR_INVALID_ADAPTER
 
-群集 IP 地址资源 "%1" 联机失败。 无法确定与群集网络接口 "%2" 对应的网络适配器的配置数据（错误代码为 "%3"）。 请检查 IP 地址资源是否配置了正确的地址和网络属性。
+群集 IP 地址资源 "%1" 联机失败。 无法确定与群集网络接口 "%2" 对应的网络适配器的配置数据 (错误代码为 "%3" ) 。 请检查 IP 地址资源是否配置了正确的地址和网络属性。
 
 ### <a name="event-1049-res_ipaddr_in_use"></a>事件1049： RES_IPADDR_IN_USE
 
@@ -259,11 +257,11 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1054-res_smb_share_not_found"></a>事件1054： RES_SMB_SHARE_NOT_FOUND
 
-文件共享资源 "%1" 的运行状况检查失败。 检索共享 "%2" 的信息（作用域为网络名称 %3）返回了错误代码 "%4"。 请确保共享存在并且可访问。
+文件共享资源 "%1" 的运行状况检查失败。 正在检索 (作用域为网络名称为 %3 的共享 "%2" 的信息) 返回的错误代码为 "%4"。 请确保共享存在并且可访问。
 
 ### <a name="event-1055-res_smb_share_failed"></a>事件1055： RES_SMB_SHARE_FAILED
 
-文件共享资源 "%1" 的运行状况检查失败。 正在检索共享 "%2" （作用域为网络名称 %3）的信息，指示该共享不存在（错误代码 "%4"）。 请确保共享存在并且可访问。
+文件共享资源 "%1" 的运行状况检查失败。 正在检索 (作用域为网络名称为 %3 的共享 "%2" 的信息) 指示该共享不存在 (错误代码 "%4" ) 。 请确保共享存在并且可访问。
 
 ### <a name="event-1069-rcm_resource_failure"></a>事件1069： RCM_RESOURCE_FAILURE
 
@@ -275,7 +273,7 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1069-rcm_resource_failure_with_cause"></a>事件1069： RCM_RESOURCE_FAILURE_WITH_CAUSE
 
-群集角色 "%2" 中类型为 "%3" 的群集资源 "%1" 失败。 错误代码为 "%5" （"%4"）。<br><br>根据资源和角色的故障策略，群集服务可能会尝试在此节点上使资源联机，或者将该组移至群集的其他节点，然后重新启动它。 使用故障转移群集管理器或 Get-clusterresource Windows PowerShell cmdlet 检查资源和组状态。
+群集角色 "%2" 中类型为 "%3" 的群集资源 "%1" 失败。 错误代码为 "%5" ( "%4" ) 。<br><br>根据资源和角色的故障策略，群集服务可能会尝试在此节点上使资源联机，或者将该组移至群集的其他节点，然后重新启动它。 使用故障转移群集管理器或 Get-clusterresource Windows PowerShell cmdlet 检查资源和组状态。
 
 ### <a name="event-1069-rcm_resource_failure_with_error_code"></a>事件1069： RCM_RESOURCE_FAILURE_WITH_ERROR_CODE
 
@@ -287,7 +285,7 @@ ms.locfileid: "87181703"
 
 ### <a name="event-1077-res_ipaddr_ipv4_address_interface_failed"></a>事件1077： RES_IPADDR_IPV4_ADDRESS_INTERFACE_FAILED
 
-IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）。 运行验证配置向导以确保网络适配器正常运行。
+IP 接口 "%1" (地址 "%2" 的运行状况检查 ) 失败 (状态为 "%3" ) 。 运行验证配置向导以确保网络适配器正常运行。
 
 ### <a name="event-1078-res_ipaddr_wins_address_failed"></a>事件1078： RES_IPADDR_WINS_ADDRESS_FAILED
 
@@ -331,7 +329,7 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1183-res_disk_invalid_mp_source_not_clustered"></a>事件1183： RES_DISK_INVALID_MP_SOURCE_NOT_CLUSTERED
 
-群集磁盘资源 "%1" 包含无效的装入点。 与装入点相关联的源磁盘和目标磁盘都必须是群集磁盘，并且必须是同一组的成员。 <br>卷 "%3" 的装入点 "%2" 引用了无效的源磁盘。 请确保源磁盘也是群集磁盘，并且在与目标磁盘相同的组（承载装入点）中。
+群集磁盘资源 "%1" 包含无效的装入点。 与装入点相关联的源磁盘和目标磁盘都必须是群集磁盘，并且必须是同一组的成员。 <br>卷 "%3" 的装入点 "%2" 引用了无效的源磁盘。 请确保源磁盘也是群集磁盘，并且在与目标磁盘相同的组中 (承载装入点) 。
 
 ### <a name="event-1191-res_netname_delete_computer_account_failed_status"></a>事件1191： RES_NETNAME_DELETE_COMPUTER_ACCOUNT_FAILED_STATUS
 
@@ -362,11 +360,11 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1195-res_netname_dns_registration_failed_status"></a>事件1195： RES_NETNAME_DNS_REGISTRATION_FAILED_STATUS
 
-群集网络名称资源 "%1" 未能注册一个或多个关联的 DNS 名称。 错误代码为 "%2"。 确保将与从属 IP 地址资源关联的网络适配器配置为具有对至少一个 DNS 服务器的访问权限。
+群集网络名称资源 "%1" 未能注册一个或多个关联的 DNS 名称 () 。 错误代码为 "%2"。 确保将与从属 IP 地址资源关联的网络适配器配置为具有对至少一个 DNS 服务器的访问权限。
 
 ### <a name="event-1196-res_netname_dns_registration_failed"></a>事件1196： RES_NETNAME_DNS_REGISTRATION_FAILED
 
-群集网络名称资源 "%1" 无法注册一个或多个关联的 DNS 名称，原因如下：<br>%2。<br><br>确保为与从属 IP 地址资源关联的网络适配器配置至少一个可访问的 DNS 服务器。
+群集网络名称资源 "%1" 未能注册一个或多个关联的 DNS 名称 () ，原因如下：<br>%2。<br><br>确保为与从属 IP 地址资源关联的网络适配器配置至少一个可访问的 DNS 服务器。
 
 ### <a name="event-1205-rcm_event_group_failed_online_offline"></a>事件1205： RCM_EVENT_GROUP_FAILED_ONLINE_OFFLINE
 
@@ -382,16 +380,16 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1208-res_disk_invalid_mp_target_not_clustered"></a>事件1208： RES_DISK_INVALID_MP_TARGET_NOT_CLUSTERED
 
-群集磁盘资源 "%1" 包含无效的装入点。 与装入点相关联的源磁盘和目标磁盘都必须是群集磁盘，并且必须是同一组的成员。 <br>卷 "%3" 的装入点 "%2" 引用了无效的目标磁盘。 请确保目标磁盘也是群集磁盘，并且在与源磁盘相同的组（承载装入点）中。
+群集磁盘资源 "%1" 包含无效的装入点。 与装入点相关联的源磁盘和目标磁盘都必须是群集磁盘，并且必须是同一组的成员。 <br>卷 "%3" 的装入点 "%2" 引用了无效的目标磁盘。 请确保目标磁盘也是群集磁盘，并且在与源磁盘相同的组中 (承载装入点) 。
 
 ### <a name="event-1211-res_netname_no_writeable_dc_status"></a>事件1211： RES_NETNAME_NO_WRITEABLE_DC_STATUS
 
-群集网络名称资源 "%1" 不能联机。 尝试在域 %2 中查找可写域控制器以创建或更新与资源关联的计算机对象失败。 错误代码为 "%3"。
+群集网络名称资源 "%1" 不能联机。 尝试在域 %2) 中查找可写域控制器 (以便创建或更新与该资源关联的计算机对象失败。 错误代码为 "%3"。
 确保配置的域中的此节点可以访问可写域控制器。 还要确保 DNS 服务器正在运行，以便解析域控制器的名称。
 
 ### <a name="event-1212-res_netname_no_writeable_dc"></a>事件1212： RES_NETNAME_NO_WRITEABLE_DC
 
-群集网络名称资源 "%1" 不能联机。 尝试在域 %2 中查找可写域控制器以创建或更新与资源关联的计算机对象失败，原因如下：<br>%3。<br><br> 错误代码为 "%4"。 确保配置的域中的此节点可以访问可写域控制器。 还要确保 DNS 服务器正在运行，以便解析域控制器的名称。
+群集网络名称资源 "%1" 不能联机。 尝试在域 %2) 中查找可写域控制器 (以便创建或更新与资源关联的计算机对象失败，原因如下：<br>%3。<br><br> 错误代码为 "%4"。 确保配置的域中的此节点可以访问可写域控制器。 还要确保 DNS 服务器正在运行，以便解析域控制器的名称。
 
 ### <a name="event-1213-res_netname_rename_restore_failed"></a>事件1213： RES_NETNAME_RENAME_RESTORE_FAILED
 
@@ -407,7 +405,7 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1218-res_netname_online_rename_recovery_missing_account"></a>事件1218： RES_NETNAME_ONLINE_RENAME_RECOVERY_MISSING_ACCOUNT
 
-群集网络名称资源 "%1" 未能执行名称更改操作（尝试将原始名称 "%3" 更改为名称 "%4"）。 在域控制器 "%2" （创建它的位置）上找不到计算机对象。 下次资源进入联机状态时，将尝试重新创建计算机对象。 此外，请与域管理员联系，以确保域中存在该计算机对象。
+群集网络名称资源 "%1" 未能执行名称更改操作 (尝试将原始名称 "%3" 更改为名称 "%4" ) 。 在 (的域控制器 "%2" 上找不到该计算机对象) 创建它的位置。 下次资源进入联机状态时，将尝试重新创建计算机对象。 此外，请与域管理员联系，以确保域中存在该计算机对象。
 
 ### <a name="event-1219-res_netname_online_rename_dc_not_found"></a>事件1219： RES_NETNAME_ONLINE_RENAME_DC_NOT_FOUND
 
@@ -426,11 +424,11 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1226-res_netname_tcb_not_held"></a>事件1226： RES_NETNAME_TCB_NOT_HELD
 
-网络名称资源 "%1" （关联网络名称为 "%2"）已启用 Kerberos 身份验证支持。 未能将所需的凭据添加到 LSA-关联的错误代码 "%3" 指示此操作通常需要的权限不足。 所需的权限是 "受信任的计算基础"，必须在组成群集的每个节点上本地启用。
+具有关联网络名称 "%2" 的网络名称资源 "%1" () 启用了 Kerberos 身份验证支持。 未能将所需的凭据添加到 LSA-关联的错误代码 "%3" 指示此操作通常需要的权限不足。 所需的权限是 "受信任的计算基础"，必须在组成群集的每个节点上本地启用。
 
 ### <a name="event-1227-res_netname_lsa_error"></a>事件1227： RES_NETNAME_LSA_ERROR
 
-网络名称资源 "%1" （关联网络名称为 "%2"）已启用 Kerberos 身份验证支持。 未能将所需的凭据添加到 LSA-关联的错误代码为 "%3"。
+具有关联网络名称 "%2" 的网络名称资源 "%1" () 启用了 Kerberos 身份验证支持。 未能将所需的凭据添加到 LSA-关联的错误代码为 "%3"。
 
 ### <a name="event-1228-res_netname_clone_failure"></a>事件1228： RES_NETNAME_CLONE_FAILURE
 
@@ -442,12 +440,12 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1230-rcm_deadlock_or_crash_detected"></a>事件1230： RCM_DEADLOCK_OR_CRASH_DETECTED
 
-服务器上的组件未及时响应。 这导致群集资源 "%1" （资源类型 "%2"，DLL "%3"）超过其超时阈值。 作为群集运行状况检测的一部分，将执行恢复操作。
-群集将通过终止并重新启动运行此资源的资源宿主子系统（RHS）进程来尝试自动恢复。 验证与资源关联的底层基础结构（例如存储、网络或服务）是否正常运行。
+服务器上的组件未及时响应。 这导致了群集资源 "%1" (资源类型 "%2"、DLL "%3" ) 超过其超时阈值。 作为群集运行状况检测的一部分，将执行恢复操作。
+群集将尝试通过终止并重新启动运行此资源 (RHS) 进程的资源宿主子系统来自动恢复。 验证底层基础结构 (例如与资源关联的存储、网络或服务) 是否正常工作。
 
 ### <a name="event-1230-rcm_resource_control_deadlock_detected"></a>事件1230： RCM_RESOURCE_CONTROL_DEADLOCK_DETECTED
 
-服务器上的组件未及时响应。 这导致群集资源 "%1" （资源类型 "%2"，DLL "%3"）在处理控制代码 "%4;" 时超过其超时阈值。 作为群集运行状况检测的一部分，将执行恢复操作。 群集将通过终止并重新启动运行此资源的资源宿主子系统（RHS）进程来尝试自动恢复。 验证与资源关联的底层基础结构（例如存储、网络或服务）是否正常运行。
+服务器上的组件未及时响应。 这导致了群集资源 "%1" (资源类型 "%2"、DLL "%3" ) 在处理控制代码 "%4;" 时超过其超时阈值。 作为群集运行状况检测的一部分，将执行恢复操作。 群集将尝试通过终止并重新启动运行此资源 (RHS) 进程的资源宿主子系统来自动恢复。 验证底层基础结构 (例如与资源关联的存储、网络或服务) 是否正常工作。
 
 ### <a name="event-1231-res_netname_logon_failure"></a>事件1231： RES_NETNAME_LOGON_FAILURE
 
@@ -464,7 +462,7 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1234-cluster_event_account_missing_privs"></a>事件1234： CLUSTER_EVENT_ACCOUNT_MISSING_PRIVS
 
-群集服务检测到其服务帐户缺少一个或多个所需的权限。 缺少权限列表是： "%1"，当前未被授予服务帐户。 使用 "sc.exe qprivs clussvc" 验证群集服务（ClusSvc）的权限。 此外，请在 Active Directory 域服务中检查任何可能已更改默认权限的安全策略或组策略。 键入以下命令，授予群集服务正确运行所需的权限：
+群集服务检测到其服务帐户缺少一个或多个所需的权限。 缺少权限列表是： "%1"，当前未被授予服务帐户。 使用 "sc.exe qprivs clussvc" 验证群集服务 (ClusSvc) 的权限。 此外，请在 Active Directory 域服务中检查任何可能已更改默认权限的安全策略或组策略。 键入以下命令，授予群集服务正确运行所需的权限：
 
 ```
 sc.exe privs
@@ -496,7 +494,7 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 ### <a name="event-1256-res_netname_dns_registration_failed_dynamic_dns_zone"></a>事件1256： RES_NETNAME_DNS_REGISTRATION_FAILED_DYNAMIC_DNS_ZONE
 
-群集网络名称资源无法注册一个或多个关联的 DNS 名称，因为相应的 DNS 区域不接受动态更新。<br><br>群集网络名称： "%1"<br>DNS 区域： "%2"
+群集网络名称资源未能注册 () s 中的一个或多个关联 DNS 名称，因为相应的 DNS 区域不接受动态更新。<br><br>群集网络名称： "%1"<br>DNS 区域： "%2"
 
 #### <a name="guidance"></a>指南
 
@@ -504,15 +502,15 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 ### <a name="event-1257-res_netname_dns_registration_failed_secure_dns_zone"></a>事件1257： RES_NETNAME_DNS_REGISTRATION_FAILED_SECURE_DNS_ZONE
 
-群集网络名称资源未能注册一个或多个关联的 DNS 名称，因为更新安全 DNS 区域的访问被拒绝。<br><br>群集网络名称： "%1"<br>DNS 区域： "%2"<br><br>确保已向群集名称对象（CNO）授予对安全 DNS 区域的权限。
+群集网络名称资源未能注册 () 一个或多个关联的 DNS 名称，因为更新安全 DNS 区域的访问被拒绝。<br><br>群集网络名称： "%1"<br>DNS 区域： "%2"<br><br>确保向群集名称对象 (CNO) 授予对安全 DNS 区域的权限。
 
 ### <a name="event-1258-res_netname_dns_registration_failed_timeout"></a>事件1258： RES_NETNAME_DNS_REGISTRATION_FAILED_TIMEOUT
 
-群集网络名称资源无法注册一个或多个关联的 DNS 名称，因为无法访问 DNS 服务器。<br><br>群集网络名称： "%1"<br>DNS 区域： "%2"<br>DNS 服务器： "%3"<br><br>确保为与从属 IP 地址资源关联的网络适配器配置至少一个可访问的 DNS 服务器。
+群集网络名称资源未能注册一个或多个关联的 DNS 名称 () ，因为无法访问 DNS 服务器。<br><br>群集网络名称： "%1"<br>DNS 区域： "%2"<br>DNS 服务器： "%3"<br><br>确保为与从属 IP 地址资源关联的网络适配器配置至少一个可访问的 DNS 服务器。
 
 ### <a name="event-1259-res_netname_dns_registration_failed_cleanup"></a>事件1259： RES_NETNAME_DNS_REGISTRATION_FAILED_CLEANUP
 
-群集网络名称资源无法注册一个或多个关联的 DNS 名称，因为群集服务无法清理与网络名称对应的现有记录。<br><br>群集网络名称： "%1"<br>DNS 区域： "%2"<br><br>确保已向群集名称对象（CNO）授予对安全 DNS 区域的权限。
+群集网络名称资源未能注册一个或多个关联的 DNS 名称 () ，因为群集服务无法清理与网络名称对应的现有记录。<br><br>群集网络名称： "%1"<br>DNS 区域： "%2"<br><br>确保向群集名称对象 (CNO) 授予对安全 DNS 区域的权限。
 
 ### <a name="event-1260-res_netname_dns_registration_modify_failed"></a>事件1260： RES_NETNAME_DNS_REGISTRATION_MODIFY_FAILED
 
@@ -548,7 +546,7 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 ### <a name="event-1265-res_type_control_timed_out"></a>事件1265： RES_TYPE_CONTROL_TIMED_OUT
 
-在处理控制代码 %2 的过程中，群集资源类型 "%1" 超时。 群集将通过终止并重新启动正在处理调用的资源宿主子系统（RHS）进程来尝试自动恢复。
+在处理控制代码 %2 的过程中，群集资源类型 "%1" 超时。 群集将尝试通过终止并重新启动正在处理调用的资源宿主子系统 (RHS) 进程来自动恢复。
 
 ### <a name="event-1289-netft_adapter_not_found"></a>事件1289： NETFT_ADAPTER_NOT_FOUND
 
@@ -560,7 +558,7 @@ SeBackupPrivilege/SeRestorePrivilege/SeIncreaseQuotaPrivilege/SeIncreaseBasePrio
 
 ### <a name="event-1361-res_ipaddr_missing_dependant"></a>事件1361： RES_IPADDR_MISSING_DEPENDANT
 
-IPv6 隧道地址资源 "%1" 无法联机，因为它不依赖 IP 地址（IPv4）资源。 至少需要一个 IP 地址（IPv4）资源的依赖项。
+IPv6 隧道地址资源 "%1" 无法联机，因为它不依赖于 IPv4) 资源 (的 IP 地址。 需要至少依赖于 IPv4) 资源 (的一个 IP 地址。
 
 ### <a name="event-1362-res_ipaddr_missing_data"></a>事件1362： RES_IPADDR_MISSING_DATA
 
@@ -568,7 +566,7 @@ IPv6 隧道地址资源 "%1" 无法联机，因为它不依赖 IP 地址（IPv4�
 
 ### <a name="event-1363-res_ipaddr_no_isatap_support"></a>事件1363： RES_IPADDR_NO_ISATAP_SUPPORT
 
-IPv6 隧道地址资源 "%1" 联机失败。 与依赖 IP 地址（IPv4）资源 "%3" 关联的群集网络 "%2" 不支持 ISATAP 隧道。 请确保群集网络支持 ISATAP 隧道。
+IPv6 隧道地址资源 "%1" 联机失败。 与依存 IP 地址关联的群集网络 "%2" (IPv4) 资源 "%3" 不支持 ISATAP 隧道。 请确保群集网络支持 ISATAP 隧道。
 
 ### <a name="event-1540-service_backup_noquorum"></a>事件1540： SERVICE_BACKUP_NOQUORUM
 
@@ -604,7 +602,7 @@ IPv6 隧道地址资源 "%1" 联机失败。 与依赖 IP 地址（IPv4）资源
 
 ### <a name="event-1567-res_vipaddr_address_interface_failed"></a>事件1567： RES_VIPADDR_ADDRESS_INTERFACE_FAILED
 
-IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）。 检查与物理或虚拟网络适配器相关的硬件或软件错误。
+IP 接口 "%1" (地址 "%2" 的运行状况检查 ) 失败 (状态为 "%3" ) 。 检查与物理或虚拟网络适配器相关的硬件或软件错误。
 
 ### <a name="event-1568-res_cloud_witness_cant_communicate_to_azure"></a>事件1568： RES_CLOUD_WITNESS_CANT_COMMUNICATE_TO_AZURE
 
@@ -656,7 +654,7 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1600-clusapi_create_cannot_set_ad_dacl"></a>事件1600： CLUSAPI_CREATE_CANNOT_SET_AD_DACL
 
-群集服务无法设置群集计算机对象 "%1" 的权限。 请与网络管理员联系，以检查 Active Directory 中计算机对象的群集安全描述符，验证 DACL 是否不太大，并删除对象上的任何不必要的额外 ACE （如有必要）。
+群集服务无法设置群集计算机对象 "%1" 的权限。 请与网络管理员联系，以检查 Active Directory 中计算机对象的群集安全描述符，验证 DACL 是否不太大，并删除对象上任何不必要的额外 ACE (s) （如有必要）。
 
 ### <a name="event-1603-res_fileserver_clone_failed"></a>事件1603： RES_FILESERVER_CLONE_FAILED
 
@@ -664,11 +662,11 @@ IP 接口 "%1" （地址 "%2"）的运行状况检查失败（状态为 "%3"）�
 
 ### <a name="event-1606-res_disk_cno_check_failed"></a>事件1606： RES_DISK_CNO_CHECK_FAILED
 
-群集磁盘资源 "%1" 包含受 BitLocker 保护的卷 "%2"，但对于此卷，Active Directory 群集名称帐户（也称为群集名称对象或 CNO）不是卷的 BitLocker 保护程序。 这是受 BitLocker 保护的卷所必需的。 若要更正此错误，请先从群集中删除该磁盘。 接下来，使用 Manage-bde.exe 命令行工具将群集名称添加为 ADAccountOrGroup 保护程序，并将 ClusterName 的格式设置 \\ \$ 为群集名称。 然后将该磁盘添加回群集。 有关详细信息，请参阅文档 Manage-bde.exe
+群集磁盘资源 "%1" 包含受 BitLocker 保护的卷 "%2"，但对于此卷，Active Directory 群集名称帐户 (也称为群集名称对象或 CNO) 不是该卷的 BitLocker 保护程序。 这是受 BitLocker 保护的卷所必需的。 若要更正此错误，请先从群集中删除该磁盘。 接下来，使用 Manage-bde.exe 命令行工具将群集名称添加为 ADAccountOrGroup 保护程序，并将 ClusterName 的格式设置 \\ \$ 为群集名称。 然后将该磁盘添加回群集。 有关详细信息，请参阅文档 Manage-bde.exe
 
 ### <a name="event-1607-res_disk_cno_unlock_failed"></a>事件1607： RES_DISK_CNO_UNLOCK_FAILED
 
-群集磁盘资源 "%1" 无法解锁受 BitLocker 保护的卷 "%2"。 群集名称对象（CNO）未设置为此卷的有效 BitLocker 保护程序。 若要更正此错误，请从群集中删除该磁盘。 然后，使用 Manage-bde.exe 命令行工具将群集名称添加为 ADAccountOrGroup 保护程序，使用 format domain \\ ClusterName \$ ，并将磁盘添加回群集。 有关详细信息，请参阅 Manage-bde.exe 的文档。
+群集磁盘资源 "%1" 无法解锁受 BitLocker 保护的卷 "%2"。 群集名称对象 (CNO) 未设置为此卷的有效 BitLocker 保护程序。 若要更正此错误，请从群集中删除该磁盘。 然后，使用 Manage-bde.exe 命令行工具将群集名称添加为 ADAccountOrGroup 保护程序，使用 format domain \\ ClusterName \$ ，并将磁盘添加回群集。 有关详细信息，请参阅 Manage-bde.exe 的文档。
 
 ### <a name="event-1608-res_fileserver_leader_failed"></a>事件1608： RES_FILESERVER_LEADER_FAILED
 
@@ -684,15 +682,15 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-1652-service_tcp_connection_failure"></a>事件1652： SERVICE_TCP_CONNECTION_FAILURE
 
-群集节点 "%1" 无法加入群集。 无法与节点 "%2" 建立 TCP 连接。 验证网络连接和任何网络防火墙的配置。
+群集节点 "%1" 无法加入群集。 无法与节点 (s) "%2" 建立 TCP 连接。 验证网络连接和任何网络防火墙的配置。
 
 ### <a name="event-1652-service_udp_connection_failure"></a>事件1652： SERVICE_UDP_CONNECTION_FAILURE
 
-群集节点 "%1" 无法加入群集。 无法建立到节点 "%2" 的 UDP 连接。 验证网络连接和任何网络防火墙的配置。
+群集节点 "%1" 无法加入群集。 无法建立与节点 (s) "%2" 的 UDP 连接。 验证网络连接和任何网络防火墙的配置。
 
 ### <a name="event-1652-service_virtual_tcp_connection_failure"></a>事件1652： SERVICE_VIRTUAL_TCP_CONNECTION_FAILURE
 
-群集节点 "%1" 无法加入群集。 无法为节点 "%2" 建立使用 Microsoft 故障转移群集虚拟适配器的 TCP 连接。 验证网络连接和任何网络防火墙的配置。
+群集节点 "%1" 无法加入群集。 无法与节点 (s) "%2" 建立使用 Microsoft 故障转移群集虚拟适配器的 TCP 连接。 验证网络连接和任何网络防火墙的配置。
 
 ### <a name="event-1653-service_no_connectivity"></a>事件1653： SERVICE_NO_CONNECTIVITY
 
@@ -700,15 +698,15 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-1654-res_vipaddr_invalid_adaptername"></a>事件1654： RES_VIPADDR_INVALID_ADAPTERNAME
 
-群集非连续 IP 地址资源 "%1" 联机失败。 无法确定与网络适配器 "%2" 对应的网络适配器的配置数据（错误代码为 "%3"）。 检查 IP 地址资源是否配置了正确的地址和网络属性。
+群集非连续 IP 地址资源 "%1" 联机失败。 无法确定与网络适配器 "%2" 对应的网络适配器的配置数据 (错误代码为 "%3" ) 。 检查 IP 地址资源是否配置了正确的地址和网络属性。
 
 ### <a name="event-1655-res_vipaddr_invalid_vsid"></a>事件1655： RES_VIPADDR_INVALID_VSID
 
-群集非连续 IP 地址资源 "%1" 联机失败。 无法确定与虚拟子网 Id "%2" 和路由域 Id "%3" 对应的网络适配器的配置数据（错误代码为 "%4"）。 检查 IP 地址资源是否配置了正确的地址和网络属性。
+群集非连续 IP 地址资源 "%1" 联机失败。 无法确定与虚拟子网 Id "%2" 和路由域 Id "%3" 对应的网络适配器的配置数据 (错误代码为 "%4" ) 。 检查 IP 地址资源是否配置了正确的地址和网络属性。
 
 ### <a name="event-1656-res_vipaddr_address_create_failed"></a>事件1656： RES_VIPADDR_ADDRESS_CREATE_FAILED
 
-无法为非连续 IP 地址资源 "%1" 添加 IP 地址 "%2" （错误代码为 "%3"）。 检查与物理或虚拟网络适配器相关的硬件或软件错误。
+无法为非连续 IP 地址资源 "%1" 添加 IP 地址 "%2" (错误代码为 "%3" ) 。 检查与物理或虚拟网络适配器相关的硬件或软件错误。
 
 ### <a name="event-1664-cluster_upgrade_incomplete"></a>事件1664： CLUSTER_UPGRADE_INCOMPLETE
 
@@ -815,7 +813,7 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-4629-nodecleanup_delete_local_account_failed"></a>事件4629： NODECLEANUP_DELETE_LOCAL_ACCOUNT_FAILED
 
-在节点清理期间，不会删除由群集管理的本地用户帐户。 错误代码为 "%1"。 打开 "本地用户和组" （lusrmgr.msc）以删除帐户。
+在节点清理期间，不会删除由群集管理的本地用户帐户。 错误代码为 "%1"。 打开 "本地用户和组" ("lusrmgr.msc") 删除帐户。
 
 ### <a name="event-4864-res_vsstask_open_failed"></a>事件4864： RES_VSSTASK_OPEN_FAILED
 
@@ -864,16 +862,16 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-5142-dcm_volume_no_access"></a>事件5142： DCM_VOLUME_NO_ACCESS
 
-由于出现错误 "%3"，无法再从此群集节点访问群集共享卷 "%1" （"%2"）。 请对此节点与存储设备和网络连接的连接进行故障排除。
+由于出现错误 "%3"，不能再从此群集节点访问群集共享卷 "%1" ( "%2" ) 。 请对此节点与存储设备和网络连接的连接进行故障排除。
 
 ### <a name="event-5143-dcm_veto_resource_move_due_to_cc"></a>事件5143： DCM_VETO_RESOURCE_MOVE_DUE_TO_CC
 
-基于节点 "%1" 上的缓存管理器的当前状态，不允许移动磁盘（"%2"），以防止潜在的死锁。 "缓存管理器脏页阈值" 为 %3，"缓存管理器脏页" 为 %4。 如果 "缓存管理器脏页" 小于 "缓存管理器脏页阈值" 的70%，或者如果 "缓存管理器脏页阈值" 减 "缓存管理器脏页" 大于128000页（如果页大小为4096字节，则为 "关于 500MB"）。
+基于节点 "%1" 上的缓存管理器的当前状态，不允许移动磁盘 ( "%2" ) ，以防止潜在的死锁。 "缓存管理器脏页阈值" 为 %3，"缓存管理器脏页" 为 %4。 如果 "缓存管理器脏页" 小于 "缓存管理器脏页阈值" 的70%，或者如果页大小为4096字节) ，则允许使用 "缓存管理器脏页阈值"，而128000不是 "缓存管理器脏页" (有关500MB 的 "缓存管理器脏页"。
 群集拒绝资源移动，以防止在此磁盘上的群集共享卷暂停时缓存管理器阻止缓冲写入导致的潜在死锁。
 
 ### <a name="event-5144-dcm_snapshot_diff_area_failure"></a>事件5144： DCM_SNAPSHOT_DIFF_AREA_FAILURE
 
-将磁盘（"%1"）添加到群集共享卷时，为卷（"%2"）设置显式快照差异区域关联失败，出现错误 "%3"。 支持群集共享卷的唯一受支持的软件快照差异区域关联。
+将磁盘 ( "%1" ) 添加到群集共享卷时，为卷 ( "%2" 设置显式快照差异区域关联 ) 失败，出现错误 "%3"。 支持群集共享卷的唯一受支持的软件快照差异区域关联。
 
 ### <a name="event-5145-dcm_snapshot_diff_area_delete_failure"></a>事件5145： DCM_SNAPSHOT_DIFF_AREA_DELETE_FAILURE
 
@@ -889,7 +887,7 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-5148-dcm_veto_resource_move_due_to_io_mode_change"></a>事件5148： DCM_VETO_RESOURCE_MOVE_DUE_TO_IO_MODE_CHANGE
 
-不能移动群集共享卷资源 "%1"，因为在属于该资源的某个卷上正在执行 IO 模式更改操作（直接 IO 到重定向 IO，反之亦然）。 请在操作完成后重试该操作。
+移动群集共享卷资源 "%1" 被拒绝，因为 IO 模式更改操作 (直接 IO 重定向 IO，反之亦然) 正在资源的某个卷上进行。 请在操作完成后重试该操作。
 
 ### <a name="event-5150-dcm_set_resource_in_failed_state"></a>事件5150： DCM_SET_RESOURCE_IN_FAILED_STATE
 
@@ -901,15 +899,15 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-5216-csv_sw_snapshot_failed"></a>事件5216： CSV_SW_SNAPSHOT_FAILED
 
-在群集共享卷 "%1" （"%2"）上创建软件快照失败，出现错误 %3。 资源必须联机才能支持快照创建。 请检查资源的状态。
+在群集共享卷 "%1" 上创建软件快照 ( "%2" ) 失败，出现错误 %3。 资源必须联机才能支持快照创建。 请检查资源的状态。
 
 ### <a name="event-5217-csv_sw_snapshot_set_failed"></a>事件5217： CSV_SW_SNAPSHOT_SET_FAILED
 
-在快照集 id 为 "%2" 的群集共享卷（"%1"）上创建软件快照失败，出现错误 "%3"。 请检查 CSV 资源的状态和资源所有者节点的系统事件。
+在快照集 id 为 "%2" 的群集共享卷 (s)  ( "%1 ) " 上创建软件快照失败，出现错误 "%3"。 请检查 CSV 资源的状态和资源所有者节点的系统事件。
 
 ### <a name="event-5219-csv_register_snapshot_prov_with_vss_failed"></a>事件5219： CSV_REGISTER_SNAPSHOT_PROV_WITH_VSS_FAILED
 
-群集服务无法向卷影服务（VSS）注册群集共享卷快照提供程序。 这可能是由于 VSS 服务关闭导致的，或者可能是 VSS 服务出现问题，导致它无法接受传入的请求。 <br>错误: %1
+群集服务无法 (VSS) 向卷影服务注册群集共享卷快照提供程序。 这可能是由于 VSS 服务关闭导致的，或者可能是 VSS 服务出现问题，导致它无法接受传入的请求。 <br>错误: %1
 
 ### <a name="event-5377-operation_exceeded_timeout"></a>事件5377： OPERATION_EXCEEDED_TIMEOUT
 
@@ -917,7 +915,7 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-5396-two_partitions_have_quorum"></a>事件5396： TWO_PARTITIONS_HAVE_QUORUM
 
-此节点上的群集服务正在关闭，因为它检测到有其他群集节点具有仲裁。 当群集服务检测到通过强制仲裁交换机（/fq）启动的另一个节点时，会发生这种情况。 通过强制仲裁交换机启动的节点将继续运行。 使用故障转移群集管理器验证群集服务重新启动时此节点是否自动加入群集。
+此节点上的群集服务正在关闭，因为它检测到有其他群集节点具有仲裁。 当群集服务检测到 (/fq) 的强制仲裁开关启动的另一个节点时，会发生这种情况。 通过强制仲裁交换机启动的节点将继续运行。 使用故障转移群集管理器验证群集服务重新启动时此节点是否自动加入群集。
 
 ### <a name="event-5397-rlua_account_failed"></a>事件5397： RLUA_ACCOUNT_FAILED
 
@@ -929,7 +927,7 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 #### <a name="guidance"></a>指南
 
-尝试在群集中的所有节点上启动群集服务，使具有群集配置数据的最新副本的节点能够首先形成群集。 群集将能够启动，节点将自动获取更新后的群集配置数据。 如果群集配置数据的最新副本没有可用节点，请运行 "Start-clusternode-FQ" Windows PowerShell cmdlet。 使用 ForceQuorum （FQ）参数将启动群集服务，并将此节点的群集配置数据副本标记为权威。 如果在具有过时群集数据库副本的节点上强制仲裁，可能会导致在节点未加入群集时所发生的群集配置更改。
+尝试在群集中的所有节点上启动群集服务，使具有群集配置数据的最新副本的节点能够首先形成群集。 群集将能够启动，节点将自动获取更新后的群集配置数据。 如果群集配置数据的最新副本没有可用节点，请运行 "Start-clusternode-FQ" Windows PowerShell cmdlet。 使用 ForceQuorum (FQ) 参数将启动群集服务，并将此节点的群集配置数据副本标记为权威。 如果在具有过时群集数据库副本的节点上强制仲裁，可能会导致在节点未加入群集时所发生的群集配置更改。
 
 ## <a name="warning-events"></a>警告事件
 
@@ -939,7 +937,7 @@ Scale Out 文件服务器无法启动，因为找不到 "分布式网络名称" 
 
 ### <a name="event-1045-res_ipaddr_ipv4_address_create_failed"></a>事件1045： RES_IPADDR_IPV4_ADDRESS_CREATE_FAILED
 
-找不到资源 "%1" IP 地址 "%2" 的匹配网络接口（返回代码是 "%3"）。 如果群集节点跨不同子网，则这可能是正常的。
+找不到资源 "%1" IP 地址 "%2" 的匹配网络接口 (返回代码是 "%3" ) 。 如果群集节点跨不同子网，则这可能是正常的。
 
 ### <a name="event-1066-res_disk_corrupt_disk"></a>事件1066： RES_DISK_CORRUPT_DISK
 
@@ -948,7 +946,7 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-1068-res_smb_share_cant_add"></a>事件1068： RES_SMB_SHARE_CANT_ADD
 
-群集文件共享资源 "%1" 不能联机。 由于出现错误 "%4"，创建文件共享 "%2" （作用域为网络名称 %3）失败。 将自动重试此操作。
+群集文件共享资源 "%1" 不能联机。 由于错误 "%4"，创建的文件共享 "%2" (作用域为网络名称 %3) 失败。 将自动重试此操作。
 
 ### <a name="event-1071-rcm_resource_online_blocked_by_locked_mode"></a>事件1071： RCM_RESOURCE_ONLINE_BLOCKED_BY_LOCKED_MODE
 
@@ -972,16 +970,16 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-1149-res_netname_cant_delete_dns_records"></a>事件1149： RES_NETNAME_CANT_DELETE_DNS_RECORDS
 
-与群集资源 "%1" 关联的 DNS 主机（A）和指针（PTR）记录未从资源的关联 DNS 服务器中删除。 如有必要，可以手动删除它们。 请与 DNS 管理员联系，以帮助完成此工作。
+DNS 主机 (与群集资源 "%1" 关联的) 和指针 (PTR) 记录未从资源的关联 DNS 服务器中删除。 如有必要，可以手动删除它们。 请与 DNS 管理员联系，以帮助完成此工作。
 
 ### <a name="event-1150-res_netname_dns_ptr_record_delete_failed"></a>事件1150： RES_NETNAME_DNS_PTR_RECORD_DELETE_FAILED
 
-删除与群集网络名称资源 "%1" 关联的主机 "%3" 的 DNS 指针（PTR）记录 "%2" 失败，出现错误 "%4"。
+删除与群集网络名称资源 "%1" 关联的主机 "%3" (PTR) 记录 "%2" 的 DNS 指针失败，出现错误 "%4"。
 如有必要，可以手动删除记录。 请与 DNS 管理员联系以获得帮助。
 
 ### <a name="event-1151-res_netname_dns_a_record_delete_failed"></a>事件1151： RES_NETNAME_DNS_A_RECORD_DELETE_FAILED
 
-删除与群集网络名称资源 "%1" 关联的 DNS 主机（A）记录 "%2" 失败，出现错误 "%3"。 如有必要，可以手动删除记录。 请与 DNS 管理员联系以获得帮助。
+删除 DNS 主机 (与群集网络名称资源 "%1" 关联的) 记录 "%2" 失败，出现错误 "%3"。 如有必要，可以手动删除记录。 请与 DNS 管理员联系以获得帮助。
 
 ### <a name="event-1155-rcm_event_exited_queuing"></a>事件1155： RCM_EVENT_EXITED_QUEUING
 
@@ -1022,7 +1020,7 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-1544-service_vss_onabort"></a>事件1544： SERVICE_VSS_ONABORT
 
-群集配置数据的备份操作已被取消。 群集卷影复制服务（VSS）编写器收到了中止请求。
+群集配置数据的备份操作已被取消。 群集卷影复制服务 (VSS) 编写器接收到中止请求。
 
 ### <a name="event-1548-service_connect_version_compatible"></a>事件1548： SERVICE_CONNECT_VERSION_COMPATIBLE
 
@@ -1082,7 +1080,7 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-1581-clussvc_unable_to_move_hive_to_safe_file"></a>事件1581： CLUSSVC_UNABLE_TO_MOVE_HIVE_TO_SAFE_FILE
 
-群集配置数据的还原请求无法创建现有群集配置数据文件（ClusDB）的副本。 尝试保留现有配置时，还原操作无法在位置 "%1" 上创建副本。 如果现有配置数据文件已损坏，则可能会出现这种情况。 还原操作已继续，但可能无法恢复到现有群集配置。
+群集配置数据的还原请求无法复制现有群集配置数据文件 (ClusDB) 。 尝试保留现有配置时，还原操作无法在位置 "%1" 上创建副本。 如果现有配置数据文件已损坏，则可能会出现这种情况。 还原操作已继续，但可能无法恢复到现有群集配置。
 
 ### <a name="event-1582-clussvc_unable_to_move_restored_hive_to_current"></a>事件1582： CLUSSVC_UNABLE_TO_MOVE_RESTORED_HIVE_TO_CURRENT
 
@@ -1090,11 +1088,11 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-1583-clussvc_netft_disable_connectionsecurity_failed"></a>事件1583： CLUSSVC_NETFT_DISABLE_CONNECTIONSECURITY_FAILED
 
-群集服务无法禁用故障转移群集虚拟适配器 "%1" 上的 Internet 协议安全性（IPsec）。 这可能会对群集通信性能产生负面影响。 如果此问题仍然存在，请验证你的本地和域连接安全策略是否适用于 IPSec 和 Windows 防火墙。 此外，请检查与基本筛选引擎服务有关的事件。
+群集服务无法禁用故障转移群集虚拟适配器 "%1" 上的 Internet 协议安全性 (IPsec) 。 这可能会对群集通信性能产生负面影响。 如果此问题仍然存在，请验证你的本地和域连接安全策略是否适用于 IPSec 和 Windows 防火墙。 此外，请检查与基本筛选引擎服务有关的事件。
 
 ### <a name="event-1584-shared_volume_not_ready_for_snapshot"></a>事件1584： SHARED_VOLUME_NOT_READY_FOR_SNAPSHOT
 
-备份应用程序在群集共享卷 "%1" （"%3"）上启动了 VSS 快照，但未正确为快照准备卷。 此快照可能无效，并且备份可能无法用于还原操作。 请联系你的备份应用程序供应商以验证与群集共享卷的兼容性。
+备份应用程序在群集共享卷 "%1" ( "%3" 上启动了 VSS 快照，) 没有正确地为快照准备卷。 此快照可能无效，并且备份可能无法用于还原操作。 请联系你的备份应用程序供应商以验证与群集共享卷的兼容性。
 
 ### <a name="event-1589-res_netname_dns_returning_ip_that_is_not_provider"></a>事件1589： RES_NETNAME_DNS_RETURNING_IP_THAT_IS_NOT_PROVIDER
 
@@ -1112,7 +1110,7 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-1671-res_disk_online_set_attributes_completed_failure"></a>事件1671： RES_DISK_ONLINE_SET_ATTRIBUTES_COMPLETED_FAILURE
 
-群集物理磁盘资源不能联机。<br><br>物理磁盘资源名称： %1<br>错误代码： %2<br>已用时间（秒）： %3
+群集物理磁盘资源不能联机。<br><br>物理磁盘资源名称： %1<br>错误代码： %2<br>已用时间 (秒) ： %3
 
 #### <a name="guidance"></a>指南
 
@@ -1145,7 +1143,7 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-5120-dcm_volume_auto_pause_after_failure"></a>事件5120： DCM_VOLUME_AUTO_PAUSE_AFTER_FAILURE
 
-群集共享卷 "%1" （"%2"）已进入暂停状态，因为 "%3"。
+由于 "%3"， ( "%2" ) 群集共享卷 "%1" 已进入暂停状态。
 所有 i/o 都将暂时排队，直到重新建立卷的路径。
 
 ### <a name="event-5123-dcm_event_root_rename_success"></a>事件5123： DCM_EVENT_ROOT_RENAME_SUCCESS
@@ -1154,11 +1152,11 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-5124-dcm_unsafe_filters_found"></a>事件5124： DCM_UNSAFE_FILTERS_FOUND
 
-群集共享卷 "%1" （"%3"）在此设备堆栈上标识了一个或多个活动的筛选器驱动程序，这可能会干扰 CSV 操作。 I/o 访问将通过网络通过其他群集节点重定向到存储设备。 这可能会导致性能下降。 请与筛选器驱动程序供应商联系，验证与群集共享卷的互操作性。 <br><br>找到的活动筛选器驱动程序：<br>%2
+) "%3" ( 群集共享卷 "%1" 在此设备堆栈上标识了一个或多个活动的筛选器驱动程序，这可能会干扰 CSV 操作。 I/o 访问将通过网络通过其他群集节点重定向到存储设备。 这可能会导致性能下降。 请与筛选器驱动程序供应商联系，验证与群集共享卷的互操作性。 <br><br>找到的活动筛选器驱动程序：<br>%2
 
 ### <a name="event-5125-dcm_unsafe_volfilter_found"></a>事件5125： DCM_UNSAFE_VOLFILTER_FOUND
 
-群集共享卷 "%1" （"%3"）在此设备堆栈上标识了一个或多个活动的卷驱动程序，这可能会干扰 CSV 操作。 I/o 访问将通过网络通过其他群集节点重定向到存储设备。 这可能会导致性能下降。 请与卷驱动程序供应商联系，验证与群集共享卷的互操作性。 <br><br>找到的活动卷驱动程序：<br>%2
+) "%3" ( 群集共享卷 "%1" 在此设备堆栈上标识了一个或多个活动的卷驱动程序，这可能会干扰 CSV 操作。 I/o 访问将通过网络通过其他群集节点重定向到存储设备。 这可能会导致性能下降。 请与卷驱动程序供应商联系，验证与群集共享卷的互操作性。 <br><br>找到的活动卷驱动程序：<br>%2
 
 ### <a name="event-5126-dcm_event_cannot_disable_short_names"></a>事件5126： DCM_EVENT_CANNOT_DISABLE_SHORT_NAMES
 
@@ -1170,19 +1168,19 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-5133-dcm_cannot_restore_drive_letters"></a>事件5133： DCM_CANNOT_RESTORE_DRIVE_LETTERS
 
-群集磁盘 "%1" 已被删除并放回 "可用存储" 群集组。 在此过程中，还原原始驱动器号的尝试时间比预期要长，这可能是因为这些驱动器号已在使用中。
+群集磁盘 "%1" 已被删除并放回 "可用存储" 群集组。 在此过程中，尝试还原原始驱动器号 () 的时间比预期要长，这可能是因为这些驱动器号已在使用中。
 
 ### <a name="event-5134-dcm_cannot_set_acl_on_root"></a>事件5134： DCM_CANNOT_SET_ACL_ON_ROOT
 
-群集服务无法设置群集共享卷根目录 "%1" 上的权限（ACL）。 错误为 "%2"。
+群集服务无法设置群集共享卷根目录 "%1" 上 (ACL) 的权限。 错误为 "%2"。
 
 ### <a name="event-5135-dcm_cannot_set_acl_on_volume_folder"></a>事件5135： DCM_CANNOT_SET_ACL_ON_VOLUME_FOLDER
 
-群集服务无法设置对群集共享卷目录 "%1" （"%2"）的权限。 错误为 "%3"。
+群集服务无法设置对群集共享卷目录 "%1" )  ( "%2" 的权限。 错误为 "%3"。
 
 ### <a name="event-5136-dcm_csv_into_redirected_mode"></a>事件5136： DCM_CSV_INTO_REDIRECTED_MODE
 
-群集共享卷 "%1" （"%2"）重定向访问已启用。 将从访问此卷的所有群集节点中的网络重定向对存储设备的访问。 这可能会导致性能下降。 关闭此卷的重定向访问以恢复正常操作。
+群集共享卷 "%1" ( "%2" ) 重定向访问已启用。 将从访问此卷的所有群集节点中的网络重定向对存储设备的访问。 这可能会导致性能下降。 关闭此卷的重定向访问以恢复正常操作。
 
 ### <a name="event-5149-dcm_csv_block_cache_resized"></a>事件5149： DCM_CSV_BLOCK_CACHE_RESIZED
 
@@ -1190,12 +1188,12 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-5156-dcm_volume_auto_pause_after_snapshot_failure"></a>事件5156： DCM_VOLUME_AUTO_PAUSE_AFTER_SNAPSHOT_FAILURE
 
-群集共享卷 "%1" （"%2"）已进入暂停状态，因为 "%3"。
+由于 "%3"， ( "%2" ) 群集共享卷 "%1" 已进入暂停状态。
 如果在用户请求之外删除了 CSV 卷的所有 volsnap 快照，则会出现此错误。 删除快照的可能原因是卷上的空间不足以使快照增长，或者尝试更新快照数据时出现 IO 故障。 在快照状态与 volsnap 同步之前，所有 i/o 都将暂时排队。
 
 ### <a name="event-5157-dcm_volume_auto_pause_after_failure_expected"></a>事件5157： DCM_VOLUME_AUTO_PAUSE_AFTER_FAILURE_EXPECTED
 
-群集共享卷 "%1" （"%2"）已进入暂停状态，因为 "%3"。
+由于 "%3"， ( "%2" ) 群集共享卷 "%1" 已进入暂停状态。
 所有 i/o 都将暂时排队，直到重新建立卷的路径。
 此错误通常是由基础结构故障引起的。 例如，失去了到存储或要从活动群集成员身份中删除群集共享卷的节点的连接。
 
@@ -1244,11 +1242,11 @@ Chkdsk 输出将记录到文件 "%3"。<br> Chkdsk 还可以将信息写入应�
 
 ### <a name="event-5121-dcm_volume_no_direct_io_due_to_failure"></a>事件5121： DCM_VOLUME_NO_DIRECT_IO_DUE_TO_FAILURE
 
-群集共享卷 "%1" （"%2"）无法再从此群集节点直接访问。 I/o 访问将通过网络重定向到拥有该卷的节点。 如果这导致性能下降，请在重新建立与存储设备的连接后，对此节点到存储设备的连接进行故障排除，并将恢复到正常状态。
+群集共享卷 "%1" ( "%2" ) 不再从此群集节点直接访问。 I/o 访问将通过网络重定向到拥有该卷的节点。 如果这导致性能下降，请在重新建立与存储设备的连接后，对此节点到存储设备的连接进行故障排除，并将恢复到正常状态。
 
 ### <a name="event-5218-csv_old_sw_snapshot_deleted"></a>事件5218： CSV_OLD_SW_SNAPSHOT_DELETED
 
-群集物理磁盘资源 "%1" 删除了软件快照。 群集共享卷 "%2" 上的软件快照已被删除，因为它早于 "%3" 天。 快照 ID 是 "%4"，它是从节点 "%5" （位于 "%6"）创建的。
+群集物理磁盘资源 "%1" 删除了软件快照。 群集共享卷 "%2" 上的软件快照已被删除，因为它早于 "%3" 天 (s) 。 快照 ID 是 "%4"，它是从节点 "%5" （位于 "%6"）创建的。
 备份作业完成后，备份应用程序应删除快照。 此快照超过了快照所需的时间。 向备份应用程序验证备份作业是否成功完成。
 
 ## <a name="additional-references"></a>其他参考

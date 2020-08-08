@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 04/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: b6fc6c662630af5658e5f186c958f4ddaffccc42
-ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
+ms.openlocfilehash: cf8a12957621ce86492cc4216c56d9a159f1ee5c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866026"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940563"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>使用 WID 数据库升级到 Windows Server 2016 中的 AD FS
 
@@ -24,8 +22,8 @@ ms.locfileid: "86866026"
 ## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>将 Windows Server 2012 R2 或 2016 AD FS 场升级到 Windows Server 2019
 以下文档将介绍如何在使用 WID 数据库时将 AD FS 场升级到 Windows Server 2019 中的 AD FS。
 
-### <a name="ad-fs-farm-behavior-levels-fbl"></a>AD FS 场行为级别（FBL）
-在 Windows Server 2016 AD FS 中，引入了场行为级别（FBL）。 此设置决定了 AD FS 场可使用的功能。
+### <a name="ad-fs-farm-behavior-levels-fbl"></a>AD FS 场行为级别 (FBL) 
+在 Windows Server 2016 AD FS 中，引入了场行为级别 (FBL) 。 此设置决定了 AD FS 场可使用的功能。
 
 下表按 Windows Server 版本列出了 FBL 值：
 
@@ -41,7 +39,7 @@ ms.locfileid: "86866026"
 ### <a name="new-vs-upgraded-farms"></a>新的 vs 升级场
 默认情况下，新 AD FS 场中的 FBL 与安装的第一个场节点的 Windows Server 版本的值相匹配。
 
-更高版本的 AD FS 服务器可以联接到 AD FS 2012 R2 或2016场，场将在与现有节点相同的 FBL 上运行。 如果在同一场中运行的多个 Windows Server 版本在最低版本的 FBL 值中运行，则您的场称为 "mixed"。 但是，在引发 FBL 之前，你将无法利用更高版本的功能。 使用混合场：
+更高版本的 AD FS 服务器可以联接到 AD FS 2012 R2 或2016场，场将与现有节点 () 在同一 FBL 上运行。 如果在同一场中运行的多个 Windows Server 版本在最低版本的 FBL 值中运行，则您的场称为 "mixed"。 但是，在引发 FBL 之前，你将无法利用更高版本的功能。 使用混合场：
 
 - 管理员可以将新的 Windows Server 2019 联合服务器添加到现有 Windows Server 2012 R2 或2016场。 因此，场处于 "混合模式"，并以与原始场相同的场行为级别进行操作。 为确保服务器场的行为一致，不能配置或使用较新的 Windows Server AD FS 版本的功能。
 
@@ -156,8 +154,9 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 这将完成 WAP 服务器的升级。
 
 
-> [!NOTE] 
-> 如果执行了具有混合证书信任的 Windows Hello 企业版，则 AD FS 2019 中存在已知的 PRT 问题。 可能会在 ADFS 管理事件日志中遇到此错误：收到的 Oauth 请求无效。 禁止客户端 'NAME' 访问作用域为 'ugs' 的资源。 若要修正此错误，请执行以下操作： 
+> [!NOTE]
+> 如果执行了具有混合证书信任的 Windows Hello 企业版，则 AD FS 2019 中存在已知的 PRT 问题。 可能会在 ADFS 管理事件日志中遇到此错误：收到的 Oauth 请求无效。 禁止客户端 'NAME' 访问作用域为 'ugs' 的资源。
+> 若要修正此错误，请执行以下操作：
 > 1. 启动 AD FS 管理控制台。 浏览到“服务”>“作用域说明”
 > 2. 右键单击“作用域说明”，选择“添加作用域说明”
 > 3. 在名称下键入“ugs”，然后单击“应用”>“确定”

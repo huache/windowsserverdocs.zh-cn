@@ -4,44 +4,42 @@ author: billmath
 manager: mtillman
 ms.date: 04/11/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 090e5c9ffbbaaa6720eb8e938019c08baff681cf
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 434ee97a352ad30caef83e495a387583da1f955b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333928"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940555"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>升级到 Windows Server 2016 中的 AD FS SQL Server
 
 
-> [!NOTE]  
+> [!NOTE]
 > 仅开始升级，并计划完成。 不建议在长时间内保持 AD FS 处于混合模式状态，因为在混合模式状态下 AD FS 会导致场出现问题。
 
 
-## <a name="moving-from-a-windows-server-2012-r2-ad-fs-farm-to-a-windows-server-2016-ad-fs-farm"></a>从 Windows Server 2012 R2 AD FS 场迁移到 Windows Server 2016 AD FS 场  
-以下文档将介绍如何在将 SQL Server 用于 AD FS 数据库时将 AD FS Windows Server 2012 R2 场升级到 Windows Server 2016 中的 AD FS。  
+## <a name="moving-from-a-windows-server-2012-r2-ad-fs-farm-to-a-windows-server-2016-ad-fs-farm"></a>从 Windows Server 2012 R2 AD FS 场迁移到 Windows Server 2016 AD FS 场
+以下文档将介绍如何在将 SQL Server 用于 AD FS 数据库时将 AD FS Windows Server 2012 R2 场升级到 Windows Server 2016 中的 AD FS。
 
-### <a name="upgrading-ad-fs-to-windows-server-2016-fbl"></a>将 AD FS 升级到 Windows Server 2016 FBL  
-Windows Server 2016 AD FS 中的新增功能是场行为级别功能（FBL）。   此功能是场范围内的，并决定 AD FS 场可使用的功能。   默认情况下，Windows Server 2012 R2 AD FS 场中的 FBL 位于 Windows Server 2012 R2 FBL。  
+### <a name="upgrading-ad-fs-to-windows-server-2016-fbl"></a>将 AD FS 升级到 Windows Server 2016 FBL
+Windows Server 2016 AD FS 中的新增功能 (FBL) 的场行为级别功能。   此功能是场范围内的，并决定 AD FS 场可使用的功能。   默认情况下，Windows Server 2012 R2 AD FS 场中的 FBL 位于 Windows Server 2012 R2 FBL。
 
-可以将 Windows server 2016 AD FS Server 添加到 Windows Server 2012 R2 场中，它将在与 Windows Server 2012 R2 相同的 FBL 上运行。  如果你有 Windows Server 2016 AD FS 服务器以这种方式运行，则你的场会被称为 "混合"。  但是，在将 FBL 提升到 Windows Server 2016 之前，你将无法利用新的 Windows Server 2016 功能。  使用混合场：  
+可以将 Windows server 2016 AD FS Server 添加到 Windows Server 2012 R2 场中，它将在与 Windows Server 2012 R2 相同的 FBL 上运行。  如果你有 Windows Server 2016 AD FS 服务器以这种方式运行，则你的场会被称为 "混合"。  但是，在将 FBL 提升到 Windows Server 2016 之前，你将无法利用新的 Windows Server 2016 功能。  使用混合场：
 
--   管理员可以向现有 Windows Server 2012 R2 场中添加新的 Windows Server 2016 联合服务器。  因此，场处于 "混合模式"，并运行 Windows Server 2012 R2 场行为级别。  若要确保整个场中的行为一致，不能在此模式下配置或使用新的 Windows Server 2016 功能。  
+-   管理员可以向现有 Windows Server 2012 R2 场中添加新的 Windows Server 2016 联合服务器。  因此，场处于 "混合模式"，并运行 Windows Server 2012 R2 场行为级别。  若要确保整个场中的行为一致，不能在此模式下配置或使用新的 Windows Server 2016 功能。
 
--   在所有 Windows Server 2012 R2 联合服务器都从混合模式场中删除后，如果是 WID 场，则会将新的 Windows 服务2016联合服务器之一提升为主节点的角色，然后，管理员可以将 FBL 从 Windows Server 2012 R2 提升到 Windows Server 2016。  因此，可以配置并使用任何新 AD FS Windows Server 2016 功能。  
+-   在所有 Windows Server 2012 R2 联合服务器都从混合模式场中删除后，如果是 WID 场，则会将新的 Windows 服务2016联合服务器之一提升为主节点的角色，然后，管理员可以将 FBL 从 Windows Server 2012 R2 提升到 Windows Server 2016。  因此，可以配置并使用任何新 AD FS Windows Server 2016 功能。
 
--   作为混合场功能的结果，希望升级到 Windows Server 2016 的 Windows Server 2012 R2 组织 AD FS 不需要部署全新的场，而是导出和导入配置数据。  相反，他们可以在 Windows Server 2016 节点处于联机状态时将其添加到现有场，而只会产生 FBL 引发的相对短暂的停机时间。  
+-   作为混合场功能的结果，希望升级到 Windows Server 2016 的 Windows Server 2012 R2 组织 AD FS 不需要部署全新的场，而是导出和导入配置数据。  相反，他们可以在 Windows Server 2016 节点处于联机状态时将其添加到现有场，而只会产生 FBL 引发的相对短暂的停机时间。
 
-请注意，在混合场模式下，AD FS 场无法在 Windows Server 2016 AD FS 中引入的任何新功能或功能。  这意味着要尝试新功能的组织在引发 FBL 之前无法执行此操作。  因此，如果你的组织希望在 rasing FBL 之前测试新功能，则需要部署单独的场来实现此目的。  
+请注意，在混合场模式下，AD FS 场无法在 Windows Server 2016 AD FS 中引入的任何新功能或功能。  这意味着要尝试新功能的组织在引发 FBL 之前无法执行此操作。  因此，如果你的组织希望在 rasing FBL 之前测试新功能，则需要部署单独的场来实现此目的。
 
-的其余部分提供了有关将 Windows Server 2016 联合服务器添加到 Windows Server 2012 R2 环境，然后将 FBL 提升为 Windows Server 2016 的步骤。  在下面的体系结构关系图中所述的测试环境中执行这些步骤。  
+的其余部分提供了有关将 Windows Server 2016 联合服务器添加到 Windows Server 2012 R2 环境，然后将 FBL 提升为 Windows Server 2016 的步骤。  在下面的体系结构关系图中所述的测试环境中执行这些步骤。
 
-> [!NOTE]  
-> 在 Windows Server 2016 FBL 中移动到 AD FS 之前，必须删除所有 Windows 2012 R2 节点。  你不能只是将 Windows Server 2012 R2 OS 升级到 Windows Server 2016，并使其成为2016节点。  需要将其删除，并将其替换为新的2016节点。  
+> [!NOTE]
+> 在 Windows Server 2016 FBL 中移动到 AD FS 之前，必须删除所有 Windows 2012 R2 节点。  你不能只是将 Windows Server 2012 R2 OS 升级到 Windows Server 2016，并使其成为2016节点。  需要将其删除，并将其替换为新的2016节点。
 
 下面的体系结构关系图显示了用于验证和记录以下步骤的设置。
 
@@ -50,10 +48,10 @@ Windows Server 2016 AD FS 中的新增功能是场行为级别功能（FBL）。
 
 #### <a name="join-the-windows-2016-ad-fs-server-to-the-ad-fs-farm"></a>将 Windows 2016 AD FS 服务器联接到 AD FS 场
 
-1.  使用服务器管理器在 Windows Server 2016 上安装 Active Directory 联合身份验证服务角色  
+1.  使用服务器管理器在 Windows Server 2016 上安装 Active Directory 联合身份验证服务角色
 
 2.  使用 AD FS 配置向导将新的 Windows Server 2016 服务器加入现有 AD FS 场。  在**欢迎**屏幕上，单击 "**下一步**"。
- ![加入场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png)  
+ ![加入场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png)
 3.  在 "**连接到 Active Directory 域服务**" 屏幕上，p) 具有执行联合身份验证服务配置权限的**管理员帐户**，然后单击 "**下一步**"。
 4.  在 "**指定场**" 屏幕上，输入 SQL server 和实例的名称，然后单击 "**下一步**"。
 ![加入场](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png)
@@ -80,7 +78,7 @@ Windows Server 2016 AD FS 中的新增功能是场行为级别功能（FBL）。
 6.  在**确认**屏幕上，单击 "**删除**"。
 7.  完成此过程后，请重新启动服务器。
 
-#### <a name="raise-the-farm-behavior-level-fbl"></a>提升场行为级别（FBL）
+#### <a name="raise-the-farm-behavior-level-fbl"></a>提升场行为级别 (FBL) 
 在执行此步骤之前，你需要确保已在 Active Directory 环境中运行 forestprep 和域准备操作，并且 Active Directory 具有 Windows Server 2016 架构。  此文档是使用 Windows 2016 域控制器开始的，不需要运行这些文档，因为在安装 AD 时运行这些文档。
 
 >[!NOTE]
@@ -89,17 +87,17 @@ Windows Server 2016 AD FS 中的新增功能是场行为级别功能（FBL）。
 1. 现在，在 Windows Server 2016 服务器上打开 PowerShell 并运行以下内容： **$cred = Get-Credential**并按 enter。
 2. 输入对 SQL Server 拥有管理员权限的凭据。
 3. 现在，在 PowerShell 中输入以下内容： **AdfsFarmBehaviorLevelRaise-Credential $cred**
-2. 出现提示时，键入**Y**。 这将开始提升级别。  完成此过程后，您已成功地引发了 FBL。  
+2. 出现提示时，键入**Y**。 这将开始提升级别。  完成此过程后，您已成功地引发了 FBL。
 ![完成更新](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish1.png)
-3. 现在，如果你前往 AD FS 管理，你将看到已添加的新节点，用于 Windows Server 2016 中的 AD FS  
-4. 同样，可以使用 PowerShell cmdlt： AdfsFarmInformation 显示当前 FBL。  
+3. 现在，如果你前往 AD FS 管理，你将看到已添加的新节点，用于 Windows Server 2016 中的 AD FS
+4. 同样，可以使用 PowerShell cmdlt： AdfsFarmInformation 显示当前 FBL。
 ![完成更新](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish2.png)
 
 #### <a name="upgrade-the-configuration-version-of-existing-wap-servers"></a>升级现有 WAP 服务器的配置版本
-1. 在每个 Web 应用程序代理上，通过在提升的窗口中执行以下 PowerShell 命令来重新配置 WAP：  
+1. 在每个 Web 应用程序代理上，通过在提升的窗口中执行以下 PowerShell 命令来重新配置 WAP：
     ```powershell
     $trustcred = Get-Credential -Message "Enter Domain Administrator credentials"
-    Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred  
+    Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred
     ```
 2. 通过运行以下 Powershell commandlet，从群集中删除旧服务器，并仅保留运行最新服务器版本的 WAP 服务器。
     ```powershell

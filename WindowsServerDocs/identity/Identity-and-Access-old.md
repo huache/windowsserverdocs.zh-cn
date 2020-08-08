@@ -6,15 +6,13 @@ ms.author: billmath
 manager: femila
 ms.date: 03/16/2018
 ms.topic: article
-ms.prod: windows-server
 ms.localizationpriority: medium
-ms.technology: identity-adds
-ms.openlocfilehash: 971622f0680d1a1b864a1f98332bc836dbdc3b00
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 92584ba048791df5de3e525ee7d5456e1a44f3e7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965659"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965174"
 ---
 # <a name="identity-and-access-in-windows-server-2016"></a>Windows Server 2016 中的标识和访问
 
@@ -27,10 +25,10 @@ ms.locfileid: "86965659"
 
 
 ## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2016"></a>[Windows Server 2016 的 Active Directory 联合身份验证服务的新增功能](ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)
-Windows Server 2016 中所有适用于 AD FS 的新功能的概述。  
+Windows Server 2016 中所有适用于 AD FS 的新功能的概述。
 
 ## <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>[Windows Server 2016 的 Active Directory 域服务的新增功能](whats-new-active-directory-domain-services.md)
-列出 Windows Server 2016 中所有适用于 AD DS 的新功能。  
+列出 Windows Server 2016 中所有适用于 AD DS 的新功能。
 
 ## <a name="privileged-access-management-for-active-directory-domain-services-40ad-ds41"></a>[Privileged Access Management Active Directory 域服务 &#40;AD DS&#41;](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 Active Directory 域服务 (AD DS) 的特权访问管理 (PAM) 是一款基于 Microsoft Identity Manager (MIM) 以及 Windows Server 2012 R2 和 Windows Server 2016 的解决方案。
@@ -42,10 +40,10 @@ Windows 10 提供了利用 Azure Active Directory 的功能。 Windows 10 设备
 有关 Windows Server 2016 中所有适用于 AD DS 的功能的详细文档。
 
 ## <a name="active-directory-federation-services"></a>[Active Directory 联合身份验证服务](Active-Directory-Federation-Services.md)
-有关 Windows Server 2016 中所有适用于 AD FS 的功能的详细文档。  
+有关 Windows Server 2016 中所有适用于 AD FS 的功能的详细文档。
 
-## <a name="solutions-and-scenario-guides"></a>解决方案和方案指南  
-* [在任何设备上从任何位置安全访问公司资源](/previous-versions/windows/it-pro/solutions-guidance/dn550982(v=ws.11))  
-*  [跨公司应用程序从任一设备加入工作区以实现 SSO 和无缝第二重身份验证](./ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)  
-* [使用适用于敏感应用程序的附加多重身份验证管理风险](./ad-fs/operations/manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications.md)  
+## <a name="solutions-and-scenario-guides"></a>解决方案和方案指南
+* [在任何设备上从任何位置安全访问公司资源](/previous-versions/windows/it-pro/solutions-guidance/dn550982(v=ws.11))
+*  [跨公司应用程序从任一设备加入工作区以实现 SSO 和无缝第二重身份验证](./ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)
+* [使用适用于敏感应用程序的附加多重身份验证管理风险](./ad-fs/operations/manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications.md)
 * [使用条件访问控制管理风险](./ad-fs/operations/manage-risk-with-conditional-access-control.md)

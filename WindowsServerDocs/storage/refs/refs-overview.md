@@ -1,28 +1,26 @@
 ---
 title: 复原文件系统 (ReFS) 概述
-ms.prod: windows-server
 ms.author: gawatu
 manager: mchad
-ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/29/2019
-ms.openlocfilehash: 5bcdbc76259d1dfecaaa5266bb952a21bcbc7825
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 668ee7a0c9e948c12140d3e25309a68ad3b2148b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548892"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957264"
 ---
 # <a name="resilient-file-system-refs-overview"></a>复原文件系统 (ReFS) 概述
 
->适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server （半年频道）
+>适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server (半年通道) 
 
 该复原文件系统 (ReFS) 是 Microsoft 的最新文件系统，可最大程度提升数据可用性、跨各种工作负载高效扩展到大数据集，并通过损坏复原提供数据完整性。 它旨在解决存储方案的扩展集问题以及为将来的革新打造基础。
 
 ## <a name="key-benefits"></a>主要优点
 
-### <a name="resiliency"></a>复原
+### <a name="resiliency"></a>复原能力
 
 ReFS 引入了一项新功能，可以准确地检测到损坏并且还能够在保持联机状态的同时修复这些损坏，从而有助于增加你的数据的完整性和可用性：
 
@@ -47,7 +45,7 @@ ReFS 引入了一项新功能，可以准确地检测到损坏并且还能够在
 
     - 在配置了这些层后，ReFS 就会使用它们为热数据提供快速存储，以及为冷数据提供节省空间的存储：
         - 所有写入都将在性能层中发生，并且在性能层中保留的大数据区块将高效地实时移到容量层中。
-        - 如果使用混合部署（混合使用闪存驱动器和 HDD 驱动器），[存储空间直通中的缓存](../storage-spaces/understand-the-cache.md)可帮助加快读取速度，从而降低虚拟化工作负荷的数据碎片特征的影响。 否则，如果使用的是双闪存部署，则读取也会出现在性能层中。
+        - 如果使用混合部署 (将闪存驱动器和 HDD 驱动器混合) ，[则存储空间直通中的缓存](../storage-spaces/understand-the-cache.md)可帮助加快读取速度，同时降低虚拟化工作负荷的数据碎片特性的影响。 否则，如果使用的是双闪存部署，则读取也会出现在性能层中。
 
 > [!NOTE]
 > 对于服务器部署，镜像加速奇偶校验仅在[存储空间直通](../storage-spaces/storage-spaces-direct-overview.md)上受支持。 建议仅将镜像加速奇偶校验用于存档和备份工作负荷。 对于虚拟化和其他高性能随机工作负载，我们建议使用三向镜像以获得更好的性能。
@@ -84,7 +82,7 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 - 在带有共享 SAS 机箱的存储空间上部署 ReFS 适用于承载存档数据和存储用户文档。
 
 > [!NOTE]
-> 存储空间支持通过 BusTypes SATA、SAS 或 NVME 连接的本地非可移动直接连接，或者通过 HBA （亦即在直通模式下的 RAID 控制器）连接。
+> 存储空间支持通过 BusTypes SATA、SAS、NVME 连接的本地非可移动直接连接，或者通过 (HBA 连接的（) 的传递模式下的 RAID 控制器）。
 
 ### <a name="basic-disks"></a>基本磁盘
 
@@ -100,17 +98,17 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 - 应用程序引入了自己的复原和可用性软件解决方案，可以利用完整性流、块克隆以及扩展和支持大量数据集的功能。
 
 > [!NOTE]
-> 备份目标包括上述受支持的配置。 请与应用程序和存储阵列供应商联系，以获取有关光纤通道和 iSCSI San 的支持详细信息。 对于 San，如果需要精简设置、剪裁/取消映射或卸载数据传输（ODX）等功能，则必须使用 NTFS。
+> 备份目标包括上述受支持的配置。 请与应用程序和存储阵列供应商联系，以获取有关光纤通道和 iSCSI San 的支持详细信息。 对于 San，如果需要精简设置、剪裁/取消映射或卸载数据传输 (ODX) 的功能，则必须使用 NTFS。
 
 ## <a name="feature-comparison"></a>功能比较
 
 ### <a name="limits"></a>限制
 
-| Feature       | ReFS                                        | NTFS |
+| 功能       | ReFS                                        | NTFS |
 |----------------|------------------------------------------------|-----------------------|
 | 最大文件名称长度 | 255 个 Unicode 字符  | 255 个 Unicode 字符               |
 | 最大路径名称长度 |32K Unicode 字符 | 32K Unicode 字符                |
-| 文件大小上限 | 35 PB （pb）  | 256 TB               |
+| 文件大小上限 | 35 PB (pb)   | 256 TB               |
 | 最大卷大小 | 35 PB                           | 256 TB                |
 
 ### <a name="functionality"></a>功能
@@ -121,7 +119,7 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 |---------------------------|------------------|-----------------------|
 | BitLocker 加密 | 是 | 是 |
 | 重复数据删除 | 是<sup>1</sup> | 是 |
-| 群集共享卷 (CSV) 支持 | Yes<sup>2</sup> | 是 |
+| 群集共享卷 (CSV) 支持 | 是<sup>2</sup> | 是 |
 | 软链接 | 是 | 是 |
 | 故障转移群集支持 | 是 | 是 |
 | 访问控制列表 | 是 | 是 |
@@ -129,7 +127,7 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 | 更改通知 | 是 | 是 |
 | 交接点 | 是 | 是 |
 | 装入点 | 是 | 是 |
-| 重分析点 | 是 | 是 |
+| 重新分析点 | 是 | 是 |
 | 卷快照 | 是 | 是 |
 | 文件 ID | 是 | 是 |
 | Oplocks | 是 | 是 |
@@ -158,7 +156,7 @@ Microsoft 开发了 NTFS 专门用于广泛的配置和工作负荷，但对于�
 | 事务 | 否 | 是 |
 | 硬链接 | 否 | 是 |
 | 对象 ID | 否 | 是 |
-| 卸载数据传输（ODX） | 否 | 是 |
+| 卸载数据传输 (ODX)  | 否 | 是 |
 | 短名称 | 否 | 是 |
 | 扩展的属性 | 否 | 是 |
 | 磁盘配额 | 否 | 是 |

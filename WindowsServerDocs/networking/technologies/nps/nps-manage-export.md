@@ -2,18 +2,16 @@
 title: 导出 NPS 配置以便在其他服务器上导入
 description: 您可以使用本主题来了解如何导出 Windows Server 2016 中的网络策略服务器配置。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bbc4982057c306e6f4b94c3c4bf8e8a2761db12a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 20b3f933565e8170e99f1eed2bfda24bd7705e1b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517802"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949110"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>导出 NPS 配置以便在其他服务器上导入
 
@@ -46,9 +44,9 @@ Export-NpsConfiguration -Path <filename>
 
 下表列出了 Windows PowerShell 中**export-npsconfiguration** cmdlet 的参数。 粗体参数是必需的。
 
-|参数|说明|
+|参数|描述|
 |---------|-----------|
-|`Path`|指定要导出 NPS 配置的 XML 文件的名称和位置。|
+|路径|指定要导出 NPS 配置的 XML 文件的名称和位置。|
 
 **管理凭据**
 
@@ -84,7 +82,7 @@ Import-NpsConfiguration -Path "C:\Npsconfig.xml"
 
 ## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>使用 Netsh 导出和导入 NPS 配置
 
-可以通过使用**Netsh NPS 导出**命令，使用 Network Shell （Netsh）导出 NPS 配置。
+可以使用 Network Shell (Netsh) 通过使用**Netsh NPS 导出**命令导出 NPS 配置。
 
 运行**netsh nps import**命令时，将自动刷新 nps，并提供更新的配置设置。 您无需在目标计算机上停止 NPS 即可运行**netsh NPS import**命令，但是，如果在配置导入期间 nps 控制台或 nps mmc 管理单元处于打开状态，则在您刷新视图之前，对服务器配置所做的更改将不可见。
 
@@ -103,7 +101,7 @@ Import-NpsConfiguration -Path "C:\Npsconfig.xml"
 
 3. 在**netsh nps**提示符下，键入**export filename =**"*path\file.xml*" **exportPSK = YES**，其中*path*是要保存 nps 配置文件的文件夹位置， *file*是要保存的 XML 文件的名称。 按 Enter。
 
-    这会在 XML 文件中存储配置设置（包括注册表设置）。 路径可以是相对路径或绝对路径，也可以是通用命名约定（UNC）路径。 按下 Enter 后，将显示一条消息，指示导出到文件是否成功。
+    这会在 XML 文件中存储配置设置 (包括注册表设置) 。 路径可以是相对路径或绝对路径，也可以是 (UNC) 路径的通用命名约定。 按下 Enter 后，将显示一条消息，指示导出到文件是否成功。
 
 4. 将创建的文件复制到目标 NPS。
 

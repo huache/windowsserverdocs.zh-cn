@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ce9bddbc9b03a9019860e9b831bb928326098b76
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a7cb3a037d074fc4a61e6c805bca181316643bb3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965949"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956674"
 ---
 # <a name="using-an-azure-ad-ux-web-theme-in-active-directory-federation-services"></a>在 Active Directory 联合身份验证服务中使用 Azure AD UX Web 主题
 目前 AD FS 窗体登录不会镜像 Azure/O365 登录体验。  为了向最终用户提供更统一且无缝的体验，我们发布了以下可应用到 AD FS 服务器的级联样式表 web 主题。  目前，Windows Server 2016 上的 AD FS 窗体登录如下所示：
@@ -44,13 +42,13 @@ ms.locfileid: "86965949"
 
 ### <a name="logo"></a>徽标
 
-说明 | 约束 | 建议
+描述 | 约束 | 建议
 ------- | ------- | ----------
 徽标显示在登录面板的顶部。 | 透明 JPG 或 PNG<br>最大高度：36 px<br>最大宽度：245 px | 在此处使用组织的徽标。<br>使用透明图像。 不要假设背景为白色。<br>请勿在映像中的徽标周围添加填充，否则徽标看起来会很小。
 
 ### <a name="background"></a>背景
 
-说明 | 约束 | 建议
+描述 | 约束 | 建议
 ------- | ------- | ----------
 此选项显示在登录页的背景中，定位在可视空间的中心，并可通过缩放和裁剪来适应浏览器窗口。    <br>在诸如手机这类窄屏上，将不会显示此图像。<br>当页面加载时，将对此图像应用一个不透明度为 0.55 的黑色蒙板。 | JPG 或 PNG<br>图像尺寸：1920x1080 px<br>文件大小：&lt; 300 KB | <br>在没有鲜明主题的位置处使用图像。 不透明的登录窗体出现在此图像的中心之上，可以覆盖图像的任何部分，具体取决于浏览器窗口的大小。<br>请使该文件保持较小，以确保快速加载。
 

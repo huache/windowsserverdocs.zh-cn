@@ -1,23 +1,21 @@
 ---
 ms.assetid: 5052f13c-ff35-471d-bff5-00b5dd24f8aa
-title: 在 AD FS 2016 或更高版本中，使用 OAuth （OBO）创建一个多层应用程序
+title: 使用 OAuth 和 AD FS 2016 或更高版本)  (OBO 生成多层应用程序
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: d13cd27efc2387911f8c66bf083509e60e7e5b31
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c313754b315b48982342fe2797d1ed766ce354a9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519876"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965164"
 ---
-# <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>在 AD FS 2016 或更高版本中，使用 OAuth （OBO）创建一个多层应用程序
+# <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>使用 OAuth 和 AD FS 2016 或更高版本)  (OBO 生成多层应用程序
 
-本演练提供了使用 Windows Server 2016 TP5 或更高版本中的 AD FS 来实现代表（OBO）身份验证的说明。 若要了解有关 OBO authentication 的详细信息，请阅读[AD FS OpenID connect/OAuth 流和应用程序方案](../../ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
+本演练提供了使用 Windows Server 2016 TP5 或更高版本中的 AD FS 实现 (OBO) 身份验证的说明。 若要了解有关 OBO authentication 的详细信息，请阅读[AD FS OpenID connect/OAuth 流和应用程序方案](../../ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
 
 > [!WARNING]
 > 你可以在此处生成的示例仅供教育之用。 这些说明适用于公开模型所需元素的最简单的最小实现。 该示例可能不包括错误处理的所有方面和其他相关功能，仅侧重于获取成功的 OBO 身份验证。
@@ -42,7 +40,7 @@ ms.locfileid: "87519876"
 
 示例将包含三个模块
 
-模块 | 说明
+模块 | 描述
 -------|------------
 ToDoClient | 用户与之交互的 Native client
 ToDoService | 用作后端 WebAPI 客户端的中间层 web API
@@ -50,7 +48,7 @@ WebAPIOBO | ToDoService 在用户添加 ToDoItem 时用于执行必备操作的�
 
 ## <a name="setting-up-the-development-box"></a>设置开发框
 
-本演练使用 Visual Studio 2015。 该项目将使用 Active Directory 身份验证库（ADAL）。 若要了解 ADAL，请阅读[Active Directory 身份验证库 .net](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)
+本演练使用 Visual Studio 2015。 项目在很大程度上使用 (ADAL) Active Directory 身份验证库。 若要了解 ADAL，请阅读[Active Directory 身份验证库 .net](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)
 
 该示例还使用 SQL LocalDB 版本11.0。 在处理示例之前，请安装 SQL LocalDB。
 
@@ -113,7 +111,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbeha
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO1.PNG)
 
-单击 "下一步"，将显示 "配置应用程序权限" 页。 在此页上，选择 "允许的作用域" 作为 openid （默认情况下处于选中状态）并 user_impersonation。 若要成功地从 AD FS 请求的访问令牌，必须使用范围 "user_impersonation"。
+单击 "下一步"，将显示 "配置应用程序权限" 页。 在此页上，选择 "允许的作用域" 作为 openid (默认情况下选择) 和 user_impersonation。 若要成功地从 AD FS 请求的访问令牌，必须使用范围 "user_impersonation"。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO12.PNG)
 
@@ -204,7 +202,7 @@ private static string todoListResourceId = ConfigurationManager.AppSettings["ida
 private static string todoListBaseAddress = ConfigurationManager.AppSettings["ida:TodoListBaseAddress"];
 ```
 
-在函数 Mainwindow.xaml （）中，将 authcontext 初始化更改为：
+在函数 Mainwindow.xaml 中 ( # A1 将 authcontext 初始化更改为：
 
 ```
 authContext = new AuthenticationContext(authority, false);
@@ -221,7 +219,7 @@ authContext = new AuthenticationContext(authority, false);
 
 * 在下一次提示符下，单击 "更改身份验证"
 * 选择 "工作和学校帐户"，并在右侧下拉列表中选择 "本地"
-* 输入 AD FS 部署的 federationmetadata.xml 路径并提供应用 URI （现在提供任何 URI，稍后将对其进行更改），然后单击 "确定" 以将项目添加到解决方案中。
+* 输入 AD FS 部署的 federationmetadata.xml 路径，并提供一个应用 URI， (现在提供任何 URI，你稍后将更改它) 并单击 "确定" 以将该项目添加到解决方案中。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO9.PNG)
 
@@ -264,7 +262,7 @@ authContext = new AuthenticationContext(authority, false);
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO6.PNG)
 
-在 "配置 Web API" 页上，为 WebAPI 项和标识符提供适当的名称。 该标识符应为 visual studio 中 WebAPIOBO 项目的值 SSL URL （类似于我们为 BackendWebAPIAdfsAdd 所做的操作）。
+在 "配置 Web API" 页上，为 WebAPI 项和标识符提供适当的名称。 标识符应是 WebAPIOBO 项目在 visual studio 中的值 SSL URL， (类似于 BackendWebAPIAdfsAdd) 所做的操作。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO8.PNG)
 
@@ -281,7 +279,7 @@ authContext = new AuthenticationContext(authority, false);
 * 打开 Web.config 文件
 * 修改以下项
 
-| 键 | 值 |
+| 密钥 | “值” |
 |:-|:-|
 | ida：受众 | 在配置 ToDoListService WebAPI 时 AD FS ToDoListService 的 ID，例如，https://localhost:44321/ |
 | ida： ClientID | 在配置 ToDoListService WebAPI 时 AD FS ToDoListService 的 ID，例如，<https://localhost:44321/> </br>**Ida：受众和 ida： ClientID 彼此匹配非常重要** |
@@ -367,7 +365,7 @@ private static string OBOWebAPIBase = ConfigurationManager.AppSettings["ida:OBOW
 
 从 AD FS 我们发出了 Nmae 声明，但我们未发布 NameIdentifier 声明。 该示例使用 NameIdentifier 在 ToDo 项中使用唯一键。 为简单起见，你可以在代码中安全删除名称声明为的 NameIdentifier。 查找并将出现的所有 NameIdentifier 替换为名称。
 
-**修改 Post 例程和 CallGraphAPIOnBehalfOfUser （）**
+**修改 Post 例程和 CallGraphAPIOnBehalfOfUser ( # B1**
 
 将以下代码复制并粘贴到 ToDoListController.cs 中，并将代码替换为 Post 和 CallGraphAPIOnBehalfOfUser
 

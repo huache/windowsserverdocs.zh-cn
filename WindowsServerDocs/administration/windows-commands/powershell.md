@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 8608f10ae96d6137ce2dd7983d78236775af0df0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 29751bdb6f17c167ffa17170be24c302fda557fd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884882"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991153"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -58,7 +58,7 @@ Windows PowerShell 是一种基于任务的命令行 shell 和脚本语言，专
 
 - 有关启动 Windows PowerShell 的其他方法的信息，请参阅[启动 Windows powershell](/powershell/scripting/windows-powershell/starting-windows-powershell)。
 
-- Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，需要图形用户界面的功能（如[Windows PowerShell 集成脚本环境 (ISE) ](/previous-versions//hh849182(v=technet.10))，以及[Out](/powershell/module/microsoft.powershell.utility/out-gridview)和[Show-Command](/powershell/module/microsoft.powershell.utility/show-command) cmdlet）不在服务器核心安装上运行。
+- Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，需要图形用户界面的功能（如[Windows PowerShell 集成脚本环境 (ISE) ](/previous-versions/hh849182(v=technet.10))，以及[Out](/powershell/module/microsoft.powershell.utility/out-gridview)和[Show-Command](/powershell/module/microsoft.powershell.utility/show-command) cmdlet）不在服务器核心安装上运行。
 
 ## <a name="additional-references"></a>其他参考
 

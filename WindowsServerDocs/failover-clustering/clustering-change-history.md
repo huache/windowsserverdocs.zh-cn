@@ -2,19 +2,17 @@
 ms.assetid: 289cbd10-e7ec-4f2e-8dd1-eb5692565578
 title: 故障转移群集主题的更改历史记录
 description: Windows Server 2016 故障转移群集文档中的新主题和更新主题
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
 manager: lizross
 ms.author: jgerend
 ms.date: 01/07/2020
-ms.openlocfilehash: 2bc64479c5615e356158b83ee41402f425f4ea3b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9305935046db6e4185e07c703eb9caa83d263b2a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177893"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965294"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>故障转移群集主题的更改历史记录
 
@@ -101,7 +99,7 @@ ms.locfileid: "87177893"
 |[群集感知更新高级选项](cluster-aware-updating-options.md)|新主题。|
 |[群集感知更新常见问题](cluster-aware-updating-faq.md)|新主题。|
 |[群集感知更新插件](cluster-aware-updating-plug-ins.md)|新主题。|
-|[为故障转移群集部署云见证](deploy-cloud-witness.md)|阐明了所需的存储帐户的类型（无法使用 Azure 高级存储或 Blob 存储帐户）。|
+|[为故障转移群集部署云见证](deploy-cloud-witness.md)|阐明了)  (不能使用 Azure 高级存储或 Blob 存储帐户所需的存储帐户类型。|
 
 ## <a name="march-2017"></a>2017 年 3 月
 

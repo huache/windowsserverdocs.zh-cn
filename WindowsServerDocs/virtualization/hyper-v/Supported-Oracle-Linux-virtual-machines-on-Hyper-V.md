@@ -1,20 +1,18 @@
 ---
 title: Hyper-v 上支持的 Oracle Linux 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/05/2020
-ms.openlocfilehash: 67f38d11c032e9eb0b98da14c25e01a5f67cabae
-ms.sourcegitcommit: 76a3b5f66e47e08e8235e2d152185b304d03b68b
+ms.openlocfilehash: 0e9a11fbff5015037bffa1cad14e70d629fef94b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84663170"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989304"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 Oracle Linux 虚拟机
 
@@ -27,59 +25,59 @@ ms.locfileid: "84663170"
 * [Oracle Linux 3.x 系列](#oracle-linux-8x-series)
 * [Oracle Linux 7. x 系列](#oracle-linux-7x-series)
 * [Oracle Linux 1.x 系列](#oracle-linux-6x-series)
- 
-   
+
+
 ## <a name="table-legend"></a>表图例
 
-* **内置**的-.lis 作为此 Linux 分发的一部分包含在内。 内置 .LIS 的内核模块版本号（如**lsmod**所示）不同于 Microsoft 提供的 .lis 下载包中的版本号。 不匹配并不表明内置的 .LIS 版本已过期。
+* **内置**的-.lis 作为此 Linux 分发的一部分包含在内。 **Lsmod**所示的内置 .lis (内核模块版本号，例如) 不同于 Microsoft 提供的 .lis 下载包上的版本号。 不匹配并不表明内置的 .LIS 版本已过期。
 
 * &#10004; 功能可用
-* （*空白*）-功能不可用
+*  (*空白*) -功能不可用
 * **RHCK** -Red Hat 兼容内核
-* **UEK** -Unbreakable Enterprise KERNEL （UEK） 
+* **UEK** -Unbreakable Enterprise KERNEL (UEK) 
    * UEK4-在上游 Linux 内核 release 4.1.12 上构建
    * UEK5-在上游 Linux 内核版本4.14 上构建
    * UEK6-在上游 Linux 内核版本5.4 上构建
 
 ## <a name="oracle-linux-8x-series"></a>Oracle Linux 3.x 系列
 
-|       **功能**     |       **Windows Server 版本**      |       **8.0-8.1 （RHCK）** |
+|       **功能**     |       **Windows Server 版本**      |       **8.0-8.1 (RHCK) ** |
 |-----------------------|---------------------------------------|-------------------|
 |       **可用性**        |   |
-|       **[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019、2016、2012 R2 | &#10004; | 
-|       Windows Server 2016 准确时间       | 2019、2016 | &#10004; | 
-|       **[网络](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**      |   | 
-|       Jumbo 帧        | 2019、2016、2012 R2 | &#10004; | 
-|       VLAN 标记和中继       | 2019、2016、2012 R2 | &#10004;  | 
+|       **[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019、2016、2012 R2 | &#10004; |
+|       Windows Server 2016 准确时间       | 2019、2016 | &#10004; |
+|       **[网络](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**      |   |
+|       Jumbo 帧        | 2019、2016、2012 R2 | &#10004; |
+|       VLAN 标记和中继       | 2019、2016、2012 R2 | &#10004;  |
 |       实时迁移      | 2019、2016、2012 R2 | &#10004; |
-|       静态 IP 注入     |  2019、2016、2012 R2 | &#10004; 备注2 | 
+|       静态 IP 注入     |  2019、2016、2012 R2 | &#10004; 备注2 |
 |       vRSS     | 2019、2016、2012 R2 | &#10004; |
 |       TCP 分段和校验和卸载 | 2019、2016、2012 R2 | &#10004;|
 |       SR-IOV  | 2019、2016 |  &#10004;   |
-|       **[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  | 
+|       **[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |
 |       VHDX 调整大小  | 2019、2016、2012 R2 | &#10004; |
 |       虚拟光纤通道 | 2019、2016、2012 R2 | &#10004; 备注3  |
 |       实时虚拟机备份  | 2019、2016、2012 R2 | &#10004; 备注5 |
 |       剪裁支持 | 2019、2016、2012 R2 | &#10004;  |
 |       SCSI WWN | 2019、2016、2012 R2 | &#10004;  |
-|       **[内存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |
+|       **[记忆](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |
 |       PAE 内核支持  | 2019、2016、2012 R2 |  空值 |
-|       MMIO 间隙的配置  | 2019、2016、2012 R2 | &#10004; | 
+|       MMIO 间隙的配置  | 2019、2016、2012 R2 | &#10004; |
 |       动态内存-热添加 | 2019、2016、2012 R2  | &#10004; 注释7、8、9 |
 |       动态内存-膨胀 | 2019、2016、2012 R2 | &#10004; 注释7、8、9 |
 |       运行时内存大小调整 | 2019、2016  | &#10004;  |
 |       **[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | |
-|       Hyper-v 特定视频设备 | 2019、2016、2012 R2 | &#10004;   | 
-|       **[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | |
-|       键值对  | 2019、2016、2012 R2 | &#10004;   | 
-|       不可屏蔽中断 | 2019、2016、2012 R2 | &#10004;  | 
-|       从主机到来宾的文件复制 | 2019、2016、2012 R2 | &#10004;  | 
-|       lsvmbus 命令 | 2019、2016、2012 R2 | &#10004;  | 
-|       Hyper-v 套接字 | 2019、2016 | &#10004;  | 
-|       PCI 传递/DDA | 2019、2016 | &#10004; | 
+|       Hyper-v 特定视频设备 | 2019、2016、2012 R2 | &#10004;   |
+|       **[杂项](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | |
+|       键值对  | 2019、2016、2012 R2 | &#10004;   |
+|       不可屏蔽中断 | 2019、2016、2012 R2 | &#10004;  |
+|       从主机到来宾的文件复制 | 2019、2016、2012 R2 | &#10004;  |
+|       lsvmbus 命令 | 2019、2016、2012 R2 | &#10004;  |
+|       Hyper-v 套接字 | 2019、2016 | &#10004;  |
+|       PCI 传递/DDA | 2019、2016 | &#10004; |
 | **[第 2 代虚拟机](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** | |  |
-|       使用 UEFI 启动 | 2019、2016、2012 R2 |  &#10004; 说明12  |   
-|       安全启动 | 2019、2016 |  &#10004; | 
+|       使用 UEFI 启动 | 2019、2016、2012 R2 |  &#10004; 说明12  |
+|       安全启动 | 2019、2016 |  &#10004; |
 
 ## <a name="oracle-linux-7x-series"></a>Oracle Linux 7. x 系列
 
@@ -89,7 +87,7 @@ ms.locfileid: "84663170"
 <tr height="50px">
 <td width="20%" rowspan="2">
 
-Feature
+功能
 </td>
 <td width="20%" rowspan="2">
 
@@ -223,7 +221,7 @@ Windows Server 2016 准确时间
 <tr height="50px">
 <td width="20%">
 
- **[网络](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)** 
+ **[网络](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**
 </td>
 <td width="20%">
 
@@ -486,7 +484,7 @@ SR-IOV
 <tr height="50px">
 <td width="20%">
 
-**[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**
+**[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**
 </td>
 <td width="20%">
 
@@ -682,7 +680,7 @@ SCSI WWN
 <tr height="50px">
 <td width="20%">
 
-**[内存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**
+**[记忆](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**
 </td>
 <td width="20%">
 
@@ -940,7 +938,7 @@ Hyper-v 特定视频
 <tr height="50px">
 <td width="20%">
 
-**[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**
+**[杂项](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**
 </td>
 <td width="20%">
 
@@ -1270,11 +1268,11 @@ PCI 传递/DDA
 
 此系列只有64位内核。
 
-|       **功能**     |       **Windows Server 版本**      |       **6.8-6.10 （RHCK）** |       **6.8-6.10 （UEK4）**     | 
+|       **功能**     |       **Windows Server 版本**      |       **6.8 (RHCK) ** |       **6.8 (UEK4) **     |
 |-----------------------|---------------------------------------|-------------------|-------------------|
 |       **可用性**     |   | .LIS 4。3  | 内置  |
 |       **[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019、2016、2012 R2 | &#10004; | &#10004;
-|       Windows Server 2016 准确时间       | 2019、2016 | | 
+|       Windows Server 2016 准确时间       | 2019、2016 | |
 |       **[网络](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**      |   |  |
 |       Jumbo 帧        | 2019、2016、2012 R2 | &#10004; | &#10004;|
 |       VLAN 标记和中继       | 2019、2016、2012 R2 | &#10004; 注释1 | &#10004; 注释1 |
@@ -1283,13 +1281,13 @@ PCI 传递/DDA
 |       vRSS     | 2019、2016、2012 R2 | &#10004; | &#10004;|
 |       TCP 分段和校验和卸载 | 2019、2016、2012 R2 | &#10004;|  &#10004; |
 |       SR-IOV  | 2019、2016 |    |  |
-|       **[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |  |
+|       **[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |  |
 |       VHDX 调整大小  | 2019、2016、2012 R2 | &#10004; | &#10004; |
 |       虚拟光纤通道 | 2019、2016、2012 R2 | &#10004; 备注3  | &#10004; 备注3 |
 |       实时虚拟机备份  | 2019、2016、2012 R2 | &#10004; 备注5 | &#10004; 备注5|
 |       剪裁支持 | 2019、2016、2012 R2 | &#10004;  | &#10004; |
 |       SCSI WWN | 2019、2016、2012 R2 | &#10004;  | &#10004; |
-|       **[内存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |  |
+|       **[记忆](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |  |
 |       PAE 内核支持  | 2019、2016、2012 R2 |  空值 | 空值
 |       MMIO 间隙的配置  | 2019、2016、2012 R2 | &#10004; | &#10004;  |
 |       动态内存-热添加 | 2019、2016、2012 R2  | &#10004; 备注6、8、9 | &#10004; 备注6、8、9 |
@@ -1297,7 +1295,7 @@ PCI 传递/DDA
 |       运行时内存大小调整 | 2019、2016  |  | |
 |       **[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | | |
 |       Hyper-v 特定视频设备 | 2019、2016、2012 R2 | &#10004;   | &#10004; |
-|       **[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | | |
+|       **[杂项](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | | |
 |       键值对  | 2019、2016、2012 R2 | &#10004; 说明10，11   | &#10004; 说明10，11  |
 |       不可屏蔽中断 | 2019、2016、2012 R2 | &#10004;  | &#10004; |
 |       从主机到来宾的文件复制 | 2019、2016、2012 R2 | &#10004;  | &#10004; |
@@ -1305,7 +1303,7 @@ PCI 传递/DDA
 |       Hyper-v 套接字 | 2019、2016 | &#10004;  | &#10004; |
 |       PCI 传递/DDA | 2019、2016 | &#10004; | &#10004; |
 | **[第 2 代虚拟机](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** | |  |
-|       使用 UEFI 启动 | 2019、2016、2012 R2 |  &#10004; 说明12  | &#10004; 说明12   
+|       使用 UEFI 启动 | 2019、2016、2012 R2 |  &#10004; 说明12  | &#10004; 说明12
 |       安全启动 | 2019、2016 |  |  |
 
 
@@ -1316,11 +1314,11 @@ PCI 传递/DDA
 
 2. 如果为虚拟机上的指定合成网络适配器配置了网络管理器，则静态 IP 注入可能不起作用。 要使静态 IP 注入正常运行，请确保已完全关闭网络管理器，或已通过 ifcfg-eth0-ethX 文件为特定网络适配器关闭网络管理器。
 
-3.  使用虚拟光纤通道设备时，在 Windows Server 2012 R2 上，请确保已填充逻辑单元号0（LUN 0）。 如果尚未填充 LUN 0，Linux 虚拟机可能无法以本机方式装载光纤通道设备。
+3.  使用虚拟光纤通道设备时，在 Windows Server 2012 R2 上，请确保已填充逻辑单元号 0 (LUN 0) 。 如果尚未填充 LUN 0，Linux 虚拟机可能无法以本机方式装载光纤通道设备。
 
 4. 对于内置的 .LIS，必须安装 "hyperv-守护程序" 包才能实现此功能。
 
-5.  如果在执行实时虚拟机备份操作的过程中有打开的文件句柄，则在某些角落情况下，备份的 Vhd 可能需要在还原时执行文件系统一致性检查（fsck）。 如果虚拟机有连接的 iSCSI 设备或直接连接的存储（也称为传递磁盘），则实时备份操作可能会悄悄地失败。
+5.  如果在执行实时虚拟机备份操作的过程中有打开的文件句柄，则在某些角落情况下，在还原时，已备份的 Vhd 可能需要执行文件系统一致性检查 (fsck) 。 如果虚拟机有连接的 iSCSI 设备或直接连接存储 (也称为传递磁盘) ，则实时备份操作可能会失败。
 
 6. 动态内存支持仅适用于64位虚拟机。
 
@@ -1340,11 +1338,11 @@ PCI 传递/DDA
 
    * 通常会消耗系统中的全部可用内存的应用程序，仅消耗最多80% 的可用 RAM。
 
-9. 如果在 Windows Server 2016 或 Windows Server 2012 R2 操作系统上使用动态内存，请以128兆字节（MB）为单位指定 "**启动内存**"、"**最小内存**" 和 "**最大内存**" 参数。 如果不这样做，可能会导致热添加失败，并且在来宾操作系统中可能看不到任何内存增长。
+9. 如果在 Windows Server 2016 或 Windows Server 2012 R2 操作系统上使用动态内存，请以128兆字节 (MB) 的倍数指定 "**启动内存**"、"**最小内存**" 和 "**最大内存**" 参数。 如果不这样做，可能会导致热添加失败，并且在来宾操作系统中可能看不到任何内存增长。
 
-10. 若要启用键/值对（KVP）基础结构，请从 Oracle Linux ISO 安装 hypervkvpd 或 hyperv-守护程序 rpm 包。 或者，可以直接从 Oracle Linux Yum 存储库安装包。
+10. 若要启用) 基础结构 (KVP 的键/值对，请从 Oracle Linux ISO 安装 hypervkvpd 或 hyperv-守护程序 rpm 包。 或者，可以直接从 Oracle Linux Yum 存储库安装包。
 
-11. 如果没有 Linux 软件更新，键/值对（KVP）基础结构可能无法正常运行。 请与您的分销商联系以获取软件更新，以防您看到此功能的问题。
+11. 如果没有 Linux 软件更新， (KVP) 基础结构的键/值对可能无法正常工作。 请与您的分销商联系以获取软件更新，以防您看到此功能的问题。
 
 12. 在 Windows Server 2012 R2 第2代虚拟机上，默认情况下已启用安全启动，某些 Linux 虚拟机将无法启动，除非禁用了安全启动选项。 你可以在**Hyper-v 管理器**中虚拟机设置的 "**固件**" 部分禁用安全启动，也可以使用 Powershell 禁用它：
 
@@ -1357,7 +1355,7 @@ PCI 传递/DDA
 
 另请参阅
 
-* [Set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx)
+* [Set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
 
 * [Hyper-v 上支持的 CentOS 和 Red Hat Enterprise Linux 虚拟机](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

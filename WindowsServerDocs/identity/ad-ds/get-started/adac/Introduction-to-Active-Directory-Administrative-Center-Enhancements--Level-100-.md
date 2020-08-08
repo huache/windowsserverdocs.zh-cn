@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: c6a18bc00d5269f30608ff8d511e8ee92b009133
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f494fc09027b17d2110731d73d3d8de6d0496342
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960989"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957024"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -46,7 +44,7 @@ Active Directory 域服务 (AD DS) 和 Active Directory 轻型目录服务 (AD L
 - 若要通过用户界面管理回收站功能，必须在 Windows Server 2012 中安装 Active Directory 管理中心版本。
 
     > [!NOTE]
-    > 你可以使用**服务器管理器**安装远程服务器管理工具（RSAT），以便使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
+    > 你可以使用**服务器管理器**安装远程服务器管理工具 (RSAT) ，使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
     >
     > 有关安装 RSAT 的信息，请参阅文章[远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
 
@@ -237,12 +235,12 @@ Windows Server 2008 操作系统将向组织提供一种为域中不同用户集
 
 如果你计划使用 Windows Server 2012 中的细化密码策略，请考虑以下事项：
 
-- 细化密码策略仅适用于全局安全组和用户对象（或 inetOrgPerson 对象，如果它们使用的是而不是用户对象）。 默认情况下，只有 Domain Admins 组的成员可以设置细化密码策略。 然而，也可以将设置这些策略的能力委派给其他用户。 域功能级别必须属于 Windows Server 2008 或更高版本。
+- 细化密码策略仅适用于全局安全组和用户对象 (或 inetOrgPerson 对象（如果使用这些对象而不是用户对象) ）。 默认情况下，只有 Domain Admins 组的成员可以设置细化密码策略。 然而，也可以将设置这些策略的能力委派给其他用户。 域功能级别必须属于 Windows Server 2008 或更高版本。
 
 - 必须使用 Windows Server 2012 或更高版本的 Active Directory 管理中心通过图形用户界面管理细化密码策略。
 
     > [!NOTE]
-    > 你可以使用**服务器管理器**安装远程服务器管理工具（RSAT），以便使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
+    > 你可以使用**服务器管理器**安装远程服务器管理工具 (RSAT) ，使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
     >
     > 有关安装 RSAT 的信息，请参阅文章[远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
 
@@ -282,7 +280,7 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
 #### <a name="step-2-create-test-users-group-and-organizational-unit"></a><a name="bkmk2_test_fgpp"></a>步骤 2：创建测试用户、组和组织单位
 
-若要创建此步骤所需的测试用户和组，请按照此处的步骤操作：[步骤3：创建测试用户、组和组织单位](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_test_env)（无需创建 OU 来演示细化密码策略）。
+若要创建此步骤所需的测试用户和组，请按照此处的步骤操作：[步骤3：创建测试用户、组和组织单位](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_test_env) (你无需创建 OU 来演示细化密码策略) 。
 
 #### <a name="step-3-create-a-new-fine-grained-password-policy"></a><a name="bkmk_create_fgpp"></a>步骤 3：创建新细化密码策略
 
@@ -357,7 +355,7 @@ Get-ADUserResultantPasswordPolicy test1
 
 5. 在 **“强制密码历史”** 下，将 **“记住密码的次数”** 更改为 **30**。
 
-6. 单击“确定”  。
+6. 单击“确定”。
 
 ![AD 管理中心](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>简介***
 
@@ -403,7 +401,7 @@ ADAC 是构建在 Windows PowerShell 上的用户界面工具。 在 Windows Ser
 - 若要使用 Windows PowerShell 脚本查看器，必须使用 Windows Server 2012 或更高版本的 ADAC
 
     > [!NOTE]
-    > 你可以使用**服务器管理器**安装远程服务器管理工具（RSAT），以便使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
+    > 你可以使用**服务器管理器**安装远程服务器管理工具 (RSAT) ，使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
     >
     > 有关安装 RSAT 的信息，请参阅文章[远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
 

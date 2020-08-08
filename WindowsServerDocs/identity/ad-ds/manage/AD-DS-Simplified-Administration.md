@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 4358f48b2373ee0c521c3970c4cb235a0d19dfca
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 61961acf9fc1c858fddb4da70b4899e229ec6a3d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519034"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956974"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 简化管理
 
@@ -203,7 +201,7 @@ Adprep 不再要求在架构主机上运行。 它可从运行 Windows Server 20
 | CheckRODCPrep<p>GroupMembership | LDAP、<p>RPC over SMB (LSARPC) | 验证用户是 Enterprise Admins 组的成员并且在现有域控制器上有管理审核和安全事件日志 (SesScurityPrivilege) 权限 |
 | VerifyInitSync<p>AfterReboot | LDAP | 通过在 rootDSE 属性 becomeSchemaMaster 上设置一个虚拟值，验证架构主机已在其重新启动后至少复制一次 |
 | VerifySFUHotFix<p>已应用 | LDAP | 验证现有林架构不包含具有 OID 1.2.840.113556.1.4.7000.187.102 的 UID 属性的已知问题 SFU2 扩展<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732)) |
-| VerifyExchange<p>SchemaFixed | LDAP、WMI、DCOM、RPC | 验证现有林架构是否仍未包含问题 Exchange 2000 扩展 Ms-exch-labeleduri，Ms-exch-labeleduri-Ms-exch-labeleduri，和 ms Ms-exch-labeleduri 内部标识符（ [https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649) ）。 |
+| VerifyExchange<p>SchemaFixed | LDAP、WMI、DCOM、RPC | 验证现有林架构是否仍未包含问题 Exchange 2000 扩展 Ms-exch-labeleduri，Ms-exch-labeleduri-Ms-exch-labeleduri 和 Ms-exch-labeleduri 内部标识符 (的名称） [https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))  |
 | VerifyWin2KSchema<p>一致性 | LDAP | 验证现有林架构具有一致的（未由第三方错误修改）核心属性和类。 |
 | DCPromo | DRSR over RPC、<p>LDAP、<p>DNS<p>RPC over SMB (SAMR) | 验证命令行语法已传递到升级代码和测试升级。 在新建时，验证林或域尚不存在。 |
 | VerifyOutbound<p>ReplicationEnabled | LDAP、DRSR over SMB、RPC over SMB (LSARPC) | 通过针对 NTDS 设置对象的选项属性检查 NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004) 来验证指定为复制伙伴的现有域控制器已启用出站复制。 |

@@ -2,23 +2,22 @@
 title: 网络适配器的性能历史记录
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4391812c89a193113fcd442d220e45fbb8c257
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ee8204d14ff1d54d3a4a5b1760055fecdc952d05
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964479"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957254"
 ---
 # <a name="performance-history-for-network-adapters"></a>网络适配器的性能历史记录
 
 > 适用于：Windows Server 2019
 
-本主题中的[存储空间直通性能历史记录](performance-history.md)详细说明了为网络适配器收集的性能历史记录。 网络适配器性能历史记录适用于群集中每个服务器上的每个物理网络适配器。 远程直接内存访问（RDMA）性能历史记录适用于启用了 RDMA 的每个物理网络适配器。
+本主题中的[存储空间直通性能历史记录](performance-history.md)详细说明了为网络适配器收集的性能历史记录。 网络适配器性能历史记录适用于群集中每个服务器上的每个物理网络适配器。 远程直接内存访问 (RDMA) 性能历史记录适用于启用了 RDMA 的每个物理网络适配器。
 
    > [!NOTE]
    > 无法为关闭的服务器中的网络适配器收集性能历史记录。 服务器重新启动时，收集将自动恢复。

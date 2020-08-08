@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3e3876680031cdb31f2fa3e6ce200efdf6fb5185
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b1a7783e02746f53d818066eb20ceb3094bd2707
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936447"
+ms.locfileid: "87990033"
 ---
 # <a name="windows-logon-scenarios"></a>Windows 登录方案
 
@@ -103,14 +103,12 @@ RDP 管理用户使用远程桌面客户端输入的凭据。 这些凭据适用
 
 当使用智能卡而不是密码时，存储在用户智能卡上的私钥/公钥对将替换为从用户的密码派生的共享密钥。 私钥仅存储在智能卡上。 公钥可供所有者要交换机密信息的任何人使用。
 
-有关 Windows 中智能卡登录过程的详细信息，请参阅[windows 中的智能卡登录的工作原理](https://technet.microsoft.com/library/ff404285.aspx)。
+有关 Windows 中智能卡登录过程的详细信息，请参阅[windows 中的智能卡登录的工作原理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff404285(v=ws.10))。
 
 ## <a name="biometric-logon"></a><a name="BKMK_BioLogon"></a>生物识别登录
 设备用于捕获和生成项目的数字特征，如指纹。 然后，将此数字表示形式与相同项目的示例进行比较，并在两个成功比较时进行身份验证。 运行本主题开头的 "**适用**于" 列表中指定的任意操作系统的计算机都可以配置为接受这种形式的登录。 但是，如果生物识别登录仅配置为本地登录，则用户在访问 Active Directory 域时需要提供域凭据。
 
 ## <a name="additional-resources"></a>其他资源
-有关 Windows 如何管理在登录过程中提交的凭据的信息，请参阅[Windows 身份验证中的凭据管理](https://technet.microsoft.com/library/dn169014.aspx)。
+有关 Windows 如何管理在登录过程中提交的凭据的信息，请参阅[Windows 身份验证中的凭据管理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169014(v=ws.10))。
 
-[Windows 登录和身份验证技术概述](https://technet.microsoft.com/library/dn169029.aspx)
-
-
+[Windows 登录和身份验证技术概述](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169029(v=ws.10))

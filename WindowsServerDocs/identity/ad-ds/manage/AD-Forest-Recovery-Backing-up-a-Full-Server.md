@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.technology: identity-adds
-ms.openlocfilehash: 3792a1e9b5c8978fdc8db5201ff4d439dbfb98d6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: cb7e6f7b8e8786ad816a9ec5e3211fa617723a9c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519014"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956934"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD 林恢复-备份完整服务器
 
@@ -56,7 +54,7 @@ ms.locfileid: "87519014"
 
    ![安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
-6. 在 "**选择备份配置**" 页上，单击 "**完全服务器（推荐）**"，然后单击 "**下一步**"。
+6. 在 "**选择备份配置**" 页上，单击 " ** (建议) **，然后单击"**下一步**"。
 7. 在 "**指定目标类型**" 页上，单击 "**本地驱动器**" 或 "**远程共享文件夹**"，然后单击 "**下一步**"。
 8. 在 "**选择备份目标**" 页上，选择备份位置。  如果选择了本地驱动器，请选择本地驱动器，或者如果选择了远程共享，请选择网络共享。
 9. 在确认屏幕上，单击 "**备份**"。
