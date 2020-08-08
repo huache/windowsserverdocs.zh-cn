@@ -5,14 +5,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 01/20/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 4f6822747902d02313b6aea5c5ca21d9d7ed8a04
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c306f901aba2991a238fb994117789d4a9a81a67
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961879"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967124"
 ---
 # <a name="setting-up-an-ad-fs-deployment-with-alwayson-availability-groups"></a>使用 AlwaysOn 可用性组设置 AD FS 部署
 高度可用的异地分布式拓扑提供：
@@ -24,30 +22,30 @@ ms.locfileid: "86961879"
 
 ## <a name="overview---alwayson-availability-groups"></a>概述-AlwaysOn 可用性组
 
-有关 AlwaysOn 可用性组的详细信息，请参阅[AlwaysOn 可用性组概述（SQL Server）](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15)
+有关 AlwaysOn 可用性组的详细信息，请参阅[AlwaysOn 可用性组 (SQL Server 概述) ](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15)
 
-从 AD FS SQL Server 场的节点的角度来看，AlwaysOn 可用性组将单个 SQL Server 实例替换为策略/项目数据库。可用性组侦听器是客户端（AD FS security token service）用于连接到 SQL 的内容。
+从 AD FS SQL Server 场的节点的角度来看，AlwaysOn 可用性组将单个 SQL Server 实例替换为策略/项目数据库。可用性组侦听器是客户端 (AD FS security token service) 用于连接到 SQL 的内容。
 下图显示了具有 AlwaysOn 可用性组的 AD FS SQL Server 场。
 
 ![使用 SQL 的服务器场](media/ad-fs-always-on/SQLoverview.png)
 
-Always On 可用性组（AG）是一个或多个一起故障转移的用户数据库。 可用性组包含一个主可用性副本和一到四个辅助副本，这些副本通过 SQL Server 用于数据保护的基于日志的数据移动来维护，无需共享存储。 每个副本由 WSFC 的不同节点上 SQL Server 的实例承载。 可用性组和相应的虚拟网络名称注册为 WSFC 群集中的资源。
+ (AG) Always On 可用性组是一个或多个一起进行故障转移的用户数据库。 可用性组包含一个主可用性副本和一到四个辅助副本，这些副本通过 SQL Server 用于数据保护的基于日志的数据移动来维护，无需共享存储。 每个副本由 WSFC 的不同节点上 SQL Server 的实例承载。 可用性组和相应的虚拟网络名称注册为 WSFC 群集中的资源。
 
 主副本节点上的可用性组侦听器响应连接到虚拟网络名称的传入客户端请求，并基于连接字符串中的属性将每个请求重定向到相应的 SQL Server 实例。
 在发生故障转移时，可以利用 WSFC 重新配置另一个 SQL Server 实例上的辅助副本，使其成为可用性组的主副本，而不是将共享物理资源的所有权转移到另一个节点。 然后，将可用性组的虚拟网络名称资源转移到该实例。
 在任意给定时刻，只有单个 SQL Server 实例可以承载可用性组数据库的主副本，所有关联的辅助副本都必须驻留在单独的实例上，并且每个实例必须驻留在单独的物理节点上。
 
-> [!NOTE] 
+> [!NOTE]
 > 如果计算机正在 Azure 上运行，请设置 Azure 虚拟机以使侦听器配置能够与 AlwaysOn 可用性组通信。 有关详细信息，请查看[虚拟机： SQL Always On 侦听器](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener)。
 
-有关 AlwaysOn 可用性组的详细概述，请参阅[Always On 可用性组概述（SQL Server）](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15)。
+有关 AlwaysOn 可用性组的详细概述，请参阅[Always On 可用性组概述 (SQL Server) ](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15)。
 
-> [!NOTE] 
+> [!NOTE]
 > 如果组织需要跨多个数据中心进行故障转移，则建议在每个数据中心创建一个项目数据库，并启用后台缓存，以便在请求处理过程中减少延迟。 按照说明进行操作以[优化 SQL，并减少延迟](./adfs-sql-latency.md)。
 
 ## <a name="deployment-guidance"></a>部署指南
 
-1. <b>为 AD FS 部署的目标考虑正确的数据库。</b>AD FS 使用数据库来存储配置以及与联合身份验证服务相关的事务数据。 您可以使用 AD FS 软件选择内置 Windows 内部数据库（WID）或 Microsoft SQL Server 2008 或更高版本，以便将数据存储在联合身份验证服务中。
+1. <b>为 AD FS 部署的目标考虑正确的数据库。</b>AD FS 使用数据库来存储配置以及与联合身份验证服务相关的事务数据。 您可以使用 AD FS 软件选择内置 Windows 内部数据库 (WID) 或 Microsoft SQL Server 2008 或更高版本，以便将数据存储在联合身份验证服务中。
 下表描述了 WID 和 SQL 数据库的支持功能之间的差异。
 
 
@@ -57,12 +55,12 @@ Always On 可用性组（AG）是一个或多个一起故障转移的用户数�
 | AD FS 功能     | SAML 项目解析。 注意：对于 SAML 应用程序而言，这种情况并不常见     |   否 | 是  |
 | AD FS 功能 | SAML/WS 联合身份验证令牌重放检测。 注意：仅当 AD FS 从外部 Idp 接收令牌时才是必需的。 如果 AD FS 不充当联合身份验证伙伴，则不需要执行此操作。      |    否  | 是 |
 | 数据库功能     |   使用 "拉" 复制的基本数据库冗余，其中一个或多个承载数据库的只读副本的服务器请求在源服务器上所做的更改数据库的读/写副本    |   否 | 否  |
-| 数据库功能 | 使用高可用性解决方案的数据库冗余，如群集或镜像（在数据库层）      |    否  | 是 |
+| 数据库功能 | 使用高可用性解决方案（例如，在数据库层进行群集或镜像 (）实现数据库冗余)       |    否  | 是 |
 | 其他功能 | OAuth Authcode 方案     |   是  | 是 |
 
 如果你是具有超过100个信任关系的大型组织，需要为其内部用户和外部用户提供对联合应用程序或服务的单一登录访问，则建议使用 SQL 选项。
 
-如果你的组织具有100或更低的已配置信任关系，则 WID 将提供数据和联合身份验证服务冗余（其中，每个联合服务器将更改复制到相同场中的其他联合服务器）。 WID 不支持令牌重播检测或项目解析，并且限制为30个联合服务器。
+如果你的组织具有100或更低的已配置信任关系，则 WID 将提供数据和联合身份验证服务冗余 (，其中每个联合服务器将更改复制到同一场中的其他联合服务器) 。 WID 不支持令牌重播检测或项目解析，并且限制为30个联合服务器。
 有关规划部署的详细信息，请访问[此处](../design/planning-your-deployment.md)。
 
 ## <a name="sql-server-high-availability-solutions"></a>SQL Server 高可用性解决方案
@@ -83,7 +81,7 @@ Always On 可用性组（AG）是一个或多个一起故障转移的用户数�
 
 ## <a name="deploy-ad-fs"></a>部署 AD FS
 
-> [!NOTE] 
+> [!NOTE]
 > 如果计算机正在 Azure 上运行，则必须以特定方式配置虚拟机，以允许侦听器与 Always On 可用性组通信。 有关配置的详细信息，请查看[在 Azure 上为可用性组配置负载均衡器 SQL Server vm](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener)
 
 
@@ -98,7 +96,7 @@ Always On 可用性组（AG）是一个或多个一起故障转移的用户数�
 
 使用 AlwaysOn 可用性组配置 AD FS 场需要对 AD FS 部署过程做少许修改。 确保每个服务器实例运行相同版本的 SQL。 若要查看 Always On 可用性组的先决条件、限制和建议的完整列表，请参阅[此处](/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-2017#PrerequisitesForDbs)。
 
-1.  必须先创建要备份的数据库，然后才能配置 AlwaysOn 可用性组。  AD FS 在新 AD FS SQL Server 场的第一个联合身份验证服务节点的设置和初始配置过程中创建其数据库。  使用 SQL server 指定现有场的数据库主机名。 作为 AD FS 配置的一部分，你必须指定 SQL 连接字符串，因此必须将第一个 AD FS 场配置为直接连接到 SQL 实例（这只是暂时性的）。 有关配置 AD FS 场的特定指南，包括使用 SQL server 连接字符串配置 AD FS 场节点，请参阅[配置联合服务器](../deployment/configure-a-federation-server.md)。
+1.  必须先创建要备份的数据库，然后才能配置 AlwaysOn 可用性组。  AD FS 在新 AD FS SQL Server 场的第一个联合身份验证服务节点的设置和初始配置过程中创建其数据库。  使用 SQL server 指定现有场的数据库主机名。 作为 AD FS 配置的一部分，你必须指定 SQL 连接字符串，因此必须将第一个 AD FS 场配置为直接连接到 SQL 实例， (这只是临时) 。 有关配置 AD FS 场的特定指南，包括使用 SQL server 连接字符串配置 AD FS 场节点，请参阅[配置联合服务器](../deployment/configure-a-federation-server.md)。
 
 ![指定场](media/ad-fs-always-on/deploymentSpecifyFarm.png)
 
@@ -113,7 +111,7 @@ Always On 可用性组（AG）是一个或多个一起故障转移的用户数�
 
 5.  完成 AD FS 场配置和安装。
 
-> [!NOTE] 
+> [!NOTE]
 > 若要安装 Always On 可用性组，必须在域帐户下运行 SQL Server。 默认情况下，它作为本地系统运行。
 
 ## <a name="install-the-failover-clustering-role"></a>安装故障转移群集角色
@@ -144,7 +142,7 @@ Windows Server 故障转移群集角色提供了有关 Windows Server 故障转�
 
 ![选择服务器图片](media/ad-fs-always-on/clusterValidationServers.png)
 
-5. 在 "测试选项" 页上，选择 "运行所有测试（推荐）"，然后选择 "下一步"。
+5. 在 "测试选项" 页上，选择 "运行 (建议) 中的所有测试"，然后选择 "下一步"。
 6. 在 "确认" 页上，选择 "下一步"。
 验证页面显示运行测试的状态。
 7. 在“摘要”页面上，执行以下任一操作：
@@ -194,9 +192,9 @@ Windows Server 故障转移群集角色提供了有关 Windows Server 故障转�
 
 ## <a name="enable-always-on-availability-groups-with-sql-server-configuration-manager"></a>使用 SQL Server 配置管理器启用 Always on 可用性组
 
-1.  连接到承载要在其中启用 Always On 可用性组的 SQL Server 实例的 Windows Server 故障转移群集（WSFC）节点。
+1.  连接到 Windows Server 故障转移群集 (WSFC) 节点，该节点承载要在其中启用 Always On 可用性组的 SQL Server 实例。
 2.  在 "开始" 菜单上，依次指向 "所有程序"、"Microsoft SQL Server" 和 "配置工具"，然后单击 "SQL Server 配置管理器"。
-3.  在 SQL Server 配置管理器中，单击 "SQL Server 服务"，右键单击 "SQL Server <instance name> " （），其中 <instance name> 是要为其启用 Always On 可用性组的本地服务器实例的名称，然后单击 "属性"。
+3.  在 SQL Server 配置管理器中，单击 "SQL Server 服务"，右键单击 "SQL Server (<instance name>) "，其中 <instance name> 是要为其启用 Always On 可用性组的本地服务器实例的名称，然后单击 "属性"。
 4.  选择“AlwaysOn 高可用性”选项卡。
 5.  验证“Windows 故障转移群集名称”字段包含本地故障转移群集的名称。 如果此字段为空，则此服务器实例当前不支持 Always On 可用性组。 本地计算机不是群集节点、WSFC 群集已关闭或此版本的 SQL Server 不支持 Always On 可用性组。
 6.  选中“启用 AlwaysOn 可用性组”复选框，然后单击“确定” 。
@@ -214,7 +212,7 @@ SQL Server 配置管理器会保存您的更改。 然后，必须手动重新�
 ## <a name="create-new-availability-group"></a>创建新的可用性组
 
 1.  在对象资源管理器中，连接到承载主副本的服务器实例。
-2.  依次展开“Always On 高可用性”节点和“可用性组”节点。
+2.  依次展开“Always On 高可用性”  节点和“可用性组”  节点。
 3.  若要启动新建可用性组向导，请选择“新建可用性组向导”命令。
 4.  首次运行该向导时，“简介”页将出现。 若要在将来跳过此页，可单击“不再显示此页”。 在阅读了此页后，单击“下一步”。
 5.  在“指定可用性组选项”页上的“可用性组名称”字段中，输入新可用性组的名称。 此名称必须是有效的 SQL Server 标识符，该标识符在群集和域中是唯一的。 可用性组名称的最大长度为 128 个字符。 e
@@ -229,7 +227,7 @@ SQL Server 配置管理器会保存您的更改。 然后，必须手动重新�
 
 ![为 AoA 选择数据库](media/ad-fs-always-on/createAoASelectDb.png)
 
-8. 在 "指定副本" 页上，为新的可用性组指定和配置一个或多个副本。 此页包含四个选项卡。 下表介绍了这些选项卡。 有关详细信息，请参阅 "[指定副本" 页（新建可用性组向导：添加副本向导）](/sql/database-engine/availability-groups/windows/specify-replicas-page-new-availability-group-wizard-add-replica-wizard?view=sql-server-ver15)主题。
+8. 在 "指定副本" 页上，为新的可用性组指定和配置一个或多个副本。 此页包含四个选项卡。 下表介绍了这些选项卡。 有关详细信息，请参阅 "[指定副本" 页 (新建可用性组向导：添加副本向导) ](/sql/database-engine/availability-groups/windows/specify-replicas-page-new-availability-group-wizard-add-replica-wizard?view=sql-server-ver15)主题。
 
 | 选项卡      | 简要说明       |
 | ------------------ |:-------------:|
@@ -240,17 +238,17 @@ SQL Server 配置管理器会保存您的更改。 然后，必须手动重新�
 
 ![指定副本详细信息](media/ad-fs-always-on/createAoAchooseReplica.png)
 
-9. 在“选择初始数据同步”页上，选择如何创建新的辅助数据库并将其联接到可用性组。 选择以下选项之一：
+9. 在“选择初始数据同步”页上，选择如何创建新的辅助数据库并将其联接到可用性组。 选择下列选项之一：
 -   自动种子设定
- - SQL Server 自动为此组中的每个数据库创建次要副本。 自动种子设定要求数据和日志文件路径在参与此组的每个 SQL Server 实例上均相同。 在 SQL Server 2016 （13. x）和更高版本上可用。 请参阅[自动初始化 Always On 可用性组](/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group?view=sql-server-ver15)。
+ - SQL Server 自动为此组中的每个数据库创建次要副本。 自动种子设定要求数据和日志文件路径在参与此组的每个 SQL Server 实例上均相同。 SQL Server 2016 (13. x) 和更高版本可用。 请参阅[自动初始化 Always On 可用性组](/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group?view=sql-server-ver15)。
 - 完整的数据库和日志备份
- - 如果你的环境满足自动启动初始数据同步的要求，则选择此选项（有关详细信息，请参阅[本主题前面的先决条件、限制和建议）](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio?view=sql-server-ver15#Prerequisites)。
+ - 如果你的环境满足自动启动初始数据同步的要求，则选择此选项。有关详细信息，请参阅[本主题前面的先决条件、限制和建议) ](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio?view=sql-server-ver15#Prerequisites) (。
 如果选择“完全”，则在创建可用性组后，向导会将每个主数据库及其事务日志备份到网络共享，并在每个承载辅助副本的服务器实例上还原备份。 然后，该向导将每个辅助数据库联接到可用性组。
 在“指定可由所有副本访问的共享网络位置”字段中，指定承载副本的所有服务器都具有读写访问权限的备份共享。 有关详细信息，请参阅本主题前面的先决条件。 在验证步骤中，向导将执行测试，确保所提供的网络位置有效，测试将在名为“BackupLocDb_”加 Guid 的主要副本上创建数据库，并对所提供的网络位置执行备份，然后在次要副本上进行还原。 在向导未能删除此数据库及其备份历史记录和备份文件情况下，将之删除是安全的操作。
 - 仅联接
  - 如果在将承载辅助副本的服务器实例上手动准备了辅助数据库，则可以选择此选项。 该向导将每个现有辅助数据库联接到可用性组。
 - 跳过初始数据同步
- - 如果要使用您自己的数据库和主数据库的日志备份，请选择此选项。 有关详细信息，请参阅[在 Always On 辅助数据库上启动数据移动（SQL Server）](/sql/database-engine/availability-groups/windows/start-data-movement-on-an-always-on-secondary-database-sql-server?view=sql-server-ver15)。
+ - 如果要使用您自己的数据库和主数据库的日志备份，请选择此选项。 有关详细信息，请参阅[在 Always On 辅助数据库上启动数据移动 (SQL Server) ](/sql/database-engine/availability-groups/windows/start-data-movement-on-an-always-on-secondary-database-sql-server?view=sql-server-ver15)。
 
 ![选择数据同步选项](media/ad-fs-always-on/createAoADataSync.png)
 
@@ -258,7 +256,7 @@ SQL Server 配置管理器会保存您的更改。 然后，必须手动重新�
 
 10. 在“摘要”页上，查看您为新的可用性组进行的选择。 若要进行更改，请单击“上一步”以返回到相应页。 在进行更改后，单击“下一步”以返回到“摘要”页。
 
-> [!NOTE] 
+> [!NOTE]
 > 如果将承载新可用性副本的服务器实例的 SQL Server 服务帐户不作为登录名存在，则新建可用性组向导需要创建该登录名。 在“摘要”页上，该向导将显示要创建的登录名的信息。 如果单击“完成”，则该向导将为 SQL Server 服务帐户创建该登录名，并授予该登录名 CONNECT 权限。
 > 如果您满意所做的选择，可以选择单击“脚本”以创建向导将执行的步骤的脚本。 然后，若要创建和配置新的可用性组，请单击“完成”。
 
@@ -281,7 +279,7 @@ SQL Server 配置管理器会保存您的更改。 然后，必须手动重新�
 ## <a name="join-availability-replica-to-an-availability-group"></a>将可用性副本联接到可用性组
 
 1.  在对象资源管理器中，连接到承载辅助副本的服务器实例，然后单击服务器名称以便展开服务器树。
-2.  依次展开“Always On 高可用性”节点和“可用性组”节点。
+2.  依次展开“Always On 高可用性”  节点和“可用性组”  节点。
 3.  选择您连接到辅助副本的可用性组。
 4.  右键单击辅助副本，然后单击“联接到可用性组”。
 5.  这将打开“将副本联接到可用性组”对话框。

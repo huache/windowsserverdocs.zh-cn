@@ -1,19 +1,17 @@
 ---
 title: 启用扩展发现横幅
 description: 启用扩展发现横幅
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: f51070abfeed3a790055b12f733fc61be383472c
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: ef08eec08b43f83121bc94abc46a5f657556db65
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269254"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945019"
 ---
 # <a name="enabling-the-extension-discovery-banner"></a>启用扩展发现横幅
 
@@ -29,13 +27,13 @@ Windows 管理中心预览版1903版中引入了扩展发现横幅功能。 此�
 
 ## <a name="how-to-implement-the-extension-discovery-banner"></a>如何实现扩展发现横幅
 
-Nuspec 文件中的 "标记" 元数据用于声明你的扩展所支持的硬件制造商和/或型号。 标记由空格分隔，你可以添加制造商或型号标记，或者同时添加这两个标记以声明受支持的制造商和/或模型。 标记格式为 ``"[value type]_[value condition]"`` 其中，[value type] 为 "制造商" 或 "模型" （区分大小写），而 "值条件" 是定义制造商或模型字符串的[Javascript 正则表达式](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions)，而 "值类型" 和 "值条件" 由下划线分隔。 然后使用 URI 编码对该字符串进行编码，并将其添加到 nuspec "tags" 元数据字符串中。
+Nuspec 文件中的 "标记" 元数据用于声明你的扩展所支持的硬件制造商和/或型号。 标记由空格分隔，你可以添加制造商或型号标记，或者同时添加这两个标记以声明受支持的制造商和/或模型。 标记格式为， ``"[value type]_[value condition]"`` 其中 [值类型] 为 "制造商" 或 "模型" (区分大小写) ，[值条件] 是定义制造商或模型字符串的[Javascript 正则表达式](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions)，而 "值类型" 和 "值条件" 由下划线分隔。 然后使用 URI 编码对该字符串进行编码，并将其添加到 nuspec "tags" 元数据字符串中。
 
 ### <a name="example"></a>示例
 
 假设我开发了一个扩展，它支持名为 Contoso Inc. 的公司的服务器，模型名称为 R3xx 和 R4xx。
 
-1. 制造商的标记将 ``"Manufacturer_/Contoso Inc./"``。 可以 ``"Model_/^R[34][0-9]{2}$/"``模型的标记。 根据要定义匹配条件的严格程度，可以通过不同的方式来定义正则表达式。 你还可以将制造商或型号标记分成多个标记，例如，也可以 ``"Model_/R3../ Model_/R4../"``模型标记。
+1. 制造商的标记为 ``"Manufacturer_/Contoso Inc./"`` 。 模型的标记可以是 ``"Model_/^R[34][0-9]{2}$/"`` 。 根据要定义匹配条件的严格程度，可以通过不同的方式来定义正则表达式。 您还可以将制造商或型号标记分成多个标记，例如，模型标记也可以是 ``"Model_/R3../ Model_/R4../"`` 。
 2. 可以通过 web 浏览器的 DevTools 控制台来测试正则表达式。 在 "边缘" 或 "Chrome" 中，按 F12 打开 "DevTools" 窗口，并在 "控制台" 选项卡中键入以下内容并按 Enter：
 
    ```javascript

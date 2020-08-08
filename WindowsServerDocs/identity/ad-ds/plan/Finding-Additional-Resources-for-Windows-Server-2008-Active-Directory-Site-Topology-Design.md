@@ -6,12 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: dd08192558457a014b6884316de7a22900dded2f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 55317bfb392fa9867b7fae1f4900b4ce6b83a141
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941061"
+ms.locfileid: "87994432"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>为 Windows Server 2008 Active Directory 站点拓扑设计查找其他资源
 
@@ -35,7 +35,7 @@ ms.locfileid: "87941061"
 
 - 有关部署目录林根级域的详细信息，请参阅[部署 Windows Server 2008 林根级域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))。
 
-- 有关保护域控制器的详细信息，请参阅[AD DS 设计和规划](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/ad-ds-design-and-planning)。
+- 有关保护域控制器的详细信息，请参阅[AD DS 设计和规划](./ad-ds-design-and-planning.md)。
 
 - 有关部署地区性域的详细信息，请参阅[部署 Windows Server 2008 地区性域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10))。
 

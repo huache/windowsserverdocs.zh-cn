@@ -1,21 +1,19 @@
 ---
 title: 分支机构注意事项
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: a9893ecd76e142dd243a1d99e83a48d2edfd5872
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b56b2d4f74f18e68a3849b01e84b0aca5ca7412e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856560"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957905"
 ---
 # <a name="branch-office-considerations"></a>分支机构注意事项
 
-> 适用于： Windows Server 2019、Windows Server （半年频道）、 
+> 适用于： Windows Server 2019、Windows Server (半年频道) 、
 
 本文介绍了如何在分支机构和其他远程方案中运行受防护的虚拟机的最佳实践，其中 Hyper-v 主机的连接时间可能与 HGS 的连接受限。
 
@@ -24,7 +22,7 @@ ms.locfileid: "80856560"
 从 Windows Server 版本1709开始，可以在 Hyper-v 主机上配置另一组主机保护者服务 Url，以便在主 HGS 无响应时使用。
 这允许您运行作为主服务器使用的本地 HGS 群集，以获得更好的性能，如果本地服务器关闭，则能够回退到您的企业数据中心的 HGS。
 
-若要使用回退选项，需要设置两个 HGS 服务器。 它们可以运行 Windows Server 2019 或 Windows Server 2016，也可以是相同或不同群集的一部分。 如果它们是不同的群集，你将需要建立操作做法，以确保在两个服务器之间同步认证策略。 它们都需要能够正确授权 Hyper-v 主机运行受防护的 Vm，并具有启动受防护的 Vm 所需的密钥材料。 你可以选择在两个群集之间具有一对共享加密和签名证书，也可以使用单独的证书并将 HGS 受防护的 VM 配置为在屏蔽数据文件中对这两个监护人（加密/签名证书对）进行授权。
+若要使用回退选项，需要设置两个 HGS 服务器。 它们可以运行 Windows Server 2019 或 Windows Server 2016，也可以是相同或不同群集的一部分。 如果它们是不同的群集，你将需要建立操作做法，以确保在两个服务器之间同步认证策略。 它们都需要能够正确授权 Hyper-v 主机运行受防护的 Vm，并具有启动受防护的 Vm 所需的密钥材料。 你可以选择在两个群集之间具有一对共享加密和签名证书，也可以使用单独的证书并将 HGS 受防护的 VM 配置为在屏蔽数据文件中 (加密/签名证书对) 。
 
 然后，将 Hyper-v 主机升级到 Windows Server 版本1709或 Windows Server 2019，并运行以下命令：
 ```powershell
@@ -48,7 +46,7 @@ Set-HgsClientConfiguration -KeyProtectionServerUrl 'https://hgs.primary.com/KeyP
 
 脱机模式允许受防护的 VM 在无法到达 HGS 时启用，只要 Hyper-v 主机的安全配置尚未更改。
 脱机模式通过在 Hyper-v 主机上缓存 VM TPM 密钥保护程序的特殊版本来运行。
-密钥保护程序将加密为主机的当前安全配置（使用基于虚拟化的安全标识密钥）。
+使用基于虚拟化的安全标识密钥) ，将密钥保护程序加密为主机 (当前的安全配置。
 如果主机无法与 HGS 通信，而且其安全配置未更改，它将能够使用缓存的密钥保护程序启动受防护的 VM。
 当系统上的安全设置发生更改时（例如正在应用的新代码完整性策略或禁用安全启动），缓存的密钥保护程序将无效，并且在任何受防护的 Vm 可以再次脱机启动之前，主机必须使用 HGS 进行证明。
 
@@ -60,5 +58,5 @@ Set-HgsClientConfiguration -KeyProtectionServerUrl 'https://hgs.primary.com/KeyP
 Set-HgsKeyProtectionConfiguration -AllowKeyMaterialCaching:$true
 ```
 
-由于可缓存的密钥保护程序对于每个受防护的 VM 都是唯一的，因此，在 HGS 启用此设置后，你需要完全关闭（不重新启动）并启动受防护的 Vm 以获取可缓存的密钥保护程序。
+由于可缓存的密钥保护程序对于每个受防护的 VM 都是唯一的，因此你需要完全关闭 (不重新启动) 并启动受防护的 Vm，以便在 HGS 上启用此设置后获取可缓存的密钥保护程序。
 如果受防护的 VM 迁移到运行较早版本的 Windows Server 的 Hyper-v 主机，或从早期版本的 HGS 获取新的密钥保护程序，则它将不能在脱机模式下启动自身，但可以继续在脱机模式下运行。

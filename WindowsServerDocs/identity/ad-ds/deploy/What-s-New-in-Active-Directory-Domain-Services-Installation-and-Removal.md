@@ -6,12 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 7444fcc6807e43192e68c006dcd49464a503976b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 09863123a69eec72b3d8bfaaf138bb2d2562f687
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953294"
+ms.locfileid: "87994503"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 域服务安装和删除的新功能
 
@@ -173,7 +173,7 @@ Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化
 
    在这种情况下，需要独立于不支持本机 64 位进程的 cmdlet 运行 ADDSDeployment cmdlet。
 
-- Windows Server 2012 中有一个名为 "复原文件系统" 的新文件系统。 请勿将 Active Directory 数据库、日志文件或 SYSVOL 存储到使用恢复文件系统 (ReFS) 格式化的数据卷上。 有关 ReFS 的详细信息，请参阅 [构建 Windows 的下一代文件系统：ReFS](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)。
+- Windows Server 2012 中有一个名为 "复原文件系统" 的新文件系统。 请勿将 Active Directory 数据库、日志文件或 SYSVOL 存储到使用恢复文件系统 (ReFS) 格式化的数据卷上。 有关 ReFS 的详细信息，请参阅 [构建 Windows 的下一代文件系统：ReFS](/archive/blogs/b8/building-the-next-generation-file-system-for-windows-refs)。
 - 在服务器管理器中，在服务器核心安装上运行 AD DS 或其他服务器角色并且已升级到 Windows Server 2012 的服务器，该服务器角色可以显示为红色状态，即使按预期方式收集事件和状态也是如此。 运行预发行版本 Windows Server 2012 的服务器核心安装的服务器也会受到影响。
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>如果错误阻止关键复制，Active Directory 域服务安装将挂起。

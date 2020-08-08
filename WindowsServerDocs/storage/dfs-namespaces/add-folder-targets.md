@@ -1,23 +1,21 @@
 ---
 title: 添加文件夹目标
 description: 本主题介绍如何添加文件夹目标（UNC 路径）
-ms.prod: windows-server
 ms.author: jgerend
 manager: brianlic
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: e5a81f2967953b985028407d53d6a039fd8990eb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bc229360a616e7fa56231e6211b4b909d45ec2de
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961269"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957815"
 ---
 # <a name="add-folder-targets"></a>添加文件夹目标
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 文件夹目标是共享文件夹或与命名空间中的某个文件夹关联的另一个命名空间的通用命名约定 (UNC) 路径。 添加多个文件夹目标可增加命名空间中的文件夹的可用性。
 

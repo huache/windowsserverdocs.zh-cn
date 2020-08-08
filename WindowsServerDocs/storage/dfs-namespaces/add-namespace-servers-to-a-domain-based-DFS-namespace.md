@@ -2,22 +2,20 @@
 title: 将命名空间服务器添加到基于域的 DFS 命名空间
 description: 本文介绍如何指定其他命名空间服务器，以使用 DFS 管理托管命名空间。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f00a6419bae1951a7c1597212d3c37676a4db90e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ada742f53435b8b3894fc1a19eee4dd69d3777d6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961249"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957805"
 ---
 # <a name="add-namespace-servers-to-a-domain-based-dfs-namespace"></a>将命名空间服务器添加到基于域的 DFS 命名空间
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 你可以指定要托管命名空间的其他命名空间服务器，以增加基于域的命名空间的可用性。
 

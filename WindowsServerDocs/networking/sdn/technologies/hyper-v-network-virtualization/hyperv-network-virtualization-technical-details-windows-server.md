@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 5341dfe03a85e192ce18baec44f5213a52a43fd7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 94d45dd04708d58d880f3dcbc7a65e9586e02a29
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952504"
+ms.locfileid: "87994411"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Windows Server 2016 中的 hyper-v 网络虚拟化技术详细信息
 
@@ -292,5 +292,4 @@ HNV 策略由主机代理进行编程。 每个虚拟机网络适配器都配置
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **社区资源**  |                                                                -   [私有云体系结构博客](https://blogs.technet.com/b/privatecloud)<br />-提出问题：[cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)                                                                |
 |         **RFC**          |                                                                   -   [NVGRE 草案 RFC](https://www.ietf.org/id/draft-sridharan-virtualization-nvgre-07.txt)<br />-   [VXLAN-RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                    |
-| **相关技术** | -有关 Windows Server 2012 R2 中的 Hyper-v 网络虚拟化技术详细信息，请参阅[Hyper-v 网络虚拟化技术详细信息](https://technet.microsoft.com/library/jj134174.aspx)<br />-   [网络控制器](../../../sdn/technologies/network-controller/Network-Controller.md) |
-
+| **相关技术** | -有关 Windows Server 2012 R2 中的 Hyper-v 网络虚拟化技术详细信息，请参阅[Hyper-v 网络虚拟化技术详细信息](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134174(v=ws.11))<br />-   [网络控制器](../../../sdn/technologies/network-controller/Network-Controller.md) |

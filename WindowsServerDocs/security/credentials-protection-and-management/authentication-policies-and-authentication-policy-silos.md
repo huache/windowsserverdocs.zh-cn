@@ -1,20 +1,18 @@
 ---
 title: 身份验证策略和身份验证策略接收器
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: 7eb0e640-033d-49b5-ab44-3959395ad567
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 705cba94299572f02c12896e2dac0ec8c2d070c0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0bca5a7e78a663c535e1d727339c6dd9eb50704b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520176"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957915"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>身份验证策略和身份验证策略接收器
 
@@ -121,7 +119,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 受保护的用户安全组在运行 Windows Server 2012 R2 和 Windows 8.1 的设备和主机计算机上，以及在具有运行 Windows Server 2012 R2 的主域控制器的域中的域控制器上触发不可配置的保护。 由于 Windows 所支持的身份验证方法已更改，因此将根据帐户的域功能级别，对受保护用户安全组的成员提供进一步保护。
 
--   受保护的用户安全组的成员无法通过使用 NTLM、摘要式身份验证或 CredSSP 默认凭据委派进行身份验证。 在运行使用上述任一安全支持提供程序（Ssp）的 Windows 8.1 的设备上，当帐户是受保护用户安全组的成员时，将无法对域进行身份验证。
+-   受保护的用户安全组的成员无法通过使用 NTLM、摘要式身份验证或 CredSSP 默认凭据委派进行身份验证。 在运行 Windows 8.1 的设备上，该设备使用上述任一安全支持提供程序 (Ssp) ，当该帐户是受保护用户安全组的成员时，对域进行的身份验证将失败。
 
 -   Kerberos 协议不会在预身份验证过程中使用较弱的 DES 或 RC4 加密类型。 这意味着，必须将域配置为至少支持 AES 加密类型。
 
@@ -157,7 +155,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 > [!NOTE]
 > 域帐户必须可直接链接到该策略，或者可以通过接收器成员身份间接链接到该策略。
 
-当身份验证策略处于审核模式，并且域控制器收到票证授予服务请求时，域控制器将根据请求的票证特权属性证书（PAC）数据检查是否允许身份验证，并在失败时记录一条警告消息。 PAC 包含各种类型的授权数据，其中包括用户所属的组、用户所具有的权限以及适用于用户的策略类型。 此信息用于生成用户的访问令牌。 如果它是允许对用户、设备或服务进行身份验证的强制执行的身份验证策略，则域控制器将根据请求的票证 PAC 数据检查是否允许身份验证。 若失败，则域控制器将返回一条错误消息并记录事件。
+当身份验证策略处于审核模式，并且域控制器收到票证授予服务请求时，域控制器将根据请求的票证特权属性证书 (PAC) 数据检查是否允许身份验证，如果失败，则记录一条警告消息。 PAC 包含各种类型的授权数据，其中包括用户所属的组、用户所具有的权限以及适用于用户的策略类型。 此信息用于生成用户的访问令牌。 如果它是允许对用户、设备或服务进行身份验证的强制执行的身份验证策略，则域控制器将根据请求的票证 PAC 数据检查是否允许身份验证。 若失败，则域控制器将返回一条错误消息并记录事件。
 
 > [!NOTE]
 > 域帐户必须可直接链接到已审核的身份验证策略，或者可以通过接收器成员身份间接链接，该策略允许对用户、设备或服务进行身份验证。
@@ -201,7 +199,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 3.  域控制器使用受保护的回复 (AS-REP) 进行回复，并且身份验证将继续进行。
 
 ### <a name="how-restricting-service-ticket-issuance-works"></a><a name="BKMK_HowRestrictingServiceTicket"></a>限制服务票证颁发的工作原理
-如果不允许使用某帐户，并且具有 TGT 的用户尝试连接到该服务（例如，打开需要对服务的服务主体名称（SPN）所标识的服务进行身份验证的应用程序），将发生以下序列：
+如果不允许使用某帐户，并且具有 TGT 的用户尝试连接到该服务 (例如，通过打开需要对服务的服务主体名称 (SPN) 标识的服务进行身份验证的应用程序时，将发生以下序列：
 
 1.  为了从 SPN 连接到 SPN1，Windows 将向请求到 SPN1 的服务票证的域控制器发送 TGS-REQ。
 
@@ -211,7 +209,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 4.  域控制器拒绝该请求。
 
-如果允许帐户满足身份验证策略设置的访问控制条件，并且具有 TGT 的用户尝试连接到该服务（例如，通过打开需要对服务的 SPN 进行身份验证的应用程序），则会发生以下序列：
+如果允许帐户满足身份验证策略设置的访问控制条件，并且具有 TGT 的用户尝试连接到服务 (例如，通过打开需要对服务的 SPN) 标识的服务进行身份验证的应用程序），则会发生以下序列：
 
 1.  为了连接到 SPN1，Windows 将向请求到 SPN1 的服务票证的域控制器发送 TGS-REQ。
 
@@ -228,7 +226,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 有关使用这些事件的疑难解答步骤，请参阅[解决关于身份验证策略的问题](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts#troubleshoot-authentication-policies)和[对受保护用户的相关事件进行疑难解答](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts#troubleshoot-events-related-to-protected-users)。
 
-|事件 ID 和日志|说明|
+|事件 ID 和日志|描述|
 |----------|--------|
 |101<p>**AuthenticationPolicyFailures-DomainController**|原因：NTLM 登录出现故障，因为已配置身份验证策略。<p>在域控制器中记录了一个事件，以指示 NTLM 身份验证失败，原因在于需要访问控制限制，但无法将这些限制应用到 NTLM。<p>显示帐户、设备、策略和接收器的名称。|
 |105<p>**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制出现故障，原因在于未允许来自特定设备的身份验证。<p>在域控制器中记录了一个事件，以指示 Kerberos TGT 受到拒绝，原因在于设备不满足强制执行的访问控制限制。<p>显示帐户、设备、策略和接收器的名称以及 TGT 生存期。|

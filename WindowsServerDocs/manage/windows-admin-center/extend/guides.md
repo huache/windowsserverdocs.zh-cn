@@ -1,25 +1,23 @@
 ---
-title: 指南
-description: 指南 Windows 管理中心 SDK （Project Honolulu）
-ms.technology: manage
+title: Guides
+description: '指导 Windows 管理中心 SDK (Project Honolulu) '
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: b7e091e4b9bef11b37a8247b52390404e258ae3b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bd4b8c35cc5a46500292e08ee1967ef00b74c0e1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357112"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945114"
 ---
-# <a name="guides"></a>指南
+# <a name="guides"></a>Guides
 
 >适用于：Windows Admin Center、Windows Admin Center 预览版
 
-## <a name="guides"></a>指南
+## <a name="guides"></a>Guides
 下面是一些通过 Windows 管理中心 SDK 进行开发的指南：
 
 - [将模块添加到工具扩展中](guides/add-module.md)

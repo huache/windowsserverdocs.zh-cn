@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: be6a1918a209f14ec8cc911aa4294825d0aa8b47
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d9625992d7098a1f5cd510901be07187702b3771
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182353"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967084"
 ---
 # <a name="set-up-an-ad-fs-lab-environment"></a>设置 AD FS 实验室环境
 
@@ -34,7 +32,7 @@ ms.locfileid: "87182353"
 
 1.  [步骤 1：配置域控制器 (DC1)](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_1)
 
-2.  [步骤2：通过设备注册服务配置联合服务器（ADFS1）](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)
+2.  [步骤2：通过设备注册服务配置联合服务器 (ADFS1) ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)
 
 3.  [步骤 3：配置 Web 服务器 (WebServ1) 和一个基于声明的应用程序示例](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_5)
 
@@ -43,7 +41,7 @@ ms.locfileid: "87182353"
 ## <a name="step-1-configure-the-domain-controller-dc1"></a><a name="BKMK_1"></a>步骤 1：配置域控制器 (DC1)
 在此测试环境中，可以调用根 Active Directory 域**contoso.com** ，并指定 <strong>pass@word1</strong> 作为管理员密码。
 
--   安装 AD DS 角色服务并安装 Active Directory 域服务（AD DS）以使你的计算机成为 Windows Server 2012 R2 中的域控制器。 此操作会在创建域控制器的过程中升级你的 AD DS 架构。 有关详细信息和分步说明，请参阅[ https://technet.microsoft.com/ library/hh472162.aspx](../../ad-ds/deploy/install-active-directory-domain-services--level-100-.md)。
+-   安装 AD DS 角色服务并安装 Active Directory 域服务 (AD DS) 使计算机成为 Windows Server 2012 R2 中的域控制器。 此操作会在创建域控制器的过程中升级你的 AD DS 架构。 有关详细信息和分步说明，请参阅[ https://technet.microsoft.com/ library/hh472162.aspx](../../ad-ds/deploy/install-active-directory-domain-services--level-100-.md)。
 
 ### <a name="create-test-active-directory-accounts"></a><a name="BKMK_2"></a>创建测试 Active Directory 帐户
 在你的域控制器起作用后，可以在此域中创建一个测试组和测试用户帐户，并将该用户帐户添加到组帐户。 你可以使用这些帐户来完成本主题前面部分中引用的操作实例指南中的演练。
@@ -54,12 +52,12 @@ ms.locfileid: "87182353"
 
 - 组： **Finance**
 
-有关如何在 Active Directory （AD）中创建用户帐户和组帐户的信息，请参阅 [https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx](/previous-versions/windows/it-pro/windows-server-2003/cc783323(v=ws.10)) 。
+有关如何在 Active Directory (AD) 中创建用户和组帐户的信息，请参阅 [https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx](/previous-versions/windows/it-pro/windows-server-2003/cc783323(v=ws.10)) 。
 
 将 **Robert Hatley** 帐户添加到 **Finance** 组。 有关如何向 Active Directory 中的组添加用户的信息，请参阅 [https://technet.microsoft.com/library/cc737130%28v=ws.10%29.aspx](/previous-versions/windows/it-pro/windows-server-2003/cc737130(v=ws.10)) 。
 
 ### <a name="create-a-gmsa-account"></a>创建 GMSA 帐户
-在 Active Directory 联合身份验证服务（AD FS）安装和配置过程中需要组托管服务帐户（GMSA）帐户。
+在 Active Directory 联合身份验证服务 (AD FS) 安装和配置期间需要 (GMSA) 帐户的组托管服务帐户。
 
 ##### <a name="to-create-a-gmsa-account"></a>创建 GMSA 帐户
 
@@ -178,7 +176,7 @@ ms.locfileid: "87182353"
 
 你可以使用以下过程为联合服务器和设备注册服务将主机 (A) 资源记录添加到公司 DNS 名称服务器。
 
-管理员组中的成员身份或等效身份是完成此过程所需的最低要求。 查看有关如何使用相应帐户和超链接 " <https://go.microsoft.com/fwlink/?LinkId=83477> 本地和域默认组（）中的组成员身份的详细信息 <https://go.microsoft.com/fwlink/p/?LinkId=83477> 。
+管理员组中的成员身份或等效身份是完成此过程所需的最低要求。 请查看有关在超链接 " <https://go.microsoft.com/fwlink/?LinkId=83477> 本地和域默认组 () 中使用适当帐户和组成员身份的详细信息 <https://go.microsoft.com/fwlink/p/?LinkId=83477> 。
 
 ##### <a name="to-add-a-host-a-and-alias-cname-resource-records-to-dns-for-your-federation-server"></a>为联合服务器将主机 (A) 和别名 (CNAME) 资源记录添加到 DNS
 
@@ -200,11 +198,11 @@ ms.locfileid: "87182353"
     > 在现实世界部署中，如果你的公司有多个用户主体名称 (UPN) 后缀，则必须创建多个 CNAME 记录，每个记录可用于那些在 DNS 中的 UPN 后缀。
 
 ## <a name="step-3-configure-the-web-server-webserv1-and-a-sample-claims-based-application"></a><a name="BKMK_5"></a>步骤 3：配置 Web 服务器 (WebServ1) 和一个基于声明的应用程序示例
-通过安装 Windows Server 2012 R2 操作系统并将其连接到域**contoso.com**来设置虚拟机（WebServ1）。 在加入域后，你可以继续安装和配置 Web 服务器角色。
+通过安装 Windows Server 2012 R2 操作系统 (WebServ1) 设置虚拟机，并将其连接到域**contoso.com**。 在加入域后，你可以继续安装和配置 Web 服务器角色。
 
 若要完成本主题前面部分中所引用的实例操作，你必须具备由联合服务器 (ADFS1) 保护的示例应用程序。
 
-您可以下载 Windows Identity Foundation SDK （ [https://www.microsoft.com/download/details.aspx?id=4451](https://www.microsoft.com/download/details.aspx?id=4451) ，其中包含基于声明的示例应用程序。
+您可以下载 Windows Identity Foundation SDK ([https://www.microsoft.com/download/details.aspx?id=4451](https://www.microsoft.com/download/details.aspx?id=4451) ，其中包括基于声明的示例应用程序。
 
 你必须完成以下步骤以使用该基于声明的应用程序示例设置 Web 服务器。
 
@@ -246,13 +244,13 @@ ms.locfileid: "87182353"
 
 ### <a name="install-windows-identity-foundation-sdk"></a><a name="BKMK_13"></a>安装 Windows Identity Foundation SDK
 
-1.  运行 WindowsIdentityFoundation-SDK-3.5.msi 以安装 Windows Identity Foundation SDK 3.5 （ https://www.microsoft.com/download/details.aspx?id=4451) 。 选择所有默认选项。
+1.  运行 WindowsIdentityFoundation-SDK-3.5.msi 以安装 Windows Identity Foundation SDK 3.5 (https://www.microsoft.com/download/details.aspx?id=4451) 。 选择所有默认选项。
 
 ### <a name="configure-the-simple-claims-app-in-iis"></a><a name="BKMK_9"></a>在 IIS 中配置简单声明应用
 
 1.  在计算机证书存储中安装有效的 SSL 证书。 该证书应包含你的 Web 服务器的名称 **webserv1.contoso.com**。
 
-2.  将 C:program files Files （x86） Windows Identity Foundation SDKv 3.5 SamplesQuick StartWeb ApplicationPassiveRedirectBasedClaimsAwareWebApp 的内容复制到 C:InetpubClaimapp。
+2.  将 C:program files 文件的内容复制 (x86) Windows Identity Foundation SDKv 3.5 SamplesQuick StartWeb ApplicationPassiveRedirectBasedClaimsAwareWebApp 到 C:InetpubClaimapp。
 
 3.  编辑 **Default.aspx.cs** 文件，以便不发生声明过滤。 执行此步骤以确保示例应用程序显示由联合服务器颁发的所有声明。 请执行以下操作：
 
@@ -260,7 +258,7 @@ ms.locfileid: "87182353"
 
     2.  在 `ExpectedClaims`的第二个实例中搜索文件。
 
-    3.  注释掉整个 `IF` 语句及其左大括号。 通过在行的开头键入 "//" （不包含引号）来指示注释。
+    3.  注释掉整个 `IF` 语句及其左大括号。 通过在行的开头键入 "//" (而不是引号) 来指示注释。
 
     4.  你的 `FOREACH` 语句现在看起来应像此代码示例所示。
 
@@ -303,7 +301,7 @@ ms.locfileid: "87182353"
 
 5.  若要将 **claimapp** 配置为与你的联合服务器一起使用，请执行以下内容：
 
-    1.  运行 FedUtil.exe，它位于**C:program files Files （x86） Windows Identity Foundation sdkv 3.5**中。
+    1.  运行 FedUtil.exe，它位于**x86) Windows Identity Foundation sdkv 3.5 (C:program files 文件**中。
 
     2.  将应用程序配置位置设置为 " **C:inetputclaimappweb.config** "，并将 "应用程序 URI" 设置为站点** https://webserv1.contoso.com /claimapp/** 的 URL。 单击“下一步”。
 
@@ -313,7 +311,7 @@ ms.locfileid: "87182353"
 
     5.  选中“不加密”****，然后单击“下一步”****。 在“提供的声明”页上，单击“下一步”********。
 
-    6.  选中“计划任务以执行每日 WS 联合身份验证元数据更新”**** 旁边的复选框。 单击 **“完成”** 。
+    6.  选中“计划任务以执行每日 WS 联合身份验证元数据更新”**** 旁边的复选框。 单击“完成”。
 
     7.  现在配置你的示例应用程序。 如果测试应用程序 URL **https://webserv1.contoso.com/claimapp** ，它应将你重定向到联合服务器。 联合服务器应显示一个错误页面，因为你尚未配置信赖方信任。 换句话说，你没有 AD FS 保护此测试应用程序。
 

@@ -1,24 +1,22 @@
 ---
 title: 规划始终启用 VPN 部署
 description: 本主题提供有关在 Windows Server 2016 中部署 Always On VPN 的规划说明。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 3c9de3ec-4bbd-4db0-b47a-03507a315383
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 11/05/2018
-ms.openlocfilehash: c1e85f2ee44d241bdc04e63d20de36e5cdeafb1a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f1d89b21c62826ff593117edeb6dc82eb74610e7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814490"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958135"
 ---
-# <a name="step-1-plan-the-always-on-vpn-deployment"></a>步骤 1： 规划 Always On VPN 部署
+# <a name="step-1-plan-the-always-on-vpn-deployment"></a>步骤 1。 规划 Always On VPN 部署
 
->适用于： Windows Server （半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>适用于： Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows 10
 
 - [**上一个：** 了解用于部署 Always On VPN 的工作流](always-on-vpn-deploy-deployment.md)
 - [**下一步：** 步骤2。配置服务器基础结构](vpn-deploy-server-infrastructure.md)
@@ -45,11 +43,11 @@ ms.locfileid: "80814490"
 IKEv2 是[Internet 工程任务团队请求注释 7296](https://datatracker.ietf.org/doc/rfc7296/)中所述的 VPN 隧道协议。 IKEv2 的主要优点是它不必完全了基础网络连接中的中断。 例如，如果连接暂时断开或用户将客户端计算机从一个网络移到另一个网络，则重新建立网络连接 IKEv2 时，IKEv2 会自动恢复 VPN 连接，而无需用户干预。
 
 >[!TIP]
->你可以配置远程访问 VPN 服务器以支持 IKEv2 连接，同时还禁用未使用的协议，从而减少服务器的安全空间。 
+>你可以配置远程访问 VPN 服务器以支持 IKEv2 连接，同时还禁用未使用的协议，从而减少服务器的安全空间。
 
 ## <a name="plan-ip-addresses-for-remote-clients"></a>规划远程客户端的 IP 地址
 
-你可以配置 VPN 服务器，以将地址分配给 VPN 客户端，从你配置的静态地址池或从 DHCP 服务器中的 IP 地址。 
+你可以配置 VPN 服务器，以将地址分配给 VPN 客户端，从你配置的静态地址池或从 DHCP 服务器中的 IP 地址。
 
 ## <a name="prepare-the-environment"></a>准备环境
 
@@ -57,17 +55,17 @@ IKEv2 是[Internet 工程任务团队请求注释 7296](https://datatracker.ietf
 
 - **为 VPN 客户端选择一系列静态 IP 地址**。 确定要支持的同时 VPN 客户端的最大数目。 另外，在内部外围网络上规划一系列静态 IP 地址，以满足该要求，即*静态地址池*。 如果使用 DHCP 在内部 DMZ 上提供 IP 地址，则可能还需要为 DHCP 中的这些静态 IP 地址创建排除项。
 
-- **请确保可以编辑公共 DNS 区域**。 将 DNS 记录添加到公共 DNS 域以支持 VPN 基础结构。 
+- **请确保可以编辑公共 DNS 区域**。 将 DNS 记录添加到公共 DNS 域以支持 VPN 基础结构。
 
-- **确保所有 VPN 用户在 Active Directory 用户（AD DS）中具有用户帐户**。 在用户可以使用 VPN 连接连接到网络之前，他们必须具有 AD DS 中的用户帐户。
+- **请确保所有 VPN 用户的用户帐户 Active Directory 用户 (AD DS) **。 在用户可以使用 VPN 连接连接到网络之前，他们必须具有 AD DS 中的用户帐户。
 
-## <a name="prepare-routing-and-firewall"></a>准备路由和防火墙 
+## <a name="prepare-routing-and-firewall"></a>准备路由和防火墙
 
 将 VPN 服务器安装在外围网络中，这会将外围网络划分为内部和外部外围网络。 根据网络环境，可能需要进行几次路由修改。
 
-- **可有可无配置端口转发。** 边缘防火墙必须打开与 IKEv2 VPN 关联的端口和协议 Id，并将其转发到 VPN 服务器。 在大多数环境中，执行此操作要求你配置端口转发。 将通用数据报协议（UDP）端口500和4500重定向到 VPN 服务器。
+- ** (可选) 配置端口转发。** 边缘防火墙必须打开与 IKEv2 VPN 关联的端口和协议 Id，并将其转发到 VPN 服务器。 在大多数环境中，执行此操作要求你配置端口转发。 将通用数据报协议 (UDP) 端口500和4500重定向到 VPN 服务器。
 
-- **配置路由，以便 DNS 服务器和 VPN 服务器可以访问 Internet**。 此部署使用 IKEv2 和网络地址转换（NAT）。 请确保 VPN 服务器可以访问所有需要的内部网络和网络资源。 从 VPN 服务器无法访问的任何网络或资源也无法通过来自远程位置的 VPN 连接访问。
+- **配置路由，以便 DNS 服务器和 VPN 服务器可以访问 Internet**。 此部署使用 IKEv2 和网络地址转换 (NAT) 。 请确保 VPN 服务器可以访问所有需要的内部网络和网络资源。 从 VPN 服务器无法访问的任何网络或资源也无法通过来自远程位置的 VPN 连接访问。
 
 在大多数环境中，若要访问新的内部外围网络，请调整边缘防火墙和 VPN 服务器上的静态路由。 但在更复杂的环境中，可能需要将静态路由添加到内部路由器，或者调整 VPN 服务器的内部防火墙规则，以及与 VPN 客户端关联的 IP 地址块。
 

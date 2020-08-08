@@ -6,12 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: f4c4cfa0fe56acc19f1a78a5b1140d90b585cce5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ae0aa44dba50c467dd1bd2423e9eb67104387cd3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953306"
+ms.locfileid: "87994491"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>将域控制器升级到 Windows Server 2012 R2 和 Windows Server 2012
 
@@ -55,7 +55,7 @@ ms.locfileid: "87953306"
 - [在现有域中安装副本 Windows Server 2012 域控制器（级别 200）](./install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain--level-200-.md)
 - [安装新的 Windows Server 2012 Active Directory 子域或树域（级别 200）](./install-a-new-windows-server-2012-active-directory-child-or-tree-domain--level-200-.md)
 - [安装 Windows Server 2012 Active Directory 只读域控制器 (RODC)（级别 200）](./rodc/install-a-windows-server-2012-active-directory-read-only-domain-controller--rodc---level-200-.md)
-- [Windows Server 2012 论坛关于域控制器](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+- [Windows Server 2012 论坛关于域控制器](/answers/topics/windows-server-2012.html)
 
 ## <a name="windows-update-considerations"></a>Windows 更新注意事项
 
@@ -175,7 +175,7 @@ AD DS 安装向导中的先决条件检查可以在开始安装之前识别潜�
 
 本部分介绍仅用于从 Windows Server 2008 或 Windows Server 2008 R2 升级域控制器的磁盘空间要求。 有关将域控制器升级到早期版本的 Windows Server 的磁盘空间要求的详细信息，请参阅 [升级到 Windows Server 2008 的磁盘空间要求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008) 或 [升级到 Windows Server 2008 R2 的磁盘空间要求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008R2)。
 
-为了容纳自定义的和应用程序驱动的架构扩展、应用程序以及管理员启动的索引，需要向托管 Active Directory 数据库和日志文件的磁盘分配空间；此外，还需要为部署域控制器期间（通常为 5 至 8 年）添加到目录中的对象和属性提供空间。 在部署时就分配适当的磁盘空间通常是一项可靠的投资，相比较而言，如果完成部署后再扩展磁盘存储空间，则需要花费更多的成本。 有关详细信息，请参阅 [Active Directory 域服务的容量规划](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/active-directory-server/capacity-planning-for-active-directory-domain-services)。
+为了容纳自定义的和应用程序驱动的架构扩展、应用程序以及管理员启动的索引，需要向托管 Active Directory 数据库和日志文件的磁盘分配空间；此外，还需要为部署域控制器期间（通常为 5 至 8 年）添加到目录中的对象和属性提供空间。 在部署时就分配适当的磁盘空间通常是一项可靠的投资，相比较而言，如果完成部署后再扩展磁盘存储空间，则需要花费更多的成本。 有关详细信息，请参阅 [Active Directory 域服务的容量规划](../../../administration/performance-tuning/role/active-directory-server/capacity-planning-for-active-directory-domain-services.md)。
 
 在计划升级的域控制器上，请在开始升级操作系统之前，先确保托管 Active Directory 数据库 (NTDS.DIT) 的驱动器至少具有相当于 NTDS.DIT 文件大小 20% 的可用磁盘空间。 如果卷上没有足够的可用磁盘空间，升级将会失败并且升级兼容性报告将返回错误，指明可用磁盘空间不足：
 

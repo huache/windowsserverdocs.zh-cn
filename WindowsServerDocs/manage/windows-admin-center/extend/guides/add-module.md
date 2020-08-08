@@ -1,19 +1,17 @@
 ---
 title: 将模块添加到工具扩展中
-description: 开发工具扩展 Windows 管理中心 SDK （Project Honolulu）-向工具扩展添加模块
-ms.technology: manage
+description: 开发工具扩展 Windows 管理中心 SDK (项目 Honolulu) 向工具扩展添加模块
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 9d30980ca404187ff1481242c1c0ef0a3d571416
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7875f8aa2320d7292b314cb18f3e17894e76fa0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357096"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945040"
 ---
 # <a name="add-a-module-to-a-tool-extension"></a>将模块添加到工具扩展中
 
@@ -21,19 +19,19 @@ ms.locfileid: "71357096"
 
 在本文中，我们将向使用 Windows 管理中心 CLI 创建的工具扩展添加一个空模块。
 
-## <a name="prepare-your-environment"></a>准备你的环境
+## <a name="prepare-your-environment"></a>准备环境
 
-如果尚未这样做，请按照开发[工具](../develop-tool.md)（或[解决方案](../develop-solution.md)）扩展中的说明来准备环境，并创建新的空工具扩展。
+如果尚未这样做，请按照开发[工具](../develop-tool.md) (或[解决方案](../develop-solution.md)) 扩展中的说明来准备环境，并创建新的空工具扩展。
 
-## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>使用角度 CLI 创建模块（和组件）
+## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>使用 "角度" CLI 创建模块 (和组件) 
 
-如果你不熟悉 Angular，强烈建议你阅读 Angular.Io 网站上的文档，以了解 Angular 和 NgModule。 有关 NgModule 的详细信息，请转至： https://angular.io/guide/ngmodule
+如果你不熟悉 Angular，强烈建议你阅读 Angular.Io 网站上的文档，以了解 Angular 和 NgModule。 有关 NgModule 的详细信息，请转至：https://angular.io/guide/ngmodule
 
-* 有关使用 Angular CLI 生成新模块的详细信息，请访问： https://github.com/angular/angular-cli/wiki/generate-module
-* 有关使用 Angular CLI 生成新组件的详细信息，请访问： https://github.com/angular/angular-cli/wiki/generate-component
+* 有关使用 Angular CLI 生成新模块的详细信息，请访问：https://github.com/angular/angular-cli/wiki/generate-module
+* 有关使用 Angular CLI 生成新组件的详细信息，请访问：https://github.com/angular/angular-cli/wiki/generate-component
 
 
-打开命令提示符，将目录更改为你项目中的 \src\app，然后运行以下命令，将 ```{!ModuleName}``` 替换为你的模块名称（删除空格）：
+打开命令提示符，将目录更改为项目中的 \src\app，然后运行以下命令，并将替换 ```{!ModuleName}``` 为) 删除空格 (空格：
 
 ```
 cd \src\app
@@ -41,7 +39,7 @@ ng generate module {!ModuleName}
 ng generate component {!ModuleName}
 ```
 
-| ReplTest1 | 说明 | 示例 |
+| 值 | 说明 | 示例 |
 | ----- | ----------- | ------- |
 | ```{!ModuleName}``` | 模块名称（删除空格） | ```ManageFooWorksPortal``` |
 
@@ -55,7 +53,7 @@ ng generate component ManageFooWorksPortal
 
 ## <a name="add-routing-information"></a>添加路由信息
 
-如果你不熟悉 Angular，强烈推荐你了解 Angular 路由和导航。 以下各节定义了必要的路由元素，可使 Windows Admin Center 导航到扩展并在扩展之间的视图间进行导航，以响应用户活动。 要了解详细信息，请转至： https://angular.io/guide/router
+如果你不熟悉 Angular，强烈推荐你了解 Angular 路由和导航。 以下各节定义了必要的路由元素，可使 Windows Admin Center 导航到扩展并在扩展之间的视图间进行导航，以响应用户活动。 要了解详细信息，请转至：https://angular.io/guide/router
 
 使用在上述步骤中所用的模块名称。
 
@@ -65,7 +63,7 @@ ng generate component ManageFooWorksPortal
 
 * 按照此命名约定，创建新文件 ```{!module-name}.routing.ts```：
 
-    | ReplTest1 | 说明 | 示例文件名 |
+    | 值 | 说明 | 示例文件名 |
     | ----- | ----------- | ------- |
     | ```{!module-name}``` | 模块名称（小写，空格替换为短划线） | ```manage-foo-works-portal.routing.ts``` |
 
@@ -83,7 +81,7 @@ ng generate component ManageFooWorksPortal
             // if the component has child components that need to be routed to, include them in the children array.
             children: [
                 {
-                    path: '', 
+                    path: '',
                     redirectTo: 'base',
                     pathMatch: 'full'
                 }
@@ -103,7 +101,7 @@ ng generate component ManageFooWorksPortal
 
 * 将刚创建的文件中的值替换为所需的值：
 
-    | ReplTest1 | 说明 | 示例 |
+    | 值 | 说明 | 示例 |
     | ----- | ----------- | ------- |
     | ```{!ModuleName}``` | 模块名称（删除空格） | ```ManageFooWorksPortal``` |
     | ```{!module-name}``` | 模块名称（小写，空格替换为短划线） | ```manage-foo-works-portal``` |
@@ -112,7 +110,7 @@ ng generate component ManageFooWorksPortal
 
 打开使用以下命名约定找到的文件 ```{!module-name}.module.ts```：
 
-| ReplTest1 | 说明 | 示例文件名 |
+| 值 | 说明 | 示例文件名 |
 | ----- | ----------- | ------- |
 | ```{!module-name}``` | 模块名称（小写，空格替换为短划线） | ```manage-foo-works-portal.module.ts``` |
 
@@ -124,7 +122,7 @@ ng generate component ManageFooWorksPortal
 
 * 将刚添加的内容中的值替换为所需的值：
 
-    | ReplTest1 | 说明 | 示例 |
+    | 值 | 说明 | 示例 |
     | ----- | ----------- | ------- |
     | ```{!module-name}``` | 模块名称（小写，空格替换为短划线） | ```manage-foo-works-portal``` |
 
@@ -140,10 +138,10 @@ ng generate component ManageFooWorksPortal
 
 打开使用以下命名约定找到的文件 ```{!module-name}.component.ts```：
 
-| ReplTest1 | 说明 | 示例文件名 |
+| 值 | 说明 | 示例文件名 |
 | ----- | ----------- | ------- |
 | ```{!module-name}``` | 模块名称（小写，空格替换为短划线） | ```manage-foo-works-portal.component.ts``` |
-    
+
 将文件中的内容修改为以下内容：
 
 ``` ts
@@ -157,23 +155,23 @@ public ngOnInit() {
 ```
 ### <a name="update-app-routingmodulets"></a>更新应用程序-路由
 
-打开文件 ```app-routing.module.ts```，并修改默认路径，以便加载刚刚创建的新模块。  找到 ```path: ''``` 的条目，然后更新 ```loadChildren``` 以加载模块，而不是默认模块：
+打开文件 ```app-routing.module.ts``` ，修改默认路径，以便加载刚创建的新模块。  查找的条目 ```path: ''``` ，并更新 ```loadChildren``` 以加载模块，而不是默认模块：
 
-| ReplTest1 | 说明 | 示例 |
+| 值 | 说明 | 示例 |
 | ----- | ----------- | ------- |
 | ```{!ModuleName}``` | 模块名称（删除空格） | ```ManageFooWorksPortal``` |
 | ```{!module-name}``` | 模块名称（小写，空格替换为短划线） | ```manage-foo-works-portal``` |
 
 ``` ts
     {
-        path: '', 
+        path: '',
         loadChildren: 'app/{!module-name}/{!module-name}.module#{!ModuleName}Module'
     },
 ```
 下面是已更新的默认路径的示例：
 ``` ts
     {
-        path: '', 
+        path: '',
         loadChildren: 'app/manage-foo-works-portal/manage-foo-works-portal.module#ManageFooWorksPortalModule'
     },
 ```

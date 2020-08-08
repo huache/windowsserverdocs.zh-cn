@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: 工作文件夹概述 - Windows Server 中的一个服务器角色，可为用户访问电脑和设备上的工作文件提供一致的方式。
-ms.openlocfilehash: 5641ea38a75e79420a5e697c14c0e4e3422aa913
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: adc03d9bcb4289896b996984ebb53b185008f3fb
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970064"
+ms.locfileid: "87994110"
 ---
 # <a name="work-folders-overview"></a>工作文件夹概述
 
@@ -170,5 +170,5 @@ ms.locfileid: "87970064"
 | **部署** | -   [设计工作文件夹实现](plan-work-folders.md)<br />-   [部署工作文件夹](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 应用程序代理部署工作文件夹 (WAP) ](deploy-work-folders-adfs-overview.md)<br />-   [使用 Azure AD 应用程序代理部署工作文件夹](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />- [脱机文件 (CSC) 到工作文件夹迁移指南](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [工作文件夹部署的性能注意事项](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [适用于 Windows 7 (64 位下载) 的工作文件夹](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [适用于 Windows 7 (32 位下载) 的工作文件夹](https://www.microsoft.com/download/details.aspx?id=42559) |
 | **操作** | -   [工作文件夹 iPad 应用：](https://windows.microsoft.com/windows/work-folders-ipad-faq)用户的 FAQ () <br />-   [工作文件夹证书管理](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (博客文章) <br />-   [监视 Windows Server 2012 R2 工作文件夹部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (博客文章) <br />-   [Windows PowerShell 中的 Set-syncshare (工作文件夹) Cmdlet](/powershell/module/syncshare/?view=win10-ps)<br />-   [Windows Server 2012 R2 预览版的存储和文件服务 PowerShell Cmdlet 快速参考卡](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
 | **故障排除** | -   [Windows Server 2012 R2 - 使用 IIS 网站和工作文件夹解决端口冲突](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)（博客文章）<br />-   [工作文件夹中的常见错误](https://techcommunity.microsoft.com/t5/storage-at-microsoft/troubleshooting-work-folders-on-windows-client/ba-p/425627) |
-| **社区资源** | -   [文件服务和存储论坛](https://docs.microsoft.com/answers/topics/windows-server-storage.html)<br />-   [Microsoft 文件 Cabinet 博客上的存储团队博客](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [询问目录服务团队博客](/archive/blogs/askds/) |
+| **社区资源** | -   [文件服务和存储论坛](/answers/topics/windows-server-storage.html)<br />-   [Microsoft 文件 Cabinet 博客上的存储团队博客](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [询问目录服务团队博客](/archive/blogs/askds/) |
 | **相关技术** | -   [Windows Server 2016 中的存储](../storage.yml)<br>-   [文件和存储服务](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))<br />-   [文件服务器资源管理器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))<br />-   [文件夹重定向、脱机文件和漫游用户配置文件](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848267(v=ws.11))<br />-   [BranchCache](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11))<br />-   [DFS 命名空间和 DFS 复制](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) |

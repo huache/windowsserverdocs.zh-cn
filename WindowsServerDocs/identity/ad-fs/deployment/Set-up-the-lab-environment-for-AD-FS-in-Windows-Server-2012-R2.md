@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 30dc33bec01cf4a9ab0b944464d4bbc60f6ca74e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 276c4d22c3df64debd696ae07fff996fdbf4ceea
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938229"
+ms.locfileid: "87994281"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>为 Windows Server 2012 R2 中的 AD FS 设置实验室环境
 
@@ -85,7 +85,7 @@ ms.locfileid: "87938229"
 
 -   使用者备用名称 (DNS)：enterpriseregistration.contoso.com
 
-有关设置 SSL 证书的详细信息，请参阅 [使用企业 CA 在域中的网站上配置 SSL/TLS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11))。
+有关设置 SSL 证书的详细信息，请参阅 [使用企业 CA 在域中的网站上配置 SSL/TLS](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11))。
 
 [Active Directory 联合身份验证服务操作方法视频系列：更新证书](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)。
 

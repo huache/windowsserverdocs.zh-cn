@@ -1,37 +1,35 @@
 ---
 title: 控制工具在解决方案中的可见性
-description: 控制工具在解决方案中的可见性 Windows 管理中心 SDK （Project Honolulu）
-ms.technology: manage
+description: '控制工具在解决方案中的可见性 Windows 管理中心 SDK (Project Honolulu) '
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 440ba3d11da671beedc2c2fb90caa3e176f83877
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: df939bb1a87c9ded77431661dcabd7faf607bb6e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385322"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945000"
 ---
 # <a name="control-your-tools-visibility-in-a-solution"></a>控制工具在解决方案中的可见性 #
 
 >适用于：Windows Admin Center、Windows Admin Center 预览版
 
-有时你可能想要从 "可用工具" 列表中排除（或隐藏）你的扩展或工具。 例如，如果你的工具仅面向 Windows Server 2016 （而不是较早的版本），则你可能不希望连接到 Windows Server 2012 R2 服务器的用户完全查看你的工具。 （假设用户体验-他们单击它，等待工具加载，而只获取一条消息，指出其功能无法用于其连接。）你可以定义在工具的清单 json 文件中显示（或隐藏）功能的时间。
+有时，你可能想要从 "可用工具" 列表中排除 (或隐藏) 你的扩展或工具。 例如，如果你的工具仅面向 Windows Server 2016 (不是旧版本) ，你可能不希望连接到 Windows Server 2012 R2 服务器的用户完全查看你的工具。  (假设用户体验-他们单击该体验，等待该工具加载，只会获得一条消息，指出其功能无法用于其连接。 ) 可以定义 (或隐藏在该工具的 manifest.js文件中) 功能的时间。
 
 ## <a name="options-for-deciding-when-to-show-a-tool"></a>用于决定何时显示工具的选项 ##
 
 您可以使用三个不同的选项来确定是否应显示工具并使其可用于特定服务器或群集连接。
 
-* 主机
-* 清单（属性数组）
-* script
+* localhost
+* 清单 (属性的数组) 
+* 脚本
 
 ### <a name="localhost"></a>主机 ###
 
-条件对象的 localHost 属性包含一个布尔值，计算此值后，可以推断连接节点是否为 localHost （Windows 管理中心安装所在的同一台计算机）。 通过向属性传递值，你可以指示何时（条件）显示此工具。 例如，如果你只希望在用户实际上连接到本地主机时显示该工具，请按如下所示进行设置：
+条件对象的 localHost 属性包含一个布尔值，可对其进行评估，以推断连接节点是否是 localHost (在) 上安装了 Windows 管理中心的同一计算机上。 通过向属性传递一个值，可指示 (条件) 显示该工具的时间。 例如，如果你只希望在用户实际上连接到本地主机时显示该工具，请按如下所示进行设置：
 
 ``` json
 "conditions": [
@@ -83,13 +81,13 @@ ms.locfileid: "71385322"
 
 SDK 包括一组预特选的清单属性，您可以使用这些属性来构建条件，确定何时可以使用您的工具。 "清单" 数组中有九个不同的属性：
 
-| 属性名 | 预期值类型 |
+| 属性名称 | 预期值类型 |
 | ------------- | ------------------- |
-| computerManufacturer | string |
+| computerManufacturer | 字符串 |
 | operatingSystemSKU | number |
-| operatingSystemVersion | version_string （例如："10.1. *"） |
+| operatingSystemVersion | version_string (例如： "10.1. *" )  |
 | productType | number |
-| clusterFqdn | string |
+| clusterFqdn | 字符串 |
 | isHyperVRoleInstalled | boolean |
 | isHyperVPowershellInstalled | boolean |
 | isManagementToolsAvailable | boolean |
@@ -107,36 +105,36 @@ SDK 包括一组预特选的清单属性，您可以使用这些属性来构建�
 
 #### <a name="operator-values"></a>运算符值 ####
 
-| Operator | 描述 |
+| 运算符 | 描述 |
 | -------- | ----------- |
 | gt | 大于 |
-| ge | 大于或等于 |
+| ge | 大于等于 |
 | lt | 小于 |
-| le | 小于或等于 |
+| le | 小于等于 |
 | eq | 等于 |
 | ne | 不等于 |
-| 为 | 检查值是否为 true |
-| 非 | 检查值是否为 false |
-| 有 | 字符串中存在项 |
+| is | 检查值是否为 true |
+| not | 检查值是否为 false |
+| contains | 字符串中存在项 |
 | notContains | 字符串中不存在项 |
 
 #### <a name="data-types"></a>数据类型 ####
 
 "Type" 属性的可用选项：
 
-| 类型 | 描述 |
+| 类型 | 说明 |
 | ---- | ----------- |
-| version | 版本号（例如：10.1. *） |
+| 版本 | 版本号 (例如： 10.1. * )  |
 | number | 一个数值 |
-| string | 一个字符串值 |
+| 字符串 | 一个字符串值 |
 | boolean | true 或 false |
 
 #### <a name="value-types"></a>值类型 ####
 
 "Value" 属性接受以下类型：
 
-* string
-* number
+* 字符串
+* 数字
 * boolean
 
 正确格式的清单条件集如下所示：
@@ -193,9 +191,9 @@ SDK 包括一组预特选的清单属性，您可以使用这些属性来构建�
         @{Name='Prop2'; Value = 12345678; Type='number'; };
 }
 ```
-"状态" 属性是一个重要值，用于控制在 "工具" 列表中显示或隐藏扩展的决定。  允许的值为:
+"状态" 属性是一个重要值，用于控制在 "工具" 列表中显示或隐藏扩展的决定。  允许的值为：
 
-| ReplTest1 | 描述 |
+| “值” | 描述 |
 | ---- | ----------- |
 | 可用 | 该扩展应显示在 "工具" 列表中。 |
 | NotSupported | 不应在 "工具" 列表中显示该扩展。 |
@@ -212,7 +210,7 @@ $response = @{
 }
 
 if (Get-Module -ListAvailable -Name servermanager) {
-    Import-module servermanager; 
+    Import-module servermanager;
     $isInstalled = (Get-WindowsFeature -name bitlocker).Installed;
     $isGood = $isInstalled;
 }
@@ -272,7 +270,7 @@ $response
 
 通过定义多个 "要求" 块，你可以使用多组要求来确定何时显示你的工具。
 
-例如，若要在 "方案 A" 或 "方案 B" 为 true 时显示你的工具，请定义两个要求块;如果任一条件为 true （即满足要求块中的所有条件），则会显示该工具。
+例如，若要在 "方案 A" 或 "方案 B" 为 true 时显示你的工具，请定义两个要求块;如果任一条件为 true (即满足要求块中的所有条件) ，则会显示该工具。
 
 ``` json
 "entryPoints": [

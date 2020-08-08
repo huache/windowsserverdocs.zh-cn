@@ -1,27 +1,25 @@
 ---
 title: 使用 Azure AD 的 VPN 连接条件访问
-description: 在此可选步骤中，可以使用 Azure Active Directory （Azure AD）条件访问来微调已授权的 VPN 用户访问资源的方式。
-ms.prod: windows-server
-ms.technology: networking-ras
+description: 在此可选步骤中，可以使用 Azure Active Directory (Azure AD) 条件性访问，来微调已授权的 VPN 用户访问资源的方式。
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 06/28/2019
 ms.reviewer: deverette
-ms.openlocfilehash: da32df185cb0c0c2370e60119dd9c2fbd510bd08
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9c57d120106041692b920891b7d0c3341daec314
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964259"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958225"
 ---
-# <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>步骤 7. 可有可无使用 Azure AD 的 VPN 连接的条件性访问
+# <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>步骤 7. 使用 Azure AD (可选) VPN 连接的条件性访问
 
 - [**上一个：** 步骤6。配置 Windows 10 客户端 Always On VPN 连接](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
-- [**下一步：** 步骤7.1。配置 EAP-TLS 以忽略证书吊销列表（CRL）检查](vpn-config-eap-tls-to-ignore-crl-checking.md)
+- [**下一步：** 步骤7.1。将 EAP-TLS 配置为忽略证书吊销列表 (CRL) 检查](vpn-config-eap-tls-to-ignore-crl-checking.md)
 
-在此可选步骤中，可以使用[Azure Active Directory （Azure AD）条件访问](/azure/active-directory/active-directory-conditional-access-azure-portal)来微调 VPN 用户访问资源的方式。 使用 Azure AD 虚拟专用网络（VPN）连接的条件性访问，你可以帮助保护 VPN 连接。 条件访问是基于策略的评估引擎，允许你为任何 Active Directory (Azure AD) 连接的应用程序创建访问规则。
+在此可选步骤中，可以使用[Azure Active Directory (Azure AD) 条件访问](/azure/active-directory/active-directory-conditional-access-azure-portal)来微调 VPN 用户访问资源的方式。 对于虚拟专用网络 (VPN) 连接 Azure AD 条件性访问，你可以帮助保护 VPN 连接。 条件访问是基于策略的评估引擎，允许你为任何 Active Directory (Azure AD) 连接的应用程序创建访问规则。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -40,13 +38,13 @@ ms.locfileid: "86964259"
 
 ## <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>[步骤 7.1.配置 EAP-TLS 以忽略证书吊销列表 (CRL) 检查](vpn-config-eap-tls-to-ignore-crl-checking.md)
 
-在此步骤中，你可以添加**IgnoreNoRevocationCheck** ，并将其设置为在证书不包括 CRL 分发点时允许客户端进行身份验证。 默认情况下，IgnoreNoRevocationCheck 设置为0（禁用）。
+在此步骤中，你可以添加**IgnoreNoRevocationCheck** ，并将其设置为在证书不包括 CRL 分发点时允许客户端进行身份验证。 默认情况下，IgnoreNoRevocationCheck 设置为 0 (禁用) 。
 
-如果 NPS 服务器完成了证书链的吊销检查（包括根证书），则 EAP-TLS 客户端将无法连接。 Azure AD 颁发给用户的云证书没有 CRL，因为它们是生存期为一小时的短有效期证书。 需要将 NPS 上的 EAP 配置为忽略缺少 CRL 的情况。 因为身份验证方法是 EAP-TLS，所以仅在**EAP\13**下需要此注册表值。 如果使用其他 EAP 身份验证方法，则还应将注册表值添加到这些方法下。
+除非 NPS 服务器完成证书链的吊销检查（包括根证书)  (），否则 EAP-TLS 客户端无法连接。 Azure AD 颁发给用户的云证书没有 CRL，因为它们是生存期为一小时的短有效期证书。 需要将 NPS 上的 EAP 配置为忽略缺少 CRL 的情况。 因为身份验证方法是 EAP-TLS，所以仅在**EAP\13**下需要此注册表值。 如果使用其他 EAP 身份验证方法，则还应将注册表值添加到这些方法下。
 
 ## <a name="step-72-create-root-certificates-for-vpn-authentication-with-azure-ad"></a>[步骤 7.2.使用 Azure AD 创建 VPN 身份验证的根证书](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
-在此步骤中，你将使用 Azure AD 配置用于 VPN 身份验证的根证书，这会在租户中自动创建 VPN 服务器云应用。  
+在此步骤中，你将使用 Azure AD 配置用于 VPN 身份验证的根证书，这会在租户中自动创建 VPN 服务器云应用。
 
 若要配置针对 VPN 连接的条件性访问，需要：
 
@@ -65,7 +63,7 @@ ms.locfileid: "86964259"
 
 1. 创建分配给 VPN 用户的条件性访问策略。
 2. 将云应用设置为**VPN 服务器**。
-3. 将授予权限（访问控制）设置为 "**需要多重身份验证**"。  您可以根据需要使用其他控件。
+3. 将 Grant (访问控制) 设置为**需要多重身份验证**。  您可以根据需要使用其他控件。
 
 ## <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>[步骤7.4。将条件性访问根证书部署到本地 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
 
@@ -83,7 +81,7 @@ ms.locfileid: "86964259"
 
 ## <a name="next-steps"></a>后续步骤
 
-[步骤7.1。将 EAP-TLS 配置为忽略证书吊销列表（CRL）检查](vpn-config-eap-tls-to-ignore-crl-checking.md)：在此步骤中，你必须添加**IgnoreNoRevocationCheck** ，并将其设置为允许在证书不包括 CRL 分发点时对客户端进行身份验证。 默认情况下，IgnoreNoRevocationCheck 设置为0（禁用）。
+[步骤7.1。将 EAP-TLS 配置为忽略证书吊销列表 (CRL) 检查](vpn-config-eap-tls-to-ignore-crl-checking.md)：在此步骤中，你必须添加**IgnoreNoRevocationCheck** ，并将其设置为允许在证书不包括 CRL 分发点时对客户端进行身份验证。 默认情况下，IgnoreNoRevocationCheck 设置为 0 (禁用) 。
 
 ## <a name="related-topics"></a>相关主题
 

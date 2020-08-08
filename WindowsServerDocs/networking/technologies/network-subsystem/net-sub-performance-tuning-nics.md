@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: a29830fe5f6f23138b5872b95926ae7dc8834ae4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0b6b09960e6d5f344aa4873d4c821ebdfb6f6a30
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955584"
+ms.locfileid: "87994225"
 ---
 # <a name="performance-tuning-network-adapters"></a>性能优化网络适配器
 
@@ -79,7 +79,7 @@ ms.locfileid: "87955584"
 
 以下是某些针对微秒敏感网络的性能优化建议。
 
-- 请将计算机的 BIOS 设置为**高性能**，并禁用 CPU 电源状态。 但是，请注意这与系统和 BIOS 相关，如果操作系统控制电源管理，则某些系统将提供更高的性能。 可以通过**设置**或使用**powercfg**命令来检查和调整电源管理设置。 有关详细信息，请参阅[Powercfg 命令行选项](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options)。
+- 请将计算机的 BIOS 设置为**高性能**，并禁用 CPU 电源状态。 但是，请注意这与系统和 BIOS 相关，如果操作系统控制电源管理，则某些系统将提供更高的性能。 可以通过**设置**或使用**powercfg**命令来检查和调整电源管理设置。 有关详细信息，请参阅[Powercfg 命令行选项](/windows-hardware/design/device-experiences/powercfg-command-line-options)。
 
 - 请将操作系统电源管理配置文件设置为**高性能系统**。
    > [!NOTE]
@@ -219,8 +219,8 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 有关这些 cmdlet 的详细信息，请参阅以下文章：
 
-- [NetTCPSetting](https://docs.microsoft.com/powershell/module/nettcpip/get-nettcpsetting?view=win10-ps)
-- [NetTCPSetting](https://docs.microsoft.com/powershell/module/nettcpip/set-nettcpsetting?view=win10-ps)
+- [NetTCPSetting](/powershell/module/nettcpip/get-nettcpsetting?view=win10-ps)
+- [NetTCPSetting](/powershell/module/nettcpip/set-nettcpsetting?view=win10-ps)
 
 #### <a name="autotuning-levels"></a>自动优化级别
 
@@ -376,6 +376,6 @@ Windows Server 2003 中的以下注册表设置不再受支持，在更高版本
 Windows Vista 和 Windows Server 2008 在 WFP)  (引入了 Windows 筛选平台。 WFP 向非 Microsoft 独立软件供应商提供 Api (Isv) 来创建数据包处理筛选器。 其示例包括防火墙和防病毒软件。
 
 > [!NOTE]
-> 编写不当的 WFP 筛选器可能会显著降低服务器的网络性能。 有关详细信息，请参阅 Windows 开发人员中心中的将[包处理驱动程序和应用程序移植到 WFP](https://docs.microsoft.com/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) 。
+> 编写不当的 WFP 筛选器可能会显著降低服务器的网络性能。 有关详细信息，请参阅 Windows 开发人员中心中的将[包处理驱动程序和应用程序移植到 WFP](/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) 。
 
 有关本指南中的所有主题的链接，请参阅[网络子系统性能优化](net-sub-performance-top.md)。

@@ -8,19 +8,19 @@ ms.reviewer: richagi
 ms.custom: it-pro
 ms.topic: article
 ms.date: 05/01/2018
-ms.openlocfilehash: a5cce413e2e95387edf73c628f38a4d225c80adb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a47cb5791b6e157b434d80535d10b107159db48f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955574"
+ms.locfileid: "87994601"
 ---
 # <a name="network-policy-server-user-data-collection"></a>网络策略服务器用户数据收集
 
 本文档介绍了如何查找网络策略服务器在你想要删除的网络策略服务器 (NPS) 收集的用户信息。
 
 >[!Note]
->如果你有兴趣查看或删除个人数据，请查看 GDPR 站点的[Windows 数据主体请求](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-windows)中的 Microsoft 指导。 如果正在查找有关 GDPR 的常规信息，请参阅[服务信任门户的 GDPR 部分](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)。
+>如果你有兴趣查看或删除个人数据，请查看 GDPR 站点的[Windows 数据主体请求](/microsoft-365/compliance/gdpr-dsr-windows)中的 Microsoft 指导。 如果正在查找有关 GDPR 的常规信息，请参阅[服务信任门户的 GDPR 部分](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)。
 
 ## <a name="information-collected-by-nps"></a>NPS 收集的信息
 
