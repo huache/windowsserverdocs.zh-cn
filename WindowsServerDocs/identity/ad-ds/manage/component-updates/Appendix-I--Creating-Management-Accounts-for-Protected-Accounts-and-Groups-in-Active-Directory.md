@@ -6,12 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7f8624b23a746eed5df9ab55c7c01d0dfbd9cb0f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 944e71b546f6e5a7484f533b5c6dc86840484e46
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943856"
+ms.locfileid: "87994921"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>附录 I：为 Active Directory 中受保护的帐户和组创建管理帐户
 
@@ -141,7 +141,7 @@ ms.locfileid: "87943856"
    >
    > 尽管为主机实现更安全的加密类型不能减少凭据被盗攻击，但安全主机的适当使用和配置也是如此。 为仅由特权帐户使用的主机设置更强的加密类型只是减少了计算机的整体攻击面。
    >
-   > 有关在系统和帐户上配置加密类型的详细信息，请参阅 " [Kerberos 支持的加密类型的 Windows 配置](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)"。
+   > 有关在系统和帐户上配置加密类型的详细信息，请参阅 " [Kerberos 支持的加密类型的 Windows 配置](/archive/blogs/openspecification/windows-configurations-for-kerberos-supported-encryption-type)"。
    >
    > 只有运行 Windows Server 2012、Windows Server 2008 R2、Windows 8 或 Windows 7 的计算机才支持这些设置。
 

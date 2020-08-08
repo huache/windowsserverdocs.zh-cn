@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 90fa1203f09bc04b27885034895e52db5fa1c5f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b90ea772874c2a5731e03f4bcbc44de6efc34a20
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971484"
+ms.locfileid: "87995035"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>创建密钥分发服务 KDS 根密钥
 
@@ -25,7 +25,7 @@ ms.locfileid: "87971484"
 > [!NOTE]
 > 删除并重新创建根密钥可能会导致出现这样的问题：由于缓存了密钥，因此在删除旧密钥后将继续使用旧密钥。 如果重新创建了根密钥，则应在所有域控制器上重新启动 (KDC) 的密钥分发服务。
 
-“域管理员”**** 或“企业管理员”**** 组中的成员身份或同等身份是完成此过程的最低要求。 有关使用适当帐户和组成员身份的详细信息，请参阅 [本地和域默认组](https://technet.microsoft.com/library/dd728026(WS.10).aspx)。
+“域管理员”**** 或“企业管理员”**** 组中的成员身份或同等身份是完成此过程的最低要求。 有关使用适当帐户和组成员身份的详细信息，请参阅 [本地和域默认组](/previous-versions/orphan-topics/ws.10/dd728026(v=ws.10))。
 
 > [!NOTE]
 > 要运行用于管理组托管服务帐户的 Windows PowerShell 命令，需要 64 位体系结构。
@@ -61,5 +61,3 @@ ms.locfileid: "87971484"
 
 ## <a name="see-also"></a>另请参阅
 [与组托管服务帐户入门](getting-started-with-group-managed-service-accounts.md)
-
-

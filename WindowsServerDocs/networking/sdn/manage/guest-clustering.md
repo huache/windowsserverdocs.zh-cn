@@ -2,19 +2,17 @@
 title: 虚拟网络中的来宾群集
 description: 仅允许连接到虚拟网络的虚拟机使用网络控制器分配的 IP 地址来在网络上进行通信。  需要浮动 IP 地址的群集技术（如 Microsoft 故障转移群集）需要执行一些额外的步骤才能正常工作。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
 author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 6889b58f5d49a4932ef8277b11e1002e85606f3f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6d597d4ced923c751e54ed4678ffb2d956a7b471
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854450"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994764"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>虚拟网络中的来宾群集
 
@@ -22,14 +20,14 @@ ms.locfileid: "80854450"
 
 仅允许连接到虚拟网络的虚拟机使用网络控制器分配的 IP 地址来在网络上进行通信。  需要浮动 IP 地址的群集技术（如 Microsoft 故障转移群集）需要执行一些额外的步骤才能正常工作。
 
-使浮动 IP 可访问的方法是使用软件负载平衡器 \(SLB\) 虚拟 IP \(VIP\)。  软件负载平衡器必须在该 IP 上的端口上配置运行状况探测，以便 SLB 将流量定向到当前具有该 IP 的计算机。
+使浮动 IP 可访问的方法是使用软件负载平衡器 \( SLB \) 虚拟 IP \( VIP \) 。  软件负载平衡器必须在该 IP 上的端口上配置运行状况探测，以便 SLB 将流量定向到当前具有该 IP 的计算机。
 
 
 ## <a name="example-load-balancer-configuration"></a>示例：负载均衡器配置
 
-此示例假设你已创建了将成为群集节点的 Vm，并将它们附加到虚拟网络。  有关指南，请参阅[创建 VM 并连接到租户虚拟网络或 VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)。  
+此示例假设你已创建了将成为群集节点的 Vm，并将它们附加到虚拟网络。  有关指南，请参阅[创建 VM 并连接到租户虚拟网络或 VLAN](./create-a-tenant-vm.md)。
 
-在此示例中，将创建一个虚拟 IP 地址（192.168.2.100）以表示群集的浮动 IP 地址，并配置一个运行状况探测来监视 TCP 端口59999，以确定哪个节点是活动节点。
+在此示例中，你将创建一个虚拟 IP 地址 (192.168.2.100) 以表示群集的浮动 IP 地址，并配置一个运行状况探测来监视 TCP 端口59999，以确定哪个节点是活动节点。
 
 1. 选择 VIP。<p>通过分配 VIP IP 地址进行准备，该地址可以是与群集节点在同一子网中的任何未使用或保留的地址。  VIP 必须与群集的浮动地址匹配。
 
@@ -46,7 +44,7 @@ ms.locfileid: "80854450"
    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
    ```
 
-3. 创建前台\-端 IP 地址。
+3. 创建前端 \- IP 地址。
 
    ```PowerShell
    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
@@ -59,7 +57,7 @@ ms.locfileid: "80854450"
    $FrontEnd.properties.privateIPAllocationMethod = "Static"
    ```
 
-4. 创建一个后\-结束池以包含群集节点。
+4. 创建后 \- 端池以包含群集节点。
 
    ```PowerShell
    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
@@ -69,10 +67,10 @@ ms.locfileid: "80854450"
    $LoadBalancerProperties.backendAddressPools += $BackEnd
    ```
 
-5. 添加探测以检测浮动地址当前处于活动状态的群集节点。 
+5. 添加探测以检测浮动地址当前处于活动状态的群集节点。
 
    >[!NOTE]
-   >在下面定义的端口上针对 VM 的永久地址的探测查询。  端口只能在活动节点上进行响应。 
+   >在下面定义的端口上针对 VM 的永久地址的探测查询。  端口只能在活动节点上进行响应。
 
    ```PowerShell
    $LoadBalancerProperties.probes += $lbprobe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
@@ -94,9 +92,9 @@ ms.locfileid: "80854450"
    $lbrule.ResourceId = "Rules1"
 
    $lbrule.properties.frontendipconfigurations += $FrontEnd
-   $lbrule.properties.backendaddresspool = $BackEnd 
+   $lbrule.properties.backendaddresspool = $BackEnd
    $lbrule.properties.protocol = "TCP"
-   $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433 
+   $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433
    $lbrule.properties.IdleTimeoutInMinutes = 4
    $lbrule.properties.EnableFloatingIP = $true
    $lbrule.properties.Probe = $lbprobe
@@ -124,9 +122,9 @@ ms.locfileid: "80854450"
    $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
    ```
 
-   创建负载均衡器并将网络接口添加到后端池后，便可以配置群集了。  
+   创建负载均衡器并将网络接口添加到后端池后，便可以配置群集了。
 
-9. 可有可无如果使用 Microsoft 故障转移群集，请继续下一个示例。 
+9.  (可选) 如果使用的是 Microsoft 故障转移群集，请继续下一个示例。
 
 ## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>示例2：配置 Microsoft 故障转移群集
 
@@ -139,10 +137,10 @@ ms.locfileid: "80854450"
    Import-module failoverclusters
 
    $ClusterName = "MyCluster"
-   
+
    $ClusterNetworkName = "Cluster Network 1"
-   $IPResourceName =  
-   $ILBIP = "192.168.2.100" 
+   $IPResourceName =
+   $ILBIP = "192.168.2.100"
 
    $nodes = @("DB1", "DB2")
    ```

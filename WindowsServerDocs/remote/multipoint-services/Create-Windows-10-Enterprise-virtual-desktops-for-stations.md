@@ -7,12 +7,12 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: fb36cb13f9a78ae028f1217dd667a106a81e5c94
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9f41b203ff14923c991f56b7166b37200bee6910
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937309"
+ms.locfileid: "87994979"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>为工作站创建 Windows 10 企业版虚拟桌面
 MultiPoint Services 中的此可选配置主要用于以下情况：对于每个用户，基本应用程序需要其自己的客户端操作系统实例。 示例包括无法在 Windows Server 上安装的应用程序，以及不会在同一台主机上运行多个实例的应用程序。
@@ -31,7 +31,7 @@ MultiPoint Services 中的此可选配置主要用于以下情况：对于每个
 | 图形 | DX11 |
 | BIOS | BIOS CPU 设置配置为启用虚拟化–第二级地址转换 (SLAT)  |
 
--   **工作站**-为 MultiPoint 服务系统设置工作站。 有关详细信息，请参阅[将其他工作站附加到 MultiPoint 服务](Attach-additional-stations-to-your-MultiPoint-services-computer.md)。
+-   **工作站**-为 MultiPoint 服务系统设置工作站。 有关详细信息，请参阅[将其他工作站附加到 MultiPoint 服务](./multipoint-attach-additional-stations.md)。
 
 -   **域**-在域环境中，Windows MultiPoint 服务器计算机已添加到域中，并且域用户已添加到 MultiPoint Services 主机操作系统上的本地管理员组中。
 

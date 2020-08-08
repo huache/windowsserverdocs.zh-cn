@@ -8,12 +8,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 8af6294ab604c0535040ba4aaa149d674854484c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 60f79b7bb624f6e64c0c32033335ddcd2eea262e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958195"
+ms.locfileid: "87995079"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Always On VPN 的高级功能
 
@@ -39,7 +39,7 @@ ms.locfileid: "87958195"
 
 |选项  |描述  |
 |---------|---------|
-|Windows Hello for Business     |在 Windows 10 中，Windows Hello 企业版通过在电脑和移动设备上提供强双重身份验证来替换密码。 此身份验证包含一种新类型的用户凭据，该凭据绑定到设备，并使用生物识别或个人识别码 (PIN) 。<p>Windows 10 VPN 客户端与 Windows Hello 企业版兼容。 用户使用手势登录后，VPN 连接将使用 Windows Hello 企业版证书进行基于证书的身份验证。<p>相关文档：<ul><li>[Windows Hello for Business](/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>技术案例研究：[使用 windows 10 中的 Windows Hello 企业版启用远程访问](/previous-versions//mt728163(v=technet.10))</li></ul>         |
+|Windows Hello for Business     |在 Windows 10 中，Windows Hello 企业版通过在电脑和移动设备上提供强双重身份验证来替换密码。 此身份验证包含一种新类型的用户凭据，该凭据绑定到设备，并使用生物识别或个人识别码 (PIN) 。<p>Windows 10 VPN 客户端与 Windows Hello 企业版兼容。 用户使用手势登录后，VPN 连接将使用 Windows Hello 企业版证书进行基于证书的身份验证。<p>相关文档：<ul><li>[Windows Hello for Business](/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>技术案例研究：[使用 windows 10 中的 Windows Hello 企业版启用远程访问](/previous-versions/mt728163(v=technet.10))</li></ul>         |
 |Azure 多重身份验证 (MFA)      |Azure MFA 有云和本地版本，你可以将其与 Windows VPN 身份验证机制集成。<p>有关此机制的工作原理的详细信息，请参阅将[RADIUS 身份验证与 Azure 多重身份验证服务器集成](/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius)。         |
 
 ## <a name="advanced-vpn-features"></a>高级 VPN 功能
@@ -151,7 +151,7 @@ ms.locfileid: "87958195"
 
 - [Windows Hello 企业版](/windows/access-protection/hello-for-business/hello-identity-verification)：本主题提供了先决条件，例如仅限云部署和混合部署。  本主题还列出了有关 Windows Hello 企业版的常见问题。
 
-- [技术案例研究：在 windows 10 中启用与 Windows Hello 企业版的远程访问](/previous-versions//mt728163(v=technet.10))：在此技术案例研究中，你将了解 Microsoft 如何实现与 Windows Hello 企业版的远程访问。  对于组织和消费者而言，Windows Hello 企业版是基于私钥/公钥或证书的身份验证方法，它比密码身份验证更有优势。 这种形式的身份验证依赖于密钥对凭据，这些凭据可替代密码，并可以抵御泄露、盗窃和网络钓鱼。
+- [技术案例研究：在 windows 10 中启用与 Windows Hello 企业版的远程访问](/previous-versions/mt728163(v=technet.10))：在此技术案例研究中，你将了解 Microsoft 如何实现与 Windows Hello 企业版的远程访问。  对于组织和消费者而言，Windows Hello 企业版是基于私钥/公钥或证书的身份验证方法，它比密码身份验证更有优势。 这种形式的身份验证依赖于密钥对凭据，这些凭据可替代密码，并可以抵御泄露、盗窃和网络钓鱼。
 
 - 将[radius 身份验证与 azure 多重身份验证服务器集成](/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius)：本主题介绍如何使用 azure 多重身份验证服务器添加和配置 radius 客户端身份验证。 RADIUS 是一种标准协议，用于接受身份验证请求并处理这些请求。 Azure 多重身份验证服务器可充当 RADIUS 服务器。
 

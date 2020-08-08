@@ -1,23 +1,21 @@
 ---
-title: 使用离散设备分配部署图形设备
+title: Deploy graphics devices using Discrete Device Assignment（使用离散设备分配部署图形设备）
 description: 了解如何使用 DDA 在 Windows Server 中部署图形设备
-ms.prod: windows-server
-ms.technology: hyper-v
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
 ms.date: 08/21/2019
-ms.openlocfilehash: 07f0ba19aaf998bb7b2fe8cf4ef1ba6cf8cae322
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e9a79ff12b89a5b99ce95213078406eb2d21ea2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860910"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945970"
 ---
-# <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>使用离散设备分配部署图形设备
+# <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>Deploy graphics devices using Discrete Device Assignment（使用离散设备分配部署图形设备）
 
-> 适用于： Microsoft Hyper-V Server 2016、Windows Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019  
+> 适用于： Microsoft Hyper-V Server 2016、Windows Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 从 Windows Server 2016 开始，可以使用离散设备分配或 DDA 将整个 PCIe 设备传递到 VM。  这样，便可以对设备进行高性能的访问，例如从 VM 内[NVMe 存储](./Deploying-storage-devices-using-dda.md)或图形卡，同时能够利用设备本机驱动程序。  请访问[使用离散设备分配部署设备的计划](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)，以了解有关设备工作的详细信息、可能的安全含义，等等。
 
@@ -53,19 +51,19 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
    ```
    Set-VM -HighMemoryMappedIoSpace 33280Mb -VMName VMName
    ```
-   > [!TIP] 
+   > [!TIP]
    > 以上 MMIO space 值是要设置为使用单个 GPU 进行试验的合理值。  如果启动 VM 后，设备会报告与资源不足相关的错误，则可能需要修改这些值。 若要了解如何精确计算 MMIO 要求，请参阅[使用离散设备分配部署设备的计划](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
 
 ## <a name="dismount-the-device-from-the-host-partition"></a>从主机分区卸载设备
 ### <a name="optional---install-the-partitioning-driver"></a>可选-安装分区驱动程序
 "离散设备分配" 提供硬件 venders 为其设备提供安全缓解驱动程序的能力。  请注意，此驱动程序与将在来宾 VM 中安装的设备驱动程序不同。  它由硬件供应商自行决定是否提供此驱动程序，但是，如果它们提供此驱动程序，请在从主机分区卸载设备之前安装它。  请与硬件供应商联系，以了解有关是否具有缓解驱动程序的详细信息
-> 如果未提供分区驱动程序，则在卸载过程中，必须使用 `-force` 选项来绕过安全警告。 有关[使用离散设备分配部署设备的计划](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)，请阅读有关如何执行此操作的详细信息。
+> 如果未提供分区驱动程序，则在卸载过程中，必须使用 `-force` 选项跳过安全警告。 有关[使用离散设备分配部署设备的计划](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)，请阅读有关如何执行此操作的详细信息。
 
 ### <a name="locating-the-devices-location-path"></a>查找设备的位置路径
-需要 PCI 位置路径才能从主机卸载和安装设备。  示例位置路径如下所示： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`。  可在此处找到有关位置路径的更多详细信息：[计划使用离散设备分配部署设备](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
+需要 PCI 位置路径才能从主机卸载和安装设备。  示例位置路径如下所示： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"` 。  可在此处找到有关位置路径的更多详细信息：[计划使用离散设备分配部署设备](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
 
 ### <a name="disable-the-device"></a>禁用设备
-使用设备管理器或 PowerShell，确保设备处于 "已禁用" 状态。  
+使用设备管理器或 PowerShell，确保设备处于 "已禁用" 状态。
 
 ### <a name="dismount-the-device"></a>卸除设备
 根据供应商是否提供缓解驱动程序，你需要使用 "-force" 选项。
@@ -101,7 +99,7 @@ Mount-VMHostAssignableDevice -LocationPath $locationPath
 ## <a name="example"></a>示例
 
 ### <a name="mounting-a-gpu-to-a-vm"></a>将 GPU 装载到 VM
-在此示例中，我们使用 PowerShell 配置名为 "ddatest1" 的 VM，以获取制造商 NVIDIA 提供的第一个 GPU，并将其分配给 VM。  
+在此示例中，我们使用 PowerShell 配置名为 "ddatest1" 的 VM，以获取制造商 NVIDIA 提供的第一个 GPU，并将其分配给 VM。
 ```
 #Configure the VM for a Discrete Device Assignment
 $vm =   "ddatest1"
@@ -131,7 +129,7 @@ Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
 Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 ```
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 如果已将 GPU 传递到 VM，但远程桌面或应用程序未识别 GPU，请检查是否存在以下常见问题：
 
@@ -139,4 +137,4 @@ Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 - 确保设备在 VM 内分配了足够的 MMIO 空间。 若要了解详细信息，请参阅[MMIO Space](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md#mmio-space)。
 - 请确保正在使用供应商支持在此配置中使用的 GPU。 例如，某些供应商在传递到 VM 后，阻止其使用者卡工作。
 - 请确保正在运行的应用程序支持在 VM 内运行，并且该应用程序支持 GPU 及其相关的驱动程序。 某些应用程序具有 Gpu 和环境的允许列表。
-- 如果你使用的是来宾上的远程桌面会话主机角色或 Windows Multipoint 服务，则需要确保将特定组策略条目设置为允许使用默认 GPU。 使用应用于来宾的组策略对象（或来宾上的本地组策略编辑器），导航到以下组策略项： > **Windows 组件 > Windows 组件** **远程桌面服务 > 远程桌面会话主机** ** >  > ** 远程桌面服务**远程会话环境**的**计算机配置** ** > ，** **为所有会话使用硬件默认图形适配器**。 将此值设置为 "已启用"，然后在应用策略后重新启动 VM。
+- 如果你使用的是来宾上的远程桌面会话主机角色或 Windows Multipoint 服务，则需要确保将特定组策略条目设置为允许使用默认 GPU。 使用应用于来宾 (的组策略对象或来宾) 上的本地组策略编辑器，导航到以下组策略项： "**计算机配置**" "  >  **管理员模板**" "  >  **Windows 组件**"  >  **远程桌面服务**  >  **远程桌面会话主机**  >  **远程会话环境**  >  **使用所有远程桌面服务会话的硬件默认图形适配器**。 将此值设置为 "已启用"，然后在应用策略后重新启动 VM。

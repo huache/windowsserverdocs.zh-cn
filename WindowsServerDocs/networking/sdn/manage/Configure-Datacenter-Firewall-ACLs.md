@@ -2,28 +2,26 @@
 title: 配置数据中心防火墙访问控制列表 (ACL)
 description: 可以将特定的 Acl 应用于网络接口。  如果在网络接口连接到的虚拟子网上还设置了 Acl，则这两个 Acl 将应用，但网络接口 Acl 优先于虚拟子网 Acl 之上。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 25f18927-a63e-44f3-b02a-81ed51933187
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: f6b1078f88b2d377c3c49934e2b1bd219641d82e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: da5b34556f0a9fd65a4a56adc778666f6911b449
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854560"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87995177"
 ---
-# <a name="configure-datacenter-firewall-access-control-lists-acls"></a>配置数据中心防火墙访问控制列表（Acl）
+# <a name="configure-datacenter-firewall-access-control-lists-acls"></a>配置数据中心防火墙访问控制列表 (Acl) 
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
 创建 ACL 并将其分配给虚拟子网后，你可能需要使用单个网络接口的特定 ACL 替代虚拟子网上的默认 ACL。  在这种情况下，你可以将特定 Acl 直接应用到连接到 Vlan 的网络接口，而不是虚拟网络。 如果在连接到网络接口的虚拟子网上设置了 Acl，则这两个 Acl 将应用并排定虚拟子网 Acl 以上的网络接口 Acl 的优先级。
 
 >[!IMPORTANT]
->如果尚未创建 ACL 并将其分配给虚拟网络，请参阅[使用访问控制列表（acl）管理数据中心网络流量流](Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)，创建 acl 并将其分配给虚拟子网。  
+>如果尚未创建 ACL 并将其分配给虚拟网络，请参阅[使用访问控制列表 (acl) 来管理数据中心网络流量流](./use-acls-for-traffic-flow.md)以创建 ACL 并将其分配给虚拟子网。
 
 在本主题中，我们将向你演示如何将 ACL 添加到网络接口。 还介绍了如何使用 Windows PowerShell 和网络控制器 REST API 从网络接口中删除 ACL。
 
@@ -32,35 +30,35 @@ ms.locfileid: "80854560"
 
 
 ## <a name="example-add-an-acl-to-a-network-interface"></a>示例：向网络接口添加 ACL
-在此示例中，我们将演示如何将 ACL 添加到虚拟网络。 
+在此示例中，我们将演示如何将 ACL 添加到虚拟网络。
 
 >[!TIP]
 >还可以在创建网络接口的同时添加 ACL。
 
 1. 获取或创建要将 ACL 添加到的网络接口。
- 
+
    ```PowerShell
    $nic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "MyVM_Ethernet1"
    ```
- 
+
 2. 获取或创建将添加到网络接口中的 ACL。
- 
+
    ```PowerShell
    $acl = get-networkcontrolleraccesscontrollist -ConnectionUri $uri -resourceid "AllowAllACL"
    ```
- 
+
 3. 将 ACL 分配到网络接口的 AccessControlList 属性
- 
+
    ```PowerShell
     $nic.properties.ipconfigurations[0].properties.AccessControlList = $acl
    ```
- 
+
 4. 在网络控制器中添加网络接口
- 
+
    ```
    new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid
    ```
- 
+
 ## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>示例：使用 Windows Powershell 和网络控制器从网络接口中删除 ACL REST API
 在此示例中，我们将向你展示如何删除 ACL。 删除 ACL 会将默认的规则集应用于网络接口。 默认规则集允许所有出站流量，但会阻止所有入站流量。
 
@@ -72,12 +70,12 @@ ms.locfileid: "80854560"
    ```PowerShell
    $nic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "MyVM_Ethernet1"
    ```
- 
+
 2. 将 $NULL 分配到 ipConfiguration 的 AccessControlList 属性。<br>
    ```PowerShell
    $nic.properties.ipconfigurations[0].properties.AccessControlList = $null
    ```
- 
+
 3. 在网络控制器中添加网络接口对象。<br>
    ```PowerShell
    new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid

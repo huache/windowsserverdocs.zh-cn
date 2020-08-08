@@ -7,12 +7,12 @@ ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: fd05441ecc64c05778234dc00fa315bb406dfb40
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: af8232de75005ae295079eb2207bce303629acaa
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970804"
+ms.locfileid: "87995194"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>将容器终结点连接到租户虚拟网络
 
@@ -20,7 +20,7 @@ ms.locfileid: "87970804"
 
 在本主题中，我们将介绍如何将容器终结点连接到通过 SDN 创建的现有租户虚拟网络。 可以使用*l2bridge* (，还可以选择) *l2tunnel*用于 Docker 的 Windows libnetwork 插件的网络驱动程序，以在租户 VM 上创建容器网络。
 
-在[容器网络驱动程序](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies)主题中，我们讨论了多个网络驱动程序通过 Windows 上的 Docker 提供。 对于 SDN，请使用*l2bridge*和*l2tunnel*驱动程序。 对于这两个驱动程序，每个容器终结点都与容器主机 (租户) 虚拟机位于同一虚拟子网中。
+在[容器网络驱动程序](/virtualization/windowscontainers/container-networking/network-drivers-topologies)主题中，我们讨论了多个网络驱动程序通过 Windows 上的 Docker 提供。 对于 SDN，请使用*l2bridge*和*l2tunnel*驱动程序。 对于这两个驱动程序，每个容器终结点都与容器主机 (租户) 虚拟机位于同一虚拟子网中。
 
 主机网络服务 (HNS) ，通过私有云插件，动态分配容器终结点的 IP 地址。 容器终结点具有唯一的 IP 地址，但由于第2层地址转换， (租户) 虚拟机共享同一 MAC 地址。
 
@@ -50,7 +50,7 @@ ms.locfileid: "87970804"
    ```
 
 >[!Note]
->除非使用 Hyper-v 容器，否则不需要[嵌套虚拟化](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting)和公开虚拟化扩展。
+>除非使用 Hyper-v 容器，否则不需要[嵌套虚拟化](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)和公开虚拟化扩展。
 
 
 ## <a name="workflow"></a>工作流
@@ -148,5 +148,4 @@ C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 >与 Microsoft SDN 堆栈一起使用时， *l2bridge*或*l2tunnel*容器网络不支持静态 IP 分配。
 
 ## <a name="more-information"></a>更多信息
-有关部署 SDN 基础结构的更多详细信息，请参阅[部署软件定义的网络基础结构](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure)。
-
+有关部署 SDN 基础结构的更多详细信息，请参阅[部署软件定义的网络基础结构](../deploy/deploy-a-software-defined-network-infrastructure.md)。

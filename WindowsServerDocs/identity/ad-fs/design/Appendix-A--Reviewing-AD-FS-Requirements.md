@@ -6,19 +6,19 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ad4275bf7b6231692171209b19c4c60190e30126
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ad3184dbe43cfa108aa1b178421102880b3ef4d7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942973"
+ms.locfileid: "87994988"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>附录 A：查看 AD FS 要求
 
 为了使 Active Directory 联合身份验证服务 (AD FS) 部署的组织伙伴可以成功地进行协作，你必须首先确保你的企业网络基础结构配置为支持帐户、名称解析和证书的 AD FS 要求。 AD FS 提出了以下类型的要求：
 
 > [!TIP]
-> 你可以在[了解密钥 AD FS 概念](https://docs.microsoft.com/windows-server/identity/ad-fs/technical-reference/understanding-key-ad-fs-concepts)中找到其他 AD FS 资源链接。
+> 你可以在[了解密钥 AD FS 概念](../technical-reference/understanding-key-ad-fs-concepts.md)中找到其他 AD FS 资源链接。
 
 ## <a name="hardware-requirements"></a>硬件要求
 以下最低要求和建议的硬件要求适用于联合服务器和联合服务器代理计算机。

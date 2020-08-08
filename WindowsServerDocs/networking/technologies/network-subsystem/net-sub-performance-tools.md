@@ -7,12 +7,12 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 07/16/2018
-ms.openlocfilehash: 3e08541b1bfd6dd07d134560c9d03306566b18db
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4344357db92a65725a7bcdc749966d3889d20695
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953913"
+ms.locfileid: "87995091"
 ---
 # <a name="performance-tools-for-network-workloads"></a>用于网络工作负荷的性能工具
 
@@ -42,6 +42,6 @@ Microsoft Server Performance Advisor \( SPA \) 可帮助 IT 管理员收集指�
 
 SPA 生成全面的诊断报告和图表，并提供建议来帮助你快速分析问题和制定纠正措施。
 
- 有关详细信息和下载顾问，请参阅 Windows 硬件开发人员中心中的[Microsoft Server Performance advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522.aspx) 。
+ 有关详细信息和下载顾问，请参阅 Windows 硬件开发人员中心中的[Microsoft Server Performance advisor](/previous-versions/dn481522(v=vs.85)) 。
 
 有关本指南中的所有主题的链接，请参阅[网络子系统性能优化](net-sub-performance-top.md)。

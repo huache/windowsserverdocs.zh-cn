@@ -1,18 +1,16 @@
 ---
 title: 使用离散设备分配部署 NVMe 存储设备
 description: 了解如何使用 DDA 部署存储设备
-ms.prod: windows-server
-ms.technology: hyper-v
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 1c36107e-78c9-4ec0-a313-6ed557ac0ffc
-ms.openlocfilehash: 2b92b175a6e914b62b069f76f92255cb99d55d74
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fdf6372d642a2e1413a2ed5029d9e9f25af4ce3f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860900"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945940"
 ---
 # <a name="deploy-nvme-storage-devices-using-discrete-device-assignment"></a>使用离散设备分配部署 NVMe 存储设备
 
@@ -37,10 +35,10 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 ## <a name="dismount-the-device-from-the-host-partition"></a>从主机分区卸载设备
 
 ### <a name="locating-the-devices-location-path"></a>查找设备的位置路径
-需要 PCI 位置路径才能从主机卸载和安装设备。  示例位置路径如下所示： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`。   可在此处找到有关位置路径的更多详细信息：[计划使用离散设备分配部署设备](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
+需要 PCI 位置路径才能从主机卸载和安装设备。  示例位置路径如下所示： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"` 。   可在此处找到有关位置路径的更多详细信息：[计划使用离散设备分配部署设备](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
 
 ### <a name="disable-the-device"></a>禁用设备
-使用设备管理器或 PowerShell，确保设备处于 "已禁用" 状态。  
+使用设备管理器或 PowerShell，确保设备处于 "已禁用" 状态。
 
 ### <a name="dismount-the-device"></a>卸除设备
 ```

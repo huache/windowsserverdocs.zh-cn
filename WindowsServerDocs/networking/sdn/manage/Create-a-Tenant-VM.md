@@ -7,12 +7,12 @@ ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 0b82128c703f5f3d1fe357beae90a15481232d5c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2ca1c308ee38726d02ef19ebdfa4c83086fef0a7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970774"
+ms.locfileid: "87995148"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>创建 VM 并连接到租户虚拟网络或 VLAN
 
@@ -31,9 +31,9 @@ ms.locfileid: "87970774"
 
 2. 如果 VM 在启动时需要网络访问，请在设置 VM 网络适配器端口上的接口 ID 后再启动 VM。 如果在设置接口 ID 之前启动 VM，并且不存在网络接口，则 VM 将无法在网络控制器中的网络上通信，且已应用所有策略。
 
-3. 如果需要此网络接口的自定义 Acl，请使用[使用访问控制列表 (acl) 中的说明创建 acl，以管理数据中心网络流量流](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)
+3. 如果需要此网络接口的自定义 Acl，请使用[使用访问控制列表 (acl) 中的说明创建 acl，以管理数据中心网络流量流](./use-acls-for-traffic-flow.md)
 
-使用此示例命令之前，请确保已创建虚拟网络。 有关详细信息，请参阅[创建、删除或更新租户虚拟网络](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks)。
+使用此示例命令之前，请确保已创建虚拟网络。 有关详细信息，请参阅[创建、删除或更新租户虚拟网络](./create,-delete,-or-update-tenant-virtual-networks.md)。
 
 ## <a name="create-a-vm-and-connect-to-a-virtual-network-by-using-the-windows-powershell-network-controller-cmdlets"></a>使用 Windows PowerShell 网络控制器 cmdlet 创建 VM 并连接到虚拟网络
 
@@ -221,6 +221,3 @@ ms.locfileid: "87970774"
    ```
 
 你已成功创建了 VM，将 VM 连接到 VLAN，并启动了 VM，使其能够处理租户工作负荷。
-
-
-

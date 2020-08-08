@@ -6,12 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 08065e153a7f0c09e305e87fc2d745b3daa0b3f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7e69a808a48c3dedcc29d8876dc460559157f191
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943866"
+ms.locfileid: "87994827"
 ---
 # <a name="guidance-about-how-to-configure-protected-accounts"></a>有关如何配置受保护帐户的指南
 
@@ -114,7 +114,7 @@ Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerbe
 -   在 Kerberos 预身份验证中拒绝 RC4：不可配置。
 
     > [!NOTE]
-    > 尽管可以 [更改支持的加密类型的配置](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)，但如果未在目标环境中进行测试，不建议针对计算机帐户更改这些设置。
+    > 尽管可以 [更改支持的加密类型的配置](/archive/blogs/openspecification/windows-configurations-for-kerberos-supported-encryption-type)，但如果未在目标环境中进行测试，不建议针对计算机帐户更改这些设置。
 
 -   将用户票证 (TGT) 限制为初始 4 小时生存期：使用身份验证策略。
 
