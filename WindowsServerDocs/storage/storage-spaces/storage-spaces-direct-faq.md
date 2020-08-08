@@ -1,21 +1,19 @@
 ---
 title: 存储空间直通-常见问题
 description: 了解存储空间直通
-ms.prod: windows-server
 ms.author: kaushik
-ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c033a5a810d1cdedeb4c733ba4bf0ac99e669f0
-ms.sourcegitcommit: 3483f886f331b9d954a0e5dba8e910dbe5ee5765
+ms.openlocfilehash: 9371403fedce0383be117728da48eec70745c3a7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82977245"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954614"
 ---
-# <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>存储空间直通常见问题（FAQ）
+# <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>存储空间直通常见问题解答 (常见问题) 
 
 本文列出了与[存储空间直通](storage-spaces-direct-overview.md)相关的一些常见问题和常见问题。
 
@@ -39,7 +37,7 @@ ms.locfileid: "82977245"
 
 默认情况下，当你使用 enable-S2D cmdlet 配置存储空间直通时，该 cmdlet 会为你执行所有操作。 它创建池和层。 使用自动配置时，必须手动完成所有操作。 如果只创建了池，则不一定要创建层。 如果未使用与附加的设备相对应的方式在所有层或未创建层上创建层，将会收到 "Enable-clusters2d" 错误消息。 建议你不要在生产环境中使用自动配置开关。
 
-## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>使用 SSD 设备创建存储空间直通后，是否可以向存储空间直通池添加旋转磁盘（HDD）？
+## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>使用 SSD 设备创建存储空间直通后，是否可以向存储空间直通池添加旋转磁盘 (HDD) ？
 
 否。 默认情况下，如果使用单个设备类型创建池，则它不会配置缓存磁盘，所有磁盘都将用于容量。 可以将 NVME 磁盘添加到配置中，并为缓存配置 NVME 磁盘。
 
@@ -49,7 +47,7 @@ ms.locfileid: "82977245"
 
 ## <a name="what-should-the-cache-size-be-when-i-am-configuring-storage-spaces-direct"></a>配置存储空间直通时，缓存大小是多少？
 
-应该调整缓存的大小，以适应你的应用程序和工作负荷的工作集（在任意给定时间主动读取或写入的数据）。
+应该调整缓存的大小，以适应工作集 (在任何给定时间) 应用程序和工作负荷的数据。
 
 ## <a name="how-can-i-determine-the-size-of-cache-that-is-being-used-by-storage-spaces-direct"></a>如何确定存储空间直通正在使用的缓存大小？
 
@@ -79,7 +77,7 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 
 ## <a name="how-does-storage-spaces-direct-make-use-of-ses"></a>存储空间直通如何利用 SES？
 
-存储空间直通使用 SCSI 机箱服务（SES）映射，确保数据和元数据的碎片以弹性方式分散到容错域。 如果硬件不支持 SES，则不会映射机箱，并且数据位置不能复原。
+存储空间直通使用 SCSI 机箱服务 (SES) 映射，确保碎片的数据和元数据以弹性方式分散到容错域。 如果硬件不支持 SES，则不会映射机箱，并且数据位置不能复原。
 
 ## <a name="which-command-can-you-use-to-check-the-physical-extent-for-a-virtual-disk"></a>可以使用哪个命令来检查虚拟磁盘的物理范围？
 

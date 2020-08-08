@@ -1,17 +1,15 @@
 ---
 title: SMB-应打开文件和打印机共享端口
 ms.date: 07/02/2012
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d9d24f1ce66ca691bfa31479a00b9ecf719abe1e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: dc2e1d7f5408ad123297b8df2dc06f59053fe870
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961299"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954764"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB：文件和打印机共享端口应打开
 
@@ -50,11 +48,11 @@ ms.locfileid: "86961299"
 
 ## <a name="issue"></a>问题
 
-> *文件和打印机共享所需的防火墙端口未打开（端口445和139）。*
+> * (端口445和 139) ，无法打开文件和打印机共享所需的防火墙端口。*
 
 ## <a name="impact"></a>影响
 
-> *计算机将无法访问此服务器上的共享文件夹和其他基于服务器消息块（SMB）的网络服务。*
+> *计算机将无法访问此服务器上的共享文件夹和其他服务器消息块 (基于 SMB) 的网络服务。*
 
 ## <a name="resolution"></a>解决方法
 
@@ -68,10 +66,10 @@ ms.locfileid: "86961299"
 
 2.  在左窗格中，单击 "**高级设置**"，然后在控制台树中单击 "**入站规则**"。
 
-3.  在 "**入站规则**" 下，找到规则**文件和打印机共享（"NB-会话中"）** 以及 "**文件和打印机共享" （SMB）**。
+3.  在 "**入站规则**" 下，找到 "规则**文件和打印机共享" (") 中**的文件和打印机共享"，并在 **) 中查找 (SMB 的文件和打印机共享**。
 
 4.  请依次右键单击每个规则，然后单击“启用规则”。
 
 ## <a name="additional-references"></a>其他参考
 
-[了解共享文件夹和 Windows 防火墙](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11))（https://technet.microsoft.com/library/cc731402.aspx)
+[了解共享文件夹和 Windows 防火墙](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11)) (https://technet.microsoft.com/library/cc731402.aspx)

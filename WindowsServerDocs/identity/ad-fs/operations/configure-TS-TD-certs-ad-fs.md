@@ -6,14 +6,12 @@ ms.author: billmath
 manager: samueld
 ms.date: 10/23/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 423587d7beb434af13aac68da82ee791f5c6b071
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a96b256fbd2f1a5ce3db71bd11de8715eccf60e9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961709"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966904"
 ---
 # <a name="obtain-and-configure-ts-and-td-certificates-for-ad-fs"></a>获取和配置 AD FS 的 TS 和 TD 证书
 
@@ -27,32 +25,32 @@ ms.locfileid: "86961709"
 默认情况下，AD FS 配置为在初始配置时以及在证书接近到期日期时自动生成令牌签名证书和令牌解密证书。
 
 您可以运行以下 Windows PowerShell 命令： `Get-AdfsProperties` 。
-  
+
   ![Set-adfsproperties](media/configure-TS-TD-certs-ad-fs/ts1.png)
-  
+
 AutoCertificateRollover 属性描述 AD FS 是否配置为自动续订令牌签名和令牌解密证书。
 
-如果将 AutoCertificateRollover 设置为 TRUE，则将在 AD FS 自动续订和配置 AD FS 证书。 一旦配置新证书，就必须确保使用此新证书更新每个联合伙伴（由信赖方信任或声明提供方信任在 AD FS 场中表示）。
-    
-如果 AD FS 未配置为自动续订令牌签名和令牌解密证书（如果 AutoCertificateRollover 设置为 False），则 AD FS 不会自动生成或开始使用新的令牌签名或令牌解密证书。 你必须手动执行这些任务。
-    
-如果将 AD FS 配置为自动续订令牌签名和令牌解密证书（AutoCertificateRollover 设置为 TRUE），则可以确定何时续订这些证书：
+如果将 AutoCertificateRollover 设置为 TRUE，则将在 AD FS 自动续订和配置 AD FS 证书。 配置新证书后，若要避免服务中断，必须确保每个联合伙伴 AD FS (通过信赖方信任或声明提供方信任) 使用此新证书更新。
+
+如果 AD FS 未配置为自动续订令牌签名和令牌解密证书 (如果将 AutoCertificateRollover 设置为 False) ，则 AD FS 将不会自动生成或开始使用新的令牌签名或令牌解密证书。 你必须手动执行这些任务。
+
+如果将 AD FS 配置为自动续订令牌签名和令牌解密证书 (AutoCertificateRollover 设置为 TRUE) ，则可以确定何时续订这些证书：
 
 CertificateGenerationThreshold 描述了在日期后，将生成新证书的日期前的天数。
 
-CertificatePromotionThreshold 确定生成新证书后要将其提升为主证书的天数（换言之，AD FS 会开始使用该证书对其颁发的令牌进行签名，并将令牌从标识提供者进行解密）。
+CertificatePromotionThreshold 确定在生成新证书后，将其升级为主要证书的天数 (换言之，AD FS 将开始使用该证书对它颁发的令牌进行签名，并从标识提供者) 解密令牌。
 
 ![Set-adfsproperties](media/configure-TS-TD-certs-ad-fs/ts2.png)
-  
-如果将 AD FS 配置为自动续订令牌签名和令牌解密证书（AutoCertificateRollover 设置为 TRUE），则可以确定何时续订这些证书：
+
+如果将 AD FS 配置为自动续订令牌签名和令牌解密证书 (AutoCertificateRollover 设置为 TRUE) ，则可以确定何时续订这些证书：
 
  - **CertificateGenerationThreshold**描述了在日期后，将生成新证书的日期前的天数。
- - **CertificatePromotionThreshold**确定生成新证书后要将其提升为主证书的天数（换言之，AD FS 会开始使用该证书对其颁发的令牌进行签名，并将令牌从标识提供者进行解密）。
+ - **CertificatePromotionThreshold**确定在生成新证书后，将其升级为主要证书的天数 (换言之，AD FS 将开始使用该证书对它颁发的令牌进行签名，并从标识提供者) 解密令牌。
 
 ## <a name="determine-when-the-current-certificates-expire"></a>确定当前证书何时过期
 你可以使用以下过程来确定主要令牌签名和令牌解密证书，并确定当前证书的过期时间。
 
-您可以运行以下 Windows PowerShell 命令： `Get-AdfsCertificate –CertificateType token-signing` （或 `Get-AdfsCertificate –CertificateType token-decrypting ` ）。 或者，你可以在 MMC 中检查当前的证书：服务 >证书。
+您可以运行以下 Windows PowerShell 命令： `Get-AdfsCertificate –CertificateType token-signing` (或 `Get-AdfsCertificate –CertificateType token-decrypting `) 。 或者，你可以在 MMC 中检查当前的证书：服务 >证书。
 
 ![Get-adfscertificate](media/configure-TS-TD-certs-ad-fs/ts3.png)
 
@@ -60,7 +58,7 @@ CertificatePromotionThreshold 确定生成新证书后要将其提升为主证�
 
 "**不晚**于" 的显示日期是必须配置新的主令牌签名或解密证书的日期。
 
-为了确保服务连续性，在此过期之前，所有联合合作伙伴（由信赖方信任或声明提供方信任在 AD FS 场中表示）必须使用新的令牌签名和令牌解密证书。 建议提前计划至少60天进行此过程。
+为了确保服务连续性，所有联合伙伴 (在 AD FS 场中由信赖方信任或声明提供方信任表示，) 在此过期之前必须使用新的令牌签名和令牌解密证书。 建议提前计划至少60天进行此过程。
 
 ## <a name="generating-a-new-self-signed-certificate-manually-prior-to-the-end-of-the-grace-period"></a>宽限期结束之前手动生成新的自签名证书
 你可以使用以下步骤在宽限期结束之前手动生成新的自签名证书。
@@ -80,7 +78,7 @@ CertificatePromotionThreshold 确定生成新证书后要将其提升为主证�
 
 首先，你必须从证书颁发机构获取新证书，并将其导入到每个联合服务器上的本地计算机个人证书存储中。 有关说明，请参阅[导入证书一](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754489(v=ws.11))文。
 
-然后，必须将此证书配置为辅助 AD FS 令牌签名或解密证书。 （将其配置为辅助证书，以便在将其升级到主证书之前，允许联合伙伴有足够的时间来使用此新证书）。
+然后，必须将此证书配置为辅助 AD FS 令牌签名或解密证书。  (你将其配置为辅助证书，以便在将其升级到主要证书) 之前，允许联合伙伴足够的时间使用此新证书。
 
 ### <a name="to-configure-a-new-certificate-as-a-secondary-certificate"></a>将新证书配置为辅助证书
 1. 打开 PowerShell 并运行以下内容：`Set-ADFSProperties -AutoCertificateRollover $false`
@@ -94,7 +92,7 @@ CertificatePromotionThreshold 确定生成新证书后要将其提升为主证�
 >[!WARNING]
 >确保新证书具有与之关联的私钥，并确保向 AD FS 的服务帐户授予对私钥的读取权限。 请在每个联合服务器上进行验证。 为此，请在“证书”管理单元中右键单击新证书，单击“所有任务”，然后单击“管理私钥”。
 
-为联合身份验证伙伴提供足够的时间来使用新证书（他们请求联合元数据或向其发送新证书的公钥）后，必须将辅助证书升级为主证书。
+为联合身份验证伙伴提供足够的时间来使用新证书后 (他们请求你的联合元数据，或者将你的新证书的公钥发送) ，你必须将辅助证书提升为主证书。
 
 ### <a name="to-promote-the-new-certificate-from-secondary-to-primary"></a>将新证书从辅助证书升级为主证书
 
@@ -108,14 +106,14 @@ CertificatePromotionThreshold 确定生成新证书后要将其提升为主证�
 ## <a name="updating-federation-partners"></a>更新联合伙伴
 
 ### <a name="partners-who-can-consume-federation-metadata"></a>可以使用联合元数据的合作伙伴
-如果你已经续订并配置了新的令牌签名或令牌解密证书，则必须确保所有联合伙伴（在你的 AD FS 中，信赖方信任和声明提供程序信任）都已选取了新证书。
+如果你已经续订并配置了新的令牌签名或令牌解密证书，则必须确保所有联合伙伴 (资源组织或在你 AD FS 中由信赖方信任和声明提供方信任表示的组织合作伙伴，) 选取了新证书。
 
 ### <a name="partners-who-can-not-consume-federation-metadata"></a>不能使用联合元数据的合作伙伴
-如果联合身份验证伙伴不能使用联合元数据，则必须手动向其发送新的令牌签名/令牌解密证书的公钥。 将新的证书公钥（.cer 文件或. p7b）发送给所有资源组织或帐户组织合作伙伴（由信赖方信任和声明提供方信任在 AD FS 中表示）。 让合作伙伴在其端实施更改以信任新证书。
+如果联合身份验证伙伴不能使用联合元数据，则必须手动向其发送新的令牌签名/令牌解密证书的公钥。 如果希望将整个链) 包含到所有资源组织或帐户组织合作伙伴， (在 AD FS 中用信赖方信任和声明提供程序信任) 表示），请将新的证书公钥发送 ( .cer 文件或. p7b。 让合作伙伴在其端实施更改以信任新证书。
 
-### <a name="promote-to-primary-if-autocertificaterollover-is-false"></a>提升为主要副本（如果 AutoCertificateRollover 为 False）
+### <a name="promote-to-primary-if-autocertificaterollover-is-false"></a>如果 AutoCertificateRollover 为 False，则提升为主 () 
 如果**AutoCertificateRollover**设置为**False**，则 AD FS 不会自动生成或开始使用新的令牌签名或令牌解密证书。 你必须手动执行这些任务。
-允许所有联合身份验证伙伴使用新的辅助证书后，请将此辅助证书升级为主证书，并在 MMC 管理单元中单击 "辅助令牌签名证书"，然后在 "操作" 窗格中，单击 "**设为主**证书"。
+允许所有联合身份验证伙伴使用新的辅助证书后，将此辅助证书升级到主 (在 MMC 管理单元中，单击 "辅助令牌签名证书"，然后在 "操作" 窗格中，单击 "**设为主**证书"。 ) 
 
 ## <a name="updating-azure-ad"></a>更新 Azure AD
 AD FS 通过用户现有 AD DS 凭据对用户进行身份验证，从而提供对 Microsoft 云服务（如 Office 365）的单一登录访问。  有关使用证书的其他信息，请参阅[续订 Office 365 和 Azure AD 的联合身份验证证书](/azure/active-directory/connect/active-directory-aadconnect-o365-certs)。

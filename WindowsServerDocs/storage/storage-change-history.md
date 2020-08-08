@@ -1,20 +1,18 @@
 ---
 ms.assetid: 87174225-a60f-4718-b4cc-9b172f205b72
 title: 存储主题的更改历史记录
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.date: 1/16/2019
 description: 面向 IT 专业人员的适用于 Windows Server 的本地存储文档中的新主题和更新主题。
-ms.openlocfilehash: 3d43166d8f5e931d2677ff394c1c4ad69b0f302f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c4ba7edcbd2a0cf4949c986dec2e2aef385326c8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966259"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954624"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server 中存储主题的更改历史记录
 
@@ -26,13 +24,13 @@ ms.locfileid: "86966259"
 
 ## <a name="january-2020"></a>2020 年 1 月
 
-| 新的或已更改的主题 | 说明 |
+| 新的或已更改的主题 | 描述 |
 | --- | --- |
 |[了解和部署永久性内存](storage-spaces/deploy-pmem.md) | 添加了已知的硬件问题。 |
 
 ## <a name="december-2019"></a>2019 年 12 月
 
-| 新的或已更改的主题                                        | 说明 |
+| 新的或已更改的主题                                        | 描述 |
 | ---                                                         | ---           |
 | [磁盘管理疑难解答](disk-management/troubleshooting-disk-management.md)| 根据客户请求进行编辑，进一步优化指导。|
 | [在磁盘管理中扩展卷](disk-management/extend-a-basic-volume.md) | 添加了指导以响应客户反馈。 |
@@ -41,20 +39,20 @@ ms.locfileid: "86966259"
 
 ## <a name="august-2019"></a>2019 年 8 月
 
-| 新的或已更改的主题                                        | 说明 |
+| 新的或已更改的主题                                        | 描述 |
 | ---                                                         | ---           |
 | [存储迁移服务常见问题解答](storage-migration-service/faq.md) | 经过更新以反映对 Linux 源的全新支持。 |
 
 ## <a name="june-2019"></a>2019 年 6 月
 
-| 新的或已更改的主题                                        | 说明 |
+| 新的或已更改的主题                                        | 描述 |
 | ---                                                         | ---           |
-| [磁盘清理](file-server/disk-cleanup.md)                                              | 新建（从以前的[版本](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770278(v%3dws.11))迁移）
+| [磁盘清理](file-server/disk-cleanup.md)                                              | 从[以前的版本](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770278(v%3dws.11))迁移的新 () 
 | [存储迁移服务常见问题解答](storage-migration-service/faq.md#can-i-consolidate-multiple-servers-into-one-server) | 增加了性能优化信息。 |
 
 ## <a name="may-2019"></a>2019 年 5 月
 
-|新的或已更改的主题                                        |说明|
+|新的或已更改的主题                                        |描述|
 |---                                                         |---           |
 |[删除卷](storage-spaces/delete-volumes.md)| 新建        |
 |[创建卷](storage-spaces/create-volumes.md)| 添加了用于在 Windows 管理中心中创建卷的步骤和视频。|
@@ -62,7 +60,7 @@ ms.locfileid: "86966259"
 
 ## <a name="march-2019"></a>2019 年 3 月
 
-|新的或已更改的主题                                        |说明|
+|新的或已更改的主题                                        |描述|
 |---                                                         |---           |
 | [使用 Azure Monitor 进行监视](storage-spaces/configure-azure-monitor.md) | 新建 |
 | [了解和部署永久性内存](storage-spaces/deploy-pmem.md) | 新建 |
@@ -71,19 +69,19 @@ ms.locfileid: "86966259"
 
 ## <a name="february-2019"></a>2019 年 2 月
 
-|新的或已更改的主题                                        |说明|
+|新的或已更改的主题                                        |描述|
 |---                                                         |---           |
 |[存储迁移服务的已知问题](storage-migration-service/known-issues.md)   | 添加了问题    |
 
 ## <a name="january-2019"></a>2019 年 1 月
 
-|新的或已更改的主题                                        |说明|
+|新的或已更改的主题                                        |描述|
 |---                                                         |---           |
 |[了解并监视存储重新同步](storage-spaces/understand-storage-resync.md)|新主题|
 
 ## <a name="december-2018"></a>2018 年 12 月
 
-|新的或已更改的主题                                        |说明|
+|新的或已更改的主题                                        |描述|
 |---                                                         |---           |
 |[使用存储迁移服务迁移服务器](storage-migration-service/migrate-data.md)| 添加了有关如何传输文件的一些说明 |
 |[Azure 中跨区域群集到群集存储副本](storage-replica/cluster-to-cluster-azure-cross-region.md)|添加了验证步骤|
@@ -92,7 +90,7 @@ ms.locfileid: "86966259"
 
 ## <a name="november-2018"></a>2018 年 11 月
 
-|新的或已更改的主题                                        |说明|
+|新的或已更改的主题                                        |描述|
 |---                                                         |---           |
 |[嵌套复原](storage-spaces/nested-resiliency.md)    | 新主题    |
 |[存储迁移服务的已知问题](storage-migration-service/known-issues.md)   | 新主题    |
@@ -103,31 +101,31 @@ ms.locfileid: "86966259"
 
 ## <a name="october-2018"></a>2018 年 10 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[存储中的新增功能](whats-new-in-storage.md)|经过更新以涵盖 Windows Server 2019 中的新增功能|
 |[存储副本的已知问题](storage-replica/storage-replica-known-issues.md)|添加了有关新更新的信息。|
 
 ## <a name="september-2018"></a>2018 年 9 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[存储迁移服务概述](storage-migration-service/overview.md)| 新主题 |
 |[使用存储迁移服务迁移服务器](storage-migration-service/migrate-data.md)| 新主题 |
-|[存储迁移服务常见问题（FAQ）](storage-migration-service/faq.md)| 新主题 |
+|[存储迁移服务常见问题解答 (FAQ) ](storage-migration-service/faq.md)| 新主题 |
 | [iSCSI 目标服务器](iscsi/iscsi-target-server.md) | 已从[以前的版本](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)库迁移。|
 | [iSCSI 目标服务器可扩展性限制](iscsi/iscsi-target-server-limits.md) |已从[以前的版本](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)库迁移。|
 
 ## <a name="june-2018"></a>2018 年 6 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[服务器到服务器存储复制](storage-replica/server-to-server-storage-replication.md)|添加了有关使用 Azure Vm 的信息，包括 ExpressRoute。|
 |[群集集](storage-spaces/cluster-sets.md)| 新主题|
 
 ## <a name="may-2018"></a>2018 年 5 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[NFS 概述](nfs/nfs-overview.md)|已从[以前的版本](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)库迁移。|
 |[部署 NFS](nfs/deploy-nfs.md)|已从[以前的版本](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)库迁移。|
@@ -141,7 +139,7 @@ ms.locfileid: "86966259"
 
 ## <a name="april-2018"></a>2018 年 4 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[收集存储空间直通中的数据](storage-spaces/data-collection.md)| 新主题。|
 |[存储空间概述](storage-spaces/overview.md)|新主题。|
@@ -150,9 +148,9 @@ ms.locfileid: "86966259"
 |[通过 SMB 直通优化文件服务器的性能](file-server/smb-direct.md)|已从[以前的版本](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)库迁移。|
 |[SMB 安全增强功能](file-server/smb-security.md)|已从[以前的版本](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)库迁移。|
 
-## <a name="march-2018"></a>2018 年 3 月
+## <a name="march-2018"></a>2018 年 3月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[存储空间直通的灾难恢复](storage-spaces/storage-spaces-direct-disaster-recovery.md)| 新主题。|
 |[了解存储空间直通中的仲裁](storage-spaces/understand-quorum.md)| 新主题。|
@@ -162,21 +160,21 @@ ms.locfileid: "86966259"
 
 ## <a name="february-2018"></a>2018 年 2 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[存储空间运行状况和操作状态](storage-spaces/storage-spaces-states.md)| 新主题。|
 |[将存储空间直通与 CSV 内存中读取缓存一起使用](storage-spaces/csv-cache.md)| 新主题。 |
 
 ## <a name="january-2018"></a>2018 年 1 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[存储空间直通中的驱动对称注意事项](storage-spaces/drive-symmetry-considerations.md)| 新主题。|
 |[将存储副本用于 Project Honolulu](./storage-replica/server-to-server-storage-replication.md)|新主题。|
 
 ## <a name="december-2017"></a>2017 年 12 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[更改驱动器号](disk-management/change-a-drive-letter.md)|新主题。|
 |[磁盘管理疑难解答](disk-management/troubleshooting-disk-management.md)|重写[磁盘的状态为 "未初始化" 或 "缺少磁盘"](disk-management/troubleshooting-disk-management.md#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)部分，用于根据客户请求添加广泛的故障排除步骤。|
@@ -188,14 +186,14 @@ ms.locfileid: "86966259"
 
 ## <a name="november-2017"></a>2017 年 11 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[存储中的新增功能](whats-new-in-storage.md)|添加了有关 Windows Server 版本1709中的新增功能的信息。|
 |[添加服务器或驱动器](storage-spaces/add-nodes.md)|添加了有关如何在添加驱动器后存储空间直通自动优化驱动器使用情况的信息。|
 
 ## <a name="october-2017"></a>2017 年 10 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[在虚拟机来宾群集中部署存储空间直通](storage-spaces/storage-spaces-direct-in-vm.md)|新主题。|
 |[磁盘管理概述](disk-management/overview-of-disk-management.md)| 发布了13个适用于 Windows 和 Windows Server 的新主题。|
@@ -206,7 +204,7 @@ ms.locfileid: "86966259"
 
 ## <a name="july-2017"></a>2017 年 7 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[DFS 命名空间](dfs-namespaces/dfs-overview.md)|发布了20个适用于 Windows Server 2016 的新主题。|
 |[文件服务器资源管理器](fsrm/fsrm-overview.md)|已发布 33 个关于 Windows Server 2016 的新主题。|
@@ -215,7 +213,7 @@ ms.locfileid: "86966259"
 
 ## <a name="june-2017"></a>2017 年 6 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[计划工作文件夹部署](work-folders/plan-work-folders.md)|已添加 Azure AD 应用程序代理支持及更新的要求相关的信息。|
 |[工作文件夹](work-folders/work-folders-overview.md)|已添加 Azure AD 应用程序代理支持及更新的要求相关的信息。|
@@ -224,7 +222,7 @@ ms.locfileid: "86966259"
 
 ## <a name="may-2017"></a>2017 年 5 月
 
-|                                                           新的或已更改的主题                                                           |                                          说明                                           |
+|                                                           新的或已更改的主题                                                           |                                          描述                                           |
 |------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
 | [数据重复删除概述](data-deduplication/overview.md)和 <br>[安装重复数据删除](data-deduplication/install-enable.md) |              已更新系统要求以包含更新的软件更新。               |
 |                                      [部署工作文件夹](work-folders/deploy-work-folders.md)                                       |         已添加与 Azure AD 应用程序代理支持及更新的所需步骤相关的信息。          |
@@ -234,7 +232,7 @@ ms.locfileid: "86966259"
 
 ## <a name="april-2017"></a>2017 年 4 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[驱动器固件更新疑难解答](troubleshoot-firmware-update.md)|新主题。|
 |[工作文件夹](work-folders/work-folders-overview.md)|新主题。|
@@ -246,13 +244,13 @@ ms.locfileid: "86966259"
 
 ## <a name="march-2017"></a>2017 年 3 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[使存储空间直通服务器脱机以进行维护](storage-spaces/maintain-servers.md)|新主题。|
 
 ## <a name="february-2017"></a>2017 年 2 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[删除存储空间直通中的服务器](storage-spaces/remove-servers.md)|新主题。|
 |[向存储空间直通添加服务器或驱动器](storage-spaces/add-nodes.md)|已改进新图像和更新的内容。|
@@ -260,7 +258,7 @@ ms.locfileid: "86966259"
 
 ## <a name="january-2017"></a>2017 年 1 月
 
-|新的或已更改的主题|说明|
+|新的或已更改的主题|描述|
 |---|---|
 |[计划卷](storage-spaces/plan-volumes.md)|新主题。|
 |[创建卷](storage-spaces/create-volumes.md)|新主题。|

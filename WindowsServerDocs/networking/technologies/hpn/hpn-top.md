@@ -1,23 +1,21 @@
 ---
-title: 高性能网络（HPN）
-ms.prod: windows-server
-ms.technology: networking
+title: '高性能网络 (HPN) '
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: 6be95455dcbd38feca0e7e166e712f4d38e21645
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7b0e18f2ab6673357c225468d214e8ed30ed731e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814780"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966464"
 ---
-# <a name="high-performance-networking-hpn"></a>高性能网络（HPN）
+# <a name="high-performance-networking-hpn"></a>高性能网络 (HPN) 
 
-高性能网络（HPNs）在实时数据处理要求方面扮演着角色。 例如，数据中心复制、数据中心灾难恢复和高性能分布式计算等活动需要大量数据传输和低网络延迟。 具有动态连接功能的 HPNs 使高性能网络资源更易于访问和管理。 
+ (HPNs 的高性能网络) 在实时数据处理要求中扮演着角色。 例如，数据中心复制、数据中心灾难恢复和高性能分布式计算等活动需要大量数据传输和低网络延迟。 具有动态连接功能的 HPNs 使高性能网络资源更易于访问和管理。
 
 
 高性能网络主题包括：

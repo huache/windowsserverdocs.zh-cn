@@ -2,18 +2,16 @@
 title: 配置电子邮件通知
 description: 本文介绍如何配置电子邮件通知
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b80aef85d6f4a1d6bd8c05b56d7c1a12b456d1ed
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 71a9f75d84aafcd852ae71494d133dda91e848f1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474184"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954684"
 ---
 # <a name="configure-e-mail-notifications"></a>配置电子邮件通知
 
@@ -37,7 +35,7 @@ ms.locfileid: "85474184"
 
 5. 若要测试你的设置，请单击**发送测试电子邮件**。
 
-6. 单击" **确定**"。
+6. 单击“确定”。
 
 
 ## <a name="additional-references"></a>其他参考

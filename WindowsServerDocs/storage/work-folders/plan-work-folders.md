@@ -1,20 +1,18 @@
 ---
 ms.assetid: a7c39656-81ee-4c2b-80ef-4d017dd11b07
 title: 计划工作文件夹部署
-ms.prod: windows-server
-ms.technology: storage-work-folders
 ms.topic: article
 author: JasonGerend
 manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: 如何计划工作文件夹部署（包括系统要求）和如何准备网络环境。
-ms.openlocfilehash: 603711676aa5f35047b0623694f3a16922a2b240
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3f082a9542853f822b2b493cf3dabafe2cd65add
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959999"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954584"
 ---
 # <a name="planning-a-work-folders-deployment"></a>计划工作文件夹部署
 
@@ -128,7 +126,7 @@ ms.locfileid: "86959999"
   你还可以使用组策略强制基于用户或计算机设置工作文件夹，不过，这样做会导致工作文件夹在用户登录到的每台电脑上同步（使用按用户策略设置时），并且会阻止用户为其电脑上的工作文件夹指定备用位置（例如，在 microSD 卡上指定一个位置，以节省主驱动器上的空间）。 我们建议你在强制自动设置之前仔细评估用户的需求。
 
 ### <a name="windows-intune"></a>Windows Intune
- Windows Intune 还为未加入域的设备（这些设备只有在未加入域的情况下才能存在）提供了安全性与可管理性层。 你可以使用 Windows Intune 来配置和管理用户的个人设备，例如，通过 Internet 连接到工作文件夹的平板电脑。 Windows Intune 可以为设备提供要使用的同步服务器 URL –否则，用户必须输入其工作电子邮件地址来查找设置（如果以的形式发布公共工作文件夹 URL） https://workfolders 。<em>contoso.com</em>），或直接输入同步服务器 URL。
+ Windows Intune 还为未加入域的设备（这些设备只有在未加入域的情况下才能存在）提供了安全性与可管理性层。 你可以使用 Windows Intune 来配置和管理用户的个人设备，例如，通过 Internet 连接到工作文件夹的平板电脑。 Windows Intune 可以向设备提供要使用的同步服务器 URL –否则，用户必须输入其工作电子邮件地址来查找设置 (如果你以形式发布公共工作文件夹 URL https://workfolders 。<em>contoso.com</em>) ，或直接输入同步服务器 URL。
 
  如果不部署 Windows Intune，用户必须手动配置外部设备，这可能会导致对客户技术支持工作人员的要求提高。
 
@@ -255,5 +253,5 @@ ms.locfileid: "86959999"
 
 |内容类型|参考|
 |------------------|----------------|
-|**产品评估**|-   [工作文件夹](work-folders-overview.md)<br />-   [适用于 Windows 7 的工作文件夹](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)（博客文章）|
-|**部署**|-   [设计工作文件夹实现](plan-work-folders.md)<br />-   [部署工作文件夹](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 应用程序代理（WAP）部署工作文件夹](deploy-work-folders-adfs-overview.md)<br />- [使用 Azure AD 应用程序代理部署工作文件夹](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [工作文件夹部署的性能注意事项](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)<br />-   [适用于 Windows 7 的工作文件夹（64位下载）](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [适用于 Windows 7 的工作文件夹（32位下载）](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作文件夹测试实验室部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)（博客文章）|
+|**产品评估**|-   [工作文件夹](work-folders-overview.md)<br />-   [适用于 Windows 7 的工作文件夹](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (博客文章) |
+|**部署**|-   [设计工作文件夹实现](plan-work-folders.md)<br />-   [部署工作文件夹](deploy-work-folders.md)<br />-   [使用 AD FS 和 Web 应用程序代理部署工作文件夹 (WAP) ](deploy-work-folders-adfs-overview.md)<br />- [使用 Azure AD 应用程序代理部署工作文件夹](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [工作文件夹部署的性能注意事项](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)<br />-   [适用于 Windows 7 (64 位下载) 的工作文件夹](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [适用于 Windows 7 (32 位下载) 的工作文件夹](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [工作文件夹测试实验室部署](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (博客文章) |

@@ -1,19 +1,17 @@
 ---
 title: 存储空间直通疑难解答
 description: 了解如何排查存储空间直通部署问题。
-ms.prod: windows-server
 ms.author: ''
-ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3a1ec8462f96c1f6a018d1148b7824cdf8cc20
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 719a44a6c442f64b83a804c9ca20eb6ceaa791e9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769465"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954604"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>排查存储空间直通
 
@@ -37,10 +35,10 @@ ms.locfileid: "87769465"
 
 |FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|大小| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
-|Disk4| 镜像| 确定|  正常| True|  10 TB|  Node-01. conto|
-|Disk3         |镜像                 |确定                          |正常       |True            |10 TB | Node-01. conto|
-|Disk2         |镜像                 |无冗余               |Unhealthy     |True            |10 TB | Node-01. conto|
-|Disk1         |镜像                 |{无冗余，InService}  |Unhealthy     |True            |10 TB | Node-01. conto|
+|Disk4| 镜像| OK|  正常| True|  10 TB|  Node-01. conto|
+|Disk3         |镜像                 |OK                          |正常       |True            |10 TB | Node-01. conto|
+|Disk2         |镜像                 |无冗余               |不正常     |True            |10 TB | Node-01. conto|
+|Disk1         |镜像                 |{无冗余，InService}  |不正常     |True            |10 TB | Node-01. conto|
 
 此外，在尝试使虚拟磁盘联机后，会在群集日志中记录以下信息 (DiskRecoveryAction) 。
 
@@ -100,8 +98,8 @@ ms.locfileid: "87769465"
 
 |FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  大小|   PSComputerName|
 |-|-|-|-|-|-|-|
-|Disk4|         镜像|                 确定|                  正常|       True|            10 TB|  Node-01. conto|
-|Disk3|         镜像|                 确定|                  正常|       True|            10 TB|  Node-01. conto|
+|Disk4|         镜像|                 OK|                  正常|       True|            10 TB|  Node-01. conto|
+|Disk3|         镜像|                 OK|                  正常|       True|            10 TB|  Node-01. conto|
 |Disk2|         镜像|                 分离|            未知|       True|            10 TB|  Node-01. conto|
 |Disk1|         镜像|                 分离|            未知|       True|            10 TB|  Node-01. conto|
 
@@ -334,17 +332,17 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
    |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| 使用情况| 大小|
    |-----------|------------|---------| -------| -----------------| ------------| -----| ----|
-   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| 错误|   确定|                正常|      自动选择 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  错误|    确定|                正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  错误|  确定|                正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| 错误| 确定|    正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| 错误|确定|       正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| 错误| 确定|      正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| 错误| 确定|      正常|自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| 错误| 确定|  正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| 错误| 确定| 正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| 错误| 确定|正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| 错误| 确定| 正常| 自动选择 |1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| 错误|   OK|                正常|      自动选择 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  错误|    OK|                正常| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  错误|  OK|                正常| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| 错误| OK|    正常| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| 错误|OK|       正常| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| 错误| OK|      正常| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| 错误| OK|      正常|自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| 错误| OK|  正常| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| 错误| OK| 正常| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| 错误| OK|正常| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| 错误| OK| 正常| 自动选择 |1.82 TB|
 
 ## <a name="how-to-destroy-an-existing-cluster-so-you-can-use-the-same-disks-again"></a>如何销毁现有群集以便可以再次使用相同的磁盘
 
@@ -357,7 +355,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 现在，如果在任何节点上运行**PhysicalDisk** ，将看到池中的所有磁盘。 例如，在具有4个 SAS 磁盘的4节点群集的实验室中，每个节点有100GB。 在这种情况下，禁用存储空间直通后，会删除 SBL (存储总线层) 但会离开筛选器，如果你运行**PhysicalDisk**，它应报告4个磁盘，不包括本地操作系统磁盘。 相反，它报告了16。 这对于群集中的所有节点都是相同的。 当你运行**磁盘**上的命令时，你将看到按以下示例输出中所示，将本地附加的磁盘编号为0、1、2等等。
 
-|数字| 友好名称| 序列号|HealthStatus|OperationalStatus|总大小| 分区形式|
+|Number| 友好名称| 序列号|HealthStatus|OperationalStatus|总大小| 分区形式|
 |-|-|-|-|-|-|-|-|
 |0|Msft Virtu  ||正常 | 联机|  127 GB| GPT|
 ||Msft Virtu ||正常| Offline| 100 GB| RAW|

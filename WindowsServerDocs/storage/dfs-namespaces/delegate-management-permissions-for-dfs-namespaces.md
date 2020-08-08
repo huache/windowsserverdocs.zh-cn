@@ -2,22 +2,20 @@
 title: 委派 DFS 命名空间的管理权限
 description: 本文介绍如何委派 DFS 命名空间的管理权限，以及哪些组可以默认执行命名空间任务
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 838b8c716618bf10b900c12b118e940e318b56a2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a986c47416de79c9ff24d9104a2fa599dd5f8640
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965869"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954784"
 ---
 # <a name="delegate-management-permissions-for-dfs-namespaces"></a>委派 DFS 命名空间的管理权限
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 下表介绍可以默认执行基本命名空间任务的组，以及委派能够执行这些任务的方法：
 

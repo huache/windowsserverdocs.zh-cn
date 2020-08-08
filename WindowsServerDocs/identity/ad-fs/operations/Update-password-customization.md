@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 42131ef5e149c62dd5449d8ada196b1068fd30ac
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c47649e5a60de646de331a6c723c18c3b041bca6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519716"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967004"
 ---
 # <a name="update-password-customization"></a>更新密码自定义
 
@@ -21,9 +19,9 @@ ms.locfileid: "87519716"
 
 通过提供自己的页面描述，你可以自定义更新密码页。
 
-若要启用密码更新页面，请转到“终结点”下的“AD FS 管理”。 更新密码的终结点位于底部，在“其他 - /adfs/portal/updatepassword/”下。 一旦启用了该终结点，则必须重新启动 AD FS 服务。 必须手动完成此操作。 如果希望在外部使用 "更新密码" 网页，并使用 Web 应用程序代理，则需要在代理上启用它（在代理上启用）。 然后，你可以 `https://<fqdn>/adfs/portal/updatepassword/` 在加入工作区的设备上导航到，你应该会看到 "更新密码" 页。
+若要启用密码更新页面，请转到“终结点”下的“AD FS 管理”。 更新密码的终结点位于底部，在“其他 - /adfs/portal/updatepassword/”下。 一旦启用了该终结点，则必须重新启动 AD FS 服务。 必须手动完成此操作。 如果希望在外部使用 "更新密码" 网页，并使用 Web 应用程序代理，则需要在代理) 上启用代理 ("启用"。 然后，你可以 `https://<fqdn>/adfs/portal/updatepassword/` 在加入工作区的设备上导航到，你应该会看到 "更新密码" 页。
 
-![更新](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom5.png)
+![update](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom5.png)
 
 ## <a name="customize-the-update-password-page-description"></a>自定义更新密码页面描述
 

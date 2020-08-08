@@ -2,22 +2,20 @@
 title: 启用或禁用引用和客户端故障回复
 description: 本文介绍如何启用或禁用引用和客户端故障回复。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3896b411ee8b02a0efde6b46484e043b27ffea77
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0336588dcf0c170698c89b32a29952916bd26100
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966509"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954754"
 ---
 # <a name="enable-or-disable-referrals-and-client-failback"></a>启用或禁用引用和客户端故障回复
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 引用是指当用户访问命名空间根目录或包含目标的 DFS 文件夹时，客户端计算机从域控制器或命名空间服务器接收的服务器的排序列表。 接收引用后，计算机会尝试访问列表中的第一个服务器。 如果该服务器不可用，则客户端计算机会尝试访问下一个服务器。 如果服务器不可用，则可将客户端配置为在该服务器可用后故障回复到首选服务器。
 

@@ -1,19 +1,17 @@
 ---
 title: Windows 管理中心 SDK 案例研究-DataON
 description: Windows 管理中心 SDK 案例研究-DataON
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 01/11/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 0e4def5cd8a88cd5cb5d4df71d2f3a192ae23701
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bd7a7d66d0f842fc0f9592f21309e2eec9723a1d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406960"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966754"
 ---
 # <a name="dataon-must-extension"></a>DataON 必须扩展
 
@@ -21,7 +19,7 @@ ms.locfileid: "71406960"
 
 [DataON](http://www.dataonstorage.com/)是针对 Microsoft Windows Server 环境优化的超聚合基础结构和存储系统的业界领先提供商。 它专门致力于提供 Microsoft 应用程序、虚拟化、数据保护和混合云服务，它具有超过650个企业部署和120PB 的存储空间直通部署。
 
-[DataON 的必须](http://www.dataonstorage.com/must)扩展为 Windows 管理中心，这是一个值的典型示例，它将两个互补的产品集成到客户，同时提供对硬件和软件的监视和管理和端到端深入了解统一体验中的整个群集。
+[DataON 的必须](http://www.dataonstorage.com/must)扩展为 Windows 管理中心，这是一个值的主要示例，它将两个互补的产品集成到客户，同时在统一的体验中跨整个群集实现监视和管理以及对硬件和软件的端到端深入了解。
 
 > <cite>"我们已在 Windows 管理中心内使我们的独立版本必须可见、监视和管理工具并使其能够正常工作。客户将受益于必须提供的扩展功能，并且从单个控制台中的 "必须" 和 "Windows 管理中心" 组合将为基于 Windows Server 的基础结构提供终极管理体验。</cite>
 >
@@ -38,7 +36,7 @@ ms.locfileid: "71406960"
 
 > <cite>"Windows 管理中心允许扩展（如 DataON），因此我可以在同一控制台中使用这两种工具，我喜欢该集成的无缝方式。Windows 管理中心和 DataON 都必须在一起，这确实使我们能够更高效地节省大量时间。它使我们的管理员任务比以往更快。 "</cite>
 >
-> --Matt Roper，技术支持服务的主持者，
+> --Matt Roper，技术支持服务的发起方 (GA) School 地区
 
 ![](../../media/extend-case-study-dataon/dataon-2.png)
 *Windows 管理中心的 DataON 中的 DataON 扩展警报服务必须扩展*

@@ -2,18 +2,16 @@
 title: 测试实验室方案 OTP 身份验证和 RSA SecurID 概述
 description: 本主题是测试实验室指南的一部分-演示带有 OTP 身份验证的 DirectAccess 和用于 Windows Server 2016 的 RSA SecurID
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: ce584811-b209-48fe-ab2b-4c399bd0bd79
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4e6167d7a363b0f6396f6af48234764ecf531fc2
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: a295d3eb549512b301a29b81e3e1c0e1167763b3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769125"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955104"
 ---
 # <a name="overview-of-the-test-lab-scenario-otp-authentication-and-rsa-securid"></a>测试实验室方案 OTP 身份验证和 RSA SecurID 概述
 

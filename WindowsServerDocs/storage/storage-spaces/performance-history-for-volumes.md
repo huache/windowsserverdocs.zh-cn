@@ -2,23 +2,22 @@
 title: 卷的性能历史记录
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b12c4e2c23601d6948d4bd2c432cb2c63c605ae
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 367866739f18e426ad7c61dba3dac60b12692bbe
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955159"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954644"
 ---
 # <a name="performance-history-for-volumes"></a>卷的性能历史记录
 
 > 适用于：Windows Server 2019
 
-本主题中的[性能历史记录存储空间直通](performance-history.md)详细说明了为卷收集的性能历史记录。 性能历史记录适用于群集中的每个群集共享卷（CSV）。 但是，它不适用于 OS 启动卷，也不适用于任何其他非 CSV 存储。
+本主题中的[性能历史记录存储空间直通](performance-history.md)详细说明了为卷收集的性能历史记录。 对于群集中的每个群集共享卷 (CSV) ，可以使用性能历史记录。 但是，它不适用于 OS 启动卷，也不适用于任何其他非 CSV 存储。
 
    > [!NOTE]
    > 收集可能需要几分钟时间才能开始新创建或重命名的卷。
