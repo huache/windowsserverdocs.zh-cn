@@ -6,12 +6,12 @@ ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
 ms.author: vshankar; danlo; clausjor; stevenek
 ms.date: 4/14/2017
-ms.openlocfilehash: 9430e9e71d9e39533d5bdacd72af4593fe34c59a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 18dca2080a311a337e0d41055e95e7a7f0f42a80
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895930"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991984"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>针对存储空间直通的性能优化
 
@@ -36,7 +36,7 @@ ms.locfileid: "87895930"
 
 ## <a name="additional-references"></a>其他参考
 
-- [了解存储空间直通](../../../../storage/storage-spaces/understand-storage-spaces-direct.md)
-- [规划存储空间直通](../../../../storage/storage-spaces/plan-storage-spaces-direct.md)
+- [了解存储空间直通](../../../../storage/storage-spaces/understand-the-cache.md)
+- [规划存储空间直通](../../../../storage/storage-spaces/storage-spaces-direct-hardware-requirements.md)
 - [文件服务器的性能优化](../../role/file-server/index.md)
-- [Software-Defined Storage Design Considerations Guide](https://technet.microsoft.com/library/mt243829.aspx)（软件定义的存储设计注意事项指南）（适用于 Windows Server 2012 R2 和共享 SAS 存储）
+- [Software-Defined Storage Design Considerations Guide](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/mt243829(v=ws.11))（软件定义的存储设计注意事项指南）（适用于 Windows Server 2012 R2 和共享 SAS 存储）

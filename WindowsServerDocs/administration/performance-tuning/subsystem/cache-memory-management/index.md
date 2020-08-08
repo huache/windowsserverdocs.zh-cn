@@ -5,12 +5,12 @@ ms.topic: landing-page
 ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 404bc76e0bc3b08fc87b49b8263427cd4496bd43
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 07a8b12b9d4be5f9105baefaae0ef4030e02f69f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895999"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993319"
 ---
 # <a name="performance-tuning-cache-and-memory-manager"></a>性能优化缓存和内存管理器
 
@@ -30,4 +30,4 @@ ms.locfileid: "87895999"
 
 -   [缓存和内存管理器可能存在的性能问题](troubleshoot.md)
 
--   [Windows Server 2016 中的缓存和内存管理器改进](improvements-in-2016.md)
+-   [Windows Server 2016 中的缓存和内存管理器改进](./improvements-in-windows-server.md)

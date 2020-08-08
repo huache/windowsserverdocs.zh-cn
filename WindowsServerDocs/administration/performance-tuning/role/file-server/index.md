@@ -7,12 +7,12 @@ ms.author: nedpyle; danlo; dkruse; v-tea
 ms.date: 12/12/2019
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: 951d59a1a0e1d58a064eb71bd073259c15fd46d4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ecbd1bc751f133b80cf1d9cb264cf70a4ac4f47c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896173"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992196"
 ---
 # <a name="performance-tuning-for-file-servers"></a>文件服务器的性能优化
 
@@ -171,7 +171,7 @@ ms.locfileid: "87896173"
 
     默认值为 0，表示禁用 SMB 签名。 将此值更改为 1 可为所有 SMB 通信启用 SMB 签名，从而阻止 SMB 与禁用 SMB 签名的计算机进行通信。 SMB 签名虽然会增加 CPU 成本和网络往返次数，但有助于阻止中间人攻击。 如果不需要 SMB 签名，请确保所有客户端和服务器上的此注册表值均为 0。
 
-    有关详细信息，请参阅 [SMB 签名的基础知识](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)。
+    有关详细信息，请参阅 [SMB 签名的基础知识](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2)。
 
 -   **FileInfoCacheEntriesMax**
 

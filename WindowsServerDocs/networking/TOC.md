@@ -67,7 +67,7 @@
 ####### [配置适用于非域成员的防火墙规则，以允许 BranchCache 流量](branchcache/deploy/Configure-Firewall-Rules-for-Non-Domain-Members-to-Allow-BranchCache-Traffic.md)
 ###### [验证客户端计算机设置](branchcache/deploy/verify-Client-computer-Settings.md)
 
-## [DirectAccess](../remote/remote-access/da-stub.md) 
+## [DirectAccess](../remote/remote-access/directaccess/directaccess.md) 
 
 ## [域名系统 (DNS)](dns/dns-top.md)
 ### [Windows Server 中 DNS 客户端的新增功能](dns/What-s-New-in-DNS-Client.md)
@@ -135,7 +135,7 @@
 ### [C# 生成的代码示例](technologies/hcn/example-c-sharp.md)
 ### [Go 生成的代码示例](technologies/hcn/example-go.md)
 
-## [Hyper-V 虚拟交换机](technologies/vswitch-stub.md)
+## [Hyper-V 虚拟交换机](../virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch.md)
 
 ## [IP 地址管理 (IPAM)](technologies/ipam/ipam-top.md)
 ### [IPAM 中的新增功能](technologies/ipam/What-s-New-in-IPAM.md)
@@ -304,7 +304,7 @@
 ### [Microsoft Azure 和 SDN](sdn/Azure_and_Sdn.md)
 ### [联系数据中心和云网络团队](sdn/contact-sdn-team.md)
 
-## [虚拟专用网 (VPN)](technologies/vpn-stub.md)
+## [虚拟专用网 (VPN)](../remote/remote-access/vpn/vpn-top.md)
 
 ## [Windows Internet 名称服务 (WINS)](technologies/wins/wins-top.md)
 
@@ -317,4 +317,3 @@
 ### [Windows 时间服务技术参考](windows-time-service/windows-time-service-tech-ref.md)
 #### [Windows 时间服务的工作原理](windows-time-service/How-the-Windows-Time-Service-Works.md)
 #### [Windows 时间服务工具和设置](windows-time-service/Windows-Time-Service-Tools-and-Settings.md)
-

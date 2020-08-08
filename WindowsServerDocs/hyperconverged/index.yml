@@ -10,48 +10,48 @@ metadata:
   author: coreyp-at-msft
   ms.author: coreyp
   ms.date: 06/10/2020
-  ms.openlocfilehash: 1d2ec270e90423f2405b664f22de7ca85c540498
-  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.openlocfilehash: da06358fad02f7ca2f7088bae1a82a2b21786bda
+  ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/18/2020
-  ms.locfileid: "85070159"
+  ms.lasthandoff: 08/07/2020
+  ms.locfileid: "87993878"
 productDirectory:
   items:
   - title: Hyper-V
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-virtualize.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/
+    - url: /windows-server/virtualization/hyper-v/
       text: 对服务器硬件进行虚拟化，使你能够在超融合群集中的服务器上运行虚拟机。
   - title: Storage Spaces Direct
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-store.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview
+    - url: ../storage/storage-spaces/storage-spaces-direct-overview.md
       text: 对存储硬件进行虚拟化，使你能够基于超聚合群集中的服务器中分布的虚拟驱动器池创建卷。
   - title: 故障转移群集
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-cluster.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview
+    - url: ../failover-clustering/failover-clustering-overview.md
       text: 将多个服务器组合在一起，以便工作负荷（例如虚拟机）可以在群集中的任何服务器上运行，实现负载均衡以及正常在服务器之间进行故障转移。
   - title: 软件定义的网络
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-network.svg
     links:
-    - url: https://docs.microsoft.com/windows-server/networking/sdn/
+    - url: ../networking/sdn/index.yml
       text: 对网络硬件进行虚拟化，使你能够动态创建和管理对来自基础物理网络的工作负荷进行抽象的网络和策略。
   - title: Windows Admin Center
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-admin-center.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/overview
+    - url: ../manage/windows-admin-center/overview.md
       text: 对服务器硬件进行虚拟化，使你能够在超融合群集中的服务器上运行虚拟机。
   - title: 连接到 Azure 混合服务
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-microsoft-azure.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/azure-hybrid-services
+    - url: /windows-server/azure-hybrid-services
       text: 将群集连接到 Azure 混合服务以执行站点恢复、监视等操作。
   - title: Azure Stack HCI
     imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-azure-stack.svg
     links:
-    - url: https://docs.microsoft.com/en-us/windows-server/azure-stack-hci
+    - url: /windows-server/azure-stack-hci
       text: 将 Windows Server 2019 虚拟化和群集技术与所选的合作伙伴提供的经过验证的硬件解决方案进行配对，帮助你避免在对软件定义的数据中心进行调整时凭猜测行事。
   - title: Windows Server 软件定义的 (WSSD)
     imageSrc: https://docs.microsoft.com/media/common/i_data-collection.svg
