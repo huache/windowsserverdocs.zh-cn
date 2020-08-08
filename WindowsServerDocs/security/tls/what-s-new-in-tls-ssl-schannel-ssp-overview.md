@@ -1,39 +1,37 @@
 ---
-title: TLS-SSL （Schannel SSP）概述
+title: TLS-SSL (Schannel SSP) 概述
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 ms.assetid: c8836345-16bb-4dcc-8d2b-2b9b687456a3
 author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: b70a8fefc05723b78dbf5e652bf35f7b8b5cff4d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a60ed0b1228780ebb6e8d1e75541dc3089f7665c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182313"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989452"
 ---
-# <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS （Schannel SSP）概述
+# <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS-SSL (Schannel SSP) 概述
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows 10
 
-适用于 IT 专业人员的本主题介绍 Schannel 安全支持提供程序（SSP）中的功能更改，其中包括用于 Windows Server 2012 R2、Windows Server 2012、Windows 8.1 和 Windows 8 的传输层安全性（TLS）、安全套接字层（SSL）和数据报传输层安全性（DTLS）身份验证协议。
+适用于 IT 专业人员的本主题介绍了 Schannel 安全支持提供程序 (SSP) 功能的更改，其中包括传输层安全 (TLS) 、安全套接字层 (SSL) ，以及 Windows Server 2012 R2、Windows Server 2012、 (和 Windows 8 的数据报传输层安全性) DTLS Windows 8.1 身份验证协议。
 
 Schannel 是实现 SSL、TLS 和 DTLS Internet 标准身份验证协议的安全支持提供程序 (SSP)。 安全支持提供程序接口 (SSPI) 是 Windows 系统用于执行安全相关功能（包括身份验证）的 API。 SSPI 用作几个安全支持提供程序 (SSP)（包括 Schannel SSP）的通用接口。
 
-有关 Schannel SSP 中的 TLS 和 SSL 的 Microsoft 实现的详细信息，请参阅[TLS/SSL 技术参考（2003）](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)。
+有关 Schannel SSP 中的 TLS 和 SSL 的 Microsoft 实现的详细信息，请参阅[TLS/SSL 技术参考 (2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc784149(v=ws.10))。
 
 
-## <a name="tlsssl-schannel-ssp-features"></a>TLS/SSL （Schannel SSP）功能
+## <a name="tlsssl-schannel-ssp-features"></a>TLS/SSL (Schannel SSP) 功能
 下面介绍了 Schannel SSP 中的 TLS 功能。
 
 ### <a name="tls-session-resumption"></a>TLS 会话恢复
 传输层安全性 (TLS) 协议是 Schannel 安全支持提供程序的一个组成部分，用于保护跨不受信任的网络在应用程序之间发送的数据。 TLS/SSL 可以用于对服务器和客户端计算机进行身份验证，以及对经身份验证的参与方之间的消息进行加密。
 
-将 TLS 连接到服务器的设备经常由于会话到期而需要重新连接。 Windows 8.1 和 Windows Server 2012 R2 现在支持 RFC 5077 （TLS 会话恢复，无服务器端状态）。 此修改为 Windows Phone 和 Windows RT 设备提供了以下好处：
+将 TLS 连接到服务器的设备经常由于会话到期而需要重新连接。 Windows 8.1 和 Windows Server 2012 R2 现在支持 RFC 5077 (TLS 会话恢复，而不) 服务器端状态。 此修改为 Windows Phone 和 Windows RT 设备提供了以下好处：
 
 -   在服务器上减少了资源使用率
 
@@ -58,13 +56,13 @@ Schannel 是实现 SSL、TLS 和 DTLS Internet 标准身份验证协议的安全
 ### <a name="management-of-trusted-issuers-for-client-authentication"></a><a name="BKMK_TrustedIssuers"></a>客户端身份验证的受信任颁发者的管理
 需要使用 SSL 或 TLS 进行客户端计算机的身份验证时，服务器可以配置为发送受信任证书颁发者的列表。 此列表包含服务器将信任的证书颁发者集合，可提示客户端计算机要选择哪个客户端证书（如果存在多个证书）。 此外，必须根据配置的受信任颁发者列表来验证客户端计算机发送到服务器的证书链。
 
-在 Windows Server 2012 和 Windows 8 之前，使用 Schannel SSP （包括 HTTP.sys 和 IIS）的应用程序或进程可以提供它们支持的受信任颁发者的列表（通过证书信任列表（CTL）进行客户端身份验证）。
+在 Windows Server 2012 和 Windows 8 之前，使用 Schannel SSP (（包括 HTTP.sys 和) IIS）的应用程序或进程可以提供受信任的颁发者的列表，它们支持通过证书信任列表 (CTL) 进行客户端身份验证。
 
 在 Windows Server 2012 和 Windows 8 中，对基础身份验证过程进行了更改，以便：
 
 -   不再支持基于 CTL 的受信任颁发者列表管理。
 
--   默认情况下，发送受信任颁发者列表的行为为 off： SendTrustedIssuerList 注册表项的默认值现在是0（默认情况下关闭）而不是1。
+-   默认情况下，发送受信任颁发者列表的行为是关闭的：默认情况下，SendTrustedIssuerList 注册表项的默认值是 0 (关闭) 而不是1。
 
 -   保留与以前版本的 Windows 操作系统的兼容性。
 
@@ -76,7 +74,7 @@ Schannel 是实现 SSL、TLS 和 DTLS Internet 标准身份验证协议的安全
 
 从 Windows Server 2012 开始，CTL 的使用已替换为基于证书存储的实现。 这样可以通过 PowerShell 提供程序的现有证书管理 commandlet 以及命令行工具（如 certutil.exe）实现更熟悉的可管理性。
 
-尽管 Schannel SSP 支持的受信任证书颁发机构列表的最大大小（16 KB）仍与 Windows Server 2008 R2 中的相同，但在 Windows Server 2012 中有一个新的专用证书存储用于客户端身份验证颁发者，以便不相关的证书不包含在消息中。
+尽管 Schannel SSP 支持的受信任证书颁发机构列表的最大大小 (16 KB) 与在 Windows server 2008 R2 中相同，但在 Windows Server 2012 中有一个新的专用证书存储用于客户端身份验证颁发者，以便不会在消息中包含相关证书。
 
 **它的工作原理是什么？**
 
@@ -86,25 +84,25 @@ Schannel 是实现 SSL、TLS 和 DTLS Internet 标准身份验证协议的安全
 
 -   如果应用程序定义的存储中不存在任何证书，则 Schannel 会检查本地计算机上的“客户端身份验证颁发者”**** 存储，如果证书存在，则使用该存储作为源。 如果未在任一存储中找到证书，则检查受信任根存储。
 
--   如果全局存储或本地存储都不包含证书，则 Schannel 提供程序将使用**受信任的根证书颁发机构**存储区作为受信任颁发者列表的源。 （这是 Windows Server 2008 R2 的行为。）
+-   如果全局存储或本地存储都不包含证书，则 Schannel 提供程序将使用**受信任的根证书颁发机构**存储区作为受信任颁发者列表的源。  (这是 Windows Server 2008 R2 的行为。 ) 
 
-如果所使用的**受信任的根证书颁发机构**存储包含根（自签名）和证书颁发机构（CA）颁发者证书的混合，则默认情况下仅将 CA 颁发者证书发送到服务器。
+如果所使用的**受信任根证书颁发机构**存储区包含根 (自签名) 和证书颁发机构 (CA) 颁发者证书的混合，则默认情况下仅将 CA 颁发者证书发送到服务器。
 
 **如何配置 Schannel 以将证书存储用于受信任颁发者**
 
 默认情况下，Windows Server 2012 中的 Schannel SSP 体系结构将使用上述存储来管理受信任的颁发者列表。 你仍可以使用 PowerShell 提供程序的现有证书管理 commandlet 以及命令行工具（如 Certutil）来管理证书。
 
-有关使用 PowerShell 提供程序管理证书的信息，请参阅[Windows 中的 AD CS 管理 cmdlet](https://technet.microsoft.com/library/hh848365(v=wps.620).aspx)。
+有关使用 PowerShell 提供程序管理证书的信息，请参阅[Windows 中的 AD CS 管理 cmdlet](/powershell/module/adcsadministration/?view=winserver2012-ps)。
 
-有关使用证书实用工具管理证书的信息，请参阅[certutil.exe](https://technet.microsoft.com/library/cc732443.aspx)。
+有关使用证书实用工具管理证书的信息，请参阅[certutil.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732443(v=ws.11))。
 
-有关为 Schannel 凭据定义的数据（包括应用程序定义的存储）的信息，请参阅[SCHANNEL_CRED 结构（Windows）](https://msdn.microsoft.com/library/windows/desktop/aa379810(v=vs.85).aspx)。
+有关为 Schannel 凭据定义的数据（包括应用程序定义的存储）的信息，请参阅[ (Windows) SCHANNEL_CRED 结构](/windows/win32/api/schannel/ns-schannel-schannel_cred)。
 
 **信任模式的默认值**
 
 Schannel 提供程序支持三种客户端身份验证信任模式。 信任模式控制如何执行客户端证书链的验证，它是由 HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel. 下的 REG_DWORD "ClientAuthTrustMode" 控制的系统范围设置。
 
-|值|信任模式|描述|
+|“值”|信任模式|描述|
 |-----|-------|--------|
 |0|计算机信任（默认值）|需要由受信任颁发者列表中的证书颁发客户端证书。|
 |1|独占根信任|需要客户端证书链接到调用方指定的受信任颁发者存储中包含的根证书。 也必须由受信任颁发者列表中的颁发者颁发证书|
@@ -112,7 +110,7 @@ Schannel 提供程序支持三种客户端身份验证信任模式。 信任模�
 
 有关由于受信任的颁发者配置问题而导致的身份验证失败的信息，请参阅知识库文章[280256](https://support.microsoft.com/kb/2802568)。
 
-### <a name="tls-support-for-server-name-indicator-sni-extensions"></a><a name="BKMK_SNI"></a>服务器名称指示符（SNI）扩展的 TLS 支持
+### <a name="tls-support-for-server-name-indicator-sni-extensions"></a><a name="BKMK_SNI"></a>TLS 支持服务器名称指示器 (SNI) 扩展
 服务器名称指示符功能扩展了 SSL 和 TLS 协议，以便在单台服务器上运行大量虚拟映像时正确标识服务器。 为了正确保护客户端计算机和服务器之间的通信安全，客户端计算机将从服务器请求数字证书。 服务器响应请求并发送证书后，客户端计算机将进行检查，将其用于加密通信，然后继续执行正常的请求-响应交换。 但是，在虚拟主机托管方案中，几个域（都具有自己的可能不同证书）将托管在服务器上。 在这种情况下，服务器无法提前了解要发送给客户端计算机的证书。 SNI 让客户端计算机可在协议早期通知目标域，且这让服务器可以正确选择相应证书。
 
 **此添加的值是什么？**
@@ -148,4 +146,4 @@ DTLS 版本 1.0 协议已添加到 Schannel 安全支持提供程序。 DTLS 协
 在适用于 Windows Server 2012 和 Windows 8 的 Schannel SSP 中，没有不推荐使用的功能或功能。
 
 ## <a name="additional-references"></a>其他参考
--   [私有云安全模型 - 包装程序功能](https://docs.microsoft.com/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)
+-   [私有云安全模型 - 包装程序功能](/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)

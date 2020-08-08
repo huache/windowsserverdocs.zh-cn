@@ -1,28 +1,26 @@
 ---
-title: TLS/SSL 概述（Schannel SSP）
+title: 'TLS/SSL 概述 (Schannel SSP) '
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: 0d963116fc9f22482398b38482f0c3c49f4be505
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 512dd20e658f610ac9de7247380eed5d2aed54f6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475514"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989469"
 ---
-# <a name="tlsssl-overview-schannel-ssp"></a>TLS/SSL 概述（Schannel SSP）
+# <a name="tlsssl-overview-schannel-ssp"></a>TLS/SSL 概述 (Schannel SSP) 
 
 >适用于：Windows Server（半年频道）、Windows Server 2016、Windows 10
 
-适用于 IT 专业人员的本主题介绍了使用 Schannel 安全服务提供程序（SSP）在 Windows 中实现的 TLS 和 SSL 实现，具体方法是：描述实际应用程序、Microsoft 实现中的更改和软件要求，以及 Windows Server 2012 和 Windows 8 的其他资源。
+适用于 IT 专业人员的本主题介绍了使用 Schannel 安全服务提供商 (SSP) 的 Windows 中的 TLS 和 SSL 实现，它介绍了实际应用程序、Microsoft 实现更改、软件要求以及 Windows Server 2012 和 Windows 8 的其他资源。
 
-## <a name="description"></a><a name="BKMK_OVER"></a>说明
+## <a name="description"></a><a name="BKMK_OVER"></a>描述
 Schannel 是安全支持提供程序 (SSP)，可实现安全套接字层 (SSL) 和传输层安全 (TLS) Internet 标准身份验证协议。
 
 安全支持提供程序接口 (SSPI) 是 Windows 系统用于执行安全相关功能（包括身份验证）的 API。 SSPI 充当多个 Ssp （包括 Schannel SSP）的通用接口。
@@ -48,6 +46,6 @@ TLS 和 SSL 协议使用客户端/服务器模型，且基于需要公钥基础�
 
 ## <a name="additional-references"></a>其他参考 ##
 
--   [Schannel 安全数据包](https://docs.microsoft.com/windows/desktop/com/schannel)
--   [安全通道](https://docs.microsoft.com/windows/desktop/SecAuthN/secure-channel)
--   [传输层安全协议](https://docs.microsoft.com/windows/desktop/SecAuthN/transport-layer-security-protocol)
+-   [Schannel 安全数据包](/windows/desktop/com/schannel)
+-   [安全通道](/windows/desktop/SecAuthN/secure-channel)
+-   [传输层安全协议](/windows/desktop/SecAuthN/transport-layer-security-protocol)

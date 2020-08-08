@@ -1,29 +1,27 @@
 ---
 title: 了解和部署永久性内存
 description: 有关永久性内存的详细信息以及如何在 Windows Server 2019 中通过存储空间直通对其进行设置的详细信息。
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f5f88ac2ec728e176735ad58d9d67112583c527
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 512b53be7af89fe9e0fd017af14425264062ed29
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469642"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960900"
 ---
 # <a name="understand-and-deploy-persistent-memory"></a>了解和部署永久性内存
 
 > 适用于：Windows Server 2019
 
-永久性内存（或 PMem）是一种新类型的内存技术，可提供经济实惠的大容量和持久性的独特组合。 本文提供有关 PMem 的背景以及使用存储空间直通在 Windows Server 2019 中部署它的步骤。
+持久性内存 (或 PMem) 是一种新类型的内存技术，可提供经济实惠的大容量和持久性的独特组合。 本文提供有关 PMem 的背景以及使用存储空间直通在 Windows Server 2019 中部署它的步骤。
 
 ## <a name="background"></a>背景
 
-PMem 是一种非易失性 RAM （NVDIMM），它通过电源周期保留其内容。 即使在出现意外断电、用户启动了关机、系统崩溃等事件时，也会保留内存内容。 这一独特的特征是，还可以使用 PMem 作为存储。 这就是为什么你会听到人们将 PMem 称为 "存储类内存" 的原因。
+PMem 是 (NVDIMM) 的一种非易失性 RAM，通过电源周期保留其内容。 即使在出现意外断电、用户启动了关机、系统崩溃等事件时，也会保留内存内容。 这一独特的特征是，还可以使用 PMem 作为存储。 这就是为什么你会听到人们将 PMem 称为 "存储类内存" 的原因。
 
 若要查看其中一些优点，请查看 Microsoft Ignite 2018 中的以下演示。
 
@@ -35,13 +33,13 @@ PMem 是一种非易失性 RAM （NVDIMM），它通过电源周期保留其内�
 
 ![13.7 m IOPS 记录屏幕快照](media/deploy-pmem/iops-record.png)
 
-如果你密切观看视频，你会注意到，甚至会有更多的 jaw。 即使在超过13.7 的 IOPS，Windows 中的文件系统也报告的延迟始终小于40μs！ （这是毫秒数的符号，一秒的秒。）此速度比典型的所有闪存供应商骄傲公布的速度要快得多。
+如果你密切观看视频，你会注意到，甚至会有更多的 jaw。 即使在超过13.7 的 IOPS，Windows 中的文件系统也报告的延迟始终小于40μs！  (这是微秒的符号，一秒的秒。 ) 此速度比典型的所有闪存供应商骄傲的速度要快得多。
 
 同时，Windows Server 2019 中的存储空间直通和 Intel &reg; Optane &trade; DC 持久性内存提供了突破性的性能。 这种业界领先的13.7 的 HCI 基准，超过了可预测性和极低的延迟，这比我们先前业界领先的 6.7 M IOPS 基准更多。 而且，这一次我们只需要12% 的节点，但 &mdash; 不到两年前。
 
 ![IOPS 收益](media/deploy-pmem/iops-gains.png)
 
-测试硬件是一个12服务器的群集，它配置为使用三向镜像和分隔的 ReFS 卷、 **12** x Intel &reg; S2600WFT、 **384 GiB** memory、2 x 28 核心 "CascadeLake"、 **1.5 tb** Intel &reg; OPTANE &trade; DC 永久性内存作为缓存、 **32 TB** NVMe （4 x 8 TB Intel &reg; DC P4510）容量、 **2** x Mellanox ConnectX-4 25 Gbps。
+测试硬件是一个12服务器的群集，它配置为使用三向镜像和分隔的 ReFS 卷、 **12** x Intel &reg; S2600WFT、 **384 GiB** memory、2 x 28 核心 "CascadeLake"、 **1.5 tb** intel &reg; OPTANE &trade; DC 永久性内存作为缓存、 **32 tb** NVMe (4 x 8 TB intel &reg; DC P4510) 容量、 **2** x Mellanox ConnectX-4 25 Gbps。
 
 下表显示了完整的性能数字。
 
@@ -62,7 +60,7 @@ PMem 是一种非易失性 RAM （NVDIMM），它通过电源周期保留其内�
 | **Intel Optane &trade;** 内存模式下的 DC 永久性内存 | 支持            | 支持                |
 
 > [!NOTE]
-> Intel Optane 支持*内存*（可变）模式和*应用直接*（持久）模式。
+> Intel Optane 支持 (可变) 和*应用直接* (永久) 模式的*内存*。
 
 > [!NOTE]
 > 当你重新启动 &reg; &trade; 在应用程序直接模式下有多个划分为多个命名空间的 Intel Optane PMem 模块的系统时，你可能会失去对部分或全部相关逻辑存储磁盘的访问权限。 此问题发生在早于版本1903的 Windows Server 2019 版本上。
@@ -79,7 +77,7 @@ PMem 是一种非易失性 RAM （NVDIMM），它通过电源周期保留其内�
 
 ### <a name="understanding-interleaved-sets"></a>了解交错集
 
-请记住，NVDIMM 位于标准 DIMM （内存）槽，使数据更接近处理器。 此配置可减少延迟并提高提取性能。 若要进一步增加吞吐量，请使用两个或更多 NVDIMMs 创建一个用于条带读/写操作的 n 向交错集。 最常见的配置是双向或四向交叉。 交错集还会使多个永久性内存设备在 Windows Server 中显示为一个逻辑磁盘。 可以使用 Windows PowerShell **PmemDisk** cmdlet 查看此类逻辑磁盘的配置，如下所示：
+回忆一下，NVDIMM 位于标准 DIMM (内存) 槽，使数据更接近处理器。 此配置可减少延迟并提高提取性能。 若要进一步增加吞吐量，请使用两个或更多 NVDIMMs 创建一个用于条带读/写操作的 n 向交错集。 最常见的配置是双向或四向交叉。 交错集还会使多个永久性内存设备在 Windows Server 中显示为一个逻辑磁盘。 可以使用 Windows PowerShell **PmemDisk** cmdlet 查看此类逻辑磁盘的配置，如下所示：
 
 ```PowerShell
 Get-PmemDisk
@@ -160,7 +158,7 @@ Windows Server 2019 上的存储空间直通支持使用持久性内存作为缓
 
 可以通过两种方法来访问永久性内存。 它们分别是：
 
-1. **直接访问（DAX）**，其操作类似于内存来获得最低延迟。 应用直接修改持久性内存，绕过堆栈。 请注意，只能将 DAX 与 NTFS 结合使用。
+1. **直接访问 (DAX) **，它的作用类似于内存来获得最低延迟。 应用直接修改持久性内存，绕过堆栈。 请注意，只能将 DAX 与 NTFS 结合使用。
 1. **阻止访问**，它的操作类似于应用程序兼容性的存储。 在此配置中，数据流经堆栈。 可以将此配置与 NTFS 和 ReFS 结合使用。
 
 下图显示了 DAX 配置的示例：
@@ -268,11 +266,11 @@ DeviceId DeviceType           HealthStatus OperationalStatus PhysicalLocation Fi
 20       Intel INVDIMM device Unhealthy    {HardwareError}   CPU1_DIMM_C1     102005310        126 GB                 0 GB
 ```
 
-此 cmdlet 显示哪些永久性内存设备处于不正常状态。 不正常的设备（**DeviceId** 20）与上一示例中的大小写匹配。 BIOS 中的**PhysicalLocation**可帮助确定哪些永久性内存设备处于错误状态。
+此 cmdlet 显示哪些永久性内存设备处于不正常状态。 不正常的设备 (**DeviceId** 20) 与上一示例中的大小写相匹配。 BIOS 中的**PhysicalLocation**可帮助确定哪些永久性内存设备处于错误状态。
 
 ## <a name="replacing-persistent-memory"></a>替换持久性内存
 
-本文介绍如何查看持久内存的运行状况状态。 如果必须替换出现故障的模块，则必须重新设置 PMem 磁盘（请参阅前面介绍的步骤）。
+本文介绍如何查看持久内存的运行状况状态。 如果必须替换出现故障的模块，则必须重新设置 PMem 磁盘 (请参阅之前) 介绍的步骤。
 
 进行故障排除时，可能需要使用**PmemDisk**。 此 cmdlet 将删除特定的持久性内存磁盘。 可以通过运行以下 cmdlet 来删除所有当前 PMem 磁盘：
 

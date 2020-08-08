@@ -1,19 +1,17 @@
 ---
 title: 开发网关插件
-description: 开发网关插件 Windows 管理中心 SDK （Project Honolulu）
-ms.technology: manage
+description: '开发网关插件 Windows 管理中心 SDK (项目 Honolulu) '
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 2b096b226190ad1ca3fd07c38b7b939d019ee30f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 428f40abf050e87cf88d536b18254e6c20b51fa3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406933"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949621"
 ---
 # <a name="develop-a-gateway-plugin"></a>开发网关插件
 
@@ -31,45 +29,45 @@ Windows 管理中心网关插件启用从工具或解决方案的 UI 到目标�
 > [!NOTE]
 > 不熟悉不同的扩展类型？ 了解有关[扩展性体系结构和扩展类型](understand-extensions.md)的详细信息。
 
-## <a name="prepare-your-environment"></a>准备你的环境
+## <a name="prepare-your-environment"></a>准备环境
 
 如果尚未准备好，请通过安装所有项目所需的依赖项和全局必备组件来[准备环境](prepare-development-environment.md)。
 
-## <a name="create-a-gateway-plugin-c-library"></a>创建网关插件（C#库）
+## <a name="create-a-gateway-plugin-c-library"></a> (c # 库创建网关插件) 
 
-若要创建自定义网关插件，请C#从 ```Microsoft.ManagementExperience.FeatureInterfaces``` 命名空间创建一个实现 ```IPlugIn``` 接口的新类。  
+若要创建自定义网关插件，请创建新的 c # 类，该类实现 ```IPlugIn``` 来自 ```Microsoft.ManagementExperience.FeatureInterfaces``` 命名空间的接口。
 
 > [!NOTE]
-> SDK 早期版本中提供的 ```IFeature``` 接口现在已标记为过时。  所有网关插件开发应使用 IPlugIn （或（可选） HttpPlugIn 抽象类）。
+> ```IFeature```在早期版本的 SDK 中提供的接口现在已标记为过时。  所有网关插件开发应使用 IPlugIn (或（可选） HttpPlugIn 抽象类) 。
 
 ### <a name="download-sample-from-github"></a>从 GitHub 下载示例
 
-若要快速开始使用自定义网关插件，你可以从 Windows 管理中心 SDK [GitHub 站点](https://aka.ms/wacsdk)克隆或下载我们的[ C#示例插件项目](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)的副本。
+若要快速开始使用自定义网关插件，你可以从 Windows 管理中心 SDK [GitHub 站点](https://aka.ms/wacsdk)克隆或下载我们的[示例 c # 插件项目](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)的副本。
 
 ### <a name="add-content"></a>添加内容
 
-将新内容添加到[ C#示例插件项目](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)项目（或您自己的项目）的克隆副本，以包含您的自定义 api，然后生成要在后续步骤中使用的自定义网关插件 DLL 文件。
+将新内容添加到[示例 c # 插件项目](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)项目 (或自己的项目) 的克隆副本，以包含自定义 api，然后生成要在后续步骤中使用的自定义网关插件 DLL 文件。
 
 ### <a name="deploy-plugin-for-testing"></a>部署用于测试的插件
 
 通过将自定义网关插件的 DLL 加载到 Windows 管理中心网关进程来对其进行测试。
 
-Windows 管理中心在当前计算机的应用程序数据文件夹中查找 ```plugins``` 文件夹中的所有插件（使用 System.environment.specialfolder 枚举的 CommonApplicationData 值）。 在 Windows 10 上 ```C:\ProgramData\Server Management Experience```此位置。  如果 ```plugins``` 文件夹尚不存在，则可以自行创建该文件夹。
+Windows 管理中心在 ```plugins``` 当前计算机的 "应用程序数据" 文件夹中的文件夹中查找所有插件 (使用 system.environment.specialfolder 枚举) 的 CommonApplicationData 值。 在 Windows 10 上，此位置是 ```C:\ProgramData\Server Management Experience``` 。  如果 ```plugins``` 文件夹尚不存在，您可以自行创建该文件夹。
 
 > [!NOTE]
-> 可以通过更新 "StaticsFolder" 配置值来覆盖调试版本中的插件位置。 如果正在本地调试，则此设置位于桌面解决方案的 app.config 中。 
+> 可以通过更新 "StaticsFolder" 配置值来覆盖调试版本中的插件位置。 如果正在本地调试，则此设置位于桌面解决方案的 App.Config 中。
 
-在插件文件夹内（在此示例中，```C:\ProgramData\Server Management Experience\plugins```）
+在此示例中 (插件文件夹内， ```C:\ProgramData\Server Management Experience\plugins```) 
 
-* 使用与自定义网关插件 DLL 中 ```Feature``` 的 ```Name``` 属性值相同的名称创建新文件夹（在我们的示例项目中，```Name``` 为 "Sample Uno"）
+* 在示例项目中，创建一个新文件夹，该文件夹的名称与 ```Name``` ```Feature``` 自定义网关插件 DLL 中 (的属性值相同， ```Name``` 即 "Uno" ) 
 * 将自定义网关插件 DLL 文件复制到此新文件夹
 * 重新启动 Windows 管理中心进程
 
-Windows 管理员进程重新启动后，您将能够通过发出 GET、PUT、PATCH、DELETE 或 POST ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}``` 来在自定义网关插件 DLL 中执行这些 Api。
+Windows 管理员进程重新启动后，您将能够通过发出 GET、PUT、PATCH、DELETE 或 POST 来在自定义网关插件 DLL 中执行这些 Api。```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}```
 
 ### <a name="optional-attach-to-plugin-for-debugging"></a>可选：附加到插件进行调试
 
-在 Visual Studio 2017 的 "调试" 菜单中，选择 "附加到进程"。 在下一个窗口中，滚动到 "可用进程" 列表并选择 "SMEDesktop"，然后单击 "附加"。 调试器启动后，可以在功能代码中放置一个断点，然后演练上述 URL 格式。 对于我们的示例项目（功能名称： "Sample Uno"），该 URL 为： "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
+在 Visual Studio 2017 的 "调试" 菜单中，选择 "附加到进程"。 在下一个窗口中，滚动到 "可用进程" 列表并选择 "SMEDesktop.exe"，然后单击 "附加"。 调试器启动后，可以在功能代码中放置一个断点，然后演练上述 URL 格式。 对于我们的示例项目 (功能名称： "Sample Uno" ) URL 为： " <http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno> "
 
 ## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>使用 Windows 管理中心 CLI 创建工具扩展 ##
 
@@ -81,8 +79,8 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}"
 
 | 值 | 说明 | 示例 |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | 公司名称（包含空格） | ```Contoso Inc``` |
-| ```{!Tool Name}``` | 工具名称（包含空格） | ```Manage Foo Works``` |
+| ```{!Company Name}``` | 你的公司名称 (带有空格)  | ```Contoso Inc``` |
+| ```{!Tool Name}``` | 你的工具名称 (带有空格)  | ```Manage Foo Works``` |
 
 下面是一个示例用法：
 
@@ -90,7 +88,7 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}"
 wac create --company "Contoso Inc" --tool "Manage Foo Works"
 ```
 
-这将使用为工具指定的名称在当前工作目录中创建一个新文件夹，将所有必需的模板文件复制到你的项目中，并使用你的公司和工具名称配置文件。  
+这将使用为工具指定的名称在当前工作目录中创建一个新文件夹，将所有必需的模板文件复制到你的项目中，并使用你的公司和工具名称配置文件。
 
 接下来，将目录更改为刚创建的文件夹，然后通过运行以下命令安装所需的本地依赖项：
 
@@ -98,7 +96,7 @@ wac create --company "Contoso Inc" --tool "Manage Foo Works"
 npm install
 ```
 
-完成此操作后，已设置将新扩展加载到 Windows 管理中心所需的一切。 
+完成此操作后，已设置将新扩展加载到 Windows 管理中心所需的一切。
 
 ## <a name="connect-your-tool-extension-to-your-custom-gateway-plugin"></a>将你的工具扩展连接到你的自定义网关插件
 
@@ -106,7 +104,7 @@ npm install
 
 - 添加[空模块](guides/add-module.md)
 - 在工具扩展中使用[自定义网关插件](guides/use-custom-gateway-plugin.md)
- 
+
 ## <a name="build-and-side-load-your-extension"></a>生成和加载扩展
 
 接下来，构建扩展并将其加载到 Windows 管理中心。  打开一个命令窗口，将目录更改为你的源目录，然后你就可以生成了。

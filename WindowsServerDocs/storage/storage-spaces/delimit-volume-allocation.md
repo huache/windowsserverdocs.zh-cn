@@ -2,16 +2,15 @@
 title: 分隔存储空间直通中的卷分配
 ms.author: cosmosdarwin
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: ccce763b437b461d33dd72cb3d656b825746e6da
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6dac775d3e92a0f7a076800d5c07af2776720c1d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953840"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960950"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>分隔存储空间直通中的卷分配
 > 适用于：Windows Server 2019
@@ -43,7 +42,7 @@ Windows Server 2019 引入了一个选项，用于在存储空间直通中手动
 
 此默认分配最大程度地提高了并行读取和写入量，从而提高了性能，并使其简易性非常有吸引力：每台服务器都是繁忙的，每个驱动器都是相同的，所有卷都保持联机或脱机。 每个卷都保证能经受多达两个并发故障，如[这些示例](storage-spaces-fault-tolerance.md#examples)所示。
 
-但是，通过此分配，卷不会经受三个并发故障。 如果三台服务器一次失败，或者三台服务器中的驱动器同时出现故障，则卷将无法访问，因为至少有一些碎片（极高的概率）分配给了出现故障的三个驱动器或服务器。
+但是，通过此分配，卷不会经受三个并发故障。 如果三台服务器一次失败，或者三台服务器中的驱动器同时出现故障，则卷将无法访问，因为至少有一些碎片 (的概率非常高，) 分配给发生故障的三个驱动器或服务器。
 
 在下面的示例中，服务器1、3和5同时出现故障。 尽管许多碎片都有保留下来的副本，但有些没有：
 
@@ -53,9 +52,9 @@ Windows Server 2019 引入了一个选项，用于在存储空间直通中手动
 
 ### <a name="new-delimited-allocation"></a>新建：分隔分配
 
-使用分隔分配，你可以指定要使用的服务器子集（最少四个）。 卷被分为三次（如之前）复制的碎片，而不是在每个服务器之间分配，而是**只将碎片分配给指定的服务器的子集**。
+使用分隔分配，你可以指定要使用的服务器的子集 (最少四个) 。 卷被分为三次（如之前）复制的碎片，而不是在每个服务器之间分配，而是**只将碎片分配给指定的服务器的子集**。
 
-例如，如果有一个8节点群集（节点1到8），则可以指定仅位于节点1、2、3、4中的磁盘上的卷。
+例如，如果有一个8节点群集 (节点1到 8) ，则可以指定仅在节点1、2、3、4中的磁盘上定位的卷。
 #### <a name="advantages"></a>优点
 
 对于示例分配，卷可能会经受三个并发故障。 如果节点1、2和6关闭，则只有2个节点中包含该卷的数据的3个副本的节点已关闭，该卷将保持联机状态。
@@ -68,7 +67,7 @@ Windows Server 2019 引入了一个选项，用于在存储空间直通中手动
 
 1. 管理员负责界定每个卷的分配，以平衡服务器之间的存储使用率，并使流量的严重程度达到平衡，如 "[最佳做法](#best-practices)" 一节中所述。
 
-2. 通过分隔分配，保留**每个服务器一个容量驱动器的等效值（无最大值）**。 这比用于常规分配的[已发布建议](plan-volumes.md#choosing-the-size-of-volumes)更多，其中以至于耗光了4个容量驱动器总计。
+2. 通过分隔分配，**每个服务器 (保留一个容量驱动器的等效项，没有最大) **。 这比用于常规分配的[已发布建议](plan-volumes.md#choosing-the-size-of-volumes)更多，其中以至于耗光了4个容量驱动器总计。
 
 3. 如果服务器发生故障，需要更换，如[删除服务器及其驱动器](remove-servers.md#remove-a-server-and-its-drives)中所述，管理员负责通过添加新的服务器并删除失败的卷来更新受影响的卷的 delimitation-以下示例。
 
@@ -95,7 +94,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
    > [!TIP]
    > 在存储空间直通中，术语 "存储缩放单位" 指连接到一台服务器的所有原始存储，包括直接连接驱动器和带有驱动器的直接连接的外部机箱。 在此上下文中，它与 "服务器" 相同。
 
-2. 使用新参数指定要使用的服务器 `-StorageFaultDomainsToUse` ，并通过将索引到中 `$Servers` 。 例如，要将分配界定为第一个、第二个、第三个和第四个服务器（索引0、1、2和3）：
+2. 使用新参数指定要使用的服务器 `-StorageFaultDomainsToUse` ，并通过将索引到中 `$Servers` 。 例如，要将分配分配给第一个、第二个、第三个和第四个服务器 (索引0、1、2和 3) ：
 
     ```PowerShell
     New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2,3]
@@ -167,13 +166,13 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 ### <a name="stagger-delimited-allocation-volumes"></a>交错分隔的分配卷
 
-为了最大限度地提高容错能力，请确保每个卷的分配都是唯一的，这意味着它不会与另一个卷共享其*所有*服务器（有一些重叠问题）。
+为了最大限度地提高容错能力，请确保每个卷的分配都是唯一的，这意味着它不会与另一个卷共享其*所有*服务器 (一些重叠) 。
 
 例如，在八节点系统上：卷1：服务器1、2、3、4卷2：服务器5、6、7、8卷3：服务器3、4、5、6卷4：服务器1、2、7、8
 
 ## <a name="analysis"></a>分析
 
-此部分派生了一个卷处于联机状态且可访问（或等效于处于联机和可访问状态的总体存储的预期小数部分）的数学概率，作为失败次数和群集大小的函数。
+此部分派生了卷处于联机状态且可访问 (或与之相同的数学概率，这是保持联机和可访问的总体存储量的预期比例，) 作为故障次数和群集大小的函数。
 
    > [!NOTE]
    > 本部分是可选阅读内容。 如果想看到数学计算，请继续阅读！ 但请不要担心： [PowerShell 中的使用](#usage-in-powershell)和[最佳做法](#best-practices)是成功实现分隔分配所需的所有操作。
@@ -190,7 +189,7 @@ MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 
 如果一次发生了三次或更多故障，但至少一半的服务器和驱动器仍处于开启状态，则带分隔分配的卷可能会保持联机并可访问，具体取决于哪些服务器发生故障。
 
-## <a name="frequently-asked-questions"></a>常见问题解答
+## <a name="frequently-asked-questions"></a>常见问题
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>是否可以分隔某些卷，但不能分隔其他卷？
 

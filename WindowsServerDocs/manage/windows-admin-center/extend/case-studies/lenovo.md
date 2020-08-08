@@ -1,25 +1,23 @@
 ---
 title: Windows 管理中心 SDK 案例研究-联想
 description: Windows 管理中心 SDK 案例研究-联想
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 1/7/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: a51b4bb5f6dc7dcd002b8e7a8998ce731fa374ed
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: 74afb81918512b45b39e3ba85649cd3edac1d3d7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942318"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949711"
 ---
 # <a name="lenovo-xclarity-integrator-extension"></a>联想 XClarity 集成器扩展
 
 ## <a name="integrated-hardware-management-everywhere"></a>随时随地集成硬件管理！
 
-适用于 Windows 管理中心的[联想 XClarity 集成](https://www.lenovo.com/us/en/data-center/software/systems-management/XClarity-Integrator/p/WMD00000370)器扩展为管理员提供了直接从 Windows 管理中心管理联想基础结构的无缝体验。 XClarity 集成器扩展包含独立的解决方案扩展，还在一个统一的 UI 中扩展现有服务器管理器、故障转移群集管理器和超聚合群集管理器解决方案，以实现简单的服务器管理。 
+适用于 Windows 管理中心的[联想 XClarity 集成](https://www.lenovo.com/us/en/data-center/software/systems-management/XClarity-Integrator/p/WMD00000370)器扩展为管理员提供了直接从 Windows 管理中心管理联想基础结构的无缝体验。 XClarity 集成器扩展包含独立的解决方案扩展，还在一个统一的 UI 中扩展现有服务器管理器、故障转移群集管理器和超聚合群集管理器解决方案，以实现简单的服务器管理。
 
 XClarity 集成器扩展中包含的解决方案扩展允许同时连接到联想 XClarity 管理员、联想机或塔式服务器，或者连接到整个机箱中的所有服务器。 添加服务器后，可以看到所有已添加节点的总体运行状况状态。
 
@@ -38,7 +36,7 @@ XClarity 集成器扩展中包含的解决方案扩展允许同时连接到联�
 ![联想扩展 ](../../media/extend-case-study-lenovo/lenovo-4.png)
  ![ 联想扩展](../../media/extend-case-study-lenovo/lenovo-5.png)
 
-Windows 服务器和群集的解决方案扩展和工具扩展提供滚动（群集感知）服务器更新功能。 这可以帮助防止在服务器更新期间发生任何工作负荷中断。 目前，扩展支持所有联想服务器的单独固件更新和合规性策略固件更新。 它们还支持联想 ThinkAgile MX HCI 群集服务器的最佳食谱固件/驱动程序更新。
+Windows 服务器和群集的解决方案扩展和工具扩展提供滚动 (群集感知) 服务器更新功能。 这可以帮助防止在服务器更新期间发生任何工作负荷中断。 目前，扩展支持所有联想服务器的单独固件更新和合规性策略固件更新。 它们还支持联想 ThinkAgile MX HCI 群集服务器的最佳食谱固件/驱动程序更新。
 
 ![联想扩展](../../media/extend-case-study-lenovo/lenovo-6-fwupdate.png)
 

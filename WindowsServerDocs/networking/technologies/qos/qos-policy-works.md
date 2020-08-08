@@ -1,19 +1,17 @@
 ---
 title: QoS 策略的工作方式
-description: 本主题概述了服务质量（QoS）策略，该策略允许你使用组策略来确定 Windows Server 2016 中特定应用程序和服务的网络流量带宽的优先级。
-ms.prod: windows-server
-ms.technology: networking
+description: 本主题概述了服务质量 (QoS) 策略，该策略允许你使用组策略来确定 Windows Server 2016 中特定应用程序和服务的网络流量带宽的优先级。
 ms.topic: article
 ms.assetid: 25097cb8-b9b1-41c9-b3c7-3610a032e0d8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 65d2635744e7d49e45d8f878be9a5e734dea9e6d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fe91bba99000be307ed011cb5636dc49d65c389a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315408"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942527"
 ---
 # <a name="how-qos-policy-works"></a>QoS 策略的工作方式
 
@@ -29,15 +27,15 @@ ms.locfileid: "80315408"
 
 4. QoS 检查模块检索用户或计算机 QoS 策略并将其存储。
 
-当创建新的传输层终结点 \(TCP 连接或 UDP 流量\) 时，将发生以下过程。
+当创建新的传输层终结点 \( TCP 连接或 UDP 流量时 \) ，将发生以下过程。
 
 1. TCP/IP 堆栈的传输层组件会通知 QoS 检测模块。
 
 2. QoS 检查模块将传输层终结点的参数与存储的 QoS 策略进行比较。
 
-3. 如果找到匹配项，则 QoS 检查模块会联系 Pacer 来创建流，这是一个包含 DSCP 值的数据结构和匹配的 QoS 策略的流量限制设置。 如果有多个 QoS 策略与传输层终结点的参数匹配，则使用最具体的 QoS 策略。
+3. 如果找到匹配项，则 QoS 检查模块会联系 Pacer.sys 来创建流，这是一个包含 DSCP 值的数据结构和匹配的 QoS 策略的流量限制设置。 如果有多个 QoS 策略与传输层终结点的参数匹配，则使用最具体的 QoS 策略。
 
-4. Pacer 存储流，并将与该流相对应的流编号返回到 QoS 检测模块。
+4. Pacer.sys 存储流，并将与该流相对应的流编号返回到 QoS 检测模块。
 
 5. QoS 检查模块将流编号返回到传输层。
 
@@ -47,19 +45,19 @@ ms.locfileid: "80315408"
 
 1. 传输层在内部用流编号来标记数据包。
 
-2. 网络层为 Pacer 查询与数据包的流编号相对应的 DSCP 值。
+2. 网络层查询 Pacer.sys 的 DSCP 值对应于数据包的流号。
 
-3. Pacer. .sys 将 DSCP 值返回到网络层。
+3. Pacer.sys 返回网络层的 DSCP 值。
 
-4. 网络层将 "IPv4 TOS 字段" 或 "IPv6 通信类" 字段更改为 Pacer 指定的 DSCP 值，对于 IPv4 数据包，将计算最终的 IPv4 标头校验和。
+4. 网络层将 "IPv4 TOS 字段" 或 "IPv6 通信类" 字段更改为 Pacer.sys 指定的 DSCP 值，对于 IPv4 数据包，将计算最终的 IPv4 标头校验和。
 
 5. 网络层将数据包交给组帧层。
 
-6. 由于数据包已使用流号码进行标记，因此组帧层通过 NDIS 1.x 将数据包传递到 Pacer. x。
+6. 由于数据包已使用流号码进行标记，因此组帧层通过 NDIS 1.x 将数据包交给 Pacer.sys。
 
-7. Pacer 使用数据包的流号来确定是否需要对数据包进行限制，如果是，则计划数据包的发送。
+7. Pacer.sys 使用数据包的流号来确定是否需要对数据包进行限制，如果是，则将数据包安排为发送。
 
-8. Pacer 如果不存在流量限制，则会立即将数据包 \(; 如果存在流量\) 限制，则\) 或计划 \(，以便在相应的网络适配器上传输。
+8. 如果不存在流量限制，则 Pacer.sys 直接对数据包进行操作， \( \) \( 如果 \) 要通过相应的网络适配器传输流量，请立即将流量阻止到 NDIS 1.x。
 
 基于策略的 QoS 的这些过程具有以下优势。
 
@@ -73,4 +71,4 @@ ms.locfileid: "80315408"
 
 有关本指南的下一个主题，请参阅[QoS 策略体系结构](qos-policy-architecture.md)。
 
-有关本指南的第一个主题，请参阅[服务质量（QoS）策略](qos-policy-top.md)。
+有关本指南的第一个主题，请参阅[Service Quality (QoS) 策略](qos-policy-top.md)。

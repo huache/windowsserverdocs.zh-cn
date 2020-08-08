@@ -2,18 +2,16 @@
 title: 编辑文件屏蔽模板属性
 description: 本文介绍了如何编辑文件屏蔽模板属性
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: cb0ab9105aeded58b2ef3de9e5eb86fe823d6b5b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 86a6a6233c1a2092a5a54b807215c12b1f0a1bae
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473524"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942075"
 ---
 # <a name="edit-file-screen-template-properties"></a>编辑文件屏蔽模板属性
 
@@ -42,7 +40,7 @@ ms.locfileid: "85473524"
     -   如果希望修改使用原始模板创建的所有现有文件屏蔽，请单击**将模板应用于所有派生的文件屏蔽**。
     -   如果希望保持现有文件屏蔽不变，请单击**不要将模板应用于派生文件屏蔽**。
 
-7.  单击" **确定**"。
+7.  单击“确定”。
 
 ## <a name="additional-references"></a>其他参考
 

@@ -1,18 +1,16 @@
 ---
 title: 了解和配置 Azure Monitor
 description: 详细设置信息 Azure Monitor 是什么，以及如何为 Windows Server 2016 和2019中的存储空间直通群集配置电子邮件和短信警报。
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/10/2020
-ms.openlocfilehash: 72d08b3e4461eeea07e161de1073f5320830028c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 40ee23fa8c1fa88c54e5c8ee1e2c3ebd3453bfff
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953981"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961131"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>使用 Azure Monitor 发送有关运行状况服务故障的电子邮件
 
@@ -20,7 +18,7 @@ ms.locfileid: "86953981"
 
 Azure Monitor 提供用于收集、分析和处理来自云与本地环境的遥测数据的综合解决方案，可将应用程序的可用性和性能最大化。 它可以帮助你了解应用程序的性能，并主动识别影响应用程序及其所依赖资源的问题。
 
-这对于本地超聚合群集特别有用。 通过 Azure Monitor 集成，你可以配置电子邮件、文本（SMS）和其他警报，以便在出现问题时对你的群集进行 ping 操作（或者当你想要基于收集的数据来标记其他活动时）进行 ping 操作。 下面，我们将简要说明 Azure Monitor 的工作原理、如何安装 Azure Monitor，以及如何将其配置为发送通知。
+这对于本地超聚合群集特别有用。 通过 Azure Monitor 集成，你可以配置电子邮件、文本 (SMS) 和其他警报，以便在 (群集出现问题时 ping 你，或者根据所) 收集的数据来标记其他活动。 下面，我们将简要说明 Azure Monitor 的工作原理、如何安装 Azure Monitor，以及如何将其配置为发送通知。
 
 如果使用的是 System Center，请查看监视 Windows Server 2019 和 Windows Server 2016 存储空间直通群集的[存储空间直通管理包](https://www.microsoft.com/download/details.aspx?id=100782)。
 
@@ -90,7 +88,7 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 
 有关下面列出的步骤的详细信息，请参阅 [Azure Monitor 文档](/azure/azure-monitor/learn/quick-collect-windows-computer)。
 
-1. 在 Azure 门户中，单击“所有服务”****。 在资源列表中，键入“Log Analytics”。 开始键入时，会根据输入筛选该列表。 选择“Log Analytics”****。<br><br>
+1. 在 Azure 门户中，单击“所有服务”。 在资源列表中，键入“Log Analytics”。 开始键入时，会根据输入筛选该列表。 选择“Log Analytics”。<br><br>
 
    ![Azure 门户](media/configure-azure-monitor/azure-portal-01.png)<br><br>
 
@@ -109,8 +107,8 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 #### <a name="obtain-workspace-id-and-key"></a>获取工作区 ID 和密钥
 在安装适用于 Windows 的 Microsoft Monitoring Agent 之前，需要先获得 Log Analytics 工作区的工作区 ID 和密钥。  安装向导需要使用此信息来正确配备代理，并确保它能与 Log Analytics 成功通信。
 
-1. 在 Azure 门户中，单击左上角的“所有服务”****。 在资源列表中，键入“Log Analytics”。 开始键入时，会根据输入筛选该列表。 选择“Log Analytics”****。
-2. 在 Log Analytics 工作区列表中，选择之前创建的 DefaultLAWorkspace**。
+1. 在 Azure 门户中，单击左上角的“所有服务”****。 在资源列表中，键入“Log Analytics”。 开始键入时，会根据输入筛选该列表。 选择“Log Analytics”。
+2. 在 Log Analytics 工作区列表中，选择之前创建的 DefaultLAWorkspace。
 3. 选择“高级设置”。<br><br> ![Log Analytics 高级设置](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br>
 4. 选择“已连接的源”，然后选择“Windows 服务器” 。
 5. “工作区 ID”和“主密钥”右侧的值**** ****。 暂时保存两者 - 暂时将两者复制粘贴到你最喜欢的编辑器中。
@@ -164,7 +162,7 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 
 Log Analytics 可从 Windows 事件日志以及指定用于长期分析的性能计数器中收集事件，并在检测到特定条件时采取措施。  首先，请按照下列步骤操作，配置 Windows 事件日志以及几个常见性能计数器中收集事件。
 
-1. 在 Azure 门户中，单击左下角的“更多服务”****。 在资源列表中，键入“Log Analytics”。 开始键入时，会根据输入筛选该列表。 选择“Log Analytics”****。
+1. 在 Azure 门户中，单击左下角的“更多服务”****。 在资源列表中，键入“Log Analytics”。 开始键入时，会根据输入筛选该列表。 选择“Log Analytics”。
 2. 选择“高级设置”。<br><br> ![Log Analytics 高级设置](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br>
 3. 选择“数据”，然后选择“Windows 事件日志”。
 4. 在此处，通过键入下面的名称并单击加号“+”来添加运行状况服务事件通道****。
@@ -185,7 +183,7 @@ Log Analytics 可从 Windows 事件日志以及指定用于长期分析的性能
 
 首先打开日志搜索门户。
 
-1. 在 Azure 门户中，单击“所有服务”****。 在资源列表中，键入“监视器”****。 开始键入时，会根据输入筛选该列表。 选择“监视器”****。
+1. 在 Azure 门户中，单击“所有服务”。 在资源列表中，键入“监视器”****。 开始键入时，会根据输入筛选该列表。 选择“监视器”****。
 2. 在 "监视" 导航菜单上，选择 " **Log Analytics** "，然后选择一个工作区。
 
 用于检索某些要使用的数据的最快方法是使用一个简单查询，它可返回表中的所有记录。 在搜索框中键入以下查询，然后单击“搜索”按钮。
@@ -206,14 +204,14 @@ Event
 Event | where (EventLevelName == "Error")
 ```
 
-![筛选器](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
+![“筛选器”](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
 
 对所关注的事件进行 approriate 查询后，请将其保存为下一步。
 
 ### <a name="create-alerts"></a>创建警报
 现在，让我们看一看创建警报的示例。
 
-1. 在 Azure 门户中，单击“所有服务”****。 在资源列表中，键入“Log Analytics”。 开始键入时，会根据输入筛选该列表。 选择“Log Analytics”****。
+1. 在 Azure 门户中，单击“所有服务”。 在资源列表中，键入“Log Analytics”。 开始键入时，会根据输入筛选该列表。 选择“Log Analytics”。
 2. 在左窗格中选择“警报”，然后单击页面顶部的“新建警报规则”，以便创建新的警报。**** ****<br><br> ![创建新的警报规则](media/configure-azure-monitor/alert-rule-02.png)<br>
 3. 第一步是在“创建警报”部分选择充当资源的 Log Analytics 工作区，**** 因为这是基于日志的警报信号。  对结果进行筛选，方法是：从下拉列表中选择特定的“订阅”（如果有多个），其中包含此前创建的 Log Analytics 工作区****。  从下拉列表中选择“Log Analytics”，对“资源类型”进行筛选。**** ****  最后，选择**资源** **DefaultLAWorkspace**，然后单击“完成”。****<br><br> ![创建警报步骤 1 任务](media/configure-azure-monitor/alert-rule-03.png)<br>
 4. 在“警报条件”部分下，单击“添加条件”，选择保存的查询，然后指定警报规则遵循的逻辑**** ****。

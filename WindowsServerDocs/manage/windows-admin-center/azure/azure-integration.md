@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 09/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b56960a531c8d7d8cf42cb0462d2fe4d422dfba7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c0a19e9bf00667e142c3aa6585c26b69c63e2aa7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970894"
+ms.locfileid: "87997347"
 ---
 # <a name="configuring-azure-integration"></a>配置 Azure 集成
 
 >适用于：Windows Admin Center、Windows Admin Center 预览版
 
-Windows 管理中心支持与 Azure 服务集成的多项可选功能。 [了解 Windows 管理中心提供的 Azure 集成选项。](../plan/azure-integration-options.md)
+Windows 管理中心支持与 Azure 服务集成的多项可选功能。 [了解 Windows 管理中心提供的 Azure 集成选项。](./index.md)
 
 若要允许 Windows 管理中心网关与 Azure 进行通信以利用 Azure Active Directory 的身份验证来进行网关访问，或代表你创建 Azure 资源 (例如，若要使用 Azure Site Recovery) 保护 Windows 管理中心中管理的 Vm，则需要首先向 Azure 注册 Windows 管理中心网关。 你只需为 Windows 管理中心网关执行此操作一次，将网关更新到较新版本时，会保留此设置。
 

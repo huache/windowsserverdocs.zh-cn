@@ -2,22 +2,20 @@
 title: 设置目标优先级以替代引用排序
 description: 本文介绍如何设置目标优先级以替代引用排序
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 77fe5b82b73a0f37ba81dda210f15d6017788822
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 04a295b8f6249521c809770af2c85fdce5dd54b4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966819"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971214"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>设置目标优先级以替代引用排序
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 引用是在用户访问命名空间中包含目标的命名空间根路径或文件夹时，客户端计算机从域控制器或命名空间服务器接收的目标的排序列表。 引用中每个目标根据命名空间根路径或文件夹的排序方法进行排序。
 

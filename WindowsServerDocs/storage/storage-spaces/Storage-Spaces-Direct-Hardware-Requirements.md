@@ -1,20 +1,18 @@
 ---
 title: 存储空间直通硬件要求
-ms.prod: windows-server
 description: 测试存储空间直通的最低硬件要求。
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 07/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ef438d58c9d36275f2e7a32ce93a383bd21a70
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 8c53179f32f0e6837297859413fa0cb88d66a0d2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864272"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961121"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>存储空间直通的硬件要求
 
@@ -60,19 +58,19 @@ ms.locfileid: "87864272"
 
 ## <a name="networking"></a>网络
 
-存储空间直通需要在每个节点之间进行可靠的高带宽、低延迟的网络连接。  
+存储空间直通需要在每个节点之间进行可靠的高带宽、低延迟的网络连接。
 
 小规模2-3 节点的最小互连
 - 10 Gbps 网络接口卡 (NIC) 或更快
 - 每个节点中有两个或更多个网络连接，以实现冗余和性能
 
-适用于高性能、大规模或部署 4 + 的建议互连 
+适用于高性能、大规模或部署 4 + 的建议互连
 - 远程直接内存访问 (RDMA) 支持的 Nic、iWARP (建议的) 或 RoCE
 - 每个节点中有两个或更多个网络连接，以实现冗余和性能
 - 25 Gbps NIC 或更快
 
 交换或 switchless 节点互连
-- 交换：必须正确配置网络交换机以处理带宽和网络类型。  如果使用的 RDMA 实现了 RoCE 协议，则网络设备和交换机配置更为重要。 
+- 交换：必须正确配置网络交换机以处理带宽和网络类型。  如果使用的 RDMA 实现了 RoCE 协议，则网络设备和交换机配置更为重要。
 - Switchless：可以使用直接连接互连节点，避免使用交换机。  每个节点都必须与群集中的每个其他节点具有直接连接。
 
 

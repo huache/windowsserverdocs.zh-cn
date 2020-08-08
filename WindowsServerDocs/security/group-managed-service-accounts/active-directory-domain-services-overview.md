@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 86d65aac95dcb5fb33f650ae5e03f943b78f78f5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 87f8aefb2645fa13ba1c9ac98e7970fc908e7bed
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971494"
+ms.locfileid: "87997062"
 ---
 # <a name="overview-of-active-directory-domain-services"></a>Active Directory 域服务概述
 
@@ -22,7 +22,7 @@ ms.locfileid: "87971494"
 
 Active Directory 存储有关网络上对象的信息，并让管理员和用户可以更容易地使用这些信息。 Active Directory 使用结构化数据存储作为目录信息的逻辑层次组织的基础。
 
-此数据存储（也称为目录）包含 Active Directory 对象的相关信息。 这些对象通常包含共享资源，如服务器、卷、打印机、网络用户和计算机帐户。 有关 Active Directory 数据存储的详细信息，请参阅[目录数据存储](https://technet.microsoft.com/library/cc736627(v=ws.10).aspx)。
+此数据存储（也称为目录）包含 Active Directory 对象的相关信息。 这些对象通常包含共享资源，如服务器、卷、打印机、网络用户和计算机帐户。 有关 Active Directory 数据存储的详细信息，请参阅[目录数据存储](/previous-versions/windows/it-pro/windows-server-2003/cc736627(v=ws.10))。
 
 通过登录身份验证和对目录中对象的访问控制，安全与 Active Directory 集成。 通过单一网络登录，管理员可以管理其整个网络中的目录数据和组织，授权网络用户可以访问网络上任何位置的资源。 基于策略的管理简化了即使最复杂的网络的管理。 有关 Active Directory 安全的详细信息，请参阅安全性概述。
 
@@ -41,14 +41,13 @@ Active Directory 还包括：
 ## <a name="understanding-active-directory"></a>了解 Active Directory
  本部分提供了指向核心 Active Directory 概念的链接：
 
-* [Active Directory 结构和存储技术](https://technet.microsoft.com/library/cc759186(v=ws.10).aspx)
-* [域控制器角色](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx)
+* [Active Directory 结构和存储技术](/previous-versions/windows/it-pro/windows-server-2003/cc759186(v=ws.10))
+* [域控制器角色](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10))
 * Active Directory 架构
-* [了解信任](https://technet.microsoft.com/library/cc771294(v=ws.10).aspx)
-* [Active Directory 复制技术](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx)
-* [Active Directory 搜索和发布技术](https://technet.microsoft.com/library/cc775686(v=ws.10).aspx)
+* [了解信任](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771294(v=ws.10))
+* [Active Directory 复制技术](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10))
+* [Active Directory 搜索和发布技术](/previous-versions/windows/it-pro/windows-server-2003/cc775686(v=ws.10))
 * 与 DNS 和组策略互操作
-* [了解架构](https://technet.microsoft.com/library/cc759402(v=ws.10).aspx)
+* [了解架构](/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10))
 
-有关 Active Directory 概念的详细列表，请参阅[了解 Active Directory](https://technet.microsoft.com/library/cc781408(v=ws.10).aspx)。
-
+有关 Active Directory 概念的详细列表，请参阅[了解 Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc781408(v=ws.10))。

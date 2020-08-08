@@ -1,21 +1,19 @@
 ---
 ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: 向存储空间直通添加服务器或驱动器
-ms.prod: windows-server
 ms.author: cosdar
 manager: dongill
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
 description: 如何将服务器或驱动器添加到存储空间直通群集
 ms.localizationpriority: medium
-ms.openlocfilehash: 773bb3a55de27d049d26fa76659d3a4d8057f0fe
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b9a26d3ac982cccf4471f3a3e03bfdae55b55eed
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966389"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961061"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>向存储空间直通添加服务器或驱动器
 
@@ -45,7 +43,7 @@ ms.locfileid: "86966389"
 2. 在群集上运行以下 cmdlet 以完成服务器添加：
 
 ```
-Add-ClusterNode -Name NewNode 
+Add-ClusterNode -Name NewNode
 ```
 
    >[!NOTE]
@@ -59,7 +57,7 @@ Add-ClusterNode -Name NewNode
 
 双向镜像卷无法就地升级到三向镜像。 相反，你可以创建一个新卷并将数据迁移（复制，例如通过使用 [存储副本](../storage-replica/server-to-server-storage-replication.md)）到该卷中，然后删除旧卷。
 
-若要开始创建三向镜像卷，有几个很好的选项。 你可以根据意愿使用这些选项。 
+若要开始创建三向镜像卷，有几个很好的选项。 你可以根据意愿使用这些选项。
 
 #### <a name="option-1"></a>选项 1
 
@@ -84,7 +82,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 在名为 *Capacity* 的 **StorageTier** 模板上设置 **PhysicalDiskRedundancy = 2**，然后通过引用层创建卷。
 
 ```PowerShell
-Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2 
+Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2
 
 New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Capacity -StorageTierSizes <Size>
 ```
@@ -135,7 +133,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedund
 #### <a name="example"></a>示例
 
 ```PowerShell
-New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes <Size, Size> 
+New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes <Size, Size>
 ```
 
 ### <a name="beyond-4-servers-greater-parity-efficiency"></a>超过 4 个服务器：奇偶校验效率更高
@@ -153,13 +151,13 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 1. 通过打开提升的 PowerShell 会话，然后使用以下命令（其中， *\<NewNode>* 是新群集节点的名称）为节点创建一个临时容错域：
 
    ```PowerShell
-   New-ClusterFaultDomain -Type Node -Name <NewNode> 
+   New-ClusterFaultDomain -Type Node -Name <NewNode>
    ```
 
 2. 将此临时容错域移到在现实世界中，新服务器所在的底盘或货架，由 *\<ParentName>* 以下内容指定：
 
    ```PowerShell
-   Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName> 
+   Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName>
    ```
 
    有关详细信息，请参阅 [Windows Server 2016 中的容错域感知](../../failover-clustering/fault-domains.md)
@@ -192,7 +190,7 @@ Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
 
 随着时间的推移，添加或删除驱动器时，池中驱动器之间的数据分布可能会变得不稳定。 在某些情况下，这可能会导致某些驱动器变满，而池中的其他驱动器的消耗更少。
 
-若要帮助保留驱动器的分配，即使是在池中，存储空间直通在将驱动器或服务器添加到池之后，自动优化驱动器的使用（这是使用共享 SAS 机箱的存储空间系统的手动过程）。 在将新驱动器添加到池之后，优化开始15分钟。 池优化作为低优先级后台操作运行，因此可能需要几个小时或几天才能完成，特别是在使用大硬盘时。
+若要帮助保留驱动器分配甚至跨池，存储空间直通在将驱动器或服务器添加到池之后，自动优化驱动器使用情况 (这是使用共享 SAS 机箱) 的存储空间系统的手动过程。 在将新驱动器添加到池之后，优化开始15分钟。 池优化作为低优先级后台操作运行，因此可能需要几个小时或几天才能完成，特别是在使用大硬盘时。
 
 优化使用两个作业-一个名为 "*优化*"，另一个称为 "重新*平衡*"，可以使用以下命令监视其进度：
 

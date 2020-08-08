@@ -2,19 +2,17 @@
 title: 部署 MultiPoint Services
 description: MultiPoint 服务部署过程概述
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 0e24fadf1914c43bf6270e1d84c5a5535518d9bd
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7188e6db4d3b0f6c7846f1e8e4d8847980f2605a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182033"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942446"
 ---
 # <a name="deploying-multipoint-services"></a>部署 MultiPoint Services
 
@@ -26,7 +24,7 @@ ms.locfileid: "87182033"
 部署信息按以下方式组织。 至少需要完成部署系统和为用户准备环境的任务。 其他任务可能适用于您的环境，也可能不适用于您的环境。
 -   [部署新的 MultiPoint Services 系统](Deploy-a-new-MultiPoint-services-system.md)
 
-    设置 MultiPoint 服务计算机和工作站。 安装和配置 MultiPoint 服务;设置工作站;安装驱动程序、更新和软件;选择性地加入域;为每个工作站添加客户端许可证（Cal）。
+    设置 MultiPoint 服务计算机和工作站。 安装和配置 MultiPoint 服务;设置工作站;安装驱动程序、更新和软件;选择性地加入域;为每个工作站 (Cal) 添加客户端许可证。
 
 -   [MultiPoint Services 部署的可选配置任务](Optional-configuration-tasks-for-a-MultiPoint-services-deployment.md)
 

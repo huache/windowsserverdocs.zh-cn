@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: siroy
 ms.date: 06/02/2020
 ms.topic: article
-ms.openlocfilehash: ff7a276802a0bd6a61fc0ea5eb6148972ac6d674
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e8e327fcf2f9173c7fb571580280ba4d5b7389fe
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939304"
+ms.locfileid: "87997501"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>存储迁移服务常见问题解答 (FAQ) 
 
@@ -126,7 +126,7 @@ Windows Server 2019 中随附的存储迁移服务版本不支持迁移以前的
 
 - **启用高性能处理。** 确保服务器的 BIOS/UEFI 设置启用高性能，例如禁用 C-State、设置 QPI 速度、启用 NUMA 和设置最高内存频率。 确保 Windows Server 中的电源管理设置为高性能。 根据需要重启。 完成迁移后，请不要忘记将这些状态返回到适当的状态。
 
-- **调整硬件**查看[Windows server 2016 的性能调整准则](/windows-server/administration/performance-tuning/)，以优化运行 windows server 2019 和 windows server 2016 的 orchestrator 和目标计算机。 [网络子系统性能优化](../../networking/technologies/network-subsystem/net-sub-performance-tuning-nics.md)部分包含特别有用的信息。
+- **调整硬件**查看[Windows server 2016 的性能调整准则](../../administration/performance-tuning/index.md)，以优化运行 windows server 2019 和 windows server 2016 的 orchestrator 和目标计算机。 [网络子系统性能优化](../../networking/technologies/network-subsystem/net-sub-performance-tuning-nics.md)部分包含特别有用的信息。
 
 - **使用更快的存储。** 尽管很难升级源计算机存储速度，但在源处于读取 IO 性能时，应确保目标存储至少具有更快的速度，因为这样可以确保传输中没有不必要的瓶颈。 如果目标是 VM，请确保至少出于迁移目的，它在虚拟机监控程序主机的最快存储层中运行，例如在闪存层上，或使用镜像的全部闪存或混合空间存储空间直通 HCI 群集。 SMS 迁移完成后，可以将 VM 实时迁移到慢速层或主机上。
 
@@ -180,7 +180,7 @@ Windows Server 2019 中随附的存储迁移服务版本不支持从 NTFS 迁移
 获得支持：
 
  - 在[Windows Server 技术社区](https://techcommunity.microsoft.com/t5/Windows-Server/ct-p/Windows-Server)上发布问题
- - [Windows Server 2019 论坛](https://docs.microsoft.com/answers/topics/windows-server-2019.html)上的文章
+ - [Windows Server 2019 论坛](/answers/topics/windows-server-2019.html)上的文章
  - 通过[Microsoft 支持部门](https://support.microsoft.com)打开支持案例
 
 ## <a name="additional-references"></a>其他参考

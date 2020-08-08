@@ -7,12 +7,12 @@ ms.assetid: 1cbef744-4661-4ba9-9e2b-0bbd8854fd5c
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: c1f317909b05c421058041bcd2546c4cc0e704bb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 663b3d4afade9b4fb459f34120d1e6b18984285a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970634"
+ms.locfileid: "87997430"
 ---
 # <a name="introducing-multipoint-services"></a>引入 MultiPoint Services
 Windows Server 2016 中的 MultiPoint 服务角色允许多个用户，每个用户都有自己的独立且熟悉的 Windows 体验，同时共享一台计算机。用户可以通过多种方式访问其会话。 其中一种方法是通过在任何设备上使用[远程桌面应用](../remote-desktop-services/clients/remote-desktop-clients.md)远程访问服务器。 另一种方法是通过工作站连接到 MultiPoint 服务器：
@@ -29,9 +29,9 @@ Windows Server 2016 中的 MultiPoint 服务角色允许多个用户，每个用
 
 -   要与 MultiPoint 服务系统一起使用哪种类型的桌面：是否需要会话、虚拟机或 Windows 电脑？
 
--   [为 MultiPoint 服务系统选择硬件](Selecting-Hardware-for-Your-MultiPoint-services-System.md)：应做出哪些硬件决策？
+-   [为 MultiPoint 服务系统选择硬件](./select-hardware-mps.md)：应做出哪些硬件决策？
 
--   [硬件要求和性能建议](Hardware-Requirements-and-Performance-Recommendations.md)： MultiPoint 服务需要什么硬件？
+-   [硬件要求和性能建议](./hardware-and-performance-recommendations.md)： MultiPoint 服务需要什么硬件？
 
 -   [MultiPoint Services 站点规划](MultiPoint-services-Site-Planning.md)：在哪里可以找到运行 MultiPoint 服务及其工作站的计算机，以及如何配置这些计算机？
 

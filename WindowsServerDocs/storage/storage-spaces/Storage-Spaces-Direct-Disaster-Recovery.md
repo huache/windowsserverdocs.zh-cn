@@ -1,20 +1,18 @@
 ---
 title: 超聚合基础结构的灾难恢复方案
-ms.prod: windows-server
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/29/2018
 description: '本文介绍目前可用于灾难恢复 Microsoft HCI (存储空间直通的方案) '
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ebe54cf6823f65fae484960ff21cee2baac0131
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: e154cd4bbb5039e2a35237ec2a4644ebecff8d06
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769083"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961140"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>存储空间直通的灾难恢复
 

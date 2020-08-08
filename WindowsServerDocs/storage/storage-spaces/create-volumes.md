@@ -1,19 +1,17 @@
 ---
 title: 在存储空间直通中创建卷
 description: 如何使用 Windows 管理中心和 PowerShell 在存储空间直通中创建卷。
-ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.date: 02/25/2020
-ms.openlocfilehash: 40750acb260335e858a7763c950dfc4ad2cd7979
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 417deaf61b111b6ba54939505c65e8e0f854e604
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473824"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960940"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>在存储空间直通中创建卷
 
@@ -31,8 +29,8 @@ ms.locfileid: "85473824"
 1. 在 Windows Admin Center 中连接到存储空间直通群集，然后在“工具”窗格中选择“卷”。 
 2. 在 "卷" 页上，选择 "**清单**" 选项卡，然后选择 "**创建卷**"。
 3. 在 "**创建卷**" 窗格中，输入卷的名称，并将**复原**保留为**三向镜像**。
-4. 在**HDD 上**，指定卷的大小。 例如 5 TB （tb）。
-5. 选择“创建” 。
+4. 在**HDD 上**，指定卷的大小。 例如，5 TB (tb) 。
+5. 选择“创建”。
 
 创建卷可能需要几分钟的时间，具体取决于大小。 右上方的通知将通知你创建卷的时间。 新卷将出现在 "清单" 列表中。
 
@@ -51,7 +49,7 @@ ms.locfileid: "85473824"
 3. 在 "**创建卷**" 窗格中，输入卷的名称。
 4. 在**复原能力**中，选择**镜像加速的奇偶校验**。
 5. 在 "**奇偶校验百分比**" 中，选择奇偶校验百分比。
-6. 选择“创建” 。
+6. 选择“创建”。
 
 观看有关如何创建镜像加速奇偶校验卷的快速视频。
 
@@ -88,7 +86,7 @@ ms.locfileid: "85473824"
 
     Windows 管理中心使你可以在不同工作负荷的现成配置文件之间进行选择，而不是复杂的设置。 如果你不确定，请使用默认设置。
 
-6. 选择“启用”****。
+6. 选择“启用”。
 
 观看有关如何打开重复数据删除和压缩的快速视频。
 

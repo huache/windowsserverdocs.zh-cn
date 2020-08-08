@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 0162cd8c14640bfc025796995fdc2ce78b5912a2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8c3f28b544db7a41c15c4f12b58c58c1f750cb54
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939638"
+ms.locfileid: "87997507"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>确认受保护的主机可以证明
 
@@ -37,7 +37,7 @@ ms.locfileid: "87939638"
 
         若要配置回退 HGS 服务器，请重复此命令并指定密钥保护和证明服务的备用 Url。 有关详细信息，请参阅[回退配置](guarded-fabric-manage-branch-office.md#fallback-configuration)。
 
-    - **通过 vmm**：如果使用 System Center 2016-VIRTUAL MACHINE MANAGER (vmm) ，则可以在 vmm 中配置证明和密钥保护 url。 有关详细信息，请参阅在**VMM 中设置受保护的主机**中[配置全局 HGS 设置](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings)。
+    - **通过 vmm**：如果使用 System Center 2016-VIRTUAL MACHINE MANAGER (vmm) ，则可以在 vmm 中配置证明和密钥保护 url。 有关详细信息，请参阅在**VMM 中设置受保护的主机**中[配置全局 HGS 设置](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#configure-global-hgs-settings)。
 
     >**说明**
     > - 如果 HGS 管理员在[hgs 服务器上启用了 HTTPS](guarded-fabric-configure-hgs-https.md)，则将 url 作为开始 `https://` 。

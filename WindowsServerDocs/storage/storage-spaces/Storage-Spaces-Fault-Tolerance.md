@@ -1,21 +1,19 @@
 ---
 title: 存储空间直通中的容错和存储效率
-ms.prod: windows-server
 ms.author: cosmosdarwin
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: 存储空间直通中的复原选项（包括镜像和奇偶校验）的讨论。
 ms.localizationpriority: medium
-ms.openlocfilehash: 517b5484bc02e377f40df84422a1910014c9b830
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 83a38655f1fa40522de84372e270b85f64128e6f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955389"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961181"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>存储空间直通中的容错和存储效率
 
@@ -33,7 +31,7 @@ ms.locfileid: "86955389"
 
 ## <a name="mirroring"></a>镜像
 
-镜像功能通过保存所有数据的多个副本来提供容错。 这最像 RAID-1。 如何对数据进行条带化和放置是一项非常重要的操作（请参阅[此博客](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)了解详细信息），但最好是说，使用镜像存储的任何数据都将被完整地多次写入。 每个副本将写入不同的物理硬件（位于不同服务器中的不同驱动器），假设每个硬盘各自都有可能发生故障。
+镜像功能通过保存所有数据的多个副本来提供容错。 这最像 RAID-1。 如何对数据进行条带化和放置是一项非常重要的 (查看[此博客](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)以了解更多) ，但是，假设使用镜像存储的任何数据都将被完整地多次写入。 每个副本将写入不同的物理硬件（位于不同服务器中的不同驱动器），假设每个硬盘各自都有可能发生故障。
 
 在 Windows Server 2016 中，存储空间提供两类镜像：“双向”和“三向”。
 
@@ -50,7 +48,7 @@ ms.locfileid: "86955389"
 
 三向镜像为所有数据编写三个副本。 存储效率为 33.3%，即若要写入 1 TB 的数据，需要至少 3 TB 的物理存储容量。 同样地，需要至少三个硬件容错域，对存储空间直通而言，这意味着三台服务器。
 
-三向镜像一次可以安全地容忍至少[两个硬件问题（驱动器或服务器）](#examples)。 例如，如果你正在重新启动一台服务器，此时另一个驱动器或服务器突然发生故障，在这种情况下，所有数据将保持安全，可供持续访问。
+三向镜像一次可以安全地容忍至少[两个硬件问题 (驱动器或服务器) ](#examples)。 例如，如果你正在重新启动一台服务器，此时另一个驱动器或服务器突然发生故障，在这种情况下，所有数据将保持安全，可供持续访问。
 
 ![三向镜像](media/Storage-Spaces-Fault-Tolerance/three-way-mirror-180px.png)
 
@@ -131,7 +129,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 此表显示包含硬盘驱动器 (HDD) 和固态硬盘 (SSD) 的混合部署在每个范围的双奇偶校验和本地重建代码的存储效率。
 
-|    容错域      |    Layout           |    效率   |
+|    容错域      |    布局           |    效率   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -153,7 +151,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 此表显示仅包含固态硬盘 (SSD) 的全闪存部署在每个范围的双奇偶校验和本地重建代码的存储效率。 奇偶校验布局在全闪存配置中可使用较大的大小，并实现更好的存储效率。
 
-|    容错域      |    Layout           |    效率   |
+|    容错域      |    布局           |    效率   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -205,7 +203,7 @@ Windows Server 2016 中的存储空间引入了 Microsoft Research 开发的名�
 
 ![容错示例 7 和 8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
-## <a name="usage"></a>用法
+## <a name="usage"></a>使用情况
 
 查看[在存储空间直通中创建卷](create-volumes.md)。
 

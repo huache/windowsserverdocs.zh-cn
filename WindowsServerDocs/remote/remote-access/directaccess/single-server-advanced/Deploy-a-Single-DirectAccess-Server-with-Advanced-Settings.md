@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 87a9ca03591116c891c5dec41477688ded96b193
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4f2b2939bff08cc5c8f1fbd1eac6b421a35f589f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970414"
+ms.locfileid: "87996781"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Deploy a Single DirectAccess Server with Advanced Settings
 
@@ -144,6 +144,5 @@ ms.locfileid: "87970414"
 |--------|-------|
 |**部署**|[Windows Server 中的 DirectAccess 部署路径](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[使用入门向导部署单个 DirectAccess 服务器](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|
 |**工具和设置**|[远程访问 PowerShell cmdlet](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))|
-|**社区资源**|[DirectAccess 生存指南](https://docs.microsoft.com/answers/topics/windows-server-infrastructure.html)<p>[DirectAccess Wiki 条目](https://go.microsoft.com/fwlink/?LinkId=236871)|
+|**社区资源**|[DirectAccess 生存指南](/answers/topics/windows-server-infrastructure.html)<p>[DirectAccess Wiki 条目](https://go.microsoft.com/fwlink/?LinkId=236871)|
 |**相关技术**|[IPv6 的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))|
-

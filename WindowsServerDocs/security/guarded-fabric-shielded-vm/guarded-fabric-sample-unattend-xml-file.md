@@ -1,25 +1,23 @@
 ---
 title: 创建操作系统专用化答案文件
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 299aa38e-28d2-4cbe-af16-5b8c533eba1f
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 526ded03c877613766b8a0b762f1db1a693d2019
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7ae16c6a923b8d9bb9cd0c8b345be0fc1655c9ca
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474994"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971304"
 ---
 # <a name="create-os-specialization-answer-file"></a>创建操作系统专用化答案文件
 
->适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
-准备部署受防护的 Vm 时，可能需要创建操作系统专用化应答文件。 在 Windows 上，这通常称为 "unattend.xml" 文件。 **ShieldingDataAnswerFile** Windows PowerShell 函数可帮助你执行此操作。 然后，在使用 System Center Virtual Machine Manager （或任何其他结构控制器）通过模板创建受防护的 Vm 时，可以使用应答文件。
+准备部署受防护的 Vm 时，可能需要创建操作系统专用化应答文件。 在 Windows 上，这通常称为 "unattend.xml" 文件。 **ShieldingDataAnswerFile** Windows PowerShell 函数可帮助你执行此操作。 然后，可以使用 System Center Virtual Machine Manager (或任何其他结构控制器) 从模板创建受防护的 Vm 时使用答案文件。
 
 有关受防护的 Vm 的无人参与文件的一般准则，请参阅[创建应答文件](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file)。
 

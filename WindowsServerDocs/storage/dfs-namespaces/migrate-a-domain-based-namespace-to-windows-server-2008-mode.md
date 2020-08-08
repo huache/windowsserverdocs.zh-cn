@@ -2,22 +2,20 @@
 title: 将基于域的命名空间迁移到 Windows Server 2008 模式
 description: 本文介绍如何将基于域的命名空间迁移到 Windows Server 2008 模式
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3aa7743773a8a6e9ed22c0f626c2c6a0dbafce56
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a7326584e2889fc0fd451b56ca4af065040f408d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475464"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942271"
 ---
 # <a name="migrate-a-domain-based-namespace-to-windows-server-2008-mode"></a>将基于域的命名空间迁移到 Windows Server 2008 模式
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 对于基于域的命名空间，Windows Server 2008 模式包括支持执行基于访问的枚举和增强可伸缩性。
 
@@ -29,7 +27,7 @@ ms.locfileid: "85475464"
      ```
      Dfsutil root export \\domain\namespace path\filename.xml
      ```
-2.  记下 \\ \\ *server* \\ 每个命名空间服务器的路径（服务器*共享*）。 你必须将命名空间服务器手动添加到重新创建的命名空间，因为 Dfsutil 无法导入命名空间服务器。
+2.  记下 \\ \\ *server* \\ 每个命名空间服务器 ( server *share* ) 的路径。 你必须将命名空间服务器手动添加到重新创建的命名空间，因为 Dfsutil 无法导入命名空间服务器。
 3.  在 DFS 管理中，右键单击命名空间，然后再单击**删除**，或者在命令提示符下键入以下命令， <br /> 其中 \\ \\ *domain* \\ *namespace*是适当域和命名空间的名称：
      ```
      Dfsutil root remove \\domain\namespace

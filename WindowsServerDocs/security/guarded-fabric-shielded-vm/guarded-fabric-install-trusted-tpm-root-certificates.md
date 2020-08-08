@@ -1,26 +1,24 @@
 ---
 title: 安装受信任的 TPM 根证书
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 06/27/2019
-ms.openlocfilehash: 096a40f422f308a036b8062e4515ebe698c31f08
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 04beb3f517df090393690a871a12015cf0bed163
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856570"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971314"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>安装受信任的 TPM 根证书
 
->适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
 将 HGS 配置为使用 TPM 证明时，还需要将 HGS 配置为信任服务器中 Tpm 的供应商。
 这一额外的验证过程仅确保可信 Tpm 可以通过您的 HGS 证明。
-如果尝试将不受信任的 TPM 注册到 `Add-HgsAttestationTpmHost`，将收到一条错误消息，指示 TPM 供应商不受信任。
+如果你尝试向注册不受信任的 TPM `Add-HgsAttestationTpmHost` ，你将收到一条错误消息，指示 TPM 供应商不受信任。
 
 要信任你的 Tpm，需要在 HGS 上安装用于签署服务器 Tpm 中认可密钥的根和中间签名证书。
 如果在数据中心中使用多个 TPM 模型，则可能需要为每个模型安装不同的证书。
@@ -35,19 +33,19 @@ HGS 将在 "TrustedTPM_RootCA" 和 "TrustedTPM_IntermediateCA" 证书存储中�
 
 在**每个 HGS 服务器**上重复以下步骤：
 
-1.  从[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)下载最新的包。
+1.  从下载最新的包 [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925) 。
 
 2.  验证 cab 文件的签名，以确保其真实性。 如果签名无效，请不要继续操作。
 
     ```powershell
     Get-AuthenticodeSignature .\TrustedTpm.cab
     ```
-    
+
     下面是一些示例输出：
-    
+
     ```
     Directory: C:\Users\Administrator\Downloads
-        
+
     SignerCertificate                         Status                                 Path
     -----------------                         ------                                 ----
     0DD6D4D4F46C0C7C2671962C4D361D607E370940  Valid                                  TrustedTpm.cab
@@ -72,7 +70,7 @@ HGS 将在 "TrustedTPM_RootCA" 和 "TrustedTPM_IntermediateCA" 证书存储中�
 若要在之前的安装过程中添加新证书或有意跳过的证书，只需在 HGS 群集中的每个节点上重复上述步骤。
 现有证书将保持受信任，但扩展的 cab 文件中找到的新证书将添加到受信任的 TPM 存储中。
 
-## <a name="next-step"></a>下一步
+## <a name="next-step"></a>后续步骤
 
 > [!div class="nextstepaction"]
 > [配置结构 DNS](guarded-fabric-configuring-fabric-dns-tpm.md)

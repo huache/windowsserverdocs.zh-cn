@@ -1,19 +1,17 @@
 ---
 title: 存储副本概述
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: 400af7c4fb5db6e6740b1140688602c55d8ca0a9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1d8997edf1354a49b9b67e417906eeaa307fdee6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469802"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961221"
 ---
 # <a name="storage-replica-overview"></a>存储副本概述
 
@@ -38,7 +36,7 @@ ms.locfileid: "85469802"
 
 ## <a name="supported-configurations"></a><a name="BKMK_SRSupportedScenarios"></a>支持的配置
 
-你可以在拉伸群集中、在群集到群集之间和服务器到服务器配置之间部署存储副本（请参阅图1-3）。
+你可以在拉伸群集中、在群集到群集之间和服务器到服务器配置之间部署存储副本 (参阅图 1-3) 。
 
 **拉伸群集**允许在单个群集中配置计算机和存储，其中某些节点共享一组非对称存储，而另一些节点共享另一组，然后通过站点感知进行同步或异步复制。 此方案可以利用具有共享的 SAS 存储的存储空间、连接了 SAN 和 iSCSI 的 LUN。 它通过 PowerShell 和故障转移群集管理器图形工具进行管理，并允许自动化工作负载故障转移。
 
@@ -88,14 +86,14 @@ ms.locfileid: "85469802"
 | 功能 | 详细信息 |
 | ----------- | ----------- |
 | 类型 | 基于主机 |
-| 同步 | 是 |
+| Synchronous | 是 |
 | 异步 | 是 |
 | 存储硬件不可知 | 是 |
 | 复制单元 | 卷（分区） |
 | Windows Server stretch 群集创建 | 是 |
 | 服务器到服务器复制 | 是 |
 | 群集到群集复制 | 是 |
-| Transport | SMB3 |
+| 传输 | SMB3 |
 | 网络 | TCP/IP 或 RDMA |
 | 网络约束支持 | 是 |
 | RDMA* | iWARP、InfiniBand、RoCE v2 |
@@ -138,9 +136,9 @@ ms.locfileid: "85469802"
 
 当源数据副本上发生应用程序写入操作时，源存储不会立即确认 IO。 相反，那些数据更改对远程目标副本的复制，并返回一条确认。 此时，应用程序才会收到 IO 确认。 这可确保远程站点与源站点的固定同步，有效地跨网络扩展存储 IO。 在源站点故障时，应用程序可以故障转移到远程站点并恢复其运行，同时保证零数据丢失。
 
-| Mode | 图表 | 步骤 |
+| 模式 | 图表 | 步骤 |
 | -------- | ----------- | --------- |
-| **同步**<p>零数据丢失<p>RPO | ![显示存储副本如何在同步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.应用程序写入数据<br />2.写入日志数据，并将数据复制到远程站点<br />3.在远程站点写入日志数据<br />4.从远程站点确认<br />5.确认应用程序写入<p>t & t1：数据刷新到该卷，始终写入日志 |
+| **Synchronous**<p>零数据丢失<p>RPO | ![显示存储副本如何在同步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.应用程序写入数据<br />2.写入日志数据，并将数据复制到远程站点<br />3.在远程站点写入日志数据<br />4.从远程站点确认<br />5.确认应用程序写入<p>t & t1：数据刷新到该卷，始终写入日志 |
 
 ### <a name="asynchronous-replication"></a>异步复制
 
@@ -150,7 +148,7 @@ ms.locfileid: "85469802"
 
 使用其比 zero RPO 更高的版本，异步复制不太适用于 HA 解决方案，如故障转移群集，因为它们是为具有冗余和无数据丢失的连续操作而设计。
 
-| Mode | 图表 | 步骤 |
+| 模式 | 图表 | 步骤 |
 | -------- | ----------- | --------- |
 | **异步**<p>几乎零数据丢失<p>（取决于多种因素）<p>RPO | ![显示存储副本如何在异步复制中写入数据的关系图](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.应用程序写入数据<br />2.写入日志数据<br />3.确认应用程序写入<br />4.数据复制到远程站点<br />5.日志数据在远程站点写入<br />6.从远程站点确认<p>t & t1：数据刷新到该卷，始终写入日志 |
 

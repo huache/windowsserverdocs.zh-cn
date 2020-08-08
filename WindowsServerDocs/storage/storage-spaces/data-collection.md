@@ -1,22 +1,20 @@
 ---
 title: 通过存储空间直通收集诊断数据
 description: 了解存储空间直通的数据收集工具，并提供有关如何运行和使用它们的特定示例。
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 10/24/2018
-ms.openlocfilehash: 75a74017f48b357dd029b062a7ce06775836bd0a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fa71408dbb6a4757150ee896a760f37914aacc38
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858960"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960970"
 ---
 # <a name="collect-diagnostic-data-with-storage-spaces-direct"></a>通过存储空间直通收集诊断数据
 
-> 适用于： Windows Server 2019、Windows Server 2016
+> 适用于：Windows Server 2019、Windows Server 2016
 
 可以使用各种诊断工具来收集对存储空间直通和故障转移群集进行故障排除所需的数据。 在本文中，我们将重点介绍**SDDCDiagnosticInfo** -一个触摸工具，它将收集所有相关信息来帮助你诊断群集。
 
@@ -24,13 +22,13 @@ ms.locfileid: "80858960"
 
 ## <a name="installing-get-sddcdiagnosticinfo"></a>安装 SDDCDiagnosticInfo
 
-**SDDCDiagnosticInfo** PowerShell cmdlet （也称为 **PCStorageDiagnosticInfo**（以前称为**StorageHealth**）可用于为故障转移群集（群集、资源、网络、节点）、存储空间（物理磁盘、存储设备、虚拟磁盘）、群集共享卷、SMB 文件共享和重复数据删除收集日志并执行运行状况检查。 
+**SDDCDiagnosticInfo** PowerShell cmdlet (也称为 **PCStorageDiagnosticInfo**（以前称为**StorageHealth**) ）可用于为故障转移群集收集日志，并为故障转移群集执行运行状况检查 (群集、资源、网络、节点) 、存储空间 (物理磁盘、存储设备、虚拟磁盘) 、群集共享卷、SMB 文件共享和重复数据删除。
 
 有两种安装脚本的方法，这两种方法都是下面的轮廓。
 
 ### <a name="powershell-gallery"></a>PowerShell 库
 
-[PowerShell 库](https://www.powershellgallery.com/packages/PrivateCloud.DiagnosticInfo)是 GitHub 存储库的快照。 请注意，从 PowerShell 库安装项需要最新版本的 PowerShellGet 模块，该模块在 Windows 10、Windows Management Framework （WMF）5.0 或基于 MSI 的安装程序（适用于 PowerShell 3 和4）中提供。
+[PowerShell 库](https://www.powershellgallery.com/packages/PrivateCloud.DiagnosticInfo)是 GitHub 存储库的快照。 请注意，从 PowerShell 库安装项需要最新版本的 PowerShellGet 模块，该模块在 Windows 10、Windows Management Framework (WMF) 5.0 或基于 MSI 的安装程序 (中适用于 PowerShell 3 和 4) 。
 
 在此过程中，我们还会安装最新版本的[Microsoft 网络诊断工具](https://www.powershellgallery.com/packages/MSFT.Network.Diag)，因为 SDDCDiagnosticInfo 依赖于这一点。 此清单模块包含网络诊断和故障排除工具，该工具由 Microsoft 的 Microsoft 核心网络产品组维护。
 
@@ -51,7 +49,7 @@ Update-Module PrivateCloud.DiagnosticInfo
 
 ### <a name="github"></a>GitHub
 
-[GitHub](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/)存储库是该模块的最新版本，因为我们不断地循环访问。 若要从 GitHub 安装模块，请从[存档](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip)下载最新的模块，并将 PrivateCloud. DiagnosticInfo 目录解压缩到 ```$env:PSModulePath``` 指向的正确 PowerShell 模块路径
+[GitHub](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/)存储库是该模块的最新版本，因为我们不断地循环访问。 若要从 GitHub 安装模块，请从[存档](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip)下载最新的模块，并将 PrivateCloud. DiagnosticInfo 目录解压缩到指向的正确 PowerShell 模块路径```$env:PSModulePath```
 
 ``` PowerShell
 # Allowing Tls12 and Tls11 -- e.g. github now requires Tls12
@@ -65,7 +63,7 @@ if (Test-Path $env:SystemRoot\System32\WindowsPowerShell\v1.0\Modules\$module) {
     Remove-Module $module -ErrorAction SilentlyContinue
 } else {
     Import-Module $module -ErrorAction SilentlyContinue
-} 
+}
 if (-not ($m = Get-Module $module -ErrorAction SilentlyContinue)) {
     $md = "$env:ProgramFiles\WindowsPowerShell\Modules"
 } else {
@@ -77,7 +75,7 @@ cp -Recurse $env:TEMP\$module-master\$module $md -Force -ErrorAction Stop
 rm -Recurse $env:TEMP\$module-master,$env:TEMP\master.zip
 Import-Module $module -Force
 
-``` 
+```
 
 如果需要将此模块置于脱机群集上，请下载 zip，将其移动到目标服务器节点，然后安装该模块。
 
@@ -106,7 +104,7 @@ Get-SDDCDiagnosticInfo
 若要将结果保存到指定文件夹：
 
 ``` PowerShell
-Get-SDDCDiagnosticInfo -WriteToPath D:\Folder 
+Get-SDDCDiagnosticInfo -WriteToPath D:\Folder
 ```
 
 下面是在实际群集上的外观示例：
@@ -140,16 +138,16 @@ Get-SddcDiagnosticInfo -ClusterName S2D-Cluster -WriteToPath d:\SDDCDiagTemp
 #generate report and save to text file
     $report=Show-SddcDiagnosticReport -Path D:\SDDCDiagTemp
     $report | out-file d:\SDDCReport.txt
-    
+
 ```
 
 下面是[示例报表](https://github.com/Microsoft/WSLab/blob/dev/Scenarios/S2D%20Tools/Get-SDDCDiagnosticInfo/SDDCReport.txt)和[示例 zip](https://github.com/Microsoft/WSLab/blob/dev/Scenarios/S2D%20Tools/Get-SDDCDiagnosticInfo/HealthTest-S2D-Cluster-20180522-1546.ZIP)的链接。
 
-若要在 Windows 管理中心中查看此信息（从版本1812开始），请导航到 "*诊断*" 选项卡。如以下屏幕截图所示，可以 
+若要在 Windows 管理中心 (版本 1812) 之前查看此信息，请导航到 "*诊断*" 选项卡。如以下屏幕截图所示，可以
 
 - 安装诊断工具
-- 更新它们（如果它们已过期）， 
-- 计划每日诊断运行（这对你的系统具有较小的影响，通常会在后台 < 5 分钟，而不会占用超过群集的500mb）
+-  (如果它们) 过期，则将其更新
+- 计划每日诊断 (它们对系统的影响较小，通常需要在后台 <5 分钟，并且在群集上不会占用超过500mb 的) 
 - 查看以前收集的诊断信息，前提是你需要为其提供支持或进行分析。
 
 ![wac 诊断屏幕快照](media/data-collection/Wac.png)
@@ -163,29 +161,29 @@ Get-SddcDiagnosticInfo -ClusterName S2D-Cluster -WriteToPath d:\SDDCDiagTemp
 运行状况摘要报表另存为：
 - 0_CloudHealthSummary .log
 
-此文件是在分析所有收集的数据后生成的，旨在提供系统的快速摘要。 它包含：
+此文件是在分析所有收集的数据后生成的，旨在提供系统的快速摘要。 该结构包含：
 
 - 系统信息
-- 存储运行状况概述（节点数、联机资源、群集共享卷联机、不正常组件等）
-- 有关不正常组件的详细信息（脱机、失败或联机挂起的群集资源）
+- 存储运行状况概述 (的节点数、联机资源、群集共享卷联机、不正常组件等 ) 
+- ) 脱机、失败或联机挂起 (群集资源的不正常组件的详细信息
 - 固件和驱动程序信息
 - 池、物理磁盘和卷详细信息
-- 存储性能（收集性能计数器）
+- 收集 (性能计数器的存储性能) 
 
 此报告将不断更新以包含更多有用信息。 有关最新信息，请参阅[GITHUB 自述文件](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/edit/master/README.md)。
 
 ### <a name="logs-and-xml-files"></a>日志和 XML 文件
 
-脚本运行各种日志收集脚本，并将输出保存为 xml 文件。 收集群集和运行状况日志、系统信息（MSInfo32）、未筛选的事件日志（故障转移群集、拆装诊断、hyper-v、存储空间等）以及存储诊断信息（操作日志）。 有关收集的信息的最新信息，请参阅[GITHUB 自述文件（我们收集的内容）](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/blob/master/README.md#what-does-the-cmdlet-output-include)。
+脚本运行各种日志收集脚本，并将输出保存为 xml 文件。 收集群集和运行状况日志、系统信息 (MSInfo32) 、未筛选的事件日志 (故障转移群集、拆装诊断、hyper-v、存储空间，以及更多) 和存储诊断信息 (操作日志) 。 有关收集哪些信息的最新信息，请参阅[GITHUB 自述文件 (我们收集的内容) ](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/blob/master/README.md#what-does-the-cmdlet-output-include)。
 
 ## <a name="how-to-consume-the-xml-files-from-get-pcstoragediagnosticinfo"></a>如何从 PCStorageDiagnosticInfo 使用 XML 文件
-你可以使用**PCStorageDiagnosticInfo** cmdlet 收集的数据中提供的 XML 文件中的数据。 这些文件包含有关虚拟磁盘、物理磁盘、基本群集信息和其他 PowerShell 相关输出的信息。 
+你可以使用**PCStorageDiagnosticInfo** cmdlet 收集的数据中提供的 XML 文件中的数据。 这些文件包含有关虚拟磁盘、物理磁盘、基本群集信息和其他 PowerShell 相关输出的信息。
 
-若要查看这些输出的结果，请打开 PowerShell 窗口，然后运行以下步骤。 
+若要查看这些输出的结果，请打开 PowerShell 窗口，然后运行以下步骤。
 
 ```PowerShell
 ipmo storage
-$d = import-clixml <filename> 
+$d = import-clixml <filename>
 $d
 ```
 

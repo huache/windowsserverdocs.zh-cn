@@ -1,20 +1,18 @@
 ---
 title: Windows 身份验证中使用的组策略设置
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 9e237f89-45b1-4a4e-9b72-11dc7d6a470b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 9cbf10e9ebce5bbe0865f28001d0c505b42c9742
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2735474c9c993dc132ab902a6fe828ee4aa42972
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517992"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942394"
 ---
 # <a name="group-policy-settings-used-in-windows-authentication"></a>Windows 身份验证中使用的组策略设置
 
@@ -39,16 +37,16 @@ ms.locfileid: "87517992"
 
 下表列出了与身份验证相关的策略组，并提供指向可帮助你配置这些策略的文档的链接。
 
-|策略组|位置|说明|
+|策略组|位置|描述|
 |--------|------|--------|
 |**密码策略**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 Settings\Account 策略|密码策略影响密码的特征和行为。 密码策略用于域帐户或本地用户帐户。 它们确定密码设置，如强制和生存期。<p>有关特定设置的信息，请参阅[密码策略](https://technet.microsoft.com/itpro/windows/keep-secure/password-policy)。|
 |**帐户锁定策略**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 Settings\Account 策略|帐户锁定策略选项在失败的登录尝试次数后禁用帐户。 使用这些选项可帮助检测和阻止破解密码的尝试。<p>有关帐户锁定策略选项的信息，请参阅[帐户锁定策略](https://technet.microsoft.com/itpro/windows/keep-secure/account-lockout-policy)。|
-|**Kerberos 策略**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 Settings\Account 策略|与 Kerberos 相关的设置包括票证生存期和强制规则。 Kerberos 策略不适用于本地帐户数据库，因为 Kerberos 身份验证协议不用于对本地帐户进行身份验证。 因此，只能通过默认域组策略对象（GPO）来配置 Kerberos 策略设置，这会影响域登录。<p>有关域控制器的 Kerberos 策略选项的信息，请参阅[Kerberos 策略](https://technet.microsoft.com/itpro/windows/keep-secure/kerberos-policy)。|
+|**Kerberos 策略**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 Settings\Account 策略|与 Kerberos 相关的设置包括票证生存期和强制规则。 Kerberos 策略不适用于本地帐户数据库，因为 Kerberos 身份验证协议不用于对本地帐户进行身份验证。 因此，只能通过默认域组策略对象 (GPO) （其中会影响域登录）来配置 Kerberos 策略设置。<p>有关域控制器的 Kerberos 策略选项的信息，请参阅[Kerberos 策略](https://technet.microsoft.com/itpro/windows/keep-secure/kerberos-policy)。|
 |**审核策略**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 \ 本地审核策略|审核策略可让你控制和了解对对象（如文件和文件夹）的访问权限，以及管理用户和组帐户以及用户登录和注销。 审核策略可以指定要审核的事件的类别，设置安全日志的大小和行为，并确定要监视其访问权限的对象以及要监视的访问类型。<p>|
 |**用户权限分配**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 \ 本地策略 \ 权限分配|用户权限通常基于用户所属的安全组（如管理员、超级用户或用户）进行分配。 此类别中的策略设置通常用于根据访问和安全组成员身份的方法授予或拒绝访问计算机的权限。|
 |**安全选项**|本地计算机策略 \dns 配置 \Windows 设置 \ 安全设置 \ 安全选项|与身份验证相关的策略包括：<p>-设备<br />-域控制器<br />-域成员<br />-交互式登录<br />-Microsoft 网络服务器<br />-网络访问<br />-网络安全<br />-恢复控制台<br />-Shutdown<p>|
-|**凭据委派**|计算机配置 \ 管理模板 Templates\System\Credentials 委派|凭据的委托是一种机制，允许在其他系统上使用本地凭据，最值得注意的是域中的成员服务器和域控制器。 这些设置适用于使用凭据安全支持提供程序（凭据 SSP）的应用程序。 远程桌面连接是一个示例。|
-|**KDC**|计算机配置 \ 管理 Templates\System\KDC|这些策略设置会影响密钥发行中心（KDC）（即域控制器上的服务）处理 Kerberos 身份验证请求的方式。|
+|**凭据委派**|计算机配置 \ 管理模板 Templates\System\Credentials 委派|凭据的委托是一种机制，允许在其他系统上使用本地凭据，最值得注意的是域中的成员服务器和域控制器。 这些设置适用于使用凭据安全支持提供程序 (凭据 SSP) 的应用程序。 远程桌面连接是一个示例。|
+|**KDC**|计算机配置 \ 管理 Templates\System\KDC|这些策略设置会影响密钥发行中心 (KDC) （域控制器上的服务）如何处理 Kerberos 身份验证请求。|
 |**Kerberos**|计算机配置 \ 管理 Templates\System\Kerberos|这些策略设置会影响如何配置 Kerberos 来处理对声明、Kerberos 保护、复合身份验证、标识代理服务器和其他配置的支持。|
 |**登录**|计算机配置\管理模板\系统\登录|这些策略设置控制系统如何提供用户的登录体验。|
 |**Net Logon**|计算机配置 \ 管理 Templates\System\Net 登录|这些策略设置控制系统如何处理网络登录请求，包括域控制器定位器的行为方式。<p>有关域控制器定位程序如何适合复制过程的详细信息，请参阅[了解站点间的复制](https://technet.microsoft.com/library/cc771251.aspx)。|
@@ -57,7 +55,7 @@ ms.locfileid: "87517992"
 |**密码同步**|计算机配置 \ 管理模板 \Windows 组件 Components\Password 同步|这些策略设置确定系统如何管理基于 Windows 和 UNIX 的操作系统之间的密码同步。<p>有关详细信息，请参阅[密码同步](https://technet.microsoft.com/library/cc732609.aspx)。|
 |**智能卡**|计算机配置 \ 管理模板 \Windows 组件 Components\Smart 卡|这些策略设置控制系统管理智能卡登录的方式。<p>|
 |**Windows 登录选项**|计算机配置 \ 管理模板 \Windows 组件 \Windows 登录选项|这些策略设置控制登录机会的使用时间和方式。|
-|**Ctrl + Alt + Del 选项**|计算机配置 \ 管理模板 \Windows 组件 Components\Ctrl + Alt + Del 选项|这些策略设置将影响登录 UI （安全桌面）上功能的外观和可访问性，如任务管理器和计算机的键盘锁定。|
+|**Ctrl + Alt + Del 选项**|计算机配置 \ 管理模板 \Windows 组件 Components\Ctrl + Alt + Del 选项|这些策略设置将影响登录 UI 上的功能的外观和可访问性 (安全桌面) ，如任务管理器和计算机的键盘锁定。|
 |**登录**|计算机配置 \ 管理模板 \Windows 组件 Components\Logon|这些策略设置确定用户是否可以在用户登录时运行哪些进程。|
 
 ## <a name="additional-references"></a>其他参考

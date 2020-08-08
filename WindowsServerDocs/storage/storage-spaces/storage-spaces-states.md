@@ -1,31 +1,29 @@
 ---
 title: 存储空间和存储空间直通运行状况和运行状态
-description: 如何查找并了解存储空间直通和存储空间（包括物理磁盘、池和虚拟磁盘）的不同运行状况和操作状态，以及如何处理它们。
+description: 如何查找并了解存储空间直通和存储空间 (的不同运行状态和操作状态，包括物理磁盘、池和虚拟磁盘) ，以及如何处理它们。
 author: jasongerend
 ms.author: jgerend
 ms.date: 12/06/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: d7bbef54d0ec554c6a3cf184dcb0414f7456547c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 81480c413c2d9775ee81374534fc54af4fdcfced
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182153"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997490"
 ---
 # <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>排查存储空间问题和运行状况和运行状态存储空间直通
 
-> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server （半年频道），Windows 10，Windows 8。1
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server (半年通道) ，Windows 10，Windows 8。1
 
-本主题介绍存储池、虚拟磁盘（位于存储空间中的卷下）的运行状况和操作状态，以及[存储空间直通](storage-spaces-direct-overview.md)和[存储空间](overview.md)中的驱动器。 尝试排查各种问题（例如由于只读配置而无法删除虚拟磁盘）时，这些状态可能非常有用。 它还讨论了为什么无法将驱动器添加到池（CannotPoolReason）。
+本主题介绍存储池的运行状况和运行状态、位于存储空间) 中的卷下的虚拟磁盘 (，以及[存储空间直通](storage-spaces-direct-overview.md)和[存储空间](overview.md)中的驱动器。 尝试排查各种问题（例如由于只读配置而无法删除虚拟磁盘）时，这些状态可能非常有用。 它还讨论了为什么无法将驱动器添加到 CannotPoolReason)  (池。
 
-存储空间具有三个主要对象-添加到*存储池*的*物理磁盘*（硬盘驱动器、ssd 等），虚拟化存储，以便可以从池中的可用空间创建*虚拟磁盘*，如下所示。 池元数据将写入池中的每个驱动器。 卷是在虚拟磁盘上创建的，并存储文件，但我们不会在此处讨论卷。
+存储空间有三个主要对象-*物理磁盘* (硬盘驱动器、ssd 等 ) ，已添加到*存储池*，并虚拟化存储，以便可以根据池中的可用空间创建*虚拟磁盘*，如下所示。 池元数据将写入池中的每个驱动器。 卷是在虚拟磁盘上创建的，并存储文件，但我们不会在此处讨论卷。
 
 ![将物理磁盘添加到存储池，然后将虚拟磁盘添加到池空间](media/storage-spaces-states/storage-spaces-object-model.png)
 
-可以在服务器管理器或 PowerShell 中查看运行状况和运行状态。 下面是一个示例，其中显示了缺少其大部分群集节点的存储空间直通群集上的各种（主要是坏）运行状况和操作状态（右键单击列标题以添加**操作状态**）。 这不是很高兴的群集。
+可以在服务器管理器或 PowerShell 中查看运行状况和运行状态。 下面是一个示例，该示例说明了存储空间直通群集上的各种 () 运行状况和操作状态，但该群集缺少其大多数群集节点 (右键单击列标题以添加**操作状态**) 。 这不是很高兴的群集。
 
 ![服务器管理器在存储空间直通群集中显示两个丢失节点的结果-大量缺少的物理磁盘和虚拟磁盘处于不正常状态](media/storage-spaces-states/unhealthy-disks-in-server-manager.png)
 
@@ -73,11 +71,11 @@ S2D on StorageSpacesDirect1 Read-only         Unknown      False        True
 ||策略|管理员将存储池设置为只读。<br><br>**操作：** 若要在故障转移群集管理器中将群集存储池设置为读写访问权限，请转到 "**池**"，右键单击该池，然后选择 "**联机**"。<br><br>对于其他服务器和 Pc，请打开具有管理权限的 PowerShell 会话，然后键入：<br><br><code>Get-StoragePool <PoolName> \| Set-StoragePool -IsReadOnly $false</code><br><br> |
 ||正在启动|存储空间正在启动或等待驱动器连接到池中。 这应该是临时状态。 完全启动后，池应转换为其他操作状态。<br><br>**操作：** 如果池处于 "*正在启动*" 状态，请确保池中的所有驱动器都已正确连接。|
 
-另请参阅[Windows Server 存储论坛](https://docs.microsoft.com/answers/topics/windows-server-storage.html)。
+另请参阅[Windows Server 存储论坛](/answers/topics/windows-server-storage.html)。
 
 ## <a name="virtual-disk-states"></a>虚拟磁盘状态
 
-在存储空间中，卷放置在划分空间不足的虚拟磁盘（存储空间）上，以供池中使用。 每个虚拟磁盘的运行状况状态为 "**正常**"、"**警告**"、"不**正常**" 或 "**未知**" 以及一个或多个操作状态。
+在存储空间中，卷位于虚拟磁盘上 (存储空间) ，该空间划分池中的可用空间不足。 每个虚拟磁盘的运行状况状态为 "**正常**"、"**警告**"、"不**正常**" 或 "**未知**" 以及一个或多个操作状态。
 
 若要了解虚拟磁盘的状态，请使用以下 PowerShell 命令：
 
@@ -123,16 +121,16 @@ Volume2      Warning      {Degraded, Incomplete} None
 
 ### <a name="virtual-disk-health-state-informationunknown"></a>虚拟磁盘运行状况状态：信息/未知
 
-如果管理员使虚拟磁盘脱机或虚拟磁盘已分离，则虚拟磁盘还可以是**信息**健康状况状态（如存储空间控制面板项中所示）或**未知**的运行状况状态（如 PowerShell 中所示）。
+虚拟磁盘还可以处于**信息**健康状况状态 (如 "存储空间控制面板" 项中所示) 或 "**未知**运行状况状态" (如 PowerShell) 中所示。
 
-|操作状态    |分离原因 |描述|
+|操作状态    |分离原因 |说明|
 |---------            |---------       |--------   |
 |已分离             |按策略            |管理员使虚拟磁盘脱机，或将虚拟磁盘设置为需要手动连接，在这种情况下，每次 Windows 重新启动时，都必须手动附加虚拟磁盘。<br><br>**操作**：使虚拟磁盘恢复联机。 若要在虚拟磁盘位于群集存储池时执行此操作，请在故障转移群集管理器选择 "**存储**  >  **池**  >  " "**虚拟磁盘**" 中，选择显示**脱机**状态的虚拟磁盘，然后选择 "**联机**"。 <br><br>若要在不在群集中时使虚拟磁盘重新联机，请以管理员身份打开 PowerShell 会话，然后尝试使用以下命令：<br><br> <code>Get-VirtualDisk \| Where-Object -Filter { $_.OperationalStatus -eq "Detached" } \| Connect-VirtualDisk</code><br><br>若要在 Windows 重新启动后自动附加所有非群集虚拟磁盘，请以管理员身份打开 PowerShell 会话，然后使用以下命令：<br><br> <code>Get-VirtualDisk \| Set-VirtualDisk -ismanualattach $false</code>|
 |            |多数磁盘不正常 |此虚拟磁盘使用的驱动器太多，已丢失或具有陈旧数据。   <br><br>**操作**： <br> 1. 重新连接任何缺失的驱动器，如果使用存储空间直通，请将任何处于脱机状态的服务器联机。 <br> 2. 所有驱动器和服务器都处于联机状态后，请更换任何出现故障的驱动器。 有关详细信息，请参阅[运行状况服务](../../failover-clustering/health-service-overview.md)。 <br>如果在重新连接或更换驱动器后需要，存储空间直通会自动启动修复。<br>3. 如果未使用存储空间直通，请使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) cmdlet 修复虚拟磁盘。  <br><br>如果有多个磁盘发生故障，超过了你的数据的副本，并且未在故障之间修复虚拟磁盘，则虚拟磁盘上的所有数据都将永久丢失。 在这种情况下，请删除虚拟磁盘、创建新的虚拟磁盘，然后从备份还原。|
 |                     |不完整 |没有足够的驱动器来读取虚拟磁盘。    <br><br>**操作**： <br> 1. 重新连接任何缺失的驱动器，如果使用存储空间直通，请将任何处于脱机状态的服务器联机。 <br> 2. 所有驱动器和服务器都处于联机状态后，请更换任何出现故障的驱动器。 有关详细信息，请参阅[运行状况服务](../../failover-clustering/health-service-overview.md)。 <br>如果在重新连接或更换驱动器后需要，存储空间直通会自动启动修复。<br>3. 如果未使用存储空间直通，请使用[VirtualDisk](/powershell/module/storage/repair-virtualdisk?view=win10-ps) cmdlet 修复虚拟磁盘。<br><br>如果有多个磁盘发生故障，超过了你的数据的副本，并且未在故障之间修复虚拟磁盘，则虚拟磁盘上的所有数据都将永久丢失。 在这种情况下，请删除虚拟磁盘、创建新的虚拟磁盘，然后从备份还原。|
 | |超时|附加虚拟磁盘花费了太长时间 <br><br> **操作：** 不应经常发生这种情况，因此你可能会尝试查看条件是否按时间传递。 或者，可以尝试使用[VirtualDisk](/powershell/module/storage/disconnect-virtualdisk?view=win10-ps) cmdlet 断开虚拟磁盘的连接，然后使用[VirtualDisk](/powershell/module/storage/connect-virtualdisk?view=win10-ps) cmdlet 将其重新连接。 |
 
-## <a name="drive-physical-disk-states"></a>驱动器（物理磁盘）状态
+## <a name="drive-physical-disk-states"></a>驱动器 (物理磁盘) 状态
 
 以下部分描述了驱动器可能处于的运行状况。 池中的驱动器在 PowerShell 中表示为*物理磁盘*对象。
 
@@ -150,7 +148,7 @@ Volume2      Warning      {Degraded, Incomplete} None
 |操作状态    |说明|
 |---------            |---------          |
 |通信断开|驱动器丢失。 如果使用存储空间直通，则可能是由于服务器已关闭。<br><br>**操作**：如果使用存储空间直通，请将所有服务器恢复联机状态。 如果未解决此问题，请重新连接驱动器，将其替换，或尝试通过使用 Windows 错误报告 >[物理磁盘](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-timed-out)的故障排除中所述的步骤获取详细的诊断信息。|
-|从池中删除|存储空间正在从其存储池中删除驱动器。 <br><br> 这是一种暂时性的状态。 删除完成后，如果驱动器仍连接到系统，驱动器将转换为原始池中的另一操作状态（通常为正常）。|
+|从池中删除|存储空间正在从其存储池中删除驱动器。 <br><br> 这是一种暂时性的状态。 删除完成后，如果驱动器仍连接到系统，则驱动器会转换为另一操作状态 (通常) 原始池中。|
 |启动维护模式|在管理员将驱动器置于维护模式后，存储空间正在将驱动器置于维护模式。 这是一种临时状态-驱动器即将处于*维护模式*状态。|
 |维护中模式|管理员将驱动器置于维护模式，从而停止从驱动器进行的读取和写入操作。 这通常在更新驱动器固件或测试失败时执行。<br><br>**操作**：要使驱动器退出维护模式，请使用[StorageMaintenanceMode](/powershell/module/storage/disable-storagemaintenancemode?view=win10-ps) cmdlet。|
 |停止维护模式|管理员将驱动器退出维护模式，并且存储空间正在使驱动器恢复联机。 这是一种临时状态-驱动器应很快处于另一状态 *-理想状态*。|

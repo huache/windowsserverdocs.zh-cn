@@ -1,8 +1,6 @@
 ---
 title: 网络
 description: 本主题概述了 Windows Server 2016 中提供的软件定义的网络和网络平台技术。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.date: 05/08/2018
 ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
@@ -10,19 +8,19 @@ manager: dougkim
 ms.author: anpaul
 author: AnirbanPaul
 ms.localizationpriority: medium
-ms.openlocfilehash: 39bda1ac3a8b3cbac61435b65baf538f2d71e20e
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 30939a702f0856461e7b8a08af2dfd40b4a4456d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408906"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997356"
 ---
 # <a name="networking"></a>网络
 
 > 适用于：Windows Server（半年频道）、Windows Server 2016
 
 > [!TIP]
-> 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)了解具体信息。
+> 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](/search/index?dataSource=previousVersions&search=Windows+Server)了解具体信息。
 
 <img src="../media/landing-icons/network.png" style='float:left; padding:.5em;' alt="Icon depicting two networked computers"> 网络是软件定义的数据中心 SDDC 平台的基础部分 \( \) ，而 Windows Server 2016 提供了新的、经过改进的软件定义网络 \( SDN \) 技术，以帮助你迁移到适用于你的组织的完全实现的 SDDC 解决方案。
 
@@ -61,7 +59,7 @@ Windows Server 2016 新增了以下网络技术：
 
 ### <a name="software-load-balancing-40slb41-for-sdn"></a>[用于 SDN 的软件负载平衡 &#40;SLB&#41;](sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)
 
-云服务提供 \( 商 \) 在 Windows Server 2016 中部署软件定义的网络（SDN）的 Csp 和企业可以使用软件负载平衡 \( SLB 在 \) 虚拟网络资源之间均匀分配租户和租户客户网络流量。 Windows Server SLB 允许多台服务器承载相同的工作负荷，具有较高的可用性和可扩展性。
+云服务提供 \( 商 \) 在 Windows Server 2016 中部署软件定义的网络 (SDN) 的 Csp 和企业可使用软件负载平衡 \( SLB 在 \) 虚拟网络资源之间均匀分配租户和租户客户网络流量。 Windows Server SLB 允许多台服务器承载相同的工作负荷，具有较高的可用性和可扩展性。
 
 ### <a name="ras-gateway-for-sdn"></a>[用于 SDN 的 RAS 网关](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)
 
@@ -95,7 +93,7 @@ BranchCache 是一种广域网 \( \) 带宽优化技术。 为了在用户访问
 
 DirectAccess 允许远程用户连接到组织网络资源。
 
-DirectAccess 文档现在位于[远程访问](https://docs.microsoft.com/windows-server/remote/remote-access/remote-access)下 Windows Server 2016 目录的[远程访问和服务器管理](https://docs.microsoft.com/windows-server/remote/)部分中。 有关详细信息，请参阅 [DirectAccess](../remote/remote-access/directaccess/DirectAccess.md)。
+DirectAccess 文档现在位于[远程访问](../remote/remote-access/remote-access.md)下 Windows Server 2016 目录的[远程访问和服务器管理](../remote/index.yml)部分中。 有关详细信息，请参阅 [DirectAccess](../remote/remote-access/directaccess/DirectAccess.md)。
 
 ### <a name="domain-name-system-40dns41"></a>[域名系统 &#40;DNS&#41;](dns/dns-top.md)
 
@@ -130,7 +128,7 @@ Windows Server 2016 中的网络卸载和优化技术包括仅限软件 (SO) 的
 此外，还提供以下卸载和优化技术文档。
 
 - [聚合网络接口卡 (NIC) 配置指南](technologies/conv-nic/cnic-top.md)
-- [数据中心桥接（DCB）](technologies/dcb/dcb-top.md)
+- [数据中心桥接 (DCB) ](technologies/dcb/dcb-top.md)
 - [虚拟接收方缩放 (vRSS)](technologies/vrss/vrss-top.md)
 
 
@@ -150,7 +148,7 @@ Windows Server 2016 中的网络卸载和优化技术包括仅限软件 (SO) 的
 
 NIC 组合可以将物理以太网网络适配器组合为一个或多个基于软件的虚拟网络适配器。 这些虚拟网络适配器可以提高性能，并在网络适配器发生故障时提供容错能力。
 
-### <a name="quality-of-service-qos-policy"></a>[服务质量（QoS）策略](technologies/qos/qos-policy-top.md)
+### <a name="quality-of-service-qos-policy"></a>[服务质量 (QoS) 策略](technologies/qos/qos-policy-top.md)
 
 通过创建其设置使用组策略分发的 QoS 配置文件，你可以在整个 Active Directory 基础架构中，将 QoS 策略用作网络带宽管理的中心点。
 
@@ -158,9 +156,9 @@ NIC 组合可以将物理以太网网络适配器组合为一个或多个基于�
 
 可以使用远程访问技术（例如 DirectAccess 和虚拟专用网络 VPN） \( 向 \) 远程辅助角色提供与内部网络资源的连接。 此外，你还可以将远程访问用于局域网 \( LAN \) 路由，以及 Web 应用程序代理。 该代理为企业网络中的 Web 应用程序提供反向代理功能，使任一设备上的用户能够从企业网络外部访问这些 Web 应用程序。
 
-远程访问文档现在位于 Windows Server 2016 目录的[远程访问和服务器管理](https://docs.microsoft.com/windows-server/remote/)部分中。 有关详细信息，请参阅[远程访问](../remote/remote-access/remote-access.md)。
+远程访问文档现在位于 Windows Server 2016 目录的[远程访问和服务器管理](../remote/index.yml)部分中。 有关详细信息，请参阅[远程访问](../remote/remote-access/remote-access.md)。
 
-有关 Web 应用程序代理（远程访问服务器角色的角色服务）的详细信息，请参阅[Windows server 2016 中的 Web 应用程序代理](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server)。
+有关 Web 应用程序代理（远程访问服务器角色的角色服务）的详细信息，请参阅[Windows server 2016 中的 Web 应用程序代理](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)。
 
 ### <a name="virtual-private-networking-vpn"></a>[虚拟专用网 (VPN)](../remote/remote-access/vpn/vpn-top.md)
 
@@ -170,14 +168,14 @@ NIC 组合可以将物理以太网网络适配器组合为一个或多个基于�
 
 对于 Windows Server 2016 远程访问 VPN 和 Windows 10 客户端计算机，你现在可以部署“始终启用 VPN”。 “始终启用 VPN”让你可以管理始终连接的远程 VPN 客户端，同时还为远程工作人员提供便利，因为他们不再需要从 VPN 手动连接到组织网络和断开该连接。
 
-有关详细信息，请参阅 [Windows Server 2016 和 Windows 10 远程访问始终启用 VPN 部署指南](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy)。
+有关详细信息，请参阅 [Windows Server 2016 和 Windows 10 远程访问始终启用 VPN 部署指南](../remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)。
 
 >[!NOTE]
->VPN 文档现在位于[远程访问](https://docs.microsoft.com/windows-server/remote/remote-access/remote-access)下 Windows Server 2016 目录的[远程访问和服务器管理](https://docs.microsoft.com/windows-server/remote/)部分中。
+>VPN 文档现在位于[远程访问](../remote/remote-access/remote-access.md)下 Windows Server 2016 目录的[远程访问和服务器管理](../remote/index.yml)部分中。
 
-有关 VPN 的详细信息，请参阅[虚拟专用网络 (VPN)](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/vpn-top)。
+有关 VPN 的详细信息，请参阅[虚拟专用网络 (VPN)](../remote/remote-access/vpn/vpn-top.md)。
 
-### <a name="windows-container-networking"></a>[Windows 容器网络](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)
+### <a name="windows-container-networking"></a>[Windows 容器网络](/virtualization/windowscontainers/manage-containers/container-networking)
 
 通过 Windows 容器网络，你可以使用标准行业工具和工作流程创建并管理网络，以连接 Windows 10 和 Windows Server 主机上的容器终结点。 Windows 容器网络支持多个拓扑，包括专用、平面 L2 和路由 L3。
 
@@ -191,6 +189,6 @@ Windows Internet 名称服务 (WINS) 是传统的计算机名称注册和解析�
 
 以下位置提供了早于 Windows Server 2016 的操作系统的网络资源。
 
-- Windows Server 2012 和 Windows Server 2012 R2 [网络连接概述](https://technet.microsoft.com/library/hh831357.aspx)
-- Windows Server 2008 和 Windows Server 2008 R2 [Networking](https://technet.microsoft.com/library/cc753940)（网络）
+- Windows Server 2012 和 Windows Server 2012 R2 [网络连接概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831357(v=ws.11))
+- Windows Server 2008 和 Windows Server 2008 R2 [Networking](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753940(v=ws.10))（网络）
 - Windows Server 2003 [Windows server 2003/2003 R2 已停用内容](https://www.microsoft.com/download/details.aspx?id=53314)

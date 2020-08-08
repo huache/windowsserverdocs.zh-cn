@@ -2,22 +2,20 @@
 title: 使用继承的权限执行基于访问的枚举
 description: 本文介绍如何使用继承的权限执行基于访问的枚举
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 112ec4363177ac6dd560493843c8937bdfbac4de
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 96b6280b8f69325a9f5c819430dd7a5249247302
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475144"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971204"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>使用继承的权限执行基于访问的枚举
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 默认情况下，用于 DFS 文件夹的权限从命名空间服务器的本地文件系统继承。 权限继承自系统驱动器的根目录，并向域 \\ 用户组授予读取权限。 因此，即使在启用基于访问的枚举后，命名空间中的所有文件夹仍对所有域用户可见。
 
@@ -52,7 +50,7 @@ ms.locfileid: "85475144"
 
 1.  在控制台树中的**命名空间**节点下，找到要控制其可见性的文件夹（包含目标），并右键单击该文件夹，然后单击**属性**。
 
-2.  单击“高级”**** 选项卡。
+2.  单击“高级”选项卡。
 
 3.  单击**使用从本地文件系统继承的权限**，然后在**确认使用继承的权限**对话框中单击**确定**。 执行此操作时将删除对此文件夹显式设置的所有权限，同时从命名空间服务器的本地文件系统中还原继承的 NTFS 权限。
 

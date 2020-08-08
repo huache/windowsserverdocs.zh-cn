@@ -7,19 +7,19 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: f973d83c53fb4667163d950a169611721f53f78e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e6bb0df12ba193cb5b335af3bf05bdca538e148b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939474"
+ms.locfileid: "87997305"
 ---
 # <a name="security-and-assurance-in-windows-server"></a>Windows Server 中的安全和保障
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
 >[!TIP]
-> 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)了解具体信息。
+> 要查找有关较旧版 Windows Server 的信息？ 在 docs.microsoft.com 上查看我们的其他 [Windows Server 库](/previous-versions/windows/)。 也可以[搜索此站点](/search/index?dataSource=previousVersions&search=Windows+Server)了解具体信息。
 
 <img src="../media/landing-icons/security.png" style='float:left; padding:.5em;' alt="Icon representing a lock"> 你可以依靠内置于操作系统的新保护层进一步防止出现安全漏洞。 帮助阻止恶意攻击并提高虚拟机、应用程序和数据的安全性。
 
@@ -27,7 +27,7 @@ ms.locfileid: "87939474"
 ### <a name="windows-server-security-blog-post"></a>[Windows Server 安全博客文章](https://blogs.technet.microsoft.com/windowsserver/2016/04/25/ten-reasons-youll-love-windows-server-2016-8-security/)
 Windows Server 安全团队的这篇博客文章重点介绍了 Windows Servers 中可以提高托管和混合云环境的安全的许多改进。
 
-### <a name="datacenter-and-private-cloud-security-blog"></a>[数据中心和私有云安全博客](https://blogs.technet.microsoft.com/datacentersecurity/)
+### <a name="datacenter-and-private-cloud-security-blog"></a>[数据中心和私有云安全博客](/archive/blogs/datacentersecurity/)
 这是来自 Microsoft 数据中心和私有云安全团队的技术内容的中心博客站点。
 
 ### <a name="addressing-emerging-threats-and-landscape-shifts"></a>[应对新兴威胁和横向转移](https://www.youtube.com/watch?v=B5JMYxYWx1k&feature=youtu.be)
@@ -54,23 +54,23 @@ Windows Server 安全团队的这篇博客文章重点介绍了 Windows Servers 
 
 此 Ignite 演示讨论了 Hyper-V 中的改进、Virtual Machine Manager 以及启用受防护的虚拟机的新主机保护者服务器角色。
 
-### <a name="guarded-fabric-deployment-guide"></a>[受保护的构造部署指南](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)
+### <a name="guarded-fabric-deployment-guide"></a>[受保护的构造部署指南](./guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview.md)
 本指南提供用于受保护的构造主机和受防护的 VM 的 Windows Server 和 System Center Virtual Machine Manager 的安装和验证信息。
 
-### <a name="shielded-vm-and-guarded-fabric-in-branch-offices"></a>[分支机构中的受防护的虚拟机和受保护的构造](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office)
+### <a name="shielded-vm-and-guarded-fabric-in-branch-offices"></a>[分支机构中的受防护的虚拟机和受保护的构造](./guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md)
 本指南提供在分支机构和其他远程场景（Hyper-V 主机在一段时间内与 HGS 的连接受限）中运行受防护的虚拟机的最佳做法。
 
-### <a name="shielded-vm-and-guarded-fabric-troubleshooting-guide"></a>[受防护的 VM 和受保护的构造故障排除指南](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-overview)
+### <a name="shielded-vm-and-guarded-fabric-troubleshooting-guide"></a>[受防护的 VM 和受保护的构造故障排除指南](./guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-overview.md)
 本指南提供有关如何解决在受防护的 VM 环境中可能遇到的问题的信息。
 
 ### <a name="shielded-vm-article"></a>[受防护的 VM 文章](http://windowsitpro.com/hyper-v/super-secure-hyper-v-environments-shielded-vms-2016)
 本白皮书概述了受防护的 VM 如何提供增强的总体安全性以防止篡改。
 
 ## <a name="privileged-access-management"></a>保护 Windows 和 Microsoft Azure Active Directory
-### <a name="securing-privileged-access"></a>[保护特权访问](https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access)
+### <a name="securing-privileged-access"></a>[保护特权访问](../identity/securing-privileged-access/securing-privileged-access.md)
 有关如何保护特权访问的道路地图。 此道路地图基于服务器安全团队、Microsoft IT、Azure 团队和 Microsoft 咨询服务部门的综合专业知识建立而成
 
-### <a name="just-in-time-administration-with-microsoft-identity-manager"></a>[使用 Microsoft Identity Manager 进行恰时管理](https://technet.microsoft.com/library/mt150258.aspx)
+### <a name="just-in-time-administration-with-microsoft-identity-manager"></a>[使用 Microsoft Identity Manager 进行恰时管理](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 本文讨论 Microsoft Identity Manager 中所包含的特性和功能，包括对实时 (JIT) 特权访问管理的支持。
 
 ### <a name="protecting-windows-and-microsoft-azure-active-directory-with-privileged-access-management"></a>[使用 Privileged Access Management 保护 Windows 和 Microsoft Azure Active Directory](https://channel9.msdn.com/events/ignite/2015/brk3873)
@@ -83,28 +83,28 @@ Windows Server 安全团队的这篇博客文章重点介绍了 Windows Servers 
 Just Enough Administration 演示演练。
 ## <a name="credential-protection"></a>凭据保护
 
-### <a name="protect-derived-domain-credentials-with-credential-guard"></a>[使用 Credential Guard 保护派生的域凭据](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
+### <a name="protect-derived-domain-credentials-with-credential-guard"></a>[使用 Credential Guard 保护派生的域凭据](/windows/security/identity-protection/credential-guard/credential-guard)
 凭据保护使用基于虚拟化的安全性来隔离密钥，以便只有特权系统软件可以访问它们。 对这些机密的未经授权访问可能会导致凭据盗窃攻击，例如哈希传递或票证传递。 凭据保护可通过保护 NTLM 密码哈希和 Kerberos 票证授予票证防止这些攻击。
 
-### <a name="protect-remote-desktop-credentials-with-remote-credential-guard"></a>[使用远程 Credential Guard 来保护远程桌面凭据](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
+### <a name="protect-remote-desktop-credentials-with-remote-credential-guard"></a>[使用远程 Credential Guard 来保护远程桌面凭据](/windows/security/identity-protection/remote-credential-guard)
 远程凭据保护可通过将 Kerberos 请求重定向回请求连接的设备，通过远程桌面连接帮助保护凭据。 它还提供远程桌面会话的单一登录体验。                                                                                                        |
 ### <a name="credential-guard-demo-video"></a>[Credential Guard 演示视频](https://www.youtube.com/watch?v=eUpKOGSl7yk)
 这段时长 5 分钟的视频演示了 Credential Guard 和远程 Credential Guard。
 
 ## <a name="hardening-the-os-and-applications"></a>强化的操作系统和应用程序
-### <a name="windows-defender-application-control-wdac-deployment-guide"></a>[Windows Defender 应用程序控制 (WDAC) 部署指南](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)
+### <a name="windows-defender-application-control-wdac-deployment-guide"></a>[Windows Defender 应用程序控制 (WDAC) 部署指南](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)
 WDAC 是可配置代码完整性 (CI) 策略，有助于企业控制其环境中运行的应用程序，但除了运行 Windows 10 之外没有具体的硬件或软件要求。
 
 ### <a name="device-guard-demo-video"></a>[Device Guard 演示视频](https://www.youtube.com/watch?v=F-pTkesjkhI)
 Device Guard 是 WDAC 和虚拟机监控程序保护的代码完整性 (HVCI) 的组合。 这段时长 7 分钟的视频展示了 Device Guard 及其在 Windows Server 上的使用。
 
-### <a name="transport-layer-security-registry-settings"></a>[传输层安全性注册表设置](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings)
+### <a name="transport-layer-security-registry-settings"></a>[传输层安全性注册表设置](./tls/tls-registry-settings.md)
 支持用于传输层安全性 (TLS) 协议和安全套接字层 (SSL) 协议的 Windows 实现的注册表设置信息。
 
-### <a name="control-flow-guard"></a>[控制流保护](https://docs.microsoft.com/windows/desktop/SecBP/control-flow-guard)
+### <a name="control-flow-guard"></a>[控制流保护](/windows/desktop/SecBP/control-flow-guard)
 控制流防护针对一些类的内存损坏攻击提供内置保护。
 
-### <a name="windows-defender"></a>[Windows Defender](https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server)
+### <a name="windows-defender"></a>[Windows Defender](./windows-defender/windows-defender-overview-windows-server.md)
 Windows Defender 提供阻止已知恶意软件的活动检测功能。 Windows Defender 默认开启且经过优化，可在 Windows Server 中支持各种服务器角色。
 
 ## <a name="detecting-and-responding-to-threats"></a>检测和响应威胁
@@ -125,10 +125,10 @@ Microsoft Operations Management Suite (OMS) 安全和审核解决方案处理本
 
 ## <a name="network-security"></a>网络安全性
 
-### <a name="datacenter-firewall-overview"></a>[数据中心防火墙概述](https://technet.microsoft.com/library/dn920240.aspx)
+### <a name="datacenter-firewall-overview"></a>[数据中心防火墙概述](/previous-versions/windows/server/dn920240(v=ws.12))
 本概述介绍了数据中心防火墙、网络层、5 元组（协议、源端口号、目标端口号、源 IP 地址和目标 IP 地址）、有状态的多租户防火墙。
 
-### <a name="whats-new-in-dns-in-windows-server"></a>[Windows Server 中 DNS 的新增功能](https://technet.microsoft.com/windows-server-docs/networking/dns/what-s-new-in-dns-server)
+### <a name="whats-new-in-dns-in-windows-server"></a>[Windows Server 中 DNS 的新增功能](../networking/dns/what-s-new-in-dns-server.md)
 本概述主题简要描述了 DNS 中的新增功能以及详细信息的链接。
 
 ## <a name="mapping-security-features-to-compliance-regulations"></a>将安全功能映射到合规性法规

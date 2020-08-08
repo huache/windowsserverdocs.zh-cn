@@ -1,20 +1,18 @@
 ---
 ms.assetid: 2bab6bf6-90e7-46a7-b917-14a7a8f55366
 title: Windows 中的存储类内存 (NVDIMM N) 的运行状况管理
-ms.prod: windows-server
 ms.author: jgerend
 manager: dongill
-ms.technology: storage-spaces
 ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cda974bf264c7e497c8d472338cf7b5f7d13a534
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: ab69c6959fb6710d5020a73546975fc56a3b4cde
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769046"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961041"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Windows 中的存储类内存 (NVDIMM N) 的运行状况管理
 
@@ -53,7 +51,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | 正常 | 确定 | |
+| 802c-01-1602-117cb5fc | 正常 | OK | |
 | 802c-01-1602-117cb64f | 警告 | 预计故障 | {Threshold Exceeded,NVDIMM\_N Error} |
 
 > [!NOTE]
@@ -67,12 +65,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | 正常 | 确定 | |
+| 802c-01-1602-117cb5fc | 正常 | OK | |
 | 802c-01-1602-117cb64f | 警告 | 预计故障 | {Threshold Exceeded,NVDIMM\_N Error} |
 
 下表列出了一些有关这种情况的信息。
 
-| 方位 | 说明 |
+| 方位 | 描述 |
 | --- | --- |
 | 可能的情况 | NVDIMM-N 警告阈值违例 |
 | 根本原因 | NVDIMM-N 设备追踪各种阈值，例如温度、NVM 生存期和/或能量源生存期。 当超出其中一个阈值时，操作系统将会收到通知。 |
@@ -87,12 +85,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | 正常 | 确定 | |
-| 802c-01-1602-117cb64f | Unhealthy | {元数据已过时, IO 错误, 暂时性错误} | {丢失数据持久性, 丢失数据, NV...} |
+| 802c-01-1602-117cb5fc | 正常 | OK | |
+| 802c-01-1602-117cb64f | 不正常 | {元数据已过时, IO 错误, 暂时性错误} | {丢失数据持久性, 丢失数据, NV...} |
 
 下表列出了一些有关这种情况的信息。
 
-| 方位 | 说明 |
+| 方位 | 描述 |
 | --- | --- |
 | 可能的情况 | 持久性丢失/备份电源 |
 |根本原因|NVDIMM-N 设备依赖备份电源（通常是电池或超级电容）获得持久性。 如果此备份电源的源不可用或设备出于任何原因（控制器/闪存错误）无法执行备份，那么数据将处于危险之中，Windows 将阻止对受影响设备的任何进一步写入操作。 仍有可能执行“读取”操作以疏散数据。|
@@ -107,12 +105,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|正常|确定||
+|802c-01-1602-117cb5fc|正常|OK||
 ||警告|通信中断||
 
 下表列出了一些有关这种情况的信息。
 
-|方位|说明|
+|方位|描述|
 |---|---|
 |可能的情况|BIOS 未将 NVDIMM N 公开到操作系统|
 |根本原因|NVDIMM N 设备基于 DRAM。 当引用损坏的 DRAM 地址时，大多数 CPU 将启动计算机检查并重新启动服务器。 然后，某些服务器平台取消映射 NVDIMM，以阻止操作系统访问相应平台，并可能会引起其他计算机检查。 如果 BIOS 检测到 NVDIMM N 已失败并且需要更换，这种情况同样也可能发生。|
@@ -127,12 +125,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|正常|确定|{未知}|
-|802c-01-1602-117cb64f|Unhealthy|{无法识别的元数据, 元数据已过时}|{未知}|
+|802c-01-1602-117cb5fc|正常|OK|{未知}|
+|802c-01-1602-117cb64f|不正常|{无法识别的元数据, 元数据已过时}|{未知}|
 
 下表列出了一些有关这种情况的信息。
 
-|方位|说明|
+|方位|描述|
 |---|---|
 |可能的情况|备份/还原失败|
 |根本原因|备份或还原过程失败可能会导致 NVDIMM-N 上的所有数据丢失。 加载操作系统时，它将显示为一个没有分区或文件系统的全新 NVDIMM-N 并呈现为 RAW，这意味着它不具有文件系统。|
