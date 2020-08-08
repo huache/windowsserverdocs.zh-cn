@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 03/20/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e3f215abaccbd1f95ee46eca93a573aa1db9e065
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3615d7a0a536a0bb54efee2e8982f9b4e3686c8d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519405"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953326"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>域控制器部署疑难解答
 
@@ -47,7 +45,7 @@ ms.locfileid: "87519405"
 
 -   [AutoRuns.exe](/sysinternals/downloads/autoruns)、任务管理器和 MSInfo32.exe
 
--   [网络监视器 3.4](https://www.microsoft.com/download/en/details.aspx?displaylang=en&id=4865) （或第三方网络捕获和分析工具）
+-   [网络监视器 3.4](https://www.microsoft.com/download/en/details.aspx?displaylang=en&id=4865) (或第三方网络捕获和分析工具) 
 
 ### <a name="general-methodology-for-troubleshooting-domain-controller-configuration"></a>域控制器配置疑难解答的常规方法
 
@@ -112,7 +110,7 @@ ms.locfileid: "87519405"
 
 ### <a name="promotion-and-demotion-success-codes"></a>升级和降级成功代码
 
-| 错误代码 | 说明 | 注意 |
+| 错误代码 | 说明 | 备注 |
 |--|--|--|
 | 1 | 退出，成功 | 你仍然必须重新启动，这仅指出已删除自动重新启动标志。 |
 | 2 | 退出，成功，需要重新启动 |  |
@@ -220,7 +218,7 @@ ms.locfileid: "87519405"
 | 问题 | 降级域控制器会使 DNS 在无区域的情况下运行 |
 |--|--|
 | 症状 | 服务器仍然响应 DNS 请求，但是没有区域信息 |
-| 解析和注释 | 删除 AD DS 角色时，还会删除 DNS 服务器角色或将 DNS 服务器服务设置为禁用。 记得将 DNS 客户端指向它本身之外的另一个服务器。 如果使用 Windows PowerShell，在降级服务器后运行以下内容：<p>代码-uninstall dns<p>或<p>代码集-服务 dns-starttype 已禁用<br />停止服务 dns |
+| 解析和注释 | 删除 AD DS 角色时，还会删除 DNS 服务器角色或将 DNS 服务器服务设置为禁用。 记得将 DNS 客户端指向它本身之外的另一个服务器。 如果使用 Windows PowerShell，在降级服务器后运行以下内容：<p>代码-uninstall dns<p>or<p>代码集-服务 dns-starttype 已禁用<br />停止服务 dns |
 
 | 问题 | 在将 Windows Server 2012 升级到现有单标签域中时，不会配置 updatetopleveldomain=1 或 allowsinglelabeldnsdomain=1 |
 |--|--|
@@ -284,7 +282,7 @@ ms.locfileid: "87519405"
 
 | 问题 | 取消选中/选中“必要时自动重新启动每个目标服务器”时，没有任何效果 |
 |--|--|
-| 症状 | 如果选择（或不选择）服务器管理器选项 "**如果需要，自动重新启动每个目标服务器（如果需要**）通过角色删除 whendemoting 域控制器，则服务器始终会重新启动，而不考虑任何选择。 |
+| 症状 | 如果选择 " (" 或 "未选择") 服务器管理器选项 "在**需要时自动重新启动每个目标服务器（如果需要**）通过角色删除 whendemoting 域控制器，则服务器始终会重新启动，而不考虑选择 |
 | 解析和注释 | 这是有目的性的。 无论此设置如何，降级进程都将重新启动服务器。 |
 
 | 问题 | Dcpromo.log 显示“[error] setting security on server files failed with 2” |
@@ -294,12 +292,12 @@ ms.locfileid: "87519405"
 
 | 问题 | 先决条件 adprep 检查失败并显示错误“无法执行 Exchange 架构冲突检查” |
 |--|--|
-| 症状 | 在尝试将 Windows Server 2012 域控制器升级到现有 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 林中时，先决条件检查失败并显示错误：<p>验证 AD 必备组件的代码失败。 无法执行域的 Exchange 架构冲突检查 *<domain name>* （异常： RPC 服务器不可用）<p>adprep.log 显示错误：<p>代码-Adprep 无法从服务器检索数据*<domain controller>*<p>通过 Windows Management Instrumentation （WMI）。 |
-| 解析和注释 | 新域控制器无法通过 DCOM/RPC 协议根据现有域控制器访问 WMI。 到目前为止，此现象有三个原因：<p>-防火墙规则阻止访问现有域控制器<p>-现有域控制器上的 "作为服务登录" （SeServiceLogonRight）权限缺少 NETWORK SERVICE 帐户<p>-使用[Ntlm 身份验证的限制简介](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10))中所述的安全策略在域控制器上禁用 NTLM |
+| 症状 | 在尝试将 Windows Server 2012 域控制器升级到现有 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 林中时，先决条件检查失败并显示错误：<p>验证 AD 必备组件的代码失败。 无法执行域 (的 Exchange 架构冲突检查 *<domain name>*) 异常： RPC 服务器不可用<p>adprep.log 显示错误：<p>代码-Adprep 无法从服务器检索数据*<domain controller>*<p> (WMI) Windows Management Instrumentation。 |
+| 解析和注释 | 新域控制器无法通过 DCOM/RPC 协议根据现有域控制器访问 WMI。 到目前为止，此现象有三个原因：<p>-防火墙规则阻止访问现有域控制器<p>-现有域控制器上的 "作为服务登录" (SeServiceLogonRight) 权限的网络服务帐户丢失<p>-使用[Ntlm 身份验证的限制简介](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10))中所述的安全策略在域控制器上禁用 NTLM |
 
 | 问题 | 创建新 AD DS 林始终显示 DNS 警告 |
 |--|--|
-| 症状 | 在新建 AD DS 林并在新域控制器上为其自身的创建 DNS 区域时，你始终会收到警告消息：<p>代码-在 DNS 配置中检测到错误。 <br />此计算机使用的 DNS 服务器在超时间隔内未响应。<br />（错误代码 0x000005B4 "ERROR_TIMEOUT"） |
+| 症状 | 在新建 AD DS 林并在新域控制器上为其自身的创建 DNS 区域时，你始终会收到警告消息：<p>代码-在 DNS 配置中检测到错误。 <br />此计算机使用的 DNS 服务器在超时间隔内未响应。<br /> (错误代码 0x000005B4 "ERROR_TIMEOUT" )  |
 | 解析和注释 | 忽略。 此警告将在新林根域的第一个域控制器中有目的性地出现，以防你要指向现有的 DNS 服务器和区域。 |
 
 | 问题 | Windows PowerShell -whatif 参数会返回不正确的 DNS 服务器信息 |
@@ -319,7 +317,7 @@ ms.locfileid: "87519405"
 
 | 问题 | 升级或降级失败并显示消息“无法启动服务” |
 |--|--|
-| 症状 | 如果尝试升级、降级或克隆域控制器，将收到错误：<p>代码-服务无法启动，因为它已被禁用或没有已启用的设备与其关联 "（0x80070422）<p>错误可能是交互式、一个事件或者可能写入日志（如 dcpromoui.log 或 dcpromo.log） |
+| 症状 | 如果尝试升级、降级或克隆域控制器，将收到错误：<p>代码-服务无法启动，因为它已被禁用或没有已启用的设备与其关联 " (0x80070422) <p>错误可能是交互式、一个事件或者可能写入日志（如 dcpromoui.log 或 dcpromo.log） |
 | 解析和注释 | DS 角色服务器服务 （DsRoleSvc) 处于禁用状态。 默认情况下，此服务在 AD DS 角色安装期间安装并设置为手动启动类型。 不要禁用此服务。 将其重新设置为手动，并允许 DS 角色操作按需启动和停止它。 此行为是设计使然。 |
 
 | 问题 | 服务器管理器仍然警告你需要升级 DC |
@@ -345,4 +343,4 @@ ms.locfileid: "87519405"
 | 问题 | 正在创建 NTDS 设置对象的升级 "挂起"，从未完成 |
 |--|--|
 | 症状 | 如果升级副本 DC 或 RODC，升级将达到 "创建 NTDS 设置对象" 的执行，并且永远不会继续或完成。 日志也停止更新。 |
-| 解析和注释 | 这是一个已知问题，原因在于向内置域管理员帐户提供带有匹配密码的内置本地管理员帐户的凭据。 这会导致核心安装引擎中的故障，此引擎不发生错误但会无限期等待（准循环）。 这是意料之中的，但行为不理想。<p>若要修复服务器：<p>1. 重新启动它。<p>1. 在 AD 中，删除该服务器的成员计算机帐户（该帐户还不是 DC 帐户）<p>1. 在该服务器上，强制从域中脱离<p>1. 在该服务器上，删除 AD DS 角色。<p>1. 重新启动<p>1. 重新添加 AD DS 角色并重新尝试升级，确保你始终向 DC 提升提供***domain\admin***格式的凭据，而不是仅提供内置本地管理员帐户 |
+| 解析和注释 | 这是一个已知问题，原因在于向内置域管理员帐户提供带有匹配密码的内置本地管理员帐户的凭据。 这会导致核心安装引擎中的故障，此引擎不发生错误但会无限期等待（准循环）。 这是意料之中的，但行为不理想。<p>若要修复服务器：<p>1. 重新启动它。<p>1. 在 AD 中，删除该服务器的成员计算机帐户 (该帐户还不是 DC 帐户) <p>1. 在该服务器上，强制从域中脱离<p>1. 在该服务器上，删除 AD DS 角色。<p>1. 重新启动<p>1. 重新添加 AD DS 角色并重新尝试升级，确保你始终向 DC 提升提供***domain\admin***格式的凭据，而不是仅提供内置本地管理员帐户 |

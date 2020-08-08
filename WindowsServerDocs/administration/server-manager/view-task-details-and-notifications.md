@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b347f5cf3a3d752c500e602b84889afa9c580ab0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 479105e7f1e605142ec54103825b1ba4934fb127
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895698"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993110"
 ---
 # <a name="view-task-details-and-notifications"></a>查看任务详细信息和通知
 
@@ -37,7 +37,7 @@ ms.locfileid: "87895698"
 
 通知在安装或卸载角色、角色服务和功能时特别有用。 例如，如果在远程服务器上启动功能安装，可以在安装仍在进行中时关闭 "添加角色和功能向导"，但活动任务仍保留在 "**通知**" 列表中。 "**通知**" 项目显示了安装的进度条，并通过单击 "**添加角色和功能向导**" 来重新打开 "添加角色和功能向导" （如果需要）。 此列表中的项目通知你安装是否失败，或者是否需要额外的配置步骤来完成功能部署。
 
-通知还在解决与服务器管理器中的任务或进程有关的问题方面起着重要的作用。 有关如何使用 "**通知**" 区域和 "**任务详细信息**" 对话框中的消息对不成功的任务或进程进行疑难解答的详细信息，请参阅[服务器管理器论坛](https://docs.microsoft.com/answers/topics/windows-server-manager.html)。
+通知还在解决与服务器管理器中的任务或进程有关的问题方面起着重要的作用。 有关如何使用 "**通知**" 区域和 "**任务详细信息**" 对话框中的消息对不成功的任务或进程进行疑难解答的详细信息，请参阅[服务器管理器论坛](/answers/topics/windows-server-manager.html)。
 
 若要删除不再想从 "**通知**" 列表中看到的通知，请将鼠标光标悬停在通知上，然后单击 "**删除任务** (**X**) 。
 
@@ -48,4 +48,4 @@ ms.locfileid: "87895698"
 
 ## <a name="see-also"></a>另请参阅
 [筛选、排序和查询服务器管理器磁贴](filter-sort-and-query-data-in-server-manager-tiles.md) 
- 中的数据[服务器管理器论坛](https://docs.microsoft.com/answers/topics/windows-server-manager.html)。
+ 中的数据[服务器管理器论坛](/answers/topics/windows-server-manager.html)。

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: f83e828dd8ce90da4265eb03f94b498933d9c2a6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 406674f26039f80cbca5ed3ba96e041bc8624729
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518605"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952788"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>部署中央访问策略（示范步骤）
 
@@ -23,7 +21,7 @@ ms.locfileid: "87518605"
 
 中心访问策略的部署包括以下阶段：
 
-| 阶段 | 说明 |
+| 阶段 | 描述 |
 |--|--|
 | [计划：确定需要策略和部署所需的配置](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.2) | 标识所需的策略和部署所需的配置。 |
 | [实现：配置组件和策略](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.3) | 配置组件和策略。 |
@@ -40,7 +38,7 @@ ms.locfileid: "87518605"
 |--|--|--|
 | 1.1 | 业务确定需要采用中心访问策略 | 为了保护存储在文件服务器的财务信息，将结合使用财务部门安全操作与中心信息安全性来指定对中心访问策略的需求。 |  |
 | 1.2 | 表示访问策略 | 只有财务部门的成员才可以读取财务文档。 财务部门的成员只应访问自己国家/地区的文档。 应当只有财务管理员才具有写入访问的权限。 允许为 FinanceException 组的成员设置例外。 该组具有读取访问权限。 |  |
-| 1.3 | Express Windows Server 2012 构造中的访问策略 | 目标：<p>-资源。部门包含财务<p>访问规则：<p>-允许读取用户。国家/地区 = 国家/地区和用户。部门 = Resource。<br />-允许完全控制用户。 MemberOf （FinanceAdmin）<p>异常：<p>允许读取 memberOf(FinanceException) |  |
+| 1.3 | Express Windows Server 2012 构造中的访问策略 | 目标：<p>-资源。部门包含财务<p>访问规则：<p>-允许读取用户。国家/地区 = 国家/地区和用户。部门 = Resource。<br />-允许完全控制用户。 MemberOf (FinanceAdmin) <p>异常：<p>允许读取 memberOf(FinanceException) |  |
 | 1.4 | 确定策略所需的文件属性 | 使用以下属性标记文件：<p>-部门<br />-国家/地区 |  |
 | 1.5 | 确定策略所需的声明类型和组 | 声明类型：<p>-国家/地区<br />-部门<p>用户组：<p>-FinanceAdmin<br />-FinanceException |  |
 | 1.6 | 确定应用此策略的服务器 | 将此策略应用于所有财务文件服务器。 |  |
@@ -117,7 +115,7 @@ New-ADClaimType department -SourceAttribute department
 
     -   国家/地区
 
-    -   部门
+    -   系
 
 ![解决方案指南](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell 等效命令</em>***
 
@@ -235,7 +233,7 @@ New-ADCentralAccessPolicy "Finance Policy" Add-ADCentralAccessPolicyMember
     > [!TIP]
     > 在生产环境中，应创建要在其中应用此策略的文件服务器组织单位 (OU)，并将所有文件服务器都添加到该 OU。 然后可以创建组策略，并将此 OU 添加到此策略。
 
-2.  在此步骤中，你将编辑已在测试环境中的[生成域控制器](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)部分创建的组策略对象，以包含你所创建的中心访问策略。 在组策略管理编辑器中，导航到域中的组织单位（此示例中的 contoso.com）：**组策略管理**、**林： contoso.com**、**域**、 **contoso.com**、 **contoso**、 **FileServerOU**。
+2.  在此步骤中，你将编辑已在测试环境中的[生成域控制器](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)部分创建的组策略对象，以包含你所创建的中心访问策略。 在组策略管理编辑器中，导航到域中的组织单位，并在此示例中选择 " (contoso.com") ： "**组策略管理**"、"**林： contoso.com**"、"**域**"、" **contoso.com**"、" **contoso**" **FileServerOU**"。
 
 3.  右键单击“FlexibleAccessGPO”****，然后单击“编辑”****。
 
@@ -377,7 +375,7 @@ New-ADCentralAccessPolicy "Finance Policy" Add-ADCentralAccessPolicyMember
 7. 再次单击 "**添加条件**"，并添加以下条件： [**和**] [**设备**] [**国家/地区**] [**任何**] [**资源**] [**country**]
 
 8. 再次单击“添加条件”****，并添加以下条件：
-   与[**用户**][**组**][**Any 的成员**][**值**] \(**FinanceException**）
+   与[**用户**][**组**][**Any 的成员**][**值**] \(**FinanceException**) 
 
 9. 若要设置 FinanceException 组，请单击“添加项”****，并在“选择用户、计算机、服务的帐户或组”**** 窗口中，键入“FinanceException”****。
 

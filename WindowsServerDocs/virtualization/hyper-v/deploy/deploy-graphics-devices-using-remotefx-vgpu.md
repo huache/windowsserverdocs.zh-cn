@@ -1,26 +1,25 @@
 ---
 title: 使用 RemoteFX vGPU 部署图形设备
 description: 了解如何在 Windows Server 中部署和配置 RemoteFX vGPU
-ms.prod: windows-server
 ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: ab16dcdc8ce29f2440207ea5bbc7c421f171ed4a
-ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
+ms.openlocfilehash: 9a060f1650d20a029d64739e1fc7f9be44d8355c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390084"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953433"
 ---
 # <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>使用 RemoteFX vGPU 部署图形设备
 
 > 适用于： Windows Server 2016、Microsoft Hyper-V Server 2016
 
 > [!NOTE]
-> 出于安全方面的考虑，从2020年7月14日的安全更新开始，所有版本的 Windows 上都默认禁用 RemoteFX vGPU。 若要了解详细信息，请参阅[KB 4570006](https://support.microsoft.com/help/4570006)。
+> 出于安全方面的考虑，从 2020 年 7 月 14 日的安全更新开始，所有版本的 Windows 都会默认禁用 RemoteFX vGPU。 要了解详细信息，请参阅 [KB 4570006](https://support.microsoft.com/help/4570006)。
 
 使用 RemoteFX 的 vGPU 功能可以让多个虚拟机共享物理 GPU。 呈现和计算资源在虚拟机之间动态共享，这使得 RemoteFX vGPU 适用于不需要专用 GPU 资源的高突发负载。 例如，在 VDI 服务中，可以使用 RemoteFX vGPU 将应用呈现成本卸载到 GPU，同时降低 CPU 负载并提高服务可伸缩性。
 
@@ -30,15 +29,15 @@ ms.locfileid: "86390084"
 
 - Windows Server 2016
 - 与 WDDM 1.2 兼容的驱动程序的 DirectX 11.0 兼容 GPU
-- 支持二级地址转换（SLAT）的 CPU
+- 具有第二级地址转换 (SLAT) 支持的 CPU
 
 来宾 VM 要求：
 
-- 支持的来宾操作系统。 有关详细信息，请参阅[RemoteFX 3D 视频适配器（vGPU）支持](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)。
+- 支持的来宾操作系统。 有关详细信息，请参阅[RemoteFX 3D 视频适配器 (vGPU) 支持](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)。
 
 来宾 VM 的其他注意事项：
 
-- OpenGL 和 OpenCL 功能仅适用于运行 Windows 10 或 Windows Server 2016 的来宾。  
+- OpenGL 和 OpenCL 功能仅适用于运行 Windows 10 或 Windows Server 2016 的来宾。
 - DirectX 11.0 仅适用于运行 Windows 8 或更高版本的来宾。
 
 ## <a name="enable-remotefx-vgpu"></a>启用 RemoteFX vGPU
@@ -46,7 +45,7 @@ ms.locfileid: "86390084"
 在 Windows Server 2016 主机上配置 RemoteFX vGPU：
 
 1. 安装适用于 Windows Server 2016 的 GPU 供应商建议的图形驱动程序。
-2. 创建运行 RemoteFX vGPU 支持的来宾操作系统的虚拟机。 若要了解详细信息，请参阅[RemoteFX 3D 视频适配器（vGPU）支持](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)。
+2. 创建运行 RemoteFX vGPU 支持的来宾操作系统的虚拟机。 若要了解详细信息，请参阅[RemoteFX 3D 视频适配器 (vGPU) 支持](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)。
 3. 将 RemoteFX 3D 图形适配器添加到 VM。 若要了解详细信息，请参阅[配置 RemoteFX VGPU 3d 适配器](#configure-the-remotefx-vgpu-3d-adapter)。
 
 默认情况下，RemoteFX vGPU 将使用所有可用且受支持的 Gpu。 若要限制 RemoteFX vGPU 使用的 Gpu，请遵循以下步骤：
@@ -68,7 +67,7 @@ ms.locfileid: "86390084"
 
    > [!NOTE]
    > - 为这些选项中的任何一个设置较高的值会影响服务规模，因此，只需设置所需的值。
-   > - 如果需要使用 1 GB 专用 VRAM，请使用64位来宾 VM，而不是32位（x86）以获得最佳结果。
+   > - 如果需要使用 1 GB 专用 VRAM，请使用64位来宾 VM，而不是32位 (x86) 以获得最佳结果。
 
 5. 选择 **"确定"** 完成配置。
 
@@ -97,7 +96,7 @@ ms.locfileid: "86390084"
 
 ### <a name="host-cpu"></a>主机 CPU
 
-虚拟机监控程序计划 CPU 上的主机和 Vm。 启用 RemoteFX 的主机上的开销会增加，因为系统会对每个启用了 vGPU 的虚拟机运行额外的进程（rdvgm.exe）。 此过程使用图形设备驱动程序在 GPU 上运行命令。 编解码器还使用 CPU 压缩需要发送回客户端的屏幕数据。
+虚拟机监控程序计划 CPU 上的主机和 Vm。 启用 RemoteFX 的主机上的开销会增加，因为系统会对每个启用了 vGPU 的虚拟机 ( # A0) 。 此过程使用图形设备驱动程序在 GPU 上运行命令。 编解码器还使用 CPU 压缩需要发送回客户端的屏幕数据。
 
 更多虚拟处理器意味着更好的用户体验。 建议为每个启用了 vGPU 的虚拟机分配至少两个虚拟 Cpu。 我们还建议为启用了 vGPU 的虚拟桌面使用 x64 体系结构，因为与 x86 虚拟机相比，x64 虚拟机上的性能更好。
 

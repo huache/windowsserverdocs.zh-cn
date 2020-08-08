@@ -1,19 +1,17 @@
 ---
 ms.assetid: 56fc7f80-9558-467e-a6e9-a04c9abbee33
 title: 故障域感知
-ms.prod: windows-server
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-failover-clustering
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/16/2016
-ms.openlocfilehash: 4e42333ecc80ab7401b6e39151377baa86dcf190
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8b54c2ee9f6c1b47d99e8d7329749aedda7d3a35
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827750"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992928"
 ---
 # <a name="fault-domain-awareness"></a>故障域感知
 
@@ -25,40 +23,39 @@ ms.locfileid: "80827750"
 
 容错域和容错能力是密切相关的概念。 容错域是一组共享单一故障点的硬件组件。 要使容错能力达到某个级别，需要相应级别的多个容错域。 例如，要使机架具备容错能力，服务器和数据必须分布在多个机架。
 
-这段简短的视频概括介绍了 Windows Server 2016 中的容错域：  
-[![单击此图以查看 Windows Server 2016 中的容错域概述](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
+这段简短视频概括介绍了 Windows Server 2016 中的容错域： [ ![ 单击此映像可查看 windows server 2016 中的容错域概述](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
 
 ### <a name="fault-domain-awareness-in-windows-server-2019"></a>Windows Server 2019 中的容错域感知
 
 Windows Server 2019 中提供了容错域感知功能，但它在默认情况下处于禁用状态，并且必须通过 Windows 注册表启用。
 
-若要启用 Windows Server 2019 中的容错域感知功能，请转到 Windows 注册表并设置（Get-群集）。AutoAssignNodeSite 注册表项为1。
+若要启用 Windows Server 2019 中的容错域感知功能，请转到 Windows 注册表并设置 (获取群集) 。AutoAssignNodeSite 注册表项为1。
 
 ```Registry
     (Get-Cluster).AutoAssignNodeSite=1
 ```
 
-若要禁用 Windows 2019 中的容错域感知功能，请转到 Windows 注册表并设置（Get-群集）。AutoAssignNodeSite 注册表项为0。
+若要禁用 Windows 2019 中的容错域感知功能，请转到 Windows 注册表并设置 (获取群集) 。AutoAssignNodeSite 注册表项为0。
 
 ```Registry
     (Get-Cluster).AutoAssignNodeSite=0
 ```
 
-## <a name="benefits"></a>优势
-- **存储空间（包括存储空间直通）使用容错域来最大程度地提高数据安全性。**  
+## <a name="benefits"></a>好处
+- **存储空间（包括存储空间直通）使用容错域来最大化数据安全性。**
     从概念上讲，存储空间复原类似软件定义的分布式 RAID。 所有数据的多个副本都保持同步，如果硬件出现故障，一个副本丢失，其他副本会被重新复制，以修复复原功能。 要获得可能的最佳复原，副本应保存在单独的容错域中。
 
-- **[运行状况服务](health-service-overview.md)使用容错域提供更有用的警报。**  
-    每个容错域可与位置元数据关联，这些数据将自动包含在任何后续警报中。 这些描述符可以协助操作或维护人员，并通过消除硬件歧义减少错误。  
+- **[运行状况服务](health-service-overview.md)使用容错域提供更有用的警报。**
+    每个容错域可与位置元数据关联，这些数据将自动包含在任何后续警报中。 这些描述符可以协助操作或维护人员，并通过消除硬件歧义减少错误。
 
-- **Stretch 群集使用容错域实现存储关联。** 拉伸群集允许远程服务器加入通用群集。 为了获得最佳性能，应用程序或虚拟机应运行在靠近为其提供存储空间的服务器上。 容错域意识启用此存储关联。   
+- **Stretch 群集使用容错域实现存储关联。** 拉伸群集允许远程服务器加入通用群集。 为了获得最佳性能，应用程序或虚拟机应运行在靠近为其提供存储空间的服务器上。 容错域意识启用此存储关联。
 
-## <a name="levels-of-fault-domains"></a>容错域级别  
-有四个规范级别的容错域：站点、机架、底盘和节点。 系统会自动发现节点；其他每个级别是可选的。 例如，如果部署未使用刀片服务器，则底盘级别可能就没有意义。  
+## <a name="levels-of-fault-domains"></a>容错域级别
+有四个规范级别的容错域：站点、机架、底盘和节点。 系统会自动发现节点；其他每个级别是可选的。 例如，如果部署未使用刀片服务器，则底盘级别可能就没有意义。
 
 ![不同级别的容错域的图示](media/Fault-Domains-in-Windows-Server-2016/levels-of-fault-domains.png)
 
-## <a name="usage"></a>用法  
+## <a name="usage"></a>使用情况
 可以使用 PowerShell 或 XML 标记来指定容错域。 这两种方法是等效的并可提供完整功能。
 
 >[!IMPORTANT]
@@ -68,11 +65,11 @@ Windows Server 2019 中提供了容错域感知功能，但它在默认情况下
 Windows Server 2016 引入了以下 cmdlet 来处理容错域：
 * `Get-ClusterFaultDomain`
 * `Set-ClusterFaultDomain`
-* `New-ClusterFaultDomain` 
+* `New-ClusterFaultDomain`
 * `Remove-ClusterFaultDomain`
 
 此短视频演示了这些 cmdlet 的用法。
-[![单击此图像，观看有关群集容错域 cmdlet 使用的简短视频](media/Fault-Domains-in-Windows-Server-2016/Part-2-Using-PowerShell.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-2-Using-PowerShell)
+[![单击此图像，观看有关群集容错域 cmdlet 使用情况的简短视频](media/Fault-Domains-in-Windows-Server-2016/Part-2-Using-PowerShell.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-2-Using-PowerShell)
 
 使用 `Get-ClusterFaultDomain` 查看当前容错域拓扑。 该 cmdlet 将列出群集中的所有节点，以及已创建的任何底盘、机架或站点。 可以使用类似于 **-Type** 或 **-Name** 的参数进行筛选，但这不是必需操作。
 
@@ -82,7 +79,7 @@ Get-ClusterFaultDomain -Type Rack
 Get-ClusterFaultDomain -Name "server01.contoso.com"
 ```
 
-使用 `New-ClusterFaultDomain` 创建新的机箱、机架或站点。 `-Type` 和 `-Name` 参数是必需的。 `-Type` 的可能值为 `Chassis`、`Rack`和 `Site`。 `-Name` 可以是任意字符串。 （对于 `Node` 类型容错域，名称必须是自动设置的实际节点名称）。
+用于 `New-ClusterFaultDomain` 创建新的机箱、机架或站点。 `-Type` 和 `-Name` 参数是必需的。 的可能值为 `-Type` `Chassis` 、 `Rack` 和 `Site` 。 `-Name`可以是任意字符串。  (对于 `Node` 类型容错域，该名称必须是) 自动设置的实际节点名称。
 
 ```PowerShell
 New-ClusterFaultDomain -Type Chassis -Name "Chassis 007"
@@ -90,22 +87,22 @@ New-ClusterFaultDomain -Type Rack -Name "Rack A"
 New-ClusterFaultDomain -Type Site -Name "Shanghai"
 ```
 
-> [!IMPORTANT]  
-> Windows Server 无法验证你所创建的任何容错域是否对应于现实世界中的任何域。 （这可能听起来很明显，但了解这一点很重要。）在实际情况下，如果你的节点全部位于一架，则在软件中创建两个 `-Type Rack` 容错域并不会神奇地提供机架容错。 你有责任确保使用这些 cmdlet 创建的拓扑匹配硬件的实际排列方式。
+> [!IMPORTANT]
+> Windows Server 无法验证你所创建的任何容错域是否对应于现实世界中的任何域。  (这可能听起来很明显，但必须了解这一点。 ) 如果在现实世界中，你的节点全部位于一架，那么 `-Type Rack` 在软件中创建两个容错域并不会神奇地提供机架容错。 你有责任确保使用这些 cmdlet 创建的拓扑匹配硬件的实际排列方式。
 
-使用 `Set-ClusterFaultDomain` 将一个容错域移到另一个容错域。 术语“父项”和“子项”通常用于描述此嵌套关系。 `-Name` 和 `-Parent` 参数是必需的。 在 `-Name`中，提供要移动的容错域的名称;在 `-Parent`中，提供目标的名称。 要一次移动多个容错域，请列出它们的名称。
+使用将 `Set-ClusterFaultDomain` 一个容错域移到另一个容错域。 术语“父项”和“子项”通常用于描述此嵌套关系。 `-Name` 和 `-Parent` 参数是必需的。 在中 `-Name` ，提供要移动的容错域的名称; 在中 `-Parent` ，提供目标的名称。 要一次移动多个容错域，请列出它们的名称。
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "server01.contoso.com" -Parent "Rack A"
 Set-ClusterFaultDomain -Name "Rack A", "Rack B", "Rack C", "Rack D" -Parent "Shanghai"
 ```
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 移动容错域时，其子项随其移动。 在上面的示例中，如果机架 A 是 server01.contoso.com 的父项，后者不需要单独移动到上海站点 - 由于其父项已存在于此站点，因此它也已在此站点存在，就像在物理世界中一样。
 
-可以在 "`ParentName`" 和 "`ChildrenNames`" 列中的 `Get-ClusterFaultDomain`的输出中查看父子关系。
+在 `Get-ClusterFaultDomain` 和列中，可以看到的输出中的父子关系 `ParentName` `ChildrenNames` 。
 
-你还可以使用 `Set-ClusterFaultDomain` 来修改容错域的某些其他属性。 例如，你可以为任何容错域提供可选的 `-Location` 或 `-Description` 元数据。 如果提供，此信息将包含在运行状况服务发出的硬件警报中。 你还可以使用 `-NewName` 参数重命名容错域。 请勿重命名 `Node` 类型的容错域。
+你还可以使用 `Set-ClusterFaultDomain` 来修改容错域的某些其他属性。 例如，可以 `-Location` `-Description` 为任何容错域提供可选的或元数据。 如果提供，此信息将包含在运行状况服务发出的硬件警报中。 你还可以使用参数重命名容错域 `-NewName` 。 请勿重命名 `Node` 类型容错域。
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "Rack A" -Location "Building 34, Room 4010"
@@ -113,7 +110,7 @@ Set-ClusterFaultDomain -Type Node -Description "Contoso XYZ Server"
 Set-ClusterFaultDomain -Name "Shanghai" -NewName "China Region"
 ```
 
-使用 `Remove-ClusterFaultDomain` 删除已创建的机箱、机架或站点。 `-Name` 参数是必需的。 不能删除包含子级的容错域–首先删除子级，或者使用 `Set-ClusterFaultDomain`将它们移到外部。 若要将容错域移到其他所有容错域之外，请将其 `-Parent` 设置为空字符串（""）。 不能删除 `Node` 类型的容错域。 要一次删除多个容错域，请列出它们的名称。
+使用 `Remove-ClusterFaultDomain` 可删除已创建的机箱、机架或站点。 `-Name` 参数是必需的。 你不能删除包含子级的容错域–首先删除子级，或者使用将它们移到外部 `Set-ClusterFaultDomain` 。 若要将容错域移到其他所有容错域之外，请将其设置 `-Parent` 为空字符串 ( "" ) 。 不能删除 `Node` 类型容错域。 要一次删除多个容错域，请列出它们的名称。
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "server01.contoso.com" -Parent ""
@@ -121,71 +118,71 @@ Remove-ClusterFaultDomain -Name "Rack A"
 ```
 
 ### <a name="defining-fault-domains-with-xml-markup"></a>使用 XML 标记定义容错域
-使用 XML 极具创意的语法来指定容错域。 我们建议使用你最喜欢的文本编辑器，如 Visual Studio Code（可从 *[此处](https://code.visualstudio.com/)* 免费获取）或记事本，创建一个可以保存并重复使用的 XML 文档。  
+使用 XML 极具创意的语法来指定容错域。 我们建议使用你最喜欢的文本编辑器，如 Visual Studio Code（可从*[此处](https://code.visualstudio.com/)* 免费获取）或记事本，创建一个可以保存并重复使用的 XML 文档。
 
 此短视频演示了如何使用 XML 标记来指定容错域。
 
 [![单击此图像，观看有关如何使用 XML 指定容错域的简短视频](media/Fault-Domains-in-Windows-Server-2016/Part-3-Using-XML-Markup.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-3-Using-XML)
 
-在 PowerShell 中，运行以下 cmdlet： `Get-ClusterFaultDomainXML`。 这将返回群集的当前容错域规范，例如 XML。 这会反映在打开和关闭 `<Topology>` 标记时包装的每个已发现 `<Node>`。  
+在 PowerShell 中，运行以下 cmdlet： `Get-ClusterFaultDomainXML` 。 这将返回群集的当前容错域规范，例如 XML。 这反映了 `<Node>` 在开始和结束标记中已发现的每个 `<Topology>` 。
 
-运行以下操作，将此输出保存到文件中。  
-
-```PowerShell
-Get-ClusterFaultDomainXML | Out-File <Path>  
-```
-
-打开文件，并添加 `<Site>`、`<Rack>`和 `<Chassis>` 标记，以指定如何在站点、机架和底盘之间分布这些节点。 每个标记必须通过唯一的 **Name** 进行识别。 对于节点，必须保持默认填充的节点名称。  
-
-> [!IMPORTANT]  
-> 虽然所有其他标记均为可选，但它们必须遵循可传递的 Site &gt; Rack &gt; Chassis &gt; Node 层次结构，并且必须正确关闭。  
-除了名称外，还可以将自由格式 `Location="..."` 和 `Description="..."` 描述符添加到任何标记。  
-
-#### <a name="example-two-sites-one-rack-each"></a>示例：两个站点，每个站点一个机架  
-
-```XML
-<Topology>  
-  <Site Name="SEA" Location="Contoso HQ, 123 Example St, Room 4010, Seattle">  
-    <Rack Name="A01" Location="Aisle A, Rack 01">  
-      <Node Name="Server01" Location="Rack Unit 33" />  
-      <Node Name="Server02" Location="Rack Unit 35" />  
-      <Node Name="Server03" Location="Rack Unit 37" />  
-    </Rack>  
-  </Site>  
-  <Site Name="NYC" Location="Regional Datacenter, 456 Example Ave, New York City">  
-    <Rack Name="B07" Location="Aisle B, Rack 07">  
-      <Node Name="Server04" Location="Rack Unit 20" />  
-      <Node Name="Server05" Location="Rack Unit 22" />  
-      <Node Name="Server06" Location="Rack Unit 24" />  
-    </Rack>  
-  </Site>  
-</Topology> 
-``` 
-
-#### <a name="example-two-chassis-blade-servers"></a>示例：两个底盘，刀片服务器  
-```XML
-<Topology>  
-  <Rack Name="A01" Location="Contoso HQ, Room 4010, Aisle A, Rack 01">  
-    <Chassis Name="Chassis01" Location="Rack Unit 2 (Upper)" >  
-      <Node Name="Server01" Location="Left" />  
-      <Node Name="Server02" Location="Right" />  
-    </Chassis>  
-    <Chassis Name="Chassis02" Location="Rack Unit 6 (Lower)" >  
-      <Node Name="Server03" Location="Left" />  
-      <Node Name="Server04" Location="Right" />  
-    </Chassis>  
-  </Rack>  
-</Topology>  
-```
-
-若要设置新的容错域规范，请保存 XML，并在 PowerShell 中运行以下。  
+运行以下操作，将此输出保存到文件中。
 
 ```PowerShell
-$xml = Get-Content <Path> | Out-String  
+Get-ClusterFaultDomainXML | Out-File <Path>
+```
+
+打开文件，并添加 `<Site>` 、 `<Rack>` 和标记， `<Chassis>` 以指定如何在站点、机架和底盘之间分布这些节点。 每个标记必须通过唯一的 **Name** 进行识别。 对于节点，必须保持默认填充的节点名称。
+
+> [!IMPORTANT]
+> 虽然所有其他标记均为可选，但它们必须遵循可传递的 Site &gt; Rack &gt; Chassis &gt; Node 层次结构，并且必须正确关闭。
+除了名称外，还 `Location="..."` 可以将自由格式和 `Description="..."` 描述符添加到任何标记。
+
+#### <a name="example-two-sites-one-rack-each"></a>示例：两个站点，每个站点一个机架
+
+```XML
+<Topology>
+  <Site Name="SEA" Location="Contoso HQ, 123 Example St, Room 4010, Seattle">
+    <Rack Name="A01" Location="Aisle A, Rack 01">
+      <Node Name="Server01" Location="Rack Unit 33" />
+      <Node Name="Server02" Location="Rack Unit 35" />
+      <Node Name="Server03" Location="Rack Unit 37" />
+    </Rack>
+  </Site>
+  <Site Name="NYC" Location="Regional Datacenter, 456 Example Ave, New York City">
+    <Rack Name="B07" Location="Aisle B, Rack 07">
+      <Node Name="Server04" Location="Rack Unit 20" />
+      <Node Name="Server05" Location="Rack Unit 22" />
+      <Node Name="Server06" Location="Rack Unit 24" />
+    </Rack>
+  </Site>
+</Topology>
+```
+
+#### <a name="example-two-chassis-blade-servers"></a>示例：两个底盘，刀片服务器
+```XML
+<Topology>
+  <Rack Name="A01" Location="Contoso HQ, Room 4010, Aisle A, Rack 01">
+    <Chassis Name="Chassis01" Location="Rack Unit 2 (Upper)" >
+      <Node Name="Server01" Location="Left" />
+      <Node Name="Server02" Location="Right" />
+    </Chassis>
+    <Chassis Name="Chassis02" Location="Rack Unit 6 (Lower)" >
+      <Node Name="Server03" Location="Left" />
+      <Node Name="Server04" Location="Right" />
+    </Chassis>
+  </Rack>
+</Topology>
+```
+
+若要设置新的容错域规范，请保存 XML，并在 PowerShell 中运行以下。
+
+```PowerShell
+$xml = Get-Content <Path> | Out-String
 Set-ClusterFaultDomainXML -XML $xml
 ```
 
-本指南仅介绍两个示例，但 `<Site>`、`<Rack>`、`<Chassis>`和 `<Node>` 标记可以通过许多其他方式进行混合和匹配，以反映部署的物理拓扑。 我们希望这些示例可阐明这些标记的灵活性，以及自由格式位置描述符消除它们歧义的价值。  
+本指南仅介绍两个示例，但 `<Site>` 、 `<Rack>` 、 `<Chassis>` 和 `<Node>` 标记可以通过许多其他方式进行混合和匹配，以反映部署的物理拓扑。 我们希望这些示例可阐明这些标记的灵活性，以及自由格式位置描述符消除它们歧义的价值。
 
 ### <a name="optional-location-and-description-metadata"></a>可选：位置和说明元数据
 
@@ -193,7 +190,7 @@ Set-ClusterFaultDomainXML -XML $xml
 
 [![单击以查看简短视频，其中演示了将位置描述符添加到容错域的值](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
 
-## <a name="see-also"></a>另请参阅  
-- [Windows Server 2019 入门](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)  
-- [Windows Server 2016 入门](https://docs.microsoft.com/windows-server/get-started/server-basics)  
--   [存储空间直通概述](../storage/storage-spaces/storage-spaces-direct-overview.md) 
+## <a name="see-also"></a>另请参阅
+- [Windows Server 2019 入门](../get-started-19/get-started-19.md)
+- [Windows Server 2016 入门](../get-started/server-basics.md)
+-   [存储空间直通概述](../storage/storage-spaces/storage-spaces-direct-overview.md)

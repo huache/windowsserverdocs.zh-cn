@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e96056eb26e200f360f92c4c6e2b94c2d77bf9ec
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 266559ba8da3add8920861f910f061d8b2994d53
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950111"
+ms.locfileid: "87992891"
 ---
 # <a name="create-a-failover-cluster"></a>创建故障转移群集
 
@@ -216,15 +216,15 @@ New-Cluster –Name MyCluster –Node Server1, Server2 –StaticAddress 192.168.
 New-Cluster -Name CN=MyCluster,OU=Cluster,DC=Contoso,DC=com -Node Server1, Server2
 ```
 
-有关如何添加群集角色的示例，请参阅 [Add-ClusterFileServerRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clusterfileserverrole?view=win10-ps) 和 [Add-ClusterGenericApplicationRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clustergenericapplicationrole?view=win10-ps)等主题。
+有关如何添加群集角色的示例，请参阅 [Add-ClusterFileServerRole](/powershell/module/failoverclusters/add-clusterfileserverrole?view=win10-ps) 和 [Add-ClusterGenericApplicationRole](/powershell/module/failoverclusters/add-clustergenericapplicationrole?view=win10-ps)等主题。
 
 ## <a name="more-information"></a>更多信息
 
-  - [故障转移群集](failover-clustering.md)
+  - [故障转移群集](./failover-clustering-overview.md)
   - [部署 Hyper-V 群集](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj863389(v%3dws.11)>)
   - [应用程序数据横向扩展文件服务器](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831349(v%3dws.11)>)
   - [部署已与 Active Directory 分离的群集](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))
   - [使用来宾群集以实现高可用性](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)
   - [群集感知更新](cluster-aware-updating.md)
-  - [New-Cluster](https://docs.microsoft.com/powershell/module/failoverclusters/new-cluster?view=win10-ps)
-  - [Test-Cluster](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)
+  - [New-Cluster](/powershell/module/failoverclusters/new-cluster?view=win10-ps)
+  - [Test-Cluster](/powershell/module/failoverclusters/test-cluster?view=win10-ps)

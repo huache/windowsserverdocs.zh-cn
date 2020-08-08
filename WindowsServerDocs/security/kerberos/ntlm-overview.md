@@ -1,20 +1,18 @@
 ---
 title: NTLM Overview
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-kerberos
 ms.topic: article
 ms.assetid: 773909fd-c0bc-498a-95fc-bb452ec04d90
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 972b5b8eb5e25382c2c9b7841cf0d0fe4db6e647
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4a86b2571ab586bf2289ba263346a791ea28b02e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181873"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943877"
 ---
 # <a name="ntlm-overview"></a>NTLM Overview
 
@@ -52,7 +50,7 @@ NTLM 无法从服务器管理器进行配置。 你可以使用安全策略设�
 |规划|[IT 基础结构威胁建模指南](https://technet.microsoft.com/library/dd941826.aspx)<p>[威胁和对策：Windows Server 2003 和 Windows XP 中的安全设置](https://technet.microsoft.com/library/dd162275.aspx)<p>[威胁和对策指南：Windows Server 2008 和 Windows Vista 中的安全设置](https://technet.microsoft.com/library/dd349791.aspx)<p>[威胁和对策指南：Windows Server 2008 R2 和 Windows 7 中的安全设置](https://technet.microsoft.com/library/hh125921.aspx)|
 |**部署**|[身份验证的扩展保护](https://support.microsoft.com/kb/968389)<p>[审核和限制 NTLM 使用指南](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)<p>[询问目录服务团队：NTLM 阻止和你：Windows 7 中的应用程序分析和审核方法](https://blogs.technet.com/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx)<p>[Windows 身份验证博客](https://blogs.technet.com/authentication/)<p>[为 NTLM 传递身份验证配置 MaxConcurrentAPI](https://support.microsoft.com/help/2688798/how-to-do-performance-tuning-for-ntlm-authentication-by-using-the-maxc)|
 |**开发**|[Microsoft NTLM \( Windows\)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)<p>[\[MS \- NLMP \] ： NT LAN 管理器 \( NTLM \) 身份验证协议规范](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<p>[\[MS \- NNTP \] ： NT LAN Manager \( NTLM \) 身份验证：网络新闻传输协议 \( NNTP \) 扩展](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<p>[\[MS \- NTHT \] ： NTLM Over HTTP 协议规范](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
-|**疑难解答**|目前不可用|
+|**故障排除**|目前不可用|
 |**社区资源**|[“NTLM 瓶颈和 RPC运行时”还有生命力吗？](https://blogs.technet.com/b/askds/archive/2011/09/15/is-this-horse-dead-yet-ntlm-bottlenecks-and-the-rpc-runtime.aspx)|
 
 

@@ -1,28 +1,26 @@
 ---
 title: 软件限制策略疑难解答
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 4fd53736-03e7-4bf9-ba90-d1212d93e19a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c6b3a475f21925b506d073bd3618d78e2ee0c1d7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e4d31dd6e434c5a5b18491ea7f73b92c993e05a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819720"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953004"
 ---
 # <a name="troubleshoot-software-restriction-policies"></a>软件限制策略疑难解答
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主题介绍了从 Windows Server 2008 和 Windows Vista 开始对软件限制策略（SRP）进行故障排除时遇到的常见问题及其解决方案。
+本主题介绍了解决软件限制策略 (SRP) 从 Windows Server 2008 和 Windows Vista 开始时遇到的常见问题及其解决方案。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 软件限制策略 (SRP) 是基于组策略的功能，用于标识在域中的计算机上运行的软件程序，以及控制这些程序的运行能力。 你可以使用软件限制策略创建计算机的高度受限配置，从而仅允许运行专门标识的应用程序。 它们与 Microsoft Active Directory 域服务和组策略集成在一起，但也可以在独立计算机上进行配置。 有关 SRP 的详细信息，请参阅[软件限制策略](software-restriction-policies.md)。
 
 从 Windows Server 2008 R2 和 Windows 7 开始，可以使用 Windows AppLocker，而不是与 SRP 一起使用，以获得部分应用程序控制策略。
@@ -30,7 +28,7 @@ ms.locfileid: "80819720"
 ### <a name="windows-cannot-open-a-program"></a>Windows 无法打开程序
 用户会收到一条消息，显示 "Windows 无法打开此程序，因为它已被软件限制策略阻止。 有关详细信息，请打开事件查看器或与系统管理员联系。 " 或者，在命令行中，消息显示 "系统无法执行指定的程序。"
 
-**原因：** 创建默认安全级别（或规则）是为了使软件程序设置为 "不**允许**"，因此不会启动。
+**原因：** 默认安全级别 (或创建了规则) 以便将软件程序设置为不**允许**，因此不会启动。
 
 **解决方案：** 在事件日志中查看消息的详细说明。 事件日志消息指示将哪个软件程序设置为**禁止**，并将哪个规则应用于程序。
 
@@ -45,7 +43,7 @@ ms.locfileid: "80819720"
 
 2.  刷新策略，方法是注销网络，然后再次登录到网络。 如果任何策略通过组策略应用，则重新登录将会刷新这些策略。
 
-3.  您可以使用命令行实用工具 gpupdate 或从注销，然后重新登录到您的计算机，以刷新策略设置。 为获得最佳结果，请运行 gpupdate，然后注销并重新登录到您的计算机。 通常，工作站或服务器上的安全设置每90分钟刷新一次，在域控制器上每5分钟刷新一次。 此外，不管是否发生更改，这些设置都会每 16 小时刷新一次。 这些是可配置的设置，因此，每个域中的刷新间隔可能不同。
+3.  您可以使用命令行实用工具 gpupdate 或从注销，然后重新登录到您的计算机，以刷新策略设置。 为获得最佳结果，请运行 gpupdate，然后注销并重新登录到您的计算机。 通常，工作站或服务器上的安全设置每90分钟刷新一次，在域控制器上每5分钟刷新一次。 还可将设置指定为每 16 个小时刷新一次，无论是否存在更改。 这些是可配置的设置，因此，每个域中的刷新间隔可能不同。
 
 4.  检查应用的策略。 检查 "**没有替代**设置的域级别策略"。
 
@@ -66,7 +64,7 @@ ms.locfileid: "80819720"
 软件限制策略解决了对未知或不受信任的代码进行控制的问题。 软件限制策略是用于标识软件并控制其在本地计算机、站点、域或 OU 中运行，并且可以通过 GPO 实现的功能的安全设置。
 
 ### <a name="a-default-rule-is-not-restricting-as-expected"></a>默认规则不按预期方式进行限制
-**原因：** 按特定顺序应用的规则，这可能会导致默认规则被特定规则覆盖。 SRP 按以下顺序应用规则（最特定于常规）：
+**原因：** 按特定顺序应用的规则，这可能会导致默认规则被特定规则覆盖。 SRP 按以下顺序应用规则 (最具体到一般) ：
 
 1.  哈希规则
 

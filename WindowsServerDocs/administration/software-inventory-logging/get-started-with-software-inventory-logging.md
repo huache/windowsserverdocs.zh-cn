@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 940c5d7795ff4dcf84bad0727d1f92d155b3ea1b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a8584b5e2cf1048e0bba5c217aa3e6031600839a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895655"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993052"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>软件清单日志记录入门
 
@@ -39,9 +39,8 @@ Windows Server 中软件清单日志记录功能包含一组简单的 PowerShell
 -   通过启用每台服务器的软件清单日志记录功能，并选择 web 服务器目标 URI 和用于身份验证的证书指纹，聚合各种软件资产管理方案的软件和服务器清单信息。
 
 ## <a name="see-also"></a>另请参阅
-[软件清单日志记录聚合器](https://technet.microsoft.com/library/mt572043.aspx)<br>
+[软件清单日志记录聚合器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/mt572043(v=ws.11))<br>
 [管理软件清单日志记录](manage-software-inventory-logging.md)<br>
-[Windows PowerShell 中的软件清单日志记录 Cmdlet](https://technet.microsoft.com/library/dn283390.aspx)<br>
+[Windows PowerShell 中的软件清单日志记录 Cmdlet](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)<br>
 [Microsoft 评估和规划工具包](https://www.microsoft.com/download/en/details.aspx?id=7826) 
 [批量激活管理工具](https://blogs.technet.com/b/volume-licensing/)
-

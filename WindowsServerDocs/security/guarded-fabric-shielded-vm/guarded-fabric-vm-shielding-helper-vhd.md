@@ -1,23 +1,21 @@
 ---
 title: 受防护的 Vm-准备 VM 防护帮助程序 VHD
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0e3414cf-98ca-4e91-9e8d-0d7bce56033b
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 85cfdbe5e95c9177194a2b6ac7b5d22e1fd9fc0e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2c6a74b3dd18465534a662e6c1afa37ac197aca6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475010"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943987"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>受防护的 Vm-准备 VM 防护帮助程序 VHD
 
->适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
 > [!IMPORTANT]
 > 在开始这些过程之前，请确保已安装最新的 Windows 2016 Server 累积更新，或者使用最新的 Windows 10[远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=45520)。 否则，这些过程将不起作用。
@@ -31,7 +29,7 @@ ms.locfileid: "85475010"
 现有 Vm 的防护过程仅适用于满足以下先决条件的 Vm：
 
 - 来宾操作系统是 Windows Server 2012、2012 R2、2016或半年频道发布。 无法将现有 Linux Vm 转换为受防护的 Vm。
-- VM 是第2代 VM （UEFI 固件）
+- VM 是第2代 VM (UEFI 固件) 
 - VM 不会对其 OS 卷使用差异磁盘。
 
 ## <a name="prepare-helper-vhd"></a>准备 Helper VHD
@@ -39,7 +37,7 @@ ms.locfileid: "85475010"
 1.  在安装了 Hyper-v 的计算机和已安装远程服务器管理工具功能**防护的 Vm 工具**上，使用空白 VHDX 创建新的第2代 VM，并使用 WINDOWS server ISO 安装媒体在其上安装 windows server 2016。 不应屏蔽此 VM，必须运行具有桌面体验的服务器核心或服务器。
 
     > [!IMPORTANT]
-    > VM 防护帮助程序 VHD**不**能与你在托管服务提供程序中创建的模板磁盘相关联。[创建受防护的 VM 模板](guarded-fabric-create-a-shielded-vm-template.md)。 如果重新使用模板磁盘，则在防护过程中会发生磁盘签名冲突，因为这两个磁盘将具有相同的 GPT 磁盘标识符。 为此，可以创建新的（空白） VHD，并使用 ISO 安装媒体将 Windows Server 2016 安装到它上面。
+    > VM 防护帮助程序 VHD**不**能与你在托管服务提供程序中创建的模板磁盘相关联。[创建受防护的 VM 模板](guarded-fabric-create-a-shielded-vm-template.md)。 如果重新使用模板磁盘，则在防护过程中会发生磁盘签名冲突，因为这两个磁盘将具有相同的 GPT 磁盘标识符。 为此，可以创建新的 (空白) VHD，并使用 ISO 安装媒体将 Windows Server 2016 安装到它上面。
 
 2.  启动 VM，完成任何安装步骤，然后登录到桌面。 验证 VM 处于工作状态后，关闭 VM。
 

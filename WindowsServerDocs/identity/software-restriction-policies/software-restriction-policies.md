@@ -1,26 +1,24 @@
 ---
 title: 软件限制策略
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 5c0befad-07c3-4262-b418-372d01850305
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 28a4773899d0ccd53f6c7facd36898225ca7e007
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 44f917beaa7b1e13171d2c8ade6f0172b450350d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966149"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953014"
 ---
 # <a name="software-restriction-policies"></a>软件限制策略
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-适用于 IT 专业人员的本主题介绍 Windows Server 2012 和 Windows 8 中的软件限制策略（SRP），并提供有关从 Windows Server 2003 开始的 SRP 的技术信息的链接。
+面向 IT 专业人员的本主题介绍 Windows Server 2012 和 Windows 8 中 (SRP) 的软件限制策略，并提供有关从 Windows Server 2003 开始的 SRP 的技术信息的链接。
 
 有关过程和故障排除提示，请参阅[管理软件限制策略](administer-software-restriction-policies.md)和[排查软件限制策略问题](troubleshoot-software-restriction-policies.md)。
 
@@ -86,10 +84,10 @@ ms.locfileid: "86966149"
 |内容类型|参考|
 |--------|-------|
 |**产品评估**|[软件限制策略的应用程序锁定](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|
-|规划|[软件限制策略技术概述](software-restriction-policies-technical-overview.md)（Windows Server 2012）<p>[软件限制策略技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10)) (Windows Server 2003)|
+|规划|[软件限制策略技术概述](software-restriction-policies-technical-overview.md) ( Windows Server 2012 ) <p>[软件限制策略技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10)) (Windows Server 2003)|
 |**部署**|无资源可用。|
-|**操作**|[管理软件限制策略](administer-software-restriction-policies.md)（Windows Server 2012）<p>[软件限制策略产品帮助](/previous-versions/windows/it-pro/windows-server-2003/cc779607(v=ws.10))（Windows Server 2003）|
-|**疑难解答**|[排查软件限制策略问题](troubleshoot-software-restriction-policies.md)（Windows Server 2012）<p>[软件限制策略故障排除](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))（Windows Server 2003）|
-|**安全性**|[软件限制策略的威胁和对策](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10)) (Windows  Server 2008)<p>[软件限制策略的威胁和对策](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))（Windows Server 2008 R2）|
-|**工具和设置**|[软件限制策略工具和设置](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))（Windows Server 2003）|
+|**操作**|[管理软件限制策略](administer-software-restriction-policies.md) ( Windows Server 2012 ) <p>[软件限制策略产品帮助](/previous-versions/windows/it-pro/windows-server-2003/cc779607(v=ws.10)) (Windows Server 2003) |
+|**故障排除**|[排查软件限制策略](troubleshoot-software-restriction-policies.md) ( Windows Server 2012 ) <p>[软件限制策略](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10)) (Windows Server 2003) 的疑难解答|
+|**安全性**|[软件限制策略的威胁和对策](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10)) (Windows  Server 2008)<p>Windows Server 2008 R2 ([软件限制策略的威胁和对策](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))) |
+|**工具和设置**|Windows Server 2003) [的软件限制策略工具和设置](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10)) (|
 |**社区资源**|[软件限制策略的应用程序锁定](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

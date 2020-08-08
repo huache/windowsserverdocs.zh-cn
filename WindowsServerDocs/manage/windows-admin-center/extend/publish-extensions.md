@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c817a28494104a1bfed1d7e19eaebaa04fd5138e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 910ed2733d01fe502a93d43f46530d781ba8c7e5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971964"
+ms.locfileid: "87992696"
 ---
 # <a name="publishing-extensions"></a>发布扩展
 
@@ -32,7 +32,7 @@ Windows 管理中心支持的可配置包源有三个主要选项：
 
 ### <a name="publishing-to-a-different-nuget-feed"></a>发布到不同的 NuGet 源
 
-您还可以创建自己的 NuGet 源，以使用[用于设置专用源或使用 NuGet 托管服务的多种不同选项](https://docs.microsoft.com/nuget/hosting-packages/overview)之一发布扩展。 NuGet 源必须支持 NuGet v2 API。 由于 Windows 管理中心当前不支持源身份验证，因此需要将源配置为允许任何人进行读访问。
+您还可以创建自己的 NuGet 源，以使用[用于设置专用源或使用 NuGet 托管服务的多种不同选项](/nuget/hosting-packages/overview)之一发布扩展。 NuGet 源必须支持 NuGet v2 API。 由于 Windows 管理中心当前不支持源身份验证，因此需要将源配置为允许任何人进行读访问。
 
 ### <a name="publishing-to-a-file-share"></a>发布到文件共享
 
@@ -72,7 +72,7 @@ Windows 管理中心使用 NuGet 包和源来分发和下载扩展。  为了使
 
 若要创建 NuGet 包，需要首先创建一个 nuspec 文件。 Nuspec 文件是包含 NuGet 包元数据的 XML 清单。 此清单同时用于生成包以及为使用者提供信息。  将此文件放置在 "NuGet 包" 文件夹的根目录下。
 
-下面是 nuspec 文件以及必需或推荐属性的列表。 有关完整的架构，请参阅[nuspec 引用](https://docs.microsoft.com/nuget/reference/nuspec)。 将 nuspec 文件保存到项目的根文件夹中，文件名为你选择的文件名。
+下面是 nuspec 文件以及必需或推荐属性的列表。 有关完整的架构，请参阅[nuspec 引用](/nuget/reference/nuspec)。 将 nuspec 文件保存到项目的根文件夹中，文件名为你选择的文件名。
 
 > [!IMPORTANT]
 > ```<id>```Nuspec 文件中的值需要与 ```"name"``` 项目文件中的值匹配 ```manifest.json``` ，否则，已发布的扩展将不会在 Windows 管理中心中成功加载。
@@ -106,7 +106,7 @@ Windows 管理中心使用 NuGet 包和源来分发和下载扩展。  为了使
 | 属性名称 | 必需/建议 | 描述 |
 | ---- | ---- | ---- |
 | packageType | 必选 | 使用 "WindowsAdminCenterExtension"，它是为 Windows 管理中心扩展定义的 NuGet 包类型。 |
-| id | 必选 | 源中唯一的包标识符。 此值需要与项目的 manifest.js文件中的 "名称" 值匹配。  有关指南，请参阅[选择唯一的包标识符](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
+| id | 必选 | 源中唯一的包标识符。 此值需要与项目的 manifest.js文件中的 "名称" 值匹配。  有关指南，请参阅[选择唯一的包标识符](/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
 | title | 需要将其发布到 Windows 管理中心源 | Windows 管理中心扩展管理器中显示的包的友好名称。 |
 | 版本 | 必选 | 扩展版本。 建议使用[语义版本控制 (SemVer 约定) ](http://semver.org/spec/v1.0.0.html) ，但不是必需的。 |
 | 作者 | 必选 | 如果代表你的公司发布，请使用你的公司名称。 |
@@ -120,7 +120,7 @@ Windows 管理中心使用 NuGet 包和源来分发和下载扩展。  为了使
 
 使用前面创建的 nuspec 文件，你现在可以创建 NuGet 包 nupkg 文件，你可以将该文件上传并发布到 NuGet 源。
 
-1. 从[NuGet 客户端工具网站](https://docs.microsoft.com/nuget/install-nuget-client-tools)下载 nuget.exe CLI 工具。
+1. 从[NuGet 客户端工具网站](/nuget/install-nuget-client-tools)下载 nuget.exe CLI 工具。
 2. 运行 "nuget.exe pack [. nuspec 文件名]" 来创建 nupkg 文件。
 
 ### <a name="4-signing-your-extension-nuget-package"></a>4. 对扩展 NuGet 包进行签名

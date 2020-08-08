@@ -1,25 +1,23 @@
 ---
 title: 主机保护者服务疑难解答
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 4cbbb41b965a44b6c81b58adc94990bb4d6af046
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 21c29c8432d9f578a50130719c61a255fdb5c649
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856400"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944077"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>主机保护者服务疑难解答
 
-> 适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+> 适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
-本主题介绍在受保护的构造中部署或操作主机保护者服务（HGS）服务器时遇到的常见问题的解决方法。
+本主题介绍在受保护的构造中 (HGS) 服务器部署或操作主机保护者服务时遇到的常见问题的解决方法。
 如果你不确定问题的性质，请首先尝试在 HGS 服务器和 Hyper-v 主机上运行[受保护的构造诊断](guarded-fabric-troubleshoot-diagnostics.md)，以缩小可能的原因。
 
 ## <a name="certificates"></a>证书
@@ -31,24 +29,24 @@ HGS 需要使用多个证书才能运行，包括管理员配置的加密和签�
 ### <a name="certificate-permissions"></a>证书权限
 
 HGS 必须能够访问证书指纹添加到 HGS 的加密证书和签名证书的公钥和私钥。
-具体而言，运行 HGS 服务的组托管服务帐户（gMSA）需要密钥的访问权限。
+具体而言，组托管服务帐户 (gMSA) 运行 HGS 服务需要访问密钥。
 若要查找 HGS 使用的 gMSA，请在你的 HGS 服务器上的权限提升的 PowerShell 提示符下运行以下命令：
 
 ```powershell
 (Get-IISAppPool -Name KeyProtection).ProcessModel.UserName
 ```
 
-如何授予 gMSA 帐户对使用私钥的访问权限取决于存储密钥的位置：在计算机上作为本地证书文件、在硬件安全模块（HSM）上，或使用自定义的第三方密钥存储提供程序。
+如何授予 gMSA 帐户对使用私钥的访问权限取决于存储密钥的位置：在计算机上作为本地证书文件、在硬件安全模块 (HSM) 或使用自定义的第三方密钥存储提供程序。
 
 #### <a name="grant-access-to-software-backed-private-keys"></a>授予对软件支持的私钥的访问权限
 
 如果你使用的是自签名证书或证书颁发机构颁发的证书，而该证书颁发机构**未**存储在硬件安全模块或自定义密钥存储提供程序中，则可以通过执行以下步骤更改私钥权限：
 
-1. 打开本地证书管理器（certlm.msc）
+1.  (certlm.msc 中打开本地证书管理器) 
 2. 展开 "**个人 > 证书**" 并找到要更新的签名或加密证书。
 3. 右键单击该证书，然后选择 "**所有任务" > "管理私钥**"。
 4. 单击 "**添加**" 以向新用户授予对证书的私钥的访问权限。
-5. 在对象选取器中，输入之前找到的 HGS 的 gMSA 帐户名称，然后单击 **"确定"** 。
+5. 在对象选取器中，输入之前找到的 HGS 的 gMSA 帐户名称，然后单击 **"确定"**。
 6. 确保 gMSA 对证书具有**读取**访问权限。
 7. 单击 **"确定"** 以关闭 "权限" 窗口。
 
@@ -79,7 +77,7 @@ $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 
 #### <a name="grant-access-to-hsm-or-custom-provider-backed-private-keys"></a>授予对 HSM 或自定义提供程序支持的私钥的访问权限
 
-如果证书的私钥由硬件安全模块（HSM）或自定义密钥存储提供程序（KSP）提供支持，则权限模型将取决于你的特定软件供应商。
+如果证书的私钥由硬件安全模块 (HSM) 或自定义密钥存储提供程序 (KSP) ，则权限模型将取决于您的特定软件供应商。
 为了获得最佳结果，请查阅供应商的文档或支持网站，以获取有关如何为特定设备/软件处理私钥权限的信息。
 在所有情况下，HGS 使用的 gMSA 都需要对加密、签名和通信证书私钥的*读取*权限，以便能够执行签名和加密操作。
 
@@ -94,13 +92,13 @@ $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 
 HSM 品牌/系列      | 建议
 ----------------------|-------------
-Gemalto 身份 SafeNet       | 确保证书请求文件中的 "密钥用法" 属性设置为0xa0，允许使用证书进行签名和加密。 此外，还必须使用本地证书管理器工具授予 gMSA 帐户对私钥的*读取*访问权限（请参阅上述步骤）。
-nCipher nShield        | 确保每个 HGS 节点都有权访问包含签名和加密密钥的安全体系。 你可能还需要使用本地证书管理器授予 gMSA 对私钥的*读取*访问权限（请参阅上面的步骤）。
+Gemalto 身份 SafeNet       | 确保证书请求文件中的 "密钥用法" 属性设置为0xa0，允许使用证书进行签名和加密。 此外，还必须使用本地证书管理器工具授予 gMSA 帐户对私钥的*读取*访问权限 (参阅上述步骤) 。
+nCipher nShield        | 确保每个 HGS 节点都有权访问包含签名和加密密钥的安全体系。 你可能还需要使用本地证书管理器授予 gMSA 对私钥的*读取*访问权限 (请参阅上述步骤) 。
 Utimaco CryptoServers | 确保证书请求文件中的 "密钥用法" 属性设置为 "0x13"，以允许将证书用于加密、解密和签名。
 
 ### <a name="certificate-requests"></a>证书请求
 
-如果使用证书颁发机构在公钥基础结构（PKI）环境中颁发证书，则需要确保证书请求中包含对这些密钥的 HGS 使用的最低要求。
+如果你使用证书颁发机构在 (PKI) 环境的公钥基础结构中颁发证书，则需要确保证书请求包含对这些密钥的 HGS 使用的最低要求。
 
 **签名证书**
 
@@ -120,15 +118,15 @@ CSR 属性 | 必需的值
 
 **Active Directory 证书服务模板**
 
-如果使用 Active Directory 证书服务（ADCS）证书模板来创建证书，则建议使用具有以下设置的模板：
+如果使用 Active Directory 证书服务 (ADCS) 证书模板来创建证书，则建议使用具有以下设置的模板：
 
 ADCS 模板属性 | 必需的值
 -----------------------|---------------
 提供程序类别      | 密钥存储提供程序
 算法名称         | RSA
 最小密钥大小       | 2048
-用途                | 签名和加密
-密钥用法扩展    | 数字签名，密钥译码，数据加密（"允许对用户数据进行加密"）
+目的                | 签名和加密
+密钥用法扩展    | 数字签名、密钥译码、数据加密 ( "允许对用户数据进行加密" ) 
 
 
 ### <a name="time-drift"></a>时间偏差
@@ -139,11 +137,11 @@ ADCS 模板属性 | 必需的值
 若要刷新证明签名者证书，请在提升的 PowerShell 提示符下运行以下命令。
 
 ```powershell
-Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName 
+Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName
 AttestationSignerCertRenewalTask
 ```
 
-或者，你可以通过打开**任务计划程序**（taskschd.msc），导航到**任务计划程序库 > Microsoft > Windows > HGSServer**并运行名为**AttestationSignerCertRenewalTask**的任务，手动运行计划的任务。
+或者，你可以通过打开**任务计划程序** (taskschd.msc) ，导航到**任务计划程序库 > Microsoft > HGSServer**并运行名为**AttestationSignerCertRenewalTask**的任务，手动运行计划的任务。
 
 ## <a name="switching-attestation-modes"></a>切换证明模式
 
@@ -154,20 +152,20 @@ AttestationSignerCertRenewalTask
 **从 TPM 切换到 AD 模式时的已知问题**
 
 如果在 TPM 模式下初始化了 HGS 群集，并且后来切换到了 Active Directory 模式，则会出现一个已知问题，它会阻止 HGS 群集中的其他节点切换到新的证明模式。
-若要确保所有 HGS 服务器都强制实施正确的证明模式，请在 HGS 群集的**每个节点上**运行 `Set-HgsServer -TrustActiveDirectory`。
+若要确保所有 HGS 服务器都强制实施正确的证明模式，请 `Set-HgsServer -TrustActiveDirectory` 在 HGS 群集的**每个节点上**运行。
 如果要从 TPM 模式切换到 AD 模式 *，并且*群集最初是在 ad 模式下设置的，则不会应用此问题。
 
 可以通过运行[HgsServer](https://technet.microsoft.com/library/mt652162.aspx)来验证 HGS 服务器的证明模式。
 
 ## <a name="memory-dump-encryption-policies"></a>内存转储加密策略
 
-如果你正在尝试配置内存转储加密策略，但未看到默认的 HGS 转储策略（Hgs\_NoDumps、Hgs\_DumpEncryption 和 Hgs\_DumpEncryptionKey）或转储策略 cmdlet （HgsAttestationDumpPolicy），则很可能你没有安装最新的累积更新。
+如果你尝试配置内存转储加密策略，但未看到默认的 HGS 转储策略 (Hgs \_ NoDumps、hgs \_ DumpEncryption 和 hgs \_ DumpEncryptionKey) 或转储策略 cmdlet (HgsAttestationDumpPolicy) ，则很可能你没有安装最新的累积更新。
 若要解决此问题，请将[你的 HGS 服务器更新](guarded-fabric-manage-hgs.md#patching-hgs)到最新的累积 Windows 更新并[激活新的证明策略](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation)。
 激活新的证明策略之前，请确保将 Hyper-v 主机更新为相同的累积更新，因为在激活 HGS 策略后，未安装新的转储加密功能的主机可能会失败证明。
 
 ## <a name="endorsement-key-certificate-error-messages"></a>认可密钥证书错误消息
 
-使用[HgsAttestationTpmHost](https://docs.microsoft.com/powershell/module/hgsattestation/add-hgsattestationtpmhost) cmdlet 注册主机时，会从提供的平台标识符文件中提取两个 TPM 标识符：认可密钥证书（EKcert）和公共认可密钥（EKpub）。
+使用[HgsAttestationTpmHost](https://docs.microsoft.com/powershell/module/hgsattestation/add-hgsattestationtpmhost) cmdlet 注册主机时，会从提供的平台标识符文件中提取两个 TPM 标识符：认可密钥证书 (EKcert) ，公共认可密钥 (EKpub) 。
 EKcert 标识 TPM 的制造商，从而保证 TPM 是真实的，并通过正常供应链制造。
 EKpub 可以唯一地标识该特定 TPM，它是 HGS 用于授予主机运行受防护的 Vm 访问权限的一种措施。
 
@@ -177,7 +175,7 @@ EKpub 可以唯一地标识该特定 TPM，它是 HGS 用于授予主机运行�
 
 某些 TPM 制造商未在其 Tpm 中包含 EKcerts。
 如果怀疑您的 TPM 是这种情况，请向 OEM 确认 Tpm 不应具有 EKcert，并使用 `-Force` 标志手动向 HGS 注册该主机。
-如果 TPM 应具有 EKcert，但在平台标识符文件中找不到，请确保在主机上运行[PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier)时使用的是管理员（提升） PowerShell 控制台。
+如果 TPM 应具有 EKcert，但在平台标识符文件中找不到，请确保在主机上运行[PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier)时，使用的是管理员 (提升的) PowerShell 控制台。
 
-如果收到 EKcert 不受信任的错误，请确保已在每个 HGS 服务器上[安装受信任的 tpm 根证书包](guarded-fabric-install-trusted-tpm-root-certificates.md)，并确保 TPM 供应商的根证书位于本地计算机的**TrustedTPM\_rootca.cer**存储区中。 还需要在本地计算机上的**TrustedTPM\_IntermediateCA**存储中安装任何适用的中间证书。
-安装根证书和中间证书后，应该能够成功运行 `Add-HgsAttestationTpmHost`。
+如果你收到 EKcert 不受信任的错误，请确保你已在每个 HGS 服务器上[安装受信任的 TPM 根证书包](guarded-fabric-install-trusted-tpm-root-certificates.md)，并且你的 TPM 供应商的根证书位于本地计算机的**TrustedTPM \_ rootca.cer**存储区中。 还需要在本地计算机上的**TrustedTPM \_ IntermediateCA**存储中安装任何适用的中间证书。
+安装根证书和中间证书后，应该能够 `Add-HgsAttestationTpmHost` 成功运行。

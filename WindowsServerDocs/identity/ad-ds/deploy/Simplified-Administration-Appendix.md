@@ -6,20 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: c92f2633bea6def335ab50f93f0c95b48b9677b0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3cef76347bcd5a341b96a71fed58d2fe0085a46c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519434"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953403"
 ---
 # <a name="simplified-administration-appendix"></a>简化管理附录
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
--   [服务器管理器添加服务器 "对话框（Active Directory）](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)
+-   [服务器管理器添加服务器 "对话框 (Active Directory) ](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)
 
 -   [服务器管理器远程服务器状态](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_ServerMgrStatus)
 
@@ -29,7 +27,7 @@ ms.locfileid: "87519434"
 
 -   [Ntdsutil.exe 从媒体更改安装](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)
 
-## <a name="server-manager-add-servers-dialog-active-directory"></a><a name="BKMK_AddServers"></a>服务器管理器添加服务器 "对话框（Active Directory）
+## <a name="server-manager-add-servers-dialog-active-directory"></a><a name="BKMK_AddServers"></a>服务器管理器添加服务器 "对话框 (Active Directory) 
 
 "**添加服务器**" 对话框允许搜索服务器、操作系统、使用通配符和位置的 Active Directory。 此对话框还允许按完全限定的域名或前缀名称使用 DNS 查询。 这些搜索使用通过 .NET 实现的本机 DNS 和 LDAP 协议，而不是通过 SOAP 对 AD 管理网关进行 AD Windows PowerShell-这意味着，通过服务器管理器联系的域控制器甚至可以运行 Windows Server 2003。 还可以导入包含服务器名称的文件，以便进行设置。
 
@@ -92,7 +90,7 @@ dir
 请参阅[更新可在运行 Windows Server 2008 R2 的域控制器上检测并防止全局 RID 池的使用率过高](https://support.microsoft.com/kb/2618669)。
 
 ## <a name="ntdsutilexe-install-from-media-changes"></a><a name="BKMK_IFM"></a>Ntdsutil.exe 从媒体更改安装
-Windows Server 2012 将两个附加选项添加到用于 Ifm 的 Ntdsutil.exe 命令行工具 **（Ifm 媒体创建）** 菜单。 这样，你就可以创建 IFM 存储，而无需首先对导出的 NTDS 执行脱机碎片整理。DIT 数据库文件。 当磁盘空间不是高级版时，这将节省创建 IFM 的时间。
+Windows Server 2012 将两个附加选项添加到 Ntdsutil.exe 命令行工具，用于**ifm 的 ifm (Ifm 介质) **菜单。 这样，你就可以创建 IFM 存储，而无需首先对导出的 NTDS 执行脱机碎片整理。DIT 数据库文件。 当磁盘空间不是高级版时，这将节省创建 IFM 的时间。
 
 下表介绍了两个新的菜单项：
 

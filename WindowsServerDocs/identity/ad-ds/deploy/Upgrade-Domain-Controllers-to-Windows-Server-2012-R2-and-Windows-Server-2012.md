@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: f211acd5e93f3f4654983e2c61d6b1a460415655
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f4c4cfa0fe56acc19f1a78a5b1140d90b585cce5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519375"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953306"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>将域控制器升级到 Windows Server 2012 R2 和 Windows Server 2012
 
@@ -71,7 +69,7 @@ Windows 8 和 Windows Server 2012 引入了一种名为 [自动维护](/windows/
 
 下表概述了 Windows Server 2012 R2 中的 AD DS 的新增功能，并提供关于其适用情况的更详细信息的链接。 有关某些功能的更为详细的解释（包括其要求），请参阅 [Windows Server 2012 R2 中的 Active Directory 的新增功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268294(v=ws.11))。
 
-|Feature|说明|
+|功能|描述|
 |-----------|---------------|
 |[工作区加入](../../ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)|使信息工作人员可以将其个人设备加入他们的公司，以访问公司资源和服务。|
 |[Web 应用程序代理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280942(v=ws.11))|使用新的远程访问角色服务提供对 Web 应用程序的访问权限。|
@@ -88,9 +86,9 @@ Windows 8 和 Windows Server 2012 引入了一种名为 [自动维护](/windows/
 
 ## <a name="whats-new-in-ad-ds-in-windows-server-2012"></a><a name="BKMK_WhatsNewAD"></a>Windows Server 2012 中 AD DS 有哪些新功能？
 
-下表概述了 Windows Server 2012 中的 AD DS 的新增功能，并提供关于其适用情况的更详细信息的链接。 有关某些功能的更多详细说明（包括其要求），请参阅[Active Directory 域服务（AD DS）中的新增](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11))功能。
+下表概述了 Windows Server 2012 中的 AD DS 的新增功能，并提供关于其适用情况的更详细信息的链接。 有关某些功能的更多详细说明（包括其要求），请参阅[AD DS) 中 Active Directory 域服务 (的新增](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11))功能。
 
-|Feature|说明|
+|功能|描述|
 |-----------|---------------|
 |基于 Active Directory 的激活 (AD BA)；请参阅 [批量激活概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612(v=ws.11))|可以简化配置分发的任务及批量软件许可证的管理。|
 |[Active Directory 联合身份验证服务 (AD FS)](../../active-directory-federation-services.md)|增加了通过服务器管理器安装角色、简化的信任设置、自动的信任管理、支持 SAML 协议等。|
@@ -123,8 +121,8 @@ Windows 8 和 Windows Server 2012 引入了一种名为 [自动维护](/windows/
 
 |||
 |-|-|
-|**方案**|**建议的配置**|
-|**由 WSUS 管理**<p>-每周安装一次更新<br />-在晚上11点重新启动星期五|将计算机设置为自动安装，在所需时间之前阻止自动重新启动<p>策略****：配置自动更新（已启用）<p>配置自动更新： 4-自动下载并计划安装<p>**策略**：不自动重启已登录的用户（已禁用）<p>**WSUS 截止时间**：设置为周五晚上 11 点|
+|**方案**|**推荐的配置 () **|
+|**由 WSUS 管理**<p>-每周安装一次更新<br />-在晚上11点重新启动星期五|将计算机设置为自动安装，在所需时间之前阻止自动重新启动<p>策略****：配置自动更新（已启用）<p>配置自动更新： 4-自动下载并计划安装<p>**策略**： (禁用已登录用户的自动重新启动) <p>**WSUS 截止时间**：设置为周五晚上 11 点|
 |**由 WSUS 管理**<p>-在不同小时/天交错安装|为应该一起更新的计算机的不同组设置目标组<p>为之前的方案使用上述步骤<p>为不同的目标组设置不同的截止时间|
 |**非 WSUS 管理-不支持截止时间**<p>-在不同时间交错安装|策略****：配置自动更新（已启用）<p>配置自动更新： 4-自动下载并计划安装<p>**注册表项：** 启用在 Microsoft 知识库文章 [2835627](https://support.microsoft.com/kb/2835627)<p>**策略：** 自动维护随机延迟（已启用）<p>为 6 小时随机延迟将“常规维护随机延迟”**** 设置为 PT6H 以提供以下行为：<p>-将在配置的维护时间和随机延迟安装更新<p>-重新启动每台计算机将在3天后发生<p>此外，为每个计算机组设置不同的维护时间|
 
@@ -156,16 +154,16 @@ AD DS 安装向导中的先决条件检查可以在开始安装之前识别潜�
 
 | 加密类型或策略 | Windows Server 2008 默认设置 | Windows Server 2012 和 Windows Server 2008 R2 默认设置 | 评论 |
 |--|--|--|--|
-| AllowNT4Crypto | 已禁用 | 已禁用 | 第三方服务器消息块 (SMB) 客户端可能与域控制器上的安全默认设置不兼容。 在所有情况下，可以通过放宽这些设置来允许交互操作，但这终将是以牺牲安全性为代价。 有关详细信息，请参阅 Microsoft 知识库中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) （ https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
-| DES | 已启用 | 已禁用 | Microsoft 知识库中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) （https://go.microsoft.com/fwlink/?LinkId=177717) |
-| 集成身份验证的 CBT/扩展保护 | 空值 | 已启用 | 请参阅 microsoft[安全公告（937811）](https://go.microsoft.com/fwlink/?LinkId=164559) （ https://go.microsoft.com/fwlink/?LinkId=164559) 和 microsoft 知识库中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （） https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>查看并安装[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394)中所需的修补程序 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
-| LMv2 | 已启用 | 已禁用 | Microsoft 知识库中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) （https://go.microsoft.com/fwlink/?LinkId=178251) |
+| AllowNT4Crypto | 已禁用 | 已禁用 | 第三方服务器消息块 (SMB) 客户端可能与域控制器上的安全默认设置不兼容。 在所有情况下，可以通过放宽这些设置来允许交互操作，但这终将是以牺牲安全性为代价。 有关详细信息，请参阅 Microsoft 知识库中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) (https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
+| DES | 已启用 | 已禁用 | Microsoft 知识库中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717) |
+| 集成身份验证的 CBT/扩展保护 | 空值 | 已启用 | 请参阅 microsoft 知识库 (中的[Microsoft 安全公告 (937811) ](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) 和[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>按照要求，查看并安装 Microsoft 知识库[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (中的修补程序 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
+| LMv2 | 已启用 | 已禁用 | Microsoft 知识库中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>操作系统要求
 
 下表列出了 Windows Server 2012 的最低系统要求。 有关系统要求的更多信息以及预安装信息，请参阅 [安装 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11))。 安装一个新的 Active Directory 林时，并无其他额外的系统要求。但是为了提高域控制器、LDAP 客户端请求以及启用了 Active Directory 的应用程序的性能，应当增加足够的内存以此来缓存 Active Directory 数据库中的内容。 如果要升级现有域控制器或将新域控制器添加到现有林，请查阅下一部分，以确保服务器满足磁盘空间要求。
 
-| 要求 | 值 |
+| 要求 | “值” |
 |--|--|
 | 处理器 | 1.4 GHz 64 位处理器 |
 | RAM | 512 MB |
@@ -225,7 +223,7 @@ Windows Server 2012 需要 Windows Server 2003 林功能级别。 也就是说�
 4. 安装运行 Windows Server 2012 的域控制器。
 5. 删除运行 Windows Server 早期版本的域控制器。
 
-新的 Windows Server 2012 域功能级别启用一个新功能： **kdc 支持声明、复合身份验证和 Kerberos**保护 kdc 管理模板策略具有两个设置（"**始终提供声明**" 和 "**未保护身份验证请求失败**"），需要 Windows Server 2012 域功能级别。
+新的 Windows Server 2012 域功能级别启用一个新功能： " **KDC 支持声明、复合身份验证和 Kerberos**保护" kdc 管理模板策略具有两个设置 (**始终提供**要求 Windows Server 2012 域功能级别) 的声明和**未保护身份验证请求**。
 
 Windows Server 2012 林功能级别不提供任何新功能，但可确保在林中创建的任何新域都将在 Windows Server 2012 域功能级别上自动运行。 Windows Server 2012 域功能级别不提供 KDC 支持声明、复合身份验证和 Kerberos 保护之外的其他新功能。 但它会确保域中的任何域控制器都运行 Windows Server 2012。 有关不同功能级别提供的其他功能的详细信息，请参阅 [了解 Active Directory 域服务 (AD DS) 功能级别](../active-directory-functional-levels.md)。
 
@@ -275,19 +273,19 @@ Windows Server 2012 中的一些新功能影响操作主机角色：
 
 下表包含了常见的集成 Active Directory 的 Microsoft 应用程序。 下表列出了可安装应用程序的 Windows Server 版本以及引入 Windows Server 2012 DC 是否会影响应用程序的兼容性。
 
-|Products|注释|
+|产品|说明|
 |-----------|---------|
-|[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|在 Windows Server 2012 服务器上安装和操作 SharePoint 2010 时， <br />要求提供 SharePoint 2010 Service Pack 2<p>在 Windows Server 2012 服务器上安装和操作 SharePoint 2010 Foundation 时，要求提供 SharePoint 2010 Foundation Service Pack 2<p>无法在 Windows Server 2012 上安装 SharePoint Server 2010（没有 Service Pack）<p>SharePoint Server 2010 必备安装程序（PrerequisiteInstaller.exe）失败，并出现错误 "此程序存在兼容性问题。" 单击 "运行程序而不获取帮助" 将显示错误 "验证是否可以安装 SharePoint &#124; 不能在 Windows Server 2012 上安装 SharePoint Server 2010 （不带 service pack）。"|
+|[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|在 Windows Server 2012 服务器上安装和操作 SharePoint 2010 时， <br />要求提供 SharePoint 2010 Service Pack 2<p>在 Windows Server 2012 服务器上安装和操作 SharePoint 2010 Foundation 时，要求提供 SharePoint 2010 Foundation Service Pack 2<p>无法在 Windows Server 2012 上安装 SharePoint Server 2010（没有 Service Pack）<p>SharePoint Server 2010 必备安装程序 ( # A0) 失败，并出现错误 "此程序存在兼容性问题。" 单击 "运行程序而不获取帮助" 将显示错误 "验证是否可以安装 SharePoint Server 2010 (&#124; 没有 service pack) 无法在 Windows Server 2012 上安装。"|
 |[Microsoft SharePoint 2013](/SharePoint/install/hardware-and-software-requirements-0)|针对服务器场中数据库服务器的最低要求：<p>Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter 的 64 位版本，或者 Windows Server 2012 Standard 或 Datacenter 的 64 位版本<p>针对带有内置数据库的单个服务器的最低要求：<p>Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter 的 64 位版本，或者 Windows Server 2012 Standard 或 Datacenter 的 64 位版本<p>针对服务器场中前端 Web 服务器和应用程序服务器的最低要求：<p>Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise 或 Datacenter 的 64 位版本，或者 Windows Server 2012 Standard 或 Datacenter 的 64 位版本。|
 |[Configuration Manager 2012](/SharePoint/install/hardware-and-software-requirements-0)|Configuration Manager 2012 Service Pack 1：<p>随着 Service Pack 1 的发布，Microsoft 将会向我们的客户端支持矩阵添加下列操作系统：<p>-Windows 8 专业版<br />-Windows 8 企业版<br />-Windows Server 2012 标准版<br />-Windows Server 2012 Datacenter<p>可以将所有站点服务器角色 - 包括站点服务器、SMS 提供程序以及管理点 - 部署到具有下列操作系统版本的服务器中：<p>-Windows Server 2012 标准版<br />-Windows Server 2012 Datacenter|
-|[Microsoft 端点 Configuration Manager （当前分支）](/configmgr/core/plan-design/configs/supported-configurations)|[Configuration Manager 的站点系统服务器支持的操作系统](/configmgr/core/plan-design/configs/supported-operating-systems-for-site-system-servers)。|
+|[Microsoft 端点 Configuration Manager (当前分支) ](/configmgr/core/plan-design/configs/supported-configurations)|[Configuration Manager 的站点系统服务器支持的操作系统](/configmgr/core/plan-design/configs/supported-operating-systems-for-site-system-servers)。|
 |[Microsoft Lync Server 2013](/lyncserver/lync-server-2013-server-and-tools-operating-system-support)|Lync Server 2013 要求与 Windows Server 2008 R2 或 Windows Server 2012 一起使用。 它无法运行在服务器核心安装上。 它可以运行在 [虚拟服务器](/lyncserver/lync-server-2013-running-lync-server-on-virtual-servers)上。|
 |[Lync Server 2010](https://support.microsoft.com/kb/2777359)|如果安装了 [Lync Server 2012 年 10 月的累计更新](https://support.microsoft.com/?kbid=2493736) ，则可以将 Lync Server 2010 安装到全新（并非升级）的 Windows Server 2012 安装中。 不支持针对现有的 Lync Server 2010 安装，将操作系统升级至 Windows Server 2012。 此外，Windows Server 2012 上也不支持 Microsoft Lync Server 2010 群聊服务器。|
 |[System Center 2012 Endpoint Protection](/SharePoint/install/hardware-and-software-requirements-0)|System Center 2012 Endpoint Protection Service Pack 1 将更新客户端支持矩阵以包含下列操作系统：<p>-Windows 8 专业版<br />-Windows 8 企业版<br />-Windows Server 2012 标准版<br />-Windows Server 2012 Datacenter|
 |[System Center 2012 Forefront Endpoint Protection](/SharePoint/install/hardware-and-software-requirements-0)|FEP 2010 更新汇总 1 将更新客户端支持矩阵以包括下列操作系统：<p>-Windows 8 专业版<br />-Windows 8 企业版<br />-Windows Server 2012 标准版<br />-Windows Server 2012 Datacenter|
 |Forefront Threat Management Gateway (TMG)|只支持 TMG 在 Windows Server 2008 和 Windows Server 2008 R2 上运行。 有关详细信息，请参阅 [Forefront TMG 系统要求](/previous-versions/tn-archive/dd896981(v=technet.10))。|
 |Windows Server 更新服务|此版本的 WSUS 已经支持基于 Windows 8 的计算机或支持基于 Windows Server 2012 的计算机作为客户端。|
-|Windows Server Update Services 3.0|更新知识库文章[2734608](https://support.microsoft.com/kb/2734608)允许运行 WINDOWS SERVER UPDATE SERVICES （WSUS） 3.0 SP2 的服务器为运行 Windows 8 或 Windows Server 2012 的计算机提供更新：**注意：** 具有独立 wsus 3.0 SP2 环境的客户或 Configuration Manager 2007 Service PACK 2 环境（WSUS 3.0 SP2）需要[2734608](https://support.microsoft.com/kb/2734608)来正确地将基于 Windows 8 的计算机或基于 windows Server 2012 的计算机作为客户端进行管理。|
+|Windows Server Update Services 3.0|更新知识库文章[2734608](https://support.microsoft.com/kb/2734608)允许运行 WINDOWS SERVER UPDATE SERVICES (WSUS) 3.0 SP2 的服务器为运行 Windows 8 或 Windows Server 2012 的计算机提供更新：**注意：** 具有独立 wsus 3.0 SP2 环境的客户或 Configuration Manager 2007 Service Pack 2 环境（含 WSUS 3.0 SP2）需要[2734608](https://support.microsoft.com/kb/2734608)来正确地将基于 Windows 8 的计算机或基于 windows Server 2012 的计算机作为客户端进行管理。|
 |[Exchange 2013](/Exchange/plan-and-deploy/prerequisites?view=exchserver-2019)|下列服务器角色支持 Windows Server 2012 Standard 和 Datacenter：架构主机、全局编录服务器、域控制器、邮箱和客户端访问服务器角色<p>林功能级别：Windows Server 2003 或更高版本<p>源：Exchange 2013 系统要求|
 |Exchange 2010|[源：Exchange 2010 Service Pack 3](https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange)<p>可以在 Windows Server 2012 成员服务器上安装带有 Service Pack 3 的 Exchange 2010。<p>对于 Windows Server 2008 R2，[Exchange 2010 系统要求](/previous-versions/office/exchange-server-2010/aa996719(v=exchg.141)) 列出了最新支持的架构主机、全局编录服务器和域控制器。<p>林功能级别：Windows Server 2003 或更高版本|
 |SQL Server 2012|源：KB [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 上支持 SQL Server 2012 RTM。|

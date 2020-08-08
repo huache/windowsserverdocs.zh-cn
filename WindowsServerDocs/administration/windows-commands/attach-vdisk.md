@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12e1d7f0ec5e9d67853f4fb77c12dcf837348b28
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 30ef29b0a8bbfed550cfa8c09a94c7b64c09b699
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895517"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993036"
 ---
 # <a name="attach-vdisk"></a>附加 vdisk
 
@@ -29,12 +29,12 @@ ms.locfileid: "87895517"
 attach vdisk [readonly] { [sd=<SDDL>] | [usefilesd] } [noerr]
 ```
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
 | 参数 | 描述 |
 | --------- | ----------- |
 | readonly | 将 VHD 附加为只读。 任何写入操作都将返回错误。 |
-| `sd=<SDDL string>` | 设置 VHD 上的用户筛选器。 筛选器字符串必须采用安全描述符定义语言 (SDDL) 格式。 默认情况下，用户筛选器允许访问，就像在物理磁盘上。 SDDL 字符串可能比较复杂，但最简单的形式是，保护访问的安全描述符称为 (DACL) 的自由访问控制列表。 它使用以下格式： `D:<dacl_flags><string_ace1><string_ace2>` .。。`<string_acen>`<p>常见的 DACL 标志包括：<ul><li>**A**。 允许访问</li><li>**D.** 拒绝访问</li></ul>常见权限包括：<ul><li>**GA**。 所有访问</li><li>**GR** 读取权限</li><li> **GW**。 写入访问权限</li></ul>常见用户帐户包括：<ul><li>**BA**。 内置管理员</li><li>**AU**。 经过身份验证的用户</li><li>**CO**。 创建者所有者</li><li>**WD**。 所有人</li></ul>示例：<ul><li>**D:P： (;;GR;;;AU**。 向所有经过身份验证的用户提供读取访问权限。</li><li>**D:P： (;;GA;;;WD**。 为每个人提供完全访问权限。</li></ul> |
+| `sd=<SDDL string>` | 设置 VHD 上的用户筛选器。 筛选器字符串必须采用安全描述符定义语言 (SDDL) 格式。 默认情况下，用户筛选器允许访问，就像在物理磁盘上。 SDDL 字符串可能比较复杂，但最简单的形式是，保护访问的安全描述符称为 (DACL) 的自由访问控制列表。 它使用以下格式： `D:<dacl_flags><string_ace1><string_ace2>` .。。`<string_acen>`<p>常见的 DACL 标志包括：<ul><li>**A**。 允许访问</li><li>**D.** 拒绝访问</li></ul>常见权限包括：<ul><li>**GA**。 所有访问</li><li>**GR** 读取权限</li><li> **GW**。 写入访问权限</li></ul>常见用户帐户包括：<ul><li>**BA**。 内置管理员</li><li>**AU**。 经过身份验证的用户</li><li>**CO**。 创建者所有者</li><li>**WD**。 所有人</li></ul>示例:<ul><li>**D:P： (;;GR;;;AU**。 向所有经过身份验证的用户提供读取访问权限。</li><li>**D:P： (;;GA;;;WD**。 为每个人提供完全访问权限。</li></ul> |
 | usefilesd | 指定应在 VHD 上使用 .vhd 文件上的安全描述符。 如果未指定**Usefilesd**参数，则 VHD 将不具有明确的安全描述符，除非使用**Sd**参数指定它。 |
 | noerr | 仅用于脚本编写。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
@@ -62,4 +62,4 @@ attach vdisk readonly
 
 - [merge vdisk](merge-vdisk.md)
 
-- [list](list_1.md)
+- [list](./list.md)

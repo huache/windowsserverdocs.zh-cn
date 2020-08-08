@@ -1,19 +1,17 @@
 ---
 title: 为 Windows 管理中心开发扩展
-description: 开发 Windows 管理中心 SDK （Project Honolulu）的扩展
-ms.technology: manage
+description: 开发 Windows 管理中心 SDK (项目 Honolulu) 的扩展
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/19/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 4b3d5b371a9ebec27dafa74610f8c6a87c404d82
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37f74354720c4f326fd7186b314e342432fd8a8d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357117"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952663"
 ---
 # <a name="develop-an-extension-for-windows-admin-center"></a>为 Windows 管理中心开发扩展
 

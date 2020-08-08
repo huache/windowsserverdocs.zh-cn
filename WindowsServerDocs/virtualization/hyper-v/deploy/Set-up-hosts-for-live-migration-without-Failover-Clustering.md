@@ -7,12 +7,12 @@ ms.assetid: b5e3c405-cb76-4ff2-8042-c2284448c435
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 7bcd4e625f340ba7358a8ce9bdd860581c390e96
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e07910b6f822ca29769fb398434f83272867dbe7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948016"
+ms.locfileid: "87992706"
 ---
 # <a name="set-up-hosts-for-live-migration-without-failover-clustering"></a>为无故障转移群集的实时迁移设置主机
 
@@ -112,7 +112,7 @@ ms.locfileid: "87948016"
 
 ### <a name="use-windows-powershell-to-set-up-the-source-and-destination-computers-for-live-migration"></a>使用 Windows PowerShell 设置用于实时迁移的源计算机和目标计算机
 
-有三个 cmdlet 可用于配置非群集主机上的实时迁移： [enable-vmmigration](https://technet.microsoft.com/library/hh848544.aspx)、 [set-vmmigrationnetwork](https://technet.microsoft.com/library/hh848467.aspx)和[VMHost](https://technet.microsoft.com/library/hh848524.aspx)。 此示例使用全部三个，并执行以下操作：
+有三个 cmdlet 可用于配置非群集主机上的实时迁移： [enable-vmmigration](/powershell/module/hyper-v/enable-vmmigration?view=win10-ps)、 [set-vmmigrationnetwork](/powershell/module/hyper-v/set-vmmigrationnetwork?view=win10-ps)和[VMHost](/powershell/module/hyper-v/set-vmhost?view=win10-ps)。 此示例使用全部三个，并执行以下操作：
   - 在本地主机上配置实时迁移
   - 仅允许在特定网络上传入迁移流量
   - 选择 Kerberos 作为身份验证协议
@@ -139,7 +139,7 @@ PS C:\> Set-VMHost -VirtualMachineMigrationPerformanceOption SMB
 |----------|---------------|
     |TCP/IP|通过 TCP/IP 连接将虚拟机的内存复制到目标服务器。|
     |压缩|在通过 TCP/IP 连接将虚拟机复制到目标服务器之前压缩该虚拟机的内存内容。 **注意：** 这是**默认**设置。|
-    |SMB|通过 SMB 3.0 连接将虚拟机的内存复制到目标服务器。<p>-当源服务器和目标服务器上的网络适配器 (启用 RDMA) 功能的远程直接内存访问时，将使用 SMB 直通。<br />-在识别到正确的 SMB 多通道配置后，SMB 多通道将自动检测并使用多个连接。<p>有关详细信息，请参阅[通过 SMB 直通优化文件服务器的性能](https://technet.microsoft.com/library/jj134210(WS.11).aspx)。|
+    |SMB|通过 SMB 3.0 连接将虚拟机的内存复制到目标服务器。<p>-当源服务器和目标服务器上的网络适配器 (启用 RDMA) 功能的远程直接内存访问时，将使用 SMB 直通。<br />-在识别到正确的 SMB 多通道配置后，SMB 多通道将自动检测并使用多个连接。<p>有关详细信息，请参阅[通过 SMB 直通优化文件服务器的性能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134210(v=ws.11))。|
 
  ## <a name="next-steps"></a>后续步骤
 

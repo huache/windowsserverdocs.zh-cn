@@ -1,20 +1,18 @@
 ---
 title: Kerberos Constrained Delegation Overview
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-kerberos
 ms.topic: article
 ms.assetid: 51923b0a-0c1a-47b2-93a0-d36f8e295589
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 07717743017c15a7bdabd3c3ce38d75a02980460
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bd34723d1f5223c2576237c768d9da55172eebc6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858860"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943887"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -26,19 +24,19 @@ ms.locfileid: "80858860"
 
 在 Windows Server 2003 中引入的 Kerberos 约束委派，为服务所使用的委派提供了一种更安全的形式。 配置了 Kerberos 约束委派后，它限制了指定服务器可代表用户执行的服务。 这需要域管理员权限来为服务配置一个域账户，并把该账户限制到单个域。 在如今的企业中，前端服务的设计并不局限于仅与域中的服务进行集成。
 
-在域管理员配置服务的早期操作系统中，服务管理员没有有效途径了解其拥有哪些委派到资源服务的前端服务。 可委派到资源服务的任何前端服务都代表一个潜在的攻击点。 如果托管前端服务的服务器受到危害，并且其被配置为委派到资源服务，则资源服务也会受到危害。
+在域管理员配置了服务的早期操作系统中，服务管理员没有有效途径来了解哪些前端服务委派给了其拥有的资源服务。 并且可委派给资源服务的任何前端服务都代表了一个潜在的攻击点。 如果托管前端服务的服务器受到安全威胁，并且它已配置为委派给资源服务，则资源服务也会受到安全威胁。
 
-在 Windows Server 2012 R2 和 Windows Server 2012 中，为服务配置约束委派的能力已从域管理员转移给服务管理员。 以这种方式，后端服务管理员可以允许或拒绝前端服务。
+在 Windows Server 2012 R2 和 Windows Server 2012 中，为服务配置约束委派的能力已从域管理员转移给服务管理员。 这样，后端服务管理员可以允许或拒绝前端服务。
 
 有关 Windows Server 2003 中引入的约束委派的详细信息，请参阅 [Kerberos 协议转换和约束委派](https://technet.microsoft.com/library/cc739587(v=ws.10))。
 
-Kerberos 协议的 Windows Server 2012 R2 和 Windows Server 2012 实现包括专门针对约束委派的扩展。  Service for User to Proxy (S4U2Proxy) 允许服务使用其用户 Kerberos 服务票证从密钥发行中心 (KDC) 获得服务票证，以用于后端服务。 这些扩展允许在可位于另一个域中的后端服务帐户上配置约束委派。 有关这些扩展的详细信息，请参阅 MSDN Library 中的[\[MS-SFU\]： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)。
+Kerberos 协议的 Windows Server 2012 R2 和 Windows Server 2012 实现包括专门针对约束委派的扩展。  Service for User to Proxy (S4U2Proxy) 允许服务使用其用户 Kerberos 服务票证从密钥发行中心 (KDC) 获得服务票证，以用于后端服务。 这些扩展允许在可位于另一个域中的后端服务帐户上配置约束委派。 有关这些扩展的详细信息，请参阅 MSDN Library 中的[ \[ MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)。
 
-**实用应用程序**
+**实际的应用程序**
 
 约束委派让服务管理员能够通过限制应用程序服务可以代表用户的范围来指定和强制应用程序信任边界。 服务管理员可以配置哪些前端服务账户能委派到其后端服务。
 
-通过支持 Windows Server 2012 R2 和 Windows Server 2012 中跨域的约束委派，可以将前端服务（如 Microsoft Internet 安全和加速（ISA） Server、Microsoft Forefront 威胁管理网关、Microsoft Exchange Outlook Web 访问（OWA）和 Microsoft SharePoint Server 配置为使用约束委派对其他域中的服务器进行身份验证。 这将通过使用现有的 Kerberos 基础结构来支持跨域的服务解决方案。 域管理员或服务管理员可以管理 Kerberos 约束委派。
+通过支持 Windows Server 2012 R2 和 Windows Server 2012 中跨域的约束委派，可以将前端服务（例如 Microsoft Internet 安全和加速 (ISA) Server、Microsoft Forefront 威胁管理网关、Microsoft Exchange Outlook Web 访问 (OWA) 和 Microsoft SharePoint Server）配置为使用约束委派对其他域中的服务器进行身份验证。 这将通过使用现有的 Kerberos 基础结构来支持跨域的服务解决方案。 域管理员或服务管理员可以管理 Kerberos 约束委派。
 
 ## <a name="resource-based-constrained-delegation-across-domains"></a>跨域的基于资源的约束委派
 
@@ -52,9 +50,9 @@ Kerberos 约束委派可以在前端服务与资源服务不在同一域中时�
 
 **工作原理的不同之处是什么？**
 
-基础协议中的更改允许跨域约束委派。 Kerberos 协议的 Windows Server 2012 R2 和 Windows Server 2012 实现包括用户到代理（S4U2Proxy）协议的服务扩展。 这组 Kerberos 协议扩展允许服务使用其用户 Kerberos 服务票证从密钥发行中心 (KDC) 获得服务票证，以用于后端服务。
+基础协议中的更改允许跨域约束委派。 Kerberos 协议的 Windows Server 2012 R2 和 Windows Server 2012 实现包括为用户提供服务的扩展，以便 (S4U2Proxy) 协议。 这组 Kerberos 协议扩展允许服务使用其用户 Kerberos 服务票证从密钥发行中心 (KDC) 获得服务票证，以用于后端服务。
 
-有关这些扩展的实现信息，请参阅 MSDN 中的[\[MS-SFU\]： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)。
+有关这些扩展的实现信息，请参阅 MSDN 中的[ \[ MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)。
 
 有关使用与 Service for User (S4U) 扩展相比提早的票证授予票证 (TGT) 的 Kerberos 委派的基础消息队列的详细信息，请参阅 [1.3.3 协议概述](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) 部分（“[MS-SFU]：Kerberos 协议扩展：用户服务和约束委派协议规范”）。
 
@@ -64,7 +62,7 @@ Kerberos 约束委派可以在前端服务与资源服务不在同一域中时�
 
 因为 KDC 不会限制协议转换，所以引入了两个新的已知 Sid，以将此控件授予资源管理员。  这些 Sid 确定是否发生了协议转换，并可与标准访问控制列表结合使用来根据需要授予或限制访问权限。
 
-|SID|说明|
+|SID|描述|
 |-------|--------|
 |AUTHENTICATION_AUTHORITY_ASSERTED_IDENTITY<br />S-1-18-1|一个 SID，表示根据客户端凭据所有权验证，身份验证颁发机构对客户端的标识进行断言。|
 |SERVICE_ASSERTED_IDENTITY<br />S-1-18-2|一个 SID，表示服务对客户端的标识进行断言。|
@@ -82,4 +80,4 @@ Kerberos 约束委派可以在前端服务与资源服务不在同一域中时�
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>软件要求
 基于资源的约束委派只能在运行 Windows Server 2012 R2 和 Windows Server 2012 的域控制器上配置，但可以在混合模式林中应用。
 
-必须将以下修补程序应用到所有运行 windows server 2012 的域控制器，这些域控制器在运行早于 Windows Server 的操作系统的前端域和后端域之间的引用路径上：基于资源的约束委派 KDC_ERR_POLICY 包含基于 Windows Server 2008 R2 的域控制器的环境中的失败（ https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro)。
+必须将以下修补程序应用到所有运行 windows server 2012 的域控制器，这些域控制器在运行早于 Windows Server 的操作系统的前端域和后端域之间的引用路径上：基于资源的约束委派 KDC_ERR_POLICY 在 (基于 Windows Server 2008 R2 的域控制器的环境中失败 https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro) 。

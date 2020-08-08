@@ -1,19 +1,17 @@
 ---
 title: 为解决方案扩展创建连接提供程序
-description: 开发解决方案扩展 Windows 管理中心 SDK （项目 Honolulu）-创建连接提供程序
-ms.technology: manage
+description: 开发解决方案扩展 Windows 管理中心 SDK (项目 Honolulu) 创建连接提供程序
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 9c04db3196d1e806e50af9164b3c8bcdfb19b079
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ec11b8a6b9129348ec2405548c21fa9d6ec5deff
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406883"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952676"
 ---
 # <a name="create-a-connection-provider-for-a-solution-extension"></a>为解决方案扩展创建连接提供程序
 
@@ -23,7 +21,7 @@ ms.locfileid: "71406883"
 
 默认情况下，Windows 管理中心附带以下连接提供程序：
 
-* Server
+* 服务器
 * Windows 客户端
 * 故障转移群集
 * HCI 群集
@@ -34,15 +32,15 @@ ms.locfileid: "71406883"
 * 定义连接状态提供程序
 * 在应用程序层中实现连接提供程序
 
-## <a name="add-connection-provider-details-to-manifestjson"></a>向 manifest 添加连接提供程序详细信息
+## <a name="add-connection-provider-details-to-manifestjson"></a>将连接提供程序详细信息添加到 manifest.js
 
-接下来，我们将逐步介绍在项目```manifest.json```文件中定义连接提供程序所需了解的内容。
+接下来，我们将逐步介绍在项目文件中定义连接提供程序所需了解的内容 ```manifest.json``` 。
 
-### <a name="create-entry-in-manifestjson"></a>在 manifest 中创建项
+### <a name="create-entry-in-manifestjson"></a>在 manifest.js中创建项
 
-此```manifest.json```文件位于 \src 文件夹中，并包含入口点在项目中的定义。 入口点的类型包括工具、解决方案和连接提供程序。 我们将定义一个连接提供程序。
+此 ```manifest.json``` 文件位于 \src 文件夹中，并包含入口点在项目中的定义。 入口点的类型包括工具、解决方案和连接提供程序。 我们将定义一个连接提供程序。
 
-清单中的连接提供程序条目的示例如下所示：
+下面是 manifest.js中的连接提供程序条目的示例：
 
 ``` json
     {
@@ -75,29 +73,29 @@ ms.locfileid: "71406883"
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| EntryPointType | 这是一个必需的属性。 有三个有效值： "工具"、"解决方案" 和 "connectionProvider"。 | 
-| name | 标识解决方案范围内的连接提供程序。 此值在完整的 Windows 管理中心实例（而不仅仅是解决方案）中必须是唯一的。 |
+| entryPointType | 这是必需的属性。 有三个有效值： "工具"、"解决方案" 和 "connectionProvider"。 |
+| name | 标识解决方案范围内的连接提供程序。 此值在完整的 Windows 管理中心实例中必须是唯一的， (不只是) 解决方案。 |
 | path | 表示 "添加连接" UI 的 URL 路径（如果它将由解决方案配置）。 此值必须映射到在 app.config 文件中配置的路由。 当解决方案入口点配置为使用连接 rootNavigationBehavior 时，此路由将加载 Shell 用来显示 "添加连接" UI 的模块。 有关详细信息，请访问 rootNavigationBehavior 上的部分。 |
 | displayName | 此处输入的值将显示在 shell 的右侧，在用户加载解决方案的 "连接" 页时，位于黑色 Windows 管理中心栏的下方。 |
-| 图标 | 表示解决方案下拉菜单中用于表示解决方案的图标。 |
+| icon | 表示解决方案下拉菜单中用于表示解决方案的图标。 |
 | description | 输入入口点的简短说明。 |
-| connectionType | 表示提供程序将加载的连接类型。 此处输入的值还将用于解决方案入口点，以指定解决方案可加载这些连接。 此处输入的值还将用于工具入口点，以指示该工具与此类型兼容。 此处输入的值还将用于在应用程序层实现步骤中提交给 RPC 调用的连接对象。 |
+| connectionType | 表示提供程序将加载的连接类型。 此处输入的值还将用于解决方案入口点，以指定解决方案可加载这些连接。 此处输入的值还将用于) 的工具入口点 (，以指示该工具与此类型兼容。 此处输入的值还将用于在应用程序层实现步骤中提交给 RPC 调用的连接对象。 |
 | connectionTypeName | 用于连接表，用于表示使用连接提供程序的连接。 此名称应为类型的复数名称。 |
 | connectionTypeUrlName | 在 Windows 管理中心连接到实例之后，用于创建 URL 以表示已加载的解决方案。 此项在连接之后、在目标之前使用。 在此示例中，"connectionexample" 是此值出现在 URL 中的位置：`http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com` |
-| connectionTypeDefaultSolution | 表示连接提供程序应加载的默认组件。 此值由以下内容组成： <br>[a] 在清单顶部定义的扩展包的名称; <br>[b] 惊叹号（！）; <br>[c] 解决方案入口点名称。    <br>对于名为 "mySample" 的项目和名称为 "example" 的解决方案入口点，此值将为 "solutionExample-extension！ example"。 |
-| connectionTypeDefaultTool | 表示应在成功连接时加载的默认工具。 此属性值由两部分组成，类似于 connectionTypeDefaultSolution。 此值由以下内容组成： <br>[a] 在清单顶部定义的扩展包的名称; <br>[b] 惊叹号（！）; <br>[c] 应最初加载的工具的工具入口点名称。 <br>对于名为 "solutionExample" 的项目和名称为 "example" 的解决方案入口点，此值将为 "solutionExample-extension！ example"。 |
+| connectionTypeDefaultSolution | 表示连接提供程序应加载的默认组件。 此值由以下内容组成： <br>[a] 在清单顶部定义的扩展包的名称; <br>[b] 惊叹号 (！ ) ; <br>[c] 解决方案入口点名称。    <br>对于名为 "mySample" 的项目和名称为 "example" 的解决方案入口点，此值将为 "solutionExample-extension！ example"。 |
+| connectionTypeDefaultTool | 表示应在成功连接时加载的默认工具。 此属性值由两部分组成，类似于 connectionTypeDefaultSolution。 此值由以下内容组成： <br>[a] 在清单顶部定义的扩展包的名称; <br>[b] 惊叹号 (！ ) ; <br>[c] 应最初加载的工具的工具入口点名称。 <br>对于名为 "solutionExample" 的项目和名称为 "example" 的解决方案入口点，此值将为 "solutionExample-extension！ example"。 |
 | connectionStatusProvider | 请参阅 "定义连接状态提供程序" 部分 |
 
 ## <a name="define-connection-status-provider"></a>定义连接状态提供程序
 
-连接状态提供程序是一种机制，通过该机制可以验证目标是否处于联机状态并且可用，同时确保连接用户有权访问目标。 目前有两种类型的连接状态提供程序：PowerShell 和 RelativeGatewayUrl。
+连接状态提供程序是一种机制，通过该机制可以验证目标是否处于联机状态并且可用，同时确保连接用户有权访问目标。 目前有两种类型的连接状态提供程序： PowerShell 和 RelativeGatewayUrl。
 
 *   <strong>Powershell 连接状态提供程序</strong>-确定目标是否处于联机状态并且可通过 PowerShell 脚本访问。 结果必须在具有以下定义的单个属性 "status" 的对象中返回。
 *   <strong>RelativeGatewayUrl 连接状态提供程序</strong>-确定目标是否处于联机状态，并可通过 rest 调用访问。 结果必须在具有以下定义的单个属性 "status" 的对象中返回。
 
 ### <a name="define-status"></a>定义状态
 
-连接状态提供程序需要返回具有单个属性```status```且符合以下格式的对象：
+连接状态提供程序需要返回具有单个属性且 ```status``` 符合以下格式的对象：
 
 ``` json
 {
@@ -117,12 +115,12 @@ ms.locfileid: "71406883"
 
    各种
 
-  | ReplTest1 | Description |
+  | “值” | 描述 |
   | ----- | ----------- |
   | 0 | 联机 |
   | 1 | 警告 |
-  | 2 | 未经授权 |
-  | 3 | Error |
+  | 2 | 未授权 |
+  | 3 | 错误 |
   | 4 | 出现 |
   | 5 | Unknown |
 
@@ -162,7 +160,7 @@ Get-Status
 
 ### <a name="define-relativegatewayurl-connection-status-provider-method"></a>定义 RelativeGatewayUrl 连接状态提供程序方法
 
-连接状态提供程序```RelativeGatewayUrl```方法调用 rest API，以确定目标是否处于联机状态并且可访问。 必须在具有单个属性 "status" 的对象中返回结果。 下面显示了 RelativeGatewayUrl 的示例连接提供程序条目。
+连接状态提供程序 ```RelativeGatewayUrl``` 方法调用 REST API，以确定目标是否处于联机状态并且可访问。 必须在具有单个属性 "status" 的对象中返回结果。 下面显示了 RelativeGatewayUrl 中 manifest.js的示例连接提供程序条目。
 
 ``` json
     {
@@ -198,7 +196,7 @@ Get-Status
 
 通过在提供程序的 "defaultValueMap" 属性中包含键和值，可以在微调时间设置状态返回对象中的标签和详细信息值的格式。
 
-例如，如果添加以下值，则任何 "defaultConnection_test" 显示为 "标签" 或 "详细信息" 的值的时间，Windows 管理中心都将自动用配置的资源字符串值替换该密钥。
+例如，如果添加以下值，则任何 "defaultConnection_test" 显示为 "标签" 或 "详细信息" 的值的时间，Windows 管理中心将自动使用配置的资源字符串值替换该密钥。
 
 ``` json
     "defaultConnection_test": "resources:strings:addServer_status_defaultConnection_label"
@@ -208,12 +206,12 @@ Get-Status
 
 现在，我们将通过创建实现 OnInit 的 TypeScript 类来实现应用程序层中的连接提供程序。 类具有以下功能：
 
-| Functions | 描述 |
+| 函数 | 描述 |
 | -------- | ----------- |
-| 构造函数（private appContextService：AppContextService，专用路由：ActivatedRoute) |  |
-| public ngOnInit （） |  |
-| public onSubmit （） | 在进行添加连接尝试时包含用于更新 shell 的逻辑 |
-| public onCancel （） | 在取消添加连接尝试时包含用于更新 shell 的逻辑 |
+| 构造函数 (专用 appContextService： AppContextService，专用路由： ActivatedRoute)  |  |
+| public ngOnInit ( # A1 |  |
+| public onSubmit ( # A1 | 在进行添加连接尝试时包含用于更新 shell 的逻辑 |
+| public onCancel ( # A1 | 在取消添加连接尝试时包含用于更新 shell 的逻辑 |
 
 ### <a name="define-onsubmit"></a>定义 onSubmit
 
@@ -311,7 +309,7 @@ this.appContextService.rpc.updateData(EnvironmentModule.nameOfShell, '##', <RpcU
 
 ## <a name="connection-provider-example"></a>连接提供程序示例
 
-用于实现连接提供程序的完整 TypeScript 类如下所示。 请注意，"connectionType" 字符串与 connectionType 中连接提供程序中定义的 "" 匹配。
+用于实现连接提供程序的完整 TypeScript 类如下所示。 请注意，"connectionType" 字符串与 manifest.js上的的连接提供程序中定义的 "connectionType" 匹配。
 
 ``` ts
 import { Component, OnInit } from '@angular/core';
@@ -331,7 +329,7 @@ export class AddExampleComponent implements OnInit {
   public newConnectionName: string;
   public strings = MsftSme.resourcesStrings<Strings>().SolutionExample;
   private connectionType = 'msft.sme.connection-type.example'; // This needs to match the connectionTypes value used in the manifest.json.
-  
+
   constructor(private appContextService: AppContextService, private route: ActivatedRoute) {
     // TODO:
   }

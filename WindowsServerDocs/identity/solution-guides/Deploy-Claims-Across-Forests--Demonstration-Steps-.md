@@ -6,184 +6,182 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 05ca21f343d2ad3db4ce00b53a66b3cd6dd6de16
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 828b7256854f9d2fd6d58567c773d4abc288cd0a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861240"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952869"
 ---
 # <a name="deploy-claims-across-forests-demonstration-steps"></a>跨林部署声明（示范步骤）
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-在本主题中，我们将介绍一种基本方案，说明如何在信任林和受信任林之间配置声明转换。 你将了解如何创建声明转换策略对象并将其链接到信任林和受信任林的信任。 然后，将验证方案。  
+在本主题中，我们将介绍一种基本方案，说明如何在信任林和受信任林之间配置声明转换。 你将了解如何创建声明转换策略对象并将其链接到信任林和受信任林的信任。 然后，将验证方案。
 
-## <a name="scenario-overview"></a>方案概述  
-Adatum 公司向 Contoso，公司提供金融服务。每个季度，Adatum 会计将其帐户电子表格复制到位于 Contoso，有限公司中的文件服务器上的一个文件夹中。从 Contoso 到 Adatum 有双向信任设置。 Contoso，有限公司需要保护共享，以便只有 Adatum 员工才能访问远程共享。  
+## <a name="scenario-overview"></a>方案概述
+Adatum 公司向 Contoso，公司提供金融服务。每个季度，Adatum 会计将其帐户电子表格复制到位于 Contoso，有限公司中的文件服务器上的一个文件夹中。从 Contoso 到 Adatum 有双向信任设置。 Contoso，有限公司需要保护共享，以便只有 Adatum 员工才能访问远程共享。
 
-在此方案中：  
+在本方案中：
 
-1.  [设置先决条件和测试环境](Deploy-Claims-Across-Forests--Demonstration-Steps-.md#BKMK_1.1)  
+1.  [设置先决条件和测试环境](Deploy-Claims-Across-Forests--Demonstration-Steps-.md#BKMK_1.1)
 
-2.  [在受信任林（Adatum）上设置声明转换](Deploy-Claims-Across-Forests--Demonstration-Steps-.md#BKMK_3)  
+2.  [在受信任林 (Adatum) 上设置声明转换](Deploy-Claims-Across-Forests--Demonstration-Steps-.md#BKMK_3)
 
-3.  [在信任林中设置声明转换（Contoso）](Deploy-Claims-Across-Forests--Demonstration-Steps-.md#BKMK_4)  
+3.  [设置信任林中的声明转换 (Contoso) ](Deploy-Claims-Across-Forests--Demonstration-Steps-.md#BKMK_4)
 
-4.  [验证方案](Deploy-Claims-Across-Forests--Demonstration-Steps-.md#BKMK_5)  
+4.  [验证方案](Deploy-Claims-Across-Forests--Demonstration-Steps-.md#BKMK_5)
 
-## <a name="set-up-the-prerequisites-and-the-test-environment"></a><a name="BKMK_1.1"></a>设置先决条件和测试环境  
-测试配置包括设置两个林： Adatum 公司和 Contoso，公司，以及在 Contoso 与 Adatum 之间具有双向信任关系。 "adatum.com" 是受信任的林，而 "contoso.com" 是信任林。  
+## <a name="set-up-the-prerequisites-and-the-test-environment"></a><a name="BKMK_1.1"></a>设置先决条件和测试环境
+测试配置包括设置两个林： Adatum 公司和 Contoso，公司，以及在 Contoso 与 Adatum 之间具有双向信任关系。 "adatum.com" 是受信任的林，而 "contoso.com" 是信任林。
 
-声明转换方案演示如何将受信任林中的声明转换为信任林中的声明。 为此，需要设置一个名为 adatum.com 的新林，并使用公司值为 "Adatum" 的测试用户填充该林。 然后，必须设置 contoso.com 和 adatum.com 之间的双向信任。  
+声明转换方案演示如何将受信任林中的声明转换为信任林中的声明。 为此，需要设置一个名为 adatum.com 的新林，并使用公司值为 "Adatum" 的测试用户填充该林。 然后，必须设置 contoso.com 和 adatum.com 之间的双向信任。
 
-> [!IMPORTANT]  
-> 设置 Contoso 和 Adatum 林时，必须确保两个根域都处于 Windows Server 2012 域功能级别，这样声明转换才能工作。  
+> [!IMPORTANT]
+> 设置 Contoso 和 Adatum 林时，必须确保两个根域都处于 Windows Server 2012 域功能级别，这样声明转换才能工作。
 
-需要为实验室设置以下各项。 [附录 B：设置测试环境](Appendix-B--Setting-Up-the-Test-Environment.md)中详细说明了这些过程  
+需要为实验室设置以下各项。 [附录 B：设置测试环境](Appendix-B--Setting-Up-the-Test-Environment.md)中详细说明了这些过程
 
-需要执行以下过程来为此方案设置实验室：  
+需要执行以下过程来为此方案设置实验室：
 
-1.  [将 Adatum 设置为受信任的林到 Contoso](Appendix-B--Setting-Up-the-Test-Environment.md)  
+1.  [将 Adatum 设置为受信任的林到 Contoso](Appendix-B--Setting-Up-the-Test-Environment.md)
 
-2.  [在 Contoso 上创建 "公司" 声明类型](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.8)  
+2.  [在 Contoso 上创建 "公司" 声明类型](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.8)
 
-3.  [启用 Contoso 上的 "公司" 资源属性](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.55)  
+3.  [启用 Contoso 上的 "公司" 资源属性](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.55)
 
-4.  [创建中心访问规则](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.9)  
+4.  [创建中心访问规则](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.9)
 
-5.  [创建中心访问策略](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.10)  
+5.  [创建中心访问策略](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.10)
 
-6.  [通过组策略发布新策略](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.11)  
+6.  [通过组策略发布新策略](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.11)
 
-7.  [在文件服务器上创建收益文件夹](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.12)  
+7.  [在文件服务器上创建 Earnings 文件夹](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.12)
 
-8.  [对新文件夹设置分类并应用中心访问策略](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.13)  
+8.  [对新文件夹设置分类并应用中心访问策略](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_2.13)
 
-使用以下信息来完成此方案：  
+使用以下信息来完成此方案：
 
-|对象|详细信息|  
-|-----------|-----------|  
-|Users|张颖，Contoso|  
-|用于 Adatum 和 Contoso 的用户声明|ID： ad://ext/Company:ContosoAdatum、<p>源属性：公司<p>建议的值： Contoso，Adatum**重要说明：** 必须将 Contoso 和 Adatum 上 "公司" 声明类型的 ID 设置为相同的，声明转换才能工作。|  
-|Contoso 上的中心访问规则|AdatumEmployeeAccessRule|  
-|Contoso 上的中心访问策略|仅限 Adatum 访问策略|  
-|Adatum 和 Contoso 上的声明转换策略|DenyAllExcept 公司|  
-|Contoso 上的文件文件夹|D:\EARNINGS|  
+|对象|详细信息|
+|-----------|-----------|
+|用户|张颖，Contoso|
+|用于 Adatum 和 Contoso 的用户声明|ID： ad://ext/Company:ContosoAdatum、<p>源属性：公司<p>建议的值： Contoso，Adatum**重要说明：** 必须将 Contoso 和 Adatum 上 "公司" 声明类型的 ID 设置为相同的，声明转换才能工作。|
+|Contoso 上的中心访问规则|AdatumEmployeeAccessRule|
+|Contoso 上的中心访问策略|仅限 Adatum 访问策略|
+|Adatum 和 Contoso 上的声明转换策略|DenyAllExcept 公司|
+|Contoso 上的文件文件夹|D:\EARNINGS|
 
-## <a name="set-up-claims-transformation-on-trusted-forest-adatum"></a><a name="BKMK_3"></a>在受信任林（Adatum）上设置声明转换  
-在此步骤中，你将在 Adatum 中创建转换策略，拒绝除 "Company" 之外的所有声明传递给 Contoso。  
+## <a name="set-up-claims-transformation-on-trusted-forest-adatum"></a><a name="BKMK_3"></a>在受信任林 (Adatum) 上设置声明转换
+在此步骤中，你将在 Adatum 中创建转换策略，拒绝除 "Company" 之外的所有声明传递给 Contoso。
 
-Windows PowerShell 的 Active Directory 模块提供了**DenyAllExcept**参数，该参数删除转换策略中除指定声明之外的所有内容。  
+Windows PowerShell 的 Active Directory 模块提供了**DenyAllExcept**参数，该参数删除转换策略中除指定声明之外的所有内容。
 
-若要设置声明转换，需要创建一个声明转换策略，并将其链接到受信任的林和信任的林。  
+若要设置声明转换，需要创建一个声明转换策略，并将其链接到受信任的林和信任的林。
 
-### <a name="create-a-claims-transformation-policy-in-adatum"></a><a name="BKMK_2.2"></a>在 Adatum 中创建声明转换策略  
+### <a name="create-a-claims-transformation-policy-in-adatum"></a><a name="BKMK_2.2"></a>在 Adatum 中创建声明转换策略
 
-##### <a name="to-create-a-transformation-policy-adatum-to-deny-all-claims-except-company"></a>创建转换策略 Adatum 以拒绝除 "公司" 之外的所有声明  
+##### <a name="to-create-a-transformation-policy-adatum-to-deny-all-claims-except-company"></a>创建转换策略 Adatum 以拒绝除 "公司" 之外的所有声明
 
-1. 以管理员身份登录到域控制器，并<strong>pass@word1密码</strong>。  
+1. 以管理员身份登录到域控制器，adatum.com 密码 <strong>pass@word1</strong> 。
 
-2. 在 Windows PowerShell 中打开提升的命令提示符，然后键入以下命令：  
+2. 在 Windows PowerShell 中打开提升的命令提示符，然后键入以下命令：
 
-   ```  
-   New-ADClaimTransformPolicy `  
-   -Description:"Claims transformation policy to deny all claims except Company"`  
-   -Name:"DenyAllClaimsExceptCompanyPolicy" `  
-   -DenyAllExcept:company `  
-   -Server:"adatum.com" `  
+   ```
+   New-ADClaimTransformPolicy `
+   -Description:"Claims transformation policy to deny all claims except Company"`
+   -Name:"DenyAllClaimsExceptCompanyPolicy" `
+   -DenyAllExcept:company `
+   -Server:"adatum.com" `
 
-   ```  
+   ```
 
-### <a name="set-a-claims-transformation-link-on-adatums-trust-domain-object"></a><a name="BKMK_2.3"></a>在 Adatum 的信任域对象上设置声明转换链接  
-在此步骤中，将对 Contoso 的 Adatum 信任域对象应用新创建的声明转换策略。  
+### <a name="set-a-claims-transformation-link-on-adatums-trust-domain-object"></a><a name="BKMK_2.3"></a>在 Adatum 的信任域对象上设置声明转换链接
+在此步骤中，将对 Contoso 的 Adatum 信任域对象应用新创建的声明转换策略。
 
-##### <a name="to-apply-the-claims-transformation-policy"></a>应用声明转换策略  
+##### <a name="to-apply-the-claims-transformation-policy"></a>应用声明转换策略
 
-1. 以管理员身份登录到域控制器，并<strong>pass@word1密码</strong>。  
+1. 以管理员身份登录到域控制器，adatum.com 密码 <strong>pass@word1</strong> 。
 
-2. 在 Windows PowerShell 中打开提升的命令提示符，然后键入以下命令：  
+2. 在 Windows PowerShell 中打开提升的命令提示符，然后键入以下命令：
 
-   ```  
+   ```
 
-     Set-ADClaimTransformLink `  
-   -Identity:"contoso.com" `  
-   -Policy:"DenyAllClaimsExceptCompanyPolicy" `  
-   '"TrustRole:Trusted `  
+     Set-ADClaimTransformLink `
+   -Identity:"contoso.com" `
+   -Policy:"DenyAllClaimsExceptCompanyPolicy" `
+   '"TrustRole:Trusted `
 
-   ```  
+   ```
 
-## <a name="set-up-claims-transformation-in-the-trusting-forest-contoso"></a><a name="BKMK_4"></a>在信任林中设置声明转换（Contoso）  
-在此步骤中，将在 Contoso （信任林）中创建声明转换策略，拒绝除 "公司" 之外的所有声明。 需要创建声明转换策略，并将其链接到林信任。  
+## <a name="set-up-claims-transformation-in-the-trusting-forest-contoso"></a><a name="BKMK_4"></a>设置信任林中的声明转换 (Contoso) 
+在此步骤中，会在 Contoso (信任林) 拒绝除 "公司" 之外的所有声明。 需要创建声明转换策略，并将其链接到林信任。
 
-### <a name="create-a-claims-transformation-policy-in-contoso"></a><a name="BKMK_4.1"></a>在 Contoso 中创建声明转换策略  
+### <a name="create-a-claims-transformation-policy-in-contoso"></a><a name="BKMK_4.1"></a>在 Contoso 中创建声明转换策略
 
-##### <a name="to-create-a-transformation-policy-adatum-to-deny-all-except-company"></a>创建转换策略 Adatum 以拒绝除 "公司" 之外的所有  
+##### <a name="to-create-a-transformation-policy-adatum-to-deny-all-except-company"></a>创建转换策略 Adatum 以拒绝除 "公司" 之外的所有
 
-1. 以管理员身份登录到域控制器，并<strong>pass@word1密码</strong>。  
+1. 以管理员身份登录到域控制器，contoso.com 密码 <strong>pass@word1</strong> 。
 
-2. 在 Windows PowerShell 中打开提升的命令提示符，然后键入以下命令：  
+2. 在 Windows PowerShell 中打开提升的命令提示符，然后键入以下命令：
 
-   ```  
-   New-ADClaimTransformPolicy `  
-   -Description:"Claims transformation policy to deny all claims except company" `  
-   -Name:"DenyAllClaimsExceptCompanyPolicy" `  
-   -DenyAllExcept:company `  
-   -Server:"contoso.com" `  
+   ```
+   New-ADClaimTransformPolicy `
+   -Description:"Claims transformation policy to deny all claims except company" `
+   -Name:"DenyAllClaimsExceptCompanyPolicy" `
+   -DenyAllExcept:company `
+   -Server:"contoso.com" `
 
-   ```  
+   ```
 
-### <a name="set-a-claims-transformation-link-on-contosos-trust-domain-object"></a><a name="BKMK_4.2"></a>在 Contoso 的信任域对象上设置声明转换链接  
-在此步骤中，将对 Adatum 应用 contoso.com 信任域对象上新创建的声明转换策略，以允许 "公司" 传递到 contoso.com。 信任域对象命名为 adatum.com。  
+### <a name="set-a-claims-transformation-link-on-contosos-trust-domain-object"></a><a name="BKMK_4.2"></a>在 Contoso 的信任域对象上设置声明转换链接
+在此步骤中，将对 Adatum 应用 contoso.com 信任域对象上新创建的声明转换策略，以允许 "公司" 传递到 contoso.com。 信任域对象命名为 adatum.com。
 
-##### <a name="to-set-the-claims-transformation-policy"></a>设置声明转换策略  
+##### <a name="to-set-the-claims-transformation-policy"></a>设置声明转换策略
 
-1. 以管理员身份登录到域控制器，并<strong>pass@word1密码</strong>。  
+1. 以管理员身份登录到域控制器，contoso.com 密码 <strong>pass@word1</strong> 。
 
-2. 在 Windows PowerShell 中打开提升的命令提示符，然后键入以下命令：  
+2. 在 Windows PowerShell 中打开提升的命令提示符，然后键入以下命令：
 
-   ```  
+   ```
 
-     Set-ADClaimTransformLink   
-   -Identity:"adatum.com" `  
-   -Policy:"DenyAllClaimsExceptCompanyPolicy" `  
-   -TrustRole:Trusting `  
+     Set-ADClaimTransformLink
+   -Identity:"adatum.com" `
+   -Policy:"DenyAllClaimsExceptCompanyPolicy" `
+   -TrustRole:Trusting `
 
-   ```  
+   ```
 
-## <a name="validate-the-scenario"></a><a name="BKMK_5"></a>验证方案  
-在此步骤中，尝试访问在文件服务器 FILE1 上设置的 D:\EARNINGS 文件夹，以验证用户是否有权访问共享文件夹。  
+## <a name="validate-the-scenario"></a><a name="BKMK_5"></a>验证方案
+在此步骤中，尝试访问在文件服务器 FILE1 上设置的 D:\EARNINGS 文件夹，以验证用户是否有权访问共享文件夹。
 
-#### <a name="to-ensure-that-the-adatum-user-can-access-the-shared-folder"></a>确保 Adatum 用户可以访问共享文件夹  
+#### <a name="to-ensure-that-the-adatum-user-can-access-the-shared-folder"></a>确保 Adatum 用户可以访问共享文件夹
 
-1. 登录到客户端计算机，CLIENT1 为 Jeff Low，密码<strong>pass@word1</strong>。  
+1. 登录到客户端计算机，CLIENT1 为 Jeff Low，并提供密码 <strong>pass@word1</strong> 。
 
-2. 浏览到 \\\FILE1.contoso.com\Earnings. 的文件夹  
+2. 浏览到文件夹 \\ \FILE1.contoso.com\Earnings。
 
-3. Jeff Low 应能访问该文件夹。  
+3. Jeff Low 应能访问该文件夹。
 
-## <a name="additional-scenarios-for-claims-transformation-policies"></a>声明转换策略的其他方案  
-下面是声明转换中的其他常见情况的列表。  
+## <a name="additional-scenarios-for-claims-transformation-policies"></a>声明转换策略的其他方案
+下面是声明转换中的其他常见情况的列表。
 
 
 |                                                 方案                                                 |                                                                                                                                                                                                                                           策略                                                                                                                                                                                                                                            |
 |----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                  允许来自 Adatum 的所有声明进入 Contoso Adatum                  |                                                          编写 <br />ADClaimTransformPolicy \`<br /> -Description： "声明转换策略以允许所有声明" \`<br />-Name： "AllowAllClaimsPolicy" \`<br />-AllowAll \`<br />-Server:"contoso" \`<br />ADClaimTransformLink \`<br />-Identity:"adatum" \`<br />-Policy： "AllowAllClaimsPolicy" \`<br />-TrustRole：信任 \`<br />-Server:"contoso" \`                                                          |
-|                  拒绝来自 Adatum 的所有声明，使其进入 Contoso Adatum                   |                                                            编写 <br />ADClaimTransformPolicy \`<br />-Description： "声明转换策略以拒绝所有声明" \`<br />-Name： "DenyAllClaimsPolicy" \`<br /> -DenyAll \`<br />-Server:"contoso" \`<br />ADClaimTransformLink \`<br />-Identity:"adatum" \`<br />-Policy： "DenyAllClaimsPolicy" \`<br />-TrustRole：信任 \`<br />-Server:"contoso"\`                                                             |
-| 允许来自 Adatum 的所有声明（"公司" 和 "部门" 除外）进入 Contoso Adatum | 代码 <br />-ADClaimTransformationPolicy \`<br />-Description： "声明转换策略以允许除公司和部门之外的所有声明" \`<br /> -Name： "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br />-AllowAllExcept： company，部门 \`<br />-Server:"contoso" \`<br />ADClaimTransformLink \`<br /> -Identity:"adatum" \`<br />-Policy： "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br /> -TrustRole：信任 \`<br />-Server:"contoso" \` |
+|                  允许来自 Adatum 的所有声明进入 Contoso Adatum                  |                                                          编写 <br />新-ADClaimTransformPolicy\`<br /> -Description： "声明转换策略以允许所有声明"\`<br />-Name： "AllowAllClaimsPolicy"\`<br />-AllowAll\`<br />-Server:"contoso"\`<br />ADClaimTransformLink\`<br />-Identity:"adatum\`<br />-Policy： "AllowAllClaimsPolicy"\`<br />-TrustRole：信任\`<br />-Server:"contoso"\`                                                          |
+|                  拒绝来自 Adatum 的所有声明，使其进入 Contoso Adatum                   |                                                            编写 <br />新-ADClaimTransformPolicy\`<br />-Description： "声明转换策略以拒绝所有声明"\`<br />-Name： "DenyAllClaimsPolicy"\`<br /> -DenyAll\`<br />-Server:"contoso"\`<br />ADClaimTransformLink\`<br />-Identity:"adatum\`<br />-Policy： "DenyAllClaimsPolicy"\`<br />-TrustRole：信任\`<br />-Server:"contoso"\`                                                             |
+| 允许来自 Adatum 的所有声明（"公司" 和 "部门" 除外）进入 Contoso Adatum | 代码 <br />-New-ADClaimTransformationPolicy\`<br />-Description： "声明转换策略以允许除公司和部门之外的所有声明"\`<br /> -Name： "AllowAllClaimsExceptCompanyAndDepartmentPolicy"\`<br />-AllowAllExcept： company，部门\`<br />-Server:"contoso"\`<br />ADClaimTransformLink\`<br /> -Identity:"adatum\`<br />-Policy： "AllowAllClaimsExceptCompanyAndDepartmentPolicy"\`<br /> -TrustRole：信任\`<br />-Server:"contoso"\` |
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅  
+## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅
 
--   有关可用于声明转换的所有 Windows PowerShell cmdlet 的列表，请参阅[Active Directory PowerShell Cmdlet 参考](https://go.microsoft.com/fwlink/?LinkId=243150)。  
+-   有关可用于声明转换的所有 Windows PowerShell cmdlet 的列表，请参阅[Active Directory PowerShell Cmdlet 参考](https://go.microsoft.com/fwlink/?LinkId=243150)。
 
--   对于涉及在两个林之间导出和导入 DAC 配置信息的高级任务，请使用[动态访问控制 PowerShell 参考](https://go.microsoft.com/fwlink/?LinkId=243150)  
+-   对于涉及在两个林之间导出和导入 DAC 配置信息的高级任务，请使用[动态访问控制 PowerShell 参考](https://go.microsoft.com/fwlink/?LinkId=243150)
 
--   [跨林部署声明](Deploy-Claims-Across-Forests.md)  
+-   [跨林部署声明](Deploy-Claims-Across-Forests.md)
 
--   [声明转换规则语言](Claims-Transformation-Rules-Language.md)  
+-   [声明转换规则语言](Claims-Transformation-Rules-Language.md)
 
--   [动态访问控制：方案概述](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [动态访问控制：方案概述](Dynamic-Access-Control--Scenario-Overview.md)
 
 

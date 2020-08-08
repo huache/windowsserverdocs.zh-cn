@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dbfaea12444de607cc28a33be334f86ee273d78
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1293abac44cc648442939784ed5bb2b8049e702f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945860"
+ms.locfileid: "87992867"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>在故障转移群集中使用群集共享卷
 
@@ -45,7 +45,7 @@ Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权、通�
 
 - **多个网络和多个网络适配器**。 若要在发生网络故障时启用容错能力，我们建议多个群集网络执行 CSV 通信，或者配置成组网络适配器。
 
-    如果群集节点已连接到不应由该群集使用的网络，则应该禁用它们。 例如，我们建议你禁用 iSCSI 网络，以供群集禁止这些网络上的 CSV 通信。 若要禁用网络，请在故障转移群集管理器中 **，选择 "网络"，** 选择 "网络"，选择 "**属性**" 操作，然后选择 "不**允许在此网络上进行群集网络通信"**。 或者，你可以使用[Get-clusternetwork](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) Windows PowerShell cmdlet 配置网络的**角色**属性。
+    如果群集节点已连接到不应由该群集使用的网络，则应该禁用它们。 例如，我们建议你禁用 iSCSI 网络，以供群集禁止这些网络上的 CSV 通信。 若要禁用网络，请在故障转移群集管理器中 **，选择 "网络"，** 选择 "网络"，选择 "**属性**" 操作，然后选择 "不**允许在此网络上进行群集网络通信"**。 或者，你可以使用[Get-clusternetwork](/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) Windows PowerShell cmdlet 配置网络的**角色**属性。
 - **网络适配器属性**。 在执行群集通信的所有适配器的属性中，确保以下设置处于启用状态：
 
   - “Microsoft 网络的客户端”**** 和“Microsoft 网络的文件和打印机共享”****。 这些设置支持服务器消息块 (SMB) 3.0，默认情况下用于在节点之间执行 CSV 通信。 若要启用 SMB，还请确保服务器服务和工作站服务正在运行，并且将它们配置为在每个群集节点上自动启动。
@@ -64,7 +64,7 @@ Windows Server 2012 R2 引入了附加功能，如分布式 CSV 所有权、通�
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>有关 CSV 通信中的 I/O 同步和 I/O 重定向
 
-- **I/o 同步**： CSV 允许多个节点同时具有对同一共享存储的读写访问权限。 当某个节点在 CSV 卷上执行磁盘输入/输出 (I/O) 时，该节点将直接与存储进行通信（例如，通过存储区域网络 (SAN)）。 但是，在任何时候，称为协调器节点的单个节点 () "拥有" 与该 LUN 关联的物理磁盘资源。 CSV 卷的协调器节点作为“磁盘”**** 下的“所有者节点”**** 显示在故障转移群集管理器中。 它还显示在[Add-clustersharedvolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell cmdlet 的输出中。
+- **I/o 同步**： CSV 允许多个节点同时具有对同一共享存储的读写访问权限。 当某个节点在 CSV 卷上执行磁盘输入/输出 (I/O) 时，该节点将直接与存储进行通信（例如，通过存储区域网络 (SAN)）。 但是，在任何时候，称为协调器节点的单个节点 () "拥有" 与该 LUN 关联的物理磁盘资源。 CSV 卷的协调器节点作为“磁盘”**** 下的“所有者节点”**** 显示在故障转移群集管理器中。 它还显示在[Add-clustersharedvolume](/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell cmdlet 的输出中。
 
   >[!NOTE]
   >在 Windows Server 2012 R2 中，CSV 所有权根据每个节点所拥有的 CSV 卷的数量均匀地分布在故障转移群集节点上。 此外，当存在以下条件时自动重新平衡所有权：CSV 故障转移、某个节点重新加入该群集、将新节点添加到该群集、重新启动群集节点，或者在关闭故障转移群集后启动该群集。
@@ -256,5 +256,5 @@ CSV 缓存通过将系统内存 (RAM) 分配为直写缓存，在只读无缓冲
 
 ## <a name="more-information"></a>更多信息
 
-- [故障转移群集](failover-clustering.md)
+- [故障转移群集](./failover-clustering-overview.md)
 - [部署群集存储空间](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)

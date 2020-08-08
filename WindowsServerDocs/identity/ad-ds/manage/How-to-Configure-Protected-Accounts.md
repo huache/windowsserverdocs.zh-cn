@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e16e08517285bc80c6913d96781fdbb84c3bce14
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 08065e153a7f0c09e305e87fc2d745b3daa0b3f0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518984"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943866"
 ---
 # <a name="guidance-about-how-to-configure-protected-accounts"></a>有关如何配置受保护帐户的指南
 
@@ -58,7 +56,7 @@ Protected Users 是一个新的全局安全组，你可以向该组添加新用�
 
 -   在超出最初的 4 小时生存期后续订用户票证 (TGT)
 
-若要将用户添加到该组，可以使用[UI 工具](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753515(v=ws.11))（如 ACTIVE DIRECTORY 管理中心（ADAC）或 Active Directory 用户和计算机）或命令行工具（如[Dsmod 组](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732423(v=ws.11))）或 Windows PowerShell[add-adgroupmember](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617210(v=technet.10)) cmdlet。 服务和计算机的帐户*不应*是受保护用户组的成员。 这些帐户的成员身份不提供本地保护，因为密码或证书在主机上始终可用。
+若要将用户添加到该组，可以使用[UI 工具](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753515(v=ws.11))（如 ACTIVE DIRECTORY 管理中心 (ADAC) 或 Active Directory 用户和计算机）或命令行工具（如[Dsmod 组](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732423(v=ws.11))）或 Windows PowerShell[add-adgroupmember](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617210(v=technet.10)) cmdlet。 服务和计算机的帐户*不应*是受保护用户组的成员。 这些帐户的成员身份不提供本地保护，因为密码或证书在主机上始终可用。
 
 > [!WARNING]
 > 身份验证限制没有规避方法，这意味着权限较高的组（例如 Enterprise Admins 组或 Domain Admins 组）的成员受到的限制与 Protected Users 组的其他成员一样。 如果此类组的所有成员都添加到受保护的用户组中，则可以锁定所有这些帐户。在全面测试潜在影响之前，永远不应将所有权限较高的帐户添加到受保护的用户组中。
@@ -74,7 +72,7 @@ Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerbe
 ### <a name="requirements-for-using-protected-accounts"></a><a name="BKMK_Prereq"></a>关于使用受保护帐户的要求
 受保护帐户具有以下部署要求：
 
--   若要为受保护用户提供客户端限制，主机必须运行 Windows 8.1 或 Windows Server 2012 R2。 用户仅需使用作为 Protected Users 组成员的帐户进行登录。 在这种情况下，可以通过将[主域控制器（PDC）模拟器角色传输](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10))到运行 Windows Server 2012 R2 的域控制器来创建受保护的用户组。 将该组对象复制到其他域控制器后，PDC 模拟器角色可以托管在运行较早版本的 Windows Server 的域控制器上。
+-   若要为受保护用户提供客户端限制，主机必须运行 Windows 8.1 或 Windows Server 2012 R2。 用户仅需使用作为 Protected Users 组成员的帐户进行登录。 在这种情况下，可以通过将[主域控制器 (PDC) 模拟器角色传输](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10))到运行 Windows Server 2012 R2 的域控制器来创建受保护的用户组。 将该组对象复制到其他域控制器后，PDC 模拟器角色可以托管在运行较早版本的 Windows Server 的域控制器上。
 
 -   若要为受保护用户提供域控制器端限制（即限制使用 NTLM 身份验证）和其他限制，域功能级别必须是 Windows Server 2012 R2。 有关功能级别的详细信息，请参阅 [了解 Active Directory 域服务 (AD DS) 功能级别](../active-directory-functional-levels.md)。
 
@@ -111,7 +109,7 @@ Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerbe
 
 -   拒绝 NTLM 身份验证：仅可通过 [NTLM 块策略](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/jj865674(v=ws.10))进行配置
 
--   在 Kerberos 预身份验证中拒绝数据加密标准（DES）： Windows Server 2012 R2 域控制器不会接受计算机帐户的 DES，除非仅为 DES 配置这些帐户，因为随 Kerberos 一起发布的每个版本的 Windows 还支持 RC4。
+-   拒绝 Kerberos 预身份验证中的数据加密标准 (DES) ： Windows Server 2012 R2 域控制器不会接受计算机帐户的 DES，除非仅为 DES 配置了 DES，因为随 Kerberos 一起发布的每个版本的 Windows 还支持 RC4。
 
 -   在 Kerberos 预身份验证中拒绝 RC4：不可配置。
 
@@ -127,7 +125,7 @@ Protected Users 组的成员必须能够使用高级加密标准 (AES) 的 Kerbe
 ## <a name="authentication-policies"></a><a name="BKMK_CreateAuthNPolicies"></a>身份验证策略
 身份验证策略是 AD DS 中包含身份验证策略对象的一个新容器。 身份验证策略可以指定帮助减少凭据被盗风险的设置，例如限制帐户的 TGT 生存期或添加其他与声明相关的条件。
 
-在 Windows Server 2012 中，动态访问控制引入了名为 "中心访问策略" Active Directory 林范围的对象类，以提供一种跨组织配置文件服务器的简单方式。 在 Windows Server 2012 R2 中，可以使用一个名为 "身份验证策略" （objectClass Msds-authnpolicies）的新对象类将身份验证配置应用于 Windows Server 2012 R2 域中的帐户类。 Active Directory 帐户类包括：
+在 Windows Server 2012 中，动态访问控制引入了名为 "中心访问策略" Active Directory 林范围的对象类，以提供一种跨组织配置文件服务器的简单方式。 在 Windows Server 2012 R2 中，名为 "身份验证策略" 的新对象类 (objectClass Msds-authnpolicies) 可用于将身份验证配置应用到 Windows Server 2012 R2 域中的帐户类。 Active Directory 帐户类包括：
 
 -   用户
 
@@ -146,7 +144,7 @@ Kerberos 身份验证协议包括三种类型的交换（也称为子协议）�
 
 -   客户端/服务器 (AP) 交换 (KRB_AP_*）
 
-作为 exchange 的客户端使用帐户的密码或私钥创建预身份验证器，以请求票证授予票证（TGT）。 此情况在用户登录或首次需要服务票证时发生。
+作为 exchange 的客户端使用帐户的密码或私钥创建预身份验证器，以请求票证授予票证 (TGT) 。 此情况在用户登录或首次需要服务票证时发生。
 
 在 TGS 交换中，帐户的 TGT 用于创建身份验证器，以请求服务票证。 此情况在需要经过验证的连接时发生。
 
@@ -183,7 +181,7 @@ AP 交换的发生频率与应用程序协议的中数据相同，并且不受�
 
 #### <a name="configure-domain-controller-support"></a>配置域控制器支持
 
-用户的帐户域必须位于 Windows Server 2012 R2 域功能级别（DFL）。 确保所有域控制器都为 Windows Server 2012 R2，然后使用 Active Directory 域和信任关系将[DFL 提升](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))为 windows Server 2012 R2。
+用户的帐户域必须位于 Windows Server 2012 R2 域功能级别 (DFL) 。 确保所有域控制器都为 Windows Server 2012 R2，然后使用 Active Directory 域和信任关系将[DFL 提升](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))为 windows Server 2012 R2。
 
 **配置对动态访问控制的支持的步骤**
 
@@ -298,7 +296,7 @@ AP 交换的发生频率与应用程序协议的中数据相同，并且不受�
 ##### <a name="troubleshoot-missing-computer-claims"></a>解决丢失计算机声明的问题
 如果已设置该声明，但不可用，则可能仅针对“计算机”**** 类配置了它。
 
-假设你想要根据计算机的组织单位（OU）限制身份验证，该计算机已配置，但仅适用于**计算机**类。
+假设你想要基于计算机上已配置的组织单位 (OU) 来限制身份验证，但仅适用于**计算机**类。
 
 ![受保护帐户](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictComputers.gif)
 

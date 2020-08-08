@@ -7,12 +7,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: 如何使用 Microsoft Azure 在云中托管 Windows Server 故障转移群集的见证服务器，亦即如何部署云见证。
-ms.openlocfilehash: 937fb6c2d4aaabfd6399a6bebdce50e351b78fc6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fa0fee044b0a5e702cb56816bf9a878f209d6117
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950191"
+ms.locfileid: "87993011"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>部署故障转移群集的云见证
 
@@ -111,7 +111,7 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
 ![云见证终结点链接的快照 ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_5.png)
  **图5：云见证终结点 URL 链接**
 
-有关创建和管理 Azure 存储帐户的详细信息，请参阅[关于 Azure 存储帐户](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)
+有关创建和管理 Azure 存储帐户的详细信息，请参阅[关于 Azure 存储帐户](/azure/storage/common/storage-account-create)
 
 ## <a name="configure-cloud-witness-as-a-quorum-witness-for-your-cluster"></a>将云见证配置为群集的仲裁见证
 云见证配置在内置于故障转移群集管理器中的现有仲裁配置向导中进行了良好的集成。
@@ -146,7 +146,7 @@ Cloud 见证是一种新的故障转移群集仲裁见证，它利用 Microsoft 
 ### <a name="configuring-cloud-witness-using-powershell"></a>使用 PowerShell 配置云见证
 现有的 Set-clusterquorum PowerShell 命令具有与云见证相对应的新附加参数。
 
-可以使用 [`Set-ClusterQuorum`](https://technet.microsoft.com/library/ee461013.aspx) 以下 PowerShell 命令配置云见证：
+可以使用 [`Set-ClusterQuorum`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee461013(v=technet.10)) 以下 PowerShell 命令配置云见证：
 
 ```PowerShell
 Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <StorageAccountAccessKey>

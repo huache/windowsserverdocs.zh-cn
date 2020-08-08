@@ -6,20 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: a8061aa6488c97211506d321d0b38b1360be97eb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9601ead1621aef187aaf6dfed83e31184e61e0d4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960579"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953282"
 ---
 # <a name="clean-up-active-directory-domain-controller-server-metadata"></a>清理 Active Directory 域控制器服务器元数据
 
 适用于：Windows Server
 
-在强制删除 Active Directory 域服务（AD DS）后，元数据清除是必需的过程。 在已强制删除的域控制器的域中的域控制器上执行元数据清除。 元数据清除将从标识域控制器的 AD DS 中删除数据到复制系统。 元数据清除还会删除文件复制服务（FRS）和分布式文件系统（DFS）复制连接，并尝试传输或获取已停用域控制器持有的任何操作主机（也称为灵活单主机操作或 FSMO）角色。
+在强制删除 Active Directory 域服务 (AD DS) 后，元数据清除是必需的过程。 在已强制删除的域控制器的域中的域控制器上执行元数据清除。 元数据清除将从标识域控制器的 AD DS 中删除数据到复制系统。 元数据清除还会删除文件复制服务 (FRS) 并分布式文件系统 (DFS) 复制连接，并尝试传输或获取已停用的域控制器所持有的任何操作主机 (（也称为灵活单主机操作或 FSMO) 角色）。
 
 有三个选项可用于清理服务器元数据：
 
@@ -32,9 +30,9 @@ ms.locfileid: "86960579"
 
 ## <a name="clean-up-server-metadata-using-gui-tools"></a>使用 GUI 工具清理服务器元数据
 
-使用 Windows Server 附带的远程服务器管理工具（RSAT）或 Active Directory 用户和计算机控制台（Dsa.msc）从域控制器组织单位（OU）中删除域控制器计算机帐户时，将自动执行服务器元数据的清除。 在 Windows Server 2008 之前，必须执行单独的元数据清理过程。
+使用远程服务器管理工具 (RSAT) 或 Windows Server 中包含的 Active Directory 用户和计算机控制台 (使用 Windows Server 删除域控制器计算机帐户时) OU (中，会自动执行服务器元数据的清除。 在 Windows Server 2008 之前，必须执行单独的元数据清理过程。
 
-你还可以使用 Active Directory 站点和服务控制台（Dssite.msc）删除域控制器的计算机帐户，这也会自动完成元数据清理。 但是，仅当首次在 Dssite.msc 中的计算机帐户下删除 NTDS 设置对象时，Active Directory 站点和服务才会自动删除元数据。
+你还可以使用 Active Directory 站点和服务控制台 (Dssite.msc) 删除域控制器的计算机帐户，这也会自动完成元数据清理。 但是，仅当首次在 Dssite.msc 中的计算机帐户下删除 NTDS 设置对象时，Active Directory 站点和服务才会自动删除元数据。
 
 只要您使用的是 Windows Server 2008 或更高版本的 Dsa.msc 或 Dssite.msc，就可以为运行早期版本的 Windows 操作系统的域控制器自动清除元数据。
 
@@ -42,12 +40,12 @@ ms.locfileid: "86960579"
 
 ## <a name="clean-up-server-metadata-using-activedirectory-users-and-computers"></a>使用 Active Directory 用户和计算机清除服务器元数据
 
-1. 打开“Active Directory 用户和计算机”。
+1. 打开“Active Directory 用户和计算机” 。
 2. 如果已确定复制伙伴准备执行此过程，并且没有连接到已删除的域控制器的复制伙伴，并且该控制器的元数据已被清除，则右键单击**Active Directory 用户和计算机**"节点，然后单击"**更改域控制器**"。 单击要删除其元数据的域控制器的名称，然后单击 **"确定"**。
 3. 展开已被强制删除的域控制器的域，然后单击 "**域控制器**"。
 4. 在详细信息窗格中，右键单击要清除其元数据的域控制器的计算机对象，然后单击 "**删除**"。
 5. 在 " **Active Directory 域服务**" 对话框中，确认要删除的域控制器的名称已显示，并单击 **"是"** 确认删除计算机对象。
-6. 在 "**删除域控制器**" 对话框中，选择 "**此域控制器永久脱机，不能再使用 Active Directory 域服务安装向导（DCPROMO）降级**"，然后单击 "**删除**"。
+6. 在 "**删除域控制器**" 对话框中，选择 "**此域控制器永久脱机，不能再使用 Active Directory 域服务安装向导 (DCPROMO) 降级**"，然后单击 "**删除**"。
 7. 如果域控制器是全局编录服务器，请在 "**删除域控制器**" 对话框中，单击 **"是"** 继续删除。
 8. 如果域控制器当前包含一个或多个操作主机角色，请单击 **"确定"** 将该角色或角色移至显示的域控制器。 不能更改此域控制器。 如果要将该角色移到另一个域控制器，则必须在完成服务器元数据清理过程后移动该角色。
 
@@ -57,7 +55,7 @@ ms.locfileid: "86960579"
 2. 如果已确定复制伙伴准备执行此过程，并且没有连接到已删除的域控制器的复制伙伴，并且该控制器的元数据是其元数据，请右键单击**Active Directory 站点和服务**"，然后单击"**更改域控制器**"。 单击要删除其元数据的域控制器的名称，然后单击 **"确定"**。
 3. 展开被强制删除的域控制器的站点，展开 "**服务器**"，展开域控制器的名称，右键单击 "NTDS 设置" 对象，然后单击 "**删除**"。
 4. 在 " **Active Directory 站点和服务**" 对话框中，单击 **"是"** 以确认删除 NTDS 设置。
-5. 在 "**删除域控制器**" 对话框中，选择 "**此域控制器永久脱机，不能再使用 Active Directory 域服务安装向导（DCPROMO）降级**"，然后单击 "**删除**"。
+5. 在 "**删除域控制器**" 对话框中，选择 "**此域控制器永久脱机，不能再使用 Active Directory 域服务安装向导 (DCPROMO) 降级**"，然后单击 "**删除**"。
 6. 如果域控制器是全局编录服务器，请在 "**删除域控制器**" 对话框中，单击 **"是"** 继续删除。
 7. 如果域控制器当前包含一个或多个操作主机角色，请单击 **"确定"** 将该角色或角色移至显示的域控制器。
 8. 右键单击被强制删除的域控制器，然后单击 "删除"。
@@ -65,7 +63,7 @@ ms.locfileid: "86960579"
 
 ## <a name="clean-up-server-metadata-using-the-command-line"></a>使用命令行清除服务器元数据
 
-作为替代方法，你可以通过使用 Ntdsutil.exe，这是一个命令行工具，该工具会自动安装在安装了 Active Directory 轻型目录服务（AD LDS）的所有域控制器和服务器上。 安装了 RSAT 的计算机上也提供了 Ntdsutil.exe。
+作为替代方法，你可以通过使用 Ntdsutil.exe，这是一个命令行工具，自动安装在安装了 Active Directory 轻型目录服务 (AD LDS) 的所有域控制器和服务器上。 安装了 RSAT 的计算机上也提供了 Ntdsutil.exe。
 
 ## <a name="to-clean-up-server-metadata-by-using-ntdsutil"></a>使用 Ntdsutil 清理服务器元数据
 
@@ -90,7 +88,7 @@ ms.locfileid: "86960579"
 
 7. 确认删除域控制器：
 
-   打开“Active Directory 用户和计算机”。 在已删除的域控制器的域中，单击 "**域控制器**"。 在详细信息窗格中，不应出现您删除的域控制器的对象。
+   打开“Active Directory 用户和计算机” 。 在已删除的域控制器的域中，单击 "**域控制器**"。 在详细信息窗格中，不应出现您删除的域控制器的对象。
 
    打开 Active Directory 站点和服务 "。 导航到 "**服务器**" 容器，并确认删除的域控制器的服务器对象不包含 NTDS 设置对象。 如果服务器对象下未显示子对象，则可以删除该服务器对象。 如果出现子对象，请不要删除服务器对象，因为另一个应用程序正在使用该对象。
 

@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e9276acbad0f9e9d403d3e172b4935f1de43475
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e3beb043272de304edfcac294bc9b831a60b1003
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880354"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993002"
 ---
 # <a name="certreq"></a>certreq
 
@@ -38,7 +38,7 @@ certreq –enroll [options] templatename
 certreq –enroll –cert certId [options] renew [reusekeys]
 ```
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
 | 参数 | 描述 |
 | -------- | ----------- |
@@ -109,7 +109,7 @@ INF 文件的此区域对于任何新的证书请求模板都是必需的，并�
 | KeyContainer | 对于生成新密钥材料的新请求，不建议设置此参数。 密钥容器由系统自动生成和维护。<p>对于应使用现有密钥材料的请求，可以将此值设置为现有密钥的密钥容器名称。 使用 `certutil –key` 命令显示计算机上下文的可用密钥容器的列表。 `certutil –key –user`为当前用户的上下文使用命令。| 随机字符串值<p>**提示：** 用双引号将任何具有空格或特殊字符的 INF 密钥值括起来，以避免潜在的 INF 分析问题。 | `KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}` |
 | KeyLength | 定义公钥和私钥的长度。 密钥长度会影响证书的安全级别。 较大的密钥长度通常提供较高的安全级别;但是，某些应用程序可能有关于密钥长度的限制。 | 加密服务提供程序支持的任何有效密钥长度。 | `KeyLength = 2048` |
 | KeySpec | 确定密钥是否可用于签名，适用于 Exchange (加密) ，或同时用于这两者。 | `AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE` | `KeySpec = AT_KEYEXCHANGE` |
-| 密钥用法 | 定义证书密钥的用途。 | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**提示：** 多个值使用管道 (|) 符号分隔符。 请确保在使用多个值时使用双引号，以避免出现 INF 分析问题。 显示的值是每个位定义的十六进制 (十进制) 值。 还可以使用旧语法：设置了多个位的单个十六进制值，而不是符号表示形式。 例如 `KeyUsage = 0xa0`。 |
+| 密钥用法 | 定义证书密钥的用途。 | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**提示：** 多个值使用管道 (|) 符号分隔符。 请确保在使用多个值时使用双引号，以避免出现 INF 分析问题。 显示的值是每个位定义的十六进制 (十进制) 值。 还可以使用旧语法：设置了多个位的单个十六进制值，而不是符号表示形式。 例如，`KeyUsage = 0xa0`。 |
 | KeyUsageProperty | 检索一个值，该值标识可以对其使用私钥的特定目的。 | <ul><li>`NCRYPT_ALLOW_DECRYPT_FLAG -- 1`</li><li>`NCRYPT_ALLOW_SIGNING_FLAG -- 2`</li><li>`NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4`</li><li>`NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)`</li></ul> | `KeyUsageProperty = NCRYPT_ALLOW_DECRYPT_FLAG | NCRYPT_ALLOW_SIGNING_FLAG` |
 | MachineKeySet | 当你需要创建由计算机拥有的证书而不是用户时，此密钥非常重要。 生成的密钥材料将保留在已创建请求的安全主体 (用户或计算机帐户) 的安全上下文中。 当管理员代表计算机创建证书申请时，必须在计算机的安全上下文中创建密钥材料，而不是管理员的安全上下文。 否则，计算机无法访问其私钥，因为它将位于管理员的安全上下文中。 | `true | false`. 默认值为 false。 | `MachineKeySet = true` |
 | NotBefore | 指定日期或日期和时间，在该日期和时间之前无法发出请求。 `NotBefore`可与和一起 `ValidityPeriod` 使用 `ValidityPeriodUnits` 。 | 日期或日期和时间 | `NotBefore = 7/24/2012 10:31 AM`<p>**提示：** `NotBefore`和 `NotAfter` 仅适用于 R `equestType=cert` 。 日期分析尝试区分区域设置。 使用月份名称将消除歧义，并应在每个区域设置中使用。 |
@@ -339,7 +339,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 - [如何手动创建 web 服务器 SSL 证书](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
-- [System Center Operations Manager 代理的证书注册](https://docs.microsoft.com/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
+- [System Center Operations Manager 代理的证书注册](/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
 
 - [Active Directory 证书服务概述](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 

@@ -7,12 +7,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: 3e5b732beb502bb0bf365136947ff380caf71545
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 253cf78e39809473fc865de90915b6a9f870d098
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879912"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992766"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合云打印
 
@@ -34,19 +34,19 @@ ms.locfileid: "87879912"
 
 - 运行 Active Directory 的 Windows Server 2016 或更高版本计算机。
 
-  有关设置 Active Directory 的帮助，请参阅[在 Windows Server 2016 中设置 Active Directory](https://blogs.technet.microsoft.com/canitpro/2017/02/22/step-by-step-setting-up-active-directory-in-windows-server-2016/) 。
+  有关设置 Active Directory 的帮助，请参阅[在 Windows Server 2016 中设置 Active Directory](/archive/blogs/canitpro/step-by-step-setting-up-active-directory-in-windows-server-2016) 。
 
 - 一个专用的、已加入域的 Windows Server 2016 或更高版本的计算机，作为打印服务器运行。
 
 - 一个专用的、已加入域的 Windows Server 2016 或更高版本的计算机，作为连接器服务器运行。
 
-  有关详细信息，请参阅[了解 Azure AD 应用程序代理连接器](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors)。
+  有关详细信息，请参阅[了解 Azure AD 应用程序代理连接器](/azure/active-directory/manage-apps/application-proxy-connectors)。
 
 - Windows 10 秋季创建者更新或更高版本的计算机，用于发布打印机。
 
 - 面向公众的域名。
 
-  你可以使用 Azure (*domainname*) 创建的域名，或购买你自己的域名。 请参阅[使用 Azure Active Directory 门户添加自定义域名](https://docs.microsoft.com/azure/active-directory/fundamentals/add-custom-domain)。
+  你可以使用 Azure (*domainname*) 创建的域名，或购买你自己的域名。 请参阅[使用 Azure Active Directory 门户添加自定义域名](/azure/active-directory/fundamentals/add-custom-domain)。
 
 ## <a name="deployment-steps"></a>部署步骤
 
@@ -54,13 +54,13 @@ ms.locfileid: "87879912"
 
 ### <a name="step-1---install-azure-ad-connect"></a>步骤 1-安装 Azure AD Connect
 
-1. Azure AD connect Azure AD 同步到本地 AD。 在带有 Active Directory 的 Windows Server 计算机上，下载并安装具有快速设置的 Azure AD Connect 软件。 请参阅[使用快速设置开始使用 Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-express)。
+1. Azure AD connect Azure AD 同步到本地 AD。 在带有 Active Directory 的 Windows Server 计算机上，下载并安装具有快速设置的 Azure AD Connect 软件。 请参阅[使用快速设置开始使用 Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-express)。
 
 ### <a name="step-2---install-application-proxy"></a>步骤 2-安装应用程序代理
 
 1. 应用程序代理允许组织中的用户访问云中的本地应用程序。 在连接器服务器上安装应用程序代理。
-    - 有关安装说明，请参阅[教程：在 Azure Active Directory 中通过应用程序代理添加用于远程访问的本地应用程序](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)。
-    - 如果组织具有复杂的网络拓扑，则建议使用专用连接器组。 请参阅[使用连接器组在单独的网络和位置上发布应用程序](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connector-groups)。
+    - 有关安装说明，请参阅[教程：在 Azure Active Directory 中通过应用程序代理添加用于远程访问的本地应用程序](/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)。
+    - 如果组织具有复杂的网络拓扑，则建议使用专用连接器组。 请参阅[使用连接器组在单独的网络和位置上发布应用程序](/azure/active-directory/manage-apps/application-proxy-connector-groups)。
 
 ### <a name="step-3---register-and-configure-applications"></a>步骤 3-注册和配置应用程序
 
@@ -174,7 +174,7 @@ ms.locfileid: "87879912"
     - 安装以下服务器角色：
         - 打印服务器角色
         - Internet Information Service (IIS)
-    - 有关如何安装服务器角色的详细信息，请参阅[使用添加角色和功能向导安装角色、角色服务和功能](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installarfw)。
+    - 有关如何安装服务器角色的详细信息，请参阅[使用添加角色和功能向导安装角色、角色服务和功能](../server-manager/install-or-uninstall-roles-role-services-or-features.md#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard)。
 
     ![打印服务器角色](../media/hybrid-cloud-print/PrintServer-Roles.png)
 
@@ -297,13 +297,13 @@ ms.locfileid: "87879912"
         `sqlite3.exe MopriaDeviceDb.db .read MopriaSQLiteDb.sql`
 
     - 在文件资源管理器中，打开 MopriaDeviceDb 文件属性以添加允许在 "安全" 选项卡中发布到 Mopria 数据库的用户或组。用户或组必须位于本地 Active Directory 中，并与 Azure AD 同步。
-    - 如果将解决方案部署到不可路由的域 (例如*mydomain*) ，则 Azure AD 域 (如 onmicrosoft.com 或从第三方供应商处购买的) 需要添加为本地 ACTIVE DIRECTORY 的 UPN*后缀。* 这就是 (要发布打印机的完全相同的用户，例如 admin@*domainname*. onmicrosoft.com) 可添加到数据库文件的安全设置中。 [有关目录同步，请参阅准备不可路由的域](https://docs.microsoft.com/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization)。
+    - 如果将解决方案部署到不可路由的域 (例如*mydomain*) ，则 Azure AD 域 (如 onmicrosoft.com 或从第三方供应商处购买的) 需要添加为本地 ACTIVE DIRECTORY 的 UPN*后缀。* 这就是 (要发布打印机的完全相同的用户，例如 admin@*domainname*. onmicrosoft.com) 可添加到数据库文件的安全设置中。 [有关目录同步，请参阅准备不可路由的域](/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization)。
 
     ![打印服务器 Mopria 注册表项](../media/hybrid-cloud-print/PrintServer-SQLiteDB.png)
 
 ### <a name="step-5-optional---configure-pre-authentication-with-azure-ad"></a>步骤 5 \[ \] （可选）-配置 Azure AD 的预身份验证
 
-1. 查看文档[Kerberos 约束委派，以便通过应用程序代理进行单一登录到你的应用程序](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd)。
+1. 查看文档[Kerberos 约束委派，以便通过应用程序代理进行单一登录到你的应用程序](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd)。
 
 2. 配置本地 Active Directory。
     - 在 Active Directory 计算机上，打开 "服务器管理器并 **Tools**  >  **Active Directory" 用户和计算机**"中转到" 工具 "。
@@ -357,7 +357,7 @@ ms.locfileid: "87879912"
 |打印机发现服务资源 URI  |MopriaDiscoveryResourceId      |
 
 > [!NOTE]
-> 如果云打印策略组不可用，但 MDM 提供程序支持 OMA URI 设置，则可以设置相同的策略。  有关其他信息，请参阅[此](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)信息。
+> 如果云打印策略组不可用，但 MDM 提供程序支持 OMA URI 设置，则可以设置相同的策略。  有关其他信息，请参阅[此](/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)信息。
 
 - OMA-URI 的值
   - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
@@ -446,9 +446,9 @@ ms.locfileid: "87879912"
 
 |错误 |建议的步骤 |
 |------|------|
-|CloudPrintDeploy PowerShell 脚本失败 | <ul><li>确保 Windows Server 具有最新更新。</li><li>如果使用 Windows Server Update Services (WSUS) ，请参阅[如何在使用 wsus/SCCM 时提供按需功能和语言包](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)。</li></ul> |
+|CloudPrintDeploy PowerShell 脚本失败 | <ul><li>确保 Windows Server 具有最新更新。</li><li>如果使用 Windows Server Update Services (WSUS) ，请参阅[如何在使用 wsus/SCCM 时提供按需功能和语言包](/windows/deployment/update/fod-and-lang-packs)。</li></ul> |
 |SQLite 安装失败，出现以下消息：检测到包 "system.string" 的依赖关系循环 | 安装包 SkipDependencies-providername nuget-providername<br>安装包 EF6-providername nuget-SkipDependencies<br>安装包 system.object-providername-providername nuget-SkipDependencies<br><br>成功下载包后，请确保它们都是相同的版本。 如果没有，请将-requiredversion 参数添加到上述命令，并将其设置为相同版本。 |
-|发布打印机失败 | <ul><li>对于 "直通预身份验证"，请确保为发布打印机的用户提供对发布数据库的适当权限。</li><li>对于 Azure AD 预身份验证，请确保在 IIS 中启用 Windows 身份验证。 请参阅步骤5.3。 此外，先尝试先传递预身份验证。 如果直通预身份验证正常工作，则问题可能与应用程序代理有关。 请参阅[排查应用程序代理问题和错误消息](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-troubleshoot)。 请注意，切换到 passthrough 会重置单一登录设置;重新访问步骤5，重新设置 Azure AD 预身份验证。</li></ul> |
+|发布打印机失败 | <ul><li>对于 "直通预身份验证"，请确保为发布打印机的用户提供对发布数据库的适当权限。</li><li>对于 Azure AD 预身份验证，请确保在 IIS 中启用 Windows 身份验证。 请参阅步骤5.3。 此外，先尝试先传递预身份验证。 如果直通预身份验证正常工作，则问题可能与应用程序代理有关。 请参阅[排查应用程序代理问题和错误消息](/azure/active-directory/manage-apps/application-proxy-troubleshoot)。 请注意，切换到 passthrough 会重置单一登录设置;重新访问步骤5，重新设置 Azure AD 预身份验证。</li></ul> |
 |打印作业保持发送到打印机状态 | <ul><li>确保连接器服务器上启用了 TLS 1.2。 请参阅步骤2.1 中的链接项目。</li><li>确保连接器服务器上已禁用 HTTP2。 请参阅步骤2.1 中的链接项目。</li></ul> |
 
 下面是可以帮助进行故障排除的日志的位置

@@ -1,33 +1,31 @@
 ---
 title: 已加入域的设备公钥身份验证
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
 manager: alanth
 author: michikos
-ms.technology: security-authentication
 ms.date: 08/18/2017
-ms.openlocfilehash: 450d3e64ff753a718c2e72e69cb60d51c8c18f78
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 37710710bc301173503450a46fc1ccc2b0614cf4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856330"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943947"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>已加入域的设备公钥身份验证
 
 >适用于： Windows Server 2016、Windows 10
 
-Kerberos 添加了对加入域的设备的支持，以便使用从 Windows Server 2012 和 Windows 8 开始的证书登录。 此更改允许第三方供应商创建解决方案来为已加入域的设备设置和初始化证书，以用于域身份验证。 
+Kerberos 添加了对加入域的设备的支持，以便使用从 Windows Server 2012 和 Windows 8 开始的证书登录。 此更改允许第三方供应商创建解决方案来为已加入域的设备设置和初始化证书，以用于域身份验证。
 
 ## <a name="automatic-public-key-provisioning"></a>自动公钥预配
 
-从 Windows 10 版本1507和 Windows Server 2016 开始，已加入域的设备会自动将绑定公钥预配到 Windows Server 2016 域控制器（DC）。 设置密钥后，Windows 可以使用域的公钥身份验证。
+从 Windows 10 版本1507和 Windows Server 2016 开始，已加入域的设备会自动将绑定公钥预配到 Windows Server 2016 域控制器 (DC) 。 设置密钥后，Windows 可以使用域的公钥身份验证。
 
 ### <a name="key-generation"></a>密钥生成
-如果设备正在运行 Credential Guard，则会创建一个公钥/私钥对，并受 Credential Guard 保护。 
+如果设备正在运行 Credential Guard，则会创建一个公钥/私钥对，并受 Credential Guard 保护。
 
-如果 Credential Guard 不可用，而 TPM 为，则会创建一个公钥/私钥对，由 TPM 保护。 
+如果 Credential Guard 不可用，而 TPM 为，则会创建一个公钥/私钥对，由 TPM 保护。
 
 如果两者都不可用，则不会生成密钥对，并且设备只能使用密码进行身份验证。
 

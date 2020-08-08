@@ -5,20 +5,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cdf812f862534ba8cd07d4558e424faf3c56c699
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 46daa58e6a13f0cf0f71131b05def481f42a594c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947149"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993101"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>Server Performance Advisor 包开发指南
 
->适用于： Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows 8，Windows 10
+>适用于： Windows Server (半年频道) 、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 8、Windows 10
 
-Microsoft Server Performance Advisor （SPA）的这一开发指南提供了一些指导原则，帮助开发人员和系统管理员开发顾问包以分析服务器性能。
+本 Microsoft Server 性能顾问开发指南 (SPA) 提供指导，帮助开发人员和系统管理员开发顾问包以分析服务器性能。
 
-它假定你熟悉性能日志和警报（PLA）、性能计数器、注册表设置、Windows Management Instrumentation （WMI）、Windows 事件跟踪（ETW）和 Transact-sql （T-sql）。
+它假定你熟悉性能日志和警报 (PLA) 、性能计数器、注册表设置、Windows Management Instrumentation (WMI) 、Windows 的事件跟踪 (ETW) 和 Transact-sql (T-sql) 。
 
 有关使用 SPA 的详细信息，请参阅[Server Performance Advisor 用户指南](server-performance-advisor-users-guide.md)。
 
@@ -27,11 +27,11 @@ Microsoft Server Performance Advisor （SPA）的这一开发指南提供了一�
 
 Advisor 包通常用于特定的服务器角色，并定义以下内容：
 
-* 要通过 PLA 收集的数据，包括 Windows Management Instrumentation （WMI）、性能计数器、注册表设置、文件和 Windows 事件跟踪（ETW）
+* 要通过 PLA 收集的数据，包括 Windows Management Instrumentation (WMI) 、性能计数器、注册表设置、文件和 Windows (ETW 事件跟踪) 
 
 * 显示警报和建议的规则
 
-* 要显示的数据（收集的原始数据、聚合数据或前10个列表）
+* 要 (收集的原始数据、聚合数据或前10个列表显示的数据) 
 
 * 用于查看随时间变化的值的统计信息
 
@@ -39,9 +39,9 @@ Advisor 包通常用于特定的服务器角色，并定义以下内容：
 
 Advisor 包包含以下元素：
 
-* **XML 元数据**（ProvisionMetadata）
+* **XML 元数据** ( # A0) 
 
-    * [性能日志和警报（PLA）](https://msdn.microsoft.com/library/windows/desktop/aa372635.aspx)数据收集器集
+    * [性能日志和警报 (PLA) ](/previous-versions/windows/desktop/pla/pla-portal)数据收集器集
 
     * 报表布局
 
@@ -51,7 +51,7 @@ Advisor 包包含以下元素：
 
     * SQL 对象，如存储过程和用户定义的函数
 
-* **ETW 架构文件**（schema）这是可选的
+* **ETW 架构文件** (schema) 这是可选的
 
 ### <a name="advisor-pack-workflow"></a>Advisor 包工作流
 
@@ -65,9 +65,9 @@ Advisor 包包含以下元素：
 
 ### <a name="import-data-into-the-database"></a>将数据导入数据库
 
-数据收集完成后，每种类型的数据将导入到 SQL Server 数据库中的相应表中。 例如，注册表设置将导入到名为 \#registryKeys 的表中。
+数据收集完成后，每种类型的数据将导入到 SQL Server 数据库中的相应表中。 例如，注册表设置将导入到名为 registryKeys 的表中 \# 。
 
-导入 ETW 文件需要 ETW 架构文件以对 .etl 文件进行解码。 ETW 架构文件是一个 XML 文件。 它可以通过使用 Windows 附带的 tracerpt 生成。 只有在 advisor 包需要导入 ETW 数据时，才需要 ETW 架构文件。
+导入 ETW 文件需要 ETW 架构文件以对 .etl 文件进行解码。 ETW 架构文件是一个 XML 文件。 它可以通过使用 Windows 附带的 tracerpt.exe 来生成。 只有在 advisor 包需要导入 ETW 数据时，才需要 ETW 架构文件。
 
 ### <a name="switch-to-low-user-rights"></a>切换到低用户权限
 
@@ -102,7 +102,7 @@ Advisor 包可以生成不同类型的输出，例如通知、建议、事实数
 
 Advisor 包
 
-ProvisionMetadata
+ProvisionMetadata.xml
 
 脚本
 
@@ -112,7 +112,7 @@ func .sql
 
 Schema. 男士
 
-每个 advisor 包都必须具有一个名为 ProvisionMetadata 的文件。 它定义基本 advisor 包信息、要收集的数据、通知和规则，以及报表需要存储和显示的方式。 SPA 框架使用此信息来生成一个临时表，然后将临时表中的结果传输到用户可访问的表中。
+每个 advisor 包都必须有一个名为 ProvisionMetadata.xml 的文件。 它定义基本 advisor 包信息、要收集的数据、通知和规则，以及报表需要存储和显示的方式。 SPA 框架使用此信息来生成一个临时表，然后将临时表中的结果传输到用户可访问的表中。
 
 所有报表 SQL 脚本都必须保存在一个名为 "**脚本**" 的子文件夹中。 出于维护目的，我们建议您将不同的数据库对象保存在不同的 SQL Server 文件中。 至少必须有一个存储过程作为主入口点。
 
@@ -121,9 +121,9 @@ Schema. 男士
 
 ### <a name="defining-basic-information"></a>定义基本信息
 
-本部分介绍构成 advisor 包的一些基本元素，包括 ProvisionMetadata 和属性。
+本部分介绍构成 advisor 包的一些基本元素，包括 ProvisionMetadata.xml 和属性。
 
-下面是 ProvisionMetadata 文件的示例标头：
+下面是 ProvisionMetadata.xml 文件的示例标头：
 
 ``` syntax
 <advisorPack
@@ -167,13 +167,13 @@ SPA 框架从脚本入口点查找主存储过程名称，并以安全的方式�
 
 * 作者：**作者**
 
-* Framework 版本： **frameworkversion** （默认为3.0）
+* Framework 版本： **frameworkversion** (默认为 3.0) 
 
-* 最低操作系统版本： **minOSversion** （此为将来的可扩展性保留）
+* 最低操作系统版本： **minOSversion** (此为将来的扩展性保留) 
 
 * 丢失的事件通知： **showEventLostWarning**
 
-### <a href="" id="bkmk-definedatacollector"></a>定义数据收集器集
+### <a name="defining-the-data-collector-set"></a><a href="" id="bkmk-definedatacollector"></a>定义数据收集器集
 
 数据收集器集定义 SPA 框架应从目标服务器收集的性能数据。 它支持注册表设置、WMI、性能计数器、来自目标服务器的文件和 ETW。
 
@@ -201,29 +201,29 @@ SPA 框架从脚本入口点查找主存储过程名称，并以安全的方式�
 </advisorPack>
 ```
 
-上一示例中 **&lt;dataCollectorSet/&gt;** 的**duration**属性定义数据收集的持续时间（以秒为单位）。 **duration**是必需的属性。 此设置控制性能计数器和 ETW 使用的收集持续时间。
+上一示例中** &lt; dataCollectorSet/ &gt; **的**duration**属性定义数据收集的持续时间， (时间单位为秒) 。 **duration**是必需的属性。 此设置控制性能计数器和 ETW 使用的收集持续时间。
 
 ### <a name="collect-registry-data"></a>收集注册表数据
 
 你可以从以下注册表配置单元收集注册表数据：
 
-* HKEY\_ROOT\_类
+* HKEY \_ 类 \_ 根
 
-* HKEY\_当前\_配置
+* HKEY \_ 当前 \_ 配置
 
-* \_当前\_用户的 HKEY
+* HKEY \_ 当前 \_ 用户
 
-* HKEY\_本地\_计算机
+* HKEY \_ 本地 \_ 计算机
 
-* HKEY\_用户
+* HKEY \_ 用户
 
-若要收集注册表设置，请指定值名称： HKEY\_本地\_计算机的完整路径\\MyKey\\MyValue
+若要收集注册表设置，请指定值名称的完整路径： HKEY \_ LOCAL \_ MACHINE \\ MyKey \\ MyValue
 
-若要收集注册表项下的所有设置，请指定注册表项的完整路径： HKEY\_本地\_计算机\\MyKey\\
+若要收集注册表项下的所有设置，请指定注册表项的完整路径： HKEY \_ 本地 \_ 计算机 \\ MyKey\\
 
-若要收集注册表项及其子项下的所有值（PLA 以递归方式收集注册表数据），请使用两个反斜杠作为最后一个路径分隔符： HKEY\_本地\_计算机\\MyKey\\\\
+若要收集注册表项及其子项下的所有值 (PLA 以递归方式收集注册表数据) ，请使用两个反斜杠作为最后一个路径分隔符： HKEY \_ LOCAL \_ MACHINE \\ MyKey\\\\
 
-若要从远程计算机收集注册表信息，请在注册表路径的开头包含计算机名称： HKEY\_本地\_MACHINE\\MyKey\\MyValue
+若要从远程计算机收集注册表信息，请在注册表路径的开头包含计算机名称： HKEY \_ LOCAL \_ MACHINE \\ MyKey \\ MyValue
 
 例如，你可能会看到如下所示的注册表项：
 
@@ -257,9 +257,9 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\db31
 <registryKey>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\\</registryKey>
 ```
 
-在运行 SQL 报表脚本之前，所有收集的数据都将导入名为 **\#registryKeys**的临时表中。 下表显示了示例2的结果：
+在运行 SQL 报表脚本之前，所有收集的数据将导入到名为** \# registryKeys**的临时表中。 下表显示了示例2的结果：
 
-KeyName | KeytypeId | Value
+KeyName | KeytypeId | “值”
 ------ | ----- | -------
 HKEY_LOCAL_MACHINE. ..\PowerSchemes | 1 | db310065-829b-4671-9647-2261c00e86ef
 \db310065-829b-4671-9647-2261c00e86ef\Description | 2 | |
@@ -271,20 +271,20 @@ HKEY_LOCAL_MACHINE. ..\PowerSchemes | 1 | db310065-829b-4671-9647-2261c00e86ef
 
 列名称 | SQL 数据类型 | 描述
 -------- | -------- | --------
-KeyName | Nvarchar （300） NOT NULL | 注册表项的完整路径名称
+KeyName | Nvarchar (300) NOT NULL | 注册表项的完整路径名称
 KeytypeId | Smallint NOT NULL | 内部类型 Id
-Value | Nvarchar （4000） NOT NULL | 所有值
+“值” | Nvarchar (4000) NOT NULL | 所有值
 
 **KeytypeID**列可以具有以下类型之一：
 
-ID | 在任务栏的搜索框中键入
+ID | 类型
 --- | ---
 1 | 字符串
 2 | expandString
 3 | 二进制
 4 | DWord
 5 | DWordBigEndian
-6 | “链接”
+6 | 链接
 7 | MultipleString
 8 | Resourcelist
 9 | FullResourceDescriptor
@@ -293,7 +293,7 @@ ID | 在任务栏的搜索框中键入
 
 ### <a name="collect-wmi"></a>收集 WMI
 
-可以添加任何 WMI 查询。 有关编写 WMI 查询的详细信息，请参阅[WQL （适用于 WMI 的 SQL）](https://msdn.microsoft.com/library/windows/desktop/aa394606.aspx)。下面的示例查询页面文件位置：
+可以添加任何 WMI 查询。 有关编写 WMI 查询的详细信息，请参阅[WQL (SQL FOR wmi) ](/windows/win32/wmisdk/wql-sql-for-wmi)。下面的示例查询页面文件位置：
 
 ``` syntax
 <path>Root\Cimv2:select * FROM Win32_PageFileUsage</path>
@@ -301,7 +301,7 @@ ID | 在任务栏的搜索框中键入
 
 以上示例中的查询返回一条记录：
 
-标题 | 名称 | PeakUsage
+Caption | “属性” | PeakUsage
 ----- | ----- | -----
 C:\pagefile.sys | C:\pagefile.sys | 215
 
@@ -311,17 +311,17 @@ C:\pagefile.sys | C:\pagefile.sys | 215
 
 SequenceID | 命名空间 | ClassName | Relativepath | WmiqueryID
 ----- | ----- | ----- | ----- | -----
-10 | Root\Cimv2 | Win32_PageFileUsage | Win32_PageFileUsage。名称 =<br>C：\\页面文件. .sys | 1
+10 | Root\Cimv2 | Win32_PageFileUsage | Win32_PageFileUsage。名称 =<br>C： \\pagefile.sys | 1
 
 **\#WmiObjectsProperties 表**
 
-ID | 查询
+ID | query
 --- | ---
 1 | Root\Cimv2： select * FROM Win32_PageFileUsage
 
 **\#WmiQueries 表**
 
-ID | 查询
+ID | query
 --- | ---
 1 | Root\Cimv2： select * FROM Win32_PageFileUsage
 
@@ -330,9 +330,9 @@ ID | 查询
 列名称 | SQL 数据类型 | 描述
 --- | --- | ---
 SequenceId | Int NOT NULL | 关联行及其属性
-命名空间 | Nvarchar （200） NOT NULL | WMI 命名空间
-ClassName | Nvarchar （200） NOT NULL | WMI 类名称
-Relativepath | Nvarchar （500） NOT NULL | WMI 相对路径
+命名空间 | Nvarchar (200) NOT NULL | WMI 命名空间
+ClassName | Nvarchar (200) NOT NULL | WMI 类名称
+Relativepath | Nvarchar (500) NOT NULL | WMI 相对路径
 WmiqueryId | Int NOT NULL | 关联密钥 #WmiQueries
 
 **\#WmiObjectProperties 表架构**
@@ -340,15 +340,15 @@ WmiqueryId | Int NOT NULL | 关联密钥 #WmiQueries
 列名称 | SQL 数据类型 | 描述
 --- | --- | ---
 SequenceId | Int NOT NULL | 关联行及其属性
-名称 | Nvarchar （1000） NOT NULL | 属性名
-Value | Nvarchar （4000） NULL | 当前属性的值。
+“属性” | Nvarchar (1000) NOT NULL | 属性名称
+“值” | Nvarchar (4000) NULL | 当前属性的值。
 
 **\#WmiQueries 表架构**
 
-列名称 | SQL 数据类型 | 描述
+列名称 | SQL 数据类型 | 说明
 --- | --- | ---
-ID | Int NOT NULL | > 唯一查询 ID
-查询 | Nvarchar （4000） NOT NULL | 设置元数据中的原始查询字符串
+ID | Int NOT NULL | >唯一查询 ID
+query | Nvarchar (4000) NOT NULL | 设置元数据中的原始查询字符串
 
 ### <a name="collect-performance-counters"></a>收集性能计数器
 
@@ -360,73 +360,73 @@ ID | Int NOT NULL | > 唯一查询 ID
 </performanceCounters>
 ```
 
-**Interval**属性是所有性能计数器的必需全局设置。 它定义了收集性能数据的时间间隔（以秒为单位）。
+**Interval**属性是所有性能计数器的必需全局设置。 它定义时间间隔 (收集性能数据的时间单位为秒) 。
 
-在前面的示例中，counter \\PhysicalDisk （\*）\\每秒查询一次 Avg. Disk sec/Transfer。
+在上面的示例中，计数器 \\ PhysicalDisk \* (\\ 每秒查询) Avg. Disk sec/Transfer。
 
-可能有两个实例： **Total\_** 和**0 C： D：** ，输出可能如下所示：
+可能有两个实例： ** \_ Total**和**0 C： D：**，输出可能如下所示：
 
 timestamp | CategoryName | CounterName | _Total 的实例值 | 实例值 0 C： D：
 ---- | ---- | ---- | ---- | ----
-13：45：52.630 | PhysicalDisk | Avg. Disk sec/Transfer | 0.00100008362473995 |0.00100008362473995
-13：45：53.629 | PhysicalDisk | Avg. Disk sec/Transfer | 0.00280023414927187 | 0.00280023414927187
-13：45：54.627 | PhysicalDisk | Avg. Disk sec/Transfer | 0.00385999853230048 | 0.00385999853230048
-13：45：55.626 | PhysicalDisk | Avg. Disk sec/Transfer | 0.000933297607934224 | 0.000933297607934224
+13：45：52.630 | 物理磁盘 | 平均值磁盘秒数/传输 | 0.00100008362473995 |0.00100008362473995
+13：45：53.629 | 物理磁盘 | 平均值磁盘秒数/传输 | 0.00280023414927187 | 0.00280023414927187
+13：45：54.627 | 物理磁盘 | 平均值磁盘秒数/传输 | 0.00385999853230048 | 0.00385999853230048
+13：45：55.626 | 物理磁盘 | 平均值磁盘秒数/传输 | 0.000933297607934224 | 0.000933297607934224
 
-若要将数据导入到数据库中，数据将规范化为名为 **\#PerformanceCounters**的表。
+若要将数据导入到数据库中，数据将规范化到名为** \# PerformanceCounters**的表中。
 
-CategoryDisplayName | InstanceName | CounterdisplayName | Value
+CategoryDisplayName | InstanceName | CounterdisplayName | “值”
 ---- | ---- | ---- | ----
-PhysicalDisk | _Total | Avg. Disk sec/Transfer | 0.00100008362473995
-PhysicalDisk | 0 C： D： | Avg. Disk sec/Transfer | 0.00100008362473995
-PhysicalDisk | _Total | Avg. Disk sec/Transfer | 0.00280023414927187
-PhysicalDisk | 0 C： D： | Avg. Disk sec/Transfer | 0.00280023414927187
-PhysicalDisk | _Total | Avg. Disk sec/Transfer | 0.00385999853230048
-PhysicalDisk | 0 C： D： | Avg. Disk sec/Transfer | 0.00385999853230048
-PhysicalDisk | _Total | Avg. Disk sec/Transfer | 0.000933297607934224
-PhysicalDisk | 0 C： D： | Avg. Disk sec/Transfer | 0.000933297607934224
+物理磁盘 | _Total | 平均值磁盘秒数/传输 | 0.00100008362473995
+物理磁盘 | 0 C： D： | 平均值磁盘秒数/传输 | 0.00100008362473995
+物理磁盘 | _Total | 平均值磁盘秒数/传输 | 0.00280023414927187
+物理磁盘 | 0 C： D： | 平均值磁盘秒数/传输 | 0.00280023414927187
+物理磁盘 | _Total | 平均值磁盘秒数/传输 | 0.00385999853230048
+物理磁盘 | 0 C： D： | 平均值磁盘秒数/传输 | 0.00385999853230048
+物理磁盘 | _Total | 平均值磁盘秒数/传输 | 0.000933297607934224
+物理磁盘 | 0 C： D： | 平均值磁盘秒数/传输 | 0.000933297607934224
 
 **注意**本地化名称（如**CategoryDisplayName**和**CounterdisplayName**）根据目标服务器上使用的显示语言而有所不同。 如果要创建非特定语言的顾问包，请避免使用这些字段。
 
-**\#PerformanceCounters**表架构
+** \# PerformanceCounters**表架构
 
-列名称 | SQL 数据类型 | 描述
+列名称 | SQL 数据类型 | 说明
 ---- | ---- | ---- | ----
-timestamp | datetime2 （3） NOT NULL | UNC 中收集的日期时间
-CategoryName | Nvarchar （200） NOT NULL | 类别名称
-CategoryDisplayName | Nvarchar （200） NOT NULL | 本地化类别名称
-InstanceName | Nvarchar （200） NULL | 实例名
-CounterName | Nvarchar （200） NOT NULL | 计数器名
-CounterdisplayName | Nvarchar （200） NOT NULL | 本地化计数器名称
-Value | Float NOT NULL | 收集的值
+timestamp | datetime2 (3) NOT NULL | UNC 中收集的日期时间
+CategoryName | Nvarchar (200) NOT NULL | 类别名称
+CategoryDisplayName | Nvarchar (200) NOT NULL | 本地化类别名称
+InstanceName | Nvarchar (200) NULL | 实例名称
+CounterName | Nvarchar (200) NOT NULL | 计数器名称
+CounterdisplayName | Nvarchar (200) NOT NULL | 本地化计数器名称
+“值” | Float NOT NULL | 收集的值
 
 ### <a name="collect-files"></a>收集文件
 
-路径可以是绝对路径或相对路径。 文件名可以包含通配符（\*）和问号（？）。 例如，若要收集临时文件夹中的所有文件，可以指定 c：\\temp\\\*。 通配符适用于指定文件夹中的文件。
+路径可以是绝对路径或相对路径。 文件名可以包含通配符 (\*) 和问号 (？ ) 。 例如，若要收集临时文件夹中的所有文件，可以指定 c： \\ temp \\ \* 。 通配符适用于指定文件夹中的文件。
 
-如果还希望从指定文件夹的子文件夹中收集文件，请使用两个反斜杠作为最后一个文件夹分隔符，例如，c：\\temp\\\\\*。
+如果还希望从指定文件夹的子文件夹收集文件，请使用两个反斜杠作为最后一个文件夹分隔符，例如 c： \\ temp \\ \\ \* 。
 
-下面是查询**applicationhost.config**文件的示例：
+下面是一个查询**applicationHost.config**文件的示例：
 
 ``` syntax
 <path>%windir%\System32\inetsrv\config\applicationHost.config</path>
 ```
 
-可在名为 **\#文件**的表中找到结果，例如：
+可在名为** \# Files**的表中找到结果，例如：
 
 querypath | Fullpath | Parentpath | FileName | 内容
 ----- | ----- | ----- | ----- | -----
-% windir%\.。\applicationHost.config |C:\Windows<br>\..。\applicationHost.config | C:\Windows<br>\..。\config | 配置 | 0x3C3F78
+% windir% \...\applicationHost.config |C:\Windows<br>\...\applicationHost.config | C:\Windows<br>\...\config | 配置 | 0x3C3F78
 
 **\#文件表架构**
 
 列名称 | SQL 数据类型 | 描述
 ---- | ---- | ----
-querypath | Nvarchar （300） NOT NULL | 原始查询语句
-Fullpath | Nvarchar （300） NOT NULL | 绝对文件路径和文件名
-Parentpath | Nvarchar （300） NOT NULL | 文件路径
-FileName | Nvarchar （300） NOT NULL | 文件名
-内容 | Varbinary （MAX） NULL | 二进制形式的文件内容
+querypath | Nvarchar (300) NOT NULL | 原始查询语句
+Fullpath | Nvarchar (300) NOT NULL | 绝对文件路径和文件名
+Parentpath | Nvarchar (300) NOT NULL | 文件路径
+FileName | Nvarchar (300) NOT NULL | 文件名
+内容 | Varbinary (MAX) NULL | 二进制形式的文件内容
 
 ### <a name="defining-rules"></a>定义规则
 
@@ -442,9 +442,9 @@ FileName | Nvarchar （300） NOT NULL | 文件名
 
 规则包含以下元素：
 
-* 从属阈值（规则的可配置部分）
+* 从属阈值 (规则的可配置部分) 
 
-* 规则定义（警报和建议）
+* 规则定义 (警报和建议) 
 
 下面是一个简单规则的示例：
 
@@ -485,11 +485,11 @@ FileName | Nvarchar （300） NOT NULL | 文件名
 
 规则有三个部分：
 
-* 警报（规则标题）
+* 警报 (规则标题) 
 
-* 建议（建议）
+* 建议 (建议) 
 
-* 关联阈值（有关依赖项的可选信息）
+* 关联阈值 (有关依赖项的可选信息) 
 
 下面是规则的示例：
 
@@ -508,7 +508,7 @@ Install OS on larger disk.</advice>
 
 可以链接到所需数量的阈值。 甚至可以链接到与当前规则无关的阈值。 链接有助于 SPA 控制台轻松管理阈值。
 
-规则名称和建议是密钥，它们在其作用域内是唯一的。 两个规则不能具有相同的名称，并且一个规则中没有两个建议可以具有相同的名称。 编写 SQL 脚本报表时，这些名称非常重要。 可以调用 \[dbo\]。\[SetNotification\] API 来设置规则状态。
+规则名称和建议是密钥，它们在其作用域内是唯一的。 两个规则不能具有相同的名称，并且一个规则中没有两个建议可以具有相同的名称。 编写 SQL 脚本报表时，这些名称非常重要。 可以调用 \[ dbo \] 。 \[\]用于设置规则状态的 SetNotification API。
 
 ### <a name="defining-ui-display-elements"></a>定义 UI 显示元素
 
@@ -516,23 +516,23 @@ Install OS on larger disk.</advice>
 
 继续前面的示例，用户将知道系统驱动器上是否有足够的可用磁盘空间。 用户可能还会对可用空间的实际大小感兴趣。 单个值组用于存储和显示此类结果。 多个单个值可以分组并显示在 SPA 控制台的表中。 该表只有两列：名称和值，如下所示。
 
-名称 | Value
+“属性” | “值”
 ---- | ----
-系统驱动器上的可用磁盘大小（GB） | 100
-已安装的磁盘总大小（GB） | 500 
+系统驱动器上的可用磁盘大小 (GB)  | 100
+ (GB) 安装的总磁盘大小 | 500 
 
 如果用户想要查看服务器上安装的所有硬盘驱动器的列表及其磁盘大小，则可以调用包含三列和多行的列表值，如下所示。
 
-Disk | 可用磁盘大小（GB） | 总大小（GB）
+磁盘 | 可用磁盘大小 (GB)  | 总大小 (GB) 
 ---- | ---- | ----
 0 | 100 | 500
 1 | 20 | 320
 
-在 advisor 包中，可能有多个表（单值组和列表值表）。 我们可以使用部分来组织和分类这些表。
+在 advisor 包中，可能有多个表 (单值组和列表值表) 。 我们可以使用部分来组织和分类这些表。
 
 总而言之，有三种类型的 UI 元素：
 
-* [节](#bkmk-ui-section)
+* [部分](#bkmk-ui-section)
 
 * [单个值组](#bkmk-ui-svg)
 
@@ -562,7 +562,7 @@ Disk | 可用磁盘大小（GB） | 总大小（GB）
 </advisorPack>
 ```
 
-### <a href="" id="bkmk-ui-section"></a>个
+### <a name="sections"></a><a href="" id="bkmk-ui-section"></a>部分
 
 节仅适用于 UI 布局。 它不参与任何逻辑计算。 每个报表都包含一组没有父节的顶级节。 顶级部分显示为报表中的选项卡。 节可以包含个子节，最多可以有10个级别。 顶级部分下的所有子部分都显示在可扩展区域中。 节可以包含多个子节、单个值组和列表值表。 单值组和列表值表以表的形式出现。
 
@@ -590,7 +590,7 @@ Disk | 可用磁盘大小（GB） | 总大小（GB）
 
 单个值组和列表值表包含不同类型的数据，例如 string、int 和 float。 由于这些值存储在 SQL Server 数据库中，因此可以为每个数据属性定义 SQL 数据类型。 不过，定义 SQL 数据类型非常复杂。 您必须指定可能很容易更改的长度或精度。
 
-若要定义逻辑数据类型，可以使用 **&lt;reportdefinition.xsd/&gt;** 的第一个子级，可在其中定义 SQL 数据类型和逻辑类型的映射。
+若要定义逻辑数据类型，可以使用** &lt; reportdefinition.xsd/ &gt; **的第一个子级，可在其中定义 SQL 数据类型和逻辑类型的映射。
 
 下面的示例定义了两种数据类型。 一个是**字符串**，另一个是**companyCode**。
 
@@ -603,23 +603,23 @@ Disk | 可用磁盘大小（GB） | 总大小（GB）
 
 * bigint
 
-* 二进制
+* binary
 
-* 位
+* bit
 
 * char
 
-* 日期
+* date
 
-* 日期/时间
+* datetime
 
 * datetime2
 
 * datetimeoffset
 
-* 十进制
+* Decimal
 
-* 浮点数
+* FLOAT
 
 * int
 
@@ -627,11 +627,11 @@ Disk | 可用磁盘大小（GB） | 总大小（GB）
 
 * nchar
 
-* 数值
+* numeric
 
 * nvarchar
 
-* 实数
+* real
 
 * smalldatetime
 
@@ -639,7 +639,7 @@ Disk | 可用磁盘大小（GB） | 总大小（GB）
 
 * smallmoney
 
-* 时间
+* time
 
 * tinyint
 
@@ -649,9 +649,9 @@ Disk | 可用磁盘大小（GB） | 总大小（GB）
 
 * varchar
 
-有关这些 SQL 数据类型的详细信息，请参阅[数据类型（transact-sql）](https://msdn.microsoft.com/library/ms187752.aspx)。
+有关这些 SQL 数据类型的详细信息，请参阅[数据类型 (transact-sql) ](/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-ver15)。
 
-### <a href="" id="bkmk-ui-svg"></a>单个值组
+### <a name="single-value-groups"></a><a href="" id="bkmk-ui-svg"></a>单个值组
 
 单个值组将多个单个值组合到一起显示在一个表中，如下所示。
 
@@ -669,19 +669,19 @@ Disk | 可用磁盘大小（GB） | 总大小（GB）
 
 虽然您可以定义多个单个值组，但不能有两个单个值名称相同，即使它们在不同的组中。 SQL 脚本报表使用单个值名称来相应地设置值。
 
-可以为每个单个值定义一个数据类型。 **类型**的允许输入在 **&lt;datatype/&gt;** 中定义。 最终报表如下所示：
+可以为每个单个值定义一个数据类型。 **类型**的允许输入在** &lt; datatype/ &gt; **中定义。 最终报表如下所示：
 
 **事实**
 
-名称 | Value
+“属性” | “值”
 --- | ---
-操作系统 | &lt;_报表脚本将设置一个值_&gt;
-操作系统版本 | &lt;_报表脚本将设置一个值_&gt;
-OS 位置 | &lt;_报表脚本将设置一个值_&gt;
+操作系统 | &lt;_将通过报表脚本设置值_&gt;
+OS 版本 | &lt;_将通过报表脚本设置值_&gt;
+OS 位置 | &lt;_将通过报表脚本设置值_&gt;
 
-第一列中显示 **&lt;值/&gt;** 的 "**标题**" 属性。 "值" 列中的值由脚本报表通过 \[dbo\]设置。\[SetSingleValue\]。 工具提示中显示 **&lt;值/&gt;** 的**说明**属性。 通常，工具提示会向用户显示数据源。 有关工具提示的详细信息，请参阅[工具提示](#bkmk-tooltips)。
+** &lt; 值 &gt; /** 的**caption**属性显示在第一列中。 "值" 列中的值由脚本报表通过 \[ dbo 设置 \] 。 \[SetSingleValue \] 。 ** &lt; 值 &gt; /** 的**description**特性显示在工具提示中。 通常，工具提示会向用户显示数据源。 有关工具提示的详细信息，请参阅[工具提示](#bkmk-tooltips)。
 
-### <a href="" id="bkmk-ui-lvt"></a>列表值表
+### <a name="list-value-tables"></a><a href="" id="bkmk-ui-lvt"></a>列表值表
 
 定义列表值与定义表的值相同。
 
@@ -695,21 +695,21 @@ OS 位置 | &lt;_报表脚本将设置一个值_&gt;
 </listValue>
 ```
 
-列表值名称必须是全局唯一的。 此名称将成为临时表的名称。 在前面的示例中，将在执行环境初始化阶段创建名为 \#NetworkAdapterInformation 的表，其中包含所述的所有列。 与单个值名称类似，列表值名称还用作自定义视图名称（例如 vwNetworkAdapterInformation）的一部分。
+列表值名称必须是全局唯一的。 此名称将成为临时表的名称。 在上面的示例中， \# 将在执行环境初始化阶段创建名为 NetworkAdapterInformation 的表，其中包含所述的所有列。 与单个值名称类似，列表值名称还用作自定义视图名称（例如 vwNetworkAdapterInformation）的一部分。
 
-&lt;列/&gt; 的 @type 是通过 &lt;datatype/&gt; 定义的
+@type&lt;列/ &gt; 由 &lt; 数据类型定义&gt;
 
 最终报表的模拟 UI 如下所示：
 
 **物理网络适配器信息**
 
-ID | 名称 | 在任务栏的搜索框中键入 | 速度（Mbps） | MAC 地址
+ID | 名称 | 类型 | 速度 (Mbps)  | MAC 地址
 --- | --- | --- | --- | ---
  | <br> | | |
  | | | |
 
 
-&lt;列/&gt; 的**标题**特性显示为一个列名，&lt;列/&gt; 的**description**特性显示为相应列标题的工具提示。 通常，tooltip 会向用户显示数据源。 有关详细信息，请参阅[工具提示](#bkmk-tooltips)。
+列/的**caption**特性 &lt; &gt; 显示为列名，列/的**description**特性 &lt; &gt; 显示为相应列标题的工具提示。 通常，tooltip 会向用户显示数据源。 有关详细信息，请参阅[工具提示](#bkmk-tooltips)。
 
 在某些情况下，表可能有很多列并且只有几行，因此，交换列和行会使表的外观更好。 若要交换列和行，可以添加以下样式特性：
 
@@ -767,26 +767,26 @@ CpuId | AverageCpuUsage
 
 下面的示例指示支持多个具有多个**键**列的**值**列。
 
-CounterName | InstanceName | 正常 | Sum
+CounterName | InstanceName | 平均值 | Sum
 --- | :---: | :---: | :---:
-% Processor time | _Total | 10 | 20
-% Processor time | CPU0 | 20 | 30 
+处理器时间百分比 | _Total | 10 | 20
+处理器时间百分比 | CPU0 | 20 | 30 
 
 在此示例中，有两个**键**列和两个**值**列。 SPA 为平均列生成两个统计信息键，并为 Sum 列生成另两个键。 统计信息键是：
 
-* CounterName （处理器时间百分比）/InstanceName （\_总计）/平均
+* CounterName ( 处理器时间百分比) /InstanceName (\_ Total) /Average
 
-* CounterName （处理器时间百分比）/InstanceName （CPU0）/Average
+* CounterName (% Processor time) /InstanceName (CPU0) /Average
 
-* CounterName （处理器时间百分比）/InstanceName （\_总计）/总计
+* CounterName ( 处理器时间百分比) /InstanceName (\_ Total) /Sum
 
-* CounterName （处理器时间百分比）/InstanceName （CPU0）/Sum
+* CounterName (% Processor time) /InstanceName (CPU0) /Sum
 
 CounterName 和 InstanceName 合并为一个键。 组合键不能有任何重复项。
 
 SPA 生成许多统计信息密钥。 其中一些问题可能对你不感兴趣，你可能想要将它们隐藏在 UI 中。 SPA 使开发人员可以创建筛选器以仅显示有用的统计信息密钥。
 
-对于前面的示例，系统管理员可能仅对 InstanceName \_总计或 CPU1 的密钥感兴趣。 可以按如下所示定义筛选器：
+对于前面的示例，系统管理员可能仅对 InstanceName 为 Total 或 CPU1 的密钥感兴趣 \_ 。 可以按如下所示定义筛选器：
 
 ``` syntax
 <listValue name="CpuPerformance">
@@ -802,7 +802,7 @@ SPA 生成许多统计信息密钥。 其中一些问题可能对你不感兴趣
 </listValue>
 ```
 
-可以在任何键列下定义 **&lt;trendableKeyValues/&gt;** 。 如果有多个键列配置了此类筛选器，则将应用逻辑。
+** &lt; trendableKeyValues/ &gt; **可在任何键列下定义。 如果有多个键列配置了此类筛选器，则将应用逻辑。
 
 ### <a name="developing-report-scripts"></a>开发报表脚本
 
@@ -814,7 +814,7 @@ SPA 生成许多统计信息密钥。 其中一些问题可能对你不感兴趣
 <advisorPack name="Microsoft.ServerPerformanceAdvisor.CoreOS.V1" reportScript="ReportScript"  
 ```
 
-主报表脚本通过组合**name**和**reportScript**属性来命名。 在下面的示例中，它将是 \[ServerPerformanceAdvisor\]。\[ReportScript\]。
+主报表脚本通过组合**name**和**reportScript**属性来命名。 在下面的示例中，它将为 \[ ServerPerformanceAdvisor. CoreOS。 \] \[ReportScript \] 。
 
 ``` syntax
 create PROCEDURE [Microsoft.ServerPerformanceAdvisor.CoreOS.V2].[ReportScript] AS SET NOCOUNT ON
@@ -848,7 +848,7 @@ create PROCEDURE [Microsoft.ServerPerformanceAdvisor.CoreOS.V2].[ReportScript] A
 
 收集的所有数据都将导入到以下相应的表中。 有关表架构的详细信息，请参阅[定义数据收集器集](#bkmk-definedatacollector)。
 
-* registry
+* 注册表
 
     * \#registryKeys
 
@@ -866,7 +866,7 @@ create PROCEDURE [Microsoft.ServerPerformanceAdvisor.CoreOS.V2].[ReportScript] A
 
 * 文件
 
-    * \#文件
+    * \#附件
 
 * ETW
 
@@ -876,11 +876,11 @@ create PROCEDURE [Microsoft.ServerPerformanceAdvisor.CoreOS.V2].[ReportScript] A
 
 ### <a name="set-rule-status"></a>设置规则状态
 
-\[dbo\]。\[SetNotification\] API 设置规则状态，以便你可以在 UI 中看到**成功**或**警告**图标。
+\[Dbo \] . \[SetNotification \] API 设置规则状态，以便你可以在 UI 中看到**成功**或**警告**图标。
 
-* @ruleName nvarchar （50）
+* @ruleNamenvarchar (50) 
 
-* @adviceName nvarchar （50）
+* @adviceNamenvarchar (50) 
 
 警报和建议消息存储在设置元数据 XML 文件中。 这使报表脚本更易于管理。
 
@@ -910,11 +910,11 @@ END
 
 ### <a name="get-threshold-value"></a>获取阈值
 
-\[dbo\]。\[GetThreshold\] API 获取阈值：
+\[Dbo \] . \[GetThreshold \] API 获取阈值：
 
-* @key nvarchar （50）
+* @keynvarchar (50) 
 
-* @value 浮点输出
+* @valuefloat 输出
 
 > [!NOTE]
 > 阈值为名称/值对，可在任何规则中引用。 系统管理员可以使用 SPA 控制台调整阈值。
@@ -947,11 +947,11 @@ if (@freediskSizeInGB < @freediskSize)
 
 ### <a name="set-or-remove-the-single-value"></a>设置或删除单个值
 
-\[dbo\]。\[SetSingleValue\] API 设置单个值：
+\[Dbo \] . \[SetSingleValue \] API 设置单个值：
 
-* @key nvarchar （50）
+* @keynvarchar (50) 
 
-* @value sql\_变体
+* @valuesql \_ 变量
 
 对于同一单个值键，此值可执行多次。 最后一个值将被保存。
 
@@ -973,9 +973,9 @@ exec dbo.SetSingleValue N Osversion ,  6.1.7601
 exec dbo.SetSingleValue N OsLocation ,  c:\ 
 ```
 
-在极少数情况下，可能需要删除以前使用 \[dbo\]设置的结果。\[removeSingleValue\] API。
+在极少数情况下，可能需要删除以前使用 dbo 设置的结果 \[ \] 。 \[removeSingleValue \] API。
 
-* @key nvarchar （50）
+* @keynvarchar (50) 
 
 您可以使用以下脚本删除以前设置的值。
 
@@ -985,9 +985,9 @@ exec dbo.removeSingleValue N Osversion
 
 ### <a name="get-data-collection-information"></a>获取数据收集信息
 
-\[dbo\]。\[GetDuration\] API 获取数据收集的用户指定持续时间（以秒为单位）：
+\[Dbo \] . \[GetDuration \] API 获取数据收集的用户指定持续时间（以秒为单位）：
 
-* @duration int 输出
+* @durationint 输出
 
 下面是一个示例报表脚本：
 
@@ -996,9 +996,9 @@ DECLARE @duration int
 exec dbo.GetDuration @duration output
 ```
 
-\[dbo\]。\[GetInternal\] API 获取性能计数器的间隔。 如果当前报表没有性能计数器信息，则它可能返回 NULL。
+\[Dbo \] . \[GetInternal \] API 获取性能计数器的间隔。 如果当前报表没有性能计数器信息，则它可能返回 NULL。
 
-* @interval int 输出
+* @intervalint 输出
 
 下面是一个示例报表脚本：
 
@@ -1057,9 +1057,9 @@ SPA 控制台可在两种模式下运行： "调试" 或 "发布"。 发布模�
 
 **调试报表脚本**
 
-1.  安装 Microsoft SQL Server Management Studio （SSMS）。
+1.   (SSMS) 安装 Microsoft SQL Server Management Studio。
 
-2.  启动 SSMS 后，连接到 localhost\\SQLExpress。 请注意，必须使用 localhost，而不是。 。 否则，可能无法在 SQL Server 中启动调试器。
+2.  在 SSMS 启动后，连接到 localhost \\ SQLExpress。 请注意，必须使用 localhost，而不是。 . 否则，可能无法在 SQL Server 中启动调试器。
 
 3.  运行以下脚本以启用调试模式：
 
@@ -1094,7 +1094,7 @@ SPA 控制台可在两种模式下运行： "调试" 或 "发布"。 发布模�
 
 
 
-正在运行 \[dbo\]。\[DebugReportScript\] 返回多个结果集，其中包括：
+正在运行 \[ dbo \] 。 \[DebugReportScript \] 返回多个结果集，其中包括：
 
 1.  Microsoft SQL Server 消息和顾问包日志
 
@@ -1110,9 +1110,9 @@ SPA 控制台可在两种模式下运行： "调试" 或 "发布"。 发布模�
 
 ### <a name="naming-convention-and-styles"></a>命名约定和样式
 
-|                                                                 Pascal 大小写                                                                 |                       驼峰式大小写                        |             Uppercase             |
+|                                                                 Pascal 大小写                                                                 |                       驼峰式大小写                        |             大写             |
 |-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------|
-| <ul><li>ProvisionMetadata 中的名称</li><li>存储过程</li><li>功能</li><li>视图名称</li><li>临时表名</li></ul> | <ul><li>参数名称</li><li>局部变量</li></ul> | 用于所有 SQL 保留关键字 |
+| <ul><li>ProvisionMetadata.xml 中的名称</li><li>存储过程</li><li>函数</li><li>视图名称</li><li>临时表名</li></ul> | <ul><li>参数名称</li><li>局部变量</li></ul> | 用于所有 SQL 保留关键字 |
 
 ### <a name="other-recommendations"></a>其他建议
 
@@ -1128,15 +1128,15 @@ SPA 控制台可在两种模式下运行： "调试" 或 "发布"。 发布模�
 
 * 请考虑使用临时表传输大量的数据。
 
-* 如果发生错误，请考虑使用**SET 事务\_ABORT ON**终止进程。
+* 如果发生错误，请考虑使用** \_ 中的 SET 事务中止**终止进程。
 
 * 始终在 advisor 包显示名称中包含主要版本号。
 
-## <a href="" id="bkmk-advancedtopics"></a>高级主题
+## <a name="advanced-topics"></a><a href="" id="bkmk-advancedtopics"></a>高级主题
 
 ### <a name="run-multiple-advisor-packs-simultaneously"></a>同时运行多个 advisor 包
 
-SPA 支持同时运行多个 advisor 包。 当你希望同时查看 Internet Information Services （IIS）和核心操作系统性能时，此方法特别有用。 IIS advisor 包所使用的许多数据收集器也可能由核心 OS advisor 包使用。 当两个或多个顾问包在同一台目标计算机上运行时，SPA 不会两次收集相同的数据。
+SPA 支持同时运行多个 advisor 包。 当你希望同时查看 (IIS) 和核心操作系统性能 Internet Information Services 时，此方法特别有用。 IIS advisor 包所使用的许多数据收集器也可能由核心 OS advisor 包使用。 当两个或多个顾问包在同一台目标计算机上运行时，SPA 不会两次收集相同的数据。
 
 下面的示例演示运行两个 advisor 包的工作流。
 
@@ -1150,7 +1150,7 @@ SPA 支持同时运行多个 advisor 包。 当你希望同时查看 Internet In
 
    1. 使用最小的时间间隔作为新的间隔。
 
-   2. 获取性能计数器的超级集。 例如，通过**进程（\*）\\% Processor time** and **Process （\*）\\\*，\\Process （\*）\\\\** * 返回更多的数据，因此将从合并的数据收集器集中删除\*% Processor time 和 process （\\）\* **% 处理器时间**和**进程（\\）** 。
+   2. 获取性能计数器的超级集。 例如，如果**进程 (\*) \\ % processor time** and **process (\*) \\ \* ，则 \\ 进程 (\*) \\ \\ *** 将返回更多** \* \\ \\ **的数据，因此，将从合并的数据收集器集中删除 (% 的** \* \\ 处理器时间**和进程)  (。
 
 ### <a name="collect-dynamic-data"></a>收集动态数据
 
@@ -1173,7 +1173,7 @@ ROOT\*IPHTTPS\0000
 
 ```
 
-若要查找**FriendlyName**值，请打开注册表编辑器并导航到注册表设置，方法是将**HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\** 与上一示例中的每一行相结合。 例如： **HKEY\_本地\_计算机\\SYSTEM\\CurrentControlSet\\枚举\\ 根\\\*IPHTTPS\\0000**。
+若要查找**FriendlyName**值，请打开注册表编辑器并导航到注册表设置，方法是将**HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Enum \\ **与上一示例中的每一行相结合。 例如： **HKEY \_ 本地 \_ 计算机 \\ 系统 \\ CurrentControlSet \\ 枚举 \\ 根 \\ \* IPHTTPS \\ 0000**。
 
 若要将上述步骤转换为 SPA 预配元数据，请在下面的代码示例中添加脚本：
 
@@ -1189,21 +1189,21 @@ ROOT\*IPHTTPS\0000
 </managementpaths>
 ```
 
-在此示例中，首先在 managementpaths 下添加 WMI 查询，并定义密钥名称**网络适配器**。 然后，添加一个注册表项，并使用语法 " **$ （网络适配器. PNPDeviceID）** " 来引用**网络适配器**。
+在此示例中，首先在 managementpaths 下添加 WMI 查询，并定义密钥名称**网络适配器**。 然后，添加注册表项，并使用语法**网络适配器** **$ (网络适配器) **。
 
 下表定义了 SPA 中的数据收集器是否支持动态数据，以及其他数据收集器是否可以引用它：
 
 数据类型 | 支持动态数据 | 可以引用
 --- | :---: | :---:
-注册表项 | “是” | “是”
-WMI | “是” | “是”
-文件 | “是” | 无
-性能计数器 | 无 | 无
-ETW | 无 | 无
+注册表项 | 是 | 是
+WMI | 是 | 是
+文件 | 是 | 否
+性能计数器 | 否 | 否
+ETW | 否 | 否
 
-对于 WMI 数据收集器，每个 WMI 对象都有多个附加属性。 任何类型的 WMI 对象始终具有三个属性： \_\_命名空间、\_\_类和 \_\_RELpath。
+对于 WMI 数据收集器，每个 WMI 对象都有多个附加属性。 任何类型的 WMI 对象始终具有三个属性： \_ \_ 命名空间、 \_ \_ 类和 \_ \_ RELpath。
 
-若要定义由其他数据收集器引用的数据收集器，请在 ProvisionMetadata 中使用唯一键分配**name**属性。 依赖数据收集器使用此密钥生成动态数据。
+若要定义由其他数据收集器引用的数据收集器，请在 ProvisionMetadata.xml 中使用唯一键分配**name**属性。 依赖数据收集器使用此密钥生成动态数据。
 
 下面是注册表项的示例：
 
@@ -1217,11 +1217,11 @@ WMI 的示例如下：
 <path name="wmi">Root\Cimv2:select PNPDeviceID FROM Win32_NetworkAdapter</path>
 ```
 
-若要定义从属数据收集器，请使用以下语法： $ （ *{name}* 。 *{attribute}* ）。
+若要定义从属数据收集器，请使用以下语法： $ (*{name}*。*{attribute}*) 。
 
 *{name}* 和 *{attribute}* 是占位符。
 
-当 SPA 从目标服务器收集数据时，它会动态将模式 $ （\*\*）替换为其引用数据收集器（注册表项/WMI）的实际收集数据，例如：
+当 SPA 从目标服务器收集数据时，它会动态地将模式 $)  (替换为 \* \* 其引用数据收集器 (注册表项/WMI) 中收集的数据，例如：
 
 ``` syntax
 <registryKey>HKEY_LOCAL_MACHINE\$(registry.key)\ </registryKey>
@@ -1256,7 +1256,7 @@ SPA 支持重置和次要版本更新。 这些进程使用相同的算法。 �
 
 * 添加或删除列表值的列
 
-### <a href="" id="bkmk-tooltips"></a>Tooltip
+### <a name="tooltips"></a><a href="" id="bkmk-tooltips"></a>Tooltip
 
 几乎所有**说明**属性都将在 SPA 控制台中显示为工具提示。
 
@@ -1275,17 +1275,17 @@ SPA 支持重置和次要版本更新。 这些进程使用相同的算法。 �
 
 数据源 | 格式 | 示例
 --- | --- | ---
-WMI | WMI： &lt;wmiclass&gt;/&lt;字段&gt; | WMI： Win32_OperatingSystem/Caption
-性能计数器 | Perfcounter finish： &lt;类别名称&gt;/&lt;InstanceName&gt; | Perfcounter finish：进程/处理器时间百分比
-registry | 注册表： &lt;registerKey&gt; | 注册表： HKLM\SOFTWARE\Microsoft<br>\\ASP.NET\\Rootver
-配置文件 | Read-configfile： &lt;Filepath&gt;\[;Xpath： Xpath&gt;&lt;\]<br>**注意**<br>Xpath 是可选的，仅当文件是 xml 文件时才有效。 | Read-configfile： windir%\\System32\\inetsrv\config\\Applicationhost.config<br>Xpath： configuration&frasl;System.webserver<br>&frasl;httpProtocol&frasl;@allowKeepAlive
-ETW | ETW： &lt;提供程序/&gt;（关键字） | ETW： Windows 内核跟踪（进程、网络）
+WMI | WMI： &lt; wmiclass &gt; / &lt; 字段&gt; | WMI： Win32_OperatingSystem/Caption
+性能计数器 | Perfcounter finish： &lt; 类别名称 &gt; / &lt; InstanceName&gt; | Perfcounter finish：进程/处理器时间百分比
+注册表 | 注册表： &lt; registerKey&gt; | 注册表： HKLM\SOFTWARE\Microsoft<br>\\ASP.NET \\ Rootver
+配置文件 | Read-configfile： &lt; Filepath &gt; \[ ;Xpath： &lt; xpath&gt;\]<br>**注意**<br>Xpath 是可选的，仅当文件是 xml 文件时才有效。 | Read-configfile： windir% \\ System32 \\ inetsrv\config \\applicationHost.config<br>Xpath &frasl; ：配置 system.webserver<br>&frasl;httpProtocol&frasl;@allowKeepAlive
+ETW | ETW： &lt; 提供程序/ &gt; (关键字)  | ETW： Windows 内核跟踪 (进程，net) 
 
 ### <a name="table-collation"></a>表排序规则
 
 当 advisor 包变得更加复杂时，您可以创建自己的变量表或临时表来存储报表脚本中的中间结果。
 
-排序字符串列可能会产生问题，因为您创建的表排序规则可能不同于 SPA 框架创建的排序规则。 如果将两个字符串列关联在不同的表中，则可能会看到排序规则错误。 若要避免此问题，应始终将列排序规则的字符串定义为**SQL\_latin1-general\_General\_CP1\_CI\_** ，就像在定义表时那样。
+排序字符串列可能会产生问题，因为您创建的表排序规则可能不同于 SPA 框架创建的排序规则。 如果将两个字符串列关联在不同的表中，则可能会看到排序规则错误。 若要避免此问题，应始终将列排序规则的字符串定义为**SQL \_ Latin1-general \_ General \_ CP1 \_ CI \_ ** ，就像在定义表时那样。
 
 下面介绍如何定义变量表：
 
@@ -1300,7 +1300,7 @@ DECLARE @filesIO TABLE (
 
 ### <a name="collect-etw"></a>收集 ETW
 
-下面介绍如何在 ProvisionMetadata 文件中定义 ETW：
+下面介绍如何在 ProvisionMetadata.xml 文件中定义 ETW：
 
 ``` syntax
 <dataSourceDefinition>
@@ -1312,18 +1312,18 @@ DECLARE @filesIO TABLE (
 
 以下提供程序属性可用于收集 ETW：
 
-属性 | 在任务栏的搜索框中键入 | 描述
+属性 | 类型 | 描述
 --- | --- | ---
-GUID | GUID | 提供程序 GUID
-会话 | 字符串 | ETW 会话名称（可选，仅限内核事件需要）
-keywordsany | 十六进制 | 任何关键字（可选，无0x 前缀）
-keywordsAll | 十六进制 | 所有关键字（可选）
-属性 | 十六进制 | 属性（可选）
-level | 十六进制 | 级别（可选）
-bufferSize | 整型 | 缓冲区大小（可选）
-flushtime | 整型 | 刷新时间（可选）
-maxBuffer | 整型 | 最大缓冲区（可选）
-minBuffer | 整型 | 最小缓冲区（可选）
+guid | GUID | 提供程序 GUID
+会话 | 字符串 | ETW 会话名称 (可选，仅内核事件必需) 
+keywordsany | Hex | 任何关键字 (可选，无0x 前缀) 
+keywordsAll | Hex | 所有关键字 (可选) 
+properties | Hex | 属性 (可选) 
+级别 | Hex | 级别 (可选) 
+bufferSize | int | 缓冲区大小 (可选) 
+flushtime | int | 可选) 的刷新时间 (
+maxBuffer | int | 最大缓冲区 (可选) 
+minBuffer | int | 最小缓冲区 (可选) 
 
 这里有两个输出表，如下所示。
 
@@ -1332,7 +1332,7 @@ minBuffer | 整型 | 最小缓冲区（可选）
 列名称 | SQL 数据类型 | 描述
 --- | --- | ---
 SequenceID | Int NOT NULL | 相关序列 ID
-EventtypeId | Int NOT NULL | 事件类型 ID （请参阅 [dbo]. [Eventtypes]）
+EventtypeId | Int NOT NULL | 事件类型 ID (引用 [dbo]。[Eventtypes] ) 
 ProcessId | BigInt NOT NULL | 进程 ID
 ThreadId | BigInt NOT NULL | 线程 ID
 timestamp | datetime2 NOT NULL | timestamp
@@ -1344,12 +1344,12 @@ Usertime | BigInt NOT NULL | 用户时间
 列名称 | SQL 数据类型 | 描述
 --- | --- | ---
 SequenceID | Int NOT NULL | 相关序列 ID
-名称 | Nvarchar(100) | 属性名
-Value | Nvarchar(4000) | Value
+“属性” | Nvarchar (100)  | 属性名称
+“值” | Nvarchar(4000) | “值”
 
 ### <a name="etw-schema"></a>ETW 架构
 
-可以通过对 .etl 文件运行 tracerpt 来生成 ETW 架构。 生成一个架构文件。 由于 .etl 文件的格式依赖于计算机，以下脚本仅适用于以下情况：
+可以通过对 .etl 文件运行 tracerpt.exe 来生成 ETW 架构。 生成一个架构文件。 由于 .etl 文件的格式依赖于计算机，以下脚本仅适用于以下情况：
 
 1.  在收集相应 .etl 文件的计算机上运行该脚本。
 
@@ -1366,11 +1366,11 @@ tracerpt *.etl -export
 
 **Advisor 包**
 
-Advisor pack 是用于处理从目标服务器收集的性能日志的元数据和 SQL 脚本的集合。 然后，advisor 包将从性能日志数据生成报表。 Advisor 包中的元数据定义要从目标服务器收集的数据以提高性能。 该元数据还定义规则集、阈值和报表格式。 通常情况下，会专门针对单个服务器角色（例如 Internet Information Services （IIS））编写 advisor 包。
+Advisor pack 是用于处理从目标服务器收集的性能日志的元数据和 SQL 脚本的集合。 然后，advisor 包将从性能日志数据生成报表。 Advisor 包中的元数据定义要从目标服务器收集的数据以提高性能。 该元数据还定义规则集、阈值和报表格式。 通常情况下，会专门针对单个服务器角色（例如 Internet Information Services (IIS) 编写 advisor 包。
 
 **SPA 控制台**
 
-SPA 控制台是指 SpaConsole，它是服务器性能顾问的核心部分。 SPA 无需在要测试的目标服务器上运行。 SPA 控制台包含 SPA 的所有用户界面，从设置项目到运行分析和查看报表。 按照设计，SPA 是两层应用程序。 SPA 控制台包含 UI 层和部分业务逻辑层。 SPA 控制台计划并处理性能分析请求。
+SPA 控制台是指 SpaConsole.exe，这是服务器性能顾问的核心部分。 SPA 无需在要测试的目标服务器上运行。 SPA 控制台包含 SPA 的所有用户界面，从设置项目到运行分析和查看报表。 按照设计，SPA 是两层应用程序。 SPA 控制台包含 UI 层和部分业务逻辑层。 SPA 控制台计划并处理性能分析请求。
 
 **SPA 框架**
 
@@ -1390,11 +1390,11 @@ SPA 项目是一个数据库，其中包含有关在 advisor 包的目标服务�
 
 **Windows 事件跟踪**
 
-Windows[事件跟踪](https://msdn.microsoft.com/library/windows/desktop/bb968803.aspx)（ETW）是 windows 操作系统中提供的高性能、低开销、可缩放的跟踪系统。 它提供分析和调试功能，可用于对各种方案进行故障排除。 SPA 使用 ETW 事件作为数据源来生成性能报告。 有关 ETW 的一般信息，请参阅[通过 Etw 改善调试和性能优化](https://msdn.microsoft.com/magazine/cc163437.aspx)。
+Windows (ETW) 的[事件跟踪](/windows/win32/etw/event-tracing-portal)是 windows 操作系统中提供的高性能、低开销且可扩展的跟踪系统。 它提供分析和调试功能，可用于对各种方案进行故障排除。 SPA 使用 ETW 事件作为数据源来生成性能报告。 有关 ETW 的一般信息，请参阅[通过 Etw 改善调试和性能优化](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)。
 
 **WMI 查询**
 
-Windows Management Instrumentation （WMI）是 Windows 操作系统中管理数据和操作的基础结构。 你可以编写 WMI 脚本或应用程序，以在远程计算机上自动执行管理任务。 WMI 还向操作系统的其他部分和产品提供管理数据。 SPA 使用 WMI 类信息和数据点作为源来生成性能报告。
+ (WMI) Windows Management Instrumentation 是 Windows 操作系统中管理数据和操作的基础结构。 你可以编写 WMI 脚本或应用程序，以在远程计算机上自动执行管理任务。 WMI 还向操作系统的其他部分和产品提供管理数据。 SPA 使用 WMI 类信息和数据点作为源来生成性能报告。
 
 **性能计数器**
 
@@ -1402,7 +1402,7 @@ Windows Management Instrumentation （WMI）是 Windows 操作系统中管理数
 
 **性能日志和警报**
 
-性能日志和警报（PLA）是 Windows 操作系统中的内置服务。 它旨在收集性能日志和跟踪，还会在满足某些触发器时引发性能警报。 PLA 可用于收集性能计数器、Windows 事件跟踪（ETW）、WMI 查询、注册表项和配置文件。 PLA 还支持通过远程过程调用（RPC）进行远程数据收集。 用户定义数据收集器集，其中包括有关要收集的数据的信息、数据收集的频率、数据收集持续时间、筛选器以及保存结果文件的位置。 SPA 使用 PLA 来收集目标服务器中的所有性能数据。
+性能日志和警报 (PLA) 是 Windows 操作系统中的内置服务。 它旨在收集性能日志和跟踪，还会在满足某些触发器时引发性能警报。 PLA 可用于收集性能计数器、Windows (ETW) 、WMI 查询、注册表项和配置文件的事件跟踪。 PLA 还支持通过远程过程调用 (RPC) 进行远程数据收集。 用户定义数据收集器集，其中包括有关要收集的数据的信息、数据收集的频率、数据收集持续时间、筛选器以及保存结果文件的位置。 SPA 使用 PLA 来收集目标服务器中的所有性能数据。
 
 **单个报表**
 
@@ -1416,7 +1416,7 @@ Windows Management Instrumentation （WMI）是 Windows 操作系统中管理数
 
 趋势图是用于调查性能问题的重复模式的 SPA 报表。 许多重复的性能问题都是由服务器或客户端计算机上的计划服务器负载更改引起的，这些更改可能会每天或每周进行一次。 SPA 提供24小时趋势图和7天趋势图来确定这些问题。
 
-用户可以一次选择一个或多个数据序列，这是单个报表中的一个数值，例如**平均总 CPU 使用率**。 更确切地说，数值是由单个服务器在给定的时间实例生成的标量值。 SPA 将这些值分组为24个组，一天中每个小时一次（7天，每周报告一次）。 SPA 计算每个组的平均值、最小值、最大值和标准偏差。
+用户可以一次选择一个或多个数据序列，这是单个报表中的一个数值，例如**平均总 CPU 使用率**。 更确切地说，数值是由单个服务器在给定的时间实例生成的标量值。 SPA 将这些值分组为24个组，一天中的每个小时 (7 个，每个7天报告一次，每周7天一次) 。 SPA 计算每个组的平均值、最小值、最大值和标准偏差。
 
 **历史图表**
 
@@ -1428,8 +1428,8 @@ Windows Management Instrumentation （WMI）是 Windows 操作系统中管理数
 
 **规则**
 
-规则是逻辑、阈值和说明的组合。 它们表示潜在的性能问题。 每个 advisor 包都包含多个规则。 每个规则由报表生成进程触发。 规则将逻辑和阈值应用于单个报表中的数据。 如果满足条件，则会发出警告通知。 否则，通知将设置为 **"正常"** 状态。 如果规则不适用，则通知设置为 "不适用（**NA**）" 状态。
+规则是逻辑、阈值和说明的组合。 它们表示潜在的性能问题。 每个 advisor 包都包含多个规则。 每个规则由报表生成进程触发。 规则将逻辑和阈值应用于单个报表中的数据。 如果满足条件，则会发出警告通知。 否则，通知将设置为 **"正常"** 状态。 如果规则不适用，则通知设置为 "不适用" (**NA**) 状态。
 
 **通知**
 
-通知是规则向用户显示的信息。 它包括规则的状态（ **"确定**"、" **NA**" 或 "**警告**"）、规则的名称，以及解决性能问题的可能建议。
+通知是规则向用户显示的信息。 它包括规则状态 (**"确定"**、" **NA**" 或 "**警告**") 、规则的名称和解决性能问题的可能建议。

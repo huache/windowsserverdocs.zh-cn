@@ -7,12 +7,12 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
 ms.topic: article
-ms.openlocfilehash: dd6270f1aadea058a1b0fb6ffb3f7dad59a54811
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1a7ea3b902793f281156930a8e666c1d32d05cbe
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895720"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993115"
 ---
 # <a name="server-performance-advisor-users-guide"></a>Server Performance Advisor 用户指南
 
@@ -584,14 +584,14 @@ SPA 控制台支持通过 UI 进行定期数据收集。 如果该功能不足�
 
 下表介绍了 SPA Windows PowerShell cmdlet：
 
-| Cmdlet 名称 | 参数 | 说明 |
+| Cmdlet 名称 | parameters | 说明 |
 | ------ | ------- | ------ |
 | SpaAnalysis | **-ServerName**目标服务器的名称。<br>**-AdvisorPackName**要在服务器上排队的 advisor 包的完整名称。 当计划同时运行多个包时，应将参数的值设置为 AP1name，AP2name。<br>**-Duration**数据收集的持续时间。<br>**-Credential**在目标服务器上运行数据收集的帐户的用户凭据。<br>**-SqlInstanceName**SQL Server 实例的名称。<br>**-SqlDatabaseName**SPA 项目数据库的名称。 | 在指定的服务器上启动 SPA 数据收集会话。 |
 | 停止-SpaAnalysis | **-SqlInstanceName**SQL Server 实例的名称。<br>**-SqlDatabaseName**SPA 项目数据库的名称。<br>**-ServerName**目标服务器的名称。 | 尝试停止正在运行的 SPA 会话。 如果会话已完成，它将返回，而不执行任何操作。 |
 | SpaServer | **-SqlInstanceName**SQL Server 实例的名称。<br>**-SqlDatabaseName**SPA 项目数据库的名称。 | 获取数据库中的服务器列表。 它将返回对象的列表，其中包括以下属性：名称、状态、文件共享和注释。 |
 | SpaAdvisorPacks | **-SqlInstanceName**SQL Server 实例的名称<br>**-SqlDatabaseName**SPA 项目数据库的名称 | 获取数据库中的 advisor 包列表。 它将返回对象的列表，其中包括以下属性：名称、DisplayName、作者和版本。 |
 
-Windows PowerShell 提供通过加密文件传递凭据以实现自动化方案的功能。 有关使用加密文件将凭据传递到 cmdlet 的详细信息，请参阅[创建接受凭据的 Windows PowerShell 脚本](https://technet.microsoft.com/magazine/ff714574.aspx)。
+Windows PowerShell 提供通过加密文件传递凭据以实现自动化方案的功能。 有关使用加密文件将凭据传递到 cmdlet 的详细信息，请参阅[创建接受凭据的 Windows PowerShell 脚本](/previous-versions/technet-magazine/ff714574(v=msdn.10))。
 
 ### <a name="automating-spa-report-collection-by-using-windows-powershell"></a>使用 Windows PowerShell 自动收集 SPA 报表
 
@@ -774,7 +774,7 @@ SPA 保护由 SPA 成功生成的每个报表的完整性。 同时，SPA 不能
 
 * **数据分析会话**特定目标服务器上的性能分析。 数据分析会话可包含多个 advisor 包。 来自这些顾问包的数据收集器集将合并到单个数据收集器集中。 单个数据分析会话的所有性能日志在同一时间段内收集。 分析在同一数据分析会话中运行的 advisor 包生成的报表有助于用户了解总体性能情况，并确定性能问题的根本原因。
 
-* **Windows 事件跟踪**Windows 中提供的高性能、低开销、可缩放的跟踪系统。 它提供分析和调试功能，可用于对各种方案进行故障排除。 SPA 使用 ETW 事件作为数据源来生成性能报告。 有关 ETW 的一般信息，请参阅[通过 Etw 改善调试和性能优化](https://msdn.microsoft.com/magazine/cc163437.aspx)。
+* **Windows 事件跟踪**Windows 中提供的高性能、低开销、可缩放的跟踪系统。 它提供分析和调试功能，可用于对各种方案进行故障排除。 SPA 使用 ETW 事件作为数据源来生成性能报告。 有关 ETW 的一般信息，请参阅[通过 Etw 改善调试和性能优化](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)。
 
 * ** (WMI) Windows Management Instrumentation**Windows 中的管理数据和操作的基础结构。 你可以编写 WMI 脚本或应用程序，以在远程计算机上自动执行管理任务。 WMI 还向操作系统的其他部分和产品提供管理数据。 SPA 使用 WMI 类信息和数据点作为源来生成性能报告。
 

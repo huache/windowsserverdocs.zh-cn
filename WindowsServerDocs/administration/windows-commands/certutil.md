@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f66bfb724a40a21bfaf323a54749f1d99c25e86
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: afaf0c75350cfb4121d0ebc664469f4494afe8c7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880342"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992951"
 ---
 # <a name="certutil"></a>certutil
 
@@ -23,7 +23,7 @@ Certutil.exe 是命令行程序，作为证书服务的一部分进行安装。 
 > [!IMPORTANT]
 > 更早版本的 certutil 可能不提供本文档中所述的所有选项。 可以通过运行或查看 certutil 的特定版本提供的所有选项 `certutil -?` `certutil <parameter> -?` 。
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>parameters
 
 ### <a name="-dump"></a>-dump
 
@@ -1101,7 +1101,7 @@ certutil [options] -setcasites delete
 - `-f`选项可用于重写指定**sitename**的验证错误或删除所有 CA sitenames 引用。
 
 > [!NOTE]
-> 有关为 Active Directory 域服务 (配置 Ca 的详细信息 AD DS) 站点感知，请参阅[AD DS 站点感知 AD CS 和 PKI 客户端](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))。
+> 有关为 Active Directory 域服务 (配置 Ca 的详细信息 AD DS) 站点感知，请参阅[AD DS 站点感知 AD CS 和 PKI 客户端](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))。
 
 ### <a name="-enrollmentserverurl"></a>-enrollmentserverURL
 

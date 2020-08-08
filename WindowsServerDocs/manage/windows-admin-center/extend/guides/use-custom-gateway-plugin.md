@@ -1,19 +1,17 @@
 ---
 title: 在工具扩展中使用自定义的网关插件
-description: 开发工具扩展 Windows 管理中心 SDK （Project Honolulu）-在工具扩展中使用自定义网关插件
-ms.technology: manage
+description: 开发工具扩展 Windows 管理中心 SDK (Project Honolulu) -在工具扩展中使用自定义网关插件
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 5bcaaa452a2b42a54cbc3b1d8f9a296504054e34
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 739b9e6769d1f2314e73a66d932586863063c7be
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269224"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952673"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>在工具扩展中使用自定义的网关插件
 
@@ -21,13 +19,13 @@ ms.locfileid: "81269224"
 
 在本文中，我们将使用 Windows 管理中心 CLI 创建的一个新的空工具扩展中的自定义网关插件。
 
-## <a name="prepare-your-environment"></a>准备你的环境 ##
+## <a name="prepare-your-environment"></a>准备环境 ##
 
 如果尚未这样做，请按照[开发工具扩展](../develop-tool.md)中的说明来准备环境，并创建新的空工具扩展。
 
 ## <a name="add-a-module-to-your-project"></a>向项目添加模块 ##
 
-如果你尚未这样做，请向你的项目添加一个新的[空模块](add-module.md)，我们将在下一步中使用该模块。  
+如果你尚未这样做，请向你的项目添加一个新的[空模块](add-module.md)，我们将在下一步中使用该模块。
 
 ## <a name="add-integration-to-custom-gateway-plugin"></a>将集成添加到自定义网关插件 ##
 
@@ -35,7 +33,7 @@ ms.locfileid: "81269224"
 
 ### <a name="create-pluginservicets"></a>创建插件。
 
-切换到上面创建的新工具模块的目录（```\src\app\{!Module-Name}```），并创建一个 ```plugin.service.ts```的新文件。
+转到 () 上创建的新工具模块的目录 ```\src\app\{!Module-Name}``` ，并创建一个新文件 ```plugin.service.ts``` 。
 
 将以下代码添加到刚创建的文件中：
 ``` ts
@@ -48,7 +46,7 @@ import { AjaxResponse, Observable } from 'rxjs';
 export class PluginService {
     constructor(private appContextService: AppContextService, private http: Http) {
     }
-    
+
     public getGatewayRestResponse(): Observable<any> {
         let callUrl = this.appContextService.activeConnection.nodeName;
 
@@ -61,14 +59,14 @@ export class PluginService {
 }
 ```
 
-根据需要更改对功能名称 ```Sample Uno``` 和 ```Sample%20Uno```。
+根据需要将对和的引用更改为 ```Sample Uno``` ```Sample%20Uno``` 你的功能名称。
 
 > [!WARNING]
-> 建议使用内置 ```this.appContextService.node``` 来调用在自定义网关插件中定义的任何 API。 这将确保在网关插件中需要凭据，以使其正确处理。
+> 建议使用内置的 ```this.appContextService.node``` 来调用在自定义网关插件中定义的任何 API。 这将确保在网关插件中需要凭据，以使其正确处理。
 
 ### <a name="modify-modulets"></a>修改 module
 
-打开前面创建的新模块的 ```module.ts``` 文件（即 ```{!Module-Name}.module.ts```）：
+打开 ```module.ts``` 之前创建的新模块的文件 (即 ```{!Module-Name}.module.ts```) ：
 
 添加以下 import 语句：
 
@@ -78,7 +76,7 @@ import { Http } from '@microsoft/windows-admin-center-sdk/core';
 import { PluginService } from './plugin.service';
 ```
 
-添加以下提供程序（声明后）：
+将以下提供程序添加 (声明后) ：
 
 ``` ts
   ,
@@ -91,7 +89,7 @@ import { PluginService } from './plugin.service';
 
 ### <a name="modify-componentts"></a>修改组件。 ts
 
-打开前面创建的新模块的 ```component.ts``` 文件（即 ```{!Module-Name}.component.ts```）：
+打开 ```component.ts``` 之前创建的新模块的文件 (即 ```{!Module-Name}.component.ts```) ：
 
 添加以下 import 语句：
 
@@ -133,9 +131,9 @@ import { PluginService } from './plugin.service';
   }
 ```
 
-### <a name="modify-componenthtml"></a>修改组件 .html ###
+### <a name="modify-componenthtml"></a>修改 component.html ###
 
-打开前面创建的新模块的 ```component.html``` 文件（即 ```{!Module-Name}.component.html```）：
+打开 ```component.html``` 之前创建的新模块的文件 (即 ```{!Module-Name}.component.html```) ：
 
 将以下内容添加到 html 文件：
 ``` html

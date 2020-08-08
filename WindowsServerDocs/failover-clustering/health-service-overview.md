@@ -1,19 +1,17 @@
 ---
 title: Windows Server 中的运行状况服务
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: 1b607869245ff46bd01824ebe4392e283be50b0d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 69bf8d66fdd3e7fac4066791d0521173484a894f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473074"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953413"
 ---
 # <a name="health-service-in-windows-server"></a>Windows Server 中的运行状况服务
 
@@ -80,7 +78,7 @@ ms.locfileid: "85473074"
 
 #### <a name="verification"></a>验证
 
-插入替换磁盘后，将根据支持的组件文档对其进行验证（请参阅下一节）。
+插入替换磁盘后，将根据支持的组件文档对其进行验证 (参阅下一节) 。
 
 #### <a name="pooling"></a>Pooling
 
@@ -88,7 +86,7 @@ ms.locfileid: "85473074"
 
 ## <a name="supported-components-document"></a>支持的组件文档
 
-运行状况服务提供了一种强制机制，用于将存储空间直通所使用的组件限制到管理员或解决方案供应商提供的支持的组件文档中。 这可用来防止你或其他人误用不受支持的硬件，可能会帮助保证或支持合同的合规性。 此功能当前仅限于物理磁盘设备，包括 Ssd、Hdd 和 NVMe 驱动器。 支持的组件文档可以限制模型、制造商（可选）和固件版本（可选）。
+运行状况服务提供了一种强制机制，用于将存储空间直通所使用的组件限制到管理员或解决方案供应商提供的支持的组件文档中。 这可用来防止你或其他人误用不受支持的硬件，可能会帮助保证或支持合同的合规性。 此功能当前仅限于物理磁盘设备，包括 Ssd、Hdd 和 NVMe 驱动器。 支持的组件文档可以限制模型、制造商 (可选) 和固件版本 (可选) 。
 
 ### <a name="usage"></a>使用情况
 
@@ -98,9 +96,9 @@ ms.locfileid: "85473074"
 
 该文档有两个独立的部分： `Disks` 和 `Cache` 。
 
-如果 `Disks` 提供了节，则只允许列出的驱动器（as `Disk` ）加入池。 将阻止所有未列出的驱动器加入池，从而有效地阻止它们在生产中的使用。 如果此部分为空，则允许任何驱动器加入池。
+如果 `Disks` 提供了节，则只允许)  (列出的驱动器 `Disk` 加入池。 将阻止所有未列出的驱动器加入池，从而有效地阻止它们在生产中的使用。 如果此部分为空，则允许任何驱动器加入池。
 
-如果 `Cache` 提供了节，则只会将列出的驱动器（as `CacheDisk` ）用于缓存。 如果此部分为空，则存储空间直通会[根据媒体类型和总线类型](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)尝试进行猜测。 此处列出的驱动器还应列在中 `Disks` 。
+如果 `Cache` 提供了节，则只使用作为)  (列出的驱动器 `CacheDisk` 用于缓存。 如果此部分为空，则存储空间直通会[根据媒体类型和总线类型](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)尝试进行猜测。 此处列出的驱动器还应列在中 `Disks` 。
 
 >[!IMPORTANT]
 > 支持的组件文档不会将以追溯方式应用到已在使用中的驱动器。

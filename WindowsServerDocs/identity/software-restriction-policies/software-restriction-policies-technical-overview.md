@@ -1,20 +1,18 @@
 ---
 title: 软件限制策略技术概述
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: dc7013b0-0efd-40fd-bd6d-75128adbd0b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 9a9a44cd4ab1f4c8ee1c4dadf5cc09de2208b46a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f98075cd8e662b3344f426bd8d69181994096a5f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966159"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953046"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>软件限制策略技术概述
 
@@ -23,7 +21,7 @@ ms.locfileid: "86966159"
 本主题介绍了软件限制策略、何时以及如何使用该功能、在过去版本中实现了哪些更改，并提供了指向其他资源的链接，这些资源可帮助你创建和部署从 Windows Server 2008 和 Windows Vista 开始的软件限制策略。
 
 ## <a name="introduction"></a>简介
-软件限制策略为管理员提供了组策略驱动机制来识别软件并控制其在本地计算机上的运行能力。 这些策略可用于保护运行 Microsoft Windows 操作系统（从 Windows Server 2003 和 Windows XP Professional 开始）的计算机免受已知冲突，并保护计算机免受安全威胁（如恶意病毒和特洛伊木马程序）的攻击。 你还可以使用软件限制策略创建计算机的高度受限配置，从而仅允许运行专门标识的应用程序。 软件限制策略与 Microsoft Active Directory 和组策略集成。 你也可以在独立计算机上创建软件限制策略。
+软件限制策略为管理员提供了组策略驱动机制来识别软件并控制其在本地计算机上的运行能力。 这些策略可用于保护运行 Microsoft Windows 操作系统的计算机 (从 Windows Server 2003 和 Windows XP Professional) 开始，防范已知冲突，并保护计算机免受安全威胁（如恶意病毒和特洛伊木马程序）的攻击。 你还可以使用软件限制策略创建计算机的高度受限配置，从而仅允许运行专门标识的应用程序。 软件限制策略与 Microsoft Active Directory 和组策略集成。 你也可以在独立计算机上创建软件限制策略。
 
 软件限制策略是信任策略，也是管理员设置的规则，旨在限制未完全受信任的脚本和其他代码的运行。 本地组策略编辑器的软件限制策略扩展提供了一个用户界面，通过该界面，可以在本地计算机或整个域中管理用于限制应用程序使用的设置。
 
@@ -42,7 +40,7 @@ ms.locfileid: "86966159"
 ## <a name="software-restriction-policy-usage-scenarios"></a>软件限制策略使用方案
 业务用户使用电子邮件、即时消息和对等应用程序进行协作。 随着这些协作的提高，尤其是在业务计算中使用 Internet，因此会受到恶意代码（如蠕虫、病毒和恶意用户或攻击者威胁）的威胁。
 
-用户可能会从本机 Windows 可执行文件（.exe 文件）等多种形式接收恶意代码，并将其发送到文档中的宏（例如 .doc 文件）。 恶意用户或攻击者通常会使用社交工程方法来使用户运行包含病毒和蠕虫的代码。 （社交工程是引诱用户泄露其密码或某种形式的安全信息的一项术语。）如果激活了此类代码，它可以在网络上生成拒绝服务攻击，将敏感或私有数据发送到 Internet，将计算机的安全性置于风险之中，或损坏硬盘驱动器的内容。
+用户可能会从多种形式接收恶意代码，范围从本机 Windows 可执行文件 ( .exe 文件) ，到文档中的宏 (如 .doc 文件) ）到脚本 (，如 .vbs 文件) 。 恶意用户或攻击者通常会使用社交工程方法来使用户运行包含病毒和蠕虫的代码。  (社会工程手段是诱使用户泄露其密码或某种形式的安全信息。 ) 如果激活了此类代码，它可以在网络上生成拒绝服务攻击，将敏感或私有数据发送到 Internet，将计算机的安全性置于风险之中，或者损坏硬盘驱动器的内容。
 
 IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软件不能运行。 由于恶意代码可以使用大量和窗体，因此这会成为一件很困难的任务。
 
@@ -58,13 +56,13 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 
 特别地，管理员可以将软件限制策略用于以下目的：
 
--   指定可在客户端计算机上运行的软件（可执行文件）
+-   指定可在客户端计算机上运行) 哪些软件 (可执行文件
 
 -   防止用户在共享计算机上运行特定程序
 
 -   指定可以将受信任的发布者添加到客户端计算机的人员
 
--   设置软件限制策略的范围（指定策略是影响客户端计算机上的所有用户还是用户子集）
+-   设置软件限制策略的作用域 (指定策略是影响客户端计算机上的所有用户还是用户子集) 
 
 -   防止可执行文件在本地计算机、组织单位 (OU)、网站或域中运行。 这适用于未使用软件限制策略解决恶意用户的潜在问题的情况。
 
@@ -80,20 +78,20 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 
 **比较软件限制策略和 AppLocker 中的应用程序控制功能**
 
-下表比较了软件限制策略（SRP）功能和 AppLocker 的特性和功能。
+下表比较了软件限制策略 (SRP) 功能和 AppLocker 的特性和功能。
 
 |应用程序控制功能|SRP|AppLocker|
 |----------------|----|-------|
 |范围|SRP 策略可以应用于从 Windows XP 和 Windows Server 2003 开始的所有 Windows 操作系统。|AppLocker 策略仅适用于 Windows Server 2008 R2、Windows Server 2012、Windows 7 和 Windows 8。|
 |策略创建|SRP 策略通过组策略维护，只有 GPO 管理员才能更新 SRP 策略。 本地计算机上的管理员可以修改本地 GPO 中定义的 SRP 策略。|AppLocker 策略通过组策略维护，只有 GPO 管理员才能更新策略。 本地计算机上的管理员可以修改本地 GPO 中定义的 AppLocker 策略。<p>AppLocker 允许自定义错误消息，从而将用户定向到某一网页寻求帮助。|
-|策略维护|必须使用本地安全策略管理单元（如果本地创建策略）或组策略管理控制台（GPMC）更新 SRP 策略。|可以使用本地安全策略管理单元（如果本地创建策略）、GPMC 或 Windows PowerShell AppLocker cmdlet 来更新 AppLocker 策略。|
+|策略维护|如果策略是在本地创建的，则必须使用本地安全策略管理单元更新 SRP 策略 () 或组策略管理控制台 (GPMC) 。|如果策略是在本地创建的，则可以使用本地安全策略管理单元更新 AppLocker 策略，) 、GPMC 或 Windows PowerShell AppLocker cmdlet (。|
 |策略应用程序|SRP 策略通过组策略分配。|AppLocker 策略通过组策略分配。|
 |强制模式|SRP 在 "拒绝列表模式" 下工作，管理员可在此创建不想在此企业中允许的文件规则，而默认情况下允许运行文件的其余部分。<p>SRP 还可以在 "允许列表模式" 中进行配置，这样，默认情况下，所有文件都将被阻止，管理员需要为要允许的文件创建允许规则。|默认情况下，AppLocker 在 "允许列表模式" 下运行，其中仅允许运行具有匹配允许规则的文件。|
-|可控制的文件类型|SRP 可以控制以下文件类型：<p>-可执行文件<br />-Dll<br />-脚本<br />-Windows 安装程序<p>SRP 不能单独控制每个文件类型。 所有 SRP 规则都位于单个规则集合中。|AppLocker 可以控制以下文件类型：<p>-可执行文件<br />-Dll<br />-脚本<br />-Windows 安装程序<br />-打包应用和安装程序（Windows Server 2012 和 Windows 8）<p>AppLocker 维护每种文件类型的单独规则集合。|
-|指定的文件类型|SRP 支持被视为可执行文件类型的可扩展列表。 管理员可以为应视为可执行文件的文件添加扩展。|AppLocker 不支持此功能。 AppLocker 当前支持以下文件扩展名：<p>-可执行文件（.exe，.com）<br />-Dll （.ocx，.dll）<br />-Scripts （.vbs，.js，. ps1，.cmd，.bat）<br />-Windows 安装程序（.msi、.mst、.msp）<br />-打包的应用安装程序（.appx）|
+|可控制的文件类型|SRP 可以控制以下文件类型：<p>-可执行文件<br />-Dll<br />-脚本<br />-Windows 安装程序<p>SRP 不能单独控制每个文件类型。 所有 SRP 规则都位于单个规则集合中。|AppLocker 可以控制以下文件类型：<p>-可执行文件<br />-Dll<br />-脚本<br />-Windows 安装程序<br />- ( Windows Server 2012 和 Windows 8 的打包应用程序和安装程序) <p>AppLocker 维护每种文件类型的单独规则集合。|
+|指定的文件类型|SRP 支持被视为可执行文件类型的可扩展列表。 管理员可以为应视为可执行文件的文件添加扩展。|AppLocker 不支持此功能。 AppLocker 当前支持以下文件扩展名：<p>-可执行文件 ( .exe，.com) <br />-Dll ( .ocx，.dll) <br />-脚本 ( .vbs，.js，. ps1，.cmd，.bat) <br />-Windows 安装程序 ( .msi，.mst，.msp) <br />-打包的应用安装程序 ( .appx) |
 |规则类型|SRP 支持四种类型的规则：<p>-哈希<br />-路径<br />-签名<br />-Internet 区域|AppLocker 支持三种类型的规则：<p>-哈希<br />-路径<br />-发布服务器|
-|编辑哈希值|SRP 允许管理员提供自定义哈希值。|AppLocker 计算哈希值本身。 在内部，它对可移植的可执行文件（Exe 和 Dll）和 Windows 安装程序使用 SHA1 Authenticode 哈希，并为 rest 使用 SHA1 平面文件哈希。|
-|支持不同的安全级别|使用 SRP administrators 可以指定应用可用于运行的权限。 因此，管理员可以配置一个规则，使记事本始终以受限权限运行，而永远不使用管理权限。<p>Windows Vista 和更早版本上的 SRP 支持多个安全级别。 在 Windows 7 上，此列表仅限于两个级别： "不允许" 和 "无限制" （基本用户转换为 "不允许"）。|AppLocker 不支持安全级别。|
+|编辑哈希值|SRP 允许管理员提供自定义哈希值。|AppLocker 计算哈希值本身。 在内部，它对可移植的可执行文件使用 SHA1 Authenticode 哈希（ (Exe 和 Dll) 和 Windows 安装程序）以及适用于 rest 的 SHA1 平面文件哈希。|
+|支持不同的安全级别|使用 SRP administrators 可以指定应用可用于运行的权限。 因此，管理员可以配置一个规则，使记事本始终以受限权限运行，而永远不使用管理权限。<p>Windows Vista 和更早版本上的 SRP 支持多个安全级别。 在 Windows 7 上，此列表仅限于两个级别： "不允许" 和 "无限制" (基本用户转换为不允许的) 。|AppLocker 不支持安全级别。|
 |管理打包应用和打包应用安装程序|无法|.appx 是 AppLocker 可以管理的有效文件类型。|
 |将规则定向到用户或用户组|SRP 规则适用于特定计算机上的所有用户。|AppLocker 规则可以针对特定用户或用户组。|
 |规则异常支持|SRP 不支持规则异常|AppLocker 规则可以有例外，这些例外使管理员可以创建规则，例如 "允许来自 Windows 的所有操作，但 Regedit.exe"。|
@@ -109,7 +107,7 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 
 在较高级别，软件限制策略包含以下组件：
 
--   软件限制策略 API。 应用程序编程接口（Api）用于创建和配置构成软件限制策略的规则。 还存在用于查询、处理和强制实施软件限制策略的软件限制策略 Api。
+-   软件限制策略 API。  (Api) 的应用程序编程接口用于创建和配置构成软件限制策略的规则。 还存在用于查询、处理和强制实施软件限制策略的软件限制策略 Api。
 
 -   软件限制策略管理工具。 这包括**本地组策略对象编辑器**管理单元的**软件限制策略**扩展，管理员使用此扩展来创建和编辑软件限制策略。
 
@@ -121,7 +119,7 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 
 -   事件查看器。 软件限制策略使用的函数将事件记录到事件查看器日志中。
 
--   策略的结果集（RSoP），有助于诊断将应用于客户端的有效策略。
+-   策略的结果集 (RSoP) ，这有助于诊断将应用于客户端的有效策略。
 
 有关 SRP 体系结构的详细信息，SRP 如何管理规则、进程和交互，请参阅 Windows Server 2003 技术库中的[软件限制策略的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))。
 
@@ -133,7 +131,7 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 
 ### <a name="create-a-separate-group-policy-object-for-software-restriction-policies"></a>为软件限制策略创建一个单独的组策略对象。
 
--   如果为软件限制策略创建了单独的组策略对象（GPO），则可以在紧急情况下禁用软件限制策略，而不会禁用域策略的其余部分。
+-   如果 (GPO) 为软件限制策略创建了单独的组策略对象，则可以在紧急情况下禁用软件限制策略，而不会禁用域策略的其余部分。
 
 ### <a name="if-you-experience-problems-with-applied-policy-settings-restart-windows-in-safe-mode"></a>如果在应用策略设置时遇到问题，请在安全模式下重新启动 Windows。
 
@@ -147,7 +145,7 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 
 ### <a name="for-best-security-use-access-control-lists-in-conjunction-with-software-restriction-policies"></a>为了获得最佳安全性，请将访问控制列表与软件限制策略结合使用。
 
--   用户可能会尝试通过重命名或移动禁止的文件或覆盖不受限制的文件来规避软件限制策略。 因此，建议使用访问控制列表（Acl）来拒绝用户执行这些任务所必需的访问权限。
+-   用户可能会尝试通过重命名或移动禁止的文件或覆盖不受限制的文件来规避软件限制策略。 因此，建议使用 (Acl) 的访问控制列表，拒绝用户执行这些任务所需的访问权限。
 
 ### <a name="test-new-policy-settings-thoroughly-in-test-environments-before-applying-the-policy-settings-to-your-domain"></a>在将策略设置应用于域之前，在测试环境中全面测试新的策略设置。
 
@@ -175,7 +173,7 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 |--------|-------|
 |规划|[软件限制策略技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10))|
 |**操作**|[管理软件限制策略](administer-software-restriction-policies.md)|
-|**疑难解答**|[软件限制策略故障排除（2003）](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))|
-|**安全性**|[软件限制策略的威胁和对策（2008）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10))<p>[软件限制策略的威胁和对策（2008 R2）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))|
-|**工具和设置**|[软件限制策略工具和设置（2003）](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))|
+|**故障排除**|[软件限制策略故障排除 (2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))|
+|**安全性**|[软件限制策略的威胁和对策 (2008) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10))<p>[软件限制策略的威胁和对策 (2008 R2) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))|
+|**工具和设置**|[软件限制策略工具和设置 (2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))|
 |**社区资源**|[软件限制策略的应用程序锁定](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|
