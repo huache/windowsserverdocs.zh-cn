@@ -2,22 +2,20 @@
 title: 创建 DFS 命名空间
 description: 本文介绍如何创建 DFS 命名空间。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 60b31b90ed54137898043e79c3c6504afb3f4b7f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6999dec3681a765ac64fdedd2e695c8a3f7dbcfa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953359"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939422"
 ---
 # <a name="create-a-dfs-namespace"></a>创建 DFS 命名空间
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 若要创建新的命名空间，可以使用服务器管理器，在安装 DFS 命名空间角色服务时创建该命名空间。 你也可以从 Windows PowerShell 会话使用 [New-DfsnRoot cmdlet](/powershell/module/dfsn/new-dfsnroot)。
 

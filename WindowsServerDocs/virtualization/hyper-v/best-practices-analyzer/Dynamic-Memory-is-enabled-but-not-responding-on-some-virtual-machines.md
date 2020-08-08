@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 91b7f50f-a071-4ab6-beb1-1b29f92f52b6
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 26b925861eada96bae11b66278955e648e197f65
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d6227829f73cdccefecd0758a69a25a299665557
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935446"
+ms.locfileid: "87988951"
 ---
 # <a name="dynamic-memory-is-enabled-but-not-responding-on-some-virtual-machines"></a>动态内存已启用，但在某些虚拟机上未响应
 
@@ -42,7 +42,4 @@ ms.locfileid: "87935446"
 
 从 Windows Server 2016，integration services 通过 Windows 更新提供。 确保将虚拟机配置为接收更新，以获取最新版本的 integration services。
 
-动态内存适用于受支持来宾的特定版本。 请参阅[hyper-v 动态内存概述](https://technet.microsoft.com/library/hh831766.aspx)版本低于 windows Server 2016 和 windows 10 的版本。
-
-
-
+动态内存适用于受支持来宾的特定版本。 请参阅[hyper-v 动态内存概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11))版本低于 windows Server 2016 和 windows 10 的版本。

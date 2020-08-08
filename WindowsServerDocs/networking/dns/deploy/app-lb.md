@@ -2,18 +2,16 @@
 title: 使用 DNS 策略执行应用程序负载平衡
 description: 本主题是 Windows Server 2016 DNS 策略方案指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 50ac17bafb09eddc6bb02df1d4decf3636f4db17
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0af8a819494754fc45392116230edad808835e80
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518293"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964233"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>使用 DNS 策略执行应用程序负载平衡
 
@@ -101,7 +99,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 
 #### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>创建 DNS 策略
 
-创建分区（区域作用域）并添加记录后，必须创建在这些范围内分发传入查询的 DNS 策略，以便使用西雅图 datacenter 中 Web 服务器的 IP 地址对 contosogiftservices.com 的50% 的查询做出响应，其余部分则在芝加哥和达拉斯数据中心之间均匀分布。
+在 (区域作用域创建分区之后) 并且已添加记录后，你必须创建在这些范围内分发传入查询的 DNS 策略，以便使用西雅图 datacenter 中的 Web 服务器的 IP 地址对 contosogiftservices.com 的50% 的查询进行响应，并且其余部分在芝加哥和达拉斯数据中心之间均匀分布。
 
 你可以使用以下 Windows PowerShell 命令创建在这三个数据中心之间平衡应用程序流量的 DNS 策略。
 

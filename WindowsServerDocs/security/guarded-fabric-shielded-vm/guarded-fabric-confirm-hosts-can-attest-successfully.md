@@ -1,23 +1,21 @@
 ---
 title: 确认受保护的主机可以证明
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7485796b-b840-4678-9b33-89e9710fbbc7
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 69ff4bcfb407d01e184abd039be8aa0117372b4a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0162cd8c14640bfc025796995fdc2ce78b5912a2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475334"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939638"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>确认受保护的主机可以证明
 
->适用于： Windows Server 2019、Windows Server （半年频道）、Windows Server 2016
+>适用于： Windows Server 2019、Windows Server (半年频道) 、Windows Server 2016
 
 构造管理员需要确认 Hyper-v 主机是否可以作为受保护的主机运行。 在至少一个受保护的主机上完成以下步骤：
 
@@ -27,11 +25,11 @@ ms.locfileid: "85475334"
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
     ```
 
-2. 请确保 Hyper-v 主机可以解析 HGS DNS 名称，并且可以通过网络连接来访问 HGS 服务器上的端口80（或者，如果设置了 HTTPS，则为443）。
+2. 如果在 HGS 服务器上设置 HTTPS) ，请确保 Hyper-v 主机可以解析 HGS DNS 名称并且具有网络连接，以便达到端口 80 (或443。
 
 3. 配置主机的密钥保护和证明 Url：
 
-    - **通过 Windows powershell**：你可以通过在提升的 Windows powershell 控制台中执行以下命令来配置密钥保护和证明 url。 对于 &lt; FQDN &gt; ，请使用 hgs 群集的完全限定的域名（FQDN）（例如，hgs），或要求 hgs 管理员在 hgs 服务器上运行**HgsServer** cmdlet 以检索 url）。
+    - **通过 Windows powershell**：你可以通过在提升的 Windows powershell 控制台中执行以下命令来配置密钥保护和证明 url。 对于 &lt; FQDN &gt; ，使用完全限定的域名 (hgs 群集 (FQDN) 例如，hgs，或要求 hgs 管理员在 hgs 服务器上运行**HgsServer** Cmdlet，以检索 url) 。
 
         ```PowerShell
         Set-HgsClientConfiguration -AttestationServerUrl 'http://<FQDN>/Attestation' -KeyProtectionServerUrl 'http://<FQDN>/KeyProtection'
@@ -39,7 +37,7 @@ ms.locfileid: "85475334"
 
         若要配置回退 HGS 服务器，请重复此命令并指定密钥保护和证明服务的备用 Url。 有关详细信息，请参阅[回退配置](guarded-fabric-manage-branch-office.md#fallback-configuration)。
 
-    - **通过 vmm**：如果你使用的是 System Center 2016-VIRTUAL MACHINE MANAGER （VMM），则可在 VMM 中配置证明和密钥保护 url。 有关详细信息，请参阅在**VMM 中设置受保护的主机**中[配置全局 HGS 设置](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings)。
+    - **通过 vmm**：如果使用 System Center 2016-VIRTUAL MACHINE MANAGER (vmm) ，则可以在 vmm 中配置证明和密钥保护 url。 有关详细信息，请参阅在**VMM 中设置受保护的主机**中[配置全局 HGS 设置](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings)。
 
     >**说明**
     > - 如果 HGS 管理员在[hgs 服务器上启用了 HTTPS](guarded-fabric-configure-hgs-https.md)，则将 url 作为开始 `https://` 。

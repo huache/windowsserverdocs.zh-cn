@@ -1,20 +1,18 @@
 ---
 title: 在 Hyper-v 上运行 Linux 的最佳实践
 description: 提供在虚拟机上运行 Linux 的建议
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 04/15/2020
-ms.openlocfilehash: 75b471d4083ef1597d5edcc775ea6fc847992483
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b9a03ec24adf0b77ff4a6e477f550c63760c9d85
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474464"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989103"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>在 Hyper-v 上运行 Linux 的最佳实践
 
@@ -26,7 +24,7 @@ ms.locfileid: "85474464"
 
 即使文件系统主要为空，某些 Linux 文件系统也可能会消耗大量的实际磁盘空间。 若要减少动态 VHDX 文件的实际磁盘空间使用情况，请考虑以下建议：
 
-* 创建 VHDX 时，请在 PowerShell 中使用 BlockSizeBytes （来自默认32MB），例如：
+* 创建 VHDX 时，请在 PowerShell 中使用默认 32MB)  (1MB BlockSizeBytes，例如：
 
 ```Powershell
 PS > New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes 127GB -Dynamic -BlockSizeBytes 1MB
@@ -68,7 +66,7 @@ Set-VMComPort -VMName <Name> -Number 2 -Path \\.\pipe\dbg1
 
 ## <a name="use-static-mac-addresses-with-failover-clustering"></a>在故障转移群集中使用静态 MAC 地址
 
-应使用故障转移群集部署的 Linux 虚拟机配置每个虚拟网络适配器的静态媒体访问控制（MAC）地址。 在某些版本的 Linux 中，故障转移后可能会丢失网络配置，因为已将新的 MAC 地址分配给虚拟网络适配器。 若要避免丢失网络配置，请确保每个虚拟网络适配器都有一个静态 MAC 地址。 可以通过在 Hyper-v 管理器或故障转移群集管理器中编辑虚拟机的设置来配置 MAC 地址。
+将使用故障转移群集部署的 Linux 虚拟机应配置为具有静态媒体访问控制， (每个虚拟网络适配器的 MAC) 地址。 在某些版本的 Linux 中，故障转移后可能会丢失网络配置，因为已将新的 MAC 地址分配给虚拟网络适配器。 若要避免丢失网络配置，请确保每个虚拟网络适配器都有一个静态 MAC 地址。 可以通过在 Hyper-v 管理器或故障转移群集管理器中编辑虚拟机的设置来配置 MAC 地址。
 
 ## <a name="use-hyper-v-specific-network-adapters-not-the-legacy-network-adapter"></a>使用 Hyper-v 特定的网络适配器，而不是旧的网络适配器
 
@@ -90,9 +88,9 @@ Linux 内核提供两组磁盘 i/o 计划程序来重新排序请求。  一个�
 
 ## <a name="shrinking-vhdx-or-expanding-vhd-and-vhdx-files-can-result-in-erroneous-gpt-partition-tables"></a>缩小 VHDX 或扩展 VHD 和 VHDX 文件可能导致 GPT 分区表错误
 
-Hyper-v 允许压缩虚拟磁盘（VHDX）文件，而不考虑磁盘上可能存在的任何分区、卷或文件系统数据结构。 如果 VHDX 的结束时间收缩到在分区结束之前的 VHDX 位置，则数据可能会丢失，分区可能会损坏，或者在读取分区时返回的数据无效。
+Hyper-v 允许压缩虚拟磁盘 (VHDX) 文件，而不考虑磁盘上可能存在的任何分区、卷或文件系统数据结构。 如果 VHDX 的结束时间收缩到在分区结束之前的 VHDX 位置，则数据可能会丢失，分区可能会损坏，或者在读取分区时返回的数据无效。
 
-调整 VHD 或 VHDX 大小后，管理员应使用诸如 fdisk 或 parted 的实用工具来更新分区、卷和文件系统结构，以反映磁盘大小的变化。 收缩或扩展包含 GUID 分区表（GPT）的 VHD 或 VHDX 的大小会在分区管理工具用于检查分区布局时产生警告，并会警告管理员修复第一个和第二个 GPT 标头。 此手动步骤可以安全地执行，而不会丢失数据。
+调整 VHD 或 VHDX 大小后，管理员应使用诸如 fdisk 或 parted 的实用工具来更新分区、卷和文件系统结构，以反映磁盘大小的变化。 缩小或扩大包含 GUID 分区表 (GPT) 的 VHD 或 VHDX 的大小会导致在分区管理工具用于检查分区布局时出现警告，并会警告管理员修复第一个和第二个 GPT 标头。 此手动步骤可以安全地执行，而不会丢失数据。
 
 ## <a name="additional-references"></a>其他参考
 
@@ -100,8 +98,8 @@ Hyper-v 允许压缩虚拟磁盘（VHDX）文件，而不考虑磁盘上可能�
 
 * [在 Hyper-v 上运行 FreeBSD 的最佳做法](Best-practices-for-running-FreeBSD-on-Hyper-V.md)
 
-* [部署 Hyper-V 群集](https://technet.microsoft.com/library/jj863389.aspx)
+* [部署 Hyper-V 群集](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))
 
-* [创建适用于 Azure 的 Linux 映像](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic)
+* [创建适用于 Azure 的 Linux 映像](/azure/virtual-machines/linux/create-upload-generic)
 
-* [在 Azure 上优化 Linux VM](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)
+* [在 Azure 上优化 Linux VM](/azure/virtual-machines/linux/optimization)

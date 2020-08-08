@@ -1,19 +1,17 @@
 ---
 title: 通过 Windows 管理中心管理故障转移群集
-description: 通过 Windows 管理中心管理故障转移群集（Project Honolulu）
-ms.technology: manage
+description: 利用 Windows 管理中心 (项目 Honolulu) 管理故障转移群集
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: b7f015ac4c9906447069501bf0922b36306a51d7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a0b9c0e43d1573a52f69454ce05dd7a1c281510e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950498"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964413"
 ---
 # <a name="manage-failover-clusters-with-windows-admin-center"></a>通过 Windows 管理中心管理故障转移群集
 
@@ -48,14 +46,14 @@ ms.locfileid: "75950498"
 
 以下工具可用于故障转移群集连接：
 
-| 工具 | 描述 |
+| 工具 | 说明 |
 | ---- | ----------- |
 | 概述 | 查看故障转移群集详细信息并管理群集资源 |
-| “磁盘” | 查看群集共享磁盘和卷 |
-| “网络” | 查看群集中的网络 |
-| 节点数 | 查看和管理群集节点 |
+| 磁盘 | 查看群集共享磁盘和卷 |
+| 网络 | 查看群集中的网络 |
+| Nodes | 查看和管理群集节点 |
 | 角色 | 管理群集角色或创建一个空角色 |
-| 更新 | 管理群集感知更新（需要[CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp)） |
+| 更新 | 管理群集感知更新 (需要[CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp))  |
 | [虚拟机](manage-virtual-machines.md) | 查看和管理虚拟机 |
 | 虚拟交换机 | 查看和管理虚拟交换机 |
 

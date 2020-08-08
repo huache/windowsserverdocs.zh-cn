@@ -1,19 +1,17 @@
 ---
 title: Windows 管理中心入门
 description: Windows 管理中心入门
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: 5c0094c9cecfb50304b0317ab11c60f0332ef3a7
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f03e97cb4c318a65b0daf4034f0f0cfd6fe053bf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518565"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964603"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows 管理中心入门
 
@@ -30,7 +28,7 @@ ms.locfileid: "87518565"
 
 ### <a name="selecting-a-client-certificate"></a>选择客户端证书
 
-首次在 Windows 10 上打开 Windows 管理中心时，请确保选择*Windows 管理中心客户端*证书（否则，会收到 HTTP 403 错误，指出 "无法访问此页"）。
+首次在 Windows 10 上打开 Windows 管理中心时，请确保选择*Windows 管理中心客户端*证书 (否则，会收到 HTTP 403 错误，指出 "无法访问此页" ) 。
 
 在 Microsoft Edge 中，当系统提示此对话框时：
 
@@ -44,7 +42,7 @@ ms.locfileid: "87518565"
 
 3. 请确保选择 "**始终允许访问**"，然后单击 "**允许**"
 
-    !"需要凭据" 对话框] （.。/media/launch-cert-3.png）
+    !"需要凭据" 对话框 (。/media/launch-cert-3.png) 
 
 ## <a name="connecting-to-managed-nodes-and-clusters"></a>连接到托管节点和群集
 
@@ -54,7 +52,7 @@ ms.locfileid: "87518565"
 
 1. 单击“所有连接”下的“+ 添加”。
 
-   ![Windows 管理中心-"所有连接" 页](../media/launch/addserver0.png)
+   ![Windows Admin Center -“所有连接”页](../media/launch/addserver0.png)
 
 2. 选择添加服务器、群集、Windows 电脑或 Azure VM：
 
@@ -85,7 +83,7 @@ ms.locfileid: "87518565"
 
     ![Windows 管理中心-搜索 Active Directory 选项卡](../media/launch/search-ad.png)
 
- 2. 输入搜索条件，然后单击 "**搜索**"。 支持通配符（*）。
+ 2. 输入搜索条件，然后单击 "**搜索**"。 支持 ( * ) 的通配符。
 
  3. 搜索完成后-选择一个或多个结果，可以选择添加标记，然后单击 "**添加**"。
 
@@ -115,7 +113,7 @@ Windows 管理中心支持通过多种机制对托管节点进行身份验证。
 
 你可以将凭据应用于所有连接，这将为该特定浏览器会话缓存这些凭据。 如果重新加载浏览器，则必须重新输入作为凭据的**管理**。
 
-**本地管理员密码解决方案（LAPS）**
+**本地管理员密码解决方案 (LAPS) **
 
 如果你的环境使用[LAPS](https://technet.microsoft.com/mt227395.aspx)，并且在 WINDOWS 10 电脑上安装了 windows 管理中心，则可以使用 LAPS 凭据通过托管节点进行身份验证。 **如果使用此方案，请**[提供反馈](https://aka.ms/WACFeedback)。
 
@@ -130,9 +128,9 @@ Windows 管理中心支持通过多种机制对托管节点进行身份验证。
 
 ![Windows 管理中心-编辑标记选项](../media/launch/tags-5.png)
 
-"**编辑连接标记**" 窗格允许您从所选连接中修改、添加或删除标记：
+"**编辑连接标记**" 窗格允许您从所选连接中修改、添加或删除标记， () ：
 
-* 若要向所选连接添加新标记，请选择 "**添加标记**"，然后输入要使用的标记名称。
+* 若要将新标记添加到所选连接 (s) ，请选择 "**添加标记**"，然后输入要使用的标记名称。
 
 * 若要使用现有标记名称标记所选连接，请选中要应用的标记名称旁的复选框。
 

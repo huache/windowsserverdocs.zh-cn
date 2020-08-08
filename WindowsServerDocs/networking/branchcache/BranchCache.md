@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 64ec120f552c5a95b69e9ac635e861507805b281
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d03169b3af61dd4925b0ca2f972faff496955b9d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971954"
+ms.locfileid: "87989233"
 ---
 # <a name="branchcache"></a>BranchCache
 
@@ -143,7 +143,7 @@ BranchCache 可以改善网络应用程序的性能并通过共享数据缓存�
 > [!NOTE]
 > 由于某些 Web 代理无法处理非标准内容编码标头，因此建议你将 BranchCache 与超文本传输协议安全 (HTTPS) ，而不是 HTTP。
 
-= = = = = = = 表示有关 Windows Server 2016 中的云技术的详细信息，请参阅[软件定义的网络 &#40;SDN&#41;](../sdn/Software-Defined-Networking--SDN-.md)。
+= = = = = = = 表示有关 Windows Server 2016 中的云技术的详细信息，请参阅[软件定义的网络 &#40;SDN&#41;](../sdn/software-defined-networking.md)。
 
 ## <a name="content-information-versions"></a><a name="bkmk_version"></a>内容信息版本
 

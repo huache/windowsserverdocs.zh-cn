@@ -2,24 +2,22 @@
 title: 调整 DFS 命名空间
 description: 本文介绍如何调整或优化 DFS 命名空间。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 011512deaeb99ded7d0bfc32a48f19ab3b622475
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 348a34e24cf7d22dc376df37607f21f1dceea74a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386150"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939393"
 ---
 # <a name="tuning-dfs-namespaces"></a>调整 DFS 命名空间
 
-> 适用于：Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
-创建命名空间并添加文件夹和目标后，请参阅以下部分，以优化或优化 DFS 命名空间处理 Active Directory 域服务（AD DS）更新的命名空间数据的方式的方法：
+创建命名空间并添加文件夹和目标之后，请参阅下列部分调试或优化 DFS 命名空间处理引用以及轮询 Active Directory 域服务 (AD DS) 获取更新的命名空间数据的方式：
 
 -   [在命名空间上启用基于访问权限的枚举](enable-access-based-enumeration-on-a-namespace.md)
 -   [启用或禁用引用和客户端故障回复](enable-or-disable-referrals-and-client-failback.md)

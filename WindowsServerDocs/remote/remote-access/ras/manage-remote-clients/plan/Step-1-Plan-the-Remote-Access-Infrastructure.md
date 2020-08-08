@@ -2,18 +2,16 @@
 title: 步骤1规划远程访问基础结构
 description: 本主题是在 Windows Server 2016 中远程管理 DirectAccess 客户端的指南的一部分。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 567097d69db8f0de3f93e315af06c18525ad3735
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 88bc666b516d00b4c132b5b67ed702f071847fb0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769585"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989753"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>步骤1规划远程访问基础结构
 
@@ -24,7 +22,7 @@ ms.locfileid: "87769585"
 
 本主题介绍规划基础结构的步骤，你可以使用这些步骤设置单个远程访问服务器以远程管理 DirectAccess 客户端。 下表列出了这些步骤，但不需要按特定顺序完成这些规划任务。
 
-|任务|说明|
+|任务|描述|
 |----|--------|
 |[规划网络拓扑和服务器设置](#plan-network-topology-and-settings)|确定远程访问服务器 (的位置，或在网络地址转换后 (NAT) 设备或防火墙) ，并规划 IP 寻址和路由。|
 |[规划防火墙要求](#plan-firewall-requirements)|规划允许远程访问通过边缘防火墙。|
@@ -52,13 +50,13 @@ ms.locfileid: "87769585"
 
     DirectAccess 使用 IPv6 和 IPsec 在 DirectAccess 客户端计算机和内部企业网络之间创建安全连接。 但是，DirectAccess 不一定需要连接到 IPv6 Internet 或内部网络上的本机 IPv6 支持。 相反，它会自动配置并使用 IPv6 转换技术在 IPv4 Internet 上对 IPv6 通信进行隧道 (6to4、Teredo 或 IP-HTTPS) 并跨仅限 IPv4 的 intranet (NAT64 或 ISATAP) 。 有关这些转换技术的概述，请参阅以下资源：
 
-    -   [IPv6 转换技术](/previous-versions//bb726951(v=technet.10))
+    -   [IPv6 转换技术](/previous-versions/bb726951(v=technet.10))
 
-    -   [IP-HTTPS 隧道协议规范](/previous-versions//bb726951(v=technet.10))
+    -   [IP-HTTPS 隧道协议规范](/previous-versions/bb726951(v=technet.10))
 
 3.  按下表配置所需的适配器和寻址。 对于使用单个网络适配器的 NAT 设备后面的部署，仅使用**内部网络适配器**列配置 IP 地址。
 
-    |说明|外部网络适配器|内部网络适配器<sup>1，以上</sup>|路由要求|
+    |描述|外部网络适配器|内部网络适配器<sup>1，以上</sup>|路由要求|
     |-|--------------|------------------------|------------|
     |IPv4 Internet 和 IPv4 Intranet|配置以下内容：<br/><br/>-具有相应子网掩码的两个静态连续公用 IPv4 地址 (仅限 Teredo) 。<br/>-Internet 防火墙或本地 Internet 服务提供商 (ISP) 路由器的默认网关 IPv4 地址。 **注意：** 远程访问服务器需要两个连续的公用 IPv4 地址，以便它可用作 Teredo 服务器，基于 Windows 的 Teredo 客户端可以使用远程访问服务器来检测 NAT 设备的类型。|配置以下内容：<br/><br/>-具有相应子网掩码的 IPv4 intranet 地址。<br/>-Intranet 命名空间的特定于连接的 DNS 后缀。 还应在内部接口上配置 DNS 服务器。 **警告：** 不要在任何 intranet 接口上配置默认网关。|若要配置远程访问服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv4 地址空间。<br/>-使用 `route add -p` 或 `netsh interface ipv4 add route` 命令将 ipv4 地址空间添加为远程访问服务器的 ipv4 路由表中的静态路由。|
     |IPv6 Internet 和 IPv6 Intranet|配置以下内容：<br/><br/>-使用 ISP 提供的自动配置地址配置。<br/>-使用 `route print` 命令以确保指向 ISP 路由器的默认 ipv6 路由存在于 IPv6 路由表中。<br/>-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，以及它们使用的默认首选项比本地 intranet 路由器更高。 如果两个结果都为“是”，则默认路由不需要任何其他配置。 ISP 路由器的更高首选等级可确保远程访问服务器的活动默认 IPv6 路由指向 IPv6 Internet。<br/><br/>因为远程访问服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，将数据包筛选器添加到外围网络中的域控制器，阻止连接到远程访问服务器的 Internet 接口的 IPv6 地址。|配置以下内容：<br/><br/>如果使用的不是默认首选项级别，请使用命令来配置 intranet 接口 `netsh interface ipv6 set InterfaceIndex ignoredefaultroutes=enabled` 。 这一命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以从命令的显示中获得 intranet 接口的 InterfaceIndex `netsh interface show interface` 。|如果你拥有 IPv6 Intranet，若要配置远程访问服务器以访问所有的 IPv6 位置，请执行以下操作：<br/><br/>-列出 intranet 上所有位置的 IPv6 地址空间。<br/>-使用 `netsh interface ipv6 add route` 命令将 ipv6 地址空间添加为远程访问服务器的 ipv6 路由表中的静态路由。|

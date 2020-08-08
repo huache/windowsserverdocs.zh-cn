@@ -1,20 +1,18 @@
 ---
 title: 导出和导入虚拟机
 description: 演示如何使用 Hyper-v 管理器或 Windows PowerShell 导出和导入虚拟机。
-ms.prod: windows-server
 author: kbdazure
 ms.author: kathydav
 manager: dongill
-ms.technology: compute-hyper-v
 ms.date: 12/13/2016
 ms.topic: article
 ms.assetid: 7fd996f5-1ea9-4b16-9776-85fb39a3aa34
-ms.openlocfilehash: f1b321c04ad0b7541f21b444499b13fd2b4e4a6d
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 674c1640ced07df731b8667658fdbf3e5500e28d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203559"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87988940"
 ---
 # <a name="export-and-import-virtual-machines"></a>导出和导入虚拟机
 
@@ -38,13 +36,13 @@ ms.locfileid: "83203559"
 
 ### <a name="using-powershell"></a>使用 PowerShell
 
-在替换 \< vm 名称和路径后，以管理员身份打开会话并运行如下所示的命令 \> \< \> ：
+在替换和后，以管理员身份打开会话并运行如下所示的命令 \<vm name\> \<path\> ：
 
 ```powershell
 Export-VM -Name \<vm name\> -Path \<path\>
 ```
 
-有关详细信息，请参阅[Export-VM](https://docs.microsoft.com/powershell/module/hyper-v/export-vm)。
+有关详细信息，请参阅[Export-VM](/powershell/module/hyper-v/export-vm)。
 
 ## <a name="import-a-virtual-machine"></a>导入虚拟机
 
@@ -58,15 +56,15 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 1. 从 Hyper-v 管理器的 "**操作**" 菜单中，单击 "**导入虚拟机**"。
 
-2. 单击“下一步”  。
+2. 单击“下一步”。
 
 3. 选择包含导出文件的文件夹，然后单击 "**下一步**"。
 
 4. 选择要导入的虚拟机。
 
-5. 选择导入类型，然后单击 "**下一步**"。 （有关说明，请参阅下面的[导入类型](#import-types)。）
+5. 选择导入类型，然后单击 "**下一步**"。  (说明，请参阅下面的[导入类型](#import-types)。 ) 
 
-6. 单击“完成”  。
+6. 单击“完成”。
 
 ### <a name="import-using-powershell"></a>使用 PowerShell 导入
 
@@ -96,7 +94,7 @@ Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx' 
 Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx' -Copy -GenerateNewId
 ```
 
-有关详细信息，请参阅[导入-VM](https://docs.microsoft.com/powershell/module/hyper-v/import-vm)。
+有关详细信息，请参阅[导入-VM](/powershell/module/hyper-v/import-vm)。
 
 ### <a name="import-types"></a>导入类型
 
@@ -107,4 +105,3 @@ Hyper-v 提供了三种导入类型：
 - **还原虚拟机**–将虚拟机还原到你选择的位置，或者使用默认的 hyper-v。 此导入类型将创建已导出文件的副本，并将其移动到所选位置。 导入完成后，虚拟机具有与导出时相同的 ID。 因此，如果虚拟机已在 Hyper-v 中运行，则需要先删除该虚拟机，然后才能完成导入。 导入完成后，导出的文件将保持不变，并且可以删除或重新导入。
 
 - **复制虚拟机**–在中，你可以选择文件的位置。 不同之处在于导入的虚拟机具有新的唯一 ID，这意味着你可以多次将虚拟机导入同一主机。
-

@@ -1,19 +1,17 @@
 ---
 title: 创建受防护的 Windows VM 模板磁盘
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 9c8b84e8-1f5a-47a1-83ca-b1dbd801cb0b
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: d33714c9939593b4c877e76f77d390139771e3ff
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: fedfce4980cd36a904ef4f2c49a68fa3016a4359
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769385"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939648"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>创建受防护的 Windows VM 模板磁盘
 
@@ -28,7 +26,7 @@ ms.locfileid: "87769385"
 
 首先准备要通过受防护的模板磁盘创建向导运行的 OS 磁盘。 此磁盘将用作租户的 Vm 中的 OS 磁盘。 你可以使用任何现有工具创建此磁盘，例如 Microsoft Desktop Image Service Manager (DISM) ，或者手动设置具有空白 VHDX 的 VM，并将操作系统安装到该磁盘。 设置磁盘时，必须遵守特定于第2代和/或受防护 Vm 的以下要求：
 
-| VHDX 的要求 | Reason |
+| VHDX 的要求 | 原因 |
 |-----------|----|
 |必须是 (GPT) 磁盘的 GUID 分区表 | 需要用于第2代虚拟机以支持 UEFI|
 |磁盘类型必须是**基本**磁盘，而不是**动态**磁盘。 <br>注意：这是指逻辑磁盘类型，而不是 Hyper-v 支持的 "动态扩展" VHDX 功能。 | BitLocker 不支持动态磁盘。|

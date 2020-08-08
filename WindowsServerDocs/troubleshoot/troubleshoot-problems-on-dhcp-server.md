@@ -1,20 +1,18 @@
 ---
 title: 排查 DHCP 服务器上的问题
 description: 此 artilce 介绍了如何排查 DHCP 服务器上的问题并收集数据。
-ms.prod: windows-server
 ms.service: na
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 5ec2ef358cfaf7841b093843848f2ea5ee42433e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d6fc69c15c3465769232d89f70a65ca915d0584e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181893"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989029"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-server"></a>排查 DHCP 服务器上的问题
 
@@ -26,7 +24,7 @@ ms.locfileid: "87181893"
 
   - DHCP 服务器服务已启动并正在运行。 若要检查此设置，请运行**net start**命令，然后查找**DHCP 服务器**。
 
-  - DHCP 服务器已获得授权。 请参阅[在加入域的方案中的 WINDOWS DHCP 服务器授权](https://docs.microsoft.com/openspecs/windows_protocols/ms-dhcpe/56f8870b-a7c1-4db1-8a86-f69079fe5077)。
+  - DHCP 服务器已获得授权。 请参阅[在加入域的方案中的 WINDOWS DHCP 服务器授权](/openspecs/windows_protocols/ms-dhcpe/56f8870b-a7c1-4db1-8a86-f69079fe5077)。
 
   - 验证 DHCP 客户端所在的子网的 DHCP 服务器作用域中是否存在 IP 地址租约。 为此，请在 DHCP 服务器管理控制台中查看适当范围的统计信息。
 
@@ -36,7 +34,7 @@ ms.locfileid: "87181893"
 
   - 验证 DHCP 服务器绑定到的 IP 地址是否在必须从中租用 IP 地址的作用域的子网内。这是因为没有中继代理可用。 为此，请运行**DhcpServerv4Binding**或**DhcpServerv6Binding** cmdlet。
 
-  - 验证是否只有 DHCP 服务器在 UDP 端口67和68上进行侦听。 其他进程或其他服务（如 WDS 或 PXE）都不应占用这些端口。 为此，请运行 `netstat -anb` 命令。
+  - 验证是否只有 DHCP 服务器在 UDP 端口67和68上进行侦听。 其他进程或其他服务 (例如，WDS 或 PXE) 应占用这些端口。 为此，请运行 `netstat -anb` 命令。
 
   - 如果正在处理 IPsec 部署的环境，请验证是否添加了 DHCP 服务器 IPsec 例外。
 
@@ -46,7 +44,7 @@ ms.locfileid: "87181893"
 
 ## <a name="event-logs"></a>事件日志
 
-检查系统和 DHCP 服务器服务事件日志（**应用程序和服务日志** \> **Microsoft** \> **Windows** \> **DHCP 服务器**）中是否存在与发现的问题相关的报告问题。
+检查系统和 DHCP 服务器服务事件日志 (**应用程序和服务日志** \> **Microsoft** \> **Windows** \> **DHCP-Server**) ，查找与观察到的问题相关的报告问题。
 根据问题的类型，会将事件记录到以下事件通道之一： [dhcp 服务器操作事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
  [dhcp 服务器管理事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
  [dhcp 服务器系统事件](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 

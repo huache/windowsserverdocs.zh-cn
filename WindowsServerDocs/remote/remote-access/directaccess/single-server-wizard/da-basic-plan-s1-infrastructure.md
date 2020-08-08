@@ -2,22 +2,20 @@
 title: 步骤1规划基本 DirectAccess 基础结构
 description: 本主题是使用 Windows Server 2016 的入门向导部署单个 DirectAccess 服务器指南的一部分
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4a7d784c38db692110559d9e2ce1f1f7c760313a
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: f1878944b0f72e22a94b9153b735571ef5b5f5f0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769735"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990017"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>步骤1规划基本 DirectAccess 基础结构
 在单台服务器上进行基本 DirectAccess 部署的第一步是针对部署所需的基础结构进行规划。 本主题介绍基础结构规划步骤：
 
-|任务|说明|
+|任务|描述|
 |----|--------|
 |规划网络拓扑和设置|确定放置 DirectAccess 服务器的位置（在边缘，或在网络地址转换 (NAT) 设备或防火墙后面），并规划 IP 寻址和路由。|
 |规划防火墙要求|规划允许 DirectAccess 通过边缘防火墙。|
@@ -42,13 +40,13 @@ ms.locfileid: "87769735"
 
     DirectAccess 使用 IPv6 和 IPsec 在 DirectAccess 客户端计算机和内部企业网络之间创建安全连接。 但是，DirectAccess 不一定需要连接到 IPv6 Internet 或内部网络上的本机 IPv6 支持。 相反，它会自动配置并使用 IPv6 转换技术在 IPv4 Internet 上（6to4、Teredo、IP-HTTPS）和仅支持 IPv4 的 Intranet 上（NAT64 或 ISATAP）对 IPv6 通信进行隧道传送。 有关这些转换技术的概述，请参阅以下资源：
 
-    -   [IPv6 转换技术](/previous-versions//bb726951(v=technet.10))
+    -   [IPv6 转换技术](/previous-versions/bb726951(v=technet.10))
 
-    -   [IP-HTTPS 隧道协议规范](/previous-versions//bb726951(v=technet.10))
+    -   [IP-HTTPS 隧道协议规范](/previous-versions/bb726951(v=technet.10))
 
 3.  按下表配置所需的适配器和寻址。 对于使用单个网络适配器的 NAT 设备后面的部署，仅使用**内部网络适配器**列配置 IP 地址。
 
-    |说明|外部网络适配器|内部网络适配器<sup>1</sup>|路由要求|
+    |描述|外部网络适配器|内部网络适配器<sup>1</sup>|路由要求|
     |-|--------------|--------------------|------------|
     |IPv4 Intranet 和 IPv4 Internet|配置以下内容：<p>-一个具有相应子网掩码的静态公用 IPv4 地址。<br />-Internet 防火墙或本地 Internet 服务提供商 (ISP) 路由器的默认网关 IPv4 地址。|配置以下内容：<p>-具有相应子网掩码的 IPv4 intranet 地址。<br />-Intranet 命名空间的特定于连接的 DNS 后缀。 还必须在内部接口上配置 DNS 服务器。<br />-不要在任何 intranet 接口上配置默认网关。|若要配置 DirectAccess 服务器以访问内部 IPv4 网络上的所有子网，请执行以下操作：<p>1. 列出 intranet 上所有位置的 IPv4 地址空间。<br />2. 使用**route add-p**或**netsh interface ipv4 add Route**命令将 ipv4 地址空间添加为 DirectAccess 服务器 ipv4 路由表中的静态路由。|
     |IPv6 Internet 和 IPv6 Intranet|配置以下内容：<p>-使用 ISP 提供的自动配置地址配置。<br />-使用**route print**命令，以确保指向 ISP 路由器的默认 ipv6 路由存在于 IPv6 路由表中。<br />-确定 ISP 和 intranet 路由器是否使用 RFC 4191 中所述的默认路由器首选项，并使用比本地 intranet 路由器更高的默认首选项。 如果两个结果都为“是”，则默认路由不需要任何其他配置。 用于 ISP 路由器的更高级首选项可确保 DirectAccess 服务器的活动默认 IPv6 路由指向 IPv6 Internet。<p>因为 DirectAccess 服务器是一个 IPv6 路由器，所以如果你具有本机 IPv6 基础结构，则 Internet 接口也可以访问 Intranet 上的域控制器。 在这种情况下，将数据包筛选器添加到外围网络中的域控制器，这些数据包筛选器可阻止连接到 DirectAccess 服务器面向 Internet 的接口的 IPv6 地址。|配置以下内容：<p>-如果使用的不是默认首选项级别，请使用**netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes = enabled**命令来配置 intranet 接口。 此命令可确保不会将指向 Intranet 路由器的其他默认路由添加到 IPv6 路由表。 你可以从 netsh 接口显示接口命令的显示中获得 Intranet 接口的 InterfaceIndex。|如果你拥有 IPv6 Intranet，若要配置 DirectAccess 服务器以访问所有的 IPv6 位置，请执行以下操作：<p>1. 列出 intranet 上所有位置的 IPv6 地址空间。<br />2. 使用**netsh interface ipv6 add route**命令将 ipv6 地址空间添加为 DirectAccess 服务器的 ipv6 路由表中的静态路由。|

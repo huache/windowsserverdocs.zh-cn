@@ -2,18 +2,16 @@
 title: 远程直接内存访问 (RDMA) 和交换机嵌入式组合 (SET)
 description: 本主题提供有关使用 Windows Server 2016 中的 Hyper-v (RDMA) 接口配置远程直接内存访问的信息，以及有关交换机嵌入组合 (设置) 的信息。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b0f11e67467521a8cfa98f4035435bbed537eda2
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 54d3ecbf752ce806a14d16088476bbb270e28271
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769565"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989137"
 ---
 # <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>远程直接内存访问 \( RDMA \) 和交换机嵌入式组合 \( 集\)
 
@@ -190,7 +188,7 @@ SET 是一种备用 NIC 组合解决方案，可用于在 \( Windows Server 2016
 
 由于已将集集成到 Hyper-v 虚拟交换机中，因此不能在虚拟机 (VM) 中使用设置。 但是，可以在 Vm 中使用 NIC 组合。
 
-有关详细信息，请参阅[虚拟机中的 NIC 组合 (vm) ](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nict-vms)。
+有关详细信息，请参阅[虚拟机中的 NIC 组合 (vm) ](../../networking/technologies/nic-teaming/nic-teaming.md)。
 
 此外，集体系结构不会公开团队界面。 相反，你必须配置 Hyper-v 虚拟交换机端口。
 
@@ -342,7 +340,7 @@ Windows Server 2016 支持实时迁移。
 
 建议你使用 System Center Virtual Machine Manager \( VMM \) 来管理集团队，但你也可以使用 Windows PowerShell 来管理集。 以下各节提供了可用于管理集的 Windows PowerShell 命令。
 
-有关如何使用 VMM 创建组集的信息，请参阅 System Center VMM 库主题[创建逻辑交换机](https://docs.microsoft.com/system-center/vmm/network-switch)中的 "设置逻辑交换机" 一节。
+有关如何使用 VMM 创建组集的信息，请参阅 System Center VMM 库主题[创建逻辑交换机](/system-center/vmm/network-switch)中的 "设置逻辑交换机" 一节。
 
 ### <a name="create-a-set-team"></a>创建集团队
 
@@ -376,7 +374,7 @@ Set-VMSwitchTeam -Name TeamedvSwitch -NetAdapterName "NIC 1","NIC 3"
 
 ### <a name="removing-a-set-team"></a>删除集团队
 
-仅可通过删除包含集组的 Hyper-v 虚拟交换机来删除集组。  有关如何删除 Hyper-v 虚拟交换机的信息，请使用删除主题[-VMSwitch](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/remove-vmswitch) 。 下面的示例删除名为**SETvSwitch**的虚拟交换机。
+仅可通过删除包含集组的 Hyper-v 虚拟交换机来删除集组。  有关如何删除 Hyper-v 虚拟交换机的信息，请使用删除主题[-VMSwitch](/powershell/module/hyper-v/remove-vmswitch?view=win10-ps) 。 下面的示例删除名为**SETvSwitch**的虚拟交换机。
 
 ```
 Remove-VMSwitch "SETvSwitch"

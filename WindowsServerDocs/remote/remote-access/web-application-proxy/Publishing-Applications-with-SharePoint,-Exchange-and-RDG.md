@@ -6,14 +6,12 @@ manager: mtillman
 ms.author: billmath
 ms.date: 04/30/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: web-app-proxy
-ms.openlocfilehash: 3bfb94a841265695b1a95cff8cc3cc87ee8088bf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 115a55ab9ddfde42027a991d172f92c3d62c4613
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961499"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939788"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>使用 SharePoint、Exchange 和 RDG 发布应用程序
 
@@ -21,13 +19,13 @@ ms.locfileid: "86961499"
 
 **此内容与 Web 应用程序代理的本地版本相关。若要启用对云中的本地应用程序的安全访问，请参阅[Azure AD 应用程序代理内容](/azure/active-directory/manage-apps/application-proxy)。**
 
-本主题介绍通过 Web 应用程序代理发布 SharePoint Server、Exchange Server 或远程桌面网关（RDP）所需执行的任务。
+本主题介绍通过 Web 应用程序代理发布 SharePoint Server、Exchange Server 或远程桌面网关 (RDP) 所需的任务。
 
 > [!NOTE]
 > 此信息按原样提供。  远程桌面服务支持并建议使用[Azure 应用代理来提供对本地应用程序的安全远程访问](/azure/active-directory/active-directory-application-proxy-get-started)。
 
 ## <a name="publish-sharepoint-server"></a><a name="BKMK_6.1"></a>发布 SharePoint Server
-当 SharePoint 站点配置为基于声明的身份验证或集成 Windows 身份验证时，您可以通过 Web 应用程序代理发布 SharePoint 站点。 如果要使用 Active Directory 联合身份验证服务（AD FS）进行预身份验证，则必须使用某个向导配置信赖方。
+当 SharePoint 站点配置为基于声明的身份验证或集成 Windows 身份验证时，您可以通过 Web 应用程序代理发布 SharePoint 站点。 如果要使用 Active Directory 联合身份验证服务 (AD FS) 进行预身份验证，则必须使用某个向导配置信赖方。
 
 -   如果 SharePoint 站点使用基于声明的身份验证，则必须使用添加信赖方信任向导来配置用于身份验证的信赖方信任。
 
@@ -43,9 +41,9 @@ ms.locfileid: "86961499"
 下表描述了可通过 Web 应用程序代理发布的 Exchange 服务，以及支持这些服务的预身份验证：
 
 
-|    Exchange 服务    |                                                                            预身份验证                                                                            |                                                                                                                                       注释                                                                                                                                        |
+|    Exchange 服务    |                                                                            预身份验证                                                                            |                                                                                                                                       说明                                                                                                                                        |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    Outlook Web App     | -使用非基于声明的身份验证 AD FS<br />-传递<br />-AD FS 对本地 Exchange 2013 Service Pak 1 （SP1）使用基于声明的身份验证 |                                                                  有关详细信息，请参阅：[对 Outlook Web App 和 EAC 使用 AD FS 基于声明的身份验证](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
+|    Outlook Web App     | -使用非基于声明的身份验证 AD FS<br />-传递<br />-AD FS 将基于声明的身份验证用于本地 Exchange 2013 Service Pak 1 (SP1)  |                                                                  有关详细信息，请参阅：[对 Outlook Web App 和 EAC 使用 AD FS 基于声明的身份验证](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Exchange 控制面板 |                                                                               直通                                                                               |                                                                                                                                                                                                                                                                                    |
 |    Outlook Anywhere    |                                                                               直通                                                                               | 必须为 Outlook Anywhere 发布三个 URL，以使其正常工作：<p>-自动发现 URL。<br />-Exchange 服务器的外部主机名;即，配置为供客户端连接到的 URL。<br />-Exchange Server 的内部 FQDN。 |
 |  Exchange ActiveSync   |                                                     直通<br/> 使用 HTTP 基本授权协议的 AD FS                                                      |                                                                                                                                                                                                                                                                                    |
@@ -54,7 +52,7 @@ ms.locfileid: "86961499"
 
 若要允许用户使用 Kerberos 约束委派进行身份验证，必须将 Web 应用程序代理服务器加入域。
 
-您必须将应用程序配置为支持 Kerberos 身份验证。 此外，还需要将服务主体名称（SPN）注册到运行 web 服务的帐户。 你可以在域控制器上或在后端服务器上执行此操作。 在负载平衡的 Exchange 环境中，这需要使用备用服务帐户，请参阅[为负载平衡的客户端访问服务器配置 Kerberos 身份验证](/exchange/configuring-kerberos-authentication-for-load-balanced-client-access-servers-exchange-2013-help)
+您必须将应用程序配置为支持 Kerberos 身份验证。 此外，还需要将服务主体名称 (SPN) 注册到运行 web 服务的帐户。 你可以在域控制器上或在后端服务器上执行此操作。 在负载平衡的 Exchange 环境中，这需要使用备用服务帐户，请参阅[为负载平衡的客户端访问服务器配置 Kerberos 身份验证](/exchange/configuring-kerberos-authentication-for-load-balanced-client-access-servers-exchange-2013-help)
 
 如果在后端服务器上运行的是 Windows Server 2012 R2 或 Windows Server 2012，还可以直接在后端服务器上配置应用程序。 有关详细信息，请参阅[Kerberos 身份验证中的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831747(v=ws.11))。 你还必须确保将 Web 应用程序代理服务器配置为委派给后端服务器的服务主体名称。
 
@@ -63,7 +61,7 @@ ms.locfileid: "86961499"
 
 #### <a name="how-to-publish-an-application-in-rdg-using-web-application-proxy-pass-through-authentication"></a>如何使用 Web 应用程序代理通过身份验证在 RDG 中发布应用程序
 
-1. 安装将有所不同，具体取决于 RD Web 访问（/rdweb）和 RD 网关（rpc）角色是位于同一服务器上还是不同服务器上。
+1. 安装将有所不同，具体取决于 RD Web 访问 (/rdweb) 和 RD 网关 (rpc) 角色是位于同一服务器上还是不同服务器上。
 
 2. 如果 RD Web 访问和 RD 网关角色托管在同一 RDG 服务器上，则只需在 Web 应用程序代理（如）中发布根 FQDN https://rdg.contoso.com/ 。
 
@@ -82,11 +80,11 @@ ms.locfileid: "86961499"
 
 #### <a name="how-to-publish-an-application-in-rdg-using-web-application-proxy-with-pre-authentication"></a>如何在 RDG 中使用具有预身份验证的 Web 应用程序代理发布应用程序
 
-1.  使用 RDG 的 Web 应用程序代理预身份验证通过将 Internet Explorer 获得的预身份验证 cookie 传递到远程桌面连接客户端（mstsc.exe）来工作。 然后，远程桌面连接客户端（mstsc.exe）将使用此方法。 然后，远程桌面连接客户端将其用作身份验证的证明。
+1.  使用 RDG 的 Web 应用程序代理预身份验证通过将 Internet Explorer 获得的预身份验证 cookie 传递到远程桌面连接客户端 ( # A0) 来实现。 然后，远程桌面连接客户端使用此方法 ( # A0) 。 然后，远程桌面连接客户端将其用作身份验证的证明。
 
-    以下过程告知收集服务器在发送到客户端的远程应用 RDP 文件中包含必要的自定义 RDP 属性。 这将告知客户端需要预身份验证，并将预身份验证服务器地址的 cookie 传递给远程桌面连接的客户端（mstsc.exe）。 除了禁用 Web 应用程序代理应用程序上的 HttpOnly 功能，这允许远程桌面连接的客户端（mstsc.exe）利用通过浏览器获取的 Web 应用程序代理 cookie。
+    以下过程告知收集服务器在发送到客户端的远程应用 RDP 文件中包含必要的自定义 RDP 属性。 这将告知客户端需要预身份验证，并将预身份验证服务器地址的 cookie 传递给远程桌面连接客户端 ( # A0) 。 除了禁用 Web 应用程序代理应用程序上的 HttpOnly 功能，这允许远程桌面连接客户端 ( # A0) 利用通过浏览器获取的 Web 应用程序代理 cookie。
 
-    对 RD Web 访问服务器的身份验证仍将使用 RD Web 访问窗体登录。 这将提供最少数量的用户身份验证提示，因为 RD Web 访问登录表单会创建客户端凭据存储，然后远程桌面连接客户端（mstsc.exe）将该存储用于任何后续的远程应用启动。
+    对 RD Web 访问服务器的身份验证仍将使用 RD Web 访问窗体登录。 这将提供最少数量的用户身份验证提示，因为 RD Web 访问登录窗体将创建客户端凭据存储，然后远程桌面连接)  ( 客户端可以使用该存储，以供后续远程应用启动时使用。
 
 2.  首先，在 AD FS 中创建手动信赖方信任，就像发布声明感知应用一样。 这意味着你必须创建一个虚拟信赖方信任，以便强制执行预身份验证，以便你可以获得预身份验证，而无需对发布的服务器进行 Kerberos 约束委派。 用户经过身份验证后，其他所有内容都将通过。
 
@@ -105,7 +103,7 @@ ms.locfileid: "86961499"
 
         这是你在 Web 应用程序代理中发布应用时将使用的信赖方信任。
 
-4.  https://rdg.contoso.com/在 Web 应用程序代理中发布站点的根目录（例如）。 将 "预身份验证" 设置为 "AD FS"，并使用前面创建的信赖方信任。 这会使/rdweb 和/rpc 使用相同的 Web 应用程序代理身份验证 cookie。
+4.  发布站点的根 (例如， https://rdg.contoso.com/ 在 Web 应用程序代理中 ) 。 将 "预身份验证" 设置为 "AD FS"，并使用前面创建的信赖方信任。 这会使/rdweb 和/rpc 使用相同的 Web 应用程序代理身份验证 cookie。
 
     可以将/rdweb 和/rpc 发布为单独的应用程序，甚至可以使用不同的已发布服务器。 你只需确保使用相同的信赖方信任进行发布，因为为信赖方信任颁发了 Web 应用程序代理令牌，因此，在使用相同的信赖方信任发布的应用程序之间有效。
 
@@ -117,7 +115,7 @@ ms.locfileid: "86961499"
 
 6.  在 RDG 发布的应用程序上禁用 Web 应用程序代理中的 HttpOnly cookie 属性。 若要允许 RDG ActiveX 控件访问 Web 应用程序代理的身份验证 cookie，必须禁用 Web 应用程序代理 cookie 上的 HttpOnly 属性。
 
-    这要求安装[适用于 WINDOWS RT 8.1、Windows 8.1 和 Windows Server 2012 R2 （KB3000850）的11月2014更新汇总](https://support.microsoft.com/kb/3000850)。
+    这要求你安装[WINDOWS RT 8.1、Windows 8.1 和 Windows Server 2012 R2 2014 年11月的更新汇总 (KB3000850) ](https://support.microsoft.com/kb/3000850)。
 
     安装此修补程序后，请在 Web 应用程序代理服务器上运行以下 PowerShell 脚本，并指定相关的应用程序名称：
 
@@ -127,7 +125,7 @@ ms.locfileid: "86961499"
 
     禁用 HttpOnly 允许 RDG ActiveX 控件对 Web 应用程序代理身份验证 cookie 的访问。
 
-7.  在集合服务器上配置相关的 RDG 集合，以允许远程桌面连接客户端（mstsc.exe）了解 rdp 文件中需要预身份验证。
+7.  在集合服务器上配置相关的 RDG 集合，使远程桌面连接客户端 ( # A0) 了解 rdp 文件中需要预身份验证。
 
     -   在 Windows Server 2012 和 Windows Server 2012 R2 中，可以通过在 RDG 收集服务器上运行以下 PowerShell cmdlet 来完成此操作：
 
@@ -157,7 +155,7 @@ ms.locfileid: "86961499"
 
         5.  完成后，请单击 "**应用**"。
 
-            这会告知收集服务器在发送到客户端的 RDP 文件中包含自定义 RDP 属性。 这将告知客户端需要预身份验证，并将预身份验证服务器地址的 cookie 传递到远程桌面连接客户端（mstsc.exe）。 这与在 Web 应用程序代理应用程序上禁用 HttpOnly 的结合允许远程桌面连接客户端（mstsc.exe）利用通过浏览器获取的 Web 应用程序代理身份验证 cookie。
+            这会告知收集服务器在发送到客户端的 RDP 文件中包含自定义 RDP 属性。 这将告知客户端需要预身份验证，并将预身份验证服务器地址的 cookie 传递给远程桌面连接客户端 ( # A0) 。 这与在 Web 应用程序代理应用程序上禁用 HttpOnly 结合使用，允许远程桌面连接客户端 ( # A0) 利用通过浏览器获取的 Web 应用程序代理身份验证 cookie。
 
             有关 RDP 的详细信息，请参阅[配置 TS 网关 OTP 方案](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731249(v=ws.10))。
 

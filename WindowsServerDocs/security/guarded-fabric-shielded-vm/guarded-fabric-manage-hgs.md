@@ -1,18 +1,16 @@
 ---
 title: 管理主机保护者服务
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: 19bf253a4cd669020442ca80f77c141f19ab94fe
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 851ea4a57068c1544f290c48f370e04b96857cf6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769455"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989168"
 ---
 # <a name="managing-the-host-guardian-service"></a>管理主机保护者服务
 
@@ -120,7 +118,7 @@ Remove-PSSession -Session $session
 若要查看这些事件，可打开事件查看器并导航到 HostGuardianService-HostGuardianService-KeyProtection。
 
 在大型环境中，通常最好将事件转发到中央 Windows 事件收集器，使事件的分析变得更简单。
-有关详细信息，请查看[Windows 事件转发文档](https://msdn.microsoft.com/library/windows/desktop/bb427443.aspx)。
+有关详细信息，请查看[Windows 事件转发文档](/windows/win32/wec/windows-event-collector)。
 
 ### <a name="using-system-center-operations-manager"></a>使用 System Center Operations Manager
 你还可以使用 System Center 2016-Operations Manager 来监视 HGS 和受保护的主机。
@@ -486,7 +484,7 @@ Add-HgsAttestationDumpPolicy -Name 'DumpEncryptionKey02' -PublicKeyHash '<paste 
 如果选择在受保护的构造中使用不同的密钥，请确保将每个唯一的转储加密密钥添加到 HGS。
 使用 HGS 无法识别的密钥加密内存转储的主机将不会通过证明。
 
-有关[在主机上配置转储加密](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)的详细信息，请参阅 hyper-v 文档。
+有关[在主机上配置转储加密](../../virtualization/hyper-v/manage/about-dump-encryption.md)的详细信息，请参阅 hyper-v 文档。
 
 #### <a name="check-if-the-system-passed-attestation"></a>检查系统是否通过了证明
 向 HGS 注册必要的信息后，应检查主机是否通过证明。

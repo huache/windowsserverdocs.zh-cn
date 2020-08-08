@@ -6,14 +6,12 @@ ms.author: nedpyle
 manager: siroy
 ms.date: 06/02/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage
-ms.openlocfilehash: d5c0644c36d4476eb49797de2f828c4da0f53965
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: ff7a276802a0bd6a61fc0ea5eb6148972ac6d674
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769155"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939304"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>存储迁移服务常见问题解答 (FAQ) 
 
@@ -62,11 +60,11 @@ ms.locfileid: "87769155"
 - CA 超时
 - 并发用户限制
 - 持续可用
-- 说明
+- 描述
 - 对数据进行加密
 - 标识远程处理
 - 基础结构
-- 名称
+- “属性”
 - 路径
 - 范围内
 - 作用域名称

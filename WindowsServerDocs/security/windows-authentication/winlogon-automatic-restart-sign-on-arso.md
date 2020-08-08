@@ -6,12 +6,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3e709c76bb1ae8c3557748d3a1e14f80fce89525
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ee6e5817564389c1870e72543a0c073dd40df4db
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936457"
+ms.locfileid: "87989067"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自动重启登录 (ARSO)
 
@@ -140,6 +140,4 @@ Windows 8 引入了锁定屏幕应用。  这些应用程序在用户的会话�
 
 |术语|定义|
 |----|-------|
-|Autologon|自动登录是在 Windows 中为多个版本提供的一项功能。  它是 Windows 的已记录功能，甚至包含 Windows 3.01 * [http：/sysinternals/Bb963905](https://technet.microsoft.com/sysinternals/bb963905.aspx)的自动登录等工具*<p>它允许设备的单个用户自动登录而无需输入凭据。 凭据作为加密的 LSA 机密配置并存储在注册表中。|
-
-
+|Autologon|自动登录是在 Windows 中为多个版本提供的一项功能。  它是 Windows 的已记录功能，甚至包含 Windows 3.01 * [http：/sysinternals/Bb963905](/sysinternals/downloads/autologon)的自动登录等工具*<p>它允许设备的单个用户自动登录而无需输入凭据。 凭据作为加密的 LSA 机密配置并存储在注册表中。|

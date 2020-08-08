@@ -1,20 +1,18 @@
 ---
 title: 应用程序数据的横向扩展文件服务器概述
 description: Windows Server 201 R2 和 Windows Server 2012 横向扩展文件服务器功能的概述。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bcfb53b04a03a259c712dd4b3003f8c4a66d8ff
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: dfd39210b6db8516fafbe8b437c7d38cd7839bad
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181713"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972384"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>应用程序数据的横向扩展文件服务器概述
 
@@ -29,14 +27,14 @@ ms.locfileid: "87181713"
 
 ## <a name="scenario-description"></a>方案描述
 
-利用横向扩展文件共享，可以从某个群集的多个节点共享同一文件夹。 例如，如果你有一个使用服务器消息块（SMB）扩展的四节点文件服务器群集，则运行 Windows Server 2012 R2 或 Windows Server 2012 的计算机可以从四个节点中的任一节点访问文件共享。 该功能通过利用新 Windows 服务器故障转移群集功能和 Windows 文件服务器协议 SMB 3.0 的功能得以实现。 文件服务器管理员可为服务器应用程序提供横向扩展文件共享及持续可用文件服务，而且只需简单地增加在线服务器的数量即可快速响应增加的需求。 所有此类功能均可在生产环境中实现，且对服务器应用程序来说完全透明。
+利用横向扩展文件共享，可以从某个群集的多个节点共享同一文件夹。 例如，如果有一个使用服务器消息块的四节点文件服务器群集 (SMB) 横向扩展，则运行 Windows Server 2012 R2 或 Windows Server 2012 的计算机可以从四个节点中的任一节点访问文件共享。 该功能通过利用新 Windows 服务器故障转移群集功能和 Windows 文件服务器协议 SMB 3.0 的功能得以实现。 文件服务器管理员可为服务器应用程序提供横向扩展文件共享及持续可用文件服务，而且只需简单地增加在线服务器的数量即可快速响应增加的需求。 所有此类功能均可在生产环境中实现，且对服务器应用程序来说完全透明。
 
 横向扩展文件服务器提供的主要优点包括：
 
 - **主动-主动文件共享**。 所有群集节点均可接受 SMB 客户端请求并为其提供服务。 通过使文件共享的内容可通过全部群集节点同时访问，SMB 3.0 群集和客户端共同协作在计划的维护和非计划故障（服务中断）期间为备用群集节点提供透明的故障转移。
 - **增加了带宽**。 最大共享带宽是所有文件服务器群集节点的总带宽。 与 Windows Server 早期版本不同的是，总带宽不再受限于单个群集节点的带宽，而是由后备存储系统的容量来确定带宽限制。 你可以通过添加节点来增加总带宽。
 - 无**停机时间的 CHKDSK**。 Windows Server 2012 中的 CHKDSK 大大增强，大大缩短了文件系统脱机修复的时间。 群集共享卷 (CSV) 更进一步，直接省去了脱机阶段。 CSV 文件系统 (CSVFS) 可在不影响文件系统中带有开放句柄的应用程序的情况下使用 CHKDSK。
-- **群集共享卷缓存**。 Windows Server 2012 中的 Csv 引入了读取缓存支持，这在某些情况下（例如虚拟桌面基础结构（VDI））可以显著提高性能。
+- **群集共享卷缓存**。 Windows Server 2012 中的 Csv 引入了读取缓存支持，在某些情况下，例如在虚拟桌面基础结构 (VDI) 中，这可以显著提高性能。
 - **更简单的管理**。 通过横向扩展文件服务器创建横向扩展文件服务器，然后添加必要的 Csv 和文件共享。 无需创建多个群集文件服务器，每个服务器均具有单独的群集磁盘，且无需开发放置策略来确保各个群集节点上的活动。
 - **自动重新平衡横向扩展文件服务器客户端**。 在 Windows Server 2012 R2 中，自动重新平衡可以提高横向扩展文件服务器的可伸缩性和可管理性。 将按照每个文件共享（而不是每个服务器）跟踪 SMB 客户端连接，然后将客户端重定向到群集节点，并让用户最方便地访问文件共享使用的卷。 这样便会减少文件服务器节点之间的重定向流量，从而提高效率。 在建立初始连接后以及在重新配置群集存储时，将重定向客户端。
 
@@ -66,7 +64,7 @@ ms.locfileid: "87181713"
 <thead>
 <tr class="header">
 <th>技术范围</th>
-<th>Feature</th>
+<th>功能</th>
 <th>一般用途文件服务器群集</th>
 <th>横向扩展文件服务器</th>
 </tr>
@@ -75,26 +73,26 @@ ms.locfileid: "87181713"
 <tr class="odd">
 <td>SMB</td>
 <td>SMB 连续可用性</td>
-<td>“是”</td>
-<td>“是”</td>
+<td>是</td>
+<td>是</td>
 </tr>
 <tr class="even">
 <td>SMB</td>
 <td>SMB 多通道</td>
-<td>“是”</td>
-<td>“是”</td>
+<td>是</td>
+<td>是</td>
 </tr>
 <tr class="odd">
 <td>SMB</td>
 <td>SMB 直通</td>
-<td>“是”</td>
-<td>“是”</td>
+<td>是</td>
+<td>是</td>
 </tr>
 <tr class="even">
 <td>SMB</td>
 <td>SMB 加密</td>
-<td>“是”</td>
-<td>“是”</td>
+<td>是</td>
+<td>是</td>
 </tr>
 <tr class="odd">
 <td>SMB</td>
@@ -110,14 +108,14 @@ ms.locfileid: "87181713"
 </tr>
 <tr class="odd">
 <td>文件系统</td>
-<td>复原文件系统（<a href="https://docs.microsoft.com/windows-server/storage/refs/refs-overview">ReFS</a>）</td>
+<td>复原文件系统 (<a href="https://docs.microsoft.com/windows-server/storage/refs/refs-overview">ReFS</a>) </td>
 <td>建议用于存储空间直通</td>
 <td>建议用于存储空间直通</td>
 </tr>
 <tr class="even">
 <td>文件系统</td>
 <td>群集共享卷文件系统 (CSV)</td>
-<td>NA</td>
+<td>不可用</td>
 <td>是</td>
 </tr>
 <tr class="odd">
@@ -147,8 +145,8 @@ ms.locfileid: "87181713"
 <tr class="odd">
 <td>文件管理</td>
 <td>DFS 命名空间 (DFSN) 文件夹目标服务器</td>
-<td>“是”</td>
-<td>“是”</td>
+<td>是</td>
+<td>是</td>
 </tr>
 <tr class="even">
 <td>文件管理</td>
@@ -225,7 +223,7 @@ ms.locfileid: "87181713"
 </tbody>
 </table>
 
-\*使用连续可用的文件共享时，文件夹重定向、脱机文件、漫游用户配置文件或主目录会生成大量必须立即写入磁盘（无缓冲）的写入操作，从而降低性能，与常规用途文件共享相比。 连续可用的文件共享与文件服务器资源管理器和运行 Windows XP 的电脑也不兼容。 此外，在用户失去对共享的访问权限后，脱机文件可能不会转换为脱机模式3-6 分钟，这可能会让尚未使用 "始终脱机" 模式脱机文件的用户不快。
+\*使用连续可用的文件共享时，文件夹重定向、脱机文件、漫游用户配置文件或主目录会生成大量必须立即写入磁盘)  (的写入操作，从而降低性能，与常规用途文件共享相比。 连续可用的文件共享与文件服务器资源管理器和运行 Windows XP 的电脑也不兼容。 此外，在用户失去对共享的访问权限后，脱机文件可能不会转换为脱机模式3-6 分钟，这可能会让尚未使用 "始终脱机" 模式脱机文件的用户不快。
 
 ## <a name="practical-applications"></a>实际的应用程序
 
@@ -250,14 +248,14 @@ ms.locfileid: "87181713"
 <table>
 <thead>
 <tr class="header">
-<th>Feature</th>
+<th>功能</th>
 <th>如何支持本方案</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><a href="failover-clustering.md">故障转移群集</a></td>
-<td>故障转移群集在 Windows Server 2012 中添加了以下功能，以支持横向扩展文件服务器：分布式网络名称、横向扩展文件服务器资源类型、群集共享卷（CSV）2和横向扩展文件服务器高可用性角色。 有关这些功能的详细信息，&#39;请参阅<a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Windows Server 2012 中的故障转移群集中的新增功能 [重定向]</a>。</td>
+<td>故障转移群集在 Windows Server 2012 中添加了以下功能，以支持横向扩展文件服务器：分布式网络名称、横向扩展文件服务器资源类型、群集共享卷 (CSV) 2 和横向扩展文件服务器高可用性角色。 有关这些功能的详细信息，&#39;请参阅<a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Windows Server 2012 中的故障转移群集中的新增功能 [重定向]</a>。</td>
 </tr>
 <tr class="even">
 <td><a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">服务器消息块</a></td>

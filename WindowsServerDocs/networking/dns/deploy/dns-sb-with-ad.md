@@ -2,18 +2,16 @@
 title: 在 Active Directory 中使用针对拆分式 DNS 的 DNS 策略
 description: 你可以使用本主题通过 Windows Server 2016 中的 Active Directory 集成的 DNS 区域，利用适用于裂脑部署的 DNS 策略的流量管理功能。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 444670b5098d0a6cd1f834ffbccee606e038bf70
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 1f6da8584f7a2b2221fb1a283b8ea4de842ddc58
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518283"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964133"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>在 Active Directory 中使用针对拆分式 DNS 的 DNS 策略
 
@@ -23,7 +21,7 @@ ms.locfileid: "87518283"
 
 在 Windows Server 2016 中，DNS 策略支持扩展到 Active Directory 集成的 DNS 区域。 Active Directory 集成 \- 为 DNS 服务器提供多主高可用性功能。
 
-以前，此方案要求 DNS 管理员维护两个不同的 DNS 服务器，每个服务器为内部和外部用户提供服务。 如果区域中只拆分了几条记录 \- brained，或者区域的两个实例（内部和外部）都委托给相同的父域，这就成为了管理难题。
+以前，此方案要求 DNS 管理员维护两个不同的 DNS 服务器，每个服务器为内部和外部用户提供服务。 如果区域中只拆分了几条记录 \- brained，或者 (内部和外部) 将区域的两个实例委托给相同的父域，这就成为了管理难题。
 
 > [!NOTE]
 > - \-当存在两个版本的单一区域、组织 intranet 上的内部用户的一个版本，以及一个适用于外部用户的版本（通常是 Internet 上的用户）时，DNS 部署会产生分裂。
@@ -60,9 +58,9 @@ DNS 管理员配置具有以下 IP 地址的 DNS 服务器接口。
 
 如果接收查询的服务器接口与任何策略匹配，则将使用关联的区域范围来响应查询。
 
-因此，在我们的示例中，对专用 IP （10.0.0.56）上收到的 www.career.contoso.com 的 DNS 查询接收包含内部 IP 地址的 DNS 响应;在公共网络接口上接收的 DNS 查询接收包含默认区域作用域中的公共 IP 地址的 DNS 响应（这与正常的查询解决方法相同）。
+因此，在我们的示例中，对专用 IP () 10.0.0.56 上收到的 www.career.contoso.com 的 DNS 查询将接收包含内部 IP 地址的 DNS 响应;在公共网络接口上接收的 DNS 查询接收包含默认区域作用域中的公共 IP 地址的 DNS 响应 (这与正常的查询解析) 相同。
 
-\( \) 仅在默认区域作用域上支持动态 DNS DDNS 更新和清理。 由于内部客户端由默认区域作用域提供服务，Contoso DNS 管理员可以继续使用现有机制（动态 DNS 或静态）来更新 contoso.com 中的记录。 对于非 \- 默认区域作用域 \( （如本示例中的外部范围 \) ），DDNS 或清理支持不可用。
+\( \) 仅在默认区域作用域上支持动态 DNS DDNS 更新和清理。 由于内部客户端由默认区域作用域提供服务，Contoso DNS 管理员可以继续使用现有的机制 (动态 DNS 或静态) 来更新 contoso.com 中的记录。 对于非 \- 默认区域作用域 \( （如本示例中的外部范围 \) ），DDNS 或清理支持不可用。
 
 ### <a name="high-availability-of-policies"></a>策略的高可用性
 
