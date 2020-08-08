@@ -7,12 +7,12 @@ ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: e671421225e9fa2d5e7461c795a9f7c9789efd88
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7fcf8b095479ec21c045a60244917b09883a6162
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970814"
+ms.locfileid: "87993768"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>使用脚本部署软件定义的网络基础结构
 
@@ -20,7 +20,7 @@ ms.locfileid: "87970814"
 
 如果你希望你的租户工作负荷在其虚拟网络外部进行通信，则可以设置 SLB NAT 规则、站点到站点网关隧道或第3层转发，以在虚拟和物理工作负载之间进行路由。
 
-你还可以使用 Virtual Machine Manager (VMM) 部署 SDN 基础结构。 有关详细信息，请参阅[在 VMM 构造中设置软件定义的网络 (SDN) 基础结构](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview)。
+你还可以使用 Virtual Machine Manager (VMM) 部署 SDN 基础结构。 有关详细信息，请参阅[在 VMM 构造中设置软件定义的网络 (SDN) 基础结构](/system-center/vmm/deploy-sdn?view=sc-vmm-2019)。
 
 ## <a name="pre-deployment"></a>部署前
 
@@ -35,7 +35,7 @@ ms.locfileid: "87970814"
 ### <a name="install-host-networking"></a>安装主机网络
 
 1. 安装适用于 NIC 硬件的最新网络驱动程序。
-2. 在所有主机上安装 Hyper-v 角色 (有关详细信息，请参阅[Windows Server 2016 上的 hyper-v 入门](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/Get-started-with-Hyper-V-on-Windows)。
+2. 在所有主机上安装 Hyper-v 角色 (有关详细信息，请参阅[Windows Server 2016 上的 hyper-v 入门](../../../virtualization/hyper-v/get-started/get-started-with-hyper-v-on-windows.md)。
 
    ```PowerShell
    Install-WindowsFeature -Name Hyper-V -ComputerName <computer_name> -IncludeManagementTools -Restart
@@ -62,7 +62,7 @@ ms.locfileid: "87970814"
    New-NetIPAddress -InterfaceAlias "vEthernet (<switch name>)" -IPAddress <IP> -DefaultGateway <Gateway IP> -AddressFamily IPv4 -PrefixLength <Length of Subnet Mask - for example: 24>
    ```
 
-5. 可有可无将虚拟机部署到主机 Active Directory 域服务 ([安装 Active Directory 域服务 (级别 100) ](https://technet.microsoft.com/library/hh472162.aspx)和 DNS 服务器。
+5. 可有可无将虚拟机部署到主机 Active Directory 域服务 ([安装 Active Directory 域服务 (级别 100) ](../../../identity/ad-ds/deploy/install-active-directory-domain-services--level-100-.md)和 DNS 服务器。
 
     a. 将 Active Directory/DNS 服务器虚拟机连接到管理 VLAN：
 
@@ -171,7 +171,7 @@ ms.locfileid: "87970814"
 
 假设 SDN Express 脚本在不报告任何错误的情况下运行到完成，则可以执行以下步骤以确保构造资源已正确部署并且可用于租户部署。
 
-使用[诊断工具](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)确保网络控制器中的任何构造资源上无错误。
+使用[诊断工具](../troubleshoot/troubleshoot-windows-server-software-defined-networking-stack.md)确保网络控制器中的任何构造资源上无错误。
 
    ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller Rest Name>``
 

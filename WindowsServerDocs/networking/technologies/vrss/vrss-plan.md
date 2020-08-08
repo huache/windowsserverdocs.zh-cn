@@ -8,12 +8,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/04/2018
-ms.openlocfilehash: 9457a1763f92e7f2571040c1c6e8e323d96ee598
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ccfaa9fa02dd7324f1682592867b027cad4006a8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951936"
+ms.locfileid: "87993555"
 ---
 # <a name="plan-the-use-of-vrss"></a>规划 vRSS 的使用
 
@@ -40,7 +40,7 @@ ms.locfileid: "87951936"
 
 3. **缺少 SR \-SR-IOV**。 验证单个根输入 \- 输出虚拟化 \( Sr-iov \- \) 虚拟函数虚拟化 \( sr-iov \) 驱动程序是否未附加到 VM 网络接口。 可以使用**get-netadaptersriov**命令对此进行验证。 如果加载了某个 VF 驱动程序，RSS 将使用此驱动程序中的缩放设置，而不是由 vRSS 配置的设置。 如果 VF 驱动程序不支持 RSS，则会禁用 vRSS。
 
-4. **NIC 组合配置**。 如果使用的是 NIC 组合，则必须正确配置 VMQ 才能使用 NIC 组合设置。 有关 NIC 组合部署和管理的详细信息，请参阅[Nic 组合](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)。
+4. **NIC 组合配置**。 如果使用的是 NIC 组合，则必须正确配置 VMQ 才能使用 NIC 组合设置。 有关 NIC 组合部署和管理的详细信息，请参阅[Nic 组合](../nic-teaming/nic-teaming.md)。
 
 5. **LPs 的数目**。 验证 VM 是否有多个逻辑处理器 \( LP \) 。 vRSS 依赖于 VM 或 Hyper-v 主机上的 RSS，对接收到多个 LPs 的流量进行负载均衡，以便进行并行处理。 可以通过在主机中运行 Windows PowerShell 命令**VMProcessor**来观察 VM 有多少 LPs。 运行该命令后，可以观察 LPs 数的计数列项。
 

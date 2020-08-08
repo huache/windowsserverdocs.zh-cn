@@ -6,12 +6,12 @@ ms.date: 06/18/2018
 ms.topic: article
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: 1f902a37dd4df28b2591380e78fe86c271f4ed3e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 215521886418167fe6504c5f08b59dbfa7375432
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963593"
+ms.locfileid: "87994046"
 ---
 # <a name="virtual-machine-resource-controls"></a>虚拟机资源控制
 
@@ -113,7 +113,7 @@ Hyper-v 主机管理员可能还希望能够将计算资源专用于 VM。
 可将虚拟化主机配置为将主机分区限制为特定的 LPs，并将一个或多个 CPU 组关联到剩余的 LPs。
 通过这种方式，可以在专用 CPU 资源上运行根和来宾分区，并完全隔离，无 CPU 共享。
 
-有关 "minroot" 配置的详细信息，请参阅[Hyper-v 主机 CPU 资源管理](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-minroot-2016)。
+有关 "minroot" 配置的详细信息，请参阅[Hyper-v 主机 CPU 资源管理](./manage-hyper-v-minroot-2016.md)。
 
 ## <a name="using-the-cpugroups-tool"></a>使用 CpuGroups 工具
 

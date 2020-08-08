@@ -5,16 +5,16 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d327d31bbfa7192780d524716504d1db3b5e9282
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e9be93989f0d8368a1994bfe9c7cceaad52ce39d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896194"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993356"
 ---
 # <a name="troubleshooting-active-directory-domain-services-performance"></a>Active Directory 域服务性能疑难解答
 
-有关添加性能故障排除的其他信息，请参阅[监视分支机构环境](https://technet.microsoft.com/library/dd736504.aspx)。
+有关添加性能故障排除的其他信息，请参阅[监视分支机构环境](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd736504(v=ws.10))。
 
 ## <a name="additional-references"></a>其他参考
 - [Active Directory 服务器的性能优化](index.md)

@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 ms.localizationpriority: low
-ms.openlocfilehash: 3818e06780ac22f56ed3d44209041f58c1070409
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e5fc2ccff1d5c108694508eb6f11dfaa64459dbb
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940058"
+ms.locfileid: "87993884"
 ---
 # <a name="use-windows-admin-center-to-manage-operating-system-updates-with-azure-update-management"></a>使用 Windows 管理中心使用 Azure 更新管理管理操作系统更新
 
-[了解有关 Azure 与 Windows 管理中心的集成的详细信息。](../plan/azure-integration-options.md)
+[了解有关 Azure 与 Windows 管理中心的集成的详细信息。](./index.md)
 
-Azure 更新管理是 Azure 自动化中的一种解决方案，可用于从单个位置（而不是每个服务器）管理多台计算机的更新和修补程序。 借助 Azure 更新管理，可以快速评估可用更新的状态、计划所需更新的安装，以及查看部署结果来验证更新是否已成功应用。 无论你的计算机是 Azure Vm、由其他云提供商托管还是在本地，都可以这样做。 [详细了解 Azure 更新管理。](https://docs.microsoft.com/azure/automation/automation-update-management)
+Azure 更新管理是 Azure 自动化中的一种解决方案，可用于从单个位置（而不是每个服务器）管理多台计算机的更新和修补程序。 借助 Azure 更新管理，可以快速评估可用更新的状态、计划所需更新的安装，以及查看部署结果来验证更新是否已成功应用。 无论你的计算机是 Azure Vm、由其他云提供商托管还是在本地，都可以这样做。 [详细了解 Azure 更新管理。](/azure/automation/automation-update-management)
 
 使用 Windows 管理中心，你可以轻松地设置和使用 Azure 更新管理使托管服务器保持最新。 如果 Azure 订阅中还没有 Log Analytics 工作区，Windows 管理中心会自动配置服务器，并在订阅和指定位置创建必要的 Azure 资源。 如果现有 Log Analytics 工作区，Windows 管理中心可以自动将服务器配置为使用 Azure 更新管理中的更新。
 
@@ -27,5 +27,4 @@ Azure 更新管理是 Azure 自动化中的一种解决方案，可用于从单�
 
 [了解如何停止使用 Azure 更新管理更新服务器。](azure-monitor.md#disabling-monitoring)
 
-请注意，在设置 Azure 更新管理之前，必须先将[Windows 管理中心网关注册到 azure](../configure/azure-integration.md) 。
-
+请注意，在设置 Azure 更新管理之前，必须先将[Windows 管理中心网关注册到 azure](./azure-integration.md) 。

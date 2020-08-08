@@ -5,12 +5,12 @@ ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 78741ae45a5f175d6be0e608adba5c6c6fcbf771
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 69e1fee1a8ae0ff1c878c64790650290b4804351
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964393"
+ms.locfileid: "87993817"
 ---
 # <a name="whats-new-in-networking"></a>网络中的新增功能
 
@@ -35,7 +35,7 @@ Upd 本主题包含以下各节。
 
 下面是新增或改进的 SDN 基础结构技术。
 
--   **网络控制器**。 Windows Server 2016 中的新增功能，网络控制器提供集中的可编程点，可用于管理、配置、监视和排查数据中心中的虚拟和物理网络基础结构。 使用网络控制器可以自动配置网络基础结构，而无需手动执行网络设备和服务的配置。 有关详细信息，请参阅[网络控制器](sdn/technologies/network-controller/Network-Controller.md)和[使用脚本部署软件定义的网络](https://technet.microsoft.com/library/mt427380.aspx)。
+-   **网络控制器**。 Windows Server 2016 中的新增功能，网络控制器提供集中的可编程点，可用于管理、配置、监视和排查数据中心中的虚拟和物理网络基础结构。 使用网络控制器可以自动配置网络基础结构，而无需手动执行网络设备和服务的配置。 有关详细信息，请参阅[网络控制器](sdn/technologies/network-controller/Network-Controller.md)和[使用脚本部署软件定义的网络](/previous-versions/windows/server/mt427380(v=ws.12))。
 
 -   **Hyper-v 虚拟交换机**。 Hyper-v 虚拟交换机在 Hyper-v 主机上运行，并允许你创建分布式切换和路由，以及与 Microsoft Azure 对齐和兼容的策略实施层。 有关详细信息，请参阅 [Hyper-V 虚拟交换机](../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md)。
 
@@ -50,7 +50,7 @@ Upd 本主题包含以下各节。
         有关详细信息，请参阅[Ras 网关中的新增功能](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)和[SDN 的 ras 网关](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)。
 
     - **软件负载均衡器 (SLB) 和网络地址转换 (NAT) **。 北南部和东-西第4层负载均衡器和 NAT 通过支持直接服务器返回来增强吞吐量，使返回的网络流量可以绕过负载平衡多路复用器。
-       有关详细信息，请参阅[用于 SDN 的软件负载平衡 &#40;SLB&#41;](sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)。
+       有关详细信息，请参阅[用于 SDN 的软件负载平衡 &#40;SLB&#41;](./sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)。
 
     有关详细信息，请参阅[网络功能虚拟化](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)。
 
@@ -145,5 +145,3 @@ IPAM 为组织网络上的 IP 地址和 DNS 基础结构提供可高度自定义
      可以使用 Windows PowerShell 设置 IPAM 对象上的访问作用域。
 
 有关详细信息，请参阅[ipam 中的新增功能](technologies/ipam/What-s-New-in-IPAM.md)和[管理 ipam](technologies/ipam/Manage-IPAM.md)。
-
-

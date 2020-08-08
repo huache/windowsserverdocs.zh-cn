@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: dc6608713ddd60d20b0b717d4133d93d23fc7b25
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b9f764b64a50b0c69116cf19e253097da464cdbb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816250"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954293"
 ---
 # <a name="manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>使用适用于敏感应用程序的附加多重身份验证管理风险
 
@@ -26,22 +24,22 @@ ms.locfileid: "80816250"
 
 -   [为 AD FS 配置其他身份验证方法](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
-## <a name="in-this-guide"></a>本指南内容
+## <a name="in-this-guide"></a>本指南包含的内容
 本指南提供以下信息：
 
--   [AD FS](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_1)中的身份验证机制-描述 Windows Server 2012 R2 中 Active Directory 联合身份验证服务（AD FS）提供的身份验证机制
+-   [AD FS](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_1)中的身份验证机制-描述 Windows Server 2012 R2 中 Active Directory 联合身份验证服务 (AD FS) 中提供的身份验证机制
 
--   [方案概述](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2)-一种方案说明，其中使用 Active Directory 联合身份验证服务（AD FS）基于用户的组成员身份来启用多重身份验证（MFA）。
+-   [方案概述](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2)-一种方案说明，你可以使用 Active Directory 联合身份验证服务 (AD FS) 根据用户的组成员身份基于用户的组成员身份来启用多重身份验证 (MFA) 。
 
     > [!NOTE]
     > 在 Windows Server 2012 R2 的 AD FS 中，可以基于网络位置、设备标识和用户标识或组成员身份来启用 MFA。
 
     有关配置和验证此方案的详细分步操作实例说明，请参阅[操作实例指南：使用适用于敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)。
 
-## <a name="key-concepts---authentication-mechanisms-in-ad-fs"></a><a name="BKMK_1"></a>关键概念-AD FS 中的身份验证机制
+## <a name="key-concepts---authentication-mechanisms-in-ad-fs"></a><a name="BKMK_1"></a>关键概念 - AD FS 中的身份验证机制
 
 ### <a name="benefits-of-authentication-mechanisms-in-ad---fs"></a>AD FS 中的身份验证机制的优势
-Windows Server 2012 R2 中的 Active Directory 联合身份验证服务（AD FS）为 IT 管理员提供了更丰富、更灵活的工具集，用于对想要访问公司资源的用户进行身份验证。 它使管理员能够灵活控制主要和附加身份验证方法，为配置身份验证策略提供丰富的管理体验（通过用户界面和 Windows PowerShell），并增强访问受 AD FS 保护的应用程序和服务的最终用户的体验。 下面是在 Windows Server 2012 R2 中 AD FS 保护应用程序和服务的一些优点：
+Windows Server 2012 R2 中的 Active Directory 联合身份验证服务 (AD FS) 为 IT 管理员提供了更丰富、更灵活的工具集，用于对想要访问公司资源的用户进行身份验证。 它使管理员能够灵活控制主要和附加身份验证方法，为配置身份验证策略提供丰富的管理体验，同时通过用户界面和 Windows PowerShell)  (配置身份验证策略，并增强访问 AD FS 保护的应用程序和服务的最终用户的体验。 下面是在 Windows Server 2012 R2 中 AD FS 保护应用程序和服务的一些优点：
 
 -   全局身份验证策略-一种集中管理功能，IT 管理员可以从该管理功能中选择使用哪种身份验证方法根据访问受保护资源的网络位置对用户进行身份验证。 这样，管理员便可以执行以下操作：
 
@@ -63,7 +61,7 @@ Windows Server 2012 R2 中的 Active Directory 联合身份验证服务（AD FS�
 -   支持自定义 MFA 提供程序：对于利用第三方 MFA 方法的组织，AD FS 提供无缝合并和使用这些身份验证方法的功能。
 
 ### <a name="authentication-scope"></a>身份验证范围
-在 Windows Server 2012 R2 的 AD FS 中，可以指定一个全局范围的身份验证策略，该策略适用于所有由 AD FS 保护的应用程序和服务。  你还可以为 AD FS 保护的特定应用程序和服务（信赖方信任）设置身份验证策略。 针对特定应用程序（按信赖方信任）指定身份验证策略不会覆盖全局身份验证策略。 如果全局或按信赖方信任身份验证策略需要 MFA，则当用户尝试验证到此信赖方信任时，将触发 MFA。  全局身份验证策略是未配置特定身份验证策略的信赖方信任（应用程序和服务）的回退。
+在 Windows Server 2012 R2 的 AD FS 中，可以指定一个全局范围的身份验证策略，该策略适用于所有由 AD FS 保护的应用程序和服务。  你还可以为特定应用程序和服务设置身份验证策略， (由 AD FS 保护的信赖方信任) 。 针对特定应用程序（按信赖方信任）指定身份验证策略不会覆盖全局身份验证策略。 如果全局或按信赖方信任身份验证策略需要 MFA，则当用户尝试验证到此信赖方信任时，将触发 MFA。  全局身份验证策略是未配置特定身份验证策略的信赖方信任（应用程序和服务）的回退。
 
 全局身份验证策略适用于受 AD FS 保护的所有信赖方。 可将以下设置配置为全局身份验证策略的一部分：
 
@@ -111,7 +109,7 @@ Windows Server 2012 R2 中的 Active Directory 联合身份验证服务（AD FS�
 
 -   可以要求针对已注册（已加入工作区）或者未注册（未加入工作区）的设备使用 MFA。
 
-    Windows Server 2012 R2 采用以用户为中心的方法来处理新式设备，其中设备对象表示 user@device 与公司之间的关系。 设备对象是 Windows Server 2012 R2 中 AD 中的新类，在提供对应用程序和服务的访问权限时，可用于提供复合标识。 AD FS 的新组件 - Device Registration Service (DRS) – 可以在 Active Directory 中设置设备标识，以及在使用者设备上设置将用于表示设备标识的证书。 然后，你可以使用此设备标识将设备加入工作区，换而言之，可以将个人设备连接到工作区的 Active Directory。 将个人设备加入工作区时，该设备将成为已知设备，并为受保护的资源和应用程序提供无缝第二重身份验证。 换句话说，设备加入工作区后，用户的标识将绑定到此设备，并可在访问受保护资源之前用于无缝复合标识验证。
+    Windows Server 2012 R2 采用以用户为中心的方法来处理新式设备，其中的设备对象表示与公司之间的关系 user@device 。 设备对象是 Windows Server 2012 R2 中 AD 中的新类，在提供对应用程序和服务的访问权限时，可用于提供复合标识。 AD FS 的新组件 - Device Registration Service (DRS) – 可以在 Active Directory 中设置设备标识，以及在使用者设备上设置将用于表示设备标识的证书。 然后，你可以使用此设备标识将设备加入工作区，换而言之，可以将个人设备连接到工作区的 Active Directory。 将个人设备加入工作区时，该设备将成为已知设备，并为受保护的资源和应用程序提供无缝第二重身份验证。 换句话说，设备加入工作区后，用户的标识将绑定到此设备，并可在访问受保护资源之前用于无缝复合标识验证。
 
     有关工作区加入和离开的详细信息，请参阅[从任何设备加入工作区以实现 SSO 和跨公司应用程序的无缝第二重身份验证](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)。
 
@@ -147,8 +145,8 @@ Windows Server 2012 R2 中的 Active Directory 联合身份验证服务（AD FS�
     ```
 
 ## <a name="see-also"></a>另请参阅
-[演练指南：利用适用于敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-[在 Windows Server 2012 R2 中设置 AD FS 的实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+[演练指南：利用适用于敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) 
+[为 Windows Server 2012 R2 中的 AD FS 设置实验室环境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

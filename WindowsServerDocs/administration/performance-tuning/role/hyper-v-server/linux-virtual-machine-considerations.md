@@ -5,18 +5,18 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 916239535b92e1248918c76897e5222fa1dc6451
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b1616af3cfc1f14c534392c7f083b333b4744ef3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896111"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993349"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Linux 虚拟机注意事项
 
 与 Hyper-v 中的 Windows 虚拟机相比，Linux 和 BSD 虚拟机有其他注意事项。
 
-首先要考虑 Integration Services 是存在还是仅在不悟道的模拟硬件上运行 VM。 [Windows 上的 Hyper-v 支持的 linux 和 FreeBSD 虚拟机](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)中提供了包含内置或可下载 Integration Services 的 LINUX 和 BSD 版本表。 这些页面提供适用于 Linux 分发版的可用 Hyper-v 功能网格，并在适用的情况下提供有关这些功能的说明。
+首先要考虑 Integration Services 是存在还是仅在不悟道的模拟硬件上运行 VM。 [Windows 上的 Hyper-v 支持的 linux 和 FreeBSD 虚拟机](../../../../virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)中提供了包含内置或可下载 Integration Services 的 LINUX 和 BSD 版本表。 这些页面提供适用于 Linux 分发版的可用 Hyper-v 功能网格，并在适用的情况下提供有关这些功能的说明。
 
 即使来宾 Integration Services 运行，它也可以配置旧版硬件，而不会表现出最佳性能。 例如，为来宾配置和使用虚拟以太网适配器，而不是使用旧版网络适配器。 对于 Windows Server 2016，还提供了高级网络，如 SR-IOV。
 
@@ -51,7 +51,7 @@ net.ipv4.tcp_abort_on_overflow = 1
 
 ## <a name="linux-storage-performance"></a>Linux 存储性能
 
-以下是一些最佳实践，如在[hyper-v 上运行 Linux 的最佳实践](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)。 Linux 内核具有不同的 i/o 计划程序，用不同的算法对请求重新排序。 NOOP 是一个先进先出队列，该队列通过虚拟机监控程序做出的计划决策。 在 Hyper-v 上运行 Linux 虚拟机时，建议使用 NOOP 作为计划程序。 若要更改特定设备的计划程序，请在启动加载器的配置中 (/etc/grub.conf，例如) ，将添加 `elevator=noop` 到内核参数，然后重新启动。
+以下是一些最佳实践，如在[hyper-v 上运行 Linux 的最佳实践](../../../../virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v.md)。 Linux 内核具有不同的 i/o 计划程序，用不同的算法对请求重新排序。 NOOP 是一个先进先出队列，该队列通过虚拟机监控程序做出的计划决策。 在 Hyper-v 上运行 Linux 虚拟机时，建议使用 NOOP 作为计划程序。 若要更改特定设备的计划程序，请在启动加载器的配置中 (/etc/grub.conf，例如) ，将添加 `elevator=noop` 到内核参数，然后重新启动。
 
 与网络类似，Linux 来宾的存储性能从具有足够深度的多个队列中获益最大，使主机保持繁忙状态。 Microbenchmarking 存储性能可能适用于 fio 基准工具与 libaio 引擎。
 

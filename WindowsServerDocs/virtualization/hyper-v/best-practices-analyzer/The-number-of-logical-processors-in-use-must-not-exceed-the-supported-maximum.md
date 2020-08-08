@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 66df8b02-91d1-424b-8934-a39c214d530e
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: d74fa49a3ce0015cb8ee819b537153519c498627
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4a78f81fa90bc25d9ca1888d2c74d90a417f1071
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960460"
+ms.locfileid: "87993423"
 ---
 # <a name="the-number-of-logical-processors-in-use-must-not-exceed-the-supported-maximum"></a>使用中的逻辑处理器数不得超过支持的最大值
 
@@ -41,7 +41,7 @@ ms.locfileid: "87960460"
 
 *从此计算机中删除一些处理器，或使用 msconfig 限制可用处理器的数量。*
 
-请参阅以下说明以使用 Msconfig。 有关删除处理器的详细信息，请参阅计算机附带的说明或联系硬件制造商。 有关 Hyper-v 支持的最高配置的详细信息，请参阅[在 Windows Server 2016 中规划 hyper-v 可伸缩性](../plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)。
+请参阅以下说明以使用 Msconfig。 有关删除处理器的详细信息，请参阅计算机附带的说明或联系硬件制造商。 有关 Hyper-v 支持的最高配置的详细信息，请参阅[在 Windows Server 2016 中规划 hyper-v 可伸缩性](../plan/plan-hyper-v-scalability-in-windows-server.md)。
 
 ### <a name="to-limit-the-number-of-available-processors"></a>限制可用处理器的数量
 
@@ -52,6 +52,3 @@ ms.locfileid: "87960460"
 3.  选择 "**处理器数量**"，然后在列表中选择一个编号。 单击“确定”。
 
 4.  重新启动计算机以使用新数目的处理器运行它。
-
-
-

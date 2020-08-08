@@ -6,18 +6,16 @@ ms.author: billmath
 manager: femila
 ms.date: 07/26/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 5a7279416746269a3886fe929d066a6397be838a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 66ef77b46065b87e6df08c63b0fb40ca4453c45b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962519"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954253"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>为 AD FS 配置额外的身份验证方法
 
-若要启用多因素身份验证 (MFA)，你必须至少选择一种附加身份验证方法。 默认情况下，在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务（AD FS）中，可以选择证书身份验证（即，基于智能卡的身份验证）作为附加身份验证方法。
+若要启用多因素身份验证 (MFA)，你必须至少选择一种附加身份验证方法。 默认情况下，在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务 (AD FS) 中，你可以选择 "证书身份验证 (换句话说，基于智能卡的身份验证) 作为附加身份验证方法。
 
 > [!NOTE]
 > 如果选择证书身份验证，请确保智能卡证书已安全地进行设置并且指定了 PIN 码要求。
@@ -30,7 +28,7 @@ ms.locfileid: "86962519"
 下面是按字母顺序排列的 Microsoft 和第三方提供商以及当前可用于 Windows Server 2012 R2 中的 AD FS 的 MFA 产品/服务的列表。
 
 |提供程序|产品/服务|用于了解详细信息的链接|
-|-|-|-| 
+|-|-|-|
 |aPersona|适用于 Microsoft ADFS SSO 的 aPersona 自适应多重身份验证|[aPersona ASM ADFS 适配器](https://www.apersona.com/adfs)|
 |Cyphercor Inc。|用于 AD FS 的 LoginTC 多重身份验证|[LoginTC AD FS 连接器](https://www.logintc.com/docs/connectors/adfs.html)|
 |双重安全性|适用于 AD FS 的双核 MFA 适配器|[AD FS 的双核身份验证](https://duo.com/docs/adfs)|
@@ -40,7 +38,7 @@ ms.locfileid: "86962519"
 |Login People|适用于 AD FS 2012 R2 的 Login People MFA API 连接程序（公用 Beta 版）|[https://www.loginpeople.com](https://www.loginpeople.com)|
 |Microsoft Corp.|Microsoft Azure MFA|[操作实例指南：使用适用于敏感应用程序的附加多重身份验证管理风险](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280946(v=ws.11))（请参阅步骤 3）|
 Mideye | ADFS 的 Mideye Authentication 提供程序 | [Mideye Microsoft Active Directory 的双因素身份验证联合身份验证服务](https://www.mideye.com/support/administrators/documentation/integration/microsoft-adfs/)|
-|Okta | Active Directory 联合身份验证服务的 Okta MFA | [Active Directory 联合身份验证服务（ADFS）的 Okta MFA](https://help.okta.com/en/prod/Content/Topics/integrations/adfs-okta-int.htm)|
+|Okta | Active Directory 联合身份验证服务的 Okta MFA | [Okta MFA for Active Directory 联合身份验证服务 (ADFS) ](https://help.okta.com/en/prod/Content/Topics/integrations/adfs-okta-int.htm)|
 |统一标识| Starling 2FA AD FS|[Starling 2FA AD FS 适配器](https://www.oneidentity.com/products/starling-two-factor-authentication/)|
 |统一标识| Defender AD FS|[Defender AD FS 适配器](https://www.oneidentity.com/products/defender/)|
 |Ping 标识|用于 AD FS 的 PingID MFA 适配器|[用于 AD FS 的 PingID MFA 适配器](https://documentation.pingidentity.com/pingid/pingidAdminGuide/index.shtml#pid_c_PingIDforADFSSSO.html)|
@@ -49,7 +47,7 @@ Mideye | ADFS 的 Mideye Authentication 提供程序 | [Mideye Microsoft Active 
 |SecureMFA|SecureMFA OTP 提供程序| [ADFS 多重身份验证提供程序](https://www.securemfa.com/)|
 |Swisscom|移动设备 ID 身份验证服务和签名服务|[移动设备 ID 身份验证服务](http://swisscom.ch/mid)|
 |Symantec|Symantec 验证和 ID 保护服务 (VIP)|[Symantec 验证和 ID 保护服务 (VIP)](http://www.symantec.com/vip-authentication-service)|
-|Trusona|基本（无密码 MFA）和执行（重要 + 身份验证）| [Trusona 多重身份验证](https://www.trusona.com/solution-overview/)|
+|Trusona|重要 (无密码 MFA) 和执行 (必需的 + 身份验证) | [Trusona 多重身份验证](https://www.trusona.com/solution-overview/)|
 
 
 ## <a name="custom-authentication-method-for-ad-fs-in-windows-server-2012-r2"></a>适用于 Windows Server 2012 R2 中 AD FS 的自定义身份验证方法

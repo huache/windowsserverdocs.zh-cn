@@ -4,20 +4,20 @@ ms.topic: article
 author: cosmosdarwin
 ms.author: cosdar
 ms.date: 11/04/2019
-ms.openlocfilehash: a7c15bd07754d48b7fbffe2cd95edaa871c9bde3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 06062f4add54fda3ddcda4d092d6eaf1d692ebf8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964443"
+ms.locfileid: "87993486"
 ---
 # <a name="deploy-hyperconverged-infrastructure-with-windows-admin-center"></a>通过 Windows 管理中心部署超聚合基础结构
 
 > 适用于：Windows Admin Center、Windows Admin Center 预览版
 
-可以使用 Windows 管理中心[版本 1910](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)或更高版本，使用两个或更多适用的 Windows 服务器部署超聚合基础结构。 这项新功能采用多阶段工作流的形式，指导你完成以下操作：安装功能、配置网络、创建群集以及部署存储空间直通和/或软件定义的网络 (SDN) （如果已选中）。
+可以使用 Windows 管理中心[版本 1910](../overview.md)或更高版本，使用两个或更多适用的 Windows 服务器部署超聚合基础结构。 这项新功能采用多阶段工作流的形式，指导你完成以下操作：安装功能、配置网络、创建群集以及部署存储空间直通和/或软件定义的网络 (SDN) （如果已选中）。
 
-从 Windows 管理中心版本2007，Windows 管理中心支持 Azure Stack HCI OS。 阅读有关[如何在 Windows 管理中心中的 AZURE STACK HCI 文档中部署群集](https://docs.microsoft.com/azure-stack/hci/getting-started)的信息。Althought 本文档重点介绍 Azure Stack HCI，说明也适用于 Windows Server 部署。
+从 Windows 管理中心版本2007，Windows 管理中心支持 Azure Stack HCI OS。 阅读有关[如何在 Windows 管理中心中的 AZURE STACK HCI 文档中部署群集](/azure-stack/hci/getting-started)的信息。Althought 本文档重点介绍 Azure Stack HCI，说明也适用于 Windows Server 部署。
 
 ## <a name="undo-and-start-over"></a>撤消并重新开始
 
@@ -88,5 +88,5 @@ Get-NetAdapter | Where Name -Ne "Management" | Set-NetAdapter -VlanID 0
 
 ## <a name="additional-references"></a>其他参考
 
-- [你好，Windows 管理中心](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)
-- [部署存储空间直通](https://docs.microsoft.com/windows-server/storage/storage-spaces/deploy-storage-spaces-direct)
+- [你好，Windows 管理中心](../overview.md)
+- [部署存储空间直通](../../../storage/storage-spaces/deploy-storage-spaces-direct.md)

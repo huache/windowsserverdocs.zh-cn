@@ -7,12 +7,12 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: f1e4713e6d658e6a51955e321e39cb7f90e261a9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3a1b85504fcae1aabc155d9cf415bc49d4722494
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963803"
+ms.locfileid: "87993636"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>排查 Always On VPN 问题
 
@@ -112,7 +112,7 @@ ms.locfileid: "87963803"
 
 客户端计算机上的应用程序日志记录 VPN 连接事件的大多数较高级别的详细信息。
 
-从源 RasClient 查找事件。 所有错误消息都将返回消息末尾的错误代码。 下面详细介绍了一些更常见的错误代码，但[路由和远程访问错误代码](/previous-versions//mt728163(v=technet.10))中提供了完整列表。
+从源 RasClient 查找事件。 所有错误消息都将返回消息末尾的错误代码。 下面详细介绍了一些更常见的错误代码，但[路由和远程访问错误代码](/previous-versions/mt728163(v=technet.10))中提供了完整列表。
 
 ## <a name="nps-logs"></a>NPS 日志
 

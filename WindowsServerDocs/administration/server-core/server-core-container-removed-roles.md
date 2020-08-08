@@ -6,18 +6,18 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 05/07/2018
-ms.openlocfilehash: f577ebd805e5373a10dd43a3d5054f92d4881c7d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2092e330af479ae0cbdb1da88ba87cf233307b59
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895913"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993255"
 ---
 # <a name="roles-role-services-and-features-not-in-server-core-containers---windows-server-version-1803"></a>不在服务器核心容器中的角色、角色服务和功能-Windows Server，版本1803
 
 > 适用于：Windows Server 版本 1803
 
-在 Windows Server 版本1803中，我们已将[服务器核心容器映像的总大小缩小到了**1.58 GB**](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/)。 完成此操作的方法是优化体系结构，并删除[服务器核心容器](https://docs.microsoft.com/virtualization/windowscontainers/about/)中不需要的项目。 有些功能在容器中不起作用，有些角色和功能没有被使用。
+在 Windows Server 版本1803中，我们已将[服务器核心容器映像的总大小缩小到了**1.58 GB**](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/)。 完成此操作的方法是优化体系结构，并删除[服务器核心容器](/virtualization/windowscontainers/about/)中不需要的项目。 有些功能在容器中不起作用，有些角色和功能没有被使用。
 
 > [!IMPORTANT]
 > 我们从服务器核心**容器**映像（而非[服务器核心本身](server-core-roles-and-services.md)）中删除了这些映像。
@@ -69,7 +69,7 @@ ms.locfileid: "87895913"
 <br>Add-windowsfeature fs-iscsitargetserver
 <br>iSCSITargetStorageProviders
 <br>iSNS_Service
-<br>授权
+<br>许可
 <br>LightweightServer
 <br>Microsoft-Hyper-v 管理-客户端
 <br>Microsoft-Hyper-v-脱机

@@ -1,23 +1,21 @@
 ---
 title: 创建受防护的 Linux VM 模板磁盘
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1a6325a5d8e931f1e62c83ba4013d94760e39f86
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0535a15d0b21b62bb9f8b91729f773d1f4db0db0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856790"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966064"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>创建受防护的 Linux VM 模板磁盘
 
-> 适用于： Windows Server 2019、Windows Server （半年频道）、 
+> 适用于： Windows Server 2019、Windows Server (半年频道) 、
 
 本主题介绍如何为可用于实例化一个或多个租户 Vm 的 Linux 受防护 Vm 准备模板磁盘。
 
@@ -26,7 +24,7 @@ ms.locfileid: "80856790"
 若要准备和测试受防护的 Linux VM，你将需要以下资源：
 
 - 运行 Windows Server 1709 或更高版本的虚拟化 capababilities 的服务器
-- 能够运行 Hyper-v 管理器连接到正在运行的 VM 控制台的另一台计算机（Windows 10 或 Windows Server 2016）
+-  (Windows 10 或 Windows Server 2016) 的另一台计算机，该计算机能够运行 Hyper-v 管理器连接到正在运行的 VM 的控制台
 - 受支持的 Linux 防护 VM 操作系统之一的 ISO 映像：
     - 带有4.4 内核的 Ubuntu 16.04 LTS
     - Red Hat Enterprise Linux 7.3
@@ -43,7 +41,7 @@ ms.locfileid: "80856790"
 受防护的 Vm 是从安全模板磁盘创建的。
 模板磁盘包含 VM 和元数据的操作系统，包括/boot 和/root 分区的数字签名，以确保在部署之前不修改核心操作系统组件。
 
-若要创建模板磁盘，必须首先创建一个常规（非屏蔽） VM，该 VM 将作为未来受防护 Vm 的基础映像准备就绪。
+若要创建模板磁盘，必须首先创建一个正 (无屏蔽) VM，该 VM 将作为未来受防护 Vm 的基础映像准备。
 你安装的软件和对此 VM 所做的配置更改将应用于从此模板磁盘创建的所有受防护的 Vm。
 这些步骤将指导你完成获取 Linux VM templatization 的最低要求。
 
@@ -72,7 +70,7 @@ ms.locfileid: "80856790"
 5.  使用 Hyper-v 管理器配置虚拟化服务器上的[外部交换机](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines)，以便 Linux VM 可以访问 Internet 以获取更新。
 
 6.  接下来，创建新的虚拟机以在上安装 Linux 操作系统。
-    在 "操作" 窗格中，单击 "**新建**" > "**虚拟机**" 以打开向导。
+    在 "操作" 窗格中，单击 "**新建**  >  **虚拟机**" 以打开向导。
     为 VM 提供一个友好名称，如 "模板化 Linux"，然后单击 "**下一步**"。
 
 7.  在向导的第二页上，选择 "**第2代**"，以确保使用基于 UEFI 的固件配置文件设置 VM。
@@ -87,8 +85,8 @@ ms.locfileid: "80856790"
 10. 继续执行所选 Linux 分发的设置过程。
     虽然每个 Linux 分发版都使用不同的安装向导，但对于将成为 Linux 受防护 VM 模板磁盘的 Vm，必须满足以下要求：
 
-    - 磁盘必须使用 GUID 分区表（GPT）布局进行分区
-    - 根分区必须用 dm dm-crypt。 密码应设置为**密码**（所有小写字母）。 此通行短语是随机的，在设置受防护的 VM 时分区会重新加密。
+    - 磁盘必须使用 GUID 分区 Table (GPT) 布局进行分区
+    - 根分区必须用 dm dm-crypt。 密码应设置为 (所有小写) 的**密码**。 此通行短语是随机的，在设置受防护的 VM 时分区会重新加密。
     - 启动分区必须使用**ext2**文件系统
 
 11. 在 Linux 操作系统完全启动并登录后，建议安装 linux 虚拟内核和关联的 Hyper-v integration services 包。
@@ -139,7 +137,7 @@ ms.locfileid: "80856790"
     ```
 
 14. 自定义 Linux OS 完成后，找到系统上的 lsvmprep 安装程序并运行它。
-    
+
     ```bash
     # The path below may change based on the version of lsvmprep installed
     # Run "find /opt -name lsvmprep" to locate the lsvmprep executable
@@ -148,9 +146,9 @@ ms.locfileid: "80856790"
 
 15. 关闭 VM。
 
-16. 如果你使用了 VM 的任何检查点（包括通过 Windows 10 秋季创意者更新由 Hyper-v 创建的自动检查点），请确保在继续操作之前删除它们。
-    检查点创建了模板磁盘向导不支持的差异磁盘（. .avhdx）。
-    
+16. 如果你使用了 VM 的任何检查点 (包括 Hyper-v 通过 Windows 10 秋季创建者更新) 创建的自动检查点，请确保删除这些检查点，然后再继续。
+    检查点创建 .avhdx) 的差异磁盘，而该模板磁盘向导不支持该 (。
+
     若要删除检查点，请打开**Hyper-v 管理器**，选择你的 VM，右键单击 "检查点" 窗格中最顶层的检查点，然后单击 "**删除检查点" 子树**。
 
     ![在 Hyper-v 管理器中删除模板 VM 的所有检查点](../media/Guarded-Fabric-Shielded-VM/delete-checkpoints-lsvm-template.png)
@@ -164,13 +162,13 @@ ms.locfileid: "80856790"
 ### <a name="obtain-a-certificate-to-sign-the-disk"></a>获取用于对磁盘进行签名的证书
 
 若要对磁盘度量进行数字签名，需要在将运行模板磁盘向导的计算机上获取证书。
-证书必须满足以下要求：
+该证书必须满足以下要求：
 
-证书属性 | 必需的值
+Certificate 属性 | 所需的值
 ---------------------|---------------
 密钥算法 | RSA
 最小密钥大小 | 2048 位
-签名算法 | SHA256 （建议）
+签名算法 | SHA256 (建议) 
 密钥用法 | 数字签名
 
 此证书的详细信息将在租户创建其防护数据文件并授权它们信任的磁盘时显示给租户。
@@ -187,7 +185,7 @@ New-SelfSignedCertificate -Subject "CN=Linux Shielded VM Template Disk Signing C
 ### <a name="process-the-disk-with-the-template-disk-wizard-cmdlet"></a>用模板磁盘向导 cmdlet 处理磁盘
 
 将模板磁盘和证书复制到运行 Windows Server 版本1709的计算机，然后运行以下命令以启动签名过程。
-你向 `-Path` 参数提供的 VHDX 将被更新的模板磁盘覆盖，因此请确保在运行该命令之前进行复制。
+你向此参数提供的 VHDX `-Path` 会被更新的模板磁盘覆盖，因此请确保在运行该命令之前进行复制。
 
 > [!IMPORTANT]
 > Windows Server 2016 或 Windows 10 上的可用远程服务器管理工具无法用于准备 Linux 受防护的 VM 模板磁盘。

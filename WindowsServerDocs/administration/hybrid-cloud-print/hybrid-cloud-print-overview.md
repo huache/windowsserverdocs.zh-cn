@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: trudyha
 ms.author: trudyha
 ms.date: 10/16/2017
-ms.openlocfilehash: fc76aef0f7fbc9f3c1dd73b94c6510c0ad37034c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 49c5ee234a6983902e7eb2f68e64a058167a3182
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879413"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993417"
 ---
 # <a name="windows-server-hybrid-cloud-print-overview"></a>Windows Server 混合云打印概述
 
@@ -56,7 +56,7 @@ Windows 10 创意者更新和 Windows 10 S 中支持**混合云打印**。
 | BYOD 设备/Windows 打印服务器后台处理程序/打印机 | 它们按原样进行。 不会更改部署中的功能。 |
 
 可以通过两种方法安装**混合云打印**：
-- * * 点播功能，请参阅在[Windows Server 中配置按需功能](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server)，了解有关添加和删除角色和功能文件的详细信息。
+- * * 点播功能，请参阅在[Windows Server 中配置按需功能](../server-manager/configure-features-on-demand-in-windows-server.md)，了解有关添加和删除角色和功能文件的详细信息。
 - * * Windows Server 2016 设置，管理员可以在 "**设置**" "  ->  **应用**  ->  " "**管理可选功能**  ->  " 中**添加功能**并搜索功能点播包
 - PowerShell 命令-在 PowerShell 管理员窗口中运行以下命令：
 

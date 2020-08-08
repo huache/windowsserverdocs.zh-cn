@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 10252626e3732197e681e12851d5ef66bad1cc80
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a751e8d6f170a83027f417855da1bdaa471de01b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519074"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954413"
 ---
 # <a name="support-for-using-hyper-v-replica-for-virtualized-domain-controllers"></a>支持将 Hyper-V 副本用于虚拟化域控制器
 
@@ -32,12 +30,12 @@ Hyper-V 副本通过 LAN 或 WAN 链接以异步方式将所选虚拟机从主 H
 
 ## <a name="windows-server-2012-or-newer-domain-controllers-required"></a>需要 Windows Server 2012 或更高版本的域控制器
 
-Windows Server 2012 Hyper-v 引入了 VM-生成 id （VMGenID）。 VMGenID 提供了一种方法，可在发生重大更改时，使虚拟机监控程序与来宾 OS 进行通信。 例如，虚拟机监控程序可以与已从快照还原（Hyper-V 快照还原技术，而不是备份还原）的虚拟化 DC 进行通信。 Windows Server 2012 和更高版本中的 AD DS 可感知 VMGenID VM 技术，并使用它来检测何时执行虚拟机监控程序操作（例如快照还原），从而允许它更好地保护自身。
+Windows Server 2012 Hyper-v 引入了 VM-生成 id (VMGenID) 。 VMGenID 提供了一种方法，可在发生重大更改时，使虚拟机监控程序与来宾 OS 进行通信。 例如，虚拟机监控程序可以与已从快照还原（Hyper-V 快照还原技术，而不是备份还原）的虚拟化 DC 进行通信。 Windows Server 2012 和更高版本中的 AD DS 可感知 VMGenID VM 技术，并使用它来检测何时执行虚拟机监控程序操作（例如快照还原），从而允许它更好地保护自身。
 
 > [!NOTE]
 > 只有 Windows Server 2012 Dc 或更高版本上的 AD DS 提供从 VMGenID 生成的这些安全措施;运行所有以前版本的 Windows Server 的 Dc 受在使用不受支持的机制（例如快照还原）还原虚拟化 DC 时可能发生的问题。 有关这些安全措施和何时触发它们的详细信息，请参阅[虚拟化域控制器体系结构](./virtualized-domain-controller-architecture.md)。
 
-当 Hyper-v 副本故障转移发生（计划内或计划外）时，虚拟化的 DC 会检测到 VMGenID 重置，并触发上述安全功能。 然后，Active Directory 操作将如常地继续。 副本 VM 取代主 VM 运行。
+当 Hyper-v 副本故障转移 (计划内或计划外的) 时，虚拟化的 DC 会检测到 VMGenID 重置，并触发上述安全功能。 然后，Active Directory 操作将如常地继续。 副本 VM 取代主 VM 运行。
 
 > [!NOTE]
 > 考虑到现在存在两个具有相同 DC 标识的实例，有可能主要实例和复制的实例都将运行。 尽管 Hyper-V 副本已准备控制机制以确保主 VM 和副本 VM 不会同时运行，但如果发生它们之间的链接在虚拟机复制之后失败的事件，它们仍可能会同时运行。 在这个不太可能发生的事件中，运行 Windows Server 2012 的虚拟化 DC 具有有助于保护 AD DS 的安全措施，而运行更早版本 Windows Server 的虚拟化 DC 没有这些安全措施。
@@ -70,5 +68,5 @@ Windows Server 2012 Hyper-v 引入了 VM-生成 id （VMGenID）。 VMGenID 提�
 
 | 计划内故障转移 | 非计划的故障转移 |
 |--|--|
-| 支持，但不建议这样做，因为运行这些版本的 Windows Server 的 DC 不支持 VMGenID 或使用关联的虚拟化安全措施。 这使它们面临 USN 回滚的风险。 有关详细信息，请参阅 [USN 和 USN 回滚](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))。 | 不支持<p>**注意：** 如果 USN 回滚不是风险（例如，不推荐的配置），则将支持非计划的故障转移。 |
+| 支持，但不建议这样做，因为运行这些版本的 Windows Server 的 DC 不支持 VMGenID 或使用关联的虚拟化安全措施。 这使它们面临 USN 回滚的风险。 有关详细信息，请参阅 [USN 和 USN 回滚](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))。 | 不支持<p>**注意：** 如果 USN 回滚不是风险，例如林中的单个 DC (不推荐的配置) ，则将支持非计划的故障转移。 |
 | 测试用例：<p>-DC1 和 DC2 正在运行 Windows Server 2008 R2。<p>-DC2 已关闭，并在 DC2-Rec 上执行计划的故障转移。在关闭完成之前，DC2 上的所有数据都将复制到 DC2 记录。<p>-在 DC2 开始后，它会使用与 DC2 相同的 invocationID 恢复与 DC1 的复制。 | 空值 |

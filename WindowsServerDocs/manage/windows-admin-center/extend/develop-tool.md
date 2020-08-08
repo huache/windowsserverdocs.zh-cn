@@ -1,19 +1,17 @@
 ---
 title: 开发工具扩展
-description: 开发工具扩展 Windows 管理中心 SDK （Project Honolulu）
-ms.technology: manage
+description: '开发工具扩展 Windows 管理中心 SDK (Project Honolulu) '
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: de2cbf3a47771555eef02cd7d18f93b2b33227b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f3bf885cd86015842be26124e7374f622d38a9c2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406908"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954123"
 ---
 # <a name="develop-a-tool-extension"></a>开发工具扩展
 
@@ -26,7 +24,7 @@ ms.locfileid: "71406908"
 > [!NOTE]
 > 不熟悉不同的扩展类型？ 了解有关[扩展性体系结构和扩展类型](understand-extensions.md)的详细信息。
 
-## <a name="prepare-your-environment"></a>准备你的环境
+## <a name="prepare-your-environment"></a>准备环境
 
 如果尚未准备好，请通过安装所有项目所需的依赖项和全局必备组件来[准备环境](prepare-development-environment.md)。
 
@@ -40,8 +38,8 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}"
 
 | 值 | 说明 | 示例 |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | 公司名称（包含空格） | ```Contoso Inc``` |
-| ```{!Tool Name}``` | 工具名称（包含空格） | ```Manage Foo Works``` |
+| ```{!Company Name}``` | 你的公司名称 (带有空格)  | ```Contoso Inc``` |
+| ```{!Tool Name}``` | 你的工具名称 (带有空格)  | ```Manage Foo Works``` |
 
 下面是一个示例用法：
 
@@ -49,7 +47,7 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}"
 wac create --company "Contoso Inc" --tool "Manage Foo Works"
 ```
 
-这将使用为工具指定的名称在当前工作目录中创建一个新文件夹，将所有必需的模板文件复制到你的项目中，并使用你的公司和工具名称配置文件。  
+这将使用为工具指定的名称在当前工作目录中创建一个新文件夹，将所有必需的模板文件复制到你的项目中，并使用你的公司和工具名称配置文件。
 
 接下来，将目录更改为刚创建的文件夹，然后通过运行以下命令安装所需的本地依赖项：
 
@@ -57,7 +55,7 @@ wac create --company "Contoso Inc" --tool "Manage Foo Works"
 npm install
 ```
 
-完成此操作后，已设置将新扩展加载到 Windows 管理中心所需的一切。 
+完成此操作后，已设置将新扩展加载到 Windows 管理中心所需的一切。
 
 ## <a name="add-content-to-your-extension"></a>向扩展添加内容
 
@@ -65,13 +63,13 @@ npm install
 
 - 添加[空模块](guides/add-module.md)
 - 添加[iFrame](guides/add-iframe.md)
- 
+
 有关更多示例，请参阅[GITHUB SDK 网站](https://aka.ms/wacsdk)：
 -  [开发人员工具](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools)是一种完全正常运行的扩展插件，可以将其放入 Windows 管理中心，其中包含一系列丰富的示例功能和工具示例，你可以在自己的扩展中浏览和使用它们。
 
 ## <a name="customize-your-extensions-icon"></a>自定义扩展的图标
 
-你可以在工具列表中自定义为你的扩展显示的图标。  为此，请修改扩展 ```manifest.json``` 中的所有 ```icon``` 条目：
+你可以在工具列表中自定义为你的扩展显示的图标。  为此，请修改 ```icon``` 扩展中的所有条目 ```manifest.json``` ：
 
 ``` json
 "icon": "{!icon-uri}",
@@ -81,13 +79,13 @@ npm install
 | ----- | ----------- | ------- |
 | ```{!icon-uri}``` | 图标资源的位置 | ```assets/foo-icon.svg``` |
 
-注意：目前，在开发模式下加载扩展时，不会显示自定义图标。  一种解决方法是删除 ```target``` 的内容，如下所示：
+注意：目前，在开发模式下加载扩展时，不会显示自定义图标。  解决方法是删除的内容，如下所示 ```target``` ：
 
 ``` json
 "target": "",
 ```
 
-此配置仅适用于在开发模式下进行的端加载，因此保留 ```target``` 中包含的值并在发布扩展之前还原它很重要。
+此配置仅适用于在开发模式下进行的端加载，因此，保留中包含的值 ```target``` 并在发布扩展之前还原它很重要。
 
 ## <a name="build-and-side-load-your-extension"></a>生成和加载扩展
 

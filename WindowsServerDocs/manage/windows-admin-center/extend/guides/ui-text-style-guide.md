@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 01/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d77498b9d4c8573dfac82b7291b6d0676d0d8c1e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a784bdfdfbfbbc4f91579d40cedb22230a70b13a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971974"
+ms.locfileid: "87993587"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Windows Admin Center UI 文本和设计风格指南
 
@@ -19,7 +19,7 @@ ms.locfileid: "87971974"
 
 本主题介绍编写 Windows Admin Center 用户界面 (UI) 文本的常规方法，以及我们采用的一些特定惯例和方法。
 
-Windows Admin Center 和任何扩展名都应遵循 [Microsoft 语音原则](https://docs.microsoft.com/style-guide/brand-voice-above-all-simple-human)，以便提供易用、友好的体验。 此风格指南基于这些语音原则和 [Microsoft 编写风格指南](https://docs.microsoft.com/style-guide/welcome/)，因此请务必查看上述两种资源中有关[辅助工具](https://docs.microsoft.com/style-guide/accessibility/accessibility-guidelines-requirements)、[缩略语](https://docs.microsoft.com/style-guide/acronyms)和[请](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/p/please)、[抱歉](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/s/sorry)等[词汇选择](https://docs.microsoft.com/style-guide/word-choice/)的信息。
+Windows Admin Center 和任何扩展名都应遵循 [Microsoft 语音原则](/style-guide/brand-voice-above-all-simple-human)，以便提供易用、友好的体验。 此风格指南基于这些语音原则和 [Microsoft 编写风格指南](/style-guide/welcome/)，因此请务必查看上述两种资源中有关[辅助工具](/style-guide/accessibility/accessibility-guidelines-requirements)、[缩略语](/style-guide/acronyms)和[请](/style-guide/a-z-word-list-term-collections/p/please)、[抱歉](/style-guide/a-z-word-list-term-collections/s/sorry)等[词汇选择](/style-guide/word-choice/)的信息。
 
 ## <a name="buttons"></a>按钮
 
@@ -29,7 +29,7 @@ Windows Admin Center 和任何扩展名都应遵循 [Microsoft 语音原则](htt
 
 ## <a name="capitalization"></a>大写
 
-我们遵循 Microsoft [大写](https://docs.microsoft.com/style-guide/capitalization)风格 - 基本全部使用句子元素的首字母大写。
+我们遵循 Microsoft [大写](/style-guide/capitalization)风格 - 基本全部使用句子元素的首字母大写。
 
 | UI 元素              |大写|注释|
 |-------------------------|--------------|--------|
@@ -215,7 +215,7 @@ Microsoft 开发人员应该使用 FWLink，但它是一个帮助链接，用户
 ## <a name="punctuation"></a>标点
 
 - 标题或不完整的句子不加结束标点符号（句号、问号）。 标题包含问题的确认对话框例外
-- 使用《Microsoft 风格指南》中关于[句号](https://docs.microsoft.com/style-guide/punctuation/periods)和[问号](https://docs.microsoft.com/style-guide/punctuation/question-marks)的指南。
+- 使用《Microsoft 风格指南》中关于[句号](/style-guide/punctuation/periods)和[问号](/style-guide/punctuation/question-marks)的指南。
 
 ## <a name="status-messages"></a>状态消息
 

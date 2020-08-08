@@ -6,20 +6,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 94e841282963e2b2b6ada552b54c7732d965b6b6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 349b673b7c062fd8f14d9a9fd857e1d7c859d3de
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955969"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954193"
 ---
 # <a name="ad-fs-troubleshooting---claims-rules-syntax"></a>AD FS 疑难解答-声明规则语法
 声明是一个使用者对其自身或另一个使用者做出的陈述。  声明由信赖方颁发，它们被赋予一个或多个值，然后打包到 AD FS 服务器颁发的安全令牌。  本文介绍声明语法和创建。  有关声明颁发的信息，请参阅[AD FS 故障排除-声明颁发](ad-fs-tshoot-claims-issuance.md)。
 
->[!NOTE]  
->你可以使用[ADFS 帮助](https://adfshelp.microsoft.com)站点上的[ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest)来帮助排查声明问题。   
+>[!NOTE]
+>你可以使用[ADFS 帮助](https://adfshelp.microsoft.com)站点上的[ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest)来帮助排查声明问题。
 
 ## <a name="how-claim-rules-are-processed"></a>处理声明规则的方式
 声明规则是通过声明[管道](../../ad-fs/technical-reference/The-Role-of-the-Claims-Pipeline.md)使用[声明引擎](../../ad-fs/technical-reference/The-Role-of-the-Claims-Engine.md)处理的。 声明引擎是联合身份验证服务的一个逻辑组件，它检查用户提供的传入声明集，然后根据每个规则中的逻辑生成输出声明集。
@@ -36,7 +34,7 @@ ms.locfileid: "86955969"
 
 示例：
 
-```c:[type == "Name", value == "domain user"] => issue(type = "Role", value = "employee");``` 
+```c:[type == "Name", value == "domain user"] => issue(type = "Role", value = "employee");```
 
 以下声明具有以下内容：
 - 条件- `c:[type == "Name", value == "domain user"] ` -评估 windows 帐户名是否为域用户的输入声明

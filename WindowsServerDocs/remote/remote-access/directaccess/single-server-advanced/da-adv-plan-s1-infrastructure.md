@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8f60a960d76e7c24ff3dc9afaf931792713f06af
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9d00622ce5712a2f725f1c6f1b533387651bc903
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970404"
+ms.locfileid: "87993595"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>步骤1规划高级 DirectAccess 基础结构
 
@@ -52,9 +52,9 @@ ms.locfileid: "87970404"
 
     DirectAccess 使用 IPv6 和 IPsec 在 DirectAccess 客户端计算机和内部企业网络之间创建安全连接。 但是，DirectAccess 不一定需要连接到 IPv6 Internet 或内部网络上的本机 IPv6 支持。 相反，它会自动配置并使用 IPv6 转换技术在 IPv4 Internet 上（通过使用 6to4、Teredo 或 IP-HTTPS）和仅支持 IPv4 的 Intranet 上（通过使用 NAT64 或 ISATAP）对 IPv6 通信进行隧道传送。 有关这些转换技术的概述，请参阅以下资源：
 
-    - [IPv6 转换技术](/previous-versions//bb726951(v=technet.10))
+    - [IPv6 转换技术](/previous-versions/bb726951(v=technet.10))
 
-    - [IP-HTTPS 隧道协议规范](/previous-versions//bb726951(v=technet.10))
+    - [IP-HTTPS 隧道协议规范](/previous-versions/bb726951(v=technet.10))
 
 3. 按下表配置所需的适配器和地址。 对于使用单个网络适配器并在 NAT 设备后面设置的部署，仅使用**内部网络适配器**列配置 IP 地址。
 

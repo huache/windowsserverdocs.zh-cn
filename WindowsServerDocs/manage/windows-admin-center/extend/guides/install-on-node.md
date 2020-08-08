@@ -1,19 +1,17 @@
 ---
 title: 在托管节点上安装扩展负载
 description: 有关如何在托管节点上安装扩展负载的说明
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 463280ba1d0a3fac84a12c0483946b01c0fefb75
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6a8675ff481f908feeeef4f97be0f1889b117291
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518555"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944969"
 ---
 # <a name="install-extension-payload-on-a-managed-node"></a>在托管节点上安装扩展负载
 
@@ -28,10 +26,10 @@ ms.locfileid: "87518555"
 
 | 值 | 说明 | 示例 |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | 公司名称（包含空格） | ```Contoso``` |
-| ```{!Tool Name}``` | 工具名称（包含空格） | ```InstallOnNode``` |
+| ```{!Company Name}``` | 你的公司名称 (带有空格)  | ```Contoso``` |
+| ```{!Tool Name}``` | 你的工具名称 (带有空格)  | ```InstallOnNode``` |
 
-在工具扩展文件夹中，创建一个 ```Node``` 文件夹（ ```{!Tool Name}\Node``` ）。 使用此 API 时，此文件夹中的任何内容都将复制到托管节点。 添加用例所需的任何文件。
+在工具扩展文件夹中创建 ```Node``` () 的文件夹 ```{!Tool Name}\Node``` 。 使用此 API 时，此文件夹中的任何内容都将复制到托管节点。 添加用例所需的任何文件。
 
 同时创建 ```{!Tool Name}\Node\installNode.ps1``` 脚本。 从文件夹将所有文件复制到托管节点后，将在托管节点上运行此脚本 ```{!Tool Name}\Node``` 。 为用例添加任何其他逻辑。 示例 ```{!Tool Name}\Node\installNode.ps1``` 文件：
 

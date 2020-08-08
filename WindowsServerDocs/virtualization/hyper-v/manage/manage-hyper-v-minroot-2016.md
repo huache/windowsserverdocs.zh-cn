@@ -4,13 +4,12 @@ description: 配置主机 CPU 资源控制
 author: allenma
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: 1e35595a0b5a0ab12187aae2cf714fc4d53901ee
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: fc65159474f9b1cd8bf282acf00ff06f4727673b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769625"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994057"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Hyper-v 主机 CPU 资源管理
 
@@ -18,12 +17,12 @@ Windows Server 2016 或更高版本中引入的 hyper-v 主机 CPU 资源控制�
 管理员可以使用这些控件将主机系统的一部分处理器专用于根分区。
 通过在 Hyper-v 主机上运行的工作负荷在系统处理器的单独子集上运行，这可以将 Hyper-v 主机中完成的工作与这些工作负荷隔离开来。
 
-有关 Hyper-v 主机硬件的详细信息，请参阅[Windows 10 Hyper-v 系统要求](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)。
+有关 Hyper-v 主机硬件的详细信息，请参阅[Windows 10 Hyper-v 系统要求](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)。
 
 ## <a name="background"></a>背景
 
 在设置 Hyper-v 主机 CPU 资源的控制之前，查看 Hyper-v 体系结构的基础知识会很有帮助。
-你可以在 " [Hyper-v 体系结构](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture)" 部分找到一般摘要。
+你可以在 " [Hyper-v 体系结构](../../../administration/performance-tuning/role/hyper-v-server/architecture.md)" 部分找到一般摘要。
 下面是本文的重要概念：
 
 * Hyper-v 创建和管理虚拟机分区，在这些分区中分配和共享计算资源，以控制虚拟机监控程序。  分区在所有来宾虚拟机之间以及来宾 Vm 与根分区之间提供强大的隔离边界。
