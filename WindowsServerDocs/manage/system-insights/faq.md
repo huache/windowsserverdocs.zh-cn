@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: 9f746e71b64497835fc5f0f90e9b46c03b63fd15
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2a97fdbc2e2a80c310cac2b770e18f34d53dd983
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971994"
+ms.locfileid: "87997144"
 ---
 # <a name="system-insights-faq"></a>系统见解常见问题解答
 
@@ -19,15 +19,15 @@ ms.locfileid: "87971994"
 
 ## <a name="how-can-you-use-system-insights-with-azure-monitor-or-system-center-operations-manager"></a>如何将系统见解用于 Azure Monitor 或 System Center Operations Manager？
 
-[Azure Monitor](https://azure.microsoft.com/services/monitor/)和[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)提供跨部署的操作信息，以帮助你管理基础结构。 与此相反，系统见解是一项 Windows Server 功能，它介绍了本地预测分析功能。 同时，系统见解和 Azure Monitor 或 SCOM 可帮助在整个设备中显示预测：
+[Azure Monitor](https://azure.microsoft.com/services/monitor/)和[System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807)提供跨部署的操作信息，以帮助你管理基础结构。 与此相反，系统见解是一项 Windows Server 功能，它介绍了本地预测分析功能。 同时，系统见解和 Azure Monitor 或 SCOM 可帮助在整个设备中显示预测：
 
  Azure Monitor 或 SCOM 可以关闭由系统见解创建的事件，因为系统见解会将每个预测的结果输出到事件日志。 它们可在一组 Windows server 中显示这些特定于计算机的预测，使你能够在一组服务器实例中统一查看这些预测。
 
- 请参阅[此处](https://docs.microsoft.com/windows-server/manage/system-insights/managing-capabilities#retrieving-capability-results)每个预测的通道和事件 id。
+ 请参阅[此处](./managing-capabilities.md#retrieving-capability-results)每个预测的通道和事件 id。
 
 ## <a name="how-does-system-insights-relate-to-windows-ml"></a>系统见解如何与 Windows ML 关联？
 
-[WINDOWS ML](https://docs.microsoft.com/windows/uwp/machine-learning/)是一种平台，使开发人员能够在 Windows 设备上导入和评分预先训练的机器学习模型。 这些模型受益于硬件加速，可在本地进行评分。
+[WINDOWS ML](/windows/uwp/machine-learning/)是一种平台，使开发人员能够在 Windows 设备上导入和评分预先训练的机器学习模型。 这些模型受益于硬件加速，可在本地进行评分。
 
 系统见解是 Windows Server 2019 中的一项功能，它提供本地预测功能，同时提供完整的管理体验，包括 PowerShell 和 Windows 管理中心集成。
 

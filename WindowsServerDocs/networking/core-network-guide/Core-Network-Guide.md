@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2c41fde041183ff7e039bd2fed877aad8ff0f234
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6db855343ef037fb1e55925620f1842c7fdff98a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962321"
+ms.locfileid: "87997136"
 ---
 # <a name="core-network-components"></a>核心网络组件
 
@@ -548,8 +548,8 @@ Administrators**** 组成员或同等身份是执行这些过程的最低要求�
 
 >[!NOTE]
 >有关这些 Windows PowerShell 命令的详细信息，请参阅以下参考主题。
->- [Add-windowsfeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature?view=win10-ps)
->- [安装-Install-addsforest](https://docs.microsoft.com/powershell/module/addsdeployment/install-addsforest?view=win10-ps)
+>- [Add-windowsfeature](/powershell/module/servermanager/install-windowsfeature?view=win10-ps)
+>- [安装-Install-addsforest](/powershell/module/addsdeployment/install-addsforest?view=win10-ps)
 
 **Administrators** 中的成员身份是执行此过程所需的最低要求。
 
@@ -1157,19 +1157,19 @@ Windows Server 2016 中的 Web 服务器 (IIS) 角色提供一个安全、易于
 
  Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 技术库资源
 
-- [Windows Server 2016 中 Active Directory 域服务 (AD DS) 的新增功能](https://technet.microsoft.com/library/mt163897.aspx)
+- [Windows Server 2016 中 Active Directory 域服务 (AD DS) 的新增功能](../../identity/whats-new-active-directory-domain-services.md)
 
-- [Active Directory 域服务概述](https://technet.microsoft.com/library/hh831484.aspx)，网址为 https://technet.microsoft.com/library/hh831484.aspx 。
+- [Active Directory 域服务概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831484(v=ws.11))，网址为 https://technet.microsoft.com/library/hh831484.aspx 。
 
-- [域名系统 (DNS) 概述](https://technet.microsoft.com/library/hh831667.aspx)，网址为 https://technet.microsoft.com/library/hh831667.aspx 。
+- [域名系统 (DNS) 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831667(v=ws.11))，网址为 https://technet.microsoft.com/library/hh831667.aspx 。
 
-- [实现 DNS 管理员角色](https://technet.microsoft.com/library/cc756152(WS.10).aspx)
+- [实现 DNS 管理员角色](/previous-versions/windows/it-pro/windows-server-2003/cc756152(v=ws.10))
 
-- [动态主机配置协议 (DHCP) 概述](https://technet.microsoft.com/library/hh831825.aspx)，网址为 https://technet.microsoft.com/library/hh831825.aspx 。
+- [动态主机配置协议 (DHCP) 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831825(v=ws.11))，网址为 https://technet.microsoft.com/library/hh831825.aspx 。
 
-- [网络策略和访问服务概述](https://technet.microsoft.com/library/hh831683.aspx)，网址为 https://technet.microsoft.com/library/hh831683.aspx 。
+- [网络策略和访问服务概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831683(v=ws.11))，网址为 https://technet.microsoft.com/library/hh831683.aspx 。
 
-- [Web 服务器 (IIS) 概述](https://technet.microsoft.com/library/hh831725.aspx)，网址为 https://technet.microsoft.com/library/hh831725.aspx 。
+- [Web 服务器 (IIS) 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831725(v=ws.11))，网址为 https://technet.microsoft.com/library/hh831725.aspx 。
 
 ## <a name="appendices-a-through-e"></a><a name="BKMK_appendix"></a>附录 A 到 E
 对于运行 Windows Server 2016、Windows 10、Windows Server 2012 和 Windows 8 以外的操作系统的计算机，以下部分包含其他配置信息。 此外，还提供了一个网络准备工作表来帮助您进行部署。
@@ -1543,4 +1543,3 @@ Windows Server 核心网络部署过程[新建并激活 DHCP 作用域](#BKMK_ne
 Windows Server 核心网络 NPS 部署过程的配置项目将[网络策略服务器安装 (nps) ](#BKMK_installNPS)并[在默认域中注册 nps](#BKMK_registerNPS)。
 
 - 安装和注册 NPS 不需要其他配置项。
-

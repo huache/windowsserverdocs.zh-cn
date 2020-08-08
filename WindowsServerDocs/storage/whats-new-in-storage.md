@@ -1,19 +1,17 @@
 ---
 ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
 title: Windows Server 中存储方面的新增功能
-ms.prod: windows-server
 ms.author: jgerend
 manager: dongill
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: 447c8fe33a0454179d8c9aacc9c324ac7bcf1f49
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3b1a3fa120e27439c1ec55f68521b813588d330b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965819"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965944"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 中存储的新增功能
 
@@ -65,13 +63,13 @@ ms.locfileid: "86965819"
 
 存储迁移服务是一种新技术，可以更轻松地将服务器迁移到更新版本的 Windows Server。 它提供一个图形工具，可清查服务器上的数据、将数据和配置传输到更新的服务器，然后选择将旧服务器的标识移到新服务器，这样应用和用户就不必进行任何更改。 有关详细信息，请参阅[存储迁移服务](storage-migration-service/overview.md)。
 
-### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>存储空间直通（仅限 Windows Server 2019）
+### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>存储空间直通仅 (Windows Server 2019) 
 
-Windows Server 2019 中的存储空间直通有很多改进（存储空间直通不包含在 Windows Server 中，半年频道）：
+对于 Windows server 2019 中的存储空间直通， (存储空间直通不包含在 Windows Server 中，半年频道) ：
 
 - **用于 ReFS 卷的重复数据删除和压缩**
 
-    对 ReFS 文件系统的重复数据删除和压缩，最多可存储同一个卷上的10倍多的数据。 （[只需单击](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)一下即可打开 Windows 管理中心。）具有可选压缩的可变大小的区块存储最大限度地提高了节约率，而多线程后处理结构则会使性能影响降至最低。 支持最大为 64 TB 的卷，并将删除重复每个文件的前 4 TB。
+    对 ReFS 文件系统的重复数据删除和压缩，最多可存储同一个卷上的10倍多的数据。  ([只需一次单击](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)即可启用 Windows 管理中心。 ) 可变大小的区块存储区（可选压缩）可以最大程度地提高节省率，而多线程后处理体系结构会使性能的影响降至最低。 支持最大为 64 TB 的卷，并将删除重复每个文件的前 4 TB。
 
 - **持久性内存的本机支持**
 
@@ -99,7 +97,7 @@ Windows Server 2019 中的存储空间直通有很多改进（存储空间直通
 
 - **镜像加速奇偶校验速度是原来的 2 倍**
 
-    使用镜像加速奇偶校验，你可以创建存储空间直通卷，这些卷一部分是镜像，另一部分是奇偶校验（如混合使用 RAID 1 和 RAID 5/6），从而充分利用两者的优势。 （它比你在 Windows 管理中心中[想像的更容易](https://www.youtube.com/watch?v=R72QHudqWpE)。）在 Windows Server 2019 中，由于优化，镜像加速奇偶校验的性能比 Windows Server 2016 更多两倍。
+    使用镜像加速奇偶校验，你可以创建存储空间直通卷，这些卷一部分是镜像，另一部分是奇偶校验（如混合使用 RAID 1 和 RAID 5/6），从而充分利用两者的优势。  (比你在 Windows 管理中心中[想像的更容易](https://www.youtube.com/watch?v=R72QHudqWpE)。 ) 在 windows Server 2019 中，镜像加速奇偶校验的性能比 windows server 2016 的性能要多两倍，因为进行了优化。
 
 - **驱动器延迟异常检测**
 
@@ -154,13 +152,13 @@ Windows Server 2019 中的存储空间直通有很多改进（存储空间直通
 
 ### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server 2019 包括阻止文件服务器资源管理器服务在服务启动时创建所有卷上的变更日志（也称为 USN 日志）的功能。 这可以节省每个卷的空间，但会禁用实时文件分类。 有关详细信息，请参阅[文件服务器资源管理器概述](fsrm/fsrm-overview.md)。
+Windows Server 2019 包括阻止文件服务器资源管理器服务在服务启动时创建更改日志 (也称为 USN 日志) 的功能。 这可以节省每个卷的空间，但会禁用实时文件分类。 有关详细信息，请参阅[文件服务器资源管理器概述](fsrm/fsrm-overview.md)。
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1803"></a>Windows Server 中存储的新增功能，版本1803
 
 ### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server 版本1803包括阻止文件服务器资源管理器服务在服务启动时创建所有卷上的变更日志（也称为 USN 日志）的功能。 这可以节省每个卷的空间，但会禁用实时文件分类。 有关详细信息，请参阅[文件服务器资源管理器概述](fsrm/fsrm-overview.md)。
+Windows Server 版本1803包括阻止文件服务器资源管理器服务在服务启动时创建更改日志 (也称为 USN 日志) 的功能。 这可以节省每个卷的空间，但会禁用实时文件分类。 有关详细信息，请参阅[文件服务器资源管理器概述](fsrm/fsrm-overview.md)。
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1709"></a>Windows Server 中存储的新增功能，版本1709
 
@@ -248,7 +246,7 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 有关详细信息，请参阅[存储服务质量](storage-qos/storage-qos-overview.md)
 
 ### <a name="data-deduplication"></a><a name="dedup"></a>重复数据删除
-| 功能 | 新功能或更新功能 | 说明 |
+| 功能 | 新功能或更新功能 | 描述 |
 |---------------|----------------|-------------|
 | [支持大型卷](data-deduplication/whats-new.md#large-volume-support) | Updated | 在 Windows Server 2016 之前，必须专门调整卷的大小实现预期改动，大小超过 10 TB 的卷不适合进行重复数据删除。 在 Windows Server 2016 中，重复数据删除支持的卷大小**高达 64 TB**。 |
 | [支持大型文件](data-deduplication/whats-new.md#large-file-support) | Updated | 在 Windows Server 2016 之前，大小接近 1 TB 的文件不适合进行重复数据删除。 在 Windows Server 2016 中，完全支持**高达 1 TB**的文件。 |

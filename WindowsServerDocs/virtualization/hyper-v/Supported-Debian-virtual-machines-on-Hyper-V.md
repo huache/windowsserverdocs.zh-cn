@@ -1,22 +1,20 @@
 ---
-title: Hyper-v 上支持的 Debian 虚拟机
+title: Hyper-V 上支持的 Debian 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 04/07/2020
-ms.openlocfilehash: e5483b9547e67414bd66b3daad1a4b07c3cb7cfc
-ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
+ms.openlocfilehash: da96f78c9886ea392ccb2834f4b245a2422dc17e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80994506"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965744"
 ---
-# <a name="supported-debian-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 Debian 虚拟机
+# <a name="supported-debian-virtual-machines-on-hyper-v"></a>Hyper-V 上支持的 Debian 虚拟机
 
 >适用于： Windows Server 2019，Hyper-v Server 2019，Windows Server 2016，Hyper-v Server 2016，Windows Server 2012 R2，Hyper-v Server 2012 R2，Windows 10，Windows 8。1
 
@@ -24,52 +22,52 @@ ms.locfileid: "80994506"
 
 ## <a name="table-legend"></a>表图例
 
-* **内置**的-.lis 作为此 Linux 分发的一部分包含在内。 Microsoft 提供的 .LIS 下载包不适用于此分发版，因此不安装它。 内置 .LIS 的内核模块版本号（如**lsmod**所示）不同于 Microsoft 提供的 .lis 下载包中的版本号。 不匹配不会指示内置的 .LIS 版本已过期。
+* **内置**的-.lis 作为此 Linux 分发的一部分包含在内。 Microsoft 提供的 .LIS 下载包不适用于此分发版，因此不安装它。 **Lsmod**所示的内置 .lis (内核模块版本号，例如) 不同于 Microsoft 提供的 .lis 下载包上的版本号。 不匹配不会指示内置的 .LIS 版本已过期。
 
-* &#10004;-可用功能
+* &#10004; 功能可用
 
-* （*空白*）-功能不可用
+*  (*空白*) -功能不可用
 
-| **具有**                                                                                                                                  | **Windows Server 操作系统版本** | **10.0-10.3 （buster）** | **9.0-9.12 （拉伸）** | **8.0-8.11 （jessie）** | **7.0-7.11 （wheezy）** |
+| **功能**                                                                                                                                  | **Windows Server 操作系统版本** | **10.0-10.3 (buster) ** | **9.0-9.12 (stretch) ** | **8.0-8.11 (jessie) ** | **7.0-7.11 (wheezy) ** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
-| **可用性**                                                                                                                             |                                             | 内置              | 内置              | 内置              | 内置（备注5）     |
-| **[转储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
-| Windows Server 2016 准确时间                                                                                                            | 2019、2016                                  | &#10004;备注4       | &#10004;备注4       |                       |                       |
-| **[上网](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                                       |                                             |                       |                       |                       |                       |
+| **可用性**                                                                                                                             |                                             | 内置              | 内置              | 内置              | 内置 (注释 5)      |
+| **[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
+| Windows Server 2016 准确时间                                                                                                            | 2019、2016                                  | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
+| **[网络](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                                       |                                             |                       |                       |                       |                       |
 | Jumbo 帧                                                                                                                                 | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | VLAN 标记和中继                                                                                                                    | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | 实时迁移                                                                                                                               | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | 静态 IP 注入                                                                                                                          | 2019、2016、2012 R2                   |                       |                       |                       |                       |
-| vRSS                                                                                                                                         | 2019、2016、2012 R2                         | &#10004;备注4       | &#10004;备注4       |                       |                       |
-| TCP 分段和校验和卸载                                                                                                       | 2019、2016、2012 R2          | &#10004;备注4       | &#10004;备注4       |                       |                       |
-| SR-IOV                                                                                                                                       | 2019、2016                                  | &#10004;备注4       | &#10004;备注4       |                       |                       |
+| vRSS                                                                                                                                         | 2019、2016、2012 R2                         | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
+| TCP 分段和校验和卸载                                                                                                       | 2019、2016、2012 R2          | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
+| SR-IOV                                                                                                                                       | 2019、2016                                  | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
 | **[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                             |                       |                       |                       |                       |
-| VHDX 调整大小                                                                                                                                  | 2019、2016、2012 R2                         | &#10004;备注1       | &#10004;备注1       | &#10004;备注1       | &#10004;备注1       |
+| VHDX 调整大小                                                                                                                                  | 2019、2016、2012 R2                         | &#10004; 注释1       | &#10004; 注释1       | &#10004; 注释1       | &#10004; 注释1       |
 | 虚拟光纤通道                                                                                                                        | 2019、2016、2012 R2                         |                       |                       |                       |                       |
-| 实时虚拟机备份                                                                                                                  | 2019、2016、2012 R2                         | &#10004;Note2 | &#10004;Note2 | &#10004;Note2 | &#10004;Note2 |
-| 剪裁支持                                                                                                                                 | 2019、2016、2012 R2                         | &#10004;备注4       | &#10004;备注4       |                       |                       |
-| SCSI WWN                                                                                                                                     | 2019、2016、2012 R2                         | &#10004;备注4       | &#10004;备注4       |                       |                       |
+| 实时虚拟机备份                                                                                                                  | 2019、2016、2012 R2                         | &#10004; Note2 | &#10004; Note2 | &#10004; Note2 | &#10004; Note2 |
+| 剪裁支持                                                                                                                                 | 2019、2016、2012 R2                         | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
+| SCSI WWN                                                                                                                                     | 2019、2016、2012 R2                         | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
 | **[记忆](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                             |                       |                       |                       |                       |
 | PAE 内核支持                                                                                                                           | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | MMIO 间隙的配置                                                                                                                    | 2019、2016、2012 R2                         | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
-| 动态内存-热添加                                                                                                                     | 2019、2016、2012 R2                   | &#10004;备注4       | &#10004;备注4       |                       |                       |
-| 动态内存-膨胀                                                                                                                  | 2019、2016、2012 R2                   | &#10004;备注4       | &#10004;备注4       |                       |                       |
-| 运行时内存大小调整                                                                                                                        | 2019、2016                                  | &#10004;备注4       | &#10004;备注4       |                       |                       |
-| **[显示](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
+| 动态内存-热添加                                                                                                                     | 2019、2016、2012 R2                   | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
+| 动态内存-膨胀                                                                                                                  | 2019、2016、2012 R2                   | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
+| 运行时内存大小调整                                                                                                                        | 2019、2016                                  | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
+| **[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
 | Hyper-v 特定视频设备                                                                                                                | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              |                       |
-| **[杂](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                             |                       |                       |                       |                       |
-| 键值对                                                                                                                               | 2019、2016、2012 R2          | &#10004;备注2       | &#10004;备注2       | &#10004;备注2       |                       |
+| **[杂项](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                             |                       |                       |                       |                       |
+| 键值对                                                                                                                               | 2019、2016、2012 R2          | &#10004; 备注2       | &#10004; 备注2       | &#10004; 备注2       |                       |
 | 不可屏蔽中断                                                                                                                       | 2019、2016、2012 R2                         | &#10004;              | &#10004;              | &#10004;              |                       |
-| 从主机到来宾的文件复制                                                                                                                 | 2019、2016、2012 R2                         | &#10004;备注2       | &#10004;备注2       | &#10004;备注2       |                       |
+| 从主机到来宾的文件复制                                                                                                                 | 2019、2016、2012 R2                         | &#10004; 备注2       | &#10004; 备注2       | &#10004; 备注2       |                       |
 | lsvmbus 命令                                                                                                                              | 2019、2016、2012 R2          |                       |                       |                       |                       |
-| Hyper-v 套接字                                                                                                                              | 2019、2016                                  | &#10004;备注4       | &#10004;备注4       |                       |                       |
-| PCI 传递/DDA                                                                                                                          | 2019、2016                                  | &#10004;备注4       | &#10004;备注4       |                       |                       |
-| **[第2代虚拟机](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** |                                             |                       |                       |                       |                       |
-| 使用 UEFI 启动                                                                                                                              | 2019、2016、2012 R2                         | &#10004;备注3       | &#10004;备注3       | &#10004;备注3       |                       |
+| Hyper-v 套接字                                                                                                                              | 2019、2016                                  | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
+| PCI 传递/DDA                                                                                                                          | 2019、2016                                  | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
+| **[第 2 代虚拟机](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** |                                             |                       |                       |                       |                       |
+| 使用 UEFI 启动                                                                                                                              | 2019、2016、2012 R2                         | &#10004; 备注3       | &#10004; 备注3       | &#10004; 备注3       |                       |
 | 安全启动                                                                                                                                  | 2019、2016                                  | &#10004;              |                       |                       |                       |
 
 
-## <a name="notes"></a>注意
+## <a name="notes"></a>说明
 
 1. 不支持在大于2TB 的 Vhd 上创建文件系统。
 

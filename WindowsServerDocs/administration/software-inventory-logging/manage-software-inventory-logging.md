@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1df4ffbb0cdc79527bef0fd2e3400d78995d5474
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 548158fd1df4ee4fbd8d6f1bcee28693961c8d79
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895661"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991855"
 ---
 # <a name="manage-software-inventory-logging"></a>管理软件清单日志记录
 
@@ -91,7 +91,7 @@ ms.locfileid: "87895661"
 必须在运行 Windows Server 2012 R2 的计算机上启用软件清单日志记录每日收集和通过网络进行的转发，才能记录软件清单。
 
 > [!NOTE]
-> 你可以使用 **[Get-SilLogging](https://technet.microsoft.com/library/dn283396.aspx)** PowerShell cmdlet 检索有关软件清单日志记录服务的信息，包括它是在运行还是已停止。
+> 你可以使用 **[Get-SilLogging](/previous-versions/windows/powershell-scripting/dn283396(v=wps.630))** PowerShell cmdlet 检索有关软件清单日志记录服务的信息，包括它是在运行还是已停止。
 
 #### <a name="to-start-software-inventory-logging"></a>启动软件清单日志记录
 
@@ -99,7 +99,7 @@ ms.locfileid: "87895661"
 
 2.  以管理员身份打开 PowerShell。
 
-3.  在 PowerShell 提示符处，输入 **[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)**
+3.  在 PowerShell 提示符处，输入 **[Start-SilLogging](/previous-versions/windows/powershell-scripting/dn283391(v=wps.630))**
 
 > [!NOTE]
 > 可以设置目标而无需设置证书指纹，但如果这样做，转发会失败，数据会在本地存储最多 30 天（这是默认值，在此之后数据会删除）。 对目标设置有效的证书哈希（并在 LocalMachine/Personal 存储空间中安装有效证书）后，只要目标配置为接受具有此证书的此数据，则本地存储的数据将转发至目标（请参阅 [Software Inventory Logging Aggregator](Software-Inventory-Logging-Aggregator.md) ，了解有关详细信息）。
@@ -110,7 +110,7 @@ ms.locfileid: "87895661"
 
 2.  以管理员身份打开 PowerShell。
 
-3.  在 PowerShell 提示符处，输入 **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)**
+3.  在 PowerShell 提示符处，输入 **[Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))**
 
 ## <a name="configuring-software-inventory-logging"></a>配置软件清单日志记录
 配置软件清单日志记录以便将数据持续转发到聚合服务器有三个步骤：
@@ -126,7 +126,7 @@ ms.locfileid: "87895661"
 有关整体设置 SIL 框架的全面指南，请参阅 [Software Inventory Logging Aggregator](software-inventory-logging-aggregator.md)。  特别地，如果 **Publish-SilData** 生成错误或 SIL 日志记录失败，请参阅疑难解答部分。
 
 ## <a name="software-inventory-logging-over-time"></a><a name="BKMK_Step2"></a>随时间推移进行的软件清单日志记录
-如果软件清单日志记录已由管理员启动，便会开始每小时收集数据并转发到聚合服务器（目标 URI）。 第一次转发是 [Get-SilData](https://technet.microsoft.com/library/dn283388.aspx) 在某个时间点检索并显示在控制台上的相同数据的完整数据集。 此后，SIL 会在每个间隔检查数据，如果自上一次收集以来数据中未进行任何更改，则仅将一个小型标识确认转发到目标聚合服务器。 如果有任何值发生了更改，则 SIL 会再次发送完整数据集。
+如果软件清单日志记录已由管理员启动，便会开始每小时收集数据并转发到聚合服务器（目标 URI）。 第一次转发是 [Get-SilData](/previous-versions/windows/powershell-scripting/dn283388(v=wps.630)) 在某个时间点检索并显示在控制台上的相同数据的完整数据集。 此后，SIL 会在每个间隔检查数据，如果自上一次收集以来数据中未进行任何更改，则仅将一个小型标识确认转发到目标聚合服务器。 如果有任何值发生了更改，则 SIL 会再次发送完整数据集。
 
 > [!IMPORTANT]
 > 如果在任何间隔目标 URI 不可访问或通过网络进行的数据传输出于任何原因未成功，则收集的数据会在本地存储最多 30 天（这是默认值，在此之后数据会删除）。 在下一次将数据成功转发到目标聚合服务器时，本地存储的所有数据都会进行转发，本地缓存的数据会删除。
@@ -134,19 +134,19 @@ ms.locfileid: "87895661"
 ## <a name="displaying-software-inventory-logging-data"></a><a name="BKMK_Step3"></a>显示软件清单日志记录数据
 除了在前一个部分介绍的 PowerShell cmdlet，还可以使用六个其他 cmdlet 来收集软件清单日志记录数据：
 
--   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)**：显示特定服务器和与操作系统相关数据的时间点值，以及物理主机的 FQDN 或主机名（如果可用）。
+-   **[Get-SilComputer](/previous-versions/windows/powershell-scripting/dn283392(v=wps.630))**：显示特定服务器和与操作系统相关数据的时间点值，以及物理主机的 FQDN 或主机名（如果可用）。
 
--   **[Get-SilComputerIdentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)**：显示由 SIL 用于各个服务器的标识符。
+-   **[Get-SilComputerIdentity (KB 3000850)](/previous-versions/windows/powershell-scripting/dn858074(v=wps.630))**：显示由 SIL 用于各个服务器的标识符。
 
--   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)**：显示所有软件清单日志记录数据的时间点集合。
+-   **[Get-SilData](/previous-versions/windows/powershell-scripting/dn283388(v=wps.630))**：显示所有软件清单日志记录数据的时间点集合。
 
--   **[Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)**：显示计算机上安装的所有软件的时间点标识。
+-   **[Get-SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))**：显示计算机上安装的所有软件的时间点标识。
 
--   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)**：显示从两天之前发出的服务器的唯一客户端设备请求和客户端用户请求总数。
+-   **[Get-SilUalAccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630))**：显示从两天之前发出的服务器的唯一客户端设备请求和客户端用户请求总数。
 
--   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)**：显示计算机上安装的所有 Windows 更新的时间点列表。
+-   **[Get-SilWindowsUpdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630))**：显示计算机上安装的所有 Windows 更新的时间点列表。
 
-软件清单日志记录 cmdlet 的典型用例情景是管理员使用 [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx) 对软件清单日志记录查询所有软件清单日志记录数据的时间点集合。
+软件清单日志记录 cmdlet 的典型用例情景是管理员使用 [Get-SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630)) 对软件清单日志记录查询所有软件清单日志记录数据的时间点集合。
 
 **输出示例**
 
@@ -200,7 +200,7 @@ SystemManufacturer        : Microsoft Corporation
 
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>删除软件清单日志记录所记录的数据
 
-1. 在 PowerShell 中，使用 **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** 命令停止软件清单日志记录。
+1. 在 PowerShell 中，使用 **[Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))** 命令停止软件清单日志记录。
 
 2. 打开 Windows 资源管理器。
 
@@ -223,17 +223,17 @@ SystemManufacturer        : Microsoft Corporation
 ## <a name="software-inventory-logging-security"></a><a name="BKMK_Step7"></a>软件清单日志记录安全
 需要本地服务器上的管理权限才能成功地从软件清单日志记录 WMI 和 PowerShell API 检索数据。
 
-若要成功利用软件清单日志记录功能的完整功能，以便随时间推移持续地（以小时为间隔）将数据转发到聚合点，管理员需要使用客户端证书确保将安全的 SSL 会话用于通过 HTTPS 进行的数据传输。 可以在以下位置找到 HTTPS 身份验证的基本概述： [HTTPS 身份验证](https://technet.microsoft.com/library/cc736680(v=WS.10).aspx)。
+若要成功利用软件清单日志记录功能的完整功能，以便随时间推移持续地（以小时为间隔）将数据转发到聚合点，管理员需要使用客户端证书确保将安全的 SSL 会话用于通过 HTTPS 进行的数据传输。 可以在以下位置找到 HTTPS 身份验证的基本概述： [HTTPS 身份验证](/previous-versions/windows/it-pro/windows-server-2003/cc736680(v=ws.10))。
 
 在 Windows Server 上本地存储的任何数据（仅当该功能已启动，但出于任何原因而无法访问目标时才这样进行）只能使用本地服务器上的管理权限来访问。
 
 ## <a name="working-with-date-and-time-settings-in-windows-server-2012-r2-software-inventory-logging"></a><a name="BKMK_Step8"></a>在 Windows Server 2012 R2 软件清单日志记录中使用日期和时间设置
 
--   使用 [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay 设置 SIL 日志记录运行的时间时，必须指定日期和时间。会设置日历日期，在本地系统时间达到该日期之前，不会进行日志记录。
+-   使用 [Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay 设置 SIL 日志记录运行的时间时，必须指定日期和时间。会设置日历日期，在本地系统时间达到该日期之前，不会进行日志记录。
 
--   当使用[get-silsoftware](https://technet.microsoft.com/library/dn283397.aspx)或[get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)时，"InstallDate" 将始终显示12：00： 00 (（无意义的值）。
+-   当使用[get-silsoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))或[get-silwindowsupdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630))时，"InstallDate" 将始终显示12：00： 00 (（无意义的值）。
 
--   当使用[get-silualaccess](https://technet.microsoft.com/library/dn283389.aspx)时，"SampleDate" 将始终显示11：59： 00 (，这是一个毫无意义的值。日期是这些 cmdlet 查询的相关数据。
+-   当使用[get-silualaccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630))时，"SampleDate" 将始终显示11：59： 00 (，这是一个毫无意义的值。日期是这些 cmdlet 查询的相关数据。
 
 ## <a name="enabling-and-configuring-software-inventory-logging-in-a-mounted-virtual-hard-disk"></a><a name="BKMK_Step10"></a>在装载的虚拟硬盘中启用和配置软件清单日志记录
 软件清单日志记录还支持脱机虚拟机上的配置和启用。 这种情况的实际用途旨在涵盖跨数据中心的广泛部署的 "黄金映像" 设置，以及配置从本地到云部署的最终用户映像。
@@ -242,20 +242,20 @@ SystemManufacturer        : Microsoft Corporation
 
 | 函数 | 值名称 | 数据 | 对应的 Cmdlet（仅在正在运行的操作系统中可用） |
 | --- | --- | --- | --- |
-|启动/停止功能|CollectionState|1 或 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)、 [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|
-|指定网络上的目标聚合点|TargetUri|字符串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|
-|为目标 Web 服务器指定用于 SSL 身份验证的证书的证书指纹或哈希|CertificateThumbprint|字符串|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|
-|指定功能应启动的日期和时间（如果设置的值根据本地系统时间是将来时间）|CollectionTime|默认：2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|
+|启动/停止功能|CollectionState|1 或 0|[Start-SilLogging](/previous-versions/windows/powershell-scripting/dn283391(v=wps.630))、 [Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))|
+|指定网络上的目标聚合点|TargetUri|字符串|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TargetURI|
+|为目标 Web 服务器指定用于 SSL 身份验证的证书的证书指纹或哈希|CertificateThumbprint|字符串|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -CertificateThumbprint|
+|指定功能应启动的日期和时间（如果设置的值根据本地系统时间是将来时间）|CollectionTime|默认：2000-01-01T03:00:00|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay|
 
 若要在脱机 VHD（未运行虚拟机操作系统）上修改这些值，必须首先装载 VHD，然后可以使用以下命令进行更改：
 
--   [Reg load](https://technet.microsoft.com/library/cc742053.aspx)
+-   [Reg load](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742053(v=ws.11))
 
--   [Reg delete](https://technet.microsoft.com/library/cc742145.aspx)
+-   [Reg delete](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742145(v=ws.11))
 
--   [Reg add](https://technet.microsoft.com/library/cc742162.aspx)
+-   [Reg add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742162(v=ws.11))
 
--   [Reg unload](https://technet.microsoft.com/library/cc742043.aspx)
+-   [Reg unload](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742043(v=ws.11))
 
 软件清单日志记录会在操作系统启动时检查这些值，并执行相应操作。
 
@@ -291,6 +291,6 @@ SystemManufacturer        : Microsoft Corporation
 ## <a name="see-also"></a>另请参阅
 [软件清单日志记录入门](get-started-with-software-inventory-logging.md) 
 [软件清单日志记录聚合](software-inventory-logging-aggregator.md) 
- 器[Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx) 
+ 器[Windows PowerShell](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps) 
  中的软件清单日志记录 cmdlet[导入-import-binarymilog](https://technet.microsoft.com/library/dn262592.aspx) 
 [导出-import-binarymilog](https://technet.microsoft.com/library/dn262591.aspx)

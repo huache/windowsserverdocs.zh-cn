@@ -7,12 +7,12 @@ ms.assetid: 4e83b126-ce9a-4cd7-a0bd-6627c9e0f81b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: b18800e2c8c7feae30f3dbcfb8904f00ef40a396
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 97141a300156c74ef5a2a3b1c4d738b4e33834f1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955460"
+ms.locfileid: "87991468"
 ---
 # <a name="set-up-the-physical-computer-and-primary-station"></a>设置物理计算机和主工作站
 安装 MultiPoint 服务之前，需要为 MultiPoint 服务系统设置主站。 如果要使用局域网 (LAN) 将计算机连接到 LAN。
@@ -21,7 +21,7 @@ ms.locfileid: "87955460"
 
 主站必须是直接连接视频的工作站。 以下过程描述如何将所需的硬件连接到 MultiPoint 服务计算机。
 
-有关工作站的详细信息，请参阅[MultiPoint 电台](multipoint-services-stations.md)。 有关做出硬件选择的帮助，请参阅[选择 MultiPoint 服务系统的硬件](Selecting-Hardware-for-Your-MultiPoint-services-System.md)。 有关将其他工作站类型连接到 MultiPoint 服务的信息，请参阅[将其他工作站连接到 Multipoint 服务计算机](Attach-additional-stations-to-your-MultiPoint-services-computer.md)。
+有关工作站的详细信息，请参阅[MultiPoint 电台](multipoint-services-stations.md)。 有关做出硬件选择的帮助，请参阅[选择 MultiPoint 服务系统的硬件](./select-hardware-mps.md)。 有关将其他工作站类型连接到 MultiPoint 服务的信息，请参阅[将其他工作站连接到 Multipoint 服务计算机](./multipoint-attach-additional-stations.md)。
 
 > [!NOTE]
 > 若要创建视频连接工作站，必须使用拉丁文键盘 (例如英语或西班牙语键盘) 。

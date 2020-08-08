@@ -1,29 +1,27 @@
 ---
 title: 群集关联
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/07/2019
 description: 本文介绍故障转移群集相关性和 antiAffinity 级别
-ms.openlocfilehash: 5fdc40e31b61a74965bf60ac907a198c7ef92521
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 9e0c16b376201567552ef959e045027527c7c1d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409587"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965554"
 ---
 # <a name="cluster-affinity"></a>群集关联
 
 > 适用于：Windows Server 2019、Windows Server 2016
 
-故障转移群集可以拥有多个可在节点间移动和运行的角色。 有时某些角色（例如虚拟机、资源组等）不应在同一个节点上运行。  这可能是由于资源消耗、内存使用情况等引起的。 例如，有两个虚拟机占用大量内存和 CPU，如果这两个虚拟机运行在同一节点上，则一个或两个虚拟机可能会影响性能。  本文将介绍群集 antiaffinity 级别以及如何使用它们。
+故障转移群集可以拥有多个可在节点间移动和运行的角色。 有时，某些角色 (例如虚拟机、资源组等) 不应在同一个节点上运行。  这可能是由于资源消耗、内存使用情况等引起的。 例如，有两个虚拟机占用大量内存和 CPU，如果这两个虚拟机运行在同一节点上，则一个或两个虚拟机可能会影响性能。  本文将介绍群集 antiaffinity 级别以及如何使用它们。
 
 ## <a name="what-is-affinity-and-antiaffinity"></a>什么是相关性和 AntiAffinity？
 
-相关性是您设置的一种规则，用于在两个或多个角色（i、e、虚拟机、资源组等）之间建立关系，以便将它们保持在一起。  AntiAffinity 是相同的，但用于尝试将指定的角色彼此分开。 故障转移群集使用 AntiAffinity 作为其角色。  更具体地说，是对角色定义的[AntiAffinityClassNames](/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames)参数，使其不会在同一节点上运行。
+相关性是您设置的一种规则，用于在两个或多个角色 (i、e、虚拟机、资源组等) 之间建立关系，以便将它们集中在一起。  AntiAffinity 是相同的，但用于尝试将指定的角色彼此分开。 故障转移群集使用 AntiAffinity 作为其角色。  更具体地说，是对角色定义的[AntiAffinityClassNames](/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames)参数，使其不会在同一节点上运行。
 
 ## <a name="antiaffinityclassnames"></a>AntiAffinityClassnames
 
@@ -67,14 +65,14 @@ AntiAffinityClassName 参数是一个 "软" 块。  也就是说，它会尝试�
 
 对于这些情况，有一个 ClusterEnforcedAntiAffinity 的附加群集属性。  此 antiaffinity 级别将阻止在同一节点上运行任何相同的 AntiAffinityClassNames 值。
 
-若要查看属性和值，PowerShell 命令（和结果）应为：
+若要查看属性和值，PowerShell 命令 (和结果) 为：
 
 ```powershell
 Get-Cluster | fl ClusterEnforcedAntiAffinity
     ClusterEnforcedAntiAffinity : 0
 ```
 
-如果值为 "0"，则表示它已禁用且不会被强制执行。  如果值为 "1"，则它是一个硬块。  若要启用此硬块，命令（和结果）为：
+如果值为 "0"，则表示它已禁用且不会被强制执行。  如果值为 "1"，则它是一个硬块。  若要启用此硬块，命令 (和 result) 为：
 
 ```powershell
 (Get-Cluster).ClusterEnforcedAntiAffinity = 1

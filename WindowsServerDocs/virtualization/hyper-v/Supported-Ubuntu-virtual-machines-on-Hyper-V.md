@@ -1,20 +1,18 @@
 ---
 title: Hyper-v 上支持的 Ubuntu 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 04/08/2020
-ms.openlocfilehash: 541f34e11146715fc54017dc3fb0d831cb4e078e
-ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
+ms.openlocfilehash: 88d5659bb4732c82cc7ecc5e4a5e806f4b984739
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80994498"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989310"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 Ubuntu 虚拟机
 
@@ -24,63 +22,63 @@ ms.locfileid: "80994498"
 
 ## <a name="table-legend"></a>表图例
 
-* **内置**的-.lis 作为此 Linux 分发的一部分包含在内。 Microsoft 提供的 .LIS 下载包不适用于此分发版，因此不安装它。 内置 .LIS 的内核模块版本号（如**lsmod**所示）不同于 Microsoft 提供的 .lis 下载包中的版本号。 不匹配并不表明内置的 .LIS 版本已过期。
+* **内置**的-.lis 作为此 Linux 分发的一部分包含在内。 Microsoft 提供的 .LIS 下载包不适用于此分发版，因此不安装它。 **Lsmod**所示的内置 .lis (内核模块版本号，例如) 不同于 Microsoft 提供的 .lis 下载包上的版本号。 不匹配并不表明内置的 .LIS 版本已过期。
 
-* &#10004;-可用功能
+* &#10004; 功能可用
 
-* （*空白*）-功能不可用
+*  (*空白*) -功能不可用
 
-|**具有**|**Windows Server 操作系统版本**|**19.10**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|
+|**功能**|**Windows Server 操作系统版本**|**19.10**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|
 |-|-|-|-|-|-|
 |**可用性**||内置|内置|内置|内置|
-|**[转储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[核心](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 准确时间|2019、2016|&#10004;|&#10004;|&#10004;||
-|**[上网](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
+|**[网络](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
 |Jumbo 帧|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |VLAN 标记和中继|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|Live migration|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|静态 IP 注入|2019、2016、2012 R2|&#10004;备注1|&#10004;备注1|&#10004;备注1|&#10004;备注1|
+|实时迁移|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
+|静态 IP 注入|2019、2016、2012 R2|&#10004; 注释1|&#10004; 注释1|&#10004; 注释1|&#10004; 注释1|
 |vRSS|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |TCP 分段和校验和卸载|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |SR-IOV|2019、2016|&#10004;|&#10004;|&#10004;||
 |**[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||
 |VHDX 调整大小|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|虚拟光纤通道|2019、2016、2012 R2|&#10004;备注2|&#10004;备注2|&#10004;备注2|&#10004;备注2|
-|实时虚拟机备份|2019、2016、2012 R2|&#10004;备注3、4、6|&#10004;备注3、4、5|&#10004;备注3、4、5|&#10004;备注3、4、5|
+|虚拟光纤通道|2019、2016、2012 R2|&#10004; 备注2|&#10004; 备注2|&#10004; 备注2|&#10004; 备注2|
+|实时虚拟机备份|2019、2016、2012 R2|&#10004; 备注3、4、6|&#10004; 备注3、4、5|&#10004; 备注3、4、5|&#10004; 备注3、4、5|
 |剪裁支持|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |SCSI WWN|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[记忆](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
 |PAE 内核支持|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |MMIO 间隙的配置|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|动态内存-热添加|2019、2016、2012 R2|&#10004;备注7、8、9|&#10004;备注7、8、9|&#10004;备注7、8、9|&#10004;备注7、8、9|
-|动态内存-膨胀|2019、2016、2012 R2|&#10004;备注7、8、9|&#10004;备注7、8、9|&#10004;备注7、8、9|&#10004;备注7、8、9|
+|动态内存-热添加|2019、2016、2012 R2|&#10004; 注释7、8、9|&#10004; 注释7、8、9|&#10004; 注释7、8、9|&#10004; 注释7、8、9|
+|动态内存-膨胀|2019、2016、2012 R2|&#10004; 注释7、8、9|&#10004; 注释7、8、9|&#10004; 注释7、8、9|&#10004; 注释7、8、9|
 |运行时内存大小调整|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[显示](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
+|**[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
 |Hyper-v 特定视频设备|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[杂](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||
-|键/值对|2019、2016、2012 R2|&#10004;备注6、10|&#10004;备注5、10|&#10004;备注5、10|&#10004;备注5、10|
+|**[杂项](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||
+|键/值对|2019、2016、2012 R2|&#10004; 备注6，10|&#10004; 备注5、10|&#10004; 备注5、10|&#10004; 备注5、10|
 |不可屏蔽中断|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |从主机到来宾的文件复制|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |lsvmbus 命令|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Hyper-v 套接字|2019、2016|||||
 |PCI 传递/DDA|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[第2代虚拟机](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||
-|使用 UEFI 启动|2019、2016、2012 R2|&#10004;注释11、12|&#10004;注释11、12|&#10004;注释11、12|&#10004;注释11、12|
+|**[第 2 代虚拟机](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||
+|使用 UEFI 启动|2019、2016、2012 R2|&#10004; 注释11，12|&#10004; 注释11，12|&#10004; 注释11，12|&#10004; 注释11，12|
 |安全启动|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|
 
-## <a name="notes"></a>注意
+## <a name="notes"></a>说明
 
 1. 如果为虚拟机上的特定 Hyper-v 特定网络适配器配置了**网络管理器**，则静态 IP 注入可能不起作用。 若要确保静态 IP 注入正常运行，请确保网络管理器已完全关闭，或已通过其**ifcfg-eth0-ethX**文件在特定网络适配器上关闭网络管理器。
 
-2. 使用虚拟光纤通道设备时，请确保已填充逻辑单元号0（LUN 0）。 如果尚未填充 LUN 0，Linux 虚拟机可能无法以本机方式装入光纤通道设备。
+2. 使用虚拟光纤通道设备时，请确保已填充逻辑单元号 0 (LUN 0) 。 如果尚未填充 LUN 0，Linux 虚拟机可能无法以本机方式装入光纤通道设备。
 
-3. 如果在执行实时虚拟机备份操作的过程中有打开的文件句柄，则在某些角落情况下，在还原时，备份的 Vhd 可能需要进行文件系统一致性检查（`fsck`）。
+3. 如果在执行实时虚拟机备份操作的过程中有打开的文件句柄，则在某些角落情况下，在还原时，备份的 Vhd 可能需要执行文件系统一致性检查 (`fsck`) 。
 
-4. 如果虚拟机有连接的 iSCSI 设备或直接连接的存储（也称为传递磁盘），则实时备份操作可能会悄悄地失败。
+4. 如果虚拟机有连接的 iSCSI 设备或直接连接存储 (也称为传递磁盘) ，则实时备份操作可能会失败。
 
-5. 在长期支持（LTS）版本中，最新的 Linux Integration Services 使用最新的虚拟硬件支持（HWE）内核。
+5. 长期支持 (LTS) 版本使用最新的虚拟硬件支持 (HWE) 内核，最新的 Linux Integration Services。
 
-   若要在14.04、16.04 和18.04 上安装 Azure 优化内核，请运行以下命令作为根（或 sudo）：
+   若要在14.04、16.04 和18.04 上安装 Azure 优化内核，请运行以下命令作为根 (或 sudo) ：
 
    ```bash
    # apt-get update
@@ -89,7 +87,7 @@ ms.locfileid: "80994498"
 
 6. 在 Ubuntu 19.10 上，使用最新的虚拟内核以获得最新的 Hyper-v 功能。
 
-   若要在19.10 上安装虚拟内核，请以 root （或 sudo）身份运行以下命令：
+   若要在19.10 上安装虚拟内核，请运行以下命令作为根 (或 sudo) ：
 
    ```bash
    # apt-get update
@@ -106,7 +104,7 @@ ms.locfileid: "80994498"
 
    * 通常会消耗系统中的全部可用内存的应用程序，仅消耗最多80% 的可用 RAM。
 
-9. 如果使用的是 Windows Server 2019、Windows Server 2016 或 Windows Server 2012/2012 R2 操作系统上的动态内存，请指定 "**启动内存**"、"**最小内存**" 和 "**最大内存**" 参数，以128兆字节（MB）为倍数。 如果不这样做，可能会导致热添加失败，并且在来宾操作系统上可能看不到任何内存增长。
+9. 如果使用的是 Windows Server 2019、Windows Server 2016 或 Windows Server 2012/2012 R2 操作系统上的动态内存，请以 128 mb (MB) 的倍数指定**启动内存**、**最小内存**和**最大内存**参数。 如果不这样做，可能会导致热添加失败，并且在来宾操作系统上可能看不到任何内存增长。
 
 10. 在 Windows Server 2019、Windows Server 2016 或 Windows Server 2012 R2 中，如果没有 Linux 软件更新，键/值对基础结构可能会无法正常工作。 请与您的分销商联系以获取软件更新，以防您看到此功能的问题。
 
@@ -158,6 +156,6 @@ ms.locfileid: "80994498"
 
 * [在 Hyper-v 上运行 Linux 的最佳实践](Best-Practices-for-running-Linux-on-Hyper-V.md)
 
-* [Set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx)
+* [Set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
 
-* [第2代 VM 中的 Ubuntu 14.04-Ben Armstrong 的虚拟化博客](https://blogs.msdn.com/b/virtual_pc_guy/archive/2014/06/09/ubuntu-14-04-in-a-generation-2-vm.aspx)
+* [第2代 VM 中的 Ubuntu 14.04-Ben Armstrong 的虚拟化博客](/archive/blogs/virtual_pc_guy/ubuntu-14-04-in-a-generation-2-vm)

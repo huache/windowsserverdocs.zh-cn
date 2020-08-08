@@ -8,12 +8,12 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: 2280dd901756c033a16e5203ad60bc0b6cad5ce4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b1c3e2f1c521615ff365642566745411db8aa612
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895824"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991941"
 ---
 # <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
@@ -157,7 +157,7 @@ ms.locfileid: "87895824"
 
 5.  注销要在其上运行服务器管理器的计算机，再使用内置管理员帐户重新登录。 重复上一步，以确定服务器管理器能够连接到并从远程服务器收集数据。
 
-如果已按照本部分中的步骤操作，但在管理工作组计算机或从工作组计算机管理其他计算机时仍出现问题，请参阅 Microsoft 网站上的[about_remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx) 。
+如果已按照本部分中的步骤操作，但在管理工作组计算机或从工作组计算机管理其他计算机时仍出现问题，请参阅 Microsoft 网站上的[about_remote_Troubleshooting](/previous-versions/dd347642(v=technet.10)) 。
 
 ### <a name="add-and-manage-servers-in-clusters"></a>在群集中添加和管理服务器
 可以使用服务器管理器来管理故障转移群集（也称为服务器群集或 MSCS）中的服务器。 故障转移群集中的服务器（无论群集节点是物理节点还是虚拟节点）在服务器管理器中有一些特有的行为和管理限制。

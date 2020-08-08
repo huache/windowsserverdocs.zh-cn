@@ -2,18 +2,16 @@
 title: 编辑自动应用配额属性
 description: 本文介绍了如何编辑自动应用配额属性
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2d520d80dc06969f21211d461fc33e2e9336df12
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 558f6b094e97a6196177e728c238f5bb7a38e7a1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474934"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957444"
 ---
 # <a name="edit-auto-apply-quota-properties"></a>编辑自动应用配额属性
 
@@ -32,7 +30,7 @@ ms.locfileid: "85474934"
 
 3.  在**从此配额模板派生属性**下，选择希望应用的配额模板。 可以在摘要列表框中查看每个配额模板的属性。
 
-4.  单击" **确定**"。 此操作将打开**更新从自动应用配额派生的配额**对话框。
+4.  单击“确定”。 此操作将打开**更新从自动应用配额派生的配额**对话框。
 
 5.  选择希望应用的更新类型：
 
@@ -40,7 +38,7 @@ ms.locfileid: "85474934"
     -   如果希望修改自动应用配额路径中的所有现有配额，请选择**将自动应用配额应用于所有派生配额**。
     -   如果希望保持现有配额不变，但修改自动应用配额路径中新子文件夹中的自动应用配额，请选择**不要将自动应用配额应用于派生配额**。
 
-6.  单击" **确定**"。
+6.  单击“确定”。
 
 ## <a name="additional-references"></a>其他参考
 

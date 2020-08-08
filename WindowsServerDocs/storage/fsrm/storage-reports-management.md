@@ -2,22 +2,20 @@
 title: 存储报告管理
 description: 本文介绍如何生成、计划和监视存储报告
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5bdcada1b445298c8743bdb39491726b594d0a66
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a43dbeac08c1cb851df48cb8412343928e07b1d0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475474"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957344"
 ---
 # <a name="storage-reports-management"></a>存储报告管理
 
-> 适用于： Windows Server 2019，Windows Server 2016，Windows Server （半年频道），Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server (半年通道) ，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
 
 在文件服务器资源管理器 Microsoft<sup>®</sup> 管理控制台 (MMC) 管理单元的**存储报告管理**节点上，可执行以下任务：
 
@@ -25,7 +23,7 @@ ms.locfileid: "85475474"
 -   为所有用户或一组所选用户监视尝试保存未授权文件的操作。
 -   立即生成存储报告。
 
-例如，你能够：
+例如，你可以：
 
 -   安排将在每个星期天午夜运行的报告，生成包含自前两天以来最近访问的文件的列表。 借助此信息，可以监视周末存储活动，以及计划将对周末在家进行连接的用户产生较少影响的服务器停机时间。
 -   随时运行报告以确定服务器上卷中的所有重复文件，从而可以迅速回收磁盘空间而不会丢失任何数据。

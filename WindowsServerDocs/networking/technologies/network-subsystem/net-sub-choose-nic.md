@@ -6,12 +6,12 @@ ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 0ba4f52df35c3b78f948bdfdf40500965a9be278
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c1095f3f5ea44b22c4cec4a871f6fc6210e92ab1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953953"
+ms.locfileid: "87991640"
 ---
 # <a name="choosing-a-network-adapter"></a>选择网络适配器
 
@@ -22,7 +22,7 @@ ms.locfileid: "87953953"
 需要高性能的网络适配器的网络密集型应用程序。 本部分探讨选择网络适配器的一些注意事项，以及如何配置不同的网络适配器设置以实现最佳网络性能。
 
 > [!TIP]
->  你可以使用 Windows PowerShell 配置网络适配器设置。 有关详细信息，请参阅[Windows PowerShell 中的网络适配器 cmdlet](https://docs.microsoft.com/powershell/module/netadapter)。
+>  你可以使用 Windows PowerShell 配置网络适配器设置。 有关详细信息，请参阅[Windows PowerShell 中的网络适配器 cmdlet](/powershell/module/netadapter)。
 
 ##  <a name="offload-capabilities"></a><a name="bkmk_offload"></a>卸载功能
 
@@ -63,13 +63,13 @@ RSS 还会对 UDP 单播和多播流量进行负载均衡，并 \( 通过将源�
 >[!NOTE]
 >若要详细了解每个 cmdlet （包括语法和参数），可以单击以下链接。 此外，还可以在 Windows PowerShell 提示符下将 cmdlet 名称传递到**get-help** ，以获取有关每个命令的详细信息。
 
-- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Disable-NetAdapterRss)。 此命令将在指定的网络适配器上禁用 RSS。
+- [Get-netadapterrss](/powershell/module/netadapter/Disable-NetAdapterRss)。 此命令将在指定的网络适配器上禁用 RSS。
 
-- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRss)。 此命令在指定的网络适配器上启用 RSS。
+- [Get-netadapterrss](/powershell/module/netadapter/Enable-NetAdapterRss)。 此命令在指定的网络适配器上启用 RSS。
 
-- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterRss)。 此命令检索指定的网络适配器的 RSS 属性。
+- [Get-netadapterrss](/powershell/module/netadapter/Get-NetAdapterRss)。 此命令检索指定的网络适配器的 RSS 属性。
 
-- [Get-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss)。 此命令在指定的网络适配器上设置 RSS 属性。
+- [Get-netadapterrss](/powershell/module/netadapter/Set-NetAdapterRss)。 此命令在指定的网络适配器上设置 RSS 属性。
 
 #### <a name="rss-profiles"></a>RSS 配置文件
 
@@ -210,28 +210,28 @@ CoalescingExceptions : 0
 
 使用以下 Windows PowerShell cmdlet 可简化配置网络适配器资源的配置。
 
-- [NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterAdvancedProperty)
+- [NetAdapterAdvancedProperty](/powershell/module/netadapter/Get-NetAdapterAdvancedProperty)
 
-- [NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterAdvancedProperty)
+- [NetAdapterAdvancedProperty](/powershell/module/netadapter/Set-NetAdapterAdvancedProperty)
 
-- [Get-netadapter](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapte)
+- [Get-netadapter](/powershell/module/netadapter/Enable-NetAdapte)
 
-- [NetAdapterBinding](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterBinding)
+- [NetAdapterBinding](/powershell/module/netadapter/Enable-NetAdapterBinding)
 
-- [NetAdapterChecksumOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
+- [NetAdapterChecksumOffload](/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [NetAdapterIPSecOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
+- [NetAdapterIPSecOffload](/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [NetAdapterLso](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterLso)
+- [NetAdapterLso](/powershell/module/netadapter/Enable-NetAdapterLso)
 
-- [NetAdapterPowerManagement](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterPowerManagement)
+- [NetAdapterPowerManagement](/powershell/module/netadapter/Enable-NetAdapterPowerManagement)
 
-- [Get-netadapterqos](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterQos)
+- [Get-netadapterqos](/powershell/module/netadapter/Enable-NetAdapterQos)
 
-- [NetAdapterRDMA](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRDMA)
+- [NetAdapterRDMA](/powershell/module/netadapter/Enable-NetAdapterRDMA)
 
-- [Get-netadaptersriov](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterSriov)
+- [Get-netadaptersriov](/powershell/module/netadapter/Enable-NetAdapterSriov)
 
-有关详细信息，请参阅[Windows PowerShell 中的网络适配器 cmdlet](https://docs.microsoft.com/powershell/module/netadapter)。
+有关详细信息，请参阅[Windows PowerShell 中的网络适配器 cmdlet](/powershell/module/netadapter)。
 
 有关本指南中的所有主题的链接，请参阅[网络子系统性能优化](net-sub-performance-top.md)。

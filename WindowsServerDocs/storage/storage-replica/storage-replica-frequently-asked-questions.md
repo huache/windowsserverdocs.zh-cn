@@ -1,19 +1,17 @@
 ---
 title: 有关存储副本的常见问题
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 04477ac9d7aa7905a4d5fc4dd58c7891c91f5baf
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 01bda8c501ca1416ebc887a98a4369f99c60f0f2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769695"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989373"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>有关存储副本的常见问题
 
@@ -115,7 +113,7 @@ Set-SRNetworkConstraint -SourceComputerName sr-cluster01 -SourceRGName group1 -S
 在两个群集间进行复制时，如果配置群集到群集复制，存储副本会完全支持横向扩展文件服务器，包括可以使用存储空间直通。
 
 ## <a name="is-csv-required-to-replicate-in-a-stretch-cluster-or-between-clusters"></a><a name="FAQ7.5"></a>在 stretch 群集或群集之间复制是否需要 CSV？
-错误。 你可以使用 CSV 或持久磁盘保留 (PDR) （如文件服务器角色）拥有的群集资源。
+否。 你可以使用 CSV 或持久磁盘保留 (PDR) （如文件服务器角色）拥有的群集资源。
 
 在两个群集间进行复制时，如果配置群集到群集复制，存储副本会完全支持横向扩展文件服务器，包括可以使用存储空间直通。
 
@@ -254,7 +252,7 @@ Remove-SmbBandwidthLimit -Category StorageReplication
 
 ## <a name="how-do-i-report-an-issue-with-storage-replica-or-this-guide"></a><a name="FAQ17"></a>如何实现报告存储副本或本指南存在问题？
 
-若要获取存储副本的技术帮助，你可以在[Microsoft 论坛](https://docs.microsoft.com/answers/index.html)上发布。 还可以将有关存储副本的疑问或本文档中出现的问题通过电子邮件发送至 srfeed@microsoft.com。 [Windows Server 常规反馈网站](https://windowsserver.uservoice.com/forums/295047-general-feedback)是设计更改请求的首选，因为它允许你的同事为你的想法提供支持和反馈。
+若要获取存储副本的技术帮助，你可以在[Microsoft 论坛](/answers/index.html)上发布。 还可以将有关存储副本的疑问或本文档中出现的问题通过电子邮件发送至 srfeed@microsoft.com。 [Windows Server 常规反馈网站](https://windowsserver.uservoice.com/forums/295047-general-feedback)是设计更改请求的首选，因为它允许你的同事为你的想法提供支持和反馈。
 
 ## <a name="can-storage-replica-be-configured-to-replicate-in-both-directions"></a><a name="FAQ18"></a>是否可将存储副本配置为双向复制？
 

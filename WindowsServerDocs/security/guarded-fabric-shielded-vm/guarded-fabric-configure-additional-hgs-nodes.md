@@ -1,19 +1,17 @@
 ---
 title: 配置其他 HGS 节点
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 227f723b-acb2-42a7-bbe3-44e82f930e35
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: fb744d2be9cc0002158deb0d9665a354ef23851a
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 16a8ada942f4fcae80085058c92a14bd33ed6e79
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769355"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997193"
 ---
 # <a name="configure-additional-hgs-nodes"></a>配置其他 HGS 节点
 
@@ -28,7 +26,7 @@ ms.locfileid: "87769355"
 | 新建 HGS 林 | [使用 PFX 文件](#dedicated-hgs-forest-with-pfx-certificates) | [使用证书指纹](#dedicated-hgs-forest-with-certificate-thumbprints) |
 | 现有堡垒林 | [使用 PFX 文件](#existing-bastion-forest-with-pfx-certificates) | [使用证书指纹](#existing-bastion-forest-with-certificate-thumbprints) |
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 请确保每个附加节点：
 - 与主节点具有相同的硬件和软件配置
@@ -117,7 +115,7 @@ ms.locfileid: "87769355"
 SSL 证书*不会*由 HGS 复制，并且无需为每个节点使用相同的密钥 (即，对于每个节点) ，你可以使用不同的 SSL 证书。
 
 请求 SSL 证书时，请确保群集完全限定的域名 (如) 的输出中所示的 `Get-HgsServer` 证书的使用者公用名，或者作为使用者备用 DNS 名称包含在内。
-从证书颁发机构获取证书后，可以将 HGS 配置为使用[HgsServer](https://technet.microsoft.com/itpro/powershell/windows/hgsserver/set-hgsserver)。
+从证书颁发机构获取证书后，可以将 HGS 配置为使用[HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps)。
 
 ```powershell
 $sslPassword = Read-Host -AsSecureString -Prompt "SSL Certificate Password"

@@ -2,22 +2,20 @@
 title: 在 DFS 命名空间中创建文件夹
 description: 本文介绍如何在 DFS 命名空间中创建文件夹。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4034c3b40a6b409f295875e424668e68bce24cdb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d854cfcb02288f6262ee380edc0614baf9e29878
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962859"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957695"
 ---
 # <a name="create-a-folder-in-a-dfs-namespace"></a>在 DFS 命名空间中创建文件夹
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 你可以使用文件夹在命名空间中创建其他级别的层次结构。 你也可以创建包含文件夹目标的文件夹，以将共享文件夹添加到命名空间。 包含文件夹目标的 DFS 文件夹不能包含其他 DFS 文件夹，因此，如果你要向命名空间添加层次结构级别，请不要将文件夹目标添加到文件夹。
 

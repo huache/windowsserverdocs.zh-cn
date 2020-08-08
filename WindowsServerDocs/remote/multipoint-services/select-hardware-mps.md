@@ -7,12 +7,12 @@ ms.assetid: e74961a2-bd38-48ae-b1c0-4b3eff761b4a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 37fd4d30183d626caf0891fea2a41f79046030e9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4a38b26604ae6089acf6e9b64c20fd9115edcade
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970464"
+ms.locfileid: "87997211"
 ---
 # <a name="selecting-hardware-for-your-multipoint-services-system"></a>为 MultiPoint Services 系统选择硬件
 
@@ -51,7 +51,7 @@ MultiPoint 服务系统通常包含以下组件：
 
 MultiPoint 服务系统是多 \- 用户环境，所有用户均连接到一台主计算机。 这会增加 CPU 使用率，因为所有用户共享同一台计算机。 某些任务（例如多媒体节目 \( 或视频 \- 编辑软件 \) ）具有更大的处理需求。 因此，请确保选择可处理对需要支持的用户和类型的用户数量的处理要求的 CPU。
 
-MultiPoint 服务需要基于 x64 的 \- CPU，并且必须满足计算机的系统要求，如[硬件要求和性能建议](Hardware-Requirements-and-Performance-Recommendations.md)中所述。
+MultiPoint 服务需要基于 x64 的 \- CPU，并且必须满足计算机的系统要求，如[硬件要求和性能建议](./hardware-and-performance-recommendations.md)中所述。
 
 以下类型的处理器经过测试，可用于具有高需求处理程序的 MultiPoint 服务系统 \- ，例如多媒体程序：
 

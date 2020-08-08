@@ -1,26 +1,24 @@
 ---
-title: 如何确定复制文件夹的最小临时区域 DFSR 需求
+title: 如何确定复制文件夹的最低临时区域 DFSR 需求
 description: 本文提供了有关如何计算 DFSR 正常运行所需的最小临时区域的快速参考指南。
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 06/10/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 5e5bfdbb90d2b3e631aaa020a173eca779f0d6b3
-ms.sourcegitcommit: fa9a8badf4eb366aeeca7d2905e2cad711ee8dae
+ms.openlocfilehash: 581b485f219e960ecd467baa1f7dff7742c3acf8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715001"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965784"
 ---
-# <a name="how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder"></a>如何确定复制文件夹的最小临时区域 DFSR 需求
+# <a name="how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder"></a>如何确定复制文件夹的最低临时区域 DFSR 需求
 
-本文提供了有关如何计算 DFSR 正常运行所需的最小临时区域的快速参考指南。 低于这些值的值可能会导致复制缓慢或停止。 
+本文提供了有关如何计算 DFSR 正常运行所需的最小临时区域的快速参考指南。 低于这些值的值可能会导致复制缓慢或停止。
 
 请记住，这些*只*是最小。 考虑暂存区域大小时，临时区域越大越好，直到复制文件夹的大小就越好。 请参阅本文末尾的 "如何确定是否有临时区域问题" 一节，了解有关为什么要使用适当调整大小的暂存区域很重要的详细信息。
 
 > [!Note]
-> 我们还提供了一个修补程序，可帮助你计算暂存大小。 [DFS 复制（DFSR）管理接口的更新可用](https://support.microsoft.com/kb/2607047)
+> 我们还提供了一个修补程序，可帮助你计算暂存大小。 [DFS 复制 (DFSR) 管理接口的更新可用](https://support.microsoft.com/kb/2607047)
 
 ## <a name="rules-of-thumb"></a>经验法则
 
@@ -36,25 +34,25 @@ PowerShell 包含在 Windows 2008 和更高版本中。 必须在 Windows Server
 
 ## <a name="how-do-you-find-these-x-largest-files"></a>如何查找这些 X 最大的文件？
 
-使用 PowerShell 脚本查找32或9个最大的文件，并确定它们最多可添加多少千兆字节数（这归功于 PowerShell 命令的需要 Pyle）。 接下来，我将向您展示三个 PowerShell 脚本。 每个都可用于自己的;但是，数字3是最有用的。
+使用 PowerShell 脚本查找32或9个最大的文件，并确定它们添加到 (的 gb 数，因为) PowerShell 命令的需要 Pyle。 接下来，我将向您展示三个 PowerShell 脚本。 每个都可用于自己的;但是，数字3是最有用的。
 
-1. 运行下面的命令：  
+1. 运行以下命令：
    ```Powershell
    Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | ft name,length -wrap –auto
    ```
-   
+
    此命令将返回文件的名称和文件大小（以字节为单位）。 如果要了解哪些32文件在已复制文件夹中最大，以便可以 "访问" 其所有者，这一点很有用。
 
-2. 运行下面的命令：  
+2. 运行以下命令：
    ```Poswershell
    Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | measure-object -property length –sum
    ```
    此命令将返回文件夹中最大32文件的总字节数，而不列出文件名。
 
-3. 运行下面的命令：  
+3. 运行以下命令：
    ```Poswershell
    $big32 = Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | measure-object -property length –sum
-   
+
    $big32.sum /1gb
    ```
    此命令将获取文件夹中最大的32文件的总字节数，并执行 math 将字节转换为千兆字节。 此命令为两个单独的行。 可以同时将这两个文件粘贴到 PowerShell 命令行界面中，或将其重新运行。
@@ -160,7 +158,7 @@ PowerShell 包含在 Windows 2008 和更高版本中。 必须在 Windows Server
 
 尽管手动演练很有趣，但可能不是您自己的时间来自己完成数学计算。 若要自动执行此过程，请使用上述示例中的命令3。 结果将如下所示
 
-> [![影像](https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/58/02/metablogapi/8204.image_thumb_02CB3914.png "image")](https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/58/02/metablogapi/0876.image_03A39EFE.png)
+> [![图像](https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/58/02/metablogapi/8204.image_thumb_02CB3914.png "图像")](https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/58/02/metablogapi/0876.image_03A39EFE.png)
 
 除了舍入为最接近的整数以外，使用示例命令3不进行任何额外的工作，我可以确定我需要用于 d：文档的 6 GB 暂存区域配额 \\ 。
 
@@ -174,30 +172,25 @@ PowerShell 包含在 Windows 2008 和更高版本中。 必须在 Windows Server
 
 ### <a name="staging-area-events"></a>临时区域事件
 
-> 事件 ID： **4202**  
-> 严重性：**警告**
-> 
-> DFS 复制服务检测到用于本地路径（路径）上已复制文件夹的暂存空间高于高水位线。 服务将尝试删除最旧的暂存文件。 性能可能会受到影响。
-> 
-> 事件 ID： **4204**  
-> 严重性：**信息**
-> 
-> DFS 复制服务已成功地删除了本地路径（路径）上已复制文件夹的旧暂存文件。 暂存空间现在低于高水位线。
-> 
-> 事件 ID： **4206**  
-> 严重性：**警告**
-> 
-> DFS 复制服务未能清除本地路径（路径）上已复制文件夹的旧暂存文件。 此服务可能无法复制某些大型文件，并且已复制文件夹可能不同步。服务将在（x）分钟内自动重试临时空间清除。 如果该服务检测到一些暂存文件已经解除锁定，则该服务可能会提前进行清理。
-> 
-> 事件 ID： **4208**  
-> 严重性：**警告**
-> 
-> DFS 复制服务检测到临时空间使用量高于本地路径（路径）的已复制文件夹的暂存配额。 此服务可能无法复制某些大型文件，并且已复制文件夹可能不同步。服务将尝试自动清理暂存空间。
-> 
-> 事件 ID： **4212**  
-> 严重性：**错误**
-> 
-> 由于临时路径无效或无法访问，因此 DFS 复制服务无法复制本地路径（路径）上的已复制文件夹。
+> 事件 ID： **4202**严重性：**警告**
+>
+> DFS 复制服务检测到用于本地路径 (path) 上的已复制文件夹的暂存空间超出了高水位线。 服务将尝试删除最旧的暂存文件。 性能可能会受到影响。
+>
+> 事件 ID： **4204**严重性：**信息性**
+>
+> DFS 复制服务已成功删除本地路径 (path) 上的已复制文件夹的旧暂存文件。 暂存空间现在低于高水位线。
+>
+> 事件 ID： **4206**严重性：**警告**
+>
+> DFS 复制服务未能清除本地路径 (路径) 上的已复制文件夹的旧暂存文件。 此服务可能无法复制某些大型文件，并且已复制文件夹可能不同步。该服务将在 (x) 分钟内自动重试临时空间清理。 如果该服务检测到一些暂存文件已经解除锁定，则该服务可能会提前进行清理。
+>
+> 事件 ID： **4208**严重性：**警告**
+>
+> DFS 复制服务检测到临时空间使用量高于本地路径 (path) 上的已复制文件夹的暂存配额。 此服务可能无法复制某些大型文件，并且已复制文件夹可能不同步。服务将尝试自动清理暂存空间。
+>
+> 事件 ID： **4212**严重性：**错误**
+>
+> 由于临时路径无效或无法访问，DFS 复制服务无法复制本地路径 (路径) 上的已复制文件夹。
 
 ## <a name="what-is-the-difference-between-4202-and-4208"></a>4202和4208之间的区别是什么？
 
@@ -207,7 +200,7 @@ PowerShell 包含在 Windows 2008 和更高版本中。 必须在 Windows Server
 
 此问题没有单个答案。 不同于4206、4208或4212事件，它们始终都是错误的，表示需要执行操作，4202和4204事件发生在正常的操作条件下。 看到许多4202和4204事件*可能*表示存在问题。 注意事项：
 
-1.  已复制文件夹（RF）日志记录4202正在执行初始复制？ 如果是这样，则记录4202和4204事件是正常的。 在初始复制期间，你可能希望尽可能少地将这些内容保留在初始复制中，方法是提供尽可能多的临时区域
+1.  已复制文件夹 (RF) 日志记录4202执行初始复制？ 如果是这样，则记录4202和4204事件是正常的。 在初始复制期间，你可能希望尽可能少地将这些内容保留在初始复制中，方法是提供尽可能多的临时区域
 2.  只需检查4202事件的总数就够了。 必须知道每个 RF 记录了多少。 如果在24小时内为一个 RF 记录了 20 4202 事件，此时间较高。 但是，如果您有20个已复制文件夹，并且每个文件夹有一个事件，那么您就会很好。
 3.  你应检查几天的数据，以确定趋势。
 

@@ -1,22 +1,20 @@
 ---
-title: 成组 NIC 配置（数据中心）中的汇聚 NIC
-description: 在本主题中，我们将向你提供有关使用交换机嵌入组合（SET）在成组的 NIC 配置中部署汇聚 NIC 的说明。
-ms.prod: windows-server
-ms.technology: networking
+title: '在成组的 NIC 配置中将 NIC 聚合 (datacenter) '
+description: 在本主题中，我们将向你提供有关如何使用交换机嵌入组合 (集) 在成组的 NIC 配置中部署汇聚 NIC 的说明。
 ms.topic: article
 ms.assetid: f01546f8-c495-4055-8492-8806eee99862
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/17/2018
-ms.openlocfilehash: d81e4013d7cc38a15dd8b0bcd48529a2d72d0b69
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 918b3d10c39c6f06330f9c0986bc08b5bc04a229
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520196"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949371"
 ---
-# <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>成组 NIC 配置（数据中心）中的汇聚 NIC
+# <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>在成组的 NIC 配置中将 NIC 聚合 (datacenter) 
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
@@ -39,7 +37,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |    名称    |           InterfaceDescription           | ifIndex | 状态 |    MacAddress     | LinkSpeed |
+   |    “属性”    |           InterfaceDescription           | ifIndex | 状态 |    MacAddress     | LinkSpeed |
    |------------|------------------------------------------|---------|--------|-------------------|-----------|
    | 测试-40G-1 | Mellanox ConnectX 3 Pro 以太网适配器 |   11    |   向上   | E4-1D-07-43-D0 |  40 Gbps  |
 
@@ -71,7 +69,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |    名称    |          InterfaceDescription           | ifIndex | 状态 |    MacAddress     | LinkSpeed |
+   |    “属性”    |          InterfaceDescription           | ifIndex | 状态 |    MacAddress     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | 测试-40G-2 | Mellanox ConnectX-3 Pro 以太网 ... #2 |   13    |   向上   | E4-1D-2D-07-40-70 |  40 Gbps  |
 
@@ -116,7 +114,7 @@ ms.locfileid: "87520196"
    |      RemoteAddress       | 为192.168.1.5 |
    |      InterfaceAlias      | 测试-40G-1  |
    |      SourceAddress       | 192.168.1.3 |
-   |      PingSucceeded       |    False    |
+   |      PingSucceeded       |    错误    |
    | PingReplyDetails \( RTT\) |    0 毫秒     |
 
    在某些情况下，可能需要禁用具有高级安全性的 Windows 防火墙才能成功执行此测试。 如果禁用防火墙，请记住安全，并确保配置符合组织的安全要求。
@@ -142,7 +140,7 @@ ms.locfileid: "87520196"
    |      RemoteAddress       | 为192.168.1.5 |
    |      InterfaceAlias      | 测试-40G-1  |
    |      SourceAddress       | 192.168.1.3 |
-   |      PingSucceeded       |    False    |
+   |      PingSucceeded       |    错误    |
    | PingReplyDetails \( RTT\) |    0 毫秒     |
 
 
@@ -161,7 +159,7 @@ ms.locfileid: "87520196"
    |      RemoteAddress       | 192.168.2.5 |
    |      InterfaceAlias      | 测试-40G-2  |
    |      SourceAddress       | 192.168.2.3 |
-   |      PingSucceeded       |    False    |
+   |      PingSucceeded       |    错误    |
    | PingReplyDetails \( RTT\) |    0 毫秒     |
 
 ## <a name="step-3-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>步骤 3. 为安装在 Hyper-v 主机中的 Nic 配置 VLAN Id
@@ -193,7 +191,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |    名称    | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
+   |    “属性”    | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
    |------------|-------------|--------------|-----------------|---------------|
    | 测试-40G-1 |   VLAN ID   |     101      |     VlanID      |     {101}     |
 
@@ -212,7 +210,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |    名称    |          InterfaceDescription           | ifIndex | 状态 |    MacAddress     | LinkSpeed |
+   |    “属性”    |          InterfaceDescription           | ifIndex | 状态 |    MacAddress     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | 测试-40G-1 | Mellanox ConnectX-3 Pro 以太网 Ada .。。 |   11    |   向上   | E4-1D-07-43-D0 |  40 Gbps  |
 
@@ -226,7 +224,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |    名称    | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
+   |    “属性”    | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
    |------------|-------------|--------------|-----------------|---------------|
    | 测试-40G-2 |   VLAN ID   |     102      |     VlanID      |     {102}     |
 
@@ -245,7 +243,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |    名称    |          InterfaceDescription           | ifIndex | 状态 |    MacAddress     | LinkSpeed |
+   |    “属性”    |          InterfaceDescription           | ifIndex | 状态 |    MacAddress     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | 测试-40G-2 | Mellanox ConnectX-3 Pro 以太网 Ada .。。 |   11    |   向上   | E4-1D-07-43-D1 |  40 Gbps  |
 
@@ -338,7 +336,7 @@ ms.locfileid: "87520196"
    |----------------|--------------------------|
    |      名称      |           SMB            |
    |     所有者      | 组策略 \( 计算机\) |
-   | NetworkProfile |           All            |
+   | NetworkProfile |           全部            |
    |   优先级   |           127            |
    |   JobObject    |          &nbsp;          |
    | NetDirectPort  |           445            |
@@ -357,9 +355,9 @@ ms.locfileid: "87520196"
    |----------------|--------------------------|
    |      名称      |         DEFAULT          |
    |     所有者      | 组策略 \( 计算机\) |
-   | NetworkProfile |           All            |
+   | NetworkProfile |           全部            |
    |   优先级   |           127            |
-   |    模板    |         默认          |
+   |    模板    |         默认值          |
    |   JobObject    |          &nbsp;          |
    | PriorityValue  |            0             |
 
@@ -375,14 +373,14 @@ ms.locfileid: "87520196"
 
    | 优先度 | 已启用 | PolicySet | IfIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
-   |    0     |  False  |  全球   | &nbsp;  | &nbsp;  |
+   |    0     |  错误  |  全球   | &nbsp;  | &nbsp;  |
    |    1     |  False  |  全球   | &nbsp;  | &nbsp;  |
-   |    2     |  False  |  全球   | &nbsp;  | &nbsp;  |
+   |    2     |  错误  |  全球   | &nbsp;  | &nbsp;  |
    |    3     |  True   |  全球   | &nbsp;  | &nbsp;  |
-   |    4     |  False  |  全球   | &nbsp;  | &nbsp;  |
-   |    5     |  False  |  全球   | &nbsp;  | &nbsp;  |
-   |    6     |  False  |  全球   | &nbsp;  | &nbsp;  |
-   |    7     |  False  |  全球   | &nbsp;  | &nbsp;  |
+   |    4     |  错误  |  全球   | &nbsp;  | &nbsp;  |
+   |    5     |  错误  |  全球   | &nbsp;  | &nbsp;  |
+   |    6     |  错误  |  全球   | &nbsp;  | &nbsp;  |
+   |    7     |  错误  |  全球   | &nbsp;  | &nbsp;  |
 
    >**重要提示**如果你的结果不匹配这些结果，原因是3之外的项的已启用值为 True，则必须为这些类禁用**FlowControl** 。
    >
@@ -409,8 +407,8 @@ ms.locfileid: "87520196"
    |      参数      |   硬件   |   当前    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
-   |     DcbxSupport     |     无     |     无     |
-   | NumTCs （Max/ETS/PFC） |    8/8/8     |    8/8/8     |
+   |     DcbxSupport     |     None     |     None     |
+   | NumTCs (Max/ETS/PFC)  |    8/8/8     |    8/8/8     |
 
    _**OperationalTrafficClasses**：_
 
@@ -447,8 +445,8 @@ ms.locfileid: "87520196"
    |      参数      |   硬件   |   当前    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
-   |     DcbxSupport     |     无     |     无     |
-   | NumTCs （Max/ETS/PFC） |    8/8/8     |    8/8/8     |
+   |     DcbxSupport     |     None     |     None     |
+   | NumTCs (Max/ETS/PFC)  |    8/8/8     |    8/8/8     |
 
    _**OperationalTrafficClasses**：_
 
@@ -479,7 +477,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   | 名称 | 算法 | 带宽（%） | 优先度 | PolicySet | IfIndex | IfAlias |
+   | “属性” | 算法 | 带宽 (% )  | 优先度 | PolicySet | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | SMB  |    ETS    |      50      |    3     |  全球   | &nbsp;  | &nbsp;  |
 
@@ -491,12 +489,12 @@ ms.locfileid: "87520196"
 
    _**后果**_
 
-   |   名称    | 算法 | 带宽（%） | 优先度 | PolicySet | IfIndex | IfAlias |
+   |   “属性”    | 算法 | 带宽 (% )  | 优先度 | PolicySet | IfIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
    | [默认值] |    ETS    |      50      | 0-2，4-7  |  全球   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      50      |    3     |  全球   | &nbsp;  | &nbsp;  |
 
-9. 可有可无为租户 IP 流量另外创建两个通信类。
+9.  (可选) 为租户 IP 流量创建两个附加的通信类。
 
    >[!TIP]
    >可以省略 "IP1" 和 "IP2" 值。
@@ -507,7 +505,7 @@ ms.locfileid: "87520196"
 
    _**后果**_
 
-   | 名称 | 算法 | 带宽（%） | 优先度 | PolicySet | IfIndex | IfAlias |
+   | “属性” | 算法 | 带宽 (% )  | 优先度 | PolicySet | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP1  |    ETS    |      10      |    1     |  全球   | &nbsp;  | &nbsp;  |
 
@@ -518,7 +516,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   | 名称 | 算法 | 带宽（%） | 优先度 | PolicySet | IfIndex | IfAlias |
+   | “属性” | 算法 | 带宽 (% )  | 优先度 | PolicySet | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP2  |    ETS    |      10      |    2     |  全球   | &nbsp;  | &nbsp;  |
 
@@ -531,7 +529,7 @@ ms.locfileid: "87520196"
     _**后果**_
 
 
-    |   名称    | 算法 | 带宽（%） | 优先度 | PolicySet | IfIndex | IfAlias |
+    |   “属性”    | 算法 | 带宽 (% )  | 优先度 | PolicySet | IfIndex | IfAlias |
     |-----------|-----------|--------------|----------|-----------|---------|---------|
     | [默认值] |    ETS    |      30      |  0、4-7   |  全球   | &nbsp;  | &nbsp;  |
     |    SMB    |    ETS    |      50      |    3     |  全球   | &nbsp;  | &nbsp;  |
@@ -540,7 +538,7 @@ ms.locfileid: "87520196"
 
     ---
 
-2.  可有可无重写调试器。<p>默认情况下，附加的调试器会阻止 NetQos。
+2.   (可选) 替代调试器。<p>默认情况下，附加的调试器会阻止 NetQos。
 
     ```powershell
     Set-ItemProperty HKLM:"\SYSTEM\CurrentControlSet\Services\NDIS\Parameters" AllowFlowControlUnderDebugger -type DWORD -Value 1 –Force
@@ -573,7 +571,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |    名称    |        InterfaceDescription        | 已启用 |
+   |    “属性”    |        InterfaceDescription        | 已启用 |
    |------------|------------------------------------|---------|
    | 测试-40G-1 | Mellanox ConnectX-4 VPI 适配器 #2 |  True   |
    | 测试-40G-2 |  Mellanox ConnectX-4 VPI 适配器   |  True   |
@@ -671,7 +669,7 @@ ms.locfileid: "87520196"
    _**输出**_
 
 
-   |  名称   | SwitchType | NetAdapterInterfaceDescription |
+   |  “属性”   | SwitchType | NetAdapterInterfaceDescription |
    |---------|------------|--------------------------------|
    | VMSTEST |  外部  |        成组-接口        |
 
@@ -700,9 +698,9 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |        名称         |        InterfaceDescription         | ifIndex | 状态 |    MacAddress     | LinkSpeed |
+   |        “属性”         |        InterfaceDescription         | ifIndex | 状态 |    MacAddress     | LinkSpeed |
    |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | vEthernet （VMSTEST） | Hyper-v 虚拟以太网适配器 #2 |   28    |   向上   | E4-1D-2D-07-40-71 |  80 Gbps  |
+   | vEthernet (VMSTEST)  | Hyper-v 虚拟以太网适配器 #2 |   28    |   向上   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
 4. 查看主机 vNIC 的其他属性。
 
@@ -713,7 +711,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |  名称   | IsManagementOs | VMName  |  SwitchName  | MacAddress | 状态 | IPAddresses |
+   |  “属性”   | IsManagementOs | VMName  |  SwitchName  | MacAddress | 状态 | IPAddresses |
    |---------|----------------|---------|--------------|------------|--------|-------------|
    | VMSTEST |      True      | VMSTEST | E41D2D074071 |    正常    | &nbsp; |             |
 
@@ -783,7 +781,7 @@ ms.locfileid: "87520196"
    PingReplyDetails (RTT) : 0 ms
    ```
 
-   >**重要提示**如果结果与示例结果不类似，并且 ping 失败，并出现消息 "警告： Ping to 为 192.168.1.5 failed--Status： DestinationHostUnreachable"，确认 "vEthernet （VMSTEST）" 具有正确的 IP 地址。
+   >**重要提示**如果结果与示例结果不类似，并且 ping 失败，并出现消息 "警告： Ping to 为 192.168.1.5 failed--Status： DestinationHostUnreachable"，确认 "vEthernet (VMSTEST) " 具有正确的 IP 地址。
    >
    >```powershell
    >Get-NetIPAddress -InterfaceAlias "vEthernet (VMSTEST)"
@@ -820,7 +818,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |         名称         | IsManagementOs | VMName |      SwitchName      |  MacAddress  | 状态 | IPAddresses |
+   |         “属性”         | IsManagementOs | VMName |      SwitchName      |  MacAddress  | 状态 | IPAddresses |
    |----------------------|----------------|--------|----------------------|--------------|--------|-------------|
    | 公司外部-交换机 |      True      | &nbsp; | 公司外部-交换机 | 001B785768AA |  正常  |   &nbsp;    |
    |         管理          |      True      | &nbsp; |       VMSTEST        | E41D2D074071 |  正常  |   &nbsp;    |
@@ -834,9 +832,9 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |      名称       |        InterfaceDescription         | ifIndex | 状态 |    MacAddress     | LinkSpeed |
+   |      “属性”       |        InterfaceDescription         | ifIndex | 状态 |    MacAddress     | LinkSpeed |
    |-----------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | vEthernet （进行） | Hyper-v 虚拟以太网适配器 #2 |   28    |   向上   | E4-1D-2D-07-40-71 |  80 Gbps  |
+   | vEthernet (的)  | Hyper-v 虚拟以太网适配器 #2 |   28    |   向上   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
 ## <a name="step-8-test-hyper-v-vswitch-rdma"></a>步骤 8。 测试 Hyper-v vSwitch RDMA
 
@@ -871,7 +869,7 @@ ms.locfileid: "87520196"
    _**后果**_
 
 
-   |         名称         | IsManagementOs |        VMName        |  SwitchName  | MacAddress | 状态 | IPAddresses |
+   |         “属性”         | IsManagementOs |        VMName        |  SwitchName  | MacAddress | 状态 | IPAddresses |
    |----------------------|----------------|----------------------|--------------|------------|--------|-------------|
    | 公司外部-交换机 |      True      | 公司外部-交换机 | 001B785768AA |    正常    | &nbsp; |             |
    |         管理          |      True      |       VMSTEST        | E41D2D074071 |    正常    | &nbsp; |             |
@@ -1153,7 +1151,7 @@ ms.locfileid: "87520196"
 
 ## <a name="step-10-validate-the-rdma-functionality"></a>步骤 10. 验证 RDMA 功能
 
-你需要从远程系统向 vSwitch 集团队的两个成员验证 RDMA 功能，该系统具有 vSwitch。<p>由于主机 Vnic \( SMB1 和 SMB2 \) 都分配到 vlan 102，因此你可以选择远程系统上的 vlan 102 适配器。 <p>在此示例中，NIC 测试-40G-2 可以 RDMA 到 SMB1 （192.168.2.111）和 SMB2 （192.168.2.222）。
+你需要从远程系统向 vSwitch 集团队的两个成员验证 RDMA 功能，该系统具有 vSwitch。<p>由于主机 Vnic \( SMB1 和 SMB2 \) 都分配到 vlan 102，因此你可以选择远程系统上的 vlan 102 适配器。 <p>在此示例中，NIC 测试-40G-2 可以 RDMA 到 SMB1 (192.168.2.111) 和 SMB2 (192.168.2.222) 。
 
 >[!TIP]
 >你可能需要在此系统上禁用防火墙。  有关详细信息，请参阅构造策略。

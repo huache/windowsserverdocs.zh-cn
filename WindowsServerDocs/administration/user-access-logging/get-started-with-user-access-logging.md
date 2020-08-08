@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b5e8ae365fbf8130d134ab2f9fa555e952d012a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: da8bb60ea455578eff96aed6173e4662fffd6ade
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895639"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991760"
 ---
 # <a name="get-started-with-user-access-logging"></a>用户访问日志记录入门
 
@@ -89,7 +89,7 @@ UAL 可以支持以下服务器角色和服务：
 ## <a name="important-functionality"></a><a name="BKMK_NEW"></a>重要功能
 下表描述 UAL 的关键功能及其可能值。
 
-|功能|值|
+|功能|“值”|
 |-----------------|---------|
 |以几乎实时的方式收集和聚合客户端请求事件数据。|最多可以保存三年的数据。 **重要提示：** 管理员需要强制遵守组织的隐私策略和本地法规收集的数据和数据保留期。|
 |通过使用 WMI 或 Windows PowerShell 界面来查询 UAL，以检索本地或远程服务器上的客户端请求数据。|UAL 启用持续的用法数据的单一视图。 服务器和企业管理员可以检索此数据并与业务管理员进行协调，以优化其批量软件许可证的使用。|
@@ -126,7 +126,5 @@ UAL 可以支持以下服务器角色和服务：
 在 Windows Server 2012 之后，可以在运行 Windows Server 版本的任何计算机上使用 UAL。
 
 ## <a name="additional-references"></a>其他参考
-MSDN 上的[用户访问日志记录](https://msdn.microsoft.com/library/windows/desktop/hh437528(v=vs.85).aspx)。
+MSDN 上的[用户访问日志记录](/previous-versions/windows/desktop/ual/user-access-logging)。
 [管理用户访问日志记录](Manage-User-Access-Logging.md)
-
-

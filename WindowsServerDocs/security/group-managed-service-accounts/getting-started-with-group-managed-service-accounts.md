@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 728da4f2061156352045439a55cba7fa9e98ced9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 979a6cf1e0b5e2d68c05f6285a9d745eabe41fa4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971464"
+ms.locfileid: "87991522"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
@@ -174,7 +174,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
     New-ADServiceAccount ITFarm1 -DNSHostName ITFarm1.contoso.com -PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$ -KerberosEncryptionType RC4, AES128, AES256 -ServicePrincipalNames http/ITFarm1.contoso.com/contoso.com, http/ITFarm1.contoso.com/contoso, http/ITFarm1/contoso.com, http/ITFarm1/contoso
     ```
 
-必须至少具有“域管理员”****、“帐户操作员”**** 中的成员身份或能够创建 msDS-GroupManagedServiceAccount 对象才能完成此过程。 有关使用适当帐户和组成员身份的详细信息，请参阅 [本地和域默认组](https://technet.microsoft.com/library/dd728026(WS.10).aspx)。
+必须至少具有“域管理员”****、“帐户操作员”**** 中的成员身份或能够创建 msDS-GroupManagedServiceAccount 对象才能完成此过程。 有关使用适当帐户和组成员身份的详细信息，请参阅 [本地和域默认组](/previous-versions/orphan-topics/ws.10/dd728026(v=ws.10))。
 
 ##### <a name="to-create-a-gmsa-for-outbound-authentication-only-using-the-new-adserviceaccount-cmdlet"></a>仅使用 New-ADServiceAccount cmdlet 创建出站身份验证的 gMSA
 
@@ -204,15 +204,15 @@ New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsA
 
 -   IIS 应用程序池
 
-    有关详细信息，请参阅 [为应用程序池 (IIS 7) 指定标识](https://technet.microsoft.com/library/cc771170(WS.10).aspx)。
+    有关详细信息，请参阅 [为应用程序池 (IIS 7) 指定标识](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771170(v=ws.10))。
 
 -   Windows 服务
 
-    有关详细信息，请参阅 [服务](https://technet.microsoft.com/library/cc772408.aspx)。
+    有关详细信息，请参阅 [服务](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772408(v=ws.11))。
 
 -   任务
 
-    有关详细信息，请参阅 [任务计划程序概述](https://technet.microsoft.com/library/cc721871.aspx)。
+    有关详细信息，请参阅 [任务计划程序概述](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc721871(v=ws.11))。
 
 其他服务可以支持 gMSA。 请参阅相应的产品文档以了解有关如何配置这些服务的详细信息。
 
@@ -223,15 +223,15 @@ New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsA
 
 -   方法 1：Active Directory 用户和计算机
 
-    有关如何使用此方法的过程，请参阅使用 Windows 界面 [将计算机帐户添加到组](https://technet.microsoft.com/library/cc733097.aspx) 以及 [在 Active Directory 管理中心内管理不同域](manage-different-domains-in-active-directory-administrative-center.md)。
+    有关如何使用此方法的过程，请参阅使用 Windows 界面 [将计算机帐户添加到组](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733097(v=ws.11)) 以及 [在 Active Directory 管理中心内管理不同域](manage-different-domains-in-active-directory-administrative-center.md)。
 
 -   方法 2：dsmod
 
-    有关如何使用此方法的过程，请参阅使用命令行 [将计算机帐户添加到组](https://technet.microsoft.com/library/cc733097.aspx) 。
+    有关如何使用此方法的过程，请参阅使用命令行 [将计算机帐户添加到组](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733097(v=ws.11)) 。
 
 -   方法 3：Windows PowerShell Active Directory cmdlet Add-ADPrincipalGroupMembership
 
-    有关如何使用此方法的过程，请参阅 [Add-ADPrincipalGroupMembership](https://technet.microsoft.com/library/ee617203.aspx)。
+    有关如何使用此方法的过程，请参阅 [Add-ADPrincipalGroupMembership](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617203(v=technet.10))。
 
 如果使用计算机帐户，请查找现有帐户，然后再添加新的计算机帐户。
 
@@ -271,7 +271,7 @@ Set-ADServiceAccount [-Identity] ITFarm1 -PrincipalsAllowedToRetrieveManagedPass
 
 请打开 Windows PowerShell 的 Active Directory 模块，并通过使用 Set-ADServiceAccount cmdlet 设置任何属性。
 
-有关如何设置这些属性的详细信息，请参阅 TechNet 库中的 [Set-ADServiceAccount](https://technet.microsoft.com/library/ee617252.aspx) 或通过在 Windows PowerShell 的 Active Directory 模块的命令提示符下输入 **Get-Help Set-ADServiceAccount** 并按 ENTER 来查看。
+有关如何设置这些属性的详细信息，请参阅 TechNet 库中的 [Set-ADServiceAccount](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617252(v=technet.10)) 或通过在 Windows PowerShell 的 Active Directory 模块的命令提示符下输入 **Get-Help Set-ADServiceAccount** 并按 ENTER 来查看。
 
 ## <a name="decommissioning-member-hosts-from-an-existing-server-farm"></a><a name="BKMK_DecommMemberHosts"></a>从现有服务器场解除成员主机的授权
 必须至少具有“域管理员”**** 中的成员身份或能够将成员从安全组对象删除才能完成这些过程。
@@ -281,15 +281,15 @@ Set-ADServiceAccount [-Identity] ITFarm1 -PrincipalsAllowedToRetrieveManagedPass
 
 -   方法 1：Active Directory 用户和计算机
 
-    有关如何使用此方法的过程，请参阅使用 Windows 界面 [删除计算机帐户](https://technet.microsoft.com/library/cc754624.aspx) 以及 [在 Active Directory 管理中心内管理不同域](manage-different-domains-in-active-directory-administrative-center.md)。
+    有关如何使用此方法的过程，请参阅使用 Windows 界面 [删除计算机帐户](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754624(v=ws.11)) 以及 [在 Active Directory 管理中心内管理不同域](manage-different-domains-in-active-directory-administrative-center.md)。
 
 -   方法 2：drsm
 
-    有关如何使用此方法的过程，请参阅使用命令行 [删除计算机帐户](https://technet.microsoft.com/library/cc754624.aspx) 。
+    有关如何使用此方法的过程，请参阅使用命令行 [删除计算机帐户](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754624(v=ws.11)) 。
 
 -   方法 3：Windows PowerShell Active Directory cmdlet Remove-ADPrincipalGroupMembership
 
-    有关如何执行此操作的详细信息，请参阅 TechNet 库中的  [Remove-ADPrincipalGroupMembership](https://technet.microsoft.com/library/ee617243.aspx) 或通过在 Windows PowerShell 的 Active Directory 模块的命令提示符下输入 **Get-Help Remove-ADPrincipalGroupMembership** 并按 ENTER 来查看。
+    有关如何执行此操作的详细信息，请参阅 TechNet 库中的  [Remove-ADPrincipalGroupMembership](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617243(v=technet.10)) 或通过在 Windows PowerShell 的 Active Directory 模块的命令提示符下输入 **Get-Help Remove-ADPrincipalGroupMembership** 并按 ENTER 来查看。
 
 如果列出计算机帐户，请检索现有帐户，然后添加除已删除计算机帐户以外的所有帐户。
 
@@ -345,7 +345,7 @@ Set-ADServiceAccount [-Identity] ITFarm1 -PrincipalsAllowedToRetrieveManagedPass
     Uninstall-ADServiceAccount ITFarm1
     ```
 
-有关 Uninstall-ADServiceAccount cmdlet 的详细信息，可通过在 Windows PowerShell 的 Active Directory 模块的命令提示符下输入 **Get-Help Uninstall-ADServiceAccount**并按 ENTER 进行查看，或者参阅 TechNet Web 上的 [Uninstall-ADServiceAccount](https://technet.microsoft.com/library/ee617202.aspx)信息。
+有关 Uninstall-ADServiceAccount cmdlet 的详细信息，可通过在 Windows PowerShell 的 Active Directory 模块的命令提示符下输入 **Get-Help Uninstall-ADServiceAccount**并按 ENTER 进行查看，或者参阅 TechNet Web 上的 [Uninstall-ADServiceAccount](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617202(v=technet.10))信息。
 
 
 

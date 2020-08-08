@@ -2,18 +2,16 @@
 title: 部署带有 OTP 身份验证的远程访问
 description: 本主题是指南使用 Windows Server 2016 中的 "使用 OTP 身份验证部署远程访问" 指南的一部分。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d1b38f753e2e4d8333299c369042a72e0dc3a6e6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8cc47a3a94425b4f77e5ed430cffe86429bf9b23
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182003"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991286"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>部署带有 OTP 身份验证的远程访问
 
@@ -35,7 +33,7 @@ ms.locfileid: "87182003"
 
 -   必须部署公钥基础结构。
 
-    有关详细信息，请参阅： [测试实验室指南微型模块：用于 Windows Server 2012 的基本 PKI。](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+    有关详细信息，请参阅： [测试实验室指南微型模块：用于 Windows Server 2012 的基本 PKI。](/answers/topics/windows-server-2012.html)
 
 -   不支持在 DirectAccess 管理控制台或 Windows PowerShell cmdlet 之外更改策略。
 
@@ -48,7 +46,7 @@ OTP 身份验证方案包含许多步骤：
 
 3.  [配置具有 OTP 身份验证的 DirectAccess](/configure/Configure-RA-with-OTP-Authentication.md)。 OTP 部署包含多个配置步骤，包括准备用于 OTP 身份验证的基础结构，配置 OTP 服务器，在远程访问服务器上配置 OTP 设置，以及更新 DirectAccess 客户端设置。
 
-4.  [对 OTP 部署进行故障排除]((/troubleshoot/Troubleshoot-an-OTP-Deployment.md). 此故障排除部分介绍了使用 OTP 身份验证部署远程访问时可能出现的一些最常见的错误。
+4.  [对 OTP 部署进行故障排除] ( # A1/故障排除/故障排除--OTP) 。 此故障排除部分介绍了使用 OTP 身份验证部署远程访问时可能出现的一些最常见的错误。
 
 ## <a name="practical-applications"></a><a name="BKMK_APP"></a>实际的应用程序
 提高安全性-使用 OTP 增加了 DirectAccess 部署的安全性。 用户需要 OTP 凭据才能访问内部网络。 用户通过 Windows 10 或 Windows 8 客户端计算机上的网络连接中可用的工作区连接提供 OTP 凭据，或通过使用 \( \) 运行 Windows 7 的客户端计算机上的 DirectAccess 连接助手 DCA 提供 OTP 凭据。 OTP 身份验证过程包括以下步骤：
@@ -129,4 +127,3 @@ OTP 身份验证方案包含许多步骤：
         -   HKEY \_ 本地 \_ 计算机 \\ 软件 \\ Microsoft \\ DirectAccess \\ OTP \\ RadiusProbePass
 
 -   如果更改已配置且正在运行的 DirectAccess 部署中的 IPsec 根证书，OTP 将停止工作。 若要解决此问题，请在每个 DirectAccess 服务器上的 Windows PowerShell 提示符下运行以下命令：`iisreset`
-

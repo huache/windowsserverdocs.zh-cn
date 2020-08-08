@@ -1,32 +1,30 @@
 ---
 title: 安全支持提供程序接口体系结构
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: de09e099-5711-48f8-adbd-e7b8093a0336
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 2faf67f71d5bb04e23f034e738b64c62a7df4f05
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 636723dafc6ddc8e346a7272978a1abf9338baad
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475244"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991461"
 ---
 # <a name="security-support-provider-interface-architecture"></a>安全支持提供程序接口体系结构
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
-本参考主题面向 IT 专业人员，介绍了在安全支持提供程序接口（SSPI）体系结构中使用的 Windows 身份验证协议。
+本参考主题面向 IT 专业人员，介绍了在安全支持提供程序界面内使用的 Windows 身份验证协议， (SSPI) 体系结构。
 
-Microsoft 安全支持提供程序接口（SSPI）是 Windows 身份验证的基础。 要求身份验证的应用程序和基础结构服务会使用 SSPI 提供它。
+Microsoft 安全支持提供程序接口 (SSPI) 是 Windows 身份验证的基础。 要求身份验证的应用程序和基础结构服务会使用 SSPI 提供它。
 
-SSPI 是 Windows Server 操作系统中通用安全服务 API （GSSAPI）的实现。 有关 GSSAPI 的详细信息，请参阅 IETF RFC 数据库中的 RFC 2743 和 RFC 2744。
+SSPI 是通用安全服务 API 在 Windows Server 操作系统中 (GSSAPI) 的实现。 有关 GSSAPI 的详细信息，请参阅 IETF RFC 数据库中的 RFC 2743 和 RFC 2744。
 
-在 Windows 中调用特定身份验证协议的默认安全支持提供程序（Ssp）作为 Dll 合并到 SSPI。 以下各节介绍了这些默认的 Ssp。 如果可以对 SSPI 进行操作，则可以合并其他 Ssp。
+调用 Windows 中特定身份验证协议 (Ssp) 的默认安全支持提供程序将作为 Dll 合并到 SSPI。 以下各节介绍了这些默认的 Ssp。 如果可以对 SSPI 进行操作，则可以合并其他 Ssp。
 
 如下图所示，Windows 中的 SSPI 提供一种机制，该机制通过客户端计算机和服务器之间的现有通信通道携带身份验证令牌。 当需要对两台计算机或设备进行身份验证，以便它们能够安全地通信时，针对身份验证的请求会路由到 SSPI，后者完成身份验证过程，而不考虑当前使用的网络协议。 SSPI 返回透明的二进制大型对象。 它们在应用程序之间传递，在这种情况下，它们可以传递到 SSPI 层。 因此，SSPI 允许应用程序使用计算机或网络上可用的各种安全模型，而无需更改安全系统的接口。
 
@@ -59,7 +57,7 @@ SSPI 是 Windows Server 操作系统中通用安全服务 API （GSSAPI）的实
 
 由于从 Windows 2000 开始，Kerberos 协议是默认的身份验证协议，因此所有域服务都支持 Kerberos SSP。 这些服务包括：
 
--   使用轻型目录访问协议（LDAP） Active Directory 查询
+-   Active Directory 使用轻型目录访问协议 (LDAP 的查询) 
 
 -   使用远程过程调用服务的远程服务器或工作站管理
 
@@ -67,13 +65,13 @@ SSPI 是 Windows Server 操作系统中通用安全服务 API （GSSAPI）的实
 
 -   客户端-服务器身份验证
 
--   使用服务器消息块（SMB）协议（也称为通用 Internet 文件系统或 CIFS）的远程文件访问
+-   使用服务器消息块 (SMB) 协议的远程文件访问 (也称为通用 Internet 文件系统或 CIFS) 
 
 -   分布式文件系统管理和引用
 
--   Intranet 到 Internet Information Services 的身份验证（IIS）
+-   Internet Information Services (IIS 的 Intranet 身份验证) 
 
--   Internet 协议安全（IPsec）的安全机构身份验证
+-   Internet 协议安全 (IPsec) 的安全机构身份验证
 
 -   用于域用户和计算机 Active Directory 证书服务的证书请求
 
@@ -83,22 +81,22 @@ SSPI 是 Windows Server 操作系统中通用安全服务 API （GSSAPI）的实
 
 **Kerberos 协议和 Kerberos SSP 的其他资源**
 
--   [Microsoft Kerberos （Windows）](https://msdn.microsoft.com/library/aa378747(VS.85).aspx)
+-   [Microsoft Kerberos (Windows) ](/windows/win32/secauthn/microsoft-kerberos)
 
 -   [\[KILE \] ： Kerberos 协议扩展](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
 
 -   [\[MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
 
--   [Kerberos SSP/AP （Windows）](https://msdn.microsoft.com/library/aa377942(VS.85).aspx)
+-   [Kerberos SSP/AP (Windows) ](/windows/win32/secauthn/kerberos-ssp-ap)
 
--   适用于 Windows Vista 的[Kerberos 增强功能](https://technet.microsoft.com/library/cc749438(v=ws.10).aspx)
+-   适用于 Windows Vista 的[Kerberos 增强功能](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10))
 
--   适用于 Windows 7 的[Kerberos 身份验证的更改](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx)
+-   适用于 Windows 7 的[Kerberos 身份验证的更改](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560670(v=ws.10))
 
--   [Kerberos 身份验证技术参考](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx)
+-   [Kerberos 身份验证技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc739058(v=ws.10))
 
 ### <a name="ntlm-security-support-provider"></a><a name="BKMK_NTLMSSP"></a>NTLM 安全支持提供程序
-NTLM 安全支持提供程序（NTLM SSP）是安全支持提供程序接口（SSPI）使用的一种二进制消息传递协议，可用于实现 NTLM 质询-响应身份验证以及协商完整性和机密性选项。 如果使用 SSPI 身份验证，则使用 NTLM，其中包括服务器消息块或 CIFS 身份验证、HTTP 协商身份验证（例如 Internet Web 身份验证）和远程过程调用服务。 NTLM SSP 包括 NTLM 和 NTLM 版本2（NTLMv2）身份验证协议。
+Ntlm 安全支持提供程序 (NTLM SSP) 是安全支持提供程序接口使用的二进制消息传递协议 (SSPI) ，以允许 NTLM 质询响应身份验证，并协商完整性和机密性选项。 如果使用 SSPI 身份验证，则使用 NTLM，其中包括服务器消息块或 CIFS 身份验证、HTTP 协商身份验证 (例如，Internet Web Authentication) 和远程过程调用服务。 NTLM SSP 包含 NTLM 和 NTLM 版本 2 (NTLMv2) 身份验证协议。
 
 受支持的 Windows 操作系统可将 NTLM SSP 用于以下内容：
 
@@ -106,7 +104,7 @@ NTLM 安全支持提供程序（NTLM SSP）是安全支持提供程序接口（S
 
 -   打印服务
 
--   使用 CIFS （SMB）进行文件访问
+-   使用 CIFS (SMB) 进行文件访问
 
 -   安全远程过程调用服务或 DCOM 服务
 
@@ -116,20 +114,20 @@ NTLM 安全支持提供程序（NTLM SSP）是安全支持提供程序接口（S
 
 **NTLM 协议和 NTLM SSP 的其他资源**
 
--   [MSV1_0 身份验证包（Windows）](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
+-   [Windows) 的 MSV1_0 身份验证包 (](/windows/win32/secauthn/msv1-0-authentication-package)
 
--   Windows 7 中[NTLM 身份验证的更改](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx)
+-   Windows 7 中[NTLM 身份验证的更改](/previous-versions/windows/it-pro/windows-7/dd566199(v=ws.10))
 
--   [Microsoft NTLM (Windows)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)
+-   [Microsoft NTLM (Windows)](/windows/win32/secauthn/microsoft-ntlm)
 
--   [审核和限制 NTLM 使用指南](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
+-   [审核和限制 NTLM 使用指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/jj865674(v=ws.10))
 
 ### <a name="digest-security-support-provider"></a><a name="BKMK_DigestSSP"></a>摘要式安全支持提供程序
-摘要式身份验证是一种行业标准，用于轻型目录访问协议（LDAP）和 web 身份验证。 摘要式身份验证通过网络以 MD5 哈希或消息摘要形式传输凭据。
+摘要式身份验证是一种行业标准，用于轻型目录访问协议 (LDAP) 和 web 身份验证。 摘要式身份验证通过网络以 MD5 哈希或消息摘要形式传输凭据。
 
-摘要式 SSP （Wdigest.dll）用于以下内容：
+摘要式 SSP ( # A0) 用于以下内容：
 
--   Internet Explorer 和 Internet Information Services （IIS）访问
+-   Internet Explorer 和 Internet Information Services (IIS) 访问
 
 -   LDAP 查询
 
@@ -139,26 +137,26 @@ NTLM 安全支持提供程序（NTLM SSP）是安全支持提供程序接口（S
 
 **摘要式协议和摘要 SSP 的其他资源**
 
--   [Microsoft Digest 身份验证（Windows）](https://msdn.microsoft.com/library/aa378745(VS.85).aspx)
+-   [ (Windows) Microsoft Digest 身份验证](/windows/win32/secauthn/microsoft-digest-ssp)
 
 -   [\[DPSP \] ：摘要式协议扩展](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
 ### <a name="schannel-security-support-provider"></a><a name="BKMK_SchannelSSP"></a>Schannel 安全支持提供程序
-安全通道（Schannel）用于基于 web 的服务器身份验证，例如，当用户尝试访问安全 web 服务器时。
+安全通道 (Schannel) 用于基于 web 的服务器身份验证，例如，当用户尝试访问安全 web 服务器时。
 
-TLS 协议、SSL 协议、专用通信技术（PCT）协议和数据报传输层（DTLS）协议基于公钥加密。 Schannel 提供所有这些协议。 所有 Schannel 协议均使用客户端/服务器模型。 Schannel SSP 使用公钥证书验证参与方。 对参与方进行身份验证时，Schannel SSP 按以下优先顺序选择协议：
+TLS 协议、SSL 协议、专用通信技术 (PCT) 协议、数据报传输层 (DTLS) 协议基于公钥加密。 Schannel 提供所有这些协议。 所有 Schannel 协议均使用客户端/服务器模型。 Schannel SSP 使用公钥证书验证参与方。 对参与方进行身份验证时，Schannel SSP 按以下优先顺序选择协议：
 
--   传输层安全性（TLS）版本1。0
+-   传输层安全性 (TLS) 版本1。0
 
--   传输层安全性（TLS）版本1。1
+-   传输层安全性 (TLS) 版本1。1
 
--   传输层安全性（TLS）版本1。2
+-   传输层安全性 (TLS) 版本1。2
 
--   安全套接字层（SSL）版本2。0
+-   安全套接字层 (SSL) 版本2。0
 
--   安全套接字层（SSL）版本3。0
+-   安全套接字层 (SSL) 版本3。0
 
--   专用通信技术（百分比）
+-   专用通信技术 (PCT) 
 
     **注意**默认情况下，PCT 处于禁用状态。
 
@@ -175,14 +173,14 @@ TLS 协议、SSL 协议、专用通信技术（PCT）协议和数据报传输层
 
 **TLS 和 SSL 协议以及 Schannel SSP 的其他资源**
 
--   [安全通道（Windows）](https://msdn.microsoft.com/library/aa380123(VS.85).aspx)
+-   [安全通道 (Windows) ](/windows/win32/secauthn/secure-channel)
 
--   [TLS/SSL 技术参考](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)
+-   [TLS/SSL 技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc784149(v=ws.10))
 
--   [\[TLSP \] ：传输层安全性（TLS）配置文件](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
+-   [\[TLSP \] ： (TLS) 配置文件的传输层安全性](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
 ### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>协商安全支持提供程序
-简单且受保护的 GSS-API 协商机制（SPNEGO）构成协商 SSP 的基础，whichcan 用于协商特定身份验证协议。 当某个应用程序调入 SSPI 以登录到网络时，该应用程序可以指定一个 SSP 来处理请求。 如果应用程序指定 Negotiate SSP，则它会分析请求，并根据客户配置的安全策略选择相应的提供程序来处理请求。
+简单且受保护的 GSS-API 协商机制 (SPNEGO) 构成协商 SSP 的基础，whichcan 用于协商特定身份验证协议。 当某个应用程序调入 SSPI 以登录到网络时，该应用程序可以指定一个 SSP 来处理请求。 如果应用程序指定 Negotiate SSP，则它会分析请求，并根据客户配置的安全策略选择相应的提供程序来处理请求。
 
 RFC 2478 中指定了 SPNEGO。
 
@@ -194,14 +192,14 @@ RFC 2478 中指定了 SPNEGO。
 
 **用于协商 SSP 的其他资源**
 
--   [Microsoft Negotiate （Windows）](https://msdn.microsoft.com/library/aa378748(VS.85).aspx)
+-   [Microsoft 协商 (Windows) ](/windows/win32/secauthn/microsoft-negotiate)
 
--   [\[SPNG \] ：简单且受保护的 GSS-API 协商机制（SPNEGO）扩展](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
+-   [\[SPNG \] ：简单且受保护的 GSS-API 协商机制 (SPNEGO) 扩展](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
 
 -   [\[N2HT \] ：协商和 NEGO2 HTTP 身份验证协议规范](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
 
 ### <a name="credential-security-support-provider"></a><a name="BKMK_CredSSP"></a>凭据安全支持提供程序
-凭据安全服务提供程序（CredSSP）提供启动新终端服务和远程桌面服务会话时的单一登录（SSO）用户体验。 使用 CredSSP，应用程序可以根据客户端的策略，将用户的凭据从客户端计算机（通过使用客户端 SSP）委托给目标服务器（通过服务器端 SSP）。 CredSSP 策略通过使用组策略进行配置，并且默认情况下禁用凭据的委派。
+凭据安全服务提供程序 (CredSSP) 提供单一登录 (SSO) 用户在启动新终端服务和远程桌面服务会话时的体验。 CredSSP 使应用程序可以使用客户端 SSP) 通过服务器端 SSP)  (基于客户端策略的目标服务器，将用户的凭据从客户端计算机委托 (。 CredSSP 策略通过使用组策略进行配置，并且默认情况下禁用凭据的委派。
 
 位置：% windir% \Windows\System32\credssp.dll
 
@@ -209,12 +207,12 @@ RFC 2478 中指定了 SPNEGO。
 
 **凭据 SSP 的其他资源**
 
--   [\[CSSP \] ：凭据安全支持提供程序（CredSSP）协议规范](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
+-   [\[CSSP \] ：凭据安全支持提供程序 (CredSSP) 协议规范](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
 
--   [用于终端服务登录的凭据安全服务提供程序和 SSO](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
+-   [用于终端服务登录的凭据安全服务提供程序和 SSO](/previous-versions/windows/it-pro/windows-vista/cc749211(v=ws.10))
 
 ### <a name="negotiate-extensions-security-support-provider"></a><a name="BKMK_NegoExtsSSP"></a>协商扩展安全支持提供程序
-协商扩展（NegoExts）是一种身份验证包，用于协商由 Microsoft 和其他软件公司实施的应用程序和方案所使用的 Ssp （NTLM 或 Kerberos 协议除外）。
+ (NegoExts) 的协商扩展是一种身份验证包，用于协商由 Microsoft 和其他软件公司实施的应用程序和方案使用的 Ssp （NTLM 或 Kerberos 协议除外）。
 
 协商包的这一扩展允许以下方案：
 
@@ -226,7 +224,7 @@ RFC 2478 中指定了 SPNEGO。
 
 -   **客户端计算机和服务器之间的丰富客户端可用性。** 使用操作系统的网络和身份验证组件。
 
-Windows 协商包与 NegoExts SSP 的处理方式与 Kerberos 和 NTLM 的处理方式相同。 在启动时，NegoExts.dll 会加载到本地系统机构（LSA）中。 当收到基于请求源的身份验证请求时，NegoExts 会在支持的 Ssp 之间进行协商。 它将收集凭据和策略，对其进行加密，并将该信息发送到创建安全令牌的相应 SSP。
+Windows 协商包与 NegoExts SSP 的处理方式与 Kerberos 和 NTLM 的处理方式相同。 在启动时，将 NegoExts.dll 加载到本地系统机构 (LSA) 。 当收到基于请求源的身份验证请求时，NegoExts 会在支持的 Ssp 之间进行协商。 它将收集凭据和策略，对其进行加密，并将该信息发送到创建安全令牌的相应 SSP。
 
 NegoExts 支持的 Ssp 不是独立的 Ssp，如 Kerberos 和 NTLM。 因此，在 NegoExts SSP 内，如果出于任何原因而导致身份验证方法失败，则将显示或记录身份验证失败消息。 不能重新协商或回退身份验证方法。
 
@@ -243,7 +241,7 @@ Windows 7 和 Windows Server 2008 R2 中引入了 PKU2U 协议，并将其作为
 
 **PKU2U 协议和 PKU2U SSP 的其他资源**
 
--   [联机标识集成简介](https://technet.microsoft.com/library/dd560662(v=ws.10).aspx)
+-   [联机标识集成简介](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560662(v=ws.10))
 
 ## <a name="security-support-provider-selection"></a><a name="BKMK_SecuritySupportProviderSelection"></a>安全支持提供程序选择
 Windows SSPI 可以使用通过安装的安全支持提供程序支持的任何协议。 但是，由于并非所有操作系统都支持与运行 Windows Server 的任何给定计算机相同的 SSP 包，因此，客户端和服务器必须协商使用两者都支持的协议。 Windows Server 倾向于客户端计算机和应用程序使用 Kerberos 协议，这是一种基于标准的强大协议，但操作系统继续允许不支持 Kerberos 协议进行身份验证的客户端计算机和客户端应用程序。
@@ -266,7 +264,7 @@ Windows SSPI 可以使用通过安装的安全支持提供程序支持的任何�
 3.  客户端计算机检查回复的内容并检查以确定它是否支持指定的协议。 如果客户端计算机确实支持指定的协议，则会继续进行身份验证。 如果客户端计算机不支持协议，则身份验证将失败，无论客户端计算机是否有权访问该资源。
 
 ### <a name="negotiate-option"></a><a name="BKMK_Negotiate"></a>Negotiate 选项
-Negotiate 选项可用于允许客户端和服务器尝试查找可接受的协议。 这基于简单且受保护的 GSS-API 协商机制（SPNEGO）。 使用协商身份验证协议的选项开始身份验证时，SPNEGO 交换的发生方式如下：
+Negotiate 选项可用于允许客户端和服务器尝试查找可接受的协议。 这基于简单且受保护的 GSS-API 协商机制 (SPNEGO) 。 使用协商身份验证协议的选项开始身份验证时，SPNEGO 交换的发生方式如下：
 
 1.  客户端计算机请求对服务的访问权限。
 
@@ -281,6 +279,4 @@ Negotiate 选项可用于允许客户端和服务器尝试查找可接受的协�
     -   如果客户端计算机不支持任何列出的协议，则身份验证交换会失败。
 
 ## <a name="additional-references"></a>其他参考
-[Windows 身份验证体系结构](https://technet.microsoft.com/library/dn169024(v=ws.10).aspx)
-
-
+[Windows 身份验证体系结构](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169024(v=ws.10))

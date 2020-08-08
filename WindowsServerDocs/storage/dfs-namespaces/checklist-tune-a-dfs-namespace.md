@@ -2,24 +2,22 @@
 title: 清单：调整 DFS 命名空间
 description: 本文介绍如何优化 DFS 命名空间处理引用和轮询 AD DS 以获得更新的命名空间数据的方式
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 67e272657c23926adbbf9f0db5174d00f4852137
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9e5759579b86c2ed7721a31aada5ddaa345fc256
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961749"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957685"
 ---
 # <a name="checklist-tune-a-dfs-namespace"></a>清单：调整 DFS 命名空间
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
-创建命名空间并添加文件夹和目标之后，请使用以下清单来优化或优化 DFS 命名空间处理 Active Directory 域服务（AD DS）更新的命名空间数据的引用和轮询的方式。
+创建命名空间并添加文件夹和目标后，请使用以下清单来优化或优化 DFS 命名空间处理引用和轮询的方式，Active Directory 域服务 (AD DS) 获取更新的命名空间数据。
 
 -   阻止用户查看命名空间中他们无权访问的文件夹。 [在命名空间上启用基于访问权限的枚举](enable-access-based-enumeration-on-a-namespace.md)
 -   允许或阻止用户在访问命名空间中的文件夹时被引用到该命名空间或文件夹目标。 [启用或禁用引用和客户端故障回复](enable-or-disable-referrals-and-client-failback.md)

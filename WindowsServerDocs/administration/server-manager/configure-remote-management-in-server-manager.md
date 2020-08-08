@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0d2369bd42fc884b1a401fc1450dbe9d1e47663
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0a39eaaff5497ee85cb823907cd8b57f1888dd08
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895803"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991881"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>在服务器管理器中配置远程管理
 
@@ -153,7 +153,7 @@ ms.locfileid: "87895803"
 
 ### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>在无人参与安装期间使用应答文件禁用远程管理的步骤
 
-1.  使用 Windows 系统映像管理器 (Windows SIM) 为 Windows Server 2016 安装创建无人参与安装答案文件。 有关如何创建应答文件和使用 Windows SIM 的详细信息，请参阅[什么是 Windows 系统映像管理器？](https://technet.microsoft.com/library/cc766347.aspx)和[循序渐进：适用于 IT 专业人士的 Windows 基本部署](https://technet.microsoft.com/library/dd349348.aspx)。
+1.  使用 Windows 系统映像管理器 (Windows SIM) 为 Windows Server 2016 安装创建无人参与安装答案文件。 有关如何创建应答文件和使用 Windows SIM 的详细信息，请参阅[什么是 Windows 系统映像管理器？](/previous-versions/windows/it-pro/windows-vista/cc766347(v=ws.10))和[循序渐进：适用于 IT 专业人士的 Windows 基本部署](/previous-versions/windows/it-pro/windows-7/dd349348(v=ws.10))。
 
 2.  在答案文件中，找到 " **Microsoft-Windows-Web-Services-for-Management-Core\EnableServerremoteManagement**" 设置。
 
@@ -183,8 +183,5 @@ ms.locfileid: "87895803"
 
 ## <a name="see-also"></a>另请参阅
 [将服务器添加到服务器管理器](add-servers-to-server-manager.md) 
-[Windows PowerShell： Windows Server 技术中心](https://technet.microsoft.com/library/dd347642.aspx) 
+[Windows PowerShell： Windows Server 技术中心](/previous-versions/dd347642(v=technet.10)) 
  上的 about_remote_Troubleshooting[用户帐户控制的说明](https://support.microsoft.com/kb/951016)
-
-
-

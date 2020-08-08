@@ -1,17 +1,15 @@
 ---
 title: 调整故障转移基线网络阈值
 description: 本文介绍了用于调整故障转移群集网络阈值的解决方案。
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 86a7023f6480e68f917cb8cdd9d0c69c417d3145
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 9f28aa9c10fe64e0b86a405c1feb480396bcb76b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409788"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965804"
 ---
 # <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>使用 SQL AlwaysOn 的 IaaS - 调整故障转移群集网络阈值
 
@@ -19,11 +17,11 @@ ms.locfileid: "87409788"
 
 ## <a name="symptom"></a>症状
 
-当在 IaaS 中运行 SQL Server AlwaysOn 的 Windows 故障转移群集节点时，建议将群集设置更改为更宽松的监视状态。 现成的群集设置具有限制性，并可能导致不必要的中断。 默认设置适用于高度优化的本地网络，并不考虑多租户环境（如 Windows Azure （IaaS））导致的延迟。
+当在 IaaS 中运行 SQL Server AlwaysOn 的 Windows 故障转移群集节点时，建议将群集设置更改为更宽松的监视状态。 现成的群集设置具有限制性，并可能导致不必要的中断。 默认设置用于高度优化的本地网络，并且不考虑多租户环境（如 Windows Azure (IaaS) ）导致的延迟。
 
 Windows Server 故障转移群集不断监视 Windows 群集中节点的网络连接和运行状况。  如果某个节点不可通过网络访问，则执行恢复操作进行恢复，并使应用程序和在线服务进入群集中的另一个节点上。 群集节点之间的通信延迟可能导致以下错误：
 
-> 错误1135（系统事件日志）
+> 错误 1135 (系统事件日志) 
 
 从活动故障转移群集成员身份中删除了群集节点节点**1** 。 此节点上的群集服务可能已停止。 这也可能是由于节点与故障转移群集中的其他活动节点失去了通信。 运行验证配置向导检查您的网络配置。 如果此情况仍然存在，请检查与此节点上的网络适配器相关的硬件或软件错误。 还要检查节点连接到的任何其他网络组件（如集线器、交换机或网桥）中是否存在故障。
 
@@ -75,7 +73,7 @@ Cluster .log 示例：
 
 **阈值**–此值定义在群集采取恢复操作之前丢失的检测信号数。  阈值为多个检测信号。  在同一群集中，同一子网上的节点与不同子网中的节点之间可能存在不同的阈值。
 
-默认情况下，Windows Server 2016 将**SameSubnetThreshold**设置为10，将**SameSubnetDelay**设置为1000毫秒。 例如，如果连接监视失败10秒，则达到故障转移阈值会导致无法访问从群集成员身份中删除的节点。 这会导致将资源移到群集上的另一个可用节点。 将报告群集错误，包括群集错误1135（以上）。
+默认情况下，Windows Server 2016 将**SameSubnetThreshold**设置为10，将**SameSubnetDelay**设置为1000毫秒。 例如，如果连接监视失败10秒，则达到故障转移阈值会导致无法访问从群集成员身份中删除的节点。 这会导致将资源移到群集上的另一个可用节点。 将报告群集错误，其中) 报告了上述群集错误 1135 (。
 
 ## <a name="resolution"></a>解决方法
 
@@ -91,7 +89,7 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 每个支持 OS 的默认值、最小值、最大值和推荐值
 
-| 说明 | (OS) | Min | Max | 默认 | 建议 |
+| 描述 | (OS) | Min | Max | 默认值 | 建议 |
 |--|--|--|--|--|--|
 | CrossSubnetThreshold | 2008 R2 | 3 | 20 | 5 | 20 |
 | CrossSubnet 阈值 | 2012 | 3 | 120 | 5 | 20 |
@@ -108,7 +106,7 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 **阈值**定义在群集采取恢复操作之前丢失的检测信号数。  阈值为多个检测信号。  在同一群集中，同一子网中的节点与不同子网中的节点之间可能存在不同的阈值。
 
-## <a name="recommendations-for-changing-to-more-relaxed-settings-for-multi-tenant-environments-like-azure-iaas"></a>针对多租户环境（例如 Azure （IaaS））更改为更宽松设置的建议
+## <a name="recommendations-for-changing-to-more-relaxed-settings-for-multi-tenant-environments-like-azure-iaas"></a>针对多租户环境（例如 Azure (IaaS）更改为更宽松设置的建议) 
 
 > [!NOTE]
 > 通过调整群集网络配置设置，提高群集环境的复原能力会导致停机时间增加。 有关详细信息，请参阅[优化故障转移群集网络阈值](https://techcommunity.microsoft.com/t5/failover-clustering/tuning-failover-cluster-network-thresholds/ba-p/371834)。

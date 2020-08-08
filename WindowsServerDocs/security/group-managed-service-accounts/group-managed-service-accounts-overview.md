@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 51b9b0d7b912cfc2fbf123cf4c666f8653dc86a1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 09405b940e9fd862372fe80c4a5194caa205e5ea
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971454"
+ms.locfileid: "87991503"
 ---
 # <a name="group-managed-service-accounts-overview"></a>Group Managed Service Accounts Overview
 
@@ -42,7 +42,7 @@ Gmsa 为服务器场或网络负载均衡器后面的系统上运行的服务提
 托管服务帐户依赖 Kerberos 支持的加密类型。在客户端计算机使用 Kerberos 在服务器中进行身份验证时，DC 将创建使用 DC 和服务器同时支持的加密保护的 Kerberos 服务票证。 DC 使用帐户的 "Msds-supportedencryptiontypes" \- 属性来确定服务器支持的加密，如果没有属性，则假定客户端计算机不支持更强的加密类型。 如果主机配置为不支持 RC4，则身份验证将始终失败。 出于此原因，应该始终显式针对 MSA 配置 AES。
 
 > [!NOTE]
-> 从 Windows Server 2008 R2 开始，默认情况下禁用 DES。 有关支持的加密类型的详细信息，请参阅 [Kerberos 身份验证中的变化](https://technet.microsoft.com/library/dd560670(WS.10).aspx)。
+> 从 Windows Server 2008 R2 开始，默认情况下禁用 DES。 有关支持的加密类型的详细信息，请参阅 [Kerberos 身份验证中的变化](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560670(v=ws.10))。
 
 Gmsa 不适用于 Windows Server 2012 之前的 Windows 操作系统。
 
@@ -54,14 +54,12 @@ Gmsa 不适用于 Windows Server 2012 之前的 Windows 操作系统。
 
 |内容类型|参考|
 |--------|-------|
-|**产品评估**|[What's New for Managed Service Accounts](what-s-new-for-managed-service-accounts.md)<p>[Windows 7 和 Windows Server 2008 R2 的托管服务帐户文档](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx)<p>[服务帐户分步 \- \- 指南](https://technet.microsoft.com/library/dd548356(v=ws.10).aspx)|
+|**产品评估**|[What's New for Managed Service Accounts](what-s-new-for-managed-service-accounts.md)<p>[Windows 7 和 Windows Server 2008 R2 的托管服务帐户文档](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641731(v=ws.10))<p>[服务帐户分步 \- \- 指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10))|
 |规划|目前不可用|
 |**部署**|目前不可用|
-|**操作**|[Active Directory 中的托管服务帐户](https://technet.microsoft.com/library/dd378925(v=ws.10).aspx)|
+|**操作**|[Active Directory 中的托管服务帐户](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378925(v=ws.10))|
 |**故障排除**|目前不可用|
 |**Evaluation**|[与组托管服务帐户入门](getting-started-with-group-managed-service-accounts.md)|
-|**工具和设置**|[Active Directory 域服务中的托管服务帐户](https://technet.microsoft.com/library/dd378925(v=WS.10).aspx)|
-|**社区资源**|[托管服务帐户：了解、实现、最佳做法和故障排除](https://blogs.technet.com/b/askds/archive/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)|
+|**工具和设置**|[Active Directory 域服务中的托管服务帐户](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378925(v=ws.10))|
+|**社区资源**|[托管服务帐户：了解、实现、最佳做法和故障排除](/archive/blogs/askds/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting)|
 |**相关技术**|[Active Directory 域服务概述](active-directory-domain-services-overview.md)|
-
-

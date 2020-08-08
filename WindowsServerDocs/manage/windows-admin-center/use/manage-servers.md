@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 69f8f20aa9e1b222ff112f91df8d6b3d7767fc84
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 25edd2851638fec99b6afda0415fdf8e8c8f1699
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962381"
+ms.locfileid: "87997186"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>通过 Windows 管理中心管理服务器
 
@@ -411,7 +411,7 @@ PowerShell 支持以下功能：
 ### <a name="features"></a>功能
 
 - 查看和修改用户和系统环境变量
-- 查看用于监视警报的配置[Azure Monitor](azure-monitor.md)
+- 查看用于监视警报的配置[Azure Monitor](../azure/azure-monitor.md)
 - 查看和修改电源配置
 - 查看和修改远程桌面设置
 - 查看和修改基于角色的访问控制设置
@@ -436,7 +436,7 @@ PowerShell 支持以下功能：
 - 编辑卷属性
 - 删除卷
 - 安装配额管理
-- 管理文件服务器资源管理器配额[存储->创建/更新配额](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
+- 管理文件服务器资源管理器配额[存储->创建/更新配额](../../../storage/fsrm/quota-management.md)
 
 [**查看有关存储的反馈和建议的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BStorage%5D)
 
@@ -451,7 +451,7 @@ PowerShell 支持以下功能：
 ## <a name="storage-replica"></a>存储副本
 
 使用**存储副本**来管理服务器到服务器的存储复制。
-[了解有关存储副本的详细信息](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
+[了解有关存储副本的详细信息](../../../storage/storage-replica/server-to-server-storage-replication.md)
 
 ## <a name="system-insights"></a>系统见解
 
@@ -473,7 +473,7 @@ PowerShell 支持以下功能：
 - 查看更新历史记录的列表
 - 安装更新
 - 联机查看 Microsoft 更新中的更新
-- 管理[Azure 更新管理](https://docs.microsoft.com/azure/automation/automation-update-management)集成
+- 管理[Azure 更新管理](/azure/automation/automation-update-management)集成
 
 [**查看反馈和建议的更新功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BUpdates%5D)
 

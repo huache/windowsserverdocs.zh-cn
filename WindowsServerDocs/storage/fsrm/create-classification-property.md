@@ -2,18 +2,16 @@
 title: 创建分类属性
 description: 本文介绍用于为指定文件夹或卷中的文件分配值的分类属性。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f8e0ba45883385a2b2bf161b04f99f8077fdef28
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8a5d044ae78ad45b59fa4cb97694c15aad3c4bbe
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473754"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957494"
 ---
 # <a name="create-a-classification-property"></a>创建分类属性
 
@@ -21,7 +19,7 @@ ms.locfileid: "85473754"
 
 分类属性用于为指定文件夹或卷中的文件分配值。 有多种属性类型可选，具体取决于你的需求。 下表定义了可选的属性类型。
 
-|properties | 说明 |
+|属性 | 描述 |
 | --- | --- |
 | Yes/No | 布尔属性可设置为**是**或**否**。 分类过程中组合多个值或从文件内容中组合多个值时，**是**将覆盖**否**。 |
 | 日期和时间 | 简单的日期/时间属性。 分类过程中组合多个值或从文件内容中组合多个值时，冲突的值将阻止重新分类。 |
@@ -47,7 +45,7 @@ ms.locfileid: "85473754"
 
 5.  从**属性类型**下拉菜单的列表中选择属性类型。
 
-6.  单击" **确定**"。
+6.  单击“确定”。
 
 ## <a name="additional-references"></a>其他参考
 

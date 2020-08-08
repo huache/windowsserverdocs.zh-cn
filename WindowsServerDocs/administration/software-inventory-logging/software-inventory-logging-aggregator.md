@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 697ca5e27db6a937c31b4dad072eef19a6f3df06
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4f8e7743e51a5316df474ad97768cf01292db668
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895674"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991917"
 ---
 # <a name="software-inventory-logging-aggregator"></a>软件清单日志记录聚合器
 
@@ -178,7 +178,7 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 6.  在“选择帐户类型” **** 中，根据你的偏好选择“本地用户” **** 或“gMSA” ****。
 
-    选择本地用户帐户选项将创建本地用户，并具有自动生成的强密码。 此帐户将用于本地服务器上的所有 SIL 聚合器服务和任务操作。  如果聚合器是 Active Directory 域（Windows Server 2012 及更高版本）的一部分，则建议使用组托管服务帐户 (gMSA)。 有关 gMSA 的详细信息，请参阅： [组托管服务帐户概述](https://technet.microsoft.com/library/hh831782.aspx)
+    选择本地用户帐户选项将创建本地用户，并具有自动生成的强密码。 此帐户将用于本地服务器上的所有 SIL 聚合器服务和任务操作。  如果聚合器是 Active Directory 域（Windows Server 2012 及更高版本）的一部分，则建议使用组托管服务帐户 (gMSA)。 有关 gMSA 的详细信息，请参阅： [组托管服务帐户概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11))
 
     -   如果你打算从 SIL 聚合器运行一个单独服务器上的 SQL Server 数据库，则必须使用 gMSA 帐户选项。
 
@@ -233,11 +233,11 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 -   在 SIL 聚合器上：
 
-    -   `Start-SilAggregator`运行
+    -   运行 `Start-SilAggregator`
 
         这是必需的步骤，以便聚合器主动接收通过 HTTPS 从已（或将要）设置为要进行清点的服务器转发给它的数据。 请注意，即使你已首先将服务器设置为转发到此聚合器也没有问题，因为服务器将在本地缓存数据负载长达 30 天。 聚合器启动并运行后，所有缓存数据将一次转发到聚合器，并且所有数据都将进行处理。
 
-    -   `Add-SilVMHost`运行
+    -   运行 `Add-SilVMHost`
 
         示例： `add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
 
@@ -253,7 +253,7 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 -   在要清点的 Windows Server 上，以管理员身份打开 PowerShell 并运行以下命令：
 
-    -   `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`运行
+    -   运行 `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`
 
         -   这将告知 Windows Server 中的 SIL 在何处发送清单数据以及使用哪个证书进行身份验证。
 
@@ -265,11 +265,11 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
             > [!IMPORTANT]
             > 如果这些值不正确，或者如果证书未安装在正确的存储中（或无效），启动 SIL 日志记录时将无法转发到目标。 数据将在本地缓存长达 30 天。
 
-    -   `Start-SilLogging`运行
+    -   运行 `Start-SilLogging`
 
         这将启动 SIL 日志记录。 在每个小时内，SIL 会不定时地将其清单数据转发到使用 `–targeturi` 参数指定的聚合器。 首次转发的将是一个完整的数据集。 接下来，每次转发的都是 "检测信号"，只是标识未更改的数据。 如果对该数据集进行了任何更改，将转发另一个完整的数据集。
 
-    -   `Publish-SilData`运行
+    -   运行 `Publish-SilData`
 
         -   首次启用 SIL 日志记录时，此步骤为可选步骤。
 
@@ -397,7 +397,7 @@ SIL 同时适用于推送模式和拉取模式，而且由两个并行工作的�
 |上次发现主机的日期时间|聚合器上次通过 HTTPS 从此 Windows Server 物理主机中接收数据清单的日期和时间。<p>支持运行 Windows Server 和 HyperV 的物理主机启用 SIL 并通过 HTTPS 向 SIL 聚合器转发清单数据。|
 
 ## <a name="sil-aggregator-cmdlets-detail"></a>SIL 聚合器 Cmdlet 详细信息
-以下是 SIL 聚合器 cmdlet 的详细信息。 有关完整的 cmdlet 文档，请参阅：[SIL 聚合器 PowerShell cmdlet](https://technet.microsoft.com/library/mt548455.aspx)
+以下是 SIL 聚合器 cmdlet 的详细信息。 有关完整的 cmdlet 文档，请参阅：[SIL 聚合器 PowerShell cmdlet](/previous-versions/windows/powershell-scripting/mt548455(v=wps.640))
 
 ### <a name="publish-silreport"></a>Publish-SilReport
 
@@ -591,8 +591,7 @@ Copyright (c) 2010, RENCI</pre>
 
 ## <a name="see-also"></a>另请参阅
 [适用于 Windows Server 的软件清单日志记录聚合器 1.0](https://www.microsoft.com/download/details.aspx?id=49046)<br>
-[SIL 聚合器 PowerShell cmdlet](https://technet.microsoft.com/library/mt548455.aspx)<br>
-[SIL PowerShell cmdlet](https://technet.microsoft.com/library/dn283390.aspx)<br>
-[SIL 概述](https://technet.microsoft.com/library/dn268301.aspx)<br>
-[管理 SIL](https://technet.microsoft.com/library/dn383584.aspx)
-
+[SIL 聚合器 PowerShell cmdlet](/previous-versions/windows/powershell-scripting/mt548455(v=wps.640))<br>
+[SIL PowerShell cmdlet](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)<br>
+[SIL 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268301(v=ws.11))<br>
+[管理 SIL](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383584(v=ws.11))

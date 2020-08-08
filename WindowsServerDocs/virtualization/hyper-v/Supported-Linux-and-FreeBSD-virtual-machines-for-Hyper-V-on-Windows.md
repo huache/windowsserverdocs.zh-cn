@@ -1,32 +1,30 @@
 ---
 title: Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: dff7a0f829f11a92f2c87305da806b9be43f42fe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3c971b3b802f1059454bc8935b638ddcc10c825c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855940"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965624"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机
 
 >适用于： Windows Server 2019，Windows Server 2016，Hyper-v Server 2016，Windows Server 2012 R2，Hyper-v server 2012 R2，Windows Server 2012，Hyper-v Server 2012，Windows Server 2008 R2，Windows 10，Windows 8.1，Windows 8，Windows 7.1，Windows 7
 
-Hyper-v 支持适用于 Linux 和 FreeBSD 虚拟机的模拟和 Hyper-v 特定设备。 与模拟设备一起运行时，无需安装任何其他软件。 但模拟设备不提供高性能，并且无法利用 Hyper-v 技术提供的丰富的虚拟机管理基础结构。 为了充分利用 Hyper-v 提供的所有权益，最好使用适用于 Linux 和 FreeBSD 的 Hyper-v 特定设备。 运行特定于 Hyper-v 的设备所需的驱动程序集合称为 Linux Integration Services （.LIS）或 FreeBSD Integration Services （BIS）。
+Hyper-v 支持适用于 Linux 和 FreeBSD 虚拟机的模拟和 Hyper-v 特定设备。 与模拟设备一起运行时，无需安装任何其他软件。 但模拟设备不提供高性能，并且无法利用 Hyper-v 技术提供的丰富的虚拟机管理基础结构。 为了充分利用 Hyper-v 提供的所有权益，最好使用适用于 Linux 和 FreeBSD 的 Hyper-v 特定设备。 运行 Hyper-v 特定设备所需的驱动程序集合称为 Linux Integration Services (.LIS) 或 FreeBSD Integration Services (BIS) 。
 
 已将 .LIS 添加到 Linux 内核，并更新了新版本。 但基于较旧内核的 Linux 分发可能没有最新的增强功能或修补程序。 Microsoft 提供下载，其中包含基于这些旧内核的某些 Linux 安装的可安装的 .LIS 驱动程序。 由于分发供应商包括 Linux Integration Services 的版本，因此最好安装适用于你的安装的最新可下载版本（如果适用）。
 
 对于其他 Linux 分发，IIS 会定期将其集成到操作系统内核和应用程序中，因此不需要单独下载或安装。
 
-对于较旧的 FreeBSD 版本（10.0 之前的版本），Microsoft 提供了包含可安装的 BIS 驱动程序和 FreeBSD 虚拟机的相应守护程序的端口。 对于更高版本的 FreeBSD 版本，BIS 内置于 FreeBSD 操作系统中，无需单独下载或安装，因为 FreeBSD 10.0 需要下载 KVP 端口。
+对于较旧的 FreeBSD 版本 (在 10.0) 之前，Microsoft 提供的端口包含可安装的 BIS 驱动程序和 FreeBSD 虚拟机的相应守护程序。 对于更高版本的 FreeBSD 版本，BIS 内置于 FreeBSD 操作系统中，无需单独下载或安装，因为 FreeBSD 10.0 需要下载 KVP 端口。
 
 > [!TIP]
 > - 从评估中心下载[Windows Server 2019](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019) 。
@@ -45,7 +43,7 @@ Hyper-v 支持适用于 Linux 和 FreeBSD 虚拟机的模拟和 Hyper-v 特定�
 
 **想要对特性和功能提出建议？** 是否有一些更好的做法？ 你可以使用[Windows Server User Voice](https://windowsserver.uservoice.com/forums/295062-linux-support)网站为 hyper-v 上的 Linux 和 FreeBSD 虚拟机建议新特性和功能，以及查看其他人的看法。
 
-## <a name="in-this-section"></a>本部分内容
+## <a name="in-this-section"></a>本节内容
 
 * [Hyper-v 上支持的 CentOS 和 Red Hat Enterprise Linux 虚拟机](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

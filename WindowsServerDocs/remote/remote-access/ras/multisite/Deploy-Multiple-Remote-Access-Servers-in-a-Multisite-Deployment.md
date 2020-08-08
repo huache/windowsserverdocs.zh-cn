@@ -2,24 +2,22 @@
 title: 在多站点部署中部署多台远程访问服务器
 description: 本主题是在 Windows Server 2016 中的多站点部署中部署多台远程访问服务器指南的一部分。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ac2f6015-50a5-4909-8f67-8565f9d332a2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d8f12839deb1279b9f6c095068a85f528dad4a72
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8f0d8b4416c8480921d43fd4e705b837082152fb
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181753"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991354"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>在多站点部署中部署多台远程访问服务器
 
 >适用于：Windows Server（半年频道）、Windows Server 2016
 
- Windows Server 2016 和 Windows Server 2012 将 DirectAccess 和远程访问服务（RAS） VPN 合并到了单个远程访问角色中。 远程访问可在许多个企业方案中部署。 本概述介绍了在多站点配置中部署远程访问服务器的企业方案。
+ Windows Server 2016 和 Windows Server 2012 将 DirectAccess 和远程访问服务 (RAS) VPN 合并到单个远程访问角色中。 远程访问可在许多个企业方案中部署。 本概述介绍了在多站点配置中部署远程访问服务器的企业方案。
 
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>方案描述
 在多站点部署中，将两个或多个远程访问服务器或服务器群集部署并配置为一个位置或分散的地理位置中的不同入口点。 在一个位置部署多个入口点允许服务器冗余，或将远程访问服务器与现有的网络体系结构对齐。 按地理位置进行部署可确保有效地使用资源，因为远程客户端计算机可以使用最接近它们的入口点连接到内部网络资源。 可以通过外部全局负载均衡器来分发和平衡多站点部署中的流量。
@@ -39,13 +37,13 @@ ms.locfileid: "87181753"
 
 -   必须先部署[具有高级设置的单个 DirectAccess 服务器，](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)然后才能部署多站点部署。
 
--   Windows 7 客户端将始终连接到特定站点。 它们将无法根据客户端的位置（与 Windows 10、8或8.1 客户端不同）连接到最近的站点。
+-   Windows 7 客户端将始终连接到特定站点。 它们将无法根据客户端 (的位置连接到最近的站点，不同于 Windows 10、8或8.1 客户端) 。
 
 -   不支持在 DirectAccess 管理控制台或 PowerShell cmdlet 之外更改策略。
 
 -   必须部署公钥基础结构。
 
-    有关详细信息，请参阅： [测试实验室指南微型模块：用于 Windows Server 2012 的基本 PKI。](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+    有关详细信息，请参阅： [测试实验室指南微型模块：用于 Windows Server 2012 的基本 PKI。](/answers/topics/windows-server-2012.html)
 
 -   企业网络必须已启用 IPv6。 如果你使用的是 ISATAP，应该将其删除并使用本机 IPv6。
 
@@ -54,7 +52,7 @@ ms.locfileid: "87181753"
 
 1. [使用高级设置部署单个 DirectAccess 服务器](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)。 设置多站点部署之前，必须先部署具有高级设置的单个远程访问服务器。
 
-2. [规划多站点部署](plan/Plan-a-Multisite-Deployment.md)。 若要从单个服务器生成多站点部署，需要执行许多额外的规划步骤，包括与多站点先决条件的符合性，以及规划 Active Directory 安全组、组策略对象（Gpo）、DNS 和客户端设置。
+2. [规划多站点部署](plan/Plan-a-Multisite-Deployment.md)。 若要从单个服务器生成多站点部署，需要执行许多其他规划步骤，包括与多站点先决条件的符合性，并规划 Active Directory 安全组、组策略对象 (Gpo) 、DNS 和客户端设置。
 
 3. [配置多站点部署](configure/Configure-a-Multisite-Deployment.md)。 这包括许多配置步骤，包括准备 Active Directory 基础结构、配置现有远程访问服务器，以及将多个远程访问服务器作为入口点添加到多站点部署。
 
@@ -65,15 +63,15 @@ ms.locfileid: "87181753"
 
 -   改进的性能-多站点部署允许客户端计算机使用远程访问访问内部资源使用最接近和最合适的入口点进行连接。 客户端有效地访问内部资源，并改善通过 DirectAccess 路由的客户端 Internet 请求的速度。 可以使用外部全局负载均衡器对入口点之间的流量进行均衡。
 
--   易于管理-多站点允许管理员将远程访问部署与 Active Directory 站点部署保持一致，从而提供简化的体系结构。 可以在入口点服务器或群集上轻松设置共享设置。 可以从部署中的任何服务器管理远程访问设置，也可以使用远程服务器管理工具（RSAT）进行远程访问。 此外，可从单个远程访问管理控制台监视整个多站点部署。
+-   易于管理-多站点允许管理员将远程访问部署与 Active Directory 站点部署保持一致，从而提供简化的体系结构。 可以在入口点服务器或群集上轻松设置共享设置。 可以从部署中的任何服务器管理远程访问设置，或使用远程服务器管理工具 (RSAT) 远程访问远程访问设置。 此外，可从单个远程访问管理控制台监视整个多站点部署。
 
 ## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>本方案所包括的角色和功能
 下表列出了此方案中使用的角色和功能。
 
 |角色/功能|如何支持本方案|
 |---------|-----------------|
-|远程访问角色|该角色可使用服务器管理器控制台加以安装和卸载。 它包括 DirectAccess（以前是 Windows Server 2008 R2 中的功能）以及路由和远程访问服务 (RRAS)（以前是网络策略和访问服务 (NPAS) 服务器角色项下的角色服务）。 远程访问角色由以下两个组件组成：<p>-DirectAccess 和路由和远程访问服务（RRAS） VPN-DirectAccess 和 VPN 在远程访问管理控制台中一起进行管理。<br />-RRAS 路由-RRAS 路由功能在旧版路由和远程访问控制台中进行管理。<p>依赖关系如下所示：<p>-Internet Information Services （IIS） Web 服务器-配置网络位置服务器和默认 Web 探测需要此功能。<br />-Windows 内部数据库-用于远程访问服务器上的本地记帐。|
-|远程访问管理工具功能|此功能的安装如下所述：<p>-在安装远程访问角色时，它默认安装在远程访问服务器上，并支持远程管理控制台用户界面。<br />-可选择将它安装在不运行远程访问服务器角色的服务器上。 在这种情况下，它可用于远程管理运行 DirectAccess 和 VPN 的远程访问计算机。<p>远程访问管理工具功能包括以下各项：<p>-远程访问 GUI 和命令行工具<br />-适用于 Windows PowerShell 的远程访问模块<p>依赖项包括：<p>-组策略管理控制台<br />-RAS 连接管理器管理工具包（CMAK）<br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|
+|远程访问角色|该角色可使用服务器管理器控制台加以安装和卸载。 它包括 DirectAccess（以前是 Windows Server 2008 R2 中的功能）以及路由和远程访问服务 (RRAS)（以前是网络策略和访问服务 (NPAS) 服务器角色项下的角色服务）。 远程访问角色由以下两个组件组成：<p>-DirectAccess 和路由和远程访问服务 (RRAS) VPN-DirectAccess 和 VPN 在远程访问管理控制台中一起进行管理。<br />-RRAS 路由-RRAS 路由功能在旧版路由和远程访问控制台中进行管理。<p>依赖关系如下所示：<p>-Internet Information Services (IIS) Web 服务器-配置网络位置服务器和默认 Web 探测需要此功能。<br />-Windows 内部数据库-用于远程访问服务器上的本地记帐。|
+|远程访问管理工具功能|此功能的安装如下所述：<p>-在安装远程访问角色时，它默认安装在远程访问服务器上，并支持远程管理控制台用户界面。<br />-可选择将它安装在不运行远程访问服务器角色的服务器上。 在这种情况下，它可用于远程管理运行 DirectAccess 和 VPN 的远程访问计算机。<p>远程访问管理工具功能包括以下各项：<p>-远程访问 GUI 和命令行工具<br />-适用于 Windows PowerShell 的远程访问模块<p>依赖项包括：<p>-组策略管理控制台<br />-RAS 连接管理器管理工具包 (CMAK) <br />-Windows PowerShell 3。0<br />-图形管理工具和基础结构|
 
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>硬件要求
 本方案的硬件要求包括以下各项：
@@ -109,7 +107,7 @@ ms.locfileid: "87181753"
 
         -   每个域都需要唯一的客户端 GPO。
 
-        -   在入口点所在的域中，每个入口点都需要服务器 GPO。 因此，如果多个入口点位于同一域中，则域中会有多个服务器 Gpo （每个入口点一个）。
+        -   在入口点所在的域中，每个入口点都需要服务器 GPO。 因此，如果多个入口点位于同一个域中，则会有多个服务器 Gpo (域中的每个入口点) 。
 
         -   对于每个域启用了每个 Windows 7 客户端支持的入口点，都需要唯一的 Windows 7 客户端 GPO。
 
@@ -135,7 +133,7 @@ ms.locfileid: "87181753"
 
     如果客户端已经升级，则将客户端计算机移动到 Windows 8 安全组。
 
--   使用 Windows PowerShell cmdlet **set-daentrypointdc**修改域控制器设置时，如果指定的 ComputerName 参数是远程访问服务器，而不是添加到多站点部署中的最后一个入口点，则将显示一条警告，指示在下一次策略刷新之前，不会更新指定的服务器。 在**远程访问管理控制台**的**仪表板**中，可以使用 "**配置状态**" 查看未更新的实际服务器。 但这不会导致任何功能问题，但是，你可以在未更新的服务器上运行**gpupdate/force** ，以立即更新配置状态。
+-   使用 Windows PowerShell cmdlet **set-daentrypointdc**修改域控制器设置时，如果指定的 ComputerName 参数是远程访问服务器，而不是添加到多站点部署中的最后一个入口点，则将显示一条警告，指示在下一次策略刷新之前，不会更新指定的服务器。 在**远程访问管理控制台**的**仪表板**中，可以使用 "**配置状态**" 查看未更新的实际服务器 () 。 但这不会导致任何功能问题，但是，你可以在服务器上运行**gpupdate/force** ， (s) 未更新为立即更新配置状态。
 
 -   当多站点部署在仅支持 IPv4 的公司网络中时，更改内部网络 IPv6 前缀还会更改 DNS64 地址，但不会更新允许 DNS 查询到 DNS64 服务的防火墙规则上的地址。 若要解决此问题，请在更改内部网络 IPv6 前缀后运行以下 Windows PowerShell 命令：
 
@@ -156,6 +154,3 @@ ms.locfileid: "87181753"
 -   如果在存在现有 ISATAP 基础结构时部署了 DirectAccess，则在删除作为 ISATAP 主机的入口点时，将从 NRPT 中所有 DNS 后缀的 DNS 服务器地址中删除 DNS64 服务的 IPv6 地址。
 
     若要解决此问题，请在 "**基础结构服务器设置**向导" 的 " **dns** " 页上，通过单击 " **dns 服务器地址**" 对话框中的 "**检测**"，删除已修改的 dns 后缀并使用正确的 DNS 服务器地址再次添加它们。
-
-
-

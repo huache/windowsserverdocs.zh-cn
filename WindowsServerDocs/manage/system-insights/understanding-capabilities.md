@@ -1,19 +1,17 @@
 ---
 title: 了解功能
 description: 本主题定义了 System Insights 中的功能概念，并介绍了 Windows Server 2019 中提供的默认功能。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: c6738e6e914d97c70aa31af2fe3b6987b0b9ea33
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 195ab01ded24742a26e1d7558529044c9883b8fc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471742"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991706"
 ---
 # <a name="understanding-capabilities"></a>了解功能
 
@@ -40,7 +38,7 @@ ms.locfileid: "85471742"
 - **错误**-未知问题导致功能失败。
 - **无**-未进行预测。 这可能是由于缺少数据或任何其他特定于功能的原因而不进行预测。
 
-此外，结果中包含的任何特定于功能的数据都将放置在用户可访问的 JSON 文件中，并且[可以使用 PowerShell 找到](https://docs.microsoft.com/windows-server/manage/system-insights/managing-capabilities#retrieving-capability-results)文件路径。
+此外，结果中包含的任何特定于功能的数据都将放置在用户可访问的 JSON 文件中，并且[可以使用 PowerShell 找到](./managing-capabilities.md#retrieving-capability-results)文件路径。
 
 ## <a name="default-capabilities"></a>默认功能
 在 Windows Server 2019 中，System Insights 引入了四个侧重于容量预测的默认功能：
@@ -71,7 +69,7 @@ ms.locfileid: "85471742"
 每个功能分析每日数据以预测未来使用情况。 但 CPU、网络和存储使用量甚至可以在一天中频繁更改，从而动态调整计算机上的工作负载。 由于在一整天内使用不稳定，因此，在单个数据点中正确地表示每日使用非常重要。 下表详细列出了特定数据点和数据的处理方式：
 
 
-| 功能名称 | 数据源 | 筛选逻辑 |
+| 功能名称 | 数据源 (s)  | 筛选逻辑 |
 | --------------- | -------------- | ---------------- |
  卷消耗预测          | 卷大小                    | 每日最大使用量
  总存储消耗预测   | 卷大小和磁盘大小之和              | 每日最大使用量

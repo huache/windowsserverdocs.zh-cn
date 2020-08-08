@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 2040bdb6d0dde9805c9bf6e6d59af025d23061a0
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 79bd34c8a2beb38d60b972aec0f8a17f17e5a590
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624205"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941019"
 ---
 # <a name="identifying-forest-design-requirements"></a>确定林设计要求
 
@@ -21,7 +19,7 @@ ms.locfileid: "81624205"
 
 若要为你的组织创建林设计，你必须确定你的目录结构需要满足的业务要求。 这涉及到确定组织中的组管理其网络资源所需的独立性量，以及每个组是否需要将其资源从其他组隔离在网络上。
 
-Active Directory 域服务（AD DS）可用于设计一个目录基础结构，该基础结构可容纳组织内具有独特管理要求的多个组，并可根据需要在组之间实现结构化和操作独立性。
+Active Directory 域服务 (AD DS) 可用于设计一个目录基础结构，该基础结构可容纳组织内具有独特管理要求的多个组，并可根据需要在组之间实现结构化和操作独立性。
 
 你的组织中的组可能具有以下类型的要求：
 
@@ -33,7 +31,7 @@ Active Directory 域服务（AD DS）可用于设计一个目录基础结构，�
 
     - 宿主方案
 
-    - 维护可在内部和外部使用的目录的组织（例如，Internet 上的用户可公开访问的目录）
+    - 维护可在内部和外部使用的目录的组织 (例如，Internet 上的用户可公开访问的目录) 
 
 - **法律要求**。 某些组织的法律要求是以特定的方式运行的，例如，将访问权限限制为业务协定中指定的某些信息。 某些组织对隔离的内部网络具有安全要求。 如果无法满足这些要求，可能会导致合同丢失，并且可能会导致法律诉讼。
 
@@ -41,9 +39,9 @@ Active Directory 域服务（AD DS）可用于设计一个目录基础结构，�
 
 设计团队必须记录组织中打算使用 AD DS 的每个组的隔离和自治要求。 团队还必须注意可能会影响 AD DS 部署的有限连接性区域。
 
-设计团队必须记录组织中打算使用 AD DS 的每个组的隔离和自治要求。 团队还必须注意可能会影响 AD DS 部署的有限连接性区域。 要使工作表可以帮助您记录所标识的区域，请从[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip，并打开 "林设计要求" （DSSLOGI_2 .doc）。
+设计团队必须记录组织中打算使用 AD DS 的每个组的隔离和自治要求。 团队还必须注意可能会影响 AD DS 部署的有限连接性区域。 要使工作表可以帮助您记录所标识的区域，请从[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并 ( # A1) 打开 "林设计要求"。
 
-## <a name="in-this-section"></a>在本节中
+## <a name="in-this-section"></a>本节内容
 
 - [服务管理员的授权范围](../../ad-ds/plan/Service-Administrator-Scope-of-Authority.md)
 

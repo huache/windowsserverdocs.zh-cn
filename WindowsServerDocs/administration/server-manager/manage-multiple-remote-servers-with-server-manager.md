@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 731d73c8aa7ea5ad7f7b2777b2694da232fae12a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 480b03f49b806ca0096c64d824679473b02695c5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895759"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991852"
 ---
 # <a name="manage-multiple-remote-servers-with-server-manager"></a>通过服务器管理器管理多台远程服务器
 
@@ -132,7 +132,7 @@ Windows 8 Windows 8.1 和[远程服务器管理工具](https://go.microsoft.com/
 
     -   若要在运行 Windows Server 2008 的服务器上启用远程管理，请参阅[在 Windows PowerShell 中启用和使用远程命令](https://go.microsoft.com/fwlink/p/?LinkId=242565)。
 
-    -   若要在运行 Windows Server 2003 的服务器上启用远程管理，请启用 Windows 防火墙中的 WMI DCOM 例外。 有关如何在运行 Windows Server 2003 的服务器上执行该操作的详细信息，请参阅 MSDN 上的 [通过 Windows 防火墙连接](https://msdn.microsoft.com/library/aa389286.aspx) 。
+    -   若要在运行 Windows Server 2003 的服务器上启用远程管理，请启用 Windows 防火墙中的 WMI DCOM 例外。 有关如何在运行 Windows Server 2003 的服务器上执行该操作的详细信息，请参阅 MSDN 上的 [通过 Windows 防火墙连接](/windows/win32/wmisdk/connecting-to-wmi-remotely-with-vbscript) 。
 
 ## <a name="tasks-that-you-can-perform-in-server-manager"></a><a name=BKMK_tasks></a>可在服务器管理器中执行的任务
 通过允许管理员使用单个工具执行下表中的任务，服务器管理器使服务器管理更高效。 在 Windows Server 2012 R2 和 Windows Server 2012 中，服务器的标准用户和管理员组的成员都可以在服务器管理器执行管理任务，但默认情况下，会阻止标准用户执行某些任务，如下表所示。
@@ -237,5 +237,3 @@ Windows 8 Windows 8.1 和[远程服务器管理工具](https://go.microsoft.com/
     -   %*appdata*% \Microsoft\Windows\ServerManager\Serverlist.xml
 
     -   %*localappdata*% \Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
-
-

@@ -6,26 +6,24 @@ ms.author: jiwool
 manager: senthilr
 ms.date: 01/26/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: compute-hyper-v
 ms.assetid: 444e1496-9e5a-41cf-bfbc-306e2ed8e00a
 audience: IT Pros
 ms.reviewer: kathydav
-ms.openlocfilehash: ea78bf9cb892f8e8cb41f357242f3b38a5bca934
-ms.sourcegitcommit: d669d4af166b9018bcf18dc79cb621a5fee80042
+ms.openlocfilehash: a2c4b2ff3ca4dda2cb2989c629c5dac5f529cac0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82037126"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991445"
 ---
 # <a name="create-hyper-v-vhd-set-files"></a>创建 Hyper-v VHD 集文件
-VHD 集文件是 Windows Server 2016 中来宾群集的新共享虚拟磁盘模型。 VHD 集文件支持联机调整共享虚拟磁盘大小、支持 Hyper-v 副本，并可包括在应用程序一致性检查点中。 
+VHD 集文件是 Windows Server 2016 中来宾群集的新共享虚拟磁盘模型。 VHD 集文件支持联机调整共享虚拟磁盘大小、支持 Hyper-v 副本，并可包括在应用程序一致性检查点中。
 
 VHD 集文件使用新的 VHD 文件类型。Vhd. VHD 集文件以元数据的形式存储有关来宾群集中使用的组虚拟磁盘的检查点信息。
 
 Hyper-v 处理管理检查点链和合并共享 VHD 集的各个方面。 管理软件可以像对 VHD 集文件进行联机大小调整一样运行磁盘操作。VHDX 文件。 这意味着管理软件无需知道 VHD 集文件格式。
 
-> [!NOTE]  
+> [!NOTE]
 > 在部署到生产环境之前，评估 VHD 集文件的影响非常重要。 请确保环境中没有性能或功能下降，如磁盘延迟。
 
 ## <a name="create-a-vhd-set-file-from-hyper-v-manager"></a>从 Hyper-v 管理器创建 VHD 集文件
@@ -38,7 +36,7 @@ Hyper-v 处理管理检查点链和合并共享 VHD 集的各个方面。 管理
 
 ## <a name="create-a-vhd-set-file-from-windows-powershell"></a>从 Windows PowerShell 创建 VHD 集文件
 
-使用带有文件类型的[新 VHD](https://technet.microsoft.com/library/hh848503.aspx) cmdlet。文件路径中的 VHD。 此示例创建一个名为的 VHD 集文件，其大小为 10 Gb。
+使用带有文件类型的[新 VHD](/powershell/module/hyper-v/new-vhd?view=win10-ps) cmdlet。文件路径中的 VHD。 此示例创建一个名为的 VHD 集文件，其大小为 10 Gb。
 
 ``` PowerShell
 PS c:\>New-VHD -Path c:\base.vhds -SizeBytes 10GB
@@ -48,21 +46,17 @@ PS c:\>New-VHD -Path c:\base.vhds -SizeBytes 10GB
 
 将现有共享 VHDX 迁移到 VHD 需要使 VM 脱机。 建议使用 Windows PowerShell 执行此过程：
 
-1. 从 VM 中删除 VHDX。 例如，运行： 
+1. 从 VM 中删除 VHDX。 例如，运行：
    ``` PowerShell
    PS c:\>Remove-VMHardDiskDrive existing.vhdx
    ```
-  
+
 2. 将 VHDX 转换为 VHD。 例如，运行：
    ``` PowerShell
    PS c:\>Convert-VHD existing.vhdx new.vhds
    ```
-  
+
 3. 将 VHD 添加到 VM。 例如，运行：
    ``` PowerShell
    PS c:\>Add-VMHardDiskDrive new.vhds
    ```
-  
-
-
-

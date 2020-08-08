@@ -6,19 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: 5682eb98854441b35719fc0c2048f07db76cbead
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: dd08192558457a014b6884316de7a22900dded2f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181833"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941061"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>为 Windows Server 2008 Active Directory 站点拓扑设计查找其他资源
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-你可以在 Windows Server 2003 和 Windows Server 2008 技术网站上找到有关 Active Directory 域服务（AD DS）的以下文档：
+你可以在 Windows Server 2003 和 Windows Server 2008 技术网站上找到有关 Active Directory 域服务 AD DS)  (的以下文档：
 
 - 有关查找域控制器的过程的详细信息，请参阅[Active Directory 集合](/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))。
 
@@ -50,6 +49,6 @@ ms.locfileid: "87181833"
 
 - 有关通过防火墙管理复制的信息，请参阅[通过防火墙分段的网络中的 Active Directory](https://microsoft.com/download/details.aspx?familyid=c2ef3846-43f0-4caf-9767-a9166368434e)。
 
-- 有关只读域控制器（RODC）功能的详细信息，请参阅[AD DS：只读域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。
+- 有关只读域控制器 (RODC) 功能的详细信息，请参阅[AD DS：只读域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。
 
 - 有关如何部署 RODC 的详细信息，请参阅[只读域控制器循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772234(v=ws.10))。

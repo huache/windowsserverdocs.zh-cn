@@ -1,23 +1,21 @@
 ---
 title: 文件服务器资源管理器 (FSRM) 概述
-ms.prod: windows-server
 ms.author: jgerend
 manager: brianlic
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
-description: 文件服务器资源管理器（FSRM）是一个工具，可用于管理和分类 Windows Server 文件服务器上的数据。
-ms.openlocfilehash: 58b410e51dae3ea102bb1a15f5bb60f00ab702fa
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+description: 文件服务器资源管理器 (FSRM) 是一个工具，可用于对 Windows Server 文件服务器上的数据进行管理和分类。
+ms.openlocfilehash: f09e262176d0e5741c60390497fd2f241eaa965a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964559"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957384"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>文件服务器资源管理器 (FSRM) 概述
 
-> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server （半年频道）
+> 适用于： Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server (半年频道) 
 
 文件服务器资源管理器 (FSRM) 是 Windows Server 中的一项角色服务，可用于对文件服务器上存储的数据进行管理和分类。 您可以使用文件服务器资源管理器自动对文件进行分类，基于这些分类执行任务，设置文件夹配额，以及创建报告监视存储使用情况。
 
@@ -55,7 +53,7 @@ ms.locfileid: "86964559"
 
 ## <a name="whats-new---prevent-fsrm-from-creating-change-journals"></a><a name="whats-new"></a>新增功能-阻止 FSRM 创建变更日志
 
-从 Windows Server 版本1803开始，现在可以阻止文件服务器资源管理器服务在服务启动时在卷上创建更改日志（也称为 USN 日志）。 这可以在每个卷上保留少许空间，但会禁用实时文件分类。
+从 Windows Server 1803 版开始，你现在可以阻止文件服务器资源管理器服务在服务启动时创建更改日志 (也称为 USN 日志) 。 这可以在每个卷上保留少许空间，但会禁用实时文件分类。
 
 有关较旧的新功能，请参阅[文件服务器资源管理器中的新增](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383587(v=ws.11))功能。
 
@@ -67,14 +65,14 @@ ms.locfileid: "86964559"
       ```
       fsutil usn deletejournal /d <VolumeName>
       ```
-    例如：`fsutil usn deletejournal /d c:`
+    例如： `fsutil usn deletejournal /d c:`
 
 3. 打开注册表编辑器，例如， `regedit` 在同一个 PowerShell 会话中键入。
 4. 导航到以下注册表项： **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings**
-5. 若要根据需要跳过为整个服务器创建更改日志，请跳过此步骤（如果只想在特定卷上禁用此步骤）：
-    1. 右键单击 "**设置**" 项，然后选择 "**新建**  >  **DWORD （32位）" 值**。
+5. 若要有选择性地跳过整个服务器的更改日志创建 (则跳过此步骤（如果只想在特定卷上禁用）) ：
+    1. 右键单击 "**设置**" 项，然后选择 "**新建**  >  **DWORD (32 位) 值**"。
     1. 将值命名为 `SkipUSNCreationForSystem` 。
-    1. 将值设置为**1** （十六进制）。
+    1. 在十六进制) 中将值设置为**1** (。
 6. 如果需要，可以跳过针对特定卷创建更改日志：
     1. 使用 `fsutil volume list` 命令或以下 PowerShell 命令获取要跳过的卷路径：
         ```PowerShell

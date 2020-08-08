@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 0a21adf3bafeb93f2f9fc18da785fae1a81260b3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1ddfbbda9ab0bdf4d04213069e192e471e4d1b98
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971524"
+ms.locfileid: "87991685"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>开始一般数据保护条例适用于 Windows Server 的 (GDPR) 旅程
 
@@ -167,7 +167,7 @@ Windows Server 2016 帮助保护标识、操作系统和虚拟化层的安全，
 
 - **社会工程研究。** 大多数凭据威胁首先通过研究组织，然后通过社交工程进行。 例如，攻击者可能会执行电子邮件仿冒攻击，以泄露合法帐户 (但不一定是有权访问组织网络) 的特权帐户。 然后，攻击者使用这些有效帐户在您的网络上执行其他调查，并确定可以执行管理任务的特权帐户。
 
-- **利用具有提升权限的帐户。** 即使使用网络中的普通非提升用户帐户，攻击者也可以使用提升的权限访问帐户。 执行此操作的一种更常见的方法是使用传递哈希或传递令牌攻击。 有关传递哈希和其他凭据盗窃技术的详细信息，请参阅[传递哈希 (PtH) 页](https://technet.microsoft.com/dn785092.aspx)上的资源。
+- **利用具有提升权限的帐户。** 即使使用网络中的普通非提升用户帐户，攻击者也可以使用提升的权限访问帐户。 执行此操作的一种更常见的方法是使用传递哈希或传递令牌攻击。 有关传递哈希和其他凭据盗窃技术的详细信息，请参阅[传递哈希 (PtH) 页](/previous-versions/dn785092(v=msdn.10))上的资源。
 
 还有其他一些方法，攻击者可使用这些方法来确定和破坏特权标识， (每日) 创建新方法。 因此，请务必确定用户使用最少特权帐户登录，以减少攻击者获取特权标识的能力。 以下部分概述了 Windows Server 可在其中缓解这些风险的功能。
 
@@ -211,7 +211,7 @@ Windows Defender Credential Guard 使用：
 
 - TPM 2.0，离散或固件（首选 - 提供硬件绑定）
 
-可以通过保护 Windows Server 2016 上的凭据和凭据派生，使用 Windows Defender 凭据防护来帮助保护特权标识。 有关 Windows Defender Credential Guard 要求的详细信息，请参阅[通过 Windows Defender Credential Guard 保护派生的域凭据](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard)。
+可以通过保护 Windows Server 2016 上的凭据和凭据派生，使用 Windows Defender 凭据防护来帮助保护特权标识。 有关 Windows Defender Credential Guard 要求的详细信息，请参阅[通过 Windows Defender Credential Guard 保护派生的域凭据](/windows/access-protection/credential-guard/credential-guard)。
 
 #### <a name="windows-defender-remote-credential-guard"></a>Windows Defender 远程 Credential Guard
 Windows Server 2016 和 Windows 10 周年更新上的 windows Defender 远程 Credential Guard 还有助于保护具有远程桌面连接的用户的凭据。 以前，使用远程桌面服务的任何人都必须登录到其本地计算机，然后在执行与目标计算机的远程连接时需要再次登录。 此第二个登录会将凭据传递到目标计算机，并将其公开给传递哈希或传递票证攻击。
@@ -226,7 +226,7 @@ Windows Server 2016 和 Windows 10 周年更新上的 windows Defender 远程 Cr
 
 - 远程桌面经典 Windows 应用程序是必需的。 远程桌面通用 Windows 平台应用不支持 Windows Defender 远程 Credential Guard。
 
-您可以通过使用远程桌面服务器上的注册表设置并组策略或远程桌面客户端上的远程桌面连接参数来启用 Windows Defender 远程 Credential Guard。 有关启用 Windows Defender 远程 Credential Guard 的详细信息，请参阅[通过 Windows Defender 远程 Credential Guard 保护远程桌面凭据](https://docs.microsoft.com/windows/access-protection/remote-credential-guard)。 与 Windows Defender Credential Guard 一样，你可以使用 Windows Defender 远程凭据防护来帮助保护 Windows Server 2016 上的特权标识。
+您可以通过使用远程桌面服务器上的注册表设置并组策略或远程桌面客户端上的远程桌面连接参数来启用 Windows Defender 远程 Credential Guard。 有关启用 Windows Defender 远程 Credential Guard 的详细信息，请参阅[通过 Windows Defender 远程 Credential Guard 保护远程桌面凭据](/windows/access-protection/remote-credential-guard)。 与 Windows Defender Credential Guard 一样，你可以使用 Windows Defender 远程凭据防护来帮助保护 Windows Server 2016 上的特权标识。
 
 ### <a name="secure-the-operating-system-to-run-your-apps-and-infrastructure"></a>保护操作系统以运行你的应用程序和基础结构
 防止网络威胁还需要查找和阻止恶意软件和攻击，这些攻击会通过破坏基础结构的标准操作实践来获得控制。 如果攻击者可以使操作系统或应用程序以非预先确定的方式运行，则可能会使用该系统来执行恶意操作。 Windows Server 2016 提供阻止外部攻击者运行恶意软件或利用漏洞的保护层。 在保护基础结构和应用程序的过程中，操作系统通过向管理员通知指示系统已被破坏的活动的活动角色。
@@ -340,11 +340,11 @@ ATA 是一项本地产品，可帮助检测组织中的身份泄露。 ATA 可�
 
 |攻击类型 |描述 |
 |---------|---------|
-|恶意攻击 |通过从已知的攻击类型列表中查找攻击来检测这些攻击，其中包括：<ul><li>传递票证 (PtT)</li><li>传递哈希 (PtH)</li><li>超传递哈希</li><li>伪造 PAC (MS14-068)</li><li>黄金票证</li><li>恶意复制</li><li>侦测</li><li>暴力破解</li><li>远程执行</li></ul>有关可检测到的恶意攻击及其说明的完整列表，请参阅[ATA 可以检测哪些可疑活动？](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats)。|
+|恶意攻击 |通过从已知的攻击类型列表中查找攻击来检测这些攻击，其中包括：<ul><li>传递票证 (PtT)</li><li>传递哈希 (PtH)</li><li>超传递哈希</li><li>伪造 PAC (MS14-068)</li><li>黄金票证</li><li>恶意复制</li><li>侦测</li><li>暴力破解</li><li>远程执行</li></ul>有关可检测到的恶意攻击及其说明的完整列表，请参阅[ATA 可以检测哪些可疑活动？](/advanced-threat-analytics/understand-explore/ata-threats)。|
 |异常行为 |这些攻击通过使用行为分析来检测，并使用机器学习识别有疑问的活动，包括：<ul><li>异常登录</li><li>未知威胁</li><li>密码共享</li><li>横向移动</li></ul>|
 |安全问题和风险 |通过查看当前的网络和系统配置来检测这些攻击，其中包括：<ul><li>破坏信任</li><li>弱协议</li><li>已知协议漏洞</li></ul>|
 
-你可以使用 ATA 帮助检测攻击者尝试破坏特权标识。 有关部署 ATA 的详细信息，请参阅[高级威胁分析文档](https://docs.microsoft.com/advanced-threat-analytics/)中的计划、设计和部署主题。
+你可以使用 ATA 帮助检测攻击者尝试破坏特权标识。 有关部署 ATA 的详细信息，请参阅[高级威胁分析文档](/advanced-threat-analytics/)中的计划、设计和部署主题。
 
 ## <a name="related-content-for-associated-windows-server-2016-solutions"></a>关联 Windows Server 2016 解决方案的相关内容
 
@@ -372,5 +372,3 @@ MICROSOFT 对本文中的信息不做任何保证（明示的、暗示的或法�
 发布日期 2017 年 9 月<br>
 版本 1.0<br>
 © 2017 Microsoft. 保留所有权利。
-
-

@@ -4,16 +4,14 @@ description: 本主题是指导 802.1 X 有线和无线部署的 "部署服务�
 manager: brianlic
 ms.topic: article
 ms.assetid: 7eb746e0-1046-4123-b532-77d5683ded44
-ms.prod: windows-server
-ms.technology: networking
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 131fb7d51e703abfdfb3f3e07790b52daa1b7b82
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d73cee05c36176755e70796c1190620223327306
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518512"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949351"
 ---
 # <a name="server-certificate-deployment-planning"></a>服务器证书部署规划
 
@@ -27,7 +25,7 @@ ms.locfileid: "87518512"
 
 - [规划 Web 服务器上的虚拟目录的位置和名称](#bkmk_virtual)
 
-- [规划 Web 服务器的 DNS 别名（CNAME）记录](#bkmk_cname)
+- [规划 Web 服务器 (CNAME) 记录的 DNS 别名](#bkmk_cname)
 
 - [规划 Capolicy.inf 的配置](#bkmk_capolicy)
 
@@ -50,10 +48,10 @@ ms.locfileid: "87518512"
 ## <a name="plan-the-location-and-name-of-the-virtual-directory-on-your-web-server"></a><a name="bkmk_virtual"></a>规划 Web 服务器上的虚拟目录的位置和名称
 若要向其他计算机提供对 CRL 和 CA 证书的访问权限，必须将这些项存储在 Web 服务器上的虚拟目录中。 本指南中的虚拟目录位于 Web 服务器 WEB1 上。 此文件夹位于 "C：" 驱动器上，名为 "pki"。 你可以在 Web 服务器上找到适合你的部署的任何文件夹位置上的虚拟目录。
 
-## <a name="plan-a-dns-alias-cname-record-for-your-web-server"></a><a name="bkmk_cname"></a>规划 Web 服务器的 DNS 别名（CNAME）记录
-别名 (CNAME) 资源记录有时也称作规范名称资源记录。 借助这些记录，您可以使用多个名称来指向单一主机，从而轻松实现某些目的，例如在同一个计算机上同时驻留文件传输协议 (FTP) 服务器和 Web 服务器。 例如，已知服务器名称（ftp、www）使用别名（CNAME）资源记录进行注册，这些记录映射到承载这些服务的服务器计算机的域名系统（DNS）主机名（例如 WEB1）。
+## <a name="plan-a-dns-alias-cname-record-for-your-web-server"></a><a name="bkmk_cname"></a>规划 Web 服务器 (CNAME) 记录的 DNS 别名
+别名 (CNAME) 资源记录有时也称作规范名称资源记录。 借助这些记录，您可以使用多个名称来指向单一主机，从而轻松实现某些目的，例如在同一个计算机上同时驻留文件传输协议 (FTP) 服务器和 Web 服务器。 例如，已知的服务器名称 (ftp、www) 使用别名 (CNAME) 资源记录进行注册，这些记录映射到承载这些服务的服务器计算机 (DNS) 主机名（例如 WEB1）。
 
-本指南提供有关配置 Web 服务器以承载证书颁发机构（CA）的证书吊销列表（CRL）的说明。 由于你可能还希望将 Web 服务器用于其他目的（例如）来托管 FTP 或网站，因此最好在 DNS 中为 Web 服务器创建别名资源记录。 在本指南中，CNAME 记录名为 "pki"，但你可以选择适合你的部署的名称。
+本指南提供有关配置 Web 服务器以承载证书吊销列表的说明 (CA) 的证书颁发机构 (CRL) 。 由于你可能还希望将 Web 服务器用于其他目的（例如）来托管 FTP 或网站，因此最好在 DNS 中为 Web 服务器创建别名资源记录。 在本指南中，CNAME 记录名为 "pki"，但你可以选择适合你的部署的名称。
 
 ## <a name="plan-configuration-of-capolicyinf"></a><a name="bkmk_capolicy"></a>规划 Capolicy.inf 的配置
 安装 AD CS 之前，必须在 CA 上配置 Capolicy.inf，并将其信息用于部署。 Capolicy.inf 文件包含以下信息：
@@ -101,7 +99,7 @@ Critical=Yes
 > 建议您不要更改 Capolicy.inf 文件中的任何其他设置，除非您有具体的原因。
 
 ## <a name="plan-configuration-of-the-cdp-and-aia-extensions-on-ca1"></a><a name="bkmk_cdp"></a>在 CA1 上规划 CDP 和 AIA 扩展的配置
-当你在 CA1 上配置证书吊销列表（CRL）分发点（CDP）和颁发机构信息访问（AIA）设置时，需要你的 Web 服务器名称和域名。 还需要在存储证书吊销列表（CRL）和证书颁发机构证书的 Web 服务器上创建的虚拟目录的名称。
+当你在 CA1 上配置证书吊销列表 (CRL) 分发点 (CDP) 和颁发机构信息访问 (AIA) 设置时，需要你的 Web 服务器名称和域名。 还需要在 Web 服务器上创建的虚拟目录的名称，证书吊销列表 (CRL) 并存储证书颁发机构证书。
 
 在此部署步骤中必须输入的 CDP 位置的格式为：
 

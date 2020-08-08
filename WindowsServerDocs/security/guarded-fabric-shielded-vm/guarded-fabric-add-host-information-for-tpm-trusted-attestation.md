@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 06/21/2019
-ms.openlocfilehash: 7ec49467b3875ba552f5b92fb3776892a2d54c13
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fc879fda0f6a708a8a1d4ebd60834f4e6543f3ba
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971404"
+ms.locfileid: "87997166"
 ---
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>为受 TPM 信任的证明添加主机信息
 
@@ -55,7 +55,7 @@ ms.locfileid: "87971404"
     Add-HgsAttestationTpmPolicy -Path <Filename>.tcglog -Name '<PolicyName>'
     ```
 
-这将完成为 TPM 模式配置 HGS 群集的过程。 构造管理员可能需要在为主机完成配置之前，先从 HGS 提供两个 Url。 若要获取这些 Url，请在 HGS 服务器上运行[HgsServer](https://docs.microsoft.com/powershell/module/hgsserver/get-hgsserver?view=win10-ps)。
+这将完成为 TPM 模式配置 HGS 群集的过程。 构造管理员可能需要在为主机完成配置之前，先从 HGS 提供两个 Url。 若要获取这些 Url，请在 HGS 服务器上运行[HgsServer](/powershell/module/hgsserver/get-hgsserver?view=win10-ps)。
 
 ## <a name="next-step"></a>后续步骤
 

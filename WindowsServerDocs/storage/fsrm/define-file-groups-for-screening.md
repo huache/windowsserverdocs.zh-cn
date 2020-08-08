@@ -2,18 +2,16 @@
 title: 定义用于屏蔽的文件组
 description: 本文介绍了如何定义文件组以为文件屏蔽、文件屏蔽异常或按文件组分类的文件存储报告创建命名空间
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e38dee0381b33bb9d11b038de715a4420906e131
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cbcf96a4ab5c6516b87ebde57f6adaf1cf4df17f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474324"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957474"
 ---
 # <a name="define-file-groups-for-screening"></a>定义用于屏蔽的文件组
 
@@ -43,7 +41,7 @@ ms.locfileid: "85474324"
     -   对于希望从文件组中排除的每一组文件，请在**要排除的文件**框中输入文件名模式，然后单击**添加**。
         请注意，应用标准通配符规则，例如， ** \* .exe**选择所有可执行文件。
 
-5.  单击" **确定**"。
+5.  单击“确定”。
 
 ## <a name="additional-references"></a>其他参考
 

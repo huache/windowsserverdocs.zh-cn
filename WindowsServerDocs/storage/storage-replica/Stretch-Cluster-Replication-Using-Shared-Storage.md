@@ -6,12 +6,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: fa5246aad79b9441b973cf864233ca8cfe0da7fa
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: efc2727c913ac2bab5ea619101ebef12f40a69b2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950537"
+ms.locfileid: "87991510"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>使用共享存储拉伸群集复制
 
@@ -801,5 +801,5 @@ ms.locfileid: "87950537"
 - [存储副本：常见问题解答](storage-replica-frequently-asked-questions.md)
 
 ## <a name="see-also"></a>另请参阅
-- [Windows Server 2016](../../get-started/windows-server-2016.md)
+- [Windows Server 2016](../../index.yml)
 - [Windows Server 2016 中的存储空间直通](../storage-spaces/storage-spaces-direct-overview.md)

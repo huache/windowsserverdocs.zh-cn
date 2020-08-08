@@ -2,22 +2,20 @@
 title: 选择命名空间类型
 description: 本文介绍如何选择命名空间类型。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ce991a628b63732f645e859a4855a18eacbacd77
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c78e97148dffba920be5e65b19d97594c1b302d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953729"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957675"
 ---
 # <a name="choose-a-namespace-type"></a>选择命名空间类型
 
-> 适用于： Windows Server 2019，Windows Server （半年频道），Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
+> 适用于： Windows Server 2019，Windows Server (半年通道) ，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008
 
 创建命名空间时，必须选择以下两种命名空间类型之一：独立命名空间或基于域的命名空间。 此外，如果选择基于域的命名空间，则必须选择命名空间模式：Windows 2000 Server 模式或 Windows Server 2008 模式。
 

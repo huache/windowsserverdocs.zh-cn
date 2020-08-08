@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fad4586b4d510fd22ecd90855b3afa1c8870c1bf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 75f0395afbcbefcdc4ac3a9fc4dc4de3bf962428
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895625"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991751"
 ---
 # <a name="manage-user-access-logging"></a>管理用户访问日志记录记录
 
@@ -233,11 +233,11 @@ UAL 可以记录的最大访问次数是每天 65,535。不建议在直接连接
 ## <a name="recovering-from-a-corrupt-state"></a>从损坏状态恢复
 本部分讨论了 UAL 在高级别上使用的可扩展存储引擎 (ESE) ，以及在 UAL 数据损坏或不可恢复时管理员可以执行的操作。
 
-UAL 使用 ESE 来优化系统资源的使用，并支持防止损坏。  有关 ESE 优点的详细信息，请参阅 MSDN 上的 [可扩展存储引擎](https://msdn.microsoft.com/library/windows/desktop/gg269259(v=exchg.10).aspx) 。
+UAL 使用 ESE 来优化系统资源的使用，并支持防止损坏。  有关 ESE 优点的详细信息，请参阅 MSDN 上的 [可扩展存储引擎](/windows/win32/extensible-storage-engine/extensible-storage-engine) 。
 
-每次 UAL 服务启动 ESE，都会执行一次软恢复。 有关详细信息，请参阅 MSDN 上的 [可扩展存储引擎文件](https://msdn.microsoft.com/library/windows/desktop/gg294069(v=exchg.10).aspx) 。
+每次 UAL 服务启动 ESE，都会执行一次软恢复。 有关详细信息，请参阅 MSDN 上的 [可扩展存储引擎文件](/windows/win32/extensible-storage-engine/extensible-storage-engine-files) 。
 
-如果软恢复出现问题，ESE 将执行崩溃恢复。 有关详细信息，请参阅 MSDN 上的 [JetInit 函数](https://msdn.microsoft.com/library/windows/desktop/gg294068(v=exchg.10).aspx) 。
+如果软恢复出现问题，ESE 将执行崩溃恢复。 有关详细信息，请参阅 MSDN 上的 [JetInit 函数](/windows/win32/extensible-storage-engine/jetinit-function) 。
 
 如果 UAL 仍然无法以现有的 ESE 文件集启动，它将删除 \Windows\System32\LogFiles\SUM\ 目录中的所有文件。 删除这些文件后，将重启 User Access Logging Service 并创建新文件。 随后将如同在新安装的计算机上那样恢复 UAL 服务。
 
@@ -258,5 +258,3 @@ Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\SyncShareSrv /v EnableWor
 ## <a name="see-also"></a><a name="BKMK_Links"></a>另请参阅
 
 - [用户访问日志记录入门](get-started-with-user-access-logging.md)
-
-
