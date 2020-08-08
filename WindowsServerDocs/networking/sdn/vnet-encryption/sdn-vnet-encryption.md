@@ -7,12 +7,12 @@ ms.assetid: 7da0f509-7b02-4a0f-90fb-d97c83a2bc4e
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 68014e0941205db61cc0b607e6784fb8d6d807ab
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 72062d002e5530031a99e3b742507277ed5ec490
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955864"
+ms.locfileid: "87990071"
 ---
 # <a name="virtual-network-encryption"></a>虚拟网络加密
 
@@ -28,9 +28,8 @@ ms.locfileid: "87955864"
 在子网中启用加密后，该子网中的所有网络流量都将自动进行加密，以及任何可能发生的应用程序级加密。  跨子网的流量（即使标记为已加密）将自动以未加密的方式发送。 跨虚拟网络边界的任何流量也会以未加密状态发送。
 
 >[!TIP]
->如果你必须将应用程序限制为仅在加密的子网上进行通信，则可以使用 (Acl) 的访问控制列表，以允许当前子网中的通信。 有关详细信息，请参阅[使用访问控制列表 (acl) 管理数据中心网络流量流](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
+>如果你必须将应用程序限制为仅在加密的子网上进行通信，则可以使用 (Acl) 的访问控制列表，以允许当前子网中的通信。 有关详细信息，请参阅[使用访问控制列表 (acl) 管理数据中心网络流量流](../manage/use-acls-for-traffic-flow.md)。
 
 ### <a name="next-steps"></a>后续步骤
 
-[为虚拟网络配置加密](https://docs.microsoft.com/windows-server/networking/sdn/vnet-encryption/sdn-config-vnet-encryption)
-
+[为虚拟网络配置加密](./sdn-config-vnet-encryption.md)

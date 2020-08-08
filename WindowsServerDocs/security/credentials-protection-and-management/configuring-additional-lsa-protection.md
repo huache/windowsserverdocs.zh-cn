@@ -1,20 +1,18 @@
 ---
 title: 配置其他 LSA 保护
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: 038e7c2b-c032-491f-8727-6f3f01116ef9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 1c923cfe39892ba105c437cf73843c2f6d07e49b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 78533908de1a1f43cbfac9054dcfe6ec83edce9d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857070"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948750"
 ---
 # <a name="configuring-additional-lsa-protection"></a>配置其他 LSA 保护
 
@@ -44,7 +42,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 #### <a name="recommended-practices"></a>建议的做法
 在广泛部署该功能之前，请使用以下列表来全面测试是否已启用 LSA 保护：
 
--   识别组织中使用的所有 LSA 插件和驱动程序。 
+-   识别组织中使用的所有 LSA 插件和驱动程序。
     这包括非 Microsoft 驱动程序或插件（例如智能卡驱动程序和加密插件），以及内部开发的、用于强制密码筛选器或密码更改通知的所有软件。
 
 -   确保使用 Microsoft 证书对所有 LSA 插件进行数字签名，以防止插件加载失败。
@@ -71,7 +69,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 2.  将该注册表项的值设置为 **AuditLevel=dword:00000008**.。
 
-3.  重启计算机。
+3.  重新启动计算机。
 
 分析事件 3065 和事件 3066 的结果。
 
@@ -83,7 +81,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 > [!IMPORTANT]
 > 如果在系统上附加并启用了内核调试程序，则不生成这些操作事件。
-> 
+>
 > 如果插件或驱动程序包含共享区域，则会同时记录事件 3066 和事件 3065。 除非插件不符合 Microsoft 签名级别要求，否则，删除共享区域应可防止发生这两个事件。
 
 若要为域中的多台计算机启用审核模式，可以使用组策略的注册表客户端扩展来部署 Lsass.exe 审核级别注册表值。 需要修改 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe 注册表项。
@@ -94,19 +92,19 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 2.  创建一个新的组策略对象 (GPO)，该对象在域级别链接，或者链接到你的计算机帐户所在的组织单位。 你也可以选择已部署的 GPO。
 
-3.  右键单击该 GPO，然后单击“编辑”打开组策略管理编辑器。
+3.  右键单击该 GPO，然后单击“编辑”打开组策略管理编辑器****。
 
-4.  依次展开“计算机配置”、“首选项”和“Windows 设置”。
+4.  依次展开“计算机配置”****、“首选项”**** 和“Windows 设置”****。
 
-5.  右键单击“注册表”，指向“新建”，然后单击“注册表项”。 此时将出现“新建注册表属性”对话框。
+5.  右键单击“注册表”****，指向“新建”****，然后单击“注册表项”****。 此时将出现“新建注册表属性”对话框****。
 
-6.  在 **“配置单元”** 列表中单击 **HKEY_LOCAL_MACHINE.**
+6.  在**Hive**列表中，单击 " **HKEY_LOCAL_MACHINE"。**
 
-7.  在“注册表项路径”列表中浏览到“**SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe**”。
+7.  在“注册表项路径”**** 列表中浏览到“**SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe**”。
 
 8.  在 **“值名称”** 框中键入 **AuditLevel**。
 
-9. 在 **“值类型”** 框中，通过单击选择 **“REG_DWORD”** 。
+9. 在 **“值类型”** 框中，通过单击选择 **“REG_DWORD”**。
 
 10. 在 **值数据** 框中，键入 **00000008**。
 
@@ -131,7 +129,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 共享区域通常是运用某些编程技术的后果，这些技术允许实例数据与使用相同安全上下文的其他进程交互。 这可能会造成安全漏洞。
 
 ## <a name="how-to-configure-additional-lsa-protection-of-credentials"></a><a name="BKMK_HowToConfigure"></a>如何配置凭据的附加 LSA 保护
-在运行 Windows 8.1 的设备（有或没有安全启动或 UEFI）上，可以通过执行本部分中所述的过程来进行配置。 对于运行 Windows RT 8.1 的设备，lsass.exe 保护始终处于启用状态，并且不能关闭。
+在运行 Windows 8.1 (，无论是还是不使用安全启动或 UEFI) ，可以通过执行本部分中所述的过程来进行配置。 对于运行 Windows RT 8.1 的设备，lsass.exe 始终启用保护，并且不能关闭。
 
 ### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>在使用或不使用安全启动和 UEFI 的基于 x86 或基于 x64 的设备上
 在使用安全启动或 UEFI 的基于 x86 或基于 x64 的设备上，使用注册表项启用 LSA 保护后，将在 UEFI 固件中设置一个 UEFI 变量。 在固件中存储设置后，无法在注册表项中删除或更改该 UEFI 变量， 而只能重新设置它。
@@ -146,7 +144,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 2.  将该注册表项的值设置为："RunAsPPL"=dword:00000001。
 
-3.  重启计算机。
+3.  重新启动计算机。
 
 ##### <a name="to-enable-lsa-protection-using-group-policy"></a>使用组策略启用 LSA 保护的步骤
 
@@ -154,21 +152,21 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 2.  创建一个新 GPO，该 GPO 在域级别链接，或者链接到你的计算机帐户所在的组织单位。 你也可以选择已部署的 GPO。
 
-3.  右键单击该 GPO，然后单击“编辑”打开组策略管理编辑器。
+3.  右键单击该 GPO，然后单击“编辑”打开组策略管理编辑器****。
 
-4.  依次展开“计算机配置”、“首选项”和“Windows 设置”。
+4.  依次展开“计算机配置”****、“首选项”**** 和“Windows 设置”****。
 
-5.  右键单击“注册表”，指向“新建”，然后单击“注册表项”。 此时将出现“新建注册表属性”对话框。
+5.  右键单击“注册表”****，指向“新建”****，然后单击“注册表项”****。 此时将出现“新建注册表属性”对话框****。
 
-6.  在“配置单元”列表中单击“**HKEY_LOCAL_MACHINE**”。
+6.  在“配置单元”**** 列表中单击“**HKEY_LOCAL_MACHINE**”。
 
-7.  在“注册表项路径” 列表中，浏览到 **SYSTEM\CurrentControlSet\Control\Lsa**。
+7.  在“注册表项路径” **** 列表中，浏览到 **SYSTEM\CurrentControlSet\Control\Lsa**。
 
-8.  在“值名称”框中，键入 **RunAsPPL**。
+8.  在“值名称”**** 框中，键入 **RunAsPPL**。
 
-9. 在“值类型”框中，单击“REG_DWORD”。
+9. 在“值类型”**** 框中，单击“REG_DWORD”****。
 
-10. 在“值数据”框中，键入 **00000001**。
+10. 在“值数据”**** 框中，键入 **00000001**。
 
 11. 单击“确定”。
 
@@ -188,9 +186,9 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
     > 关闭安全启动后，将会重置所有与安全启动和 UEFI 相关的配置。 仅当禁用 LSA 保护的所有其他方法均已失败时，才应关闭安全启动。
 
 ### <a name="verifying-lsa-protection"></a>验证 LSA 保护
-若要发现 Windows 启动时是否在保护模式下启动 LSA，请搜索“系统”日志下的“Windows 日志”中的以下 WinInit 事件:
+若要发现 Windows 启动时是否在保护模式下启动 LSA，请搜索“系统”**** 日志下的“Windows 日志”**** 中的以下 WinInit 事件:
 
--   12: LSASS.exe 已作为级别为 4 的受保护进程启动
+-   12：LSASS.exe 已作为具有以下级别的受保护进程启动：4
 
 ## <a name="additional-resources"></a>其他资源
 [凭据保护和管理](credentials-protection-and-management.md)

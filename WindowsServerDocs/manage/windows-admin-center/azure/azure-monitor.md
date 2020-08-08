@@ -1,19 +1,17 @@
 ---
 title: 通过 Windows 管理中心的 Azure Monitor 监视服务器和配置警报
-description: Windows 管理中心（Project Honolulu）与 Azure Monitor 集成
-ms.technology: manage
+description: Windows 管理中心 (项目 Honolulu) 与 Azure Monitor 集成
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 03/24/2019
-ms.openlocfilehash: d6c18e3c4ef052b2e2d274f491762d8e31de4758
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 81501cb5f4255b7a65ebc5f9f6cb9413938864f0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833310"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940118"
 ---
 # <a name="monitor-servers-and-configure-alerts-with-azure-monitor-from-windows-admin-center"></a>通过 Windows 管理中心的 Azure Monitor 监视服务器和配置警报
 
@@ -22,11 +20,11 @@ ms.locfileid: "85833310"
 [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)是一种解决方案，可从各种资源（包括在本地和云中的 Windows 服务器和 vm）收集、分析和处理遥测数据。 尽管 Azure Monitor 从 Azure Vm 和其他 Azure 资源拉取数据，本文重点介绍 Azure Monitor 与本地服务器和 Vm 一起工作的方式，尤其是使用 Windows 管理中心。 如果你有兴趣了解如何使用 Azure Monitor 获取有关超聚合群集的电子邮件警报，请参阅[使用 Azure Monitor 发送电子邮件以运行状况服务错误](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor)。
 
 ## <a name="how-does-azure-monitor-work"></a>Azure Monitor 的工作原理是怎样的？
-![](../media/azure-monitor-diagram.png)从本地 Windows server 生成的 img 数据在 Azure Monitor 的 Log Analytics 工作区中收集。 在工作区中，你可以启用各种监视解决方案逻辑集，为特定方案提供见解。 例如，Azure 更新管理、Azure 安全中心和用于 VM 的 Azure Monitor 都是可以在工作区内启用的监视解决方案。 
+![](../media/azure-monitor-diagram.png)从本地 Windows server 生成的 img 数据在 Azure Monitor 的 Log Analytics 工作区中收集。 在工作区中，你可以启用各种监视解决方案逻辑集，为特定方案提供见解。 例如，Azure 更新管理、Azure 安全中心和用于 VM 的 Azure Monitor 都是可以在工作区内启用的监视解决方案。
 
-当你在 Log Analytics 工作区中启用监视解决方案时，向该工作区报告的所有服务器都将开始收集与该解决方案相关的数据，以便该解决方案可以为工作区中的所有服务器生成见解。 
+当你在 Log Analytics 工作区中启用监视解决方案时，向该工作区报告的所有服务器都将开始收集与该解决方案相关的数据，以便该解决方案可以为工作区中的所有服务器生成见解。
 
-若要在本地服务器上收集遥测数据并将其推送到 Log Analytics 工作区，Azure Monitor 要求安装 Microsoft Monitoring Agent 或 MMA。 某些监视解决方案还需要辅助代理。 例如，用于 VM 的 Azure Monitor 还依赖于 ServiceMap 代理来获得此解决方案提供的其他功能。 
+若要在本地服务器上收集遥测数据并将其推送到 Log Analytics 工作区，Azure Monitor 要求安装 Microsoft Monitoring Agent 或 MMA。 某些监视解决方案还需要辅助代理。 例如，用于 VM 的 Azure Monitor 还依赖于 ServiceMap 代理来获得此解决方案提供的其他功能。
 
 某些解决方案（例如 Azure 更新管理）还依赖于 Azure 自动化来集中管理 Azure 和非 Azure 环境中的资源。 例如，Azure 更新管理使用 Azure 自动化在 Azure 门户中对环境中的计算机上的更新安装集中地进行安排和协调。
 
@@ -35,20 +33,20 @@ ms.locfileid: "85833310"
 
 在 WAC 中，你可以启用两个监视解决方案：
 
-- [Azure 更新管理](azure-update-management.md)（在更新工具中）
-- 用于 VM 的 Azure Monitor （在服务器设置中），即虚拟机见解
+- [Azure 更新管理](azure-update-management.md) (在更新工具中) 
+- 服务器设置中的用于 VM 的 Azure Monitor () ，即虚拟机见解
 
-你可以开始使用这些工具中的 Azure Monitor。 如果以前从未使用过 Azure Monitor，则 WAC 会自动预配 Log Analytics 工作区（和 Azure 自动化帐户，如果需要），并在目标服务器上安装和配置 Microsoft Monitoring Agent （MMA）。 然后再将相应的解决方案安装到工作区中。 
+你可以开始使用这些工具中的 Azure Monitor。 如果以前从未使用过 Azure Monitor，则 WAC 会自动预配 Log Analytics 工作区 (和 Azure 自动化帐户（如果需要）) ，然后在目标服务器上安装并配置 Microsoft Monitoring Agent (MMA) 。 然后再将相应的解决方案安装到工作区中。
 
 例如，如果你首次中转到更新工具来设置 Azure 更新管理，WAC 将：
 
 1. 在计算机上安装 MMA
-2. 创建 Log Analytics 工作区和 Azure 自动化帐户（因为在这种情况下，必须使用 Azure 自动化帐户）
+2. 创建 Log Analytics 工作区和 Azure Automation 帐户 (，因为在这种情况下需要使用 Azure 自动化帐户) 
 3. 在新创建的工作区中安装更新管理解决方案。
 
 如果要在同一台服务器上的 WAC 中添加另一个监视解决方案，WAC 只需将该解决方案安装到该服务器所连接到的现有工作区中。 WAC 将另外安装其他任何所需的代理。
 
-如果连接到其他服务器，但已通过 WAC 或在 Azure 门户中手动设置了 Log Analytics 工作区，则还可以在服务器上安装 MMA 代理并将其连接到现有工作区。 将服务器连接到工作区时，它会自动开始收集数据并向该工作区中安装的解决方案报告。
+如果连接到另一台服务器，但已通过 WAC 或在 Azure 门户) 中手动设置 Log Analytics 工作区 (，则还可以在服务器上安装 MMA 代理并将其连接到现有工作区。 将服务器连接到工作区时，它会自动开始收集数据并向该工作区中安装的解决方案报告。
 
 ## <a name="azure-monitor-for-virtual-machines-aka-virtual-machine-insights"></a>用于虚拟机的 Azure Monitor（也称为 虚拟机见解）
 >适用于： Windows 管理中心预览
@@ -70,11 +68,11 @@ ms.locfileid: "85833310"
 
 ### <a name="get-a-consolidated-view-across-multiple-servers-"></a>* * 跨多个服务器获取合并视图 * *
 
-如果将多个服务器集成到 Azure Monitor 中的单个 Log Analytics 工作区，则可以从 Azure Monitor 内的[虚拟机 Insights 解决方案](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview)获取所有这些服务器的合并视图。  （请注意，仅 Azure Monitor 的虚拟机见解的 "性能" 和 "映射" 选项卡可用于本地服务器– "运行状况" 选项卡仅适用于 Azure Vm。）若要在 Azure 门户中查看此信息，请转到 "Azure Monitor" > 虚拟机 "，并导航到" 性能 "或" 映射 "选项卡。
+如果将多个服务器集成到 Azure Monitor 中的单个 Log Analytics 工作区，则可以从 Azure Monitor 内的[虚拟机 Insights 解决方案](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview)获取所有这些服务器的合并视图。   (请注意，只有适用于 Azure Monitor 的虚拟机见解的 "性能" 和 "映射" 选项卡可用于本地服务器– "运行状况" 选项卡仅适用于 Azure Vm。 ) 若要在 Azure 门户中查看此信息，请转到 Azure Monitor > () 虚拟机 "，并导航到" 性能 "或" 映射 "选项卡。
 
 ### <a name="visualize-apps-systems-and-services-connected-to-a-given-server"></a>**可视化连接到给定服务器的应用、系统和服务**
 
-当管理中心将服务器加入到 Azure Monitor 中的 VM insights 解决方案中时，它还会亮起称为[服务映射](https://docs.microsoft.com/azure/azure-monitor/insights/service-map)功能。 此功能会自动发现应用程序组件并映射服务之间的通信，以便你可以从 Azure 门户轻松查看服务器之间的连接，并提供非常详细的信息。 可以通过转到 "Azure 门户 > Azure Monitor" > "虚拟机"，并导航到 "映射" 选项卡来找到此信息。
+当管理中心将服务器加入到 Azure Monitor 中的 VM insights 解决方案中时，它还会亮起称为[服务映射](https://docs.microsoft.com/azure/azure-monitor/insights/service-map)功能。 此功能会自动发现应用程序组件并映射服务之间的通信，以便你可以从 Azure 门户轻松查看服务器之间的连接，并提供非常详细的信息。 若要找到此信息，请转到 "Azure 门户 > Azure Monitor" Insights (下 > 虚拟机 "，并导航到" 地图 "选项卡。
 
 > [!NOTE]
 > 目前，有6个公共区域提供用于 Azure Monitor 的虚拟机见解的可视化。  有关最新信息，请查看[用于 VM 的 Azure Monitor 文档](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-onboard#log-analytics)。  您必须将 Log Analytics 工作区部署在一个受支持的区域中，以获得上述虚拟机 Insights 解决方案提供的其他优势。

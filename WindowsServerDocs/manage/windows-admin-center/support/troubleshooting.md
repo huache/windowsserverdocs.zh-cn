@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: a7ef7eb2acf9a641babf5690119c61f452aaabbc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 76b171b81ff01a7a16b700d720bf289fefddf0f7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937616"
+ms.locfileid: "87990210"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑难解答
 
@@ -69,7 +69,7 @@ ms.locfileid: "87937616"
 
 * [请检查 Windows 版本](#check-the-windows-version)
 * 你是否针对 HTTPS 添加了入站端口规则？
-* [了解有关在 Azure VM 中安装 Windows Admin Center 的详细信息](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/azure-integration#use-a-windows-admin-center-gateway-deployed-in-azure)
+* [了解有关在 Azure VM 中安装 Windows Admin Center 的详细信息](../azure/azure-integration.md)
 
 ### <a name="check-the-windows-version"></a>请检查 Windows 版本
 
@@ -237,4 +237,3 @@ netsh http delete urlacl url=https://+:443/
 * 你**尝试管理**的计算机的 Windows [版本](#check-the-windows-version)：
 * 你使用什么浏览器？
     * 如果你使用的是 Google Chrome，那么它的版本是？ （“帮助”>“关于 Google Chrome”）
-

@@ -2,18 +2,17 @@
 ms.assetid: 6416d125-bcaf-433d-971a-2f0283bca2c2
 title: 群集感知更新-常见问题
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 description: 有关 Windows Server 中的群集感知更新的常见问题的解答。
-ms.openlocfilehash: aa2f99378713d93bafed710b96542559ac44ead7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0283f7f29ccc647508530d6cfdbf54b41086b90c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473334"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990913"
 ---
 # <a name="cluster-aware-updating-frequently-asked-questions"></a>群集感知更新：常见问题
 
@@ -101,7 +100,7 @@ CAU 不会对群集节点进行负载平衡，但它会尝试保留群集角色�
 
 **高级更新运行选项**管理员还可以从大量高级更新运行选项中进行指定，例如每个节点上重试更新过程的最大次数。 可以使用 CAU UI 或 CAU PowerShell cmdlet 指定这些选项。 这些自定义设置可以保存在更新运行配置文件中，供以后执行更新运行时重复使用。
 
-**公共插件 \- 体系结构**CAU 包含注册、注销和选择插件的功能 \- 。 cau 附带两个默认插件 \- ：一个 \( \) 在每个群集节点上协调 Windows 更新代理 WUA api; 第二个应用手动复制到群集节点可访问的文件共享的修补程序。 如果企业有这两个插件无法满足的独特需求 \- ，企业可以 \- 根据公共 API 规范构建一个新的 CAU 插件。 有关详细信息，请参阅[群集 \- 感知更新插件 \- 参考](https://msdn.microsoft.com/library/hh418084(VS.85).aspx)。
+**公共插件 \- 体系结构**CAU 包含注册、注销和选择插件的功能 \- 。 cau 附带两个默认插件 \- ：一个 \( \) 在每个群集节点上协调 Windows 更新代理 WUA api; 第二个应用手动复制到群集节点可访问的文件共享的修补程序。 如果企业有这两个插件无法满足的独特需求 \- ，企业可以 \- 根据公共 API 规范构建一个新的 CAU 插件。 有关详细信息，请参阅[群集 \- 感知更新插件 \- 参考](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)。
 
 有关配置和自定义 CAU 插件 \- 以支持不同更新方案的信息，请参阅[插件的 \- 工作原理](assetId:///847b571b-12b3-473c-953f-75a5a1f51333)。
 
@@ -154,11 +153,10 @@ CAU 不需要在群集节点上运行的服务。 但是，CAU 需要在 \( \) �
 
 ## <a name="where-is-the-cau-plug-in-specification"></a>什么是 CAU 插件 \- 规范？
 
--   [群集 \- 感知更新插件 \- 引用](https://msdn.microsoft.com/library/hh418084(VS.85).aspx)
+-   [群集 \- 感知更新插件 \- 引用](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
 
 -   [群集感知更新插件 \- 示例](https://code.msdn.microsoft.com/windowsdesktop/Cluster-Aware-Updating-6a8854c9)
 
 ## <a name="additional-references"></a>其他参考
 
 -   [群集 \- 感知更新概述](cluster-aware-updating.md)
-

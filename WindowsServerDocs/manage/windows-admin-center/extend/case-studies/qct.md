@@ -1,27 +1,25 @@
 ---
 title: Windows 管理中心 SDK 案例研究-QCT
 description: Windows 管理中心 SDK 案例研究-QCT
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/14/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 2922bcdd08fac7bf2179a0ebbad37c7151d660b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13f23a46647ec6cc2d8c2813c426f6372ead39ca
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357246"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964664"
 ---
 # <a name="qct-management-suite-extension"></a>QCT 管理套件扩展
 
 ## <a name="a-simple-path-to-server-infrastructure-management"></a>服务器基础结构管理的简单路径
 
-适用于 Windows 管理中心的 QCT 管理套件扩展提供了一个窗格，用于监视系统配置和管理[QCT AZURE STACK HCI 认证系统](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/windows-server-software-defined-solution-wssd/)的服务器运行状况：[QUANTAGRID D52BQ-2u](https://www.qct.io/product/index/Server/rackmount-server/2U-Rackmount-Server/QuantaGrid-D52BQ-2U)， [QUANTAGRID D52T-1ULH](https://www.qct.io/product/index/Storage/Storage-Server/1U-Storage-Server/QuantaGrid-D52T-1ULH) And [QuantaPlex T21P-4u](https://www.qct.io/product/index/Storage/Storage-Server/4U-Storage-Server/QuantaPlex-T21P-4U)。
+适用于 Windows 管理中心的 QCT 管理套件扩展提供单个窗格，用于监视系统配置和管理[QCT AZURE STACK HCI 认证系统](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/windows-server-software-defined-solution-wssd/)的服务器运行状况： [QuantaGrid D52BQ-2U](https://www.qct.io/product/index/Server/rackmount-server/2U-Rackmount-Server/QuantaGrid-D52BQ-2U)、 [QuantaGrid D52T-1ULH](https://www.qct.io/product/index/Storage/Storage-Server/1U-Storage-Server/QuantaGrid-D52T-1ULH)和[QuantaPlex T21P-4u](https://www.qct.io/product/index/Storage/Storage-Server/4U-Storage-Server/QuantaPlex-T21P-4U)。
 
-由于现有监视和管理方面的客户难题，QCT 提供了独占的互补特征和功能，其中包括系统事件日志、监视驱动程序和硬件组件运行状况的概述，以提高总体管理体验。
+由围绕现有监视和管理的客户难点驱动，QCT 提供了独特的互补特征和功能，其中包括系统事件日志、监视驱动程序和硬件组件运行状况的概述，以增强总体管理体验。
 
 ![QCT 扩展](../../media/extend-case-study-qct/D52T_DarkMode_Disk-Detail-General.PNG)
 

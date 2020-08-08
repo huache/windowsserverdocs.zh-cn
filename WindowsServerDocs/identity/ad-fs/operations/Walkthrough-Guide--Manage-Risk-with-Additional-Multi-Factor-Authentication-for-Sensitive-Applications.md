@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: be9eaa7b742f554539fa5bbd08f46d47a347c1ad
-ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
+ms.openlocfilehash: f651f60b5ba9e871a88a2df15d87b6819e851642
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118573"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956284"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>操作实例指南：使用适用于敏感应用程序的附加多重身份验证管理风险
 
@@ -21,7 +19,7 @@ ms.locfileid: "87118573"
 
 
 ## <a name="about-this-guide"></a>关于本指南
-本演练提供了根据用户的组成员身份数据，在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务（AD FS）中配置多重身份验证（MFA）的说明。
+本演练提供了有关如何基于用户的组成员身份数据，在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务 (AD FS) 中配置多重身份验证 (MFA) 的说明。
 
 有关 AD FS 中的 MFA 和身份验证机制的详细信息，请参阅[利用适用于敏感应用程序的附加多重身份验证管理风险](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)。
 
@@ -136,7 +134,7 @@ ms.locfileid: "87118573"
 
     3.  **目录**-与多重身份验证提供程序关联的 Windows Azure Active Directory 租户。 这是一个可选字段，因为在保护本地应用程序时，提供程序不一定要链接到 Windows Azure Active Directory。
 
-7.  单击“创建”后，将会创建该多重身份验证提供程序，并且会显示这样一条消息：已成功创建多重身份验证提供程序。  单击“确定”。
+7.  单击“创建”后，将会创建该多重身份验证提供程序，并且会显示这样一条消息：已成功创建多重身份验证提供程序。  单击“确定” 。
 
 接下来，必须下载 Windows Azure 多重身份验证服务器。 若要执行此操作，你可以通过 Windows Azure 门户启动 Windows Azure Multi-Factor Authentication 门户。
 
@@ -183,9 +181,9 @@ ms.locfileid: "87118573"
 
     > [!NOTE]
     > “多重身份验证 AD FS 适配器”**** 安装向导将在 Active Directory 中创建一个名为“PhoneFactor Admins”**** 的安全组，然后将联合身份验证服务的 AD FS 服务帐户添加到此组。
-    > 
+    >
     > 建议在域控制器上验证是否确实创建了“PhoneFactor Admins”组****，以及 AD FS 服务帐户是否是此组的成员。
-    > 
+    >
     > 需要时，在域控制器上手动将 AD FS 服务帐户添加到 **PhoneFactor 管理员**组。
 
     有关安装 AD FS 适配器的更多详细信息，请单击多重身份验证服务器右上角的“帮助”链接。
@@ -204,7 +202,7 @@ ms.locfileid: "87118573"
 
 ##### <a name="to-configure-the-mfa-policy-based-on-users-group-membership-data-for-claimapp--via-the-ad-fs-management-console"></a>通过 AD FS 管理控制台基于用户的组成员身份数据配置 MFA 策略
 
-1.  在联合服务器上的 AD FS 管理控制台中，导航到 " **Authentication Policies** \\ **每个信赖方信任**节点的身份验证策略"，然后选择代表示例应用程序的信赖方信任（**claimapp**）。
+1.  在联合服务器上的 AD FS 管理控制台中，导航到 " **Authentication Policies** \\ **每个信赖方信任**节点的身份验证策略"，然后选择代表示例应用程序的信赖方信任 (**claimapp**) 。
 
 2.  在“操作”页面中直接选择或者通过右键单击“claimapp”的方式选择“编辑自定义的多重身份验证”************。
 

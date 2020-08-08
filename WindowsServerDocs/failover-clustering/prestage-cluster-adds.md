@@ -1,22 +1,20 @@
 ---
-title: 在 Active Directory 域服务中预留群集计算机对象
+title: 在 Active Directory 域服务中预安排群集计算机对象
 description: 如何在 Active Directory 域服务中预安排群集计算机对象。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d8efc1bdb5a2c3a653afbe61b211f94658101d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 1f9255b0f3ca85a2c128549fbe9dc2c01c870b1b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181723"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990757"
 ---
-# <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>在 Active Directory 域服务中预留群集计算机对象
+# <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>在 Active Directory 域服务中预安排群集计算机对象
 
 > 适用于：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -138,5 +136,5 @@ ms.locfileid: "87181723"
 
 ## <a name="more-information"></a>更多信息
 
-- [故障转移群集](failover-clustering.md)
+- [故障转移群集](./failover-clustering-overview.md)
 - [在 Active Directory 中配置群集帐户](configure-ad-accounts.md)

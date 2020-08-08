@@ -5,12 +5,12 @@ ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 21008268f14435852c7de78ce826bc380f9017a1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d0d9f149a95c00fdac02cbdd383fb950e56b845a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955814"
+ms.locfileid: "87990046"
 ---
 # <a name="virtual-network-peering"></a>虚拟网络对等互连
 
@@ -57,7 +57,7 @@ ms.locfileid: "87955814"
 
 -   虚拟网络中的虚拟机可访问对等互连虚拟网络中的内部负载均衡器。
 
-可以在虚拟网络中 (Acl) 应用访问控制列表，以阻止对其他虚拟网络或子网的访问（如果需要）。 如果打开对等互连虚拟网络之间的完全连接 (这是默认选项) ，则可以将 Acl 应用到特定的子网或虚拟机，以便阻止或拒绝特定访问。 若要了解有关 Acl 的详细信息，请参阅[使用访问控制列表 (acl) 来管理数据中心网络流量流](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
+可以在虚拟网络中 (Acl) 应用访问控制列表，以阻止对其他虚拟网络或子网的访问（如果需要）。 如果打开对等互连虚拟网络之间的完全连接 (这是默认选项) ，则可以将 Acl 应用到特定的子网或虚拟机，以便阻止或拒绝特定访问。 若要了解有关 Acl 的详细信息，请参阅[使用访问控制列表 (acl) 来管理数据中心网络流量流](../manage/use-acls-for-traffic-flow.md)。
 
 ## <a name="service-chaining"></a>服务链
 
@@ -65,7 +65,7 @@ ms.locfileid: "87955814"
 
 你可以部署中心辐射型网络，其中，中心虚拟网络可托管基础结构组件，如网络虚拟设备。 所有辐射虚拟网络与中心虚拟网络对等。 流量可以流经中心虚拟网络中的网络虚拟设备。
 
-虚拟网络对等互连使用户定义的路由中的下一跃点成为对等互连虚拟网络中虚拟机的 IP 地址。 若要详细了解用户定义的路由，请参阅[在虚拟网络上使用网络虚拟设备](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-network-virtual-appliances-on-a-vn)。
+虚拟网络对等互连使用户定义的路由中的下一跃点成为对等互连虚拟网络中虚拟机的 IP 地址。 若要详细了解用户定义的路由，请参阅[在虚拟网络上使用网络虚拟设备](../manage/use-network-virtual-appliances-on-a-vn.md)。
 
 ## <a name="gateways-and-on-premises-connectivity"></a>网关和本地连接
 
@@ -87,4 +87,3 @@ ms.locfileid: "87955814"
 
 ## <a name="next-steps"></a>后续步骤
 [配置虚拟网络对等互连](sdn-configure-vnet-peering.md)：在此过程中，你将使用 Windows POWERSHELL 查找 HNV 提供程序逻辑网络，以创建两个虚拟网络，每个虚拟网络具有一个子网。 你还可以在两个虚拟网络之间配置对等互连。
-

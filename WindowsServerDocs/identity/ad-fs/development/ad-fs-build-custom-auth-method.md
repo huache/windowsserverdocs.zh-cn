@@ -6,14 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 05/23/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 868878fa9c38e1a37ec238d57be578727c189471
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c817567d081ebcd7b6349d80b0590042528135be
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519886"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965024"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>为 Windows Server 中的 AD FS 构建自定义身份验证方法
 
@@ -50,7 +48,7 @@ ms.locfileid: "87519886"
 
     现在应设置为解析提供程序所需的所有类型。
 
-7. 向项目中添加新类（右键单击项目，**添加 .。。类 ...**）并为其指定一个名称（如**MyAdapter**），如下所示：
+7. 向项目添加新类 (右键单击项目，**添加 .。。类 ...**) ，并将其命名为**MyAdapter**，如下所示：
 
     ![创建提供程序](media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "创建提供程序")
 
@@ -77,7 +75,7 @@ ms.locfileid: "87519886"
         }
     ```
 
-    现在，你应该能够在 IAuthenticationAdapter 上按 F12 （右键单击– "前往定义"）来查看所需的接口成员集。
+    现在，你应该可以通过单击 (右键单击 "IAuthenticationAdapter 上的定义) 来查看所需的接口成员集。
 
     接下来，您可以执行这些操作的简单实现。
 
@@ -138,7 +136,7 @@ ms.locfileid: "87519886"
     }
     ```
 
-2. 接下来，你可以为每个添加所需的成员。首先，元数据（包含有用的内嵌注释）
+2. 接下来，你可以为每个添加所需的成员。首先，具有有用内联注释 (元数据) 
 
     ```
     class MyMetadata : IAuthenticationAdapterMetadata
@@ -325,9 +323,9 @@ ms.locfileid: "87519886"
 
    ![创建提供程序](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "创建提供程序")
 
-15. 然后，在**Resources .resx**文件中，选择 "**添加资源 ..."添加现有文件**。 导航到上面保存的文本文件（包含 html 片段）。
+15. 然后，在**Resources .resx**文件中，选择 "**添加资源 ..."添加现有文件**。 导航至文本文件 (包含上面保存的 html 片段) 。
 
-   确保 GetFormHtml 代码通过资源文件（.resx 文件）名称前缀后跟资源本身的名称，正确解析新资源的名称：
+   确保 GetFormHtml 代码将资源文件 ( .resx 文件正确解析新资源的名称，) 名称前缀后跟资源本身的名称：
 
 ```
     public string GetFormHtml(int lcid)
@@ -367,11 +365,11 @@ ms.locfileid: "87519886"
 
 3. 将 Gacutil.exe 工具复制到服务器。
 
-    可在 Windows 8 计算机上的 **% homedrive% Program Files （x86） Microsoft sdkswindowsv 8.0 abinnetfx 4.0 工具**中找到 Gacutil.exe。 你将需要**gacutil.exe**文件本身以及**1033**、 **en-us**和其他本地化资源文件夹（位于**NETFX 4.0 工具**位置下）。
+    可在 Windows 8 计算机上的**homedrive% Program Files (x86) Microsoft sdkswindowsv 8.0 abinnetfx 4.0 工具**中找到 Gacutil.exe。 你将需要**gacutil.exe**文件本身以及**1033**、 **en-us**和其他本地化资源文件夹（位于**NETFX 4.0 工具**位置下）。
 
-4. 将提供程序文件（一个或多个强名称签名 .dll 文件）复制到与**gacutil.exe**相同的文件夹位置（该位置只是为了方便）
+4. 将 (的提供程序文件复制)  (一个或多个强名称签名 .dll 文件) 到与**gacutil.exe**相同的文件夹位置 (
 
-5. 将 .dll 文件添加到场中每个 AD FS 联合服务器上的 GAC 中：
+5. 在场中的每个 AD FS 联合服务器上的 GAC 中添加 .dll 文件 () ：
 
     示例：使用命令行工具 GACutil.exe 向 GAC 添加 dll：`C:>.gacutil.exe /if .<yourdllname>.dll`
 
@@ -381,7 +379,7 @@ ms.locfileid: "87519886"
 
 ### <a name="register-your-provider-in-ad-fs"></a>将提供程序注册到 AD FS
 
-满足上述先决条件后，请在联合服务器上打开 Windows PowerShell 命令窗口并输入以下命令（请注意，如果使用的是使用 Windows 内部数据库的联合服务器场，则必须在场的主联合服务器上执行这些命令）：
+满足上述先决条件后，请在联合服务器上打开 Windows PowerShell 命令窗口并输入以下命令 (请注意，如果使用的是使用 Windows 内部数据库的联合服务器场，则必须在服务器场的主联合服务器上执行以下命令) ：
 
 1. `Register-AdfsAuthenticationProvider –TypeName YourTypeName –Name “AnyNameYouWish” [–ConfigurationFilePath (optional)]`
 
@@ -389,7 +387,7 @@ ms.locfileid: "87519886"
 
     这会将你的外部提供程序注册到 AD FS，并将其名称作为 AnyNameYouWish 提供给你。
 
-2. 重新启动 AD FS 服务（例如，使用 Windows 服务管理单元）。
+2. 使用 "Windows 服务" 管理单元重新启动 AD FS 服务 (，例如) "。
 
 3. 运行以下命令：`Get-AdfsAuthenticationProvider`。
 
@@ -414,15 +412,15 @@ ms.locfileid: "87519886"
 
 #### <a name="create-the-authentication-policy-using-the-ad-fs-management-snap-in"></a>使用 "AD FS 管理" 管理单元创建身份验证策略
 
-1. 从 "服务器管理器**工具**" 菜单中打开 "AD FS 管理" 管理单元。
+1. 从服务器管理器 "**工具**") 菜单中打开 "AD FS 管理" 管理单元 (。
 
 2. 单击 "**身份验证策略**"。
 
 3. 在中心窗格中的 "**多重身份验证**" 下，单击 "**全局设置**" 右侧的 "**编辑**" 链接。
 
-4. 在页面底部的 "**选择其他身份验证方法**" 下，选中提供商的 AdminName 的复选框。 单击“应用”。
+4. 在页面底部的 "**选择其他身份验证方法**" 下，选中提供商的 AdminName 的复选框。 单击“**应用**”。
 
-5. 若要提供 "触发器" 来使用适配器调用 MFA，请在 "**位置**" 下检查**Extranet**和**Intranet**，例如。 单击“确定”。 （若要配置每个信赖方的触发器，请参阅下面的 "使用 Windows PowerShell 创建身份验证策略"。）
+5. 若要提供 "触发器" 来使用适配器调用 MFA，请在 "**位置**" 下检查**Extranet**和**Intranet**，例如。 单击“确定”。  (配置每个信赖方的触发器，请参阅下面的 "使用 Windows PowerShell 创建身份验证策略"。 ) 
 
 6. 使用以下命令检查结果：
 
@@ -453,7 +451,7 @@ ms.locfileid: "87519886"
    Set-AdfsAdditionalAuthenticationRule –AdditionalAuthenticationRules 'c:[type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn" );
    ```
 
-   示例2：创建 MFA 规则以要求对特定信赖方的外部请求进行 MFA。 （请注意，单个提供程序无法连接到 Windows Server 2012 R2 的 AD FS 中的单个依赖方。
+   示例2：创建 MFA 规则以要求对特定信赖方的外部请求进行 MFA。  (请注意，单个提供程序无法连接到 Windows Server 2012 R2) AD FS 中的单个依赖方。
 
     ```powershell
     $rp = Get-AdfsRelyingPartyTrust –Name <Relying Party Name>
@@ -464,7 +462,7 @@ ms.locfileid: "87519886"
 
 最后，执行以下步骤来测试适配器：
 
-1. 确保为 Extranet 和 Intranet 将 AD FS 全局主要身份验证类型配置为窗体身份验证（这使得演示更易于作为特定用户进行身份验证）
+1. 确保将 AD FS 全局主要身份验证类型配置为 Extranet 和 Intranet (的窗体身份验证，这使得演示更易于作为特定用户进行身份验证) 
 
     1. 在 "AD FS" 管理单元中，在 "**身份验证策略**" 下的 "**主要身份验证**" 区域中，单击 "**全局设置**" 旁边的 "**编辑**"。
 
@@ -472,7 +470,7 @@ ms.locfileid: "87519886"
 
 2. 确保为 Extranet 和 Intranet 身份验证方法都同时检查**Forms 身份验证**。 单击“确定”。
 
-3. 打开 "IDP 发起的登录" html 页（https:// <fsname> /adfs/ls/idpinitiatedsignon.htm），并在测试环境中以有效 AD 用户身份登录。
+3. 在测试环境中打开 "IDP 发起的登录 html" 页 (https:// <fsname> /adfs/ls/idpinitiatedsignon.htm) 并以有效的 AD 用户身份登录。
 
 4. 输入用于主要身份验证的凭据。
 
@@ -503,7 +501,7 @@ return new MyPresentationForm();
 }
 ```
 
-让我们进行更新，使其不会始终返回 MyPresentationForm （）。 为此，可以在类中创建一个简单的实用工具方法：
+让我们进行更新，使其不会始终返回 MyPresentationForm ( # A1。 为此，可以在类中创建一个简单的实用工具方法：
 
 ```
 static bool ValidateProofData(IProofData proofData, IAuthenticationContext authContext)
@@ -559,7 +557,7 @@ return new MyPresentationForm();
 
 ![清除策略](media/ad-fs-build-custom-auth-method/Dn783423.c111b4e7-5b05-413c-8b0f-222a0e91ac1f(MSDN.10).jpg "清除策略")
 
-### <a name="unregister-provider-windows-powershell"></a>撤消注册提供程序（Windows PowerShell）
+### <a name="unregister-provider-windows-powershell"></a> (Windows PowerShell 注销提供程序) 
 
 `PS C:> Unregister-AdfsAuthenticationProvider –Name “YourAuthProviderName”`
 
@@ -567,7 +565,7 @@ return new MyPresentationForm();
 
 请注意，你为 "Name" 传递的值与你向 Register-adfsauthenticationprovider cmdlet 提供的 "名称" 的值相同。 它也是从 Register-adfsauthenticationprovider 输出的 "Name" 属性。
 
-请注意，在取消注册某个提供程序之前，必须从 AdfsGlobalAuthenticationPolicy 中删除该提供程序（通过清除你在 AD FS 管理 "管理单元或使用 Windows PowerShell 中签入的复选框）。
+请注意，在取消注册某个提供程序之前，必须通过清除 AD FS 管理 "管理单元或使用 Windows PowerShell 中签入的复选框，从 AdfsGlobalAuthenticationPolicy 中删除该提供程序 (。 ) 
 
 请注意，在完成此操作后，必须重新启动 AD FS 服务。
 
@@ -585,7 +583,7 @@ return new MyPresentationForm();
 
 请确保先在本地粘贴更新的 .dll。 `C:>.gacutil.exe /if .MFAAdapter.dll`
 
-### <a name="view-assembly-in-the-gac-cmd-line"></a>查看 GAC 中的程序集（cmd 行）
+### <a name="view-assembly-in-the-gac-cmd-line"></a>在 GAC 中查看程序集 (命令行) 
 
 `C:> .gacutil.exe /l mfaadapter`
 
@@ -599,13 +597,13 @@ return new MyPresentationForm();
 
 ### <a name="create-the-authentication-policy-using-the-ad-fs-management-snap-in"></a>使用 "AD FS 管理" 管理单元创建身份验证策略
 
-1. 从 "服务器管理器**工具**" 菜单中打开 "AD FS 管理" 管理单元。
+1. 从服务器管理器 "**工具**") 菜单中打开 "AD FS 管理" 管理单元 (。
 
 2. 单击 "**身份验证策略**"。
 
 3. 在 "**多重身份验证**" 下，单击 "**全局设置**" 右侧的 "**编辑**" 链接。
 
-4. 在 "**选择其他身份验证方法**" 下，选中提供程序的 AdminName 的复选框。 单击“应用”。
+4. 在 "**选择其他身份验证方法**" 下，选中提供程序的 AdminName 的复选框。 单击“**应用**”。
 
 5. 若要提供 "触发器" 来使用适配器调用 MFA，请在 "位置" 下检查**Extranet**和**Intranet**，例如。 单击“确定”。
 
@@ -613,7 +611,7 @@ return new MyPresentationForm();
 
 最后，执行以下步骤来测试适配器：
 
-1. 确保为 Extranet 和 Intranet 将 AD FS 全局主要身份验证类型配置为**窗体身份验证**（这样可以更容易地以特定用户身份进行身份验证）。
+1. 确保将 AD FS 全局主要身份验证类型配置为 Extranet 和 Intranet (的**窗体身份验证**，这样可以更轻松地) 特定用户进行身份验证。
 
     1. 在 AD FS 管理 "管理单元中，在"**身份验证策略**"下的"**主要身份验证**"区域中，单击"**全局设置**"旁边的"**编辑**"。
 
@@ -621,7 +619,7 @@ return new MyPresentationForm();
 
 2. 确保为**Extranet**和**Intranet**身份验证方法都同时检查**Forms 身份验证**。 单击“确定”。
 
-3. 打开 "IDP 发起的登录" html 页（https:// <fsname> /adfs/ls/idpinitiatedsignon.htm），并在测试环境中以有效 AD 用户身份登录。
+3. 在测试环境中打开 "IDP 发起的登录 html" 页 (https:// <fsname> /adfs/ls/idpinitiatedsignon.htm) 并以有效的 AD 用户身份登录。
 
 4. 输入用于主要身份验证的凭据。
 

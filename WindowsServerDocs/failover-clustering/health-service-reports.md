@@ -1,18 +1,16 @@
 ---
 title: 运行状况服务报表
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: a1aedd4dc48abb38c33679f219a6825c6a9141bb
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1e6b11bc73ef34e5247ca43140d3e2122e77ab61
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473024"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990782"
 ---
 # <a name="health-service-reports"></a>运行状况服务报表
 
@@ -77,7 +75,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 ### <a name="discover-objects"></a>发现对象
 
-建立**CimSession**后，可以在群集上查询 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
+建立**CimSession**后，可以在群集上查询 (WMI) Windows Management Instrumentation。
 
 你需要获取多个相关对象的实例，然后才能获取错误或度量值。 首先， **MSFT \_ StorageSubSystem** ，它代表群集上存储空间直通。 使用它可以获取群集中的每个**msft \_ StorageNode** ，以及每个**msft \_ 卷**和数据卷。 最后，您还需要**MSFT \_ StorageHealth**，这运行状况服务本身。
 
@@ -109,7 +107,7 @@ public void DiscoverObjects(CimSession Session)
 
 这些对象是在 PowerShell 中使用**StorageSubSystem**、 **StorageNode**和**Volume**等 cmdlet 获取的相同对象。
 
-可以访问[存储管理 API 类](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)中所述的所有相同属性。
+可以访问[存储管理 API 类](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes)中所述的所有相同属性。
 
 ```
 using System.Diagnostics;
@@ -127,9 +125,9 @@ foreach (CimInstance Node in Nodes)
 
 Windows Server 2016 中的每个作用域提供的指标完整列表如下所述。
 
-### <a name="iobserveronnext"></a>IObserver. OnNext （）
+### <a name="iobserveronnext"></a>IObserver. OnNext ( # A1
 
-此示例代码使用[观察程序设计模式](https://msdn.microsoft.com/library/ee850490(v=vs.110).aspx)来实现一个观察器，当度量值的每个新样本到达时，将调用其**OnNext （）** 方法。 如果流式处理结束时，将调用其**OnCompleted （）** 方法。 例如，你可以使用它来重新启动流式处理，因此它会无限期地继续。
+此示例代码使用[观察程序设计模式](/dotnet/standard/events/observer-design-pattern)来实现一个观察器，在度量值的每个新样本到达时，将调用**OnNext ( # B1**方法。 如果流式处理结束时，将调用其**OnCompleted ( # B1**方法。 例如，你可以使用它来重新启动流式处理，因此它会无限期地继续。
 
 ```
 class MetricsObserver<T> : IObserver<T>
@@ -219,7 +217,7 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 单位 = {0，1，2，3，4}，其中 0 = "字节"，1 = "BytesPerSecond"，2 = "CountPerSecond"，3 = "秒"，或 4 = "百分比"。
 
-## <a name="coverage"></a>覆盖率
+## <a name="coverage"></a>覆盖范围
 
 下面是适用于 Windows Server 2016 中每个作用域的指标。
 

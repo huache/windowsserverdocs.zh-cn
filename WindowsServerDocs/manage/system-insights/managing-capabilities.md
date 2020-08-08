@@ -1,19 +1,17 @@
 ---
 title: 管理功能
 description: 系统见解公开了可为每个功能配置的各种设置，可以对这些设置进行调整以满足部署的特定需求。 本主题介绍如何通过 Windows 管理中心或 PowerShell 管理每项功能的各种设置，提供基本 PowerShell 示例和 Windows 管理中心屏幕截图，演示如何调整这些设置。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 66745440094ccf55b774727320d59074139a7f33
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e82b27d2d746592b29b86a66ee34b21f8605a0d8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471778"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940158"
 ---
 # <a name="managing-capabilities"></a>管理功能
 
@@ -85,7 +83,7 @@ $Output.ForecastingResults
 | 警告 | 148 |
 | 严重 | 150 |
 | 错误 | 149 |
-| 无 | 132 |
+| None | 132 |
 
 >[!TIP]
 >使用[Azure Monitor](https://azure.microsoft.com/services/monitor/)或[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)来聚合这些事件，并查看一组计算机中的预测结果。

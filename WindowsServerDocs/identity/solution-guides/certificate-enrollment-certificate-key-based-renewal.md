@@ -5,22 +5,21 @@ ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: c4c74fc5fef01c21d5c1818c212c004786caca66
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 5e8618853e28c6deef4a15e84361e339c70bf052
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182213"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940331"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>为自定义端口上的基于证书密钥的续订配置证书注册 Web 服务
 
 > 作者： Jitesh Thakur、Meera Mohideen、包含 Windows 组的技术顾问。
 Ankit Tyagi 支持工程师和 Windows 组
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文提供了在443以外的自定义端口上实现证书注册策略 Web 服务（CEP）和证书注册 Web 服务（CES）的分步说明，以利用 CEP 和 CES 的自动续订功能。
+本文提供了有关在443以外的自定义端口上实现证书注册策略 Web 服务 (CEP) 和证书注册 Web 服务 (CES) 的分步说明，以利用 CEP 和 CES 的自动续订功能。
 
 本文还介绍了 CEP 和 CES 如何工作，并提供了安装指南。
 
@@ -33,13 +32,13 @@ Ankit Tyagi 支持工程师和 Windows 组
 
 在此示例中，说明基于使用以下配置的环境：
 
-- 具有 Active Directory 证书服务（AD CS）公钥基础结构（PKI）的 Contoso.com 林。
+- Active Directory 证书服务 (AD CS) 公钥基础结构 (PKI) 的 Contoso.com 林。
 
 - 在一个在服务帐户下运行的服务器上配置的两个 CEP/CES 实例。 一个实例使用用户名和密码进行初始注册。 另一种使用基于证书的身份验证在仅续订模式下进行基于密钥的续订。
 
 - 用户具有工作组或未加入域的计算机，他将使用用户名和密码凭据注册计算机证书。
 
-- 从用户到 CEP 的连接和通过 HTTPS 进行的 CES 连接发生在自定义端口上，如49999。 （此端口是从动态端口范围中选择的，并且不会被任何其他服务用作静态端口。）
+- 从用户到 CEP 的连接和通过 HTTPS 进行的 CES 连接发生在自定义端口上，如49999。  (从动态端口范围中选择此端口，任何其他服务都不会将其用作静态端口。 ) 
 
 - 当证书生存期即将结束时，计算机将使用基于证书的 CES 基于密钥的续订来续订同一通道上的证书。
 
@@ -118,7 +117,7 @@ Add-WindowsFeature Adcs-Enroll-Web-Svc
 Install-AdcsEnrollmentPolicyWebService -AuthenticationType Username -SSLCertThumbprint "sslCertThumbPrint"
 ```
 
-此命令通过指定使用用户名和密码进行身份验证来安装证书注册策略 Web 服务（CEP）。
+此命令通过指定使用用户名和密码进行身份验证，安装证书注册策略 Web 服务 (CEP) 。
 
 > [!Note]
 > 在此命令中， \<**SSLCertThumbPrint**\> 是将用于绑定 IIS 的证书的指纹。
@@ -127,11 +126,11 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Username -SSLCertThum
 Install-AdcsEnrollmentWebService -ApplicationPoolIdentity -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSLCertThumbprint "sslCertThumbPrint" -AuthenticationType Username
 ```
 
-此命令安装证书注册 Web 服务（CES），以将证书颁发机构用于计算机名称**CA1.contoso.com**和**CA1-ca**的 ca 公用名。 已将 CES 标识指定为默认应用程序池标识。 身份验证类型为**username**。 SSLCertThumbPrint 是将用于绑定 IIS 的证书的指纹。
+此命令将证书注册 Web 服务 (CES) ，以将证书颁发机构用于计算机名称**CA1.contoso.com**和**CA1-ca**的 ca 公用名。 已将 CES 标识指定为默认应用程序池标识。 身份验证类型为**username**。 SSLCertThumbPrint 是将用于绑定 IIS 的证书的指纹。
 
-##### <a name="step-2-check-the-internet-information-services-iis-manager-console"></a>步骤2检查 Internet Information Services （IIS）管理器控制台
+##### <a name="step-2-check-the-internet-information-services-iis-manager-console"></a>步骤2在 IIS) 管理器控制台 (Internet Information Services
 
-成功安装后，你希望在 Internet Information Services （IIS）管理器控制台中看到以下显示。
+成功安装后，你应该会在 "Internet Information Services (" IIS) 管理器控制台 "中看到以下显示。
 ![IIS 管理器](media/certificate-enrollment-certificate-key-based-renewal-4.png)
 
 在 "**默认**网站" 下，选择 " **ADPolicyProvider_CEP_UsernamePassword**"，然后打开 "**应用程序设置**"。 请注意**ID**和**URI**。
@@ -148,7 +147,7 @@ Install-AdcsEnrollmentWebService -ApplicationPoolIdentity -CAConfig "CA1.contoso
 Install-AdcsEnrollmentPolicyWebService -AuthenticationType Certificate -SSLCertThumbprint "sslCertThumbPrint" -KeyBasedRenewal
 ```
 
-此命令安装证书注册策略 Web 服务（CEP），并指定证书用于身份验证。
+此命令安装证书注册策略 Web 服务 (CEP) ，并指定证书用于身份验证。
 
 > [!Note]
 > 在此命令中， \<SSLCertThumbPrint\> 是将用于绑定 IIS 的证书的指纹。
@@ -159,7 +158,7 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Certificate -SSLCertT
 Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSLCertThumbprint "sslCertThumbPrint" -AuthenticationType Certificate -ServiceAccountName "Contoso\cepcessvc" -ServiceAccountPassword (read-host "Set user password" -assecurestring) -RenewalOnly -AllowKeyBasedRenewal
 ```
 
-此命令安装证书注册 Web 服务（CES），以将证书颁发机构用于计算机名称**CA1.contoso.com**和**CA1-ca**的 ca 公用名。
+此命令将证书注册 Web 服务 (CES) ，以将证书颁发机构用于计算机名称**CA1.contoso.com**和**CA1-ca**的 ca 公用名。
 
 在此命令中，将证书注册 Web 服务的标识指定为**cepcessvc**服务帐户。 身份验证类型为**certificate**。 **SSLCertThumbPrint**是将用于绑定 IIS 的证书的指纹。
 
@@ -191,9 +190,9 @@ Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSL
 
 ![新对象](media/certificate-enrollment-certificate-key-based-renewal-6.png)
 
-##### <a name="step-2-configure-the-service-account-for-constrained-delegation-s4u2self"></a>步骤2：为约束委派配置服务帐户（S4U2Self）
+##### <a name="step-2-configure-the-service-account-for-constrained-delegation-s4u2self"></a>步骤2：为约束委派配置服务帐户 (S4U2Self) 
 
-运行以下 PowerShell 命令以启用约束委托（S4U2Self 或任何身份验证协议）：
+运行以下 PowerShell 命令，以启用约束委派 (S4U2Self 或任何身份验证协议) ：
 
 ```PowerShell
 Get-ADUser -Identity cepcessvc | Set-ADAccountControl -TrustedToAuthForDelegation $True
@@ -234,7 +233,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 #### <a name="configure-the-client-computer"></a>配置客户端计算机
 
-在客户端计算机上，设置注册策略和自动注册策略。 为此，请按照下列步骤进行操作：
+在客户端计算机上，设置注册策略和自动注册策略。 要实现这一点，请执行下列操作：
 
 1. 选择 "**启动**  >  **运行**"，然后输入**gpedit.msc**。
 
@@ -276,7 +275,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 若要确保自动续订正在运行，请通过使用 mmc 续订具有相同密钥的证书来验证手动续订是否正常工作。 此外，在续订时，还应提示您选择证书。 你可以选择前面注册的证书。 应为提示。
 
-打开计算机的 "个人" 证书存储区，然后添加 "存档的证书" 视图。 为此，请将 "本地计算机帐户" 管理单元添加到 mmc.exe，通过单击选中 "**证书（本地计算机）** "，单击右侧或 mmc 顶部的 "**操作" 选项卡**中的 "**查看**"，单击 "**查看选项**"，选择 "**存档的证书**"，然后单击 **"确定"**。
+打开计算机的 "个人" 证书存储区，然后添加 "存档的证书" 视图。 为此，请将 "本地计算机帐户" 管理单元添加到 mmc.exe 中，通过单击 " ** (本地计算机) **突出显示证书，单击右侧或 mmc 顶部"**操作 "选项卡**中的"**查看**"，单击"**查看选项**"，选择"**存档的证书**"，然后单击 **" 确定 "**。
 
 ### <a name="method-1"></a>方法 1
 
@@ -292,9 +291,9 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 将客户端计算机上的时间和日期提前到证书模板的续订时间。
 
-例如，证书模板具有2天的有效性设置和配置的8小时续订设置。 在凌晨4:00 颁发了示例证书。 每月18日过期，截止时间为凌晨4:00。 20号。 自动注册引擎会在重新启动时触发，每隔8小时触发一次（大约）。
+例如，证书模板具有2天的有效性设置和配置的8小时续订设置。 在凌晨4:00 颁发了示例证书。 每月18日过期，截止时间为凌晨4:00。 20号。 自动注册引擎会在重新启动时触发，每隔8小时触发一次 (大约) 。
 
-因此，如果您将时间前进到 8:10 P.M.。 在19年，由于我们的续订窗口在模板上设置为8小时，因此运行 Certutil-脉冲（触发 AE 引擎）可为您注册证书。
+因此，如果您将时间前进到 8:10 P.M.。 在19年，由于我们的续订时段在模板上设置为8小时，因此运行 Certutil-脉冲 (来触发 AE 引擎) 为你注册证书。
 
 ![command](media/certificate-enrollment-certificate-key-based-renewal-15.png)
 
@@ -313,7 +312,7 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 [安装-AdcsEnrollmentWebService](/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
 
-另请参阅
+请参阅
 
 [Windows Server 安全论坛](https://aka.ms/adcsforum)
 
@@ -323,4 +322,4 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 [Windows PKI 博客](/archive/blogs/pki/)
 
-[如何在 Web 注册代理页的自定义服务帐户上配置 Kerberos 约束委派（仅限 S4U2Proxy 或 Kerberos）](https://support.microsoft.com/help/4494313/configuring-web-enrollment-proxy-for-s4u2proxy-constrained-delegation)
+[如何在 Web 注册代理页的自定义服务帐户上配置 Kerberos 约束委派 (S4U2Proxy 或 Kerberos) ](https://support.microsoft.com/help/4494313/configuring-web-enrollment-proxy-for-s4u2proxy-constrained-delegation)

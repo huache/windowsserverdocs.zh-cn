@@ -1,20 +1,18 @@
 ---
 title: 群集感知更新概述
-description: 群集感知更新（CAU）在运行 Windows Server 的群集上自动执行软件更新安装。
+description: 群集感知更新 (CAU) 自动执行运行 Windows Server 的群集上的软件更新安装。
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: a889e19947d014bc2008417f64f6be5cc53112e6
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: defec4b34dfd0e2efa5724e499330c79b993bb60
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409888"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990805"
 ---
 # <a name="cluster-aware-updating-overview"></a>群集感知更新概述
 
@@ -80,7 +78,7 @@ CAU 可在所有版本的 Windows Server 上使用，包括服务器核心安装
 
 若要安装故障转移群集功能，你可使用以下工具：
 - 服务器管理器中的“添加角色和功能向导”
-- [Add-windowsfeature](https://docs.microsoft.com/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps)  Windows PowerShell cmdlet
+- [Add-windowsfeature](/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps)  Windows PowerShell cmdlet
 - 部署映像服务和管理 (DISM) 命令行工具
 
 有关详细信息，请参阅[安装故障转移群集功能](create-failover-cluster.md#install-the-failover-clustering-feature)。
@@ -101,9 +99,9 @@ CAU 可在所有版本的 Windows Server 上使用，包括服务器核心安装
 ### <a name="enabling-self-updating-mode"></a>启用自我更新模式
 若要启用自我更新模式，必须将群集感知更新群集角色添加到故障转移群集。 为此，请使用以下方法之一：
 - 在服务器管理器中，选择 "**工具**" "  >  **群集感知更新**"，然后在 "群集感知更新" 窗口中选择 "**配置群集自我更新选项**"。
-- 在 PowerShell 会话中，运行[add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps) cmdlet。
+- 在 PowerShell 会话中，运行[add-cauclusterrole](/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps) cmdlet。
 
-若要卸载 CAU，请使用服务器管理器、 [uninstall](https://docs.microsoft.com/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) CMDLET 或 DISM 命令行工具卸载故障转移群集功能或故障转移群集工具 \- 。
+若要卸载 CAU，请使用服务器管理器、 [uninstall](/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) CMDLET 或 DISM 命令行工具卸载故障转移群集功能或故障转移群集工具 \- 。
 
 ### <a name="additional-requirements-and-best-practices"></a>其他要求和最佳做法
 
@@ -134,8 +132,6 @@ CAU 可在所有版本的 Windows Server 上使用，包括服务器核心安装
 
 -   [CAU 插件的 \- 工作原理](cluster-aware-updating-plug-ins.md)
 
--   [\-Windows PowerShell 中的群集感知更新 cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
+-   [\-Windows PowerShell 中的群集感知更新 cmdlet](/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
 
 -   [群集 \- 感知更新插件 \- 引用](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
-
-

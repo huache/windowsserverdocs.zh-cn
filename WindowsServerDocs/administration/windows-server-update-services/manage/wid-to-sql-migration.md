@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: edebd8ea11a844fbe6d00ca7ce7a6a375d8e9a51
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7a5102ab622d051e87ca735e5a03f131d583838a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896863"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991125"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>将 WSUS 数据库从 WID 迁移到 SQL
 
@@ -78,7 +78,7 @@ ms.locfileid: "87896863"
     ![image4.jpg ](images/image4.png) ![ image5](images/image5.png)
 
 > [!TIP]
-> 也可以使用 Transact-sql 来完成此操作。  有关附加数据库的说明，请参阅[SQL 文档](https://docs.microsoft.com/sql/relational-databases/databases/attach-a-database)。
+> 也可以使用 Transact-sql 来完成此操作。  有关附加数据库的说明，请参阅[SQL 文档](/sql/relational-databases/databases/attach-a-database)。
 >
 > 使用前面示例中的路径 (示例) ：
 > ```sql

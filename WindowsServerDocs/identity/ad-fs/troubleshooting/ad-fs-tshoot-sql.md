@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/12/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 052a804a61701855fbdf6b6e373314d35b474cf9
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2fb32d5b553b4d248c718fac766a83daa5dfedb2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517592"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964814"
 ---
 # <a name="ad-fs-troubleshooting---sql-connectivity"></a>AD FS 疑难解答-SQL 连接
 AD FS 提供将远程 SQL Server 用于 AD FS 场数据的功能。  如果场中的 AD FS 服务器无法与后端 SQL server 通信，则会出现问题。  以下文档将提供一些基本步骤来测试与后端服务器的通信。
@@ -29,7 +27,7 @@ AD FS 提供将远程 SQL Server 用于 AD FS 场数据的功能。  如果场�
 
 ![PowerShell 命令屏幕运行命令](media/ad-fs-tshoot-sql/sql2.png)
 
-## <a name="create-a-universal-data-link-udl-file-to-test-connectivity"></a>创建用于测试连接的通用数据链接（UDL）文件
+## <a name="create-a-universal-data-link-udl-file-to-test-connectivity"></a>创建通用数据链接 (UDL) 文件来测试连接
 通用数据链接文件或 UDL 文件本质上是包含数据库连接字符串的文本文件。  通过使用我们在上面获取的信息，可以测试 SQL server 是否响应连接。
 
 ### <a name="to-create-a-udl-file-to-test-connectivity"></a>创建用于测试连接的 udl 文件

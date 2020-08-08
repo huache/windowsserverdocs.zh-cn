@@ -1,19 +1,17 @@
 ---
 title: 通过 Windows 管理中心管理超聚合基础结构
-description: 通过 Windows 管理中心管理超聚合基础结构（Project Honolulu）
-ms.technology: manage
+description: 通过 Windows 管理中心 (项目 Honolulu) 管理超聚合基础结构
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 8344fcb01a5d527dfce46118121fbf7623636549
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a2fd0e688d33265119c8dcb915d485e953507c80
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519666"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990485"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>通过 Windows 管理中心管理超聚合基础结构
 
@@ -21,7 +19,7 @@ ms.locfileid: "87519666"
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>什么是超聚合基础结构
 
-超聚合基础结构将软件定义的计算、存储和网络整合到一个群集中，以提供高性能、经济高效且易于缩放的虚拟化。 此功能是在 Windows Server 2016 中引入的，其中[存储空间直通](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)、[软件定义的网络](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)和[hyper-v](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)。
+超聚合基础结构将软件定义的计算、存储和网络整合到一个群集中，以提供高性能、经济高效且易于缩放的虚拟化。 此功能是在 Windows Server 2016 中引入的，其中[存储空间直通](../../../storage/storage-spaces/storage-spaces-direct-overview.md)、[软件定义的网络](../../../networking/sdn/software-defined-networking.md)和[hyper-v](../../../virtualization/hyper-v/hyper-v-on-windows-server.md)。
 
 > [!Tip]
 > 想要获取超聚合基础结构？ Microsoft 建议合作伙伴[提供这些 Windows Server 软件定义](https://microsoft.com/wssd)的解决方案。 它们针对我们的参考体系结构进行设计、汇编和验证，以确保兼容性和可靠性，使你能够快速启动和运行。
@@ -42,7 +40,7 @@ ms.locfileid: "87519666"
 - **用于计算、存储和不久网络的统一单窗格。** 查看虚拟机、主机服务器、卷、驱动器等，使其在一个专门构建的、一致的互连体验中。
 - **创建和管理存储空间和 Hyper-v 虚拟机。** 完全简单的工作流，用于创建、打开、调整和删除卷;和创建、启动、连接到和移动虚拟机;还有很多。
 - **强大的群集范围内监视。** 在群集中的每个服务器上，仪表板图形内存和 CPU 使用率、存储容量、IOPS、吞吐量和延迟，并在不正确的情况下出现明确的警报。
-- **软件定义的网络（SDN）支持。** 管理和监视虚拟网络、子网、将虚拟机连接到虚拟网络和监视 SDN 基础结构。
+- **软件定义的网络 (SDN) 支持。** 管理和监视虚拟网络、子网、将虚拟机连接到虚拟网络和监视 SDN 基础结构。
 
 Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它将接收可改善现有功能并添加新功能的频繁更新。
 
@@ -57,7 +55,7 @@ Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它
 
 超聚合基础结构的 Windows 管理中心依赖于发布 Windows Server 2016 后添加的管理 Api。 你需要执行以下两个步骤，然后才能在 Windows Server 2016 群集中管理 Windows 管理中心：
 
-1. 验证群集中的每个服务器是否已[为 Windows server 2016 （KB4103723）](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)或更高版本安装了2018-05 累积更新。 若要下载并安装此更新，请参阅 "**设置**" "  >  **更新 & 安全**"  >  **Windows 更新**，然后选择 "**联机检查 Microsoft 更新中的更新**"。
+1. 验证群集中的每个服务器是否安装了[2018-05 (KB4103723) ](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)或更高版本的累积2016更新。 若要下载并安装此更新，请参阅 "**设置**" "  >  **更新 & 安全**"  >  **Windows 更新**，然后选择 "**联机检查 Microsoft 更新中的更新**"。
 2. 在群集上以管理员身份运行以下 PowerShell cmdlet：
 
 ```powershell
@@ -65,15 +63,15 @@ Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它
 ```
 
 > [!Tip]
-> 在群集中的任何服务器上，只需运行一次 cmdlet。 你可以在 Windows PowerShell 中本地运行它，或使用凭据安全服务提供程序（CredSSP）来远程运行它。 根据你的配置，可能无法从 Windows 管理中心中运行此 cmdlet。
+> 在群集中的任何服务器上，只需运行一次 cmdlet。 你可以在 Windows PowerShell 中本地运行它，或使用凭据安全服务提供程序 (CredSSP) 来远程运行它。 根据你的配置，可能无法从 Windows 管理中心中运行此 cmdlet。
 
 ### <a name="prepare-your-windows-server-2019-cluster-for-windows-admin-center"></a>为 Windows 管理中心准备 Windows Server 2019 群集
 
 如果群集运行 Windows Server 2019，则不需要上述步骤。 只需按照下一部分所述将群集添加到 Windows 管理中心即可！
 
-### <a name="configure-software-defined-networking-optional"></a>配置软件定义的网络（可选） ###
+### <a name="configure-software-defined-networking-optional"></a>配置软件定义的网络 (可选)  ###
 
-可以将运行 Windows Server 2016 或2019的超聚合基础结构配置为使用软件定义的网络（SDN），步骤如下：
+可以通过以下步骤将运行 Windows Server 2016 或2019的超聚合基础结构配置为使用软件定义的网络 (SDN) ：
 
 1. 准备 OS 的 VHD，这是安装在超聚合基础结构主机上的操作系统。 此 VHD 将用于所有 NC/SLB/GW Vm。
 2. 从中下载 SDN Express 下的所有文件夹和文件 [https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress) 。
@@ -113,7 +111,7 @@ Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它
 
 ![添加超聚合群集连接](../media/manage-hyper-converged/add-hyper-converged-cluster-connection.gif)
 
-### <a name="add-sdn-enabled-hyper-converged-cluster-windows-admin-center-preview"></a>添加启用了 SDN 的超聚合群集（Windows 管理中心预览）
+### <a name="add-sdn-enabled-hyper-converged-cluster-windows-admin-center-preview"></a> (Windows 管理中心预览版添加启用了 SDN 的超聚合群集) 
 
 最新的 Windows 管理中心预览版支持为超聚合基础结构定义的软件网络管理。 通过将网络控制器 REST URI 添加到超聚合群集连接，可以使用超聚合群集管理器来管理 SDN 资源和监视 SDN 基础结构。
 
@@ -137,7 +135,7 @@ Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它
 
 是的。 超聚合基础结构的 Windows 管理中心接收频繁的更新，这些更新可改善 Windows Server 2016 和 Windows Server 2019 的体验。 但是，某些新功能仅适用于 Windows Server 2019 –例如，切换开关以进行重复数据删除和压缩。
 
-### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>能否使用 Windows 管理中心来管理其他用例（而非超聚合）的存储空间直通，例如聚合横向扩展文件服务器（SoFS）或 Microsoft SQL Server？
+### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>我是否可以使用 Windows 管理中心来管理不 (超聚合) 存储空间直通的其他用例，例如聚合横向扩展文件服务器 (SoFS) 或 Microsoft SQL Server？
 
 超聚合基础结构的 Windows 管理中心并不提供特定于存储空间直通的其他用例的管理或监视选项–例如，无法创建文件共享。 但是，仪表板和核心功能（如创建卷或替换驱动器）适用于任何存储空间直通的群集。
 
@@ -151,7 +149,7 @@ Microsoft 正在积极开发超聚合基础结构的 Windows 管理中心。 它
 
 ### <a name="why-do-i-need-the-latest-cumulative-update-for-windows-server-2016"></a>为什么需要 Windows Server 2016 的最新累积更新？
 
-超聚合基础结构的 Windows 管理中心依赖于自 Windows Server 2016 发布以来开发的管理 Api。 这些 Api 已添加到[Windows Server 2016 （KB4103723）的2018-05 累积更新](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)中，可在5月8日的2018内使用。
+超聚合基础结构的 Windows 管理中心依赖于自 Windows Server 2016 发布以来开发的管理 Api。 这些 Api 已添加到[Windows Server 2016 (KB4103723) 的2018-05 累积更新](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)中，可在5月 8 2018 日内获得。
 
 ### <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>使用 Windows Admin Center 需要多少费用？
 
@@ -176,12 +174,12 @@ Windows Admin Center 不会在 Windows 以外产生额外费用。
 ### <a name="manage-storage-spaces-direct-volumes"></a>管理存储空间直通卷
 
 <ul>
-               <li>（0:37）<a href="https://youtu.be/o66etKq70N8">如何创建三向镜像卷</a></li>
-               <li>（1:17）<a href="https://youtu.be/R72QHudqWpE">如何创建镜像加速奇偶校验卷</a></li>
-               <li>（1:02）<a href="https://youtu.be/j59z7ulohs4">如何打开卷并添加文件</a></li>
-               <li>（0:51）<a href="https://youtu.be/PRibTacyKko">如何打开重复数据删除和压缩</a></li>
-               <li>（0:47）<a href="https://youtu.be/hqyBzipBoTI">如何扩展卷</a></li>
-               <li>（0:26）<a href="https://youtu.be/DbjF8r2F6Jo">如何删除卷</a></li>
+               <li> (0:37) <a href="https://youtu.be/o66etKq70N8">如何创建三向镜像卷</a></li>
+               <li> (1:17) <a href="https://youtu.be/R72QHudqWpE">如何创建镜像加速奇偶校验卷</a></li>
+               <li> (1:02) <a href="https://youtu.be/j59z7ulohs4">如何打开卷并添加文件</a></li>
+               <li> (0:51) <a href="https://youtu.be/PRibTacyKko">如何启用重复数据删除和压缩</a></li>
+               <li> (0:47) <a href="https://youtu.be/hqyBzipBoTI">如何扩展卷</a></li>
+               <li> (0:26) <a href="https://youtu.be/DbjF8r2F6Jo">如何删除卷</a></li>
 </ul>
 
 <table>
@@ -253,7 +251,7 @@ Windows Admin Center 不会在 Windows 以外产生额外费用。
 7. 移除故障驱动器，并插入更换驱动器。
 8. 在“驱动器”>“清单”中，将显示新的驱动器。 最终，警报将清除，卷将修复回正常状态，存储将重新平衡到新驱动器上 — 无需用户操作。
 
-### <a name="manage-virtual-networks-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>管理虚拟网络（使用 Windows 管理中心预览的启用了 SDN 的 HCI 群集）
+### <a name="manage-virtual-networks-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>使用 Windows 管理中心预览版管理启用了 SDN 的 HCI 群集 (虚拟网络) 
 
 1. 从左侧的导航栏中选择 "**虚拟网络**"。
 2. 单击 "**新建**" 创建新的虚拟网络和子网，或选择现有的虚拟网络并单击 "**设置**" 修改其配置。
@@ -261,7 +259,7 @@ Windows Admin Center 不会在 Windows 以外产生额外费用。
 
 ![管理虚拟网络](../media/manage-hyper-converged/manage-virtual-networks.png)
 
-### <a name="connect-a-virtual-machine-to-a-virtual-network-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>将虚拟机连接到虚拟网络（使用 Windows 管理中心预览的启用了 SDN 的 HCI 群集）
+### <a name="connect-a-virtual-machine-to-a-virtual-network-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>使用 Windows 管理中心预览将虚拟机连接到虚拟网络 (启用了 SDN 的 HCI 群集) 
 
 1. 从左侧导航栏中选择 "**虚拟机**"。
 2. 选择现有虚拟机 > 单击 "**设置**" > 在 "**设置**" 中打开 "**网络**" 选项卡。
@@ -271,7 +269,7 @@ Windows Admin Center 不会在 Windows 以外产生额外费用。
 
 ![将虚拟机连接到虚拟网络](../media/manage-hyper-converged/connect-vm-to-virtual-network.png)
 
-### <a name="monitor-software-defined-networking-infrastructure-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>监视软件定义的网络基础结构（使用 Windows 管理中心预览的启用了 SDN 的 HCI 群集）
+### <a name="monitor-software-defined-networking-infrastructure-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>使用 Windows 管理中心预览监视软件定义的网络基础结构 (启用了 SDN 的 HCI 群集) 
 
 1. 从左侧导航栏中选择 " **SDN 监视**"。
 2. 查看有关网络控制器、软件负载均衡器、虚拟网关的运行状况的详细信息，并监视虚拟网关池、公用和专用 IP 池使用情况以及 SDN 主机状态。
@@ -289,6 +287,6 @@ Windows Admin Center 不会在 Windows 以外产生额外费用。
 ### <a name="additional-references"></a>其他参考
 
 - [Windows 管理中心](../overview.md)
-- [存储空间直通](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
-- [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)
-- [软件定义的网络](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)
+- [存储空间直通](../../../storage/storage-spaces/storage-spaces-direct-overview.md)
+- [Hyper-V](../../../virtualization/hyper-v/hyper-v-on-windows-server.md)
+- [软件定义的网络](../../../networking/sdn/software-defined-networking.md)

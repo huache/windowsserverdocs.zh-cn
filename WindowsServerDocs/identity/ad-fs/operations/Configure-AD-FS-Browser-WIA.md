@@ -1,25 +1,23 @@
 ---
-title: 通过 AD FS 将浏览器配置为使用 Windows 集成身份验证（WIA）
+title: 将浏览器配置为使用 Windows 集成身份验证 (WIA) 与 AD FS
 description: 本文档介绍如何将浏览器配置为将 WIA 与 AD FS
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 03/20/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: fff48467519e5bfb8121bf887a773bc75defbb4c
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: e8a7b99ff18091266dd3ef7fdbe54ca641f4c556
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519796"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956494"
 ---
-# <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>通过 AD FS 将浏览器配置为使用 Windows 集成身份验证（WIA）
+# <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>将浏览器配置为使用 Windows 集成身份验证 (WIA) 与 AD FS
 
-默认情况下，在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务（AD FS）中启用 Windows 集成身份验证（WIA），以便在组织的内部网络（intranet）内针对使用浏览器进行身份验证的任何应用程序进行身份验证请求。
+默认情况下，在 Windows Server 2012 R2 的 Active Directory 联合身份验证服务 (AD FS) 中启用了 Windows 集成身份验证 (WIA) ，用于在组织内部网络中发生的身份验证请求 (intranet) 使用浏览器进行身份验证的应用程序。
 
-AD FS 2016 现在提供了一个改进的默认设置，使边缘浏览器可以执行 WIA，同时也不会错误地捕获 Windows Phone：
+AD FS 2016 现在具有改进的默认设置，使边缘浏览器可以执行 WIA，同时也不会 (错误) 捕获 Windows Phone：
 
 ```
 =~Windows\s*NT.*Edge
@@ -62,14 +60,14 @@ Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT",
 |-----|-----|
 |MSIE 6。0|IE 6。0|
 |MSIE 7.0;Windows NT|IE 7、IE 在 intranet 区域中。 桌面操作系统发送 "Windows NT" 片段。|
-|MSIE 8。0|IE 8.0 （无设备发送此信息，因此需要更具体的信息）|
-|MSIE 9。0|IE 9.0 （无设备发送此信息，因此无需再进行此操作）|
-|MSIE 10.0;Windows NT 6|适用于 Windows XP 和更高版本的桌面操作系统的 IE 10。0</br></br>将排除 Windows Phone 8.0 设备（将首选项设置为 "移动"），因为它们发送</br></br>用户代理： Mozilla/5.0 （兼容;MSIE 10.0;Windows Phone 8.0;Trident/6.0;IEMobile/10.0;单臂接触NOKIALumia 920）|
+|MSIE 8。0|IE 8.0 (没有设备发送此信息，因此需要进行更具体的) |
+|MSIE 9。0|IE 9.0 (没有设备发送此信息，因此无需再进行更具体的) |
+|MSIE 10.0;Windows NT 6|适用于 Windows XP 和更高版本的桌面操作系统的 IE 10。0</br></br> (将首选项设置为 "移动) " 的 Windows Phone 8.0 设备被排除，原因是它们发送</br></br>用户代理： Mozilla/5.0 (兼容;MSIE 10.0;Windows Phone 8.0;Trident/6.0;IEMobile/10.0;单臂接触NOKIALumia 920) |
 |Windows NT 6.3;Trident/7。0</br></br>Windows NT 6.3;Win6464Trident/7。0</br></br>Windows NT 6.3;WOW64Trident/7。0| Windows 8.1 桌面操作系统，不同的平台|
 |Windows NT 6.2;Trident/7。0</br></br>Windows NT 6.2;Win6464Trident/7。0</br></br>Windows NT 6.2;WOW64Trident/7。0|Windows 8 桌面操作系统，不同平台|
 |Windows NT 6.1;Trident/7。0</br></br>Windows NT 6.1;Win6464Trident/7。0</br></br>Windows NT 6.1;WOW64Trident/7。0|Windows 7 桌面操作系统，不同平台|
-|Edg/79.0.309.43 | 适用于 Windows Server 2012 R2 或更早版本的 Microsoft Edge （Chromium） |
-|Edg/*| 适用于 Windows Server 2016 或更高版本的 Microsoft Edge （Chromium）|
+|Edg/79.0.309.43 | Windows Server 2012 R2 或更早版本的 Microsoft Edge (Chromium)  |
+|Edg/*| Windows Server 2016 或更高版本的 Microsoft Edge (Chromium) |
 |“MSIPC”| Microsoft Information Protection and Control 客户端|
 |Windows Rights Management 客户端|Windows Rights Management 客户端|
 

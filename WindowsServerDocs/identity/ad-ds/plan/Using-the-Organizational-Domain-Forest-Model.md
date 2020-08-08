@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 4216dea74b72d2257db32045ffda1a21ba6a4f43
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9f89279327e1e328443dd2b3eae510df5926e9e1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965509"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964974"
 ---
 # <a name="using-the-organizational-domain-forest-model"></a>使用组织域林模型
 
@@ -33,7 +31,7 @@ ms.locfileid: "86965509"
 | -------------------------- |----------------- |
 | 域控制器操作的管理    | -创建和删除域控制器<br />-监视域控制器的功能<br />-管理域控制器上运行的服务<br />-备份和还原目录 |
 | 域范围设置的配置         | -创建域和域用户帐户策略，例如密码、Kerberos 和帐户锁定策略<br />-创建和应用全域性组策略 |
-| 数据级别管理的委派       | -创建组织单位（Ou）并委派管理<br />-修复 ou 结构中 OU 所有者没有足够的访问权限来进行修复的问题 |
+| 数据级别管理的委派       | -创建组织单位 (Ou) 和委派管理<br />-修复 ou 结构中 OU 所有者没有足够的访问权限来进行修复的问题 |
 | 外部信任的管理 | -建立与林外域的信任关系 |
 
 其他类型的服务管理（如架构或复制拓扑管理）由林所有者负责。
@@ -57,4 +55,4 @@ ms.locfileid: "86965509"
 所有域所有者都必须知道，如果将来有任何情况发生变化，则可能需要将组织域移到多个林部署中。
 
 > [!NOTE]
-> 将 Windows Server 2008 Active Directory 域的安全风险降至最低的另一种方法是使用管理员角色分离，这需要在 Active Directory 基础结构中部署只读域控制器（RODC）。 RODC 是 Windows Server 2008 操作系统中的一种新类型的域控制器，它承载 Active Directory 数据库的只读分区。 在发布 Windows Server 2008 之前，域控制器上的任何服务器维护工作都必须由域管理员执行。 在 Windows Server 2008 中，你可以将 RODC 的本地管理权限委派给任何域用户，而无需授予该用户对域或其他域控制器的任何管理权限。 这允许委派的用户登录到 RODC，并在服务器上执行维护工作（如升级驱动程序）。 但是，此委派的用户无法登录到任何其他域控制器或执行域中的任何其他管理任务。 这样，任何受信任的用户都可以被委派有效地管理 RODC 的能力，而不会影响域的其余部分的安全性。 有关 Rodc 的详细信息，请参阅[AD DS：只读域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。
+> 将 Windows Server 2008 Active Directory 域中的安全风险降至最低的另一种方法是使用管理员角色分隔，这需要在 Active Directory 基础结构中 (RODC) 部署只读域控制器。 RODC 是 Windows Server 2008 操作系统中的一种新类型的域控制器，它承载 Active Directory 数据库的只读分区。 在发布 Windows Server 2008 之前，域控制器上的任何服务器维护工作都必须由域管理员执行。 在 Windows Server 2008 中，你可以将 RODC 的本地管理权限委派给任何域用户，而无需授予该用户对域或其他域控制器的任何管理权限。 这允许委派的用户登录到 RODC，并在服务器上执行维护工作（如升级驱动程序）。 但是，此委派的用户无法登录到任何其他域控制器或执行域中的任何其他管理任务。 这样，任何受信任的用户都可以被委派有效地管理 RODC 的能力，而不会影响域的其余部分的安全性。 有关 Rodc 的详细信息，请参阅[AD DS：只读域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))。

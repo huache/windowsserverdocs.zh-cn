@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 670c853cb1c41fbbc799eca4cc6ac54588c55761
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5523f882d64f0c43456bd86aa9a60f95db033094
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960499"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956270"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>操作实例指南：使用条件访问控制管理风险
 
@@ -21,7 +19,7 @@ ms.locfileid: "86960499"
 
 
 ## <a name="about-this-guide"></a>关于本指南
-本演练提供有关使用可通过 Windows Server 2012 R2 中 Active Directory 联合身份验证服务（AD FS）中的条件性访问控制机制提供的因素（用户数据）之一来管理风险的说明。 有关 Windows Server 2012 R2 中 AD FS 的条件访问控制和授权机制的详细信息，请参阅[使用条件访问控制管理风险](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)。
+本演练提供了通过 Windows Server 2012 R2 中 Active Directory 联合身份验证服务 (AD FS) 中的条件性访问控制机制来管理风险 (用户数据) 的相关说明。 有关 Windows Server 2012 R2 中 AD FS 的条件访问控制和授权机制的详细信息，请参阅[使用条件访问控制管理风险](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)。
 
 本操作实例包括以下部分：
 
@@ -123,7 +121,7 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 
     系统将授予你对应用程序的访问权限。
 
-3.  键入不属于 **Finance** 组的另一 AD 用户的凭据。 （有关如何在 AD 中创建用户帐户的详细信息，请参阅 [https://technet.microsoft.com/library/cc7833232.aspx](/previous-versions/windows/it-pro/windows-server-2003/cc783323(v=ws.10)) 。
+3.  键入不属于 **Finance** 组的另一 AD 用户的凭据。  (有关如何在 AD 中创建用户帐户的详细信息，请参阅 [https://technet.microsoft.com/library/cc7833232.aspx](/previous-versions/windows/it-pro/windows-server-2003/cc783323(v=ws.10)) 。
 
     此时，由于你在上一步中设置的访问控制策略，将为不属于**财务**组的 AD 用户显示 "拒绝访问" 消息。 默认消息文本为**您无权访问此站点。单击此处注销并再次登录，或与管理员联系以获取权限。** 但是，此文本完全可自定义。 有关如何自定义登录体验的详细信息，请参阅 [Customizing the AD FS Sign-in Pages](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11))。
 

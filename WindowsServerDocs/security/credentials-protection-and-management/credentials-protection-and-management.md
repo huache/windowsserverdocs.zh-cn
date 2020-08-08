@@ -1,20 +1,18 @@
 ---
 title: 凭据保护和管理
 description: Windows Server 安全
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: e457229c-0126-40fe-948c-101c943e1b57
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 649c070fe477a51ca764bd1ad83ed013feb1b60b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3dc1d0ae3658e4379d3a358211471ac7f675651c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518013"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948700"
 ---
 # <a name="credentials-protection-and-management"></a>凭据保护和管理
 
@@ -38,7 +36,7 @@ ms.locfileid: "87518013"
 
 受保护的用户组的成员将受到以下身份限制方法的进一步限制：
 
--   受保护的用户组成员仅可通过 Kerberos 协议进行登录。 该帐户无法使用 NTLM、摘要式身份验证或 CredSSP 进行身份验证。 在运行 Windows 8.1 的设备上，不会缓存密码，因此当该帐户是受保护用户组的成员时，使用这些安全支持提供程序（Ssp）之一的设备将无法对域进行身份验证。
+-   受保护的用户组成员仅可通过 Kerberos 协议进行登录。 该帐户无法使用 NTLM、摘要式身份验证或 CredSSP 进行身份验证。 在运行 Windows 8.1 的设备上，不会缓存密码，因此当帐户是受保护用户组的成员时，使用上述任一安全支持提供程序 (Ssp) 的设备将无法对域进行身份验证。
 
 -   Kerberos 协议不会在预身份验证过程中使用较弱的 DES 或 RC4 加密类型。 这意味着必须将域配置为至少支持 AES 加密套件。
 

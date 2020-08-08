@@ -3,24 +3,22 @@ ms.assetid: d44d4430-41e2-483a-9685-92610cdef32a
 title: 群集感知更新插件的工作原理
 description: 当使用 Windows Server 中的群集感知更新在群集上安装更新时，如何使用插件协调更新。
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
-ms.technology: storage-failover-clustering
-ms.openlocfilehash: ac09163eb40045289a68287aa3eace20ff714d09
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 42ba496ce0d62a6a911f762f6ea7330001fb9031
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409577"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990894"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>群集感知更新插件的工作原理
 
 > 适用于：Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-[群集感知更新](cluster-aware-updating.md)（CAU）使用插件跨故障转移群集中的节点协调更新的安装。 本主题提供有关使用内置 \- cau 插件 \- 或 \- 你为 CAU 安装的其他插件的信息。
+[群集感知更新](cluster-aware-updating.md) (CAU) 使用插件跨故障转移群集中的节点协调更新的安装。 本主题提供有关使用内置 \- cau 插件 \- 或 \- 你为 CAU 安装的其他插件的信息。
 
 ## <a name="install-a-plug-in"></a><a name="BKMK_INSTALL"></a>安装 \- 插件
 除了 \- \- 使用 CAU Microsoft.windowsupdateplugin 和 microsoft.hotfixplugin 安装的默认插件外， \( **Microsoft.WindowsUpdatePlugin**还**Microsoft.HotfixPlugin** \) 必须单独安装插件。 如果在自我更新模式中使用 CAU \- ，则 \- 必须在所有群集节点上安装插件。 如果在远程更新模式中使用 CAU \- ，则该插件 \- 必须安装在远程更新协调器计算机上。 \-你安装的插件可能会在每个节点上有其他安装要求。
@@ -48,10 +46,10 @@ ms.locfileid: "87409577"
 
 |Cmdlet|说明|
 |----------|---------------|
-|[Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/add-cauclusterrole)|将提供自我更新功能的 CAU 群集角色添加 \- 到指定的群集。|
-|[Invoke-CauRun](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-caurun)|为适用的更新执行群集节点的扫描并通过更新运行在指定的群集上安装这些更新。|
-|[Invoke-CauScan](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-causcan)|为适用的更新执行群集节点的扫描，并返回将应用于指定群集中每个节点的更新的初始集列表。|
-|[Set-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/set-cauclusterrole)|为指定群集上的 CAU 群集角色设置配置属性。|
+|[Add-CauClusterRole](/powershell/module/clusterawareupdating/add-cauclusterrole)|将提供自我更新功能的 CAU 群集角色添加 \- 到指定的群集。|
+|[Invoke-CauRun](/powershell/module/clusterawareupdating/invoke-caurun)|为适用的更新执行群集节点的扫描并通过更新运行在指定的群集上安装这些更新。|
+|[Invoke-CauScan](/powershell/module/clusterawareupdating/invoke-causcan)|为适用的更新执行群集节点的扫描，并返回将应用于指定群集中每个节点的更新的初始集列表。|
+|[Set-CauClusterRole](/powershell/module/clusterawareupdating/set-cauclusterrole)|为指定群集上的 CAU 群集角色设置配置属性。|
 
 如果未使用这些 cmdlet 指定 CAU 插件 \- 参数，则默认值为 \- **microsoft.windowsupdateplugin**中的插件。
 
@@ -83,9 +81,9 @@ CAU 插件参数的语法 \- 遵循以下通用规则：
 
 |Cmdlet|说明|
 |----------|---------------|
-|[Get-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/get-cauplugin)|检索有关在 \- 本地计算机上注册的一个或多个软件更新插件的信息。|
-|[Register-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin)|在本地计算机上注册 CAU 软件更新插件 \- 。|
-|[Unregister-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/unregister-cauplugin)|\-从 CAU 可以使用的插件列表中删除软件更新插件 \- 。 **注意：**\-无法注销随 CAU \( **microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**一起安装的插件 \) 。|
+|[Get-CauPlugin](/powershell/module/clusterawareupdating/get-cauplugin)|检索有关在 \- 本地计算机上注册的一个或多个软件更新插件的信息。|
+|[Register-CauPlugin](/powershell/module/clusterawareupdating/register-cauplugin)|在本地计算机上注册 CAU 软件更新插件 \- 。|
+|[Unregister-CauPlugin](/powershell/module/clusterawareupdating/unregister-cauplugin)|\-从 CAU 可以使用的插件列表中删除软件更新插件 \- 。 **注意：**\-无法注销随 CAU \( **microsoft.windowsupdateplugin**和**microsoft.hotfixplugin**一起安装的插件 \) 。|
 
 ## <a name="using-the-microsoftwindowsupdateplugin"></a><a name="BKMK_WUP"></a>使用 Microsoft.windowsupdateplugin
 
@@ -141,7 +139,7 @@ CAU 的默认插件 \- **microsoft.windowsupdateplugin**，执行以下操作：
 
 **QueryString \= "IsInstalled \= 0 and Type \= " Driver "and IsHidden \= 0"**
 
-有关默认的插件的查询字符串、 \- **microsoft.windowsupdateplugin**、搜索条件 \( （如**IsInstalled** \) ），以及查询字符串中可以包含的语法的详细信息，请参阅[Windows 更新 Agent （WUA） API 参考](https://go.microsoft.com/fwlink/p/?LinkId=223304)中有关搜索条件的部分。
+有关默认的插件的查询字符串、 \- **microsoft.windowsupdateplugin**、搜索条件 \( （如**IsInstalled** \) ），以及查询字符串中可以包含的语法的详细信息，请参阅[Windows 更新 Agent (WUA) API 参考](https://go.microsoft.com/fwlink/p/?LinkId=223304)中有关搜索条件的部分。
 
 ## <a name="use-the-microsofthotfixplugin"></a><a name="BKMK_HFP"></a>使用 Microsoft.HotfixPlugin
 插件 \- 可用于**Microsoft.HotfixPlugin**应用 microsoft 有限分发版本 \( LDR \) \( 的更新，这些更新也称为修补程序，以前称为 qfe，可 \) 单独下载以解决特定的 Microsoft 软件问题。 插件从 SMB 文件共享上的根文件夹安装更新，还可以自定义以应用非 \- Microsoft 驱动程序、固件和 BIOS 更新。
@@ -295,12 +293,12 @@ CAU 的默认插件 \- **microsoft.windowsupdateplugin**，执行以下操作：
 
 下表描述了 `<Template>` 属性和可能的 `<ExitConditions>` 子元素。
 
-|`<Template>` 特性|说明|
+|`<Template>` 特性|描述|
 |--------------------------|---------------|
 |`path`|在 `<Extension name>` 属性中所定义文件类型的安装程序的完整路径。<p>若要指定修补程序根文件夹结构中的更新文件的路径，请使用 `$update$`。|
 |`parameters`|在 `path`中指定的程序的必需和可选参数字符串。<p>若要指定一个作为修补程序根文件夹结构中的更新文件路径的参数，请使用 `$update$`。|
 
-|`<ExitConditions>` 子元素|说明|
+|`<ExitConditions>` 子元素|描述|
 |---------------------------------|---------------|
 |`<Success>`|定义一个或多个表明指定更新已成功的退出代码。 这是必需的子元素。|
 |`<Success_RebootRequired>`|或者，定义一个或多个退出代码，以表明指定的更新已成功，并且节点必须重新启动。 <br>**注意：** 或者， `<Folder>` 元素可以包含 `alwaysReboot` 特性。 如果设置此属性，它表明如果按照此规则安装修补程序，则返回在 `<Success>`中定义的退出代码之一，此情况可以解释为 `<Success_RebootRequired>` 退出条件。|
@@ -406,7 +404,6 @@ CAU 的默认插件 \- **microsoft.windowsupdateplugin**，执行以下操作：
 
 -   [群集感知更新概述](cluster-aware-updating.md)
 
--   [群集感知更新 Windows PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating)
+-   [群集感知更新 Windows PowerShell Cmdlet](/powershell/module/clusterawareupdating)
 
--   [群集感知更新插件参考](https://msdn.microsoft.com/library/hh418084.aspx)
-
+-   [群集感知更新插件参考](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)

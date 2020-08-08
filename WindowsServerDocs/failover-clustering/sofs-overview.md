@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd39210b6db8516fafbe8b437c7d38cd7839bad
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9147d88b2d31def46e7a755abf17a2cdf767f8a2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972384"
+ms.locfileid: "87990686"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>应用程序数据的横向扩展文件服务器概述
 
@@ -231,12 +231,12 @@ ms.locfileid: "87972384"
 
 - Internet Information Services (IIS) Web 服务器可以将网站的配置和数据存储在横向扩展文件共享上。 有关详细信息，请参阅[共享配置](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264)。
 - Hyper-V 可以将配置和实时虚拟磁盘存储在横向扩展文件共享上。 有关详细信息，请参阅[在 SMB 上部署 Hyper-V](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)。
-- SQL Server 可以将实时数据库文件存储在横向扩展文件共享上。 有关详细信息，请参阅[安装 SQL Server 并使用 SMB 文件共享作为存储选项](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)。
+- SQL Server 可以将实时数据库文件存储在横向扩展文件共享上。 有关详细信息，请参阅[安装 SQL Server 并使用 SMB 文件共享作为存储选项](/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)。
 - Virtual Machine Manager (VMM) 可以将库共享（其中包含虚拟机模板和相关文件）存储在横向扩展文件共享上。 但是，库服务器本身不能是横向扩展文件服务器，它必须位于独立的服务器或不使用横向扩展文件服务器群集角色的故障转移群集上。
 
 如果将横向扩展文件共享用作库共享，则只能使用与横向扩展文件服务器兼容的技术。 例如，不能使用 DFS 复制来复制横向扩展文件共享上托管的库共享。 还有一点很重要，那就是横向扩展文件服务器安装了最新的软件更新。
 
-若要将横向扩展文件共享用作库共享，首先添加一个具有本地共享或根本没有共享的库服务器（比如虚拟机）。 然后在添加库共享时，选择在横向扩展文件服务器上托管的文件共享。 此共享应由 VMM 管理，并且专门创建用于库服务器。 此外，请确保在横向扩展文件服务器上安装最新的更新。 有关添加 VMM 库服务器和库共享的详细信息，请参阅[将配置文件添加到 VMM 库](https://docs.microsoft.com/system-center/vmm/library-profiles?view=sc-vmm-1801)。 有关文件和存储服务当前可用的修补程序的列表，请参阅 [Microsoft 知识库文章 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie)。
+若要将横向扩展文件共享用作库共享，首先添加一个具有本地共享或根本没有共享的库服务器（比如虚拟机）。 然后在添加库共享时，选择在横向扩展文件服务器上托管的文件共享。 此共享应由 VMM 管理，并且专门创建用于库服务器。 此外，请确保在横向扩展文件服务器上安装最新的更新。 有关添加 VMM 库服务器和库共享的详细信息，请参阅[将配置文件添加到 VMM 库](/system-center/vmm/library-profiles?view=sc-vmm-1801)。 有关文件和存储服务当前可用的修补程序的列表，请参阅 [Microsoft 知识库文章 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie)。
 
 >[!NOTE]
 >某些用户（比如信息工作者）的工作负荷对性能的影响较大。 例如，当多个用户执行诸如打开和关闭文件、创建新文件和重命名现有文件之类的操作时，将对性能产生影响。 如果文件共享启用连续可用性，它将提供数据完整性，但同时也会影响整体性能。 连续可用性要求将数据直接写入磁盘，以便在横向扩展文件服务器中的群集节点出现故障时确保数据的完整性。 因此，将多个大型文件复制到文件服务器的用户可能会发现连续可用的文件共享上的性能明显变慢。

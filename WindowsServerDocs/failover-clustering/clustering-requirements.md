@@ -1,20 +1,18 @@
 ---
 title: 故障转移群集硬件要求和存储选项
 description: 用于创建故障转移群集的硬件要求和存储选项。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed3337e0543953182ed73337ff7aa0a2f093376c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 65d2d21138efbae3c5ada56bfa8628f06c4dcbe7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177924"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990797"
 ---
 # <a name="failover-clustering-hardware-requirements-and-storage-options"></a>故障转移群集硬件要求和存储选项
 
@@ -32,7 +30,7 @@ ms.locfileid: "87177924"
 
 - **用于存储的设备控制器或相应适配器**：
 
-  - **串行连接 SCSI 或光纤通道**：如果你在所有群集服务器中使用串行连接 SCSI 或光纤通道，则存储堆栈的所有组件都应相同。 需要多路径 i/o （MPIO）软件相同，并且设备特定模块（DSM）软件是相同的。 建议将大容量存储设备控制器（即主机总线适配器（HBA）、HBA 驱动程序以及 HBA 固件）附加到群集存储。 如果使用不同的 HBA，则应向存储供应商验证你是否采用了其支持或推荐的配置。
+  - **串行连接 SCSI 或光纤通道**：如果你在所有群集服务器中使用串行连接 SCSI 或光纤通道，则存储堆栈的所有组件都应相同。 需要多路径 i/o (MPIO) 软件相同，并且设备特定模块 (DSM) 软件相同。 建议将大容量存储设备控制器（即主机总线适配器 (HBA) 、HBA 驱动程序以及 HBA 固件）连接到群集存储。 如果使用不同的 HBA，则应向存储供应商验证你是否采用了其支持或推荐的配置。
   - **iSCSI**：如果使用的是 iSCSI，则各群集服务器应具有一个或多个专用于群集存储的网络适配器或 HBA。 不应将用于 iSCSI 的网络用于网络通信。 在所有群集服务器中，用于连接 iSCSI 存储目标的网络适配器都应相同，建议使用千兆或更高速度的以太网。
 - **存储**：必须使用与 windows Server 2012 R2 或 windows server 2012 兼容的[存储空间直通](../storage/storage-spaces/storage-spaces-direct-overview.md)或共享存储。 你可以使用附加的共享存储，还可以将 SMB 3.0 文件共享用作在故障转移群集中配置的运行 Hyper-v 的服务器的共享存储。 有关详细信息，请参阅[在 SMB 上部署 Hyper-V](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)。
 
@@ -63,17 +61,17 @@ ms.locfileid: "87177924"
 
 - **确认存储的兼容性**：请与制造商和供应商确认存储（包括存储所使用的驱动程序、固件和软件）是否与运行的 Windows Server 版本中的故障转移群集兼容。
 - **隔离存储设备，每个设备一个群集**：来自不同群集的服务器不能访问同一存储设备。 多数情况下，用于一组群集服务器的一个 LUN 不应通过 LUN 屏蔽或分区而与所有其他服务器隔离。
-- **考虑使用多路径 I/O 软件或网络适配器组**：在高度可用的存储构造中，你可以使用多路径 I/O 软件或网络适配器组（也称为负载平衡和故障转移或 LBFO）部署具有多个主机总线适配器的故障转移群集。 这可以提供最高级别的冗余和可用性。 对于 Windows Server 2012 R2 或 Windows Server 2012，多路径解决方案必须基于 Microsoft 多路径 i/o （MPIO）。 虽然 Windows Server 包含一个或多个设备特定模块 (DSM) 作为操作系统的一部分，但你的硬件供应商通常会为你的硬件提供一个 MPIO DSM。
+- **考虑使用多路径 I/O 软件或网络适配器组**：在高度可用的存储构造中，你可以使用多路径 I/O 软件或网络适配器组（也称为负载平衡和故障转移或 LBFO）部署具有多个主机总线适配器的故障转移群集。 这可以提供最高级别的冗余和可用性。 对于 Windows Server 2012 R2 或 Windows Server 2012，多路径解决方案必须基于 Microsoft 多路径 i/o (MPIO) 。 虽然 Windows Server 包含一个或多个设备特定模块 (DSM) 作为操作系统的一部分，但你的硬件供应商通常会为你的硬件提供一个 MPIO DSM。
 
-    有关 LBFO 的详细信息，请参阅 Windows Server 技术库中的[NIC 组合概述](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)。
+    有关 LBFO 的详细信息，请参阅 Windows Server 技术库中的[NIC 组合概述](../networking/technologies/nic-teaming/nic-teaming.md)。
 
     >[!IMPORTANT]
     >主机总线适配器和多路径 I/O 软件可能对版本非常敏感。 如果你要对群集实现一个多路径解决方案，则应同你的硬件供应商密切协作，以便为运行的 Windows Server 版本选择正确的适配器、固件和软件。
 
-- **考虑使用存储空间**：如果你计划部署使用存储空间配置的串行连接 SCSI （SAS）群集存储，请参阅为要求[部署群集存储空间](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)。
+- **考虑使用存储空间**：如果你计划部署使用存储空间配置的串行连接 SCSI (SAS) 群集存储，请参阅为要求[部署群集存储空间](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)。
 
 ## <a name="more-information"></a>更多信息
 
-- [故障转移群集](failover-clustering.md)
+- [故障转移群集](./failover-clustering-overview.md)
 - [存储空间](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831739(v%3dws.11)>)
 - [使用来宾群集以实现高可用性](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)

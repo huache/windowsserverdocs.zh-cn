@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: 9724aa8d-e4ae-404c-bee6-cef1534cd3ca
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2af2321a1f87eab1e29ecb6c483ee85c87b08ee7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0662a72f23a06e62d92fc040aa88e11f795083e3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971834"
+ms.locfileid: "87990162"
 ---
 # <a name="configure-windows-server-update-services-wsus-content-servers"></a>配置 Windows Server Update Services (WSUS) 内容服务器
 
@@ -21,4 +21,4 @@ ms.locfileid: "87971834"
 
 当你将 WSUS 服务器配置为将更新文件存储在本地计算机上时，会下载更新元数据和更新文件并直接将它们存储在 WSUS 服务器上。 这可确保 BranchCache 客户端计算机从 WSUS 服务器接收 Microsoft 产品更新文件，而不是直接从 Microsoft 更新网站接收。
 
-有关 WSUS 同步的详细信息，请参阅[设置更新同步](https://technet.microsoft.com/library/mt612311.aspx)
+有关 WSUS 同步的详细信息，请参阅[设置更新同步](../../../administration/windows-server-update-services/manage/setting-up-update-synchronizations.md)

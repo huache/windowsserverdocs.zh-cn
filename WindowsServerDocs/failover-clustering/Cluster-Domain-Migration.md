@@ -1,20 +1,18 @@
 ---
 title: Windows Server 2016/2019 中的跨域群集迁移
 description: 本文介绍如何将 Windows Server 2019 群集从一个域迁移到另一个域
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6062dd987a136bc2be67c09efbe399bb8fae24f6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 32f7e62fd08080f8b56c9c495f374d5c927454bb
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178523"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990970"
 ---
 # <a name="failover-cluster-domain-migration"></a>故障转移群集域迁移
 
@@ -55,7 +53,7 @@ ms.locfileid: "87178523"
 2. 将节点的域成员身份更改为新域。
 3. 重新创建更新域中的新群集。  这需要重新创建所有资源。
 
-第二个选项的破坏性较低，但需要额外的硬件，因为需要在新域中构建新群集。  一旦群集位于新域中，就运行群集迁移向导来迁移资源。 请注意，这不会迁移数据-需要使用其他工具来迁移数据，如[存储迁移服务](../storage/storage-migration-service/overview.md)（添加群集支持后）。
+第二个选项的破坏性较低，但需要额外的硬件，因为需要在新域中构建新群集。  一旦群集位于新域中，就运行群集迁移向导来迁移资源。 请注意，这不会迁移数据-需要使用另一个工具迁移数据，如[存储迁移服务](../storage/storage-migration-service/overview.md) (一旦将群集支持添加) 。
 
 ![生成和迁移](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-2.gif)
 
@@ -65,7 +63,7 @@ ms.locfileid: "87178523"
 2. 使用[群集迁移向导](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))将所有资源迁移到新群集。 提醒，此操作不会复制数据，因此需要单独执行此操作。
 3. 停止或销毁旧群集。
 
-在这两个选项中，新群集需要安装所有[群集感知应用程序](https://technet.microsoft.com/aa369082(v=vs.90))，驱动程序都是最新的，并且可能会进行测试，以确保所有这些应用程序正常运行。  如果还需要移动数据，这是一个耗时的过程。
+在这两个选项中，新群集需要安装所有[群集感知应用程序](/previous-versions/windows/desktop/mscs/cluster-aware-applications)，驱动程序都是最新的，并且可能会进行测试，以确保所有这些应用程序正常运行。  如果还需要移动数据，这是一个耗时的过程。
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -77,14 +75,14 @@ ms.locfileid: "87178523"
 
 完成此操作的过程是将群集从一个域更改为工作组并返回到新域。  不需要销毁群集、重建群集、安装应用程序等。 例如，如下所示：
 
-![Migrate](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-3.gif)
+![迁移](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-3.gif)
 
 ## <a name="migrating-a-cluster-to-a-new-domain"></a>将群集迁移到新域
 
 在以下步骤中，群集将从 Contoso.com 域移动到新的 Fabrikam.com 域。  群集名称是*CLUSCLUS* ，并具有名为*CLUSCLUS*的文件服务器角色。
 
 1. 在群集中的所有服务器上使用相同的名称和密码创建一个本地管理员帐户。  当服务器在域之间移动时，可能需要进行登录。
-2. 使用对群集名称对象（CNO）具有 Active Directory 权限的域用户或管理员帐户登录到第一台服务器，虚拟计算机对象（VCO）有权访问群集，并打开 PowerShell。
+2. 使用对群集名称对象具有 Active Directory 权限的域用户或管理员帐户登录到第一台服务器 (CNO) ，虚拟计算机对象 (VCO) 可以访问群集并打开 PowerShell。
 3. 确保所有群集网络名称资源处于脱机状态，并运行以下命令。  此命令将删除群集可能具有的 Active Directory 对象。
 
    ```PowerShell
@@ -123,7 +121,7 @@ ms.locfileid: "87178523"
    New-ClusterNameAccount -Name CLUSTERNAME -Domain NEWDOMAINNAME.com -UpgradeVCOs
    ```
 
-    注意：如果没有任何其他组的网络名称（即只包含虚拟机的 Hyper-v 群集），则不需要-UpgradeVCOs 参数开关。
+    注意：如果没有任何其他组的网络名称 (例如，仅具有虚拟机的 Hyper-v 群集) ，则不需要-UpgradeVCOs 参数开关。
 
 9. 使用 Active Directory 用户和计算机检查新域，并确保创建了关联的计算机对象。 如果有，请将其余资源联机。
 
@@ -140,4 +138,3 @@ ms.locfileid: "87178523"
 ```
 New-ClusternameAccount : Cluster name account cannot be created.  This cluster contains a file share witness with invalid permissions for a cluster of type AdministrativeAccesssPoint ActiveDirectoryAndDns. To proceed, delete the file share witness.  After this you can create the cluster name account and recreate the file share witness.  The new file share witness will be automatically created with valid permissions.
 ```
-

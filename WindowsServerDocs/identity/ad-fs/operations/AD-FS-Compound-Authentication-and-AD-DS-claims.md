@@ -6,29 +6,27 @@ ms.author: billmath
 manager: femila
 ms.date: 09/07/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: e02ce6400bc9905814e6ad7dcf02614c0dff5e46
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c0e2681498fdc86782bf418bfc90446bab0e0170
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965169"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940382"
 ---
 # <a name="compound-authentication-and-ad-ds-claims-in-ad-fs"></a>复合身份验证和 AD FS 中的 AD DS 声明
-Windows Server 2012 引入了复合身份验证，从而增强了 Kerberos 身份验证。  复合身份验证使 Kerberos 票证授予服务（TGS）请求包含两个标识： 
+Windows Server 2012 引入了复合身份验证，从而增强了 Kerberos 身份验证。  复合身份验证使 Kerberos 票证授予服务 (TGS) 请求包括两个标识：
 
 - 用户的标识
-- 用户设备的标识。  
+- 用户设备的标识。
 
-Windows 通过扩展[Kerberos 灵活身份验证安全隧道（FAST）或 Kerberos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))保护来完成复合身份验证。 
+Windows 通过扩展[Kerberos 灵活的身份验证安全隧道 (FAST) 或 Kerberos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))保护来完成复合身份验证。
 
-AD FS 2012 及更高版本允许 AD DS 颁发的用户或传入 Kerberos 身份验证票证的设备声明。 在以前版本的 AD FS 中，声明引擎只能读取 Kerberos 中的用户和组安全 Id （Sid），但无法读取任何包含在 Kerberos 票证中的声明信息。
+AD FS 2012 及更高版本允许 AD DS 颁发的用户或传入 Kerberos 身份验证票证的设备声明。 在以前版本的 AD FS 中，声明引擎只能读取来自 Kerberos 的 Sid)  (用户和组安全 Id，但无法读取 Kerberos 票证中包含的任何声明信息。
 
-你可以通过使用 Active Directory 域服务（AD DS）的用户和设备声明以及 Active Directory 联合身份验证服务（AD FS）为联合应用程序启用更丰富的访问控制。
+可以通过使用 Active Directory 域服务 (AD DS) 颁发的用户和设备声明，并将 Active Directory 联合身份验证服务 (AD FS) ，为联合应用程序启用更丰富的访问控制。
 
 ## <a name="requirements"></a>要求
-1.  访问联合应用程序的计算机必须使用**Windows 集成身份验证**对 AD FS 进行身份验证。 
+1.  访问联合应用程序的计算机必须使用**Windows 集成身份验证**对 AD FS 进行身份验证。
     - Windows 集成身份验证仅在连接到后端 AD FS 服务器时可用。
     - 计算机必须能够访问联合身份验证服务名称的后端 AD FS 服务器
     - AD FS 服务器必须在其 Intranet 设置中提供 Windows 集成身份验证作为主要身份验证方法。
@@ -38,7 +36,7 @@ AD FS 2012 及更高版本允许 AD DS 颁发的用户或传入 Kerberos 身份�
 3.  承载 AD FS 服务器的域必须具有应用于域控制器的 "**声明复合身份验证和 Kerberos**保护" 策略设置的 KDC 支持。
 
 ## <a name="steps-for-configuring-ad-fs-in-windows-server-2012-r2"></a>在 Windows Server 2012 R2 中配置 AD FS 的步骤
-使用以下步骤来配置复合身份验证和声明 
+使用以下步骤来配置复合身份验证和声明
 
 ### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>步骤1：在默认域控制器策略上启用 KDC 支持声明、复合身份验证和 Kerberos 保护
 1.  在服务器管理器中，选择 "工具"、"**组策略管理**"。
@@ -62,9 +60,9 @@ AD FS 2012 及更高版本允许 AD DS 颁发的用户或传入 Kerberos 身份�
 ### <a name="step-3-ensure-the-ad-fs-servers-have-been-updated"></a>步骤3：确保已更新 AD FS 服务器。
 你需要确保在 AD FS 服务器上安装下列更新。
 
-|更新|说明|
+|更新|描述|
 |----- | ----- |
-|[KB2919355](https://www.microsoft.com/download/details.aspx?id=42335)|累积安全更新（包括 KB2919355、KB2932046、KB2934018、KB2937592、KB2938439）|
+|[KB2919355](https://www.microsoft.com/download/details.aspx?id=42335)|累积安全更新 (包括 KB2919355、KB2932046、KB2934018、KB2937592、KB2938439) |
 |[KB2959977](https://www.microsoft.com/download/details.aspx?id=42530)|服务器 2012 R2 更新|
 |[修补程序3052122](https://support.microsoft.com/help/3052122/update-adds-support-for-compound-id-claims-in-ad-fs-tokens-in-windows)|此更新在 Active Directory 联合身份验证服务中添加了对复合 ID 声明的支持。|
 
@@ -90,17 +88,17 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 1. 将以下声明说明添加到场中。 默认情况下，ADFS 2012 R2 中不存在此声明说明，需要手动添加。
 2. 在 AD FS 管理 "下的"**服务**"下，右键单击"**声明说明**"，然后选择"**添加声明说明**"
 3. 在声明说明中输入以下信息
-   - 显示名称： "Windows 设备组" 
+   - 显示名称： "Windows 设备组"
    - 声明说明： " <https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup> "
 4. 选中两个框。
-5. 单击“确定”  。
+5. 单击“确定”。
 
 ![声明说明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc6.png)
 
 6. 使用 PowerShell 时，可以使用**AdfsClaimDescription** cmdlet。
    ``` powershell
    Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' `
-   -ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device' 
+   -ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device'
    ```
 
 
@@ -110,20 +108,21 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 
 ### <a name="step-6--enable-the-compound-authentication-bit-on-the-msds-supportedencryptiontypes-attribute"></a>步骤6：在 Msds-supportedencryptiontypes 属性上启用复合身份验证位
 
-1.  使用**Uninstall-adserviceaccount** PowerShell cmdlet 在指定用于运行 AD FS 服务的帐户上的 msds-supportedencryptiontypes 属性上启用复合身份验证位。  
+1.  使用**Uninstall-adserviceaccount** PowerShell cmdlet 在指定用于运行 AD FS 服务的帐户上的 msds-supportedencryptiontypes 属性上启用复合身份验证位。
 
 >[!NOTE]
 >如果更改服务帐户，则必须通过运行**new-aduser-compoundIdentitySupported： $true** Windows PowerShell cmdlet 来手动启用复合身份验证。
 
 ``` powershell
-Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
+Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true
 ```
 2. 重新启动 ADFS 服务。
 
 >[!NOTE]
->如果 "CompoundIdentitySupported" 设置为 true，则在新服务器上安装相同的 gMSA （2012R2/2016）会失败，并出现以下错误 **： "安装-uninstall-adserviceaccount：无法安装服务帐户"。错误消息： "提供的上下文与目标不匹配。"**。
+>如果 "CompoundIdentitySupported" 设置为 true，则在新服务器上安装相同的 gMSA (2012R2/2016) 会失败，并出现以下错误 **： "安装-uninstall-adserviceaccount：无法安装服务帐户"。错误消息： "提供的上下文与目标不匹配。"**。
 >
->**解决方案**：暂时将 CompoundIdentitySupported 设置为 $false。 此步骤会导致 ADFS 停止发出 WindowsDeviceGroup 声明。 Uninstall-adserviceaccount-Identity "ADFS Service Account"-CompoundIdentitySupported： $false 在新服务器上安装 gMSA，然后将 CompoundIdentitySupported 重新启用为 $True。
+>**解决方案**：暂时将 CompoundIdentitySupported 设置为 $false。 此步骤会导致 ADFS 停止发出 WindowsDeviceGroup 声明。
+Uninstall-adserviceaccount-Identity "ADFS Service Account"-CompoundIdentitySupported： $false 在新服务器上安装 gMSA，然后将 CompoundIdentitySupported 重新启用为 $True。
 禁用 CompoundIdentitySupported，然后重新启用不需要重新启动 ADFS 服务。
 
 ### <a name="step-7-update-the-ad-fs-claims-provider-trust-for-active-directory"></a>步骤7：更新 Active Directory 的 AD FS 声明提供方信任
@@ -133,7 +132,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 3.  在 "**编辑活动控制器的声明规则**" 中，单击 "**添加规则**"。
 4.  在 "**添加转换声明规则向导**" 中选择 "**传递或筛选传入声明**"，然后单击 "**下一步**"。
 5.  从 "**传入声明类型**" 下拉添加显示名称并选择 " **Windows 设备组**"。
-6.  单击“完成” 。  单击 "**应用**"，然后单击 **"确定"**。 
+6.  单击“完成”。  单击 "**应用**"，然后单击 **"确定"**。
 ![声明说明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc7.png)
 
 ### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>步骤8：在需要 "WindowsDeviceGroup" 声明的信赖方上，添加类似的 "传递" 或 "转换" 声明规则。
@@ -141,7 +140,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 3. 在 "**颁发转换规则**" 中，单击 "**添加规则**"。
 4. 在 "**添加转换声明规则向导**" 中选择 "**传递或筛选传入声明**"，然后单击 "**下一步**"。
 5. 从 "**传入声明类型**" 下拉添加显示名称并选择 " **Windows 设备组**"。
-6. 单击“完成” 。  单击 "**应用**"，然后单击 **"确定"**。
+6. 单击“完成”。  单击 "**应用**"，然后单击 **"确定"**。
    ![声明说明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
 
 
@@ -181,20 +180,21 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 
 ### <a name="step-4--enable-the-compound-authentication-bit-on-the-msds-supportedencryptiontypes-attribute"></a>步骤4：在 Msds-supportedencryptiontypes 属性上启用复合身份验证位
 
-1.  使用**Uninstall-adserviceaccount** PowerShell cmdlet 在指定用于运行 AD FS 服务的帐户上的 msds-supportedencryptiontypes 属性上启用复合身份验证位。  
+1.  使用**Uninstall-adserviceaccount** PowerShell cmdlet 在指定用于运行 AD FS 服务的帐户上的 msds-supportedencryptiontypes 属性上启用复合身份验证位。
 
 >[!NOTE]
 >如果更改服务帐户，则必须通过运行**new-aduser-compoundIdentitySupported： $true** Windows PowerShell cmdlet 来手动启用复合身份验证。
 
 ``` powershell
-Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
+Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true
 ```
 2. 重新启动 ADFS 服务。
 
 >[!NOTE]
->如果 "CompoundIdentitySupported" 设置为 true，则在新服务器上安装相同的 gMSA （2012R2/2016）会失败，并出现以下错误 **： "安装-uninstall-adserviceaccount：无法安装服务帐户"。错误消息： "提供的上下文与目标不匹配。"**。
+>如果 "CompoundIdentitySupported" 设置为 true，则在新服务器上安装相同的 gMSA (2012R2/2016) 会失败，并出现以下错误 **： "安装-uninstall-adserviceaccount：无法安装服务帐户"。错误消息： "提供的上下文与目标不匹配。"**。
 >
->**解决方案**：暂时将 CompoundIdentitySupported 设置为 $false。 此步骤会导致 ADFS 停止发出 WindowsDeviceGroup 声明。 Uninstall-adserviceaccount-Identity "ADFS Service Account"-CompoundIdentitySupported： $false 在新服务器上安装 gMSA，然后将 CompoundIdentitySupported 重新启用为 $True。
+>**解决方案**：暂时将 CompoundIdentitySupported 设置为 $false。 此步骤会导致 ADFS 停止发出 WindowsDeviceGroup 声明。
+Uninstall-adserviceaccount-Identity "ADFS Service Account"-CompoundIdentitySupported： $false 在新服务器上安装 gMSA，然后将 CompoundIdentitySupported 重新启用为 $True。
 禁用 CompoundIdentitySupported，然后重新启用不需要重新启动 ADFS 服务。
 
 ### <a name="step-5-update-the-ad-fs-claims-provider-trust-for-active-directory"></a>步骤5：更新 Active Directory 的 AD FS 声明提供方信任
@@ -204,7 +204,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 3.  在 "**编辑活动控制器的声明规则**" 中，单击 "**添加规则**"。
 4.  在 "**添加转换声明规则向导**" 中选择 "**传递或筛选传入声明**"，然后单击 "**下一步**"。
 5.  从 "**传入声明类型**" 下拉添加显示名称并选择 " **Windows 设备组**"。
-6.  单击“完成” 。  单击 "**应用**"，然后单击 **"确定"**。 
+6.  单击“完成”。  单击 "**应用**"，然后单击 **"确定"**。
 
 
 ### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>步骤6：在需要 "WindowsDeviceGroup" 声明的信赖方上，添加类似的 "传递" 或 "转换" 声明规则。
@@ -212,7 +212,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 3. 在 "**颁发转换规则**" 中，单击 "**添加规则**"。
 4. 在 "**添加转换声明规则向导**" 中选择 "**传递或筛选传入声明**"，然后单击 "**下一步**"。
 5. 从 "**传入声明类型**" 下拉添加显示名称并选择 " **Windows 设备组**"。
-6. 单击“完成” 。  单击 "**应用**"，然后单击 **"确定"**。
+6. 单击“完成”。  单击 "**应用**"，然后单击 **"确定"**。
 
 ## <a name="validation"></a>验证
 若要验证 "WindowsDeviceGroup" 声明的版本，请使用 .Net 4.6 创建测试声明感知应用程序。 With WIF SDK 4.0。
@@ -222,7 +222,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 
 现在可以使用计算机/设备的声明进行更丰富的访问控制。
 
-例如，如果为–身份验证用户不是安全组 "-1-5-21-2134745077-1211275016-3050530490-1117" 的成员，并且计算机（要从中进行身份验证的用户）不是安全组 "S-1-5-21-2134745077-1211275016-3050530490-1115 （WindowsDeviceGroup）" 的成员，则以下**AdditionalAuthenticationRules**将告知 AD FS 调用 MFA。
+例如，如果为–身份验证用户不是安全组 "-1-5-21-2134745077-1211275016-3050530490-1117" 的成员，并且计算机 (（其中是用户从其进行身份验证的计算机），则以下**AdditionalAuthenticationRules**将告知 AD FS 调用 MFA) 不是安全组 "S-1-5-21-2134745077-1211275016-3050530490-1115 (WindowsDeviceGroup) " 的成员。
 
 但是，如果满足上述任一条件，则不会调用 MFA。
 

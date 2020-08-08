@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ce07e38a3a8a07f97959e782fd22c1d5472d338
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cf3d0337dfa7360bdf8304c587c4ea31b7607e27
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896779"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990964"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>WSUS 消息和疑难解答提示
 
@@ -69,7 +69,7 @@ WSUS 安装程序使用 Microsoft SQL Server 执行安装。 之所以出现此�
 
 ## <a name="some-services-are-not-running-check-the-following-services"></a>某些服务没有运行。 检查以下服务：
 
-- **Selfupdate：** 有关 Selfupdate 服务疑难解答的信息，请参阅[必须更新自动更新](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx)。
+- **Selfupdate：** 有关 Selfupdate 服务疑难解答的信息，请参阅[必须更新自动更新](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708554(v=ws.10))。
 
 - **WSSUService.exe：** 此服务有助于同步。 如果同步出现问题，请单击 "**开始**"，指向 "**管理工具**"，单击 "**服务**"，然后在服务列表中查找 " **Windows Server Update Service** "，以访问 WSUSService.exe。 请执行以下操作：
 

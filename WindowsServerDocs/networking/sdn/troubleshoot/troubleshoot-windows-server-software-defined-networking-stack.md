@@ -7,12 +7,12 @@ ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/14/2018
-ms.openlocfilehash: 87972f9a0d83a4b7f192e2fe0f751ee66c599044
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2bf186d2f8761ca51c77b4d02489b0d85c53e046
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955914"
+ms.locfileid: "87990154"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Windows Server 软件定义的网络堆栈疑难解答
 
@@ -20,7 +20,7 @@ ms.locfileid: "87955914"
 
 本指南将介绍常见的软件定义的网络 (SDN) 错误和故障情况，并概述利用可用的诊断工具的故障排除工作流。
 
-有关 Microsoft 软件定义的网络的详细信息，请参阅[软件定义的网络](../../sdn/Software-Defined-Networking--SDN-.md)。
+有关 Microsoft 软件定义的网络的详细信息，请参阅[软件定义的网络](../software-defined-networking.md)。
 
 ## <a name="error-types"></a>错误类型
 下表显示了在 Windows Server 2012 R2 中从市场生产部署 (HNVv1) 最常遇到的问题的类，并以多种方式与 Windows Server 2016 HNVv2 中所示的相同类型的问题一致，并具有新的软件定义网络 (SDN) 堆栈。
@@ -54,12 +54,12 @@ Import-Module hnvdiagnostics
 ```
 
 ### <a name="network-controller-diagnostics"></a>网络控制器诊断
-这些 cmdlet 记录在 TechNet 上的[网络控制器诊断 Cmdlet 主题](https://docs.microsoft.com/powershell/module/networkcontrollerdiagnostics/)中。 它们有助于在网络控制器节点之间以及在 Hyper-v 主机上运行的网络控制器与 NC 主机代理之间确定网络策略一致性问题。
+这些 cmdlet 记录在 TechNet 上的[网络控制器诊断 Cmdlet 主题](/powershell/module/networkcontrollerdiagnostics/)中。 它们有助于在网络控制器节点之间以及在 Hyper-v 主机上运行的网络控制器与 NC 主机代理之间确定网络策略一致性问题。
 
  必须从网络控制器节点虚拟机之一运行_ServiceFabricNodeStatus_和_NetworkControllerReplica_ cmdlet。 所有其他 NC 诊断 cmdlet 都可以从连接到网络控制器的任何主机上运行，也可以在网络控制器管理安全组 (Kerberos) 或有权访问 x.509 证书来管理网络控制器。
 
 ### <a name="hyper-v-host-diagnostics"></a>Hyper-v 主机诊断
-有关这些 cmdlet 的详细信息，请参见 " [Hyper-v 网络虚拟化 (HNV) 诊断 Cmdlet" 主题](https://docs.microsoft.com/powershell/module/hnvdiagnostics/)中的 TechNet。 它们有助于识别租户虚拟机之间的数据路径中的问题 (东/西) 并通过 SLB VIP (北/南) 传输流量。
+有关这些 cmdlet 的详细信息，请参见 " [Hyper-v 网络虚拟化 (HNV) 诊断 Cmdlet" 主题](/powershell/module/hnvdiagnostics/)中的 TechNet。 它们有助于识别租户虚拟机之间的数据路径中的问题 (东/西) 并通过 SLB VIP (北/南) 传输流量。
 
 _调试-VirtualMachineQueueOperation_、 _CustomerRoute_、 _PACAMapping_、 _ProviderAddress_、 _VMNetworkAdapterPortId_ _、VMSwitchExternalPortId_和_EncapOverheadSettings_都是可从任何 hyper-v 主机上运行的本地测试（& a）。 其他 cmdlet 通过网络控制器调用数据路径测试，因此需要访问网络控制器，如以上 descried 所示。
 

@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center 的扩展
 description: Windows Admin Center SDK (Project Honolulu) 的扩展
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 010ab340dc71d199119f1bd51fbc22e3ad449040
-ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
+ms.openlocfilehash: 9dd372b765df3dce719c44ce99ed6e4ab6d156fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81650083"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956114"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Windows Admin Center 的扩展
 
@@ -28,7 +26,7 @@ Windows Admin Center 扩展使用 HTML5、CSS、Angular、TypeScript 和 jQuery 
 下面是通过开发 Windows 管理中心的扩展可为产品和客户带来的价值：
 
 - **与 Windows Admin Center 工具集成：** 将你的产品和服务与 Windows Admin Center 中的服务器和群集管理工具集成，向客户提供统一、无缝的端到端监视、管理、疑难解答体验。
-- **利用平台安全、标识和管理功能：** 利用 Windows 管理中心平台功能满足当今 IT 组织的复杂要求，为你的产品和服务启用 Azure Active Directory （AAD）支持、多重身份验证、基于角色的访问控制（RBAC）、日志记录和审核。
+- **利用平台安全、标识和管理功能：** 通过利用 Windows 管理中心平台功能满足当今 IT 组织的复杂要求，为你的产品和服务启用 Azure Active Directory (AAD) 支持、多重身份验证、基于角色的访问控制 (RBAC) 、日志记录和审核。
 - **使用最新的 Web 技术开发：** 使用现代的 Web 技术（包括 HTML5、CSS、Angular、TypeScript 和 jQuery）以及 Windows Admin Center SDK 中包含的丰富、强大的 UI 控件来快速构建出色的用户体验。
 - **扩展产品推广：** 成为 Windows 管理中心生态系统的一部分，并将其扩展到我们的扩展客户群。
 

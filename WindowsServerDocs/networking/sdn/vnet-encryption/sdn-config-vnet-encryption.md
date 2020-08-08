@@ -7,12 +7,12 @@ ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 24b716283eeab929f09db3c4e9cf3ec577211d32
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 41bf68a18a05f97de4cff14651bf98bfa28bc33c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955854"
+ms.locfileid: "87990140"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>为虚拟子网配置加密
 
@@ -31,7 +31,7 @@ ms.locfileid: "87955854"
 >与同一子网上的其他 VM 通信时，无论其当前是否已连接或已连接，流量都会自动加密。
 
 >[!TIP]
->如果你必须将应用程序限制为仅在加密的子网上进行通信，则可以使用 (Acl) 的访问控制列表，以允许当前子网中的通信。 有关详细信息，请参阅[使用访问控制列表 (acl) 管理数据中心网络流量流](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)。
+>如果你必须将应用程序限制为仅在加密的子网上进行通信，则可以使用 (Acl) 的访问控制列表，以允许当前子网中的通信。 有关详细信息，请参阅[使用访问控制列表 (acl) 管理数据中心网络流量流](../manage/use-acls-for-traffic-flow.md)。
 
 
 ## <a name="step-1-create-the-encryption-certificate"></a>步骤 1。 创建加密证书

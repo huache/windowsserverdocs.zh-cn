@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: b66d688052398ba76b6721e8bab0d0878be4959a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d7941733ff2191e94c6c1e380d4349585a5c98d3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517702"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956174"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>AD FS 故障排除-Azure AD
 随着云的增长，许多企业都在使用 Azure AD 来实现其各种应用和服务。  与 Azure AD 联合已成为许多组织的标准做法。  本文档将介绍解决此联合身份验证问题的一些方面。  一般疑难解答文档中的几个主题仍适用于与 Azure 联合，因此本文档重点介绍 Azure AD 和 AD FS 交互的细节。
@@ -72,7 +70,7 @@ ms.locfileid: "87517702"
 |-----|-----|
 |用户名和密码|urn:oasis:names:tc:SAML:2.0:ac:classes:Password|
 |受密码保护的传输|urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport|
-|传输层安全性（TLS）客户端|urn： oasis：名称： tc： SAML：2.0： ac：类： TLSClient
+|TLS) 客户端 (传输层安全性|urn： oasis：名称： tc： SAML：2.0： ac：类： TLSClient
 |X.509 证书|urn： oasis：名称： tc： SAML：2.0： ac：类： X509
 |Windows 集成身份验证|urn：联合身份验证：身份验证： windows|
 |Kerberos|urn： oasis：名称： tc： SAML：2.0： ac：类： Kerberos|

@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 02/15/2019
-ms.openlocfilehash: f03e97cb4c318a65b0daf4034f0f0cfd6fe053bf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c824b2ae8c43be4b5b33b79ce9ddb75dd03c9a9e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964603"
+ms.locfileid: "87990529"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows 管理中心入门
 
@@ -115,7 +115,7 @@ Windows 管理中心支持通过多种机制对托管节点进行身份验证。
 
 **本地管理员密码解决方案 (LAPS) **
 
-如果你的环境使用[LAPS](https://technet.microsoft.com/mt227395.aspx)，并且在 WINDOWS 10 电脑上安装了 windows 管理中心，则可以使用 LAPS 凭据通过托管节点进行身份验证。 **如果使用此方案，请**[提供反馈](https://aka.ms/WACFeedback)。
+如果你的环境使用[LAPS](/previous-versions/mt227395(v=msdn.10))，并且在 WINDOWS 10 电脑上安装了 windows 管理中心，则可以使用 LAPS 凭据通过托管节点进行身份验证。 **如果使用此方案，请**[提供反馈](https://aka.ms/WACFeedback)。
 
 ## <a name="using-tags-to-organize-your-connections"></a>使用标记来组织连接
 

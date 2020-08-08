@@ -7,14 +7,12 @@ ms.reviewer: anandy
 manager: mtillman
 ms.date: 07/17/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: active-directory-federation-services
-ms.openlocfilehash: cecffe6ae789c4a7c8c9ff382e83d84ade8ef018
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0cfb91269e0a55524346d7189d728848d9c6e670
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519846"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940464"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>使用 AD FS 2016 或更高版本的 OAuth 公共客户端生成本机客户端应用程序
 
@@ -22,7 +20,7 @@ ms.locfileid: "87519846"
 
 本文介绍如何生成与受 AD FS 2016 或更高版本保护的 Web API 交互的本机应用程序。
 
-1. .Net TodoListClient WPF 应用程序使用 Active Directory 身份验证库（ADAL）通过 OAuth 2.0 协议从 Azure Active Directory （Azure AD）获取 JWT 访问令牌
+1. .Net TodoListClient WPF 应用程序使用 Active Directory 身份验证库 (ADAL) 通过 OAuth 2.0 协议从 Azure Active Directory (Azure AD) 获取 JWT 访问令牌
 2. 调用 TodoListService web API 的/todolist) 终结点时，访问令牌用作持有者令牌以对用户进行身份验证。
  我们将使用此处 Azure AD 的应用程序示例，然后在 AD FS 2016 或更高版本中对其进行修改。
 
@@ -80,7 +78,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 解决方案中的此项目表示 native client 应用程序。 我们需要确保客户端应用程序知道：
 
 1. 需要在何处进行用户身份验证？
-2. 客户端需要向身份验证机构提供什么 ID （AD FS）？
+2. 客户端需要向身份验证机构提供什么 ID (AD FS) ？
 3. 需要访问令牌的资源的 ID 是多少？
 4. Web API 的基址是什么？
 

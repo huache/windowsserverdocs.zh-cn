@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/18/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a85d486dc30a36d575927ba243d46a403c3a5185
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f30b66bd80b3c5002bdc2c66a1d89718cdb1ee39
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520166"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956204"
 ---
 # <a name="ad-fs-troubleshooting---fiddler---ws-federation"></a>AD FS 疑难解答-Fiddler-ws-federation
 
@@ -27,11 +25,11 @@ ms.locfileid: "87520166"
 
 请求：
 
-- HTTP 获取我们的信赖方（http://sql1.contoso.com/SampApp)
+- HTTP 获取我们的信赖方 (http://sql1.contoso.com/SampApp)
 
 响应：
 
-- 响应是 HTTP 302 （重定向）。  响应标头中的传输数据显示重定向到的位置（https://sts.contoso.com/adfs/ls)
+- 响应是 HTTP 302 (重定向) 。  响应标头中的传输数据显示重定向到的位置 (https://sts.contoso.com/adfs/ls)
 - 重定向 URL 包含 wa = wsignin1.0 1.0，告诉我们 RP 应用程序已生成 WS 联合身份验证登录请求，并将其发送到 AD FS 的/adfs/ls/终结点。  这称为 "重定向绑定"。
 
 ![响应标头中的传输数据](media/ad-fs-tshoot-fiddler-ws-fed/fiddler2.png)
@@ -42,7 +40,7 @@ ms.locfileid: "87520166"
 
 请求：
 
-- HTTP 获取我们的 AD FS 服务器（sts .com）
+- HTTP GET to AD FS server (sts.contoso.com) 
 
 响应：
 

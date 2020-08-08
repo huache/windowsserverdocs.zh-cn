@@ -1,23 +1,21 @@
 ---
 title: 使用 Windows 错误报告排查故障转移群集问题
 description: 使用 WER 报表对故障转移群集进行故障排除，并提供有关如何收集报表和诊断常见问题的特定详细信息。
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.author: johnmar
 author: JohnMarlin-MSFT
 ms.date: 03/27/2018
-ms.openlocfilehash: f888b7f49c2bf97eb42070a6028b137aeb730406
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 9b4569f4f4d28ad1380cf057cdf96e4b81fbdb2a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768534"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990738"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>使用 Windows 错误报告排查故障转移群集问题
 
 > 适用于： Windows Server 2019、Windows Server 2016、Windows Server
 
-Windows 错误报告 (WER) 是基于事件的灵活反馈基础结构，旨在帮助高级管理员或第3层支持收集有关 Windows 可以检测到的硬件和软件问题的信息、向 Microsoft 报告信息并为用户提供任何可用的解决方案。 本[参考](https://docs.microsoft.com/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting cmdlet 的说明和语法。
+Windows 错误报告 (WER) 是基于事件的灵活反馈基础结构，旨在帮助高级管理员或第3层支持收集有关 Windows 可以检测到的硬件和软件问题的信息、向 Microsoft 报告信息并为用户提供任何可用的解决方案。 本[参考](/powershell/module/windowserrorreporting/)提供所有 WindowsErrorReporting cmdlet 的说明和语法。
 
 下面提供的故障排除信息将有助于排查已经升级的高级问题，并可能需要将数据发送给 Microsoft 进行会审。
 
@@ -75,11 +73,11 @@ Microsoft-Windows-Kernel-LiveDump/Analytic
 
 ## <a name="gathering-logs"></a>正在收集日志
 
-启用事件通道后，可以使用**DumpLogQuery**收集日志。 公共资源类型属性**DumpLogQuery**是 mutistring 值。 每个字符串都是[XPATH 查询，如此处所述](https://msdn.microsoft.com/library/windows/desktop/dd996910(v=vs.85).aspx)。
+启用事件通道后，可以使用**DumpLogQuery**收集日志。 公共资源类型属性**DumpLogQuery**是 mutistring 值。 每个字符串都是[XPATH 查询，如此处所述](/windows/win32/wes/consuming-events)。
 
 在进行故障排除时，如果需要收集其他事件通道，可以通过添加其他查询或修改列表来修改**DumpLogQuery**属性。
 
-为此，请先使用[Get-winevent](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1) PowerShell CMDLET 测试 XPATH 查询：
+为此，请先使用[Get-winevent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1) PowerShell CMDLET 测试 XPATH 查询：
 
 ```powershell
 get-WinEvent -FilterXML "<QueryList><Query><Select Path='Microsoft-Windows-GroupPolicy/Operational'>*[System[TimeCreated[timediff(@SystemTime) &gt;= 600000]]]</Select></Query></QueryList>"
@@ -158,7 +156,7 @@ Directory of c:\ProgramData\Microsoft\Windows\WER\ReportArchive
 
 ```
 
-Windows 错误报告提供了很多用于自定义问题报告体验的设置。 有关详细信息，请参阅 Windows 错误报告[文档](https://msdn.microsoft.com/library/windows/desktop/bb513638(v=vs.85).aspx)。
+Windows 错误报告提供了很多用于自定义问题报告体验的设置。 有关详细信息，请参阅 Windows 错误报告[文档](/windows/win32/wer/wer-settings)。
 
 
 ## <a name="troubleshooting-using-windows-error-reporting-reports"></a>使用 Windows 错误报告报表进行故障排除

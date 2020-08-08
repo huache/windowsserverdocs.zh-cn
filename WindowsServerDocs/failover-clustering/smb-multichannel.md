@@ -1,18 +1,16 @@
 ---
 ms.assetid: a6343f1c-e9dd-4a02-91ad-39bd519d66cd
 title: 简化的 SMB 多通道和多 NIC 群集网络
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.topic: article
 author: RobHindman
 ms.author: robhind
 ms.date: 09/15/2016
-ms.openlocfilehash: f345cd877f1c611683c2ffdef56b9b58cc070e49
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7fad43cb5f3de5c10ed815fa802b6168c15850d1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473054"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990748"
 ---
 # <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a>简化的 SMB 多通道和多 NIC 群集网络
 
@@ -23,8 +21,8 @@ ms.locfileid: "85473054"
 简化的 SMB 多通道和多 NIC 群集网络具有以下优势：
 - 故障转移群集会自动识别使用同一交换机/相同子网的节点上的所有 Nic-无需其他配置。
 - 自动启用 SMB 多通道。
-- 只有 IPv6 链接本地（fe80） IP 地址资源的网络可在仅群集（专用）网络上识别。
-- 默认情况下，在每个群集访问点（CAP）网络名称（NN）上配置单个 IP 地址资源。
+- 仅群集链接本地 (fe80) IP 地址资源的网络在仅限群集的 (专用) 网络上被识别。
+- 默认情况下，会在每个群集访问点 (CAP) 网络名称 (NN) 配置单个 IP 地址资源。
 - 当在同一子网上找到多个 Nic 时，群集验证不再发出警告消息。
 
 ## <a name="requirements"></a>要求
@@ -41,24 +39,24 @@ ms.locfileid: "85473054"
 
 ### <a name="use-multiple-nics-across-clusters"></a>跨群集使用多个 Nic
 
-在存储和存储工作负荷群集中使用多个 Nic 时，可实现简化的 SMB 多通道的最大优势。 这允许工作负荷群集（Hyper-v、SQL Server 故障转移群集实例、存储副本等）使用 SMB 多通道，从而更有效地使用网络。 在聚合（也称为非聚合）群集配置中，其中，横向扩展文件服务器群集用于存储 Hyper-v 或 SQL Server 故障转移群集实例群集的工作负荷数据，此网络通常称为 "北南部子网"/网络。 许多客户通过购买支持 RDMA 的 NIC 卡和交换机来最大限度地提高此网络的吞吐量。
+在存储和存储工作负荷群集中使用多个 Nic 时，可实现简化的 SMB 多通道的最大优势。 这允许工作负荷群集 (Hyper-v、SQL Server 故障转移群集实例、存储副本 ) 等）使用 SMB 多通道，从而更有效地使用网络。 在聚合 (也称为非聚合) 群集配置，其中，横向扩展文件服务器群集用于存储 Hyper-v 或 SQL Server 故障转移群集实例群集的工作负荷数据，此网络通常称为 "北南部子网"/网络。 许多客户通过购买支持 RDMA 的 NIC 卡和交换机来最大限度地提高此网络的吞吐量。
 
 ![北南部 SMB 子网 ](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig2.png)
  **图2：若要实现最大网络吞吐量，请在横向扩展文件服务器群集和 hyper-v 或 SQL Server 故障转移群集实例群集上使用多个 nic，该群集共享北南部子网**
 
 ![截图在同一子网中使用多个 Nic 的两个群集利用 SMB 多通道 ](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig3.png)
- **图3：两个群集（用于存储的横向扩展文件服务器、SQL Server <abbr title=" 故障转移群集实例 "> FCI </abbr> ）均使用同一子网中的多个 Nic 来利用 SMB 多通道并获得更好的网络吞吐量。**
+ **图3：两个群集 (横向扩展文件服务器用于存储，SQL Server <abbr title=" 故障转移群集实例 "> FCI </abbr> 用于工作负荷) 两者都在同一子网中使用多个 Nic 来利用 SMB 多通道并获得更好的网络吞吐量。**
 
 ## <a name="automatic-recognition-of-ipv6-link-local-private-networks"></a>自动识别 IPv6 链接本地专用网络
-检测到具有多个 Nic 的专用（仅群集）网络时，群集将自动识别每个子网上每个 NIC 的 IPv6 链接本地（fe80） IP 地址。 这样可以节省管理员时间，因为他们不再需要手动配置 IPv6 链接本地（fe80） IP 地址资源。
+仅当检测到专用 (群集) 具有多个 Nic 的网络时，群集将自动识别每个子网上每个 NIC 的 IPv6 链接本地 (fe80) IP 地址。 这会节省管理员时间，因为他们不再需要手动配置 IPv6 链接本地 (fe80) IP 地址资源。
 
-如果使用多个专用（仅限群集）网络，请检查 IPv6 路由配置以确保路由未配置为跨子网，因为这会降低网络性能。
+如果仅) 网络使用多个专用 (群集，请检查 IPv6 路由配置以确保路由未配置为跨子网，因为这会降低网络性能。
 
 ![故障转移群集管理器 UI 中自动网络配置的截图 ](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig4.png)
- **图4：自动 IPv6 链接本地（Fe80）地址资源配置**
+ **图4：自动 IPv6 链接本地 (Fe80) 地址资源配置**
 
 ## <a name="throughput-and-fault-tolerance"></a>吞吐量和容错
-Windows Server 2019 和 Windows Server 2016 会自动检测 NIC 功能，并将尝试在尽可能快的配置中使用每个 NIC。 使用 RSS 的 nic 和具有 RDMA 功能的 nic 都可以使用。 下表总结了使用这些技术时的利弊。 当使用多个支持 RDMA 的 Nic 时，实现最大吞吐量。 有关详细信息，请参阅[SMB Mutlichannel 的基础知识](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/)。
+Windows Server 2019 和 Windows Server 2016 会自动检测 NIC 功能，并将尝试在尽可能快的配置中使用每个 NIC。 使用 RSS 的 nic 和具有 RDMA 功能的 nic 都可以使用。 下表总结了使用这些技术时的利弊。 当使用多个支持 RDMA 的 Nic 时，实现最大吞吐量。 有关详细信息，请参阅[SMB Mutlichannel 的基础知识](/archive/blogs/josebda/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0)。
 
 ![各种 NIC 配置的吞吐量和容错的图示 ](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig5.png)
  **图5：各种 Nic 的吞吐量和容错 conifigurations**

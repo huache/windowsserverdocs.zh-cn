@@ -1,18 +1,16 @@
 ---
 title: 运行状况服务故障
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: de2e9939302c0b9937fb54b4082feeecf6de5295
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5f35c52e6b4aaf382c80507ca562b52ce27da953
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473104"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990788"
 ---
 # <a name="health-service-faults"></a>运行状况服务故障
 
@@ -24,7 +22,7 @@ ms.locfileid: "85473104"
 
 每个故障都包含五个重要字段：
 
--   severity
+-   严重性
 -   问题的描述
 -   用于解决问题的建议后续步骤
 -   故障实体的标识信息
@@ -103,7 +101,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 ### <a name="discover-objects"></a>发现对象
 
-建立**CimSession**后，可以在群集上查询 WINDOWS MANAGEMENT INSTRUMENTATION （WMI）。
+建立**CimSession**后，可以在群集上查询 (WMI) Windows Management Instrumentation。
 
 你需要获取多个相关对象的实例，然后才能获取错误或度量值。 首先， **MSFT \_ StorageSubSystem** ，它代表群集上存储空间直通。 使用它可以获取群集中的每个**msft \_ StorageNode** ，以及每个**msft \_ 卷**和数据卷。 最后，您还需要**MSFT \_ StorageHealth**，这运行状况服务本身。
 
@@ -135,7 +133,7 @@ public void DiscoverObjects(CimSession Session)
 
 这些对象是在 PowerShell 中使用**StorageSubSystem**、 **StorageNode**和**Volume**等 cmdlet 获取的相同对象。
 
-可以访问[存储管理 API 类](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)中所述的所有相同属性。
+可以访问[存储管理 API 类](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes)中所述的所有相同属性。
 
 ```
 using System.Diagnostics;
@@ -206,7 +204,7 @@ foreach (CimInstance DiagnoseResult in DiagnoseResults)
 }
 ```
 
-下面介绍了每个错误（**DiagnoseResult**）中属性的完整列表。
+下面介绍了每个错误 (**DiagnoseResult**) 中的属性的完整列表。
 
 ### <a name="fault-events"></a>错误事件
 
@@ -225,7 +223,7 @@ public void ListenForFaultEvents()
 }
 ```
 
-接下来，实现将在每次生成新事件时调用**OnNext （）** 方法的观察程序。
+接下来，实现一个观察器，每次生成新事件时将调用**OnNext ( # B1**方法。
 
 每个事件都包含**ChangeType** ，用于指示是否正在创建、删除或更新错误以及相关**FaultId**。
 
@@ -279,7 +277,7 @@ class FaultsObserver : IObserver
 
 故障不会被标记为 "已查看" 或由用户解决。 它们是在运行状况服务观察到问题时创建的，并且仅当运行状况服务无法再发现问题时，才会被自动删除。 通常，这反映了问题已修复。
 
-但是，在某些情况下，运行状况服务重新发现可能会导致故障（例如，故障转移后或由于间歇性连接等）。 出于此原因，保留自己的错误表示可能有意义，因此可以轻松删除重复。 如果发送电子邮件警报或等效项，则这一点特别重要。
+但是，在某些情况下，运行状况服务 (可能会重新发现故障，例如，故障转移后或由于间歇性连接等，) 。 出于此原因，保留自己的错误表示可能有意义，因此可以轻松删除重复。 如果发送电子邮件警报或等效项，则这一点特别重要。
 
 ### <a name="properties-of-faults"></a>错误属性
 
@@ -289,7 +287,7 @@ class FaultsObserver : IObserver
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | FaultType （正常）                      |
-| Reason                    | "卷的可用空间不足。"                 |
+| 原因                    | "卷的可用空间不足。"                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N。 123456789                                  |
 | FaultingObjectLocation    | 机架 A06，RU 25，槽11                                        |
@@ -316,7 +314,7 @@ class FaultsObserver : IObserver
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | FaultType （正常）                      |
-| Reason                    | "卷的可用空间不足。"                 |
+| 原因                    | "卷的可用空间不足。"                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N。 123456789                                  |
 | FaultingObjectLocation    | 机架 A06，RU 25，槽11                                        |
@@ -324,11 +322,11 @@ class FaultsObserver : IObserver
 
 **ChangeType**ChangeType = {0，1，2} = {"创建"，"删除"，"更新"}。
 
-## <a name="coverage"></a>覆盖率
+## <a name="coverage"></a>覆盖范围
 
 在 Windows Server 2016 中，运行状况服务提供以下故障范围：
 
-### <a name="physicaldisk-8"></a>**PhysicalDisk （8）**
+### <a name="physicaldisk-8"></a>**PhysicalDisk (8) **
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedmedia"></a>FaultType： FaultType. PhysicalDisk. FailedMedia
 * 严重性：警告
@@ -370,7 +368,7 @@ class FaultsObserver : IObserver
 * 原因： *"尝试更新物理磁盘上的固件失败"。*
 * RecommendedAction： *"尝试使用其他固件二进制文件。"*
 
-### <a name="virtual-disk-2"></a>**虚拟磁盘（2）**
+### <a name="virtual-disk-2"></a>**虚拟磁盘 (2) **
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksneedsrepair"></a>FaultType： FaultType. VirtualDisks. NeedsRepair
 * 严重性：信息
@@ -382,14 +380,14 @@ class FaultsObserver : IObserver
 * 原因： *"卷不可访问。某些数据可能丢失。 "*
 * RecommendedAction： *"检查所有存储设备的物理和/或网络连接。可能需要从备份还原。*
 
-### <a name="pool-capacity-1"></a>**池容量（1）**
+### <a name="pool-capacity-1"></a>**池容量 (1) **
 
 #### <a name="faulttype-microsofthealthfaulttypestoragepoolinsufficientreservecapacityfault"></a>FaultType： FaultType. StoragePool. InsufficientReserveCapacityFault
 * 严重性：警告
-* 原因： *"存储池没有建议的最低预留容量。这可能会限制在出现驱动器故障时还原数据复原的能力。 "*
+* 原因： *"存储池没有建议的最低预留容量。这可能会限制在)  (出现驱动器故障时还原数据复原的能力。 "*
 * RecommendedAction： *"将额外容量添加到存储池，或释放容量。建议的最小保留保留因部署而异，但大约为2个驱动器的容量。 "*
 
-### <a name="volume-capacity-2sup1sup"></a>**卷容量（2）**<sup>1</sup>
+### <a name="volume-capacity-2sup1sup"></a>**卷容量 (2) ** <sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType： FaultType. 容量
 * 严重性：警告
@@ -401,7 +399,7 @@ class FaultsObserver : IObserver
 * 原因： *"卷的可用空间不足。"*
 * RecommendedAction： *"扩展卷或将工作负荷迁移到其他卷"。*
 
-### <a name="server-3"></a>**服务器（3）**
+### <a name="server-3"></a>**服务器 (3) **
 
 #### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultType： FaultType. 关闭
 * 严重性：关键
@@ -411,21 +409,21 @@ class FaultsObserver : IObserver
 #### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultType： FaultType （独立）
 * 严重性：关键
 * 原因： *"由于连接问题，服务器与群集隔离。"*
-* RecommendedAction： *"如果隔离仍然存在，请检查网络或将工作负荷迁移到其他节点。"*
+* RecommendedAction： *"如果隔离仍然存在，请检查网络 () 或将工作负荷迁移到其他节点。"*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultType： FaultType （已隔离）
 * 严重性：关键
 * 原因： *"由于重复失败，服务器已由群集隔离。"*
 * RecommendedAction： *"替换服务器或修复网络"。*
 
-### <a name="cluster-1"></a>**群集（1）**
+### <a name="cluster-1"></a>**群集 (1) **
 
 #### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultType： FaultType. ClusterQuorumWitness. 错误
 * 严重性：关键
 * 原因： *"群集出现故障，导致服务中断"。*
 * RecommendedAction： *"检查见证服务器资源，并根据需要重新启动。启动或替换失败的服务器。 "*
 
-### <a name="network-adapterinterface-4"></a>**网络适配器/接口（4）**
+### <a name="network-adapterinterface-4"></a>**网络适配器/接口 (4) **
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisconnected"></a>FaultType： FaultType. 网络适配器。
 * 严重性：警告
@@ -434,7 +432,7 @@ class FaultsObserver : IObserver
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkinterfacemissing"></a>FaultType： FaultType. NetworkInterface
 * 严重性：警告
-* 原因： *"服务器 {server} 缺少连接到群集网络的网络适配器 {群集网络}"。*
+* 原因： *"服务器 {server} 缺少网络适配器 (s) 连接到群集网络 {群集网络}"。*
 * RecommendedAction： *"将服务器连接到缺少的群集网络"。*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterhardware"></a>FaultType： FaultType. 网络适配器
@@ -447,7 +445,7 @@ class FaultsObserver : IObserver
 * 原因： *"网络接口 {network interface} 未启用且未在使用中。"*
 * RecommendedAction： *"启用网络接口"。*
 
-### <a name="enclosure-6"></a>**机箱（6）**
+### <a name="enclosure-6"></a>**机箱 (6) **
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurelostcommunication"></a>FaultType： FaultType. StorageEnclosure. LostCommunication
 * 严重性：警告
@@ -479,7 +477,7 @@ class FaultsObserver : IObserver
 * 原因： *"存储机箱的位置 {位置} 温度传感器出现故障。"*
 * RecommendedAction： *"更换存储机箱中的温度传感器。"*
 
-### <a name="firmware-rollout-3"></a>**固件推出（3）**
+### <a name="firmware-rollout-3"></a>**固件推出 (3) **
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomainfailedmaintenancemode"></a>FaultType： FaultType. FaultDomain. FailedMaintenanceMode
 * 严重性：警告
@@ -496,7 +494,7 @@ class FaultsObserver : IObserver
 * 原因： *"已取消固件回滚，因为有太多物理磁盘未能通过固件更新尝试。"*
 * RecommendedAction： *"解决固件问题后重新启动固件推出"。*
 
-### <a name="storage-qos-3sup2sup"></a>**存储 QoS （3）**<sup>2</sup>
+### <a name="storage-qos-3sup2sup"></a>**存储 QoS (3) ** <sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType： FaultType. StorQos. InsufficientThroughput
 * 严重性：警告
@@ -510,11 +508,11 @@ class FaultsObserver : IObserver
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosmisconfiguredflow"></a>FaultType： FaultType. StorQos. MisconfiguredFlow
 * 严重性：警告
-* 原因： *"一个或多个存储使用者（通常是虚拟机）正在使用 id 为 {id} 的不存在的策略。"*
+* 原因： *"一个或多个存储使用者 (通常) 使用 id 为 {id} 的不存在的策略。"*
 * RecommendedAction： *"重新创建任何缺少的存储 QoS 策略。"*
 
-<sup>1</sup>表示卷已达到80% （次严重性）或90% （主要严重性）。
-<sup>2</sup>指示卷上的某些 .vhd 未达到其最小 IOPS，超过10% （次）、30% （主要）或50% （严重）滚动时间为24小时。
+<sup>1</sup>表示卷已达到80% 的完整 (次严重性) 或90% 完全 (主要严重性) 。
+<sup>2</sup>表示卷上的某些 .vhd (s) 未达到其最小 IOPS 超过 10% (次) ，30% (主要) ，或 50% (滚动24小时窗口的严重) 。
 
 >[!NOTE]
 > 存储机箱组件（如风扇、电源和传感器）的运行状况派生自 SCSI 机箱服务 (SES)。 如果你的供应商不提供此信息，运行状况服务不能对其进行显示。

@@ -1,20 +1,18 @@
 ---
 title: 在故障转移群集中配置和管理仲裁
 description: 有关如何在 Windows Server 故障转移群集中管理群集仲裁的详细信息。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2847b9268207155efc181c97c58a91c1d51eac6d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 02158cc005cc46bd42e88569b14c17c59ef377ee
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177813"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990773"
 ---
 # <a name="configure-and-manage-quorum"></a>配置和管理仲裁
 
@@ -60,7 +58,7 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 | ---------    |---------        |---------                        |
 | 磁盘见证     |  <ul><li> 存储群集数据库副本的专用 LUN</li><li> 对具有共享（非复制）存储的群集最有用</li>       |  <ul><li>LUN 的大小必须至少有 512 MB</li><li> 必须专用于群集而且不分配给群集角色</li><li> 必须包括在群集存储中并且通过存储验证测试</li><li> 不可以是群集共享卷 (CSV) 磁盘</li><li> 具有单个卷的基本磁盘</li><li> 不需要有驱动器号</li><li> 可以使用 NTFS 或 ReFS 格式化</li><li> 可以使用容错功能的硬件 RAID 有选择性地进行配置</li><li> 应从备份和防病毒扫描中排除</li><li> 存储空间直通不支持磁盘见证</li>|
 | 文件共享见证     | <ul><li>在运行 Windows Server 的文件服务器上配置的 SMB 文件共享</li><li> 不存储群集数据库的副本</li><li> 仅维护 witness.log 文件中的群集信息</li><li> 对具有复制存储的多站点群集最有用 </li>       |  <ul><li>必须至少具有 5 MB 的可用空间</li><li> 必须专用于单个群集而不用于存储用户或应用程序数据</li><li> 必须对群集名称的计算机对象启用写入权限</li></ul><br>以下是有关托管文件共享见证的文件服务器的其他注意事项：<ul><li>可以使用多个群集的文件共享见证配置单个文件服务器。</li><li> 文件服务器必须位于与群集工作负载分开的站点上。 如果站点到站点网络通信丢失，则允许向任何群集站点提供均等的生存机会。 如果文件服务器位于同一站点上，则该站点成为主站点，并且它是可以访问文件共享的唯一站点。</li><li> 如果虚拟机未托管在使用文件共享见证的同一群集上，则文件服务器可以在虚拟机上运行。</li><li> 为了获得高可用性，可在单独的故障转移群集上配置文件服务器。 </li>      |
-| 云见证     |  <ul><li>存储在 Azure blob 存储中的见证文件</li><li> 当群集中的所有服务器都具有可靠的 Internet 连接时，建议使用此设置。</li>      |  请参阅[部署云见证](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)。       |
+| 云见证     |  <ul><li>存储在 Azure blob 存储中的见证文件</li><li> 当群集中的所有服务器都具有可靠的 Internet 连接时，建议使用此设置。</li>      |  请参阅[部署云见证](./deploy-cloud-witness.md)。       |
 
 ### <a name="node-vote-assignment"></a>节点投票分配
 
@@ -83,7 +81,7 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 
 借助动态仲裁管理，群集还有可能在最后一个未出现故障的群集节点上运行。 通过动态调整多数仲裁要求，该群集可以针对单个节点维持相继节点关闭。
 
-通过使用[Start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode?view=win10-ps) Windows PowerShell cmdlet，可以通过群集节点的**DynamicWeight** common 属性验证节点的群集分配的动态投票。 “0”值表示该节点没有仲裁投票。 值为 1 指示该节点具有仲裁投票。
+通过使用[Start-clusternode](/powershell/module/failoverclusters/get-clusternode?view=win10-ps) Windows PowerShell cmdlet，可以通过群集节点的**DynamicWeight** common 属性验证节点的群集分配的动态投票。 “0”值表示该节点没有仲裁投票。 值为 1 指示该节点具有仲裁投票。
 
 通过使用“验证群集仲裁”**** 验证测试，可以验证所有群集节点的投票分配。
 
@@ -96,7 +94,7 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 
 ## <a name="general-recommendations-for-quorum-configuration"></a>仲裁配置的常规建议
 
-群集软件基于配置的节点数和共享存储的可用性自动为新群集配置仲裁。 通常这是最适合该群集的仲裁配置。 但是，在将群集投入生产之前，最好是在创建该群集后查看仲裁配置。 若要查看详细的群集仲裁配置，你可以使用验证配置向导或[测试群集](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)Windows PowerShell cmdlet 来运行 "**验证仲裁配置**" 测试。 在故障转移群集管理器中，基本仲裁配置显示在所选群集的摘要信息中，或者你可以查看有关运行[Set-clusterquorum](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell cmdlet 时返回的仲裁资源的信息。
+群集软件基于配置的节点数和共享存储的可用性自动为新群集配置仲裁。 通常这是最适合该群集的仲裁配置。 但是，在将群集投入生产之前，最好是在创建该群集后查看仲裁配置。 若要查看详细的群集仲裁配置，你可以使用验证配置向导或[测试群集](/powershell/module/failoverclusters/test-cluster?view=win10-ps)Windows PowerShell cmdlet 来运行 "**验证仲裁配置**" 测试。 在故障转移群集管理器中，基本仲裁配置显示在所选群集的摘要信息中，或者你可以查看有关运行[Set-clusterquorum](/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell cmdlet 时返回的仲裁资源的信息。
 
 你可以随时运行“验证仲裁配置”**** 测试，以验证该仲裁配置是否最适合你的群集。 测试输出指示是否建议对仲裁配置进行更改以及最适合的设置。 如果建议进行更改，你可以使用配置群集仲裁向导来应用建议的设置。
 
@@ -126,7 +124,7 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 ### <a name="change-the-quorum-configuration-in-a-failover-cluster-by-using-failover-cluster-manager"></a>使用故障转移群集管理器更改故障转移群集中的仲裁配置
 
 1. 在故障转移群集管理器中，选择或指定你想要更改的群集。
-2. 选择群集后，在 "**操作**" 下，选择 "**更多操作**"，然后选择 "**配置群集仲裁设置**"。 将出现配置群集仲裁向导。 选择“**下一步**”。
+2. 选择群集后，在 "**操作**" 下，选择 "**更多操作**"，然后选择 "**配置群集仲裁设置**"。 将出现配置群集仲裁向导。 选择“下一步”  。
 3. 在“选择仲裁配置选项”**** 页面上，选择三个配置选项之一，并且完成该选项的步骤。 配置仲裁设置之前，你可以查看你的选择。 有关选项的详细信息，请参阅本主题前面的[了解仲裁](#understanding-quorum)。
 
     - 若要允许群集自动重置最适合当前群集配置的仲裁设置，请选择 "**使用典型设置**"，然后完成该向导。
@@ -156,7 +154,7 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
       4. 如果你选择该选项来配置磁盘见证，则在“配置存储见证”**** 页面上，选择你想要分配为磁盘见证的存储卷，然后完成该向导。
       5. 如果你选择该选项来配置文件共享见证，则在“配置文件共享见证”**** 页面上，键入或浏览到将用作见证资源的文件共享，然后完成该向导。
 
-4. 选择“**下一步**”。 在出现的确认页面上确认你的选择，然后选择 "**下一步**"。
+4. 选择“下一步”  。 在出现的确认页面上确认你的选择，然后选择 "**下一步**"。
 
 运行向导并出现 "**摘要**" 页面后，如果要查看向导执行的任务的报告，请选择 "**查看报告**"。 最新报表将保留在**为 quorumconfiguration.mht**名称为的<em>systemroot</em>** \\ 群集 \\ 报表**文件夹中。
 
@@ -165,7 +163,7 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 
 ### <a name="windows-powershell-equivalent-commands"></a>Windows PowerShell 等效命令
 
-下面的示例演示如何使用[set-clusterquorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps) cmdlet 和其他 Windows PowerShell cmdlet 来配置群集仲裁。
+下面的示例演示如何使用[set-clusterquorum](/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps) cmdlet 和其他 Windows PowerShell cmdlet 来配置群集仲裁。
 
 以下示例将群集 *CONTOSO-FC1* 上的仲裁配置更改为没有仲裁见证的简单多数节点配置。
 
@@ -245,7 +243,7 @@ Set-ClusterQuorum -NodeAndFileShareMajority "\\fileserver\fsw"
 > * 若要在包含要使用的群集配置的特定节点上强制启动群集，必须使用 Windows PowerShell cmdlet 或等效的命令行工具，如此过程后面所示。
 > * 如果你使用故障转移群集管理器连接到强制启动的群集，并且使用“启动群集服务”**** 操作启动节点，则使用阻止仲裁的设置自动启动该节点。
 
-#### <a name="windows-powershell-equivalent-commands-start-clusternode"></a>Windows PowerShell 等效命令（Start-clusternode）
+#### <a name="windows-powershell-equivalent-commands-start-clusternode"></a>Windows PowerShell 等效命令 (Start-clusternode) 
 
 以下示例显示了如何使用 **Start-ClusterNode** cmdlet 来在节点 *ContosoFCNode1* 上强制启动群集。
 
@@ -275,7 +273,7 @@ Net Start ClusSvc /PQ
 
 本部分概括了灾难恢复部署中两个多站点群集配置的特征和仲裁配置。 仲裁配置指南有所不同，具体取决于针对站点之间的工作负载，是需要自动故障转移还是手动故障转移。 通常，你的配置取决于存在于你的组织中的服务级别协议 (SLA)，用于在站点上发生故障或恢复时提供并支持群集工作负载。
 
-### <a name="automatic-failover"></a>自动故障转移
+### <a name="automatic-failover"></a>自动故障转移 (automatic failover)
 
 在此配置中，群集包含可以托管群集角色的两个或多个站点。 如果在任何站点上发生故障，则群集角色预期会自动故障转移到剩余站点。 因此，必须配置群集仲裁，以便任何站点都可以维持完整的站点故障。
 
@@ -313,6 +311,6 @@ Net Start ClusSvc /PQ
 
 ## <a name="more-information"></a>更多信息
 
-* [故障转移群集](failover-clustering.md)
-* [故障转移群集 Windows PowerShell cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)
+* [故障转移群集](./failover-clustering-overview.md)
+* [故障转移群集 Windows PowerShell cmdlet](/powershell/module/failoverclusters/?view=win10-ps)
 * [了解群集和池仲裁](../storage/storage-spaces/understand-quorum.md)
