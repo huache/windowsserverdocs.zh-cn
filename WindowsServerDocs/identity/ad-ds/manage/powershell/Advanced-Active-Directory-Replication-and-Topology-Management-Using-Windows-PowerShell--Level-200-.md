@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 41cfde1ffab857762469a00d1e805d5cf1fc542b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 058e1ba1cd68c1d33aee6e85dfb0de572a480d26
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518835"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967974"
 ---
 # <a name="advanced-active-directory-replication-and-topology-management-using-windows-powershell-level-200"></a>Advanced Active Directory Replication and Topology Management Using Windows PowerShell (Level 200)
 
@@ -100,7 +98,7 @@ Repadmin.exe 验证 Active Directory 复制的运行状况和一致性。 Repadm
 
 - **Get-ADReplicationUpToDatenessVectorTable**
 
-**Target** 参数接受以逗号分隔的字符串列表，这些字符串可标识由 **Scope** 参数指定的目标服务器、站点、域或林。 还允许使用星号（ \* ），这意味着指定范围内的所有服务器。 如果未指定作用域，则表示当前用户林中的所有服务器。 **Scope** 参数指定搜索的范围。 可接受的值是 **Server**、**Site**、**Domain** 和 **Forest**。 **EnumerationServer** 指定用于枚举在 **Target** 和 **Scope** 中指定的域控制器列表的服务器。 它的操作方式与 **Server** 参数相同，并且要求指定的服务器运行 Active Directory Web 服务。
+**Target** 参数接受以逗号分隔的字符串列表，这些字符串可标识由 **Scope** 参数指定的目标服务器、站点、域或林。 还允许使用星号 (\*) ，这意味着指定范围内的所有服务器。 如果未指定作用域，则表示当前用户林中的所有服务器。 **Scope** 参数指定搜索的范围。 可接受的值是 **Server**、**Site**、**Domain** 和 **Forest**。 **EnumerationServer** 指定用于枚举在 **Target** 和 **Scope** 中指定的域控制器列表的服务器。 它的操作方式与 **Server** 参数相同，并且要求指定的服务器运行 Active Directory Web 服务。
 
 若要引入新的 cmdlet，下面提供了一些用于显示不适用于 repadmin.exe 的功能的示例方案；有了这些图示，可能实现的管理功能便显而易见。 查看有关特定用法要求的 cmdlet 帮助。
 

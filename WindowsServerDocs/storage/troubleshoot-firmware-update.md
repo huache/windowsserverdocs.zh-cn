@@ -1,19 +1,17 @@
 ---
 ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: 驱动器固件更新疑难解答
-ms.prod: windows-server
 ms.author: toklima
 manager: masriniv
-ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: b62fdfe64ea579f61239dc582c639fb10ec1371c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b63df280585c4e1d5de88bc8a2ab08cce74c06d7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820880"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946220"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>驱动器固件更新疑难解答
 
@@ -23,8 +21,8 @@ Windows 10 版本 1703 和更高版本以及 Windows Server（半年频道）能
 
 你可以在此处找到有关此功能的详细信息：
 
-- [更新 Windows Server 2016 中的驱动器固件](update-firmware.md)
-- [无需停机即可更新驱动器固件存储空间直通](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
+- [在 Windows Server 2016 中更新驱动器固件](update-firmware.md)
+- [在不停机的情况下在存储空间直通中更新驱动器固件](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
 
 固件更新可能会因各种原因而失败。 这篇文章旨在帮助进行高级疑难解答。
 
@@ -41,7 +39,7 @@ Windows 10 版本 1703 和更高版本以及 Windows Server（半年频道）能
 以下部分概述了疑难解答信息，具体取决于使用 Microsoft 还是第三方驱动程序。
 
 ## <a name="identifying-inappropriate-hardware"></a>确定不适当的硬件
-识别设备是否支持正确命令集的最快方式是启动 PowerShell，然后将磁盘的代表 PhysicalDisk 对象传递到 Get-StorageFirmwareInfo cmdlet 中。 下面是一个示例：
+识别设备是否支持正确命令集的最快方式是启动 PowerShell，然后将磁盘的代表 PhysicalDisk 对象传递到 Get-StorageFirmwareInfo cmdlet 中。 以下是示例：
 
 ```powershell
 Get-PhysicalDisk -SerialNumber 15140F55976D | Get-StorageFirmwareInformation
@@ -64,7 +62,7 @@ FirmwareVersionInSlot : {0013}
 
 要验证 SAS 设备是否支持所需的命令集，有两个选择：
 1.  使用相应的固件映像通过 Update-StorageFirmware cmdlet 试一下，或者
-2.  请查阅 Windows Server 目录以确定哪些 SAS 设备已成功获取了 FW 更新 AQ （ https://www.windowsservercatalog.com/)
+2.  请查阅 Windows Server 目录，以确定哪些 SAS 设备已成功获取 FW 更新 AQ (https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>修正选项
 如果你正在测试的给定设备不支持相应的命令集，则询问你的供应商，了解是否可获得提供所需命令集的已更新固件，或者查看 Windows Server 目录，确定用于获得源的可实现相应命令集的设备。
@@ -81,7 +79,7 @@ FirmwareVersionInSlot : {0013}
 ```powershell
 Get-PhysicalDisk -SerialNumber 44GS103UT5EW | Update-StorageFirmware -ImagePath C:\Firmware\J3E160@3.enc -SlotNumber 0
 ```
-下面是输出示例：
+这是一个输出示例：
 
 ```
 Update-StorageFirmware : Failed
@@ -97,14 +95,14 @@ At line:1 char:47
 + CategoryInfo          : NotSpecified: (:) [Update-StorageFirmware], CimException
 + FullyQualifiedErrorId : StorageWMI 4,Microsoft.Management.Infrastructure.CimCmdlets.InvokeCimMethodCommand,Update-StorageFirmware
 ```
-    
+
 PowerShell 将引发错误，并且已收到调用的函数（即内核 API）不正确的信息。 这可能意味着第三方 SAS 微型端口驱动程序（在本例中为 true）没有实现 API，或者该 API 因其他原因而失败，例如下载分段不一致。
 
 ```
 EventData
 DeviceGUID  {132EDB55-6BAC-A3A0-C2D5-203C7551D700}
 DeviceNumber    1
-Vendor  ATA 
+Vendor  ATA
 Model   TOSHIBA THNSNJ12
 FirmwareVersion 6101
 SerialNumber    44GS103UT5EW
@@ -119,7 +117,7 @@ CdbBytes    3B0E0000000001000000
 NumberOfRetriesDone 0
 ```
 
-通道中的 ETW 事件507显示 SCSI SRB 请求失败，并提供 SenseKey 为 "5" （非法请求）的附加信息，并且 AdditionalSense 信息为 "36" （CDB 中非法的字段）。
+通道中的 ETW 事件507显示 SCSI SRB 请求失败，并提供 SenseKey 为 "5" (非法请求) 的其他信息，并且 AdditionalSense 信息为 "36" (CDB) 中的非法字段。
 
    > [!Note]
    > 这些信息是由相关微型端口直接提供的，这些信息的准确性将取决于微型端口驱动程序的实现和复杂程度。
@@ -144,7 +142,7 @@ NumberOfRetriesDone 0
 
 下面是 SATA 设备上的固件更新因将下载的映像无效（事件 ID：258）而失败的示例：
 
-``` 
+```
 EventData
 MiniportName    storahci
 MiniportEventId 19
@@ -175,10 +173,10 @@ Parameter8Value 0
 
 上述事件在参数值 2 至 6 中包含详细的设备信息。 在这里，我们将查看各个 ATA 注册值。 可使用 ATA ACS 规范来解码针对下载微代码命令失败的以下值：
 - 返回代码：0 (0000 0000)（不适用 - 由于未转移任何负载，因此没有意义）
-- 功能：15（0000 1111）（第1位设置为 "1"，表示 "中止"）
+- 功能： 15 (0000 1111)  (位1设置为 "1"，表示 "中止" ) 
 - SectorCount：0 (0000 0000)（不适用）
 - DriveHead：160 (1010 0000)（不适用 – 仅设置了过时位）
-- 命令：146（1001 0010）（Bit 1 设置为 "1"，表示感知数据的可用性）
+- 命令： 146 (1001 0010)  (位1设置为 "1"，表示感知数据的可用性) 
 
 这告诉我们，设备终止了固件更新操作。
 

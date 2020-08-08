@@ -2,17 +2,16 @@
 title: 存储空间直通的性能历史记录
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ce984d3a88f46b77773c524e5b75135930e1bb03
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f3c0babfad0ebecdac40262a783ecf683d6dc1e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961789"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968784"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>存储空间直通的性能历史记录
 
@@ -57,7 +56,7 @@ ms.locfileid: "86961789"
 
 ## <a name="timeframes"></a>期限
 
-性能历史记录最多存储一年，并且具有较长的粒度。 最近一小时内，每10秒提供一次度量值。 此后，它们会在更精细的序列中智能地（根据需要求平均值或求和）。 最近一天，每5分钟提供一次度量值;对于最近一周，每15分钟;依此类推。
+性能历史记录最多存储一年，并且具有较长的粒度。 最近一小时内，每10秒提供一次度量值。 此后，它们将通过求平均值或求和 (进行智能合并，以适合更多时间的更细化系列) 。 最近一天，每5分钟提供一次度量值;对于最近一周，每15分钟;依此类推。
 
 在 Windows 管理中心，可以选择图表右上角的时间范围。
 
@@ -146,13 +145,13 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 ### <a name="performance-history-storage"></a>性能历史记录存储
 
-启用存储空间直通之后不久，将创建一个名为的大约 10 GB 的卷， `ClusterPerformanceHistory` 并在此处预配可扩展存储引擎（也称为 MICROSOFT JET）的实例。 此轻型数据库存储性能历史记录，无需任何管理员参与或管理。
+启用存储空间直通后，不久就会创建一个名为的大约 10 GB 的卷， `ClusterPerformanceHistory` 并在其中预配了一个可扩展存储引擎的实例)  (。 此轻型数据库存储性能历史记录，无需任何管理员参与或管理。
 
 ![性能历史记录存储的卷](media/performance-history/perf-history-volume.png)
 
 卷由存储空间支持，并使用简单的双向镜像或三向镜像复原功能，具体取决于群集中的节点数。 它在驱动器或服务器发生故障后进行修复，就像存储空间直通中的其他卷。
 
-卷使用 ReFS 但不群集共享卷（CSV），因此它仅出现在群集组的 "所有者" 节点上。 除了自动创建外，此卷没有什么特别之处：你可以查看、浏览、调整大小或将其删除（不推荐）。 如果出现问题，请参阅[故障排除](#troubleshooting)。
+卷使用 ReFS 但不群集共享卷 (CSV) ，因此它仅出现在群集组的 "所有者" 节点上。 除了自动创建外，此卷没有什么特别之处：你可以查看、浏览、调整大小或将其删除 (不建议) 。 如果出现问题，请参阅[故障排除](#troubleshooting)。
 
 ### <a name="object-discovery-and-data-collection"></a>对象发现和数据收集
 
@@ -162,7 +161,7 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 ### <a name="handling-measurement-gaps"></a>处理测量间隙
 
-当度量值合并到跨越更多时间的更细化系列中[时，会](#timeframes)排除丢失数据的时间段。 例如，如果服务器在30分钟内停机，然后在50% 的 CPU 上运行30分钟，则 `ClusterNode.Cpu.Usage` 该小时的平均时间将正确记录为50% （而非25%）。
+当度量值合并到跨越更多时间的更细化系列中[时，会](#timeframes)排除丢失数据的时间段。 例如，如果服务器在30分钟内停机，然后在50% 的 CPU 上运行30分钟，则 `ClusterNode.Cpu.Usage` 该小时的平均记录将正确地记录为 50% (而不是 25% ) 。
 
 ### <a name="extensibility-and-customization"></a>可扩展性和自定义
 
@@ -216,15 +215,15 @@ Stop-ClusterPerformanceHistory -DeleteHistory
 
 ![无可用数据](media/performance-history/no-data-available.png)
 
-1. 如果该对象是新添加或创建的，请等待它被发现（最多15分钟）。
+1. 如果该对象是新添加或创建的，请等待它被发现 (最多15分钟) 。
 
-2. 刷新页面，或等待下一次后台刷新（最多30秒）。
+2. 刷新页面，或等待下一个后台刷新 (最多30秒) 。
 
-3. 某些特殊对象从性能历史记录中排除–例如，未群集的虚拟机，以及不使用群集共享卷（CSV）文件系统的卷。 对于 "精细打印"，请检查对象类型的子主题，如[卷的性能历史记录](performance-history-for-volumes.md)。
+3. 某些特殊对象将从性能历史记录中排除–例如，未群集的虚拟机，以及不使用群集共享卷 (CSV) 文件系统的卷。 对于 "精细打印"，请检查对象类型的子主题，如[卷的性能历史记录](performance-history-for-volumes.md)。
 
 4. 如果问题仍然存在，请以管理员身份打开 PowerShell 并运行 `Get-ClusterPerf` cmdlet。 Cmdlet 包含疑难解答逻辑来识别常见问题，例如，如果缺少 ClusterPerformanceHistory 卷，则提供修正说明。
 
-5. 如果上一步骤中的命令未返回任何内容，则可以尝试通过在 PowerShell 中运行来重新启动运行状况服务（收集性能历史记录） `Stop-ClusterResource Health ; Start-ClusterResource Health` 。
+5. 如果上一步骤中的命令未返回任何内容，则可以尝试重新启动运行状况服务 (，它会通过在 PowerShell 中运行来收集性能历史记录) `Stop-ClusterResource Health ; Start-ClusterResource Health` 。
 
 ## <a name="additional-references"></a>其他参考
 

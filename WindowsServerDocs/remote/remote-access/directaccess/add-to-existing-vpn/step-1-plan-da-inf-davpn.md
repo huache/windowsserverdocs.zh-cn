@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4ca50ea8-6987-4081-acd5-5bf9ead62acd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9d820acc69e71c5236dbff799f58c35e02f0d161
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f67609fff7f5de7cd1b53d73dcf86faaec9dec64
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970424"
+ms.locfileid: "87995456"
 ---
 # <a name="step-1-plan-directaccess-infrastructure"></a>步骤1规划 DirectAccess 基础结构
 
@@ -44,7 +44,7 @@ ms.locfileid: "87970424"
 
     DirectAccess 使用 IPv6 和 IPsec 在 DirectAccess 客户端计算机和内部企业网络之间创建安全连接。 但是，DirectAccess 不一定需要连接到 IPv6 Internet 或内部网络上的本机 IPv6 支持。 相反，它会自动配置并使用 IPv6 转换技术在 IPv4 Internet 上（6to4、Teredo、IP-HTTPS）和仅支持 IPv4 的 Intranet 上（NAT64 或 ISATAP）对 IPv6 通信进行隧道传送。 有关这些转换技术的概述，请参阅以下资源：
 
-    - [IPv6 转换技术](/previous-versions//bb726951(v=technet.10))
+    - [IPv6 转换技术](/previous-versions/bb726951(v=technet.10))
 
     - [IP-HTTPS 隧道协议规范](/openspecs/windows_protocols/ms-iphttps/f1bf1125-49c2-4246-9c75-5d4fc9706b56)
 

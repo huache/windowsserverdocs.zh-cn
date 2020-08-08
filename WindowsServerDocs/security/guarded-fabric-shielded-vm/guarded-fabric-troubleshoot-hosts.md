@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 5940b2a626a42d639870c98ee740c44b18c02ca3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d226f4fdc9b34b97b24b970b3198bd4164b3a309
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944057"
+ms.locfileid: "87995281"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>受保护主机的疑难解答
 
@@ -60,20 +60,20 @@ UnauthorizedHost          | 主机未通过证明，因为无权运行受防护�
 
 AttestationSubStatus       | 含义以及如何操作
 ---------------------------|-------------------------------
-BitLocker                  | 主机的 OS 卷未通过 BitLocker 加密。 若要解决此问题，请在 OS 卷上[启用 bitlocker](https://technet.microsoft.com/itpro/windows/keep-secure/bitlocker-basic-deployment) ，或[在 HGS 上禁用 bitlocker 策略](guarded-fabric-manage-hgs.md#review-attestation-policies)。
+BitLocker                  | 主机的 OS 卷未通过 BitLocker 加密。 若要解决此问题，请在 OS 卷上[启用 bitlocker](/windows/security/information-protection/bitlocker/bitlocker-basic-deployment) ，或[在 HGS 上禁用 bitlocker 策略](guarded-fabric-manage-hgs.md#review-attestation-policies)。
 CodeIntegrityPolicy        | 主机未配置为使用代码完整性策略，或者未使用 HGS 服务器信任的策略。 请确保已配置代码完整性策略，已重新启动主机，并且已将该策略注册到 HGS 服务器。 有关详细信息，请参阅[创建并应用代码完整性策略](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#create-and-apply-a-code-integrity-policy)。
 DumpsEnabled               | 主机配置为允许故障转储或实时内存转储，这是你的 HGS 策略所不允许的。 若要解决此问题，请在主机上禁用转储。
-DumpEncryption             | 主机配置为允许故障转储或实时内存转储，但不加密这些转储。 请在主机上禁用转储或[配置转储加密](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)。
-DumpEncryptionKey          | 该主机配置为允许和加密转储，但不使用 HGS 已知的证书对其进行加密。 若要解决此问题，请在主机上[更新转储加密密钥](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)或将[密钥注册到 HGS](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts)。
+DumpEncryption             | 主机配置为允许故障转储或实时内存转储，但不加密这些转储。 请在主机上禁用转储或[配置转储加密](../../virtualization/hyper-v/manage/about-dump-encryption.md)。
+DumpEncryptionKey          | 该主机配置为允许和加密转储，但不使用 HGS 已知的证书对其进行加密。 若要解决此问题，请在主机上[更新转储加密密钥](../../virtualization/hyper-v/manage/about-dump-encryption.md)或将[密钥注册到 HGS](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts)。
 FullBoot                   | 主机从睡眠状态或休眠状态中恢复。 重新启动主机以允许进行干净的完全启动。
-HibernationEnabled         | 主机配置为允许在不加密休眠文件的情况下进行休眠，而你的 HGS 策略不允许这样做。 禁用休眠并重启主机，或[配置转储加密](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)。
+HibernationEnabled         | 主机配置为允许在不加密休眠文件的情况下进行休眠，而你的 HGS 策略不允许这样做。 禁用休眠并重启主机，或[配置转储加密](../../virtualization/hyper-v/manage/about-dump-encryption.md)。
 HypervisorEnforcedCodeIntegrityPolicy | 主机未配置为使用虚拟机监控程序强制执行的代码完整性策略。 验证虚拟机监控程序是否已启用、配置和强制实施代码完整性。 有关详细信息，请参阅[Device Guard 部署指南](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-deploy-code-integrity-policies)。
 Iommu                      | 主机的基于虚拟化的安全功能未配置为要求 IOMMU 设备防范直接内存访问攻击，这是因为您的 HGS 策略要求。 验证主机是否有 IOMMU、是否已启用，以及 Device Guard 是否配置为在启动 VBS 时[要求 DMA 保护](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#enable-virtualization-based-security-vbs-and-device-guard)。
-PagefileEncryption         | 主机上未启用页面文件加密。 若要解决此问题，请运行 `fsutil behavior set encryptpagingfile 1` 以启用页文件加密。 有关详细信息，请参阅[fsutil 行为](https://technet.microsoft.com/library/cc785435.aspx)。
-SecureBoot                 | 此主机上未启用安全启动，或者未使用 Microsoft Secure Boot 模板。 若要解决此问题，请使用 Microsoft Secure Boot 模板[启用安全启动](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/disabling-secure-boot#enable_secure_boot)。
+PagefileEncryption         | 主机上未启用页面文件加密。 若要解决此问题，请运行 `fsutil behavior set encryptpagingfile 1` 以启用页文件加密。 有关详细信息，请参阅[fsutil 行为](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc785435(v=ws.11))。
+SecureBoot                 | 此主机上未启用安全启动，或者未使用 Microsoft Secure Boot 模板。 若要解决此问题，请使用 Microsoft Secure Boot 模板[启用安全启动](/windows-hardware/manufacture/desktop/disabling-secure-boot#enable_secure_boot)。
 SecureBootSettings         | 此主机上的 TPM 基线与 HGS 信任的任何一个基线不匹配。 如果通过安装新的硬件或软件更改了 UEFI 启动机构、.DBX 变量、调试标志或自定义安全启动策略，则会发生这种情况。 如果信任此计算机的当前硬件、固件和软件配置，则可以[捕获新的 TPM 基线](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#capture-the-tpm-baseline-for-each-unique-class-of-hardware)，并[将其注册到 HGS](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts)。
 TcgLogVerification         | 无法获取或验证 TCG 日志 (的 TPM 基线) 。 这可能表示主机的固件、TPM 或其他硬件组件有问题。 如果主机配置为在启动 Windows 之前尝试 PXE 启动，则过期的 Net Boot 程序 (NBP) 也可能导致此错误。 确保启用 PXE 启动时所有 Nbp 都是最新的。
-VirtualSecureMode          | 主机上未运行基于虚拟化的安全功能。 确保启用 VBS 并且系统满足配置的[平台安全功能](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#validate-enabled-device-guard-hardware-based-security-features)。 有关 VBS 要求的详细信息，请参阅[Device Guard 文档](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)。
+VirtualSecureMode          | 主机上未运行基于虚拟化的安全功能。 确保启用 VBS 并且系统满足配置的[平台安全功能](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#validate-enabled-device-guard-hardware-based-security-features)。 有关 VBS 要求的详细信息，请参阅[Device Guard 文档](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)。
 
 ## <a name="modern-tls"></a>新式 TLS
 
@@ -90,4 +90,4 @@ reg add HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319 /v SystemDefaultTlsVers
 > [!WARNING]
 > 系统默认的 TLS 版本设置将影响计算机上的所有 .NET 应用。 在将注册表项部署到生产计算机之前，请务必在隔离的环境中对其进行测试。
 
-有关 .NET 4.6 和 TLS 1.0 的详细信息，请参阅[解决 TLS 1.0 问题第2版](https://docs.microsoft.com/security/solving-tls1-problem)。
+有关 .NET 4.6 和 TLS 1.0 的详细信息，请参阅[解决 TLS 1.0 问题第2版](/security/solving-tls1-problem)。

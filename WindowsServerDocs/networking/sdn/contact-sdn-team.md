@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: fe5b9bc8c8b3b888b3c11a72c39756374cde566c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d9bba302c80a810e44c41079d7041b49741fd5b4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970824"
+ms.locfileid: "87995251"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>联系数据中心和云网络团队
 
@@ -31,10 +31,10 @@ Microsoft 的**软件定义网络 \( SDN \) **和**容器联网**解决方案由
 
 > GitHub 是与我们联系的最佳场所，其中包含的主题涉及更多详细信息，而不是您可以轻松地适应推文的内容种类。 *是否需要有关 SDN 部署的帮助？不确定我们的功能如何满足你的组织的独特需求？是否有潜在的 bug？* 通过提交 GitHub 问题，与我们取得联系的所有合理原因。
 
-## <a name="microsoft-docs"></a>[Microsoft Docs](https://docs.microsoft.com/)
-[容器联网文档](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)可在[Microsoft Docs (docs.microsoft.com) ](https://docs.microsoft.com/)上找到，其中包含**内置注释功能**。 若要在 Microsoft Docs 只需登录的情况下，离开或回复注释，请向下滚动到想要引用的 Microsoft Docs 页面的底部，然后在那里进行注释并提交。
+## <a name="microsoft-docs"></a>[Microsoft Docs](/)
+[容器联网文档](/virtualization/windowscontainers/manage-containers/container-networking)可在[Microsoft Docs (docs.microsoft.com) ](/)上找到，其中包含**内置注释功能**。 若要在 Microsoft Docs 只需登录的情况下，离开或回复注释，请向下滚动到想要引用的 Microsoft Docs 页面的底部，然后在那里进行注释并提交。
 
-> [Microsoft Docs](https://docs.microsoft.com/)是 Microsoft 的新的统一文档网站。 虽然我们的大多数团队[SDN 文档](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)仍在 TechNet 上，但我们的[容器网络文档](https://docs.microsoft.com/virtualization/windowscontainers)现在 Microsoft Docs。
+> [Microsoft Docs](/)是 Microsoft 的新的统一文档网站。 虽然我们的大多数团队[SDN 文档](./software-defined-networking.md)仍在 TechNet 上，但我们的[容器网络文档](/virtualization/windowscontainers)现在 Microsoft Docs。
 >
 > *一般情况下，如果你遇到关于 Microsoft Docs 的问题，或者你希望获得更多的建议，只需在该页面上留下评论，就可以与 Microsoft 团队分享你的反馈。*
 

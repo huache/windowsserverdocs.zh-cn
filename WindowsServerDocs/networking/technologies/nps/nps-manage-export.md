@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 20b3f933565e8170e99f1eed2bfda24bd7705e1b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a7f6de6b4ee0e442aed5f718c7025a6eb2e70388
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949110"
+ms.locfileid: "87995466"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>导出 NPS 配置以便在其他服务器上导入
 
@@ -60,7 +60,7 @@ Export-NpsConfiguration -Path <filename>
 Export-NpsConfiguration –Path c:\config.xml
 ```
 
-有关详细信息，请参阅[export-npsconfiguration](https://technet.microsoft.com/library/jj872749.aspx)。
+有关详细信息，请参阅[export-npsconfiguration](/powershell/module/nps/export-npsconfiguration?view=win10-ps)。
 
 导出 NPS 配置后，将 XML 文件复制到目标服务器。
 
@@ -78,7 +78,7 @@ Import-NpsConfiguration [-Path] <String> [ <CommonParameters>]
 Import-NpsConfiguration -Path "C:\Npsconfig.xml"
 ```
 
-有关详细信息，请参阅[export-npsconfiguration](https://technet.microsoft.com/library/jj872750.aspx)。
+有关详细信息，请参阅[export-npsconfiguration](/powershell/module/nps/import-npsconfiguration?view=win10-ps)。
 
 ## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>使用 Netsh 导出和导入 NPS 配置
 

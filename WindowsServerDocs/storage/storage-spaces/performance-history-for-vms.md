@@ -2,23 +2,22 @@
 title: 虚拟机的性能历史记录
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6077e72ba36c0ef2d0d34da4768aaf9fa5137fbe
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: dcf866d1de675f914d469783b1194e55adf63cb8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955219"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968724"
 ---
 # <a name="performance-history-for-virtual-machines"></a>虚拟机的性能历史记录
 
 > 适用于：Windows Server 2019
 
-本主题中的[性能历史记录存储空间直通](performance-history.md)详细说明了为虚拟机（VM）收集的性能历史记录。 性能历史记录适用于每个正在运行的群集 VM。
+本主题中的[存储空间直通性能历史记录](performance-history.md)详细说明了为虚拟机 (VM) 收集的性能历史记录。 性能历史记录适用于每个正在运行的群集 VM。
 
    > [!NOTE]
    > 收集可能需要几分钟时间才能开始新创建或重命名的虚拟机。
@@ -41,14 +40,14 @@ ms.locfileid: "86955219"
 | `vmnetworkadapter.bandwidth.outbound` | 每秒位数 |
 | `vmnetworkadapter.bandwidth.total`    | 每秒位数 |
 
-此外，为 `vhd.iops.total` 附加到 VM 的每个 VHD 聚合所有虚拟硬盘（VHD）序列（例如）。
+此外， `vhd.iops.total` 为附加到 VM 的每个 vhd 聚合所有虚拟硬盘 (vhd) 系列（例如）。
 
 ## <a name="how-to-interpret"></a>如何解释
 
 
-| 系列                            | 说明                                                                                                  |
+| 系列                            | 描述                                                                                                  |
 |-----------------------------------|--------------------------------------------------------------------------------------------------------------|
-| `vm.cpu.usage`                    | 虚拟机使用其主机服务器的处理器的百分比。                                   |
+| `vm.cpu.usage`                    | 虚拟机使用的主机服务器处理器 () 的百分比。                                   |
 | `vm.memory.assigned`              | 分配给虚拟机的内存量。                                                      |
 | `vm.memory.available`             | 保持可用的内存量（指定的量）。                                       |
 | `vm.memory.maximum`               | 如果使用动态内存，则这是可以分配给虚拟机的最大内存量。 |
@@ -72,7 +71,7 @@ Get-VM <Name> | Get-ClusterPerf
 ```
 
    > [!NOTE]
-   > Get VM cmdlet 仅返回本地（或指定）服务器上的虚拟机，而不是在群集上返回。
+   > Get VM cmdlet 仅返回本地 (上的虚拟机或指定) 服务器上的虚拟机，而不是在群集上。
 
 ## <a name="additional-references"></a>其他参考
 

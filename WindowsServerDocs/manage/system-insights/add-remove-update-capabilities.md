@@ -1,19 +1,17 @@
 ---
 title: 添加、删除和更新功能
 description: 使用系统见解，你可以创建利用现有数据收集和管理功能的新功能。 还必须具备平台支持来管理这些功能的添加、删除和更新，这一点很重要。 本主题介绍在系统见解中添加、删除和更新功能的高级功能。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 217cb528896e3b09ce81821bb0201388fab28701
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 17d31b480e013cf0276041a88a86530448071ca5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475274"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958685"
 ---
 # <a name="adding-removing-and-updating-capabilities"></a>添加、删除和更新功能
 

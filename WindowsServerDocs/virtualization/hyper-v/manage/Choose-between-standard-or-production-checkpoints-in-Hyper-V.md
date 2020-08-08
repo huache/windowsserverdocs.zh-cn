@@ -1,20 +1,18 @@
 ---
 title: 在 Hyper-v 中的标准或生产检查点之间进行选择
 description: 提供有关将虚拟机配置为使用标准或生产检查点的说明
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 92bb573b-03b7-470e-b72e-e35edf52b349
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 4e5e3d2d81f9ee1b7cbb4a60a1ade2c218d1e769
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9aeff8371b357d9e4b063d48c310b32843dc00af
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474284"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968154"
 ---
 # <a name="choose-between-standard-or-production-checkpoints-in-hyper-v"></a>在 Hyper-v 中的标准或生产检查点之间进行选择
 
@@ -42,7 +40,7 @@ ms.locfileid: "85474284"
 5.  单击 "**应用**" 以保存所做的更改。 如果已完成，请单击 **"确定"** 以关闭对话框。
 
 > [!NOTE]
-> 在运行 Active Directory 域服务角色（域控制器）或 Active Directory 轻型目录服务角色的来宾上仅支持**生产检查点**。
+> 在 Active Directory 域服务 role (域控制器) 或 Active Directory 轻型目录服务角色中运行的来宾仅支持**生产检查点**。
 
 ## <a name="additional-references"></a>其他参考
 

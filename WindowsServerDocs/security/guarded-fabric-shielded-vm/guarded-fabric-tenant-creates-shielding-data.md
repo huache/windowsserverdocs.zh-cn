@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 296de5fbb7387e469d7e1ce39a477366dd274bbb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c9d1237caeb5838d1e95d00ec9afab9eeb436fd4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936748"
+ms.locfileid: "87995481"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>租户的受防护的 Vm-创建屏蔽数据来定义受防护的 VM
 
@@ -39,7 +39,7 @@ ms.locfileid: "87936748"
 
 由于租户只能使用远程桌面连接或其他远程管理工具连接到其受防护的 Vm，因此确保租户可以验证它们是否连接到正确的终结点，这一点很重要， (也就是说，不存在拦截连接) 的 "中间人"。
 
-验证连接到目标服务器的一种方法是安装和配置一个证书，以便在启动连接时提供远程桌面服务。 连接到服务器的客户端计算机将检查其是否信任证书，并在不显示警告的情况。 通常，若要确保连接客户端信任证书，则会从租户的 PKI 颁发 RDP 证书。 有关[在远程桌面服务中使用证书的](https://technet.microsoft.com/library/dn781533.aspx)详细信息，请参阅 TechNet。
+验证连接到目标服务器的一种方法是安装和配置一个证书，以便在启动连接时提供远程桌面服务。 连接到服务器的客户端计算机将检查其是否信任证书，并在不显示警告的情况。 通常，若要确保连接客户端信任证书，则会从租户的 PKI 颁发 RDP 证书。 有关[在远程桌面服务中使用证书的](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn781533(v=ws.11))详细信息，请参阅 TechNet。
 
  为了帮助你决定是否需要获取自定义 RDP 证书，请考虑以下事项：
 
@@ -103,7 +103,7 @@ ms.locfileid: "87936748"
 另请注意，仅当使用的是 VMM 静态 IP 地址池时，才使用与表末尾相关的网络相关的替换字符串。 托管服务提供商应能够告诉你是否需要这些替换字符串。 有关 VMM 模板中静态 IP 地址的详细信息，请参阅 VMM 文档中的以下内容：
 
 - [IP 地址池的准则](https://technet.microsoft.com/system-center-docs/vmm/plan/plan-network#guidelines-for-ip-address-pools)
-- [在 VMM 构造中设置静态 IP 地址池](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-network-static-address-pools)
+- [在 VMM 构造中设置静态 IP 地址池](/system-center/vmm/network-pool?view=sc-vmm-2019)
 
 最后，请务必注意，受防护的 VM 部署过程只会加密 OS 驱动器。 如果使用一个或多个数据驱动器部署受防护的 VM，强烈建议你在租户域中添加无人参与命令或组策略设置，以自动加密数据驱动器。
 
@@ -206,10 +206,10 @@ ms.locfileid: "87936748"
 
 ## <a name="create-a-shielding-data-file-and-add-guardians-using-powershell"></a>使用 PowerShell 创建防护数据文件并添加监护人
 
-作为防护数据文件向导的替代方法，你可以运行[ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps)来创建防护数据文件。
+作为防护数据文件向导的替代方法，你可以运行[ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps)来创建防护数据文件。
 
 所有屏蔽数据文件都需要使用正确的所有者和监护人证书进行配置，以便授权受防护的 Vm 在受保护的构造中运行。
-可以通过运行[HgsGuardian](https://docs.microsoft.com/powershell/module/hgsclient/get-hgsguardian?view=win10-ps)来检查是否在本地安装了任何监护人。 所有者保护者具有私钥，而你的数据中心的保护者通常不会这样做。
+可以通过运行[HgsGuardian](/powershell/module/hgsclient/get-hgsguardian?view=win10-ps)来检查是否在本地安装了任何监护人。 所有者保护者具有私钥，而你的数据中心的保护者通常不会这样做。
 
 如果需要创建所有者监护人，请运行以下命令：
 
@@ -251,7 +251,7 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 可以通过向参数提供以逗号分隔的卷 ID 限定符列表，来信任多个模板磁盘 `-VolumeIDQualifier` 。
 最后，如果有其他文件需要随 VM 一起附带答案文件，请使用 `-OtherFile` 参数，并提供以逗号分隔的文件路径列表。
 
-请参阅[ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)和[VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)的 cmdlet 文档，了解配置防护数据文件的其他方法。
+请参阅[ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps)和[VolumeIDQualifier](/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)的 cmdlet 文档，了解配置防护数据文件的其他方法。
 
 ## <a name="additional-references"></a>其他参考
 

@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 04/01/2019
-ms.openlocfilehash: a0bc065f9654091ece18445488e4b46cfb197ad3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dedd7a3629b4381fd5f78f70a39f6906cab0573d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944147"
+ms.locfileid: "87995383"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>使用基于 TPM 的证明授权受保护的主机
 
@@ -80,11 +80,11 @@ Windows Server 2019 引入了一种新的证明方法，称为*v2 证明*，其�
 
 建议你首先在 audit (日志记录) 模式下创建 CI 策略，以查看它是否缺少任何内容，然后为主机生产工作负荷强制实施策略。
 
-如果使用[CIPolicy](https://docs.microsoft.com/powershell/module/configci/new-cipolicy?view=win10-ps) cmdlet 来生成自己的代码完整性策略，则需要确定要使用的规则级别。
+如果使用[CIPolicy](/powershell/module/configci/new-cipolicy?view=win10-ps) cmdlet 来生成自己的代码完整性策略，则需要确定要使用的规则级别。
 建议使用回退到**哈希**的主**发布服务器**级别，这样就可以在不更改 CI 策略的情况下更新已进行数字签名的大多数软件。
 同一发行者编写的新软件也可以安装在服务器上，而无需更改 CI 策略。
 未进行数字签名的可执行文件将进行哈希处理-更新这些文件将需要你创建新的 CI 策略。
-有关可用 CI 策略规则级别的详细信息，请参阅[部署代码完整性策略：策略规则和文件规则](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules)和 cmdlet 帮助。
+有关可用 CI 策略规则级别的详细信息，请参阅[部署代码完整性策略：策略规则和文件规则](/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules)和 cmdlet 帮助。
 
 1.  在引用主机上，生成新的代码完整性策略。 以下命令在**发布服务器**级别上创建策略，并回退到**哈希**。 然后，它会将 XML 文件转换为二进制文件格式，Windows 和 HGS 需要分别应用和度量 CI 策略。
 
@@ -101,7 +101,7 @@ Windows Server 2019 引入了一种新的证明方法，称为*v2 证明*，其�
 
 3.  将 CI 策略应用到引用主机：
 
-    1.  运行以下命令，将计算机配置为使用 CI 策略。 你还可以将 CI 策略部署[组策略](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy)或[System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm)。
+    1.  运行以下命令，将计算机配置为使用 CI 策略。 你还可以将 CI 策略部署[组策略](/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy)或[System Center Virtual Machine Manager](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm)。
 
         ```powershell
         Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }

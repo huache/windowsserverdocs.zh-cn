@@ -1,20 +1,18 @@
 ---
 title: 启用或禁用 Hyper-v 中的检查点
 description: 提供有关打开或关闭检查点功能的说明。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 92e1d0d0-f2c1-4ba2-8510-c8eb091cf5d6
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 77148346fb2e4964897b3b28643bf74a7295d062
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d8d88c0dfdd6d423efa5a3d9e43fbb804de9542d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473854"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968104"
 ---
 # <a name="enable-or-disable-checkpoints-in-hyper-v"></a>启用或禁用 Hyper-v 中的检查点
 
@@ -28,7 +26,7 @@ ms.locfileid: "85473854"
 
 3.  若要允许执行此虚拟机的检查点，请确保选择 "**启用检查点**"。 若要禁用检查点，请清除 "**启用检查点**" 复选框。
 
-4.  单击“应用”**** 来应用你的更改。 如果你已完成，请单击“确定”**** 来关闭对话框。
+4.  单击“应用”以应用所做的更改。 如果你已完成，请单击“确定”**** 来关闭对话框。
 
 ## <a name="additional-references"></a>其他参考
 

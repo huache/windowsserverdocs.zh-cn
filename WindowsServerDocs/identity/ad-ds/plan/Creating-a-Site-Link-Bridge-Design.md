@@ -6,25 +6,23 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 244444cc773e3b69ba09a2050ebaefa11ea9edef
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b77899c0603e89f972f2fbcb705a95b202c5062e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962279"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967734"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>创建站点链接桥设计
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-站点链接桥连接两个或多个站点链接，并启用站点链接之间的传递。 网桥中的每个站点链接都必须具有一个与桥中的其他站点链接共同的站点。 知识一致性检查器（KCC）使用每个站点链接上的信息来计算一个站点链接中的站点与桥的其他站点链接中的站点之间的复制成本。 如果站点链接之间没有公共站点，KCC 也无法在同一站点链接桥连接的站点中的域控制器之间建立直接连接。
+站点链接桥连接两个或多个站点链接，并启用站点链接之间的传递。 网桥中的每个站点链接都必须具有一个与桥中的其他站点链接共同的站点。 知识一致性检查器 (KCC) 使用每个站点链接上的信息来计算一个站点链接中的站点与桥的其他站点链接中的站点之间的复制成本。 如果站点链接之间没有公共站点，KCC 也无法在同一站点链接桥连接的站点中的域控制器之间建立直接连接。
 
-默认情况下，所有站点链接都是可传递的。 建议你不要更改默认值 "**桥接所有站点链接**" （默认情况下启用）来启用传递。 但是，在以下情况下，你将需要禁用**桥接所有站点链接**并完成站点链接桥设计：
+默认情况下，所有站点链接都是可传递的。 建议你不要更改默认值 "**桥接所有站点链接**" （默认情况) 下 (启用），以使传递保持启用状态。 但是，在以下情况下，你将需要禁用**桥接所有站点链接**并完成站点链接桥设计：
 
 - 你的 IP 网络未完全路由。 禁用**桥接所有站点链接**时，所有站点链接都被视为不可传递的，你可以创建和配置站点链接桥对象以建立网络的实际路由行为的模型。
-- 需要控制在 Active Directory 域服务（AD DS）中所做更改的复制流。 通过为站点链接 IP 传输禁用 "**桥接所有站点链接**" 并配置站点链接桥，站点链接桥将成为不相互连接的网络的等效项。 站点链接桥中的所有站点链接都可以进行可传递的路由，但不会在站点链接桥之外路由。
+- 需要控制 Active Directory 域服务 (AD DS) 所做更改的复制流。 通过为站点链接 IP 传输禁用 "**桥接所有站点链接**" 并配置站点链接桥，站点链接桥将成为不相互连接的网络的等效项。 站点链接桥中的所有站点链接都可以进行可传递的路由，但不会在站点链接桥之外路由。
 
 有关如何使用 "Active Directory 站点和服务" 管理单元来禁用 "**桥接所有站点链接**" 设置的详细信息，请参阅文章[启用或禁用站点链接桥](/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10))。
 

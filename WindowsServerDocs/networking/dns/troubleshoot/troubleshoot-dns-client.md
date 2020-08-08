@@ -2,17 +2,16 @@
 title: 排查 DNS 客户端问题
 description: 本文介绍如何从客户端对 DNS 问题进行故障排除。
 manager: dcscontentpm
-ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 2a9b44807ae6bc9f4c446d4af2150caf09955899
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8098f49c0a48004c54e4acc67522d61d4b30717c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182333"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958635"
 ---
 # <a name="troubleshooting-dns-clients"></a>排查 DNS 客户端问题
 
@@ -44,7 +43,7 @@ ms.locfileid: "87182333"
 
 ### <a name="ping-test"></a>Ping 测试
 
-验证客户端是否可以通过使用首选 DNS 服务器的 IP 地址对其进行 ping 操作来联系首选（或备用） DNS 服务器。
+通过使用首选 DNS 服务器的 IP 地址对其进行 ping 操作，验证客户端是否可以联系首选的 (或备用) DNS 服务器。
 
 例如，如果客户端使用的首选 DNS 服务器为10.0.0.1，请在命令提示符下运行以下命令：
 
@@ -127,6 +126,6 @@ nslookup bing.com
 
 若要解决此问题，请通过运行来清除缓存 `ipconfig /flushdns` 。
 
-## <a name="next-step"></a>下一步
+## <a name="next-step"></a>后续步骤
 
 如果名称解析仍失败，请参阅[DNS 服务器故障排除](troubleshoot-dns-server.md)部分。

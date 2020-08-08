@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 273651b8be1352218feb76c50cfd39cf9580a8a3
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0b83588268e6a6c8dd685082b3862520fcbd80d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519544"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968254"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>安装新的 Windows Server 2012 Active Directory 林（级别 200）
 
@@ -565,10 +563,10 @@ ADDSDeployment cmdlet 提供其他选项以跳过 DNS 客户端设置、转发�
 > 不建议重写重新启动。 域控制器必须重新启动才能正常工作。
 
 ## <a name="see-also"></a>另请参阅
-[Active Directory 域服务（TechNet 门户）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770946(v=ws.10)) 
+[Active Directory 域服务 (TechNet 门户) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770946(v=ws.10)) 
 [Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378801(v=ws.10)) 
  的 Active Directory 域服务[Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378891(v=ws.10)) 
- 的 Active Directory 域服务[Windows Server 技术参考（Windows server 2003）](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10)) 
-[Active Directory 管理中心：入门（Windows Server 2008 R2）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560651(v=ws.10)) 
-[Active Directory Windows PowerShell 管理（Windows Server 2008 R2）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10)) 
-[询问目录服务团队（官方 Microsoft 商业技术支持博客）](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10))
+ 的 Active Directory 域服务Windows server[技术参考 (Windows server 2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10)) 
+[Active Directory 管理中心：入门 (Windows Server 2008 R2) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560651(v=ws.10)) 
+[Active Directory 管理 Windows PowerShell (Windows Server 2008 R2) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10)) 
+[询问目录服务团队 (官方 Microsoft 商业技术支持博客) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10))

@@ -6,20 +6,18 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 06/18/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 1b156701090acc79a63afab26653f42044a23741
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0ac2a3b67b0c3407db017c63d5e5187d36f08aa5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966539"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958845"
 ---
 # <a name="securing-domain-controllers-against-attack"></a>保护域控制器免受攻击
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*定律三：如果攻击者对您的计算机具有不受限制的物理访问，就不是您的计算机了。* - [十个不可变定律（版本2.0）](https://www.microsoft.com/en-us/msrc?rtc=1)
+*定律三：如果攻击者对您的计算机具有不受限制的物理访问，就不是您的计算机了。* - [安全性 (的十个永恒定律) 版本2.0](https://www.microsoft.com/en-us/msrc?rtc=1)
 
 域控制器提供了 AD DS 数据库的物理存储，还提供了允许企业有效管理其服务器、工作站、用户和应用程序的服务和数据。 如果恶意用户获取了对域控制器的特权访问，则该用户可以修改、损坏或销毁 AD DS 数据库，并通过扩展 Active Directory 管理的所有系统和帐户。
 
@@ -35,11 +33,11 @@ ms.locfileid: "86966539"
 
 #### <a name="physical-domain-controllers"></a>物理域控制器
 
-在数据中心，物理域控制器应安装在独立于常规服务器总体的专用安全机架或 cages 中。 如果可能，应将域控制器配置为受信任的平台模块（TPM）芯片，并通过 BitLocker 驱动器加密保护域控制器服务器中的所有卷。 BitLocker 通常会在一位数字的百分比中增加性能开销，但即使从服务器中删除了磁盘，也会防止目录泄露。 BitLocker 还可以帮助系统防范攻击，如 rootkit，因为修改启动文件将导致服务器启动到恢复模式，以便可以加载原始二进制文件。 如果将域控制器配置为使用软件 RAID、串行连接 SCSI、SAN/NAS 存储或动态卷，则无法实现 BitLocker，因此应尽可能在域控制器中使用本地附加的存储（带有或不带硬件 RAID）。
+在数据中心，物理域控制器应安装在独立于常规服务器总体的专用安全机架或 cages 中。 如果可能，应将域控制器配置为包含受信任的平台模块 (TPM) 芯片，并且应通过 BitLocker 驱动器加密保护域控制器服务器中的所有卷。 BitLocker 通常会在一位数字的百分比中增加性能开销，但即使从服务器中删除了磁盘，也会防止目录泄露。 BitLocker 还可以帮助系统防范攻击，如 rootkit，因为修改启动文件将导致服务器启动到恢复模式，以便可以加载原始二进制文件。 如果将域控制器配置为使用软件 RAID、串行连接 SCSI、SAN/NAS 存储或动态卷，则无法实现 BitLocker，因此在本地连接的存储 (有或不包含硬件 RAID) 应尽可能在域控制器中使用。
 
 #### <a name="virtual-domain-controllers"></a>虚拟域控制器
 
-如果实现虚拟域控制器，应确保域控制器与环境中的其他虚拟机在不同的物理主机上运行。 即使使用第三方虚拟化平台，也请考虑在 Windows Server 2012 或 Windows Server 2008 R2 中的 Hyper-v Server 上部署虚拟域控制器，这将提供最小的攻击面并可使用其托管的域控制器进行管理，而不是使用其他虚拟化主机进行管理。 如果实现了用于管理虚拟化基础结构的 System Center Virtual Machine Manager （SCVMM），则可以将域控制器虚拟机所在的物理主机和域控制器本身的管理委派给授权管理员。 还应考虑分离虚拟域控制器的存储，以防止存储管理员访问虚拟机文件。
+如果实现虚拟域控制器，应确保域控制器与环境中的其他虚拟机在不同的物理主机上运行。 即使使用第三方虚拟化平台，也请考虑在 Windows Server 2012 或 Windows Server 2008 R2 中的 Hyper-v Server 上部署虚拟域控制器，这将提供最小的攻击面并可使用其托管的域控制器进行管理，而不是使用其他虚拟化主机进行管理。 如果实现了用于管理虚拟化基础结构 System Center Virtual Machine Manager (SCVMM) ，则可以将域控制器虚拟机所在的物理主机和域控制器本身委派给授权管理员。 还应考虑分离虚拟域控制器的存储，以防止存储管理员访问虚拟机文件。
 
 ### <a name="branch-locations"></a>分支位置
 
@@ -65,7 +63,7 @@ ms.locfileid: "86966539"
 
 ### <a name="security-configuration-wizard"></a>安全配置向导
 
-在初始生成时，所有域控制器都应被锁定。 这可以通过使用 Windows Server 中本机附带的安全配置向导来在 "基本生成" 域控制器上配置服务、注册表、系统和 WFAS 设置。 可以将设置保存并导出到 GPO 中，该 GPO 可以链接到林中每个域中的域控制器 OU，以强制域控制器的配置一致。 如果你的域包含多个版本的 Windows 操作系统，则可以将 Windows Management Instrumentation （WMI）筛选器配置为仅将 Gpo 应用于运行相应操作系统版本的域控制器。
+在初始生成时，所有域控制器都应被锁定。 这可以通过使用 Windows Server 中本机附带的安全配置向导来在 "基本生成" 域控制器上配置服务、注册表、系统和 WFAS 设置。 可以将设置保存并导出到 GPO 中，该 GPO 可以链接到林中每个域中的域控制器 OU，以强制域控制器的配置一致。 如果你的域包含多个版本的 Windows 操作系统，则可以将 Windows Management Instrumentation (WMI) 筛选器配置为仅将 Gpo 应用于运行相应操作系统版本的域控制器。
 
 ### <a name="microsoft-security-compliance-toolkit"></a>Microsoft 安全合规性工具包
 
@@ -73,7 +71,7 @@ ms.locfileid: "86966539"
 
 ### <a name="rdp-restrictions"></a>RDP 限制
 
-链接到林中所有域控制器 Ou 的组策略对象应配置为仅允许来自经过授权的用户和系统（例如，跳转服务器）的 RDP 连接。 这可以通过组合用户权限设置和 WFAS 配置来实现，并且应在 Gpo 中实现，以便一致地应用策略。 如果它被绕过，则下一个组策略刷新会将系统恢复为其正确的配置。
+链接到林中所有域控制器 Ou 的组策略对象应配置为仅允许来自授权用户和系统的 RDP 连接 (例如，跳转服务器) 。 这可以通过组合用户权限设置和 WFAS 配置来实现，并且应在 Gpo 中实现，以便一致地应用策略。 如果它被绕过，则下一个组策略刷新会将系统恢复为其正确的配置。
 
 ### <a name="patch-and-configuration-management-for-domain-controllers"></a>域控制器的修补和配置管理
 
@@ -81,9 +79,9 @@ ms.locfileid: "86966539"
 
 ### <a name="blocking-internet-access-for-domain-controllers"></a>阻止域控制器的 Internet 访问
 
-作为 Active Directory 安全评估的一部分执行的一项检查是在域控制器上使用和配置 Internet Explorer。 Internet Explorer （或任何其他 web 浏览器）不应在域控制器上使用，但对数千个域控制器的分析已揭示了很多情况下，特权用户使用 Internet Explorer 浏览组织的 intranet 或 Internet。
+作为 Active Directory 安全评估的一部分执行的一项检查是在域控制器上使用和配置 Internet Explorer。 Internet Explorer (或任何其他 web 浏览器) 不应在域控制器上使用，但对数千个域控制器的分析已揭示了很多情况下，特权用户使用 Internet Explorer 浏览组织的 intranet 或 Internet。
 
-如前面所述，"错误日志" 中[的 "](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md)配置错误" 一节中所述，使用高特权帐户（默认情况下，允许本地登录到域控制器的唯一帐户）从 Windows 基础结构中最强大的计算机中浏览 Internet （或受感染的 intranet）会给组织的安全带来特别的风险。 无论是通过下载还是下载恶意软件感染的 "实用程序" 通过驱动器，攻击者都可以获得完全破坏或销毁 Active Directory 环境所需的所有内容。
+如前面所述，[要折衷的途径](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md)的 "配置错误" 一节，使用高特权 (帐户从 Windows 基础结构中最强大的计算机中浏览 Internet (或感染的 intranet) ，默认情况下，) 会向组织的安全带来特别的风险。 无论是通过下载还是下载恶意软件感染的 "实用程序" 通过驱动器，攻击者都可以获得完全破坏或销毁 Active Directory 环境所需的所有内容。
 
 尽管 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 和当前版本的 Internet Explorer 提供了许多针对恶意下载的保护，但在大多数情况下，使用域控制器和特权帐户来浏览 Internet、域控制器运行的是 Windows Server 2003，或是特意禁用了较新的操作系统和浏览器所提供的保护。
 

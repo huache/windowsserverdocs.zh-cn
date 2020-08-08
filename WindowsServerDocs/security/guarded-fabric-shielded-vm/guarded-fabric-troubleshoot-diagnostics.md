@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: a0537c938b86141f83857f1763fbb18260a23e42
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 40381a08c22c8b559fbf2b7da8e8151e91c77718
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944189"
+ms.locfileid: "87995365"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>使用受保护的构造诊断工具进行故障排除
 
@@ -19,7 +19,7 @@ ms.locfileid: "87944189"
 
 本主题介绍如何使用受保护的结构诊断工具来确定和修正受保护的结构基础结构的部署、配置和日常操作中的常见故障。 这包括主机保护者服务 (HGS) 、所有受保护的主机以及 DNS 和 Active Directory 等服务。 诊断工具可用于执行对失败的受保护结构的会审中的第一步，为管理员提供解决中断和标识配置错误的资产的起点。 该工具不能取代对受保护的构造进行操作的声音，只是为了快速验证日常操作过程中遇到的最常见问题。
 
-有关本文中使用的 cmdlet 的完整文档，请参阅[HgsDiagnostics 模块参考](https://docs.microsoft.com/powershell/module/hgsdiagnostics/?view=win10-ps)。
+有关本文中使用的 cmdlet 的完整文档，请参阅[HgsDiagnostics 模块参考](/powershell/module/hgsdiagnostics/?view=win10-ps)。
 
 [!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)]
 
@@ -105,10 +105,10 @@ Get-HgsTrace -RunDiagnostics -Target $server
 ```
 此示例将生成一个提示，收集远程用户凭据，然后将使用远程主机在上运行诊断， `hgs-01.secure.contoso.com` 以完成跟踪收集。  生成的跟踪将下载到 localhost，然后进行诊断。  诊断结果与执行[本地诊断](#local-diagnosis)时的结果相同。  同样，不需要指定角色，因为它可以根据远程系统上安装的 Windows PowerShell 模块进行推断。
 
-远程诊断利用 Windows PowerShell 远程处理来访问远程主机。  因此，跟踪目标是启用 Windows PowerShell 远程处理的先决条件 (参阅[Enable enable-psremoting](https://technet.microsoft.com/library/hh849694.aspx)) ，并正确配置了 localhost 以启动与目标的连接。
+远程诊断利用 Windows PowerShell 远程处理来访问远程主机。  因此，跟踪目标是启用 Windows PowerShell 远程处理的先决条件 (参阅[Enable enable-psremoting](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7)) ，并正确配置了 localhost 以启动与目标的连接。
 
 > [!NOTE]
-> 在大多数情况下，只需将 localhost 作为同一个 Active Directory 林的一部分，并使用有效的 DNS 主机名。  如果你的环境使用更复杂的联合身份验证模型或者你希望使用直接 IP 地址进行连接，则可能需要执行其他配置，例如设置 WinRM[受信任的主机](https://technet.microsoft.com/library/ff700227.aspx)。
+> 在大多数情况下，只需将 localhost 作为同一个 Active Directory 林的一部分，并使用有效的 DNS 主机名。  如果你的环境使用更复杂的联合身份验证模型或者你希望使用直接 IP 地址进行连接，则可能需要执行其他配置，例如设置 WinRM[受信任的主机](/previous-versions/technet-magazine/ff700227(v=msdn.10))。
 
 可以通过使用 cmdlet 验证跟踪目标是否已正确实例化并配置为接受连接 `Test-HgsTraceTarget` ：
 ```PowerShell
@@ -122,7 +122,7 @@ $server | Test-HgsTraceTarget
 从具有足够权限的用户执行远程诊断以远程连接到跟踪目标时，无需向提供凭据 `New-HgsTraceTarget` 。  `Get-HgsTrace`当打开连接时，cmdlet 将自动重复使用调用该 cmdlet 的用户的凭据。
 
 > [!WARNING]
-> 某些限制适用于重用凭据，特别是在执行所谓的 "第二跃点" 时。  当尝试将凭据从远程会话内部重新使用到另一台计算机时，会发生这种情况。  需要[设置 CredSSP](https://technet.microsoft.com/library/hh849872.aspx)以支持此方案，但这不在受保护的结构管理和故障排除范围内。
+> 某些限制适用于重用凭据，特别是在执行所谓的 "第二跃点" 时。  当尝试将凭据从远程会话内部重新使用到另一台计算机时，会发生这种情况。  需要[设置 CredSSP](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7)以支持此方案，但这不在受保护的结构管理和故障排除范围内。
 
 #### <a name="using-windows-powershell-just-enough-administration-jea-and-diagnostics"></a>使用 Windows PowerShell 的管理 (JEA) 和诊断
 

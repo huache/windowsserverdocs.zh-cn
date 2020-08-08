@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: 92ddf9c5d90a963115e4009afea996b8aecf052d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3c1b414acaf7487b0a435cfea2891903646c869f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966544"
+ms.locfileid: "87995272"
 ---
 # <a name="software-and-hardware-sh-integrated-features-and-technologies"></a>软件和硬件 (SH) 集成功能和技术
 
@@ -37,7 +37,7 @@ ms.locfileid: "87966544"
 
 3.  确保为主机中的 RDMA 指定的 Vnic 启用 RDMA。
 
-有关 RDMA 和 SET 的详细信息，请参阅[ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (设置) ](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)。
+有关 RDMA 和 SET 的详细信息，请参阅[ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (设置) ](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)。
 
 ## <a name="data-center-bridging-dcb"></a>Data Center Bridging (DCB)
 
@@ -45,14 +45,14 @@ DCB 是一套电气和电子工程师协会 (IEEE) 标准，可在数据中心�
 
 对于 DCB，Windows Server 使用基于优先级的流控制 (PFC) ，标准化于 IEEE 802.1 Q b b。 PFC 通过防止在通信类中溢出，来创建 (几乎) 无损网络构造。 Windows Server 还使用 ETS) 的增强的传输选择， (在 IEEE 802.1 Qaz 中进行标准化。 ETS 允许将带宽划分为多达八类流量的保留部分。 每个交通类都有自己的传输队列，通过使用 PFC，可以在类中启动和停止传输。
 
-有关详细信息，请参阅[数据中心桥接 (DCB) ](https://docs.microsoft.com/windows-server/networking/technologies/dcb/dcb-top)。
+有关详细信息，请参阅[数据中心桥接 (DCB) ](../dcb/dcb-top.md)。
 
 ## <a name="hyper-v-network-virtualization"></a>Hyper-V 网络虚拟化
 
 |                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **v1 (HNVv1) **       |                     在 Windows Server 2012 中引入的 Hyper-v 网络虚拟化 (HNV) 可在共享物理网络基础结构的基础上实现客户网络虚拟化。 由于物理网络结构上只需进行少量的更改，HNV 为服务提供商提供灵活的灵活性，可在三个云中的任何位置部署和迁移租户工作负荷：服务提供商云、私有云或 Microsoft Azure 公有云。                     |
-| **v2 NVGRE (HNVv2 NVGRE) ** | 在 Windows Server 2016 和 System Center Virtual Machine Manager 中，Microsoft 提供了端到端网络虚拟化解决方案，其中包括 RAS 网关、软件负载平衡、网络控制器等。 有关详细信息，请参阅[Windows Server 2016 中的 Hyper-v 网络虚拟化概述](https://technet.microsoft.com/windows-server-docs/networking/sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-overview-windows-server)。 |
+| **v2 NVGRE (HNVv2 NVGRE) ** | 在 Windows Server 2016 和 System Center Virtual Machine Manager 中，Microsoft 提供了端到端网络虚拟化解决方案，其中包括 RAS 网关、软件负载平衡、网络控制器等。 有关详细信息，请参阅[Windows Server 2016 中的 Hyper-v 网络虚拟化概述](../../sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-overview-windows-server.md)。 |
 | **v2 VxLAN (HNVv2 VxLAN) ** |                                                                                                                                                                                        在 Windows Server 2016 中，是 SDN 扩展的一部分，可通过网络控制器进行管理。                                                                                                                                                                                        |
 
 ---
@@ -74,13 +74,13 @@ Pvlan 仅允许在同一虚拟化服务器上的虚拟机之间进行通信。 �
 
 RDMA 是一种网络技术，可提供高吞吐量、低延迟的通信，可最大程度地降低 CPU 使用率。 RDMA 通过允许网络适配器将数据直接传输到应用程序内存或从应用程序内存中传输数据，支持零复制网络。 支持 RDMA 意味着 NIC (物理或虚拟) 能够向 RDMA 客户端公开 RDMA。 另一方面，已启用 RDMA 意味着支持 RDMA 的 NIC 在堆栈上公开 RDMA 接口。
 
-有关 RDMA 的详细信息，请参阅[ (rdma 的远程直接内存访问) 和交换机嵌入组合 (设置) ](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)。
+有关 RDMA 的详细信息，请参阅[ (rdma 的远程直接内存访问) 和交换机嵌入组合 (设置) ](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)。
 
 ## <a name="receive-side-scaling-rss"></a>接收方伸缩 (RSS)
 
 RSS 是一项 NIC 功能，它分隔开来不同的流集，并将它们传递给不同的处理器进行处理。 RSS 并行网络处理，使主机可以扩展为非常高的数据速率。
 
-有关更多详细信息，请参阅[ (RSS) 的接收方缩放](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-receive-side-scaling)。
+有关更多详细信息，请参阅[ (RSS) 的接收方缩放](/windows-hardware/drivers/network/introduction-to-receive-side-scaling)。
 
 ## <a name="single-root-input-output-virtualization-sr-iov"></a>单个根输入-输出虚拟化 (SR-IOV) 
 
@@ -90,7 +90,7 @@ SR-IOV 允许 VM 流量直接从 NIC 移至 VM，而无需通过 Hyper-v 主机�
 
 将来，两种技术会允许 SR-IOV：通用 Flow 表 (GFT) 和硬件 QoS 卸载 (NIC 中的带宽管理) –生态系统中的 Nic 支持它们。 这两种技术的组合会使 SR-IOV 对所有 Vm 都有用，这将允许应用策略、虚拟化和带宽管理规则，并可能在 SR-IOV 的一般应用程序中带来极大的进步。
 
-有关更多详细信息，请参阅[单根 I/o 虚拟化概述 (sr-iov) ](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-)。
+有关更多详细信息，请参阅[单根 I/o 虚拟化概述 (sr-iov) ](/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-)。
 
 ## <a name="tcp-chimney-offload"></a>TCP 烟囱卸载
 
@@ -101,11 +101,11 @@ TCP 烟囱卸载，也称为 TCP 引擎卸载 (TOE) ，它是一种允许主机�
 
 ## <a name="virtual-local-area-network-vlan"></a>虚拟局域网 (VLAN) 
 
-VLAN 是对以太网框架标头的扩展，用于启用将 LAN 分区为多个 Vlan，每个 Vlan 使用其自己的地址空间。 在 Windows Server 2016 中，Vlan 是在 Hyper-v 交换机的端口上设置的，或者是通过设置 NIC 组合团队上的团队界面设置的。 有关详细信息，请参阅[NIC 组合和虚拟局域网 (vlan) ](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nict-and-vlans)。
+VLAN 是对以太网框架标头的扩展，用于启用将 LAN 分区为多个 Vlan，每个 Vlan 使用其自己的地址空间。 在 Windows Server 2016 中，Vlan 是在 Hyper-v 交换机的端口上设置的，或者是通过设置 NIC 组合团队上的团队界面设置的。 有关详细信息，请参阅[NIC 组合和虚拟局域网 (vlan) ](../nic-teaming/nic-teaming.md)。
 
 ## <a name="virtual-machine-queue-vmq"></a>虚拟机队列 (VMQ)
 
-Vmq 是一项 NIC 功能，用于为每个 VM 分配队列。 只要启用了 Hyper-v，还必须启用 VMQ。 在 Windows Server 2016 中，Vmq 将 NIC 交换机 vPorts 与分配给 vPort 的单个队列一起使用，以提供相同的功能。 有关详细信息，请参阅[虚拟接收方缩放 (vRSS) ](https://docs.microsoft.com/windows-server/networking/technologies/vrss/vrss-top)和[NIC 组合](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)。
+Vmq 是一项 NIC 功能，用于为每个 VM 分配队列。 只要启用了 Hyper-v，还必须启用 VMQ。 在 Windows Server 2016 中，Vmq 将 NIC 交换机 vPorts 与分配给 vPort 的单个队列一起使用，以提供相同的功能。 有关详细信息，请参阅[虚拟接收方缩放 (vRSS) ](../vrss/vrss-top.md)和[NIC 组合](../nic-teaming/nic-teaming.md)。
 
 ## <a name="virtual-machine-multi-queue-vmmq"></a>虚拟机多队列 (VMMQ) 
 

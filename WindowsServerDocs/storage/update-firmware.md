@@ -1,19 +1,17 @@
 ---
 ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
 title: 更新驱动器固件
-ms.prod: windows-server
 ms.author: toklima
 manager: dmoss
-ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 0e117b486fd628397bfe36aa897ff64cdd26f98b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 15e0d6dedc6bb81c0b511479ee342dbd463654e2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965829"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946210"
 ---
 # <a name="updating-drive-firmware"></a>更新驱动器固件
 >适用于： Windows Server 2019、Windows Server 2016、Windows 10
@@ -25,13 +23,13 @@ ms.locfileid: "86965829"
 
 ## <a name="drive-compatibility"></a>驱动器兼容性
 
-要使用 Windows Server 更新驱动器固件，必须具有受支持的驱动器。 若要确保常见设备行为，则可以通过为 SAS、SATA 和 NVMe 设备定义新的（对于 Windows 10 和 Windows Server 2016 - 可选 Hardware Lab Kit (HLK)）要求开始入手。 这些要求列出了 SAS、SATA 和 NVMe 设备必须支持才可使用这些新的 Windows 本机 PowerShell cmdlet 更新固件的命令。 为了支持这些要求，有一个新的 HLK 测试可以验证供应商的产品是否支持正确的命令并在将来的修订版中实施。 
+要使用 Windows Server 更新驱动器固件，必须具有受支持的驱动器。 若要确保常见设备行为，则可以通过为 SAS、SATA 和 NVMe 设备定义新的（对于 Windows 10 和 Windows Server 2016 - 可选 Hardware Lab Kit (HLK)）要求开始入手。 这些要求列出了 SAS、SATA 和 NVMe 设备必须支持才可使用这些新的 Windows 本机 PowerShell cmdlet 更新固件的命令。 为了支持这些要求，有一个新的 HLK 测试可以验证供应商的产品是否支持正确的命令并在将来的修订版中实施。
 
 有关你的硬件是否支持 Windows 更新驱动器固件的信息，请联系你的解决方案供应商。
 以下是指向各种要求的链接：
 
 -   SATA：[Device.Storage.Hd.Sata](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsata) - 在 **[如果已实施\] 固件下载和激活**部分
-    
+
 -   SAS：[Device.Storage.Hd.Sas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsas) - 在 **[如果已实施\] 固件下载和激活**部分
 
 -   NVMe：[Device.Storage.ControllerDrive.NVMe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragecontrollerdrivenvme) - 在部分 **5.7** 和 **5.8**。
@@ -65,7 +63,7 @@ ms.locfileid: "86965829"
 
 驱动器会首先将新的固件映像加载到内部暂存区域。 在此情况下，I/O 通常继续进行。 在下载后激活该映像。 在此期间，由于内部重置，驱动器将不能响应 I/O 命令。 这意味着此驱动器在激活过程中不提供任何数据。 访问此驱动器上数据的应用程序需要等待响应直至固件激活完成。 下面是运行中的 cmdlet 的示例：
 
-   ```powershell 
+   ```powershell
    $pd | Update-StorageFirmware -ImagePath C:\Firmware\J3E160@3.enc -SlotNumber 0
    $pd | Get-StorageFirmwareInformation
 
@@ -81,7 +79,7 @@ ms.locfileid: "86965829"
 
 此驱动器在大约 5.8 秒内执行固件更新，如下所示：
 
-```powershell 
+```powershell
 Measure-Command {$pd | Update-StorageFirmware -ImagePath C:\\Firmware\\J3E16101.enc -SlotNumber 0}
 
  Days : 0
@@ -166,7 +164,7 @@ $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponen
 
 若要查看操作中的运行状况服务并详细了解其推出机制，请参阅此视频：https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
-## <a name="frequently-asked-questions"></a>常见问题解答
+## <a name="frequently-asked-questions"></a>常见问题
 
 另请参阅[驱动器固件更新疑难解答](troubleshoot-firmware-update.md)。
 

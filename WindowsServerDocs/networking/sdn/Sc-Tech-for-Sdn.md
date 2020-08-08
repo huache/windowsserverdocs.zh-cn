@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: f66ee49a-1fd3-4927-a813-64a15017b63b
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: e502ab3bc751bbbd1302de3c58c70754d50a5c4e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4896b7d5c4a1c555c431e42b597d1c43a02ec71b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970834"
+ms.locfileid: "87995262"
 ---
 # <a name="system-center-technologies-for-sdn"></a>用于 SDN 的 System Center 技术
 
@@ -27,7 +27,7 @@ System Center 包含以下用于软件定义的网络 (SDN) 的技术：
 ## <a name="system-center-operations-manager"></a><a name="bkmk_scom"></a>System Center Operations Manager
 System Center 2016 Operations Manager 提供灵活且经济高效的基础结构监视，帮助确保关键应用程序的可预测性能和可用性，并为数据中心和云（私有和公有）提供全面的监视。
 
-有关详细信息，请参阅[Operations Manager](https://technet.microsoft.com/library/hh205987.aspx)。
+有关详细信息，请参阅[Operations Manager](/previous-versions/system-center/system-center-2012-R2/hh205987(v=sc.12))。
 
 ## <a name="system-center-virtual-machine-manager"></a><a name="bkmk_scvmm"></a>System Center Virtual Machine Manager
 通过 System Center 2016 Virtual Machine Manager (VMM) ，你可以：
@@ -40,6 +40,4 @@ System Center 2016 Operations Manager 提供灵活且经济高效的基础结构
 - 帮助你控制虚拟网络之间的流量，包括能够为关键应用程序和工作负荷定义有保证的带宽。
 
 
-有关详细信息，请参阅[在 VMM 构造中设置软件定义的网络 (SDN) 基础结构](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview)。
-
-
+有关详细信息，请参阅[在 VMM 构造中设置软件定义的网络 (SDN) 基础结构](/system-center/vmm/deploy-sdn?view=sc-vmm-2019)。
