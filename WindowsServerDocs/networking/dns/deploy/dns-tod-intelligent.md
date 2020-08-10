@@ -6,16 +6,16 @@ ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 771b87776e6530f330e68f1f06b39fef191cb7c7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e999406a64e77e769ba9a6ffdc27cce109f2ef5a
+ms.sourcegitcommit: be6583ea86b47fa5ac3363b44ab0de75b571c90e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996887"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88039650"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>使用针对基于时间的智能 DNS 响应的 DNS 策略
 
->适用于：Windows Server（半年频道）、Windows Server 2016
+> 适用于：Windows Server（半年频道）、Windows Server 2016
 
 你可以使用本主题来了解如何使用基于当天的时间的 DNS 策略在应用程序的不同地理位置分发应用程序流量。
 
@@ -59,13 +59,13 @@ Contoso 礼券执行站点分析，发现每个晚上晚上6点到晚上9点的�
 - [将记录添加到区域作用域](#bkmk_records)
 - [创建 DNS 策略](#bkmk_policies)
 
->[!NOTE]
->您必须在对要配置的区域具有权威的 DNS 服务器上执行这些步骤。 若要执行以下过程，需要**DnsAdmins**中的成员身份或同等身份。
+> [!NOTE]
+> 您必须在对要配置的区域具有权威的 DNS 服务器上执行这些步骤。 若要执行以下过程，需要**DnsAdmins**中的成员身份或同等身份。
 
 以下各节提供了详细的配置说明。
 
->[!IMPORTANT]
->以下各节包含示例 Windows PowerShell 命令，其中包含许多参数的示例值。 在运行这些命令之前，请确保将这些命令中的示例值替换为适用于你的部署的值。
+> [!IMPORTANT]
+> 以下各节包含示例 Windows PowerShell 命令，其中包含许多参数的示例值。 在运行这些命令之前，请确保将这些命令中的示例值替换为适用于你的部署的值。
 
 #### <a name="create-the-dns-client-subnets"></a><a name="bkmk_subnets"></a>创建 DNS 客户端子网
 第一步是确定要将流量重定向到的区域的子网或 IP 地址空间。 例如，如果要重定向美国和欧洲的流量，则需要确定这些区域的子网或 IP 地址空间。
@@ -74,12 +74,12 @@ Contoso 礼券执行站点分析，发现每个晚上晚上6点到晚上9点的�
 
 你可以使用以下 Windows PowerShell 命令来创建 DNS 客户端子网。
 
-```
-Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet "192.0.0.0/24, 182.0.0.0/24"
+```PowerShell
+Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet "192.0.0.0/24", "182.0.0.0/24"
 
-Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.0.0/24"
-
+Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24", "151.1.0.0/24"
 ```
+
 有关详细信息，请参阅[DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)。
 
 #### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>创建区域作用域
@@ -89,17 +89,17 @@ Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.
 
 区域作用域是区域的唯一实例。 DNS 区域可以有多个区域作用域，每个区域作用域包含其自己的一组 DNS 记录。 同一条记录可以出现在多个作用域中，具有不同的 IP 地址或相同的 IP 地址。
 
->[!NOTE]
->默认情况下，在 DNS 区域中存在区域作用域。 此区域作用域具有与区域相同的名称，并且旧式 DNS 操作在此作用域上起作用。
+> [!NOTE]
+> 默认情况下，在 DNS 区域中存在区域作用域。 此区域作用域具有与区域相同的名称，并且旧式 DNS 操作在此作用域上起作用。
 
 你可以使用以下 Windows PowerShell 命令创建区域作用域。
 
-```
+```PowerShell
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneScope"
 
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
-
 ```
+
 有关详细信息，请参阅[DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)。
 
 #### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>将记录添加到区域作用域
@@ -109,12 +109,12 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 
 你可以使用以下 Windows PowerShell 命令将记录添加到区域作用域。
 
-```
+```PowerShell
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.0.0.1" -ZoneScope "SeattleZoneScope
 
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.3" -ZoneScope "DublinZoneScope"
-
 ```
+
 在默认范围内添加记录时，不包含 ZoneScope 参数。 这与将记录添加到标准 DNS 区域相同。
 
 有关详细信息，请参阅[DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
@@ -133,10 +133,10 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 
 你可以使用以下 Windows PowerShell 命令创建一个 DNS 策略，用于链接 DNS 客户端子网和区域作用域。
 
->[!NOTE]
->在此示例中，DNS 服务器处于 GMT 时区，因此高峰时间段必须以等效的 GMT 时间表示。
+> [!NOTE]
+> 在此示例中，DNS 服务器处于 GMT 时区，因此高峰时间段必须以等效的 GMT 时间表示。
 
-```
+```PowerShell
 Add-DnsServerQueryResolutionPolicy -Name "America6To9Policy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,4;DublinZoneScope,1" -TimeOfDay "EQ,01:00-04:00" -ZoneName "contosogiftservices.com" -ProcessingOrder 1
 
 Add-DnsServerQueryResolutionPolicy -Name "Europe6To9Policy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "SeattleZoneScope,1;DublinZoneScope,4" -TimeOfDay "EQ,17:00-20:00" -ZoneName "contosogiftservices.com" -ProcessingOrder 2
@@ -146,8 +146,8 @@ Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ClientSu
 Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "DublinZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 4
 
 Add-DnsServerQueryResolutionPolicy -Name "RestOfWorldPolicy" -Action ALLOW --ZoneScope "DublinZoneScope,1;SeattleZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 5
-
 ```
+
 有关详细信息，请参阅[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 现在 DNS 服务器配置了所需的 DNS 策略，以根据地理位置和当天的时间重定向流量。
