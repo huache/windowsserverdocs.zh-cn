@@ -1,7 +1,6 @@
 ---
 title: 保护特权访问
 description: 用于保护特权访问的分阶段方法
-ms.prod: windows-server
 ms.topic: conceptual
 ms.assetid: f5dec0c2-06fe-4c91-9bdc-67cc6a3ede60
 ms.date: 02/25/2019
@@ -9,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 4165561524dcb8572dbafc3904638fcb4513d06d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5db041be6aa9a61bc248296ade4296afeaa4fb3e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964720"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953056"
 ---
 # <a name="securing-privileged-access"></a>保护特权访问
 
@@ -69,7 +68,7 @@ Microsoft 建议的路线图分为 3 个阶段：
 * [第 3 阶段：持续维护](#phase-3-security-improvement-and-sustainment)
    * 安全改进和支持。
 
-路线图基于我们应对这些攻击和解决方案实施的经验，优先计划最有效和最快速的实现方案。 
+路线图基于我们应对这些攻击和解决方案实施的经验，优先计划最有效和最快速的实现方案。
 
 Microsoft 建议按照此路线图来保护特许访问权限免受顽固攻击者的攻击。 你可以对此路线图进行调整，以满足组织的现有功能和特定要求。
 

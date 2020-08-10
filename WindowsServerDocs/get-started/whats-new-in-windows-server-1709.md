@@ -1,19 +1,17 @@
 ---
 title: Windows Server 版本 1709 中的新增功能
 description: 计算、标识、管理、自动化、网络、安全性、存储方面的新增功能。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: c814098aeb73ca186e0a0db668f477f9cc1f5cf9
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: cfbe25604ee517a522c9d29b1320db4cd032d162
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409567"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941679"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 中的新增功能
 

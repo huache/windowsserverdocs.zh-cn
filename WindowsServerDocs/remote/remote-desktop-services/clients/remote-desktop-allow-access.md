@@ -1,8 +1,6 @@
 ---
 title: 远程桌面 - 允许访问你的电脑
 description: 了解用于远程访问你的电脑的选项
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 0f1557ed-53f7-4333-b023-c8e0f4b58bf4
 author: lizap
@@ -10,21 +8,21 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 27f6a361ffd3bc5082cea57f6e09264520110d40
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f581aeee099c906c970fdc320150fd1d6c102e17
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959129"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946520"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>远程桌面 - 允许访问你的电脑
 
 >适用于：Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
-可以使用远程桌面通过 [Microsoft 远程桌面客户端](remote-desktop-clients.md)（适用于 Windows、iOS、macOS 和 Android）从远程设备连接并控制你的电脑。 当你允许远程连接到你的电脑时，可以使用其他设备连接到你的电脑并访问所有应用、文件和网络资源，就像坐在办公桌前一样。  
+可以使用远程桌面通过 [Microsoft 远程桌面客户端](remote-desktop-clients.md)（适用于 Windows、iOS、macOS 和 Android）从远程设备连接并控制你的电脑。 当你允许远程连接到你的电脑时，可以使用其他设备连接到你的电脑并访问所有应用、文件和网络资源，就像坐在办公桌前一样。
 
 > [!NOTE]
-> 可以使用远程桌面连接到 Windows 10 专业版和企业版、Windows 8.1 和 8 企业版和专业版、Windows 7 专业版、企业版和旗舰版以及比 Windows Server 2008 更高的 Windows Server 版本。 不能连接到运行家庭版的计算机（如 Windows 10 家庭版）。 
+> 可以使用远程桌面连接到 Windows 10 专业版和企业版、Windows 8.1 和 8 企业版和专业版、Windows 7 专业版、企业版和旗舰版以及比 Windows Server 2008 更高的 Windows Server 版本。 不能连接到运行家庭版的计算机（如 Windows 10 家庭版）。
 
 若要连接到远程电脑，必须打开该电脑，它必须具有网络连接，必须启用远程桌面，你必须具有对远程电脑的网络访问权限（可以通过 Internet 访问），并且必须具有连接权限。 若要获得连接权限，你必须在用户列表中。 开始连接之前，最好先找到要连接的计算机的名称，并确保允许远程桌面连接通过其防火墙。
 
@@ -45,7 +43,7 @@ ms.locfileid: "86959129"
 
 ### <a name="windows-7-and-early-version-of-windows-10"></a>Windows 7 和早期版本的 Windows 10
 
-若要为电脑配置远程访问，请下载并运行 [Microsoft 远程桌面助手](https://www.microsoft.com/download/details.aspx?id=50042)。 此助手将更新系统设置以启用远程访问，确保计算机处于可连接的唤醒状态，并检查防火墙是否允许远程桌面连接。 
+若要为电脑配置远程访问，请下载并运行 [Microsoft 远程桌面助手](https://www.microsoft.com/download/details.aspx?id=50042)。 此助手将更新系统设置以启用远程访问，确保计算机处于可连接的唤醒状态，并检查防火墙是否允许远程桌面连接。
 
 ### <a name="all-versions-of-windows-legacy-method"></a>所有 Windows 版本（旧方法）
 
@@ -59,7 +57,7 @@ ms.locfileid: "86959129"
 
 应确保可以访问你的电脑的每个帐户都配置了强密码。
 
-## <a name="why-allow-connections-only-with-network-level-authentication"></a>为什么仅允许使用网络级别身份验证进行连接？ 
+## <a name="why-allow-connections-only-with-network-level-authentication"></a>为什么仅允许使用网络级别身份验证进行连接？
 
 如果要限制谁可以访问你的电脑，请选择仅允许使用网络级别身份验证 (NLA) 进行访问。 启用此选项后，用户必须先向网络验证身份，然后才能连接到你的电脑。 仅允许使用 NLA 从运行远程桌面的计算机进行连接是一种更安全的身份验证方法，可以帮助保护计算机免受恶意用户和软件的侵害。 若要了解有关 NLA 和远程桌面的详细信息，请查看[为 RDS 连接配置 NLA](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732713(v=ws.11))。
 

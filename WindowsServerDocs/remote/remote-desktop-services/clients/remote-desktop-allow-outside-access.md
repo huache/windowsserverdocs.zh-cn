@@ -1,20 +1,18 @@
 ---
 title: 远程桌面 - 允许从你的网络外部访问你的电脑
 description: 了解用于从电脑网络外部远程访问电脑的选项
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: haley-rowland
 manager: dongill
 ms.author: elizapo
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc1b7568006ef9e32132d772702212c5fd78ec4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 109f60ec099606dfc031fc07a8f457287f8fb50d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857420"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946430"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>远程桌面 - 允许从电脑网络外部访问电脑
 
@@ -24,7 +22,7 @@ ms.locfileid: "80857420"
 
 ## <a name="enable-port-forwarding-on-your-router"></a>在路由器上启用端口转移
 
-端口转移直接将路由器 IP 地址（公共 IP）上的端口映射到要访问的电脑的端口和 IP 地址。 
+端口转移直接将路由器 IP 地址（公共 IP）上的端口映射到要访问的电脑的端口和 IP 地址。
 
 启用端口转移的具体步骤取决于所使用的路由器，因此需要在线搜索路由器说明。 有关这些步骤的一般性讨论，请查看 [wikiHow to Set Up Port Forwarding on a Router](https://www.wikihow.com/Set-Up-Port-Forwarding-on-a-Router)（如何在路由器上设置端口转移）。
 
@@ -36,7 +34,7 @@ ms.locfileid: "80857420"
 
 - 公共 IP 地址（路由器的 IP）。 可通过多种方式查找此信息 - 可以搜索（在必应或 Google 中）“我的 IP”或查看 [Wi-Fi 网络属性](https://binged.it/2Gwob34)（适用于 Windows 10）。
 - 要映射的端口号。 大多数情况下为 3389 - 这是远程桌面连接使用的默认端口。
-- 对路由器的管理员访问权限。  
+- 对路由器的管理员访问权限。
 
    >[!WARNING]
    > 你正在向 Internet 开放你的电脑 - 请确保为电脑设置了强密码。

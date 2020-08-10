@@ -1,19 +1,17 @@
 ---
 title: 远程服务器管理工具
 description: 远程服务器管理工具的深入主题
-ms.prod: windows-server
-ms.technology: manage-rsat
 ms.topic: get-started-article
 ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 75ebb12962e213887f1827992aff3fdf3c1df305
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 49a86a24b3637a701d6857af246eaa2852f1c73f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963129"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948770"
 ---
 # <a name="remote-server-administration-tools"></a>远程服务器管理工具
 
@@ -47,20 +45,20 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 > 适用于 Windows 10 的远程服务器管理工具不应该在运行 Windows 8.1、Windows 8、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 或 Windows 2000 Server 管理工具包的计算机上安装。 删除计算机中所有旧版本的管理工具包或者远程服务器管理工具（包括较早的预发布版本和不同语言或区域设置的工具版本），然后安装适用于 Windows 10 的远程服务器管理工具。
 
 若要使用此版本的服务器管理器来访问和管理运行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的远程服务器，则必须安装一些更新，以便可通过使用服务器管理器管理旧版本的 Windows Server 操作系统。 有关如何通过使用适用于 Windows 10 的远程服务器管理工具中的服务器管理器为管理准备 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2 的详细信息，请参阅[使用服务器管理器管理多台远程服务器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831456(v=ws.11))。
-        
+
 必须在远程服务器上启用 Windows PowerShell 和服务器管理器远程管理，以便使用适用于 Windows 10 的远程服务器管理工具中的工具管理它们。 默认情况下，在运行 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 的服务器上启用远程管理。 有关如何在已禁用远程管理的情况下启用它的详细信息，请参阅 [使用服务器管理器管理多台远程服务器](https://go.microsoft.com/fwlink/p/?LinkId=241358)。
-        
-## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>安装、卸载和关闭/启用 RSAT 工具        
+
+## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>安装、卸载和关闭/启用 RSAT 工具
 
 ### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-or-later"></a>使用按需功能 (FoD) 在 Windows 10 2018 年 10 月更新或更高版本上安装特定的 RSAT 工具。
 
 从 Windows 10 2018 年 10 月更新开始，RSAT 作为一组“按需功能”直接包含在 Windows 10 中。 现在，不用下载 RSAT 包，只需转到“设置”中的“管理可选功能”，然后单击“添加功能”，即可查看可用的 RSAT 工具列表  。 选择并安装所需的特定 RSAT 工具。 若要查看安装进度，请单击“后退”按钮，在“管理可选功能”页上查看状态 。
-        
+
 请参阅[由“按需功能”提供的 RSAT 工具列表](/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)。 除了通过图形“设置”应用进行安装以外，还可以使用 [DISM /Add-Capability](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods) 通过命令行或自动化来安装特定的 RSAT 工具 。
 
-按需功能的一个好处是，已安装的功能在 Windows 10 版本升级保持不变。        
-        
-#### <a name="to-uninstall-specific-rsat-tools-on-windows-10-october-2018-update-or-later-after-installing-with-fod"></a>在 Windows 10 2018 年 10 月更新或更高版本（安装 FoD 后）上卸载特定的 RSAT 工具        
+按需功能的一个好处是，已安装的功能在 Windows 10 版本升级保持不变。
+
+#### <a name="to-uninstall-specific-rsat-tools-on-windows-10-october-2018-update-or-later-after-installing-with-fod"></a>在 Windows 10 2018 年 10 月更新或更高版本（安装 FoD 后）上卸载特定的 RSAT 工具
 
 在 Windows 10 上，打开“设置”应用，转到“管理可选功能”，选择并卸载要移除的特定 RSAT 工具 。 请注意，在某些情况下‘需要手动卸载依赖项。 具体来说，如果 RSAT 工具 B 需要 RSAT 工具 A，并且仍旧安装了 RSAT 工具 B，则选择卸载 RSAT 工具 A 将失败。 在这种情况下，请先卸载 RSAT 工具 B，然后卸载 RSAT 工具 A。另请注意，在某些情况下，即使仍安装了该工具，卸载 RSAT 工具也可能会成功。 在这种情况下，重启计算机将完成此工具的移除。
 
@@ -89,10 +87,10 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 
 4.  阅读并接受许可条款。 单击 **“我接受”** 。
 
-5.  安装需要几分钟才能完成。    
-        
+5.  安装需要几分钟才能完成。
+
 ##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>卸载适用于 Windows 10 的远程服务器管理工具（在 RSAT 包安装后）的具体步骤
-        
+
 1. 在桌面上，依次单击“开始” 、“所有应用” 、“Windows 系统” 和“控制面板” 。
 
 2. 在“程序” 下，单击“卸载程序” 。
@@ -104,7 +102,7 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 5. 当系统询问你是否确定要卸载更新时，单击 **“是”** 。
    S
    ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>关闭特定工具（在 RSAT 包安装后）
-        
+
 6. 在桌面上，依次单击“开始” 、“所有应用” 、“Windows 系统” 和“控制面板” 。
 
 7. 单击 **“程序”** ，然后在 **“程序和功能”** 中单击 **“打开或关闭 Windows 功能”** 。
@@ -115,7 +113,7 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 
    > [!NOTE]
    > 如果关闭服务器管理器，则计算机必须重新启动，并且可从服务器管理器的“工具”菜单中访问的工具必须从“管理工具”文件夹打开 。
-        
+
 10. 关闭完不使用的工具后，单击 **“确定”** 。
 
 ### <a name="run-remote-server-administration-tools"></a>运行远程服务器管理工具
@@ -147,14 +145,14 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 
 > [!NOTE]
 > 你还可以启动针对特定服务器的 Windows PowerShell 会话，方法是右键单击服务器管理器中角色或组页中的托管服务器，然后单击“Windows PowerShell”。
-        
+
 
 ## <a name="known-issues"></a>已知问题
 
 ### <a name="issue-rsat-fod-installation-fails-with-error-code-0x800f0954"></a>**问题**：RSAT FOD 安装失败，错误代码为 0x800f0954
 
 > **影响**：WSUS/配置管理器环境中 Windows 10 1809（2018 年 10 月更新）上的 RSAT FOD
-> 
+>
 > **解决方法**：若要在通过 WSUS 或配置管理器接收更新且已加入域的计算机上安装 FOD，你需要更改“组策略”设置，以允许直接从 Windows 更新或本地共享下载 FOD。 有关如何更改该设置的更多详细信息和说明，请参阅[使用 WSUS/SCCM 时，如何使按需功能和语言包可用](/windows/deployment/update/fod-and-lang-packs)。
 
 ---
@@ -162,7 +160,7 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 ### <a name="issue-rsat-fod-installation-via-settings-app-does-not-show-statusprogress"></a>**问题**：通过“设置”应用进行的 RSAT FOD 安装不显示状态/进度
 
 > **影响**：Windows 10 1809（2018 年 10 月更新）上的 RSAT FOD
-> 
+>
 > **解决方法**：若要查看安装进度，请单击“后退”按钮，在“管理可选功能”页上查看状态 。
 
 ---
@@ -170,7 +168,7 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 ### <a name="issue-rsat-fod-uninstallation-via-settings-app-may-fail"></a>**问题**：通过“设置”应用进行的 RSAT FOD 卸载可能会失败
 
 > **影响**：Windows 10 1809（2018 年 10 月更新）上的 RSAT FOD
-> 
+>
 > **解决方法**：在某些情况下，卸载失败的原因是需要手动卸载依赖项。 具体来说，如果 RSAT 工具 B 需要 RSAT 工具 A，并且仍旧安装了 RSAT 工具 B，则选择卸载 RSAT 工具 A 将失败。 在这种情况下，请先卸载 RSAT 工具 B，然后卸载 RSAT 工具 A。请参阅包含依赖项的 RSAT FOD 列表。
 
 ---
@@ -178,7 +176,7 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 ### <a name="issue-rsat-fod-uninstallation-appears-to-succeed-but-the-tool-is-still-installed"></a>**问题**：RSAT FOD 卸载似乎已成功，但工具仍为安装状态
 
 > **影响**：Windows 10 1809（2018 年 10 月更新）上的 RSAT FOD
-> 
+>
 > **解决方法**：重启计算机将完成此工具的移除。
 
 ---
@@ -186,9 +184,9 @@ RSAT 允许 IT 管理员从 Windows 10 PC 管理 Windows Server 角色和功能�
 ### <a name="issue-rsat-missing-after-windows-10-upgrade"></a>**问题**：Windows 10 升级后，RSAT 丢失
 
 > **影响**：无法自动重新安装任何 RSAT .MSU 安装包（在 RSAT FOD 之前）
-> 
+>
 > **解决方法**：由于 RSAT .MSU 作为 Windows 更新包提供，因此 RSAT 安装不能在操作系统升级期间保留。 请在升级 Windows 10 后再次安装 RSAT。 请注意，此限制是我们从 Windows 10 1809 开始迁移到 FOD 的原因之一。 在未来的 Windows 10 版本升级中，已安装的 RSAT FOD 将保持不变。
 
 ## <a name="see-also"></a>另请参阅
 >- [适用于 Windows 10 的远程服务器管理工具](https://go.microsoft.com/fwlink/?LinkID=404281)
->- [适用于 Windows Vista、Windows 7、Windows 8、Windows Server 2008、Windows Server 2008 R2、Windows Server 2012 和 Windows Server 2012 R2 的远程服务器管理工具 (RSAT)](https://go.microsoft.com/fwlink/p/?LinkID=221055)                                                                                                                                                                                                                                                                                                                                                                                    
+>- [适用于 Windows Vista、Windows 7、Windows 8、Windows Server 2008、Windows Server 2008 R2、Windows Server 2012 和 Windows Server 2012 R2 的远程服务器管理工具 (RSAT)](https://go.microsoft.com/fwlink/p/?LinkID=221055)

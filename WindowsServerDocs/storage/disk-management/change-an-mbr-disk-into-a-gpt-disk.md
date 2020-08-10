@@ -2,18 +2,16 @@
 title: 将主启动记录 (MBR) 磁盘更改为 GUID 分区表 (GPT) 磁盘
 description: 介绍如何将主启动记录 (MBR) 磁盘更改为 GUID 分区表 (GPT) 磁盘
 ms.date: 06/07/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3aedb8ed1edb8476642b86ec66d306187d4badf0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 86934f2bf86ea8f91dfbe92f97952d76542a6bc4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966059"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935906"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>将 MBR 磁盘转换为 GPT 磁盘
 

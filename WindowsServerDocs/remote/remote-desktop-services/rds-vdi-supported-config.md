@@ -1,20 +1,18 @@
 ---
 title: 远程桌面服务 VDI 支持的 Windows 10 安全配置
 description: 提供有关 Windows Server 2016 中 RDS 支持的 Windows 10 VDI 配置的信息。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/27/2016
 ms.topic: article
 ms.assetid: 8f164f5d-a498-4f91-a12f-3e01d554f810
 author: lizap
 manager: dongill
-ms.openlocfilehash: 4ecd290a910ddbb1aba85b26764fb86e30731172
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7fd8de56d02dfe83add67b740405265a232747d9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963349"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946340"
 ---
 # <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>远程桌面服务 VDI 支持的 Windows 10 安全配置
 
@@ -40,10 +38,10 @@ Windows 10 和 Windows Server 2016 提供操作系统中内置的保护层来进
 > [!NOTE]
 > 如果在单实例环境中使用连接代理，并且 DNS 名称与计算机名称相匹配，则你也许可以使用 Remote Credential Guard，不过它不受支持。
 
-## <a name="shielded-vms-and-encryption-supported-vms"></a>受防护的 VM 和加密支持的 VM： 
+## <a name="shielded-vms-and-encryption-supported-vms"></a>受防护的 VM 和加密支持的 VM：
 
-- 远程桌面服务 VDI 不支持受防护的 VM 
+- 远程桌面服务 VDI 不支持受防护的 VM
 
 若要利用加密支持的 VM：
-- 请在远程桌面服务集合创建过程以外使用非托管集合和预配技术来预配虚拟机。 
-- 不支持用户配置文件磁盘，因为它们依赖于差异磁盘 
+- 请在远程桌面服务集合创建过程以外使用非托管集合和预配技术来预配虚拟机。
+- 不支持用户配置文件磁盘，因为它们依赖于差异磁盘

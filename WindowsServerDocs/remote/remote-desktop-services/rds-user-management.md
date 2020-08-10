@@ -1,20 +1,18 @@
 ---
 title: 管理 RDS 集合中的用户
 description: 了解如何管理远程桌面服务中的用户。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 2727e1ab-69b8-46f3-9f6d-2540324fe596
 author: christianmontoya
 ms.author: chrimo
 ms.date: 03/27/2018
 manager: scottman
-ms.openlocfilehash: 430c38f98dd9aec3034e023d737952e3015622eb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a0ddb8ddc26df58e130315a3e1e0b70953c61dc4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858680"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954804"
 ---
 # <a name="manage-users-in-your-rds-collection"></a>管理 RDS 集合中的用户
 
@@ -82,7 +80,7 @@ ms.locfileid: "80858680"
    1. 在服务器管理器中单击“远程桌面服务”>“概述”，然后单击特定的集合。 
    2. 在“属性”下，单击“任务”>“编辑属性”。  
    3. 单击“用户组”。 
-   4. 单击“添加”，然后输入你希望其有权访问该集合的用户或组。  还可以在此窗口中删除用户和组，方法是选择要删除的用户或组，然后单击“删除”。  
-   
-   >[!NOTE] 
+   4. 单击“添加”，然后输入你希望其有权访问该集合的用户或组。  还可以在此窗口中删除用户和组，方法是选择要删除的用户或组，然后单击“删除”。 
+
+   >[!NOTE]
    > “用户组”窗口永远不可为空。 若要缩小有权访问集合的用户的范围，必须先添加特定的用户或组，然后删除更广泛的组。

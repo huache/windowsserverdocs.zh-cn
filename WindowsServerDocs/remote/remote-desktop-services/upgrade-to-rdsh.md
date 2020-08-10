@@ -1,20 +1,18 @@
 ---
 title: 将远程桌面会话主机升级到 Windows Server 2016
 description: 本文介绍如何将现有的远程桌面服务部署升级到 Windows Server 2016。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 08/01/2016
 ms.topic: article
 ms.assetid: 5c9b98b8-4eca-4a39-b10b-2bac729f7f44
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: e685c51a003a7121dab19c74d82796311ef0889a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b825c79ac698f2a61c81628180f1d7cc14b826e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857120"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948840"
 ---
 # <a name="upgrading-your-remote-desktop-session-host-to-windows-server-2016"></a>将远程桌面会话主机升级到 Windows Server 2016
 
@@ -31,7 +29,7 @@ ms.locfileid: "80857120"
 
 1. 确定要升级的服务器，例如，集合中一半的服务器。
 2. 将“允许新连接”设置为 false，以防与这些服务器建立新连接。 
-3. 注销这些服务器上的所有会话。 
+3. 注销这些服务器上的所有会话。
 4. 从集合中删除这些服务器。
 5. 将服务器升级到 Windows Server 2016。
 6. 在集合中的剩余服务器上，将“允许新连接”设置为“false”。 

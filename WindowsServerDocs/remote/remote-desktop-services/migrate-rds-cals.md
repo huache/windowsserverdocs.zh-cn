@@ -1,26 +1,24 @@
 ---
 title: 迁移远程桌面服务客户端访问许可证 (RDS CAL)
 description: 本文介绍如何将远程桌面服务客户端访问许可证迁移到新的 Windows Server 2016 许可证服务器。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 11/01/2016
 ms.topic: article
 ms.assetid: 91bdedce-6145-469f-b72e-7e113c4391e9
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 5d95c2bc3a92a8cdcba4b308c88d94cb9af6d2a5
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b3f1fb102f08e8947feba0c522cd43c462154c36
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855990"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936996"
 ---
 # <a name="migrate-your-remote-desktop-services-client-access-licenses-rds-cals"></a>迁移远程桌面服务客户端访问许可证 (RDS CAL)
 
 有以下三个选项可以迁移 RDS CAL：
-1. 自动连接方法：此推荐方法通过 Internet 直接与 Microsoft Clearinghouse 出站（通过 TCP 端口 443）通信。  
-2. 使用 Web 浏览器：此方法允许在运行远程桌面授权管理器工具的服务器没有 Internet 连接时进行迁移，但管理员在单独的设备上具有 Internet 连接。 Web 迁移方法的 URL 将显示在“管理 RDS CAL”向导中。 
+1. 自动连接方法：此推荐方法通过 Internet 直接与 Microsoft Clearinghouse 出站（通过 TCP 端口 443）通信。
+2. 使用 Web 浏览器：此方法允许在运行远程桌面授权管理器工具的服务器没有 Internet 连接时进行迁移，但管理员在单独的设备上具有 Internet 连接。 Web 迁移方法的 URL 将显示在“管理 RDS CAL”向导中。
 3. 使用电话：此方法允许管理员通过与 Microsoft 代表通话来完成迁移过程。 相应电话号码由服务器激活向导中所选的国家/地区确定，并显示在“管理 RDS CAL”向导中。
 
 在本文中，[建立 RDS CAL 迁移方法](#establish-rds-cal-migration-method)突出显示在任何 RDS CAL 迁移方法中通用的常规步骤，而[迁移 RDS CAL](#migrate-rds-cals) 突出显示特定于每个迁移方法的步骤。
@@ -38,7 +36,7 @@ ms.locfileid: "80855990"
     - 源许可证服务器不再运行。
 7. 向导中的下一页取决于所选的迁移原因。
     - 如果选择了“用此许可证服务器替换源许可证服务器”  作为迁移 RDS CAL 的原因，则将显示“源许可证服务器信息”  页。
-    
+
        在“源许可证服务器信息”页上，输入源许可证服务器的名称或 IP 地址。
 
        如果源许可证服务器在网络上可用，请单击“下一步”  。 向导将联系源许可证务服器。 如果源许可证服务器运行的是早于 Windows Server 2008 R2 的操作系统或源许可证服务器已停用，则系统会提醒你必须在完成向导后手动从源许可证服务器中删除 RDS CAL。 确认你已了解此要求之后，将显示“获取客户端许可证密钥包”  页。
@@ -66,7 +64,7 @@ ms.locfileid: "80855990"
 
 ### <a name="using-a-web-browser"></a>使用 Web 浏览器
 1. 在“获取客户端许可证密钥包”  页上，单击超链接以连接到远程桌面服务授权网站。
-   如果在没有 Internet 连接的计算机上运行远程桌面授权管理器，请记下远程桌面服务授权网站的地址，然后从具有 Internet 连接的计算机连接到该网站。 
+   如果在没有 Internet 连接的计算机上运行远程桌面授权管理器，请记下远程桌面服务授权网站的地址，然后从具有 Internet 连接的计算机连接到该网站。
 2. 在远程桌面服务授权网页上的“选择选项”  下，选择“管理 CAL”  ，然后单击“下一步”  。
 3. 提供下列必需信息，然后单击“下一步”  ：
     - **目标许可证服务器 ID**： 一个 35 位数（以 5 个数字为一组），显示在“管理 RDS CAL”向导中的“获取客户端许可证密钥包”  页上。
@@ -84,7 +82,7 @@ ms.locfileid: "80855990"
 6. 在输入所需的信息后，请单击“下一步”  。
 7. 验证已输入的所有信息是否正确，然后单击“下一步”  以将你的请求提交到 Microsoft Clearinghouse。 之后，网页将显示 Microsoft Clearinghouse 生成的许可证密钥包 ID。
 
-   > [!IMPORTANT] 
+   > [!IMPORTANT]
    > 请保留许可证密钥包 ID 的副本。 拥有此信息，便于你在恢复 RDS CAL 需要帮助时与 Microsoft Clearinghouse 进行通信。
 
 8. 在相同的“获取客户端许可证密钥包”  页上，输入许可证密钥包 ID，然后单击“下一步”  以将 RDS CAL 迁移到你的许可证服务器。

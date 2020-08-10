@@ -3,17 +3,16 @@ title: KMS 故障排除指南
 description: 提供有关 KMS 服务的信息，并推荐用于排查激活问题的工具和方法
 ms.topic: troubleshooting
 ms.date: 9/24/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: a089e0efb54af86f97595d8863926525a8416fea
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b31f357089ed54ed5f350657979740e7fd58651a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960459"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941805"
 ---
 # <a name="guidelines-for-troubleshooting-the-key-management-service-kms"></a>密钥管理服务 (KMS) 故障排除指南
 

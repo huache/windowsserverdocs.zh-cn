@@ -2,18 +2,16 @@
 title: 初始化新磁盘
 description: 如何使用磁盘管理初始化新磁盘，使其可供使用。 还包括指向解决问题的链接。
 ms.date: 12/20/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 68e51cff5b70ed0b11488e44cebba057e7432d99
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: adfc298c460bfa55516898df1781217dfe55d129
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965269"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942292"
 ---
 # <a name="initialize-new-disks"></a>初始化新磁盘
 
@@ -29,7 +27,7 @@ ms.locfileid: "86965269"
 下面介绍了如何使用磁盘管理初始化新磁盘。 如果想要使用 PowerShell，则改用 [initialize-disk](/powershell/module/storage/initialize-disk) cmdlet。
 
 1. 使用管理员权限打开磁盘管理。
- 
+
     为此，请在任务栏上的搜索框中键入“磁盘管理”  ，选择并按住（或右键单击）“磁盘管理”  ，然后选择“以管理员身份运行”   > “是”  。 如果不能以管理员身份打开它，请键入“计算机管理”  ，然后转到“存储”   > “磁盘管理”  。
 1. 在“磁盘管理”中，右键单击想要初始化的磁盘，然后单击“初始化磁盘”  （如下所示）。 如果磁盘被列为“脱机”  ，首先右键单击它并选择“联机”  。
 

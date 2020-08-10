@@ -3,17 +3,16 @@ title: 重新生成 Tokens.dat 文件
 description: 排查 Windows 激活问题时如何重新生成 Tokens.dat 文件
 ms.topic: troubleshooting
 ms.date: 09/18/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a5835cd601b2eb327c8605d70bf075e6c8e8414
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bc44dae97422e4d9d9e55b32004f806bbb7860f7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71962993"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941779"
 ---
 # <a name="rebuild-the-tokensdat-file"></a>重新生成 Tokens.dat 文件
 
@@ -23,11 +22,10 @@ ms.locfileid: "71962993"
 
 若要重新生成 Tokens.dat 文件，请执行以下步骤：
 
-1. 打开提升的命令提示符窗口：  
-   **对于 Windows 10**
+1. 打开提升的命令提示符窗口：**对于 Windows 10**
 
    1. 打开“开始”菜单，然后输入cmd   。
-   1. 在搜索结果中，右键单击“命令提示符”，然后选择“以管理员身份运行”   。  
+   1. 在搜索结果中，右键单击“命令提示符”，然后选择“以管理员身份运行”   。
 
    **对于 Windows 8.1**
    1. 从屏幕右边缘轻扫，然后点击“搜索”  。 或者，如果使用鼠标，请指向屏幕右下角，然后选择“搜索”  。
@@ -39,7 +37,7 @@ ms.locfileid: "71962993"
    1. 打开“开始”菜单，然后输入cmd   。
    1. 在搜索结果中，右键单击“cmd.exe”，然后选择“以管理员身份运行”   。
 
-1. 输入适用于你的操作系统的命令列表。  
+1. 输入适用于你的操作系统的命令列表。
 
    对于 Windows 10、Windows Server 2016 及更高版本的 Windows，按顺序输入以下命令：
    ```cmd

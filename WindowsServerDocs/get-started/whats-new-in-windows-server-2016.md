@@ -1,21 +1,19 @@
 ---
 title: Windows Server 2016 中的新增功能
 description: 计算、标识、管理、自动化、网络、安全性、存储方面的新增功能。
-ms.prod: windows-server
 ms.date: 05/21/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 2827f332-44d4-4785-8b13-98429087dcc7
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: a0a6cefcfb69050721a8b82b5f0f770fa518a551
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d0ba6860edd40202da3078ee0ad05eb91901e1f2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961759"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945710"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 中的新增功能
 
@@ -25,56 +23,56 @@ ms.locfileid: "86961759"
 
 ## <a name="compute"></a>[Compute](../virtualization/virtualization.yml)
 
-虚拟化区域包括适用于 IT 专业人员的虚拟化产品和功能，以设计、部署和维护 Windows Server。  
+虚拟化区域包括适用于 IT 专业人员的虚拟化产品和功能，以设计、部署和维护 Windows Server。
 
-### <a name="general"></a>常规  
-由于 Win32 Time 和 Hyper-V 时间同步服务的改进，物理和虚拟计算机从更高的时间准确性中受益。 现在，Windows Server 可以托管与即将推出的要求 UTC 准确性为 1 ms 的规则相容的服务。  
+### <a name="general"></a>常规
+由于 Win32 Time 和 Hyper-V 时间同步服务的改进，物理和虚拟计算机从更高的时间准确性中受益。 现在，Windows Server 可以托管与即将推出的要求 UTC 准确性为 1 ms 的规则相容的服务。
 
-### <a name="hyper-v"></a>Hyper-V  
--   [Windows Server 2016 上的 Hyper-V 中的新增功能](../virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows.md)。 本主题介绍了 Windows Server 2016 中的 Hyper-V 角色、运行在 Windows 10 上的客户端 Hyper-V 和 Microsoft Hyper-V Server 2016 中的新增和更改的功能。  
+### <a name="hyper-v"></a>Hyper-V
+-   [Windows Server 2016 上的 Hyper-V 中的新增功能](../virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows.md)。 本主题介绍了 Windows Server 2016 中的 Hyper-V 角色、运行在 Windows 10 上的客户端 Hyper-V 和 Microsoft Hyper-V Server 2016 中的新增和更改的功能。
 
--   [Windows 容器](/virtualization/windowscontainers/)：Windows Server 2016 容器支持增加了性能改进，简化了网络管理，并在 Windows 10 上支持 Windows 容器。 有关容器的某些其他信息，请参阅[容器：Docker、Windows 和趋势](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)。  
+-   [Windows 容器](/virtualization/windowscontainers/)：Windows Server 2016 容器支持增加了性能改进，简化了网络管理，并在 Windows 10 上支持 Windows 容器。 有关容器的某些其他信息，请参阅[容器：Docker、Windows 和趋势](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)。
 
-### <a name="nano-server"></a>Nano Server  
-[Nano Server](getting-started-with-nano-server.md) 的新增功能。 Nano Server 具有一个已更新的模块，用于构建 Nano Server 映像，包括物理主机和来宾虚拟机功能的更大分离度，以及对不同 Windows Server 版本的支持。   
+### <a name="nano-server"></a>Nano Server
+[Nano Server](getting-started-with-nano-server.md) 的新增功能。 Nano Server 具有一个已更新的模块，用于构建 Nano Server 映像，包括物理主机和来宾虚拟机功能的更大分离度，以及对不同 Windows Server 版本的支持。
 
-恢复控制台也有改进，其中包括入站和出站防火墙规则分离及 WinRM 配置修复功能。  
+恢复控制台也有改进，其中包括入站和出站防火墙规则分离及 WinRM 配置修复功能。
 
-### <a name="shielded-virtual-machines"></a>受防护的虚拟机  
-Windows Server 2016 提供新的基于 Hyper-V 的受防护的虚拟机，以保护任何第 2 代虚拟机免受已损坏的构造影响。 Windows Server 2016 中引入的功能如下所示：  
+### <a name="shielded-virtual-machines"></a>受防护的虚拟机
+Windows Server 2016 提供新的基于 Hyper-V 的受防护的虚拟机，以保护任何第 2 代虚拟机免受已损坏的构造影响。 Windows Server 2016 中引入的功能如下所示：
 
-- 新的“支持加密”模式提供比为普通虚拟机提供的更多、但比防护模式少的保护功能，同时仍支持 vTPM、磁盘加密、实时迁移通信加密和其他功能，包括直接构造管理便利（例如虚拟机控制台连接和 Powershell Direct）。  
+- 新的“支持加密”模式提供比为普通虚拟机提供的更多、但比防护模式少的保护功能，同时仍支持 vTPM、磁盘加密、实时迁移通信加密和其他功能，包括直接构造管理便利（例如虚拟机控制台连接和 Powershell Direct）。
 
 - 完全支持将现有非受防护的第 2 代虚拟机转换为受防护的虚拟机，包括自动磁盘加密。
 
-- Hyper-V 虚拟机管理器现在可以查看授权运行的受防护的虚拟机上的构造，为构造管理员提供了一种打开受防护的虚拟机的密钥保护程序 (KP) 并查看构造是否有权在其上运行的方式。  
+- Hyper-V 虚拟机管理器现在可以查看授权运行的受防护的虚拟机上的构造，为构造管理员提供了一种打开受防护的虚拟机的密钥保护程序 (KP) 并查看构造是否有权在其上运行的方式。
 
-- 你可以转换运行的主机保护者服务上的证明模式。 现在你可以即时在不太安全但更简单、基于 Active Directory 的证明和基于 TPM 的证明之间进行切换。  
+- 你可以转换运行的主机保护者服务上的证明模式。 现在你可以即时在不太安全但更简单、基于 Active Directory 的证明和基于 TPM 的证明之间进行切换。
 
-- 基于 Windows PowerShell 的端到端诊断工具能够检测到受保护的 Hyper-V 主机和主机保护者服务中的错误配置或错误。  
+- 基于 Windows PowerShell 的端到端诊断工具能够检测到受保护的 Hyper-V 主机和主机保护者服务中的错误配置或错误。
 
 - 恢复环境不仅提供在虚拟机可正常运行的构造中安全地排查故障并修复受防护的虚拟机的方法，还提供与受防护的虚拟机本身相同的保护级别。
 
 - 主机保护者服务支持现有的安全 Active Directory – 可以指示主机保护者服务使用现有的 Active Directory 林作为其 Active Directory，而不是创建自己的 Active Directory 实例
 
-有关使用受防护的虚拟机的详细信息和说明，请参阅 [Shielded VMs and Guarded Fabric Validation Guide for Windows Server 2016 (TPM)](https://aka.ms/shieldedvms)（Windows Server 2016 (TPM) 受防护的 VM 和受保护的构造验证指南）。  
+有关使用受防护的虚拟机的详细信息和说明，请参阅 [Shielded VMs and Guarded Fabric Validation Guide for Windows Server 2016 (TPM)](https://aka.ms/shieldedvms)（Windows Server 2016 (TPM) 受防护的 VM 和受保护的构造验证指南）。
 
-## <a name="identity-and-access"></a>[身份标识和访问权限](../identity/Identity-and-Access.yml)  
-身份标识中的新功能提高了组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务托管在云中，其他的则托管在本地。  
+## <a name="identity-and-access"></a>[身份标识和访问权限](../identity/Identity-and-Access.yml)
+身份标识中的新功能提高了组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务托管在云中，其他的则托管在本地。
 
-### <a name="active-directory-certificate-services"></a>Active Directory 证书服务  
-Windows Server 2016 中的 Active Directory 证书服务 (AD CS) 增加了对 TPM 密钥证明的支持：现可使用智能卡 KSP 进行密钥证明，而未加入域的设备现在可以使用 NDES 注册，以获得可证明 TPM 中密钥的证书。  
+### <a name="active-directory-certificate-services"></a>Active Directory 证书服务
+Windows Server 2016 中的 Active Directory 证书服务 (AD CS) 增加了对 TPM 密钥证明的支持：现可使用智能卡 KSP 进行密钥证明，而未加入域的设备现在可以使用 NDES 注册，以获得可证明 TPM 中密钥的证书。
 
-### <a name="active-directory-domain-services"></a>Active Directory 域服务  
-Active Directory 域服务包括可帮助组织保护 Active Directory 环境并为公司和个人设备提供更好的标识管理体验的改进。 有关详细信息，请参阅 [What's new in Active Directory Domain Services (AD DS) in Windows Server 2016](../identity/whats-new-active-directory-domain-services.md)（Windows Server 2016 中 Active Directory 域服务 (AD DS) 中的新增功能）。   
+### <a name="active-directory-domain-services"></a>Active Directory 域服务
+Active Directory 域服务包括可帮助组织保护 Active Directory 环境并为公司和个人设备提供更好的标识管理体验的改进。 有关详细信息，请参阅 [What's new in Active Directory Domain Services (AD DS) in Windows Server 2016](../identity/whats-new-active-directory-domain-services.md)（Windows Server 2016 中 Active Directory 域服务 (AD DS) 中的新增功能）。
 
-### <a name="active-directory-federation-services"></a>Active Directory 联合身份验证服务  
-Active Directory 联合身份验证服务中的新增功能。 Windows Server 2016 中的 Active Directory 联合身份验证服务 (AD FS) 包括使你可以配置 AD FS 以对轻型目录访问协议 (LDAP) 目录中存储的用户进行身份验证的新功能。 有关详细信息，请参阅 [Windows Server 2016 中 AD FS 的新增功能](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)。  
+### <a name="active-directory-federation-services"></a>Active Directory 联合身份验证服务
+Active Directory 联合身份验证服务中的新增功能。 Windows Server 2016 中的 Active Directory 联合身份验证服务 (AD FS) 包括使你可以配置 AD FS 以对轻型目录访问协议 (LDAP) 目录中存储的用户进行身份验证的新功能。 有关详细信息，请参阅 [Windows Server 2016 中 AD FS 的新增功能](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)。
 
-### <a name="web-application-proxy"></a>Web 应用程序代理  
-Web 应用程序代理的最新版本专注于为更多应用程序实现发布和预身份验证的新功能以及改进的用户体验。 查看新功能的完整列表，其中包括针对丰富的客户端应用（如 Exchange ActiveSync）的预身份验证以及用于更轻松地发布 SharePoint 应用的通配符域。 有关详细信息，请参阅 [Windows Server 2016 中的 Web 应用程序代理](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)。  
+### <a name="web-application-proxy"></a>Web 应用程序代理
+Web 应用程序代理的最新版本专注于为更多应用程序实现发布和预身份验证的新功能以及改进的用户体验。 查看新功能的完整列表，其中包括针对丰富的客户端应用（如 Exchange ActiveSync）的预身份验证以及用于更轻松地发布 SharePoint 应用的通配符域。 有关详细信息，请参阅 [Windows Server 2016 中的 Web 应用程序代理](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)。
 
-##  <a name="administration"></a>[管理](../administration/manage-windows-server.yml)  
+##  <a name="administration"></a>[管理](../administration/manage-windows-server.yml)
 管理和自动化部分重点介绍适用于想要运行和管理 Windows Server 2016（包括 Windows PowerShell）的 IT 专业人员的工具和参考信息。
 
 Windows PowerShell 5.1 包含重要的新功能（包括支持使用类进行开发、可扩展其用途的新安全功能），提高其可用性，并允许你更轻松、全面地控制和管理基于 Windows 的环境。 有关详细信息，请参阅 [WMF 5.1 中的新方案和功能](/powershell/wmf/5.1/scenarios-features)。
@@ -89,7 +87,7 @@ Windows Management Framework 5 包括对 Windows PowerShell 期望状态配置 (
 有关测试 Windows Management Framework 5 的 DSC 功能的详细信息，请参阅[验证 PowerShell DSC 的功能](https://devblogs.microsoft.com/powershell/validate-features-of-powershell-dsc/)中所论述的一系列博客文章。 若要下载，请参阅 [Windows Management Framework 5.1](/powershell/scripting/wmf/setup/install-configure)。
 
 ### <a name="packagemanagement-unified-package-management-for-software-discovery-installation-and-inventory"></a>用于软件发现、安装和清单的 PackageManagement 统一包管理
-Windows Server 2016 和 Windows 10 引入了一种新的 PackageManagement 功能（以前称为 OneGet），该功能可以允许 IT 专业人员或开发人员使软件发现、安装、清单 (SDII) 在本地或远程自动进行，无论安装程序技术为何，也不管软件位于何处。 
+Windows Server 2016 和 Windows 10 引入了一种新的 PackageManagement 功能（以前称为 OneGet），该功能可以允许 IT 专业人员或开发人员使软件发现、安装、清单 (SDII) 在本地或远程自动进行，无论安装程序技术为何，也不管软件位于何处。
 
 有关详细信息，请参阅 [https://github.com/OneGet/oneget/wiki](https://github.com/OneGet/oneget/wiki)。
 
@@ -98,8 +96,8 @@ Windows Server 2016 和 Windows 10 引入了一种新的 PackageManagement 功�
 
 有关详细信息，请参阅 [PowerShell ♥ 蓝队](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)。
 
-## <a name="networking"></a>[网络](../networking/index.yml)  
-本部分论述了适用于 IT 专业人员的网络产品和功能，可用于设计、部署和维护 Windows Server 2016。  
+## <a name="networking"></a>[网络](../networking/index.yml)
+本部分论述了适用于 IT 专业人员的网络产品和功能，可用于设计、部署和维护 Windows Server 2016。
 
 ### <a name="software-defined-networking"></a>软件定义的网络
 你现在可以将流量映射并传送到新的或现有虚拟设备。 与分布式防火墙和网络安全组联合使用，使你能够以类似于 Azure 的方式动态分段和保护工作负荷。 其次，你可以使用 System Center Virtual Machine Manager 部署并管理整个软件定义的网络 (SDN) 堆栈。 最后，可以使用 Docker 来管理 Windows Server 容器网络，并将 SDN 策略与虚拟机和容器关联。 有关详细信息，请参阅[计划软件定义的网络基础结构](../networking/sdn/plan/plan-a-software-defined-network-infrastructure.md)。
@@ -109,23 +107,23 @@ Windows Server 2016 和 Windows 10 引入了一种新的 PackageManagement 功�
 
 当从数据包丢失恢复时，为了改善 TCP 行为，我们实施了 TCP 尾部丢失探测 (TLP) 和最新确认 (RACK)。 TLP 可帮助将转发超时 (RTO) 转换为快速恢复，而 RACK 可减少快速恢复所需的时间，以重新传输丢失的数据包。 
 
-## <a name="security-and-assurance"></a>[安全和保障](../security/Security-and-Assurance.yml)  
-此部分包含适用于 IT 专业人员的安全解决方案和功能，可在数据中心和云环境中进行部署。 有关 Windows Server 2016 中常规安全性的信息，请参阅[安全和保障](../security/Security-and-Assurance.yml)。  
+## <a name="security-and-assurance"></a>[安全和保障](../security/Security-and-Assurance.yml)
+此部分包含适用于 IT 专业人员的安全解决方案和功能，可在数据中心和云环境中进行部署。 有关 Windows Server 2016 中常规安全性的信息，请参阅[安全和保障](../security/Security-and-Assurance.yml)。
 
-### <a name="just-enough-administration"></a>Just Enough Administration  
+### <a name="just-enough-administration"></a>Just Enough Administration
 Windows Server 2016 中的 Just Enough Administration 是一种安全技术，可使能由 Windows PowerShell 管理的任何内容均可进行委派管理。 功能包括对在网络标识下运行、通过 PowerShell Direct 连接、安全地复制文件到 JEA 终结点或从 JEA 终结点安全地复制文件及配置 PowerShell 控制台来在 JEA 上下文中默认启动的支持。 有关详细信息，请参阅 [GitHub 上的 JEA](https://aka.ms/JEA)。
 
 ### <a name="credential-guard"></a>Credential Guard
 凭据保护使用基于虚拟化的安全性来隔离密钥，以便只有特权系统软件可以访问它们。 请查看[使用 Credential Guard 保护派生的域凭据](/windows/security/identity-protection/credential-guard/credential-guard)。
 
 ###  <a name="remote-credential-guard"></a>远程 Credential Guard
-Credential Guard 包括对 RDP 会话的支持，以便用户凭据能够保留在客户端上，且不会在服务器端暴露。 它还提供远程桌面的单一登录体验。 请参阅[使用 Windows Defender Credential Guard 保护派生的域凭据](/windows/access-protection/credential-guard/credential-guard)。   
+Credential Guard 包括对 RDP 会话的支持，以便用户凭据能够保留在客户端上，且不会在服务器端暴露。 它还提供远程桌面的单一登录体验。 请参阅[使用 Windows Defender Credential Guard 保护派生的域凭据](/windows/access-protection/credential-guard/credential-guard)。
 
 ### <a name="device-guard-code-integrity"></a>Device Guard（代码完整性）
 Device Guard 通过创建指定哪些代码可以在服务器上运行的策略提供内核模式代码完整性 (KMCI) 和用户模式代码完整性 (UMCI)。 请参阅 [Windows Defender Device Guard 简介：基于虚拟化的安全性和代码完整性策略](/windows/device-security/device-guard/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)。
 
 
-### <a name="windows-defender"></a>Windows Defender  
+### <a name="windows-defender"></a>Windows Defender
 [Windows Server 2016 的 Windows Defender 概述](../security/windows-defender/windows-defender-overview-windows-server.md)。 默认情况下，Windows Server Antimalware 已在 Windows Server 2016 中安装并处于启用状态，但是 Windows Server Antimalware 的用户界面尚未安装。 但是，Windows Server Antimalware 会在没有用户界面的情况下更新反恶意软件定义并保护计算机。 如果需要 Windows Server Antimalware 的用户界面，则可以使用“添加角色和功能向导”在操作系统安装之后安装它。
 
 ### <a name="control-flow-guard"></a>控制流防护
@@ -181,10 +179,10 @@ Windows Server 2016 中包括多个服务器的新功能和增强功能，它们
 ### <a name="internet-information-services-iis-100"></a>Internet Information Services (IIS) 10.0
 Windows Server 2016 中的 IIS 10.0 Web 服务器提供的新增功能包括：
 
-- 在网络堆栈中支持 HTTP/2 协议，并与 IIS 10.0 集成，允许 IIS 10.0 网站针对支持的配置为 HTTP/2 请求自动提供服务。 与 HTTP/1.1 相比，这会有大量的增强功能，例如，更有效地重用连接和减少延迟、提高网页的加载速度。 
+- 在网络堆栈中支持 HTTP/2 协议，并与 IIS 10.0 集成，允许 IIS 10.0 网站针对支持的配置为 HTTP/2 请求自动提供服务。 与 HTTP/1.1 相比，这会有大量的增强功能，例如，更有效地重用连接和减少延迟、提高网页的加载速度。
 - 在 Nano Server 中运行和管理 IIS 10.0 的功能。 请参阅 [Nano Server 上的 IIS](iis-on-nano-server.md)。
 - 支持通配符主机头，使管理员能够为域设置 Web 服务器，然后让 Web 服务器为任何子域的请求提供服务。
-- 一个用于管理 IIS 的新 PowerShell 模块 (IISAdministration)。 
+- 一个用于管理 IIS 的新 PowerShell 模块 (IISAdministration)。
 
 有关更多详细信息，请参阅 [IIS](https://iis.net/learn)。
 
@@ -199,5 +197,5 @@ Microsoft Windows 10 和 Windows Server 2016 中添加了三个新功能：
 
 
 
-## <a name="see-also"></a>另请参阅  
--   [发行说明：Windows Server 2016 中的重要问题](Windows-Server-2016-GA-Release-Notes.md)  
+## <a name="see-also"></a>另请参阅
+-   [发行说明：Windows Server 2016 中的重要问题](Windows-Server-2016-GA-Release-Notes.md)

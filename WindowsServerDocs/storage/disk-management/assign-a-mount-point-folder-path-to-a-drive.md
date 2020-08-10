@@ -2,18 +2,16 @@
 title: 为驱动器分配装入点文件夹路径。
 description: 本文介绍如何为驱动器分配装入点文件夹路径（而不是驱动器号）。
 ms.date: 06/07/2020
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 82b12edd9cb680eee567e5dc014615e3d042cd18
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 447eff6e9168825cec01d481ec9cb7e25431ac3e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966089"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936089"
 ---
 # <a name="mount-a-drive-in-a-folder"></a>在文件夹中装载驱动器
 

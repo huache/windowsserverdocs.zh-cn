@@ -1,8 +1,6 @@
 ---
 title: 远程桌面客户端常见问题解答
 description: 有关远程桌面客户端的常见问题
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 785a18cf-a5d0-4bc2-95e4-9ef53ee8f65a
 author: lizap
@@ -10,18 +8,18 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a91980477b34bb529e3e6f3c6ff66da9ea7f3c84
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 672a9d1b33137d9559d88b8773d3c7ccd2493ddc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80856050"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955054"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>有关远程桌面客户端的常见问题
 
 >适用于：Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
-你已经在设备（Android、Mac、iOS 或 Windows）上设置了远程桌面客户端，现在可能会有疑问。 以下是有关远程桌面客户端的最常见问题的解答。 
+你已经在设备（Android、Mac、iOS 或 Windows）上设置了远程桌面客户端，现在可能会有疑问。 以下是有关远程桌面客户端的最常见问题的解答。
 
 - [设置](#setting-up)
 - [连接、网关和网络](#connection-gateway-and-networks)
@@ -44,7 +42,7 @@ ms.locfileid: "80856050"
 
 我设置了设备，但我认为电脑尚未准备就绪。 能帮帮我吗？
 
-首先，你是否看到过“远程桌面设置”向导？ 它将指导你帮助电脑为远程访问做好准备。 在电脑上下载并运行该工具以完成所有设置。 
+首先，你是否看到过“远程桌面设置”向导？ 它将指导你帮助电脑为远程访问做好准备。 在电脑上下载并运行该工具以完成所有设置。
 
 或者，如果你更喜欢手动操作，请继续阅读。
 
@@ -74,17 +72,17 @@ Administrators 组的成员自动拥有访问权限。
 以下是尝试连接到远程电脑时可能会遇到的常见问题的一些可能解决方案。 如果这些解决方案不起作用，可以在 [Microsoft 社区网站](https://go.microsoft.com/fwlink/p/?LinkId=242079)上找到更多帮助。
 
 - **无法找到远程电脑。** 确保拥有正确的电脑名称，然后检查是否正确输入了该名称。 如果仍然无法连接，请尝试使用远程电脑的 IP 地址而不是电脑名称。
-- **网络出现问题。** 确保具有 Internet 连接。 
+- **网络出现问题。** 确保具有 Internet 连接。
 - **远程桌面端口可能被防火墙阻止。** 如果使用 Windows 防火墙，请按照以下步骤执行操作：
 
-  1. 打开 Windows 防火墙。 
-  2. 单击“允许应用或功能通过 Windows 防火墙”  。 
+  1. 打开 Windows 防火墙。
+  2. 单击“允许应用或功能通过 Windows 防火墙”  。
   3. 单击“更改设置”  。 系统可能会要求输入管理员密码或确认选择。
   4. 在“允许的应用和功能”下，选择“远程桌面”，然后点击或单击“确定”    。
 
      如果使用其他防火墙，请确保远程桌面端口（通常为 3389）已打开。
 - **远程电脑上可能未设置远程连接。** 若要修复此问题，请向上滚动至本主题中的[如何为远程桌面设置电脑？](#how-do-i-set-up-a-pc-for-remote-desktop)这个问题。
-- **远程电脑可能仅允许连接已设置网络级别身份验证的电脑。** 
+- **远程电脑可能仅允许连接已设置网络级别身份验证的电脑。**
 - **远程电脑可能已关闭。** 无法连接到处于已关闭、睡眠或休眠状态的电脑，因此请确保远程电脑上的睡眠和休眠设置设为“从不”（并非所有电脑都提供休眠模式）  。
 
 ### <a name="why-cant-i-find-or-connect-to-my-pc"></a>为什么找不到或无法连接到我的电脑？
@@ -97,7 +95,7 @@ Administrators 组的成员自动拥有访问权限。
    > [!IMPORTANT]
    > 使用电脑名称要求网络通过 DNS 正确解析名称。 在许多家庭网络中，必须使用 IP 地址（而不是主机名）进行连接。
 - 电脑是否位于不同的网络上？ 是否将电脑配置为允许外部连接通过？  查看[允许从你的网络外部访问你的电脑](remote-desktop-allow-outside-access.md)以获取帮助。
-- 是否连接到受支持的 Windows 版本？ 
+- 是否连接到受支持的 Windows 版本？
 
    > [!NOTE]
    > 如果没有第三方软件，则不支持 Windows XP 家庭版、Windows 媒体中心版、Windows Vista 家庭版和 Windows 7 家庭版或简易版。
@@ -192,7 +190,7 @@ Web 客户端支持 Windows、macOS、Linux 和 ChromeOS。 目前不支持移�
 可以通过手动设置远程会话的键盘语言来解决此问题。 请参阅下一部分中的相关步骤。
 
 ### <a name="how-do-language-settings-affect-keyboards-in-a-remote-session"></a>语言设置如何影响远程会话中的键盘？
-有许多类型的 Mac 键盘布局。 其中一些是 Mac 特定的布局或自定义布局，这些布局在远程登录到的 Windows 版本中可能没有完全匹配项。 远程会话将键盘映射到远程电脑上可用的最佳匹配键盘语言。 
+有许多类型的 Mac 键盘布局。 其中一些是 Mac 特定的布局或自定义布局，这些布局在远程登录到的 Windows 版本中可能没有完全匹配项。 远程会话将键盘映射到远程电脑上可用的最佳匹配键盘语言。
 
 如果 Mac 键盘布局设置为电脑版本的语言键盘（例如，法语 - 电脑），则所有键应正确映射，且键盘应正常工作。
 

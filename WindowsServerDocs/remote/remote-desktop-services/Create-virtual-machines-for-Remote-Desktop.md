@@ -1,52 +1,50 @@
 ---
 title: 为远程桌面创建虚拟机
 description: 创建 VM 在云中托管远程桌面组件。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 08/01/2016
 ms.topic: article
 ms.assetid: b0f62d6f-0915-44ca-afef-be44a922e20e
 author: lizap
 manager: dongill
-ms.openlocfilehash: 9eba68e3dfce817208763ed11c4a7af68bb60be3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 864b1a0fda39570a94007108e816c7a9b2cddd51
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966519"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939688"
 ---
 # <a name="create-virtual-machines-for-remote-desktop"></a>为远程桌面创建虚拟机
 
 >适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016
 
-使用以下步骤在租户环境中创建虚拟机，这些虚拟机将用于运行桌面托管部署所需的 Windows Server 2016 角色、服务和功能。   
-  
-对于此基本部署示例，将创建最少 3 台虚拟机。 一个虚拟机将托管远程桌面 (RD) 连接代理和许可证服务器角色服务，以及用于部署的文件共享。 第二个虚拟机将托管 RD 网关和 Web 访问角色服务。  第三个虚拟机托管 RD 会话主机角色服务。 对于非常小的部署，可以通过使用 AAD 应用代理来消除部署中的所有公共终结点，并将所有角色服务组合到单个 VM 上，从而降低 VM 成本。 对于大型部署，可以在单个虚拟机上安装各种角色服务，以便更好地进行缩放。  
-  
-本部分概述了在 [Microsoft Azure 市场](https://azure.microsoft.com/marketplace/) 中基于 Windows Server 映像为每个角色部署虚拟机的必要步骤。 如果需要从需要 PowerShell 的自定义映像创建虚拟机，请查看[使用资源管理器和 PowerShell 创建 Windows VM](/azure/virtual-machines/windows/quick-create-powershell)。 然后返回此处附加文件共享的 Azure 数据磁盘，并为部署输入外部 URL。  
-  
-1. [创建 Windows 虚拟机](/azure/virtual-machines/windows/quick-create-portal)以托管 RD 连接代理、RD 许可证服务器和文件服务器。  
-  
-   出于本文讨论的目的，我们使用以下命名约定：  
-   - RD 连接代理、许可证服务器和文件服务器：   
-       - VM：Contoso-Cb1  
-       - 可用性集：CbAvSet    
-   - RD Web 访问和 RD 网关服务器：   
-       - VM：Contoso-WebGw1  
-       - 可用性集：WebGwAvSet  
-          
-   - RD 会话主机：   
-       - VM：Contoso-Sh1  
-       - 可用性集：ShAvSet  
-          
-   每个 VM 使用相同的资源组。  
-2. 为用户配置文件磁盘 (UPD) 共享创建并附加 Azure 数据磁盘：  
-   1.  在 Azure 门户中，单击“浏览”>“资源组”  ，单击部署的资源组，然后单击为 RD 连接代理创建的 VM（例如 Contoso-Cb1）。  
-   2.  单击“设置”>“磁盘”>“附加新磁盘”  。  
-   3.  接受名称和类型的默认值。  
-   4.  输入足够大的大小（以 GB 为单位）来保存租户环境中的网络共享，包括用户配置文件磁盘和证书。 可以为每个计划拥有的用户提供大约 5 GB 的内存  
-   5.  接受位置和主机缓存的默认值，然后单击“确定”  。  
+使用以下步骤在租户环境中创建虚拟机，这些虚拟机将用于运行桌面托管部署所需的 Windows Server 2016 角色、服务和功能。
+
+对于此基本部署示例，将创建最少 3 台虚拟机。 一个虚拟机将托管远程桌面 (RD) 连接代理和许可证服务器角色服务，以及用于部署的文件共享。 第二个虚拟机将托管 RD 网关和 Web 访问角色服务。  第三个虚拟机托管 RD 会话主机角色服务。 对于非常小的部署，可以通过使用 AAD 应用代理来消除部署中的所有公共终结点，并将所有角色服务组合到单个 VM 上，从而降低 VM 成本。 对于大型部署，可以在单个虚拟机上安装各种角色服务，以便更好地进行缩放。
+
+本部分概述了在 [Microsoft Azure 市场](https://azure.microsoft.com/marketplace/) 中基于 Windows Server 映像为每个角色部署虚拟机的必要步骤。 如果需要从需要 PowerShell 的自定义映像创建虚拟机，请查看[使用资源管理器和 PowerShell 创建 Windows VM](/azure/virtual-machines/windows/quick-create-powershell)。 然后返回此处附加文件共享的 Azure 数据磁盘，并为部署输入外部 URL。
+
+1. [创建 Windows 虚拟机](/azure/virtual-machines/windows/quick-create-portal)以托管 RD 连接代理、RD 许可证服务器和文件服务器。
+
+   出于本文讨论的目的，我们使用以下命名约定：
+   - RD 连接代理、许可证服务器和文件服务器：
+       - VM：Contoso-Cb1
+       - 可用性集：CbAvSet
+   - RD Web 访问和 RD 网关服务器：
+       - VM：Contoso-WebGw1
+       - 可用性集：WebGwAvSet
+
+   - RD 会话主机：
+       - VM：Contoso-Sh1
+       - 可用性集：ShAvSet
+
+   每个 VM 使用相同的资源组。
+2. 为用户配置文件磁盘 (UPD) 共享创建并附加 Azure 数据磁盘：
+   1.  在 Azure 门户中，单击“浏览”>“资源组”  ，单击部署的资源组，然后单击为 RD 连接代理创建的 VM（例如 Contoso-Cb1）。
+   2.  单击“设置”>“磁盘”>“附加新磁盘”  。
+   3.  接受名称和类型的默认值。
+   4.  输入足够大的大小（以 GB 为单位）来保存租户环境中的网络共享，包括用户配置文件磁盘和证书。 可以为每个计划拥有的用户提供大约 5 GB 的内存
+   5.  接受位置和主机缓存的默认值，然后单击“确定”  。
 3. 创建外部负载均衡器来访问外部部署：
    1. 在 Azure 门户中，单击“浏览”>“负载均衡器”  ，然后单击“添加”  。
    2. 输入“名称”  ，选择“公共”  作为负载均衡器的“类型”  ，然后选择相应“订阅”  、“资源组”  和“位置”  。
@@ -76,6 +74,6 @@ ms.locfileid: "86966519"
        2. 输入“名称”  （如 RDP-Contoso-WebGw1)，为服务选择“自定义”  ，选择“TCP”  作为协议，并为“端口”  输入 14000。
        3. 选择“选择虚拟机”  和 Contoso-WebGw1。
        4. 为端口映射选择“自定义”  ，为“目标端口”  输入 3389，然后选择“确定”  。
-5. 为部署输入外部 URL/DNS 名称，以便从外部访问它：  
-   1.  在 Azure 门户中，单击“浏览”>“资源组”  ，单击部署的资源组，然后单击为 RD Web 访问和 RD 网关创建的公共 IP 地址。  
-   2.  单击“配置”  ，输入 DNS 名称标签（如 contoso)，然后单击“保存”  。 此 DNS 名称标签 (contoso.westus.cloudapp.azure.com) 是将用于连接到 RD Web 访问和 RD 网关服务器的 DNS 名称。  
+5. 为部署输入外部 URL/DNS 名称，以便从外部访问它：
+   1.  在 Azure 门户中，单击“浏览”>“资源组”  ，单击部署的资源组，然后单击为 RD Web 访问和 RD 网关创建的公共 IP 地址。
+   2.  单击“配置”  ，输入 DNS 名称标签（如 contoso)，然后单击“保存”  。 此 DNS 名称标签 (contoso.westus.cloudapp.azure.com) 是将用于连接到 RD Web 访问和 RD 网关服务器的 DNS 名称。

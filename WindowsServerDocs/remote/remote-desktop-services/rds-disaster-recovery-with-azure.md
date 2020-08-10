@@ -1,27 +1,25 @@
 ---
 title: 使用 Azure 灾难恢复为 RDS 设置灾难恢复
 description: 了解如何使用 Azure 灾难恢复对 RDS 部署实现灾难恢复
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 06/12/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 68fa7026a3198b7800c4855f8472f4a0bec62009
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6c0e9b97a436f51babf679d6ce0aa67c09bcfe26
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858990"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936902"
 ---
 # <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>使用 Azure Site Recovery 为 RDS 设置灾难恢复
 
 >适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016
 
-可以使用 Azure Site Recovery 为远程桌面服务部署创建灾难恢复解决方案。 
+可以使用 Azure Site Recovery 为远程桌面服务部署创建灾难恢复解决方案。
 
-[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) 是一种基于 Azure 的服务，通过安排虚拟机的复制、故障转移和恢复来提供灾难恢复功能。 Azure Site Recovery 支持多种复制技术，以便一致地复制、保护虚拟机和云应用程序，并将其无缝地故障转移到私有云/公有云或托管商的云。 
+[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) 是一种基于 Azure 的服务，通过安排虚拟机的复制、故障转移和恢复来提供灾难恢复功能。 Azure Site Recovery 支持多种复制技术，以便一致地复制、保护虚拟机和云应用程序，并将其无缝地故障转移到私有云/公有云或托管商的云。
 
 使用以下信息可创建和验证灾难恢复解决方案。
 
@@ -42,7 +40,7 @@ ms.locfileid: "80858990"
 - 创建[本地 RDS 部署](rds-deploy-infrastructure.md)。
 - 将 [Azure Site Recovery 服务保管库](/azure/site-recovery/site-recovery-vmm-to-azure#create-a-recovery-services-vault)添加到 Microsoft Azure 订阅。
 - 如果要将 Azure 用作恢复站点，请在 VM 上运行 [Azure 虚拟机就绪情况评估工具](https://azure.microsoft.com/downloads/vm-readiness-assessment/)以确保它们与 Azure VM 和 Azure Site Recovery 服务兼容。
- 
+
 ## <a name="implementation-checklist"></a>实现清单
 
 我们会更详细地介绍用于为 RDS 部署启用 Azure Site Recovery 服务的各种步骤，但下面是高级实现步骤。

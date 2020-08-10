@@ -1,26 +1,24 @@
 ---
 title: 激活远程桌面服务许可证服务器
 description: 安装和激活 RD 许可证服务器
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: eb24ddd2-0361-41fe-bd6b-c7c63427cb71
 author: lizap
 ms.author: elizapo
 ms.date: 09/20/2016
 manager: dongill
-ms.openlocfilehash: 3eaa999c03c97ad3188d4dcd8514b2705bf0a3b1
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0caf683c95bcaaa8838028bb78c1209ccd5c916c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852970"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948900"
 ---
 # <a name="activate-the-remote-desktop-services-license-server"></a>激活远程桌面服务许可证服务器
 
 >适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016
 
-访问 RD 会话主机时，远程桌面服务许可证服务器会向用户和设备颁发客户端访问许可证 (CAL)。 可以使用远程桌面授权管理器激活许可证服务器。 
+访问 RD 会话主机时，远程桌面服务许可证服务器会向用户和设备颁发客户端访问许可证 (CAL)。 可以使用远程桌面授权管理器激活许可证服务器。
 
 ## <a name="install-the-rd-licensing-role"></a>安装 RD 授权角色
 
@@ -39,7 +37,7 @@ ms.locfileid: "80852970"
 3. 在欢迎页面上单击“下一步”  。
 4. 对于连接方法，选择“自动连接(推荐)”  ，然后单击“下一步”  。
 5. 输入你的公司信息（你的姓名、公司名称、地理区域），然后单击“下一步”  。
-6. 可选择输入任何其他公司信息（例如电子邮件和公司地址），然后单击“下一步”  。 
+6. 可选择输入任何其他公司信息（例如电子邮件和公司地址），然后单击“下一步”  。
 7. 确保未选择“立即启动许可证安装向导”  （我们会在后面的步骤安装许可证），然后单击“下一步”  。
 
-许可证服务器现在已准备好开始颁发和管理许可证。 
+许可证服务器现在已准备好开始颁发和管理许可证。

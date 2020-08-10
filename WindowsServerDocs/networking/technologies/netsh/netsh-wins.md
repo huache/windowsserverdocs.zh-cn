@@ -1,19 +1,17 @@
 ---
 title: Network Shell (Netsh) 示例批处理文件
 description: 本主题介绍如何使用 Windows Server 2016 中的 Netsh 创建执行多个任务的批处理文件。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: c94e37a4-3637-4613-9eb5-ed604e831eca
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f0cc6818b589c6ee2ac64115fe9e7fb71c3d20b1
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 35690e25fa18512d729bbd323b8983284a41781d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517902"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953973"
 ---
 # <a name="network-shell-netsh-example-batch-file"></a>Network Shell (Netsh) 示例批处理文件
 

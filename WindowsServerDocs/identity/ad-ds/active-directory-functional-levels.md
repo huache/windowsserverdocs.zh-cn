@@ -6,16 +6,14 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 10/29/2018
 ms.topic: article
-ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.technology: identity-adds
-ms.openlocfilehash: b6a9a5c08e24f5c7bb7ac50ac1c72386ef8a6d0f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 75ba30502c7de1b0a88886f42c3a8ef9a84a7e18
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963049"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938626"
 ---
 # <a name="forest-and-domain-functional-levels"></a>林和域功能级别
 
@@ -133,7 +131,7 @@ ms.locfileid: "86963049"
 
 ### <a name="windows-server-2008-forest-functional-level-features"></a>Windows Server 2008 林功能级别功能
 
-* 提供 Windows Server 2003 林功能级别可用的所有功能，而不是任何其他功能。 
+* 提供 Windows Server 2003 林功能级别可用的所有功能，而不是任何其他功能。
 
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Windows Server 2008 域功能级别功能
 
@@ -145,7 +143,7 @@ ms.locfileid: "86963049"
       > 文件复制服务 (FRS) 从 Windows Server 2012 R2 开始弃用。 在至少运行 Windows Server 2012 R2 的域控制器上创建的新域必须设置为 Windows Server 2008 域功能级别或更高级别。
 
   * 在 Windows Server 2008 模式下运行的基于域的 DFS 命名空间，支持基于访问的枚举和增强的可伸缩性。 在 Windows Server 2008 模式下的基于域的命名空间还要求林使用 Windows Server 2003 林功能级别。 有关详细信息，请参阅 [Choose a Namespace Type](https://go.microsoft.com/fwlink/?LinkId=180400)（选择命名空间类型）。
-  * 针对 Kerberos 协议的高级加密标准（AES 128 和 AES 256）支持。 若要使用 AES 来颁发 TGT，域功能级别必须为 Windows Server 2008 或更高版本，且域密码需要更改。 
+  * 针对 Kerberos 协议的高级加密标准（AES 128 和 AES 256）支持。 若要使用 AES 来颁发 TGT，域功能级别必须为 Windows Server 2008 或更高版本，且域密码需要更改。
     * 有关详细信息，请参阅 [Kerberos Enhancements](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10))（Kerberos 增强功能）。
 
       > [!NOTE]
@@ -182,7 +180,7 @@ ms.locfileid: "86963049"
       - 站点间拓扑生成器 (ISTG) 使用改进的算法，可通过缩放支持多个林，其中的站点数目大于 AD DS 在 Windows 2000 林功能级别能够支持的站点数量。 改进的 ISTG 选择算法是一种在 Windows 2000 林功能级别选择 ISTG 的入侵性较小的机制。
    * 在域目录分区中创建动态辅助类（名为 **dynamicObject**）的实例的功能
    * 将 **inetOrgPerson** 对象实例转换为 **User** 对象实例以及完成反向转换的功能
-   * 创建新组类型的实例以支持基于角色的授权的功能。 
+   * 创建新组类型的实例以支持基于角色的授权的功能。
       - 这些类型称为应用程序基本组和 LDAP 查询组。
    * 在架构中停用并重新定义属性和类别。 以下属性可以重用：ldapDisplayName、schemaIdGuid、OID、mapiID。
    * 在 Windows Server 2008 模式下运行的基于域的 DFS 命名空间，支持基于访问的枚举和增强的可伸缩性。 有关详细信息，请参阅 [Choose a Namespace Type](https://go.microsoft.com/fwlink/?LinkId=180400)（选择命名空间类型）。
@@ -226,5 +224,5 @@ ms.locfileid: "86963049"
 
 ## <a name="next-steps"></a>后续步骤
 
-* [提升域功能级别](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))  
+* [提升域功能级别](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))
 * [提升林功能级别](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985(v=ws.11))

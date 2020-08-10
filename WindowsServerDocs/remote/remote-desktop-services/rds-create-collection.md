@@ -1,20 +1,18 @@
 ---
 title: 创建远程桌面服务集合
 description: 了解如何将 RDSH 和 RemoteApp 程序添加到 RDS 部署中。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/22/2019
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: 6a842c7984dc63fe40c05300f6cfbb6718846525
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7827d83fdd071cb57b51ee8c04776680e5e29e64
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852950"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936946"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>创建供桌面和应用运行的远程桌面服务集合
 
@@ -22,11 +20,11 @@ ms.locfileid: "80852950"
 
 使用以下步骤创建远程桌面服务会话集合。 会话集合包含你希望提供给用户的应用和桌面。 创建集合后，发布它，以便用户可以访问它。
 
-在创建集合之前，需确定需要哪种集合：共用桌面会话还是个人桌面会话。 
+在创建集合之前，需确定需要哪种集合：共用桌面会话还是个人桌面会话。
 
 - **为基于会话的虚拟化使用共用桌面会话**：利用 Windows Server 的计算能力提供经济高效的多会话环境，以驱动用户的日常工作负载
 - **使用个人桌面会话创建虚拟桌面基础结构 (VDI)** ：利用 Windows 客户端为用户提供他们在 Windows 桌面体验中所预期的高性能、应用兼容性和顺手性。
- 
+
 使用共用会话时，多个用户访问共享的资源池，而使用个人桌面会话时，将从池中向用户分配其自己的桌面。 共用会话提供较低的总成本，而个人会话使用户能够自定义其桌面体验。
 
 如果需要共享常用图形的托管应用程序，则可将个人会话桌面与新的离散设备分配 (DDA) 相结合，这也可为需要加速图形的托管应用程序提供支持。 有关详细信息，请参阅[哪种图形虚拟化技术适合你](rds-graphics-virtualization.md)。
@@ -36,12 +34,12 @@ ms.locfileid: "80852950"
 
 ## <a name="create-a-pooled-desktop-session-collection"></a>创建一个共用桌面会话集合
 
-1.  在“服务器管理器”中，单击“远程桌面服务”>“集合”>“任务”>“创建会话集合”  。  
-2.  输入集合名称，例如“ContosoAps”  。  
-3.  选择创建的 RD 会话主机服务器（例如，Contoso-Shr1）。  
-4.  接受默认“用户组”  。  
-5.  输入为该集合的用户配置文件磁盘创建的文件共享的位置（例如，\Contoso-Cb1\UserDisksr  ）。   
-6.  单击“**创建**”。 创建集合后，单击“关闭”  。  
+1.  在“服务器管理器”中，单击“远程桌面服务”>“集合”>“任务”>“创建会话集合”  。
+2.  输入集合名称，例如“ContosoAps”  。
+3.  选择创建的 RD 会话主机服务器（例如，Contoso-Shr1）。
+4.  接受默认“用户组”  。
+5.  输入为该集合的用户配置文件磁盘创建的文件共享的位置（例如，\Contoso-Cb1\UserDisksr  ）。
+6.  单击“**创建**”。 创建集合后，单击“关闭”  。
 
 
 ## <a name="create-a-personal-desktop-session-collection"></a>创建个人桌面会话集合
@@ -57,6 +55,6 @@ ms.locfileid: "80852950"
 ## <a name="publish-remoteapp-programs"></a>发布 RemoteApp 程序
 使用以下步骤在集合中发布应用和资源：
 
-1.  在“服务器管理器”中，选择新集合 (ContosoApps  )。  
-2.  在 RemoteApp 程序下，单击“发布 RemoteApp 程序”  。  
-3. 选择要发布的程序，然后单击“发布”  。  
+1.  在“服务器管理器”中，选择新集合 (ContosoApps  )。
+2.  在 RemoteApp 程序下，单击“发布 RemoteApp 程序”  。
+3. 选择要发布的程序，然后单击“发布”  。

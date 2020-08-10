@@ -1,19 +1,17 @@
 ---
 title: 启用始终脱机模式以更快地访问文件
 description: 如何使用脱机文件的始终脱机模式，以便更快地访问缓存文件和重定向文件夹。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 389fdd26a7e1d9824f1eaf0136a544547f08eb05
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2a4526a70379ad414cdf866419a3b893e42256d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71401956"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942218"
 ---
 # <a name="enable-always-offline-mode-for-faster-access-to-files"></a>启用始终脱机模式以更快地访问文件
 

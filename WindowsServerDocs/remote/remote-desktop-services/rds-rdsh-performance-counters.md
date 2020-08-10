@@ -1,20 +1,18 @@
 ---
 title: 使用性能计数器来诊断远程桌面会话主机上的应用程序响应能力问题
 description: 你的应用在 RDS 上是否运行缓慢？ 了解可用于诊断 RDSH 上的应用性能问题的性能计数器
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 07/11/2019
 ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e08e4aa0cd1298502c59a1a8275293910345d6a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 1db80d7ad93eea13decf90f1195a022c27c83e5e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966189"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954984"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>使用性能计数器来诊断远程桌面会话主机上的应用性能问题
 

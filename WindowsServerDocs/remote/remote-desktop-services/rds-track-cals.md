@@ -1,20 +1,18 @@
 ---
 title: 跟踪远程桌面服务客户端访问许可证 (RDS CAL)
 description: 了解如何跟踪整个 RDS 部署中的 CAL。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 80d82d30-3ad0-4a8c-9a9b-2773c47eee19
 author: lizap
 ms.author: elizapo
 ms.date: 05/11/2017
 manager: dongill
-ms.openlocfilehash: 7e5793427b4a294d90c7b9ebeb66bb27578be190
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7804b0339a9c086a6e68dd83d63b0da5ff292665
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857330"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954814"
 ---
 # <a name="track-your-remote-desktop-services-client-access-licenses-rds-cals"></a>跟踪远程桌面服务客户端访问许可证 (RDS CAL)
 
@@ -23,7 +21,7 @@ ms.locfileid: "80857330"
 可以使用远程桌面授权管理器工具创建报告，用于跟踪远程桌面许可证服务器颁发的 RDS 基于用户的 CAL。
 
 > [!NOTE]
->  如果在环境中使用 Azure AD 域服务，则无法使用远程桌面授权管理器工具来获取基于用户的 CAL。 在这种情况下，需要通过登录事件、轮询通过连接代理建立的活动远程桌面连接或适用的其他机制手动跟踪授权。 
+>  如果在环境中使用 Azure AD 域服务，则无法使用远程桌面授权管理器工具来获取基于用户的 CAL。 在这种情况下，需要通过登录事件、轮询通过连接代理建立的活动远程桌面连接或适用的其他机制手动跟踪授权。
 
 使用以下步骤生成基于用户的 CAL 报告：
 

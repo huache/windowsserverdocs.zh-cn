@@ -1,17 +1,15 @@
 ---
 title: 适用于移动宽带网络的 Netsh 命令 (MBN)
 description: 使用 netsh mbn 查询和配置移动宽带设置与参数。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 author: apdutta
 ms.date: 02/20/2020
-ms.openlocfilehash: 478f87db4d520a133b3d70c0ed2dbb4e91db60d9
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 50c0bbf441e3109189117cbfd8df9ee597712bcd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853730"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953983"
 ---
 # <a name="netsh-mbn-commands"></a>Netsh mbn 命令
 
@@ -19,7 +17,7 @@ ms.locfileid: "80853730"
 使用 **netsh mbn** 查询和配置移动宽带设置与参数。
 
 > [!TIP]
-> 可以使用以下命令获取有关 netsh mbn 命令的帮助 
+> 可以使用以下命令获取有关 netsh mbn 命令的帮助
 >
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;netsh mbn /?
 
@@ -227,7 +225,7 @@ disconnect interface="Cellular"
 
 ## <a name="dump"></a>dump
 
-显示配置脚本。 
+显示配置脚本。
 
 创建包含当前配置的脚本。  如果将此脚本保存到某个文件，则可以使用此脚本来还原已更改的配置设置。
 
@@ -529,7 +527,7 @@ set tracing mode=yes
 - [tracing](#tracing)
 - [visibleproviders](#visibleproviders)
 
-### <a name="acstate"></a>acstate  
+### <a name="acstate"></a>acstate
 
 显示给定接口的移动宽带数据自动连接状态。
 
@@ -667,7 +665,7 @@ show dmprofiles [[name=]<string>] [[interface=]<string>]
 | **interface** | 接口名称。 它是“netsh mbn show interface”命令显示的接口名称之一。 | 可选 |
 
 **备注**
-    
+
 显示配置文件数据或列出系统上的配置文件。
 
 如果指定了配置文件名称，则会显示配置文件的内容。 否则会列出接口的配置文件。
@@ -789,7 +787,7 @@ show netlteattachinfo [interface=]<string>
 show netlteattachinfo interface="Cellular"
 ```
 
-### <a name="pin"></a>固定      
+### <a name="pin"></a>固定
 
 显示给定接口的引脚信息。
 
@@ -813,7 +811,7 @@ show pin interface="Cellular"
 ```
 
 
-### <a name="pinlist"></a>pinlist  
+### <a name="pinlist"></a>pinlist
 
 显示给定接口的引脚列表信息。
 
@@ -861,7 +859,7 @@ show preferredproviders interface="Cellular"
 ```
 
 
-### <a name="profiles"></a>profiles 
+### <a name="profiles"></a>profiles
 
 显示系统上配置的配置文件列表。
 
@@ -886,7 +884,7 @@ show profiles [[name=]<string>] [[interface=]<string>] [[purpose=]<string>]
 如果指定了接口名称，则只会列出给定接口上的指定配置文件。 否则会显示第一个匹配的配置文件。
 
 如果提供了用途，则只会显示具有匹配用途 GUID 的配置文件。  否则不会按用途筛选配置文件。  字符串可以是带大括号的 GUID，或以下字符串之一：internet、supl、mms、ims 或 allhost。
-    
+
 **示例**
 
 ```powershell
@@ -943,7 +941,7 @@ show provisionedcontexts interface="Cellular"
 ```
 
 
-### <a name="purpose"></a>purpose  
+### <a name="purpose"></a>purpose
 
 显示可用于在设备上筛选配置文件的用途组 GUID。 此命令没有参数。
 
@@ -954,7 +952,7 @@ show purpose
 ```
 
 
-### <a name="radio"></a>radio    
+### <a name="radio"></a>radio
 
 显示给定接口的无线电状态信息。
 
@@ -1002,7 +1000,7 @@ show readyinfo interface="Cellular"
 ```
 
 
-### <a name="signal"></a>signal   
+### <a name="signal"></a>signal
 
 显示给定接口的信号信息。
 
@@ -1098,14 +1096,14 @@ show smsconfig interface="Cellular"
 ```
 
 
-### <a name="tracing"></a>tracing  
+### <a name="tracing"></a>tracing
 
 显示是启用还是禁用了移动宽带跟踪。
 
 **语法**
 
 ```powershell
-show tracing 
+show tracing
 ```
 
 

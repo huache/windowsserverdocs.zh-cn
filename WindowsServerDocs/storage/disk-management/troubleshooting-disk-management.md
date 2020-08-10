@@ -2,18 +2,16 @@
 title: 磁盘管理疑难解答
 description: 本文介绍如何解决磁盘管理问题
 ms.date: 12/20/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 56ffd044f8526626581455fb18b530fd71a2381e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 0c8fec6f6bf200bf3514e26ea86dc809991a97dd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182263"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954914"
 ---
 # <a name="troubleshooting-disk-management"></a>磁盘管理疑难解答
 

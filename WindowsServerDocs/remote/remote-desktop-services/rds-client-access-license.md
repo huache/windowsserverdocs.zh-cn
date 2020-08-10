@@ -1,26 +1,24 @@
 ---
 title: 使用客户端访问许可证 (CAL) 许可 RDS 部署
 description: 远程桌面服务中的客户端授权的概述。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 5be6546b-df16-4475-bcba-aa75aabef3e3
 author: lizap
 ms.author: elizapo
 ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: a11820b9c75bbcb928da562f3f74e4130e9c8096
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: d257893e19286ab2a4c8293a2cf2b2e6697898ce
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775315"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936986"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>使用客户端访问许可证 (CAL) 许可 RDS 部署
 
 >适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016
 
-连接到远程桌面会话主机的每个用户和设备需要客户端访问许可证 (CAL)。 使用 RD 授权来安装、颁发和跟踪 RDS CAL。  
+连接到远程桌面会话主机的每个用户和设备需要客户端访问许可证 (CAL)。 使用 RD 授权来安装、颁发和跟踪 RDS CAL。
 
 当用户或设备连接到 RD 会话主机服务器时，RD 会话主机服务器将确定是否需要 RDS CAL。 然后，RD 会话主机服务器从远程桌面许可证服务器请求 RDS CAL。 如果可从许可证服务器获取相应的 RDS CAL，则会将 RDS CAL 颁发给客户端，并且客户端能够连接到 RD 会话主机服务器，并从此处连接到桌面或它们正在尝试使用的应用。
 

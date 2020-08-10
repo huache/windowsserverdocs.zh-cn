@@ -1,19 +1,17 @@
 ---
 title: 使用 Windows Server 中的 SMB 3 协议的文件共享概述
 description: 使用 Windows Server 中的 SMB 3 协议进行文件共享和文件服务的概述。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 055538bc52e11b7fb24f15db51af52e5cf8376d1
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 1b9ff2ccd63adc7edd7503d3eff695d09b806f7a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182083"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954734"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>使用 Windows Server 中的 SMB 3 协议的文件共享概述
 

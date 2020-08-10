@@ -1,20 +1,18 @@
 ---
 title: 在 Azure 中为 UPD 存储部署双节点存储空间直通 SOFS
 description: 了解如何将存储空间直通与 RDS 配合使用。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 1099f21d-5f07-475a-92dd-ad08bc155da1
 author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 683571ff965a5a62b11d52335aff4dec81e70d07
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 92359ee40bb33cd720515788060eae47d8915715
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182183"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954844"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>在 Azure 中为 UPD 存储部署双节点存储空间直通横向扩展文件服务器
 

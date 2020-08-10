@@ -4,14 +4,13 @@ description: Linux 及其他非 Windows 系统的管理员用于进行远程系�
 ms.date: 01/07/2019
 contributor: damaerteMSFT
 author: maertendmsft
-ms.product: windows-server
 ms.type: conceptual
-ms.openlocfilehash: a045e2b2d262df2a19d910b54c8e2a6db9f55362
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1c0686d7bbe6e78baf924919c6733b733fe65f64
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469742"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879489"
 ---
 # <a name="openssh-in-windows"></a>Windows 中的 OpenSSH
 
