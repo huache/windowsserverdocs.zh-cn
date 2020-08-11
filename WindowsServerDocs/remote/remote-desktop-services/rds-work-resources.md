@@ -1,18 +1,16 @@
 ---
 title: 使用 Windows Server 上的 PowerShell 自定义 RDS 标题“工作资源”
 description: 介绍如何在 Windows Server 中更改默认的工作区名称。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 10/26/2017
 ms.topic: article
 author: Heidilohr
-ms.openlocfilehash: ec07fe6c93f1f2c3350af7a9bd0bc2be0a384b93
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5124ce691793570f6ffa11a43975719addb89e67
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963239"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970114"
 ---
 # <a name="customize-the-rds-title-work-resources-using-powershell-on-windows-server"></a>使用 Windows Server 上的 PowerShell 自定义 RDS 标题“工作资源”
 
@@ -28,7 +26,7 @@ ms.locfileid: "86963239"
 
 ```powershell
     Set-RDWorkspace [-Name] <string> [-ConnectionBroker <string>]  [<CommonParameters>]
-```   
+```
 
 例如，可以使用以下命令将工作区名称更改为“Contoso RemoteApps”：
 

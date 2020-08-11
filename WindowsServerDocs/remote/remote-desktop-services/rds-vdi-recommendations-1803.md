@@ -1,19 +1,17 @@
 ---
 title: 针对虚拟桌面基础结构 (VDI) 角色优化 Windows 10 版本 1803
 description: 建议的设置和配置，可最大程度减少用作 VDI 映像的 Windows 10 1803 桌面的开销
-ms.prod: windows-server
 ms.reviewer: robsmi
-ms.technology: remote-desktop-services
 ms.author: jaimeo, robsmi
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: c08e7621285ceb8d122629c26ce5e160ee849737
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e7bd68264f60b61a5c1063a51217bedb0c6c80ec
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182163"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989829"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>针对虚拟桌面基础结构 (VDI) 角色优化 Windows 10 版本 1803
 
@@ -187,7 +185,7 @@ Get-WindowsOptionalFeature -Online
 Enable-WindowsOptionalFeature -Online -FeatureName "DirectPlay"
 ```
 
-有关详细信息，请参阅 [Windows PowerShell 论坛](https://docs.microsoft.com/answers/topics/windows-server-powershell.ht)。
+有关详细信息，请参阅 [Windows PowerShell 论坛](/answers/topics/windows-server-powershell.ht)。
 
 #### <a name="enable-or-disable-windows-features-by-using-dism"></a>使用 DISM 启用或禁用 Windows 功能
 

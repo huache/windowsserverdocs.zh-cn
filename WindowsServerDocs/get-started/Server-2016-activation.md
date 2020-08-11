@@ -1,21 +1,19 @@
 ---
 title: Microsoft 服务器激活
 description: 如何激活 Windows Server 2016。
-ms.prod: windows-server
 ms.date: 09/19/2018
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 99f7daa4-30ce-4d13-be65-0a45d5cc7a54
 author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: d95d02dc9aa4adb2f64e88d2307efd0143225bba
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ad46c72b664bd1cb6b0a74e353d300dfd01e9d82
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959039"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959415"
 ---
 # <a name="windows-server-2016-activation"></a>Windows Server 2016 激活
 
@@ -31,18 +29,18 @@ KMS 主机不必是专用服务器，KMS 可与其他服务共用一台主机。
 > [!NOTE]
 > 可能需要对 KMS 服务器进行更新以便支持对这些较新的客户端进行激活。 如果收到激活错误，请检查你是否具有在此表下面列出的相应更新。
 
-|产品密钥组|KMS 可以托管于|由此 KMS 主机激活的 Windows 版本|  
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|  
-|适用于 Windows Server 2016 的批量许可证|Windows Server 2012<p>Windows Server 2012 R2<p>Windows Server 2016<p>|Windows Server 半年频道 <br><br>Windows Server 2016（所有版本）<p>Windows 10 LTSB（2015 和 2016）<p>Windows 10 专业版<p>Windows 10 企业版<p>Windows 10 专业工作站版<br><br>Windows 10 教育版<br><br>Windows Server 2012 R2（所有版本）<p>Windows 8.1 专业版<p>Windows 8.1 企业版<p>Windows Server 2012（所有版本）<p>Windows Server 2008 R2（所有版本）<p>Windows Server 2008（所有版本）<p>Windows 7 专业版<p>Windows 7 企业版| 
-|适用于 Windows 10 的批量许可证|Windows 7<p>Windows 8.1<p> Windows 10|Windows 10 专业版<p> Windows 10 专业版 N<p> Windows 10 企业版<p> Windows 10 企业版 N<p> Windows 10 教育版<p> Windows 10 教育版 N<p> Windows 10 企业版 LTSB (2015)<p> Windows 10 企业版 LTSB N (2015)<p> Windows 10 专业工作站版<br><br>Windows 8.1 专业版<p> Windows 8.1 企业版<p> Windows 7 专业版<p> Windows 7 企业版<p>|  
+|产品密钥组|KMS 可以托管于|由此 KMS 主机激活的 Windows 版本|
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+|适用于 Windows Server 2016 的批量许可证|Windows Server 2012<p>Windows Server 2012 R2<p>Windows Server 2016<p>|Windows Server 半年频道 <br><br>Windows Server 2016（所有版本）<p>Windows 10 LTSB（2015 和 2016）<p>Windows 10 专业版<p>Windows 10 企业版<p>Windows 10 专业工作站版<br><br>Windows 10 教育版<br><br>Windows Server 2012 R2（所有版本）<p>Windows 8.1 专业版<p>Windows 8.1 企业版<p>Windows Server 2012（所有版本）<p>Windows Server 2008 R2（所有版本）<p>Windows Server 2008（所有版本）<p>Windows 7 专业版<p>Windows 7 企业版|
+|适用于 Windows 10 的批量许可证|Windows 7<p>Windows 8.1<p> Windows 10|Windows 10 专业版<p> Windows 10 专业版 N<p> Windows 10 企业版<p> Windows 10 企业版 N<p> Windows 10 教育版<p> Windows 10 教育版 N<p> Windows 10 企业版 LTSB (2015)<p> Windows 10 企业版 LTSB N (2015)<p> Windows 10 专业工作站版<br><br>Windows 8.1 专业版<p> Windows 8.1 企业版<p> Windows 7 专业版<p> Windows 7 企业版<p>|
 |“适用于 Windows 10 的 Windows Server 2012 R2”批量许可证|Windows Server 2008 R2<p> Windows Server 2012 Standard<p> Windows Server 2012 Datacenter<p> Windows Server 2012 R2 Standard<p>Windows Server 2012 R2 Datacenter|Windows 10 专业版<p> Windows 10 企业版<p>Windows 10 企业版 LTSB (2015)<br><br>Windows 10 专业工作站版<br><br>Windows 10 教育版<br><br> Windows Server 2012 R2（所有版本）<p> Windows 8.1 专业版<p> Windows 8.1 企业版<p> Windows Server 2012（所有版本）<p> Windows Server 2008 R2（所有版本）<p>Windows Server 2008（所有版本）<p> Windows 7 专业版<p> Windows 7 企业版|
 
-> [!NOTE]  
+> [!NOTE]
 > 你可能需要安装这些更新中的一个或多个，具体取决于 KMS 服务器运行的操作系统以及你想要激活的操作系统。
-> - Windows 7 或 Windows Server 2008 R2 上的 KMS 安装必须经过更新才可支持对运行 Windows 10 的客户端进行激活。 有关详细信息，请参阅 [使 Windows 7 和 Windows Server 2008 R2 KMS 主机能够激活 Windows 10 的更新](https://support.microsoft.com/help/3079821/update-that-enables-windows-7-and-windows-server-2008-r2-kms-hosts-to-activate-windows-10)。  
-> - Windows Server 2012 上的 KMS 安装必须经过更新才可支持对运行 Windows 10 和 Windows Server 2016 或更高版本客户端或服务器操作系统的客户端进行激活。 有关详细信息，请参阅  [Windows Server 2012 的 2016 年 7 月更新汇总](https://support.microsoft.com/help/3172615/july-2016-update-rollup-for-windows-server-2012)。 
-> - Windows 8.1 或 Windows Server 2012 R2 上的 KMS 安装必须经过更新才可支持对运行 Windows 10 和 Windows Server 2016 或更高版本客户端或服务器操作系统的客户端进行激活。 有关详细信息，请参阅  [Windows 8.1 和 Windows Server 2012 R2 的 2016 年 7 月更新汇总](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8.1-and-windows-server-2012-r2)。  
-> - 无法更新 Windows Server 2008 R2 来支持对运行 Windows Server 2016 或更高版本操作系统的客户端进行激活。 
+> - Windows 7 或 Windows Server 2008 R2 上的 KMS 安装必须经过更新才可支持对运行 Windows 10 的客户端进行激活。 有关详细信息，请参阅 [使 Windows 7 和 Windows Server 2008 R2 KMS 主机能够激活 Windows 10 的更新](https://support.microsoft.com/help/3079821/update-that-enables-windows-7-and-windows-server-2008-r2-kms-hosts-to-activate-windows-10)。 
+> - Windows Server 2012 上的 KMS 安装必须经过更新才可支持对运行 Windows 10 和 Windows Server 2016 或更高版本客户端或服务器操作系统的客户端进行激活。 有关详细信息，请参阅  [Windows Server 2012 的 2016 年 7 月更新汇总](https://support.microsoft.com/help/3172615/july-2016-update-rollup-for-windows-server-2012)。
+> - Windows 8.1 或 Windows Server 2012 R2 上的 KMS 安装必须经过更新才可支持对运行 Windows 10 和 Windows Server 2016 或更高版本客户端或服务器操作系统的客户端进行激活。 有关详细信息，请参阅  [Windows 8.1 和 Windows Server 2012 R2 的 2016 年 7 月更新汇总](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8.1-and-windows-server-2012-r2)。 
+> - 无法更新 Windows Server 2008 R2 来支持对运行 Windows Server 2016 或更高版本操作系统的客户端进行激活。
 
 一台 KMS 主机能够支持无限数量的 KMS 客户端。 如果客户端数量超过 50 个，我们建议至少准备两台 KMS 主机，以防某一台 KMS 主机不可用。 大多数组织单位运行两台 KMS 主机可以满足整个基础结构的需求。
 
@@ -61,7 +59,7 @@ KMS 激活要求 TCP/IP 连接。 KMS 主机可客户端默认配置使用域名
 
 如果你的组织需要 6 台以上的KMS 主机，则应为组织的 KMS 密钥请求更多的激活次数，例如，如果一份批量许可协议涵盖 10 个物理位置，并且你希望每个位置有一台本地的 KMS 主机。
 
-> [!NOTE] 
+> [!NOTE]
 > 要解决此特殊情况，请联系您的激活呼叫中心。 有关详细信息，请参阅 [Microsoft 批量许可]( https://www.microsoft.com/licensing)。
 
 默认情况下，运行批量许可版本的 Windows 10、Windows Server 2016、Windows 8.1、Windows Server 2012 R2、Windows Server 2012、Windows 7、Windows Server 2008 R2 的计算机为无需额外配置的 KMS 客户端。

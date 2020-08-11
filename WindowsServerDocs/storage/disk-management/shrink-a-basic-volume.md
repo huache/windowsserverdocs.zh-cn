@@ -2,24 +2,22 @@
 title: 压缩基本卷
 description: 本文介绍如何压缩基本卷
 ms.date: 06/07/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2baf24ed656ef06d44dff93180701d25e6852500
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 652e5c85e0e094dd463302bffa8922ef5548dd6b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385858"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971174"
 ---
 # <a name="shrink-a-basic-volume"></a>压缩基本卷
 
 > **适用于：** Windows 10、Windows 8.1、Windows Server（半年频道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-可以通过以下方式减少主分区和逻辑驱动器所使用的空间：将它们压缩到同一磁盘上相邻的连续空间。 例如，如果需要其他分区却没有多余的磁盘，则可以从卷的末尾处压缩现有分区，来创建新的未分配空间，可将这部分空间用于新的分区。 压缩操作可能因存在某些文件类型而被阻止。 有关详细信息，请参阅[其他注意事项](#additional-considerations) 
+可以通过以下方式减少主分区和逻辑驱动器所使用的空间：将它们压缩到同一磁盘上相邻的连续空间。 例如，如果需要其他分区却没有多余的磁盘，则可以从卷的末尾处压缩现有分区，来创建新的未分配空间，可将这部分空间用于新的分区。 压缩操作可能因存在某些文件类型而被阻止。 有关详细信息，请参阅[其他注意事项](#additional-considerations)
 
 压缩分区时，会在磁盘上自动重新定位任何普通文件，以创建新的未分配空间。 无需重新格式化磁盘便可压缩分区。
 
@@ -63,7 +61,8 @@ ms.locfileid: "71385858"
 
 ## <a name="additional-considerations"></a>其他注意事项
 
--   压缩分区时，无法自动重新定位某些文件（例如，页面文件或影子副本存储区域），并且当分配的空间减小到不可移动的文件所在位置时，则无法再继续减小。 如果压缩操作失败，请检查应用程序日志中是否有事件 259，此事件标识不可移动的文件。 如果你知道与阻止压缩操作的文件相关联的簇，也可以在命令提示符下使用 fsutil  命令（请键入 fsutil volume querycluster /?  以了解使用情况）。 如果提供 querycluster  参数，则命令输出将标识阻止压缩操作成功的不可移动文件。
+-   压缩分区时，无法自动重新定位某些文件（例如，页面文件或影子副本存储区域），并且当分配的空间减小到不可移动的文件所在位置时，则无法再继续减小。
+如果压缩操作失败，请检查应用程序日志中是否有事件 259，此事件标识不可移动的文件。 如果你知道与阻止压缩操作的文件相关联的簇，也可以在命令提示符下使用 fsutil  命令（请键入 fsutil volume querycluster /?  以了解使用情况）。 如果提供 querycluster  参数，则命令输出将标识阻止压缩操作成功的不可移动文件。
 在某些情况下，可以暂时重新定位该文件。 例如，如果需要进一步压缩分区，则可以使用控制面板将页面文件或存储的影子副本移到另一个磁盘、删除存储的影子副本、压缩该卷，然后将页面文件移回该磁盘。 如果通过动态坏簇重新映射检测到的坏簇数量太高，则无法压缩分区。 如果发生这种情况，应该考虑移动数据并更换磁盘。
 
 -  请不要使用块级复制来传输数据。 这种复制也将复制坏扇区表，并且新磁盘会将相同扇区视为坏扇区，即使它们是正常扇区也不例外。

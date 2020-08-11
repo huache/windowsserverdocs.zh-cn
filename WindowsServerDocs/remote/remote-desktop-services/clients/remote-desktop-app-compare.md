@@ -1,8 +1,6 @@
 ---
 title: 远程桌面 - 比较客户端应用
 description: 了解不同 RD 应用在支持的特性和功能方面的比较。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
@@ -10,12 +8,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 04/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c41d2691f22e7feb89518a02736f3607940a2f6
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 524b90965ca1dfca726294d4518fcefa4a470cf2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80856220"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970104"
 ---
 # <a name="compare-the-clients"></a>比较客户端
 

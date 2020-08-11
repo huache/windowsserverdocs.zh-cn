@@ -1,35 +1,33 @@
 ---
 title: 发行说明 - Windows Server 版本 1803 中的重要问题
 description: 在安装 Windows Server 版本 1803 之前了解任何已知问题、限制或所需的其他信息
-ms.prod: windows-server
 ms.date: 05/07/2018
-ms.technology: server-general
 ms.topic: article
 author: lizap
 ms.author: elizapo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dc63afba827e2a58ba28d2c4398f1ba80d7e7b5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b9e1032c61d633b57d16068b11aab36c792ce9fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962489"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967854"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1803"></a>发行说明：Windows Server 版本 1803 中的重要问题
 
 >适用于：Windows Server 半年频道
 
-这些发行说明汇总了 Windows Server 操作系统中最关键的问题，包括避免或解决已知问题的方法。 若要了解此版本中的新增功能，请参阅 [Windows Server 版本 1803 中的新增功能](whats-new-in-windows-server-1803.md)。 如果你对运行 Windows Server 版本 1803 容器感兴趣，请查看[关于 Windows 容器](/virtualization/windowscontainers/about/)。 
+这些发行说明汇总了 Windows Server 操作系统中最关键的问题，包括避免或解决已知问题的方法。 若要了解此版本中的新增功能，请参阅 [Windows Server 版本 1803 中的新增功能](whats-new-in-windows-server-1803.md)。 如果你对运行 Windows Server 版本 1803 容器感兴趣，请查看[关于 Windows 容器](/virtualization/windowscontainers/about/)。
 
-除非另有指定，否则，每个所报告的问题均适用于 Windows Server 版本 1803 的所有版本和安装选项。  
+除非另有指定，否则，每个所报告的问题均适用于 Windows Server 版本 1803 的所有版本和安装选项。
 
-我们会不断更新本文。 如果发现了任何已知问题，我们会在此处记述。 
+我们会不断更新本文。 如果发现了任何已知问题，我们会在此处记述。
 
 
 ## <a name="software-defined-datacenter"></a>软件定义的数据中心
 
-存储空间直通、软件定义的网络和受防护的虚拟机等软件定义的数据中心功能未包含在 Windows Server 版本 1803 中。 如 [Windows Server 半年频道更新](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)中所述，Windows Server 半年频道注重于可从更快的创新中受益的容器和应用方案。 
+存储空间直通、软件定义的网络和受防护的虚拟机等软件定义的数据中心功能未包含在 Windows Server 版本 1803 中。 如 [Windows Server 半年频道更新](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)中所述，Windows Server 半年频道注重于可从更快的创新中受益的容器和应用方案。
 
 如果需要基础结构角色，请使用长期服务频道版本：Windows Server 2016（现已推出）或 [Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview)（今年晚些时候推出）。
 

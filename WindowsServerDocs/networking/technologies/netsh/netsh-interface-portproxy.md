@@ -1,19 +1,17 @@
 ---
 title: 界面端口代理的 Netsh 命令
 description: 使用 netsh interface portproxy 命令作为 IPv4 和 IPv6 网络与应用程序之间的代理。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: e9c4cff4d1424c244857cf75be41d445b299f1f2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2b05db55ef914130a337b38ea92b41e0cef81dc9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853740"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964023"
 ---
 # <a name="netsh-interface-portproxy-commands"></a>Netsh interface portproxy 命令
 
@@ -175,7 +173,7 @@ Portproxy 服务器从服务器侦听的 IPv4 地址列表中删除 IPv4 端口�
 
 ### <a name="syntax"></a>语法
 
-```PowerShell 
+```PowerShell
 delete v4tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
@@ -297,7 +295,7 @@ set v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address |
 
 ### <a name="syntax"></a>语法
 
-```PowerShell 
+```PowerShell
 set v6tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 

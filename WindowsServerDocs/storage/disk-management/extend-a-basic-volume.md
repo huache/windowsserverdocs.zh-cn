@@ -2,18 +2,16 @@
 title: 扩展基本卷
 description: 可以向 Windows 中的现有卷添加空间，并将它扩展到驱动器上的空白空间中，但前提是空白空间里没有卷（未分配）并且紧接在要扩展的卷后，两者之间没有其他卷。 本文介绍如何执行此操作。
 ms.date: 12/19/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 19b48bd74dad4e20780b41852afbee15f5ec1ade
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d0cd4c0c2bd6909c82ee39c97b58909e85aeef9f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966099"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961611"
 ---
 # <a name="extend-a-basic-volume"></a>扩展基本卷
 

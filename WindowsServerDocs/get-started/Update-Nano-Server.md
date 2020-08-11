@@ -1,25 +1,23 @@
 ---
 title: 更新 Nano Server
 description: ''
-ms.prod: windows-server
 manager: DonGill
-ms.technology: server-nano
 ms.date: 09/06/2017
 ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b8a674d61379c0a645cc379ab9f9eafa3cc19b1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 33bf8f3125ede8f3ac777e002e7d31dc174ba238
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960689"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959195"
 ---
 # <a name="updating-nano-server"></a>更新 Nano Server
 
 > [!IMPORTANT]
-> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解其含义。 
+> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解其含义。
 
 Nano Server 提供各种保持最新状态的方法。 与其他的 Windows Server 安装选项相比，Nano Server 遵循与 Windows 10 维护模型类似的更积极的维护模型。 这些定期版本称为 Current Branch for Business (CBB) 版本  。 此方法支持想要更快地创新并以快速开发生命周期的云节奏前进的客户。 有关 CBB 的详细信息，请访问 [Windows Server 博客](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)。
 
@@ -112,7 +110,7 @@ Enter-PSSession $s
    ```powershell
    # Apply the servicing stack update first and then restart
    dism.exe /Online /Add-Package /PackagePath:C:\ServicingPackages_cabs\Windows10.0-KB3176936-x64.cab
-   
+
    # After the operation completes successfully and you are prompted to restart, it's safe to
    # press Ctrl+C to cancel the pipeline and return to the prompt
    Restart-Computer; exit
@@ -133,7 +131,7 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
 
 - 扫描可用更新
    ```powershell
-   $ci = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
+   $ci = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession
    $result = $ci | Invoke-CimMethod -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=0";OnlineScan=$true}
    $result.Updates
    ```
@@ -151,7 +149,7 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
    $result = $ci | Invoke-CimMethod -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=1";OnlineScan=$true}
    $result.Updates
    ```
-   
+
 ## <a name="additional-options"></a>其他选项
 其他更新 Nano Server 的方法可能与上述选项重合或对其加以补充。 此类选项包括使用 Windows Server Update Services (WSUS)、System Center Virtual Machine Manager (VMM)、任务计划程序或非 Microsoft 解决方案。
 - 通过设置以下注册表项[配置 WSUS 的 Windows 更新](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939844(v=ws.10))：

@@ -1,8 +1,6 @@
 ---
 title: 欢迎使用 Windows Server 2016 中的远程桌面服务
 description: 提供远程桌面服务的概述
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 02/22/2017
 ms.topic: article
@@ -10,14 +8,14 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 70979eae2ad9f54ab895572f97d9b5968cff31d9
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6d856c6f751b9c8aa6c0f6547dd56d6ee36afb35
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854680"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961951"
 ---
-# <a name="welcome-to-remote-desktop-services"></a>欢迎使用远程桌面服务 
+# <a name="welcome-to-remote-desktop-services"></a>欢迎使用远程桌面服务
 
 远程桌面服务 (RDS) 是一个卓越的平台，可以生成虚拟化解决方案来满足每个最终客户的需求，包括交付独立的虚拟化应用程序、提供安全的移动和远程桌面访问，使最终用户能够从云运行其应用程序和桌面。
 
@@ -35,7 +33,7 @@ RDS 提供部署灵活性、高成本效益和可扩展性 - 各种部署选项�
 - **桌面**：包含你安装和管理的各种应用程序，为用户提供完整的桌面体验。 对于依赖于使用这些计算机作为其主要工作站，或者当前正在使用瘦客户端（例如 MultiPoint 服务）的用户而言，此解决方案非常理想。
 - **RemoteApp**：指定在虚拟化计算机上托管/运行的，但看上去如同本地应用程序一样在用户桌面上运行的各个应用程序。 应用有其自身的任务栏条目，并可调整大小以及在监视器之间移动。 非常适合用于在安全的远程环境中部署和管理关键应用程序，同时可让用户在其自己的桌面中工作以及自定义其桌面。
 
-对于成本效益至关重要的环境，以及当你希望在基于会话的虚拟化环境中部署完整桌面后能够扩大收益时，可以使用 [MultiPoint 服务](../multipoint-services/multipoint-services.md)来实现最大价值。 
+对于成本效益至关重要的环境，以及当你希望在基于会话的虚拟化环境中部署完整桌面后能够扩大收益时，可以使用 [MultiPoint 服务](../multipoint-services/multipoint-services.md)来实现最大价值。
 
 使用这些选项和配置可以在远端以安全且经济高效的方式灵活部署用户所需的桌面和应用程序。
 

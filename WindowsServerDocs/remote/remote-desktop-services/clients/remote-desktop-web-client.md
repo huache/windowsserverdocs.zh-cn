@@ -1,19 +1,17 @@
 ---
 title: Web 客户端入门
 description: 介绍如何登录到远程桌面 Web 客户端。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c37c28fded08ba68e46a10a534ee0269c714938
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6d408c70d75de0e2a14260f951209348e2aea63e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74189472"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961871"
 ---
 # <a name="get-started-with-the-web-client"></a>Web 客户端入门
 
@@ -61,7 +59,7 @@ Web 客户端当前仅支持复制和粘贴文本。 不能将文件复制或粘
 
 ## <a name="use-an-input-method-editor-ime-in-the-remote-session"></a>在远程会话中使用输入法编辑器 (IME)
 
-若要在远程会话中使用输入法编辑器输入复杂字符，请选择导航栏中的齿轮图标来打开“设置”  侧面板，并将“启用输入法编辑器”  开关设置为“开启”  。 必须已在远程会话中安装并启用了输入法编辑器。 
+若要在远程会话中使用输入法编辑器输入复杂字符，请选择导航栏中的齿轮图标来打开“设置”  侧面板，并将“启用输入法编辑器”  开关设置为“开启”  。 必须已在远程会话中安装并启用了输入法编辑器。
 
 ## <a name="get-help-with-the-web-client"></a>获取有关 Web 客户端的帮助
 

@@ -1,19 +1,17 @@
 ---
 title: 创建灾难恢复计划
 description: 了解如何为 RDS 部署创建灾难恢复计划。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 05/05/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 18342bb7fd3ad26427ae1e1a051e20444fdff7c2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e7bf323d1a0506e9f9718d2afb8da392f0118929
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80859020"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961731"
 ---
 # <a name="create-your-disaster-recovery-plan-for-rds"></a>为 RDS 创建灾难恢复计划
 
@@ -38,7 +36,7 @@ ms.locfileid: "80859020"
 2. 故障转移组 2 - 连接代理 VM
 3. 故障转移组 3 - Web 访问 VM
 
-你的计划将如下所示： 
+你的计划将如下所示：
 
 ![基于会话的 RDS 部署的灾难恢复计划](media/rds-asr-session-drplan.png)
 
@@ -62,20 +60,20 @@ ms.locfileid: "80859020"
    Broker - broker.contoso.com
    Virtualization host - VH1.contoso.com
 
-   ipmo RemoteDesktop; 
-   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
+   ipmo RemoteDesktop;
+   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com
    ```
 4. 故障转移组 2 - 模板 VM
 5. 组 2 脚本 1 - 关闭模板 VM
-   
+
    模板 VM 恢复到辅助站点时将启动，但它是一个系统准备的 VM，无法完全启动。 此外 RDS 要求关闭 VM 以从中创建共用 VM 配置。 因此，我们需要将其关闭。 如果有一台 VMM 服务器，则主站点和辅助站点上的模板 VM 名称相同。 正因为如此，我们使用下面脚本中的 Context  变量指定的 VM ID。 如果你有多个模板，请将其全部关闭。
 
    ```powershell
-   ipmo virtualmachinemanager; 
+   ipmo virtualmachinemanager;
    Foreach($vm in $VMsAsTemplate)
    {
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
-   } 
+   }
    ```
 6. 组 2 脚本 2 - 删除现有的共用 VM
 
@@ -83,7 +81,7 @@ ms.locfileid: "80859020"
 
    ```powershell
    ipmo RemoteDesktop
-   $desktops = Get-RDVirtualDesktop -CollectionName Win8Desktops; 
+   $desktops = Get-RDVirtualDesktop -CollectionName Win8Desktops;
    Foreach($vm in $desktops){
       Remove-RDVirtualDesktopFromCollection -CollectionName Win8Desktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
@@ -98,8 +96,8 @@ ms.locfileid: "80859020"
    共用 VM 名称需要使用前缀和后缀，并且是唯一的。 如果 VM 名称已经存在，脚本将失败。 此外，如果主端 VM 从 1-5 进行编号，则恢复站点编号将从 6 开始继续。
 
    ```powershell
-   ipmo RemoteDesktop; 
-   Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1} 
+   ipmo RemoteDesktop;
+   Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1}
    ```
 9. 故障转移组 3 - Web 访问和网关服务器 VM
 
@@ -120,27 +118,27 @@ ms.locfileid: "80859020"
    ipconfig /registerdns
    ```
 3. 组 1 脚本 - 添加虚拟化主机
-      
+
    修改下面的脚本，以供云中的每个虚拟化主机运行。 通常在将虚拟化主机添加到连接代理之后，需要重启主机。 确保在脚本运行之前，主机没有等待的重启，否则它将失败。
 
    ```powershell
    Broker - broker.contoso.com
    Virtualization host - VH1.contoso.com
 
-   ipmo RemoteDesktop; 
-   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
+   ipmo RemoteDesktop;
+   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com
    ```
 4. 故障转移组 2 - 模板 VM
 5. 组 2 脚本 1 - 关闭模板 VM
-   
+
    模板 VM 恢复到辅助站点时将启动，但它是一个系统准备的 VM，无法完全启动。 此外 RDS 要求关闭 VM 以从中创建共用 VM 配置。 因此，我们需要将其关闭。 如果有一台 VMM 服务器，则主站点和辅助站点上的模板 VM 名称相同。 正因为如此，我们使用下面脚本中的 Context  变量指定的 VM ID。 如果你有多个模板，请将其全部关闭。
 
    ```powershell
-   ipmo virtualmachinemanager; 
+   ipmo virtualmachinemanager;
    Foreach($vm in $VMsAsTemplate)
    {
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
-   } 
+   }
    ```
 6. 故障转移组 3 - 个人 VM
 7. 组 3 脚本 1 - 删除现有个人 VM 并进行添加
@@ -149,17 +147,17 @@ ms.locfileid: "80859020"
 
    ```powershell
    ipmo RemoteDesktop
-   $desktops = Get-RDVirtualDesktop -CollectionName CEODesktops; 
-   Export-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
+   $desktops = Get-RDVirtualDesktop -CollectionName CEODesktops;
+   Export-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com
 
    Foreach($vm in $desktops){
      Remove-RDVirtualDesktopFromCollection -CollectionName CEODesktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
-   
-   Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
+
+   Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com
    ```
 8. 故障转移组 3 - Web 访问和网关服务器 VM
 
-你的计划将如下所示： 
+你的计划将如下所示：
 
 ![个人桌面 RDS 部署的灾难恢复计划](media/rds-asr-personal-desktops-drplan.png)

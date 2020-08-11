@@ -1,26 +1,24 @@
 ---
 title: 从 Windows Server（版本 1709）开始已删除或计划取代的功能
 description: 各版本中已删除或计划删除的特性和功能。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 ms.date: 08/22/2019
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 98632ee7147c3041b0f13d0a0e90bf8115268d36
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ad9c64083ec07bd8fc5d1db56978f2b469da9953
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959469"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959435"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>从 Windows Server 版本 1709 开始已删除或计划取代的功能
 
 >适用于：Windows Server 版本 1709
 
-以下是 Windows Server 版本 1709 中已从该版本的产品中删除或开始考虑在后续版本中可能取代的功能列表。 本文档面向在商业环境中更新操作系统的 IT 专业人员。 **在后续的版本中可能会对该列表进行更改，并且可能不包含任何受影响的功能。** 
+以下是 Windows Server 版本 1709 中已从该版本的产品中删除或开始考虑在后续版本中可能取代的功能列表。 本文档面向在商业环境中更新操作系统的 IT 专业人员。 **在后续的版本中可能会对该列表进行更改，并且可能不包含任何受影响的功能。**
 
 > [!TIP]
 > - 可以通过加入 [Windows 预览体验计划](https://insider.windows.com)来提前使用 Windows Server 版本 - 这是测试功能变动的好方法。
@@ -60,7 +58,7 @@ Windows Server 版本 1709 包含 Windows Server 2016 中存在的相同功能�
 ### <a name="internet-storage-name-service-isns"></a>Internet 存储名称服务 (iSNS)
 正在考虑替换 iSNS。 服务器消息块 (SMB) 特性提供与其他特性基本相同的功能。 有关此特性的背景信息，请参阅[服务器消息块概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))。
 
-### <a name="rsaaes-encryption-for-iis"></a>适用于 IIS 的 RSA/AES 加密 
+### <a name="rsaaes-encryption-for-iis"></a>适用于 IIS 的 RSA/AES 加密
 我们正在考虑替换此加密方法，因为现已推出优异的加密 API：下一代 (CNG) 方法。 若要了解有关 CNG 加密的详细信息，请参阅[关于 CNG](/windows/win32/seccng/about-cng)。
 
 ### <a name="windows-powershell-20"></a>Windows PowerShell 2.0

@@ -1,21 +1,19 @@
 ---
 title: 通过 Sconfig.cmd 配置 Windows Server 的服务器核心安装
 description: 介绍如何使用 Sconfig.cmd
-ms.prod: windows-server
 ms.date: 10/17/2017
-ms.technology: server-general
 ms.topic: article
 ms.assetid: e6cac074-c6fc-46dd-9664-fa0342c0a5e8
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: db1a4fe48460a957369c2ca3ced24e0ccb54fef7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 727525d426a8417e642485be51db7206f3efa64a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959119"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959465"
 ---
 # <a name="configure-a-server-core-installation-of-windows-server-2016-or-windows-server-version-1709-with-sconfigcmd"></a>通过 Sconfig.cmd 配置 Windows Server 2016 或 Windows Server 版本 1709 的服务器核心安装
 
@@ -100,12 +98,12 @@ ms.locfileid: "86959119"
 
 - Windows PowerShell
 
-- 服务器管理器  
+- 服务器管理器
 
 ## <a name="to-log-off-restart-or-shut-down-the-server"></a>注销、重启或关闭服务器的步骤
 
-若要注销、重启或关闭服务器，请访问主菜单相应的菜单项。 这些选项在“Windows 安全”菜单中也可用，可通过按 CTRL+ALT+DEL 随时从任何应用程序进行访问  。  
+若要注销、重启或关闭服务器，请访问主菜单相应的菜单项。 这些选项在“Windows 安全”菜单中也可用，可通过按 CTRL+ALT+DEL 随时从任何应用程序进行访问  。
 
 ## <a name="to-exit-to-the-command-line"></a>退出命令行的步骤
-  
+
 选择 **“退出命令行”** 选项，按 ENTER 以退出命令行。 若要返回到服务器配置工具，请键入 **Sconfig.cmd**，然后按 Enter。

@@ -1,19 +1,17 @@
 ---
 title: Netsh 命令语法、上下文和格式设置
 description: 你可以使用本主题来学习如何输入 netsh 上下文和子上下文、了解 netsh 语法和命令格式，以及如何在运行 Windows Server 2016 或 Windows 10 的本地和远程计算机上运行 netsh 命令。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 8cb9b59f-0255-4261-b49a-562c5ea50ee0
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 061d7252d5a7bbe09d3dca245d9b77ed20a4dedf
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f72d3dfc3cd6f54b123cb00baf9ba75e4faeb906
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854760"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969464"
 ---
 # <a name="netsh-command-syntax-contexts-and-formatting"></a>Netsh 命令语法、上下文和格式设置
 
@@ -27,7 +25,7 @@ Netsh 还提供脚本功能，可让你在批处理模式下对指定的计算�
 
 ## <a name="netsh-contexts"></a>Netsh 上下文
 
-Netsh 使用动态\-链接库 \(DLL\) 文件与其他操作系统组件进行交互。 
+Netsh 使用动态\-链接库 \(DLL\) 文件与其他操作系统组件进行交互。
 
 每个 netsh 帮助程序 DLL 提供一组称为“上下文”的广泛功能，这是一组特定于网络服务器角色或功能的命令  。 这些上下文通过为一个或多个服务、实用工具或协议提供配置和监视支持来扩展 netsh 的功能。 例如，Dhcpmon.dll 向 netsh 提供配置和管理 DHCP 服务器所需的上下文和命令集。
 
@@ -40,9 +38,9 @@ Netsh 使用动态\-链接库 \(DLL\) 文件与其他操作系统组件进行交
 >    ```
 >   PS C:\Windows\system32> netsh
 >   netsh>/?
->    
+>
 >    The following commands are available:
->    
+>
 >    Commands in this context:
 >    ..            - Goes up one context level.
 >    ?             - Displays a list of commands.
@@ -83,10 +81,10 @@ Netsh 使用动态\-链接库 \(DLL\) 文件与其他操作系统组件进行交
 >    wfp           - Changes to the `netsh wfp' context.
 >    winhttp       - Changes to the `netsh winhttp' context.
 >    winsock       - Changes to the `netsh winsock' context.
->    
+>
 >    The following sub-contexts are available:
 >     advfirewall branchcache bridge dhcpclient dnsclient firewall http interface ipsec ipsecdosprotection lan namespace netio ras rpc trace wfp winhttp winsock
->    
+>
 >    To view help for a command, type the command, followed by a space, and then type ?.
 >    ```
 
@@ -149,7 +147,7 @@ Netsh 是命令行脚本实用工具，可让你以本地或远程方式显示�
 
 **`Context`**
 
-可选。 指定要输入的 netsh 上下文  。 
+可选。 指定要输入的 netsh 上下文  。
 
 **`-r`**
 

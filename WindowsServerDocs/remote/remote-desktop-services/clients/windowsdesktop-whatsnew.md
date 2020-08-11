@@ -1,20 +1,18 @@
 ---
 title: Windows 桌面客户端中的新功能
 description: 了解 Windows 桌面的远程桌面客户端的最新更改
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 07/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 41e4923d64ebacf606f01350a873f6dbce564b4c
-ms.sourcegitcommit: 42cd33c95645321d09d006ff2e7666d6370dfbc3
+ms.openlocfilehash: 0077837fc03fbff37ed2a152ee68bfa4f1e24fa8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87330813"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961821"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 

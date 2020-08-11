@@ -1,26 +1,24 @@
 ---
 title: 安装服务器核心
 description: 如何在 Windows Server 2019、Windows Server 2016 或 Windows Server（半年频道）上获取并安装服务器核心安装。
-ms.prod: windows-server
 ms.date: 05/21/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 13d36c233094511216483f0fb37dc6a004212a50
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 93b4cb477ce31543e67dd9f973637e830e0fd478
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826970"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959785"
 ---
 # <a name="install-server-core"></a>安装服务器核心
 
 > 适用于：Windows Server 2019、Windows Server 2016、Windows Server（半年频道）
-  
+
 首次安装 Windows Server 时，你可以使用以下安装选项：
 
 >[!NOTE]
@@ -33,10 +31,10 @@ ms.locfileid: "80826970"
 
 安装 Windows Server（半年频道）时，你可以使用以下安装选项：
 
--    Windows Server Standard 
+-    Windows Server Standard
 -    Windows Server Datacenter
 
-“服务器核心”选项可减少所需的磁盘空间和潜在的攻击面，因此我们建议选择服务器核心安装，除非你有特殊需求要用到“带桌面体验的服务器”选项中包含的附加用户界面元素和图形管理工具。 如果确实感觉到需要额外的用户界面元素，请参阅[安装带桌面体验的服务器](Getting-Started-with-Server-with-Desktop-Experience.md)。 
+“服务器核心”选项可减少所需的磁盘空间和潜在的攻击面，因此我们建议选择服务器核心安装，除非你有特殊需求要用到“带桌面体验的服务器”选项中包含的附加用户界面元素和图形管理工具。 如果确实感觉到需要额外的用户界面元素，请参阅[安装带桌面体验的服务器](Getting-Started-with-Server-with-Desktop-Experience.md)。
 
 使用“服务器核心”选项不会安装标准用户界面（桌面体验）；通过使用命令行、Windows PowerShell 或远程方法来管理服务器。
 

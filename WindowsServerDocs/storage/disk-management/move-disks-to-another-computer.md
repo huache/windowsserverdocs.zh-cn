@@ -2,18 +2,16 @@
 title: 将磁盘移到另一台计算机
 description: 本文介绍了如何将磁盘移到另一台计算机
 ms.date: 10/12/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6db73f963766e480f8ec478657354a51bcb1f456
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1527dbd567eb72e407023ecdcfade04856a3127a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385818"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971184"
 ---
 # <a name="move-disks-to-another-computer"></a>将磁盘移到另一台计算机
 
@@ -58,14 +56,14 @@ ms.locfileid: "71385818"
 
 ## <a name="detect-new-disks"></a>检测新磁盘
 
-1. 在新计算机上，打开“磁盘管理”。 
+1. 在新计算机上，打开“磁盘管理”。
 2. 单击“操作”  ，然后单击“重新扫描磁盘”  。
-3. 右键单击任何标记为“外部”  的磁盘。 
+3. 右键单击任何标记为“外部”  的磁盘。
 4. 单击“导入外部磁盘”  ，然后按照屏幕上的说明操作。
 
 ## <a name="additional-considerations"></a>其他注意事项
 
--   基本卷移到另一台计算机后，会在该计算机上获得下一个可用的驱动器号。 
+-   基本卷移到另一台计算机后，会在该计算机上获得下一个可用的驱动器号。
 -   动态卷会保留它们在上一台计算机上具有的驱动器号。 如果动态卷在上一台计算机上没有驱动器号，则在移到另一台计算机后将不会获得驱动器号。 如果在卷所移动到的计算机上已经使用了该驱动器号，则卷会获得下一个可用的驱动器号。
 
 -   如果管理员已使用 mountvol /n  或 diskpart automount  命令阻止将新卷添加到系统中，则会阻止安装从另一台计算机中移动的卷并阻止其获得驱动器号。 若要使用该卷，必须手动安装该卷，并使用磁盘管理或 DiskPart  和 mountvol  命令为其分配驱动器号。

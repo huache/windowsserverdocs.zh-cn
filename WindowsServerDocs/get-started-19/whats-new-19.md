@@ -1,19 +1,17 @@
 ---
 title: Windows Server 2019 中的新增功能
 description: Windows Server 2019 中新功能的概述，包括桌面体验、存储迁移服务、系统见解、Azure 网络适配器、存储空间直通改进以及其他更改。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: fd094347679d147a04faefdf3741a06addda2026
-ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
+ms.openlocfilehash: 6337a3812cb6e1ca838c463bc811f8959d1f0714
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86946575"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972364"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 中的新增功能
 
@@ -45,9 +43,9 @@ Windows Server 2019 是长期服务频道 (LTSC) 版本，因此包含<b>桌面�
 
 ### <a name="server-core-app-compatibility-feature-on-demand"></a>Server Core 应用兼容性按需功能
 
-[Server Core 应用兼容性按需功能 (FOD)](./install-fod-19.md) 包含带桌面体验的 Windows Server 的一部分二进制文件和组件，无需添加 Windows Server 桌面体验图形环境本身，因此显著提高了 Windows Server 核心安装选项的应用兼容性。  此举可增加 Server Core 的功能和兼容性，同时尽可能保持精简。  
+[Server Core 应用兼容性按需功能 (FOD)](./install-fod-19.md) 包含带桌面体验的 Windows Server 的一部分二进制文件和组件，无需添加 Windows Server 桌面体验图形环境本身，因此显著提高了 Windows Server 核心安装选项的应用兼容性。  此举可增加 Server Core 的功能和兼容性，同时尽可能保持精简。
 
-此可选按需功能在单独的 ISO 上提供，可通过 DISM 将其仅添加到 Windows Server 核心安装和映像中。 
+此可选按需功能在单独的 ISO 上提供，可通过 DISM 将其仅添加到 Windows Server 核心安装和映像中。
 
 ## <a name="security"></a>安全
 
@@ -75,7 +73,7 @@ ATP 的深度平台传感器和响应操作可暴露内存和内核级别攻击�
 
 ### <a name="security-with-software-defined-networking-sdn"></a>软件定义的网络 (SDN) 的安全性
 
-[SDN 的安全性](../networking/sdn/security/sdn-security-top.md)提供多种功能来增强客户运行工作负荷的信心，不管是在本地运行，还是作为服务提供商在云中运行。 
+[SDN 的安全性](../networking/sdn/security/sdn-security-top.md)提供多种功能来增强客户运行工作负荷的信心，不管是在本地运行，还是作为服务提供商在云中运行。
 
 这些安全增强功能集成到了 Windows Server 2016 中 引入的全面 SDN 平台中。
 
@@ -91,7 +89,7 @@ ATP 的深度平台传感器和响应操作可暴露内存和内核级别攻击�
 
 - **故障排除改进**
 
-    我们还通过启用对 VMConnect 增强会话模式和 PowerShell Direct 的支持，简化了[受防护虚拟机的故障排除](../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md)。 这些工具尤其适用于到 VM 的网络连接已断开，需要更新其配置才能恢复访问的情况。 
+    我们还通过启用对 VMConnect 增强会话模式和 PowerShell Direct 的支持，简化了[受防护虚拟机的故障排除](../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md)。 这些工具尤其适用于到 VM 的网络连接已断开，需要更新其配置才能恢复访问的情况。
 
     这些功能不需要进行配置。将受防护的 VM 置于运行 Windows Server 1803 或更高版本的 Hyper-V 主机上时，这些功能会自动变为可用状态。
 
@@ -168,7 +166,7 @@ Windows Server 2019 通过推出半年频道版本不断改进计算、联网和
 - 在 Kubernetes 上部署的工作负荷能够利用网络安全性来保护使用嵌入式工具的 Linux 和 Windows 服务。
 
 ### <a name="container-improvements"></a>容器改进
-    
+
 - **改进了集成身份**
 
     我们简化了容器中的集成 Windows 身份验证并提高了其可靠性，解决了早期 Windows Server 版本中的几个限制。
@@ -187,7 +185,8 @@ Windows Server 2019 通过推出半年频道版本不断改进计算、联网和
 
 ### <a name="encrypted-networks"></a>加密网络
 
-[加密网络](../networking/sdn/sdn-whats-new.md) - 虚拟网络加密允许对在标记为**启用加密**的子网内相互通信的虚拟机之间的虚拟网络流量进行加密。 它还利用虚拟子网上的数据报传输层安全性 (DTLS) 来加密数据包。 DTLS 可以防止能够访问物理网络的任何人进行窃听、篡改和伪造。
+[加密网络](../networking/sdn/sdn-whats-new.md) - 虚拟网络加密允许对在标记为**启用加密**的子网内相互通信的虚拟机之间的虚拟网络流量进行加密。
+它还利用虚拟子网上的数据报传输层安全性 (DTLS) 来加密数据包。 DTLS 可以防止能够访问物理网络的任何人进行窃听、篡改和伪造。
 
 ### <a name="network-performance-improvements-for-virtual-workloads"></a>虚拟工作负荷的网络性能提升
 
@@ -199,7 +198,7 @@ Windows Server 2019 通过推出半年频道版本不断改进计算、联网和
 
 ### <a name="low-extra-delay-background-transport"></a>低额外延迟后台传输
 
-低额外延迟后台传输 (LEDBAT) 是一款针对延迟进行优化的网络拥塞控制提供程序，旨在自动产生为用户和应用程序分配的带宽，同时在网络未使用时使用整个可用带宽。   
+低额外延迟后台传输 (LEDBAT) 是一款针对延迟进行优化的网络拥塞控制提供程序，旨在自动产生为用户和应用程序分配的带宽，同时在网络未使用时使用整个可用带宽。
 此技术用于在整个 IT 环境中部署较大的关键更新，而不会影响面向客户的服务和关联带宽。
 
 ### <a name="windows-time-service"></a>Windows 时间服务
@@ -214,7 +213,7 @@ Windows Server 2019 中的[高性能 SDN 网关](../networking/sdn/gateway-perfo
 
 ### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>用于 SDN 的新部署 UI 和 Windows Admin Center 扩展
 
-现在，借助 Windows Server 2019，可以通过用于充分利用 SDN 的新部署 UI 和 Windows Admin Center 扩展来轻松实现部署和管理。 
+现在，借助 Windows Server 2019，可以通过用于充分利用 SDN 的新部署 UI 和 Windows Admin Center 扩展来轻松实现部署和管理。
 
 ### <a name="persistent-memory-support-for-hyper-v-vms"></a>Hyper-V VM 的持久性内存支持
 

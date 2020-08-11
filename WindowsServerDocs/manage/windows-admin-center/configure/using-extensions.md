@@ -1,18 +1,16 @@
 ---
 title: 安装和管理扩展
 description: 在 Windows Admin Center (Project Honolulu) 中安装和管理扩展
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 4ba2e760d57f1c3f59e40b78b449a8831b8093d2
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: c2feaaff614d00afeaf5d132c446eebe5fdf0989
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942306"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966774"
 ---
 # <a name="install-and-manage-extensions"></a>安装和管理扩展
 
@@ -24,7 +22,7 @@ Windows Admin Center 是作为可扩展的平台构建的，其中的每个连�
 
 Windows Admin Center 会显示指定的 NuGet 源提供的扩展。 默认情况下，Windows Admin Center 指向 Microsoft 官方 NuGet 源，其中托管由 Microsoft 和其他开发者发布的扩展。
 
-1. 单击右上角的“设置”按钮，然后在左窗格中单击“扩展”。 
+1. 单击右上角的“设置”按钮，然后在左窗格中单击“扩展”。
 2. “可用扩展”选项卡会列出源上可供安装的扩展。
 3. 单击某个扩展，在“详细信息”窗格中查看扩展说明、版本、发布者和其他信息。
 4. 单击“安装”，安装某个扩展。 如果网关必须在提升模式下运行才能进行此更改，则会显示 UAC 提升提示。 安装完成后，系统会自动刷新浏览器，并会使用已安装的新扩展重新加载 Windows Admin Center。 如果你尝试安装的扩展是对以前安装的扩展的更新，则可单击“更新到最新”按钮来安装该更新。 也可转到“已安装的扩展”选项卡来查看已安装的扩展，以及查看某个更新在“状态”列中是否可用。 
@@ -44,7 +42,7 @@ Windows Admin Center 支持多个源，你可以一次从多个源查看和管�
 
 可以卸载以前安装的任何扩展，甚至可以卸载在安装 Windows Admin Center 过程中预安装的任何工具。
 
-1. 单击右上角的“设置”按钮，然后在左窗格中单击“扩展”。 
+1. 单击右上角的“设置”按钮，然后在左窗格中单击“扩展”。
 2. 单击“已安装的扩展”选项卡，查看所有已安装的扩展。
 3. 选择要卸载的扩展，然后单击“卸载”。
 
@@ -56,7 +54,7 @@ Windows Admin Center 支持多个源，你可以一次从多个源查看和管�
 
 ### <a name="manually-downloading-extension-packages"></a>手动下载扩展包
 
-1. 在另一台具有 Internet 连接的计算机上，打开 Web 浏览器并导航到以下 URL：[https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC) 
+1. 在另一台具有 Internet 连接的计算机上，打开 Web 浏览器并导航到以下 URL：[https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC)
 
    * 若要查看扩展包，可能需要创建一个 Microsoft 帐户并登录。
 

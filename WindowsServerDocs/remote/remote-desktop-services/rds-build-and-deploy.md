@@ -1,24 +1,22 @@
 ---
 title: RDS - 生成和部署
 description: 生成远程桌面部署的步骤
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/18/2017
 ms.topic: article
 ms.assetid: 176ae424-96e9-4c78-88f5-da418e76c3d7
 author: lizap
 manager: dongill
-ms.openlocfilehash: c0a2676cc5e7043cd1f96d6c1d393d7b0e443fe8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: be58880108f84aa6141157dbe730e18fcff4c6c2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961209"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961801"
 ---
 # <a name="build-and-deploy-your-remote-desktop-services-deployment"></a>生成和部署远程桌面服务部署
 
-远程桌面服务部署是用来与用户共享应用和资源的基础结构。 根据你要提供的体验，可视需要生成小型部署或复杂部署。 可以轻松缩放远程桌面部署。 可按需增加和减少远程桌面 Web 访问、网关、连接代理和会话主机服务器的数目。 可以使用远程桌面连接代理来分配工作负荷。 基于 Active Directory 的身份验证提供高度安全的环境。 
+远程桌面服务部署是用来与用户共享应用和资源的基础结构。 根据你要提供的体验，可视需要生成小型部署或复杂部署。 可以轻松缩放远程桌面部署。 可按需增加和减少远程桌面 Web 访问、网关、连接代理和会话主机服务器的数目。 可以使用远程桌面连接代理来分配工作负荷。 基于 Active Directory 的身份验证提供高度安全的环境。
 
 使用[远程桌面客户端](clients/remote-desktop-clients.md)可从任何 Windows、Apple 或 Android 计算机、平板电脑或手机进行访问。
 
@@ -34,7 +32,7 @@ ms.locfileid: "86961209"
 - [部署远程桌面服务基础结构](rds-deploy-infrastructure.md)
 - [创建一个会话集合用于保存你要共享的应用和资源](rds-create-collection.md)
 - [为 RDS 部署授权](rds-client-access-license.md)
-- 让用户安装[远程桌面客户端](clients/remote-desktop-clients.md)，以便可以访问应用和资源。 
+- 让用户安装[远程桌面客户端](clients/remote-desktop-clients.md)，以便可以访问应用和资源。
 - 添加其他连接代理和会话主机来实现高可用性：
    - [通过 RD 会话主机场横向扩展现有 RDS 集合](rds-scale-rdsh-farm.md)
    - [为 RD 连接代理基础结构提供高可用性](rds-connection-broker-cluster.md)

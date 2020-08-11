@@ -1,30 +1,28 @@
 ---
 title: Windows Server 2016 产品和版本
 description: 说明 Windows Server Standard 和 Windows Server Datacenter 版本的差异
-ms.prod: windows-server
 ms.date: 10/04/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: c5ca3bfe-7ced-49f6-a932-80cab33f419e
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4c35f0b65d0461e9dc2e23404d2637aecff415
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 50d0c603e5134c716c50e3aa8286cb33578ee06e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827100"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959905"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Windows Server 2016 Standard 和 Datacenter 版本的比较
 
 > 适用于：Windows Server 2016
-  
+
 ## <a name="locks-and-limits"></a>锁定和限制
 
 | 锁定和限制 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
-| ------------------- |---------- | --------------------------- |  
+| ------------------- |---------- | --------------------------- |
 | 最大用户数 | 基于 CAL   | 基于 CAL     |
 | 最大 SMB 连接数 | 16,777,216      | 16,777,216          |
 | 最大 RRAS 连接数| 无限制       | 无限制         |
@@ -41,8 +39,8 @@ ms.locfileid: "80827100"
 
 ## <a name="server-roles"></a>服务器角色
 
-| 可用的 Windows Server 角色     | 角色服务 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |  
-| -------------------                | ----------    | ----------                   | ---------------------------    |  
+| 可用的 Windows Server 角色     | 角色服务 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
+| -------------------                | ----------    | ----------                   | ---------------------------    |
 | Active Directory 证书服务|              | 是                          | 是                            |
 | Active Directory 域服务    |               | 是                          | 是                            |
 | Active Directory 联合身份验证服务|               | 是                          | 是                            |
@@ -80,8 +78,8 @@ ms.locfileid: "80827100"
 
 ## <a name="features"></a>功能
 
-|Windows Server 功能可以使用服务器管理器（或 PowerShell）安装|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|---------------------------|  
+|Windows Server 功能可以使用服务器管理器（或 PowerShell）安装|Windows Server 2016 Standard|Windows Server 2016 Datacenter|
+|-------------------|----------|---------------------------|
 |.NET Framework 3.5|是|是|
 |.NET Framework 4.6|是|是|
 |后台智能传送服务 (BITS)|是|是|
@@ -144,8 +142,8 @@ ms.locfileid: "80827100"
 |WoW64 支持|已安装|已安装|
 |XPS 查看器|是，在安装为具有桌面体验的服务器时|是，在安装为具有桌面体验的服务器时|
 
-|通常可用的功能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|---------------------------|  
+|通常可用的功能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|
+|-------------------|----------|---------------------------|
 |最佳做法分析器|是|是|
 |直接访问|是|是|
 |动态内存（虚拟化）|是|是|

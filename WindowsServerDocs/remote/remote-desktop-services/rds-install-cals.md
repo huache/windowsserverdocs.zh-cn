@@ -1,19 +1,17 @@
 ---
 title: 安装 RDS 客户端访问许可证
 description: 了解如何安装 RD 客户端的 CAL。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 09/20/2016
 manager: dongill
-ms.openlocfilehash: 3a9f73418bd4da67c97db30a3272588afc287b95
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 848ca4ae9edd414173bbfd5822011b93d044e394
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860440"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961661"
 ---
 # <a name="install-rds-client-access-licenses-on-the-remote-desktop-license-server"></a>在远程桌面许可证服务器上安装 RDS 客户端访问许可证
 

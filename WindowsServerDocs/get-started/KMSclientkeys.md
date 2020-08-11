@@ -1,7 +1,6 @@
 ---
 title: KMS 客户端安装密钥
 description: 从 KMS 服务器激活 Windows 产品所需的密钥
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: jasongerend
@@ -9,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 1eeaa76af345d3f05effe2afe35c40d594adfc3a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 399a79588c91be0ab5cf553fc29636e5ab768c16
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959619"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959695"
 ---
 # <a name="kms-client-setup-keys"></a>KMS 客户端安装密钥
 
@@ -23,7 +22,7 @@ ms.locfileid: "86959619"
 默认情况下，运行批量许可版本的 Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7、Windows Server 2008 R2、Windows Vista 和 Windows Server 2008 的计算机为无需额外配置的 KMS 客户端。
 
 > [!NOTE]
-> 在以下各表中，“LTSC”代表“长期服务频道”，而“LTSB”是指“长期服务分支”。 
+> 在以下各表中，“LTSC”代表“长期服务频道”，而“LTSB”是指“长期服务分支”。
 
 **若要使用此处列出的密钥（它们是 GVLK），你必须首先在你的部署中运行 KMS 主机。** 如果你尚未配置 KMS 主机，则请参阅 [Deploy KMS Activation](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502531(v=ws.11))（部署 KMS 激活），以了解设置主机的步骤。
 
@@ -57,7 +56,7 @@ ms.locfileid: "86959619"
 ### <a name="windows-server-2019"></a>Windows Server 2019
 | 操作系统版本       | KMS 客户端安装程序密钥          |
 |--------------------------------|-------------------------------|
-| Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG | 
+| Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG |
 | Windows Server 2019 Standard   | N69G4-B89J2-4G8F4-WWYCC-J464C |
 | Windows Server 2019 Essentials | WVDHN-86M7X-466P6-VHXV7-YY726 |
 
@@ -104,7 +103,7 @@ ms.locfileid: "86959619"
 | Windows 10 企业版 LTSB 2016   | DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ |
 | Windows 10 企业版 N LTSB 2016 | QFFDN-GRT3P-VKWWX-X7T3R-8B639 |
 
-### <a name="windows-10-ltsb-2015"></a>Windows 10 LTSB 2015 
+### <a name="windows-10-ltsb-2015"></a>Windows 10 LTSB 2015
 
 | 操作系统版本          | KMS 客户端安装程序密钥          |
 |-----------------------------------|-------------------------------|
@@ -117,14 +116,14 @@ ms.locfileid: "86959619"
 
 | 操作系统版本  | KMS 客户端安装程序密钥          |
 |---------------------------|-------------------------------|
-| Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG | 
+| Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG |
 | Windows Server Standard   | PTXN8-JFHJM-4WC78-MPCBR-9W4KR |
 
 ### <a name="windows-server-version-1709"></a>Windows Server 版本 1709
 
 | 操作系统版本  | KMS 客户端安装程序密钥          |
 |---------------------------|-------------------------------|
-| Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6 | 
+| Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6 |
 | Windows Server Standard   | DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4 |
 
 ### <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
@@ -195,7 +194,7 @@ ms.locfileid: "86959619"
 | Windows 8 企业版 N   | JMNMF-RHW7P-DMY6X-RF3DR-X2BQT |
 
 
-### <a name="windows-7"></a>Windows 7 
+### <a name="windows-7"></a>Windows 7
 
 | 操作系统版本 | KMS 客户端安装程序密钥          |
 |--------------------------|-------------------------------|

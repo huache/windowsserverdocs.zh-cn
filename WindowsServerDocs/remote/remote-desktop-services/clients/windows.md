@@ -1,8 +1,6 @@
 ---
 title: Windows 应用商店客户端入门
 description: 适用于 Windows 应用商店的远程桌面客户端的基本设置步骤。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
@@ -10,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ed87f2d03ef725c3efdfc2453b53201017e66e0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 05e32c05aaafb941958e025253e67c856d81257d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181943"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990366"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>Windows 应用商店客户端入门
 
@@ -58,7 +56,7 @@ ms.locfileid: "87181943"
    - **剪贴板** – 如果启用，可以从/向远程电脑复制文本和图像。
    - **音频播放** – 选择要在远程会话期间用于音频的设备。 可以选择在本地设备、远程电脑上播放声音或完全不播放。
    - **音频录制** – 启用时，可以在远程电脑上对应用程序使用本地麦克风。
-4. 点击“保存”  。
+4. 点击“保存”。
 
 需要编辑这些设置？ 点击桌面旁边的溢出菜单 (...)，然后点击“编辑”。
 
@@ -203,4 +201,4 @@ ms.locfileid: "87181943"
 | 鼠标指针 | 缩放                 | 双指捏合可缩小，双指分开可放大 |
 
 > [!TIP]
-> 欢迎提出问题和意见。 但是，如果你在本文评论部分发布支持请求或产品反馈，我们将无法回复你的反馈。 如需帮助或想要排查客户端问题，强烈建议你转到[远程桌面客户论坛](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)，启动新的会话。 如果有功能方面的建议，可通过[反馈中心](feedback-hub://?tabid=2&contextid=605)告诉我们。
+> 欢迎提出问题和意见。 但是，如果你在本文评论部分发布支持请求或产品反馈，我们将无法回复你的反馈。 如需帮助或想要排查客户端问题，强烈建议你转到[远程桌面客户论坛](/answers/topics/windows-remote-desktop-client.html)，启动新的会话。 如果有功能方面的建议，可通过[反馈中心](feedback-hub://?tabid=2&contextid=605)告诉我们。

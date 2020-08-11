@@ -2,24 +2,22 @@
 title: 管理虚拟硬盘 (VHD)
 description: 本文介绍如何管理虚拟硬盘
 ms.date: 10/12/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6ffa7e9dc769b8d8c892d0af1ceae5246df62d3e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c00fcec3e27f3c91b429419fe25b5dc84125a720
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385806"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957665"
 ---
 # <a name="manage-virtual-hard-disks-vhd"></a>管理虚拟硬盘 (VHD)
 
 > **适用于：** Windows 10、Windows 8.1、Windows Server（半年频道）、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主题介绍如何通过磁盘管理来创建、附加和分离虚拟硬盘。 虚拟硬盘 (VHD) 是虚拟化的硬盘文件，装载后，其外观和运行方式与物理硬盘大体相同。 它们最常与 Hyper-V 虚拟机配合使用。 
+本主题介绍如何通过磁盘管理来创建、附加和分离虚拟硬盘。 虚拟硬盘 (VHD) 是虚拟化的硬盘文件，装载后，其外观和运行方式与物理硬盘大体相同。 它们最常与 Hyper-V 虚拟机配合使用。
 
 ## <a name="viewing-vhds-in-disk-management"></a>在磁盘管理中查看 VHD
 
@@ -40,7 +38,7 @@ ms.locfileid: "71385806"
 
 ## <a name="attaching-and-detaching-a-vhd"></a>附加和分离 VHD
 
-若要使 VHD（刚才创建的 VHD 或另一个现有的 VHD）可供使用，请执行以下操作： 
+若要使 VHD（刚才创建的 VHD 或另一个现有的 VHD）可供使用，请执行以下操作：
 
 1. 在“操作”菜单上，选择“附加 VHD”   。
 
