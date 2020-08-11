@@ -1,8 +1,6 @@
 ---
 title: macOS 客户端入门
 description: 了解如何为 Mac 设置远程桌面客户端
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
@@ -10,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 57072fe5a92bcc59a1ccd46b1c0db7a6828a165d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 2a0c93ddc6bf891a3f8157d36b67f60241d4d41b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181953"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991596"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS 客户端入门
 
@@ -164,4 +162,4 @@ Windows Server 2012 R2 引入了对新身份验证方法（即远程桌面网关
 若要了解有关此功能的更多信息，请查看 [https://aka.ms/paa-sample](https://aka.ms/paa-sample)。
 
 > [!TIP]
-> 欢迎提出问题和意见。 但是，请不要使用本文末尾的评论功能来请求获取故障排除帮助。 而是转到[远程桌面客户端论坛](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)并启动一个新线程。 有功能建议？ 请在[客户端用户心声论坛](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告诉我们。
+> 欢迎提出问题和意见。 但是，请不要使用本文末尾的评论功能来请求获取故障排除帮助。 而是转到[远程桌面客户端论坛](/answers/topics/windows-remote-desktop-client.html)并启动一个新线程。 有功能建议？ 请在[客户端用户心声论坛](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告诉我们。

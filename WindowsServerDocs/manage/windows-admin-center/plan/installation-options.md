@@ -1,19 +1,17 @@
 ---
 title: 哪种安装类型适合你
 description: 本主题介绍 Windows Admin Center 的不同安装选项，包括在 Windows 10 电脑或 Windows 服务器上安装以供多个管理员使用。
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 12/02/2019
-ms.openlocfilehash: bd7ec8a5a072cbda99b036718d24ec1908fb8b53
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4114869b3f138eea2e6ed45a4317699706471c5b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269244"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997008"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>哪种安装类型适合你？
 
@@ -44,7 +42,7 @@ ms.locfileid: "81269244"
 - **在其他方案中：** 通过 URL（如 `https://servername.contoso.com`）从客户端浏览器连接到不同计算机上的 Windows Admin Center 网关
 
 > [!WARNING]
-> 不支持在域控制器上安装 Windows Admin Center。 [详细了解域控制器安全最佳做法](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack)。
+> 不支持在域控制器上安装 Windows Admin Center。 [详细了解域控制器安全最佳做法](../../../identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack.md)。
 
 ## <a name="installation-supported-web-browsers"></a>安装：支持的 Web 浏览器
 
@@ -67,9 +65,9 @@ Microsoft Edge（包括 [Microsoft Edge insider](https://microsoftedgeinsider.co
 
 > [!NOTE]
 > Windows Server 2012 和 2012 R2 中未包含 Windows Admin Center 需要的 PowerShell 功能。 如果你要使用 Windows Admin Center 进行管理，则将需要在这些服务器上安装 Windows Management Framework (WMF) 5.1 或更高版本。
-> 
-> 在 PowerShell 中键入 `$PSVersiontable`，以验证是否安装了 WMF 并且版本是否为 5.1 或更高版本。 
-> 
+>
+> 在 PowerShell 中键入 `$PSVersiontable`，以验证是否安装了 WMF 并且版本是否为 5.1 或更高版本。
+>
 > 如果未安装 WMF，可以[下载 WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616)。
 
 ## <a name="high-availability"></a>高可用性

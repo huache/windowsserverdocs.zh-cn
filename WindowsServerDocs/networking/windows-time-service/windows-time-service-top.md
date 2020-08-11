@@ -1,19 +1,17 @@
 ---
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
-title: Windows 时间服务
+title: Windows 时间服务 (W32Time)
 author: dcuomo
 ms.author: dacuo
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: 5dbb0db20f7100ed7dbe99587f201f38abf632ad
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2bd28bc9e774ebdd30c81397bfe3a3bb6320a679
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80815900"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997387"
 ---
 # <a name="windows-time-service-w32time"></a>Windows 时间服务 (W32Time)
 
@@ -32,9 +30,9 @@ Windows 时间服务 (W32Time) 主题中提供了以下内容：
 
 
 ## <a name="related-topics"></a>“相关主题”
-有关域层次结构和评分系统的详细信息，请参阅[“什么是 Windows 时间服务？”](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/) 博客文章。
+有关域层次结构和评分系统的详细信息，请参阅[“什么是 Windows 时间服务？”](/archive/blogs/w32time/what-is-windows-time-service) 博客文章。
 
-Windows 时间提供程序插件模型[记录在 TechNet 上](https://msdn.microsoft.com/library/windows/desktop/ms725475%28v=vs.85%29.aspx)。
+Windows 时间提供程序插件模型[记录在 TechNet 上](/windows/win32/sysinfo/time-provider)。
 
 可在[此处](https://windocs.blob.core.windows.net/windocs/WindowsTimeSyncAccuracy_Addendum.pdf)下载“Windows 2016 精确时间”一文中引用的附录
 

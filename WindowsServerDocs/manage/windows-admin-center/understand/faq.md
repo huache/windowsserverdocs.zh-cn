@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center 常见问题解答
 description: 获取有关 Windows Admin Center (Project Honolulu) 问题的解答
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
-ms.prod: windows-server
-ms.openlocfilehash: 4125a3f427bd19ae7461aaaef058a558722d1987
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: 2b1b6c8665e289647fe793125e7cc4c5024b4135
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891372"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993540"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常见问题解答
 
@@ -104,12 +102,12 @@ Microsoft Edge 的最新版本（Windows 10 版本 1709 或更高版本）、Goo
 
 是的，在少数情况下，Windows Admin Center 需要 CredSSP。 需要使用 CredSSP 才能将用于身份验证的凭据传递给除用作管理目标的特定服务器以外的计算机。 例如，如果你在**服务器 B** 上管理虚拟机，但想要将这些虚拟机的 vhdx 文件存储在**服务器 C** 托管的文件共享上，则 Windows Admin Center 必须使用 CredSSP 在**服务器 C** 上进行身份验证才能访问该文件共享。
 
-在提示你许可后，Windows Admin Center 会自动处理 CredSSP 的配置。 在配置 CredSSP 之前，Windows Admin Center 将检查以确保系统包含最新的 CredSSP [更新](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)。 
+在提示你许可后，Windows Admin Center 会自动处理 CredSSP 的配置。 在配置 CredSSP 之前，Windows Admin Center 将检查以确保系统包含最新的 CredSSP [更新](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)。
 
 CredSSP 当前用于以下场合：
 
 - 在虚拟机工具中使用非聚合 SMB 存储（以上示例）。
-- 在执行[群集感知更新](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating)的故障转移或超融合群集管理解决方案中使用“更新”工具 
+- 在执行[群集感知更新](../../../failover-clustering/cluster-aware-updating.md)的故障转移或超融合群集管理解决方案中使用“更新”工具
 
 ## <a name="are-there-any-cloud-dependencies"></a>是否有云依赖关系？
 
@@ -164,4 +162,4 @@ Windows Admin Center 是“Project Honolulu”的官方产品名称，强调了�
 
 ## <a name="im-having-an-issue-with-windows-admin-center-where-can-i-get-help"></a>我有有关 Windows Admin Center 的问题，在哪里可以获得帮助？
 
-请参阅我们的[故障排除指南](../use/troubleshooting.md)和[已知问题](../use/known-issues.md)列表。
+请参阅我们的[故障排除指南](../support/troubleshooting.md)和[已知问题](../support/known-issues.md)列表。

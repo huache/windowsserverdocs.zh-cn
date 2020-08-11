@@ -1,18 +1,16 @@
 ---
 title: 将 Windows Server 2016 升级到 Windows Server 2019 |Microsoft Docs
 description: 了解如何执行就地升级，从 Windows Server 2016 升级到 Windows Server 2019。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 91b10602a0cd5a3250fe01991fca42d01727784c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2ed2ed1859ca69f2251543a78dec0b856ce3f7e2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861340"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997221"
 ---
 # <a name="upgrade-windows-server-2016-to-windows-server-2019"></a>将 Windows Server 2016 升级到 Windows Server 2019
 
@@ -88,4 +86,4 @@ ms.locfileid: "80861340"
 
 ## <a name="related-articles"></a>相关文章
 
-- 有关 Windows Server 2019 的详细信息，请参阅 [Windows Server 2019 入门](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)。
+- 有关 Windows Server 2019 的详细信息，请参阅 [Windows Server 2019 入门](../get-started-19/get-started-19.md)。

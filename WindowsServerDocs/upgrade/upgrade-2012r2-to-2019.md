@@ -1,18 +1,16 @@
 ---
 title: 将 Windows Server 2012 R2 升级到 Windows Server 2019 | Microsoft Docs
 description: 了解如何从 Windows Server 2012 R2 就地升级到 Windows Server 2019。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 02d6dd21b798346245f209174902b6f4fdf24ff8
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c23c04682fe796a5d76f487b5ed6d91e81ac3ad1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853340"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87995781"
 ---
 # <a name="upgrade-windows-server-2012-r2-to-windows-server-2019"></a>将 Windows Server 2012 R2 升级到 Windows Server 2019
 
@@ -92,4 +90,4 @@ ms.locfileid: "80853340"
 
 ## <a name="related-articles"></a>相关文章
 
-- 有关 Windows Server 2019 的详细信息，请参阅 [Windows Server 2019 入门](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)。
+- 有关 Windows Server 2019 的详细信息，请参阅 [Windows Server 2019 入门](../get-started-19/get-started-19.md)。

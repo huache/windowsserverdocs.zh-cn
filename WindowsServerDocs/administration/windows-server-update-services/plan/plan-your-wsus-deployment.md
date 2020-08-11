@@ -1,20 +1,18 @@
 ---
 title: 规划 WSUS 部署
 description: Windows Server Update Service (WSUS) 主题 - 概述了部署规划流程，并提供了相关主题的链接
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 35865398-b011-447a-b781-1c52bc0c9e3a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: de4fe62b179286f058a9c4508e9f907eeb9ae806
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8e6aaaef666577db134d5d5bb42feffb38cb5a36
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178573"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990940"
 ---
 # <a name="plan-your-wsus-deployment"></a>规划 WSUS 部署
 
@@ -101,14 +99,14 @@ ms.locfileid: "87178573"
 2. Windows 客户端版本无法从 Web 按需安装 .NET 3.5。 与服务器角色相同的注意事项也适用于 .NET 3.5。
 
    > [!NOTE]
-   > 配置按需功能安装源不涉及 WSUS。 有关如何配置这些功能的信息，请参阅 [在 Windows Server 中配置按需功能](https://technet.microsoft.com/library/jj127275.aspx)。
+   > 配置按需功能安装源不涉及 WSUS。 有关如何配置这些功能的信息，请参阅 [在 Windows Server 中配置按需功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275(v=ws.11))。
 
 3. 运行 Windows 10 版本 1709 或版本 1803 的企业设备无法直接从 WSUS 安装任何按需功能。 若要安装按需功能，请[创建功能文件（并排存储）](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store)或从以下源之一获取按需功能包：
    - [批量许可服务中心](https://www.microsoft.com/licensing/servicecenter) (VLSC) - 需要批量许可访问权限
    - OEM 门户 - 需要 OEM 访问权限
    - MSDN 下载 - 需要 MSDN 订阅
 
-     可以使用 [DISM 命令行选项](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options)安装单独获取的按需功能包。
+     可以使用 [DISM 命令行选项](/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options)安装单独获取的按需功能包。
 
 ### <a name="wsus-database-requirements"></a>WSUS 数据库要求
 WSUS 要求以下数据库之一：
@@ -244,9 +242,9 @@ WSUS 支持仅用于数据库的 Windows 身份验证。 你不能同时使用 S
 
 Windows 内部数据库不提供用户界面或任何数据库管理工具。 如果为 WSUS 选择该数据库，则必须使用外部工具来管理数据库。 有关更多信息，请参阅：
 
--   [备份和还原 WSUS 数据以及备份你的服务器](https://technet.microsoft.com/library/dd939904(WS.10).aspx)
+-   [备份和还原 WSUS 数据以及备份你的服务器](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939904(v=ws.10))
 
--   [为 WSUS 数据库重建索引](https://technet.microsoft.com/library/dd939795(WS.10).aspx)
+-   [为 WSUS 数据库重建索引](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939795(v=ws.10))
 
 #### <a name="wsus-with-sql-server"></a>带 SQL Server 的 WSUS
 我们建议你在以下情况下使用 SQL Server 和 WSUS：
@@ -324,7 +322,7 @@ WSUS 配置向导的 **“选择语言”** 页可让你获得所有语言或语
 WSUS 可让你将各组客户端计算机作为更新目标，从而确保特定计算机总是在最方便的时候获得适当的更新。 例如，如果同一部门（例如会计组）中的所有计算机具有特定配置，你可为该组建立一个计算机组，并确定它们的计算机需要哪些更新以及何时安装这些更新，然后使用 WSUS 报告评估团队更新。
 
 > [!NOTE]
-> 如果 WSUS 服务器在副本模式下运行，则不能在该服务器上创建计算机组。 必须在属于 WSUS 服务器层次结构的 WSUS 服务器上，创建副本服务器的客户端计算机需要的所有计算机组。 有关副本模式的详细信息，请参阅《WSUS 3.0 SP2 操作指南》中的“管理 WSUS 副本服务器”[管理 WSUS 副本服务器](https://technet.microsoft.com/library/dd939893(WS.10).aspx)。
+> 如果 WSUS 服务器在副本模式下运行，则不能在该服务器上创建计算机组。 必须在属于 WSUS 服务器层次结构的 WSUS 服务器上，创建副本服务器的客户端计算机需要的所有计算机组。 有关副本模式的详细信息，请参阅《WSUS 3.0 SP2 操作指南》中的“管理 WSUS 副本服务器”[管理 WSUS 副本服务器](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939893(v=ws.10))。
 
 计算机始终分配给“所有计算机”  组，并且它们保持分配给“未分配的计算机”  组，直到你将它们分配给其他组。 计算机可以属于多个组。
 
@@ -436,14 +434,14 @@ WSUS 可让你按语言、产品和类别来过滤更新同步。 在 WSUS 服�
 ### <a name="large-update-deployment"></a>大规模更新部署
 当你部署大规模更新（例如 service pack）时，你可以使用以下操作来避免占满网络：
 
-1.  使用后台智能传送服务 (BITS) 限制 可使用当天的时间来控制 BITS 带宽，但它们适用于使用 BITS 的所有应用程序。 若要了解如何控制 BITS 限制，请参阅[组策略](https://msdn.microsoft.com/library/windows/desktop/aa362844(v=vs.85).aspx)。
+1.  使用后台智能传送服务 (BITS) 限制 可使用当天的时间来控制 BITS 带宽，但它们适用于使用 BITS 的所有应用程序。 若要了解如何控制 BITS 限制，请参阅[组策略](/windows/win32/bits/group-policies)。
 
 2.  使用 Internet 信息服务 (IIS) 限制来控制对一个或多个 Web 服务的限制。
 
 3.  使用计算机组来控制推出。 当客户端计算机向 WSUS 服务器发送信息时，它将自己识别为特定计算机组的成员。 WSUS 服务器使用此信息确定应向此计算机部署哪些更新。 你可以设置多个计算机组，并随后为这些组的子集批准大规模 service pack 下载。
 
 ### <a name="background-intelligent-transfer-service"></a>后台智能传送服务
-WSUS 为所有其文件传送任务使用后台智能传送服务 (BITS) 协议。 这包括到客户端计算机和服务器同步的下载。 BITS 使用空闲带宽启用程序来下载文件。 BITS 保持通过断开网络和重新启动计算机来传送文件的方式。 有关更多信息，请参阅：[后台智能传送服务](https://msdn.microsoft.com/library/bb968799.aspx)
+WSUS 为所有其文件传送任务使用后台智能传送服务 (BITS) 协议。 这包括到客户端计算机和服务器同步的下载。 BITS 使用空闲带宽启用程序来下载文件。 BITS 保持通过断开网络和重新启动计算机来传送文件的方式。 有关更多信息，请参阅：[后台智能传送服务](/windows/win32/bits/background-intelligent-transfer-service-portal)
 
 ## <a name="17-plan-automatic-updates-settings"></a>1.7. 计划自动更新设置
 你可以指定批准 WSUS 服务器上的更新的截止时间。 截止时间促使客户端计算机在特定时间安装更新，但存在的情况有许多种，取决于截止时间是否过期、计算机中是否有其他更新排队等候安装以及更新（或队列中的其他更新）是否需要重新启动。
@@ -463,4 +461,3 @@ WSUS 为所有其文件传送任务使用后台智能传送服务 (BITS) 协议�
 如果必须重新启动计算机，且有任何用户登陆，则会显示类似的倒计时对话框，该对话框将警告用户即将重新启动。 你可以使用组策略操控计算机重新启动。
 
 下载新更新后，自动更新向 WSUS 服务器询问批准的程序包列表，以确认它下载的程序包依然有效且获批准。 这意味着，如果在自动更新下载更新时，WSUS 管理员从批准的更新列表中删除更新，则实际上安装的只是依然获批准的更新。
-

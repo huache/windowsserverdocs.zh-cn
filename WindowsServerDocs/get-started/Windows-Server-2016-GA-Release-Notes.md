@@ -1,19 +1,17 @@
 ---
 title: 发行说明 - Windows Server 2016 中的重要问题
 description: 总结了需要解决方法的重要问题，以避免故障、挂起、安装失败、数据丢失。
-ms.prod: windows-server
 ms.date: 11/13/2018
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 8ceff837c2b85466f5583eed03f39e73f32fd4a4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b7e86b0841023548b1df1937bdf0820d59e12292
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826380"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990508"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>发行说明：Windows Server 2016 中的重要问题
 
@@ -62,7 +60,7 @@ ms.locfileid: "80826380"
 
 ## <a name="shielded-virtual-machines"></a>受防护的虚拟机
 
-[comment]: # (ID:369; Submitter: nirb; state: signed off)  
+[comment]: # (ID:369; Submitter: nirb; state: signed off)
 - 请确保安装了所有可用更新后再在生产中部署受防护的虚拟机。
 
 - 如果使用基于虚拟化的代码完整性保护或受防护的虚拟机（使用基于虚拟化的代码完整性保护），则应意识到这些技术可能与一些设备和应用程序不兼容。 应先在实验室中测试此类配置，再启用生产系统上的功能。 否则将导致意外的数据丢失或停止错误。
@@ -74,22 +72,22 @@ ms.locfileid: "80826380"
 
 如果安装任何将在“开始”  菜单中的文件夹内添加快捷方式项的应用程序，在你注销并再次登录前，这些快捷方式无效。
 
-返回到主 [Windows Server 2016](Windows-Server-2016.md) 集线器。
+返回到主 [Windows Server 2016](../index.yml) 集线器。
 
 ## <a name="storport-performance"></a>Storport 性能
 
-相比 Windows Server 2012 R2，运行新安装 Windows Server 2016 时某些系统可能会出现存储性能降低的情况。  在 Windows Server 2016 的开发期间进行了大量更改，从而改进此平台的安全性和可靠性。 其中部分更改，例如默认启用 Windows Defender，会导致输入/输出路径拉长，进而导致在特定工作负载和模式中输入/输出性能降低。 Microsoft 不建议禁用 Windows Defender，因为它是系统的重要保护层。  
+相比 Windows Server 2012 R2，运行新安装 Windows Server 2016 时某些系统可能会出现存储性能降低的情况。  在 Windows Server 2016 的开发期间进行了大量更改，从而改进此平台的安全性和可靠性。 其中部分更改，例如默认启用 Windows Defender，会导致输入/输出路径拉长，进而导致在特定工作负载和模式中输入/输出性能降低。 Microsoft 不建议禁用 Windows Defender，因为它是系统的重要保护层。 
 
 ## <a name="copyright"></a>版权
 
-本文档按“现样”提供。 本文档中表达的信息和视图（包括 URL 和其他 Internet 网站引用）如有更改，恕不另行通知。  
+本文档按“现样”提供。 本文档中表达的信息和视图（包括 URL 和其他 Internet 网站引用）如有更改，恕不另行通知。
 
-本文档未向你提供针对任何 Microsoft 产品的任何知识产权的任何法律权限。 可以复制本文档并将其用于进行内部参考。  
+本文档未向你提供针对任何 Microsoft 产品的任何知识产权的任何法律权限。 可以复制本文档并将其用于进行内部参考。
 
-&copy; 2016 Microsoft Corporation。 保留所有权利。  
+&copy; 2016 Microsoft Corporation。 保留所有权利。
 
-Microsoft、Active Directory、Hyper-V、Windows 和 Windows Server 是 Microsoft Corporation 在美国和/或其他国家/地区的注册商标或商标。  
+Microsoft、Active Directory、Hyper-V、Windows 和 Windows Server 是 Microsoft Corporation 在美国和/或其他国家/地区的注册商标或商标。
 
-本产品包含图形过滤器软件；该软件在一定程度上是以独立 JPEG 小组所做工作为基础的。  
+本产品包含图形过滤器软件；该软件在一定程度上是以独立 JPEG 小组所做工作为基础的。
 
 1.0

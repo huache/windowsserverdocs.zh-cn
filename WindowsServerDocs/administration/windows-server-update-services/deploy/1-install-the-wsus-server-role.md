@@ -1,20 +1,18 @@
 ---
 title: 步骤 1 - 安装 WSUS 服务器角色
 description: Windows Server Update Service (WSUS) 主题 - 介绍了如何使用服务器管理器安装服务器角色
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: fabc8619-350e-403b-96f8-116424931300
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a923b2da4583c32010e7e3104315957f3f05acaf
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 980aa106b9ed4cb1ebc5b091fa308906dcdb2d6a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178563"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991029"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>步骤 1：安装 WSUS 服务器角色
 
@@ -23,7 +21,7 @@ ms.locfileid: "87178563"
 部署 WSUS 服务器的下一步是安装 WSUS 服务器角色。 以下过程描述了使用服务器管理器安装 WSUS 服务器角色的步骤。
 
 > [!IMPORTANT]
-> 该安装过程仅包含使用 Windows 内部数据库 (WID) 安装 WSUS 的步骤。 使用 Microsoft SQL Server 安装 WSUS 的过程记录在 [WSUS 论坛](https://docs.microsoft.com/answers/topics/windows-server-update-services.html)中。
+> 该安装过程仅包含使用 Windows 内部数据库 (WID) 安装 WSUS 的步骤。 使用 Microsoft SQL Server 安装 WSUS 的过程记录在 [WSUS 论坛](/answers/topics/windows-server-update-services.html)中。
 
 ### <a name="to-install-the-wsus-server-role"></a>安装 WSUS 服务器角色的步骤
 
@@ -63,4 +61,3 @@ ms.locfileid: "87178563"
 
 > [!IMPORTANT]
 > 此时，安装过程已结束，但是若要 WSUS 正常工作，你必须继续执行[步骤 2：配置 WSUS](2-configure-wsus.md)。
-

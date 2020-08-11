@@ -1,7 +1,6 @@
 ---
 title: 为何特权访问工作站可以帮助保护组织
 description: PAW 如何提高组织的安全局势
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 93589778-3907-4410-8ed5-e7b6db406513
 ms.date: 03/13/2019
@@ -9,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: b51255a0ac0120847e3eb05a373535bc1b7f5d44
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6a7e916c78ad7b2711268f02bcf028dfb2621303
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520156"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991867"
 ---
 # <a name="privileged-access-workstations"></a>特权访问工作站
 
@@ -138,7 +137,7 @@ Microsoft 同时在内部系统和客户系统中使用 PAW 体系结构方法�
 * **高敏感度信息工作者** - 在 PAW 中使用的此方法还可以为高度敏感信息工作者的任务和涉及预公告合并和收购活动、预发布的财务报告、组织的社交媒体状态显示、管理层通信，非专利商业秘密、敏感信息检索或其他专有或敏感数据的保护的员工提供保护。 本指南不深入讨论这些信息工作者方案的配置，也不在技术说明中包含此种情况。
 
     > [!NOTE]
-    > Microsoft IT 使用 PAW （内部称为“安全管理工作站”或 SAW）来管理对 Microsoft 内部的内部高值系统的安全访问权限。 在下方的“Microsoft 如何使用管理工作站”部分，本指南还包括了针对 PAW 使用方法的其他信息。 有关此高值资产环境的详细信息，请参阅文章[使用安全管理工作站保护高值资产](/previous-versions//mt186538(v=technet.10))。
+    > Microsoft IT 使用 PAW （内部称为“安全管理工作站”或 SAW）来管理对 Microsoft 内部的内部高值系统的安全访问权限。 在下方的“Microsoft 如何使用管理工作站”部分，本指南还包括了针对 PAW 使用方法的其他信息。 有关此高值资产环境的详细信息，请参阅文章[使用安全管理工作站保护高值资产](/previous-versions/mt186538(v=technet.10))。
 
 本文档将介绍为什么推荐这种做法来保护高影响力特权帐户、保护管理权限的这些 PAW 解决方案是怎样的，以及如何为域和云服务管理快速部署 PAW 解决方案。
 
@@ -1086,7 +1085,7 @@ New-ShieldingDataFile -Policy Shielded -BindToHostTpm [...]
 
 [Device Guard 概述](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
 
-[使用安全管理工作站保护高值资产](/previous-versions//mt186538(v=technet.10))
+[使用安全管理工作站保护高值资产](/previous-versions/mt186538(v=technet.10))
 
 [Dave Probert 介绍 Windows 10 中的隔离用户模式（第 9 频道）](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
 

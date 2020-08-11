@@ -1,20 +1,18 @@
 ---
 ms.assetid: c9844427-27cf-4d76-b5bb-e06368b092f7
 title: 故障转移群集
-ms.prod: windows-server
 ms.topic: landing-page
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 657cf161086047ca87ca7dbd2adcd2b8e6bde892
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 41f5eef75e20a4da740141620493d2daa254b0a1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177883"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992856"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Windows Server 中的故障转移群集
 
@@ -44,7 +42,7 @@ ms.locfileid: "87177883"
 
 |**管理**  |  **工具和设置**  |  **社区资源**       |
 | ------------- |  -------------- | --------------------- |
-| [群集感知更新](cluster-aware-updating.md)    |   [故障转移群集 PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)      |  [高可用性（群集）论坛](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
-|  [运行状况服务](health-service-overview.md)   |   [群集感知更新 PowerShell Cmdlet](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [故障转移群集和网络负载均衡团队博客](https://blogs.msdn.com/b/clustering/)        |
+| [群集感知更新](cluster-aware-updating.md)    |   [故障转移群集 PowerShell Cmdlet](/powershell/module/failoverclusters/?view=win10-ps)      |  [高可用性（群集）论坛](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
+|  [运行状况服务](health-service-overview.md)   |   [群集感知更新 PowerShell Cmdlet](/powershell/module/clusterawareupdating/?view=win10-ps)      | [故障转移群集和网络负载均衡团队博客](https://blogs.msdn.com/b/clustering/)        |
 |  [群集域迁移](cluster-domain-migration.md)   |         |         |
 |  [使用 Windows 错误报告进行疑难解答](troubleshooting-using-wer-reports.md)   |         |         |

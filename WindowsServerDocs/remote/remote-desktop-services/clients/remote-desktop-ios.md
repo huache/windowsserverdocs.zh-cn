@@ -1,8 +1,6 @@
 ---
 title: iOS 客户端入门
 description: 了解如何为 iOS 设置远程桌面客户端
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
@@ -10,12 +8,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f51a60e66a3e1452ed66c94c409c5e4e5cb191f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 723fa40e1c2d446381b333eee1289a25adefd5d8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181963"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997363"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS 客户端入门
 
@@ -192,4 +190,4 @@ ms.locfileid: "87181963"
 尽管某些组合键可能无法在远程会话中按预期方式使用，但许多常见的 Windows 组合键（如 CTRL+C、CTRL+V 和 ALT+TAB）可以使用。
 
 > [!TIP]
-> 欢迎提出问题和意见。 但是，如果你在本文评论部分发布支持请求或产品反馈，我们将无法回复你的反馈。 如需帮助或想要排查客户端问题，强烈建议你转到[远程桌面客户论坛](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)，启动新的会话。 如果有功能方面的建议，可通过 [UserVoice 客户论坛](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告诉我们。
+> 欢迎提出问题和意见。 但是，如果你在本文评论部分发布支持请求或产品反馈，我们将无法回复你的反馈。 如需帮助或想要排查客户端问题，强烈建议你转到[远程桌面客户论坛](/answers/topics/windows-remote-desktop-client.html)，启动新的会话。 如果有功能方面的建议，可通过 [UserVoice 客户论坛](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告诉我们。

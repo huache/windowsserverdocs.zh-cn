@@ -1,20 +1,18 @@
 ---
 title: 步骤 4 - 为自动更新配置组策略设置
 description: Windows Server Update Service (WSUS) 主题 -“为自动更新配置组策略设置”是部署 WSUS 的四步流程中的第四个步骤
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 62177d05-d832-4ea8-bca4-47a8cd34a19c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d678c139ae2327eeecdff2731f1edb57d358a28a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ca59369cda4c38af111b9ccd3141219b1516cbd7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828840"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991102"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>步骤 4：为自动更新配置组策略设置
 
@@ -639,7 +637,7 @@ ms.locfileid: "80828840"
 
     -   **打开“计算机配置”>“组策略的维护计划程序扩展”** 。 在 GPOE 中，导航到“<策略名称>” > “计算机配置” > “策略” > “管理模板” > “Windows 组件” > “维护计划程序”。      
 
-有关组策略的详细信息，请参阅[组策略概述](https://technet.microsoft.com/library/hh831791.aspx(v=ws.12))。
+有关组策略的详细信息，请参阅[组策略概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))。
 
 > [!TIP]
 > 打开所需的组策略扩展后，可以使用以下步骤来启用、禁用或浏览设置：

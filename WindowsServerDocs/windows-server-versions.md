@@ -1,8 +1,6 @@
 ---
 title: 适用于 IT 管理员的 Windows Server 技术内容 - Windows Server
 description: 获取当前版本和以前版本的 Windows Server 技术文章以及适用于 IT 专业人员的产品评估。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 ms.date: 01/17/2018
 ms.assetid: 0c3dc323-8beb-4d7d-a2e0-12bda848ddcb
@@ -10,12 +8,12 @@ author: lizap
 ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 5133e474882531e05cd8b6a3e69ca9c90a1c101a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f11f63dd05676fd0f16a1c0d71db9482ca1b86fc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80859720"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992502"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - 当前版本和以前版本的 IT 管理员内容
 
@@ -24,25 +22,25 @@ Windows Server 是一个平台，用于构建连接的应用程序、网络和 W
 使用以下链接可查看适用于 IT 专业人员的不同版本的 Windows Server 的技术内容。
 
 > [!IMPORTANT]
-> 你的电脑上是否运行的是 Windows？ Windows 10、Windows 8 还是 8.1？ Windows 7？ 你是否有任何疑问？ 转到 [Microsoft 支持](https://support.microsoft.com) - 只需在搜索栏中键入问题即可。 该处可提供有关 Windows、Office 和 Skype 的信息，应有尽有。 
-> 
+> 你的电脑上是否运行的是 Windows？ Windows 10、Windows 8 还是 8.1？ Windows 7？ 你是否有任何疑问？ 转到 [Microsoft 支持](https://support.microsoft.com) - 只需在搜索栏中键入问题即可。 该处可提供有关 Windows、Office 和 Skype 的信息，应有尽有。
+>
 > 以下信息仅与 Windows Server 相关   。
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
-[Windows Server 2016 技术内容](windows-server-2016.md)
+[Windows Server 2016 技术内容](./index.yml)
 
 ## <a name="windows-server-2012-r2-and-windows-server-2012"></a>Windows Server 2012 R2 和 Windows Server 2012
 
-[Windows Server 2012 R2 和 Windows Server 2012 技术库](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/) 
+[Windows Server 2012 R2 和 Windows Server 2012 技术库](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/)
 
-[MSDN 上的 Windows Server 2012 R2 开发人员库](https://msdn.microsoft.com/library/dn609939(v=vs.85).aspx) 
+[MSDN 上的 Windows Server 2012 R2 开发人员库](/windows/win32/srvnodes/what-s-new-for-windows-server-2012-r2)
 
 ## <a name="windows-server-2008-r2-and-windows-server-2008"></a>Windows Server 2008 R2 和 Windows Server 2008
 
 [Windows Server 2008 R2 和 Windows Server 2008 技术库](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008)
- 
-[MSDN 上的 Windows Server 2008 开发人员库](https://msdn.microsoft.com/library/hh738539.aspx) 
+
+[MSDN 上的 Windows Server 2008 开发人员库](https://msdn.microsoft.com/library/hh738539.aspx)
 
 ## <a name="windows-server-2003"></a>Windows Server 2003
 
@@ -52,13 +50,12 @@ Windows Server 是一个平台，用于构建连接的应用程序、网络和 W
 
 ## <a name="product-evaluations"></a>产品评估
 
-[下载 Windows Server 2016 评估](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1) 
+[下载 Windows Server 2016 评估](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1)
 
-[下载 Windows Server 2012 R2 试用版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2) 
+[下载 Windows Server 2012 R2 试用版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2)
 
 ## <a name="related-links"></a>相关链接
-[Windows Server 2016 产品信息](https://www.microsoft.com/cloud-platform/windows-server) 
+[Windows Server 2016 产品信息](https://www.microsoft.com/cloud-platform/windows-server)
 
 > [!TIP]
-> 你是否有任何疑问？ 即刻体验 [Microsoft 支持](https://support.microsoft.com) - 只需在搜索栏中键入问题即可。 该处可提供有关 Windows、Office、Skype 的帮助，应有尽有。 
-
+> 你是否有任何疑问？ 即刻体验 [Microsoft 支持](https://support.microsoft.com) - 只需在搜索栏中键入问题即可。 该处可提供有关 Windows、Office、Skype 的帮助，应有尽有。

@@ -1,18 +1,16 @@
 ---
 title: 将 Windows Server 2008 R2 升级到 Windows Server 2012 R2 |Microsoft Docs
 description: 了解如何从 Windows Server 2008 R2 就地升级到 Windows Server 2012 R2。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 7598826bee4abd869dff82c3891fdbe126db35fb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: fad4caf75be75bae5361a99f1e6e6520767680cd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182173"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996096"
 ---
 # <a name="upgrade-windows-server-2008-r2-to-windows-server-2012-r2"></a>将 Windows Server 2008 R2 升级到 Windows Server 2012 R2
 
@@ -66,7 +64,7 @@ ms.locfileid: "87182173"
 
     ![选择安装类型的屏幕](media/upgrade-2008r2-2012r2/choose-install-upgrade.png)
 
-9. 安装程序会使用 [Windows Server 安装和升级](https://docs.microsoft.com/windows-server/get-started/installation-and-upgrade)文章中的信息，提醒你确保应用与 Windows Server 2012 R2 兼容。确认后选择“下一步”  。
+9. 安装程序会使用 [Windows Server 安装和升级](../get-started/installation-and-upgrade.md)文章中的信息，提醒你确保应用与 Windows Server 2012 R2 兼容。确认后选择“下一步”  。
 
     ![提示你检查应用兼容性的屏幕](media/upgrade-2008r2-2012r2/compatibility-report.png)
 

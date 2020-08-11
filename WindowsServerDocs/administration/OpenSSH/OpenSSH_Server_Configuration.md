@@ -4,14 +4,13 @@ description: 适用于 Windows 10 1809 和 Server 2019 的 OpenSSH 服务器的�
 ms.date: 09/27/2018
 ms.topic: conceptual
 contributor: maertendMSFT
-ms.product: windows-server
 author: maertendmsft
-ms.openlocfilehash: abd156936bbd26479b0fe6bb7ffb98c1dd122f8e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e2052ef9bf67eea241b6668a734f2f3e166bb61
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469752"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992383"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>适用于 Windows 10 1809 和 Server 2019 的 OpenSSH 服务器配置
 
@@ -64,7 +63,7 @@ Windows 允许使用多种格式来指定域主体，但许多格式与标准 Li
 此外，此方法使用了 "?"（而非 @）来避免与 username@host 格式发生冲突。
 
 工作组用户/组和连接到 internet 的帐户始终解析为其本地帐户名称（不包括域部分，类似于标准 Unix 名称）。
-域用户和组严格解析为 [NameSamCompatible](https://docs.microsoft.com/windows/desktop/api/secext/ne-secext-extended_name_format) 格式 - domain_short_name\user_name。
+域用户和组严格解析为 [NameSamCompatible](/windows/desktop/api/secext/ne-secext-extended_name_format) 格式 - domain_short_name\user_name。
 所有基于用户/组的配置规则都需要遵循此格式。
 
 域用户和组的示例
@@ -149,4 +148,3 @@ Windows Server 2019 和 Windows 10 1809 中附带的 OpenSSH 版本中未提供�
 * X11Forwarding
 * X11UseLocalhost
 * XAuthLocation
-

@@ -1,19 +1,17 @@
 ---
 title: 使用 Windows Admin Center 的用户访问选项
 description: 使用 Windows Admin Center (Project Honolulu) 的用户访问选项和标识提供者
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 084cdae0bf8ca0eb3aff1f4679d30978b860efef
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3c96968f55a06c7ccffd9f7919001f21bff6a75c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71356915"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996985"
 ---
 # <a name="user-access-options-with-windows-admin-center"></a>使用 Windows Admin Center 的用户访问选项
 
@@ -33,7 +31,7 @@ Windows Admin Center 定义了两个用于访问网关服务的角色：网关�
 **网关管理员**可以对谁获得访问权限以及用户如何向网关进行身份验证进行配置。
 
 >[!NOTE]
-> 如果 Windows Admin Center 中未定义访问组，则这些角色将反映 Windows 帐户对网关服务器的访问权限。 
+> 如果 Windows Admin Center 中未定义访问组，则这些角色将反映 Windows 帐户对网关服务器的访问权限。
 
 [在 Windows Admin Center 中配置网关用户和管理员访问权限。](../configure/user-access-control.md)
 
@@ -51,7 +49,7 @@ Windows Admin Center 定义了两个用于访问网关服务的角色：网关�
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>条件访问和多重身份验证
 
-通过要求对网关进行 Azure AD 身份验证，你可以使用 Azure AD 提供的其他安全功能，例如条件访问和多重身份验证。 [详细了解如何使用 Azure Active Directory 配置条件访问。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+通过要求对网关进行 Azure AD 身份验证，你可以使用 Azure AD 提供的其他安全功能，例如条件访问和多重身份验证。 [详细了解如何使用 Azure Active Directory 配置条件访问。](/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
 ## <a name="role-based-access-control"></a>基于角色的访问控制
 

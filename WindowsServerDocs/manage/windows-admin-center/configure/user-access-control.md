@@ -1,19 +1,17 @@
 ---
 title: 配置用户访问控制和权限
 description: 了解如何使用 Active Directory 或 Azure AD (Project Honolulu) 配置用户访问控制和权限
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 0de38560301d4d793214846036850a05a5d5a326
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 99fafcb5a42133baeb119a9857a2e05b7e3dbd89
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182203"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997422"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>配置用户访问控制和权限
 
@@ -82,7 +80,7 @@ ms.locfileid: "87182203"
 
 ### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center"></a>针对 Windows Admin Center 配置 Azure Active Directory 身份验证
 
-[若要设置 Azure AD 身份验证，必须先将网关注册到 Azure](azure-integration.md)（对于 Windows Admin Center 网关，只需这样做一次）。 此步骤创建一个 Azure AD 应用程序，可以在其中管理网关用户和网关管理员的访问。
+[若要设置 Azure AD 身份验证，必须先将网关注册到 Azure](../azure/azure-integration.md)（对于 Windows Admin Center 网关，只需这样做一次）。 此步骤创建一个 Azure AD 应用程序，可以在其中管理网关用户和网关管理员的访问。
 
 若要为特定 Azure AD 用户或组网关用户或网关管理员提供 Windows Admin Center 服务的访问权限，必须执行以下操作：
 
@@ -103,7 +101,7 @@ ms.locfileid: "87182203"
 
 使用 Azure AD 作为额外的安全层来控制 Windows Admin Center 网关访问权限的好处之一是：你可以利用 Azure AD 的强大安全功能，如条件访问和多重身份验证。
 
-[详细了解如何使用 Azure Active Directory 配置条件访问。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+[详细了解如何使用 Azure Active Directory 配置条件访问。](/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
 ## <a name="configure-single-sign-on"></a>配置单一登录
 
@@ -111,7 +109,7 @@ ms.locfileid: "87182203"
 
 在 Windows 10 上安装 Windows Admin Center 后，即可使用单一登录。 但是，若要在 Windows Server 上使用 Windows Admin Center，需在环境中设置某种形式的 Kerberos 委托，然后才能使用单一登录。 该委托会将网关计算机配置为值得信任，可以委托到目标节点。
 
-若要在环境中配置[基于资源的受约束委托](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)，请使用以下 PowerShell 示例。 此示例演示如何将 Windows Server [node01.contoso.com] 配置为接受来自 contoso.com 域中 Windows Admin Center 网关 [wac.contoso.com] 的委托。
+若要在环境中配置[基于资源的受约束委托](../../../security/kerberos/kerberos-constrained-delegation-overview.md)，请使用以下 PowerShell 示例。 此示例演示如何将 Windows Server [node01.contoso.com] 配置为接受来自 contoso.com 域中 Windows Admin Center 网关 [wac.contoso.com] 的委托。
 
 ```powershell
 Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount (Get-ADComputer wac)

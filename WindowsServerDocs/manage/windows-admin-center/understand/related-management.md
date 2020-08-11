@@ -1,28 +1,26 @@
 ---
 title: Windows Admin Center 相关的管理解决方案
 description: Windows Admin Center 与其他 Microsoft 监视和管理解决方案/产品 (Project Honolulu) 的比较及其如何相辅相成
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: d681e5007cd3ae3c14de774df0bc85abc23b51d7
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2f3a8de38cc643184468fccb4fcdd24f9ba75dd7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323529"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997518"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center 和相关的 Microsoft 管理解决方案
 
 >适用于：Windows Admin Center、Windows Admin Center 预览版
 
-[Windows Admin Center](windows-admin-center.md) 是传统的内置服务器管理工具的演进。这些传统的方法包括使用远程桌面 (RDP) 连接到服务器进行故障排除或配置。 Windows Admin Center 并不旨在取代其他现有的 Microsoft 管理解决方案，而是对这些解决方案进行补充，如下所述。
+[Windows Admin Center](../overview.md) 是传统的内置服务器管理工具的演进。这些传统的方法包括使用远程桌面 (RDP) 连接到服务器进行故障排除或配置。 Windows Admin Center 并不旨在取代其他现有的 Microsoft 管理解决方案，而是对这些解决方案进行补充，如下所述。
 
 ## <a name="remote-server-administration-tools-rsat"></a>远程服务器管理工具 (RSAT)
 
-[远程服务器管理工具 (RSAT)](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools) 是用于管理 Windows Server 中可选角色和功能的 GUI 与 PowerShell 工具集合。 RSAT 具有 Windows Admin Center 所不能提供的许多功能。 将来，我们可能会将 RSAT 中的某些最常用工具添加到 Windows Admin Center。 需要使用 GUI 进行管理的任何新 Windows Server 角色或功能将在 Windows Admin Center 中提供。
+[远程服务器管理工具 (RSAT)](../../../remote/remote-server-administration-tools.md) 是用于管理 Windows Server 中可选角色和功能的 GUI 与 PowerShell 工具集合。 RSAT 具有 Windows Admin Center 所不能提供的许多功能。 将来，我们可能会将 RSAT 中的某些最常用工具添加到 Windows Admin Center。 需要使用 GUI 进行管理的任何新 Windows Server 角色或功能将在 Windows Admin Center 中提供。
 
 ## <a name="intune"></a>Intune
 
