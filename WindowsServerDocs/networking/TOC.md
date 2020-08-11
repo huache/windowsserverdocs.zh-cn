@@ -72,6 +72,7 @@
 ## [域名系统 (DNS)](dns/dns-top.md)
 ### [Windows Server 中 DNS 客户端的新增功能](dns/What-s-New-in-DNS-Client.md)
 ### [Windows Server 中 DNS 服务器的新增功能](dns/What-s-New-in-DNS-Server.md)
+### [任播 DNS](dns/deploy/anycast.md)
 ### [DNS 策略方案指南](dns/deploy/DNS-Policy-Scenario-Guide.md)
 #### [DNS 策略概述](dns/deploy/DNS-Policies-Overview.md)
 #### [使用 DNS 策略通过主服务器实现地理位置流量管理](dns/deploy/primary-geo-location.md)
