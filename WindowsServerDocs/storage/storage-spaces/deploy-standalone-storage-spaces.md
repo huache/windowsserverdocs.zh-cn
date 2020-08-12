@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f98ec982601281d5b16a5ec369ca275de189c85
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5eddc639fd07516b95b23684ec4137f328b7c105
+ms.sourcegitcommit: 08da40966c5d633f8748c8ae348f12656a54d3b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996478"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140294"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>在独立服务器上部署存储空间
 
@@ -100,19 +100,19 @@ ms.locfileid: "87996478"
 下面的示例说明哪些物理磁盘在原始池中可用。
 
 ```PowerShell
-Get-StoragePool -IsPrimordial $true | Get-PhysicalDisk | Where-Object CanPool -eq $True
+Get-StoragePool -IsPrimordial $true | Get-PhysicalDisk -CanPool $True
 ```
 
 以下示例创建一个名为*StoragePool1*的新存储池，该存储池使用所有可用的磁盘。
 
 ```PowerShell
-New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName “Storage Spaces*” –PhysicalDisks (Get-PhysicalDisk –CanPool $True)
+New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName "Windows Storage*" –PhysicalDisks (Get-PhysicalDisk –CanPool $True)
 ```
 
 以下示例创建一个新的存储池*StoragePool1*，它使用四个可用磁盘。
 
 ```PowerShell
-New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName “Storage Spaces*” –PhysicalDisks (Get-PhysicalDisk PhysicalDisk1, PhysicalDisk2, PhysicalDisk3, PhysicalDisk4)
+New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName "Windows Storage*" –PhysicalDisks (Get-PhysicalDisk PhysicalDisk1, PhysicalDisk2, PhysicalDisk3, PhysicalDisk4)
 ```
 
 下面的 cmdlet 序列示例说明如何将一个可用的物理磁盘 *PhysicalDisk5* 作为热备用添加到存储池 *StoragePool1*。
