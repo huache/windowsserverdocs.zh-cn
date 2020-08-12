@@ -1,24 +1,22 @@
 ---
 title: 部署具有高可用性的 Windows Admin Center
 description: 部署具有高可用性的 Windows Admin Center (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 6ae7bd9ed7aee5835ac1f53b9e10879ad8824f52
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 132f566e8467179c1a58e3555d26ab834dae7129
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71406946"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970854"
 ---
 # <a name="deploy-windows-admin-center-with-high-availability"></a>部署具有高可用性的 Windows Admin Center
 
 >适用于：Windows Admin Center、Windows Admin Center 预览版
 
-可以在故障转移群集中部署 Windows Admin Center，为 Windows Admin Center 网关服务提供高可用性。 提供的解决方案是一种主动-被动解决方案，其中只有一个 Windows Admin Center 实例处于活动状态。 如果群集中的某个节点发生故障，Windows Admin Center 会正常故障转移到另一个节点，从而使你可以无缝继续管理环境中的服务器。 
+可以在故障转移群集中部署 Windows Admin Center，为 Windows Admin Center 网关服务提供高可用性。 提供的解决方案是一种主动-被动解决方案，其中只有一个 Windows Admin Center 实例处于活动状态。 如果群集中的某个节点发生故障，Windows Admin Center 会正常故障转移到另一个节点，从而使你可以无缝继续管理环境中的服务器。
 
 [了解其他 Windows Admin Center 部署选项。](../plan/installation-options.md)
 
@@ -35,7 +33,7 @@ ms.locfileid: "71406946"
 2. 通过 RDP 连接到节点，并通过以下参数从该节点运行 ```Install-WindowsAdminCenterHA.ps1``` 脚本：
     - `-clusterStorage`：用于存储 Windows Admin Center 数据的群集共享卷的本地路径。
     - `-clientAccessPoint`：选择将用于访问 Windows Admin Center 的名称。 例如，如果使用参数 `-clientAccessPoint contosoWindowsAdminCenter` 运行该脚本，则将通过访问 `https://contosoWindowsAdminCenter.<domain>.com` 来访问 Windows Admin Center 服务
-    - `-staticAddress`：可选。 群集通用服务的一个或多个静态地址。 
+    - `-staticAddress`：可选。 群集通用服务的一个或多个静态地址。
     - `-msiPath`：Windows Admin Center .msi 文件的路径。
     - `-certPath`：可选。 证书 .pfx 文件的路径。
     - `-certPassword`：可选。 `-certPath` 中提供的证书 .pfx 的 SecureString 密码
@@ -86,7 +84,7 @@ $certPassword = Read-Host -AsSecureString
 ```powershell
 $certPassword = Read-Host -AsSecureString
 .\Install-WindowsAdminCenterHA.ps1 -msiPath ".\WindowsAdminCenter.msi" -certPath "cert.pfx" -certPassword $certPassword -Verbose
-``` 
+```
 
 ## <a name="uninstall"></a>卸载
 

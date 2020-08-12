@@ -1,19 +1,17 @@
 ---
 title: 利用事件对用户配置文件进行故障排除
 description: 如何利用事件和跟踪日志对加载和卸载用户配置文件时的问题进行故障排除。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e927a77627e786015a928d798aafee13a2cc34b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e6417fc6453499387fbf721ef31121e07eccdfdd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394379"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957625"
 ---
 # <a name="troubleshoot-user-profiles-with-events"></a>利用事件对用户配置文件进行故障排除
 
@@ -70,8 +68,8 @@ ms.locfileid: "71394379"
 下面介绍如何为用户配置文件服务创建和解码跟踪：
 
 1. 使用本地管理员组的成员帐户登录用户遇到问题的计算机。
-2. 在提升的命令提示符下，输入以下命令，其中 \<Path\> 是之前创建的本地文件夹的路径，例如 C:\\logs  ：
-        
+2. 在提升的命令提示符下，输入以下命令，其中 \<Path\> 是之前创建的本地文件夹的路径，例如 C:\\logs：
+
     ```PowerShell
     logman create trace -n RUP -o <Path>\RUP.etl -ets
     logman update RUP -p {eb7428f5-ab1f-4322-a4cc-1f1a9b2c5e98} 0x7FFFFFFF 0x7 -ets
@@ -80,12 +78,12 @@ ms.locfileid: "71394379"
 4. 重现问题。 重现此问题的过程通常是以遇到问题的用户身份登录、注销用户或两者都执行。
 5. 在重现该问题后，再次以本地管理员身份登录。
 6. 在提升的命令提示符下运行以下命令，将日志保存到 ETL 文件中：
-  
+
     ```PowerShell
     logman stop -n RUP -ets
     ```
 7. 键入以下命令，将 ETL 文件导出到当前目录（可能是主文件夹或 %WINDIR%\\System32 文件夹）中的可读文件：
-    
+
     ```PowerShell
     Tracerpt <path>\RUP.etl
     ```

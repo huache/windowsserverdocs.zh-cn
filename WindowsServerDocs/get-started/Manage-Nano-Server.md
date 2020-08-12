@@ -1,225 +1,212 @@
 ---
 title: 管理 Nano Server
 description: 更新, 服务包, 网络跟踪, 性能监视
-ms.prod: windows-server
 manager: DonGill
-ms.technology: server-nano
 ms.date: 09/06/2017
 ms.topic: get-started-article
 ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: f07c6ffd96aabd4bac5a7e34c7bb612df33274f6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 78a869f826bd9d13e627f5710cca1b3ef1cdcdc4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961109"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959625"
 ---
 # <a name="manage-nano-server"></a>管理 Nano Server
 
 >适用于：Windows Server 2016
 
 > [!IMPORTANT]
-> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解其含义。   
+> 自 Windows Server 版本 1709 开始，Nano Server 将仅用作[容器基本 OS 映像](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)。 查看[对 Nano Server 进行的更改](nano-in-semi-annual-channel.md)以了解其含义。
 
-Nano Server 进行远程管理。 其不具备本地登录功能，亦不支持终端服务。 但是，有多种选项来远程管理 Nano Server，包括 Windows PowerShell、Windows Management Instrumentation (WMI)、Windows 远程管理和紧急管理服务 (EMS)。  
+Nano Server 进行远程管理。 其不具备本地登录功能，亦不支持终端服务。 但是，有多种选项来远程管理 Nano Server，包括 Windows PowerShell、Windows Management Instrumentation (WMI)、Windows 远程管理和紧急管理服务 (EMS)。
 
-若要使用任何远程管理工具，可能需要知道 Nano Server 的 IP 地址。 了解 IP 地址的一些方法包括：  
-  
--   使用 Nano 恢复控制台（请参阅本主题的“使用 Nano Server 恢复控制台”部分了解详细信息）。  
-  
--   将串行电缆连接到计算机并使用 EMS。  
-  
--   通过使用在配置 Nano Server 时分配给它的计算机名称，可以使用 ping 获取 IP 地址。 例如，`ping NanoServer-PC /4`。  
-  
-## <a name="using-windows-powershell-remoting"></a>使用 Windows PowerShell 远程控制  
-若要使用 Windows PowerShell 远程控制管理 Nano Server，则需要将 Nano Server 的 IP 地址添加到受信任主机的管理计算机列表，将所使用的帐户添加到 Nano Server 的管理员，并启用 CredSSP（如果计划使用该功能）。  
+若要使用任何远程管理工具，可能需要知道 Nano Server 的 IP 地址。 了解 IP 地址的一些方法包括：
+
+-   使用 Nano 恢复控制台（请参阅本主题的“使用 Nano Server 恢复控制台”部分了解详细信息）。
+
+-   将串行电缆连接到计算机并使用 EMS。
+
+-   通过使用在配置 Nano Server 时分配给它的计算机名称，可以使用 ping 获取 IP 地址。 例如，`ping NanoServer-PC /4`。
+
+## <a name="using-windows-powershell-remoting"></a>使用 Windows PowerShell 远程控制
+若要使用 Windows PowerShell 远程控制管理 Nano Server，则需要将 Nano Server 的 IP 地址添加到受信任主机的管理计算机列表，将所使用的帐户添加到 Nano Server 的管理员，并启用 CredSSP（如果计划使用该功能）。
 
 > [!NOTE]
 > 如果目标 Nano Server 和管理计算机处于相同的 AD DS 林中（或处于具有信任关系的林中），则不应将 Nano Server 添加到受信任的主机列表中 - 可以通过使用其完全限定的域名（例如：PS C:\>Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)）连接到 Nano Server
-  
-  
-若要将 Nano Server 添加到受信任的主机列表，请在提升的 Windows PowerShell 提示符下运行此命令：  
-  
-`Set-Item WSMan:\localhost\Client\TrustedHosts <IP address of Nano Server>`  
-  
-若要启动远程 Windows PowerShell 会话，请启动提升的本地 Windows PowerShell 会话，然后运行以下命令：  
-  
-  
-```  
-$ip = <IP address of Nano Server>  
-$user = $ip\Administrator  
-Enter-PSSession -ComputerName $ip -Credential $user  
-```  
-  
-  
-现在可以在 Nano Server 上正常运行 Windows PowerShell 命令。  
-  
-> [!NOTE]  
-> 并非所有的 Windows PowerShell 命令都在此版本的 Nano Server 中可用。 若要查看可用的命令，请运行 `Get-Command -CommandType Cmdlet`  
-  
-使用命令 `Exit-PSSession` 停止远程会话  
-  
-## <a name="using-windows-powershell-cim-sessions-over-winrm"></a>通过 WinRM 使用 Windows PowerShell CIM 会话  
-可以在 Windows PowerShell 中使用 CIM 会话和实例通过 Windows 远程管理 (WinRM) 来运行 WMI 命令。  
-  
-通过在 Windows PowerShell 提示符中运行以下命令启动 CIM 会话：  
-  
-  
-```  
-$ip = <IP address of the Nano Server\>  
-$user = $ip\Administrator  
-$cim = New-CimSession -Credential $user -ComputerName $ip  
-```  
-  
-  
-建立会话后，你可以运行各种 WMI 命令，例如：  
-  
-  
-```  
-Get-CimInstance -CimSession $cim -ClassName Win32_ComputerSystem | Format-List *  
-Get-CimInstance -CimSession $Cim -Query SELECT * from Win32_Process WHERE name LIKE 'p%'  
-```  
-  
-  
-## <a name="windows-remote-management"></a>Windows 远程管理  
-可以使用 Windows 远程管理 (WinRM) 在 Nano Server 上远程运行程序。 若要使用 WinRM，首先配置服务并在提升的命令提示符下使用以下命令设置代码页：  
-  
+
+
+若要将 Nano Server 添加到受信任的主机列表，请在提升的 Windows PowerShell 提示符下运行此命令：
+
+`Set-Item WSMan:\localhost\Client\TrustedHosts <IP address of Nano Server>`
+
+若要启动远程 Windows PowerShell 会话，请启动提升的本地 Windows PowerShell 会话，然后运行以下命令：
+
+
+```
+$ip = <IP address of Nano Server>
+$user = $ip\Administrator
+Enter-PSSession -ComputerName $ip -Credential $user
+```
+
+
+现在可以在 Nano Server 上正常运行 Windows PowerShell 命令。
+
+> [!NOTE]
+> 并非所有的 Windows PowerShell 命令都在此版本的 Nano Server 中可用。 若要查看可用的命令，请运行 `Get-Command -CommandType Cmdlet`
+
+使用命令 `Exit-PSSession` 停止远程会话
+
+## <a name="using-windows-powershell-cim-sessions-over-winrm"></a>通过 WinRM 使用 Windows PowerShell CIM 会话
+可以在 Windows PowerShell 中使用 CIM 会话和实例通过 Windows 远程管理 (WinRM) 来运行 WMI 命令。
+
+通过在 Windows PowerShell 提示符中运行以下命令启动 CIM 会话：
+
+
+```
+$ip = <IP address of the Nano Server\>
+$user = $ip\Administrator
+$cim = New-CimSession -Credential $user -ComputerName $ip
+```
+
+
+建立会话后，你可以运行各种 WMI 命令，例如：
+
+
+```
+Get-CimInstance -CimSession $cim -ClassName Win32_ComputerSystem | Format-List *
+Get-CimInstance -CimSession $Cim -Query SELECT * from Win32_Process WHERE name LIKE 'p%'
+```
+
+
+## <a name="windows-remote-management"></a>Windows 远程管理
+可以使用 Windows 远程管理 (WinRM) 在 Nano Server 上远程运行程序。 若要使用 WinRM，首先配置服务并在提升的命令提示符下使用以下命令设置代码页：
+
 ```
 winrm quickconfig
 winrm set winrm/config/client @{TrustedHosts=<ip address of Nano Server>}
 chcp 65001
 ```
-  
-现在可以在 Nano Server 上远程运行命令。 例如：  
+
+现在可以在 Nano Server 上远程运行命令。 例如：
 
 ```
 winrs -r:<IP address of Nano Server> -u:Administrator -p:<Nano Server administrator password> ipconfig
 ```
-  
-有关 Windows 远程管理的详细信息，请参阅 [Windows 远程管理 (WinRM) 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11))。  
-   
-   
-  
-## <a name="running-a-network-trace-on-nano-server"></a>在 Nano Server上运行网络跟踪  
- Nano Server 中不提供 Netsh trace、Tracelog.exe 和 Logman.exe。 若要捕获网络数据包，可以使用这些 Windows PowerShell cmdlet：  
-   
-   
-```  
-New-NetEventSession [-Name]  
-Add-NetEventPacketCaptureProvider -SessionName  
-Start-NetEventSession [-Name]  
-Stop-NetEventSession [-Name]  
-```  
-[Windows PowerShell 中的网络事件数据包捕获 Cmdlet](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11)) 详细记录了这些 cmdlet  
 
-## <a name="installing-servicing-packages"></a>安装服务包  
-如果想要安装服务包，请使用 -ServicingPackagePath 参数（可以向 .cab 文件传递一系列路径）：  
-  
-`New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath \\path\to\kb123456.cab`  
-  
-通常情况下，服务包或修补程序被下载为一个包含 .cab 文件的 KB 项。 请按照下列步骤来提取 .cab 文件，随后可以使用 -ServicingPackagePath 参数安装该文件：  
-  
-1.  下载服务包（从关联的知识库文章或从 [Microsoft 更新目录](https://catalog.update.microsoft.com/v7/site/home.aspx)）。 将其保存到本地目录或网络共享，例如：C:\ServicingPackages  
-2.  创建将在其中保存提取的服务包的文件夹。  示例：c:\KB3157663_expanded  
-3.  打开 Windows PowerShell 控制台，然后使用 `Expand` 命令指定到服务包的 .msu 文件的路径，包括 `-f:*` 参数和将服务包提取到的路径。  例如：`Expand C:\ServicingPackages\Windows10.0-KB3157663-x64.msu -f:* C:\KB3157663_expanded`  
-  
-    展开的文件应如下所示：  
-C:>dir C:\KB3157663_expanded   
-驱动器 C 中的卷是操作系统  
-卷序列号是 B05B-CC3D  
-   
-      C:\KB3157663_expanded 的目录  
-   
-      2016/04/19 下午 01:17    \<DIR>          。  
-      2016/04/19 下午 01:17    \<DIR>          。  
-        04/17/2016  12:31 AM               517 Windows10.0-KB3157663-x64-pkgProperties.txt  
-04/17/2016  12:30 AM        93,886,347 Windows10.0-KB3157663-x64.cab  
-04/17/2016  12:31 AM               454 Windows10.0-KB3157663-x64.xml  
-04/17/2016  12:36 AM           185,818 WSUSSCAN.cab  
-               4 个文件     94,073,136 字节  
-               2 个目录  328,559,427,584 字节可用  
-4.  结合指向此目录中的 .cab 文件的 -ServicingPackagePath 参数运行 `New-NanoServerImage`，例如：`New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath C:\KB3157663_expanded\Windows10.0-KB3157663-x64.cab`  
+有关 Windows 远程管理的详细信息，请参阅 [Windows 远程管理 (WinRM) 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11))。
+
+
+
+## <a name="running-a-network-trace-on-nano-server"></a>在 Nano Server上运行网络跟踪
+ Nano Server 中不提供 Netsh trace、Tracelog.exe 和 Logman.exe。 若要捕获网络数据包，可以使用这些 Windows PowerShell cmdlet：
+
+
+```
+New-NetEventSession [-Name]
+Add-NetEventPacketCaptureProvider -SessionName
+Start-NetEventSession [-Name]
+Stop-NetEventSession [-Name]
+```
+[Windows PowerShell 中的网络事件数据包捕获 Cmdlet](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11)) 详细记录了这些 cmdlet
+
+## <a name="installing-servicing-packages"></a>安装服务包
+如果想要安装服务包，请使用 -ServicingPackagePath 参数（可以向 .cab 文件传递一系列路径）：
+
+`New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath \\path\to\kb123456.cab`
+
+通常情况下，服务包或修补程序被下载为一个包含 .cab 文件的 KB 项。 请按照下列步骤来提取 .cab 文件，随后可以使用 -ServicingPackagePath 参数安装该文件：
+
+1.  下载服务包（从关联的知识库文章或从 [Microsoft 更新目录](https://catalog.update.microsoft.com/v7/site/home.aspx)）。 将其保存到本地目录或网络共享，例如：C:\ServicingPackages
+2.  创建将在其中保存提取的服务包的文件夹。  示例：c:\KB3157663_expanded
+3.  打开 Windows PowerShell 控制台，然后使用 `Expand` 命令指定到服务包的 .msu 文件的路径，包括 `-f:*` 参数和将服务包提取到的路径。  例如：`Expand C:\ServicingPackages\Windows10.0-KB3157663-x64.msu -f:* C:\KB3157663_expanded`
+
+    展开的文件应如下所示：驱动器 C 中的 C:>dir C:\KB3157663_expanded 卷是操作系统，卷序列号是 B05B-CC3D
+
+      C:\KB3157663_expanded 的目录
+
+      2016/04/19 下午 01:17    \<DIR>          。
+      2016/04/19 下午 01:17    \<DIR>          。
+        2016/04/17 中午 12:31               517 Windows10.0-KB3157663-x64-pkgProperties.txt 2016/04/17 中午 12:30        93,886,347 Windows10.0-KB3157663-x64.cab 2016/04/17 中午 12:31               454 Windows10.0-KB3157663-x64.xml 2016/04/17 中午 12:36           185,818 WSUSSCAN.cab 4 个文件     94,073,136 字节 2 个目录  328,559,427,584 字节免费
+4.  结合指向此目录中的 .cab 文件的 -ServicingPackagePath 参数运行 `New-NanoServerImage`，例如：`New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath C:\KB3157663_expanded\Windows10.0-KB3157663-x64.cab`
 
 ## <a name="managing-updates-in-nano-server"></a>管理 Nano Server 中的更新
 
-当前可以使用 Windows Management Instrumentation (WMI) 的 Windows 更新提供程序找到合适的更新列表，然后安装所有或其子集。 如果使用 Windows Server Update Services (WSUS)，还可以配置 Nano Server 来联系 WSUS 服务器以获取更新。  
+当前可以使用 Windows Management Instrumentation (WMI) 的 Windows 更新提供程序找到合适的更新列表，然后安装所有或其子集。 如果使用 Windows Server Update Services (WSUS)，还可以配置 Nano Server 来联系 WSUS 服务器以获取更新。
 
-在所有情况下，首先建立与 Nano Server 计算机的远程 Windows PowerShell 会话。 这些示例使用 *$sess* 进行会话；如果使用其他内容，请根据需要替换该元素。  
-
-
-### <a name="view-all-available-updates"></a>查看所有可用的更新  
----  
-使用以下命令获取适用更新的完整列表：  
-```  
-$sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
-
-$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria=IsInstalled=0;OnlineScan=$true}  
-```  
-**注意：**  
-如果没有更新可用，则此命令将返回以下错误：  
-```  
-Invoke-CimMethod : A general error occurred that is not covered by a more specific error code.  
-
-At line:1 char:16  
-
-+ ... anResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUp ...  
-
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
-
-    + CategoryInfo          : NotSpecified: (MSFT_WUOperatio...-5b842a3dd45d)  
-
-   :CimInstance) [Invoke-CimMethod], CimException  
-
-    + FullyQualifiedErrorId : MI RESULT 1,Microsoft.Management.Infrastructure.  
-
-   CimCmdlets.InvokeCimMethodCommand  
-```  
-
-### <a name="install-all-available-updates"></a>安装所有可用更新  
----  
-通过使用以下命令可以一次性检测、下载和安装**所有**可用更新：  
-
-```  
-$sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
-
-$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ApplyApplicableUpdates  
-
-Restart-Computer  
-```  
-**注意：**  
-Windows Defender 将阻止安装更新。 若要解决此问题，卸载 Windows Defender、安装更新，然后重新安装 Windows Defender。 或者，可以在另一台计算机上下载更新，将更新复制到 Nano Server 上，然后使用 DISM.exe 应用更新。  
+在所有情况下，首先建立与 Nano Server 计算机的远程 Windows PowerShell 会话。 这些示例使用 *$sess* 进行会话；如果使用其他内容，请根据需要替换该元素。
 
 
-### <a name="verify-installation-of-updates"></a>验证安装的更新  
----  
-使用这些命令来获取当前安装的更新列表：  
-```  
-$sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
+### <a name="view-all-available-updates"></a>查看所有可用的更新
+---
+使用以下命令获取适用更新的完整列表：
+```
+$sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession
 
-$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria=IsInstalled=1;OnlineScan=$true}  
-```  
+$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria=IsInstalled=0;OnlineScan=$true}
+```
+**注意：** 如果没有更新可用，则此命令将返回以下错误：
+```
+Invoke-CimMethod : A general error occurred that is not covered by a more specific error code.
 
-**注意：**  
-这些命令将列出已安装的内容，但不会在输出中专门指示已安装的内容。 如果需要包括“安装”的输出，例如对于报表，则可以运行  
+At line:1 char:16
+
++ ... anResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUp ...
+
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    + CategoryInfo          : NotSpecified: (MSFT_WUOperatio...-5b842a3dd45d)
+
+   :CimInstance) [Invoke-CimMethod], CimException
+
+    + FullyQualifiedErrorId : MI RESULT 1,Microsoft.Management.Infrastructure.
+
+   CimCmdlets.InvokeCimMethodCommand
+```
+
+### <a name="install-all-available-updates"></a>安装所有可用更新
+---
+通过使用以下命令可以一次性检测、下载和安装**所有**可用更新：
+
+```
+$sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession
+
+$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ApplyApplicableUpdates
+
+Restart-Computer
+```
+**注意：** Windows Defender 将阻止安装更新。 若要解决此问题，卸载 Windows Defender、安装更新，然后重新安装 Windows Defender。 或者，可以在另一台计算机上下载更新，将更新复制到 Nano Server 上，然后使用 DISM.exe 应用更新。
+
+
+### <a name="verify-installation-of-updates"></a>验证安装的更新
+---
+使用这些命令来获取当前安装的更新列表：
+```
+$sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession
+
+$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria=IsInstalled=1;OnlineScan=$true}
+```
+
+**注意：** 这些命令将列出已安装的内容，但不会在输出中专门指示已安装的内容。 如果需要包括“安装”的输出，例如对于报表，则可以运行
 ```PowerShell
 Get-WindowsPackage -Online
 ```
 
-### <a name="using-wsus"></a>使用 WSUS  
----  
-上面列出的命令将通过 Internet 查询 Windows 更新和 Microsoft 更新服务来查找并下载更新。 如果使用 WSUS，可以在 Nano Server 上设置注册表项来改为使用 WSUS 服务器。  
-  
-请参阅[在非 Active Directory 环境中配置自动更新](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708449(v=ws.10))中的“Windows 更新代理环境选项注册表项”表  
-  
-应至少设置 **WUServer** 和 **WUStatusServer** 注册表项，但是具体取决于如何实现 WSUS，可能会需要其他值。 始终可以通过检查同一环境中的另一台 Windows Server 来确认这些设置。  
+### <a name="using-wsus"></a>使用 WSUS
+---
+上面列出的命令将通过 Internet 查询 Windows 更新和 Microsoft 更新服务来查找并下载更新。 如果使用 WSUS，可以在 Nano Server 上设置注册表项来改为使用 WSUS 服务器。
 
-为 WSUS 设置这些值后，以上部分中的命令将查询该服务器的更新，并将其作为下载源。  
+请参阅[在非 Active Directory 环境中配置自动更新](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708449(v=ws.10))中的“Windows 更新代理环境选项注册表项”表
 
-### <a name="automatic-updates"></a>自动更新  
----  
+应至少设置 **WUServer** 和 **WUStatusServer** 注册表项，但是具体取决于如何实现 WSUS，可能会需要其他值。 始终可以通过检查同一环境中的另一台 Windows Server 来确认这些设置。
+
+为 WSUS 设置这些值后，以上部分中的命令将查询该服务器的更新，并将其作为下载源。
+
+### <a name="automatic-updates"></a>自动更新
+---
 目前，自动执行更新安装的方法是将上述步骤转换为本地 Windows PowerShell 脚本，然后创建计划的任务来运行该脚本并按计划重新启动系统。
 
 
@@ -259,7 +246,7 @@ PS C:\> wpr.exe -providers | select-string Storage
 PS C:\> New-EtwTraceSession -Name ExampleTrace -LocalFilePath c:\etrace.etl
 ```
 
-将提供程序 GUID 添加到跟踪。 将 ```wpr.exe -providers``` 用于进行 GUID 转换的提供程序名称。 
+将提供程序 GUID 添加到跟踪。 将 ```wpr.exe -providers``` 用于进行 GUID 转换的提供程序名称。
 ```
 PS C:\> wpr.exe -providers | select-string Kernel-Memory
 
@@ -286,7 +273,7 @@ Mode                LastWriteTime         Length Name
 ### <a name="record-traces-from-multiple-etw-providers"></a>记录来自多个 ETW 提供程序的跟踪
 [Windows Performance Recorder](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) 的 ```-profiles``` 选项可实现同时从多个提供程序的跟踪。 有多个内置的配置文件，如 CPU、网络和 DiskIO 可供选择：
 ```
-PS C:\Users\Administrator\Documents> wpr.exe -profiles 
+PS C:\Users\Administrator\Documents> wpr.exe -profiles
 
 Microsoft Windows Performance Recorder Version 10.0.14393 (CoreSystem)
 Copyright (c) 2015 Microsoft Corporation. All rights reserved.
@@ -328,7 +315,7 @@ Copyright (c) 2015 Microsoft Corporation. All rights reserved.
 
 首先，创建新的自动记录器配置。
 ```
-PS C:\> New-AutologgerConfig -Name BootPnpLog -LocalFilePath c:\bootpnp.etl 
+PS C:\> New-AutologgerConfig -Name BootPnpLog -LocalFilePath c:\bootpnp.etl
 ```
 
 向其添加 ETW 提供程序。 此示例使用内核即插即用提供程序。 再次调用 ```Add-EtwTraceProvider```，同时指定相同的自动记录器名称，但指定不同的 GUID，以启用多个来源的启动跟踪收集。
@@ -394,7 +381,7 @@ TimeCreated           Message
 9/15/2016 11:31:16 AM The Virtualization Based Security enablement policy check at phase 0 failed with status: {File...
 ```
 
-Nano Server 还支持 ```wevtutil.exe```，后者允许检索有关事件日志和发布程序的信息。 请参阅 [wevtutil.exe 文档](https://aka.ms/qvod7p) 了解更多详细信息。 
+Nano Server 还支持 ```wevtutil.exe```，后者允许检索有关事件日志和发布程序的信息。 请参阅 [wevtutil.exe 文档](https://aka.ms/qvod7p) 了解更多详细信息。
 
 ### <a name="graphical-interface-tools"></a>图形界面工具
 [基于 Web 的服务器管理工具](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog) 可以用于远程管理 Nano Server 目标和使用 Web 浏览器显示 Nano Server 事件日志。 最后，MMC 管理单元事件查看器 (eventvwr.msc) 还可以用于查看日志，只需通过桌面在计算机上打开它并使其指向远程 Nano Server。
@@ -402,8 +389,8 @@ Nano Server 还支持 ```wevtutil.exe```，后者允许检索有关事件日志�
 
 
 
-## <a name="using-windows-powershell-desired-state-configuration-with-nano-server"></a>结合使用 Windows PowerShell Desired State Configuration 与 Nano Server  
-  
-可以使用 Windows PowerShell Desired State Configuration (DSC) 将 Nano Server 作为目标节点来管理。 目前，仅可以在请求模式下管理使用 DSC 运行 Nano Server 的节点。 并非所有 DSC 功能都与 Nano Server 正常运行。  
-  
-有关完整的详细信息，请参阅[使用 Nano Server 上的 DSC](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)。  
+## <a name="using-windows-powershell-desired-state-configuration-with-nano-server"></a>结合使用 Windows PowerShell Desired State Configuration 与 Nano Server
+
+可以使用 Windows PowerShell Desired State Configuration (DSC) 将 Nano Server 作为目标节点来管理。 目前，仅可以在请求模式下管理使用 DSC 运行 Nano Server 的节点。 并非所有 DSC 功能都与 Nano Server 正常运行。
+
+有关完整的详细信息，请参阅[使用 Nano Server 上的 DSC](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)。

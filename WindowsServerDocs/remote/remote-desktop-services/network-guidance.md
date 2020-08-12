@@ -1,19 +1,17 @@
 ---
 title: 网络指南
 description: 针对远程桌面部署的带宽建议。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 12/12/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: ba084c58e725627e838c07b5b5b9849d131b2038
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 3817178ef303573490cc98af8a35844715286e8e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203548"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948890"
 ---
 # <a name="network-guidelines"></a>网络指南
 
@@ -54,6 +52,10 @@ ms.locfileid: "83203548"
 | 约 1920 × 1080 像素                     | 5 Mbps                |
 | 约 3840 × 2160 像素 (4K)                | 15 Mbps               |
 
-## <a name="additional-resources"></a>其他资源
+## <a name="windows-virtual-desktop-experience-estimator"></a>Windows 虚拟桌面体验评估器
 
 你所在的 Azure 区域可能会像影响网络条件一样影响用户体验。 请查看 [Windows 虚拟桌面体验估算器](https://azure.microsoft.com/services/virtual-desktop/assessment/)以了解详细信息。
+
+## <a name="assistive-technologies"></a>辅助技术
+
+辅助技术工作负载（例如在远程会话中使用“讲述人”）要求建立连接且连接的往返时间 (RTT) 为 20 毫秒 (ms)；若要获得最佳用户体验，则时间更短。

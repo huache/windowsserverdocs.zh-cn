@@ -1,20 +1,18 @@
 ---
 title: 受支持的远程桌面 RDP 文件设置
 description: 了解远程桌面的 RDP 文件设置
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 06/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8132c6d996a3e814b15eb34b713832fb6a98d6a0
-ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
+ms.openlocfilehash: 5303bb696131d4e122da11c2d72152bf304716b4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85586699"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961931"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>受支持的远程桌面 RDP 文件设置
 
@@ -59,17 +57,18 @@ ms.locfileid: "85586699"
 | redirected video capture encoding quality:i:value | 控制已编码视频的质量。 | - 0：高压缩视频。 当有大量的运动时，质量可能会受到影响。 </br>- 1：中等压缩。</br>- 2：低压缩视频，图片质量高。 | 0 | 是 |
 | audiomode:i:value | 音频输出位置：</br>确定本地或远程计算机是否播放音频。 | - 0：在本地计算机上播放音频（在此计算机上播放）</br>- 1：在远程计算机上播放音频（在远程计算机上播放）</br>- 2：不播放声音（不要播放） | 0 | 是 |
 | camerastoredirect:s:value | 摄像头重定向：</br>配置要重定向哪些摄像头。 此设置使用分号分隔的列表，其中包含支持重定向的摄像头的 KSCATEGORY_VIDEO_CAMERA 接口。 | - *：重定向所有摄像头</br> - 摄像头列表，如 camerastoredirect:s:\\?\usb#vid_0bda&pid_58b0&mi</br>- 可以通过在符号链接字符串前面加上“-”来排除特定摄像头 | 不重定向任何摄像头 | 是 |
-| devicestoredirect:s:value | USB 设备重定向：</br>确定本地计算机上将被重定向并在远程会话中可用的设备。 | - *：重定向所有支持的设备，包括稍后连接的设备</br> - 一个或多个设备的有效硬件 ID | 不重定向任何设备 | 是 |
+| devicestoredirect:s:value | 即插即用设备重定向：</br>确定本地计算机上将被重定向并在远程会话中可用的设备。 | - *：重定向所有支持的设备，包括稍后连接的设备</br> - 一个或多个设备的有效硬件 ID</br> - DynamicDevices：重定向稍后将连接的所有受支持的设备 | 不重定向任何设备 | 是 |
 | drivestoredirect:s:value | 驱动器/存储重定向：</br>确定本地计算机上将被重定向并在远程会话中可用的磁盘驱动器。 | - 未指定值：不重定向任何驱动器</br>- *：重定向所有磁盘驱动器，包括稍后连接的驱动器</br>- DynamicDrives：重定向稍后连接的所有驱动器</br>- 驱动器以及一个或多个驱动器的标签，例如“drivestoredirect:s:C:;E:;”：重定向指定的驱动器 | 不重定向任何驱动器 | 是 |
 | redirectclipboard:i:value | 剪贴板重定向：</br>确定是否已启用剪贴板重定向。 | - 0：本地计算机上的剪贴板在远程会话中不可用</br>- 1：本地计算机上的剪贴板在远程会话中可用 | 1 | 是 |
 | redirectprinters:i:value | 打印机重定向：</br>确定本地计算机上配置的打印机是否会被重定向并在远程会话中可用 | - 0：本地计算机上的打印机在远程会话中不可用</br>- 1：本地计算机上的打印机在远程会话中可用 | 1 | 是 |
 | redirectsmartcards:i:value | 智能卡重定向：</br>确定本地计算机上的智能卡设备是否会被重定向并在远程会话中可用。 |- 0：本地计算机上的智能卡设备在远程会话中不可用</br>- 1：本地计算机上的智能卡设备在远程会话中可用 | 1 | 是 |
+| usbdevicestoredirect:s:value | USB 重定向 | - *：重定向所有尚未被另一高级别重定向进行重定向的 USB 设备</br> - {设备安装程序类 GUID}：重定向属于指定的[设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors/)的所有设备</br> - USBInstanceID：重定向由实例 ID 标识的特定 USB 设备| 不重定向任何 USB 设备 | 是 |
 
 ## <a name="display-settings"></a>显示设置
 
 | RDP 设置                        | 说明            | 值                 | 默认值          | Windows 虚拟桌面支持 |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|
-| use multimon:i:value | 确定远程会话是否会使用本地计算机中的一个或多个显示。 | - 0：不启用多显示支持</br>- 1：启用多显示支持 | 0 | 是 |
+| use multimon:i:value | 确定远程会话是否会使用本地计算机中的一个或多个显示。 | - 0：不启用多显示支持</br>- 1：启用多显示支持 | 1 | 是 |
 | selectedmonitors:s:value | 指定要在远程会话中使用的本地显示。 所选的显示必须是连续的。 需要将 use multimon 设置为 1。</br></br>只适用于 Windows 收件箱 (MSTSC) 和 Windows 桌面 (MSRDC) 客户端。 | 特定于计算机的显示 ID 的逗号分隔列表。 可以通过调用 mstsc.exe /l 来检索 ID。 列出的第一个 ID 将被设置为会话中的主显示。 | 所有显示 | 是 |
 | maximizetocurrentdisplays:i:value | 确定远程会话在最大化时在哪个显示中进入全屏。 需要将 use multimon 设置为 1。</br></br>只适用于 Windows 桌面 (MSRDC) 客户端。 | - 0：会话在最大化时在最初选择的显示中进入全屏</br>- 1：会话在最大化时在会话窗口所触及的显示中动态进入全屏 | 0 | 是 |
 | singlemoninwindowedmode:i:value | 确定多显示远程会话在退出全屏时是否自动切换为单个显示。 需要将 use multimon 设置为 1。</br></br>只适用于 Windows 桌面 (MSRDC) 客户端。 | - 0：会话在退出全屏时保留所有显示</br>- 1：会话在退出全屏时切换为单个显示 | 0 | 是 |

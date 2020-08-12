@@ -1,25 +1,23 @@
 ---
 title: 通过远程桌面服务使用个人会话桌面
 description: 了解如何通过 RDS 共享个性化的已分配桌面。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 10/22/2019
 manager: dongill
-ms.openlocfilehash: c0c36793d08391ad98fa797004ed6dec9883e9f1
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ccb8bd5a91af6e4b9a8d1a610bf22747433bf913
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857400"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946420"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>通过远程桌面服务使用个人会话桌面
 
 >适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016
 
-可以使用个人会话桌面在云计算环境中部署基于服务器的个人桌面。  （Hyper-V 结构服务器与来宾虚拟机的云计算环境有区别，例如 Microsoft Azure 云或 Microsoft 云平台。）个人会话桌面功能扩展了远程桌面服务中的基于会话的桌面部署方案，它可以创建新型会话集合，其中的每个用户将分配到其自己的个人会话主机，并拥有管理权限。 
+可以使用个人会话桌面在云计算环境中部署基于服务器的个人桌面。  （Hyper-V 结构服务器与来宾虚拟机的云计算环境有区别，例如 Microsoft Azure 云或 Microsoft 云平台。）个人会话桌面功能扩展了远程桌面服务中的基于会话的桌面部署方案，它可以创建新型会话集合，其中的每个用户将分配到其自己的个人会话主机，并拥有管理权限。
 
 使用以下信息创建和管理个人会话桌面集合。
 
@@ -34,13 +32,13 @@ ms.locfileid: "80857400"
 ## <a name="manually-assign-a-user-to-a-personal-session-host"></a>手动将用户分配到个人会话主机
 使用 Set-RDPersonalSessionDesktopAssignment  cmdlet 可将用户手动分配到集合中的个人会话主机服务器。 该 cmdlet 支持以下参数：
 
--CollectionName \<字符串\>
+-CollectionName \<string\>
 
--ConnectionBroker \<字符串\> 
+-ConnectionBroker \<string\>
 
--User \<字符串\>
+-User \<string\>
 
--Name \<字符串\>
+-Name \<string\>
 
 - -CollectionName  - 指定个人会话桌面集合的名称。 此参数是必需的。
 - -ConnectionBroker  - 指定远程桌面部署的远程桌面连接代理（RD 连接代理）服务器。 如果未提供值，该 cmdlet 将使用本地计算机的完全限定域名 (FQDN)。
@@ -49,50 +47,50 @@ ms.locfileid: "80857400"
 
 Import-RDPersonalSessionDesktopAssignment  cmdlet 从文本文件导入用户帐户与个人会话桌面之间的关联。 该 cmdlet 支持以下参数：
 
--CollectionName \<字符串\>
+-CollectionName \<string\>
 
--ConnectionBroker \<字符串\>
+-ConnectionBroker \<string\>
 
--Path \<字符串>
+-Path \<string>
 
 -Path  指定要导入的文件的路径和文件名。
- 
+
 ## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>从个人会话主机中删除用户分配
 使用 Remove-RDPersonalSessionDesktopAssignment  cmdlet 可删除个人会话桌面与用户之间的关联。 该 cmdlet 支持以下参数：
 
--CollectionName \<字符串\>
+-CollectionName \<string\>
 
--ConnectionBroker \<字符串\>
+-ConnectionBroker \<string\>
 
 -Force
 
--Name \<字符串\>
+-Name \<string\>
 
--User \<字符串\>
+-User \<string\>
 
 -Force  强制运行命令而不要求用户确认。
 
 ## <a name="query-user-assignments"></a>查询用户分配
 使用 Get-RDPersonalSessionDesktopAssignment  cmdlet 可获取个人会话桌面和关联的用户帐户的列表。 该 cmdlet 支持以下参数：
 
--CollectionName \<字符串\>
+-CollectionName \<string\>
 
--ConnectionBroker \<字符串\>
+-ConnectionBroker \<string\>
 
--User \<字符串\>
+-User \<string\>
 
--Name \<字符串\>
+-Name \<string\>
 
-可以运行该 cmdlet 来按集合名称、用户名或桌面会话名称执行查询。 如果仅指定 -CollectionName  参数，该 cmdlet 将返回会话主机和关联用户的列表。 如果同时指定 -User  参数，则会返回与该用户关联的会话主机。 如果提供 -Name  参数，则会返回与该会话主机关联的用户。 
+可以运行该 cmdlet 来按集合名称、用户名或桌面会话名称执行查询。 如果仅指定 -CollectionName  参数，该 cmdlet 将返回会话主机和关联用户的列表。 如果同时指定 -User  参数，则会返回与该用户关联的会话主机。 如果提供 -Name  参数，则会返回与该会话主机关联的用户。
 
 
 Export-RDPersonalPersonalDesktopAssignment  cmdlet 将用户与个人虚拟桌面之间的当前关联导出到文本文件。 该 cmdlet 支持以下参数：
 
--CollectionName \<字符串\>
+-CollectionName \<string\>
 
--ConnectionBroker \<字符串\>
+-ConnectionBroker \<string\>
 
--Path \<字符串\>
+-Path \<string\>
 
 
 所有新的 cmdlet 都支持通用参数：-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。 有关详细信息，请参阅 [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216)。

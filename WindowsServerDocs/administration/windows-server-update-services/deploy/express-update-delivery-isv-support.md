@@ -1,39 +1,37 @@
 ---
 title: Express 更新交付 ISV 支持
 description: Windows Server Update Service (WSUS) 主题 - 独立软件供应商 (ISV) 如何使用 WSUS 配置 Express 更新交付
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 60d01ef425ed96160cd76afdd7c27c081c778add
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3c56c9ac0f2899f03ce1b32b699b577c2dc3de0c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828770"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991082"
 ---
 # <a name="express-update-delivery-isv-support"></a>Express 更新交付 ISV 支持
 
 >适用于：Windows 10、Windows Server 2016
 
-Windows 10 更新下载可能会很大，因为每个包都包含以前发布的所有修复以确保一致性和简单性。  
+Windows 10 更新下载可能会很大，因为每个包都包含以前发布的所有修复以确保一致性和简单性。
 
-从版本 7 开始，Windows 已能够通过称为 [Express](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2) 的功能减小 Windows 更新下载的大小，虽然使用者设备默认情况下支持该功能，但是 Windows 10 企业版设备需要具有 Windows Server Update Services (WSUS) 才能利用 Express。
+从版本 7 开始，Windows 已能够通过称为 [Express](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10)#Anchor_2) 的功能减小 Windows 更新下载的大小，虽然使用者设备默认情况下支持该功能，但是 Windows 10 企业版设备需要具有 Windows Server Update Services (WSUS) 才能利用 Express。
 
 ## <a name="how-microsoft-supports-express"></a>Microsoft 如何支持 Express
 
 - **独立 WSUS 上的 Express**
 
-    Express 更新交付已在[所有受支持的 WSUS 版本上可用](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx)。
+    Express 更新交付已在[所有受支持的 WSUS 版本上可用](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10))。
 
-- **直接连接到 Windows 更新的设备上的 Express** 
+- **直接连接到 Windows 更新的设备上的 Express**
 
     使用者设备支持 Express 下载：它们使用 Windows 更新 (WU) 客户端来扫描、下载和安装更新。 在下载阶段中，WU 客户端请求 Express 包并下载合适的字节范围。
 
--  **使用[适用于企业的 Windows 更新](https://technet.microsoft.com/itpro/windows/manage/waas-manage-updates-wufb)管理的企业设备**也可受益于 Express 更新传递支持，而无需对配置进行任何更改。
+-  **使用[适用于企业的 Windows 更新](/windows/deployment/update/waas-manage-updates-wufb)管理的企业设备**也可受益于 Express 更新传递支持，而无需对配置进行任何更改。
 
 ## <a name="how-isvs-can-take-advantage-of-express"></a>ISV 如何利用 Express
 
@@ -41,7 +39,7 @@ ISV 可以使用 WSUS 和 WU 客户端来支持 Express 更新交付。 Microsof
 
 1.  [**配置 WSUS**](#BKMK_1)
 
-    WSUS 服务器是扫描和更新同步所必需的（可在[此处](https://technet.microsoft.com/library/dn800972(v=ws.11).aspx)找到更多信息）
+    WSUS 服务器是扫描和更新同步所必需的（可在[此处](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn800972(v=ws.11))找到更多信息）
 
 2.  [**指定和填充 ISV 文件缓存**](#BKMK_2)
 
@@ -51,19 +49,19 @@ ISV 可以使用 WSUS 和 WU 客户端来支持 Express 更新交付。 Microsof
 
 >[!NOTE]
 >需要安装 Windows 10 版本 1607 的累积更新（2017 年 1 月或之后的）（[KB3213986（OS 内部版本 14393.693）](https://support.microsoft.com/help/4009938/january-10-2017-kb3213986-os-build-14393-693)。
-    
+
    - ISV 客户端代理确定要批准哪些更新，以及何时下载和安装更新
    - WU 客户端确定要下载的字节范围并发起下载请求
 
 ### <a name="step-1-configure-wsus"></a><a name=BKMK_1></a>步骤 1：配置 WSUS
 
-WSUS 充当 Windows 更新的接口，并管理描述了需要下载的 Express 包的所有元数据。 如果需要进行部署，请参阅 [**Windows Server Update Services 3.0 SP2 概述**](https://technet.microsoft.com/library/dd939931(v=ws.10).aspx)。 部署 WSUS 后，需要考虑的主要事项为是否将更新内容存储在 WSUS 服务器本地。 配置 WSUS 时，我们建议不要将更新存储在本地。 这假设你的环境中已有定向这些包的部署的软件。 有关如何配置 WSUS 本地存储的详细信息，请参阅[**决定在何处存储更新**](https://technet.microsoft.com/library/cc720494(v=ws.10).aspx)。
+WSUS 充当 Windows 更新的接口，并管理描述了需要下载的 Express 包的所有元数据。 如果需要进行部署，请参阅 [**Windows Server Update Services 3.0 SP2 概述**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939931(v=ws.10))。 部署 WSUS 后，需要考虑的主要事项为是否将更新内容存储在 WSUS 服务器本地。 配置 WSUS 时，我们建议不要将更新存储在本地。 这假设你的环境中已有定向这些包的部署的软件。 有关如何配置 WSUS 本地存储的详细信息，请参阅[**决定在何处存储更新**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720494(v=ws.10))。
 
-### <a name="step-2-specify-and-populate-the-isv-file-cache"></a><a name=BKMK_2></a>步骤 2：指定和填充 ISV 文件缓存 
+### <a name="step-2-specify-and-populate-the-isv-file-cache"></a><a name=BKMK_2></a>步骤 2：指定和填充 ISV 文件缓存
 
 #### <a name="specify-the-isv-file-cache"></a>指定 ISV 文件缓存
 
-[**配置服务提供商参考**](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference)中详述的新的客户端组策略和移动设备管理 (MDM) 设置定义了 ISV 文件缓存的位置。
+[**配置服务提供商参考**](/windows/client-management/mdm/configuration-service-provider-reference)中详述的新的客户端组策略和移动设备管理 (MDM) 设置定义了 ISV 文件缓存的位置。
 
 | **名称**                                              | **描述**                                                                                                                                                      |
 |-------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -72,29 +70,28 @@ WSUS 充当 Windows 更新的接口，并管理描述了需要下载的 Express 
 设置 ISV 文件缓存的备用下载位置时有两个选项：
 
 1. **指定 ISV HTTP 服务器主机名**，这是 ISV 文件缓存
-    
+
     此方法将 WU 客户端配置为向策略中指定的 HTTP 服务器发出下载请求
 
 2. **指定 localhost**
- 
+
     此方法将 WU 客户端配置为向 localhost 发出下载请求。 这允许 ISV 客户端代理处理这些请求并根据情况进行路由来满足下载请求。
 
 > [!IMPORTANT]
-> ISV 文件缓存需要以下各项：                                                          
-> - 根据 RFC，服务器必须符合 HTTP 1.1：<http://www.w3.org/Protocols/rfc2616/rfc2616.html>                                                                                                                                                                
-> 具体而言，Web 服务器需要支持                                                                                                                                                                                                                                       [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) 和 [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) 请求<br>                                                                                                                                                                                                                                                                                                  - 部分范围请求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - Keep-alive<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - 不要使用 Transfer-Encoding:chunked                                                                                                 
+> ISV 文件缓存需要以下各项：
+> - 根据 RFC，服务器必须符合 HTTP 1.1：<http://www.w3.org/Protocols/rfc2616/rfc2616.html>具体而言，Web 服务器需要支持                                                                                                                                                                                                                                       [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) 和 [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) 请求<br>                                                                                                                                                                                                                                                                                                  - 部分范围请求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - Keep-alive<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - 不要使用 Transfer-Encoding:chunked
 
 #### <a name="populate-the-isv-file-cache"></a>填充 ISV 文件缓存
 
-必须使用与要在托管客户端上安装的更新关联的文件来填充 ISV 文件缓存。 
+必须使用与要在托管客户端上安装的更新关联的文件来填充 ISV 文件缓存。
 
 **若要填充 ISV 文件缓存，请执行以下步骤：**
 
-1. 使用 [WSUS API](https://msdn.microsoft.com/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx) 访问 MU 服务的更新的文件路径和名称。
+1. 使用 [WSUS API](/previous-versions/windows/desktop/aa354524(v=vs.85)) 访问 MU 服务的更新的文件路径和名称。
 
     WSUS 服务器上的每个更新的元数据包含该更新在 Microsoft 更新上的文件路径和文件名（Microsoft 更新主机名为粗体，后跟文件路径和文件名）： **<http://download.windowsupdate.com>** /c/msdownload/update/software/updt/2016/09/windows10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74.msu
 
-2. 从 Microsoft 更新下载文件，并使用以下两种方法之一将文件存储在 ISV 文件缓存中： 
+2. 从 Microsoft 更新下载文件，并使用以下两种方法之一将文件存储在 ISV 文件缓存中：
 
    - 使用**与 MU 服务上相同的文件夹路径**来存储文件
 
@@ -116,7 +113,7 @@ ISV 客户端代理使用以下建议的工作流来安排已批准更新的下�
 
 5.  下载更新后，ISV 客户端代理将调用 WU 客户端来安装已批准的更新
 
-有关使用 WU 客户端来扫描、下载和安装更新的其他信息，请参阅[搜索、下载和安装更新](https://msdn.microsoft.com/library/windows/desktop/aa387102(v=vs.85).aspx)。
+有关使用 WU 客户端来扫描、下载和安装更新的其他信息，请参阅[搜索、下载和安装更新](/windows/win32/wua_sdk/searching--downloading--and-installing-updates)。
 
 ### <a name="download-workflow-options"></a>下载工作流选项
 
@@ -131,9 +128,9 @@ ISV 客户端代理使用以下建议的工作流来安排已批准更新的下�
 
   - **完整文件版本** - 从根本上替换更新二进制文件的本地版本。
 
-  - **Express 版本** - 包含修补设备上的现有二进制文件所需的增量。 
+  - **Express 版本** - 包含修补设备上的现有二进制文件所需的增量。
 
-    在扫描阶段中已下载到客户端的更新元数据中会同时引用完整文件版本和 Express 版本。 
+    在扫描阶段中已下载到客户端的更新元数据中会同时引用完整文件版本和 Express 版本。
 
     **Express 下载的工作方式如下所述：**
 
@@ -155,4 +152,4 @@ ISV 客户端代理使用以下建议的工作流来安排已批准更新的下�
 
 默认情况下，在 Windows 10 企业版和教育版中，交付优化仅允许在组织自有的网络中进行对等共享，但你可以使用组策略和移动设备管理 (MDM) 设置对其进行不同配置。
 
-有关 DO 的详细信息，请参阅[配置适用于 Windows 10 更新的交付优化](https://technet.microsoft.com/itpro/windows/manage/waas-delivery-optimization)。
+有关 DO 的详细信息，请参阅[配置适用于 Windows 10 更新的交付优化](/windows/deployment/update/waas-delivery-optimization)。

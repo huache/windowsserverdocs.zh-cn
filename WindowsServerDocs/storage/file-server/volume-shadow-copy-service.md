@@ -1,17 +1,15 @@
 ---
 title: 卷影复制服务
 ms.date: 01/30/2019
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 9948fab77ab4869c27fd63e623315bd1b3e9ff47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 44f0db935e50bf7976612edc4317b4212818f84d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966689"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950741"
 ---
 # <a name="volume-shadow-copy-service"></a>卷影复制服务
 
@@ -22,7 +20,6 @@ ms.locfileid: "86966689"
   - 当生成数据的应用程序仍在运行时，通常需要备份数据。 这意味着，某些数据文件可能处于打开状态，或者可能处于不一致的状态。
 
   - 如果数据集很大，则很难一次备份所有数据集。
-
 
 正确执行备份和还原操作需要备份应用程序、要备份的业务线应用程序以及存储管理硬件和软件之间密切协调。 卷影复制服务 (VSS) 是在 Windows Server®2003 中引入的，它有助于这些组件之间的对话，以便更好地协同工作。 当所有组件都支持 VSS 时，你可以使用它们来备份应用程序数据，无需将应用程序脱机。
 
@@ -62,7 +59,7 @@ VSS 提供程序   创建和维护卷影副本的组件。 这可能会在软
 
 下图说明了 VSS 服务如何与请求程序、编写程序和提供程序协调以创建卷的卷影副本。
 
-![](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
+![卷影复制服务的架构示意图](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
 
 图 1   卷影复制服务的架构示意图
 
@@ -70,7 +67,7 @@ VSS 提供程序   创建和维护卷影副本的组件。 这可能会在软
 
 本部分通过列出创建卷影副本所需采取的步骤，将请求程序、编写程序和提供程序的各种角色置于上下文中。 下图显示卷影复制服务如何控制请求程序、编写程序和提供程序的总体协调。
 
-![](media/volume-shadow-copy-service/Ee923636.1c481a14-d6bc-4796-a3ff-8c6e2174749b(WS.10).jpg)
+![卷影复制服务的工作原理示意图](media/volume-shadow-copy-service/Ee923636.1c481a14-d6bc-4796-a3ff-8c6e2174749b(WS.10).jpg)
 
 图 2 卷影副本创建过程
 
@@ -309,7 +306,7 @@ LUN 重新同步不同于 LUN 交换。 LUN 交换是自 Windows Server 2003 SP
 
 3.  数据现已准备就绪，可供使用。
 
-![](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
+![显示在两个服务器中如何传输卷影副本的关系图](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
 
 图 3   在两个服务器之间创建和传输卷影副本
 
@@ -577,7 +574,7 @@ VssAdmin 适用于 Windows 客户端和 Windows Server 操作系统版本。
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="media/volume-shadow-copy-service/Dd560667.note(WS.10).gif" />注意</th>
+<th>注意</th>
 </tr>
 </thead>
 <tbody>

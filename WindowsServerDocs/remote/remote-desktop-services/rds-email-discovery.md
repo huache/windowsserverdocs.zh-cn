@@ -1,19 +1,17 @@
 ---
 title: 设置电子邮件发现以订阅 RDS 源
 description: 了解如何将 Azure AD 域服务集成到 RDS 部署中。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 3/27/2018
 ms.localizationpriority: medium
 ms.topic: article
 author: christianmontoya
-ms.openlocfilehash: c56a233adf28270aac809dc960e32b5363e4b8ab
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1f44257e5ce8ebea1b55acaa399d55aa772ab106
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71387507"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936857"
 ---
 # <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>设置电子邮件发现以订阅 RDS 源
 
@@ -25,7 +23,7 @@ ms.locfileid: "71387507"
 在设置电子邮件发现之前，请执行以下操作：
 
 - 确保你有权向与你的电子邮件关联的域添加 TXT 记录（例如，如果你的用户拥有 @contoso.com 电子邮件地址，那么，你需要有 contoso.com 域的权限）
-- 创建 RD Web 源 URL（ https://\<rdweb-dns-name\>.domain/RDWeb/Feed/webfeed.aspx，例如 https://rdweb.contoso.com/RDWeb/Feed/webfeed.aspx)
+- 创建 RD Web 源 URL (https://\<rdweb-dns-name\>.domain/RDWeb/Feed/webfeed.aspx)，例如 https://rdweb.contoso.com/RDWeb/Feed/webfeed.aspx)
 
 现在，使用以下步骤设置电子邮件发现：
 
@@ -33,9 +31,9 @@ ms.locfileid: "71387507"
 2. 导航到已注册域的相应页面，可以在其中查看、添加和编辑 DNS 记录。
 3. 输入具有以下属性的新 DNS 记录：
    - **主机:** _msradc
-   - **文本:** \<RD Web 源 URL\>
+   - **文本：** \<RD Web Feed URL\>
    - **TTL:** 300
 
-   DNS 记录字段的名称因域名注册机构而异，但此过程将生成名为 _msradc.\<domain_name\> 的 TXT 记录（例如 _msradc.contoso.com），其值为完整的 RD Web 源。
+   DNS 记录字段的名称因域名注册机构而异，但此过程将生成名为 _msradc.\<domain_name\> 的 TXT 记录 （例如 _msradc.contoso.com），其值为完整的 RD Web 源。
 
 就这么简单！ 现在，在设备上启动远程桌面应用程序并为自己订阅！
