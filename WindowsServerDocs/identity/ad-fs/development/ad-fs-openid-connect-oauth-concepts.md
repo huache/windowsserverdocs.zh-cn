@@ -6,19 +6,19 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.openlocfilehash: 46e78e74781f4a85f279299745d841fd0bcaf7c3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 18e480200bf2d22c5f46dd67d1ee6a704f566d55
+ms.sourcegitcommit: b18effcba95c85d6e08e7d29808b576491a5352e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964854"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243199"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS OpenID Connect/OAuth 概念
 适用于 AD FS 2016 及更高版本
 
 ## <a name="modern-authentication-actors"></a>新式身份验证参与者
 
-|Actor| 描述|
+|Actor| 说明|
 |-----|-----|
 |最终用户|这是 (用户、应用程序、服务和组) 需要访问资源的安全主体。|
 |客户端|这是你的 web 应用程序，由其客户端 ID 标识。 客户端通常是最终用户与之交互的参与方，并从授权服务器请求令牌。
@@ -34,8 +34,8 @@ ms.locfileid: "87964854"
 
 |应用程序类型|说明|角色|
 |-----|-----|-----|
-|本机应用程序|有时称为 "**公共客户端**"，这旨在作为在电脑或设备上运行并与用户交互的客户端应用。|请求授权服务器的令牌 (AD FS) 用户访问资源。 使用令牌作为 HTTP 标头，将 HTTP 请求发送到受保护的资源。|
-|服务器应用程序 (Web 应用) |在服务器上运行并且用户通常通过浏览器访问的 web 应用程序。 由于它可以维护自己的客户端 "机密" 或凭据，因此有时称为**机密客户端**。 |请求授权服务器的令牌 (AD FS) 用户访问资源。 请求令牌之前，客户端 (Web 应用) 需要使用其机密进行身份验证。 |
+|本机应用程序|有时称为 " **公共客户端**"，这旨在作为在电脑或设备上运行并与用户交互的客户端应用。|请求授权服务器的令牌 (AD FS) 用户访问资源。 使用令牌作为 HTTP 标头，将 HTTP 请求发送到受保护的资源。|
+|服务器应用程序 (Web 应用) |在服务器上运行并且用户通常通过浏览器访问的 web 应用程序。 由于它可以维护自己的客户端 "机密" 或凭据，因此有时称为 **机密客户端**。 |请求授权服务器的令牌 (AD FS) 用户访问资源。 请求令牌之前，客户端 (Web 应用) 需要使用其机密进行身份验证。 |
 |Web API|用户正在访问的最终资源。 将这些作为 "信赖方" 的新表示形式。|使用客户端获取的持有者访问令牌|
 
 ## <a name="application-group"></a>应用程序组
@@ -56,7 +56,7 @@ ms.locfileid: "87964854"
 - aza-如果对 [代理客户端使用 OAuth 2.0 协议扩展](/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)，   并且 scope 参数包含作用域 "aza"，则服务器将发出新的主刷新令牌并在响应的 refresh_token 字段中设置该令牌，并将 refresh_token_expires_in 字段设置为新主刷新令牌的生存期（如果强制执行）。
 - openid - 允许应用程序请求使用 OpenID Connect 授权协议。
 - logon_cert - logon_cert 作用域允许应用程序请求登录证书，这些证书可用于以交互方式登录通过身份验证的用户。 AD FS 服务器忽略响应中的 access_token 参数，改为提供 base64 编码的 CMS 证书链或 CMC 完整 PKI 响应。  [此处](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)提供了更多详细信息。
-- user_impersonation - user_impersonation 作用域是成功从 AD FS 请求代表访问令牌的必要条件。 有关如何使用此作用域的详细信息，请参阅使用[ (OBO) 使用 OAuth 和 AD FS 2016 构建多层应用程序](ad-fs-on-behalf-of-authentication-in-windows-server.md)。
+- user_impersonation - user_impersonation 作用域是成功从 AD FS 请求代表访问令牌的必要条件。 有关如何使用此作用域的详细信息，请参阅使用 [ (OBO) 使用 OAuth 和 AD FS 2016 构建多层应用程序](ad-fs-on-behalf-of-authentication-in-windows-server.md)。
 - allatclaims – allatclaims 范围允许应用程序在访问令牌中请求要添加到 ID 令牌中的声明。
 - vpn_cert - vpn_cert 作用域允许应用程序请求 VPN 证书，该证书可用于使用 EAP-TLS 身份验证建立 VPN 连接。 不再支持此作用域。
 - email - 允许应用程序请求登录用户的电子邮件声明。
@@ -79,25 +79,25 @@ AD FS 颁发的 (访问和 ID 令牌) 安全令牌包含有关已进行身份验
 
  2. AD FS 验证身份验证请求中的客户端 ID 和客户端 ID 在 AD FS 中的客户端和资源注册过程中获取的客户端 id。 如果使用机密客户端，则 AD FS 还会验证身份验证请求中提供的客户端密码。 AD FS 还验证客户端的重定向 uri。
 
- 3. AD FS 标识客户端要通过身份验证请求中传递的资源参数访问的资源。 如果使用 MSAL 客户端库，则不发送 resource 参数。 而是作为作用域参数的一部分发送资源 url：*范围 = [资源 url]//[范围值，openid]*。
+ 3. AD FS 标识客户端要通过身份验证请求中传递的资源参数访问的资源。 如果使用 MSAL 客户端库，则不发送 resource 参数。 而是作为作用域参数的一部分发送资源 url： *范围 = [资源 url]/[范围值（如 openid]）*。
 
     如果未使用 resource 或 scope 参数传递资源，ADFS 将使用默认资源 urn： microsoft：用户，其策略 (例如，MFA、颁发或授权策略) 无法进行配置。
 
  4. 接下来 AD FS 验证客户端是否有权访问该资源。 AD FS 还验证在身份验证请求中传递的作用域是否与注册资源时配置的作用域相匹配。 如果客户端没有权限，或者未在身份验证请求中发送正确的作用域，则将终止身份验证流。
 
- 5. 验证权限和作用域后，AD FS 使用已配置的[身份验证方法](../operations/configure-authentication-policies.md)对用户进行身份验证。
+ 5. 验证权限和作用域后，AD FS 使用已配置的 [身份验证方法](../operations/configure-authentication-policies.md)对用户进行身份验证。
 
- 6. 如果根据资源策略或全局身份验证策略需要[其他身份验证方法](../operations/configure-additional-authentication-methods-for-ad-fs.md)，AD FS 会触发附加身份验证。
+ 6. 如果根据资源策略或全局身份验证策略需要 [其他身份验证方法](../operations/configure-additional-authentication-methods-for-ad-fs.md) ，AD FS 会触发附加身份验证。
 
- 7. AD FS 使用[AZURE mfa](../operations/configure-ad-fs-and-azure-mfa.md)或[第三方 MFA](../operations/additional-authentication-methods-ad-fs.md)来执行身份验证。
+ 7. AD FS 使用 [AZURE mfa](../operations/configure-ad-fs-and-azure-mfa.md) 或 [第三方 MFA](../operations/additional-authentication-methods-ad-fs.md) 来执行身份验证。
 
- 8. 对用户进行身份验证后，AD FS 将应用[声明规则](../deployment/configuring-claim-rules.md) (确定作为安全令牌的一部分发送给资源的声明) 和[访问控制策略](../operations/ad-fs-client-access-policies.md) (确定用户已满足访问资源) 所需的条件。
+ 8. 对用户进行身份验证后，AD FS 将应用 [声明规则](../deployment/configuring-claim-rules.md) (确定作为安全令牌的一部分发送给资源的声明) 和 [访问控制策略](../operations/ad-fs-client-access-policies.md) (确定用户已满足访问资源) 所需的条件。
 
  9. 接下来，AD FS 生成访问令牌和刷新令牌。
 
  10. AD FS 还会生成 ID 令牌。
 
- 11. 如果身份验证请求中包含范围 = allatclaims，[则会自定义 ID 令牌](custom-id-tokens-in-ad-fs.md)，以在基于定义的声明规则的访问令牌中包含声明。
+ 11. 如果身份验证请求中包含范围 = allatclaims， [则会自定义 ID 令牌](custom-id-tokens-in-ad-fs.md) ，以在基于定义的声明规则的访问令牌中包含声明。
 
  12. 生成并自定义所需的令牌后，AD FS 对包括令牌的客户端的响应。 仅当身份验证请求包括范围 = openid 时，响应中包含 ID 标记。 客户端始终可以使用令牌终结点获取身份验证后的 ID 令牌。
 
@@ -129,16 +129,16 @@ AD FS 颁发的 (访问和 ID 令牌) 安全令牌包含有关已进行身份验
 
 ![AD FS 自定义令牌选项2](media/adfs-modern-auth-concepts/option2.png)
 
-为了更好地了解如何在 ADFS 中配置 Web 应用以获取自定义的 ID 令牌，请参阅[使用 OpenID connect 或 OAuth 与 AD FS 2016 或更高版本一起使用时，自定义要在 id_token 中发出的声明](Custom-Id-Tokens-in-AD-FS.md)。
+为了更好地了解如何在 ADFS 中配置 Web 应用以获取自定义的 ID 令牌，请参阅 [使用 OpenID connect 或 OAuth 与 AD FS 2016 或更高版本一起使用时，自定义要在 id_token 中发出的声明](Custom-Id-Tokens-in-AD-FS.md)。
 
 ## <a name="single-log-out"></a>单一登录
 
-单个注销会导致使用会话 id 结束所有客户端会话。AD FS 2016 和更高版本支持 OpenID Connect/OAuth 的单一登录。 有关更多详细信息，请参阅用于[OpenID connect 的单一注销 AD FS](ad-fs-logout-openid-connect.md)。
+单个注销会导致使用会话 id 结束所有客户端会话。AD FS 2016 和更高版本支持 OpenID Connect/OAuth 的单一登录。 有关更多详细信息，请参阅用于 [OpenID connect 的单一注销 AD FS](ad-fs-logout-openid-connect.md)。
 
 
 ## <a name="ad-fs-endpoints"></a>AD FS 终结点
 
-|AD FS 终结点|描述|
+|AD FS 终结点|说明|
 |-----|-----|
 |/authorize|AD FS 返回可用于获取访问令牌的授权代码|
 |/token|AD FS 返回一个访问令牌，该令牌可用于访问资源 (Web API) |

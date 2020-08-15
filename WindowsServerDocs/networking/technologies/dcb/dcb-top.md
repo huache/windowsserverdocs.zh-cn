@@ -6,12 +6,12 @@ ms.assetid: da58f312-bd3b-4bb6-98ca-6177869dd6ad
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 646660c1371b592670737b7d7d208b62208bfec9
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 81c35d1a5673793220ec860266d129a4ecdb4046
+ms.sourcegitcommit: b18effcba95c85d6e08e7d29808b576491a5352e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993941"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243189"
 ---
 # <a name="data-center-bridging-dcb"></a>数据中心桥接 \(DCB\)
 
@@ -38,7 +38,7 @@ DCB 提供 \- 针对特定类型的网络流量的基于硬件的带宽分配，
 DCB 包含以下一组协议。
 
 - 增强了传输服务 \( ETS \) – IEEE 802.1 qaz，它基于 802.1 p 和 802.1 q 标准构建
-- 优先级流控制 \( PFS \) ，IEEE 802.1 q b b
+- 优先级流控制 \( PFC \) ，IEEE 802.1 q b b
 - DCB Exchange Protocol \( DCBX \) ，IEEE 802.1 ab，如 802.1 qaz standard 中的扩展。
 
 DCBX 协议允许你在交换机上配置 DCB，然后可以自动配置终端设备，如运行 Windows Server 2016 的计算机。
@@ -63,7 +63,7 @@ Windows 应用程序通常不能参与 DCBX 交换。 因此，必须将主机�
 
 4. 允许服务器管理员或网络管理员根据知名的协议、知名的 TCP/UDP 端口或该应用程序使用的 NetworkDirect 端口为特定流量类型或优先级分配应用程序。
 
-5. 通过 Windows Server 2016 Windows Management Instrumentation \( WMI \) 和 windows POWERSHELL 提供 DCB 管理。 有关详细信息，请参阅本主题后面的[用于 DCB 的 Windows PowerShell 命令](#bkmk_wps)部分，以及以下主题。
+5. 通过 Windows Server 2016 Windows Management Instrumentation \( WMI \) 和 windows POWERSHELL 提供 DCB 管理。 有关详细信息，请参阅本主题后面的 [用于 DCB 的 Windows PowerShell 命令](#bkmk_wps) 部分，以及以下主题。
     - [系统提供的 DCB 组件](/windows-hardware/drivers/network/system-provided-dcb-components)
     - [数据中心桥接的 NDIS QoS 要求](/windows-hardware/drivers/network/ndis-qos-requirements-for-data-center-bridging)
 
@@ -72,7 +72,7 @@ Windows 应用程序通常不能参与 DCBX 交换。 因此，必须将主机�
 7. 支持 Windows Server 2016 Service \( QoS 解决方案的共存 \) 。
 
 >[!NOTE]
->在使用任何 RDMA over 聚合以太网 \( RoCE \) 版本的 rdma 之前，必须启用 DCB。 尽管 Internet 广域 RDMA 协议 iWARP 网络不需要 \( \) ，但测试已确定所有基于以太网的 \- rdma 技术更适用于 DCB。 因此，应考虑使用 DCB 进行 iWARP RDMA 部署。 有关详细信息，请参阅[ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (设置) ](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。
+>在使用任何 RDMA over 聚合以太网 \( RoCE \) 版本的 rdma 之前，必须启用 DCB。 尽管 Internet 广域 RDMA 协议 iWARP 网络不需要 \( \) ，但测试已确定所有基于以太网的 \- rdma 技术更适用于 DCB。 因此，应考虑使用 DCB 进行 iWARP RDMA 部署。 有关详细信息，请参阅 [ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (设置) ](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。
 
 ##  <a name="practical-applications-of-dcb"></a>DCB 的实际应用
 
