@@ -7,12 +7,12 @@ ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 7fcf8b095479ec21c045a60244917b09883a6162
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 84b96e724706db49945c2e4936d0b4d8691d8daa
+ms.sourcegitcommit: 3d59c2aaebcd190b20d24bc8a449eee0681b6a3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993768"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88583322"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>使用脚本部署软件定义的网络基础结构
 
@@ -20,7 +20,7 @@ ms.locfileid: "87993768"
 
 如果你希望你的租户工作负荷在其虚拟网络外部进行通信，则可以设置 SLB NAT 规则、站点到站点网关隧道或第3层转发，以在虚拟和物理工作负载之间进行路由。
 
-你还可以使用 Virtual Machine Manager (VMM) 部署 SDN 基础结构。 有关详细信息，请参阅[在 VMM 构造中设置软件定义的网络 (SDN) 基础结构](/system-center/vmm/deploy-sdn?view=sc-vmm-2019)。
+你还可以使用 Virtual Machine Manager (VMM) 部署 SDN 基础结构。 有关详细信息，请参阅 [在 VMM 构造中设置软件定义的网络 (SDN) 基础结构](/system-center/vmm/deploy-sdn?view=sc-vmm-2019)。
 
 ## <a name="pre-deployment"></a>部署前
 
@@ -35,7 +35,7 @@ ms.locfileid: "87993768"
 ### <a name="install-host-networking"></a>安装主机网络
 
 1. 安装适用于 NIC 硬件的最新网络驱动程序。
-2. 在所有主机上安装 Hyper-v 角色 (有关详细信息，请参阅[Windows Server 2016 上的 hyper-v 入门](../../../virtualization/hyper-v/get-started/get-started-with-hyper-v-on-windows.md)。
+2. 在所有主机上安装 Hyper-v 角色 (有关详细信息，请参阅 [Windows Server 2016 上的 hyper-v 入门](../../../virtualization/hyper-v/get-started/get-started-with-hyper-v-on-windows.md)。
 
    ```PowerShell
    Install-WindowsFeature -Name Hyper-V -ComputerName <computer_name> -IncludeManagementTools -Restart
@@ -62,7 +62,7 @@ ms.locfileid: "87993768"
    New-NetIPAddress -InterfaceAlias "vEthernet (<switch name>)" -IPAddress <IP> -DefaultGateway <Gateway IP> -AddressFamily IPv4 -PrefixLength <Length of Subnet Mask - for example: 24>
    ```
 
-5. 可有可无将虚拟机部署到主机 Active Directory 域服务 ([安装 Active Directory 域服务 (级别 100) ](../../../identity/ad-ds/deploy/install-active-directory-domain-services--level-100-.md)和 DNS 服务器。
+5. 可有可无将虚拟机部署到主机 Active Directory 域服务 ([安装 Active Directory 域服务 (级别 100) ](../../../identity/ad-ds/deploy/install-active-directory-domain-services--level-100-.md) 和 DNS 服务器。
 
     a. 将 Active Directory/DNS 服务器虚拟机连接到管理 VLAN：
 
@@ -81,9 +81,9 @@ ms.locfileid: "87993768"
    Set-DnsClientServerAddress -InterfaceAlias "vEthernet (<switch name>)" -ServerAddresses <DNS Server IP>
    ```
 
-   a. 右键单击 "**开始**"，单击 "**系统**"，然后单击 "**更改设置**"。
+   a. 右键单击 " **开始**"，单击 " **系统**"，然后单击 " **更改设置**"。
    b. 单击“更改”****。
-   c. 单击 "**域**" 并指定域名。  "" "d。 单击“确定”。
+   c. 单击 " **域** " 并指定域名。  "" "d。 单击“确定”。
    e. 出现提示时，键入用户名和密码凭据。
    f. 重新启动服务器。
 
@@ -114,33 +114,18 @@ ms.locfileid: "87993768"
 
    ``winrm id -r:<Hyper-V Host FQDN>``
 
-### <a name="nano-installation-requirements-and-notes"></a>Nano 安装要求和说明
-
-如果使用 Nano 作为 Hyper-v 主机 () 部署的物理服务器，则需要满足以下其他要求：
-
-1. 所有 Nano 节点都需要安装带有语言包的 DSC 包：
-
-   - Microsoft-NanoServer-DSC-Package.cab
-   - Microsoft-NanoServer-DSC-Package_en-us.cab
-
-     ``dism /online /add-package /packagepath:<Path> /loglevel:4``
-
-2. 必须在 (Windows Server Core 或 Windows Server w/GUI) 的非 Nano 主机上运行 SDN Express 脚本。 Nano 上不支持 PowerShell 工作流。
-
-3. 使用 PowerShell 或 NC REST 包装器调用网络控制器 NorthBound API (依赖于 WebRequest 和 Invoke-restmethod) 必须从非 Nano 主机进行。
-
 ### <a name="run-sdn-express-scripts"></a>运行 SDN Express 脚本
 
-1. 请参阅[MICROSOFT SDN GitHub 存储库](https://github.com/Microsoft/SDN.git)中的安装文件。
+1. 请参阅 [MICROSOFT SDN GitHub 存储库](https://github.com/Microsoft/SDN.git) 中的安装文件。
 
-2. 将安装文件从存储库下载到指定的部署计算机。 单击 "**克隆或下载**"，然后单击 "**下载 ZIP**"。
+2. 将安装文件从存储库下载到指定的部署计算机。 单击 " **克隆或下载** "，然后单击 " **下载 ZIP**"。
 
    >[!NOTE]
    >指定的部署计算机必须运行 Windows Server 2016 或更高版本。
 
-3. 展开 zip 文件并将**SDNExpress**文件夹复制到部署计算机的 `C:\` 文件夹。
+3. 展开 zip 文件并将 **SDNExpress** 文件夹复制到部署计算机的 `C:\` 文件夹。
 
-4. 将该 `C:\SDNExpress` 文件夹共享为 "**SDNExpress**"，并向**每个人**提供**读取/写入**权限。
+4. 将该 `C:\SDNExpress` 文件夹共享为 "**SDNExpress**"，并向 **每个人** 提供 **读取/写入**权限。
 
 5. 导航到 `C:\SDNExpress` 文件夹。<p>你会看到以下文件夹：
 
@@ -153,9 +138,9 @@ ms.locfileid: "87993768"
    | 脚本 | 部署脚本。<p>- **SDNExpress.ps1**<br>部署和配置构造，其中包括网络控制器虚拟机、SLB Mux 虚拟机、网关池 (s) 和与池 () 相对应的 HNV 网关虚拟机 () 。<br />-   **FabricConfig.psd1**<br>SDNExpress 脚本的配置文件模板。  你将为你的环境自定义此。<br />-   **SDNExpressTenant.ps1**<br>在具有负载平衡 VIP 的虚拟网络上部署示例租户工作负荷。<br>还在连接到以前创建的租户工作负荷的服务提供商边缘网关上 (IPSec S2S VPN、GRE、L3) 提供一个或多个网络连接。 IPSec 和 GRE 网关可通过相应的 VIP IP 地址连接，并可通过相应的地址池连接到 L3 转发网关。<br>此脚本也可用于删除带有撤消选项的相应配置。<br />- **TenantConfig.psd1**<br>租户工作负荷和 S2S 网关配置的模板配置文件。<br />- **SDNExpressUndo.ps1**<br>清理构造环境，并将其重置为启动状态。<br />- **SDNExpressEnterpriseExample.ps1**<br>预配一个或多个具有一个远程访问网关的企业站点环境，并 (可以选择) 每个站点对应的一个企业虚拟机。 IPSec 或 GRE 企业网关连接到服务提供商网关对应的 VIP IP 地址，以建立 S2S 隧道。 L3 转发网关通过相应的对等 IP 地址进行连接。 <br> 此脚本也可用于删除带有撤消选项的相应配置。<br />- **EnterpriseConfig.psd1**<br>企业站点到站点网关和客户端 VM 配置的模板配置文件。 |
    | TenantApps | 用于部署示例租户工作负荷的文件。 |
 
-6. 验证 Windows Server 2016 VHDX 文件是否位于**Images**文件夹中。
+6. 验证 Windows Server 2016 VHDX 文件是否位于 **Images** 文件夹中。
 
-7. 通过更改 " **<< 将 >>标记替换**为特定值来自定义 SDNExpress\scripts\FabricConfig.psd1 文件，以适合你的实验室基础结构，其中包括" 规划网络 "主题中列出的网络的主机名、域名、用户名和密码以及网络信息。
+7. 通过更改 " **<< 将 >>标记替换 ** 为特定值来自定义 SDNExpress\scripts\FabricConfig.psd1 文件，以适合你的实验室基础结构，其中包括" 规划网络 "主题中列出的网络的主机名、域名、用户名和密码以及网络信息。
 
 8. 在 DNS 中为 NetworkControllerRestName (FQDN) 和 NetworkControllerRestIP 创建一个主机 A 记录。
 
@@ -171,7 +156,7 @@ ms.locfileid: "87993768"
 
 假设 SDN Express 脚本在不报告任何错误的情况下运行到完成，则可以执行以下步骤以确保构造资源已正确部署并且可用于租户部署。
 
-使用[诊断工具](../troubleshoot/troubleshoot-windows-server-software-defined-networking-stack.md)确保网络控制器中的任何构造资源上无错误。
+使用 [诊断工具](../troubleshoot/troubleshoot-windows-server-software-defined-networking-stack.md) 确保网络控制器中的任何构造资源上无错误。
 
    ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller Rest Name>``
 
@@ -180,13 +165,13 @@ ms.locfileid: "87993768"
 
 现在已部署了构造资源，你可以通过部署示例租户工作负荷来端到端地验证 SDN 部署。 此租户工作负荷包括两个虚拟子网 (web 层和数据库层) 使用 SDN 分布式防火墙 (ACL) 规则通过访问控制列表进行保护。 可以通过 SLB/MUX 使用虚拟 IP (VIP) 地址来访问 web 层的虚拟子网。 脚本会自动部署两个 web 层虚拟机和一个数据库层虚拟机，并将这些虚拟机连接到虚拟子网。
 
-1.  通过更改<< FabricConfig.psd将** >>标记替换**为特定值来自定义 SDNExpress\scripts\TenantConfig.psd1 文件 (例如： VHD 映像名称、网络控制器 REST 名称、vSwitch 名称等。
+1.  通过更改<< FabricConfig.psd将 ** >>标记替换 ** 为特定值来自定义 SDNExpress\scripts\TenantConfig.psd1 文件 (例如： VHD 映像名称、网络控制器 REST 名称、vSwitch 名称等。
 
 2.  运行该脚本。 例如：
 
     ``SDNExpress\scripts\SDNExpressTenant.ps1 -ConfigurationDataFile TenantConfig.psd1 -Verbose``
 
-3.  若要撤消配置，请运行包含**undo**参数的同一个脚本。 例如：
+3.  若要撤消配置，请运行包含 **undo** 参数的同一个脚本。 例如：
 
     ``SDNExpress\scripts\SDNExpressTenant.ps1 -Undo -ConfigurationDataFile TenantConfig.psd1 -Verbose``
 
@@ -209,4 +194,4 @@ ms.locfileid: "87993768"
    >[!TIP]
    >`VIPIP`在 TenantConfig.psd1 中搜索变量。
 
-   运行此多个时间以查看可用 Dip 之间的负载均衡器开关。 你还可以使用 web 浏览器查看此行为。 浏览到 `<VIP IP address>/unique.htm`。 关闭浏览器并打开一个新的实例，然后重新浏览。 你将看到蓝页和绿色页备用，除非浏览器在缓存超时前缓存页面。
+   运行此多个时间以查看可用 Dip 之间的负载均衡器开关。 你还可以使用 web 浏览器查看此行为。 浏览到 `<VIP IP address>/unique.htm` 。 关闭浏览器并打开一个新的实例，然后重新浏览。 你将看到蓝页和绿色页备用，除非浏览器在缓存超时前缓存页面。

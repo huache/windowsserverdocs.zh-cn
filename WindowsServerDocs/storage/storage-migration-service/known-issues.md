@@ -6,22 +6,22 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.openlocfilehash: 818fca0ed62c140b3b0c4bbb1394380d42201f79
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0dc49603099427fb00507db021c391500a7c42f2
+ms.sourcegitcommit: 3d59c2aaebcd190b20d24bc8a449eee0681b6a3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961311"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88583312"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
-本主题包含有关使用[存储迁移服务](overview.md)迁移服务器时的已知问题的解答。
+本主题包含有关使用 [存储迁移服务](overview.md) 迁移服务器时的已知问题的解答。
 
 存储迁移服务分为两部分： Windows Server 中的服务和 Windows 管理中心中的用户界面。 服务在 Windows Server、长期服务通道以及 Windows Server、半年通道中可用;虽然可单独下载 Windows 管理中心。 我们还会定期包括 Windows Server 累积更新中的更改（通过 Windows 更新发布）。
 
-例如，Windows Server 版本1903包括存储迁移服务的新功能和修复程序，它们也可用于 Windows Server 2019 和 Windows Server，版本1809通过安装[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)来实现。
+例如，Windows Server 版本1903包括存储迁移服务的新功能和修复程序，它们也可用于 Windows Server 2019 和 Windows Server，版本1809通过安装 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)来实现。
 
-## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a>如何在使用 Microsoft 支持部门时收集日志文件
+## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a> 如何在使用 Microsoft 支持部门时收集日志文件
 
 存储迁移服务包含 Orchestrator 服务和代理服务的事件日志。 Orchestrator 服务器始终包含事件日志，并且安装了代理服务的目标服务器包含代理日志。 这些日志位于：
 
@@ -46,11 +46,11 @@ Windows 管理中心存储迁移服务扩展受版本限制，只管理 Windows 
 
 运行切换验证时，收到错误 "失败：目标计算机上的令牌筛选器策略访问被拒绝"。 即使您为源计算机和目标计算机提供了正确的本地管理员凭据，也会出现这种情况。
 
-此问题已在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新中解决。
+此问题已在 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 更新中解决。
 
 ## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-or-windows-server-2019-essentials-edition"></a>Windows Server 2019 评估版或 Windows Server 2019 Essentials edition 中不包含存储迁移服务
 
-使用 Windows 管理中心连接到[Windows server 2019 评估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019)或 windows Server 2019 Essentials edition 时，没有管理存储迁移服务的选项。 角色和功能中也不包含存储迁移服务。
+使用 Windows 管理中心连接到 [Windows server 2019 评估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019) 或 windows Server 2019 Essentials edition 时，没有管理存储迁移服务的选项。 角色和功能中也不包含存储迁移服务。
 
 此问题是由 Windows Server 2019 和 Windows Server 2019 Essentials 的评估介质中的服务问题引起的。
 
@@ -70,13 +70,13 @@ Transfer Log - Please check file sharing is allowed in your firewall. : This req
 
 若要解决此问题，请执行以下操作：
 
-1. 在 orchestrator 计算机上，使用 Notepad.exe 编辑 *% SYSTEMROOT% \SMS\Microsoft.StorageMigration.Service.exe.config*文件，将 "sendTimeout" 的默认值从1分钟更改为10分钟
+1. 在 orchestrator 计算机上，使用 Notepad.exe 编辑 *% SYSTEMROOT% \SMS\Microsoft.StorageMigration.Service.exe.config* 文件，将 "sendTimeout" 的默认值从1分钟更改为10分钟
 
     ```
     <bindings>
       <netTcpBinding>
         <binding name="NetTcpBindingSms"
-                 sendTimeout="00:01:00"
+                 sendTimeout="00:10:00"
     ```
 
 2. 重新启动 orchestrator 计算机上的 "存储迁移服务" 服务。
@@ -144,7 +144,7 @@ at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer()
 
 此问题的原因是存储迁移服务中的代码缺陷未调用备份权限。
 
-若要解决此问题，请在[KB4490481 （2019年4月2日）安装 Windows 更新在 orchestrator 计算机上安装 (OS Build 17763.404) ](https://support.microsoft.com/help/4490481/windows-10-update-kb4490481) ，并在目标计算机上安装代理服务。 请确保源迁移用户帐户是源计算机上的本地管理员和存储迁移服务协调器。 请确保目标迁移用户帐户是目标计算机上的本地管理员和存储迁移服务协调器。
+若要解决此问题，请在 [KB4490481 （2019年4月2日）安装 Windows 更新在 orchestrator 计算机上安装 (OS Build 17763.404) ](https://support.microsoft.com/help/4490481/windows-10-update-kb4490481) ，并在目标计算机上安装代理服务。 请确保源迁移用户帐户是源计算机上的本地管理员和存储迁移服务协调器。 请确保目标迁移用户帐户是目标计算机上的本地管理员和存储迁移服务协调器。
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>使用存储迁移服务预先播种数据时，DFSR 哈希不匹配
 
@@ -182,7 +182,7 @@ at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer()
    Attributes:32
 ```
 
-此问题由[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新修复。
+此问题由 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 更新修复。
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>从 Windows Server 2008 R2 传输时，出现错误 "无法传输任何终结点上的存储"
 
@@ -232,11 +232,11 @@ at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferOperation.Validate(
 at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferRequestHandler.ProcessRequest(FileTransferRequest fileTransferRequest, Guid operationId)
 ```
 
-如果迁移帐户没有对 SMB 共享的至少读取权限，则这是一个代码缺陷。 此问题首先在累积更新[4520062](https://support.microsoft.com/help/4520062/windows-10-update-kb4520062)中解决。
+如果迁移帐户没有对 SMB 共享的至少读取权限，则这是一个代码缺陷。 此问题首先在累积更新 [4520062](https://support.microsoft.com/help/4520062/windows-10-update-kb4520062)中解决。
 
 ## <a name="error-0x80005000-when-running-inventory"></a>运行清单时出现错误0x80005000
 
-安装[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)并尝试运行清单后，清单失败并出现错误：
+安装 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 并尝试运行清单后，清单失败并出现错误：
 
 ```
 EXCEPTION FROM HRESULT: 0x80005000
@@ -335,7 +335,7 @@ DLL not found
 There are no more endpoints available from the endpoint mapper
 ```
 
-此问题由[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新程序解决。
+此问题由 [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) 更新程序解决。
 
 ## <a name="uninstalling-a-cumulative-update-prevents-storage-migration-service-from-starting"></a>卸载累积更新会阻止存储迁移服务启动
 
@@ -416,7 +416,7 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 此问题有两种解决方案：
 
-1. 此问题已由[KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818)更新首次解决。 之前的代码缺陷阻止了静态 IP 地址的所有使用。
+1. 此问题已由 [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) 更新首次解决。 之前的代码缺陷阻止了静态 IP 地址的所有使用。
 
 2. 如果未在源计算机的网络接口上指定默认网关 IP 地址，则即使使用 KB4537818 更新也会出现此问题。 若要解决此问题，请在网络接口上使用 ( # A0) 或 New-netroute Powershell cmdlet 设置有效的默认 IP 地址。
 
@@ -424,7 +424,7 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 完成传输后，运行相同数据的后续重新传输后，即使源服务器上存在很少的数据发生更改，传输时间也不会显著提高。
 
-当传输大量文件和嵌套文件夹时，这是预期的行为。 数据的大小不相关。 首先，我们在[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)中改进了此行为，并继续优化传输性能。 若要进一步调整性能，请查看[优化清单和传输性能](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
+当传输大量文件和嵌套文件夹时，这是预期的行为。 数据的大小不相关。 首先，我们在 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 中改进了此行为，并继续优化传输性能。 若要进一步调整性能，请查看 [优化清单和传输性能](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
 
 ## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>数据不会传输，用户在迁移到域控制器或从域控制器中进行重命名
 
@@ -564,7 +564,7 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 此问题的原因是组策略在源计算机上设置以下注册表值： "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy = 0"
 
-此设置不是标准组策略的一部分，它是使用[Microsoft 安全符合性工具包](https://www.microsoft.com/download/details.aspx?id=55319)配置的加载项：
+此设置不是标准组策略的一部分，它是使用 [Microsoft 安全符合性工具包](https://www.microsoft.com/download/details.aspx?id=55319)配置的加载项：
 
 - Windows Server 2012 R2： "计算机配置 \ 管理 Templates\SCM：将哈希 Mitigations\Apply UAC 限制传递到网络登录上的本地帐户"
 
@@ -572,7 +572,7 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 还可以使用组策略首选项设置自定义注册表设置。 您可以使用 GPRESULT 工具来确定将此设置应用于源计算机的策略。
 
-存储迁移服务暂时将[LocalAccountTokenFilterPolicy](https://support.microsoft.com/help/951016/description-of-user-account-control-and-remote-restrictions-in-windows)启用为整个过程的一部分，并在完成后将其删除。 如果组策略将组策略对象 (GPO) ，则会替代存储迁移服务，并阻止剪切。
+存储迁移服务暂时将 [LocalAccountTokenFilterPolicy](https://support.microsoft.com/help/951016/description-of-user-account-control-and-remote-restrictions-in-windows) 启用为整个过程的一部分，并在完成后将其删除。 如果组策略将组策略对象 (GPO) ，则会替代存储迁移服务，并阻止剪切。
 
 若要解决此问题，请使用以下选项之一：
 
@@ -635,8 +635,8 @@ Error Message:
 Guidance: Check the detailed error and make sure the inventory requirements are met. The inventory couldn't determine any aspects of the specified source computer. This could be because of missing permissions or privileges on the source or a blocked firewall port.
 ```
 
-此问题是由存储迁移服务中的代码缺陷导致的。 唯一的解决方法是将计算机重命名为具有与 NetBIOS 名称相同的名称，然后使用[NETDOM COMPUTERNAME/add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11))来添加一个备用计算机名称，其中包含在开始清点之前使用的较长名称。 存储迁移服务支持迁移备用计算机名称。
+此问题是由存储迁移服务中的代码缺陷导致的。 唯一的解决方法是将计算机重命名为具有与 NetBIOS 名称相同的名称，然后使用 [NETDOM COMPUTERNAME/add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)) 来添加一个备用计算机名称，其中包含在开始清点之前使用的较长名称。 存储迁移服务支持迁移备用计算机名称。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [存储迁移服务概述](overview.md)
