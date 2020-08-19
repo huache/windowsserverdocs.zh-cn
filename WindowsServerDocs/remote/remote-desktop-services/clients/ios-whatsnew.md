@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/06/2020
+ms.date: 08/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 16e142a299b43ac6167fa4bf34d5782899f28846
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0afb5a64a86d3b33ea5d78756abe09bf87564928
+ms.sourcegitcommit: 3ed5dd72451b494e17d508fed82fdc5559ba4ef0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970154"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270139"
 ---
 # <a name="whats-new-in-the-ios-client"></a>iOS 客户端中的新增功能
 
@@ -21,6 +21,15 @@ ms.locfileid: "87970154"
 ## <a name="how-to-report-issues"></a>如何报告问题
 
 我们致力于将适用于 iOS 的远程桌面客户端打造成最好的，因此我们非常重视你的反馈。 你可以通过“帮助” > “报告问题”来报告任何问题。
+
+## <a name="updates-for-version-1012"></a>针对版本 10.1.2 的更新
+
+发布日期：2020 年 8 月 17 日
+
+在此更新中，我们解决了版本 10.1.1 更新中报告的问题。
+
+- 修复了在使用非中转身份验证订阅 Windows 虚拟桌面源时，某些用户遇到故障。
+- 修复了 iPhone X、iPhone XS 和 iPhone 11 Pro 上工作区图标的布局。
 
 ## <a name="updates-for-version-1007"></a>版本 10.0.7 的更新
 

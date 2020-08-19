@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/28/2020
+ms.date: 08/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0077837fc03fbff37ed2a152ee68bfa4f1e24fa8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5f3a2ff6268cbccc2d354227b577441a270faf9f
+ms.sourcegitcommit: f3a72c06e739d9ee9d8cd7e8259ccee8db7c7523
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961821"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88089966"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -25,7 +25,19 @@ ms.locfileid: "87961821"
 |用户组 |版本  |
 |-----------|---------|
 |公用     |1.2.1186 |
-|Insider    |1.2.1186 |
+|Insider    |1.2.1272 |
+
+## <a name="updates-for-version-121272-insider"></a>针对版本 1.2.1272 的更新 [INSIDER]
+
+*发布日期：2020 年 8 月 11 日*
+
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D7LK)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D5aF)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Dan3)
+
+- 添加了根据用户标识自动检测主权云的功能。
+- 添加了为所有用户启用自定义 URL 订阅的功能。
+- 修复了源任务栏上应用固定的相关问题。
+- 修复了使用 URL 进行订阅时出现的故障。
+- 改善了通过触控或笔拖动远程应用窗口时的体验。
 
 ## <a name="updates-for-version-121186"></a>针对版本 1.2.1186 的更新
 

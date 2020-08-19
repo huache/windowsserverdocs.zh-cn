@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 06/30/2020
+ms.date: 08/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5303bb696131d4e122da11c2d72152bf304716b4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 65a2a767e89af6d64893de1b8c7949bedd9e7625
+ms.sourcegitcommit: 9f2e04cd7e52c29fa2fbc64f67dcafbd021015ab
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961931"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051841"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>受支持的远程桌面 RDP 文件设置
 
@@ -59,7 +59,9 @@ ms.locfileid: "87961931"
 | camerastoredirect:s:value | 摄像头重定向：</br>配置要重定向哪些摄像头。 此设置使用分号分隔的列表，其中包含支持重定向的摄像头的 KSCATEGORY_VIDEO_CAMERA 接口。 | - *：重定向所有摄像头</br> - 摄像头列表，如 camerastoredirect:s:\\?\usb#vid_0bda&pid_58b0&mi</br>- 可以通过在符号链接字符串前面加上“-”来排除特定摄像头 | 不重定向任何摄像头 | 是 |
 | devicestoredirect:s:value | 即插即用设备重定向：</br>确定本地计算机上将被重定向并在远程会话中可用的设备。 | - *：重定向所有支持的设备，包括稍后连接的设备</br> - 一个或多个设备的有效硬件 ID</br> - DynamicDevices：重定向稍后将连接的所有受支持的设备 | 不重定向任何设备 | 是 |
 | drivestoredirect:s:value | 驱动器/存储重定向：</br>确定本地计算机上将被重定向并在远程会话中可用的磁盘驱动器。 | - 未指定值：不重定向任何驱动器</br>- *：重定向所有磁盘驱动器，包括稍后连接的驱动器</br>- DynamicDrives：重定向稍后连接的所有驱动器</br>- 驱动器以及一个或多个驱动器的标签，例如“drivestoredirect:s:C:;E:;”：重定向指定的驱动器 | 不重定向任何驱动器 | 是 |
+| keyboardhook:i:value | 确定何时将 Windows 键组合（WIN 键、ALT + TAB）应用到桌面连接的远程会话。 | - 0：在本地计算机上应用 Windows 组合键</br>- 1：对焦时，在远程计算机上应用 Windows 组合键</br>- 2：仅在全屏模式下，在远程计算机上应用 Windows 组合键 | 2 | 是 |
 | redirectclipboard:i:value | 剪贴板重定向：</br>确定是否已启用剪贴板重定向。 | - 0：本地计算机上的剪贴板在远程会话中不可用</br>- 1：本地计算机上的剪贴板在远程会话中可用 | 1 | 是 |
+| redirectcomports:i:value | COM 端口重定向：</br>确定本地计算机上的 COM（串行）端口是否会被重定向并在远程会话中可用。 | - 0：本地计算机上的 COM 端口在远程会话中不可用</br>- 1：本地计算机上的 COM 端口在远程会话中可用 | 0 | 是 |
 | redirectprinters:i:value | 打印机重定向：</br>确定本地计算机上配置的打印机是否会被重定向并在远程会话中可用 | - 0：本地计算机上的打印机在远程会话中不可用</br>- 1：本地计算机上的打印机在远程会话中可用 | 1 | 是 |
 | redirectsmartcards:i:value | 智能卡重定向：</br>确定本地计算机上的智能卡设备是否会被重定向并在远程会话中可用。 |- 0：本地计算机上的智能卡设备在远程会话中不可用</br>- 1：本地计算机上的智能卡设备在远程会话中可用 | 1 | 是 |
 | usbdevicestoredirect:s:value | USB 重定向 | - *：重定向所有尚未被另一高级别重定向进行重定向的 USB 设备</br> - {设备安装程序类 GUID}：重定向属于指定的[设备安装程序类](/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors/)的所有设备</br> - USBInstanceID：重定向由实例 ID 标识的特定 USB 设备| 不重定向任何 USB 设备 | 是 |
