@@ -7,12 +7,12 @@ ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b82435dc9d0018d3ac3fa5c6855b18bcddbd2797
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.openlocfilehash: 9e730ea3fe0deeca84759c546e3f4afa76e5c7d8
+ms.sourcegitcommit: 1eaad076ea74e72b36e8893aaa15f3e5f4237bd6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838096"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88659372"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Windows Server Essentials 的系统要求
 
@@ -37,7 +37,7 @@ ms.locfileid: "87838096"
 |---------------|-----------------|
 |网络适配器|千兆以太网适配器 (10/100/1000baseT PHY/MAC)|
 |Internet|某些功能可能需要 Internet 访问（可能收费）或 Microsoft 帐户|
-|支持的客户端操作系统|Windows 8.1、Windows 8、Windows 7、Macintosh OS X 版本 10.5 到 10.8。<br /><br /> **注意：** 某些功能需要专业版或更高版本。<br /><br /> 1 GB 的可用硬盘空间（安装后会释放此磁盘上的一个分区）|
+|支持的客户端操作系统| Windows 10、Windows 8.1、Windows 8、Windows 7、Macintosh OS X 版本10.5 到10.8。<br /><br /> **注意：** 某些功能需要专业版或更高版本。<br /><br /> 1 GB 的可用硬盘空间（安装后会释放此磁盘上的一个分区）|
 |路由器|支持 IPv4 NAT 或 IPv6 的路由器或防火墙|
 |其他需求|DVD-ROM 驱动器|
 

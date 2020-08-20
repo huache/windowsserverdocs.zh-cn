@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 2bf49dbd17e1724782b27f8b306c04346f194242
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9623ce4e5e31b905c1c18e9359811389d8d75f23
+ms.sourcegitcommit: 1eaad076ea74e72b36e8893aaa15f3e5f4237bd6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991364"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88659382"
 ---
 # <a name="network-controller"></a>网络控制器
 
@@ -28,7 +28,7 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 > - [使用 Windows PowerShell 部署网络控制器](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
 > - [使用服务器管理器安装网络控制器服务器角色](Install-the-Network-Controller-server-role-using-Server-Manager.md)
 > - [网络控制器的部署后步骤](post-deploy-steps-nc.md)
-> - [网络控制器 Cmdlet](https://technet.microsoft.com/library/mt576401.aspx)
+> - [网络控制器 Cmdlet](https://docs.microsoft.com/powershell/module/networkcontroller/?view=win10-ps)
 
 ## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>网络控制器概述
 
@@ -37,7 +37,7 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 你可以在域和非域环境中部署网络控制器。 在域环境中，网络控制器使用 Kerberos 对用户和网络设备进行身份验证;在非域环境中，你必须部署用于身份验证的证书。
 
 >[!IMPORTANT]
->不要将网络控制器服务器角色部署到物理主机上。 若要部署网络控制器，必须在 \( \) 安装在 hyper-v 主机上的 hyper-v 虚拟机 VM 上安装网络控制器服务器角色。 在三个不同的 Hyper-v 主机上的虚拟机上安装了网络控制器之后 \- ，必须 \- \( \) 通过使用 Windows PowerShell 命令**NetworkControllerServer**将主机添加到网络控制器，为软件定义的网络 SDN 启用 hyper-v 主机。 这样做会使 SDN 软件负载均衡器正常工作。 有关详细信息，请参阅[NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
+>不要将网络控制器服务器角色部署到物理主机上。 若要部署网络控制器，必须在 \( \) 安装在 hyper-v 主机上的 hyper-v 虚拟机 VM 上安装网络控制器服务器角色。 在三个不同的 Hyper-v 主机上的虚拟机上安装了网络控制器之后 \- ，必须 \- \( \) 通过使用 Windows PowerShell 命令 **NetworkControllerServer**将主机添加到网络控制器，为软件定义的网络 SDN 启用 hyper-v 主机。 这样做会使 SDN 软件负载均衡器正常工作。 有关详细信息，请参阅 [NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)。
 
 网络控制器使用 Southbound API 与网络设备、服务和组件进行通信。 借助 Southbound API，网络控制器可以发现网络设备、检测服务配置并收集用户所需的所有网络信息。 此外，Southbound API 还为网络控制器提供了一种将信息发送到网络基础结构的方式，例如用户已做出的配置更改。
 
@@ -66,7 +66,7 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 
 如果要在测试实验室环境中部署网络控制器，可以在 \( \) 安装在 hyper-v 主机上的 hyper-v 虚拟机 VM 上运行网络控制器服务器角色。
 
-若要在更大的数据中心内实现高可用性，可以使用安装在三个或更多 Hyper-v 主机上的三个 Vm 来部署群集。 有关详细信息，请参阅[网络控制器高可用性](network-controller-high-availability.md)。
+若要在更大的数据中心内实现高可用性，可以使用安装在三个或更多 Hyper-v 主机上的三个 Vm 来部署群集。 有关详细信息，请参阅 [网络控制器高可用性](network-controller-high-availability.md)。
 
 ## <a name="network-controller-features"></a><a name="bkmk_features"></a>网络控制器功能
 
@@ -87,13 +87,13 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 
 借助此网络控制器功能，你能够为你的工作负荷 VM 配置和管理同时针对数据中心中的横向和纵向网络流量的允许/拒绝防火墙访问控制规则。 工作负荷 VM 的 vSwitch 端口将查明防火墙规则，以便将其分布到数据中心中的工作负荷上。 通过使用 Northbound API，你可以从工作负荷 VM 同时为传入和传出流量定义防火墙规则。 还可以配置每条防火墙规则，以记录该规则允许或拒绝的流量。
 
-有关详细信息，请参阅[数据中心防火墙概述](../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)。
+有关详细信息，请参阅 [数据中心防火墙概述](../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)。
 
 ### <a name="software-load-balancer-management"></a><a name="bkmk_slb"></a>软件负载平衡器管理
 
 此网络控制器功能可使你允许多个服务器承载相同的工作负荷，从而提供高可用性和可扩展性。
 
-有关详细信息，请参阅[用于 SDN 的软件负载平衡 &#40;SLB&#41;](../network-function-virtualization/software-load-balancing-for-sdn.md)。
+有关详细信息，请参阅 [用于 SDN 的软件负载平衡 &#40;SLB&#41;](../network-function-virtualization/software-load-balancing-for-sdn.md)。
 
 ### <a name="virtual-network-management"></a><a name="bkmk_virtual"></a>虚拟网络管理
 
@@ -120,14 +120,14 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 
 网络控制器可以将不同的租户连接到不同的网关。 对于所有网关连接，可以使用单个公共 IP，或将不同的公共 IP 用于连接的子集。 网络控制器记录所有网关配置和状态更改，这些更改可用于审核和故障排除。
 
-有关 BGP 的详细信息，请参阅[&#40;BGP&#41;边界网关协议](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)。
+有关 BGP 的详细信息，请参阅 [&#40;BGP&#41;边界网关协议 ](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)。
 
-有关 RAS 网关的详细信息，请参阅[SDN 的 Ras 网关](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)。
+有关 RAS 网关的详细信息，请参阅 [SDN 的 Ras 网关](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)。
 
 ## <a name="network-controller-deployment-options"></a>网络控制器部署选项
 
-若要使用 System Center Virtual Machine Manager vmm 部署网络 \( 控制器 \) ，请参阅[在 Vmm 构造中设置 SDN 网络控制器](/system-center/vmm/sdn-controller?view=sc-vmm-2019)。
+若要使用 System Center Virtual Machine Manager vmm 部署网络 \( 控制器 \) ，请参阅 [在 Vmm 构造中设置 SDN 网络控制器](/system-center/vmm/sdn-controller?view=sc-vmm-2019)。
 
-若要使用脚本部署网络控制器，请参阅[使用脚本部署软件定义的网络基础结构](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)。
+若要使用脚本部署网络控制器，请参阅 [使用脚本部署软件定义的网络基础结构](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)。
 
-若要使用 Windows PowerShell 部署网络控制器，请参阅[使用 Windows Powershell 部署网络控制器](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
+若要使用 Windows PowerShell 部署网络控制器，请参阅 [使用 Windows Powershell 部署网络控制器](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
