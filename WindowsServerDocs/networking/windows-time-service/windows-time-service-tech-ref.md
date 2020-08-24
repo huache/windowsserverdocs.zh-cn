@@ -2,16 +2,16 @@
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
 title: Windows 时间服务技术参考
 description: W32Time 服务为计算机提供网络时钟同步，而无需进行大量配置。 W32Time 服务对于成功运行 Kerberos V5 身份验证非常重要，因此对于基于 AD DS 的身份验证也很重要。
-author: dcuomo
-ms.author: dacuo
+author: dahavey
+ms.author: dahavey
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: 01dc71fb483dfa426d7c7239145391260f2534e0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7017657c92f581560d7d0053d067f97ab6d16db8
+ms.sourcegitcommit: b5b040a47cf48c94852de9aad8b91475f891d2f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939878"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88563327"
 ---
 # <a name="windows-time-service-technical-reference"></a>Windows 时间服务技术参考
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 或更高版本
