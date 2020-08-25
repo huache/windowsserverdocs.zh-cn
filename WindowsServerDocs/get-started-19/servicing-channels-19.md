@@ -1,17 +1,17 @@
 ---
-title: 服务频道
+title: Windows Server 服务频道
 description: Windows Server 服务频道的说明 - LTSC 和 SAC
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 47fd1d50e9f90fb6617e2ded4bff3efeab5cd117
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 49de69c5a21a9c16012d79609784ff89395358db
+ms.sourcegitcommit: 893b9a24fd2efe30f5af909e3aa1f25907a17427
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969964"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88681278"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server 服务频道：LTSC 和 SAC
 
@@ -36,8 +36,8 @@ ms.locfileid: "87969964"
 
 可使用[软件保障](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)，也可以通过 Azure 市场或其他云/托管服务提供商及 Visual Studio 订阅等会员计划为批量授权的客户提供半年频道。
 
-> [!NOTE]
-> **当前的半年频道版本是 Windows Server 版本 1909**。 如果你要将服务器置于此频道，则应该安装 Windows Server 版本 1909，该版本可以在 Server Core 模式下安装或作为容器中运行的 Nano Server 来安装。 不支持从长期服务频道版本就地升级，因为它们处于**不同的发行频道**中。 半年频道发行版不是更新 – 它是半年频道中的下一个 Windows Server 发行版。
+> [!Note]
+> **当前的半年频道版本是 Windows Server 版本 2004**。 如果你要将服务器置于此频道，应安装 Windows Server 版本 2004，该版本可在 Server Core 模式下安装，也可安装为容器中运行的 Nano Server。 不支持从长期服务频道版本就地升级，因为它们处于**不同的发行频道**中。 半年频道发行版不是更新 – 它是半年频道中的下一个 Windows Server 发行版。
 
 在该模型中，Windows Server 版本通过发布的年份和月份进行标识：例如，2017 年 9 月发布的版本标识为**版本 1709**。 以半年频道发布的 Windows Server 每年发布两次新版本。 每个版本的支持周期为 18 个月。
 
@@ -45,7 +45,8 @@ ms.locfileid: "87969964"
 
 以下是需考虑的主要区别：
 
-- 是否需要在 Devops、容器和微服务上增加新技术？ 如果需要，应该考虑安装 Windows Server 版本 1909，加入半年频道 。 如本主题中所述，每年你将收到两个新版本，每个版本的主流生产支持期为 18 个月。 可通过批量许可、Azure 或 Visual Studio 订阅服务获取新版本。 目前，如果你打算在生产环境中运行产品，半年频道中的版本需要批量许可和软件保障。
+- 是否需要快速创新？ 是否需要提前访问最新的 Windows Server 功能？ 是否需要支持快速节奏混合应用程序、dev-ops 和 Hyper-V 结构？ 如果需要，应考虑安装 Windows Server 版本 2004，加入半年频道 。 如本主题中所述，每年你将收到两个新版本，每个版本的主流生产支持期为 18 个月。 可通过批量许可、Azure 或 Visual Studio 订阅服务获取新版本。 目前，如果你打算在生产环境中运行产品，半年频道中的版本需要批量许可和软件保障。
+
 - 是否需要稳定性和可预测性？ 是否需要在物理服务器上运行虚拟机和传统工作负载？ 如果需要，应该考虑**将服务器置于长期服务频道**。 当前的 LTSC 版本为 **Windows Server 2019**。 如本主题中所述，你有权每 2 至 3 年接收新版本，每个版本享受 5 年的主流支持和 5 年的延长支持。 LTSC 版本在所有发布机制中均有提供。 无论使用何种许可模型，所有人均可使用 LTSC 版本。
 
 下表总结了不同频道之间的主要差异：
@@ -170,12 +171,12 @@ State   :     Installed
 
 ## <a name="additional-references"></a>其他参考
 
-[Windows Server 半年频道中对 Nano Server 所做的更改](../get-started/nano-in-semi-annual-channel.md)
+- [Windows Server 半年频道中对 Nano Server 所做的更改](../get-started/nano-in-semi-annual-channel.md)
 
-[Windows Server 支持生命周期](https://support.microsoft.com/lifecycle)
+- [Windows Server 支持生命周期](https://support.microsoft.com/lifecycle)
 
-[确定 Server Core 是否正在运行](/previous-versions/windows/desktop/legacy/hh846315(v=vs.85)?f=255&MSPPError=-2147217396)
+- [确定 Server Core 是否正在运行](https://msdn.microsoft.com/library/hh846315%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)
 
-[GetProductInfo 函数](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
+- [GetProductInfo 函数](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
 
-[软件清单日志记录 Cmdlet](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)
+- [软件清单日志记录 Cmdlet](https://docs.microsoft.com/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)
