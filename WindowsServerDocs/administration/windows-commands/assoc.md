@@ -28,15 +28,15 @@ ms.locfileid: "88778598"
 assoc [<.ext>[=[<filetype>]]]
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 | --------- | ----------- |
 | `<.ext>` | 指定文件扩展名。 |
 | `<filetype>` | 指定与指定的文件扩展名关联的文件类型。 |
 | /? | 在命令提示符下显示帮助。 |
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 - 若要删除文件扩展名的文件类型关联，请按空格键，在等号后面添加一个空格。
 
