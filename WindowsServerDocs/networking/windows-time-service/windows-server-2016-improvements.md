@@ -1,17 +1,16 @@
 ---
 title: Windows Server 2016 的时间准确性改进
 description: Windows Server 2016 已改进用于纠正时间和调整本地时钟的算法，方便与 UTC 同步。
-author: dcuomo
-ms.author: dacuo
-manager: dougkim
+author: dahavey
+ms.author: dahavey
 ms.date: 10/17/2018
 ms.topic: article
-ms.openlocfilehash: 7c0644d88e158050b83873f4398fe7ee87b120d5
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f7593b085dd07694bf7d51d2712501bea612e9af
+ms.sourcegitcommit: b5b040a47cf48c94852de9aad8b91475f891d2f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997401"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88563397"
 ---
 # <a name="time-accuracy-improvements-for-windows-server-2016"></a>Windows Server 2016 的时间准确性改进
 

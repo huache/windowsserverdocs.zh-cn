@@ -5,18 +5,34 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/20/2020
+ms.date: 08/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 985d7b015c2ff3fe1d117e8277b445744f6a51e6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dbaaafe2c01d41a9786d6718bad850dc08deaa81
+ms.sourcegitcommit: 6d991b16a6d9129e1f5d1ca7d688bd621b72d586
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961851"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88638874"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Windows 应用商店客户端中的新增功能
 
 我们会定期更新 [Microsoft Store 客户端](windows.md)，添加新功能并修复问题。 可在下面找到最新更新。
+
+## <a name="updates-for-version-1021519-insider"></a>针对版本 10.2.1519 的更新（预览体验计划）
+
+*发布日期：2020/08/19*
+
+- 重写了客户端，使其使用与 iOS、macOS 和 Android 客户端相同的基础 RDP 核心引擎。
+- 现支持 Windows 虚拟桌面的 Windows 资源管理器集成版本。
+- 添加了对 x64 和 ARM64 的支持。
+- 将侧面板设计更新为了全屏。
+- 添加了对浅色模式和深色模式的支持。
+- 添加了订阅和连接到主权云部署的功能。
+- 添加在正式发布 (RTM) 时启用和还原工作区（书签）的功能。
+- 更新了在订阅过程中使用现有 Azure Active Directory (Azure AD) 令牌减少用户必须登录的次数的功能。
+- 更新后的订阅现可检测你是在使用 Windows 虚拟桌面还是 Windows 虚拟桌面（经典）。
+- 解决了将文件复制到远程电脑方面的问题。
+- 解决了按钮方面的常见辅助功能问题。
 
 ## <a name="updates-for-version-1011215"></a>针对版本 10.1.1215 的更新
 
@@ -47,7 +63,7 @@ ms.locfileid: "87961851"
 *发布日期：2019 年 3 月 15 日*
 
 - 现在可以设置用户帐户的显示名称，这样可以用不同的密码保存相同用户名。
-- 添加远程资源时，现在可以选择现有用户帐户。
+- 添加远程资源时，现可选择现有用户帐户。
 - 修复了客户端未正确终止的问题。
 - 客户端现在可以正确处理辅助窗口打开时的挂起问题。
 - 其他 bug 修复。
