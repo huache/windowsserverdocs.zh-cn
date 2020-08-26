@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/26/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fa1c713b06e63c919bc2e42e8d4ba3c14eecf8f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5bd3e1d5f06e5c415b4f300d9a2c8a9b390e5051
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971604"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702826"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows 桌面客户端入门
 
@@ -70,8 +70,8 @@ ms.locfileid: "87971604"
 1. 在客户端的主页上，点击“使用 URL 进行订阅”。
 2. 输入工作区 URL 或你的电子邮件地址：
    - 如果使用工作区 URL，请输入管理员提供给你的 URL。 如果从 Windows 虚拟桌面访问资源，可使用下列 URL 之一：
-     - Windows 虚拟桌面 2019 秋季版：`https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
-     - Windows 虚拟桌面 2020 春季版：`https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
+     - Windows 虚拟桌面（经典）：`https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
+     - Windows 虚拟桌面：`https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
    - 若要使用电子邮件地址，请输入你的电子邮件地址。 这会指示客户端搜索与你的电子邮件地址关联的 URL，前提是管理员已设置[电子邮件发现](../rds-email-discovery.md)。
 3. 点击“下一步”。
 4. 出现提示时，请使用用户帐户登录。

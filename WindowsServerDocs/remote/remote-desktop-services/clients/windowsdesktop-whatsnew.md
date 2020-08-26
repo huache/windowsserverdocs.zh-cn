@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/11/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3a2ff6268cbccc2d354227b577441a270faf9f
-ms.sourcegitcommit: f3a72c06e739d9ee9d8cd7e8259ccee8db7c7523
+ms.openlocfilehash: b23c19304aa7773dbb3c4e1406e065fb68947c5d
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88089966"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702836"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -57,7 +57,7 @@ ms.locfileid: "88089966"
 
 下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
 
-- 更新了“订阅”选项的自动发现逻辑，以支持 Windows 虚拟桌面春季 2020更新。 只有春季更新资源的客户不再需要为秋季 2019 版提供许可。
+- 更新了“订阅”选项的自动发现逻辑，以支持 Windows 虚拟桌面的 Azure 资源管理器集成版本。 只具有 Windows 虚拟桌面资源的客户应该不再需要提供对 Windows 虚拟桌面（经典）的同意。
 - 提供最高 400% 的比例因子，从而优化了对高 DPI 设备的支持。
 - 解决了问题：“断开连接”对话框不显示。
 - 解决了问题：命令栏工具提示的显示时间比预期长。
@@ -71,7 +71,7 @@ ms.locfileid: "88089966"
 下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
 - 进行订阅时，现可选择帐户而不是键入电子邮件地址。
-- 添加了新的“使用 URL 进行订阅”选项，你可用它来指定你要订阅的工作区的 URL，或在我们无法自动找到你的资源的情况下使用[电子邮件发现](../rds-email-discovery.md)（若可用）。 这与其他远程桌面客户端中的订阅流程很相似。 这可用于直接订阅 WVD 2020 春季版更新工作区。
+- 添加了新的“使用 URL 进行订阅”选项，你可用它来指定你要订阅的工作区的 URL，或在我们无法自动找到你的资源的情况下使用[电子邮件发现](../rds-email-discovery.md)（若可用）。 这与其他远程桌面客户端中的订阅流程很相似。 这可用于直接订阅 Windows 虚拟桌面工作区。
 - 现支持使用新的 [URI 方案](remote-desktop-uri.md)订阅工作区，该方案可随附电子邮件发送给用户，也可添加到支持网站中。
 - 新增了“连接信息”对话框，它提供了桌面会话和应用会话的客户端、网络和服务器详细信息。 可以在全屏模式下从连接栏访问此对话框，也可以在窗口化模式下从“系统”菜单访问它。
 - 在窗口化模式下启动的桌面会话现在始终最大化，而不是在最大化窗口时进入全屏。 使用“系统”菜单中的“全屏”选项可以进入全屏。

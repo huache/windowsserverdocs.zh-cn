@@ -6,14 +6,14 @@ ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/16/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 723fa40e1c2d446381b333eee1289a25adefd5d8
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: fd8e1da0edd1e49ad0f43420e662a79871ee28f0
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997363"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702846"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS 客户端入门
 
@@ -72,8 +72,8 @@ ms.locfileid: "87997363"
 2. 在“源 URL”字段中，输入要添加的源的 URL。 该 URL 可以是一个 URL，也可以是电子邮件地址。
    - 如果使用 URL，请输入管理员提供给你的 URL。
       - 此 URL 通常是一个 Windows 虚拟桌面 URL。 使用哪一个取决于所使用的 Windows 虚拟桌面版本。
-        - 如果是 2019 年秋季版，请使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
-        - 如果是 2020 年春季版，请使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
+        - 对于 Windows 虚拟桌面（经典），请使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
+        - 对于 Windows 虚拟桌面，请使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
    - 如果使用电子邮件地址，请输入你的电子邮件地址。 输入电子邮件地址会指示客户端搜索与该地址关联的 URL，前提是管理员已采用这种方式配置了服务器。
 3. 点击“下一步”。
 4. 出现提示时，提供你的凭据。

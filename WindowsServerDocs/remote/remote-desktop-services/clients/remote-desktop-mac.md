@@ -6,14 +6,14 @@ ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 07/16/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a0c93ddc6bf891a3f8157d36b67f60241d4d41b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e0ce10cbdc1dfe70156d36a96978222395afaa94
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991596"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702816"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS 客户端入门
 
@@ -49,8 +49,8 @@ ms.locfileid: "87991596"
 1. 选择主页上的“添加源”，以连接到服务，并检索资源。
 2. 输入源 URL。 该项可以是 URL 或电子邮件地址：
    - 此 URL 通常是一个 Windows 虚拟桌面 URL。 使用哪一个取决于所使用的 Windows 虚拟桌面版本。
-      - 如果是 2019 年秋季版，请使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
-      - 如果是 2020 年春季版，请使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
+      - 对于 Windows 虚拟桌面（经典），请使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
+      - 对于 Windows 虚拟桌面，请使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
    - 若要使用电子邮件地址，请输入你的电子邮件地址。 这会指示客户端搜索与你的电子邮件地址关联的 URL，前提是管理员已采用这种方式配置了服务器。
 3. 选择“订阅”。
 4. 出现提示时，请使用用户帐户登录。

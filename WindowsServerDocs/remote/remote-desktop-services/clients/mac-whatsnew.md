@@ -5,20 +5,64 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/08/2020
+ms.date: 08/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e8769dd5784bcbac5c5384316564150801c1eb0e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 72d828099d8dfe29639789f526533a7bb1ba159d
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946510"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702856"
 ---
 # <a name="whats-new-in-the-macos-client"></a>MacOS 客户端中的新增功能
 
 我们会定期更新[适用于 macOS 的远程桌面客户端](remote-desktop-mac.md)添加新功能并修复问题。 可在下面找到最新更新。
 
 如果遇到任何问题，可以随时通过导航到“帮助” > “报告问题”来联系我们   。
+
+## <a name="updates-for-version-1040"></a>针对版本 10.4.0 的更新
+
+*发布日期：2020/8/20*
+
+在该版本中，我们对基础代码进行了大量更新，此代码在我们的所有客户端中支持远程桌面体验。 我们还添加了一些新功能，同时解决了错误报告中显示的 bug 和故障。 你可能会注意到的以下一些更改：
+
+- 通过电脑快速连接 (Cmd+K)，无需创建书签即可连接到电脑。
+- 通过自动重新连接，可从暂时性的网络故障中恢复电脑连接。
+- 恢复挂起的 MacBook 时，可使用自动重新连接功能来重新连接所有已断开的电脑连接。
+- 现支持在订阅和连接到 Windows 虚拟桌面资源时使用 HTTP 代理。
+- 使用 PAC 文件实现了对 HTTP 代理自动配置的支持。
+- 集成了对 NETBIOS 名称解析的支持，让你能够在本地网络上更轻松地连接到电脑。
+- 解决了在应用处于焦点时系统菜单栏不响应的问题。
+- 修复了可能导致服务器上出现解密错误的客户端争用情况。
+- 进行了改进，可对涉及到 Retina 级显示器的多显示器场景显示布局和几何启发式方法。
+- 多显示器布局配置现跨会话重定向场景进行维护。
+- 解决了阻止菜单栏在多显示器场景中显示的问题。
+- 与 macOS 密钥链交互的用户帐户 UI 现将显示密钥链访问错误。
+- 在工作区订阅期间点击“取消”现将导致不向连接中心添加任何内容。
+- 添加了 Cmd+Z 和 Cmd+F 的键映射，将它们分别映射到 Ctrl+Z 和 Ctrl+F。
+- 修复了在启动时导致远程应用在连接中心后面打开的 bug。
+- 解决了 macOS 10.15 上的 AAC 音频播放会导致客户端停止的问题。
+- 现可在 Unicode 模式中使用 Shift+向左单击。
+- 修复了在 Unicode 模式中使用 Shift 键会触发粘滞键警报的 bug。
+- 增添了在连接启动之前对网络可用性的检查。
+- 解决了在连接序列期间电脑缩略图闪烁显示出现问题的情况。
+- 修复了“添加/编辑用户帐户”工作表中的密码字段变为多行的 bug。
+- 现在，如果所有工作区均已折叠，“全部折叠”选项将灰显。
+- 现在，如果所有工作区均已展开，“全部展开”选项将灰显。
+- High Sierra 上不再显示首次运行权限 UI。
+- 解决了用户无法使用 DOMAIN\USERNAME 格式保存的凭据连接到 Windows 虚拟桌面终结点的问题。
+- 对于 Windows 虚拟桌面终结点，现始终预填充凭据提示中的用户名字段。
+- 修复了在连接中心宽度不够时会剪切工作区的“编辑”、“删除”和“刷新”按钮的 bug。
+- “添加工作区”工作表中的“电子邮件或工作区 URL”字段不再区分大小写。
+- 解决了大量影响 VoiceOver 和键盘导航方案的辅助功能问题。
+- 大量更新用于提升与 Windows 虚拟桌面服务中当前和即将推出的功能的互操作性。
+- 你现可从终端提示符中配置客户端播发的 AVC 支持级别。 下面是你可配置的支持级别：
+  
+   - 不向服务器播发 AVC 支持：`defaults write com.microsoft.rdc.macos AvcSupportLevel disabled`
+   - 向服务器播发 AVC420 支持：`defaults write com.microsoft.rdc.macos AvcSupportLevel avc420`
+   - 向服务器播发对 AVC444 支持的支持：`defaults write com.microsoft.rdc.macos AvcSupportLevel avc444`
+
+再次感谢所有报告 bug 和花时间帮助我们诊断问题的用户！
 
 ## <a name="updates-for-version-1039"></a>针对版本 10.3.9 的更新
 
@@ -332,8 +376,8 @@ ms.locfileid: "87946510"
 - 解决了 RemoteApp 窗口出现在连接中心后面的问题。
 - 修复了从远程桌面 8 导入之后在编辑本地资源时发生的问题。
 - 现在可以通过在桌面磁贴上按 ENTER 来启动连接。
-- 处于全屏视图时，CMD+M 现在会正确映射到 WIN+M。
-- “连接中心”、“首选项”和“关于”窗口现在会响应 CMD+M。
+- 处于全屏视图时，Cmd+M 现会正确映射到 WIN+M。
+- “连接中心”、“首选项”和“关于”窗口现会响应 Cmd+M。
 - 现在可以通过在“添加远程资源”  页面上按 ENTER 来开始发现源。
 - 修复了在刷新之前，新远程资源源在连接中心中显示为空的问题。
 
