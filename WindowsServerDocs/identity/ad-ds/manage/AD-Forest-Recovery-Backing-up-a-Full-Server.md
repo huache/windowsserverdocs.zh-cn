@@ -1,17 +1,17 @@
 ---
 title: AD 林恢复-备份完整服务器
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.openlocfilehash: cb7e6f7b8e8786ad816a9ec5e3211fa617723a9c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ef1eb77a108d742d4fe6c7b76bfe412c7eac95bc
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956934"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939917"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD 林恢复-备份完整服务器
 
@@ -26,42 +26,42 @@ ms.locfileid: "87956934"
 >[!NOTE]
 >请注意，Windows Server 2016 和 Windows Server 2012 R2 的步骤可能略有不同。
 
-有关在 Windows Server 2008 和 Windows Server 2008 R2 中安装它的步骤，请参阅[安装 Windows Server 备份](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。
+有关在 Windows Server 2008 和 Windows Server 2008 R2 中安装它的步骤，请参阅 [安装 Windows Server 备份](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。
 
 ### <a name="to-install-windows-server-backup"></a>安装 Windows Server 备份
 
-1. 打开**服务器管理器**，然后单击 "**添加角色和功能**"。
-2. 在 "**添加角色和功能向导**" 中，单击 "**下一步**"。
-3. 在 "**安装类型**" 屏幕上，保留默认的**基于角色或基于功能的安装**，然后单击 "**下一步**"。
-4. 在**服务器选择**屏幕上，单击 "**下一步**"。
-5. 在 "**服务器角色**" 屏幕上，单击 "**下一步**"。
+1. 打开 **服务器管理器** ，然后单击 " **添加角色和功能**"。
+2. 在 " **添加角色和功能向导** " 中，单击 " **下一步**"。
+3. 在 " **安装类型** " 屏幕上，保留默认的 **基于角色或基于功能的安装** ，然后单击 " **下一步**"。
+4. 在 **服务器选择** 屏幕上，单击 " **下一步**"。
+5. 在 " **服务器角色** " 屏幕上，单击 " **下一步**"。
 6. 在 "**功能**" 屏幕上，选择**Windows Server 备份**然后单击 "**下一步**" 
     ![ 安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
-7. 单击“安装”  。
-8. 安装完成后，单击 "**关闭**"。
+7. 单击“安装”。
+8. 安装完成后，单击 " **关闭**"。
 
 ### <a name="to-perform-a-backup-with-windows-server-backup"></a>使用 Windows Server 备份执行备份
 
-1. 打开**服务器管理器**，单击 "**工具**"，然后单击 " **Windows Server 备份**"。
-   - 在 Windows Server 2008 R2 和 Windows Server 2008 中，单击 "**开始**"，指向 "**管理工具**"，然后单击 " **Windows Server 备份**"。
+1. 打开 **服务器管理器**，单击 " **工具**"，然后单击 " **Windows Server 备份**"。
+   - 在 Windows Server 2008 R2 和 Windows Server 2008 中，单击 " **开始**"，指向 " **管理工具**"，然后单击 " **Windows Server 备份**"。
 
    ![安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
 
-2. 如果系统提示，请在 "**用户帐户控制**" 对话框中提供备份操作员凭据，然后单击 **"确定"**。
-3. 单击 "**本地备份**"。
+2. 如果系统提示，请在 " **用户帐户控制** " 对话框中提供备份操作员凭据，然后单击 **"确定"**。
+3. 单击 " **本地备份**"。
 4. 在 **“操作”** 菜单中，单击 **“一次性备份”**。
-5. 在 "一次性备份" 向导中的 "**备份选项**" 页上，单击 "**其他选项**"，然后单击 "**下一步**"。
+5. 在 "一次性备份" 向导中的 " **备份选项** " 页上，单击 " **其他选项**"，然后单击 " **下一步**"。
 
    ![安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
-6. 在 "**选择备份配置**" 页上，单击 " ** (建议) **，然后单击"**下一步**"。
-7. 在 "**指定目标类型**" 页上，单击 "**本地驱动器**" 或 "**远程共享文件夹**"，然后单击 "**下一步**"。
-8. 在 "**选择备份目标**" 页上，选择备份位置。  如果选择了本地驱动器，请选择本地驱动器，或者如果选择了远程共享，请选择网络共享。
-9. 在确认屏幕上，单击 "**备份**"。
+6. 在 " **选择备份配置** " 页上，单击 " ** (建议) **，然后单击" **下一步**"。
+7. 在 " **指定目标类型** " 页上，单击 " **本地驱动器** " 或 " **远程共享文件夹**"，然后单击 " **下一步**"。
+8. 在 " **选择备份目标** " 页上，选择备份位置。  如果选择了本地驱动器，请选择本地驱动器，或者如果选择了远程共享，请选择网络共享。
+9. 在确认屏幕上，单击 " **备份**"。
 
    ![安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup4.png)
 
-10. 完成此完成后，单击 "**关闭**"。
+10. 完成此完成后，单击 " **关闭**"。
 11. 关闭 Windows Server 备份。
 
 >[!NOTE]

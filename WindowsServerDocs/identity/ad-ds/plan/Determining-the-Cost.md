@@ -1,17 +1,17 @@
 ---
 ms.assetid: e3ea1f67-60d4-4566-b24c-37faa95c3b2a
 title: 确定成本
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: f99c151840fcd32fd94567bba8a0bd9ce5196c69
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: acf68e45a1d914bcbf5e780f51d2455fe43ab3e3
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943091"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939407"
 ---
 # <a name="determining-the-cost"></a>确定成本
 
@@ -21,7 +21,7 @@ ms.locfileid: "87943091"
 
 建议在站点范围内定义成本值。 成本通常不仅基于链接的总带宽，还取决于链接的可用性、延迟和货币成本。
 
-若要确定要在站点链接上部署的成本，请记录每个站点链接的连接速度。 有关所标识连接速度的信息，请参阅[收集网络信息](../../ad-ds/plan/Collecting-Network-Information.md)中的 "地理位置和通信链接" ( # A0) 工作表。
+若要确定要在站点链接上部署的成本，请记录每个站点链接的连接速度。 有关所标识连接速度的信息，请参阅 [收集网络信息](../../ad-ds/plan/Collecting-Network-Information.md) 中的 "地理位置和通信链接" ( # A0) 工作表。
 
 下表列出了不同类型的网络的速度。
 
@@ -40,7 +40,7 @@ ms.locfileid: "87943091"
 
 使用下表根据广域网) 链接速度 (WAN 计算每个站点链接的开销。 对于表中未列出的 WAN 链接速度，可以通过将1024除以可用带宽的对数（以 Kbps 为单位）来计算相对成本系数。
 
-|可用带宽 (Kbps) |节约成本|
+|可用带宽 (Kbps) |成本|
 |--------------------------------|--------|
 |9.6|1042|
 |19.2|798|

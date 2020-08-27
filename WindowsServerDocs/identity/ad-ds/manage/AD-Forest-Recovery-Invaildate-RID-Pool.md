@@ -1,23 +1,23 @@
 ---
 title: AD 林恢复-使 RID 池失效
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 2f5f84df-bd85-4ca4-bdd3-835bd1d45c11
-ms.openlocfilehash: 1dac48ff5dc9f864b7c23f4a91740005fa12780c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 36919eb4f4e67129446975f9c8c4d60fd64cc499
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969884"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939637"
 ---
 # <a name="ad-forest-recovery---invalidating-the-current-rid-pool"></a>AD 林恢复-使当前 RID 池失效
 
 >适用于： Windows Server 2016、Windows Server 2012 和 2012 R2、Windows Server 2008 和 2008 R2
 
-使用以下过程向我们的 Windows PowerShell 使域控制器上的当前 RID 池失效。 默认情况下，windows PowerShell 在 Windows Server 2012 和 Windows Server 2008 R2 上处于启用状态，但 windows Server 2008 却不能通过使用 "**添加功能**" 安装。 可以将其[下载](https://www.microsoft.com/download/details.aspx?id=20020)到在 Windows Server 2003 上运行。
+使用以下过程向我们的 Windows PowerShell 使域控制器上的当前 RID 池失效。 默认情况下，windows PowerShell 在 Windows Server 2012 和 Windows Server 2008 R2 上处于启用状态，但 windows Server 2008 却不能通过使用 " **添加功能**" 安装。 可以将其 [下载](https://www.microsoft.com/download/details.aspx?id=20020) 到在 Windows Server 2003 上运行。
 
 若要验证命令是否已成功完成，请检查事件 ID 16654 (源是否) Windows Server 2012 中事件查看器的系统日志中。 Windows 的早期版本不会记录此事件。
 

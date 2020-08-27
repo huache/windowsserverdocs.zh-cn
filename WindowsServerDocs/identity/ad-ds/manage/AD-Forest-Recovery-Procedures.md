@@ -1,17 +1,17 @@
 ---
 title: AD 林恢复 - 过程
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 47a471fb-3b0b-4aa8-8525-1c92d0d51e93
-ms.openlocfilehash: c59990486da26847884aec3052818bce1ebe450d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2bd333d2ae6d27facf5e3c5b31a113b13a1cd11c
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969854"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939476"
 ---
 # <a name="ad-forest-recovery---procedures"></a>AD 林恢复 - 过程
 
@@ -19,7 +19,7 @@ ms.locfileid: "87969854"
 
 本部分包含与林恢复过程相关的过程。 这些过程适用于 Windows Server 2016、2012 R2、2012，还适用于 Windows Server 2008 R2 和2008，但有一些细微的例外。
 
-在[带有 windows server 2003 域控制器的林恢复](AD-Forest-Recovery-Windows-Server-2003.md)中发现包含不同于 windows server 2003 的步骤的过程。
+在 [带有 windows server 2003 域控制器的林恢复](AD-Forest-Recovery-Windows-Server-2003.md)中发现包含不同于 windows server 2003 的步骤的过程。
 
 下面是用于备份和还原域控制器和 Active Directory 的过程列表。
 

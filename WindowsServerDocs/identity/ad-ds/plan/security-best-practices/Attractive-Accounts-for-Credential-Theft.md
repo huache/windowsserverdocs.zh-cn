@@ -1,17 +1,17 @@
 ---
 ms.assetid: 34244b53-1206-4f5b-8c4d-3ebf574d8e24
 title: 凭据容易被盗的帐户
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6aab5eeb405a067cc2bb83bc5e92d777869ca349
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f2cde8766a518be95d52449d2516a874c6070bc7
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963108"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938217"
 ---
 # <a name="attractive-accounts-for-credential-theft"></a>凭据容易被盗的帐户
 
@@ -35,10 +35,10 @@ ms.locfileid: "87963108"
 
 由于 Active Directory 中高度特权的帐户可用于传播泄露，并可以操作 VIP 帐户或它们可以访问的数据，因此凭据窃取攻击最有用的帐户是 Active Directory 中企业管理员、域管理员和管理员组的成员的帐户。
 
-由于域控制器是 AD DS 数据库的存储库，并且域控制器对 Active Directory 中的所有数据具有完全访问权限，因此，无论是并行处理凭据盗窃攻击，还是在一个或多个具有高特权的 Active Directory 帐户受到损害后，域控制器也会受到破坏。 尽管许多发布 (和许多攻击者) 在描述传递哈希和其他凭据被盗攻击时专注于域管理员组成员身份 (如[减少 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述所述的那样，作为此处列出的任何组的成员的帐户可用于破坏整个) 安装。
+由于域控制器是 AD DS 数据库的存储库，并且域控制器对 Active Directory 中的所有数据具有完全访问权限，因此，无论是并行处理凭据盗窃攻击，还是在一个或多个具有高特权的 Active Directory 帐户受到损害后，域控制器也会受到破坏。 尽管许多发布 (和许多攻击者) 在描述传递哈希和其他凭据被盗攻击时专注于域管理员组成员身份 (如 [减少 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md) 中所述所述的那样，作为此处列出的任何组的成员的帐户可用于破坏整个) 安装。
 
 > [!NOTE]
-> 有关传递哈希和其他凭据被盗攻击的全面信息，请参阅[附录 M：文档链接和建议阅读](../../../ad-ds/manage/Appendix-M--Document-Links-and-Recommended-Reading.md)中列出的[缓解哈希 (PTH) 攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)白皮书。 若要详细了解通过确定攻击者（有时称为 "高级持久性威胁" (Apt) ）的攻击，请参阅确定的[攻击者和目标攻击](https://www.microsoft.com/download/details.aspx?id=34793)。
+> 有关传递哈希和其他凭据被盗攻击的全面信息，请参阅[附录 M：文档链接和建议阅读](../../../ad-ds/manage/Appendix-M--Document-Links-and-Recommended-Reading.md)中列出的[缓解哈希 (PTH) 攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)白皮书。 若要详细了解通过确定攻击者（有时称为 "高级持久性威胁" (Apt) ）的攻击，请参阅确定的 [攻击者和目标攻击](https://www.microsoft.com/download/details.aspx?id=34793)。
 
 ## <a name="activities-that-increase-the-likelihood-of-compromise"></a>增加危害可能性的活动
 由于凭据被盗的目标通常是高度特权的域帐户和 VIP 帐户，因此管理员一定要了解提高凭据盗窃攻击成功的可能性。 尽管攻击者还以 VIP 帐户为目标，但是，如果在系统或域中没有为 Vip 提供高级别的权限，则他们的凭据被盗需要其他类型的攻击，如社交工程来提供机密信息。 或者，攻击者必须首先获取缓存了 VIP 凭据的系统的特权访问权限。 因此，增加此处所述凭据被盗的可能性的活动主要是为了防止获取高度特权的管理凭据。 这些活动是常见的机制，攻击者可以利用这些机制来损害系统，以获取特权凭据。
@@ -55,9 +55,9 @@ ms.locfileid: "87963108"
 当使用高度特权的域帐户以交互方式登录到遭到入侵的工作站或成员服务器时，该计算机遭受攻击可能会从登录系统的任何帐户获取凭据。
 
 #### <a name="unsecured-administrative-workstations"></a>不安全的管理工作站
-在许多组织中，IT 人员使用多个帐户。 一个帐户用于登录到员工的工作站，因为这些是 IT 人员，他们通常在其工作站上具有本地管理员权限。 在某些情况下，UAC 处于启用状态，以便用户在登录时至少收到一个拆分访问令牌，并且必须在需要权限时提升。 当这些用户执行维护活动时，他们通常使用本地安装的管理工具并通过选择 "以**管理员身份运行**" 选项或在出现提示时提供凭据来提供其域特权帐户的凭据。 尽管此配置可能适用，但它会公开环境，因为：
+在许多组织中，IT 人员使用多个帐户。 一个帐户用于登录到员工的工作站，因为这些是 IT 人员，他们通常在其工作站上具有本地管理员权限。 在某些情况下，UAC 处于启用状态，以便用户在登录时至少收到一个拆分访问令牌，并且必须在需要权限时提升。 当这些用户执行维护活动时，他们通常使用本地安装的管理工具并通过选择 "以 **管理员身份运行** " 选项或在出现提示时提供凭据来提供其域特权帐户的凭据。 尽管此配置可能适用，但它会公开环境，因为：
 
--   员工用于登录到其工作站的 "常规" 用户帐户具有本地管理员权限，这种[情况](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx)下，该计算机容易受到攻击，导致用户相信要安装恶意软件。
+-   员工用于登录到其工作站的 "常规" 用户帐户具有本地管理员权限，这种 [情况](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx) 下，该计算机容易受到攻击，导致用户相信要安装恶意软件。
 
 -   恶意软件安装在管理帐户的上下文中，现在可以使用计算机来捕获击键、剪贴板内容、屏幕快照和内存驻留凭据，其中任何一个都可能导致公开强大域帐户的凭据。
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 8a3cf2ae-2511-4eea-afd5-a43179a78613
 title: 目录服务组件更新
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b3614679780395defcd182394f4a6cdd7f4ad832
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 39f13d18210a6527c5da2ccb6655150be9608a46
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943405"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939587"
 ---
 # <a name="directory-services-component-updates"></a>目录服务组件更新
 
@@ -87,7 +87,7 @@ Windows Server 2008 DFL 是创建新域时支持的最低功能级别。
 ### <a name="lowering-the-forest-and-domain-functional-levels"></a>降低林和域功能级别
 默认情况下，林和域功能级别设置为 Windows Server 2012 R2，在新域和新林创建时设置为，但可以使用 Windows PowerShell 降低。
 
-若要使用 Windows PowerShell 提升或降低林功能级别，请使用**set-adforestmode** cmdlet。
+若要使用 Windows PowerShell 提升或降低林功能级别，请使用 **set-adforestmode** cmdlet。
 
 **将 contoso.com FFL 设置为 Windows Server 2008 模式：**
 
@@ -112,7 +112,7 @@ Set-ADDomainMode -DomainMode Windows2008Domain -Identity contoso.com
 ### <a name="adprep"></a>ADPREP.LOG
 此版本中没有新的林或域操作。
 
-这些 .ldf 文件包含**设备注册服务**的架构更改。
+这些 .ldf 文件包含 **设备注册服务**的架构更改。
 
 1.  Sch59
 
@@ -269,32 +269,32 @@ Log Record Bytes Generated: 0
 
 1.  打开 LDP.exe，然后连接并绑定到域控制器。
 
-2.  在 "**选项**" 菜单上，单击 "**控件**"。
+2.  在 " **选项** " 菜单上，单击 " **控件**"。
 
-3.  在 "控件" 对话框中，展开 "**加载预定义**的" 下拉菜单，单击 "**搜索统计**信息"，然后单击 **"确定"**。
+3.  在 "控件" 对话框中，展开 " **加载预定义** 的" 下拉菜单，单击 " **搜索统计** 信息"，然后单击 **"确定"**。
 
     ![目录服务更新](media/Directory-Services-component-updates/GTR_ADDS_Controls.gif)
 
 4.  在 "**浏览**" 菜单上，单击 "**搜索**"
 
-5.  在 "搜索" 对话框中，选择 "**选项**" 按钮。
+5.  在 "搜索" 对话框中，选择 " **选项** " 按钮。
 
-6.  确保在 "搜索选项" 对话框中选中了 "**扩展**" 复选框，然后选择 **"确定"**。
+6.  确保在 "搜索选项" 对话框中选中了 " **扩展** " 复选框，然后选择 **"确定"**。
 
     ![目录服务更新](media/Directory-Services-component-updates/GTR_ADDS_SearchOptions.gif)
 
 ### <a name="try-this-use-ldp-to-return-query-statistics"></a>尝试此操作：使用 LDP 返回查询统计信息
 在域控制器上或在已加入域的客户端或安装了 AD DS 工具的服务器上执行以下。  对 Windows Server 2012 DC 和 Windows Server 2012 R2 DC 执行以下操作。
 
-1.  查看["创建更有效的 MICROSOFT AD 应用程序"](/previous-versions/ms808539(v=msdn.10))一文，并根据需要向后参考。
+1.  查看 ["创建更有效的 MICROSOFT AD 应用程序"](/previous-versions/ms808539(v=msdn.10)) 一文，并根据需要向后参考。
 
-2.  使用 LDP，启用搜索统计信息 (参阅[以在 LDP 中启用统计信息控件](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_EnableStats)) 
+2.  使用 LDP，启用搜索统计信息 (参阅 [以在 LDP 中启用统计信息控件](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_EnableStats)) 
 
 3.  执行多个 LDAP 搜索，并观察结果顶部的统计信息。  你将在其他活动中重复相同的搜索，以便将其记录在记事本文本文件中。
 
 4.  执行 LDAP 搜索，因为属性索引，查询优化器应该能够优化该搜索
 
-5.  尝试构造一个需要很长时间才能完成的搜索 (你可能想要增加**时间限制**选项，使搜索) 不超时。
+5.  尝试构造一个需要很长时间才能完成的搜索 (你可能想要增加 **时间限制** 选项，使搜索) 不超时。
 
 ### <a name="additional-resources"></a>其他资源
 [什么是 Active Directory 搜索？](/previous-versions/windows/it-pro/windows-server-2003/cc783845(v=ws.10))
@@ -308,7 +308,7 @@ Log Record Bytes Generated: 0
 ## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>1644 事件改进
 
 ### <a name="overview"></a>概述
-此更新向事件 ID 1644 添加了更多 LDAP 搜索结果统计信息，以帮助进行故障排除。  此外，还有一个新的注册表值，可用于根据基于时间的阈值启用日志记录。  这些改进已在 Windows Server 2012 和 Windows Server 2008 R2 SP1 中通过 KB [2800945](https://support.microsoft.com/kb/2800945)提供，并可用于 windows SERVER 2008 SP2。
+此更新向事件 ID 1644 添加了更多 LDAP 搜索结果统计信息，以帮助进行故障排除。  此外，还有一个新的注册表值，可用于根据基于时间的阈值启用日志记录。  这些改进已在 Windows Server 2012 和 Windows Server 2008 R2 SP1 中通过 KB [2800945](https://support.microsoft.com/kb/2800945) 提供，并可用于 windows SERVER 2008 SP2。
 
 > [!NOTE]
 > -   向事件 ID 1644 添加了其他 LDAP 搜索统计信息，以帮助排查低效或昂贵的 LDAP 搜索问题
@@ -323,7 +323,7 @@ Log Record Bytes Generated: 0
 
 -   正在启动节点
 
--   “筛选器”
+-   筛选
 
 -   搜索范围
 

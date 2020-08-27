@@ -1,17 +1,17 @@
 ---
 ms.assetid: 155abe09-6360-4913-8dd9-7392d71ea4e6
 title: 配置计算机进行故障排除
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 05aa12b16d67a8f91ed82064c8464927546bfee8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 049addf848e231104e844c06627997c71b335d20
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947901"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938737"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>配置计算机进行故障排除
 
@@ -29,7 +29,7 @@ ms.locfileid: "87947901"
 
 安装 AD DS 创建域控制器时，将自动安装用于管理 AD DS 的管理工具。 如果要从非域控制器的计算机远程管理域控制器，可以在运行受支持的 Windows 版本的成员服务器或工作站上安装远程服务器管理工具 (RSAT) 。 RSAT 替换 Windows Server 2003 中的 Windows 支持工具。
 
-有关安装 RSAT 的信息，请参阅文章[远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
+有关安装 RSAT 的信息，请参阅文章 [远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
 
 ### <a name="configure-reliability-and-performance-monitor"></a>配置可靠性和性能监视器
 
@@ -39,9 +39,9 @@ Windows Server 包括 Windows 可靠性和性能监视器，这是一个 Microso
 
 ### <a name="set-logging-levels"></a>设置日志记录级别
 
-如果在目录服务登录事件查看器中收到的信息不足以进行故障排除，请使用**HKEY_LOCAL_MACHINE \system\currentcontrolset\services\ntds\diagnostics**中的相应注册表项提高日志记录级别。
+如果在目录服务登录事件查看器中收到的信息不足以进行故障排除，请使用 **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\ntds\diagnostics**中的相应注册表项提高日志记录级别。
 
-默认情况下，所有条目的日志记录级别均设置为**0**，这将提供最小数量的信息。 最高日志记录级别为**5**。 增大条目的级别会导致在目录服务事件日志中记录其他事件。
+默认情况下，所有条目的日志记录级别均设置为 **0**，这将提供最小数量的信息。 最高日志记录级别为 **5**。 增大条目的级别会导致在目录服务事件日志中记录其他事件。
 
 使用以下过程来更改诊断条目的日志记录级别。 若要完成该过程，必须至少具有 **Domain Admins** 的成员资格或同等权限。
 
@@ -54,5 +54,5 @@ Windows Server 包括 Windows 可靠性和性能监视器，这是一个 Microso
 1. 单击 "**开始**  >  **运行**" > 键入**regedit** > 单击 **"确定"**。
 2. 导航到要为其设置日志记录的条目。
    * 示例： HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics
-3. 双击条目，然后在 "**基本**" 中单击 "**十进制**"。
-4. 在 "**值**" 中，键入从**0**到**5**的整数，然后单击 **"确定"**。
+3. 双击条目，然后在 " **基本**" 中单击 " **十进制**"。
+4. 在 " **值**" 中，键入从 **0** 到 **5**的整数，然后单击 **"确定"**。

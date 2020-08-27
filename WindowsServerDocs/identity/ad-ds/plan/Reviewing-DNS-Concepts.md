@@ -1,17 +1,17 @@
 ---
 ms.assetid: 133474ee-316d-4b1c-acc6-ad5434a064d5
 title: 查看 DNS 概念
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 4036e4671bab9d45ffb000eba441160c794b7f68
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 20192d56aded75f5a178a600067b26c8c23286fb
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972284"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938577"
 ---
 # <a name="reviewing-dns-concepts"></a>查看 DNS 概念
 
@@ -25,7 +25,7 @@ ms.locfileid: "87972284"
 
 了解 DNS 的核心功能（例如委托、递归名称解析和 Active Directory 集成的 DNS 区域）非常重要，因为它们对 Active Directory 逻辑结构设计有直接的影响。
 
-有关 DNS 和 Active Directory 域服务 (AD DS) 的详细信息，请参阅[dns 和 AD DS](../../ad-ds/plan/DNS-and-AD-DS.md)。
+有关 DNS 和 Active Directory 域服务 (AD DS) 的详细信息，请参阅 [dns 和 AD DS](../../ad-ds/plan/DNS-and-AD-DS.md)。
 
 ## <a name="delegation"></a>委托
 

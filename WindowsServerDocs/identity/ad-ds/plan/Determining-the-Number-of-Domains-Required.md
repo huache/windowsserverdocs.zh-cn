@@ -1,17 +1,17 @@
 ---
 ms.assetid: 87bca912-b912-4bbe-9533-2c34a7abc52d
 title: 确定所需的域数量
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 6ff1d69afc95aa87d81c8737313d425e84cbc531
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8fe9e6d50bef530d50ba8e7a33432fe2613b871b
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941325"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939347"
 ---
 # <a name="determining-the-number-of-domains-required"></a>确定所需的域数量
 
@@ -42,7 +42,7 @@ ms.locfileid: "87941325"
 
 使用此表：
 
-1. 在 "**连接域控制器的最慢链接**" 列中，找到与要在域中复制 AD DS 的最慢链接速度的值。
+1. 在 " **连接域控制器的最慢链接** " 列中，找到与要在域中复制 AD DS 的最慢链接速度的值。
 
 2. 在对应于最慢链接速度的行中，找到表示要分配给 AD DS 的带宽百分比的列。 位于该位置的值是单个域林中的域可包含的最大用户数。
 
@@ -80,7 +80,7 @@ ms.locfileid: "87941325"
 
 使用此表：
 
-1. 在 "**连接域控制器的最慢链接**" 列中，找到与要在林中复制 AD DS 的速度最慢的链接速度的值。
+1. 在 " **连接域控制器的最慢链接** " 列中，找到与要在林中复制 AD DS 的速度最慢的链接速度的值。
 
 2. 在对应于最慢链接速度的行中，找到表示要分配给 AD DS 的带宽百分比的列。 该位置的值是林可承载的用户的最大数量。
 
@@ -114,7 +114,7 @@ ms.locfileid: "87941325"
 
 使用此表：
 
-1. 在 "**连接域控制器的最慢链接**" 列中，找到与要在区域中复制 AD DS 的最慢链接速度的值。
+1. 在 " **连接域控制器的最慢链接** " 列中，找到与要在区域中复制 AD DS 的最慢链接速度的值。
 
 2. 在对应于最慢链接速度的行中，找到表示要分配给 AD DS 的带宽百分比的列。 该值表示该区域可托管的用户的最大数量。
 
@@ -126,4 +126,4 @@ ms.locfileid: "87941325"
 
 将组织分为多个区域后，请记录要表示的区域，以及每个区域中的用户数。 此外，请注意将用于 Active Directory 复制的每个区域中速度最慢的链接速度。 此信息用于确定是否需要其他域或林。
 
-要使工作表可以帮助您记录标识的区域，请从[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "标识区域" ( # A1) 。
+要使工作表可以帮助您记录标识的区域，请从 [Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608) 下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "标识区域" ( # A1) 。

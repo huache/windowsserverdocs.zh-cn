@@ -1,17 +1,17 @@
 ---
 ms.assetid: b146f47e-3081-4c8e-bf68-d0f993564db2
 title: 虚拟化域控制器部署和配置
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6804df686635e441c667ab395ca486d3791a2aa5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7c2ae279a39566a30670111198d0e4840f57f6fc
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959405"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939067"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>虚拟化域控制器部署和配置
 
@@ -427,7 +427,7 @@ Export-vm
 ##### <a name="hyper-v-manager-method"></a>Hyper-V 管理器方法
 使用 Hyper-V 管理器创建合并的磁盘：
 
-1. 单击 "**编辑磁盘**"。
+1. 单击 " **编辑磁盘**"。
 
 2. 浏览最低的子磁盘。 例如，如果使用差异磁盘，则子磁盘是最低的子项。 如果虚拟机含有单个快照（或多个快照），则当前选定的快照是最低的子磁盘。
 
@@ -642,7 +642,7 @@ Remove-VMSnapshot
 > [!WARNING]
 > 确保导入计算机时，不会将静态 MAC 地址分配给源域控制器。 如果克隆具有静态 MAC 的源计算机，则这些复制的计算机将无法正确发送或接收任何网络流量。 如果出现这种情况，请设置新的唯一静态或动态 MAC 地址。 你可以看到 VM 是否通过该命令使用静态 MAC 地址：
 >
-> **VMName** ***测试-vm* |VMNetworkAdapter |fl\\***
+> **VMName** ***测试-vm* |VMNetworkAdapter |fl \\***
 
 ### <a name="step-9---clone-the-new-virtual-machine"></a>步骤 9 – 克隆新的虚拟机
 （可选）在开始克隆之前，请重启脱机克隆源域控制器。 无论如何，请确保 PDC 模拟器处于联机状态。

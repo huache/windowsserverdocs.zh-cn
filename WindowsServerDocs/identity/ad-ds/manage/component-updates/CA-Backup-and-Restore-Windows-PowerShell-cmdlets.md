@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7e195f5b-b194-40f3-a26d-5cf4ade5fc4d
 title: CA 备份和还原 Windows PowerShell cmdlet
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 817a4c117bfd39799a5147d657262eb208c9a79b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b008ec74adfc3a4b6c63ec29f719c45483412b1d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943442"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939557"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>CA 备份和还原 Windows PowerShell cmdlet
 
@@ -34,7 +34,7 @@ Windows Server 2012 中引入了 ADCSAdministration Windows PowerShell 模块。
 
 **ADCSAdministration Cmdlet：备份-Backup-caroleservice**
 
-|参数-需要**粗体**参数|描述|
+|参数-需要 **粗体** 参数|说明|
 |------------------------------------------------|---------------|
 |**-路径**|-String-保存备份的位置<br />-这是唯一未命名的参数<br />-位置参数<p>**示例：**<p>Backup-caroleservice-Path c:\adcsbackup1<p>备份-Backup-caroleservice c:\adcsbackup2|
 |-KeyOnly|-备份不包含数据库的 CA 证书<p>**示例：**<p>Backup-caroleservice c:\adcsbackup3-KeyOnly|
@@ -45,7 +45,7 @@ Windows Server 2012 中引入了 ADCSAdministration Windows PowerShell 模块。
 |-KeepLog|1. 指示命令保留日志文件。 如果未指定开关，则默认情况下会截断日志文件，但在增量方案中除外<p>Backup-caroleservice c:\adcsbackup7-KeepLog|
 
 ### <a name="-password-secure-string"></a>-Password <Secure String>
-如果使用了-Password 参数，则提供的密码必须是安全字符串。  使用 "**读取主机**" cmdlet 启动安全密码条目的交互式提示，或使用**convertto-html-SecureString** cmdlet 来指定密码。
+如果使用了-Password 参数，则提供的密码必须是安全字符串。  使用 " **读取主机** " cmdlet 启动安全密码条目的交互式提示，或使用 **convertto-html-SecureString** cmdlet 来指定密码。
 
 查看以下示例
 
@@ -64,7 +64,7 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
 ## <a name="restore-caroleservice"></a>Restore-CARoleService
 **ADCSAdministration Cmdlet： Restore-Backup-caroleservice**
 
-|参数-需要**粗体**参数|描述|
+|参数-需要 **粗体** 参数|说明|
 |------------------------------------------------|---------------|
 |**-路径**|-String-要从中还原备份的位置<br />-这是唯一未命名的参数<br />-位置参数<p>**示例：**<p>Backup-caroleservice.-Path c:\adcsbackup1-Force<p>Backup-caroleservice c:\adcsbackup2-Force|
 |-KeyOnly|-不在数据库的情况下还原 CA 证书<br />-如果备份是通过-KeyOnly 选项创建的，则必须指定-<p>**示例：**<p>Backup-caroleservice c:\adcsbackup3-KeyOnly-Force|

@@ -1,17 +1,17 @@
 ---
 title: AD 林恢复 - 标识问题
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 33a1febbdbe564873f8f7c0a4df474e933f09b92
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fc285fb355b6539aac56c7c410de1e1f7da48f00
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969894"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939657"
 ---
 # <a name="identify-the-problem"></a>识别问题
 
@@ -28,7 +28,7 @@ ms.locfileid: "87969894"
 - 攻击者已设法在 Dc 上安装恶意软件，并已 Microsoft 支持部门从备份中恢复林。
 
    > [!IMPORTANT]
-   >  本文不介绍有关如何恢复受到黑客攻击的林的安全建议。 通常，建议遵循传递哈希缓解技术来强化环境。 有关详细信息，请参阅[缓解哈希传递 (PtH) 攻击和其他凭据盗窃技术](https://www.microsoft.com/download/details.aspx?id=36036)。
+   >  本文不介绍有关如何恢复受到黑客攻击的林的安全建议。 通常，建议遵循传递哈希缓解技术来强化环境。 有关详细信息，请参阅 [缓解哈希传递 (PtH) 攻击和其他凭据盗窃技术](https://www.microsoft.com/download/details.aspx?id=36036)。
 
 - 不能将任何 Dc 与其复制伙伴进行复制。
 - 不能对任何域控制器 AD DS 更改。

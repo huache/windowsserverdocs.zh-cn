@@ -1,17 +1,17 @@
 ---
 ms.assetid: 22c514b2-401e-49e1-a87e-0cbaa2c1dac1
 title: 站点函数
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 40fa12c7bb301e0701fbac2e148cfe32820e1fa0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 20ca1c9e3a4b0ef750d787289bf8563ead5a5ae1
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967714"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938357"
 ---
 # <a name="site-functions"></a>站点函数
 
@@ -29,7 +29,7 @@ Active Directory 域服务 (AD DS) 使用多主机、存储和转发的复制方
 
 通过在同一站点中查找域控制器，客户端可避免通过 WAN 链接进行通信。 如果客户端站点上没有域控制器，则相对于其他连接的站点，具有最低开销连接的域控制器将播发自身 (在没有域控制器的站点中的 DNS) 中注册特定于站点的服务 (SRV) 资源记录。 在 DNS 中发布的域控制器是指由站点拓扑定义的最近站点中的域控制器。 此过程可确保每个站点都有一个用于身份验证的首选域控制器。
 
-有关查找域控制器的过程的详细信息，请参阅[Active Directory 集合](/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))。
+有关查找域控制器的过程的详细信息，请参阅 [Active Directory 集合](/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))。
 
 ## <a name="sysvol-replication"></a>SYSVOL 复制
 SYSVOL 是在域中的每个域控制器上存在的文件系统中的文件夹的集合。 SYSVOL 文件夹为必须在整个域中复制的文件提供默认 Active Directory 位置，包括 Gpo) 、启动和关闭脚本以及登录和注销脚本 (组策略对象。  Windows Server 2008 可以 (FRS) 使用文件复制服务，也可以分布式文件系统复制 (DFSR) 将从一个域控制器对 SYSVOL 文件夹所做的更改复制到其他域控制器。 FRS 和 DFSR 会根据你在站点拓扑设计期间创建的计划来复制这些更改。
@@ -38,4 +38,4 @@ SYSVOL 是在域中的每个域控制器上存在的文件系统中的文件夹�
 DFSN 使用站点信息将客户端定向到在站点中承载请求的数据的服务器。 如果 DFSN 在客户端所在的站点中找不到数据的副本，则 DFSN 将使用 AD DS 中的站点信息来确定具有 DFSN 共享数据的文件服务器最近的客户端。
 
 ## <a name="service-location"></a>服务定位
-通过在 AD DS 中发布文件和打印服务等服务，你允许 Active Directory 客户端在相同或最近的站点中查找请求的服务。 打印服务使用存储在 AD DS 中的位置属性，使用户无需知道其确切位置即可按位置浏览打印机。 有关设计和部署打印服务器的详细信息，请参阅[设计和部署打印服务器](/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10))。
+通过在 AD DS 中发布文件和打印服务等服务，你允许 Active Directory 客户端在相同或最近的站点中查找请求的服务。 打印服务使用存储在 AD DS 中的位置属性，使用户无需知道其确切位置即可按位置浏览打印机。 有关设计和部署打印服务器的详细信息，请参阅 [设计和部署打印服务器](/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10))。

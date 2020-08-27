@@ -1,17 +1,17 @@
 ---
 ms.assetid: 341614c6-72c2-444f-8b92-d2663aab7070
 title: 虚拟化域控制器体系结构
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c56b55ad3617293b495d78e6ceedabed1e76463f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 04d50961aeb6190c15ba4c772afd8767d9d24f9b
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954444"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939007"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>虚拟化域控制器体系结构
 
@@ -30,7 +30,7 @@ ms.locfileid: "87954444"
 
 在混合环境中（某些虚拟机监控程序支持 VM 生成 ID 而其他虚拟机监控程序不支持），可能会在不支持 VM 生成 ID 的虚拟机监控程序上意外地部署克隆媒体。 DCCloneConfig.xml 文件的存在表明了要克隆 DC 的管理意图。 因此，如果在启动期间找到了 DCCloneConfig.xml 文件，但主机未提供 VM 生成 ID，则克隆 DC 将启动进入目录服务还原模式 (DSRM)，以防对环境的其余部分造成任何影响。 随后，可将克隆媒体移动到支持 VM 生成 ID 的虚拟机监控程序，然后可以重试克隆。
 
-如果在支持 VM 生成 ID 的虚拟机监控程序上部署克隆媒体，但未提供 DCCloneConfig.xml 文件，则当 DC 检测到其 DIT 和新 VM 的 DIT 之间的 VM 生成 ID 发生更改时，它将触发安全措施，以阻止重复使用 USN 并避免重复 SID。 但是，将不会启动克隆，因此辅助 DC 将在与源域控制器相同的标识下继续运行。 为了避免环境中出现任何不一致，应及早从网络中删除此辅助 DC。 有关如何在确保更新获取已复制出站的同时回收此辅助 DC 的详细信息，请参阅 Microsoft 知识库文章[2742970](https://support.microsoft.com/kb/2742970)。
+如果在支持 VM 生成 ID 的虚拟机监控程序上部署克隆媒体，但未提供 DCCloneConfig.xml 文件，则当 DC 检测到其 DIT 和新 VM 的 DIT 之间的 VM 生成 ID 发生更改时，它将触发安全措施，以阻止重复使用 USN 并避免重复 SID。 但是，将不会启动克隆，因此辅助 DC 将在与源域控制器相同的标识下继续运行。 为了避免环境中出现任何不一致，应及早从网络中删除此辅助 DC。 有关如何在确保更新获取已复制出站的同时回收此辅助 DC 的详细信息，请参阅 Microsoft 知识库文章 [2742970](https://support.microsoft.com/kb/2742970)。
 
 ### <a name="cloning-detailed-processing"></a><a name="BKMK_CloneProcessDetails"></a>克隆详细处理
 下图显示了初始克隆操作和克隆重试操作的体系结构。 稍后，本主题将对这些过程进行详细说明。
@@ -179,7 +179,7 @@ AD DS 依赖于虚拟机监控程序平台以显示名为 **VM 生成 ID** 的�
 
 1.  在时间 T1，虚拟机监控程序管理员拍摄虚拟 DC1 的快照。 此时 DC1 的 USN 值（实际上为 **highestCommittedUsn**）为 100，InvocationId（在之前的图中表示为 ID）值为 A（实际上它是 GUID）。 SavedVMGID 值是 DC 的 DIT 文件中的 VM 生成 ID（根据 DC 的计算机对象存储在名为 **msDS-GenerationId** 的属性中）。 VMGID 是虚拟机驱动程序中可用的 VM 生成 ID 的当前值。 该值由虚拟机监控程序提供。
 
-2.  在稍后的时间 T2，100 位用户将添加到此 DC（将用户视为可能会在时间 T1 和 T2 之间在此 DC 上执行的更新的示例；实际上，这些更新可能是用户创建、组创建、密码更新、属性更新等的组合）。 在此示例中，每个更新使用一个唯一的 USN（但在实际中一个用户创建可能会使用多个 USN）。 在提交这些更新之前，DC1 将检查其数据库中的 VM 生成 ID 值 （savedVMGID） 是否与驱动程序中可用的当前值 (VMGID) 相同。 因为还没有发生回滚，所以它们是相同的，因此将提交更新且 USN 将上移至 200，这指示下一个更新可以使用 USN 201。 InvocationId、savedVMGID 和 VMGID 中没有发生任何更改。 在下一个复制周期，这些更新将复制到 DC2。 DC2 会将此处所述的高水位线 (和**UptoDatenessVector**) 作为 DC1 () @USN = 200 进行更新。 也就是说，通过 USN 200，DC2 可感知来自 InvocationId A 上下文中的 DC1 的所有更新。
+2.  在稍后的时间 T2，100 位用户将添加到此 DC（将用户视为可能会在时间 T1 和 T2 之间在此 DC 上执行的更新的示例；实际上，这些更新可能是用户创建、组创建、密码更新、属性更新等的组合）。 在此示例中，每个更新使用一个唯一的 USN（但在实际中一个用户创建可能会使用多个 USN）。 在提交这些更新之前，DC1 将检查其数据库中的 VM 生成 ID 值 （savedVMGID） 是否与驱动程序中可用的当前值 (VMGID) 相同。 因为还没有发生回滚，所以它们是相同的，因此将提交更新且 USN 将上移至 200，这指示下一个更新可以使用 USN 201。 InvocationId、savedVMGID 和 VMGID 中没有发生任何更改。 在下一个复制周期，这些更新将复制到 DC2。 DC2 会将此处所述的高水位线 (和 **UptoDatenessVector**) 作为 DC1 () @USN = 200 进行更新。 也就是说，通过 USN 200，DC2 可感知来自 InvocationId A 上下文中的 DC1 的所有更新。
 
 3.  在时间 T3，在时间 T1 拍摄的快照将应用到 DC1。 DC1 已回滚，因此其 USN 回滚到 100，这指示它可从 101 起使用 USN 以与后续更新相关联。 但是，在这种情况下，支持 VM 生成 ID 的虚拟机监控程序上的 VMGID 值将会不同。
 

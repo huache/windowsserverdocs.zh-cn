@@ -1,17 +1,17 @@
 ---
 ms.assetid: d590c90e-9adf-4305-b226-eb2a5743337b
 title: 了解 AD DS 设计
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 73c3aacd34be72f59d5d54d9d657143f8db8d610
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b457bd4ea2517fdebf024caceccbc1b19857f754
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965104"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938347"
 ---
 # <a name="understanding-ad-ds-design"></a>了解 AD DS 设计
 
@@ -23,6 +23,6 @@ AD DS 部署项目涉及三个阶段：设计阶段、部署阶段和操作阶�
 
 尽管本指南中所述的 Windows Server AD DS 设计和部署策略基于广泛的实验室和试验计划测试以及客户环境中的成功实施，但你可能需要自定义你的 AD DS 设计和部署，以便更好地适应特定的复杂环境。
 
-- 有关在分支机构环境中部署 AD DS 的详细信息，请参阅[只读域控制器 (RODC) 分支机构规划指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd734758(v=ws.10))。
-- 有关在 Exchange 环境中部署 AD DS 的详细信息，请参阅[Exchange Server 组织 Active Directory](/exchange/plan-and-deploy/active-directory/active-directory)文章。
-- 有关在多个林环境中部署 AD DS 的详细信息，请参阅[windows 2000 和 Windows Server 2003 中的多林注意事项](/previous-versions/windows/it-pro/windows-server-2003/cc739395(v=ws.10))一文。
+- 有关在分支机构环境中部署 AD DS 的详细信息，请参阅 [只读域控制器 (RODC) 分支机构规划指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd734758(v=ws.10))。
+- 有关在 Exchange 环境中部署 AD DS 的详细信息，请参阅 [Exchange Server 组织 Active Directory](/exchange/plan-and-deploy/active-directory/active-directory)文章。
+- 有关在多个林环境中部署 AD DS 的详细信息，请参阅 [windows 2000 和 Windows Server 2003 中的多林注意事项](/previous-versions/windows/it-pro/windows-server-2003/cc739395(v=ws.10))一文。

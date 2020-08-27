@@ -1,17 +1,17 @@
 ---
 ms.assetid: 0abe0976-4b49-45d6-a7b3-81d28bdb8210
 title: 审核策略建议
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5b5ce5e7b53c7b82732613022c8309efe044143f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 33ce3713f95b995fdab63b9e3bd27650fae58347
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972224"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938227"
 ---
 # <a name="audit-policy-recommendations"></a>审核策略建议
 
@@ -19,12 +19,12 @@ ms.locfileid: "87972224"
 
 本部分介绍了 Windows 默认审核策略设置、基线建议的审核策略设置，以及 Microsoft 提供的更积极的建议，适用于工作站和服务器产品。
 
-此处所示的 SCM 基线建议，以及建议用于帮助检测折衷的设置，旨在仅成为管理员的入门基线指南。 每个组织都必须自行决定他们所面临的威胁、可接受的风险容差，以及他们应该启用哪些审核策略类别或子类别。 有关威胁的详细信息，请参阅[威胁和对策指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125921(v=ws.10))。 建议先使用此处建议的设置，然后在生产环境中实施之前修改和测试，而无需进行周密审核策略的管理员。
+此处所示的 SCM 基线建议，以及建议用于帮助检测折衷的设置，旨在仅成为管理员的入门基线指南。 每个组织都必须自行决定他们所面临的威胁、可接受的风险容差，以及他们应该启用哪些审核策略类别或子类别。 有关威胁的详细信息，请参阅 [威胁和对策指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125921(v=ws.10))。 建议先使用此处建议的设置，然后在生产环境中实施之前修改和测试，而无需进行周密审核策略的管理员。
 
 建议适用于企业级计算机，Microsoft 将其定义为具有平均安全要求并且需要高级操作功能的计算机。 需要更高安全要求的实体应考虑更严格的审核策略。
 
 > [!NOTE]
-> Microsoft Windows 默认值和基线建议是从[Microsoft 安全合规管理器工具](/previous-versions/tn-archive/cc677002(v=technet.10))获取的。
+> Microsoft Windows 默认值和基线建议是从 [Microsoft 安全合规管理器工具](/previous-versions/tn-archive/cc677002(v=technet.10))获取的。
 
 以下基线审核策略设置适用于未知的安全计算机，这些计算机被确定为攻击者或恶意软件，这些计算机处于非活动状态、成功的攻击。
 
@@ -51,8 +51,8 @@ ms.locfileid: "87972224"
 
 |**表示法**|**建议**|
 |--|--|
-|是|在一般情况下启用|
-|是|在一般情况下**不**启用|
+|YES|在一般情况下启用|
+|是|在一般情况下 **不** 启用|
 |IF|对于特定方案，或在计算机上安装了所需审核的角色或功能时启用|
 |DC|在域控制器上启用|
 |空字符|无建议|
@@ -92,7 +92,7 @@ ms.locfileid: "87972224"
 | 审核 IPsec 主模式 |  |  | 如果 |
 | 审核 IPsec 快速模式 |  |  |  |
 | 审核注销 | 是否 | 是否 | 是否 |
-| 审核登录<sup>1</sup> | 是的 | 是的 | 是的 |
+| 审核登录 <sup>1</sup> | 是的 | 是的 | 是的 |
 | 审核网络策略服务器 | 是的 |  |  |
 | 审核其他登录/注销事件 |  |  |  |
 | 审核特殊登录 | 是否 | 是否 | 是的 |
@@ -135,7 +135,7 @@ ms.locfileid: "87972224"
 | 审核安全系统扩展 |  |  |  |
 | 审核系统完整性 |  |  |  |
 
-<sup>1</sup>从 Windows 10 版本1809开始，默认情况下为成功和失败启用了审核登录。 在以前版本的 Windows 中，默认情况下仅启用成功。
+<sup>1</sup> 从 Windows 10 版本1809开始，默认情况下为成功和失败启用了审核登录。 在以前版本的 Windows 中，默认情况下仅启用成功。
 
 **Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2，Windows Server 2008 审核设置建议**
 
@@ -253,7 +253,7 @@ ms.locfileid: "87972224"
 
 Aberrant 失败的登录次数可能表明存在密码猜测攻击。 为了使企业能够为发生异常大量失败的登录提供警报，在出现恶意安全事件之前，他们必须首先了解其环境中的失败登录的正常级别。
 
-有关监视泄露迹象时应包括的事件的完整列表，请参阅[附录 L：要监视的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)。
+有关监视泄露迹象时应包括的事件的完整列表，请参阅 [附录 L：要监视的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)。
 
 ## <a name="active-directory-objects-and-attributes-to-monitor"></a>要监视的 Active Directory 对象和属性
 下面是你应该监视的帐户、组和属性，以帮助检测对 Active Directory 域服务安装的破坏尝试。
@@ -266,7 +266,7 @@ Aberrant 失败的登录次数可能表明存在密码猜测攻击。 为了使�
 
 - AD DS 中的特权和 VIP 帐户。 监视更改，尤其是对 "帐户" 选项卡上的属性所做的更改 (例如，cn、name、sAMAccountName、userPrincipalName 或 userAccountControl) 。 除了监视帐户之外，还可以将帐户的修改权限限制为尽可能少的一组管理用户。
 
-有关要监视的建议事件的列表、其重要程度和事件消息摘要，请参阅[附录 L：要监视的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)。
+有关要监视的建议事件的列表、其重要程度和事件消息摘要，请参阅 [附录 L：要监视的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) 。
 
 - 按服务器的工作负荷分类对服务器进行分组，这使你能够快速确定应该最密切监视的服务器和最得到配置的服务器
 
@@ -281,15 +281,15 @@ Aberrant 失败的登录次数可能表明存在密码猜测攻击。 为了使�
 ## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>用于监视 Active Directory 域服务的其他信息
 查看以下链接，了解有关监视 AD DS 的其他信息：
 
-- [全局对象访问审核非常神奇](/archive/blogs/askds/global-object-access-auditing-is-magic)-提供有关配置和使用添加到 windows 7 和 windows Server 2008 R2 的高级审核策略配置的信息。
+- [全局对象访问审核非常神奇](/archive/blogs/askds/global-object-access-auditing-is-magic) -提供有关配置和使用添加到 windows 7 和 windows Server 2008 R2 的高级审核策略配置的信息。
 
-- [Windows 2008 中的审核更改简介](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008)-介绍了在 windows 2008 中进行的审核更改。
+- [Windows 2008 中的审核更改简介](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008) -介绍了在 windows 2008 中进行的审核更改。
 
-- [Vista 和2008中的冷审核技巧](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008)-介绍了 windows Vista 和 windows Server 2008 中的有趣的新功能，这些功能可用于排查问题或查看环境中发生的情况。
+- [Vista 和2008中的冷审核技巧](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008) -介绍了 windows Vista 和 windows Server 2008 中的有趣的新功能，这些功能可用于排查问题或查看环境中发生的情况。
 
-- [Windows server 2008 和 Windows vista 中的一站式审核](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista)-包含对 windows server 2008 和 windows vista 中包含的审核功能和信息的编译。
+- [Windows server 2008 和 Windows vista 中的一站式审核](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista) -包含对 windows server 2008 和 windows vista 中包含的审核功能和信息的编译。
 
-- [AD DS 审核循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))-介绍了 Windows Server 2008 中 (AD DS) 审核功能的新 Active Directory 域服务。 它还提供了实现此新功能的过程。
+- [AD DS 审核循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) -介绍了 Windows Server 2008 中 (AD DS) 审核功能的新 Active Directory 域服务。 它还提供了实现此新功能的过程。
 
 ## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>安全事件 ID 建议重要性的常规列表
 所有事件 ID 建议均伴随着严重级别，如下所示：
@@ -302,4 +302,4 @@ Aberrant 失败的登录次数可能表明存在密码猜测攻击。 为了使�
 
 这些建议旨在为管理员提供基线指南。 在生产环境中实现之前，应仔细检查所有建议。
 
-请参阅[附录 L：要监视的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md)列表，查看要监视的建议事件的列表、关键程度级别和事件消息摘要。
+请参阅 [附录 L：要监视的事件](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) 列表，查看要监视的建议事件的列表、关键程度级别和事件消息摘要。

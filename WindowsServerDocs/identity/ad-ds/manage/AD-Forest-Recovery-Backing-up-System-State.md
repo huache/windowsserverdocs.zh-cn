@@ -1,17 +1,17 @@
 ---
 title: AD 林恢复-备份系统状态数据
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 9238cb27-0020-42f7-90d6-fcebf7e3c0bc
-ms.openlocfilehash: 675b8edd5425238b838df2c2bb7e09d0c0232c92
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d9e8dfb97fa1439ca73dcf86efa8721bb584e659
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956884"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939907"
 ---
 # <a name="ad-forest-recovery---backing-up-the-system-state-data"></a>AD 林恢复-备份系统状态数据
 
@@ -21,33 +21,33 @@ ms.locfileid: "87956884"
 
 ## <a name="to-perform-a-system-state-backup-using-windows-server-backup"></a>使用 Windows Server 备份执行系统状态备份
 
-1. 打开**服务器管理器**，单击 "**工具**"，然后单击 " **Windows Server 备份**"。
-   - 在 Windows Server 2008 R2 和 Windows Server 2008 中，单击 "**开始**"，指向 "**管理工具**"，然后单击 " **Windows Server 备份**"。
+1. 打开 **服务器管理器**，单击 " **工具**"，然后单击 " **Windows Server 备份**"。
+   - 在 Windows Server 2008 R2 和 Windows Server 2008 中，单击 " **开始**"，指向 " **管理工具**"，然后单击 " **Windows Server 备份**"。
 
    ![安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
 
-2. 如果系统提示，请在 "**用户帐户控制**" 对话框中提供备份操作员凭据，然后单击 **"确定"**。
-3. 单击 "**本地备份**"。
+2. 如果系统提示，请在 " **用户帐户控制** " 对话框中提供备份操作员凭据，然后单击 **"确定"**。
+3. 单击 " **本地备份**"。
 4. 在 **“操作”** 菜单中，单击 **“一次性备份”**。
-5. 在 "一次性备份" 向导中的 "**备份选项**" 页上，单击 "**其他选项**"，然后单击 "**下一步**"。
+5. 在 "一次性备份" 向导中的 " **备份选项** " 页上，单击 " **其他选项**"，然后单击 " **下一步**"。
 
    ![安装备份](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
-6. 在 "**选择备份配置**" 页上，单击 "**自定义) **"，然后单击 "**下一步**"。
-7. 在 "**选择备份项**" 屏幕上，单击 "**添加项**" 并选择 "**系统状态**"，然后单击 **"确定"**。
-   - 在 Windows Server 2008 R2 和 Windows Server 2008 中，选择要包含在备份中的卷。 如果选中 "**启用系统恢复**" 复选框，则所有关键卷都处于选中状态。
+6. 在 " **选择备份配置** " 页上，单击 " **自定义) **"，然后单击 " **下一步**"。
+7. 在 " **选择备份项** " 屏幕上，单击 " **添加项** " 并选择 " **系统状态** "，然后单击 **"确定"**。
+   - 在 Windows Server 2008 R2 和 Windows Server 2008 中，选择要包含在备份中的卷。 如果选中 " **启用系统恢复** " 复选框，则所有关键卷都处于选中状态。
 
    ![安装备份](media/AD-Forest-Recovery-Backing-up-System-State/systemstatebackup.png)
 
-8. 在 "**指定目标类型**" 页上，单击 "**本地驱动器**" 或 "**远程共享文件夹**"，然后单击 "**下一步**"。  如果要备份到远程共享文件夹，请执行以下操作：
+8. 在 " **指定目标类型** " 页上，单击 " **本地驱动器** " 或 " **远程共享文件夹**"，然后单击 " **下一步**"。  如果要备份到远程共享文件夹，请执行以下操作：
    - 键入共享文件夹的路径。
-   - 在 "**访问控制**" 下，选择 "**不继承**或**继承**" 以确定对备份的访问权限，然后单击 "**下一步**"。
-   - 在 "为**备份提供用户凭据**" 对话框中，提供对共享文件夹具有写访问权限的用户的用户名和密码，然后单击 **"确定"**。
+   - 在 " **访问控制**" 下，选择 " **不继承** 或 **继承** " 以确定对备份的访问权限，然后单击 " **下一步**"。
+   - 在 "为 **备份提供用户凭据** " 对话框中，提供对共享文件夹具有写访问权限的用户的用户名和密码，然后单击 **"确定"**。
 
-9. 对于 Windows Server 2008 R2 和 Windows Server 2008，在 "**指定高级选项**" 页上，选择 " **VSS 副本备份**"，然后单击 "**下一步**"。
-10. 在 "**选择备份目标**" 页上，选择备份位置。  如果选择了本地驱动器，请选择本地驱动器，或者如果选择了远程共享，请选择网络共享。
-11. 在确认屏幕上，单击 "**备份**"。
-12. 完成此完成后，单击 "**关闭**"。
+9. 对于 Windows Server 2008 R2 和 Windows Server 2008，在 " **指定高级选项** " 页上，选择 " **VSS 副本备份** "，然后单击 " **下一步**"。
+10. 在 " **选择备份目标** " 页上，选择备份位置。  如果选择了本地驱动器，请选择本地驱动器，或者如果选择了远程共享，请选择网络共享。
+11. 在确认屏幕上，单击 " **备份**"。
+12. 完成此完成后，单击 " **关闭**"。
 13. 关闭 Windows Server 备份。
 
 ## <a name="to-perform-a-system-state-backup-using-wbadminexe"></a>使用 Wbadmin.exe 执行系统状态备份

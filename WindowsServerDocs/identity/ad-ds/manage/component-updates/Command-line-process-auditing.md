@@ -1,17 +1,17 @@
 ---
 ms.assetid: c8597cc8-bdcb-4e59-a09e-128ef5ebeaf8
 title: 命令行进程审核
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1499927a0ecc01255e5da5f9c0fff2ea064d4b5e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 12bf07aa5fb60f18cdd5b04b7d7f91c00388ed42
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943452"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939567"
 ---
 # <a name="command-line-process-auditing"></a>命令行进程审核
 
@@ -38,7 +38,7 @@ ms.locfileid: "87943452"
 
 **图 SEQ 图 \\ \* 阿拉伯16事件4688**
 
-在 REF _Ref366427278 \h 图16中查看更新的事件 ID 4688。  在此更新之前，将不会记录**处理命令行**的任何信息。  由于这种附加日志记录，我们现在可以看到，不仅 wscript.exe 进程已启动，而且还用于执行 VB 脚本。
+在 REF _Ref366427278 \h 图16中查看更新的事件 ID 4688。  在此更新之前，将不会记录 **处理命令行** 的任何信息。  由于这种附加日志记录，我们现在可以看到，不仅 wscript.exe 进程已启动，而且还用于执行 VB 脚本。
 
 ## <a name="configuration"></a>配置
 若要查看此更新的效果，你将需要启用两个策略设置。
@@ -46,7 +46,7 @@ ms.locfileid: "87943452"
 ### <a name="you-must-have-audit-process-creation-auditing-enabled-to-see-event-id-4688"></a>您必须启用审核过程创建审核才能看到事件 ID 4688。
 若要启用审核过程创建策略，请编辑以下组策略：
 
-**策略位置：**> 策略 > Windows 设置的计算机配置 > 安全设置 > 高级审核配置 > 详细跟踪
+**策略位置：** > 策略 > Windows 设置的计算机配置 > 安全设置 > 高级审核配置 > 详细跟踪
 
 **策略名称：** 审核进程创建
 
@@ -105,7 +105,7 @@ ms.locfileid: "87943452"
 
 ## <a name="try-this-explore-command-line-process-auditing"></a>请尝试执行以下操作：浏览命令行进程审核
 
-1.  启用**审核进程创建**事件，并确保未覆盖高级审核策略配置
+1.  启用 **审核进程创建** 事件，并确保未覆盖高级审核策略配置
 
 2.  创建一个脚本，该脚本将生成一些相关事件并执行该脚本。  观察事件。  本课程中用于生成事件的脚本如下所示：
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 6785de86-4f7d-4ed1-9055-8de0871d59b5
 title: 附录 M-文档链接和建议阅读
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 977ea36fefaa05b49034367594e1d952d712adb2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 891ddf584fb8dc2936d51051aef63f2a7cbab8a2
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994477"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938747"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>附录 M：文档链接和建议的读物
 
@@ -27,15 +27,15 @@ ms.locfileid: "87994477"
 | [安全管理的10个永恒定律](/previous-versions/cc722488(v=technet.10)) | [https://technet.microsoft.com/library/cc722488.aspx](/previous-versions/cc722488(v=technet.10)) |
 | [Microsoft 安全合规管理器](/previous-versions/tn-archive/cc677002(v=technet.10)) | [https://technet.microsoft.com/library/cc677002.aspx](/previous-versions/tn-archive/cc677002(v=technet.10)) |
 | [Gartner 研讨会 ITXPO](http://www.gartner.com/technology/symposium/orlando/) | [http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/) |
-| [2012 (DBIR) 的数据违规调查报告](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf) | [http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf) |
-| [安全性 (的十个永恒定律) 版本2.0](https://www.microsoft.com/en-us/msrc?rtc=1) | [https://technet.microsoft.com/security/hh278941.aspx](https://www.microsoft.com/en-us/msrc?rtc=1) |
+| [2012 (DBIR) 的数据违规调查报告 ](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf) | [http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf) |
+| [安全性 (的十个永恒定律) 版本2.0 ](https://www.microsoft.com/en-us/msrc?rtc=1) | [https://technet.microsoft.com/security/hh278941.aspx](https://www.microsoft.com/en-us/msrc?rtc=1) |
 | [使用启发式扫描](/previous-versions/tn-archive/bb418939(v=technet.10)) | [https://technet.microsoft.com/library/bb418939.aspx](/previous-versions/tn-archive/bb418939(v=technet.10)) |
 | [驱动器-通过下载](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx) | [https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx) |
 | [Microsoft 支持部门文章2526083](https://support.microsoft.com/kb/2526083) | [https://support.microsoft.com/kb/2526083](https://support.microsoft.com/kb/2526083) |
 | [Microsoft 支持部门文章814777](https://support.microsoft.com/kb/814777) | [https://support.microsoft.com/kb/814777](https://support.microsoft.com/kb/814777) |
 | [ (OWASP 中打开 Web 应用程序安全性项目) ](https://www.owasp.org/index.php/Main_Page) | [https://www.owasp.org/index.php/Main_Page](https://www.owasp.org/index.php/Main_Page) |
 | [Microsoft 安全开发生命周期](https://www.microsoft.com/security/sdl/default.aspx) | [https://www.microsoft.com/security/sdl/default.aspx](https://www.microsoft.com/security/sdl/default.aspx) |
-| [减少传递哈希 (PtH) 攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) | [https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating传递哈希 (PtH) 攻击和其他凭据被盗 Techniques_English.pdf](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) |
+| [减少传递哈希 (PtH) 攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) | [https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating 传递哈希 (PtH) 攻击和其他凭据被盗 Techniques_English.pdf](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) |
 | [已确定攻击者和目标攻击](https://www.microsoft.com/download/details.aspx?id=34793) | [https://www.microsoft.com/download/details.aspx?id=34793](https://www.microsoft.com/download/details.aspx?id=34793) |
 | [通过 GPO 管理内置管理员帐户密码的解决方案](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789) | [https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789) |
 | [Microsoft 支持部门文章817433](https://support.microsoft.com/?id=817433) | [https://support.microsoft.com/?id=817433](https://support.microsoft.com/?id=817433) |
@@ -173,7 +173,7 @@ ms.locfileid: "87994477"
 | [Microsoft 安全智能报告](https://www.microsoft.com/security/sir/default.aspx) |
 | [减少传递哈希 (PTH) 攻击和其他凭据盗窃技术](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) |
 | [澳大利亚政府防御信号目录 Top 35 缓解策略](http://www.dsd.gov.au/infosec/top35mitigationstrategies.htm) |
-| [2012 数据违规调查报告](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)- (VERIZON，US 机密服务)  |
+| [2012 数据违规调查报告](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf) - (VERIZON，US 机密服务)  |
 | [2009数据违规调查报告](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf) |
 | [云计算安全优势](https://www.microsoft.com/news/Press/2012/May12/05-14SMBSecuritySurveyPR.aspx) |
 | [将最低权限原则应用于 Windows 上的用户帐户](https://www.microsoft.com/download/details.aspx?id=4868) |
@@ -181,7 +181,7 @@ ms.locfileid: "87994477"
 | 保护 Windows Server 2003 [Active Directory 安装的最佳实践指南](https://www.microsoft.com/download/details.aspx?id=16755) |
 | 为 Windows Server 2003[委派 Active Directory 管理的最佳做法](https://www.microsoft.com/download/details.aspx?id=21678) |
 | [Microsoft 支持生命周期](https://support.microsoft.com/lifecycle/) |
-| [Active Directory 技术规范](/openspecs/windows_protocols/ms-adts/d2435927-0999-4c62-8c6d-13ba31a52e1a)-dSHeuristics 信息 |
+| [Active Directory 技术规范](/openspecs/windows_protocols/ms-adts/d2435927-0999-4c62-8c6d-13ba31a52e1a) -dSHeuristics 信息 |
 | [已委派控制的非管理员用户尝试将计算机加入基于 Windows Server 2003 或基于 Windows Server 2008 的域控制器时出现错误消息： "访问被拒绝"](https://support.microsoft.com/kb/932455) |
 | [保护 Active Directory 的最佳实践指南 Installations.doc](https://go.microsoft.com/fwlink/?LinkId=140862) |
 | [Hyper-v 安全指南](https://www.microsoft.com/download/details.aspx?id=16650) |

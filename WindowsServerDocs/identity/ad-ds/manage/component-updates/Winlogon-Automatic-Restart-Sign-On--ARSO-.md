@@ -2,18 +2,18 @@
 ms.assetid: cb834273-828a-4141-9387-37dd8270e932
 title: 'Winlogon 自动重新启动登录 (ARSO) '
 description: Windows 自动重启登录如何有助于提高用户的工作效率。
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.reviewer: cahick
 ms.date: 08/20/2019
 ms.topic: article
-ms.openlocfilehash: 711a3fc22977d7aa9751c8e200524f4cd295110b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3f2957d2290934505f67edbcb8a49733452939e2
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943304"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939867"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自动重新启动登录 (ARSO) 
 
@@ -54,7 +54,7 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 **支持：** 至少为 Windows 10 版本1903
 
-**说明：**
+**描述：**
 
 此策略设置控制在系统重新启动之后或在关机和冷启动之后，设备是否将自动登录并锁定最后一个交互式用户。
 
@@ -95,7 +95,7 @@ ARSO 以不同的方式对待非托管和托管设备。 对于非托管设备�
 
 **支持：** 至少为 Windows 10 版本1903
 
-**说明：**
+**描述：**
 
 此策略设置控制在重新启动或冷启动之后，自动重启和登录和锁定进行的配置。 如果选择了 "在重新启动后自动登录并锁定上次交互用户" 策略中的 "已禁用"，则不会进行自动登录，并且不需要配置此策略。
 

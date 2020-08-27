@@ -1,17 +1,17 @@
 ---
 title: AD 林恢复-确定如何恢复林
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: fcc344010f25a11051bed5afc6bc6632729f7f4e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dda621c8b567822a882e8230aba604ce0a115835
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949931"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939787"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>确定如何恢复林
 
@@ -23,7 +23,7 @@ ms.locfileid: "87949931"
 - 自上次受信任的备份以来对现有对象所做的所有更新
 - 对 AD DS (中的配置分区或架构分区所做的所有更改，如自上次信任的备份以来) 架构更改
 
-对于林中的每个域，必须知道域管理员帐户的密码。 最好是内置管理员帐户的密码。 还必须知道 DSRM 密码才能执行 DC 的系统状态还原。 通常，在安全位置将管理员帐户和 DSRM 密码历史记录存档到安全位置，前提是这些备份有效，也就是说，在逻辑删除生存期内或在已删除的对象生存期内（如果启用了 Active Directory 回收站）。 你还可以将 DSRM 密码与域用户帐户同步，以便更容易记住。 有关详细信息，请参阅知识库文章[961320](https://support.microsoft.com/kb/961320)。 在准备过程中，必须在林恢复之前对 DSRM 帐户进行同步。
+对于林中的每个域，必须知道域管理员帐户的密码。 最好是内置管理员帐户的密码。 还必须知道 DSRM 密码才能执行 DC 的系统状态还原。 通常，在安全位置将管理员帐户和 DSRM 密码历史记录存档到安全位置，前提是这些备份有效，也就是说，在逻辑删除生存期内或在已删除的对象生存期内（如果启用了 Active Directory 回收站）。 你还可以将 DSRM 密码与域用户帐户同步，以便更容易记住。 有关详细信息，请参阅知识库文章 [961320](https://support.microsoft.com/kb/961320)。 在准备过程中，必须在林恢复之前对 DSRM 帐户进行同步。
 
 > [!NOTE]
 > 默认情况下，管理员帐户是内置 Administrators 组的成员，域管理员组和企业管理员组也是如此。 此组对域中的所有 Dc 都具有完全控制权。
@@ -44,17 +44,17 @@ ms.locfileid: "87949931"
 > 1. 执行完整服务器还原，以便还原操作系统以及所有文件和应用程序。
 > 2. 使用 wbadmin.exe 执行系统状态还原，以将 SYSVOL 标记为权威。
 >
-> 有关详细信息，请参阅 Microsoft 知识库文章[249694](https://support.microsoft.com/kb/249694)。
+> 有关详细信息，请参阅 Microsoft 知识库文章 [249694](https://support.microsoft.com/kb/249694)。
 
 如果出现故障的时间未知，请进一步进行调查，确定保存林的最后一个安全状态的备份。 这种方法不太理想。 因此，我们强烈建议您每日保存有关 AD DS 的运行状况状态的详细日志，以便在林范围内发生故障时，可以确定故障的大致时间。 还应保留备份的本地副本以实现更快的恢复。
 
-如果启用了 Active Directory 回收站，则备份生存期等于**deletedObjectLifetime**值或**tombstoneLifetime**值（以较小者为准）。 有关详细信息，请参阅[Active Directory 回收站循序渐进指南](https://go.microsoft.com/fwlink/?LinkId=178657) (https://go.microsoft.com/fwlink/?LinkId=178657) 。
+如果启用了 Active Directory 回收站，则备份生存期等于 **deletedObjectLifetime** 值或 **tombstoneLifetime** 值（以较小者为准）。 有关详细信息，请参阅 [Active Directory 回收站循序渐进指南](https://go.microsoft.com/fwlink/?LinkId=178657) (https://go.microsoft.com/fwlink/?LinkId=178657) 。
 
 作为替代方法，还可以使用 Active Directory 数据库装载工具 ( # A0) ，并使用轻型目录访问协议 (LDAP) 工具（例如 Ldp.exe 或 Active Directory 用户和计算机）识别哪个备份具有林的最新安全状态。 Windows Server 2008 和更高版本的 Windows Server 操作系统中包含的 Active Directory 数据库装载工具公开作为 LDAP 服务器存储在备份或快照中的 Active Directory 数据。 然后，可以使用 LDAP 工具来浏览数据。 此方法的优点是，不需要在目录服务还原模式下重新启动任何 DC (DSRM) 检查 AD DS 备份的内容。
 
-有关使用 Active Directory 数据库装载工具的详细信息，请参阅[Active Directory 数据库装载工具循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。
+有关使用 Active Directory 数据库装载工具的详细信息，请参阅 [Active Directory 数据库装载工具循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。
 
-你还可以使用**ntdsutil snapshot**命令创建 Active Directory 数据库的快照。 通过计划定期创建快照的任务，您可以在一段时间内获取 Active Directory 数据库的其他副本。 你可以使用这些副本来更好地识别林范围的故障发生的时间，然后选择要还原的最佳备份。 若要创建快照，请使用 Windows Server 2008 附带的**ntdsutil**版本或 windows Vista 或更高版本的远程服务器管理工具 (RSAT) 。 目标 DC 可以运行任何版本的 Windows Server。 有关使用**ntdsutil snapshot**命令的详细信息，请参阅[snapshot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。
+你还可以使用 **ntdsutil snapshot** 命令创建 Active Directory 数据库的快照。 通过计划定期创建快照的任务，您可以在一段时间内获取 Active Directory 数据库的其他副本。 你可以使用这些副本来更好地识别林范围的故障发生的时间，然后选择要还原的最佳备份。 若要创建快照，请使用 Windows Server 2008 附带的 **ntdsutil** 版本或 windows Vista 或更高版本的远程服务器管理工具 (RSAT) 。 目标 DC 可以运行任何版本的 Windows Server。 有关使用 **ntdsutil snapshot** 命令的详细信息，请参阅 [snapshot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))。
 
 ## <a name="determining-which-domain-controllers-to-restore"></a>确定要还原的域控制器
 
@@ -73,13 +73,13 @@ ms.locfileid: "87949931"
 - 在发生故障之前，作为域名系统 (DNS) 服务器的 DC。 这节省了重新安装 DNS 所需的时间。
 - 如果还使用 Windows 部署服务，请选择未配置为使用 BitLocker 网络解锁的 DC。 在这种情况下，不支持将 BitLocker 网络解锁用于在林恢复期间从备份还原的第一个 DC。
 
-   BitLocker 网络解锁，因为在已部署 Windows 部署服务 (WDS *) 的 dc*上，*不能*使用 BitLocker 网络解锁，因为这样做会导致第一个 DC 需要 Active Directory 和 WDS 才能进行解锁的情况。 但在还原第一个 DC 之前，Active Directory 尚不能用于 WDS，因此无法解锁。
+   BitLocker 网络解锁，因为在已部署 Windows 部署服务 (WDS *) 的 dc* 上， *不能* 使用 BitLocker 网络解锁，因为这样做会导致第一个 DC 需要 Active Directory 和 WDS 才能进行解锁的情况。 但在还原第一个 DC 之前，Active Directory 尚不能用于 WDS，因此无法解锁。
 
    若要确定是否已将 DC 配置为使用 BitLocker 网络解锁，请检查以下注册表项中是否标识了网络解锁证书：
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-维护处理或还原包含 Active Directory 的备份文件时的安全过程。 林恢复的紧急性会无意中导致忽视的安全最佳做法。 有关详细信息，请参阅[关于保护 Active Directory 安装和日常操作的最佳实践指南](/previous-versions/windows/it-pro/windows-2000-server/bb727066(v=technet.10))中标题为 "建立域控制器备份和还原策略" 的部分：第 II 部分。
+维护处理或还原包含 Active Directory 的备份文件时的安全过程。 林恢复的紧急性会无意中导致忽视的安全最佳做法。 有关详细信息，请参阅 [关于保护 Active Directory 安装和日常操作的最佳实践指南](/previous-versions/windows/it-pro/windows-2000-server/bb727066(v=technet.10))中标题为 "建立域控制器备份和还原策略" 的部分：第 II 部分。
 
 ## <a name="identify-the-current-forest-structure-and-dc-functions"></a>标识当前林结构和 DC 函数
 
@@ -87,15 +87,15 @@ ms.locfileid: "87949931"
 
 准备一个表，其中显示域中每个 DC 的功能，如以下示例中所示。 这将帮助你在恢复后恢复到林的预故障配置。
 
-|DC 名称|操作系统|FSMO|GC|RODC|Backup|DNS|服务器核心|VM|VM-GenID|
+|DC 名称|操作系统|FSMO|GC|RODC|备份|DNS|Server Core|VM|VM-GenID|
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|
 |DC_1|Windows Server 2012|架构主机，域命名主机|是|否|是|否|否|是|是|
-|DC_2|Windows Server 2012|None|是|否|是|是|否|是|是|
+|DC_2|Windows Server 2012|无|是|否|是|是|否|是|是|
 |DC_3|Windows Server 2012|结构主机|否|否|否|是|是|是|是|
 |DC_4|Windows Server 2012|PDC 模拟器，RID 主机|是|否|否|否|否|是|否|
-|DC_5|Windows Server 2012|None|否|否|是|是|否|是|是|
-|RODC_1|Windows Server 2008 R2|None|是|是|是|是|是|是|否|
-|RODC_2|Windows Server 2008|None|是|是|否|是|是|是|否|
+|DC_5|Windows Server 2012|无|否|否|是|是|否|是|是|
+|RODC_1|Windows Server 2008 R2|无|是|是|是|是|是|是|否|
+|RODC_2|Windows Server 2008|无|是|是|否|是|是|是|否|
 
 对于林中的每个域，标识包含该域的 Active Directory 数据库的受信任备份的单个可写 DC。 选择用于还原 DC 的备份时，请务必小心。 如果失败的日期和原因大约是已知的，则一般建议使用在该日期之前数天内进行的备份。
 

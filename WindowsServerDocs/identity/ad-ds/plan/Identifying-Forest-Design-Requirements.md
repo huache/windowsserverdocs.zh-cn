@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7d957ebb-3476-49d8-b00b-6e93b4a94778
 title: 确定林设计要求
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 79bd34c8a2beb38d60b972aec0f8a17f17e5a590
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9c5278fa01d34b5ed0bf77153dce1575ee6ac509
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941019"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939077"
 ---
 # <a name="identifying-forest-design-requirements"></a>确定林设计要求
 
@@ -39,7 +39,7 @@ Active Directory 域服务 (AD DS) 可用于设计一个目录基础结构，该
 
 设计团队必须记录组织中打算使用 AD DS 的每个组的隔离和自治要求。 团队还必须注意可能会影响 AD DS 部署的有限连接性区域。
 
-设计团队必须记录组织中打算使用 AD DS 的每个组的隔离和自治要求。 团队还必须注意可能会影响 AD DS 部署的有限连接性区域。 要使工作表可以帮助您记录所标识的区域，请从[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并 ( # A1) 打开 "林设计要求"。
+设计团队必须记录组织中打算使用 AD DS 的每个组的隔离和自治要求。 团队还必须注意可能会影响 AD DS 部署的有限连接性区域。 要使工作表可以帮助您记录所标识的区域，请从 [Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608) 下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并 ( # A1) 打开 "林设计要求"。
 
 ## <a name="in-this-section"></a>本节内容
 

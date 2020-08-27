@@ -1,17 +1,17 @@
 ---
 ms.assetid: d92731f1-e4d8-4223-9b07-ca1f40bb0e1f
 title: 不连续的命名空间
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8f96ecaff5fbe31c4d9d037861685a2e4c008e63
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 06506ac47fe22724047cff73fb88972b868600b5
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941217"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939277"
 ---
 # <a name="disjoint-namespace"></a>不连续的命名空间
 
@@ -75,7 +75,7 @@ ms.locfileid: "87941217"
 - 若要优化名称解析，必须执行手动步骤来修改和维护组策略以配置具有备用主 DNS 后缀的成员计算机。
 
 > [!NOTE]
-> Windows Internet 名称服务 (WINS) 可用于通过解析单标签名称来抵消此缺点。 有关 WINS 的详细信息，请参阅[Wins 技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10))。
+> Windows Internet 名称服务 (WINS) 可用于通过解析单标签名称来抵消此缺点。 有关 WINS 的详细信息，请参阅 [Wins 技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10))。
 
 - 如果你的环境需要多个主 DNS 后缀，则必须相应地为林中的所有 Active Directory 域配置 DNS 后缀搜索顺序。
 
@@ -83,7 +83,7 @@ ms.locfileid: "87941217"
 
 - 您必须仔细测试所有应用程序的兼容性问题。
 
-有关可用于解决这些缺点的步骤的详细信息，请参阅[创建非连续命名空间](/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10))。
+有关可用于解决这些缺点的步骤的详细信息，请参阅 [创建非连续命名空间](/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10))。
 
 ### <a name="planning-a-namespace-transition"></a>规划命名空间转换
 
@@ -91,18 +91,18 @@ ms.locfileid: "87941217"
 
 - 手动配置的服务主体名称 (Spn) 在命名空间更改后可能不再与 DNS 名称匹配。 这可能会导致身份验证失败。
 
-    有关详细信息，请参阅[由于 Spn 设置不当，服务登录失败](/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10))。
+    有关详细信息，请参阅 [由于 Spn 设置不当，服务登录失败](/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10))。
 
-    - 如果你将基于 Windows Server 2003 的计算机用于约束委派，则这些计算机可能需要其他配置来更改 Spn。 有关详细信息，请参阅 Microsoft 知识库中的文章936628，[当你尝试在运行 Windows Server 2003 (404) 的计算机上配置约束委派时，SPN 不会出现在可委派给帐户的服务列表中](https://support.microsoft.com/help/936628)。
+    - 如果你将基于 Windows Server 2003 的计算机用于约束委派，则这些计算机可能需要其他配置来更改 Spn。 有关详细信息，请参阅 Microsoft 知识库中的文章936628， [当你尝试在运行 Windows Server 2003 (404) 的计算机上配置约束委派时，SPN 不会出现在可委派给帐户的服务列表中](https://support.microsoft.com/help/936628) 。
 
-    - 如果要委派权限来修改从属管理员的 Spn，请参阅[委派权限以修改 spn](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770439(v=ws.10))。
+    - 如果要委派权限来修改从属管理员的 Spn，请参阅 [委派权限以修改 spn](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770439(v=ws.10))。
 
 - 如果在具有非连续命名空间中配置的域控制器的部署中使用轻型目录访问协议 (LDAP) 通过安全套接字层 (SSL)  (称为 LDAPS) ，则必须在配置 LDAPS 证书时使用适当的 Active Directory 域名和主 DNS 后缀。
 
-    有关域控制器证书要求的详细信息，请参阅 Microsoft 知识库中的文章321051，[如何使用第三方证书颁发机构启用基于 SSL 的 LDAP](https://support.microsoft.com/help/321051/)。
+    有关域控制器证书要求的详细信息，请参阅 Microsoft 知识库中的文章321051， [如何使用第三方证书颁发机构启用基于 SSL 的 LDAP](https://support.microsoft.com/help/321051/)。
 
     > [!NOTE]
-    > 使用用于 LDAPS 的证书的域控制器可能要求你重新部署其证书。 如果这样做，则在重新启动域控制器之前，可能不会选择适当的证书。 有关轻型目录访问协议 (LDAP) 通过安全套接字层 (SSL)  (LDAPS) Windows Server 2003 的身份验证的详细信息，请参阅 Microsoft 知识库中的文章938703，[如何排查 LDAP OVER SSL 连接问题](https://support.microsoft.com/help/938703/)。
+    > 使用用于 LDAPS 的证书的域控制器可能要求你重新部署其证书。 如果这样做，则在重新启动域控制器之前，可能不会选择适当的证书。 有关轻型目录访问协议 (LDAP) 通过安全套接字层 (SSL)  (LDAPS) Windows Server 2003 的身份验证的详细信息，请参阅 Microsoft 知识库中的文章938703， [如何排查 LDAP OVER SSL 连接问题](https://support.microsoft.com/help/938703/)。
 
 ### <a name="planning-for-disjoint-namespace-deployments"></a>规划非连续命名空间部署
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: d7a4d2e1-217d-4ffc-93f0-817149bd9e7f
 title: 危及系统安全的途径
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: adf73ed7e6b003d6622c09dcc1a5dc0c85a6fe71
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 31d936647be758c3f9cf2cd6d922f00ec5554e98
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994338"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938207"
 ---
 # <a name="avenues-to-compromise"></a>危及系统安全的途径
 
@@ -29,11 +29,11 @@ ms.locfileid: "87994338"
 
 本文档的此部分重点介绍攻击者通常用于获取对基础结构的访问权限，并最终启动权限提升攻击的机制。 另请参阅以下部分：
 
--   [降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)Active Directory 安全配置的详细建议。
+-   [降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md) Active Directory 安全配置的详细建议。
 
--   [监视 Active Directory 以获得损害迹象](../../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md)帮助检测折衷的建议
+-   [监视 Active Directory 以获得损害迹象](../../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md) 帮助检测折衷的建议
 
--   [规划折衷](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)高级方法，有助于针对基础结构和业务观点的基础结构进行攻击
+-   [规划折衷](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md) 高级方法，有助于针对基础结构和业务观点的基础结构进行攻击
 
 > [!NOTE]
 > 尽管本文档重点介绍作为 AD DS 域的一部分的 Active Directory 和 Windows 系统，但攻击者很少只关注 Active Directory 和 Windows。 在混合使用操作系统、目录、应用程序和数据存储库的环境中，通常会发现非 Windows 系统也已经泄露。 如果系统在 Windows 和非 Windows 环境之间提供 "桥" （例如，Windows 和 UNIX 或 Linux 客户端访问的文件服务器）、为多个操作系统提供身份验证服务的目录，或将数据同步到不同目录的 metadirectories，则更是如此。
@@ -46,11 +46,11 @@ ms.locfileid: "87994338"
 不管攻击者的动机如何，大多数信息安全漏洞都是从一个或两个系统一次泄露的。 这些初始事件或网络入口点通常会利用可能已修复但未解决的漏洞。 [2012 数据违规调查报告 (DBIR) ](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)，这是 Verizon 风险团队与许多国家安全机构和其他公司合作制定的年度研究，指出96% 的攻击是 "不太困难" 的，这就是 "通过简单或中间控制能够避免 97%"。 这些发现可能是以下经常被利用的漏洞的直接结果。
 
 ### <a name="gaps-in-antivirus-and-antimalware-deployments"></a>防病毒和反恶意软件部署中的缺口
-*法律号码：过期的恶意软件扫描器只是根本不会有任何扫描仪。* - [安全性 (的十个永恒定律) 版本2.0](https://www.microsoft.com/en-us/msrc?rtc=1)
+*法律号码：过期的恶意软件扫描器只是根本不会有任何扫描仪。* - [安全性 (的十个永恒定律) 版本2.0 ](https://www.microsoft.com/en-us/msrc?rtc=1)
 
 分析组织的防病毒和反恶意软件部署通常会显示一个环境，其中大多数工作站都配置了启用和最新的防病毒软件和反恶意软件。 通常情况下，工作站经常连接到公司环境或员工设备，其中的防病毒软件和反恶意软件可能难于部署、配置和更新。
 
-然而，在许多受影响的环境中，服务器人口往往不太受保护。 如[2012 数据违规调查](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)中所报告，所有数据泄露的94% 涉及到服务器，这表示上一年的增长18%，并69了恶意软件的攻击百分比。 在服务器人口中，发现防病毒和反恶意软件安装的配置不正确，已过时、配置不正确，甚至已禁用。 在某些情况下，由管理人员禁用防病毒和反恶意软件，但在其他情况下，攻击者会在攻击服务器后通过其他漏洞禁用该软件。 当防病毒软件和反恶意软件禁用后，攻击者会在服务器上植物恶意软件，并专注于跨服务器总体传播安全漏洞。
+然而，在许多受影响的环境中，服务器人口往往不太受保护。 如 [2012 数据违规调查](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)中所报告，所有数据泄露的94% 涉及到服务器，这表示上一年的增长18%，并69了恶意软件的攻击百分比。 在服务器人口中，发现防病毒和反恶意软件安装的配置不正确，已过时、配置不正确，甚至已禁用。 在某些情况下，由管理人员禁用防病毒和反恶意软件，但在其他情况下，攻击者会在攻击服务器后通过其他漏洞禁用该软件。 当防病毒软件和反恶意软件禁用后，攻击者会在服务器上植物恶意软件，并专注于跨服务器总体传播安全漏洞。
 
 重要的是，不仅要确保系统受到当前的全面恶意软件防护的保护，还需要监视系统以禁用或删除防病毒软件和反恶意软件，并在手动禁用时自动重新启动保护。 尽管没有防病毒软件和反恶意软件可保证所有感染的防护和检测，但正确配置并部署的防病毒和反恶意软件实现可以降低感染的可能性。
 
@@ -83,9 +83,9 @@ IT 消费化带来了额外的挑战，那就是使用员工拥有的设备来�
 即使在通常会保持最新和修补系统的环境中，我们通常还能识别操作系统、计算机上运行的应用程序和 Active Directory 的间隔或配置错误。 某些配置错误只公开本地计算机以进行破坏，但在计算机被 "拥有" 后，攻击者通常会专注于进一步传播其他系统中的漏洞，并最终 Active Directory。 下面是一些常见领域，其中标识了引入风险的配置。
 
 #### <a name="in-active-directory"></a>在 Active Directory
-攻击者最常使用的 Active Directory 中的帐户是那些是最高特权组的成员的帐户，如域管理员的成员 (DA) 、Enterprise Admins (EA) 或 (中的内置管理员) BA Active Directory 组。 应将这些组的成员身份降为尽可能少的帐户数，以便限制这些组的攻击面。 甚至可以消除这些特权组中的 "永久" 成员身份;也就是说，你可以实施一些设置，仅当需要其域和全林性的权限时，才能暂时填充这些组。 使用高特权帐户时，它们只能用于指定的安全系统，例如域控制器或安全管理主机。 为了[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)，提供了有助于实现所有这些配置的详细信息。
+攻击者最常使用的 Active Directory 中的帐户是那些是最高特权组的成员的帐户，如域管理员的成员 (DA) 、Enterprise Admins (EA) 或 (中的内置管理员) BA Active Directory 组。 应将这些组的成员身份降为尽可能少的帐户数，以便限制这些组的攻击面。 甚至可以消除这些特权组中的 "永久" 成员身份;也就是说，你可以实施一些设置，仅当需要其域和全林性的权限时，才能暂时填充这些组。 使用高特权帐户时，它们只能用于指定的安全系统，例如域控制器或安全管理主机。 为了 [降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)，提供了有助于实现所有这些配置的详细信息。
 
-在 Active Directory 中评估最高特权组的成员身份时，我们通常会发现所有这三个特权组中的成员身份过多。 在某些情况下，组织在 DA 组中有几十个甚至上百个帐户。 在其他情况下，组织会直接将帐户放到内置的管理员组中，同时认为该组比 DAs 组 "权限更小"。 不是。 尽管 EA 权限很少且暂时需要，但我们经常在目录林根级域中找到 EA 组的一部分永久成员。 即使这是一个有效的冗余配置，在所有三个组中查找 IT 用户的日常管理帐户也是很常见的。 如[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述，某个帐户是否是其中一个组或所有这些组的永久成员，该帐户可用于进行破坏，甚至还会销毁它所管理的 AD DS 环境以及系统和帐户。 为了[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)，在 Active Directory 中提供安全配置和使用特权帐户的建议。
+在 Active Directory 中评估最高特权组的成员身份时，我们通常会发现所有这三个特权组中的成员身份过多。 在某些情况下，组织在 DA 组中有几十个甚至上百个帐户。 在其他情况下，组织会直接将帐户放到内置的管理员组中，同时认为该组比 DAs 组 "权限更小"。 不是。 尽管 EA 权限很少且暂时需要，但我们经常在目录林根级域中找到 EA 组的一部分永久成员。 即使这是一个有效的冗余配置，在所有三个组中查找 IT 用户的日常管理帐户也是很常见的。 如 [降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述，某个帐户是否是其中一个组或所有这些组的永久成员，该帐户可用于进行破坏，甚至还会销毁它所管理的 AD DS 环境以及系统和帐户。 为了 [降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)，在 Active Directory 中提供安全配置和使用特权帐户的建议。
 
 #### <a name="on-domain-controllers"></a>在域控制器上
 评估域控制器时，发现它们的配置和管理与成员服务器不同。 域控制器有时会运行在成员服务器上安装的相同应用程序和实用程序，而不是因为它们是在域控制器上需要的，而是因为应用程序是标准生成的一部分。 这些应用程序可以在域控制器上提供最少的功能，但通过要求使用打开端口、创建高特权服务帐户的配置设置，或者不应连接到域控制器的用户（除了身份验证和组策略应用程序以外的其他目的）授予对系统的访问权限，可大大增加其攻击面。 在某些情况下，攻击者使用了已在域控制器上安装的工具，不仅可以访问域控制器，而且不能修改或损坏 AD DS 数据库。
@@ -93,24 +93,24 @@ IT 消费化带来了额外的挑战，那就是使用员工拥有的设备来�
 当我们提取域控制器上的 Internet Explorer 配置设置时，我们发现用户已使用在 Active Directory 中具有高权限级别的帐户登录，并且已使用这些帐户从域控制器访问 Internet 和 intranet。 在某些情况下，帐户已将域控制器上的 Internet Explorer 设置配置为允许下载 Internet 内容，并且已从 Internet 站点下载了免费软件实用程序，并将其安装在域控制器上。 默认情况下，为用户和管理员启用了 Internet Explorer 增强的安全配置，但我们经常发现管理员已禁用了。 当具有高特权的帐户访问 Internet 并将内容下载到任何计算机时，该计算机会面临严重的风险。 如果计算机是域控制器，则会将整个 AD DS 安装置于风险之中。
 
 ##### <a name="protecting-domain-controllers"></a>保护域控制器
-域控制器应视为关键的基础结构组件，与文件、打印和应用程序服务器相比，安全的得到和配置更为严格。 域控制器不应运行域控制器正常运行所不需要的任何软件，也不能防止域控制器遭受攻击。 不应允许域控制器访问 Internet，并且应通过组策略的对象 (Gpo) 来配置和强制安全设置。 安全安装、配置和管理域控制器的详细建议在[保护域控制器免遭攻击](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md)中提供。
+域控制器应视为关键的基础结构组件，与文件、打印和应用程序服务器相比，安全的得到和配置更为严格。 域控制器不应运行域控制器正常运行所不需要的任何软件，也不能防止域控制器遭受攻击。 不应允许域控制器访问 Internet，并且应通过组策略的对象 (Gpo) 来配置和强制安全设置。 安全安装、配置和管理域控制器的详细建议在 [保护域控制器免遭攻击](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md)中提供。
 
 #### <a name="within-the-operating-system"></a>在操作系统中
-*定律2：如果攻击者不能更改计算机上的操作系统，则不是您的计算机。* - [安全性 (的十个永恒定律) 版本2.0](https://www.microsoft.com/en-us/msrc?rtc=1)
+*定律2：如果攻击者不能更改计算机上的操作系统，则不是您的计算机。* - [安全性 (的十个永恒定律) 版本2.0 ](https://www.microsoft.com/en-us/msrc?rtc=1)
 
 尽管某些组织为不同类型的服务器创建基准配置，并允许在安装操作系统后对其进行有限的自定义，但对受攻击环境进行分析常常会发现大量以 ad hoc 方式部署的服务器，并且可以手动、独立地进行配置。 执行同一功能的两个服务器之间的配置可能完全不同，这两个服务器的配置不安全。 相反，服务器配置基线可能会不断地强制执行，但也可以一致地进行配置;也就是说，服务器的配置方式是在给定类型的所有服务器上创建相同的漏洞。 错误配置包括禁用安全功能、向帐户授予过多的权利和权限 () 、在系统上使用相同的本地凭据，以及允许安装未经授权的应用程序和实用程序创建自己的漏洞。
 
 ##### <a name="disabling-security-features"></a>禁用安全功能
-组织有时会禁用具有高级安全性的 Windows 防火墙 (WFAS) ，因为 WFAS 难于配置或需要大量工作。 但是，从 Windows Server 2008 开始，如果服务器上安装了任何角色或功能，则默认情况下将使用该角色或功能所需的最少特权来配置该角色或功能，并且会自动将 Windows 防火墙配置为支持该角色或功能。 通过禁用 (，而不是在其位置) 使用其他基于主机的防火墙，组织将增加整个 Windows 环境的受攻击面。 外围防火墙提供某些防护来防范直接以 Internet 为目标的攻击，但不能防范利用其他攻击媒介（如[驱动器下载](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx)攻击）的攻击，也不提供源自 intranet 上其他受入侵系统的攻击。
+组织有时会禁用具有高级安全性的 Windows 防火墙 (WFAS) ，因为 WFAS 难于配置或需要大量工作。 但是，从 Windows Server 2008 开始，如果服务器上安装了任何角色或功能，则默认情况下将使用该角色或功能所需的最少特权来配置该角色或功能，并且会自动将 Windows 防火墙配置为支持该角色或功能。 通过禁用 (，而不是在其位置) 使用其他基于主机的防火墙，组织将增加整个 Windows 环境的受攻击面。 外围防火墙提供某些防护来防范直接以 Internet 为目标的攻击，但不能防范利用其他攻击媒介（如 [驱动器下载](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx) 攻击）的攻击，也不提供源自 intranet 上其他受入侵系统的攻击。
 
-用户帐户控制 (UAC) 设置有时在服务器上处于禁用状态，因为管理人员发现干扰性的提示。 尽管[Microsoft 支持部门文章 2526083](https://support.microsoft.com/kb/2526083)介绍了可能在 Windows Server 上禁用 uac 的情况，除非你运行的是在设计) 禁用 uac 的服务器核心安装 (，否则，你不应在服务器上禁用 uac，而无需仔细考虑和研究。
+用户帐户控制 (UAC) 设置有时在服务器上处于禁用状态，因为管理人员发现干扰性的提示。 尽管 [Microsoft 支持部门文章 2526083](https://support.microsoft.com/kb/2526083) 介绍了可能在 Windows Server 上禁用 uac 的情况，除非你运行的是在设计) 禁用 uac 的服务器核心安装 (，否则，你不应在服务器上禁用 uac，而无需仔细考虑和研究。
 
 在其他情况下，服务器设置配置为不太安全的值，因为组织将过时的服务器配置设置应用于新的操作系统，例如将 Windows Server 2003 基准应用到运行 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008 的计算机，而无需更改基线来反映操作系统中的更改。 部署新的操作系统时，请查看安全更改和配置设置，以确保所实现的设置适用且适用于新的操作系统，而不是将旧的服务器基准应用到新的操作系统。
 
 ##### <a name="granting-excessive-privilege"></a>授予过多权限
 在几乎每个已评估的环境中，对 Windows 系统上的本地和基于域的帐户授予过多的特权。 用户在其工作站上被授予了本地管理员权限，成员服务器运行配置了权限超过其所需功能的服务，而服务器总体中的本地管理员组包含数十甚至数百个本地和域帐户。 计算机上只有一个特权帐户的泄露，使得攻击者能够破坏登录到计算机的每个用户和服务的帐户，并获取并利用凭据将该安全传播传播到其他系统。
 
-虽然传递哈希 (PTH) 和其他凭据盗窃攻击现在无处不在，但这是因为，当攻击者获得对计算机的管理员或系统级别的访问权限时，可以轻松地轻松提取其他特权帐户的凭据。 即使没有允许从登录会话中获取凭据的工具，具有对计算机的特权访问权限的攻击者也可以轻松地安装击键记录器来捕获击键、屏幕截图和剪贴板内容。 如果攻击者具有对计算机的特权访问权限，则可以禁用反恶意软件，安装 rootkit，修改受保护的文件，或者在计算机上安装恶意软件，使攻击自动化或将服务器转为[驱动器](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx)。
+虽然传递哈希 (PTH) 和其他凭据盗窃攻击现在无处不在，但这是因为，当攻击者获得对计算机的管理员或系统级别的访问权限时，可以轻松地轻松提取其他特权帐户的凭据。 即使没有允许从登录会话中获取凭据的工具，具有对计算机的特权访问权限的攻击者也可以轻松地安装击键记录器来捕获击键、屏幕截图和剪贴板内容。 如果攻击者具有对计算机的特权访问权限，则可以禁用反恶意软件，安装 rootkit，修改受保护的文件，或者在计算机上安装恶意软件，使攻击自动化或将服务器转为 [驱动器](https://www.microsoft.com/security/sir/glossary/drive-by-download-sites.aspx) 。
 
 用于在一台计算机之外扩展违规行为的策略各不相同，但传播泄露的关键是获取对其他系统的高特权访问。 通过减少对任何系统具有特权访问权限的帐户数，你可以减少攻击面，而不只是该计算机的攻击面，但攻击者可能会从计算机中收集宝贵的凭据。
 
@@ -119,13 +119,13 @@ IT 消费化带来了额外的挑战，那就是使用员工拥有的设备来�
 
 如果本地管理员帐户在服务器上命名为相同的值，并且分配给该帐户的密码也被配置为相同的值，则攻击者可以在已获得管理员或系统级访问权限的一台计算机上提取该帐户的凭据。 攻击者最初不必泄露管理员帐户;它们只需要对作为本地管理员组成员的用户或配置为以本地系统或管理员权限运行的服务帐户的帐户进行破坏。 然后，攻击者可以提取管理员帐户的凭据，并将网络登录中的这些凭据重播到网络上的其他计算机。
 
-只要另一台计算机的本地帐户的用户名和密码 (或密码哈希) 为所提供的帐户凭据，登录尝试便会成功，并且攻击者会获得对目标计算机的特权访问权限。 在当前版本的 Windows 中，默认情况下[禁用](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753450(v=ws.11))内置 Administrator 帐户，但在旧版操作系统中，默认情况下会启用该帐户。
+只要另一台计算机的本地帐户的用户名和密码 (或密码哈希) 为所提供的帐户凭据，登录尝试便会成功，并且攻击者会获得对目标计算机的特权访问权限。 在当前版本的 Windows 中，默认情况下 [禁用](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753450(v=ws.11))内置 Administrator 帐户，但在旧版操作系统中，默认情况下会启用该帐户。
 
 > [!NOTE]
-> 某些组织特意配置了本地管理员帐户，以便在系统锁定所有其他特权帐户时，能够提供 "故障安全"。 但是，即使本地管理员帐户处于禁用状态，并且没有其他可用的帐户可以启用该帐户或使用管理员权限登录系统，系统仍可以启动到安全模式，并且可以重新启用内置本地管理员帐户，如[Microsoft 支持部门文章 814777](https://support.microsoft.com/kb/814777)中所述。 此外，如果系统仍成功应用 Gpo，则可以将 GPO 修改为临时 () 重新启用管理员帐户，或者将受限制的组配置为将基于域的帐户添加到本地管理员组。 可以执行修复，并再次禁用管理员帐户。 为了有效地防止使用内置本地管理员帐户凭据的横向泄露，必须为本地管理员帐户配置唯一的用户名和密码。 若要通过 GPO 为本地管理员帐户部署唯一密码，请参阅 technet 上的[通过 gpo 管理内置管理员帐户的密码](/previous-versions/mt227395(v=msdn.10))。  
+> 某些组织特意配置了本地管理员帐户，以便在系统锁定所有其他特权帐户时，能够提供 "故障安全"。 但是，即使本地管理员帐户处于禁用状态，并且没有其他可用的帐户可以启用该帐户或使用管理员权限登录系统，系统仍可以启动到安全模式，并且可以重新启用内置本地管理员帐户，如 [Microsoft 支持部门文章 814777](https://support.microsoft.com/kb/814777)中所述。 此外，如果系统仍成功应用 Gpo，则可以将 GPO 修改为临时 () 重新启用管理员帐户，或者将受限制的组配置为将基于域的帐户添加到本地管理员组。 可以执行修复，并再次禁用管理员帐户。 为了有效地防止使用内置本地管理员帐户凭据的横向泄露，必须为本地管理员帐户配置唯一的用户名和密码。 若要通过 GPO 为本地管理员帐户部署唯一密码，请参阅 technet 上的 [通过 gpo 管理内置管理员帐户的密码](/previous-versions/mt227395(v=msdn.10)) 。  
 
 ##### <a name="permitting-installation-of-unauthorized-applications"></a>允许安装未授权的应用程序
-*定律1：如果攻击者可能会劝诱您在您的计算机上运行他的程序，这并不是您的计算机。* - [安全性 (的十个永恒定律) 版本2.0](https://www.microsoft.com/en-us/msrc?rtc=1)
+*定律1：如果攻击者可能会劝诱您在您的计算机上运行他的程序，这并不是您的计算机。* - [安全性 (的十个永恒定律) 版本2.0 ](https://www.microsoft.com/en-us/msrc?rtc=1)
 
 无论组织是否在服务器之间部署一致的基线设置，都不应允许安装不属于服务器定义的角色的应用程序。 通过允许安装的软件不是服务器的指定功能的一部分，服务器将被公开到无意或恶意安装的软件，这些软件会增加服务器的攻击面、引入应用程序漏洞或导致系统不稳定。
 
@@ -153,7 +153,7 @@ SQL 注入是一种应用程序漏洞，该漏洞允许用户定义的输入修�
 
 在联机银行和电子商务方案中经常会使用 XSS，在这种情况下，攻击者可以在被利用的用户的环境中进行购买或转让。 对于基于 web 的自定义标识管理应用程序，攻击者可能会允许攻击者创建自己的标识、修改权限和权限并导致系统泄露。
 
-尽管跨站点脚本和 SQL 注入的全面讨论超出了本文档的讨论范围，但 "[开放式 Web 应用程序安全项目 (OWASP") ](https://www.owasp.org/index.php/Main_Page)发布了一个前10个列表，其中详细讨论了漏洞和对策。
+尽管跨站点脚本和 SQL 注入的全面讨论超出了本文档的讨论范围，但 " [开放式 Web 应用程序安全项目 (OWASP") ](https://www.owasp.org/index.php/Main_Page) 发布了一个前10个列表，其中详细讨论了漏洞和对策。
 
 无论对基础结构安全的投资如何，如果在该基础结构中部署的设计和编写的应用程序都很糟糕，环境就容易受到攻击。 即使是安全可靠的基础结构通常也不能为这些应用程序攻击提供有效对策。 复合问题、设计不良的应用程序可能要求向服务帐户授予应用程序正常运行所需的权限。
 
@@ -161,5 +161,5 @@ Microsoft 安全开发生命周期 (SDL) 是一组结构化的过程控制，可
 
 对于每个问题，某些组织将解决高于 $10000 的生产代码中的安全问题的全部成本，而在没有有效 SDL 的情况下开发的应用程序可平均每100000行增加10个高严重性问题。 在大型应用程序中，成本会迅速提升。 与此相反，许多公司在 SDL 的最终代码审查阶段为每100000行的代码提供了不到一次的问题基准，并在生产中的高风险应用程序中实现零问题。
 
-通过在要求收集和设计应用程序的早期包括安全要求，实现 SDL 可以提高安全性，为高风险应用程序提供威胁建模;需要对开发人员进行有效培训和监视;和需要清晰、一致的代码标准和实践。 SDL 的最终效果是应用程序安全性方面的重大改进，同时降低开发、部署、维护和解除应用程序的部署成本。 尽管 SDL 设计和实施的详细讨论超出了本文档的讨论范围，但请参阅[Microsoft 安全开发生命周期](https://www.microsoft.com/security/sdl/default.aspx)，了解详细的指导和信息。
+通过在要求收集和设计应用程序的早期包括安全要求，实现 SDL 可以提高安全性，为高风险应用程序提供威胁建模;需要对开发人员进行有效培训和监视;和需要清晰、一致的代码标准和实践。 SDL 的最终效果是应用程序安全性方面的重大改进，同时降低开发、部署、维护和解除应用程序的部署成本。 尽管 SDL 设计和实施的详细讨论超出了本文档的讨论范围，但请参阅 [Microsoft 安全开发生命周期](https://www.microsoft.com/security/sdl/default.aspx) ，了解详细的指导和信息。
 

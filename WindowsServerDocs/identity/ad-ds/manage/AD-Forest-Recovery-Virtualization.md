@@ -1,17 +1,17 @@
 ---
 title: AD 林恢复虚拟化
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
-ms.openlocfilehash: e02fbf15ee3f9edc68bbfc479c2ab06aba32a959
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aa6598c2a033147928d05c8175886c1c2425b4cd
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943750"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938047"
 ---
 # <a name="active-directory-forest-recovery-virtualization"></a>Active Directory 林恢复虚拟化
 
@@ -29,7 +29,7 @@ ms.locfileid: "87943750"
 - 用作克隆源的虚拟化 DC 必须运行 Windows Server 2016 或2012，并且必须是可克隆域控制器组的成员。
 - PDC 仿真器必须运行 Windows Server 2016 或2012。 如果是虚拟化的，则可以克隆 PDC 模拟器。
 
-有关如何执行虚拟化 DC 克隆的分步说明，请参阅[Active Directory 域服务 (AD DS) 虚拟化 (级别 100) 的简介](../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。 有关虚拟化 DC 克隆的工作原理的详细信息，请参阅[虚拟化域控制器技术参考 (级别 300) ](../deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-.md)。
+有关如何执行虚拟化 DC 克隆的分步说明，请参阅 [Active Directory 域服务 (AD DS) 虚拟化 (级别 100) 的简介 ](../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。 有关虚拟化 DC 克隆的工作原理的详细信息，请参阅 [虚拟化域控制器技术参考 (级别 300) ](../deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-.md)。
 
 ## <a name="next-steps"></a>后续步骤
 

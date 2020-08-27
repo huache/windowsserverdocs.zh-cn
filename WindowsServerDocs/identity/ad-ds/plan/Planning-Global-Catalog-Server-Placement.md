@@ -1,17 +1,17 @@
 ---
 ms.assetid: 407d5e81-c04c-4275-9ae9-35f65b4a371a
 title: 规划全局编录服务器放置
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a8ef90ec13b67fdb3bc0e37e02d571721a0ea77a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e82b9c7db0db62f4e74e6114d78aca59b21f8525
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970974"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938697"
 ---
 # <a name="planning-global-catalog-server-placement"></a>规划全局编录服务器放置
 
@@ -47,6 +47,6 @@ ms.locfileid: "87970974"
 
 ## <a name="enabling-universal-group-membership-caching"></a>启用通用组成员身份缓存
 
-对于包含少于100用户并且不包含大量需要全局编录服务器的漫游用户或应用程序的位置，你可以部署运行 Windows Server 2008 的域控制器并启用通用组成员身份缓存。 确保全局编录服务器不是已启用通用组成员身份缓存的域控制器中的一个或多个复制跃点，以便能够刷新缓存中的通用组信息。 有关通用组缓存的工作原理的信息，请参阅 "[全局编录工作](/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10))原理" 一文。
+对于包含少于100用户并且不包含大量需要全局编录服务器的漫游用户或应用程序的位置，你可以部署运行 Windows Server 2008 的域控制器并启用通用组成员身份缓存。 确保全局编录服务器不是已启用通用组成员身份缓存的域控制器中的一个或多个复制跃点，以便能够刷新缓存中的通用组信息。 有关通用组缓存的工作原理的信息，请参阅 " [全局编录工作](/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10))原理" 一文。
 
-要使工作表可以帮助你记录计划在何处放置全局编录服务器和域控制器启用通用组缓存的位置，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip 和打开域控制器布局 ( # A1) 。 在部署目录林根级域和地区性域时，请参阅有关需要放置全局编录服务器的位置的信息。
+要使工作表可以帮助你记录计划在何处放置全局编录服务器和域控制器启用通用组缓存的位置，请参阅 [Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)、下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip 和打开域控制器布局 ( # A1) 。 在部署目录林根级域和地区性域时，请参阅有关需要放置全局编录服务器的位置的信息。

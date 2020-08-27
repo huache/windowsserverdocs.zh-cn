@@ -1,17 +1,17 @@
 ---
 ms.assetid: c0d64566-5530-482e-a332-af029a5fb575
 title: 将设计要求映射到林设计模型
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: f10c3c5bc1b974e27aa14341c5367885333172fc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b796b06d8bdf5b4e644eaa3cc9f2e50f127c71a1
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971004"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939047"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>将设计要求映射到林设计模型
 
@@ -26,19 +26,19 @@ ms.locfileid: "87971004"
 > [!NOTE]
 > 如果某个因素列为 "N/A"，则不会考虑这一点，因为其他要求也适用于该因素。
 
-|方案|受限连接|数据隔离|数据独立性|服务隔离|服务自治|
+|场景|受限连接|数据隔离|数据独立性|服务隔离|服务自治|
 |------------|------------------------|------------------|-----------------|---------------------|--------------------|
 |[方案1：加入现有林以进行数据自治](#BKMK_1)|否|否|是|否|否|
 |[方案2：使用组织林或域进行服务自治](#BKMK_2)|否|否|空值|否|是|
-|[方案3：使用组织林或资源林进行服务隔离](#BKMK_3)|否|否|空值|是|空值|
-|[方案4：使用组织林或受限访问林进行数据隔离](#BKMK_4)|空值|是|空值|空值|空值|
+|[方案3：使用组织林或资源林进行服务隔离](#BKMK_3)|否|否|不适用|是|不适用|
+|[方案4：使用组织林或受限访问林进行数据隔离](#BKMK_4)|不适用|是|不适用|不适用|不适用|
 |[方案5：使用组织林，或为受限连接重新配置防火墙](#BKMK_5)|是|否|空值|否|否|
 |[方案6：使用组织林或域，并使用有限连接性为服务自治重新配置防火墙](#BKMK_6)|是|否|空值|否|是|
-|[方案7：使用资源林，并使用有限连接性为服务隔离重新配置防火墙](#BKMK_7)|是|否|空值|是|空值|
+|[方案7：使用资源林，并使用有限连接性为服务隔离重新配置防火墙](#BKMK_7)|是|否|不适用|是|不适用|
 
 ## <a name="scenario-1-join-an-existing-forest-for-data-autonomy"></a><a name="BKMK_1"></a>方案1：加入现有林以进行数据自治
 
-只需在现有组织林中 (Ou) 的组织单位中托管组，即可满足数据自治的要求。 将 Ou 控制委派给该组中的数据管理员，以实现数据独立性。 有关使用 Ou 委托控件的详细信息，请参阅[创建组织单位设计](../../ad-ds/plan/Creating-an-Organizational-Unit-Design.md)。
+只需在现有组织林中 (Ou) 的组织单位中托管组，即可满足数据自治的要求。 将 Ou 控制委派给该组中的数据管理员，以实现数据独立性。 有关使用 Ou 委托控件的详细信息，请参阅 [创建组织单位设计](../../ad-ds/plan/Creating-an-Organizational-Unit-Design.md)。
 
 ## <a name="scenario-2-use-an-organizational-forest-or-domain-for-service-autonomy"></a><a name="BKMK_2"></a>方案2：使用组织林或域进行服务自治
 
@@ -50,7 +50,7 @@ ms.locfileid: "87971004"
 
 - 使用组织域。 将用户、组和计算机放在现有组织林中的一个单独的域中。 此模型仅提供域级服务自治，不适用于完全服务独立性、服务隔离或数据隔离。
 
-有关使用组织域的详细信息，请参阅[使用组织域林模型](../../ad-ds/plan/../../ad-ds/plan/Using-the-Organizational-Domain-Forest-Model.md)。
+有关使用组织域的详细信息，请参阅 [使用组织域林模型](../../ad-ds/plan/../../ad-ds/plan/Using-the-Organizational-Domain-Forest-Model.md)。
 
 ## <a name="scenario-3-use-an-organizational-forest-or-resource-forest-for-service-isolation"></a><a name="BKMK_3"></a>方案3：使用组织林或资源林进行服务隔离
 
@@ -97,7 +97,7 @@ ms.locfileid: "87971004"
 - 其他林可以配置为信任为数据隔离创建的组织林，以便隔离林中的用户可以访问其他林中的资源。 但是，隔离林中的用户决不能以交互方式登录到信任林中的工作站。 信任林中的计算机可能会被恶意软件破坏，并可用于捕获用户的登录凭据。
 
    > [!NOTE]
-   > 若要防止信任林中的服务器模拟独立林的用户，然后访问独立林中的资源，林所有者可以禁用委托身份验证或使用约束委托功能。 有关委派的身份验证和约束委派的详细信息，请参阅[委派身份验证](/previous-versions/windows/it-pro/windows-server-2003/cc739740(v=ws.10))。
+   > 若要防止信任林中的服务器模拟独立林的用户，然后访问独立林中的资源，林所有者可以禁用委托身份验证或使用约束委托功能。 有关委派的身份验证和约束委派的详细信息，请参阅 [委派身份验证](/previous-versions/windows/it-pro/windows-server-2003/cc739740(v=ws.10))。
 
 - 你可能需要在组织林和组织中的其他林之间建立防火墙，以限制用户对其林以外的信息的访问。
 
@@ -114,7 +114,7 @@ ms.locfileid: "87971004"
 
 - 使用组织林。 将连接受限的组的用户、组和计算机放入单独的组织林中。 将该组中的个人分配为林所有者。 组织林在防火墙的另一端提供单独的环境。 林包括在林中管理的用户帐户和资源，以便用户无需通过防火墙即可完成日常任务。 特定的用户或应用程序可能有需要通过防火墙来联系其他林的特殊需求。 您可以通过在防火墙中打开相应的接口（包括任何信任功能所必需的接口），单独满足这些需求。
 
-有关配置防火墙以与 Active Directory 域服务 (AD DS) 一起使用的详细信息，请参阅[按防火墙分段的网络中的 Active Directory](https://go.microsoft.com/fwlink/?LinkId=37928)。
+有关配置防火墙以与 Active Directory 域服务 (AD DS) 一起使用的详细信息，请参阅 [按防火墙分段的网络中的 Active Directory](https://go.microsoft.com/fwlink/?LinkId=37928)。
 
 ## <a name="scenario-6-use-an-organizational-forest-or-domain-and-reconfigure-the-firewall-for-service-autonomy-with-limited-connectivity"></a><a name="BKMK_6"></a>方案6：使用组织林或域，并使用有限连接性为服务自治重新配置防火墙
 
@@ -124,9 +124,9 @@ ms.locfileid: "87971004"
 
 - 使用组织林。 将需要服务自治的组的用户、组和计算机放到单独的组织林中。 将该组中的个人分配为林所有者。 组织林在防火墙的另一端提供单独的环境。 林包括在林中管理的用户帐户和资源，以便用户无需通过防火墙即可完成日常任务。 特定的用户或应用程序可能有需要通过防火墙来联系其他林的特殊需求。 您可以通过在防火墙中打开相应的接口（包括任何信任功能所必需的接口），单独满足这些需求。
 
-- 将用户、组和计算机放在现有组织林中的一个单独的域中。 此模型仅提供域级服务自治，不适用于完全服务独立性、服务隔离或数据隔离。 林中的其他组必须信任新域的服务管理员，使其与林所有者信任的程度相同。 出于此原因，我们不建议采用这种方法。 有关使用组织域的详细信息，请参阅[使用组织域林模型](../../ad-ds/plan/../../ad-ds/plan/Using-the-Organizational-Domain-Forest-Model.md)。
+- 将用户、组和计算机放在现有组织林中的一个单独的域中。 此模型仅提供域级服务自治，不适用于完全服务独立性、服务隔离或数据隔离。 林中的其他组必须信任新域的服务管理员，使其与林所有者信任的程度相同。 出于此原因，我们不建议采用这种方法。 有关使用组织域的详细信息，请参阅 [使用组织域林模型](../../ad-ds/plan/../../ad-ds/plan/Using-the-Organizational-Domain-Forest-Model.md)。
 
-还需要打开防火墙，以允许 Active Directory 流量通过。 有关配置防火墙以与 AD DS 一起使用的详细信息，请参阅[由防火墙分段的网络中的 Active Directory](https://go.microsoft.com/fwlink/?LinkId=37928)。
+还需要打开防火墙，以允许 Active Directory 流量通过。 有关配置防火墙以与 AD DS 一起使用的详细信息，请参阅 [由防火墙分段的网络中的 Active Directory](https://go.microsoft.com/fwlink/?LinkId=37928)。
 
 ## <a name="scenario-7-use-a-resource-forest-and-reconfigure-the-firewall-for-service-isolation-with-limited-connectivity"></a><a name="BKMK_7"></a>方案7：使用资源林，并使用有限连接性为服务隔离重新配置防火墙
 
@@ -152,4 +152,4 @@ ms.locfileid: "87971004"
 
    特定的用户或应用程序可能有需要通过防火墙来联系其他林的特殊需求。 您可以通过在防火墙中打开相应的接口（包括任何信任功能所必需的接口），单独满足这些需求。
 
-有关配置防火墙以与 AD DS 一起使用的详细信息，请参阅[由防火墙分段的网络中的 Active Directory](https://go.microsoft.com/fwlink/?LinkId=37928)。
+有关配置防火墙以与 AD DS 一起使用的详细信息，请参阅 [由防火墙分段的网络中的 Active Directory](https://go.microsoft.com/fwlink/?LinkId=37928)。

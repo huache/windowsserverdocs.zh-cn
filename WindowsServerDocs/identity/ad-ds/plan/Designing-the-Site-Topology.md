@@ -1,17 +1,17 @@
 ---
 ms.assetid: eeb919de-e21e-48d8-8186-e42adec6933f
 title: 设计站点拓扑
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 97bf24c1e983ce7a058c405d5863b11420765da5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dac3976a71b27f75cee5a2d4640282819bdfe75e
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943103"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939437"
 ---
 # <a name="designing-the-site-topology"></a>设计站点拓扑
 
@@ -29,7 +29,7 @@ ms.locfileid: "87943103"
 
 -   优化客户端计算机查找最接近的资源的能力，例如域控制器和分布式文件系统 (DFS) 服务器。 这有助于减少跨慢速广域网的网络流量 (WAN) 链接、改进登录和注销过程，并加速文件下载操作。
 
-在开始设计站点拓扑之前，必须了解物理网络结构。 此外，必须首先为每个林设计 Active Directory 逻辑结构，包括管理层次结构、林计划和域计划。 还必须在 AD DS (DNS) 基础结构设计中完成域名系统。 有关设计 Active Directory 逻辑结构和 DNS 基础结构的详细信息，请参阅[设计 Windows Server 2008 的逻辑结构 AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770806(v=ws.10))。
+在开始设计站点拓扑之前，必须了解物理网络结构。 此外，必须首先为每个林设计 Active Directory 逻辑结构，包括管理层次结构、林计划和域计划。 还必须在 AD DS (DNS) 基础结构设计中完成域名系统。 有关设计 Active Directory 逻辑结构和 DNS 基础结构的详细信息，请参阅 [设计 Windows Server 2008 的逻辑结构 AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770806(v=ws.10))。
 
 完成站点拓扑设计后，必须验证你的域控制器符合 Windows Server 2008 Standard、Windows Server 2008 Enterprise 和 Windows Server 2008 Datacenter 的硬件要求。
 

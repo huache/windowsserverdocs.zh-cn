@@ -1,15 +1,15 @@
 ---
 ms.assetid: 709353b0-b913-4367-8580-44745183e2bc
 title: 验证 DNS 功能以支持目录复制
-ms.author: joflore
+ms.author: iainfou
 ms.date: 05/31/2017
 author: Femila
-ms.openlocfilehash: 90950ea59dc831f294f6ca96125ec4c9abe68bf9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c59160cb3242a91ef8a86d9e8247e0f2d376395b
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941571"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938057"
 ---
 # <a name="verify-dns-functionality-to-support-directory-replication"></a>验证 DNS 功能以支持目录复制
 
@@ -26,9 +26,9 @@ ms.locfileid: "87941571"
 基本 DNS 测试检查 DNS 功能的以下方面：
 
 
-- **连接：** 测试确定域控制器是否已在 DNS 中注册，可以通过<system>ping</system>命令联系，并具有轻型目录访问协议/远程过程调用 (LDAP/RPC) 连接性。 如果域控制器上的连接测试失败，则不会对该域控制器运行其他测试。 在运行任何其他 DNS 测试之前，将自动执行连接测试。
+- **连接：** 测试确定域控制器是否已在 DNS 中注册，可以通过 <system>ping</system> 命令联系，并具有轻型目录访问协议/远程过程调用 (LDAP/RPC) 连接性。 如果域控制器上的连接测试失败，则不会对该域控制器运行其他测试。 在运行任何其他 DNS 测试之前，将自动执行连接测试。
 - **基本服务：** 如果域控制器) 上安装了 DNS，则该测试确认以下服务正在运行并且在已测试的域控制器上可用： DNS 客户端服务、Net Logon 服务密钥发行中心 (KDC) 服务和 DNS 服务器服务 (。
-- **DNS 客户端配置：** 该测试确认 DNS 客户端计算机上的所有网络适配器上的 DNS 服务器都是可访问的。
+- **DNS 客户端配置：**  该测试确认 DNS 客户端计算机上的所有网络适配器上的 DNS 服务器都是可访问的。
 - **资源记录注册：** 该测试确认主机 (每个域控制器的) 资源记录在客户端计算机上配置的至少一个 DNS 服务器上注册。
 - ** (SOA) 的权限的区域和启动：** 如果域控制器正在运行 DNS 服务器服务，则该测试会确认 Active Directory 域区域的 Active Directory 域区域和 (SOA) 资源记录的启动。
 - **根区域：** 检查根 ( ) 区域是否存在。
@@ -43,7 +43,7 @@ Enterprise Admins 中的成员身份或同等身份是完成这些过程所需�
 1. 在要测试的域控制器或安装了 Active Directory 域服务 (AD DS) 工具的域成员计算机上，以管理员身份打开命令提示符。 若要以管理员身份打开命令提示符，请单击“开始”****。
 2. 在“开始搜索”中，键入 ldp。
 3. 在“开始”菜单的顶部，右键单击“命令提示符”，然后单击“以管理员身份运行”。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。
-4. 在命令提示符下，键入以下命令，然后按 ENTER：`dcdiag /test:dns /v /s:<DCName> /DnsBasic /f:dcdiagreport.txt`
+4. 在命令提示符下，键入以下命令，然后按 ENTER： `dcdiag /test:dns /v /s:<DCName> /DnsBasic /f:dcdiagreport.txt`
 </br></br>用 DCName 的域控制器的实际可分辨名称、NetBIOS 名称或 DNS 名称替换 &lt; &gt; 。 作为替代方法，你可以通过键入/e：而不是/s：来测试林中的所有域控制器。
 /F 开关指定在上一个命令中 dcdiagreport.txt 的文件名。 如果要将文件放在当前工作目录以外的位置，则可以指定文件路径，例如/f:c:reportsdcdiagreport.txt。
 
@@ -71,7 +71,7 @@ Enterprise Admins 中的成员身份或同等身份是完成这些过程所需�
 
 
 - **别名 (CNAME) ：** 用于查找复制伙伴的基于 GUID)  (GUID 的资源记录的全局唯一标识符
-- **主机 () ：** 包含域控制器的 IP 地址的主机资源记录
+- **主机 () ：**  包含域控制器的 IP 地址的主机资源记录
 - **LDAP SRV：** 服务 (SRV) 查找 LDAP 服务器的资源记录
 - **GC SRV**：服务 (SRV) 查找全局编录服务器的资源记录
 - **PDC SRV**：服务 (SRV) 查找主域控制器的资源记录 (PDC) 模拟器操作主机
@@ -83,7 +83,7 @@ Enterprise Admins 中的成员身份或同等身份是完成这些过程所需�
 1. 打开 DNS 管理单元。 若要打开 DNS，请单击 "启动"。 在 "开始搜索" 中，键入 dnsmgmt.msc，然后按 ENTER。 如果出现 "用户帐户控制" 对话框，请确认它显示了所需的操作，然后单击 "继续"。
 2. 使用 DNS 管理单元查找任何运行 DNS 服务器服务的域控制器，其中，服务器承载的 DNS 区域与域控制器的 Active Directory 域相同。
 3. 在控制台树中，单击名为 _msdcs 的区域。Dns_Domain_Name。
-4. 在详细信息窗格中，验证是否存在以下资源记录：别名 (CNAME) 名为 Dsa_Guid _msdcs 的资源记录。<placeholder>Dns_Domain_Name</placeholder>和相应的主机 (Dns 服务器名称的) 资源记录。
+4. 在详细信息窗格中，验证是否存在以下资源记录：别名 (CNAME) 名为 Dsa_Guid _msdcs 的资源记录。<placeholder>Dns_Domain_Name</placeholder> 和相应的主机 (Dns 服务器名称的) 资源记录。
 
 如果别名 (CNAME) 资源记录未注册，请验证动态更新是否正常工作。 使用以下部分中的测试来验证动态更新。
 
@@ -95,7 +95,7 @@ Enterprise Admins 中的成员身份或同等身份是完成这些过程所需�
 
 
 1. 以管理员身份打开命令提示符。 若要以管理员身份打开命令提示符，请单击“开始”。 在“开始搜索”中，键入 ldp。 在“开始”菜单的顶部，右键单击“命令提示符”，然后单击“以管理员身份运行”。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。
-2. 在命令提示符下，键入以下命令，然后按 ENTER：`dcdiag /test:dns /v /s:<DCName> /DnsDynamicUpdate`
+2. 在命令提示符下，键入以下命令，然后按 ENTER： `dcdiag /test:dns /v /s:<DCName> /DnsDynamicUpdate`
    </br></br>用 DCName 的域控制器的可分辨名称、NetBIOS 名称或 DNS 名称替代 &lt; &gt; 。 作为替代方法，你可以通过键入/e：而不是/s：来测试林中的所有域控制器。 如果在域控制器上未启用 IPv6，则应该会预计主机 (AAAA) 资源记录部分出现故障，这是未启用 IPv6 时的正常情况。
 
 如果未配置安全动态更新，则可以使用以下过程对其进行配置。
@@ -119,6 +119,6 @@ Enterprise Admins 中的成员身份或同等身份是完成这些过程所需�
 1. 以管理员身份打开命令提示符。 若要以管理员身份打开命令提示符，请单击“开始”。
 2. 在“开始搜索”中，键入 ldp。
 3. 在开头的顶部，右键单击 "命令提示符"，然后单击 "以管理员身份运行"。 如果出现“用户帐户控制”对话框，请确认它显示的是所需操作，然后单击“继续”。
-4. 若要在源域控制器上手动启动域控制器定位器资源记录的注册，请在命令提示符下键入以下命令，然后按 ENTER：`net stop netlogon && net start netlogon`
-5. 若要手动启动主机 () 资源记录的注册，请在命令提示符下键入以下命令，然后按 ENTER：`ipconfig /flushdns && ipconfig /registerdns`
-6. 在命令提示符下，键入以下命令，然后按 ENTER：`dcdiag /test:dns /v /s:<DCName>` </br></br>用 DCName 的域控制器的可分辨名称、NetBIOS 名称或 DNS 名称替代 &lt; &gt; 。 查看测试的输出，以确保通过 DNS 测试。 如果在域控制器上未启用 IPv6，则应该会预计主机 (AAAA) 资源记录部分出现故障，这是未启用 IPv6 时的正常情况。
+4. 若要在源域控制器上手动启动域控制器定位器资源记录的注册，请在命令提示符下键入以下命令，然后按 ENTER： `net stop netlogon && net start netlogon`
+5. 若要手动启动主机 () 资源记录的注册，请在命令提示符下键入以下命令，然后按 ENTER： `ipconfig /flushdns && ipconfig /registerdns`
+6. 在命令提示符下，键入以下命令，然后按 ENTER： `dcdiag /test:dns /v /s:<DCName>` </br></br>用 DCName 的域控制器的可分辨名称、NetBIOS 名称或 DNS 名称替代 &lt; &gt; 。 查看测试的输出，以确保通过 DNS 测试。 如果在域控制器上未启用 IPv6，则应该会预计主机 (AAAA) 资源记录部分出现故障，这是未启用 IPv6 时的正常情况。

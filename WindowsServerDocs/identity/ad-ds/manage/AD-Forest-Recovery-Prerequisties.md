@@ -1,17 +1,17 @@
 ---
 title: 规划 Active Directory 林恢复的先决条件
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
-ms.openlocfilehash: 827a983e49d9e20aafe2e7361f87e9f00ec117b0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bb640474ca990d7853a35ad684889b389affb69d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969864"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938097"
 ---
 # <a name="active-directory-forest-recovery-prerequisites"></a>Active Directory 林恢复先决条件
 
@@ -27,7 +27,7 @@ ms.locfileid: "87969864"
    - 结束时，请咨询 Microsoft 支持部门，将整个林还原到发生故障之前的状态，这是从故障中恢复的最佳方法。 在许多情况下，林恢复应为最后一个选项。
 
 1. 已遵循有关使用 Active Directory 集成的域名系统 (DNS) 的 Microsoft 最佳实践建议。 具体而言，每个 Active Directory 域都应有一个 Active Directory 集成的 DNS 区域。
-   - 如果不是这种情况，你仍可以使用本指南的基本原则执行林恢复。 但是，你将需要根据自己的环境对 DNS 恢复采取特定的措施。 有关使用 Active Directory 集成的 DNS 的详细信息，请参阅[创建 Dns 基础结构设计](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)。
+   - 如果不是这种情况，你仍可以使用本指南的基本原则执行林恢复。 但是，你将需要根据自己的环境对 DNS 恢复采取特定的措施。 有关使用 Active Directory 集成的 DNS 的详细信息，请参阅 [创建 Dns 基础结构设计](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)。
 
 1. 尽管本指南旨在作为林恢复的通用指南，但并不是所有可能的方案都涵盖在内。 例如，从 Windows Server 2008 开始，有一个服务器核心版本，它是 Windows Server 的完整版本，但没有完整的 GUI。 尽管当然可以恢复只包含运行服务器核心的 Dc 的林，但本指南没有详细说明。 但是，根据此处所述的指南，你将能够自行设计所需的命令行操作。
 
@@ -46,7 +46,7 @@ ms.locfileid: "87969864"
   - 主域控制器 (PDC) 模拟器主机
   - 基础结构主机
 
-此外，应定期在实验室环境中备份和还原 AD DS 和 SYSVOL。 有关详细信息，请参阅[备份系统状态数据](AD-Forest-Recovery-Procedures.md)和[执行 Active Directory 域服务的非权威还原](AD-Forest-Recovery-Procedures.md)。
+此外，应定期在实验室环境中备份和还原 AD DS 和 SYSVOL。 有关详细信息，请参阅 [备份系统状态数据](AD-Forest-Recovery-Procedures.md) 和 [执行 Active Directory 域服务的非权威还原](AD-Forest-Recovery-Procedures.md)。
 
 ## <a name="next-steps"></a>后续步骤
 

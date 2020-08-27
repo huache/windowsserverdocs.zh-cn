@@ -1,17 +1,17 @@
 ---
 title: AD 林恢复-恢复多域林中的单个域
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 267541be-2ea7-4af6-ab34-8b5a3fedee2d
-ms.openlocfilehash: 60f965c90fd8b383689f1b7d0a55bd365c07ee01
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 90ff4003373c422797ed7629ba87435efcdfb686
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953194"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938877"
 ---
 # <a name="ad-forest-recovery---recovering-a-single-domain-in-a-multidomain-forest"></a>AD 林恢复-恢复多域林中的单个域
 
@@ -43,7 +43,7 @@ ms.locfileid: "87953194"
 
 对于较大的组织，删除延迟对象非常有利，这些组织不会面临与其他选项相关联的停机时间。
 
-有关详细信息，请参阅[使用 Repadmin 删除延迟对象](/previous-versions/windows/it-pro/windows-server-2003/cc785298(v=ws.10))。
+有关详细信息，请参阅 [使用 Repadmin 删除延迟对象](/previous-versions/windows/it-pro/windows-server-2003/cc785298(v=ws.10))。
 
 ## <a name="next-steps"></a>后续步骤
 
