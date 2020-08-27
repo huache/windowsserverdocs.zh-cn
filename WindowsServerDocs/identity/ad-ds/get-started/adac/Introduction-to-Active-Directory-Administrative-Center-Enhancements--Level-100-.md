@@ -1,17 +1,17 @@
 ---
 ms.assetid: 074e63e9-976c-49da-8cba-9ae0b3325e34
 title: Introduction to Active Directory Administrative Center Enhancements (Level 100)
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: f494fc09027b17d2110731d73d3d8de6d0496342
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a7639fccf472d3b23b06a64dc0e621cfa4f8bb37
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957024"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940107"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -44,9 +44,9 @@ Active Directory 域服务 (AD DS) 和 Active Directory 轻型目录服务 (AD L
 - 若要通过用户界面管理回收站功能，必须在 Windows Server 2012 中安装 Active Directory 管理中心版本。
 
     > [!NOTE]
-    > 你可以使用**服务器管理器**安装远程服务器管理工具 (RSAT) ，使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
+    > 你可以使用 **服务器管理器** 安装远程服务器管理工具 (RSAT) ，使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
     >
-    > 有关安装 RSAT 的信息，请参阅文章[远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
+    > 有关安装 RSAT 的信息，请参阅文章 [远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
 
 ### <a name="active-directory-recycle-bin-step-by-step"></a>Active Directory 回收站的分步设置
 
@@ -66,7 +66,7 @@ Active Directory 域服务 (AD DS) 和 Active Directory 轻型目录服务 (AD L
 
 #### <a name="to-raise-the-functional-level-on-the-target-forest"></a>提升目标林的功能级别
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 
@@ -80,7 +80,7 @@ Active Directory 域服务 (AD DS) 和 Active Directory 轻型目录服务 (AD L
 Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:$false
 ```
 
-对于 **-Identity**参数，请指定完全限定的 DNS 域名。
+对于 **-Identity** 参数，请指定完全限定的 DNS 域名。
 
 ### <a name="step-2-enable-recycle-bin"></a><a name="bkmk_enable_recycle_bin"></a>步骤 2：启用回收站
 
@@ -88,7 +88,7 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 
 #### <a name="to-enable-active-directory-recycle-bin-in-adac-on-the-target-domain"></a>在目标域的 ADAC 中启用 Active Directory 回收站
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 
@@ -110,7 +110,7 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,
 
 #### <a name="to-create-test-users"></a>创建测试用户
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 
@@ -123,13 +123,13 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,
    - 全名：test1
    - 用户 SamAccountName 登录：test1
    - 密码：p@ssword1
-   - 确认密码：p@ssword1
+   - 确认密码： p@ssword1
 
 5. 重复上述步骤以创建第二个用户 test2。
 
 #### <a name="to-create-a-test-group-and-add-users-to-the-group"></a>创建测试组并将用户添加到该组
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 3. 在 **“任务”** 窗格中，单击 **“新建”**，再单击 **“组”**。
 4. 在 **“组”** 下输入以下信息，再单击 **“确定”**：
@@ -149,8 +149,8 @@ Add-ADGroupMember -Identity group1 -Member test1
 
 #### <a name="to-create-an-organizational-unit"></a>创建组织单位
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
-2. 单击 "**管理**"，单击 "**添加导航节点**"，在 "**添加导航节点**" 对话框中选择适当的目标域，然后单击 "确定"。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
+2. 单击 " **管理**"，单击 " **添加导航节点** "，在 " **添加导航节点** " 对话框中选择适当的目标域，然后单击 "确定"。
 3. 在 **“任务”** 窗格中，单击 **“新建”**，再单击 **“组织单位”**。
 4. 在 **“组织单位”** 下输入以下信息，再单击 **“确定”**：
 
@@ -172,7 +172,7 @@ New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 
 #### <a name="to-restore-deleted-objects-to-their-original-location"></a>将删除的对象还原到原始位置
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 
@@ -203,7 +203,7 @@ Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADOb
 
 #### <a name="to-restore-deleted-objects-to-a-different-location"></a>将删除的对象还原到其他位置
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 
@@ -240,9 +240,9 @@ Windows Server 2008 操作系统将向组织提供一种为域中不同用户集
 - 必须使用 Windows Server 2012 或更高版本的 Active Directory 管理中心通过图形用户界面管理细化密码策略。
 
     > [!NOTE]
-    > 你可以使用**服务器管理器**安装远程服务器管理工具 (RSAT) ，使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
+    > 你可以使用 **服务器管理器** 安装远程服务器管理工具 (RSAT) ，使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
     >
-    > 有关安装 RSAT 的信息，请参阅文章[远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
+    > 有关安装 RSAT 的信息，请参阅文章 [远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
 
 ### <a name="fine-grained-password-policy-step-by-step"></a>细化密码策略的分步设置
 
@@ -264,7 +264,7 @@ Windows Server 2008 操作系统将向组织提供一种为域中不同用户集
 
 ##### <a name="to-raise-the-domain-functional-level"></a>提升域功能级别的步骤
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 
@@ -280,7 +280,7 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
 #### <a name="step-2-create-test-users-group-and-organizational-unit"></a><a name="bkmk2_test_fgpp"></a>步骤 2：创建测试用户、组和组织单位
 
-若要创建此步骤所需的测试用户和组，请按照此处的步骤操作：[步骤3：创建测试用户、组和组织单位](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_test_env) (你无需创建 OU 来演示细化密码策略) 。
+若要创建此步骤所需的测试用户和组，请按照此处的步骤操作： [步骤3：创建测试用户、组和组织单位](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_test_env) (你无需创建 OU 来演示细化密码策略) 。
 
 #### <a name="step-3-create-a-new-fine-grained-password-policy"></a><a name="bkmk_create_fgpp"></a>步骤 3：创建新细化密码策略
 
@@ -288,7 +288,7 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
 ##### <a name="to-create-a-new-fine-grained-password-policy"></a>创建新细化密码策略
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 
@@ -300,7 +300,7 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
     ![AD 管理中心简介](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewFGPP.gif)
 
-5. 在 "**直接应用**于" 下，单击 "**添加**"，键入**Group1**，然后单击 **"确定"**。
+5. 在 " **直接应用**于" 下，单击 " **添加**"，键入 **Group1**，然后单击 **"确定"**。
 
     这样可将“密码策略”对象与为测试环境创建的全局组成员相关联。
 
@@ -321,7 +321,7 @@ Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 
 ##### <a name="to-view-a-resultant-set-of-policies-for-a-user"></a>查看生成的用户策略集
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 
@@ -345,7 +345,7 @@ Get-ADUserResultantPasswordPolicy test1
 
 ##### <a name="to-edit-a-fine-grained-password-policy"></a>编辑细化密码策略
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 
@@ -369,7 +369,7 @@ Set-ADFineGrainedPasswordPolicy TestPswd -PasswordHistoryCount:"30"
 
 ##### <a name="to-delete-a-fine-grained-password-policy"></a>删除细化密码策略
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 
@@ -401,9 +401,9 @@ ADAC 是构建在 Windows PowerShell 上的用户界面工具。 在 Windows Ser
 - 若要使用 Windows PowerShell 脚本查看器，必须使用 Windows Server 2012 或更高版本的 ADAC
 
     > [!NOTE]
-    > 你可以使用**服务器管理器**安装远程服务器管理工具 (RSAT) ，使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
+    > 你可以使用 **服务器管理器** 安装远程服务器管理工具 (RSAT) ，使用正确版本的 Active Directory 管理中心通过用户界面管理回收站。
     >
-    > 有关安装 RSAT 的信息，请参阅文章[远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
+    > 有关安装 RSAT 的信息，请参阅文章 [远程服务器管理工具](../../../../remote/remote-server-administration-tools.md)。
 
 - 对 Windows PowerShell 有一个基本的了解。 例如，需要了解 Windows PowerShell 中管道系统的工作原理。 有关 Windows PowerShell 中管道系统的详细信息，请参阅 [Windows PowerShell 中的管道系统和管道](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176927(v=technet.10))。
 
@@ -413,7 +413,7 @@ ADAC 是构建在 Windows PowerShell 上的用户界面工具。 在 Windows Ser
 
 #### <a name="to-construct-a-script-using-powershell-history-viewer"></a>使用 PowerShell 历史记录查看器构建脚本
 
-1. 右键单击 Windows PowerShell 图标，单击 "以**管理员身份运行**"，然后键入 " **dsac.exe** " 以打开 ADAC。
+1. 右键单击 Windows PowerShell 图标，单击 "以 **管理员身份运行** "，然后键入 " **dsac.exe** " 以打开 ADAC。
 
 2. 单击 **“管理”**，单击 **“添加导航节点”**，在 **“添加导航节点”** 对话框中选择相应目标域，再单击 **“确定”**。
 

@@ -1,17 +1,17 @@
 ---
 title: AD 林恢复-重置信任密码
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.openlocfilehash: c91e32f76eb2a825cbce8419d9ce3bf689968e08
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d3a0c694e2108ca623f1ba224d2a265314d7800e
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969824"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941477"
 ---
 # <a name="resetting-a-trust-password-on-one-side-of-the-trust"></a>重置信任一方的信任密码
 
@@ -45,7 +45,7 @@ ms.locfileid: "87969824"
    ```
 
    > [!NOTE]
-   > 在信任的双方， **passwordT**应为相同的值。 仅运行此命令一次 (与**netdom resetpwd**命令) ，因为它会自动重置密码两次。
+   > 在信任的双方， **passwordT**应为相同的值。 仅运行此命令一次 (与 **netdom resetpwd** 命令) ，因为它会自动重置密码两次。
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 79b9c912-ea3e-4679-ab41-893e096c4d09
 title: 附录 B-Active Directory 中的特权帐户和组
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: dbccc8f7adac03815c6ced2ceee22210d44dbce9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 22bcea1426502af83fdeeecb0005324de2d54e64
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963255"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941567"
 ---
 # <a name="appendix-b-privileged-accounts-and-groups-in-active-directory"></a>附录 B：Active Directory 中有权限的帐户和组
 
@@ -27,7 +27,7 @@ ms.locfileid: "87963255"
 权限、权限和权限之间的差异可能会令人感到困惑和矛盾，甚至是在 Microsoft 的文档中。 本部分介绍了在本文档中使用的各个特性。 对于其他 Microsoft 文档，这些说明不应被视为权威说明，因为它可能会以不同的方式使用这些术语。
 
 #### <a name="rights-and-privileges"></a>权限和特权
-权限和特权实际上是授予安全主体（如用户、服务、计算机或组）的系统范围相同的功能。 通常由 IT 专业人员使用的接口通常称为 "权限" 或 "用户权限"，它们通常由组策略对象分配。 下面的屏幕截图显示了一些最常见的用户权限，这些权限可以分配给安全主体 (它代表 Windows Server 2012 域) 中的默认域控制器 GPO。 其中某些权限适用于 Active Directory （例如 "**使计算机和用户帐户可用于委派**" 用户权限），而其他权限适用于 Windows 操作系统（如**更改系统时间**）。
+权限和特权实际上是授予安全主体（如用户、服务、计算机或组）的系统范围相同的功能。 通常由 IT 专业人员使用的接口通常称为 "权限" 或 "用户权限"，它们通常由组策略对象分配。 下面的屏幕截图显示了一些最常见的用户权限，这些权限可以分配给安全主体 (它代表 Windows Server 2012 域) 中的默认域控制器 GPO。 其中某些权限适用于 Active Directory （例如 " **使计算机和用户帐户可用于委派** " 用户权限），而其他权限适用于 Windows 操作系统（如 **更改系统时间**）。
 
 ![特权帐户和组](media/Appendix-B--Privileged-Accounts-and-Groups-in-Active-Directory/SAD_8.gif)
 
@@ -91,7 +91,7 @@ ms.locfileid: "87963255"
 权限是应用于安全对象（如文件系统、注册表、服务和 Active Directory 对象）的访问控制。 每个安全对象都有一个关联的访问控制列表 (ACL) ，其中包含 (Ace) 的访问控制项，该访问控制项可授予或拒绝 (用户、服务、计算机或组) 对对象执行各种操作的能力。 例如，Active Directory 中的多个对象的 Acl 包含允许经过身份验证的用户读取有关这些对象的常规信息的 Ace，但不授予它们读取敏感信息或更改对象的能力。
 除每个域的内置来宾帐户之外，在 Active Directory 林中或受信任的林中，登录并由域控制器进行身份验证的每个安全主体都具有经过身份验证的用户安全标识符 (SID) 默认添加到其访问令牌。 因此，用户、服务或计算机帐户是否尝试读取域中用户对象的常规属性，读取操作成功。
 
-如果安全主体试图访问某个对象，但该对象的 Ace 未定义，并且包含主体的访问令牌中存在的 SID，则主体将无法访问该对象。 而且，如果对象的 ACL 中的 ACE 包含与用户访问令牌匹配的 SID 的 "拒绝" 条目，则 "拒绝" ACE 通常会替代冲突的 "允许" ACE。 有关 Windows 中的访问控制的详细信息，请参阅 MSDN 网站上的[访问控制](/windows/win32/secauthz/access-control)。
+如果安全主体试图访问某个对象，但该对象的 Ace 未定义，并且包含主体的访问令牌中存在的 SID，则主体将无法访问该对象。 而且，如果对象的 ACL 中的 ACE 包含与用户访问令牌匹配的 SID 的 "拒绝" 条目，则 "拒绝" ACE 通常会替代冲突的 "允许" ACE。 有关 Windows 中的访问控制的详细信息，请参阅 MSDN 网站上的 [访问控制](/windows/win32/secauthz/access-control) 。
 
 在本文档中，权限是指授予或拒绝对安全对象安全主体的功能。 每当用户权限和权限之间发生冲突时，用户权限通常优先。 例如，如果 Active Directory 中的对象已配置有一个 ACL，该 ACL 拒绝管理员对某个对象的所有读取和写入访问权限，那么该域的 Administrators 组成员的用户将无法查看有关该对象的很多信息。 但是，因为向管理员组授予用户权限 "获取文件或其他对象的所有权"，所以用户只需获得相关对象的所有权，然后重写对象的 ACL 即可授予管理员对对象的完全控制权限。
 
@@ -138,7 +138,7 @@ Administrators 组是域的内置容器中的域本地组。 默认情况下，�
 
 下表列出了 Active Directory 中的内置组和默认组。 默认情况下，两组组都存在;不过，内置组 (默认情况下) 在 Active Directory 的内置容器中，而默认组在) 的 "用户" 容器中默认定位 (。 内置容器中的组都是所有域本地组，而 Users 容器中的组是域本地组、全局组和通用组的组合，此外还有三个单独的用户帐户 (管理员、来宾和 Krbtgt) 。
 
-除了本附录前面介绍的最高特权组外，某些内置帐户和默认帐户和组将被授予提升的权限，并且还应受到保护并仅在安全管理主机上使用。 这些组和帐户可在表 B-1 的阴影行中找到： Active Directory 中的内置组和默认组和帐户。 由于这些组和帐户中的某些组和帐户被授予了可能被误用以损害 Active Directory 或域控制器的权利和权限，因此它们将作为[Active Directory 中的 "受保护的帐户和组](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)" 中所述的其他保护措施。
+除了本附录前面介绍的最高特权组外，某些内置帐户和默认帐户和组将被授予提升的权限，并且还应受到保护并仅在安全管理主机上使用。 这些组和帐户可在表 B-1 的阴影行中找到： Active Directory 中的内置组和默认组和帐户。 由于这些组和帐户中的某些组和帐户被授予了可能被误用以损害 Active Directory 或域控制器的权利和权限，因此它们将作为 [Active Directory 中的 "受保护的帐户和组](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)" 中所述的其他保护措施。
 
 ##### <a name="table-b-1-built-in-and-default-accounts-and-groups-in-active-directory"></a>表 B-1：内置和默认的帐户和组 Active Directory
 

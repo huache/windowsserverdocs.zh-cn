@@ -1,17 +1,17 @@
 ---
 ms.assetid: 39c0126d-af5e-4dcb-88c1-aa38f888e973
 title: Active Directory 集成 DNS 区域
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a10fb5f15579b223540ffcff1ca004c78d6e71ef
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4f313b09954697f4b54c31a1721311ea0a017dd5
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941442"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941267"
 ---
 # <a name="active-directory-integrated-dns-zones"></a>Active Directory 集成 DNS 区域
 
@@ -29,7 +29,7 @@ Windows Server 2008 中 Active Directory 集成的 DNS 将区域数据存储在�
 
 - 林中每个域的域范围的应用程序目录分区，名为 DomainDnsZones
 
-有关 AD DS 如何在应用程序分区中存储 DNS 信息的详细信息，请参阅[Dns 技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc779926(v=ws.10))。
+有关 AD DS 如何在应用程序分区中存储 DNS 信息的详细信息，请参阅 [Dns 技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc779926(v=ws.10))。
 
 > [!NOTE]
-> 建议你在运行 Active Directory 域服务安装向导 ( # A0) 时安装 DNS。 如果这样做，该向导将自动创建 DNS 区域委派。 有关详细信息，请参阅[部署 Windows Server 2008 林根级域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))。
+> 建议你在运行 Active Directory 域服务安装向导 ( # A0) 时安装 DNS。 如果这样做，该向导将自动创建 DNS 区域委派。 有关详细信息，请参阅 [部署 Windows Server 2008 林根级域](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))。

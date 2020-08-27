@@ -1,17 +1,17 @@
 ---
 ms.assetid: 50bd2566-e03c-4884-b5c4-895c8aab80aa
 title: 确定部署项目参与者
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 16edfc28e90ca5e5755305a1e95c338b604a72f2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5330b9ea3d06ce122708a87b396ee38f465f58b3
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959045"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941057"
 ---
 # <a name="identifying-the-deployment-project-participants"></a>确定部署项目参与者
 
@@ -199,7 +199,7 @@ Active Directory 设计团队负责收集对 Active Directory 逻辑结构设计
 
 - 与部署团队合作，在实验室环境中测试设计，以确保它按计划运行并根据需要修改设计，以解决出现的任何问题
 
-- 创建满足林中复制要求的站点拓扑设计，同时防止可用带宽的过载。 有关设计站点拓扑的详细信息，请参阅[设计适用于 Windows Server 2008 的站点拓扑 AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772013(v=ws.10))。
+- 创建满足林中复制要求的站点拓扑设计，同时防止可用带宽的过载。 有关设计站点拓扑的详细信息，请参阅 [设计适用于 Windows Server 2008 的站点拓扑 AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772013(v=ws.10))。
 
 - 与部署团队合作，确保正确实现设计
 
@@ -249,4 +249,4 @@ Active Directory 部署团队包括以下成员：
 部署团队在部署阶段与服务和数据管理员协作，以确保操作团队的成员熟悉新的设计。 这有助于确保在部署操作完成时平稳过渡所有权。 完成部署过程后，维护新 Active Directory 环境的责任将传递给操作团队。
 
 ### <a name="documenting-the-design-and-deployment-teams"></a>记录设计和部署团队
-记录将参与 AD DS 的设计和部署的人员的姓名和联系信息。 确定将负责设计和部署团队中每个角色的人员。 最初，此列表包括潜在的林所有者、项目经理和项目架构师。 确定要部署的林数量时，可能需要为其他林创建新的设计团队。 请注意，当团队成员身份发生变化时，您需要更新您的文档，并且在设计过程中确定不同的 Active Directory 所有者。 若要使工作表可以帮助您记录每个林的设计和部署团队，请从[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并 ( # A1) 打开 "设计和部署团队信息"。
+记录将参与 AD DS 的设计和部署的人员的姓名和联系信息。 确定将负责设计和部署团队中每个角色的人员。 最初，此列表包括潜在的林所有者、项目经理和项目架构师。 确定要部署的林数量时，可能需要为其他林创建新的设计团队。 请注意，当团队成员身份发生变化时，您需要更新您的文档，并且在设计过程中确定不同的 Active Directory 所有者。 若要使工作表可以帮助您记录每个林的设计和部署团队，请从 [Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608) 下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并 ( # A1) 打开 "设计和部署团队信息"。

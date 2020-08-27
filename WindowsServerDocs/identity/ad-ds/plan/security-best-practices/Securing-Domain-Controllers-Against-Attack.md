@@ -1,23 +1,23 @@
 ---
 ms.assetid: ba28bd05-16e6-465f-982b-df49633cfde4
 title: 保护域控制器免受攻击
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 06/18/2017
 ms.topic: article
-ms.openlocfilehash: 0ac2a3b67b0c3407db017c63d5e5187d36f08aa5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7fe76d6e6f2bb640e69b46faacacf87f533ad80d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958845"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941357"
 ---
 # <a name="securing-domain-controllers-against-attack"></a>保护域控制器免受攻击
 
 > 适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*定律三：如果攻击者对您的计算机具有不受限制的物理访问，就不是您的计算机了。* - [安全性 (的十个永恒定律) 版本2.0](https://www.microsoft.com/en-us/msrc?rtc=1)
+*定律三：如果攻击者对您的计算机具有不受限制的物理访问，就不是您的计算机了。* - [安全性 (的十个永恒定律) 版本2.0 ](https://www.microsoft.com/en-us/msrc?rtc=1)
 
 域控制器提供了 AD DS 数据库的物理存储，还提供了允许企业有效管理其服务器、工作站、用户和应用程序的服务和数据。 如果恶意用户获取了对域控制器的特权访问，则该用户可以修改、损坏或销毁 AD DS 数据库，并通过扩展 Active Directory 管理的所有系统和帐户。
 
@@ -51,7 +51,7 @@ ms.locfileid: "87958845"
 
 ### <a name="remote-locations-with-limited-space-and-security"></a>空间和安全性有限的远程位置
 
-如果你的基础结构包含只能安装单个物理服务器的位置，则应在远程位置安装能够运行虚拟化工作负载的服务器，并且应将 BitLocker 驱动器加密配置为保护服务器中的所有卷。 服务器上的一个虚拟机应运行 RODC，而其他服务器则作为主机上的独立虚拟机运行。 [只读域控制器规划和部署指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771744(v=ws.10))中提供了有关部署 RODC 的规划的信息。 有关部署和保护虚拟化域控制器的详细信息，请参阅[在 hyper-v 中运行域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd363553(v=ws.10))。 有关强化 Hyper-v、委派虚拟机管理和保护虚拟机的更多详细指南，请参阅 Microsoft 网站上的[Hyper-v 安全指南](https://www.microsoft.com/download/details.aspx?id=16650)解决方案加速器。
+如果你的基础结构包含只能安装单个物理服务器的位置，则应在远程位置安装能够运行虚拟化工作负载的服务器，并且应将 BitLocker 驱动器加密配置为保护服务器中的所有卷。 服务器上的一个虚拟机应运行 RODC，而其他服务器则作为主机上的独立虚拟机运行。 [只读域控制器规划和部署指南](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771744(v=ws.10))中提供了有关部署 RODC 的规划的信息。 有关部署和保护虚拟化域控制器的详细信息，请参阅 [在 hyper-v 中运行域控制器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd363553(v=ws.10))。 有关强化 Hyper-v、委派虚拟机管理和保护虚拟机的更多详细指南，请参阅 Microsoft 网站上的 [Hyper-v 安全指南](https://www.microsoft.com/download/details.aspx?id=16650) 解决方案加速器。
 
 ## <a name="domain-controller-operating-systems"></a>域控制器操作系统
 
@@ -67,7 +67,7 @@ ms.locfileid: "87958845"
 
 ### <a name="microsoft-security-compliance-toolkit"></a>Microsoft 安全合规性工具包
 
-[Microsoft 安全符合性工具包](https://microsoft.com/download/details.aspx?id=55319)域控制器设置可以与 "安全配置向导" 设置结合，为域控制器生成全面的配置基线，这些基线是在 Active Directory 中的域控制器 OU 上部署的 gpo 部署和强制执行的。
+[Microsoft 安全符合性工具包](https://microsoft.com/download/details.aspx?id=55319) 域控制器设置可以与 "安全配置向导" 设置结合，为域控制器生成全面的配置基线，这些基线是在 Active Directory 中的域控制器 OU 上部署的 gpo 部署和强制执行的。
 
 ### <a name="rdp-restrictions"></a>RDP 限制
 
@@ -81,7 +81,7 @@ ms.locfileid: "87958845"
 
 作为 Active Directory 安全评估的一部分执行的一项检查是在域控制器上使用和配置 Internet Explorer。 Internet Explorer (或任何其他 web 浏览器) 不应在域控制器上使用，但对数千个域控制器的分析已揭示了很多情况下，特权用户使用 Internet Explorer 浏览组织的 intranet 或 Internet。
 
-如前面所述，[要折衷的途径](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md)的 "配置错误" 一节，使用高特权 (帐户从 Windows 基础结构中最强大的计算机中浏览 Internet (或感染的 intranet) ，默认情况下，) 会向组织的安全带来特别的风险。 无论是通过下载还是下载恶意软件感染的 "实用程序" 通过驱动器，攻击者都可以获得完全破坏或销毁 Active Directory 环境所需的所有内容。
+如前面所述， [要折衷的途径](../../../ad-ds/plan/security-best-practices/Avenues-to-Compromise.md)的 "配置错误" 一节，使用高特权 (帐户从 Windows 基础结构中最强大的计算机中浏览 Internet (或感染的 intranet) ，默认情况下，) 会向组织的安全带来特别的风险。 无论是通过下载还是下载恶意软件感染的 "实用程序" 通过驱动器，攻击者都可以获得完全破坏或销毁 Active Directory 环境所需的所有内容。
 
 尽管 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 和当前版本的 Internet Explorer 提供了许多针对恶意下载的保护，但在大多数情况下，使用域控制器和特权帐户来浏览 Internet、域控制器运行的是 Windows Server 2003，或是特意禁用了较新的操作系统和浏览器所提供的保护。
 
@@ -89,7 +89,7 @@ ms.locfileid: "87958845"
 
 ### <a name="perimeter-firewall-restrictions"></a>外围防火墙限制
 
-应将外围防火墙配置为阻止来自域控制器的出站连接到 Internet。 尽管域控制器可能需要在站点边界之间进行通信，但可以根据如何为 Microsoft 支持部门网站上的[Active Directory 域和信任配置防火墙](https://support.microsoft.com/kb/179442)中提供的指导原则，将外围防火墙配置为允许站点间通信。
+应将外围防火墙配置为阻止来自域控制器的出站连接到 Internet。 尽管域控制器可能需要在站点边界之间进行通信，但可以根据如何为 Microsoft 支持部门网站上的 [Active Directory 域和信任配置防火墙](https://support.microsoft.com/kb/179442) 中提供的指导原则，将外围防火墙配置为允许站点间通信。
 
 ### <a name="dc-firewall-configurations"></a>DC 防火墙配置
 

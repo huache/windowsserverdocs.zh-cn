@@ -1,17 +1,17 @@
 ---
 ms.assetid: b3d6fb87-c4d4-451c-b3de-a53d2402d295
 title: 安装新的 Windows Server 2012 Active Directory 林（级别 200）
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 0b83588268e6a6c8dd685082b3862520fcbd80d5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 50fd78a480a369030e8874054f583dc163a3a0b3
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968254"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941027"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>安装新的 Windows Server 2012 Active Directory 林（级别 200）
 
@@ -217,7 +217,7 @@ Dcpromo.exe 保留在 Windows Server 2012 中，仅用于命令行无人参与�
 ### <a name="uninstallingdisabling"></a>卸载/禁用
 无论是否已将服务器升级到域控制器，你都可以按照和其他角色相同的方法删除 AD DS 角色。 但是，删除 AD DS 角色需要在完成时重新启动。
 
-Active Directory 域服务角色删除与安装不同，因为它在完成之前需要域控制器降级。 非常有必要阻止域控制器在未在林中正确清理元数据的情况下卸载其角色二进制文件。 有关详细信息，请参阅[降级域控制器和域 &#40;级别 200&#41;](../../ad-ds/deploy/Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
+Active Directory 域服务角色删除与安装不同，因为它在完成之前需要域控制器降级。 非常有必要阻止域控制器在未在林中正确清理元数据的情况下卸载其角色二进制文件。 有关详细信息，请参阅 [降级域控制器和域 &#40;级别 200&#41;](../../ad-ds/deploy/Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
 
 > [!WARNING]
 > 不支持在升级到域控制器后使用 Dism.exe 或 Windows PowerShell DISM 模块删除 AD DS 角色，并且将阻止服务器正常启动。

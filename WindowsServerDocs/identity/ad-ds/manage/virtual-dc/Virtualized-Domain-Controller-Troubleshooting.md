@@ -1,17 +1,17 @@
 ---
 ms.assetid: 249ba1be-b0d3-4a77-99af-3699074a2b6e
 title: 虚拟化域控制器疑难解答
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b3e384eaa85e0becfa501743fc4d7efa45eac02a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 75f4ce8516e48dc76200b8fb1d19e56ba969e70b
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941561"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941297"
 ---
 # <a name="virtualized-domain-controller-troubleshooting"></a>虚拟化域控制器疑难解答
 
@@ -183,7 +183,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2160** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message**
+| **消息**
 | 本地 *<COMPUTERNAME>* 已找到虚拟域控制器克隆配置文件。<p>虚拟域控制器克隆配置文件位于：%1<p>虚拟域控制器克隆配置文件的存在表示本地虚拟域控制器是另一个虚拟域控制器的克隆。 *<COMPUTERNAME>* 将开始克隆自身。 |
  **注释和解析** | 这是一个成功事件，仅当意外发生时才成为问题。 在 DSA 工作目录 %systemroot%\ntds 和任何本地或可移动磁盘的根目录中检查 dcclconeconfig.xml 文件。 |
 
@@ -192,14 +192,14 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2161** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | 本地未 *<COMPUTERNAME>* 找到虚拟域控制器克隆配置文件。 本地计算机不是克隆的 DC。| **注释和解析** | 这是一个成功事件，仅当意外发生时才成为问题。 在 DSA 工作目录 %systemroot%\ntds 和任何本地或可移动磁盘的根目录中检查 dcclconeconfig.xml 文件。 |
+| **消息** | 本地未 *<COMPUTERNAME>* 找到虚拟域控制器克隆配置文件。 本地计算机不是克隆的 DC。| **注释和解析** | 这是一个成功事件，仅当意外发生时才成为问题。 在 DSA 工作目录 %systemroot%\ntds 和任何本地或可移动磁盘的根目录中检查 dcclconeconfig.xml 文件。 |
 
 | 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2162** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | 虚拟域控制器克隆失败。<p>有关与虚拟域控制器克隆尝试相对应的错误的详细信息，请检查系统事件日志和 %systemroot%\debug\dcpromo.log 中记录的事件。<p>错误代码：%1 |
+| **消息** | 虚拟域控制器克隆失败。<p>有关与虚拟域控制器克隆尝试相对应的错误的详细信息，请检查系统事件日志和 %systemroot%\debug\dcpromo.log 中记录的事件。<p>错误代码：%1 |
 | **注释和解析** | 按照消息说明，此错误为 catchall。 |
 
 | 事件 | 说明 |
@@ -207,7 +207,7 @@ ms.locfileid: "87941561"
 |**事件 ID**|**2163**|
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|
 |**严重性**|信息|
-|**Message**|已启动 DsRoleSvc 服务以克隆本地虚拟域控制器。|
+|**消息**|已启动 DsRoleSvc 服务以克隆本地虚拟域控制器。|
 |**注释和解析**|这是一个成功事件，仅当意外发生时才成为问题。 在 DSA 工作目录 %systemroot%\ntds 和任何本地或可移动磁盘的根目录中检查 dcclconeconfig.xml 文件。|
 
 | 事件 | 说明 |
@@ -215,7 +215,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2164** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 无法启动 DsRoleSvc 服务以克隆本地虚拟域控制器。 |
+| **消息** | *<COMPUTERNAME>* 无法启动 DsRoleSvc 服务以克隆本地虚拟域控制器。 |
 | **注释和解析** | 检查 DS 角色服务器服务 (DsRoleSvc) 的服务设置，并确保将其启动类型设置为手动。 验证没有任何第三方程序正在阻止此服务的启动。 |
 
 | 事件 | 说明 |
@@ -223,7 +223,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2165** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 无法在克隆本地虚拟域控制器的过程中启动线程。<p>错误代码：%1<p>错误消息：%2<p>线程名称：%3 |
+| **消息** | *<COMPUTERNAME>* 无法在克隆本地虚拟域控制器的过程中启动线程。<p>错误代码：%1<p>错误消息：%2<p>线程名称：%3 |
 | **注释和解析** | 请联系 Microsoft 产品支持 |
 
 | 事件 | 说明 |
@@ -231,7 +231,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2166** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 需要 RPCSS 服务以开始重新启动进入 DSRM。 等待 RPCSS 初始化到运行状态失败。<p>错误代码：%1 |
+| **消息** | *<COMPUTERNAME>* 需要 RPCSS 服务以开始重新启动进入 DSRM。 等待 RPCSS 初始化到运行状态失败。<p>错误代码：%1 |
 | **注释和解析** | 检查 RPC 服务器服务 (Rpcss) 的系统事件日志和服务设置 |
 
 | 事件 | 说明 |
@@ -239,7 +239,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2168** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | Microsoft-Windows-ActiveDirectory_DomainService<p>此 DC 在受支持的虚拟机监控程序上运行。 检测到 VM 生成 ID。<p>VM 生成 ID 的当前值：%1 |
+| **消息** | Microsoft-Windows-ActiveDirectory_DomainService<p>此 DC 在受支持的虚拟机监控程序上运行。 检测到 VM 生成 ID。<p>VM 生成 ID 的当前值：%1 |
 | **注释和解析** | 这是一个成功事件，仅当意外发生时才成为问题。 |
 
 | 事件 | 说明 |
@@ -247,7 +247,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2169** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | 未检测到 VM 生成 ID。 DC 托管在不支持 VM 生成 ID 的物理计算机、Hyper-V 的下级版本或者 VM 监控程序上。<p>其他数据<p>检查 VM 生成 ID 时返回的错误代码：%1 |
+| **消息** | 未检测到 VM 生成 ID。 DC 托管在不支持 VM 生成 ID 的物理计算机、Hyper-V 的下级版本或者 VM 监控程序上。<p>其他数据<p>检查 VM 生成 ID 时返回的错误代码：%1 |
 | **注释和解析** | 如果不打算克隆，则这是一个成功事件。 否则，请检查系统事件日志并查看虚拟机监控程序产品支持文档。 |
 
 | 事件 | 说明 |
@@ -255,7 +255,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2170** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 警告 |
-| **Message** | 已检测到生成 ID 更改。<p>DS 中缓存的生成 ID（旧值）：%1<p>VM 中的当前生成 ID（新值）：%2<p>生成 ID 将在应用虚拟机快照之后、在虚拟机导入操作之后或在实时迁移操作之后发生更改。 *<COMPUTERNAME>* 将创建一个新的调用 ID 以恢复域控制器。 不应使用虚拟机快照还原虚拟化域控制器。 支持用于还原或回滚 Active Directory 域服务数据库中的内容的方法是：还原使用 Active Directory 域服务感知备份应用程序制作的系统状态备份。 |
+| **消息** | 已检测到生成 ID 更改。<p>DS 中缓存的生成 ID（旧值）：%1<p>VM 中的当前生成 ID（新值）：%2<p>生成 ID 将在应用虚拟机快照之后、在虚拟机导入操作之后或在实时迁移操作之后发生更改。 *<COMPUTERNAME>* 将创建一个新的调用 ID 以恢复域控制器。 不应使用虚拟机快照还原虚拟化域控制器。 支持用于还原或回滚 Active Directory 域服务数据库中的内容的方法是：还原使用 Active Directory 域服务感知备份应用程序制作的系统状态备份。 |
 | **注释和解析** | 如果打算克隆，则这是一个成功事件。 否则，请检查系统事件日志。 |
 
 | 事件 | 说明 |
@@ -263,7 +263,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2171** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | 未检测到生成 ID 更改。<p>DS 中缓存的生成 ID（旧值）：%1<p>VM 中的当前生成 ID（新值）：%2 |
+| **消息** | 未检测到生成 ID 更改。<p>DS 中缓存的生成 ID（旧值）：%1<p>VM 中的当前生成 ID（新值）：%2 |
 | **注释和解析** | 如果不打算克隆，则这是一个成功事件，而且在虚拟化 DC 每次重新启动时应该可以见到。 否则，请检查系统事件日志。 |
 
 | 事件 | 说明 |
@@ -271,7 +271,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2172** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | 读取域控制器的计算机对象的 msDS-GenerationId 属性。<p>msDS-GenerationId 属性值：%1 |
+| **消息** | 读取域控制器的计算机对象的 msDS-GenerationId 属性。<p>msDS-GenerationId 属性值：%1 |
 | **注释和解析** | 如果打算克隆，则这是一个成功事件。 否则，请检查系统事件日志。 |
 
 | 事件 | 说明 |
@@ -279,7 +279,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2173** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | 无法读取域控制器的计算机对象的 msDS-GenerationId 属性。 这可能是由于数据库事务失败或本地数据库中不存在生成 ID 所致。 在 dcpromo 之后的第一次重新启动过程中不存在 msDS-GenerationId，或者该 DC 并非虚拟域控制器。<p>其他数据<p>故障代码：%1 |
+| **消息** | 无法读取域控制器的计算机对象的 msDS-GenerationId 属性。 这可能是由于数据库事务失败或本地数据库中不存在生成 ID 所致。 在 dcpromo 之后的第一次重新启动过程中不存在 msDS-GenerationId，或者该 DC 并非虚拟域控制器。<p>其他数据<p>故障代码：%1 |
 | **注释和解析** | 如果打算克隆，则这是一个成功事件，而且它是完成克隆后的第一次 VM 重新启动。 还可以在非虚拟域控制器上忽略它。 否则，请检查系统事件日志。 |
 
 | 事件 | 说明 |
@@ -287,7 +287,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2174** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | 该 DC 既不是虚拟域控制器克隆，也不是已还原虚拟域控制器快照。 |
+| **消息** | 该 DC 既不是虚拟域控制器克隆，也不是已还原虚拟域控制器快照。 |
 | **注释和解析** | 如果不打算克隆，则这是一个成功事件。 否则，请检查系统事件日志。 |
 
 | 事件 | 说明 |
@@ -295,7 +295,7 @@ ms.locfileid: "87941561"
 |**事件 ID**|**2175**|
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|
 |**严重性**|错误|
-|**Message**|虚拟域控制器克隆配置文件存在于不受支持的平台上。|
+|**消息**|虚拟域控制器克隆配置文件存在于不受支持的平台上。|
 |**注释和解析**|当找到 dccloneconfig.xml 但无法找到 VM 生成 ID 时，会发生这种情况，例如，在不支持 VM 生成 ID 的物理计算机上或虚拟机监控程序上找到 dccloneconfig.xml 文件。|
 
 | 事件 | 说明 |
@@ -303,7 +303,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2176** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | 重命名的虚拟域控制器克隆配置文件。<p>其他数据<p>旧文件名：%1<p>新文件名：%2 |
+| **消息** | 重命名的虚拟域控制器克隆配置文件。<p>其他数据<p>旧文件名：%1<p>新文件名：%2 |
 | **注释和解析** | 启动源 VM 备份时预期将重命名，因为尚未更改 VM 生成 ID。 这会阻止源域控制器的克隆尝试。 |
 
 | 事件 | 说明 |
@@ -311,7 +311,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2177** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | 重命名虚拟域控制器克隆配置文件失败。<p>其他数据<p>文件名：%1<p>故障代码：%2 %3 |
+| **消息** | 重命名虚拟域控制器克隆配置文件失败。<p>其他数据<p>文件名：%1<p>故障代码：%2 %3 |
 | **注释和解析** | 启动源 VM 备份时预期将尝试重命名，因为尚未更改 VM 生成 ID。 这会阻止源域控制器的克隆尝试。 手动重命名该文件，并调查可能会阻止文件重命名的已安装的第三方产品。 |
 
 | 事件 | 说明 |
@@ -319,7 +319,7 @@ ms.locfileid: "87941561"
 |**事件 ID**|**2178**|
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|
 |**严重性**|信息|
-|**Message**|已检测到虚拟域控制器克隆配置文件，但尚未更改 VM 生成 ID。 本地 DC 是克隆源 DC。 重命名克隆配置文件。|
+|**消息**|已检测到虚拟域控制器克隆配置文件，但尚未更改 VM 生成 ID。 本地 DC 是克隆源 DC。 重命名克隆配置文件。|
 |**注释和解析**|预期在启动源 VM 备份时发生，因为尚未更改 VM 生成 ID。 这会阻止源域控制器的克隆尝试。|
 
 | 事件 | 说明 |
@@ -327,7 +327,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2179** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | 域控制器的计算机对象的 msDS-GenerationId 属性已设置为以下参数：<p>GenerationID 属性：%1 |
+| **消息** | 域控制器的计算机对象的 msDS-GenerationId 属性已设置为以下参数：<p>GenerationID 属性：%1 |
 | **注释和解析** | 这是一个成功事件，仅当意外发生时才成为问题。 |
 
 | 事件 | 说明 |
@@ -335,7 +335,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2180** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 警告 |
-| **Message** | 无法设置域控制器的计算机对象的 msDS-GenerationId 属性。<p>其他数据<p>故障代码：%1 |
+| **消息** | 无法设置域控制器的计算机对象的 msDS-GenerationId 属性。<p>其他数据<p>故障代码：%1 |
 | **注释和解析** | 检查系统事件日志和 Dcpromo.log。 在 MS TechNet、MS 知识库和 MS 博客中查找特定错误以确定其常规含义，然后根据这些结果进行故障排除。 |
 
 | 事件 | 说明 |
@@ -343,7 +343,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2182** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | 内部事件：请求目录服务克隆远程 DSA： |
+| **消息** | 内部事件：请求目录服务克隆远程 DSA： |
 | **注释和解析** | 这是一个成功事件，仅当意外发生时才成为问题。 |
 
 | 事件 | 说明 |
@@ -351,7 +351,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2183** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | 内部事件： *<COMPUTERNAME>* 已完成克隆远程目录系统代理的请求。<p>原始 DC 名称：%3<p>请求克隆 DC 名称：%4<p>请求克隆 DC 站点：%5<p>其他数据<p>错误值：%1 %2 |
+| **消息** | 内部事件： *<COMPUTERNAME>* 已完成克隆远程目录系统代理的请求。<p>原始 DC 名称：%3<p>请求克隆 DC 名称：%4<p>请求克隆 DC 站点：%5<p>其他数据<p>错误值：%1 %2 |
 | **注释和解析** | 这是一个成功事件，仅当意外发生时才成为问题。 |
 
 | 事件 | 说明 |
@@ -359,7 +359,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2184** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 无法为克隆的 DC 创建域控制器帐户。<p>原始 DC 名称：%1<p>克隆的 DC 的允许数量：%2<p>超过了对克隆可以生成的域控制器帐户的数量限制 <em> <COMPUTERNAME> </em> 。 |
+| **消息** | *<COMPUTERNAME>* 无法为克隆的 DC 创建域控制器帐户。<p>原始 DC 名称：%1<p>克隆的 DC 的允许数量：%2<p>超过了对克隆可以生成的域控制器帐户的数量限制 <em> <COMPUTERNAME> </em> 。 |
 | **注释和解析** | 根据命名约定，如果不降级域控制器，则单一源域控制器名称仅可自动生成 9999 次。 使用 XML 中的 <computername> 元素从以不同方式命名的 DC 中生成新的唯一的名称或克隆。 |
 
 | 事件 | 说明 |
@@ -367,7 +367,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2191** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | *<COMPUTERNAME>* 设置以下注册表值以禁用 DNS 更新。<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>在克隆过程中，本地计算机在短时间内可能会与克隆源计算机具有相同的计算机名称。 在此期间将禁用 DNS A 和 AAAA 记录注册，因此客户端无法将请求发送到正在进行克隆的本地计算机。 完成克隆后，克隆进程将再次启用 DNS 更新。 |
+| **消息** | *<COMPUTERNAME>* 设置以下注册表值以禁用 DNS 更新。<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>在克隆过程中，本地计算机在短时间内可能会与克隆源计算机具有相同的计算机名称。 在此期间将禁用 DNS A 和 AAAA 记录注册，因此客户端无法将请求发送到正在进行克隆的本地计算机。 完成克隆后，克隆进程将再次启用 DNS 更新。 |
 | **注释和解析** | 这是一个成功事件，仅当意外发生时才成为问题。 |
 
 | 事件 | 说明 |
@@ -375,7 +375,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2192** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 无法设置以下注册表值以禁用 DNS 更新。<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>错误代码：%4<p>错误消息：%5<p>在克隆过程中，本地计算机在短时间内可能会与克隆源计算机具有相同的计算机名称。 在此期间将禁用 DNS A 和 AAAA 记录注册，因此客户端无法将请求发送到正在进行克隆的本地计算机。 |
+| **消息** | *<COMPUTERNAME>* 无法设置以下注册表值以禁用 DNS 更新。<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>错误代码：%4<p>错误消息：%5<p>在克隆过程中，本地计算机在短时间内可能会与克隆源计算机具有相同的计算机名称。 在此期间将禁用 DNS A 和 AAAA 记录注册，因此客户端无法将请求发送到正在进行克隆的本地计算机。 |
 | **注释和解析** | 检查应用程序和系统事件日志。 调查可能会阻止注册表更新的第三方应用程序。 |
 
 | 事件 | 说明 |
@@ -383,7 +383,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2193** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | *<COMPUTERNAME>* 设置以下注册表值以启用 DNS 更新。<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>在克隆过程中，本地计算机在短时间内可能会与克隆源计算机具有相同的计算机名称。 在此期间将禁用 DNS A 和 AAAA 记录注册，因此客户端无法将请求发送到正在进行克隆的本地计算机。 |
+| **消息** | *<COMPUTERNAME>* 设置以下注册表值以启用 DNS 更新。<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>在克隆过程中，本地计算机在短时间内可能会与克隆源计算机具有相同的计算机名称。 在此期间将禁用 DNS A 和 AAAA 记录注册，因此客户端无法将请求发送到正在进行克隆的本地计算机。 |
 | **注释和解析** | 这是一个成功事件，仅当意外发生时才成为问题。 |
 
 | 事件 | 说明 |
@@ -391,7 +391,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2194** |
 |--|--|
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 未能设置以下注册表值以启用 DNS 更新。<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>错误代码：%4<p>错误消息：%5<p>在克隆过程中，本地计算机在短时间内可能会与克隆源计算机具有相同的计算机名称。 在此期间将禁用 DNS A 和 AAAA 记录注册，因此客户端无法将请求发送到正在进行克隆的本地计算机。 |
+| **消息** | *<COMPUTERNAME>* 未能设置以下注册表值以启用 DNS 更新。<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>错误代码：%4<p>错误消息：%5<p>在克隆过程中，本地计算机在短时间内可能会与克隆源计算机具有相同的计算机名称。 在此期间将禁用 DNS A 和 AAAA 记录注册，因此客户端无法将请求发送到正在进行克隆的本地计算机。 |
 | **注释和解析** | 检查应用程序和系统事件日志。 调查可能会阻止注册表更新的第三方应用程序。 |
 
 | 事件 | 说明 |
@@ -399,7 +399,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2195** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | 无法设置 DSRM 启动。<p>错误代码：%1<p>错误消息：%2<p>当虚拟域控制器克隆失败，或虚拟域控制器克隆配置文件在不受支持的虚拟机监控程序上显示时，本地计算机将重新启动进入 DSRM，以进行故障排除。 设置 DSRM 启动失败。 |
+| **消息** | 无法设置 DSRM 启动。<p>错误代码：%1<p>错误消息：%2<p>当虚拟域控制器克隆失败，或虚拟域控制器克隆配置文件在不受支持的虚拟机监控程序上显示时，本地计算机将重新启动进入 DSRM，以进行故障排除。 设置 DSRM 启动失败。 |
 | **注释和解析** | 检查应用程序和系统事件日志。 调查可能会阻止注册表更新的第三方应用程序。 |
 
 | 事件 | 说明 |
@@ -407,7 +407,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2196** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | 无法启用关机权限。<p>错误代码：%1<p>错误消息：%2<p>当虚拟域控制器克隆失败，或虚拟域控制器克隆配置文件在不受支持的虚拟机监控程序上显示时，本地计算机将重新启动进入 DSRM，以进行故障排除。 启用关机权限失败。 |
+| **消息** | 无法启用关机权限。<p>错误代码：%1<p>错误消息：%2<p>当虚拟域控制器克隆失败，或虚拟域控制器克隆配置文件在不受支持的虚拟机监控程序上显示时，本地计算机将重新启动进入 DSRM，以进行故障排除。 启用关机权限失败。 |
 | **注释和解析** | 检查应用程序和系统事件日志。 调查可能会阻止使用权限的第三方应用程序。 |
 
 | 事件 | 说明 |
@@ -415,7 +415,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2197** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | 无法启动系统关闭。<p>错误代码：%1<p>错误消息：%2<p>当虚拟域控制器克隆失败，或虚拟域控制器克隆配置文件在不受支持的虚拟机监控程序上显示时，本地计算机将重新启动进入 DSRM，以进行故障排除。 启动系统关闭失败。 |
+| **消息** | 无法启动系统关闭。<p>错误代码：%1<p>错误消息：%2<p>当虚拟域控制器克隆失败，或虚拟域控制器克隆配置文件在不受支持的虚拟机监控程序上显示时，本地计算机将重新启动进入 DSRM，以进行故障排除。 启动系统关闭失败。 |
 | **注释和解析** | 检查应用程序和系统事件日志。 调查可能会阻止使用权限的第三方应用程序。 |
 
 | 事件 | 说明 |
@@ -423,7 +423,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2198** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 无法创建或修改以下克隆的 DC 对象。<p>其他数据：<p>对象：<p>%1<p>错误值：%2<p>%3 |
+| **消息** | *<COMPUTERNAME>* 无法创建或修改以下克隆的 DC 对象。<p>其他数据：<p>对象：<p>%1<p>错误值：%2<p>%3 |
 | **注释和解析** | 在 MS TechNet、MS 知识库和 MS 博客中查找特定错误以确定其常规含义，然后根据这些结果进行故障排除。 |
 
 | 事件 | 说明 |
@@ -431,7 +431,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2199** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 无法创建以下克隆的 DC 对象，因为该对象已存在。<p>其他数据：<p>源 DC：<p>%1<p>对象：<p>%2 |
+| **消息** | *<COMPUTERNAME>* 无法创建以下克隆的 DC 对象，因为该对象已存在。<p>其他数据：<p>源 DC：<p>%1<p>对象：<p>%2 |
 | **注释和解析** | 验证 dccloneconfig.xml 未指定现有的域控制器，或者已在多个克隆上使用 dccloneconfig.xml 的副本，而没有编辑名称。 如果仍不希望发生此冲突，则请确定哪位管理员对其进行了升级；请联系他们以讨论是否应降级现有的域控制器、是否应清理现有的域控制器元数据，以及克隆是否应使用不同的名称。 |
 
 | 事件 | 说明 |
@@ -439,7 +439,7 @@ ms.locfileid: "87941561"
 | **事件 ID** | **2203** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | 最后一个虚拟域控制器克隆失败。 这是自此之后的首次重新启动，因此这应该是克隆的重试。 但是，既不存在虚拟域控制器克隆配置文件，也未检测到 VM 生成 ID 发生更改。 启动进入 DSRM。<p>最后一个虚拟域控制器克隆失败：%1<p>存在虚拟域控制器克隆配置文件：%2<p>检测到虚拟机生成 ID 发生更改：%3 |
+| **消息** | 最后一个虚拟域控制器克隆失败。 这是自此之后的首次重新启动，因此这应该是克隆的重试。 但是，既不存在虚拟域控制器克隆配置文件，也未检测到 VM 生成 ID 发生更改。 启动进入 DSRM。<p>最后一个虚拟域控制器克隆失败：%1<p>存在虚拟域控制器克隆配置文件：%2<p>检测到虚拟机生成 ID 发生更改：%3 |
 | **注释和解析** | 如果之前克隆失败，则预期出现该现象，因为 dccloneconfig.xml 缺失或无效 |
 
 | 事件 | 说明 |
@@ -639,7 +639,7 @@ ms.locfileid: "87941561"
 | 事件 ID | 29251 |
 | 源 | Microsoft-Windows-DirectoryServices-DSROLE-Server |
 | 严重性 | 错误 |
-| 消息 | 虚拟域控制器克隆无法重置克隆计算机的 IP 地址。<p>返回的错误代码为 %1 (%2)。<p>虚拟域控制器配置文件中网络配置部分的配置问题可能会导致此错误。<p>有关与虚拟域控制器克隆尝试期间 IP 地址重置相对应的错误的详细信息，请参阅 %systemroot%\debug\dcpromo.log。<p>有关在克隆的计算机上重置计算机 IP 地址的详细信息，请参阅https://go.microsoft.com/fwlink/?LinkId=208030 |
+| 消息 | 虚拟域控制器克隆无法重置克隆计算机的 IP 地址。<p>返回的错误代码为 %1 (%2)。<p>虚拟域控制器配置文件中网络配置部分的配置问题可能会导致此错误。<p>有关与虚拟域控制器克隆尝试期间 IP 地址重置相对应的错误的详细信息，请参阅 %systemroot%\debug\dcpromo.log。<p>有关在克隆的计算机上重置计算机 IP 地址的详细信息，请参阅 https://go.microsoft.com/fwlink/?LinkId=208030 |
 | 注释和解析 | 验证 dccloneconfig.xml 中设置的 IP 信息有效且未与原始源计算机重复。 |
 
 | 事件 | 说明 |
@@ -801,7 +801,7 @@ ms.locfileid: "87941561"
 ##### <a name="directory-services-event-log"></a>目录服务事件日志
 目录服务日志包含大部分基于事件的克隆操作信息。 虚拟机监控程序更改 VM 生成 ID，NTDS 服务对它进行注释，然后使 RID 池无效并更改调用 ID。 已设置新的 VM 生成 ID 且服务器将复制 Active Directory 数据入站。 停止 DFSR 服务并删除其包含 SYSVOL 的数据库，强制执行非权威同步入站。 调整 USN 高水印。
 
-| **事件 ID** | **Source** | **Message** |
+| **事件 ID** | **Source** | **消息** |
 |--|--|--|
 | **2160** | ActiveDirectory_DomainService | 本地 Active Directory 域服务已找到虚拟域控制器克隆配置文件。<p>虚拟域控制器克隆配置文件位于：<p>*<path>* \DCCloneConfig.xml<p>虚拟域控制器克隆配置文件的存在表示本地虚拟域控制器是另一个虚拟域控制器的克隆。 Active Directory 域服务将开始克隆其本身。 |
 | **2191** | ActiveDirectory_DomainService | Active Directory 域服务将设置以下注册表值以禁用 DNS 更新。<p>注册表项：<p>SYSTEM\CurrentControlSet\Services\Netlogon\Parameters<p>注册表值：<p>UseDynamicDns<p>注册表值数据：<p>0<p>在克隆过程中，本地计算机在短时间内可能会与克隆源计算机具有相同的计算机名称。 在此期间将禁用 DNS A 和 AAAA 记录注册，因此客户端无法将请求发送到正在进行克隆的本地计算机。 完成克隆后，克隆进程将再次启用 DNS 更新。 |
@@ -830,13 +830,13 @@ ms.locfileid: "87941561"
 | **2173** | ActiveDirectory_DomainService | 无法读取域控制器的计算机对象的 msDS-GenerationId 属性。 这可能是由于数据库事务失败或本地数据库中不存在生成 ID 所致。 在 dcpromo 之后的第一次重新启动过程中不存在 msDS-GenerationId，或者该 DC 并非虚拟域控制器。<p>其他数据<p>故障代码：<p>6 |
 | **1000** | ActiveDirectory_DomainService | Microsoft Active Directory 域服务启动完成，版本 6.2.8225.0 |
 | **1394** | ActiveDirectory_DomainService | 已清除阻止 Active Directory 域服务数据库更新的所有问题。 成功完成 Active Directory 域服务数据库的新的更新。 已重启 Net Logon 服务。 |
-| **1128** | ActiveDirectory_DomainService | 1128 知识一致性检查“已从以下源目录服务到本地目录服务创建复制连接。<p>源目录服务：<p>CN = NTDS 设置，*<Domain Controller DN>*<p>本地目录服务：<p>CN = NTDS 设置，*<Domain Controller DN>*<p>其他数据<p>原因代码：<p>0x2<p>创建点内部 ID：<p>f0a025d |
+| **1128** | ActiveDirectory_DomainService | 1128 知识一致性检查“已从以下源目录服务到本地目录服务创建复制连接。<p>源目录服务：<p>CN = NTDS 设置，*<Domain Controller DN>*<p>本地目录服务：<p>CN = NTDS 设置， *<Domain Controller DN>*<p>其他数据<p>原因代码：<p>0x2<p>创建点内部 ID：<p>f0a025d |
 | **1999** | ActiveDirectory_DomainService | 源目录服务已优化由目标目录服务显示的更新序列号 (USN)。 源和目标目录服务具有通用的复制伙伴。 目标目录服务使用通用复制伙伴保持最新状态，而且使用此伙伴的备份安装了源目录服务。<p>目标目录服务 ID：<p>*<GUID> (<FQDN>)*<p>通用目录服务 ID：<p>*<GUID>*<p>通用属性 USN：<p>*<Number>*<p>因此，已使用以下设置配置目标目录服务的最新程度矢量。<p>上一个对象 USN：<p>0<p>上一个属性 USN：<p>0<p>数据库 GUID：<p>*<GUID>*<p>对象 USN：<p>*<Number>*<p>属性 USN：<p>*<Number>* |
 
 ##### <a name="system-event-log"></a>系统事件日志
 克隆操作的后续指示位于系统事件日志中。 因为虚拟机监控程序告诉来宾计算机，它已克隆或从快照还原，所以域控制器将立即使其 RID 池失效，以避免之后复制安全主体。 随着克隆继续进行，将出现各种预期的操作和消息，主要是围绕启动和停止服务，以及由此导致的某些预期错误。 完成后，系统事件日志将记录整体克隆成功。
 
-|**事件 ID**|**Source**|**Message**|
+|**事件 ID**|**Source**|**消息**|
 |--|--|--|
 |**16654**|Directory-Services-SAM|帐户标识符 (RID) 池已失效。 在以下预期情况下，可能会出现该问题：<p>1. 从备份还原域控制器。<p>2. 从快照还原在虚拟机上运行的域控制器。<p>3. 管理员已手动使池失效|
 |**7036**|服务控制管理器|“Active Directory 域服务”服务已进入运行状态。|
@@ -1345,20 +1345,20 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 ##### <a name="active-directory-web-services-event-log"></a>Active Directory Web 服务事件日志
 发生克隆时，NTDS.DIT 数据库处于脱机状态的时间将延长。 ADWS 服务将为此记录至少一个事件。 克隆完成后，将启动 ADWS 服务，请注意目前尚不存在有效的计算机证书（存在与否取决于你的环境是否使用自动注册部署 Microsoft PKI），然后将启动新域控制器的实例。
 
-|**事件 ID**|**Source**|**Message**|
+|**事件 ID**|**Source**|**消息**|
 |--|--|--|
 |**1202**|ADWS 实例事件|现在此计算机托管了指定的目录实例，但 Active Directory Web 服务无法处理它。 Active Directory Web 服务将定期重试此操作。<p>目录实例： NTDS<p>目录实例 LDAP 端口：389<p>目录实例 SSL 端口：636|
 |**1000**|ADWS 实例事件|正在启动 Active Directory Web 服务|
 |**1008**|ADWS 实例事件|Active Directory Web 服务已成功减少其安全特权|
 |**1100**|ADWS 实例事件|已加载 Active Directory Web 服务配置文件的 <appsettings> 部分中指定的值，未出现错误。|
-|**1400**|ADWS 实例事件|ADWS 证书事件 Active Directory Web 服务找不到具有指定证书名称的服务器证书。 使用 SSL/TLS 连接需要证书。 若要使用 SSL/TLS 连接，请验证计算机上安装了来自可信任证书颁发机构 (CA) 的有效服务器身份验证证书。<p>证书名称：*<Server FQDN>*|
+|**1400**|ADWS 实例事件|ADWS 证书事件 Active Directory Web 服务找不到具有指定证书名称的服务器证书。 使用 SSL/TLS 连接需要证书。 若要使用 SSL/TLS 连接，请验证计算机上安装了来自可信任证书颁发机构 (CA) 的有效服务器身份验证证书。<p>证书名称： *<Server FQDN>*|
 |**1100**|ADWS 实例事件|已加载 Active Directory Web 服务配置文件的 <appsettings> 部分中指定的值，未出现错误。|
 |**1200**|ADWS 实例事件|目前，Active Directory Web 服务在处理指定的目录实例。<p>目录实例： NTDS<p>目录实例 LDAP 端口：389<p>目录实例 SSL 端口：636|
 
 ##### <a name="dns-server-event-log"></a>DNS 服务器事件日志
 因为 AD DS 数据库处于脱机状态时 DNS 服务仍在运行，所以发生克隆时，DNS 服务将发生短暂的预期中断。 若使用 Active Directory 集成的 DNS，则会发生这种情况，但若使用标准主要 DNS 或辅助 DNS，则不会发生这种情况。 这些错误将多次记录。 克隆完成后，正常情况下，DNS 将恢复联机状态。
 
-|**事件 ID**|**Source**|**Message**|
+|**事件 ID**|**Source**|**消息**|
 |--|--|--|
 |**4013**|DNS-Server-Service|DNS 服务器正在等待 Active Directory 域服务 (AD DS) 显示已完成目录的初始同步的信号。 在初始同步完成之前，DNS 服务器服务将无法启动，因为可能未将关键 DNS 数据复制到此域控制器上。 如果 AD DS 事件日志中的事件指示 DNS 名称解析出现问题，则请考虑将此域中另一台 DNS 服务器的 IP 地址添加到这台计算机“Internet 协议”属性的 DNS 服务器列表中。 每隔两分钟记录一次此事件，直到 AD DS 显示已成功完成初始同步的信号为止。|
 |**4015**|DNS-Server-Service|DNS 服务器遇到了来自 Active Directory 的关键错误。 检查 Active Directory 是否正常运作。 扩展的错误调试信息（可能为空）是 """"。 事件数据包含了错误。|
@@ -1370,7 +1370,7 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 ##### <a name="file-replication-service-event-log"></a>文件复制服务事件日志
 在克隆过程中，文件复制服务将从合作伙伴进行非权威同步。 克隆通过该方法实现此功能：删除 NTFRS 数据库文件并保持 SYSVOL 的内容不变，以便用作预植入的数据。 两次尝试同步是预期行为。
 
-| **事件 ID** | **Source** | **Message** |
+| **事件 ID** | **Source** | **消息** |
 |--|--|--|
 | **13562** | NtFrs | 下面是轮询域控制器 DC2.root.fabrikam.com 的 FRS 副本集配置信息时，文件复制服务遇到的警告和错误的摘要。<p>无法绑定到域控制器。 将在下一个轮询周期重试 |
 | **13502** | NtFrs | 文件复制服务正在停止。 |
@@ -1380,7 +1380,7 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 | **13503** | NtFrs | 文件复制服务已停止。 |
 | **13565** | NtFrs | 文件复制服务使用另一域控制器的数据初始化系统卷。 在完成此过程之前，计算机 DC2 将无法成为域控制器。 然后，系统卷将共享为 SYSVOL。<p>若要检查 SYSVOL 共享，请在命令提示符下键入：<p>net share<p>文件复制服务完成初始化过程后，将显示 SYSVOL 共享。<p>系统卷的初始化过程可能需要一些时间。 所需时间取决于系统卷中的数据量、其他域控制器的可用性和域控制器之间的复制间隔。 |
 | **13501** | NtFrs | 文件复制服务正在启动。 |
-| **13553** | NtFrs | 文件复制服务已成功地将此计算机添加到以下副本集：<p>“DOMAIN SYSTEM VOLUME (SYSVOL SHARE)”<p>与此事件相关的信息如下所示：<p>计算机 DNS 名称为*<Domain Controller FQDN>*<p>副本集成员名称是*<Domain Controller>*<p>副本集根路径是*<path>*<p>副本暂存目录路径为*<path>*<p>副本工作目录路径为*<path>* |
+| **13553** | NtFrs | 文件复制服务已成功地将此计算机添加到以下副本集：<p>“DOMAIN SYSTEM VOLUME (SYSVOL SHARE)”<p>与此事件相关的信息如下所示：<p>计算机 DNS 名称为  *<Domain Controller FQDN>*<p>副本集成员名称是 *<Domain Controller>*<p>副本集根路径是 *<path>*<p>副本暂存目录路径为 *<path>*<p>副本工作目录路径为 *<path>* |
 | **13520** | NtFrs | 文件复制服务已将已存在的文件移动 <path> 到 *<path>* \ NtFrs_PreExisting___See_EventLog 中。<p>文件复制服务可能会随时删除 \ NtFrs_PreExisting___See_EventLog 中的文件 *<path>* 。 可以通过将文件复制到 \ NtFrs_PreExisting___See_EventLog 中来保存文件 *<path>* 。 如果文件在其他复制伙伴中已经存在，将文件复制到 c:\windows\sysvol\domain 可能会引起名称冲突。<p>在某些情况下，文件复制服务可能会将文件从 *<path>* \ NtFrs_PreExisting___See_EventLog 复制到， *<path>* 而不是从其他复制伙伴复制文件。<p>可随时通过删除 \ NtFrs_PreExisting___See_EventLog 中的文件来恢复空间 *<path>* 。 |
 | **13508** | NtFrs | 文件复制服务在启用从到的复制时遇到问题，请 *\\\\<Domain Controller FQDN>* *<Domain Controller>* *<path>* 使用<p>DNS 名称 *\\\\<Domain Controller FQDN>* 。 FRS 会不断重试。<p>以下是一些你将看到此警告的原因。<p>[1] FRS 无法正确解析此计算机的 DNS 名称 *\\\\<Domain Controller FQDN>* 。<p>[2] FRS 未在上运行 *\\\\<Domain Controller FQDN>* 。<p>[3] 尚未将此副本的 Active Directory 域服务中的拓扑信息复制到所有域控制器。<p>每次连接都将显示一次该事件日志消息，解决该问题后，你将看到另一个事件日志消息，指示已建立连接。 |
 | **13509** | NtFrs | 在 *\\\\<Domain Controller FQDN>* *<Domain Controller>* *<Path>* 重复重试之后，文件复制服务已启用从到的复制。 |
@@ -1389,15 +1389,15 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 ##### <a name="dfs-replication-event-log"></a>DFS 复制事件日志
 在克隆过程中，DFSR 服务将从伙伴进行非权威同步。 克隆通过该方法实现此功能：删除 DFSR 数据库文件并保持 SYSVOL 的内容不变，以便用作预植入的数据。 两次尝试同步是预期行为。
 
-| **事件 ID** | **Source** | **Message** |
+| **事件 ID** | **Source** | **消息** |
 |--|--|--|
 | **1004** | DFSR | DFS 复制服务已启动。 |
 | **1314** | DFSR | DFS 复制服务已成功配置调试日志文件。<p>其他信息：<p>调试日志文件路径： C:\Windows\debug |
 | **6102** | DFSR | DFS 复制服务已成功注册 WMI 提供程序 |
 | **1206** | DFSR | DFS 复制服务已成功联系域控制器 DC2.corp.contoso.com 以访问配置信息。 |
 | **1210** | DFSR | DFS 复制服务为传入的复制请求成功地设置了 RPC 侦听程序。<p>其他信息：<p>端口： 0 " |
-| **4614** | DFSR | DFS 复制服务在本地路径 C:\Windows\SYSVOL\domain 中初始化了 SYSVOL，并且正在等待执行初始复制。 所复制的文件夹将保留在初始同步状态，直到它已通过其伙伴进行复制。 如果该服务器正在升级到域控制器，则在解决此问题之前，该域控制器将不会进行播发，并且不会发挥如同域控制器的作用。 如果指定的伙伴也同样处于初始同步状态，或者如果在此服务器或同步伙伴遇到共享冲突，则可能发生这种情况。 如果在从文件复制服务 (FRS) 到 DFS 复制的 SYSVOL 迁移过程中遇到此事件，则在解决此问题之前，将不会复制更改。 这可能会导致此服务器上的 SYSVOL 文件夹与其他域控制器不同步。<p>其他信息：<p>已复制文件夹名称： SYSVOL 共享<p>已复制的文件夹 ID：*<GUID>*<p>复制组名称：域系统卷<p>复制组 ID：*<GUID>*<p>成员 ID：*<GUID>*<p>只读：0 |
-| **4604** | DFSR | DFS 复制服务已成功初始化位于本地路径 C:\Windows\SYSVOL\domain 上的 SYSVOL 已复制文件夹。 此成员已完成 SYSVOL 和合作伙伴 dc1.corp.contoso.com 的初始同步。 若要检查 SYSVOL 共享是否存在，请打开命令提示符窗口，然后键入“net share”。<p>其他信息：<p>已复制文件夹名称： SYSVOL 共享<p>已复制的文件夹 ID：*<GUID>*<p>复制组名称：域系统卷<p>复制组 ID：*<GUID>*<p>成员 ID：*<GUID>*<p>同步伙伴：*<domain controller FQDN>* |
+| **4614** | DFSR | DFS 复制服务在本地路径 C:\Windows\SYSVOL\domain 中初始化了 SYSVOL，并且正在等待执行初始复制。 所复制的文件夹将保留在初始同步状态，直到它已通过其伙伴进行复制。 如果该服务器正在升级到域控制器，则在解决此问题之前，该域控制器将不会进行播发，并且不会发挥如同域控制器的作用。 如果指定的伙伴也同样处于初始同步状态，或者如果在此服务器或同步伙伴遇到共享冲突，则可能发生这种情况。 如果在从文件复制服务 (FRS) 到 DFS 复制的 SYSVOL 迁移过程中遇到此事件，则在解决此问题之前，将不会复制更改。 这可能会导致此服务器上的 SYSVOL 文件夹与其他域控制器不同步。<p>其他信息：<p>已复制文件夹名称： SYSVOL 共享<p>已复制的文件夹 ID： *<GUID>*<p>复制组名称：域系统卷<p>复制组 ID： *<GUID>*<p>成员 ID： *<GUID>*<p>只读：0 |
+| **4604** | DFSR | DFS 复制服务已成功初始化位于本地路径 C:\Windows\SYSVOL\domain 上的 SYSVOL 已复制文件夹。 此成员已完成 SYSVOL 和合作伙伴 dc1.corp.contoso.com 的初始同步。 若要检查 SYSVOL 共享是否存在，请打开命令提示符窗口，然后键入“net share”。<p>其他信息：<p>已复制文件夹名称： SYSVOL 共享<p>已复制的文件夹 ID： *<GUID>*<p>复制组名称：域系统卷<p>复制组 ID： *<GUID>*<p>成员 ID： *<GUID>*<p>同步伙伴： *<domain controller FQDN>* |
 
 ## <a name="troubleshooting-virtualized-domain-controller-safe-restore"></a><a name="BKMK_TshootVDCSafeRestore"></a>对虚拟化域控制器安全还原进行故障排除
 
@@ -1460,7 +1460,7 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 | **事件 ID** | **2170** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 警告 |
-| **Message** | 已检测到生成 ID 更改。<p>DS 中缓存的生成 ID（旧值）：%1<p>VM 中的当前生成 ID（新值）：%2<p>生成 ID 将在应用虚拟机快照之后、在虚拟机导入操作之后或在实时迁移操作之后发生更改。 *<COMPUTERNAME>* 将创建一个新的调用 ID 以恢复域控制器。 不应使用虚拟机快照还原虚拟化域控制器。 支持用于还原或回滚 Active Directory 域服务数据库中的内容的方法是：还原使用 Active Directory 域服务感知备份应用程序制作的系统状态备份。 |
+| **消息** | 已检测到生成 ID 更改。<p>DS 中缓存的生成 ID（旧值）：%1<p>VM 中的当前生成 ID（新值）：%2<p>生成 ID 将在应用虚拟机快照之后、在虚拟机导入操作之后或在实时迁移操作之后发生更改。 *<COMPUTERNAME>* 将创建一个新的调用 ID 以恢复域控制器。 不应使用虚拟机快照还原虚拟化域控制器。 支持用于还原或回滚 Active Directory 域服务数据库中的内容的方法是：还原使用 Active Directory 域服务感知备份应用程序制作的系统状态备份。 |
 | **注释和解析** | 如果快照为预期行为，则这是一个成功事件。 如果不是，则请检查 Hyper-V-Worker 事件日志，或联系虚拟机监控程序管理员。 |
 
 | 事件 | 说明 |
@@ -1468,7 +1468,7 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 |**事件 ID**|**2174**|
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|
 |**严重性**|信息|
-|**Message**|该 DC 既不是虚拟域控制器克隆，也不是已还原虚拟域控制器快照。|
+|**消息**|该 DC 既不是虚拟域控制器克隆，也不是已还原虚拟域控制器快照。|
 |**注释和解析**|当启动物理域控制器或虚拟化域控制器未从快照还原时，这是预期事件|
 
 | 事件 | 说明 |
@@ -1476,126 +1476,126 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 |**事件 ID**|**2181**|
 |**Source**|Microsoft-Windows-ActiveDirectory_DomainService|
 |**严重性**|信息|
-|**Message**|因为虚拟机还原到以前的状态，所以中止了事务。 在应用虚拟机快照后、虚拟机导入操作后或者实时迁移操作后，将发生这种情况。|
+|**消息**|因为虚拟机还原到以前的状态，所以中止了事务。 在应用虚拟机快照后、虚拟机导入操作后或者实时迁移操作后，将发生这种情况。|
 |**注释和解析**|当还原快照时，这是预期事件。 事务将跟踪 VM 生成 ID 更改|
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2185** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | *<COMPUTERNAME>* 已停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务。<p>服务名称：%1<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 必须在本地 SYSVOL 副本上初始化非权威还原。 执行该操作的方法是：停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务，然后使用相应的注册表项和值启动它来触发还原。 重启 FRS 或 DFSR 服务时，将会记录事件 2187。 |
+| **消息** | *<COMPUTERNAME>* 已停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务。<p>服务名称：%1<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 必须在本地 SYSVOL 副本上初始化非权威还原。 执行该操作的方法是：停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务，然后使用相应的注册表项和值启动它来触发还原。 重启 FRS 或 DFSR 服务时，将会记录事件 2187。 |
 | **注释和解析** | 当还原快照时，这是预期事件。 此域控制器上的所有 SYSVOL 数据都将替换为伙伴 DC 的副本。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | 2186 |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 未能停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务。<p>服务名称：%1<p>错误代码：%2<p>错误消息：%3<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 必须在本地 SYSVOL 副本上初始化非权威还原。 完成该操作的方法是：停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 复制服务，然后使用相应的注册表项和值启动它来触发还原。 *<COMPUTERNAME>* 未能停止当前正在运行的服务，无法完成非权威还原。 请手动执行非权威还原。 |
+| **消息** | *<COMPUTERNAME>* 未能停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务。<p>服务名称：%1<p>错误代码：%2<p>错误消息：%3<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 必须在本地 SYSVOL 副本上初始化非权威还原。 完成该操作的方法是：停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 复制服务，然后使用相应的注册表项和值启动它来触发还原。 *<COMPUTERNAME>* 未能停止当前正在运行的服务，无法完成非权威还原。 请手动执行非权威还原。 |
 | **注释和解析** | 检查系统、FRS 和 DFSR 事件日志以获取详细信息。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2187** |
 | **严重性** | 信息 |
-| **Message** | *<COMPUTERNAME>* 已启动用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务。<p>服务名称：%1<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 需要在本地 SYSVOL 副本上初始化非权威还原。 完成该操作的方法是：停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务，然后使用相应的注册表项和值启动它来触发还原。 |
+| **消息** | *<COMPUTERNAME>* 已启动用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务。<p>服务名称：%1<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 需要在本地 SYSVOL 副本上初始化非权威还原。 完成该操作的方法是：停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务，然后使用相应的注册表项和值启动它来触发还原。 |
 | **注释和解析** | 当还原快照时，这是预期事件。 此域控制器上的所有 SYSVOL 数据都将替换为伙伴 DC 的副本。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2188** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 无法启动用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务。<p>服务名称：%1<p>错误代码：%2<p>错误消息：%3<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 需要在本地 SYSVOL 副本上初始化非权威还原。 完成该操作的方法是：停止用于复制 SYSVOL 的 FRS 或 DFSR 服务，然后使用相应的注册表项和值启动它来触发还原。 *<COMPUTERNAME>* 无法启动用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务，无法完成非权威还原。 请手动执行非权威还原，然后重启该服务。 |
+| **消息** | *<COMPUTERNAME>* 无法启动用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务。<p>服务名称：%1<p>错误代码：%2<p>错误消息：%3<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 需要在本地 SYSVOL 副本上初始化非权威还原。 完成该操作的方法是：停止用于复制 SYSVOL 的 FRS 或 DFSR 服务，然后使用相应的注册表项和值启动它来触发还原。 *<COMPUTERNAME>* 无法启动用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务，无法完成非权威还原。 请手动执行非权威还原，然后重启该服务。 |
 | **注释和解析** | 检查系统、FRS 和 DFSR 事件日志以获取详细信息。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2189** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | *<COMPUTERNAME>* 设置以下注册表值，以在非权威还原过程中初始化 SYSVOL 副本：<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 需要在本地 SYSVOL 副本上初始化非权威还原。 完成该操作的方法是：停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务，然后使用相应的注册表项和值启动它来触发还原。 |
+| **消息** | *<COMPUTERNAME>* 设置以下注册表值，以在非权威还原过程中初始化 SYSVOL 副本：<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 需要在本地 SYSVOL 副本上初始化非权威还原。 完成该操作的方法是：停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务，然后使用相应的注册表项和值启动它来触发还原。 |
 | **注释和解析** | 当还原快照时，这是预期事件。 此域控制器上的所有 SYSVOL 数据都将替换为伙伴 DC 的副本。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2190** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 在非权威还原期间，无法设置以下注册表值，以初始化 SYSVOL 副本：<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>错误代码：%4<p>错误消息：%5<p>Active Directory 检测到托管域控制器角色的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 需要在本地 SYSVOL 副本上初始化非权威还原。 完成该操作的方法是：停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务，然后使用相应的注册表项和值启动它来触发还原。 *<COMPUTERNAME>* 无法设置以上注册表值，无法完成非权威还原。 请手动执行非权威还原。 |
+| **消息** | *<COMPUTERNAME>* 在非权威还原期间，无法设置以下注册表值，以初始化 SYSVOL 副本：<p>注册表项：%1<p>注册表值：%2<p>注册表值数据：%3<p>错误代码：%4<p>错误消息：%5<p>Active Directory 检测到托管域控制器角色的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 需要在本地 SYSVOL 副本上初始化非权威还原。 完成该操作的方法是：停止用于复制 SYSVOL 文件夹的 FRS 或 DFSR 服务，然后使用相应的注册表项和值启动它来触发还原。 *<COMPUTERNAME>* 无法设置以上注册表值，无法完成非权威还原。 请手动执行非权威还原。 |
 | **注释和解析** | 检查应用程序和系统事件日志。 调查可能会阻止注册表更新的第三方应用程序。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2200** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 初始化复制以使域控制器保持最新。 完成复制后，将会记录事件 2201。 |
+| **消息** | Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 初始化复制以使域控制器保持最新。 完成复制后，将会记录事件 2201。 |
 | **注释和解析** | 当还原快照时，这是预期事件。 标记入站 AD 复制的开始。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2201** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 已完成复制，以将域控制器保持最新。 |
+| **消息** | Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 已完成复制，以将域控制器保持最新。 |
 | **注释和解析** | 当还原快照时，这是预期事件。 标记入站 AD 复制的结束。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2202** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 复制失败，使域控制器保持最新状态。 在下一次定期复制后，将更新域控制器。 |
+| **消息** | Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 复制失败，使域控制器保持最新状态。 在下一次定期复制后，将更新域控制器。 |
 | **注释和解析** | 检查目录服务和系统事件日志。 使用 repadmin.exe 尝试强制执行复制，并记录任何失败。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2204** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | *<COMPUTERNAME>* 检测到虚拟机生成 ID 的更改。 更改意味着虚拟域控制器已还原为以前的状态。 *<COMPUTERNAME>* 将执行以下操作，以针对可能的数据分歧保护已还原的域控制器，并保护具有重复 Sid 的安全主体的创建：<p>创建新的调用 ID<p>使当前 RID 池无效<p>在下次入站复制时，将验证 FSMO 角色的所有权。 在此窗口期间，如果域控制器保留 FSMO 角色，则该角色将不可用。<p>启动 SYSVOL 复制服务还原操作。<p>启动复制以使已还原的域控制器保持最新状态。<p>请求新的 RID 池。 |
+| **消息** | *<COMPUTERNAME>* 检测到虚拟机生成 ID 的更改。 更改意味着虚拟域控制器已还原为以前的状态。 *<COMPUTERNAME>* 将执行以下操作，以针对可能的数据分歧保护已还原的域控制器，并保护具有重复 Sid 的安全主体的创建：<p>创建新的调用 ID<p>使当前 RID 池无效<p>在下次入站复制时，将验证 FSMO 角色的所有权。 在此窗口期间，如果域控制器保留 FSMO 角色，则该角色将不可用。<p>启动 SYSVOL 复制服务还原操作。<p>启动复制以使已还原的域控制器保持最新状态。<p>请求新的 RID 池。 |
 | **注释和解析** | 当还原快照时，这是预期事件。 这说明了将作为安全还原过程一部分进行的各种不同的重置操作。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2205** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | *<COMPUTERNAME>* 将虚拟域控制器恢复到以前的状态后，当前 RID 池失效。 |
+| **消息** | *<COMPUTERNAME>* 将虚拟域控制器恢复到以前的状态后，当前 RID 池失效。 |
 | **注释和解析** | 当还原快照时，这是预期事件。 必须销毁本地 RID 池，因为域控制器已按时间顺序查看，并且可能已进行签发。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2206** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | ERROR |
-| **Message** | *<COMPUTERNAME>* 在将虚拟域控制器恢复到以前的状态后，无法使当前 RID 池失效。<p>其他数据：<p>错误代码：%1<p>错误值：%2 |
+| **消息** | *<COMPUTERNAME>* 在将虚拟域控制器恢复到以前的状态后，无法使当前 RID 池失效。<p>其他数据：<p>错误代码：%1<p>错误值：%2 |
 | **注释和解析** | 检查目录服务和系统事件日志。 验证可使用 Dcdiag.exe /test:ridmanager 从该服务器访问处于联机状态的 RID 主机 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2207** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | ERROR |
-| **Message** | *<COMPUTERNAME>* 将虚拟域控制器恢复到以前的状态后，无法还原。 已请求重新启动到 DSRM。 请检查之前的事件，以获取详细信息。 |
+| **消息** | *<COMPUTERNAME>* 将虚拟域控制器恢复到以前的状态后，无法还原。 已请求重新启动到 DSRM。 请检查之前的事件，以获取详细信息。 |
 | **注释和解析** | 检查目录服务和系统事件日志。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2208** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 信息 |
-| **Message** | *<COMPUTERNAME>* 在非权威还原期间，删除了 DFSR 数据库，以初始化 SYSVOL 副本。 |
+| **消息** | *<COMPUTERNAME>* 在非权威还原期间，删除了 DFSR 数据库，以初始化 SYSVOL 副本。 |
 | **注释和解析** | 当还原快照时，这是预期事件。 这可确保 DFSR 从伙伴 DC 非权威地同步 SYSVOL。 请注意，与 SYSVOL 位于相同卷上的任何其他 DFSR 已复制文件夹也将进行非权威同步（在与 SYSVOL 相同的卷上，不建议使用域控制器托管自定义 DFSR 集）。 |
 
-| 事件 | 描述 |
+| 事件 | 说明 |
 |--|--|
 | **事件 ID** | **2209** |
 | **Source** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **严重性** | 错误 |
-| **Message** | *<COMPUTERNAME>* 未能删除 DFSR 数据库。<p>其他数据：<p>错误代码：%1<p>错误值：%2<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 需要在本地 SYSVOL 副本上初始化非权威还原。 对于 DFSR 而言，这可以通过停止 DFSR 服务、删除 DFSR 数据库并重启该服务来完成。 在重启时，DFSR 将重建数据库并启动初始同步。 |
+| **消息** | *<COMPUTERNAME>* 未能删除 DFSR 数据库。<p>其他数据：<p>错误代码：%1<p>错误值：%2<p>Active Directory 检测到托管域控制器的虚拟机已恢复为以前的状态。 *<COMPUTERNAME>* 需要在本地 SYSVOL 副本上初始化非权威还原。 对于 DFSR 而言，这可以通过停止 DFSR 服务、删除 DFSR 数据库并重启该服务来完成。 在重启时，DFSR 将重建数据库并启动初始同步。 |
 | **注释和解析** | 检查 DFSR 事件日志。 |
 
 #### <a name="error-messages"></a>错误消息
@@ -1622,7 +1622,7 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 ##### <a name="directory-services-event-log"></a>目录服务事件日志
 目录服务事件日志包含大部分的安全还原操作信息。 虚拟机监控程序更改 VM 生成 ID，NTDS 服务对它进行注释，然后使 RID 池无效并更改调用 ID。 已设置新的 VM 生成 ID 且服务器将复制 AD 数据入站。 停止 DFSR 服务并删除其包含 SYSVOL 的数据库，强制执行非权威同步入站。 调整 USN 高水印。
 
-| **事件 ID** | **Source** | **Message** |
+| **事件 ID** | **Source** | **消息** |
 |--|--|--|
 | **2170** | ActiveDirectory_DomainService | 已检测到生成 ID 更改。<p>在 DS 中缓存的生成 ID（旧值）：<p>*<number>*<p>VM 中的当前生成 ID（新值）：<p>*<number>*<p>生成 ID 将在应用虚拟机快照之后、在虚拟机导入操作之后或在实时迁移操作之后发生更改。 Active Directory 域服务将创建一个新的调用 ID 以恢复域控制器。 不应使用虚拟机快照还原虚拟化域控制器。 支持用于还原或回滚 Active Directory 域服务数据库中的内容的方法是：还原使用 Active Directory 域服务感知备份应用程序制作的系统状态备份。” |
 | **2181** | ActiveDirectory_DomainService | 因为虚拟机还原到以前的状态，所以中止了事务。 在应用虚拟机快照后、虚拟机导入操作后或者实时迁移操作后，将发生这种情况。 |
@@ -1640,7 +1640,7 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 ##### <a name="system-event-log"></a>系统事件日志
 系统事件日志记录将脱机的虚拟机恢复到联机状态并与主机时间同步时所显示的计算机时间。 RID 池将无效，而且 DFSR 或 FRS 服务将重启。
 
-| **事件 ID** | **Source** | **Message** |
+| **事件 ID** | **Source** | **消息** |
 |--|--|--|
 | **1** | Kernel-General | 系统时间已更改为 *？ <now> * 从 *<快照时间/日期>*。<p>更改原因：应用程序或系统组件更改了时间。 |
 | **16654** | Directory-Services-SAM | 帐户标识符 (RID) 池已失效。 在以下预期情况下，可能会出现该问题：<p>1. 从备份还原域控制器。<p>2. 从快照还原在虚拟机上运行的域控制器。<p>3. 管理员已手动使池失效。<p>有关更多信息，请参见 <https://go.microsoft.com/fwlink/?LinkId=226247> 。 |
@@ -1650,7 +1650,7 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 ##### <a name="application-event-log"></a>应用程序事件日志
 应用程序事件日志记录 DFSR 数据库停止和启动。
 
-| **事件 ID** | **Source** | **Message** |
+| **事件 ID** | **Source** | **消息** |
 |--|--|--|
 | **103** | ESENT | Dfsr (1360) \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db：数据库引擎已停止实例 (0) 。<p>异常关闭：0<p>内部计时序列：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.141、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.000、[10] 0.000、[11] 0.016、[12] 0.000、[13] 0.000、[14] 0.000、[15] 0.000。 |
 | **102** | ESENT | Dfsr (532) \\ \\ .\C： \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.db：数据库引擎 (6.02.8189.0000) 正在启动新实例 (0) 。 |
@@ -1660,7 +1660,7 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 ##### <a name="dfs-replication-event-log"></a>DFS 复制事件日志
 停止 DFSR 服务并删除包含 SYSVOL 的数据库，这会强制执行非权威同步入站。
 
-| **事件 ID** | **Source** | **Message** |
+| **事件 ID** | **Source** | **消息** |
 |--|--|--|
 | **1006** | DFSR | DFS 复制服务正在停止。 |
 | **1008** | DFSR | DFS 复制服务已停止。 |
@@ -1670,8 +1670,8 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 | **6102** | DFSR | DFS 复制服务已成功注册 WMI 提供程序。 |
 | **1206** | DFSR | DFS 复制服务已成功联系域控制器 *<domain controller FQDN>* 以访问配置信息。 |
 | **1210** | DFSR | DFS 复制服务为传入的复制请求成功地设置了 RPC 侦听程序。<p>其他信息：<p>端口：0 |
-| **4614** | DFSR | DFS 复制服务在本地路径 C:\Windows\SYSVOL\domain 中初始化了 SYSVOL，并且正在等待执行初始复制。 所复制的文件夹将保留在初始同步状态，直到它已通过其伙伴进行复制。 如果该服务器正在升级到域控制器，则在解决此问题之前，该域控制器将不会进行播发，并且不会发挥如同域控制器的作用。 如果指定的伙伴也同样处于初始同步状态，或者如果在此服务器或同步伙伴遇到共享冲突，则可能发生这种情况。 如果在从文件复制服务 (FRS) 到 DFS 复制的 SYSVOL 迁移过程中遇到此事件，则在解决此问题之前，将不会复制更改。 这可能会导致此服务器上的 SYSVOL 文件夹与其他域控制器不同步。<p>其他信息：<p>已复制文件夹名称： SYSVOL 共享<p>已复制的文件夹 ID：*<GUID>*<p>复制组名称：域系统卷<p>复制组 ID：*<GUID>*<p>成员 ID：*<GUID>*<p>只读：0 |
-| **4604** | DFSR | DFS 复制服务已成功初始化位于本地路径 C:\Windows\SYSVOL\domain 上的 SYSVOL 已复制文件夹。 此成员已完成 SYSVOL 和合作伙伴 dc1.corp.contoso.com 的初始同步。 若要检查 SYSVOL 共享是否存在，请打开命令提示符窗口，然后键入“net share”。<p>其他信息：<p>已复制文件夹名称： SYSVOL 共享<p>已复制的文件夹 ID：*<GUID>*<p>复制组名称：域系统卷<p>复制组 ID：*<GUID>*<p>成员 ID：*<GUID>*<p>同步伙伴：*<partner domain controller FQDN>* |
+| **4614** | DFSR | DFS 复制服务在本地路径 C:\Windows\SYSVOL\domain 中初始化了 SYSVOL，并且正在等待执行初始复制。 所复制的文件夹将保留在初始同步状态，直到它已通过其伙伴进行复制。 如果该服务器正在升级到域控制器，则在解决此问题之前，该域控制器将不会进行播发，并且不会发挥如同域控制器的作用。 如果指定的伙伴也同样处于初始同步状态，或者如果在此服务器或同步伙伴遇到共享冲突，则可能发生这种情况。 如果在从文件复制服务 (FRS) 到 DFS 复制的 SYSVOL 迁移过程中遇到此事件，则在解决此问题之前，将不会复制更改。 这可能会导致此服务器上的 SYSVOL 文件夹与其他域控制器不同步。<p>其他信息：<p>已复制文件夹名称： SYSVOL 共享<p>已复制的文件夹 ID： *<GUID>*<p>复制组名称：域系统卷<p>复制组 ID： *<GUID>*<p>成员 ID： *<GUID>*<p>只读：0 |
+| **4604** | DFSR | DFS 复制服务已成功初始化位于本地路径 C:\Windows\SYSVOL\domain 上的 SYSVOL 已复制文件夹。 此成员已完成 SYSVOL 和合作伙伴 dc1.corp.contoso.com 的初始同步。 若要检查 SYSVOL 共享是否存在，请打开命令提示符窗口，然后键入“net share”。<p>其他信息：<p>已复制文件夹名称： SYSVOL 共享<p>已复制的文件夹 ID： *<GUID>*<p>复制组名称：域系统卷<p>复制组 ID： *<GUID>*<p>成员 ID： *<GUID>*<p>同步伙伴： *<partner domain controller FQDN>* |
 
 #### <a name="restoring-a-domain-controller-that-replicates-sysvol-using-frs"></a>还原使用 FRS 复制 SYSVOL 的域控制器
 在这种情况下，将使用文件复制事件日志而不是 DFSR 事件日志。 应用程序事件日志还将写入其他与 FRS 相关的事件。 否则，一般情况下目录服务和系统事件日志消息是一样的，并采用相同的顺序（如上所述）。
@@ -1679,7 +1679,7 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 ##### <a name="file-replication-service-event-log"></a>文件复制服务事件日志
 停止并使用 D2 BURFLAGS 值重启 FRS 服务以非权威地同步 SYSVOL。
 
-| **事件 ID** | **Source** | **Message** |
+| **事件 ID** | **Source** | **消息** |
 |--|--|--|
 | **13502** | NTFRS | 文件复制服务正在停止。 |
 | **13503** | NTFRS | 文件复制服务已停止。 |
@@ -1694,7 +1694,7 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 ##### <a name="application-event-log"></a>应用程序事件日志
 FRS 数据库停止并启动，并因为 D2 BURFLAGS 操作而清除。
 
-| **事件 ID** | **Source** | **Message** |
+| **事件 ID** | **Source** | **消息** |
 |--|--|--|
 | **327** | ESENT | ntfrs (1424) 数据库引擎已分离数据库 (1, c:\windows\ntfrs\jet\ntfrs.jdb)。 （时间 = 0 秒）<p>内部计时序列：[1] 0.000、[2] 0.015、[3] 0.000、[4] 0.000、[5] 0.000、[6] 0.516、[7] 0.000、[8] 0.000、[9] 0.000、[10] 0.000、[11] 0.063、[12] 0.000。<p>恢复缓存：0 |
 | **103** | ESENT | ntfrs (1424) 数据库引擎已停止实例 (0)。<p>异常关闭：0<p>内部计时序列：[1] 0.000、[2] 0.000、[3] 0.000、[4] 0.000、[5] 0.000、[6] 0.000、[7] 0.000、[8] 0.000、[9] 0.031、[10] 0.000、[11] 0.016、[12] 0.000、[13] 0.000、[14] 0.047、[15] 0.000。 |

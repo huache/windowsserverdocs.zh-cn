@@ -1,17 +1,17 @@
 ---
 ms.assetid: a7ef2fba-b05c-4be2-93b2-b9456244c3ad
 title: 监视 Active Directory 遭到破坏的迹象
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8b28d412411336062187a842912b6f4a41957eba
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9b7aafb92b354181957c6c304ad9b366b4413e65
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994347"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941417"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>监视 Active Directory 遭到破坏的迹象
 
@@ -19,7 +19,7 @@ ms.locfileid: "87994347"
 
 *定律5：永久警惕是安全的价格。* - [安全管理的10个永恒定律](/previous-versions/cc722488(v=technet.10))
 
-固态事件日志监视系统是任何安全 Active Directory 设计的重要组成部分。 如果受害者制订适当的事件日志监视和警报，则很多计算机安全威胁可能在事件初期发现。 此结论支持独立报表。 例如， [2009 Verizon 数据违规报告](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf)状态：
+固态事件日志监视系统是任何安全 Active Directory 设计的重要组成部分。 如果受害者制订适当的事件日志监视和警报，则很多计算机安全威胁可能在事件初期发现。 此结论支持独立报表。 例如， [2009 Verizon 数据违规报告](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf) 状态：
 
 "事件监视和日志分析的明显 ineffectiveness 仍是一个 enigma。 检测的机会有;调查人员指出，66% 的受害者在其日志中有足够的证据来发现违规行为是否更用心分析此类资源。 "
 
@@ -29,15 +29,15 @@ ms.locfileid: "87994347"
 
 下面是 Microsoft 官方企业支持博客的链接。 这些博客的内容提供有关审核的建议、指导和建议，这些建议可帮助你增强 Active Directory 基础结构的安全性，并且在设计审核策略时是有价值的资源。
 
-* [全局对象访问审核非常神奇](/archive/blogs/askds/global-object-access-auditing-is-magic)-介绍一种称为 "高级审核策略配置" 的控制机制，该机制已添加到 windows 7 和 windows Server 2008 R2，使你可以设置要轻松审核的数据类型，而不是调整的脚本和 auditpol.exe。
-* [Windows 2008 中的审核更改简介](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008)-介绍了在 windows Server 2008 中进行的审核更改。
-* [Vista 和2008中的冷审核技巧](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008)-介绍了 windows Vista 和 windows Server 2008 的有趣审核功能，这些功能可用于排查问题或查看环境中发生的情况。
-* [Windows server 2008 和 Windows vista 中的一站式审核](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista)-包含对 windows server 2008 和 windows vista 中包含的审核功能和信息的编译。
+* [全局对象访问审核非常神奇](/archive/blogs/askds/global-object-access-auditing-is-magic) -介绍一种称为 "高级审核策略配置" 的控制机制，该机制已添加到 windows 7 和 windows Server 2008 R2，使你可以设置要轻松审核的数据类型，而不是调整的脚本和 auditpol.exe。
+* [Windows 2008 中的审核更改简介](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008) -介绍了在 windows Server 2008 中进行的审核更改。
+* [Vista 和2008中的冷审核技巧](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008) -介绍了 windows Vista 和 windows Server 2008 的有趣审核功能，这些功能可用于排查问题或查看环境中发生的情况。
+* [Windows server 2008 和 Windows vista 中的一站式审核](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista) -包含对 windows server 2008 和 windows vista 中包含的审核功能和信息的编译。
 
 以下链接提供了有关 windows 8 和 Windows Server 2012 中 Windows 审核改进的信息，以及有关 Windows Server 2008 中 AD DS 审核的信息。
 
-* [安全审核中的新增](/previous-versions/orphan-topics/ws.11/hh849638(v=ws.11))功能-概述了 windows 8 和 windows Server 2012 中的新安全审核功能。
-* [AD DS 审核循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))-介绍了 Windows Server 2008 中 (AD DS) 审核功能的新 Active Directory 域服务。 它还提供了实现此新功能的过程。
+* [安全审核中的新增](/previous-versions/orphan-topics/ws.11/hh849638(v=ws.11)) 功能-概述了 windows 8 和 windows Server 2012 中的新安全审核功能。
+* [AD DS 审核循序渐进指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) -介绍了 Windows Server 2008 中 (AD DS) 审核功能的新 Active Directory 域服务。 它还提供了实现此新功能的过程。
 
 ### <a name="windows-audit-categories"></a>Windows 审核类别
 
@@ -88,7 +88,7 @@ Windows (有数十种用户权限，例如，作为批处理作业登录并作�
 ##### <a name="audit-process-tracking"></a>审核过程跟踪
 此策略设置确定是否审核详细的进程跟踪信息，如程序激活、进程退出、处理重复和间接对象访问等。 这对于跟踪恶意用户及其使用的程序很有用。
 
-启用审核过程跟踪会生成大量事件，因此通常会将其设置为 "**无审核**"。 但是，在事件响应期间，此设置可以从已启动进程的详细日志和启动时间的详细日志中提供极大的好处。 对于域控制器和其他单一角色基础结构服务器，可以随时安全地启用此类别。 单个角色服务器在其职责的正常过程中不会生成大量的进程跟踪流量。 这样，就可以在发生未经授权的事件时捕获它们。
+启用审核过程跟踪会生成大量事件，因此通常会将其设置为 " **无审核**"。 但是，在事件响应期间，此设置可以从已启动进程的详细日志和启动时间的详细日志中提供极大的好处。 对于域控制器和其他单一角色基础结构服务器，可以随时安全地启用此类别。 单个角色服务器在其职责的正常过程中不会生成大量的进程跟踪流量。 这样，就可以在发生未经授权的事件时捕获它们。
 
 ##### <a name="system-events-audit"></a>系统事件审核
 
@@ -111,7 +111,7 @@ Windows (有数十种用户权限，例如，作为批处理作业登录并作�
 ![监视 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)
 
 > [!NOTE]
-> 组策略不会始终准确报告所有启用的审核策略的状态，而 auditpol.exe 会。 有关更多详细信息，请参阅[在 Windows 7 和 2008 R2 中获取有效的审核策略](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))。
+> 组策略不会始终准确报告所有启用的审核策略的状态，而 auditpol.exe 会。 有关更多详细信息，请参阅 [在 Windows 7 和 2008 R2 中获取有效的审核策略](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) 。
 
 每个主类别都有多个子类别。 下面是类别、子类别和其功能的说明的列表。
 
@@ -196,10 +196,10 @@ Windows (有数十种用户权限，例如，作为批处理作业登录并作�
 #### <a name="logonlogoff"></a>登录/注销
 
 ##### <a name="logon"></a>登录
-此子类别报告用户尝试登录到系统的时间。 这些事件在访问的计算机上发生。 对于交互式登录，这些事件的生成发生在登录到的计算机上。 如果发生网络登录以访问共享，则这些事件会在承载访问资源的计算机上生成。 如果此设置配置为 "**无审核**"，则很难或不可能确定哪些用户访问或尝试访问组织计算机。
+此子类别报告用户尝试登录到系统的时间。 这些事件在访问的计算机上发生。 对于交互式登录，这些事件的生成发生在登录到的计算机上。 如果发生网络登录以访问共享，则这些事件会在承载访问资源的计算机上生成。 如果此设置配置为 " **无审核**"，则很难或不可能确定哪些用户访问或尝试访问组织计算机。
 
 ##### <a name="network-policy-server"></a>网络策略服务器
-此子类别报告 RADIUS (IAS) 和网络访问保护 (NAP) 用户访问请求中生成的事件。 这些请求可以是**Grant**、 **Deny**、**放弃**、**隔离**、**锁定**和**解锁**。 审核此设置将导致 NPS 和 IAS 服务器上出现中等或大量记录。
+此子类别报告 RADIUS (IAS) 和网络访问保护 (NAP) 用户访问请求中生成的事件。 这些请求可以是 **Grant**、 **Deny**、 **放弃**、 **隔离**、 **锁定**和 **解锁**。 审核此设置将导致 NPS 和 IAS 服务器上出现中等或大量记录。
 
 ##### <a name="ipsec-main-mode"></a>IPsec 主模式
 在主模式协商期间，此子类别报告 Internet 密钥交换 (IKE) 协议的结果，并已验证 Internet 协议 (AuthIP) 。
@@ -211,7 +211,7 @@ Windows (有数十种用户权限，例如，作为批处理作业登录并作�
 此子类别报告其他登录和注销相关事件，例如远程桌面服务会话断开连接和重新连接，使用 RunAs 在不同帐户下运行进程，以及锁定和解锁工作站。
 
 ##### <a name="logoff"></a>Logoff
-此子类别报告用户何时从系统注销。 这些事件在访问的计算机上发生。 对于交互式登录，这些事件的生成发生在登录到的计算机上。 如果发生网络登录以访问共享，则这些事件会在承载访问资源的计算机上生成。 如果此设置配置为 "**无审核**"，则很难或不可能确定哪些用户访问或尝试访问组织计算机。
+此子类别报告用户何时从系统注销。 这些事件在访问的计算机上发生。 对于交互式登录，这些事件的生成发生在登录到的计算机上。 如果发生网络登录以访问共享，则这些事件会在承载访问资源的计算机上生成。 如果此设置配置为 " **无审核**"，则很难或不可能确定哪些用户访问或尝试访问组织计算机。
 
 ##### <a name="account-lockout"></a>帐户锁定
 由于登录尝试失败次数过多，此子类别将报告用户的帐户被锁定的时间。
@@ -258,7 +258,7 @@ Windows (有数十种用户权限，例如，作为批处理作业登录并作�
 ##### <a name="file-system"></a>文件系统
 此子类别报告何时访问文件系统对象。 只有具有 Sacl 的文件系统对象才会导致生成审核事件，并且仅在以匹配其 SACL 条目的方式对其进行访问时才生成审核事件。 此策略设置本身将不会引起任何事件的审核。 它确定是否审核访问文件系统对象（该对象具有指定的系统访问控制列表 (SACL) 的用户的事件，从而有效地启用审核。
 
-如果 "审核对象访问" 设置配置为 "**成功**"，则每次用户使用指定的 SACL 成功访问对象时，都会生成一个审核条目。 如果此策略设置配置为**失败**，则每次用户尝试使用指定的 SACL 访问对象失败时都会生成一个审核条目。
+如果 "审核对象访问" 设置配置为 " **成功**"，则每次用户使用指定的 SACL 成功访问对象时，都会生成一个审核条目。 如果此策略设置配置为 **失败**，则每次用户尝试使用指定的 SACL 访问对象失败时都会生成一个审核条目。
 
 ##### <a name="registry"></a>注册表
 当访问注册表对象时，此子类别将进行报告。 只有具有 Sacl 的注册表对象会导致生成审核事件，并且仅在以匹配其 SACL 条目的方式对其进行访问时才生成审核事件。 此策略设置本身将不会引起任何事件的审核。
@@ -308,7 +308,7 @@ IPsec 驱动程序
 ##### <a name="other-system-events"></a>其他系统事件
 此子类别报告其他系统事件。
 
-有关子类别说明的详细信息，请参阅[Microsoft 安全合规管理器工具](/previous-versions/tn-archive/cc677002(v=technet.10))。
+有关子类别说明的详细信息，请参阅 [Microsoft 安全合规管理器工具](/previous-versions/tn-archive/cc677002(v=technet.10))。
 
 每个组织应查看以前涵盖的类别和子类别，并启用最适合其环境的类别和子类别。 在生产环境中部署之前，始终应对审核策略的更改进行测试。
 
@@ -317,15 +317,15 @@ IPsec 驱动程序
 可以使用组策略、auditpol.exe、Api 或注册表编辑来设置 Windows 审核策略。 为大多数公司配置审核策略的建议方法是组策略或 auditpol.exe。 设置系统审核策略需要管理员级别的帐户权限或适当的委派权限。
 
 > [!NOTE]
-> 必须为安全主体提供 "**管理审核和安全日志**" 特权 (管理员默认情况下) 允许修改单个资源（如文件、Active Directory 对象和注册表项）的对象访问审核选项。
+> 必须为安全主体提供 " **管理审核和安全日志** " 特权 (管理员默认情况下) 允许修改单个资源（如文件、Active Directory 对象和注册表项）的对象访问审核选项。
 
 ### <a name="setting-windows-audit-policy-by-using-group-policy"></a>使用组策略设置 Windows 审核策略
 
-若要使用组策略设置审核策略，请在 "**计算机配置 \Windows 设置 \ 安全设置 \ 本地策略 \ 审核策略**" 下配置相应的审核类别 (参阅以下屏幕截图，获取本地组策略编辑器 (gpedit.msc) # A3 的示例。 可以为**成功**、**失败**或**成功**和失败事件启用每个审核策略类别。
+若要使用组策略设置审核策略，请在 " **计算机配置 \Windows 设置 \ 安全设置 \ 本地策略 \ 审核策略** " 下配置相应的审核类别 (参阅以下屏幕截图，获取本地组策略编辑器 (gpedit.msc) # A3 的示例。 可以为 **成功**、 **失败**或 **成功** 和失败事件启用每个审核策略类别。
 
 ![监视 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_6.gif)
 
-可以通过使用 Active Directory 或本地组策略来设置高级审核策略。 若要设置高级审核策略，请配置位于 "**计算机配置 \Windows 设置 \ 安全设置高级审核策略**" 下的相应子类别 (参阅下面的屏幕截图，获取本地组策略编辑器 (gpedit.msc) # A3 的示例。 可以为**成功**、**失败**或**成功**和**失败**事件启用每个审核策略子类别。
+可以通过使用 Active Directory 或本地组策略来设置高级审核策略。 若要设置高级审核策略，请配置位于 " **计算机配置 \Windows 设置 \ 安全设置高级审核策略** " 下的相应子类别 (参阅下面的屏幕截图，获取本地组策略编辑器 (gpedit.msc) # A3 的示例。 可以为 **成功**、 **失败**或 **成功** 和 **失败** 事件启用每个审核策略子类别。
 
 ![监视 AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)
 
@@ -333,7 +333,7 @@ IPsec 驱动程序
 
 Windows Server 2008 和 Windows Vista 中引入了设置 Windows 审核策略) Auditpol.exe (。 最初，只能使用 auditpol.exe 来设置高级审核策略，但可以在 Windows Server 2012、Windows Server 2008 R2 或 Windows Server 2008、Windows 8 和 Windows 7 中使用组策略。
 
-Auditpol.exe 是一个命令行实用工具。 语法如下所示：
+Auditpol.exe 是一个命令行实用工具。 语法如下：
 
 `auditpol /set /<Category|Subcategory>:<audit category> /<success|failure:> /<enable|disable>`
 
@@ -350,36 +350,36 @@ Auditpol.exe 语法示例：
 
 #### <a name="scripting-auditpol"></a>脚本 Auditpol
 
-Microsoft 为想要设置高级审核策略的管理员提供了一个[示例脚本](https://support.microsoft.com/kb/921469)，而不是在每个 auditpol.exe 命令中手动键入。
+Microsoft 为想要设置高级审核策略的管理员提供了一个 [示例脚本](https://support.microsoft.com/kb/921469) ，而不是在每个 auditpol.exe 命令中手动键入。
 
-**注意**组策略不会始终准确报告所有启用的审核策略的状态，而 auditpol.exe 会。 有关更多详细信息，请参阅[在 windows 7 和 windows 2008 R2 中获取有效的审核策略](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10))。
+**注意** 组策略不会始终准确报告所有启用的审核策略的状态，而 auditpol.exe 会。 有关更多详细信息，请参阅 [在 windows 7 和 windows 2008 R2 中获取有效的审核策略](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) 。
 
 #### <a name="other-auditpol-commands"></a>其他 Auditpol 命令
 
-Auditpol.exe 可用于保存和还原本地审核策略，以及查看其他审核相关命令。 下面是其他**auditpol**命令。
+Auditpol.exe 可用于保存和还原本地审核策略，以及查看其他审核相关命令。 下面是其他 **auditpol** 命令。
 
-`auditpol /clear`-用于清除和重置本地审核策略
+`auditpol /clear` -用于清除和重置本地审核策略
 
-`auditpol /backup /file:<filename>`-用于将当前的本地审核策略备份到二进制文件
+`auditpol /backup /file:<filename>` -用于将当前的本地审核策略备份到二进制文件
 
-`auditpol /restore /file:<filename>`-用于将以前保存的审核策略文件导入到本地审核策略
+`auditpol /restore /file:<filename>` -用于将以前保存的审核策略文件导入到本地审核策略
 
-`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-如果启用此审核策略设置，则会导致系统立即停止 (并停止： C0000244 {Audit Failed} 消息) 如果出于任何原因无法记录安全审核。 通常，当安全审核日志已满并且为安全日志指定的保持方法不会**覆盖事件**或**按天覆盖事件**时，将无法记录事件。 通常，它仅由需要更高保障安全日志日志记录的环境启用。 如果启用，则管理员必须密切监视安全日志大小并根据需要轮换日志。 还可以通过修改安全选项 "**审核：如果无法记录安全审核则立即关闭系统**" (默认值为 "已禁用") ，设置为组策略。
+`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>` -如果启用此审核策略设置，则会导致系统立即停止 (并停止： C0000244 {Audit Failed} 消息) 如果出于任何原因无法记录安全审核。 通常，当安全审核日志已满并且为安全日志指定的保持方法不会 **覆盖事件** 或 **按天覆盖事件**时，将无法记录事件。 通常，它仅由需要更高保障安全日志日志记录的环境启用。 如果启用，则管理员必须密切监视安全日志大小并根据需要轮换日志。 还可以通过修改安全选项 " **审核：如果无法记录安全审核则立即关闭系统** " (默认值为 "已禁用") ，设置为组策略。
 
-`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`-此审核策略设置确定是否审核全局系统对象的访问权限。 如果启用此策略，则会导致使用默认的系统访问控制列表 (SACL) 创建系统对象（如互斥体、事件、信号量和 DOS 设备）。 大多数管理员都将审核全局系统对象视为 "干扰"，只有在怀疑恶意攻击时才会启用。 只为指定的对象提供 SACL。 如果还启用了审核对象访问审核策略 (或内核对象审核子类别) ，则会审核对这些系统对象的访问权限。 配置此安全设置时，只有在重新启动 Windows 后，更改才会生效。 还可以通过修改安全选项 "审核全局系统对象的访问权限 (默认值 = 已禁用) ，将此策略设置为组策略。
+`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>` -此审核策略设置确定是否审核全局系统对象的访问权限。 如果启用此策略，则会导致使用默认的系统访问控制列表 (SACL) 创建系统对象（如互斥体、事件、信号量和 DOS 设备）。 大多数管理员都将审核全局系统对象视为 "干扰"，只有在怀疑恶意攻击时才会启用。 只为指定的对象提供 SACL。 如果还启用了审核对象访问审核策略 (或内核对象审核子类别) ，则会审核对这些系统对象的访问权限。 配置此安全设置时，只有在重新启动 Windows 后，更改才会生效。 还可以通过修改安全选项 "审核全局系统对象的访问权限 (默认值 = 已禁用) ，将此策略设置为组策略。
 
-`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`-此审核策略设置指定已命名的内核对象 (例如，在创建这些对象时将向其提供 Sacl) 。 AuditBaseDirectories 会影响容器对象，而 AuditBaseObjects 会影响不能包含其他对象的对象。
+`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>` -此审核策略设置指定已命名的内核对象 (例如，在创建这些对象时将向其提供 Sacl) 。 AuditBaseDirectories 会影响容器对象，而 AuditBaseObjects 会影响不能包含其他对象的对象。
 
-`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`-此审核策略设置指定在将一个或多个这些权限分配给用户安全令牌时，客户端是否生成事件： AssignPrimaryTokenPrivilege、AuditPrivilege、BackupPrivilege、CreateTokenPrivilege、DebugPrivilege、EnableDelegationPrivilege、ImpersonatePrivilege、LoadDriverPrivilege、RestorePrivilege、SecurityPrivilege、SystemEnvironmentPrivilege、TakeOwnershipPrivilege 和 TcbPrivilege。 如果未启用此选项 (默认值为 "禁用") ，则不会记录 BackupPrivilege 和 RestorePrivilege 特权。 启用此选项会使安全日志极有干扰， (有时在备份操作期间有几百个事件) 。 还可以通过修改安全选项 "**审核：审核备份和还原的使用权限**" 来设置此策略组策略。
+`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>` -此审核策略设置指定在将一个或多个这些权限分配给用户安全令牌时，客户端是否生成事件： AssignPrimaryTokenPrivilege、AuditPrivilege、BackupPrivilege、CreateTokenPrivilege、DebugPrivilege、EnableDelegationPrivilege、ImpersonatePrivilege、LoadDriverPrivilege、RestorePrivilege、SecurityPrivilege、SystemEnvironmentPrivilege、TakeOwnershipPrivilege 和 TcbPrivilege。 如果未启用此选项 (默认值为 "禁用") ，则不会记录 BackupPrivilege 和 RestorePrivilege 特权。 启用此选项会使安全日志极有干扰， (有时在备份操作期间有几百个事件) 。 还可以通过修改安全选项 " **审核：审核备份和还原的使用权限**" 来设置此策略组策略。
 
 > [!NOTE]
-> 此处提供的某些信息是从 Microsoft[审核选项类型](/openspecs/windows_protocols/ms-gpac/262a2bed-93d4-4c04-abec-cf06e9ec72fd)和 microsoft SCM 工具获取的。
+> 此处提供的某些信息是从 Microsoft [审核选项类型](/openspecs/windows_protocols/ms-gpac/262a2bed-93d4-4c04-abec-cf06e9ec72fd) 和 microsoft SCM 工具获取的。
 
 ## <a name="enforcing-traditional-auditing-or-advanced-auditing"></a>强制执行传统审核或高级审核
 
 在 Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows 8、Windows 7 和 Windows Vista 中，管理员可以选择启用9个传统类别或使用子类别。 这是一种二进制选择，必须在每个 Windows 系统中进行。 主类别可以启用或 subcategoriesit 不能同时启用。
 
-若要防止旧的传统类别策略覆盖审核策略子类别，你必须启用 "**强制审核策略子类别设置 (Windows Vista 或更高版本") ，以替代**位于 "**计算机配置 \ 设置 \ 安全 \ 本地策略 \ 安全选项**" 下的审核策略类别设置策略设置。
+若要防止旧的传统类别策略覆盖审核策略子类别，你必须启用 " **强制审核策略子类别设置 (Windows Vista 或更高版本") ，以替代** 位于 " **计算机配置 \ 设置 \ 安全 \ 本地策略 \ 安全选项**" 下的审核策略类别设置策略设置。
 
 建议启用并配置子类别，而不是九个主要类别。 这要求启用组策略设置 (为允许子类别重写审核类别) 以及配置支持审核策略的不同子类别。
 

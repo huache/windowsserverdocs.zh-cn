@@ -1,17 +1,17 @@
 ---
 ms.assetid: 206b8072-1d0c-4a0b-ba8a-35a868d67b4c
 title: 创建站点链接设计
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: f10fea4e6e94ecc6636fe13588fea2bb94ad4407
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 881ca5f2d932a8e13aaa7467179360ca8bb4af66
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947759"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941137"
 ---
 # <a name="creating-a-site-link-design"></a>创建站点链接设计
 
@@ -38,7 +38,7 @@ ms.locfileid: "87947759"
 
 当直接 IP 连接不可用时，你可以配置站点之间的复制以使用 SMTP。 不过，SMTP 复制功能受到限制，并且需要 (CA) 的企业证书颁发机构。 SMTP 只能复制配置、架构和应用程序目录分区，并且不支持域目录分区的复制。
 
-若要命名站点链接，请使用一致的命名方案，如 name_of_site1 name_of_site2。 记录站点列表、链接站点，以及在工作表中连接这些站点的站点链接的名称。 要使工作表可以帮助你记录站点名称和关联的站点链接名称，请参阅[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "站点和关联的站点链接" ( # A1) 。
+若要命名站点链接，请使用一致的命名方案，如 name_of_site1 name_of_site2。 记录站点列表、链接站点，以及在工作表中连接这些站点的站点链接的名称。 要使工作表可以帮助你记录站点名称和关联的站点链接名称，请参阅 [Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)，下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "站点和关联的站点链接" ( # A1) 。
 
 ## <a name="in-this-guide"></a>本指南包含的内容
 

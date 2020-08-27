@@ -1,17 +1,17 @@
 ---
 ms.assetid: b8df1828-5ead-4c90-b0fe-95c675116b7c
 title: 创建组织单位设计
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 96fd3dd2d090ef6b39b99962e6b639bf2abdcb62
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3676d489f3ac0b59ba00904afc04e865150d901e
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947738"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941117"
 ---
 # <a name="creating-an-organizational-unit-design"></a>创建组织单位设计
 
@@ -19,7 +19,7 @@ ms.locfileid: "87947738"
 
 林所有者负责为其域创建 (OU) 设计的组织单位。 创建 OU 设计涉及到设计 OU 结构、分配 OU 所有者角色以及创建帐户和资源 Ou。
 
-最初，设计 OU 结构以启用管理委派。 OU 设计完成后，您可以为应用程序组策略的应用程序创建更多 OU 结构，并限制对象的可见性。 有关详细信息，请参阅[设计组策略基础结构](/previous-versions/windows/it-pro/windows-server-2003/cc786524(v=ws.10))。
+最初，设计 OU 结构以启用管理委派。 OU 设计完成后，您可以为应用程序组策略的应用程序创建更多 OU 结构，并限制对象的可见性。 有关详细信息，请参阅 [设计组策略基础结构](/previous-versions/windows/it-pro/windows-server-2003/cc786524(v=ws.10))。
 
 ## <a name="ou-owner-role"></a>OU 所有者角色
 林所有者为你为域设计的每个 OU 指定一个 OU 所有者。 OU 所有者是 Active Directory 域服务 (AD DS) 中控制对象子树的数据管理器。 OU 所有者可以控制委派管理的方式，以及如何将策略应用到其 OU 中的对象。 他们还可以创建新的子树并委派这些子树内 Ou 的管理。
@@ -38,7 +38,7 @@ Ou 提供管理自治和控制目录中对象的可见性的方法。 Ou 提供�
 
 务必记录 OU 设计。 列出你计划创建的 Ou 的名称。 对于每个 OU，记录 OU 类型、OU 所有者、父 OU (（如果适用）) 以及该 OU 的来源。
 
-要使工作表可以帮助您记录 OU 设计，请从[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "标识每个域的 ou" ( # A1) 。
+要使工作表可以帮助您记录 OU 设计，请从 [Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608) 下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并打开 "标识每个域的 ou" ( # A1) 。
 
 ## <a name="in-this-section"></a>本节内容
 

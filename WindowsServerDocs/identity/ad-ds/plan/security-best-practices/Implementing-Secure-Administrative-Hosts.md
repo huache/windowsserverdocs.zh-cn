@@ -1,17 +1,17 @@
 ---
 ms.assetid: eafdddc3-40d7-4a75-8f4f-a45294aabfc8
 title: 实现安全管理主机
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e4a969049c28b29fff61d4ede7995153ed3c5818
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 63f4f805ca5326f480ce3496deecf04a40d5ffa4
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958935"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941427"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>实现安全管理主机
 
@@ -81,7 +81,7 @@ ms.locfileid: "87958935"
 你应允许授权用户进行交互式登录，并且应删除或甚至阻止服务器访问时不需要的其他登录类型。
 
 ### <a name="patch-and-configuration-management"></a>修补和配置管理
-规模较小的组织可能依赖于 Windows 更新或[Windows Server Update Services](/windows/deployment/deploy-whats-new) (WSUS) 来管理 Windows 系统更新的部署，而较大的组织可能会实施企业修补程序和配置管理软件（如 Microsoft 终结点 Configuration Manager）。 无论你使用何种机制将更新部署到一般服务器和工作站总体，你都应该考虑为高度安全的系统（如域控制器、证书颁发机构和管理主机）进行单独的部署。 通过将这些系统与常规管理基础结构隔离，如果管理软件或服务帐户遭到入侵，则无法轻松地将此折衷扩展到基础结构中的最安全系统。
+规模较小的组织可能依赖于 Windows 更新或 [Windows Server Update Services](/windows/deployment/deploy-whats-new) (WSUS) 来管理 Windows 系统更新的部署，而较大的组织可能会实施企业修补程序和配置管理软件（如 Microsoft 终结点 Configuration Manager）。 无论你使用何种机制将更新部署到一般服务器和工作站总体，你都应该考虑为高度安全的系统（如域控制器、证书颁发机构和管理主机）进行单独的部署。 通过将这些系统与常规管理基础结构隔离，如果管理软件或服务帐户遭到入侵，则无法轻松地将此折衷扩展到基础结构中的最安全系统。
 
 尽管不应为安全系统执行手动更新过程，但是，你应该配置单独的基础结构来更新安全系统。 即使在非常大的组织中，此基础结构通常也可以通过专用的 WSUS 服务器和 Gpo 来实现安全系统。
 
@@ -155,7 +155,7 @@ ms.locfileid: "87958935"
 ### <a name="implementing-secure-administrative-workstations-and-jump-servers"></a>实现安全的管理工作站和跳转服务器
 作为保护管理工作站或结合使用的一种替代方法，你可以实施安全的跳转服务器，管理用户可以使用 RDP 和智能卡连接到跳转服务器来执行管理任务。
 
-应将 "跳转服务器" 配置为运行远程桌面网关角色，以允许你对跳转服务器的连接以及将从该服务器管理的目标服务器实施限制。 如果可能，还应安装 Hyper-v 角色并创建[个人虚拟](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759174(v=ws.11))机或其他每个用户的虚拟机，以便管理用户在跳转服务器上用于其任务。
+应将 "跳转服务器" 配置为运行远程桌面网关角色，以允许你对跳转服务器的连接以及将从该服务器管理的目标服务器实施限制。 如果可能，还应安装 Hyper-v 角色并创建 [个人虚拟](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759174(v=ws.11)) 机或其他每个用户的虚拟机，以便管理用户在跳转服务器上用于其任务。
 
 通过在跳转服务器上向管理用户提供每用户虚拟机，你可以为管理工作站提供物理安全性，管理用户可以在不使用时重置或关闭虚拟机。 如果你不想在相同的管理主机上安装 Hyper-v 角色和远程桌面网关角色，则可以将它们安装在不同的计算机上。
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: b11f7a65-ec7b-4c11-8dc4-d7cabb54cd94
 title: Active Directory 复制问题疑难解答
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 630ba90cd2e5c00753b707754d32530b38c8db8d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2ceb13e3729310e01063c0c5c3694806b1565363
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941616"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941487"
 ---
 # <a name="troubleshooting-active-directory-replication-problems"></a>Active Directory 复制问题疑难解答
 
@@ -25,9 +25,9 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 
 入站或出站复制失败会导致代表复制拓扑、复制计划、域控制器、用户、计算机、密码、安全组、组成员身份和组策略在域控制器之间不一致的 Active Directory 对象。 目录不一致和复制失败会导致操作失败或不一致的结果，具体取决于与该操作联系的域控制器，并可阻止应用组策略和访问控制权限。 Active Directory 域服务 (AD DS) 依赖于网络连接、名称解析、身份验证和授权、目录数据库、复制拓扑和复制引擎。 如果复制问题的根本原因不是很明显，则确定可能的原因可能会导致系统排除可能的原因。
 
-有关基于 UI 的工具以帮助监视复制和诊断错误，请参阅[Active Directory 复制状态工具](https://www.microsoft.com/download/details.aspx?id=30005)
+有关基于 UI 的工具以帮助监视复制和诊断错误，请参阅 [Active Directory 复制状态工具](https://www.microsoft.com/download/details.aspx?id=30005)
 
-有关介绍如何使用 Repadmin 工具解决 Active Directory 复制可用的综合文档，请执行下面的操作：请参阅[使用 Repadmin 进行 Active Directory 复制的监视和故障排除](https://go.microsoft.com/fwlink/?LinkId=122830)。
+有关介绍如何使用 Repadmin 工具解决 Active Directory 复制可用的综合文档，请执行下面的操作：请参阅 [使用 Repadmin 进行 Active Directory 复制的监视和故障排除](https://go.microsoft.com/fwlink/?LinkId=122830)。
 
 有关 Active Directory 复制的工作原理的信息，请参阅以下技术参考：
 
@@ -38,7 +38,7 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 
 理想情况下，红色 (错误) 和黄色 (警告) 目录服务事件日志中的事件将建议在源或目标域控制器上导致复制失败的特定约束。 如果事件消息为解决方案建议步骤，请尝试执行事件中所述的步骤。 Repadmin 工具和其他诊断工具还提供可帮助您解决复制故障的信息。
 
-有关使用 Repadmin 排查复制问题的详细信息，请参阅[使用 repadmin 进行 Active Directory 复制的监视和故障排除](https://go.microsoft.com/fwlink/?LinkId=122830)。
+有关使用 Repadmin 排查复制问题的详细信息，请参阅 [使用 repadmin 进行 Active Directory 复制的监视和故障排除](https://go.microsoft.com/fwlink/?LinkId=122830)。
 
 ## <a name="ruling-out-intentional-disruptions-or-hardware-failures"></a>排除有意中断或硬件故障
 
@@ -56,11 +56,11 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 
 ### <a name="firewall-configuration"></a>防火墙配置
 
-默认情况下，Active Directory 复制远程过程调用 (Rpc) 通过 RPC 终结点映射程序在端口135上通过 RPC 终结点映射程序 (RPCSS) 动态发生。 请确保正确配置具有高级安全性的 Windows 防火墙和其他防火墙以允许复制。 有关指定 Active Directory 复制和端口设置的端口的信息，请参阅[Microsoft 知识库中的文章 224196](https://go.microsoft.com/fwlink/?LinkId=22578)。
+默认情况下，Active Directory 复制远程过程调用 (Rpc) 通过 RPC 终结点映射程序在端口135上通过 RPC 终结点映射程序 (RPCSS) 动态发生。 请确保正确配置具有高级安全性的 Windows 防火墙和其他防火墙以允许复制。 有关指定 Active Directory 复制和端口设置的端口的信息，请参阅 [Microsoft 知识库中的文章 224196](https://go.microsoft.com/fwlink/?LinkId=22578)。
 
-有关 Active Directory 复制使用的端口的信息，请参阅[Active Directory 复制工具和设置](https://go.microsoft.com/fwlink/?LinkId=123774)。
+有关 Active Directory 复制使用的端口的信息，请参阅 [Active Directory 复制工具和设置](https://go.microsoft.com/fwlink/?LinkId=123774)。
 
-有关通过防火墙管理 Active Directory 复制的信息，请参阅[通过防火墙 Active Directory 复制](https://go.microsoft.com/fwlink/?LinkId=123775)。
+有关通过防火墙管理 Active Directory 复制的信息，请参阅 [通过防火墙 Active Directory 复制](https://go.microsoft.com/fwlink/?LinkId=123775)。
 
 ## <a name="responding-to-failure-of-an-outdated-server-running-windows-2000-server"></a>响应运行 Windows 2000 服务器的过时服务器的故障
 
@@ -70,7 +70,7 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 2. 强制删除 Active Directory 或重新安装操作系统。
 3. 从 Active Directory 中删除服务器元数据，以便无法恢复服务器对象。
 
-您可以使用脚本在大多数 Windows 操作系统上清理服务器元数据。 有关使用此脚本的信息，请参阅[删除 Active Directory 域控制器元数据](https://go.microsoft.com/fwlink/?LinkID=123599)。
+您可以使用脚本在大多数 Windows 操作系统上清理服务器元数据。 有关使用此脚本的信息，请参阅 [删除 Active Directory 域控制器元数据](https://go.microsoft.com/fwlink/?LinkID=123599)。
 
 默认情况下，删除的 NTDS 设置对象会在14天内自动恢复。 因此，如果您未删除服务器元数据 (使用 Ntdsutil 或前面提到的脚本执行元数据清理) ，则会在目录中恢复服务器元数据，从而导致复制尝试发生。 在这种情况下，由于无法与缺少的域控制器进行复制，将永久记录错误。
 
@@ -91,13 +91,13 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 
 1. 每天监视复制运行状况，或使用 Repadmin.exe 每日检索复制状态。
 2. 使用事件消息和本指南中所述的方法尝试及时解决任何报告的故障。 如果软件可能导致此问题，请先卸载该软件，然后再继续阅读其他解决方案。
-3. 如果任何已知的方法无法解决导致复制失败的问题，请从服务器中删除 AD DS，然后重新安装 AD DS。 有关重新安装 AD DS 的详细信息，请参阅[解除域控制器的授权](https://go.microsoft.com/fwlink/?LinkId=128290)。
+3. 如果任何已知的方法无法解决导致复制失败的问题，请从服务器中删除 AD DS，然后重新安装 AD DS。 有关重新安装 AD DS 的详细信息，请参阅 [解除域控制器的授权](https://go.microsoft.com/fwlink/?LinkId=128290)。
 4. 如果在服务器连接到网络时无法正常删除 AD DS，请使用以下方法之一来解决问题：
 
    - 在目录服务还原模式下强制 AD DS 删除 (DSRM) ，清理服务器元数据，然后重新安装 AD DS。
    - 重新安装操作系统，并重建域控制器。
 
-有关强制删除 AD DS 的详细信息，请参阅[强制删除域控制器](https://go.microsoft.com/fwlink/?LinkId=128291)。
+有关强制删除 AD DS 的详细信息，请参阅 [强制删除域控制器](https://go.microsoft.com/fwlink/?LinkId=128291)。
 
 ## <a name="using-repadmin-to-retrieve-replication-statustitle"></a>使用 Repadmin 检索复制状态</title>
 
@@ -126,7 +126,7 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 ### <a name="to-generate-a-repadmin-showrepl-spreadsheet-for-domain-controllers"></a>为域控制器生成 repadmin/showrepl 电子表格
 
 1. 以管理员身份打开命令提示符：在 "开始" 菜单上，右键单击 "命令提示符"，然后单击 "以管理员身份运行"。 如果出现 "用户帐户控制" 对话框，请提供企业管理员凭据（如果需要），然后单击 "继续"。
-2. 在命令提示符下，键入以下命令，然后按 ENTER：`repadmin /showrepl * /csv > showrepl.csv`
+2. 在命令提示符下，键入以下命令，然后按 ENTER： `repadmin /showrepl * /csv > showrepl.csv`
 3. 打开 Excel。
 4. 单击 "Office" 按钮，单击 "打开"，导航到 "showrepl.csv"，然后单击 "打开"。
 5. 隐藏或删除列 A 以及 "传输类型" 列，如下所示：
@@ -139,7 +139,7 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 8. 选择整个电子表格。 在 "数据" 选项卡上，单击 "筛选器"。
 9. 在 "上次成功时间" 列中，单击向下箭头，然后单击 "升序排序"。
 10. 在 "源 DC" 列中，单击筛选器向下箭头，指向 "文本筛选器"，然后单击 "自定义筛选器"。
-11. 在 "自定义自动筛选" 对话框中的 "显示行位置" 下，单击 "不包含"。 在相邻的文本框中，键入<userInput>del</userInput>以消除查看删除的域控制器的结果。
+11. 在 "自定义自动筛选" 对话框中的 "显示行位置" 下，单击 "不包含"。 在相邻的文本框中，键入 <userInput>del</userInput> 以消除查看删除的域控制器的结果。
 12. 对于 "上次失败时间" 列重复步骤11，但使用 "不等于" 值，然后键入值0。
 13. 解决复制失败问题。
 
@@ -149,11 +149,11 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 
 在应用程序或服务尝试操作时出现的事件消息和各种错误消息中会报告复制问题。 理想情况下，这些消息由监视应用程序收集，或在检索复制状态时收集。
 
-大多数复制问题都在目录服务事件日志中记录的事件消息中进行标识。 还可以在<system>repadmin/showrepl</system>命令的输出中以错误消息的形式标识复制问题。
+大多数复制问题都在目录服务事件日志中记录的事件消息中进行标识。 还可以在 <system>repadmin/showrepl</system> 命令的输出中以错误消息的形式标识复制问题。
 
 ### <a name="repadmin-showrepl-error-messages-that-indicate-replication-problems"></a>repadmin/showrepl 错误消息，指出复制问题
 
-若要确定 Active Directory 复制问题，请使用<system>repadmin/showrepl</system>命令，如前一部分中所述。 下表显示了此命令生成的错误消息，以及错误的根本原因以及提供错误解决方案的主题的链接。
+若要确定 Active Directory 复制问题，请使用 <system>repadmin/showrepl</system> 命令，如前一部分中所述。 下表显示了此命令生成的错误消息，以及错误的根本原因以及提供错误解决方案的主题的链接。
 
 |Repadmin 错误|根本原因|解决方案|
 | --- | --- | --- |
@@ -179,8 +179,8 @@ Active Directory 复制问题可具有多个不同的源。 例如，域名系�
 |2088 NTDS 复制 |AD DS 无法将源域控制器的 DNS 主机名解析为 IP 地址，但复制已成功。|解决复制 DNS 查找问题（事件 ID 1925、2087、2088）|
 |5805 Net Logon|计算机帐户无法进行身份验证，这通常是由同一计算机名的多个实例或不复制到每个域控制器的计算机名称导致的。|解决复制安全问题|
 
-有关复制概念的详细信息，请参阅[Active Directory 复制技术](https://go.microsoft.com/fwlink/?LinkId=41950)。
+有关复制概念的详细信息，请参阅 [Active Directory 复制技术](https://go.microsoft.com/fwlink/?LinkId=41950)。
 
 ## <a name="next-steps"></a>后续步骤
 
-有关详细信息，包括特定于错误代码的支持文章，请参阅支持文章：[如何排查常见 Active Directory 复制错误](https://support.microsoft.com/help/3108513)
+有关详细信息，包括特定于错误代码的支持文章，请参阅支持文章： [如何排查常见 Active Directory 复制错误](https://support.microsoft.com/help/3108513)

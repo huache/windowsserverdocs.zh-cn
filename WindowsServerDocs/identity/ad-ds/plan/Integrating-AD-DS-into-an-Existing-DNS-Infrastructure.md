@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4981b32f-741e-4afc-8734-26a8533ac530
 title: 将 AD DS 集成到现有的 DNS 基础结构
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 09c03933eda54a9b8723c1352cb35dba736fbe4a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6c9882af6af5901c34b689a0f3de91e1a158187e
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971014"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941047"
 ---
 # <a name="integrating-ad-ds-into-an-existing-dns-infrastructure"></a>将 AD DS 集成到现有的 DNS 基础结构
 
@@ -28,13 +28,13 @@ ms.locfileid: "87971014"
 
 -   配置每个地区性域的域控制器，以便托管与其 Active Directory 域相对应的 DNS 区域。
 
--   配置包含 Active Directory 林范围定位器记录 (的区域，_msdcs。*林名称*zone) 使用林范围的 DNS 应用程序目录分区复制到林中的每个 dns 服务器。
+-   配置包含 Active Directory 林范围定位器记录 (的区域，_msdcs。*林名称* zone) 使用林范围的 DNS 应用程序目录分区复制到林中的每个 dns 服务器。
 
     > [!NOTE]
-    > 如果 DNS 服务器服务与 Active Directory 域服务安装向导一起安装 (建议) 此选项，则会自动执行前面的所有任务。 有关详细信息，请参阅[部署 Windows Server 2008 林根级域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。
+    > 如果 DNS 服务器服务与 Active Directory 域服务安装向导一起安装 (建议) 此选项，则会自动执行前面的所有任务。 有关详细信息，请参阅 [部署 Windows Server 2008 林根级域](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))。
 
     > [!NOTE]
-    > AD DS 使用全林性定位器记录，使复制伙伴能够彼此查找，并使客户端能够查找全局编录服务器。 AD DS 在 _msdcs 中存储全林性定位器记录。*林名称*区域。 由于区域中的信息必须广泛使用，此区域将通过林范围的 DNS 应用程序目录分区复制到林中的所有 DNS 服务器。
+    > AD DS 使用全林性定位器记录，使复制伙伴能够彼此查找，并使客户端能够查找全局编录服务器。 AD DS 在 _msdcs 中存储全林性定位器记录。*林名称* 区域。 由于区域中的信息必须广泛使用，此区域将通过林范围的 DNS 应用程序目录分区复制到林中的所有 DNS 服务器。
 
 现有的 DNS 结构保持不变。 不需要移动任何服务器或区域。 只需从现有 DNS 层次结构创建到 Active Directory 集成的 DNS 区域的委托。
 

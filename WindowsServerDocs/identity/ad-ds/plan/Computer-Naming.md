@@ -1,17 +1,17 @@
 ---
 ms.assetid: f7002265-60fa-40b8-9dd7-4bf131d9320a
 title: 计算机命名
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 37f877b3165f5de31c8a26ae4000b8064362fa17
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 59b6be118a93881d5800e2f0032e0738c7e3bdfa
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947845"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941187"
 ---
 # <a name="computer-naming"></a>计算机命名
 
@@ -21,4 +21,4 @@ ms.locfileid: "87947845"
 
 如果计算机已有一个静态输入到 DNS 区域或通过集成 DNS/动态主机配置协议注册 (DHCP) 服务器服务，则计算机的 FQDN 与先前注册的名称不同。 计算机可以通过任一名称引用。
 
-有关 Active Directory 域服务 (AD DS) 中的命名约定的详细信息，请参阅[Active Directory 中的计算机、域、站点和 ou 的命名约定](https://support.microsoft.com/help/909264/)。
+有关 Active Directory 域服务 (AD DS) 中的命名约定的详细信息，请参阅 [Active Directory 中的计算机、域、站点和 ou 的命名约定](https://support.microsoft.com/help/909264/)。

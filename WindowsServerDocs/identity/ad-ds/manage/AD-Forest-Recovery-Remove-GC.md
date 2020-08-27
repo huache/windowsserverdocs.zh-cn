@@ -1,17 +1,17 @@
 ---
 title: AD 林恢复-删除全局编录
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 60087a62-11e6-4750-a70e-510f35315688
-ms.openlocfilehash: b05415e73faef73831cccbbd9785dd1cf2d1cf9e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e24449f2debdeeaf1e0ccdaf51a44d041c7dcc61
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969844"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941577"
 ---
 # <a name="ad-forest-recovery---removing-the-global-catalog"></a>AD 林恢复-删除全局编录
 
@@ -23,13 +23,13 @@ ms.locfileid: "87969844"
 
 ## <a name="to-remove-the-global-catalog-using-active-directory-sites-and-services"></a>使用 Active Directory 站点和服务删除全局编录
 
-1. 打开服务器管理器，单击 "**工具**"，然后单击 " **Active Directory 站点和服务**"。
-2. 在控制台树中，展开 "**站点**" 容器，然后选择包含目标服务器的相应站点。
-3. 展开 "**服务器**" 容器，然后展开要从中删除全局编录的 DC 的*服务器*对象。
-4. 右键单击 " **NTDS 设置**"，然后单击 "**属性**"。
-5. 清除 "**全局编录**" 复选框。
+1. 打开服务器管理器，单击 " **工具** "，然后单击 " **Active Directory 站点和服务**"。
+2. 在控制台树中，展开 " **站点** " 容器，然后选择包含目标服务器的相应站点。
+3. 展开 " **服务器** " 容器，然后展开要从中删除全局编录的 DC 的 *服务器* 对象。
+4. 右键单击 " **NTDS 设置**"，然后单击 " **属性**"。
+5. 清除 " **全局编录** " 复选框。
    ![删除 GC](media/AD-Forest-Recovery-Remove-GC/removegc1.png)
-6. 单击“**应用**”。
+6. 单击“应用”。
 
 ## <a name="to-remove-the-global-catalog-using-repadmin"></a>使用 Repadmin 删除全局编录
 

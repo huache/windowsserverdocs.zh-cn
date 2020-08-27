@@ -1,17 +1,17 @@
 ---
 ms.assetid: c54b544f-cc32-4837-bb2d-a8656b22f3de
 title: Introduction to Active Directory Replication and Topology Management Using Windows PowerShell (Level 100)
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 62ba9e757195861989fcd6d9eca395a47262aa7e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fd08814cd60f71f4ace9cfc0e374e80f54c6d89d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967774"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941497"
 ---
 # <a name="introduction-to-active-directory-replication-and-topology-management-using-windows-powershell-level-100"></a>Introduction to Active Directory Replication and Topology Management Using Windows PowerShell (Level 100)
 
@@ -27,7 +27,7 @@ Active Directory 的 Windows PowerShell 包含管理复制、站点、域和林�
 > -   Windows &reg; 8 中安装了 AD DS 和 AD LDS 的远程服务器管理工具。
 
 ## <a name="installing-the-active-directory-module-for-windows-powershell"></a>安装 Windows PowerShell 的 Active Directory 模块
-如果在运行 Windows Server 2012 的服务器上安装了 AD DS 服务器角色，则默认情况下将安装适用于 Windows PowerShell 的 Active Directory 模块。 无需添加服务器角色之外的任何其他步骤。 你还可以通过安装远程服务器管理工具将 Active Directory 模块安装在运行 Windows Server 2012 的服务器上，并且可以通过下载并安装[远程服务器管理工具 (RSAT) ](https://www.microsoft.com/download/details.aspx?id=28972)来将 Active Directory 模块安装在运行 windows 8 的计算机上。 有关安装步骤，请参阅 [说明](https://www.microsoft.com/download/details.aspx?id=28972)。
+如果在运行 Windows Server 2012 的服务器上安装了 AD DS 服务器角色，则默认情况下将安装适用于 Windows PowerShell 的 Active Directory 模块。 无需添加服务器角色之外的任何其他步骤。 你还可以通过安装远程服务器管理工具将 Active Directory 模块安装在运行 Windows Server 2012 的服务器上，并且可以通过下载并安装 [远程服务器管理工具 (RSAT) ](https://www.microsoft.com/download/details.aspx?id=28972)来将 Active Directory 模块安装在运行 windows 8 的计算机上。 有关安装步骤，请参阅 [说明](https://www.microsoft.com/download/details.aspx?id=28972)。
 
 ## <a name="scenarios-for-testing-windows-powershell-for-active-directory-replication-and-topology-management-cmdlets"></a>用于测试 Active Directory 的 Windows PowerShell 复制和拓扑管理 cmdlet 的方案
 以下方案是为了帮助管理员熟悉新的管理 cmdlet 而设计：
@@ -40,7 +40,7 @@ Active Directory 的 Windows PowerShell 包含管理复制、站点、域和林�
 
 ## <a name="lab-requirements"></a>实验室要求
 
--   两个 Windows Server 2012 域控制器： **DC1**和**DC2** ，属于 contoso.com 域并且位于该域中的公司站点。
+-   两个 Windows Server 2012 域控制器： **DC1** 和 **DC2** ，属于 contoso.com 域并且位于该域中的公司站点。
 
 ## <a name="view-domain-controllers-and-their-sites"></a>查看域控制器及其站点
 在此步骤中，你将使用 Windows PowerShell 的 Active Directory 模块查看此域的现有域控制器和复制拓扑。
@@ -51,7 +51,7 @@ Active Directory 的 Windows PowerShell 包含管理复制、站点、域和林�
 
 1.  在“DC1”**** 上，单击任务栏上的“Windows PowerShell”****。
 
-2.  键入以下命令：
+2.  键入下列命令：
 
     `Get-ADReplicationSite -Filter *`
 
@@ -139,7 +139,7 @@ Active Directory 的 Windows PowerShell 包含管理复制、站点、域和林�
 
     `Get-ADReplicationUpToDatenessVectorTable DC1`
 
-    这显示了林中每个域控制器的 **DC1** 观察到的最高 USN 列表。 **Server** 值参考了维护该表的服务器，在这种情况下服务器为 **DC1**。 **Partner** 值参考了（直接或间接）做出更改的复制伙伴。 UsnFilter 值是来自 Partner 参数的 **DC1** 观察到的最高 USN。 如果将新的域控制器添加到林中，则它将不会出现在**dc1**的表中，直到**dc1**接收到来自新域的更改。
+    这显示了林中每个域控制器的 **DC1** 观察到的最高 USN 列表。 **Server** 值参考了维护该表的服务器，在这种情况下服务器为 **DC1**。 **Partner** 值参考了（直接或间接）做出更改的复制伙伴。 UsnFilter 值是来自 Partner 参数的 **DC1** 观察到的最高 USN。 如果将新的域控制器添加到林中，则它将不会出现在 **dc1**的表中，直到 **dc1** 接收到来自新域的更改。
 
 #### <a name="to-view-the-up-to-dateness-vector-table-for-all-domain-controllers-in-a-domain"></a>查看域中所有域控制器的最新矢量表
 

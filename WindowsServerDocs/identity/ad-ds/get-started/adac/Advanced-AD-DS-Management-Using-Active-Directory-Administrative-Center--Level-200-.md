@@ -1,23 +1,23 @@
 ---
 ms.assetid: 4d21d27d-5523-4993-ad4f-fbaa43df7576
 title: Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 56792ce9c5a98e923627be4d98eba8404e046b46
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 567798afaa50604df737fe4ad119ff1cd13d31ae
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971134"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940377"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
 >适用于：Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本主题详细介绍了更新的 Active Directory 管理中心及其新的 Active Directory 回收站、细化密码策略，以及更详细的 Windows PowerShell 历史记录查看器，包括体系结构、常见任务示例和疑难解答信息。 有关简介，请参阅[&#40;级别 100&#41;Active Directory 管理中心增强功能简介](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)。
+本主题详细介绍了更新的 Active Directory 管理中心及其新的 Active Directory 回收站、细化密码策略，以及更详细的 Windows PowerShell 历史记录查看器，包括体系结构、常见任务示例和疑难解答信息。 有关简介，请参阅 [&#40;级别 100&#41;Active Directory 管理中心增强功能简介 ](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)。
 
 - [Active Directory 管理中心体系结构](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Arch)
 - [使用 Active Directory 管理中心启用和管理 Active Directory 回收站](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_EnableRecycleBin)
@@ -55,7 +55,7 @@ ms.locfileid: "87971134"
 - Active Directory 管理中心无法在单个操作中还原对象的子树。 例如，如果你删除带有嵌套的 OU、用户、组和计算机的 OU，则还原基本 OU 不会还原子对象。
 
     > [!NOTE]
-    > Active Directory 管理中心批处理还原操作*仅对选定内容中*的已删除对象进行 "最大努力"，因此在还原列表的子级之前对父对象进行排序。 在简单的测试用例中，可能会在单个操作中还原对象的子树。 但是，诸如包含部分树的选定内容，如包含某些已删除的父节点的树-树和某些已删除的父节点（例如，当父还原失败时跳过子对象）可能不会按预期方式工作。 为此，在还原父对象后，你应该始终通过独立操作还原对象的子树。
+    > Active Directory 管理中心批处理还原操作 *仅对选定内容中* 的已删除对象进行 "最大努力"，因此在还原列表的子级之前对父对象进行排序。 在简单的测试用例中，可能会在单个操作中还原对象的子树。 但是，诸如包含部分树的选定内容，如包含某些已删除的父节点的树-树和某些已删除的父节点（例如，当父还原失败时跳过子对象）可能不会按预期方式工作。 为此，在还原父对象后，你应该始终通过独立操作还原对象的子树。
 
 Active Directory 回收站需要 Windows Server 2008 R2 林功能级别，并且你必须是 Enterprise Admins 组的成员。 一旦启用，则不能禁用 Active Directory 回收站。 Active Directory 回收站将增大林中每个域控制器上的 Active Directory 数据库 (NTDS.DIT) 大小。 随着时间的推移，回收站使用的磁盘空间将继续增大，因为它保留对象及其所有属性数据。
 
@@ -103,7 +103,7 @@ Active Directory 管理中心人为地将从容器返回的默认对象数量限
 
 #### <a name="restoration"></a>还原
 
-##### <a name="filtering"></a>筛选
+##### <a name="filtering"></a>Filtering
 
 Active Directory 管理中心将提供强大的条件和筛选选项，你应该先熟悉它们，然后才能在实际还原中进行使用。 域会有意地在其生存期内删除许多对象。由于已删除对象的生存期可能为 180 天，因此你不能在发生意外时简单地还原所有对象。
 
@@ -116,11 +116,11 @@ Active Directory 管理中心将提供强大的条件和筛选选项，你应该
 - *ANR (不明确的名称解析-未在菜单中列出，但在 "筛选器" 框中键入内容时将使用它) *
 - 给定日期之间的最后修改时间
 - 对象是用户/inetorgperson/计算机/组/组织单位
-- “属性”
+- 名称
 - 删除时间
 - 最后一个已知的父对象
 - 类型
-- 描述
+- 说明
 - 城市
 - 国家/地区
 - 系
@@ -154,7 +154,7 @@ Active Directory 管理中心将提供强大的条件和筛选选项，你应该
 
 ![高级 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreSingle.gif)
 
-单击 "**还原到 ...** " 以更改还原位置。 如果已删除对象的父容器也被删除，但你不希望还原父容器，这会很有用。
+单击 " **还原到 ...** " 以更改还原位置。 如果已删除对象的父容器也被删除，但你不希望还原父容器，这会很有用。
 
 ![高级 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreToSingle.gif)
 
@@ -181,7 +181,7 @@ Active Directory 管理中心将提供强大的条件和筛选选项，你应该
 
 请考虑管理员意外删除包含子 OU 和用户的销售 OU 的情况。
 
-首先，观察所有已删除用户的**最后一个已知父**属性的值及其读取方式 **OU = Sales\0ADEL：*<guid + 已删除对象容器可分辨名称> * * *：
+首先，观察所有已删除用户的 **最后一个已知父** 属性的值及其读取方式 **OU = Sales\0ADEL：*<guid + 已删除对象容器可分辨名称> * * *：
 
 ![高级 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParent.gif)
 
@@ -257,7 +257,7 @@ Set-ADFineGrainedPasswordPolicy
 
 ![高级 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPP.gif)
 
-Active Directory 管理中心还允许你为特定用户查找生成的已应用 FGPP 组。 右键单击任何用户，然后单击 "**查看生成的密码设置 ...** "，以打开通过隐式或显式分配应用于该用户的*密码设置*页面：
+Active Directory 管理中心还允许你为特定用户查找生成的已应用 FGPP 组。 右键单击任何用户，然后单击 " **查看生成的密码设置 ...** "，以打开通过隐式或显式分配应用于该用户的 *密码设置* 页面：
 
 ![高级 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RSOP.png)
 
@@ -265,7 +265,7 @@ Active Directory 管理中心还允许你为特定用户查找生成的已应用
 
 ![高级 AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPPSettings.gif)
 
-此处未显示隐式 FGPP 赋值;为此，必须使用 "**查看生成的密码设置 ...** " 选项。
+此处未显示隐式 FGPP 赋值;为此，必须使用 " **查看生成的密码设置 ...** " 选项。
 
 ## <a name="using-the-active-directory-administrative-center-windows-powershell-history-viewer"></a><a name="BKMK_HistoryViewer"></a>使用 Active Directory 管理中心 Windows PowerShell 历史记录查看器
 
@@ -444,7 +444,7 @@ Active Directory 管理中心现在包含内置日志记录，作为跟踪配置
 
 在没有可用 Active Directory Web 服务实例时显示的错误如下：
 
-|错误|操作|
+|错误|Operation|
 | --- | --- |
 |“无法连接到任何域。 请在连接可用时刷新或重试”|在 Active Directory 管理中心应用程序启动时显示|
 |"找不到 *<NetBIOS domain name>* 运行 Active Directory Web 服务 (ADWS) " 的域中的可用服务器|当尝试在 Active Directory 管理中心应用程序中选择域节点时显示|

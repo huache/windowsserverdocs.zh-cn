@@ -1,17 +1,17 @@
 ---
 ms.assetid: 19feca0e-a6d0-4d27-93b0-cb44f8c26484
 title: 委派帐户 OU 和资源 OU 管理
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a73089ce50b90689460f347c2d4f5587ac11c3cb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 00a8eec9936b03fffa9718bc31bfb05e733d1022
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947769"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941097"
 ---
 # <a name="delegating-administration-of-account-ous-and-resource-ous"></a>委派帐户 OU 和资源 OU 管理
 
@@ -28,7 +28,7 @@ ms.locfileid: "87947769"
 
 下表列出并描述了可以在帐户 OU 结构中创建的可能的子 Ou。
 
-|OU|目的|
+|OU|用途|
 |------|-----------|
 |用户|包含非管理员用户帐户。|
 |服务帐户|某些需要访问网络资源的服务以用户帐户的身份运行。 将创建此 OU，以便将用户 OU 中包含的用户帐户中的服务用户帐户分隔开来。 此外，将不同类型的用户帐户放在不同的 Ou 中，可以根据特定的管理要求对其进行管理。|

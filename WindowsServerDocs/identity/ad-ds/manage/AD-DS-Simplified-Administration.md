@@ -1,17 +1,17 @@
 ---
 ms.assetid: f74eec9a-2485-4ee0-a0d8-cce01250a294
 title: AD DS 简化管理
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 61961acf9fc1c858fddb4da70b4899e229ec6a3d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5fec303bb5681147d1a2d9ab008ad40ac6a1b52c
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956974"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940047"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS 简化管理
 
@@ -30,7 +30,7 @@ AD DS 简化管理是对域部署的重构。
 - Windows PowerShell 的 Active Directory 模块现在包括用于复制拓扑管理、动态访问控制以及其他操作的 cmdlet
 - Windows Server 2012 林功能级别不实现新功能，只有一部分新 Kerberos 功能需要域功能级别，这使管理员无需频繁地需要相似的域控制器环境
 - 添加对虚拟化域控制器的完全支持，以包括自动化部署和回滚保护
-   - 有关虚拟化域控制器的详细信息，请参阅[Active Directory 域服务 &#40;AD DS&#41; 虚拟化 &#40;级别 100&#41;的简介](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
+   - 有关虚拟化域控制器的详细信息，请参阅 [Active Directory 域服务 &#40;AD DS&#41; 虚拟化 &#40;级别 100&#41;的简介 ](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
 
 此外，还有很多管理和维护方面的改进：
 

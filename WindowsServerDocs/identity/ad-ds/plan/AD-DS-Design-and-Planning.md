@@ -1,17 +1,17 @@
 ---
 ms.assetid: a91339ef-6ad4-445f-8ecc-a95fbcc04296
 title: AD DS 设计和规划
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: b735852f8e2428c3d6375a3168f204e403a461f5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 935ed41c8c821621df829a87d561a2decadd8b07
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941453"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941277"
 ---
 # <a name="ad-ds-design-and-planning"></a>AD DS 设计和规划
 
@@ -27,7 +27,7 @@ ms.locfileid: "87941453"
 
 尽管本指南中所述的策略适用于几乎所有服务器操作系统部署，但它们已专门针对包含少于100000个用户和少于1000个站点的环境进行测试和验证，其网络连接的网络连接最低为每秒 28.8 kbps (Kbps) 。 如果你的环境不满足这些条件，请考虑使用在更复杂的环境中部署 AD DS 的咨询公司。
 
-有关测试 AD DS 部署过程的详细信息，请参阅[测试和验证部署过程](/previous-versions/windows/it-pro/windows-server-2003/cc772722(v=ws.10))一文。
+有关测试 AD DS 部署过程的详细信息，请参阅 [测试和验证部署过程](/previous-versions/windows/it-pro/windows-server-2003/cc772722(v=ws.10))一文。
 
 ## <a name="in-this-guide"></a>本指南包含的内容
 

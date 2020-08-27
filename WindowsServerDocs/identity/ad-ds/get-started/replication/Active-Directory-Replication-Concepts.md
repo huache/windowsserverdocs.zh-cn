@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4cc9c16c-1928-4dce-a3a8-6229be28eb65
 title: Active Directory 复制概念
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c1392d813497980d6060cc22fe35afa17c4043e0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 403a8be3d6b7fc6330395bf6e4d20141e01b76ba
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969944"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940317"
 ---
 # <a name="active-directory-replication-concepts"></a>Active Directory 复制概念
 
@@ -27,7 +27,7 @@ ms.locfileid: "87969944"
 
 -   [子网](#BKMK_4)
 
--   [网站](#BKMK_5)
+-   [站点](#BKMK_5)
 
 -   [站点链接](#BKMK_6)
 
@@ -75,10 +75,10 @@ KCC 是在所有域控制器上运行的内置进程，并为 Active Directory �
 ## <a name="failover-functionality"></a><a name="BKMK_3"></a>故障转移功能
 站点确保复制是围绕网络故障和脱机域控制器进行路由的。 KCC 按指定的时间间隔运行，以调整 AD DS 中发生的更改（例如，添加新域控制器和创建新站点）的复制拓扑。 KCC 检查现有连接的复制状态，以确定是否有任何连接不起作用。 如果某个连接由于域控制器故障而不工作，则 KCC 会自动建立与其他复制伙伴的临时连接 (如果可用) 确保发生复制。 如果站点中的所有域控制器都不可用，则 KCC 会自动在不同站点的域控制器之间创建复制连接。
 
-## <a name="subnet"></a><a name="BKMK_4"></a>子网
+## <a name="subnet"></a><a name="BKMK_4"></a>个子
 子网是一段 TCP/IP 网络，其中的一组逻辑 IP 地址被分配。 子网通过一种方式对计算机进行分组，以便在网络上确定其物理邻近性。 AD DS 中的子网对象标识用于将计算机映射到站点的网络地址。
 
-## <a name="site"></a><a name="BKMK_5"></a>网站
+## <a name="site"></a><a name="BKMK_5"></a>站点
 站点 Active Directory 是指一个或多个对象，这些对象代表一个或多个具有高度可靠和快速网络连接的 TCP/IP 子网。 管理员可以使用站点信息配置 Active Directory 访问和复制，以优化物理网络的使用情况。 站点对象与一组子网相关联，并且林中的每个域控制器都与 Active Directory 站点关联（根据其 IP 地址）。 站点可以托管多个域中的域控制器，并且一个域可以表示在多个站点中。
 
 ## <a name="site-link"></a><a name="BKMK_6"></a>站点链接
@@ -104,7 +104,7 @@ KCC 是在所有域控制器上运行的内置进程，并为 Active Directory �
 ## <a name="site-link-transitivity"></a><a name="BKMK_8"></a>站点链接传递性
 默认情况下，所有站点链接都是可传递的或 "桥接"。 当桥接站点链接并且计划重叠时，KCC 会创建复制连接，以确定站点之间的域控制器复制伙伴，其中的站点不直接通过站点链接进行连接，而是通过一组常用站点以可传递方式连接的。 这意味着你可以通过组合站点链接将任何站点连接到任何其他站点。
 
-通常，对于完全路由的网络，除非要控制复制更改的流，否则不需要创建任何站点链接桥。 如果你的网络未完全路由，则应该创建站点链接桥，以避免复制尝试失败。 特定传输的所有站点链接都隐式属于该传输的单一站点链接桥。 站点链接的默认桥接会自动发生，并且没有 Active Directory 对象表示该桥。 "**桥接所有站点链接**" 设置，在 "IP" 和 "简单邮件传输协议" 的属性中， (SMTP) 站点间传输容器，实现自动站点链接桥接。
+通常，对于完全路由的网络，除非要控制复制更改的流，否则不需要创建任何站点链接桥。 如果你的网络未完全路由，则应该创建站点链接桥，以避免复制尝试失败。 特定传输的所有站点链接都隐式属于该传输的单一站点链接桥。 站点链接的默认桥接会自动发生，并且没有 Active Directory 对象表示该桥。 " **桥接所有站点链接** " 设置，在 "IP" 和 "简单邮件传输协议" 的属性中， (SMTP) 站点间传输容器，实现自动站点链接桥接。
 
 > [!NOTE]
 > AD DS 的未来版本中将不支持 SMTP 复制;因此，不建议在 SMTP 容器中创建站点链接对象。
@@ -115,7 +115,7 @@ KCC 是在所有域控制器上运行的内置进程，并为 Active Directory �
 ## <a name="universal-group-membership-caching"></a><a name="BKMK_10"></a>通用组成员身份缓存
 通用组成员身份缓存允许域控制器缓存用户的通用组成员身份信息。 可以通过使用 "Active Directory 站点和服务" 管理单元，启用运行 Windows Server 2008 的域控制器来缓存通用组成员身份。
 
-启用通用组成员身份缓存后，就不需要在域中的每个站点上都需要全局编录服务器，这会将网络带宽的使用降到最低，因为域控制器不需要复制林中的所有对象。 它还可以减少登录时间，因为身份验证域控制器并不总是需要访问全局编录即可获取通用组成员身份信息。 有关何时使用通用组成员身份缓存的详细信息，请参阅[规划全局编录服务器的放置](../../../ad-ds/plan/Planning-Global-Catalog-Server-Placement.md)。
+启用通用组成员身份缓存后，就不需要在域中的每个站点上都需要全局编录服务器，这会将网络带宽的使用降到最低，因为域控制器不需要复制林中的所有对象。 它还可以减少登录时间，因为身份验证域控制器并不总是需要访问全局编录即可获取通用组成员身份信息。 有关何时使用通用组成员身份缓存的详细信息，请参阅 [规划全局编录服务器的放置](../../../ad-ds/plan/Planning-Global-Catalog-Server-Placement.md)。
 
 
 

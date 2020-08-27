@@ -1,17 +1,17 @@
 ---
 ms.assetid: 40bc24b1-2e7d-4e77-bd0f-794743250888
 title: SPN 和 UPN 唯一性
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c3e2cac6cb4d7cb5e76c4c59bfa2b8431f2401c6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cafbc577bd025fc30f409385f51f6981fb3ab81d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972374"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941377"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN 和 UPN 唯一性
 
@@ -39,7 +39,7 @@ ms.locfileid: "87972374"
 |UPN 唯一性|与基于 Windows Azure AD 的服务（如 Office 365）进行的本地 AD 帐户重复 Upn 中断同步。|
 |SPN 唯一性|Kerberos 需要用于相互身份验证的 Spn。  重复 Spn 导致身份验证失败。|
 
-有关 Upn 和 Spn 的唯一性要求的详细信息，请参阅[唯一性约束](/openspecs/windows_protocols/ms-adts/3c154285-454c-4353-9a99-fb586e806944)。
+有关 Upn 和 Spn 的唯一性要求的详细信息，请参阅 [唯一性约束](/openspecs/windows_protocols/ms-adts/3c154285-454c-4353-9a99-fb586e806944)。
 
 ## <a name="symptoms"></a>症状
 错误代码8467或8468，或者其十六进制、符号或字符串等效项记录在目录服务事件日志中的各种屏幕上，事件 ID 为2974。 仅在以下情况下，才会阻止创建重复 UPN 或 SPN 的尝试：
@@ -171,19 +171,19 @@ DN: CN=Dianne Hunt2\0ADEL:dd3ab8a4-3005-4f2f-814f-d6fc54a1a1c0,CN=Deleted Object
 ```
 
 > [!TIP]
-> repadmin.exe 中以前未记录的 **/deleted**参数用于在结果集中包含已删除的对象
+> repadmin.exe 中以前未记录的 **/deleted** 参数用于在结果集中包含已删除的对象
 
 ### <a name="using-global-search"></a>使用全局搜索
 
 -   打开 Active Directory 管理中心并导航到 "**全局搜索**"
 
--   选择 "**转换为 LDAP** " 单选按钮
+-   选择 " **转换为 LDAP** " 单选按钮
 
--   类型** (userPrincipalName =*ConflictingUPN*) **
+-   类型 ** (userPrincipalName =*ConflictingUPN*) **
 
-    -   将***ConflictingUPN***替换为发生冲突的实际 UPN
+    -   将 ***ConflictingUPN*** 替换为发生冲突的实际 UPN
 
--   选择**应用**
+-   选择 **应用**
 
 ![SPN 和 UPN 唯一性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig13_GlobalSearch.gif)
 
@@ -209,7 +209,7 @@ Get-ADObject -LdapFilter "(userPrincipalName=dhunt@blue.contoso.com)" -IncludeDe
 
 **图 SEQ 图 \\ \* 阿拉伯8在添加重复 SPN 时，ADSIEdit 中显示的错误消息**
 
-目录服务事件日志中记录的是**ActiveDirectory_DomainService**事件 ID **2974**。
+目录服务事件日志中记录的是 **ActiveDirectory_DomainService** 事件 ID **2974**。
 
 ```
 Operation failed. Error code: 0x21c7
@@ -263,7 +263,7 @@ servicePrincipalName Value=<SPN>
 
 -   **如果 DC！ = GC**
 
-    -   Offbox 调用**需要**但并不重要，也就是说，这是一项尽力的唯一性检查
+    -   Offbox 调用 **需要** 但并不重要，也就是说，这是一项尽力的唯一性检查
 
         -   仅当找不到 GC 时，才检查本地 DIT
 
@@ -327,7 +327,7 @@ servicePrincipalName Value=<SPN>
 > -   此模块没有单独的实验室指南。
 > -   **试用此**活动本质上是自由格式的活动，可用于浏览实验室环境中的课程资料。
 > -   您可以选择执行提示或退出脚本，并提供您自己的活动。
-> -   虽然并非所有部分都有**尝试使用此**提示，但仍建议您在实验室中浏览相应的课程内容。
+> -   虽然并非所有部分都有 **尝试使用此** 提示，但仍建议您在实验室中浏览相应的课程内容。
 
 试验 SPN 和 UPN 的唯一性。  按照这些提示操作，或完成自己的提示。
 
@@ -349,7 +349,7 @@ servicePrincipalName Value=<SPN>
 
 **同时**
 
-1.  向教室讲师验证是否可以在 Active Directory 管理中心中启用*[AD 回收站](../../get-started/adac/advanced-ad-ds-management-using-active-directory-administrative-center--level-200-.md#BKMK_EnableRecycleBin)*。  如果是这样，请转到下一步。
+1.  向教室讲师验证是否可以在 Active Directory 管理中心中启用 *[AD 回收站](../../get-started/adac/advanced-ad-ds-management-using-active-directory-administrative-center--level-200-.md#BKMK_EnableRecycleBin)* 。  如果是这样，请转到下一步。
 
 2.  在用户帐户上填充 UPN
 

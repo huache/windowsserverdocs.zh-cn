@@ -1,17 +1,17 @@
 ---
 ms.assetid: cd70b0aa-0a67-4966-a041-4dd3f302c98b
 title: 创建 DNS 基础结构设计
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: b96f0b5fd47fc4a7d4d1fe6d68fcfa1543108d3f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8aaffc866b2e5e9c52a0d448d8cdaf929f4ecccc
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947855"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941177"
 ---
 # <a name="creating-a-dns-infrastructure-design"></a>创建 DNS 基础结构设计
 
@@ -21,15 +21,15 @@ ms.locfileid: "87947855"
 
 根据你的组织是否已有 DNS 服务器服务或正在部署新的 DNS 服务器服务，设计 DNS 以支持 AD DS 的过程会有所不同：
 
-- 如果你已有现有的 DNS 基础结构，则必须将 Active Directory 命名空间集成到该环境中。 有关详细信息，请参阅[将 AD DS 集成到现有的 DNS 基础结构](../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)。
-- 如果没有现成的 DNS 基础结构，则必须设计和部署新的 DNS 基础结构来支持 AD DS。 有关详细信息，请参阅[部署域名系统 (DNS) ](/previous-versions/windows/it-pro/windows-server-2003/cc780661(v=ws.10))。
+- 如果你已有现有的 DNS 基础结构，则必须将 Active Directory 命名空间集成到该环境中。 有关详细信息，请参阅 [将 AD DS 集成到现有的 DNS 基础结构](../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)。
+- 如果没有现成的 DNS 基础结构，则必须设计和部署新的 DNS 基础结构来支持 AD DS。 有关详细信息，请参阅 [部署域名系统 (DNS) ](/previous-versions/windows/it-pro/windows-server-2003/cc780661(v=ws.10))。
 
-如果你的组织具有现有的 DNS 基础结构，则必须确保了解你的 DNS 基础结构将如何与 Active Directory 命名空间进行交互。 要使工作表可以帮助你记录现有 DNS 基础结构的设计，请从[Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608)下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并 ( # A1) 打开 "DNS 清单"。
+如果你的组织具有现有的 DNS 基础结构，则必须确保了解你的 DNS 基础结构将如何与 Active Directory 命名空间进行交互。 要使工作表可以帮助你记录现有 DNS 基础结构的设计，请从 [Windows Server 2003 部署工具包的作业帮助](https://microsoft.com/download/details.aspx?id=9608) 下载 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip，并 ( # A1) 打开 "DNS 清单"。
 
 > [!NOTE]
-> 除了 IP 版本 4 (IPv4) 地址，Windows Server 还支持 IP 版本 6 (IPv6) 地址。 要使工作表在记录当前 DNS 结构的递归名称解析方法时帮助你列出 IPv6 地址，请参阅[附录 a： DNS 清单](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)。
+> 除了 IP 版本 4 (IPv4) 地址，Windows Server 还支持 IP 版本 6 (IPv6) 地址。 要使工作表在记录当前 DNS 结构的递归名称解析方法时帮助你列出 IPv6 地址，请参阅 [附录 a： DNS 清单](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)。
 
-在设计 DNS 基础结构以支持 AD DS 之前，请阅读有关 DNS 层次结构、DNS 名称解析过程以及 DNS 如何支持 AD DS 的信息。 有关 DNS 层次结构和名称解析过程的详细信息，请参阅[Dns 技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc779926(v=ws.10))。 有关 DNS 如何支持 AD DS 的详细信息，请参阅[Active Directory 技术参考的 Dns 支持](/previous-versions/windows/it-pro/windows-server-2003/cc781627(v=ws.10))。
+在设计 DNS 基础结构以支持 AD DS 之前，请阅读有关 DNS 层次结构、DNS 名称解析过程以及 DNS 如何支持 AD DS 的信息。 有关 DNS 层次结构和名称解析过程的详细信息，请参阅 [Dns 技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc779926(v=ws.10))。 有关 DNS 如何支持 AD DS 的详细信息，请参阅 [Active Directory 技术参考的 Dns 支持](/previous-versions/windows/it-pro/windows-server-2003/cc781627(v=ws.10))。
 
 ## <a name="in-this-section"></a>本节内容
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: aac117a7-aa7a-4322-96ae-e3cc22ada036
 title: 管理 RID 颁发
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 4d3e242bf151650144f8350a4665196672425530
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fdf4d5c89dfb8d7c4237551a8a67a9e4f63991a7
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943601"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940547"
 ---
 # <a name="managing-rid-issuance"></a>管理 RID 颁发
 
@@ -23,7 +23,7 @@ ms.locfileid: "87943601"
 
 - [解决 RID 颁发问题](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Tshoot)
 
-有关详细信息，请参阅[AskDS 博客](/archive/blogs/askds/managing-rid-issuance-in-windows-server-2012)。
+有关详细信息，请参阅 [AskDS 博客](/archive/blogs/askds/managing-rid-issuance-in-windows-server-2012)。
 
 ## <a name="managing-rid-issuance"></a><a name="BKMK_Manage"></a>管理 RID 颁发
 默认情况下，一个域具有大约十亿个安全主体（例如用户、组和计算机）的容量。 当然，没有哪个域具有这么多经常使用的对象。 但是，Microsoft 客户支持发现了如下案例：
@@ -109,7 +109,7 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
 
 5. 确保“DN”**** 为空。
 
-6. 在 "**编辑项属性**" 中键入：
+6. 在 " **编辑项属性**" 中键入：
 
     ```
     SidCompatibilityVersion
@@ -200,7 +200,7 @@ CN = RID Manager $，CN = System，DC =*<domain>*
     ![RID 颁发](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeilingSuccess.png)
 
 ### <a name="other-rid-fixes"></a>其他 RID 修补程序
-以前的 Windows Server 操作系统在缺少 rIDSetReferences 属性时有 RID 池泄露问题。 若要在运行 Windows Server 2008 R2 的域控制器上解决此问题，请从[KB 2618669](https://support.microsoft.com/kb/2618669)安装修补程序。
+以前的 Windows Server 操作系统在缺少 rIDSetReferences 属性时有 RID 池泄露问题。 若要在运行 Windows Server 2008 R2 的域控制器上解决此问题，请从 [KB 2618669](https://support.microsoft.com/kb/2618669)安装修补程序。
 
 ### <a name="unfixed-rid-issues"></a>未解决的 RID 问题
 在历史上，帐户创建失败时会发生 RID 泄露；在创建帐户时，虽然失败，但仍将用尽一个 RID。 常见示例是使用不符合复杂性的密码创建一个用户。
@@ -241,7 +241,7 @@ RID 颁发中的所有日志记录均发生在系统事件日志中的源 Direct
 
 3. 返回的错误是否专门提及 RID，但除此之外并不具体？ 例如，“Windows 无法创建对象，因为目录服务无法分配相对标识符。”
 
-    1. 检查域控制器上的系统事件日志中是否有 "旧版" () RID[池请求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee406152(v=ws.10))中详细介绍的 Windows Server 2012 rid 事件 (16642、16643、16644、16645、16656) 。
+    1. 检查域控制器上的系统事件日志中是否有 "旧版" () RID [池请求](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee406152(v=ws.10)) 中详细介绍的 Windows Server 2012 rid 事件 (16642、16643、16644、16645、16656) 。
 
     2. 检查域控制器和 RID 主机上的系统事件中新的块指示事件，它们在本主题下文中有详细说明（16655、16656、16657）。
 

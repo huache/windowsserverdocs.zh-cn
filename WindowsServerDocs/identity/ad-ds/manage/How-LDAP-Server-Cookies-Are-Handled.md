@@ -1,17 +1,17 @@
 ---
 ms.assetid: 3acaa977-ed63-4e38-ac81-229908c47208
 title: 如何处理 LDAP 服务器 Cookie
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 077c40d6ed61da1d36bdfd792af41ea5067421fc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7e01afeeef7bb9751b4c23839569a9395fbd9c51
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943591"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941347"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>如何处理 LDAP 服务器 Cookie
 
@@ -26,7 +26,7 @@ ms.locfileid: "87943591"
 这些容量和逻辑问题促使 Microsoft LDAP 开发人员创建称为 "分页查询" 的 LDAP 扩展。 它正在实现一个 LDAP 控件，用于将一个大型查询分解成多个较小的结果集块。 它已经是作为 [RFC 2696](http://www.ietf.org/rfc/rfc2696)的 RFC 标准。
 
 ## <a name="cookie-handling-on-client"></a>在客户端上处理的 Cookie
-分页查询方法使用由客户端或通过[LDAP 策略](https://support.microsoft.com/kb/315071/en-us) ( "MaxPageSize" ) 设置的页面大小。 客户端始终需要通过发送 LDAP 控件来启用分页。
+分页查询方法使用由客户端或通过 [LDAP 策略](https://support.microsoft.com/kb/315071/en-us) ( "MaxPageSize" ) 设置的页面大小。 客户端始终需要通过发送 LDAP 控件来启用分页。
 
 
 处理包含多个结果的查询时，在某一时刻会达到允许的最大对象数。 LDAP 服务器将打包响应消息，并添加包含稍后继续搜索所需信息的 Cookie。
@@ -72,7 +72,7 @@ LDAP 服务器不允许针对池中的每个 LDAP 连接有超过 MaxResultSetsP
 > "DSID" 背后的十六进制值将因 LDAP 服务器二进制文件的内部版本而异。
 
 ## <a name="reporting-on-the-cookie-pool"></a>关于 Cookie 池的报告
-LDAP 服务器能够通过[NTDS 诊断密钥](https://support.microsoft.com/kb/314980/en-us)中的类别 "16 LDAP 接口" 记录事件。 如果将此类别设置为 "2"，则可以获得以下事件：
+LDAP 服务器能够通过 [NTDS 诊断密钥](https://support.microsoft.com/kb/314980/en-us)中的类别 "16 LDAP 接口" 记录事件。 如果将此类别设置为 "2"，则可以获得以下事件：
 
 ```
 Log Name:      Directory Service
@@ -125,7 +125,7 @@ The client should consider a more efficient search filter.  The limit for Maximu
 
 如果你在使用 250MB 或更大容量的池时仍看到事件 2899，则你很可能正在使用许多客户端非常频繁地查询大量对象并返回这些对象。 使用 [Active Directory 数据收集器集](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond)可以帮你查找使 LDAP 服务器繁忙的重复性分页查询。 这些查询全部显示，其中包含与所用页面大小匹配的 "返回的条目数"。
 
-如果可能，你应查看应用程序设计，并以较低的频率、数据量和/或更少的客户端实例查询此数据来实现其他方法。如果你有权访问源代码的应用程序，本[指南可帮助](/previous-versions/ms808539(v=msdn.10))你了解应用程序访问 ad 的最佳方式。
+如果可能，你应查看应用程序设计，并以较低的频率、数据量和/或更少的客户端实例查询此数据来实现其他方法。如果你有权访问源代码的应用程序，本  [指南可帮助](/previous-versions/ms808539(v=msdn.10)) 你了解应用程序访问 ad 的最佳方式。
 
 如果不能更改查询行为，一种方法也会添加所需命名上下文的更多复制实例，并重新分发客户端，并最终降低单个 LDAP 服务器上的负载。
 

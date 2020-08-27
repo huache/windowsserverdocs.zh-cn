@@ -1,17 +1,17 @@
 ---
 ms.assetid: 65ed5956-6140-4e06-8d99-8771553637d1
 title: 降级域控制器和域（级别 200）
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: d9be9555c3e72b13fb86509289ee7459f4d1b687
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5a450d37c3dcd5f92e6685c1a7f0393d764b8e55
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959385"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940957"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>降级域控制器和域
 
@@ -52,7 +52,7 @@ ms.locfileid: "87959385"
 
    ![服务器管理器-所有服务器-删除角色和功能](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection.png)
 
-ServerManager cmdlet **Uninstall 和 Uninstall**会阻止你删除 AD DS**角色，直到**降级域控制器。
+ServerManager cmdlet **Uninstall 和 Uninstall** 会阻止你删除 AD DS **角色，直到** 降级域控制器。
 
 ### <a name="server-selection"></a>服务器选择
 
@@ -95,7 +95,7 @@ Uninstall-windowsfeature
 
 你可在“凭据”**** 页上配置降级选项。 从以下列表提供执行降级所需的凭据：
 
-* 降级其他域控制器需要 Domain Admin 凭据。 选择 **"强制删除此域控制器**" 将降级域控制器，且不会从 Active Directory 删除域控制器对象的元数据。
+* 降级其他域控制器需要 Domain Admin 凭据。 选择 **"强制删除此域控制器** " 将降级域控制器，且不会从 Active Directory 删除域控制器对象的元数据。
 
    > [!WARNING]
    > 如果域控制器可以联系其他域控制器，则不要选择此选项，而且*还没有任何合理的方法*可解决这种网络问题。 强制降级会将 Active Directory 中已丢弃的元数据保留在林中的其余域控制器上。 此外，该域控制器上所有未复制的更改（如密码或新用户帐户）都将永久丢失。 已丢弃的元数据是 AD DS、Exchange、SQL 和其他软件的大部分 Microsoft 客户支持案例的根本原因。
@@ -129,7 +129,7 @@ Uninstall-windowsfeature
 
 ![Active Directory 域服务配置向导-凭据删除 DNS 和应用程序分区](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ReviewOptions.png)
 
-根据之前选择“凭据”**** 页面上的“域中的最后一个域控制器”****，将出现“删除选项”**** 页。 此页面使你可以配置其他删除选项。 选择 "**忽略区域的最后一个 DNS 服务器**"、"**删除应用程序分区**" 和 "**删除 DNS 委派**" 以启用 "**下一步**" 按钮。
+根据之前选择“凭据”**** 页面上的“域中的最后一个域控制器”****，将出现“删除选项”**** 页。 此页面使你可以配置其他删除选项。 选择 " **忽略区域的最后一个 DNS 服务器**"、" **删除应用程序分区**" 和 " **删除 DNS 委派** " 以启用 " **下一步** " 按钮。
 
 该选项仅在适用于此域控制器时出现。 例如，如果此服务器没有 DNS 委派，则该复选框将不会显示。
 
@@ -148,7 +148,7 @@ Uninstall-windowsfeature
 
 ![Active Directory 域服务配置向导-凭据新的管理员密码](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_NewAdminPwd.png)
 
-当降级完成且计算机成为域成员服务器或工作组计算机后，"**新建管理员密码**" 页将要求你提供内置本地计算机的管理员帐户的密码。
+当降级完成且计算机成为域成员服务器或工作组计算机后，" **新建管理员密码** " 页将要求你提供内置本地计算机的管理员帐户的密码。
 
 **Uninstall-ADDSDomainController** cmdlet 和参数遵循与服务器管理器相同的默认值（如果未指定）。
 
@@ -157,7 +157,7 @@ Uninstall-windowsfeature
 * 如果*未指定*为参数，则 cmdlet 将提示你输入并确认掩蔽的密码。 以交互方式运行 cmdlet 时，这是首选用法。
 * 如果*已使用值*指定，那么该值必须是一个安全字符串。 以交互方式运行 cmdlet 时，这不是首选用法。
 
-例如，你可以通过使用**读取主机**cmdlet 来提示用户输入安全字符串来手动提示输入密码。
+例如，你可以通过使用 **读取主机** cmdlet 来提示用户输入安全字符串来手动提示输入密码。
 
 ```
 -localadministratorpassword (read-host -prompt "Password:" -assecurestring)
@@ -204,7 +204,7 @@ Uninstall-ADDSDomainController
 * %systemroot%\debug\dcpromo.log
 * %systemroot%\debug\dcpromoui.log
 
-由于**install-addsdomaincontroller**和**uninstall**只包含一个操作各，因此，它们会在确认阶段中显示，并带有最少的所需参数。 按 ENTER 将启动不可撤销的降级过程，并重新启动计算机。
+由于 **install-addsdomaincontroller** 和 **uninstall** 只包含一个操作各，因此，它们会在确认阶段中显示，并带有最少的所需参数。 按 ENTER 将启动不可撤销的降级过程，并重新启动计算机。
 
 ![PowerShell 卸载-Install-addsdomaincontroller 示例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallConfirm.png)
 

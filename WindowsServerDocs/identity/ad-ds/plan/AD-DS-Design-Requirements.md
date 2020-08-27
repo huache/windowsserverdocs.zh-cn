@@ -1,17 +1,17 @@
 ---
 ms.assetid: f6e76ef0-2217-4cdb-980f-22a780a85ebb
 title: AD DS 设计要求
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d81a6bfb3ae29b4a9c76c5e902e8fec8e08c84b0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5d3cedc70a4dc4f58927a5802e65c90380f839ed
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941540"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941367"
 ---
 # <a name="ad-ds-design-requirements"></a>AD DS 设计要求
 
@@ -25,14 +25,14 @@ ms.locfileid: "87941540"
 
 ![AD DS 设计要求](media/AD-DS-Design-Requirements/d5cebae6-a752-4063-a98f-473799c251bd.gif)
 
-有关详细信息，请参阅[设计 Windows Server 2008 的逻辑结构 AD DS](Designing-the-Logical-Structure.md)。
+有关详细信息，请参阅 [设计 Windows Server 2008 的逻辑结构 AD DS](Designing-the-Logical-Structure.md)。
 
 ## <a name="designing-the-site-topology"></a>设计站点拓扑
 为 AD DS 基础结构设计逻辑结构后，必须为网络设计站点拓扑。 站点拓扑是物理网络的逻辑表示形式。 它包含有关 AD DS 站点的位置、每个站点内的 AD DS 域控制器的信息，以及支持站点之间 AD DS 复制的站点链接和站点链接桥。 下图显示了站点拓扑设计过程。
 
 ![AD DS 设计要求](media/AD-DS-Design-Requirements/d34d43c0-437f-47cb-9b64-09c0f9ce6479.gif)
 
-有关详细信息，请参阅[设计适用于 Windows Server 2008 的站点拓扑 AD DS](Designing-the-Site-Topology.md)。
+有关详细信息，请参阅 [设计适用于 Windows Server 2008 的站点拓扑 AD DS](Designing-the-Site-Topology.md)。
 
 ## <a name="planning-domain-controller-capacity"></a>规划域控制器容量
 为了确保高效 AD DS 性能，你必须为每个站点确定适当数量的域控制器，并验证它们是否满足 Windows Server 2008 的硬件要求。 对域控制器进行周密的容量规划可确保不会低估硬件要求，这可能会导致域控制器性能和应用程序响应时间不佳。 下图显示了域控制器容量规划过程。
@@ -42,7 +42,7 @@ ms.locfileid: "87941540"
 ## <a name="enabling-windows-server-2008-advanced-ad-ds-features"></a>启用 Windows Server 2008 advanced AD DS 功能
 你可以通过提高域或林功能级别，使用 Windows Server 2008 AD DS 向环境引入高级功能。 当域或林中的所有域控制器都运行 Windows Server 2008 时，可以将功能级别提升到 Windows Server 2008。
 
-有关详细信息，请参阅[启用 AD DS 的高级功能](../../ad-ds/plan/Enabling-Advanced-Features-for-AD-DS.md)。
+有关详细信息，请参阅 [启用 AD DS 的高级功能](../../ad-ds/plan/Enabling-Advanced-Features-for-AD-DS.md)。
 
 
 

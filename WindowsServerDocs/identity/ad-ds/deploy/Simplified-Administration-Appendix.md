@@ -1,17 +1,17 @@
 ---
 ms.assetid: c911d6c6-98c6-4532-b1db-5724e1ceb96c
 title: 简化管理附录
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3cef76347bcd5a341b96a71fed58d2fe0085a46c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 34d8af5166df3627e22b268359df5aa8bdb422c9
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953403"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940687"
 ---
 # <a name="simplified-administration-appendix"></a>简化管理附录
 
@@ -29,7 +29,7 @@ ms.locfileid: "87953403"
 
 ## <a name="server-manager-add-servers-dialog-active-directory"></a><a name="BKMK_AddServers"></a>服务器管理器添加服务器 "对话框 (Active Directory) 
 
-"**添加服务器**" 对话框允许搜索服务器、操作系统、使用通配符和位置的 Active Directory。 此对话框还允许按完全限定的域名或前缀名称使用 DNS 查询。 这些搜索使用通过 .NET 实现的本机 DNS 和 LDAP 协议，而不是通过 SOAP 对 AD 管理网关进行 AD Windows PowerShell-这意味着，通过服务器管理器联系的域控制器甚至可以运行 Windows Server 2003。 还可以导入包含服务器名称的文件，以便进行设置。
+" **添加服务器** " 对话框允许搜索服务器、操作系统、使用通配符和位置的 Active Directory。 此对话框还允许按完全限定的域名或前缀名称使用 DNS 查询。 这些搜索使用通过 .NET 实现的本机 DNS 和 LDAP 协议，而不是通过 SOAP 对 AD 管理网关进行 AD Windows PowerShell-这意味着，通过服务器管理器联系的域控制器甚至可以运行 Windows Server 2003。 还可以导入包含服务器名称的文件，以便进行设置。
 
 Active Directory 搜索使用以下 LDAP 筛选器：
 
@@ -59,9 +59,9 @@ Active Directory 搜索返回以下属性：
 如果 ARP 做出响应，则会与服务器建立 DCOM 和 WMI 连接，以返回状态信息。 如果 RPC、DCOM 和 WMI 无法访问，服务器管理器将无法完全管理该服务器。
 
 ## <a name="windows-powershell-module-loading"></a><a name="BKMK_PSLoadModule"></a>Windows PowerShell 模块加载
-Windows PowerShell 3.0 实现动态模块加载。 通常不再需要使用**import-module** cmdlet;相反，只需调用 cmdlet、alias 或 function，就会自动加载模块。
+Windows PowerShell 3.0 实现动态模块加载。 通常不再需要使用 **import-module** cmdlet;相反，只需调用 cmdlet、alias 或 function，就会自动加载模块。
 
-若要查看已加载的模块，请使用**get-help** cmdlet。
+若要查看已加载的模块，请使用 **get-help** cmdlet。
 
 ```
 Get-Module
@@ -77,7 +77,7 @@ Get-Module -ListAvailable
 
 ```
 
-使用**import-module**命令的主要情况是，需要访问 "AD：" Windows PowerShell 虚拟驱动器，但没有其他任何内容已加载该模块。 例如，使用以下命令：
+使用 **import-module** 命令的主要情况是，需要访问 "AD：" Windows PowerShell 虚拟驱动器，但没有其他任何内容已加载该模块。 例如，使用以下命令：
 
 ```
 import-module activedirectory
@@ -87,10 +87,10 @@ dir
 ```
 
 ## <a name="rid-issuance-hotfixes-for-previous-operating-systems"></a><a name="BKMK_Rid"></a>旧操作系统的 RID 颁发修补程序
-请参阅[更新可在运行 Windows Server 2008 R2 的域控制器上检测并防止全局 RID 池的使用率过高](https://support.microsoft.com/kb/2618669)。
+请参阅 [更新可在运行 Windows Server 2008 R2 的域控制器上检测并防止全局 RID 池的使用率过高](https://support.microsoft.com/kb/2618669)。
 
 ## <a name="ntdsutilexe-install-from-media-changes"></a><a name="BKMK_IFM"></a>Ntdsutil.exe 从媒体更改安装
-Windows Server 2012 将两个附加选项添加到 Ntdsutil.exe 命令行工具，用于**ifm 的 ifm (Ifm 介质) **菜单。 这样，你就可以创建 IFM 存储，而无需首先对导出的 NTDS 执行脱机碎片整理。DIT 数据库文件。 当磁盘空间不是高级版时，这将节省创建 IFM 的时间。
+Windows Server 2012 将两个附加选项添加到 Ntdsutil.exe 命令行工具，用于 **ifm 的 ifm (Ifm 介质) ** 菜单。 这样，你就可以创建 IFM 存储，而无需首先对导出的 NTDS 执行脱机碎片整理。DIT 数据库文件。 当磁盘空间不是高级版时，这将节省创建 IFM 的时间。
 
 下表介绍了两个新的菜单项：
 

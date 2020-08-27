@@ -1,17 +1,17 @@
 ---
 ms.assetid: ba7f2b9f-7351-4680-b7d8-a5f270614f1c
 title: Active Directory 域服务安装和删除的新功能
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 09863123a69eec72b3d8bfaaf138bb2d2562f687
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9658fe8ea7c9c11cda10989bfe9d1568c21d9704
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994503"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940587"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory 域服务安装和删除的新功能
 
@@ -40,7 +40,7 @@ AD DS 安装包括以下功能：
 > [!WARNING]
 > 从 Windows Server 2012 开始，不再推荐使用旧 Active Directory 域服务安装向导 ( # A0) 。
 
-在[安装 Active Directory 域服务 &#40;级别 100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)，UI 过程显示如何启动添加角色向导以安装 AD DS 服务器角色二进制文件，然后运行 Active Directory 域服务配置向导来完成域控制器安装。 Windows PowerShell 示例显示如何使用 AD DS 部署 cmdlet 完成这两个步骤。
+在 [安装 Active Directory 域服务 &#40;级别 100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)，UI 过程显示如何启动添加角色向导以安装 AD DS 服务器角色二进制文件，然后运行 Active Directory 域服务配置向导来完成域控制器安装。 Windows PowerShell 示例显示如何使用 AD DS 部署 cmdlet 完成这两个步骤。
 
 ## <a name="adprepexe-integration"></a><a name="BKMK_NewAdprep"></a>Adprep.exe 集成
 
@@ -121,7 +121,7 @@ AD DS 安装向导将在安装开始前，检查是否满足以下先决条件�
 
 ## <a name="system-requirements"></a><a name="BKMK_SystemReqs"></a>系统要求
 
-Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化。 有关详细信息，请参阅[Windows Server 2008 R2 SP1 系统要求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) (https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) 。
+Windows server 2012 的系统要求与 Windows Server 2008 R2 相比没有变化。 有关详细信息，请参阅 [Windows Server 2008 R2 SP1 系统要求](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) (https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) 。
 
 部分功能可能具有附加要求。 例如，虚拟域控制器克隆功能需要 PDC 仿真器运行 Windows Server 2012 和运行 Windows Server 2012 且安装了 Hyper-v 角色的计算机。
 

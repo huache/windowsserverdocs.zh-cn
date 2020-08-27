@@ -1,17 +1,17 @@
 ---
 ms.assetid: 8f994e2e-6c07-43f0-aef4-75f8b2c9a144
 title: 维护更安全的环境
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d4ddefda4ce9488320927542dcd24b9ac092bdb4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7cde4344a28888c997cfb751b2943429fbc4e686
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994315"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941407"
 ---
 # <a name="maintaining-a-more-secure-environment"></a>维护更安全的环境
 
@@ -70,5 +70,5 @@ Active Directory 中的数据应具有标识的业务所有者，即，作为联
 
 通过将业务信息与你的基础结构集成，你可以使用该业务信息来帮助你确定误报。 例如，如果将 executive 旅行记录在负责监视环境的 IT 人员可以访问的日历中，则可以将连接尝试与执行人员的已知位置关联起来。
 
-假设执行人员通常位于芝加哥，并使用安全的工作站来访问其办公桌的关键业务数据，尝试从位于亚特兰大的不安全工作站访问数据时，会触发事件。 如果能够验证主管当前是否在亚特兰大，则可以通过联系 executive 人员或执行人员的助理来确定访问失败是否是由执行程序忘记使用安全工作站访问数据的结果来解决该问题。 通过构造使用[规划折衷](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)中所述方法的程序，您可以开始为 Active Directory 安装中最重要的帐户生成预期行为的数据库，这可能会帮助您更快速地发现和响应攻击。
+假设执行人员通常位于芝加哥，并使用安全的工作站来访问其办公桌的关键业务数据，尝试从位于亚特兰大的不安全工作站访问数据时，会触发事件。 如果能够验证主管当前是否在亚特兰大，则可以通过联系 executive 人员或执行人员的助理来确定访问失败是否是由执行程序忘记使用安全工作站访问数据的结果来解决该问题。 通过构造使用 [规划折衷](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)中所述方法的程序，您可以开始为 Active Directory 安装中最重要的帐户生成预期行为的数据库，这可能会帮助您更快速地发现和响应攻击。
 

@@ -1,22 +1,22 @@
 ---
 title: 使用 Hyper-v 虚拟化域控制器
 description: 在 Hyper-v 中虚拟化 Windows Server Active Directory 域控制器时的注意事项
-author: MicrosoftGuyJFlo
-ms.author: joflore
+author: iainfoulds
+ms.author: iainfou
 ms.date: 04/19/2018
 ms.topic: article
-ms.openlocfilehash: ad40b5e5049c8b4f29dab4ffac8246a73e5b2fcd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 55895a86521cc7d093c474fb8e4d3c53e4132894
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956984"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940067"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>使用 Hyper-v 虚拟化域控制器
 
 > 适用于：Windows Server 2016
 
-为了使指南适用于 Windows Server 2016，将更新本主题。 Windows Server 2012 对虚拟化域控制器 (Dc) 进行了许多改进，包括保护以防止虚拟 Dc 上的 USN 回滚以及克隆虚拟 Dc 的功能。 有关这些改进的详细信息，请参阅[Active Directory 域服务 (的简介 AD DS) 虚拟化 (级别 100) ](../../introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100.md)。
+为了使指南适用于 Windows Server 2016，将更新本主题。 Windows Server 2012 对虚拟化域控制器 (Dc) 进行了许多改进，包括保护以防止虚拟 Dc 上的 USN 回滚以及克隆虚拟 Dc 的功能。 有关这些改进的详细信息，请参阅 [Active Directory 域服务 (的简介 AD DS) 虚拟化 (级别 100) ](../../introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100.md)。
 
 Hyper-v 将不同的服务器角色合并到单台物理计算机上。 本指南介绍如何将域控制器作为32位或64位来宾操作系统运行。
 
@@ -53,11 +53,11 @@ Hyper-v 将不同的服务器角色合并到单台物理计算机上。 本指�
    - 托管虚拟、可写域控制器的计算机的本地管理员应将凭据中的等效项视为该域控制器所属的所有域和林的默认域管理员。
    - 避免安全和性能问题的建议配置是运行 Windows Server 2008 或更高版本的服务器核心安装的主机，而不是 Hyper-v 以外的应用程序。 此配置限制了服务器上安装的应用程序和服务的数量，这将导致更高的性能和更少的应用程序和服务受到恶意攻击，从而攻击计算机或网络。 这种类型的配置的效果称为减少的攻击面。 在不能令人满意的分支机构或其他位置，建议使用只读域控制器 (RODC) 。 如果存在单独的管理网络，我们建议仅将主机连接到管理网络。
    - 你可以将 Bitlocker 用于域控制器，因为 Windows Server 2016 你可以使用虚拟 TPM 功能，还可以提供来宾密钥材料来解锁系统卷。
-   - [受保护的构造和受防护的 vm](/it-server/WindowsServerDocs/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)可以提供额外的控制来保护域控制器。
+   - [受保护的构造和受防护的 vm](/it-server/WindowsServerDocs/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md) 可以提供额外的控制来保护域控制器。
 
-有关 Rodc 的详细信息，请参阅[只读域控制器规划和部署指南](../../deploy/rodc/read-only-domain-controller-updates.md)。
+有关 Rodc 的详细信息，请参阅 [只读域控制器规划和部署指南](../../deploy/rodc/read-only-domain-controller-updates.md)。
 
-有关保护域控制器的详细信息，请参阅[保护 Active Directory 安装的最佳实践指南](../../plan/security-best-practices/best-practices-for-securing-active-directory.md)。
+有关保护域控制器的详细信息，请参阅 [保护 Active Directory 安装的最佳实践指南](../../plan/security-best-practices/best-practices-for-securing-active-directory.md)。
 
 ## <a name="security-boundaries-for-different-host-and-guest-configurations"></a>不同主机和来宾配置的安全边界
 
@@ -86,9 +86,9 @@ Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例
 
 在新的微内核64位体系结构中，以前的虚拟化平台的 Hyper-v 性能显著增加了。 为了获得最佳主机性能，主机应为 Windows Server 2008 或更高版本的服务器核心安装，并且不应安装 Hyper-v 以外的其他服务器角色。
 
-虚拟机的性能特别依赖于工作负荷。 为了保证 Active Directory 性能，请测试特定拓扑。 使用工具（如可靠性和性能监视器） (Perfmon) 或[Microsoft 评估和规划 (MAP) 工具包](https://go.microsoft.com/fwlink/?linkid=137077)，在一段时间内评估当前工作负荷。 如果要对当前在网络中存在的所有服务器和服务器角色进行清点，还可以使用地图工具。
+虚拟机的性能特别依赖于工作负荷。 为了保证 Active Directory 性能，请测试特定拓扑。 使用工具（如可靠性和性能监视器） (Perfmon) 或 [Microsoft 评估和规划 (MAP) 工具包](https://go.microsoft.com/fwlink/?linkid=137077)，在一段时间内评估当前工作负荷。 如果要对当前在网络中存在的所有服务器和服务器角色进行清点，还可以使用地图工具。
 
-若要大致了解虚拟化域控制器的性能，请使用[Active Directory 性能测试工具 ( # A0) ](https://go.microsoft.com/fwlink/?linkid=137088)执行以下性能测试。
+若要大致了解虚拟化域控制器的性能，请使用 [Active Directory 性能测试工具 ( # A0) ](https://go.microsoft.com/fwlink/?linkid=137088)执行以下性能测试。
 
 轻型目录访问协议 (LDAP) 测试是在具有 ADTest.exe 的物理域控制器上运行的，然后在与物理域控制器相同的服务器上运行的虚拟机上运行。 物理计算机只使用了一个逻辑处理器，且虚拟机只使用了一个虚拟处理器来轻松达到100% 的 CPU 使用率。 在下表中，每个测试后，在括号中的字母和数字指示 ADTest.exe 中的特定测试。 如此数据所示，虚拟化域控制器的性能为88到98% 的物理域控制器性能。
 
@@ -173,11 +173,11 @@ Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例
 
 使用可靠性和性能管理器监视虚拟机的性能 (Perfmon) ，在虚拟机中，CPU 信息将不会完全准确，这是因为虚拟 CPU 在物理处理器上的计划方式。 如果要获取在 Hyper-v 服务器上运行的虚拟机的 CPU 信息，请使用主机分区中的 Hyper-v 虚拟机监控程序逻辑处理器计数器。
 
-有关 AD DS 和 Hyper-v 性能优化的详细信息，请参阅[Windows Server 2016 的性能优化指南](../../../../administration/performance-tuning/index.md)。
+有关 AD DS 和 Hyper-v 性能优化的详细信息，请参阅 [Windows Server 2016 的性能优化指南](../../../../administration/performance-tuning/index.md)。
 
-此外，请不要计划在配置为域控制器的虚拟机上使用差异磁盘 VHD，因为差异磁盘 VHD 会降低性能。 若要了解有关 Hyper-v 磁盘类型（包括差异磁盘）的详细信息，请参阅[新建虚拟硬盘向导](https://go.microsoft.com/fwlink/?linkid=137279)。
+此外，请不要计划在配置为域控制器的虚拟机上使用差异磁盘 VHD，因为差异磁盘 VHD 会降低性能。 若要了解有关 Hyper-v 磁盘类型（包括差异磁盘）的详细信息，请参阅 [新建虚拟硬盘向导](https://go.microsoft.com/fwlink/?linkid=137279)。
 
-有关虚拟宿主环境中 AD DS 的其他信息，请参阅在 Microsoft 知识库中的[虚拟宿主环境中承载 Active Directory 域控制器时要注意的事项](https://go.microsoft.com/fwlink/?linkid=141292)。
+有关虚拟宿主环境中 AD DS 的其他信息，请参阅在 Microsoft 知识库中的 [虚拟宿主环境中承载 Active Directory 域控制器时要注意的事项](https://go.microsoft.com/fwlink/?linkid=141292) 。
 
 ## <a name="deployment-considerations-for-virtualized-domain-controllers"></a>虚拟化域控制器的部署注意事项
 
@@ -188,8 +188,8 @@ Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例
 虚拟化平台（如 Hyper-v）提供了许多便利功能，可更轻松地管理、维护、备份和迁移计算机。 但是，不应将以下常见的部署实践和功能用于虚拟域控制器：
 
 - 若要确保 Active Directory 写入的持续性，请不要将虚拟域控制器的数据库文件部署 (Active Directory 数据库 (NTDS。虚拟 IDE 磁盘上的 DIT) 、日志和 SYSVOL) 。 相反，请创建附加到虚拟 SCSI 控制器的第二个 VHD，并确保在安装域控制器期间将数据库、日志和 SYSVOL 放置在虚拟机的 SCSI 磁盘上。
-- 不要在配置为域控制器的虚拟机上 (Vhd) 上实现差异磁盘虚拟硬盘。 这使得还原到以前的版本变得很容易，并且还会降低性能。 有关 VHD 类型的详细信息，请参阅[新建虚拟硬盘向导](https://go.microsoft.com/fwlink/?linkid=137279)。
-- 不要将新的 Active Directory 域和林部署在未首先使用系统准备工具 (Sysprep) 进行准备的 Windows Server 操作系统的副本上。 有关运行 Sysprep 的详细信息，请参阅[sysprep (系统准备) 概述](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)
+- 不要在配置为域控制器的虚拟机上 (Vhd) 上实现差异磁盘虚拟硬盘。 这使得还原到以前的版本变得很容易，并且还会降低性能。 有关 VHD 类型的详细信息，请参阅 [新建虚拟硬盘向导](https://go.microsoft.com/fwlink/?linkid=137279)。
+- 不要将新的 Active Directory 域和林部署在未首先使用系统准备工具 (Sysprep) 进行准备的 Windows Server 操作系统的副本上。 有关运行 Sysprep 的详细信息，请参阅 [sysprep (系统准备) 概述](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)
 
    > [!WARNING]
    > 不支持在域控制器上运行 Sysprep。
@@ -203,9 +203,9 @@ Rodc 的优点之一是能够将其放在无法保证物理安全的位置，例
 
 ## <a name="physical-to-virtual-migration"></a>物理到虚拟迁移
 
-System Center Virtual Machine Manager (VMM) 2008 提供对物理计算机和虚拟机的统一管理。 它还提供将物理计算机迁移到虚拟机的功能。 此过程称为 "物理到虚拟机转换 (P2V 转换) 。 在 P2V 转换过程中，要迁移的新虚拟机和物理域控制器不得同时运行，以避免在[usn 和 Usn 回滚](#usn-and-usn-rollback)中所述的 usn 回滚情况。
+System Center Virtual Machine Manager (VMM) 2008 提供对物理计算机和虚拟机的统一管理。 它还提供将物理计算机迁移到虚拟机的功能。 此过程称为 "物理到虚拟机转换 (P2V 转换) 。 在 P2V 转换过程中，要迁移的新虚拟机和物理域控制器不得同时运行，以避免在 [usn 和 Usn 回滚](#usn-and-usn-rollback)中所述的 usn 回滚情况。
 
-应使用脱机模式执行 P2V 转换，以便在域控制器重新打开时目录数据保持一致。 在转换物理服务器向导中提供并建议使用 "脱机模式" 选项。 有关联机模式和脱机模式之间差异的说明，请参阅[在 VMM 中将物理计算机转换为虚拟机](https://go.microsoft.com/fwlink/?linkid=155072)。 在 P2V 转换期间，虚拟机不应连接到网络。 只有在完成并验证了 P2V 转换过程之后，才应启用虚拟机的网络适配器。 此时，物理源计算机将处于关闭状态。 重新格式化硬盘之前，不要再次将物理源计算机重新进入网络。
+应使用脱机模式执行 P2V 转换，以便在域控制器重新打开时目录数据保持一致。 在转换物理服务器向导中提供并建议使用 "脱机模式" 选项。 有关联机模式和脱机模式之间差异的说明，请参阅 [在 VMM 中将物理计算机转换为虚拟机](https://go.microsoft.com/fwlink/?linkid=155072)。 在 P2V 转换期间，虚拟机不应连接到网络。 只有在完成并验证了 P2V 转换过程之后，才应启用虚拟机的网络适配器。 此时，物理源计算机将处于关闭状态。 重新格式化硬盘之前，不要再次将物理源计算机重新进入网络。
 
 > [!NOTE]
 > 有一些更安全的选项可用于创建新的虚拟 Dc，而不会运行创建 USN 回滚的风险。 你可以通过定期升级设置新的虚拟 DC、从介质安装 (IfM) 以及使用域控制器克隆（如果已有至少一个虚拟 DC）。
@@ -243,11 +243,11 @@ System Center Virtual Machine Manager (VMM) 2008 提供对物理计算机和虚�
 
   > [!NOTE]
   > 如果打算将 Bitlocker 用于虚拟 DC 来宾，则需要确保将其他卷配置为使用 "自动解锁"。
-  > 有关配置自动解锁的详细信息，请参阅[BitLockerAutoUnlock](/powershell/module/bitlocker/enable-bitlockerautounlock)
+  > 有关配置自动解锁的详细信息，请参阅 [BitLockerAutoUnlock](/powershell/module/bitlocker/enable-bitlockerautounlock)
 
 - **VHD 文件的主机存储**。 建议：主机存储建议解决 VHD 文件的存储。 为了获得最佳性能，请不要将 VHD 文件存储在由其他服务或应用程序使用的磁盘上，如安装了主机 Windows 操作系统的系统磁盘。 将每个 VHD 文件存储在独立于主机操作系统和任何其他 VHD 文件的分区中。 理想的配置是将每个 VHD 文件存储在单独的物理驱动器上。
 
-  主机物理磁盘系统还必须至少满足以下条件**之一**，以满足虚拟化工作负荷数据完整性的要求：
+  主机物理磁盘系统还必须至少满足以下条件 **之一** ，以满足虚拟化工作负荷数据完整性的要求：
 
    - 系统 (SCSI 光纤通道) 使用服务器级磁盘。
    - 系统确保磁盘连接到支持电池的缓存主机总线适配器 (HBA) 。
@@ -259,25 +259,25 @@ System Center Virtual Machine Manager (VMM) 2008 提供对物理计算机和虚�
 
 若要减少损坏 Active Directory 数据的可能性，请使用虚拟 SCSI 控制器：
 
-   - 在托管虚拟域控制器的 Hyper-v 服务器上，使用 SCSI 物理驱动器 (而不是 IDE/ATA 驱动器) 。 如果无法使用 SCSI 驱动器，请确保在托管虚拟域控制器的 ATA/IDE 驱动器上禁用写缓存。 有关详细信息，请参阅[事件 ID 1539 –数据库完整性](https://go.microsoft.com/fwlink/?linkid=162419)。
+   - 在托管虚拟域控制器的 Hyper-v 服务器上，使用 SCSI 物理驱动器 (而不是 IDE/ATA 驱动器) 。 如果无法使用 SCSI 驱动器，请确保在托管虚拟域控制器的 ATA/IDE 驱动器上禁用写缓存。 有关详细信息，请参阅 [事件 ID 1539 –数据库完整性](https://go.microsoft.com/fwlink/?linkid=162419)。
    - 为了保证 Active Directory 写入的持久性，必须将 Active Directory 数据库、日志和 SYSVOL 置于虚拟 SCSI 磁盘上。 虚拟 SCSI 磁盘支持 (FUA) 的强制单元访问。 FUA 可确保操作系统直接从介质写入和读取数据，绕过任何和所有缓存机制。
 
 ## <a name="operational-considerations-for-virtualized-domain-controllers"></a>虚拟化域控制器的操作注意事项
 
 在虚拟机上运行的域控制器的操作限制不适用于在物理计算机上运行的域控制器。 使用虚拟化域控制器时，某些虚拟化软件功能和做法不应使用：
 
-   - 请勿暂停、停止或存储虚拟机中域控制器的已保存状态，时间段比林的逻辑删除生存期长，然后从暂停或保存状态恢复。 这样做可能会影响复制。 若要了解如何确定林的逻辑删除生存期，请参阅[确定林的逻辑删除生存期](https://go.microsoft.com/fwlink/?linkid=137177)。
+   - 请勿暂停、停止或存储虚拟机中域控制器的已保存状态，时间段比林的逻辑删除生存期长，然后从暂停或保存状态恢复。 这样做可能会影响复制。 若要了解如何确定林的逻辑删除生存期，请参阅 [确定林的逻辑删除生存期](https://go.microsoft.com/fwlink/?linkid=137177)。
    - 请勿复制或克隆 (Vhd) 的虚拟硬盘。 即使具有来宾 VM 的安全措施，也仍然可以复制单个 Vhd 并导致 USN 回滚。
    - 不要拍摄或使用虚拟域控制器的快照。 Windows Server 2012 和更高版本在技术上是受支持的，它不能代替良好的备份策略。 获取 DC 快照或还原快照的原因有很多。
    - 不要在配置为域控制器的虚拟机上使用差异磁盘 VHD。 这会使还原到以前的版本非常简单，并且还会降低性能。
    - 不要在运行域控制器的虚拟机上使用导出功能。
-   - 不要还原域控制器，或者尝试通过除使用受支持的备份以外的任何方式来回滚 Active Directory 数据库的内容。 有关详细信息，请参阅[虚拟化域控制器的备份和还原注意事项](#backup-and-restore-practices-to-avoid)。
+   - 不要还原域控制器，或者尝试通过除使用受支持的备份以外的任何方式来回滚 Active Directory 数据库的内容。 有关详细信息，请参阅 [虚拟化域控制器的备份和还原注意事项](#backup-and-restore-practices-to-avoid)。
 
 所有这些建议都有助于避免更新序列号 (USN) 回滚的可能性。 有关 USN 回滚的详细信息，请参阅 USN 和 USN 回滚。
 
 ## <a name="backup-and-restore-considerations-for-virtualized-domain-controllers"></a>虚拟化域控制器的备份和还原注意事项
 
-备份域控制器是任何环境的关键要求。 如果出现域控制器故障或管理错误，备份将防止数据丢失。 如果发生此类事件，则必须将域控制器的系统状态回滚到故障或错误之前的某个时间点。 将域控制器还原到正常状态的支持方法是使用 Active Directory 兼容的备份应用程序（如 Windows Server 备份）来还原源自域控制器的当前安装的系统状态备份。 有关将 Windows Server 备份与 Active Directory 域服务 (AD DS) 一起使用的详细信息，请参阅[AD DS 备份和恢复分步指南](https://go.microsoft.com/fwlink/?LinkId=138501)。
+备份域控制器是任何环境的关键要求。 如果出现域控制器故障或管理错误，备份将防止数据丢失。 如果发生此类事件，则必须将域控制器的系统状态回滚到故障或错误之前的某个时间点。 将域控制器还原到正常状态的支持方法是使用 Active Directory 兼容的备份应用程序（如 Windows Server 备份）来还原源自域控制器的当前安装的系统状态备份。 有关将 Windows Server 备份与 Active Directory 域服务 (AD DS) 一起使用的详细信息，请参阅 [AD DS 备份和恢复分步指南](https://go.microsoft.com/fwlink/?LinkId=138501)。
 
 利用虚拟机技术，Active Directory 还原操作的某些要求会提高重要性。 例如，如果使用虚拟硬盘的副本还原域控制器 (VHD) 文件，则在还原域控制器的数据库版本后，你将绕过更新其数据库版本的关键步骤。 复制将使用不适当的跟踪号继续，导致域控制器副本之间出现不一致的数据库。 在大多数情况下，此问题会被复制系统检测到，但不会报告任何错误，这两个域控制器之间的不一致。
 
@@ -310,7 +310,7 @@ System Center Virtual Machine Manager (VMM) 2008 提供对物理计算机和虚�
 
 如果域控制器虚拟机出现故障，并且更新序列号 (USN) 回滚，则还原虚拟机的情况有两种：
 
-   - 如果存在早于故障的有效系统状态数据备份，则可以使用用于创建备份的备份实用程序的还原选项还原系统状态。 系统状态数据备份必须在 tombstone 生存时间（默认情况下不超过180天）内使用与 Active Directory 兼容的备份实用程序创建。 应至少每半个逻辑删除生存期备份域控制器。 有关如何确定林的特定逻辑删除生存期的说明，请参阅[确定林的逻辑删除生存期](https://go.microsoft.com/fwlink/?linkid=137177)。
+   - 如果存在早于故障的有效系统状态数据备份，则可以使用用于创建备份的备份实用程序的还原选项还原系统状态。 系统状态数据备份必须在 tombstone 生存时间（默认情况下不超过180天）内使用与 Active Directory 兼容的备份实用程序创建。 应至少每半个逻辑删除生存期备份域控制器。 有关如何确定林的特定逻辑删除生存期的说明，请参阅 [确定林的逻辑删除生存期](https://go.microsoft.com/fwlink/?linkid=137177)。
    - 如果 VHD 文件的工作副本可用，但没有可用的系统状态备份，则可以删除现有的虚拟机。 使用 VHD 以前的副本还原现有的虚拟机，但要确保在目录服务还原模式下启动 (DSRM) 并正确配置注册表，如以下部分所述。 然后，在正常模式下重新启动域控制器。
 
 使用下图中的过程来确定还原虚拟化域控制器的最佳方式。
@@ -330,13 +330,13 @@ System Center Virtual Machine Manager (VMM) 2008 提供对物理计算机和虚�
 
 ## <a name="to-restore-the-system-state-backup-of-a-virtual-domain-controller"></a>还原虚拟域控制器的系统状态备份
 
-1. 启动域控制器的虚拟机，并按 F5 访问 Windows 启动管理器屏幕。 如果需要输入连接凭据，请立即单击虚拟机上的 "**暂停**" 按钮，使其不会继续启动。 然后，输入连接凭据，并单击虚拟机上的 "**播放**" 按钮。 在虚拟机窗口中单击，并按 F5。
+1. 启动域控制器的虚拟机，并按 F5 访问 Windows 启动管理器屏幕。 如果需要输入连接凭据，请立即单击虚拟机上的 " **暂停** " 按钮，使其不会继续启动。 然后，输入连接凭据，并单击虚拟机上的 " **播放** " 按钮。 在虚拟机窗口中单击，并按 F5。
 
    如果看不到 Windows 启动管理器屏幕，并且域控制器开始在正常模式下启动，请关闭虚拟机以防止其完成启动。 根据需要重复此步骤多次，直到可以访问 Windows 启动管理器屏幕。 不能从 Windows 错误恢复菜单访问 DSRM。 因此，请关闭虚拟机，并在出现 Windows 错误恢复菜单时重试。
 
 2. 在 Windows 启动管理器屏幕中，按 F8 访问高级启动选项。
-3. 在 "**高级启动选项**" 屏幕中，选择 "**目录服务还原模式**"，然后按 enter。 这会在 DSRM 中启动域控制器。
-4. 使用用于创建系统状态备份的工具的相应还原方法。 如果使用 Windows Server 备份，请参阅[执行 AD DS 的非权威还原](https://go.microsoft.com/fwlink/?linkid=132637)。
+3. 在 " **高级启动选项** " 屏幕中，选择 " **目录服务还原模式**"，然后按 enter。 这会在 DSRM 中启动域控制器。
+4. 使用用于创建系统状态备份的工具的相应还原方法。 如果使用 Windows Server 备份，请参阅 [执行 AD DS 的非权威还原](https://go.microsoft.com/fwlink/?linkid=132637)。
 
 ## <a name="restoring-a-virtual-domain-controller-when-an-appropriate-system-state-data-backup-is-not-available"></a>当相应的系统状态数据备份不可用时还原虚拟域控制器
 
@@ -350,14 +350,14 @@ System Center Virtual Machine Manager (VMM) 2008 提供对物理计算机和虚�
 ## <a name="to-restore-a-previous-version-of-a-virtual-domain-controller-vhd-without-system-state-data-backup"></a>还原以前版本的虚拟域控制器 VHD 而不进行系统状态数据备份
 
 1. 使用以前的 VHD，如前一部分中所述，在 DSRM 中启动虚拟域控制器。 不允许域控制器在正常模式下启动。 如果错过了 Windows 启动管理器屏幕，并且域控制器开始在正常模式下启动，请关闭虚拟机以防止其完成启动。 有关输入 DSRM 的详细说明，请参阅上一节。
-2. 打开注册表编辑器。 若要打开注册表编辑器，请单击 "**开始**"，再单击 "**运行**"，键入**regedit**，然后单击 "确定"。 如果出现了“用户帐户控制”**** 对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”****。 在注册表编辑器中，展开以下路径： **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Services \\ NTDS \\ Parameters**。 查找名为 " **DSA 先前还原计数**" 的值。 如果值为，请记下该设置。 如果值不存在，则设置等于默认值0。 如果看不到任何值，请不要添加值。
-3. 右键单击**Parameters**项，单击 "**新建**"，然后单击 " **DWORD (32 位) 值**"。
-4. 键入 "**从备份中还原**的新名称数据库"，然后按 enter。
+2. 打开注册表编辑器。 若要打开注册表编辑器，请单击 " **开始**"，再单击 " **运行**"，键入 **regedit**，然后单击 "确定"。 如果出现了“用户帐户控制”**** 对话框，请确认其所显示的操作是你要采取的操作，然后单击“是”****。 在注册表编辑器中，展开以下路径： **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Services \\ NTDS \\ Parameters**。 查找名为 " **DSA 先前还原计数**" 的值。 如果值为，请记下该设置。 如果值不存在，则设置等于默认值0。 如果看不到任何值，请不要添加值。
+3. 右键单击 **Parameters** 项，单击 " **新建**"，然后单击 " **DWORD (32 位) 值**"。
+4. 键入 " **从备份中还原**的新名称数据库"，然后按 enter。
 5. 双击刚才创建的值，打开 "**编辑 DWORD (32 位) 值**" 对话框，然后在 "**值数据**" 框中键入**1** 。 在运行带有 Service Pack 4 的 Windows 2000 Server (SP4) ，Windows Server 2003 的域控制器上提供了在 windows [server 2003、Windows server 2008 和 Windows server 2008 R2](https://go.microsoft.com/fwlink/?linkid=137182) （安装了 Microsoft 知识库）和 windows server 2008 上检测和恢复中包含的更新的域控制器上的 "**从备份中还原的数据库**" 选项。
 6. 在正常模式下重新启动域控制器。
 7. 当域控制器重新启动时，打开事件查看器。 若要打开事件查看器，请依次单击“开始”****、“控制面板”****，双击“管理工具”****，然后双击“事件查看器”****。
-8. 展开 "**应用程序和服务日志**"，然后单击 "**目录服务**" 日志。 确保 "详细信息" 窗格中显示事件。
-9. 右键单击 "**目录服务**" 日志，然后单击 "**查找**"。 在 "**查找内容**" 中，键入**1109**，然后单击 "**查找下一个**"。
+8. 展开 " **应用程序和服务日志**"，然后单击 " **目录服务** " 日志。 确保 "详细信息" 窗格中显示事件。
+9. 右键单击 " **目录服务** " 日志，然后单击 " **查找**"。 在 " **查找内容**" 中，键入 **1109**，然后单击 " **查找下一个**"。
 10. 应该会看到至少一个事件 ID 1109 条目。 如果看不到此条目，请转到下一步。 否则，请双击该条目，然后查看确认已对 InvocationID 进行更新的文本：
 
     ```
@@ -373,12 +373,12 @@ System Center Virtual Machine Manager (VMM) 2008 提供对物理计算机和虚�
     ```
 
 11. 关闭事件查看器。
-12. 使用注册表编辑器验证**DSA 先前还原计数**中的值是否等于前一个值加1。 如果这不是正确的值，并且在事件查看器中找不到事件 ID 1109 的条目，请确认域控制器的 service pack 是最新的。 你不能在同一 VHD 上再次尝试此过程。 你可以在 VHD 副本上重试，或通过从步骤1开始，在正常模式下重试。
+12. 使用注册表编辑器验证 **DSA 先前还原计数** 中的值是否等于前一个值加1。 如果这不是正确的值，并且在事件查看器中找不到事件 ID 1109 的条目，请确认域控制器的 service pack 是最新的。 你不能在同一 VHD 上再次尝试此过程。 你可以在 VHD 副本上重试，或通过从步骤1开始，在正常模式下重试。
 13. 关闭“注册表编辑器”。
 
 ## <a name="usn-and-usn-rollback"></a>USN 和 USN 回滚
 
-本部分介绍由于使用较旧版本的虚拟机还原 Active Directory 数据库时可能会发生的复制问题。 有关 Active Directory 复制过程的更多详细信息，请参阅[Active Directory 复制概念](../replication/active-directory-replication-concepts.md)
+本部分介绍由于使用较旧版本的虚拟机还原 Active Directory 数据库时可能会发生的复制问题。 有关 Active Directory 复制过程的更多详细信息，请参阅 [Active Directory 复制概念](../replication/active-directory-replication-concepts.md)
 
 ## <a name="usns"></a>Usn
 
@@ -393,9 +393,9 @@ Active Directory 域服务 (AD DS) 使用 (Usn) 的更新序列号来跟踪域�
 
 ## <a name="directory-database-identity"></a>目录数据库标识
 
-除了 Usn 以外，域控制器还跟踪源复制伙伴的目录数据库。 服务器上运行的目录数据库的标识与服务器对象本身的标识分开维护。 每个域控制器上的目录数据库标识存储在 "NTDS 设置" 对象的**invocationID**属性中，该属性位于以下轻型目录访问协议 (LDAP) 路径： CN = NTDS 设置，Cn = ServerName，Cn = Servers，Cn =*SiteName*，cn = Sites，cn = Configuration，dc =*ForestRootDomain*。 服务器对象标识存储在 NTDS 设置对象的**objectGUID**特性中。 服务器对象的标识决不会更改。 但是，当服务器上出现系统状态还原过程或添加应用程序目录分区，并随后从服务器重新添加时，目录数据库的标识会更改。  (其他情况：当 HyperV 实例在包含虚拟 DC 的 VHD 的分区上触发其 VSS 编写器时，来宾反过来会触发其自己的 VSS 编写器， (备份/还原所使用的相同机制) 导致重置 invocationID 的另一种方法) 
+除了 Usn 以外，域控制器还跟踪源复制伙伴的目录数据库。 服务器上运行的目录数据库的标识与服务器对象本身的标识分开维护。 每个域控制器上的目录数据库标识存储在 "NTDS 设置" 对象的 **invocationID** 属性中，该属性位于以下轻型目录访问协议 (LDAP) 路径： CN = NTDS 设置，Cn = ServerName，Cn = Servers，Cn =*SiteName*，cn = Sites，cn = Configuration，dc =*ForestRootDomain*。 服务器对象标识存储在 NTDS 设置对象的 **objectGUID** 特性中。 服务器对象的标识决不会更改。 但是，当服务器上出现系统状态还原过程或添加应用程序目录分区，并随后从服务器重新添加时，目录数据库的标识会更改。  (其他情况：当 HyperV 实例在包含虚拟 DC 的 VHD 的分区上触发其 VSS 编写器时，来宾反过来会触发其自己的 VSS 编写器， (备份/还原所使用的相同机制) 导致重置 invocationID 的另一种方法) 
 
-因此， **invocationID**会有效地将域控制器上的一组原始更新与特定版本的目录数据库相关联。 最新的矢量和高水位标记表分别使用**invocationID**和 DC GUID，以便域控制器知道复制信息来自 Active Directory 数据库的哪个副本。
+因此， **invocationID** 会有效地将域控制器上的一组原始更新与特定版本的目录数据库相关联。 最新的矢量和高水位标记表分别使用 **invocationID** 和 DC GUID，以便域控制器知道复制信息来自 Active Directory 数据库的哪个副本。
 
 **InvocationID**是一个全局唯一标识符 (GUID) 值，该标识符在运行命令**repadmin/showrepl**后显示在输出的顶部附近。 以下文本表示命令的示例输出：
 
@@ -407,7 +407,7 @@ Active Directory 域服务 (AD DS) 使用 (Usn) 的更新序列号来跟踪域�
    DSA invocationID: b0d9208b-8eb6-4205-863d-d50801b325a9
    ```
 
-如果在域控制器上正确还原 AD DS， **invocationID**将重置。 作为此更改的结果，你将会遇到复制流量的增加–这是相对于正在复制的分区大小的持续时间
+如果在域控制器上正确还原 AD DS， **invocationID** 将重置。 作为此更改的结果，你将会遇到复制流量的增加–这是相对于正在复制的分区大小的持续时间
 
 例如，假设 VDC1 和 DC2 是同一域中的两个域控制器。 下图显示了当在适当的还原情况下重置 invocationID 值时，有关 VDC1 的信息。
 
@@ -424,11 +424,11 @@ USN 回滚的原因有很多，例如，当使用旧虚拟硬盘 (VHD) 文件或
    - 如果未运行 Windows Server 2012 或更高版本，请不要导出运行域控制器的虚拟机。
    - 不要还原域控制器，或者尝试通过任何其他方式（如 Windows Server 备份）来回滚 Active Directory 数据库的内容。
 
-在某些情况下，可能会检测不到 USN 回滚。 在其他情况下，它可能会导致其他复制错误。 在这种情况下，需要确定问题的范围并及时处理。 有关如何删除因 USN 回滚而可能发生的延迟对象的信息，请参阅 Microsoft 知识库中的[过时 Active Directory 对象在 Windows Server 2003 中生成事件 ID 1988](https://go.microsoft.com/fwlink/?linkid=137185) 。
+在某些情况下，可能会检测不到 USN 回滚。 在其他情况下，它可能会导致其他复制错误。 在这种情况下，需要确定问题的范围并及时处理。 有关如何删除因 USN 回滚而可能发生的延迟对象的信息，请参阅 Microsoft 知识库中的 [过时 Active Directory 对象在 Windows Server 2003 中生成事件 ID 1988](https://go.microsoft.com/fwlink/?linkid=137185) 。
 
 ## <a name="usn-rollback-detection"></a>USN 回滚检测
 
-大多数情况下，如果检测到不正确的还原过程 **，则不**会重置 USN 回滚。 在不正确的域控制器还原操作之后，Windows Server 2008 对不适当的复制提供保护。 这种保护是由以下事实触发的：不正确的还原操作导致 Usn 较低，以表示复制伙伴已经收到的原始更改。
+大多数情况下，如果检测到不正确的还原过程 **，则不** 会重置 USN 回滚。 在不正确的域控制器还原操作之后，Windows Server 2008 对不适当的复制提供保护。 这种保护是由以下事实触发的：不正确的还原操作导致 Usn 较低，以表示复制伙伴已经收到的原始更改。
 
 在 Windows Server 2008 和 Windows Server 2003 SP1 中，当目标域控制器通过使用以前使用的 USN 请求更改时，目标域控制器会解释其源复制伙伴的响应，以表示其复制元数据已过时。 这表示源域控制器上的 Active Directory 数据库已回滚到以前的状态。 例如，虚拟机的 VHD 文件已回滚到以前的版本。 在这种情况下，目标域控制器会在已被确定为已完成不正确还原的域控制器上启动以下隔离措施：
 
@@ -447,9 +447,9 @@ USN 回滚的原因有很多，例如，当使用旧虚拟硬盘 (VHD) 文件或
 1. 将记录错误的虚拟机与网络隔离开来。
 2. 尝试确定是否有任何更改源自此域控制器并传播到其他域控制器。 如果事件是启动虚拟机的快照或副本的结果，请尝试确定 USN 回滚发生的时间。 然后，你可以检查该域控制器的复制伙伴，以确定复制是否发生了。
 
-   您可以使用 Repadmin 工具来做出此决定。 有关如何使用 Repadmin 的信息，请参阅[使用 Repadmin 进行 Active Directory 复制的监视和故障排除](https://go.microsoft.com/fwlink/?linkid=122830)。 如果无法自行确定此问题，请联系[Microsoft 支持部门](https://support.microsoft.com)以获得帮助。
+   您可以使用 Repadmin 工具来做出此决定。 有关如何使用 Repadmin 的信息，请参阅 [使用 Repadmin 进行 Active Directory 复制的监视和故障排除](https://go.microsoft.com/fwlink/?linkid=122830)。 如果无法自行确定此问题，请联系 [Microsoft 支持部门](https://support.microsoft.com) 以获得帮助。
 
-3. 强制降级域控制器。 这涉及到清理域控制器的元数据并占用操作主机 (也称为灵活单主机操作或 FSMO) 角色。 有关详细信息，请参阅 Microsoft 知识库中的[如何在 Windows server 2003、Windows server 2008 和 Windows server 2008 R2 中检测和恢复 usn 回滚中](https://go.microsoft.com/fwlink/?linkid=137182)的 "从 Usn 回滚恢复" 部分。
+3. 强制降级域控制器。 这涉及到清理域控制器的元数据并占用操作主机 (也称为灵活单主机操作或 FSMO) 角色。 有关详细信息，请参阅 Microsoft 知识库中的 [如何在 Windows server 2003、Windows server 2008 和 Windows server 2008 R2 中检测和恢复 usn 回滚中](https://go.microsoft.com/fwlink/?linkid=137182) 的 "从 Usn 回滚恢复" 部分。
 4. 删除域控制器的所有以前的 VHD 文件。
 
 ## <a name="undetected-usn-rollback"></a>未检测到的 USN 回滚
@@ -471,4 +471,4 @@ Rodc 是在 Active Directory 数据库中托管分区的只读副本的域控制
 
 不建议使用快照还原 RODC。 使用与 Active Directory 兼容的备份应用程序还原 RODC。 此外，与可写域控制器一样，必须谨慎考虑不允许 RODC 脱机，使其超过 tombstone 生存期。 这种情况可能会导致 RODC 上的延迟对象。
 
-有关 Rodc 的详细信息，请参阅[只读域控制器规划和部署指南](../../deploy/rodc/read-only-domain-controller-updates.md)。
+有关 Rodc 的详细信息，请参阅 [只读域控制器规划和部署指南](../../deploy/rodc/read-only-domain-controller-updates.md)。

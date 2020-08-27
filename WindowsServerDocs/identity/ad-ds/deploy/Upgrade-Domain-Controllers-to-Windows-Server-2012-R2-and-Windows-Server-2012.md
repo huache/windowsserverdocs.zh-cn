@@ -1,17 +1,17 @@
 ---
 ms.assetid: e4c31187-f15f-410b-bb79-8d63e2f2b421
 title: 将域控制器升级到 Windows Server 2012 R2 和 Windows Server 2012
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: ae0aa44dba50c467dd1bd2423e9eb67104387cd3
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4034ea96fbe1f758d6948b2bc52ba9786158b0ba
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994491"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940557"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>将域控制器升级到 Windows Server 2012 R2 和 Windows Server 2012
 
@@ -22,9 +22,9 @@ ms.locfileid: "87994491"
 ## <a name="domain-controller-upgrade-steps"></a><a name="BKMK_UpgradeWorkflow"></a>域控制器升级步骤
 升级域的推荐方法是根据需要提升运行较新版本 Windows Server 的域控制器并降级较旧的域控制器。 该方法优于升级现有域控制器的操作系统。 此列表涵盖在提升运行较新版本的 Windows Server 的域控制器之前要遵循的一般步骤：
 
-1. 验证目标服务器是否满足[系统要求](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303418(v=ws.11))。
+1. 验证目标服务器是否满足 [系统要求](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303418(v=ws.11))。
 2. 验证[应用程序兼容性](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat)。
-3. 验证安全设置。 有关详细信息，请参阅 windows [server 2012 中与 AD DS 相关的弃用功能和行为更改](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_DeprecatedFeatures)和[windows Server 2008 和 Windows server 2008 R2 中的安全默认设置](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee522994(v=ws.10)#BKMK_SecureDefault)。
+3. 验证安全设置。 有关详细信息，请参阅 windows [server 2012 中与 AD DS 相关的弃用功能和行为更改](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_DeprecatedFeatures) 和 [windows Server 2008 和 Windows server 2008 R2 中的安全默认设置](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee522994(v=ws.10)#BKMK_SecureDefault)。
 4. 从计划运行安装的计算机上检查与目标服务器的连接性。
 5. 检查所需操作主机角色的可用性：
 
@@ -69,7 +69,7 @@ Windows 8 和 Windows Server 2012 引入了一种名为 [自动维护](/windows/
 
 下表概述了 Windows Server 2012 R2 中的 AD DS 的新增功能，并提供关于其适用情况的更详细信息的链接。 有关某些功能的更为详细的解释（包括其要求），请参阅 [Windows Server 2012 R2 中的 Active Directory 的新增功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268294(v=ws.11))。
 
-|功能|描述|
+|功能|说明|
 |-----------|---------------|
 |[工作区加入](../../ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)|使信息工作人员可以将其个人设备加入他们的公司，以访问公司资源和服务。|
 |[Web 应用程序代理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280942(v=ws.11))|使用新的远程访问角色服务提供对 Web 应用程序的访问权限。|
@@ -86,9 +86,9 @@ Windows 8 和 Windows Server 2012 引入了一种名为 [自动维护](/windows/
 
 ## <a name="whats-new-in-ad-ds-in-windows-server-2012"></a><a name="BKMK_WhatsNewAD"></a>Windows Server 2012 中 AD DS 有哪些新功能？
 
-下表概述了 Windows Server 2012 中的 AD DS 的新增功能，并提供关于其适用情况的更详细信息的链接。 有关某些功能的更多详细说明（包括其要求），请参阅[AD DS) 中 Active Directory 域服务 (的新增](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11))功能。
+下表概述了 Windows Server 2012 中的 AD DS 的新增功能，并提供关于其适用情况的更详细信息的链接。 有关某些功能的更多详细说明（包括其要求），请参阅 [AD DS) 中 Active Directory 域服务 (的新增 ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11))功能。
 
-|功能|描述|
+|功能|说明|
 |-----------|---------------|
 |基于 Active Directory 的激活 (AD BA)；请参阅 [批量激活概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612(v=ws.11))|可以简化配置分发的任务及批量软件许可证的管理。|
 |[Active Directory 联合身份验证服务 (AD FS)](../../active-directory-federation-services.md)|增加了通过服务器管理器安装角色、简化的信任设置、自动的信任管理、支持 SAML 协议等。|
@@ -154,16 +154,16 @@ AD DS 安装向导中的先决条件检查可以在开始安装之前识别潜�
 
 | 加密类型或策略 | Windows Server 2008 默认设置 | Windows Server 2012 和 Windows Server 2008 R2 默认设置 | 评论 |
 |--|--|--|--|
-| AllowNT4Crypto | 已禁用 | 已禁用 | 第三方服务器消息块 (SMB) 客户端可能与域控制器上的安全默认设置不兼容。 在所有情况下，可以通过放宽这些设置来允许交互操作，但这终将是以牺牲安全性为代价。 有关详细信息，请参阅 Microsoft 知识库中的[文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) (https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
+| AllowNT4Crypto | 已禁用 | 已禁用 | 第三方服务器消息块 (SMB) 客户端可能与域控制器上的安全默认设置不兼容。 在所有情况下，可以通过放宽这些设置来允许交互操作，但这终将是以牺牲安全性为代价。 有关详细信息，请参阅 Microsoft 知识库中的 [文章 942564](https://go.microsoft.com/fwlink/?LinkId=164558) (https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
 | DES | 已启用 | 已禁用 | Microsoft 知识库中的[文章 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717) |
-| 集成身份验证的 CBT/扩展保护 | 空值 | 已启用 | 请参阅 microsoft 知识库 (中的[Microsoft 安全公告 (937811) ](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) 和[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>按照要求，查看并安装 Microsoft 知识库[文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (中的修补程序 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
+| 集成身份验证的 CBT/扩展保护 | 不适用 | 已启用 | 请参阅 microsoft 知识库 (中的 [Microsoft 安全公告 (937811) ](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) 和 [文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>按照要求，查看并安装 Microsoft 知识库 [文章 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (中的修补程序 https://go.microsoft.com/fwlink/?LinkId=186394) 。 |
 | LMv2 | 已启用 | 已禁用 | Microsoft 知识库中的[文章 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>操作系统要求
 
 下表列出了 Windows Server 2012 的最低系统要求。 有关系统要求的更多信息以及预安装信息，请参阅 [安装 Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11))。 安装一个新的 Active Directory 林时，并无其他额外的系统要求。但是为了提高域控制器、LDAP 客户端请求以及启用了 Active Directory 的应用程序的性能，应当增加足够的内存以此来缓存 Active Directory 数据库中的内容。 如果要升级现有域控制器或将新域控制器添加到现有林，请查阅下一部分，以确保服务器满足磁盘空间要求。
 
-| 要求 | “值” |
+| 要求 | 值 |
 |--|--|
 | 处理器 | 1.4 GHz 64 位处理器 |
 | RAM | 512 MB |
@@ -200,10 +200,10 @@ AD DS 安装向导中的先决条件检查可以在开始安装之前识别潜�
 
 | 如果运行下列版本 | 可以升级到这些版本 |
 |--|--|
-| 带有 SP2 的 Windows Server 2008 Standard<p>或者<p>带有 SP2 的 Windows Server 2008 Enterprise | Windows Server 2012 Standard<p>或者<p>Windows Server 2012 Datacenter |
+| 带有 SP2 的 Windows Server 2008 Standard<p>要么<p>带有 SP2 的 Windows Server 2008 Enterprise | Windows Server 2012 Standard<p>要么<p>Windows Server 2012 Datacenter |
 | 带有 SP2 的 Windows Server 2008 Datacenter | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 | Windows Server 2012 Standard |
-| 带有 SP1 的 Windows Server 2008 R2 Standard<p>或者<p>带有 SP1 的 Windows Server 2008 R2 Enterprise | Windows Server 2012 Standard<p>或者<p>Windows Server 2012 Datacenter |
+| 带有 SP1 的 Windows Server 2008 R2 Standard<p>要么<p>带有 SP1 的 Windows Server 2008 R2 Enterprise | Windows Server 2012 Standard<p>要么<p>Windows Server 2012 Datacenter |
 | 带有 SP1 的 Windows Server 2008 R2 Datacenter | Windows Server 2012 Datacenter |
 | Windows Web Server 2008 R2 | Windows Server 2012 Standard |
 
@@ -223,7 +223,7 @@ Windows Server 2012 需要 Windows Server 2003 林功能级别。 也就是说�
 4. 安装运行 Windows Server 2012 的域控制器。
 5. 删除运行 Windows Server 早期版本的域控制器。
 
-新的 Windows Server 2012 域功能级别启用一个新功能： " **KDC 支持声明、复合身份验证和 Kerberos**保护" kdc 管理模板策略具有两个设置 (**始终提供**要求 Windows Server 2012 域功能级别) 的声明和**未保护身份验证请求**。
+新的 Windows Server 2012 域功能级别启用一个新功能： " **KDC 支持声明、复合身份验证和 Kerberos** 保护" kdc 管理模板策略具有两个设置 (**始终提供** 要求 Windows Server 2012 域功能级别) 的声明和 **未保护身份验证请求** 。
 
 Windows Server 2012 林功能级别不提供任何新功能，但可确保在林中创建的任何新域都将在 Windows Server 2012 域功能级别上自动运行。 Windows Server 2012 域功能级别不提供 KDC 支持声明、复合身份验证和 Kerberos 保护之外的其他新功能。 但它会确保域中的任何域控制器都运行 Windows Server 2012。 有关不同功能级别提供的其他功能的详细信息，请参阅 [了解 Active Directory 域服务 (AD DS) 功能级别](../active-directory-functional-levels.md)。
 
@@ -263,11 +263,11 @@ Windows Server 2012 中的一些新功能影响操作主机角色：
 
 ## <a name="virtualizing-domain-controllers"></a><a name="BKMK_Virtual"></a>虚拟化域控制器
 
-从 Windows Server 2012 开始 AD DS 改进使域控制器的虚拟化和克隆域控制器的能力更安全。 而克隆域控制器又支持在新域中快速部署其他域控制器和其他好处。 有关详细信息，请参阅[Active Directory 域服务 &#40;的简介 AD DS&#41; 虚拟化 &#40;级别 100&#41;](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
+从 Windows Server 2012 开始 AD DS 改进使域控制器的虚拟化和克隆域控制器的能力更安全。 而克隆域控制器又支持在新域中快速部署其他域控制器和其他好处。 有关详细信息，请参阅 [Active Directory 域服务 &#40;的简介 AD DS&#41; 虚拟化 &#40;级别 100&#41;](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)。
 
 ## <a name="administration-of-windows-server-2012-servers"></a><a name="BKMK_Admin"></a>管理 Windows Server 2012 服务器
 
-使用[适用于 windows 8 的远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=28972)来管理运行 windows Server 2012 的域控制器和其他服务器。 可以在运行 Windows 8 的计算机上运行 Windows Server 2012 远程服务器管理工具。
+使用 [适用于 windows 8 的远程服务器管理工具](https://www.microsoft.com/download/details.aspx?id=28972) 来管理运行 windows Server 2012 的域控制器和其他服务器。 可以在运行 Windows 8 的计算机上运行 Windows Server 2012 远程服务器管理工具。
 
 ## <a name="application-compatibility"></a><a name="BKMK_AppCompat"></a>应用程序兼容性
 
@@ -285,7 +285,7 @@ Windows Server 2012 中的一些新功能影响操作主机角色：
 |[System Center 2012 Forefront Endpoint Protection](/SharePoint/install/hardware-and-software-requirements-0)|FEP 2010 更新汇总 1 将更新客户端支持矩阵以包括下列操作系统：<p>-Windows 8 专业版<br />-Windows 8 企业版<br />-Windows Server 2012 标准版<br />-Windows Server 2012 Datacenter|
 |Forefront Threat Management Gateway (TMG)|只支持 TMG 在 Windows Server 2008 和 Windows Server 2008 R2 上运行。 有关详细信息，请参阅 [Forefront TMG 系统要求](/previous-versions/tn-archive/dd896981(v=technet.10))。|
 |Windows Server 更新服务|此版本的 WSUS 已经支持基于 Windows 8 的计算机或支持基于 Windows Server 2012 的计算机作为客户端。|
-|Windows Server Update Services 3.0|更新知识库文章[2734608](https://support.microsoft.com/kb/2734608)允许运行 WINDOWS SERVER UPDATE SERVICES (WSUS) 3.0 SP2 的服务器为运行 Windows 8 或 Windows Server 2012 的计算机提供更新：**注意：** 具有独立 wsus 3.0 SP2 环境的客户或 Configuration Manager 2007 Service Pack 2 环境（含 WSUS 3.0 SP2）需要[2734608](https://support.microsoft.com/kb/2734608)来正确地将基于 Windows 8 的计算机或基于 windows Server 2012 的计算机作为客户端进行管理。|
+|Windows Server Update Services 3.0|更新知识库文章 [2734608](https://support.microsoft.com/kb/2734608) 允许运行 WINDOWS SERVER UPDATE SERVICES (WSUS) 3.0 SP2 的服务器为运行 Windows 8 或 Windows Server 2012 的计算机提供更新： **注意：** 具有独立 wsus 3.0 SP2 环境的客户或 Configuration Manager 2007 Service Pack 2 环境（含 WSUS 3.0 SP2）需要 [2734608](https://support.microsoft.com/kb/2734608) 来正确地将基于 Windows 8 的计算机或基于 windows Server 2012 的计算机作为客户端进行管理。|
 |[Exchange 2013](/Exchange/plan-and-deploy/prerequisites?view=exchserver-2019)|下列服务器角色支持 Windows Server 2012 Standard 和 Datacenter：架构主机、全局编录服务器、域控制器、邮箱和客户端访问服务器角色<p>林功能级别：Windows Server 2003 或更高版本<p>源：Exchange 2013 系统要求|
 |Exchange 2010|[源：Exchange 2010 Service Pack 3](https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange)<p>可以在 Windows Server 2012 成员服务器上安装带有 Service Pack 3 的 Exchange 2010。<p>对于 Windows Server 2008 R2，[Exchange 2010 系统要求](/previous-versions/office/exchange-server-2010/aa996719(v=exchg.141)) 列出了最新支持的架构主机、全局编录服务器和域控制器。<p>林功能级别：Windows Server 2003 或更高版本|
 |SQL Server 2012|源：KB [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 上支持 SQL Server 2012 RTM。|

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
 title: 事件 ID 2088-复制成功时出现 DNS 查找失败
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 9dbb7debbca8d1625ebe975a051ed8b607d1ddd0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a6e78c458f92e477ddeaf156370f5e254caf4679
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943282"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941337"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>事件 ID 2088：DNS 查找失败但复制成功
 
@@ -51,7 +51,7 @@ Active Directory could not use DNS to resolve the IP address of the source domai
 
 2) 键入 "net view \\ <source DC name> " 或 "ping"，确认源域控制器正在运行 Active Directory 并且可在网络上访问 <source DC name> 。
 
-3) 验证源域控制器是否正在对 DNS 服务使用有效的 DNS 服务器，以及是否已正确注册源域控制器的主机记录和 CNAME 记录，并使用上提供的 DCDIAG.EXE 的 DNS 增强版本<https://www.microsoft.com/dns>
+3) 验证源域控制器是否正在对 DNS 服务使用有效的 DNS 服务器，以及是否已正确注册源域控制器的主机记录和 CNAME 记录，并使用上提供的 DCDIAG.EXE 的 DNS 增强版本 <https://www.microsoft.com/dns>
 
 dcdiag/test： dns
 
@@ -59,9 +59,9 @@ dcdiag/test： dns
 
 dcdiag/test： dns
 
-5) 有关 DNS 错误故障的进一步分析，请参阅 KB 824449：<https://support.microsoft.com/?kbid=824449>
+5) 有关 DNS 错误故障的进一步分析，请参阅 KB 824449： <https://support.microsoft.com/?kbid=824449>
 
-其他数据错误值：11004请求的名称有效，但找 </code> 不到请求类型的数据</introduction>
+其他数据错误值：11004请求的名称有效，但找 </code> 不到请求类型的数据 </introduction>
   <section>
     <title>诊断</title>
     <content>

@@ -1,17 +1,17 @@
 ---
 ms.assetid: ac727bd1-a892-47ed-a7ba-439b34187d4e
 title: AD DS 安装和删除向导页面说明
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 39d41b605db94931731f29aa25990672332c8056
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0eab71426d282bbd1c0411b13286a9cc93dc38ab
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959425"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941017"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>AD DS 安装和删除向导页面说明
 
@@ -48,7 +48,7 @@ ms.locfileid: "87959425"
 -   [确认角色删除选择](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_ConfirmRoleRemovalPage)
 
 ## <a name="deployment-configuration"></a><a name="BKMK_DepConfigPage"></a>部署配置
-服务器管理器从“部署配置”页面**** 开始执行每个域控制器的安装。 其余选项和必填字段在此页面和后续页面上会有所变化，这视所选部署操作而定。 例如，如果创建新林，"**准备选项**" 页不会显示，但是如果在现有林或域中安装运行 Windows Server 2012 的第一个域控制器，则会出现此情况。
+服务器管理器从“部署配置”页面**** 开始执行每个域控制器的安装。 其余选项和必填字段在此页面和后续页面上会有所变化，这视所选部署操作而定。 例如，如果创建新林，" **准备选项** " 页不会显示，但是如果在现有林或域中安装运行 Windows Server 2012 的第一个域控制器，则会出现此情况。
 
 有些验证测试会在此页面上执行，之后作为先决条件检查的一部分再次执行。 例如，如果你尝试在具有 Windows 2000 功能级别的林中安装第一个 Windows Server 2012 域控制器，则此页上将显示错误。
 
@@ -62,7 +62,7 @@ ms.locfileid: "87959425"
 
 -   在创建新林的服务器上，你必须属于 管理员组 的成员。
 
-有关如何创建林的详细信息，请参阅[安装新的 Windows Server 2012 Active Directory 森林 &#40;Level 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md)。
+有关如何创建林的详细信息，请参阅 [安装新的 Windows Server 2012 Active Directory 森林 &#40;Level 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md)。
 
 创建新域时，将显示以下选项。
 
@@ -79,7 +79,7 @@ ms.locfileid: "87959425"
 
 -   如果当前凭据不是来自域，Active Directory 域服务配置向导将提示你提供域凭据。 单击“更改”**** 提供域凭据。
 
-有关如何创建域的详细信息，请参阅[安装新的 Windows Server 2012 Active Directory 子或树域 &#40;Level 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)。
+有关如何创建域的详细信息，请参阅 [安装新的 Windows Server 2012 Active Directory 子或树域 &#40;Level 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)。
 
 将新域控制器添加到现有域时，将显示以下选项。
 
@@ -91,7 +91,7 @@ ms.locfileid: "87959425"
 
     此外，在林中安装运行 Windows Server 2012 的第一个域控制器时，需要凭据包括 Enterprise Admins 组和 Schema Admins 组中的组成员身份。 如果当前凭据没有足够权限或组成员身份，Active Directory 域服务配置向导将在稍后给出提示。
 
-有关如何向现有域添加域控制器的详细信息，请参阅[在现有域中安装副本 Windows Server 2012 域控制器 &#40;级别 200&#41;](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)。
+有关如何向现有域添加域控制器的详细信息，请参阅 [在现有域中安装副本 Windows Server 2012 域控制器 &#40;级别 200&#41;](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)。
 
 ## <a name="domain-controller-options"></a><a name="BKMK_DCOptionsPage"></a>域控制器选项
 如果要创建新林，“域控制器选项”页将显示以下选项。
@@ -100,16 +100,16 @@ ms.locfileid: "87959425"
 
 -   默认情况下，林和域功能级别设置为 Windows Server 2012。
 
-    Windows Server 2012 域功能级别提供了一个新功能：支持动态访问控制和 Kerberos 保护 KDC 管理模板策略具有两个设置 (始终提供要求 Windows Server 2012 域功能级别) 的声明和未保护身份验证请求。 有关详细信息，请参阅[Kerberos 身份验证中的新增功能中的](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))"支持声明、复合身份验证和 Kerberos 保护"。
+    Windows Server 2012 域功能级别提供了一个新功能：支持动态访问控制和 Kerberos 保护 KDC 管理模板策略具有两个设置 (始终提供要求 Windows Server 2012 域功能级别) 的声明和未保护身份验证请求。 有关详细信息，请参阅 [Kerberos 身份验证中的新增功能中的](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))"支持声明、复合身份验证和 Kerberos 保护"。
     Windows Server 2012 林功能级别不提供任何新功能，但可确保在林中创建的任何新域都将在 Windows Server 2012 域功能级别上自动运行。 Windows Server 2012 域功能级别不提供支持动态访问控制和 Kerberos 保护的其他任何新功能，但可确保域中的任何域控制器都运行 Windows Server 2012。 有关不同功能级别提供的其他功能的详细信息，请参阅 [了解 Active Directory 域服务 (AD DS) 功能级别](../active-directory-functional-levels.md)。
 
     除了功能级别以外，运行 Windows Server 2012 的域控制器还提供运行早期版本 Windows Server 的域控制器上不可用的其他功能。 例如，运行 Windows Server 2012 的域控制器可用于虚拟域控制器克隆，而运行早期版本 Windows Server 的域控制器则不能。
 
 -   创建新林时，默认情况下选择 DNS 服务器。 林中的第一个域控制器必须是全局目录 (GC) 服务器，且不能是只读域控制器 (RODC)。
 
--   需要目录服务还原模式 (DSRM) 密码才能登录未运行 AD DS 的域控制器。 指定的密码必须遵循应用于服务器的密码策略，且默认情况下无需强密码；仅需非空密码。 总是选择复杂强密码或首选密码。 有关如何将 DSRM 密码与域用户帐户的密码同步的信息，请参阅[KB 961320](https://support.microsoft.com/kb/961320)。
+-   需要目录服务还原模式 (DSRM) 密码才能登录未运行 AD DS 的域控制器。 指定的密码必须遵循应用于服务器的密码策略，且默认情况下无需强密码；仅需非空密码。 总是选择复杂强密码或首选密码。 有关如何将 DSRM 密码与域用户帐户的密码同步的信息，请参阅 [KB 961320](https://support.microsoft.com/kb/961320)。
 
-有关如何创建林的详细信息，请参阅[安装新的 Windows Server 2012 Active Directory 森林 &#40;Level 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md)。
+有关如何创建林的详细信息，请参阅 [安装新的 Windows Server 2012 Active Directory 森林 &#40;Level 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md)。
 
 如果要创建子域，“域控制器选项”页将显示以下选项。
 
@@ -126,7 +126,7 @@ ms.locfileid: "87959425"
     > [!IMPORTANT]
     > 如果服务器不属于 Active Directory 子网且存在多个站点，则不选择任何内容且“下一步”**** 按钮不可用，直至从列表中选择一个站点。
 
-有关如何创建域的详细信息，请参阅[安装新的 Windows Server 2012 Active Directory 子或树域 &#40;Level 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)。
+有关如何创建域的详细信息，请参阅 [安装新的 Windows Server 2012 Active Directory 子或树域 &#40;Level 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)。
 
 如果要将域控制器添加到域，“域控制器选项”页将显示以下选项。
 
@@ -134,9 +134,9 @@ ms.locfileid: "87959425"
 
 -   可配置的域控制器选项包括“DNS 服务器”****、“全局目录”**** 和“只读域控制器”****。
 
-    Microsoft 建议所有域控制器都提供 DNS 和全局目录服务，以在分布式环境中实现高可用性，这就是向导默认情况下启用这些选项的原因。 有关部署 Rodc 的详细信息，请参阅[只读域控制器规划和部署指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771744(v=ws.10))。
+    Microsoft 建议所有域控制器都提供 DNS 和全局目录服务，以在分布式环境中实现高可用性，这就是向导默认情况下启用这些选项的原因。 有关部署 Rodc 的详细信息，请参阅 [只读域控制器规划和部署指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771744(v=ws.10))。
 
-有关如何向现有域添加域控制器的详细信息，请参阅[在现有域中安装副本 Windows Server 2012 域控制器 &#40;级别 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)。
+有关如何向现有域添加域控制器的详细信息，请参阅 [在现有域中安装副本 Windows Server 2012 域控制器 &#40;级别 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)。
 
 ## <a name="dns-options"></a><a name="BKMK_DNSOptionsPage"></a>DNS 选项
 如果安装 DNS 服务器，则将显示以下“DNS 选项”**** 页。
@@ -153,11 +153,11 @@ ms.locfileid: "87959425"
 
 此外，还可以先创建这些 DNS 委派记录，再安装 DNS 服务器。 若要创建区域委派，请打开 **“DNS 管理器”**，右键单击父域，然后单击 **“新建委派”**。 按照“新建委派向导”中的步骤创建委派。
 
-安装过程尝试创建委派，以确保其他域中的计算机可解析主机的 DNS 查询，包括 DNS 子域中的域控制器和成员计算机。 请注意，只能在 Microsoft DNS 服务器上自动创建委派记录。 如果父 DNS 域区域位于 BIND 等第三方 DNS 服务器上，则将在“先决条件检查”页面上显示无法创建 DNS 委派记录的警告。 有关该警告的详细信息，请参阅[安装 AD DS 的已知问题](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10))。
+安装过程尝试创建委派，以确保其他域中的计算机可解析主机的 DNS 查询，包括 DNS 子域中的域控制器和成员计算机。 请注意，只能在 Microsoft DNS 服务器上自动创建委派记录。 如果父 DNS 域区域位于 BIND 等第三方 DNS 服务器上，则将在“先决条件检查”页面上显示无法创建 DNS 委派记录的警告。 有关该警告的详细信息，请参阅 [安装 AD DS 的已知问题](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10))。
 
 父域和要提升的子域之间的委派可在安装前后创建和验证。 新域控制器安装出现延迟不是因为无法创建或更新 DNS 委派。
 
-有关委派的详细信息，请参阅[了解区域委派](https://go.microsoft.com/fwlink/?LinkId=164773) (https://go.microsoft.com/fwlink/?LinkId=164773) 。 如果在所处情形中无法进行区域委派，可以考虑使用其他方法进行从其他域到你域中主机的名称解析。 例如，其他域的 DNS 管理员可配置条件转发、存根区域或辅助区域来解析你域中的名称。 有关详细信息，请参阅下列主题：
+有关委派的详细信息，请参阅 [了解区域委派](https://go.microsoft.com/fwlink/?LinkId=164773) (https://go.microsoft.com/fwlink/?LinkId=164773) 。 如果在所处情形中无法进行区域委派，可以考虑使用其他方法进行从其他域到你域中主机的名称解析。 例如，其他域的 DNS 管理员可配置条件转发、存根区域或辅助区域来解析你域中的名称。 有关详细信息，请参阅下列主题：
 
 -   [了解区域类型](https://go.microsoft.com/fwlink/?LinkID=157399) (https://go.microsoft.com/fwlink/?LinkID=157399)
 
@@ -170,15 +170,15 @@ ms.locfileid: "87959425"
 
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_RODCOptions.gif)
 
--   委派的管理员帐户获得 RODC 的本地管理权限。 这些用户可以操作与本地计算机的管理员组等效的权限。 他们不是 Domain Admins 或域内置管理员组的成员。 在不指派域管理权限的情况下委派分支机构管理时，这样选择很有用。 不需要配置管理委派。 有关详细信息，请参阅[管理员角色分隔](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753170(v=ws.10))。
+-   委派的管理员帐户获得 RODC 的本地管理权限。 这些用户可以操作与本地计算机的管理员组等效的权限。 他们不是 Domain Admins 或域内置管理员组的成员。 在不指派域管理权限的情况下委派分支机构管理时，这样选择很有用。 不需要配置管理委派。 有关详细信息，请参阅 [管理员角色分隔](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753170(v=ws.10))。
 
 -   密码复制策略用作访问控制列表 (ACL)。 它确定是否应该允许 RODC 缓存密码。 在 RODC 收到经身份验证的用户或计算机登录请求时，它将参考密码复制策略来确定是否应该缓存帐户的密码。 那么，同一帐户就可以更高效地执行后续登录。
 
     密码复制策略 (PRP) 列出了可缓存密码的帐户，以及密码缓存被显式拒绝的帐户。 允许缓存用户和计算机帐户列表，并不表示 RODC 一定缓存了这些帐户的密码。 例如，管理员可以提前指定 RODC 将缓存的任何密码。 这样，RODC 可以对这些帐户进行身份验证，即使集线器站点的 WAN 链接处于脱机状态也是如此。
 
-    不允许（包括隐式）或被拒绝的任何用户或计算机都不会缓存密码。 如果这些用户或计算机不能访问可写域控制器，则无法访问 AD DS-提供的资源或功能。 有关 PRP 的详细信息，请参阅[密码复制策略](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730883(v=ws.10))。 有关管理 PRP 的详细信息，请参阅[管理密码复制策略](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754646(v=ws.10))。
+    不允许（包括隐式）或被拒绝的任何用户或计算机都不会缓存密码。 如果这些用户或计算机不能访问可写域控制器，则无法访问 AD DS-提供的资源或功能。 有关 PRP 的详细信息，请参阅 [密码复制策略](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730883(v=ws.10))。 有关管理 PRP 的详细信息，请参阅 [管理密码复制策略](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754646(v=ws.10))。
 
-有关安装 Rodc 的详细信息，请参阅[安装 Windows Server 2012 Active Directory 只读域控制器 &#40;RODC&#41; &#40;级别 200&#41;](../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md)。
+有关安装 Rodc 的详细信息，请参阅 [安装 Windows Server 2012 Active Directory 只读域控制器 &#40;RODC&#41; &#40;级别 200&#41;](../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md)。
 
 ## <a name="additional-options"></a><a name="BKMK_AdditionalOptionsPage"></a>其他选项
 如果要创建新域，以下选项将显示在“其他选项”**** 页中。
@@ -193,7 +193,7 @@ ms.locfileid: "87959425"
 
 -   你还可以使用“从媒体安装 (IFM)”选项选择使用备份的媒体安装域控制器。 如果在本地存储安装媒体，可以选择“从媒体安装路径”**** 选项浏览到文件位置。 此浏览选项不适用于远程安装。 你可以单击“验证”**** 来确保提供的路径是有效媒体。 必须仅通过其他现有 Windows Server 2012 计算机上的 Windows Server 备份或 Ntdsutil.exe 创建 IFM 选项使用的媒体;不能使用 Windows Server 2008 R2 或早期版本的操作系统为 Windows Server 2012 域控制器创建媒体。 如果使用 SYSKEY 保护媒体，服务器管理器将在验证期间提示提供映像密码。
 
-有关如何创建域的详细信息，请参阅[安装新的 Windows Server 2012 Active Directory 子或树域 &#40;Level 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)。 有关如何向现有域添加域控制器的详细信息，请参阅[在现有域中安装副本 Windows Server 2012 域控制器 &#40;级别 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)。
+有关如何创建域的详细信息，请参阅 [安装新的 Windows Server 2012 Active Directory 子或树域 &#40;Level 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)。 有关如何向现有域添加域控制器的详细信息，请参阅 [在现有域中安装副本 Windows Server 2012 域控制器 &#40;级别 200&#41;](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)。
 
 ## <a name="paths"></a><a name="BKMK_Paths"></a>路径
 以下选项显示在“路径”**** 页。
@@ -207,7 +207,7 @@ ms.locfileid: "87959425"
 ## <a name="preparation-options"></a><a name="BKMK_AdprepCreds"></a>准备选项
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_PreparationOptions.gif)
 
-如果当前未使用足够凭据登录来运行 adprep.exe 命令和，且需要运行 adprep 才能完成 AD DS 安装，系统将提示你提供凭据来运行 adprep.exe。 需要运行 Adprep 才能将运行 Windows Server 2012 的第一个域控制器添加到现有域或林。 更具体地说：
+如果当前未使用足够凭据登录来运行 adprep.exe 命令和，且需要运行 adprep 才能完成 AD DS 安装，系统将提示你提供凭据来运行 adprep.exe。 需要运行 Adprep 才能将运行 Windows Server 2012 的第一个域控制器添加到现有域或林。 更具体说来：
 
 -   必须运行 Adprep/forestprep 才能将运行 Windows Server 2012 的第一个域控制器添加到现有林。 此命令必须由托管架构主机的域的 Enterprise Admins 组、Schema Admins 组和 Domain Admins 组的成员来运行。 若要成功运行此命令，运行命令的计算机和林的架构主机之间必须存在连接。
 
@@ -215,7 +215,7 @@ ms.locfileid: "87959425"
 
 -   必须运行 Adprep /rodcprep 才能将第一个 RODC 添加到现有林。 此命令必须由 Enterprise Admins 组的成员来运行。 若要成功运行此命令，运行命令的计算机和林中每个应用程序目录分区的基础结构主机之间必须存在连接。
 
-有关 Adprep.exe 的详细信息，请参阅[Adprep.exe 集成](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_NewAdprep)并参阅[运行 Adprep.exe](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))。
+有关 Adprep.exe 的详细信息，请参阅 [Adprep.exe 集成](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_NewAdprep) 并参阅 [运行 Adprep.exe](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))。
 
 ## <a name="review-options"></a><a name="BKMK_ViewInstallOptionsPage"></a>查看选项
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_ReviewOptions.gif)
@@ -229,7 +229,7 @@ ms.locfileid: "87959425"
 
 此页面上显示的一些警告包括：
 
--   运行 Windows Server 2008 或更高版本的域控制器具有 "允许与 Windows NT 4 兼容的加密算法" 的默认设置，可防止在建立安全通道会话时使用较弱的加密算法。 有关潜在影响和解决方法的详细信息，请参阅知识库文章[942564](https://support.microsoft.com/kb/942564)。
+-   运行 Windows Server 2008 或更高版本的域控制器具有 "允许与 Windows NT 4 兼容的加密算法" 的默认设置，可防止在建立安全通道会话时使用较弱的加密算法。 有关潜在影响和解决方法的详细信息，请参阅知识库文章 [942564](https://support.microsoft.com/kb/942564)。
 
 -   无法创建或更新 DNS 委派。 有关详细信息，请参阅 [DNS 选项](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_DNSOptionsPage)。
 
@@ -251,14 +251,14 @@ ms.locfileid: "87959425"
 
 你可在“凭据”**** 页上配置降级选项。 从以下列表提供执行降级所需的凭据：
 
--   降级其他域控制器需要 Domain Admin 凭据。 选择 **"强制删除域控制器**" 将降级域控制器，而不会从 Active Directory 中删除域控制器对象的元数据。
+-   降级其他域控制器需要 Domain Admin 凭据。 选择 **"强制删除域控制器** " 将降级域控制器，而不会从 Active Directory 中删除域控制器对象的元数据。
 
     > [!IMPORTANT]
     > 如果域控制器可以联系其他域控制器，则不要选择此选项，而且*还没有任何合理的方法*可解决这种网络问题。 强制降级会将 Active Directory 中已丢弃的元数据保留在林中的其余域控制器上。 此外，该域控制器上所有未复制的更改（如密码或新用户帐户）都将永久丢失。 已丢弃的元数据是 AD DS、Exchange、SQL 和其他软件的大部分 Microsoft 客户支持案例的根本原因。 如果强制降级域控制器，*必须*立即手动执行元数据清理。 有关步骤，请查看 [清理服务器元数据](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816907(v=ws.10))。
 
 -   降级域中的最后一个域控制器需要 Enterprise Admins 组成员身份，因为这将删除域本身（如果这是林中的最后一个域，这将删除林）。 服务器管理器将通知当前域控制器是否是域中的最后一个域控制器。 选择“域中的最后一个域控制器”**** 以确认域控制器是域中的最后一个域控制器。
 
-有关删除 AD DS 的详细信息，请参阅[删除 Active Directory 域服务 (级别 100) ](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c)并[降级域控制器和域 &#40;级别 200&#41;](Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
+有关删除 AD DS 的详细信息，请参阅 [删除 Active Directory 域服务 (级别 100) ](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c) 并 [降级域控制器和域 &#40;级别 200&#41;](Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
 
 ## <a name="ad-ds-removal-options-and-warnings"></a><a name="BKMK_RemovalOptionsPage"></a>AD DS 删除选项和警告
 如果需要“审查” 选项页的相关帮助，请参阅“审查” 选项。
@@ -269,7 +269,7 @@ ms.locfileid: "87959425"
 
 必须单击“继续删除”**** 确认附加角色不再提供，才能单击“下一步”**** 继续。
 
-如果强制删除域控制器，未复制到域中其他域控制器的任何 Active Directory 对象更改都将丢失。 此外，如果域控制器托管操作主机角色、全局目录或 DNS 服务器角色，可能会给域和林中的关键操作带来如下影响。 在删除托管任何操作主机角色的域控制器之前，尝试将角色传输到其他域控制器。 如果无法传输角色，请先从此计算机删除 Active Directory 域服务，然后使用 Ntdsutil.exe 占用角色。 在计划占用角色的域控制器上使用 Ntdsutil；如果可能，使用与此域控制器相同的站点中的最新复制伙伴。 有关传输和占用操作主机角色的详细信息，请参阅 Microsoft 知识库中的[文章 255504](https://go.microsoft.com/fwlink/?LinkId=80395) 。 如果向导无法确定域控制器是否托管操作主机角色，请运行 netdom.exe 命令以确定此域控制器是否执行任何操作主机角色。
+如果强制删除域控制器，未复制到域中其他域控制器的任何 Active Directory 对象更改都将丢失。 此外，如果域控制器托管操作主机角色、全局目录或 DNS 服务器角色，可能会给域和林中的关键操作带来如下影响。 在删除托管任何操作主机角色的域控制器之前，尝试将角色传输到其他域控制器。 如果无法传输角色，请先从此计算机删除 Active Directory 域服务，然后使用 Ntdsutil.exe 占用角色。 在计划占用角色的域控制器上使用 Ntdsutil；如果可能，使用与此域控制器相同的站点中的最新复制伙伴。 有关传输和占用操作主机角色的详细信息，请参阅 Microsoft 知识库中的 [文章 255504](https://go.microsoft.com/fwlink/?LinkId=80395) 。 如果向导无法确定域控制器是否托管操作主机角色，请运行 netdom.exe 命令以确定此域控制器是否执行任何操作主机角色。
 
 -   全局目录：用户可能无法登录林中的域。 在删除全局目录服务器之前，确保此林和站点具有足够全局目录服务器来服务用户登录。 如有必要，指定其他全局目录服务器并使用新信息更新客户端和应用程序。
 
@@ -293,14 +293,14 @@ ms.locfileid: "87959425"
 
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_RemovalOptions.gif)
 
-有关删除 AD DS 的详细信息，请参阅[删除 Active Directory 域服务 (级别 100) ](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c)并[降级域控制器和域 &#40;级别 200&#41;](Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
+有关删除 AD DS 的详细信息，请参阅 [删除 Active Directory 域服务 (级别 100) ](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c) 并 [降级域控制器和域 &#40;级别 200&#41;](Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
 
 ## <a name="new-administrator-password"></a><a name="BKMK_NewAdminPwdPage"></a>新建管理员密码
-当降级完成且计算机成为域成员服务器或工作组计算机后，"**新建管理员密码**" 页将要求你提供内置本地计算机的管理员帐户的密码。
+当降级完成且计算机成为域成员服务器或工作组计算机后，" **新建管理员密码** " 页将要求你提供内置本地计算机的管理员帐户的密码。
 
 ![AD DS 安装](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_NewAdminPwd.gif)
 
-有关删除 AD DS 的详细信息，请参阅[删除 Active Directory 域服务 (级别 100) ](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c)并[降级域控制器和域 &#40;级别 200&#41;](Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
+有关删除 AD DS 的详细信息，请参阅 [删除 Active Directory 域服务 (级别 100) ](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c) 并 [降级域控制器和域 &#40;级别 200&#41;](Demoting-Domain-Controllers-and-Domains--Level-200-.md)。
 
 ## <a name="review-options"></a><a name="BKMK_ConfirmRoleRemovalPage"></a>查看选项
 “审查” 选项**** 页面可以将降级配置设置导出到 Windows PowerShell 脚本，以便可以自动执行附加降级。 单击“降级”**** 以删除 AD DS。

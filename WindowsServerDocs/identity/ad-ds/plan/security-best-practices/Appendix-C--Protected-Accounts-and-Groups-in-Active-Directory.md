@@ -1,17 +1,17 @@
 ---
 ms.assetid: 5b2876ac-fe7d-4054-bfba-b692e57bc0d2
 title: Active Directory 中的附录 C-受保护的帐户和组
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e539a91e4d844074c76f6d1f41eb4e6824db242a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7a62ad9ecd14d4f4a3126d0294c56082e8a5f701
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963351"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941610"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>附录 C：Active Directory 中受保护的帐户和组
 
@@ -68,41 +68,41 @@ SDProp 是默认情况下每 60 (分钟运行一次的进程，) 域控制器上
 
 测试 AdminSDHolder 更改的更好方法是手动运行 SDProp，这会导致任务立即运行，但不会影响计划的执行。 对于运行 Windows Server 2008 和更早版本的域控制器，在运行 Windows Server 2012 或 Windows Server 2008 R2 的域控制器上，手动运行 SDProp 的执行方式略有不同。
 
-[Microsoft 支持部门文章 251343](https://support.microsoft.com/kb/251343)中提供了在较早版本的操作系统上手动运行 SDProp 的过程，以下是针对较旧和较新操作系统的分步说明。 在任一情况下，都必须连接到 Active Directory 中的 rootDSE 对象，并使用 rootDSE 对象的 null DN 执行修改操作，并将操作的名称指定为要修改的属性。 有关 rootDSE 对象上的可修改操作的详细信息，请参阅 MSDN 网站上的[RootDSE 修改操作](/openspecs/windows_protocols/ms-adts/fc74972f-b267-4c1a-8716-0f5b48cf52b9)。
+[Microsoft 支持部门文章 251343](https://support.microsoft.com/kb/251343)中提供了在较早版本的操作系统上手动运行 SDProp 的过程，以下是针对较旧和较新操作系统的分步说明。 在任一情况下，都必须连接到 Active Directory 中的 rootDSE 对象，并使用 rootDSE 对象的 null DN 执行修改操作，并将操作的名称指定为要修改的属性。 有关 rootDSE 对象上的可修改操作的详细信息，请参阅 MSDN 网站上的 [RootDSE 修改操作](/openspecs/windows_protocols/ms-adts/fc74972f-b267-4c1a-8716-0f5b48cf52b9) 。
 
 ###### <a name="running-sdprop-manually-in-windows-server-2008-or-earlier"></a>在 Windows Server 2008 或更早版本中手动运行 SDProp
 
 您可以使用 Ldp.exe 或通过运行 LDAP 修改脚本强制 SDProp 运行。 若要使用 Ldp.exe 运行 SDProp，请在更改域中的 AdminSDHolder 对象之后执行以下步骤：
 
-1. 启动**Ldp.exe**。
-2. 单击 "Ldp" 对话框上的 "**连接**"，然后单击 "**连接**"。
+1. 启动 **Ldp.exe**。
+2. 单击 "Ldp" 对话框上的 " **连接** "，然后单击 " **连接**"。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_9.gif)
 
-3. 在 "**连接**" 对话框中，键入持有 PDC 模拟器 (PDCE) 角色的域的域控制器的名称，然后单击 **"确定"**。
+3. 在 " **连接** " 对话框中，键入持有 PDC 模拟器 (PDCE) 角色的域的域控制器的名称，然后单击 **"确定"**。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)
 
-4. 验证是否已成功连接，如以下屏幕截图中的**Dn： (RootDSE) **所示，单击 "**连接**"，然后单击 "**绑定**"。
+4. 验证是否已成功连接，如以下屏幕截图中的 **Dn： (RootDSE) ** 所示，单击 " **连接** "，然后单击 " **绑定**"。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)
 
-5. 在 "**绑定**" 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。  (如果以该用户身份登录，则可以选择 "作为当前已登录用户**绑定**"。 ) 单击 **"确定"**。
+5. 在 " **绑定** " 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。  (如果以该用户身份登录，则可以选择 "作为当前已登录用户 **绑定** "。 ) 单击 **"确定"**。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_12.png)
 
-6. 完成绑定操作后，单击 "**浏览**"，然后单击 "**修改**"。
+6. 完成绑定操作后，单击 " **浏览**"，然后单击 " **修改**"。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_13.png)
 
-7. 在 "**修改**" 对话框中，将**DN**字段留空。 在 "**编辑条目属性**" 字段中，键入**FixUpInheritance**，然后在 "**值**" 字段中键入**Yes**。 单击**Enter**填充**条目列表**，如以下屏幕截图所示。
+7. 在 " **修改** " 对话框中，将 **DN** 字段留空。 在 " **编辑条目属性** " 字段中，键入 **FixUpInheritance**，然后在 " **值** " 字段中键入 **Yes**。 单击 **Enter** 填充 **条目列表** ，如以下屏幕截图所示。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_14.gif)
 
 8. 在 "填充的修改" 对话框中，单击 "运行"，然后验证对 AdminSDHolder 对象所做的更改是否已出现在该对象上。
 
 > [!NOTE]
-> 有关修改 AdminSDHolder 以允许指定的无特权帐户修改受保护组的成员身份的信息，请参阅[附录 I：在 Active Directory 中创建受保护帐户和组的管理帐户](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)。
+> 有关修改 AdminSDHolder 以允许指定的无特权帐户修改受保护组的成员身份的信息，请参阅 [附录 I：在 Active Directory 中创建受保护帐户和组的管理帐户](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)。
 
 如果希望通过 LDIFDE 或脚本手动运行 SDProp，可以按如下所示创建修改项：
 
@@ -112,33 +112,33 @@ SDProp 是默认情况下每 60 (分钟运行一次的进程，) 域控制器上
 
 还可以通过使用 Ldp.exe 或运行 LDAP 修改脚本来强制 SDProp 运行。 若要使用 Ldp.exe 运行 SDProp，请在更改域中的 AdminSDHolder 对象之后执行以下步骤：
 
-1. 启动**Ldp.exe**。
+1. 启动 **Ldp.exe**。
 
-2. 在 " **Ldp** " 对话框中，单击 "**连接**"，然后单击 "**连接**"。
+2. 在 " **Ldp** " 对话框中，单击 " **连接**"，然后单击 " **连接**"。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_16.gif)
 
-3. 在 "**连接**" 对话框中，键入持有 PDC 模拟器 (PDCE) 角色的域的域控制器的名称，然后单击 **"确定"**。
+3. 在 " **连接** " 对话框中，键入持有 PDC 模拟器 (PDCE) 角色的域的域控制器的名称，然后单击 **"确定"**。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)
 
-4. 验证是否已成功连接，如以下屏幕截图中的**Dn： (RootDSE) **所示，单击 "**连接**"，然后单击 "**绑定**"。
+4. 验证是否已成功连接，如以下屏幕截图中的 **Dn： (RootDSE) ** 所示，单击 " **连接** "，然后单击 " **绑定**"。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)
 
-5. 在 "**绑定**" 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。  (如果以该用户身份登录，则可以选择 "**作为当前已登录用户绑定**"。 ) 单击 **"确定"**。
+5. 在 " **绑定** " 对话框中，键入有权修改 rootDSE 对象的用户帐户的凭据。  (如果以该用户身份登录，则可以选择 " **作为当前已登录用户绑定**"。 ) 单击 **"确定"**。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_19.gif)
 
-6. 完成绑定操作后，单击 "**浏览**"，然后单击 "**修改**"。
+6. 完成绑定操作后，单击 " **浏览**"，然后单击 " **修改**"。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_20.gif)
 
-7. 在 "**修改**" 对话框中，将**DN**字段留空。 在 "**编辑项属性**" 字段中，键入**RunProtectAdminGroupsTask**，然后在 "**值**" 字段中键入**1**。 单击 " **Enter** " 以填充条目列表，如下所示。
+7. 在 " **修改** " 对话框中，将 **DN** 字段留空。 在 " **编辑项属性** " 字段中，键入 **RunProtectAdminGroupsTask**，然后在 " **值** " 字段中键入 **1**。 单击 " **Enter** " 以填充条目列表，如下所示。
 
    ![受保护的帐户和组](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_21.gif)
 
-8. 在 "填充的**修改**" 对话框中，单击 "**运行**"，然后验证对 AdminSDHolder 对象所做的更改是否已出现在该对象上。
+8. 在 "填充的 **修改** " 对话框中，单击 " **运行**"，然后验证对 AdminSDHolder 对象所做的更改是否已出现在该对象上。
 
 如果希望通过 LDIFDE 或脚本手动运行 SDProp，可以按如下所示创建修改项：
 

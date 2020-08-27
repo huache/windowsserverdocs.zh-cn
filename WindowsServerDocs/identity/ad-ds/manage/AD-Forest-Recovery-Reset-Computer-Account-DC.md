@@ -1,17 +1,17 @@
 ---
 title: AD 林恢复-重置 DC 上的计算机帐户
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 4e1a6070-df0a-4dfe-8773-899a010bfabd
-ms.openlocfilehash: 3d779e989c4414629c9a7414adf41c96525368c4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 54d3233db2e4cba388abb35e91053413072bb1c1
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969834"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941587"
 ---
 # <a name="ad-forest-recovery---resetting-the-computer-account-on-the-dc"></a>AD 林恢复-重置 DC 上的计算机帐户
 
@@ -33,7 +33,7 @@ ms.locfileid: "87969834"
    netdom resetpwd /server:domain controller name /userD:administrator /passwordd:*
    ```
 
-    其中*域控制器名称*是你要恢复的本地 DC。
+    其中 *域控制器名称* 是你要恢复的本地 DC。
 
    > [!NOTE]
    > 你应运行此命令两次。

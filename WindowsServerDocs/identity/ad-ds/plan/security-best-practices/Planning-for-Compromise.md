@@ -1,17 +1,17 @@
 ---
 ms.assetid: 6f50476c-a1f1-48fb-999b-76c4c3816496
 title: 规划泄露
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c7347f247b9e637c610d73e0b37018bd54572dea
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9be3768f4ac0f95c1c268d9a4efb55af3f74d304
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994298"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941397"
 ---
 # <a name="planning-for-compromise"></a>规划泄露
 
@@ -29,7 +29,7 @@ ms.locfileid: "87994298"
 
 若要创建有效的防御，同时向依赖于你的基础结构和应用程序的用户和企业提供服务，你可能需要考虑 novel 方法，以防止、检测和在你的环境中受到损害，然后再从泄露中恢复。 本文档中的方法和建议可能无法帮助你修复已泄露的 Active Directory 安装，但可以帮助你保护下一项。
 
-Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：规划 Active Directory 林恢复](https://www.microsoft.com/download/details.aspx?id=16506)。 您可能能够防止您的新环境受到完全损害，但即使您不能，您也可以使用这些工具来恢复和重新获得对您的环境的控制。
+Windows Server 2012 中提供了有关恢复 Active Directory 林的建议 [：规划 Active Directory 林恢复](https://www.microsoft.com/download/details.aspx?id=16506)。 您可能能够防止您的新环境受到完全损害，但即使您不能，您也可以使用这些工具来恢复和重新获得对您的环境的控制。
 
 ## <a name="rethinking-the-approach"></a>反思方法
 *定律数八：防御网络的难点与复杂性是直接成比例的。* - [安全管理的10个永恒定律](/previous-versions/cc722488(v=technet.10))
@@ -60,7 +60,7 @@ Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：�
 
 请不要关注和尝试修复 "已损坏" 的所有内容，而是考虑一种方法，根据在业务和基础结构中最重要的内容来确定优先级。 不要尝试修正使用过时的、配置错误的系统和应用程序填充的环境，而应考虑创建一个新的小型安全环境，你可以在其中安全地移植用户、系统和对你的业务最重要的信息。
 
-在本部分中，我们将介绍一种方法，通过该方法，你可以创建一个可用作核心业务基础结构的 "生命船" 或 "安全单元" 的处于纯洁 AD DS 林。 处于纯洁林只是新安装的 Active Directory 林中，通常是大小和范围有限的，它是使用当前操作系统、应用程序以及[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述的原则构建的。
+在本部分中，我们将介绍一种方法，通过该方法，你可以创建一个可用作核心业务基础结构的 "生命船" 或 "安全单元" 的处于纯洁 AD DS 林。 处于纯洁林只是新安装的 Active Directory 林中，通常是大小和范围有限的，它是使用当前操作系统、应用程序以及 [降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述的原则构建的。
 
 通过在新构建的林中实施推荐的配置设置，你可以创建一个 AD DS 安装，该安装是从一开始就使用安全的设置和做法构建的，你可以减少支持旧系统和应用程序的问题。 虽然设计和实现处于纯洁 AD DS 安装的详细说明不在本文档的讨论范围内，但你应遵循一些常规原则和指导原则，以创建一个可在其中存放最关键资产的 "安全单元"。 这些准则如下所示：
 
@@ -78,7 +78,7 @@ Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：�
 
 ### <a name="identifying-principles-for-segregating-and-securing-critical-assets"></a>确定用于隔离和保护关键资产的原则
 
-你创建的处于纯洁环境的特性可能会有很大的差异。 例如，你可以选择创建一个处于纯洁林，以便仅将 VIP 用户和敏感数据迁移到只有这些用户可以访问的数据。 你可以创建处于纯洁林，其中你不仅可以迁移 VIP 用户，还可以将其作为管理林来实现，实现[降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md)中所述的原则，以创建可用于从处于纯洁林中管理旧版林的安全管理帐户和主机。 你可以实现一个 "专门构建的" 林，其中驻留了 VIP 帐户、特权帐户和需要额外安全性的系统，如运行 Active Directory 证书服务的服务器 (AD CS) ，其唯一目的是将这些服务器与不太安全的林分离。 最后，您可以实现一个处于纯洁林，使其成为所有新用户、系统、应用程序和数据的事实上的位置，从而使您能够通过 attrition 最终解除旧林的授权。
+你创建的处于纯洁环境的特性可能会有很大的差异。 例如，你可以选择创建一个处于纯洁林，以便仅将 VIP 用户和敏感数据迁移到只有这些用户可以访问的数据。 你可以创建处于纯洁林，其中你不仅可以迁移 VIP 用户，还可以将其作为管理林来实现，实现 [降低 Active Directory 攻击面](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Reducing-the-Active-Directory-Attack-Surface.md) 中所述的原则，以创建可用于从处于纯洁林中管理旧版林的安全管理帐户和主机。 你可以实现一个 "专门构建的" 林，其中驻留了 VIP 帐户、特权帐户和需要额外安全性的系统，如运行 Active Directory 证书服务的服务器 (AD CS) ，其唯一目的是将这些服务器与不太安全的林分离。 最后，您可以实现一个处于纯洁林，使其成为所有新用户、系统、应用程序和数据的事实上的位置，从而使您能够通过 attrition 最终解除旧林的授权。
 
 无论你的处于纯洁林中是否包含少量的用户和系统，或是为了进行更严格的迁移而形成基础，你都应在规划中遵循以下原则：
 
@@ -105,7 +105,7 @@ Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：�
 
 然而，维护 SID 历史记录在某些环境中已经过验证，因为使用当前和历史 Sid 填充用户的访问令牌可能会导致令牌膨胀。 令牌膨胀的问题是，必须存储在用户的访问令牌中的 Sid 数使用或超过令牌中的可用空间量。
 
-尽管令牌大小可以提高到有限的范围，但令牌膨胀的终极解决方案是减少与用户帐户关联的 Sid 数，无论是通过合理化组成员身份、删除 SID 历史记录还是同时使用二者。 有关令牌膨胀的详细信息，请参阅[MaxTokenSize 和 Kerberos 令牌膨胀](/archive/blogs/shanecothran/maxtokensize-and-kerberos-token-bloat)。
+尽管令牌大小可以提高到有限的范围，但令牌膨胀的终极解决方案是减少与用户帐户关联的 Sid 数，无论是通过合理化组成员身份、删除 SID 历史记录还是同时使用二者。 有关令牌膨胀的详细信息，请参阅 [MaxTokenSize 和 Kerberos 令牌膨胀](/archive/blogs/shanecothran/maxtokensize-and-kerberos-token-bloat)。
 
 不是从旧环境迁移用户 (尤其是可以使用 SID 历史记录泄露组成员身份和 SID 历史记录) ，请考虑利用元目录应用程序 "迁移" 用户，而无需将 SID 历史记录到新的林中。 在新林中创建用户帐户时，可以使用元目录应用程序将帐户映射到旧林中的相应帐户。
 
@@ -121,7 +121,7 @@ Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：�
 应用程序在从一个林迁移到另一个林的任何迁移中都可能会带来最大的挑战，但在 "nonmigratory" 迁移的情况下，你应该应用的最基本原则之一是，处于纯洁林中的应用程序应该是最新的、支持的和全新安装的。 可以从旧林中的应用程序实例迁移数据（如果可能）。 在处于纯洁林中无法 "重新创建" 应用程序的情况下，应考虑诸如以下部分中所述的一些方法，如创造性销毁或隔离旧版应用程序。
 
 ### <a name="implementing-creative-destruction"></a>实现创造性销毁
-创造性销毁是一项经济术语，用于描述由之前的订单销毁所创建的经济开发。 在最近几年中，术语已应用于信息技术。 它通常是指通过这种方法消除旧的基础结构，而不是通过升级，而是将其替换为全新的内容。 2011 [Gartner 研讨会 ITXPO](http://www.gartner.com/technology/symposium/orlando/)为 cio 和高级 IT 经理提供了创造性的销毁，作为成本降低和提高效率的关键主题。 安全改进可以作为过程的自然 outgrowth。
+创造性销毁是一项经济术语，用于描述由之前的订单销毁所创建的经济开发。 在最近几年中，术语已应用于信息技术。 它通常是指通过这种方法消除旧的基础结构，而不是通过升级，而是将其替换为全新的内容。 2011 [Gartner 研讨会 ITXPO](http://www.gartner.com/technology/symposium/orlando/) 为 cio 和高级 IT 经理提供了创造性的销毁，作为成本降低和提高效率的关键主题。 安全改进可以作为过程的自然 outgrowth。
 
 例如，组织可能由多个业务单位组成，它们使用不同的应用程序来执行类似的功能，同时 modernity 和供应商支持。 从历史角度来看，它可能负责单独维护每个业务单位的应用程序，而合并工作由尝试确定哪些应用程序提供了最佳功能，然后将数据从其他应用程序迁移到该应用程序。
 
@@ -141,7 +141,7 @@ Windows Server 2012 中提供了有关恢复 Active Directory 林的建议[：�
 
 例如，你可以定义一个策略，要求执行官和其他 Vip 使用安全工作站来访问敏感数据和系统，从而使他们能够使用其他设备来访问不太敏感的数据。 这是用户要记住的一个简单原则，但你可以实现一些后端控制，以帮助强制实施此方法。
 
-如果用户使用智能卡登录到安全系统，则可以使用[身份验证机制保证](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10))来允许用户访问敏感数据，并且可以使用 IPsec 和用户权限限制来控制可从中连接到敏感数据存储库的系统。 您可以使用[Microsoft 数据分类工具包](https://www.microsoft.com/download/details.aspx?id=27123)构建强大的文件分类基础结构，还可以实现[动态访问控制](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10))，以根据访问尝试的特征限制对数据的访问，将业务规则转换为技术控制。
+如果用户使用智能卡登录到安全系统，则可以使用 [身份验证机制保证](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10)) 来允许用户访问敏感数据，并且可以使用 IPsec 和用户权限限制来控制可从中连接到敏感数据存储库的系统。 您可以使用 [Microsoft 数据分类工具包](https://www.microsoft.com/download/details.aspx?id=27123) 构建强大的文件分类基础结构，还可以实现 [动态访问控制](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10)) ，以根据访问尝试的特征限制对数据的访问，将业务规则转换为技术控制。
 
 从用户的角度来看，从安全系统访问敏感数据 "简单"，然后尝试从不安全系统中执行此操作 "不是"。 但是，从监视和管理你的环境的角度来看，你将帮助你在用户访问敏感数据和系统的方式中创建可识别模式，使你能够更轻松地检测异常的访问尝试。
 

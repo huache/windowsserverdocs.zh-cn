@@ -1,17 +1,17 @@
 ---
 ms.assetid: 5ab76733-804d-4f30-bee6-cb672ad5075a
 title: 域控制器部署疑难解答
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 03/20/2019
 ms.topic: article
-ms.openlocfilehash: 3615d7a0a536a0bb54efee2e8982f9b4e3686c8d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8c850a9a09af97d9aa377b79aaa87d06aa0d916c
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953326"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940607"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>域控制器部署疑难解答
 
@@ -161,7 +161,7 @@ ms.locfileid: "87953326"
 | 47 | 带有指定名称的树已经存在 | 选择不同的树 DNS 域名 |
 | 48 | 树名不适合林结构 | 选择不同的树 DNS 域名 |
 | 49 | 指定的域不存在 | 验证你键入的域名 |
-| 50 | 在降级期间，检测到最后一个域控制器（即使它并不是最后一个），或者指定了最后一个域控制器（但是它并不是最后一个） | 不要指定**域中的最后一个域控制器** (**-lastdomaincontrollerindomain**)，除非它真的是最后一个。 如果这确实是最后一个域控制器，且存在虚拟域控制器元数据，请使用 **-ignorelastdcindomainmismatch**进行替代 |
+| 50 | 在降级期间，检测到最后一个域控制器（即使它并不是最后一个），或者指定了最后一个域控制器（但是它并不是最后一个） | 不要指定**域中的最后一个域控制器** (**-lastdomaincontrollerindomain**)，除非它真的是最后一个。 如果这确实是最后一个域控制器，且存在虚拟域控制器元数据，请使用 **-ignorelastdcindomainmismatch** 进行替代 |
 | 51 | 此域控制器上存在应用分区 | 指定到**删除应用程序分区** (**-removeapplicationpartitions**) |
 | 52 | 缺少必要的命令行参数（即，必须在命令行上指定应答文件） | *仅在已弃用的 dcpromo/unattend 中查看。查看旧版文档* |
 | 53 | 升级/降级失败，必须重新启动计算机才能清理 | 检查展开的错误和日志 |
@@ -196,7 +196,7 @@ ms.locfileid: "87953326"
 | 84 | 无法检测域控制器帐户 | 验证现有的域控制器是否具有正确的用户帐户控制属性集。 |
 | 85 | 无法为阶段 2 选择域控制器帐户 | 如果指定“使用现有帐户”，但没有找到帐户或在帐户查找期间发生错误，则返回该问题。 确保已提供正确的 RODC 分步帐户 |
 | 86 | 需要运行阶段 2 升级 | 如果升级其他域控制器，但是存在现有帐户且未指定“允许重新安装”，则返回该问题 |
-| 87 | 存在冲突类型的域控制器帐户 | 如果不尝试附加到未占用的域控制器，则在升级前重命名计算机。 必须使用 **-useexistingaccount**和正确的只读或可写参数（取决于帐户类型）附加到未占用的域控制器帐户 |
+| 87 | 存在冲突类型的域控制器帐户 | 如果不尝试附加到未占用的域控制器，则在升级前重命名计算机。 必须使用 **-useexistingaccount** 和正确的只读或可写参数（取决于帐户类型）附加到未占用的域控制器帐户 |
 | 88 | 指定的服务器管理员无效 | 你为 RODC 管理员委派指定了无效的帐户。 验证指定的帐户是有效的用户或组 |
 | 89 | 指定域的 RID 的主机处于脱机状态。 | 使用 **netdom.exe query fsmo** 检测 RID 主机。 使其联机，并使其可供你正在升级的域控制器访问 |
 | 90 | 域命名主机处于脱机状态。 | 使用 **netdom.exe query fsmo** 检测域命名主机。 使其联机，并使其可供你正在升级的域控制器访问 |
@@ -218,7 +218,7 @@ ms.locfileid: "87953326"
 | 问题 | 降级域控制器会使 DNS 在无区域的情况下运行 |
 |--|--|
 | 症状 | 服务器仍然响应 DNS 请求，但是没有区域信息 |
-| 解析和注释 | 删除 AD DS 角色时，还会删除 DNS 服务器角色或将 DNS 服务器服务设置为禁用。 记得将 DNS 客户端指向它本身之外的另一个服务器。 如果使用 Windows PowerShell，在降级服务器后运行以下内容：<p>代码-uninstall dns<p>or<p>代码集-服务 dns-starttype 已禁用<br />停止服务 dns |
+| 解析和注释 | 删除 AD DS 角色时，还会删除 DNS 服务器角色或将 DNS 服务器服务设置为禁用。 记得将 DNS 客户端指向它本身之外的另一个服务器。 如果使用 Windows PowerShell，在降级服务器后运行以下内容：<p>代码-uninstall dns<p>或<p>代码集-服务 dns-starttype 已禁用<br />停止服务 dns |
 
 | 问题 | 在将 Windows Server 2012 升级到现有单标签域中时，不会配置 updatetopleveldomain=1 或 allowsinglelabeldnsdomain=1 |
 |--|--|
@@ -242,7 +242,7 @@ ms.locfileid: "87953326"
 
 | 问题 | 在域控制器升级期间显示了两次的 DNS 委派警告 |
 |--|--|
-| 症状 | 使用 ADDSDeployment Windows PowerShell 进行升级时，警告返回了*两次*：<p>代码-"无法创建此 DNS 服务器的委派，因为找不到权威父区域或该区域未运行 Windows DNS 服务器。 如果要与现有 DNS 基础结构集成，应在父区域中手动创建对此 DNS 服务器的委派，以确保来自域外部的名称解析可靠。 否则，不需要执行任何操作。 " |
+| 症状 | 使用 ADDSDeployment Windows PowerShell 进行升级时，警告返回了 *两次* ：<p>代码-"无法创建此 DNS 服务器的委派，因为找不到权威父区域或该区域未运行 Windows DNS 服务器。 如果要与现有 DNS 基础结构集成，应在父区域中手动创建对此 DNS 服务器的委派，以确保来自域外部的名称解析可靠。 否则，不需要执行任何操作。 " |
 | 解析和注释 | 忽略。 ADDSDeployment Windows PowerShell 在先决条件检查期间首次显示警告，然后在配置域控制器期间再次显示。 如果不希望配置 DNS 委派，则使用参数：<p>代码--creatednsdelegation： $false<p>*不*要跳过先决条件检查以禁止显示此消息 |
 
 | 问题 | 在配置期间指定 UPN 或非域凭据将返回误导性错误 |
@@ -282,7 +282,7 @@ ms.locfileid: "87953326"
 
 | 问题 | 取消选中/选中“必要时自动重新启动每个目标服务器”时，没有任何效果 |
 |--|--|
-| 症状 | 如果选择 " (" 或 "未选择") 服务器管理器选项 "在**需要时自动重新启动每个目标服务器（如果需要**）通过角色删除 whendemoting 域控制器，则服务器始终会重新启动，而不考虑选择 |
+| 症状 | 如果选择 " (" 或 "未选择") 服务器管理器选项 "在 **需要时自动重新启动每个目标服务器（如果需要** ）通过角色删除 whendemoting 域控制器，则服务器始终会重新启动，而不考虑选择 |
 | 解析和注释 | 这是有目的性的。 无论此设置如何，降级进程都将重新启动服务器。 |
 
 | 问题 | Dcpromo.log 显示“[error] setting security on server files failed with 2” |
@@ -292,7 +292,7 @@ ms.locfileid: "87953326"
 
 | 问题 | 先决条件 adprep 检查失败并显示错误“无法执行 Exchange 架构冲突检查” |
 |--|--|
-| 症状 | 在尝试将 Windows Server 2012 域控制器升级到现有 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 林中时，先决条件检查失败并显示错误：<p>验证 AD 必备组件的代码失败。 无法执行域 (的 Exchange 架构冲突检查 *<domain name>*) 异常： RPC 服务器不可用<p>adprep.log 显示错误：<p>代码-Adprep 无法从服务器检索数据*<domain controller>*<p> (WMI) Windows Management Instrumentation。 |
+| 症状 | 在尝试将 Windows Server 2012 域控制器升级到现有 Windows Server 2003、Windows Server 2008 或 Windows Server 2008 R2 林中时，先决条件检查失败并显示错误：<p>验证 AD 必备组件的代码失败。 无法执行域 (的 Exchange 架构冲突检查  *<domain name>*) 异常： RPC 服务器不可用<p>adprep.log 显示错误：<p>代码-Adprep 无法从服务器检索数据 *<domain controller>*<p> (WMI) Windows Management Instrumentation。 |
 | 解析和注释 | 新域控制器无法通过 DCOM/RPC 协议根据现有域控制器访问 WMI。 到目前为止，此现象有三个原因：<p>-防火墙规则阻止访问现有域控制器<p>-现有域控制器上的 "作为服务登录" (SeServiceLogonRight) 权限的网络服务帐户丢失<p>-使用[Ntlm 身份验证的限制简介](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10))中所述的安全策略在域控制器上禁用 NTLM |
 
 | 问题 | 创建新 AD DS 林始终显示 DNS 警告 |
@@ -343,4 +343,4 @@ ms.locfileid: "87953326"
 | 问题 | 正在创建 NTDS 设置对象的升级 "挂起"，从未完成 |
 |--|--|
 | 症状 | 如果升级副本 DC 或 RODC，升级将达到 "创建 NTDS 设置对象" 的执行，并且永远不会继续或完成。 日志也停止更新。 |
-| 解析和注释 | 这是一个已知问题，原因在于向内置域管理员帐户提供带有匹配密码的内置本地管理员帐户的凭据。 这会导致核心安装引擎中的故障，此引擎不发生错误但会无限期等待（准循环）。 这是意料之中的，但行为不理想。<p>若要修复服务器：<p>1. 重新启动它。<p>1. 在 AD 中，删除该服务器的成员计算机帐户 (该帐户还不是 DC 帐户) <p>1. 在该服务器上，强制从域中脱离<p>1. 在该服务器上，删除 AD DS 角色。<p>1. 重新启动<p>1. 重新添加 AD DS 角色并重新尝试升级，确保你始终向 DC 提升提供***domain\admin***格式的凭据，而不是仅提供内置本地管理员帐户 |
+| 解析和注释 | 这是一个已知问题，原因在于向内置域管理员帐户提供带有匹配密码的内置本地管理员帐户的凭据。 这会导致核心安装引擎中的故障，此引擎不发生错误但会无限期等待（准循环）。 这是意料之中的，但行为不理想。<p>若要修复服务器：<p>1. 重新启动它。<p>1. 在 AD 中，删除该服务器的成员计算机帐户 (该帐户还不是 DC 帐户) <p>1. 在该服务器上，强制从域中脱离<p>1. 在该服务器上，删除 AD DS 角色。<p>1. 重新启动<p>1. 重新添加 AD DS 角色并重新尝试升级，确保你始终向 DC 提升提供 ***domain\admin*** 格式的凭据，而不是仅提供内置本地管理员帐户 |
