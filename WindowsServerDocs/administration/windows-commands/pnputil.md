@@ -1,18 +1,18 @@
 ---
 title: pnputil
 description: Pnputil 命令的参考文章，其中添加了驱动程序包，删除驱动程序包，并使用 pnputil.exe 实用程序列出了驱动程序存储区中的驱动程序包。
-ms.topic: article
+ms.topic: reference
 ms.assetid: fab686b8-09d3-4f6c-afa2-630e6036f44c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4bd4a5ed4dcadb1011dfbf28647ba4f223249a34
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: adc465cfd2d94c2959b38af32104c7f829067cb8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884919"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035235"
 ---
 # <a name="pnputil"></a>pnputil
 
@@ -26,13 +26,13 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | -a | 指定添加标识的 INF 文件。 |
 | -d | 指定删除标识的 INF 文件。 |
 | -E | 指定枚举所有第三方 INF 文件。 |
-| -f | 指定强制删除标识的 INF 文件。 不能与 **– i**参数一起使用。 |
-| -i | 指定安装标识的 INF 文件。 不能与 **-f**参数一起使用。 |
+| -f | 指定强制删除标识的 INF 文件。 不能与 **– i** 参数一起使用。 |
+| -i | 指定安装标识的 INF 文件。 不能与 **-f** 参数一起使用。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ### <a name="examples"></a>示例

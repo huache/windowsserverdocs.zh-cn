@@ -1,18 +1,18 @@
 ---
 title: dfsutil
 description: 用于管理 DFS 命名空间、服务器和客户端的 dfsutil 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: ef5093a4-0d24-4b21-9d04-59933ad98e2c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f31af9f557271182980a367ebf5e2233788fcc31
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a622a9647b438ed2748ed42b28395bebe361f50b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891021"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028365"
 ---
 # <a name="dfsutil"></a>dfsutil
 
@@ -37,7 +37,7 @@ Dfsutil 命令管理 DFS 命名空间、服务器和客户端。
 
 以下功能仅作为 dfsutil 参数提供：
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 客户端 | 显示或修改客户端信息或注册表项。 |
 | 斜 | 执行诊断或查看 dfsdirs/dfspath。 |

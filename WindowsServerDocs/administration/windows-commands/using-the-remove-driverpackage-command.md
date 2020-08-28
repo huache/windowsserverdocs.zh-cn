@@ -1,18 +1,18 @@
 ---
 title: DriverPackage
 description: 用于从服务器中删除驱动程序包的 DriverPackage 参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6b201e91-0d44-4e4a-8252-8b0235df1002
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6f391ed7a5e2a991c0d38e35ac3d08565b32765
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5745b83fdb817f90a835fe2243aff21f9892be47
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881227"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023201"
 ---
 # <a name="remove-driverpackage"></a>DriverPackage
 
@@ -26,7 +26,7 @@ wdsutil /remove-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package N
 ```
 ### <a name="parameters"></a>参数
 
-|        参数        |                                                                            描述                                                                             |
+|        参数        |                                                                            说明                                                                             |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server： <Server name> ] |              指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。              |
 | [/DriverPackage： <Name> ] |                                                        指定要删除的驱动程序包的名称。                                                         |

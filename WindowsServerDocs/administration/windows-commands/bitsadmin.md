@@ -1,18 +1,18 @@
 ---
 title: bitsadmin
 description: Bitsadmin 命令的参考文章，它是一个命令行工具，用于创建、下载或上传作业并监视其进度。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4853036e-1df8-45ad-8be6-cfb097b8dd27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bfaa79720dafdbed62a704b20940143b82390ac
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3744d45265b0b0ae7143d1e37c5e53511a23e26a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880756"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034606"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
@@ -22,11 +22,11 @@ Bitsadmin 是一个命令行工具，用于创建、下载或上载作业，以�
 
 大多数交换机都需要一个 `<job>` 参数，该参数将设置为作业的显示名称或 GUID。 作业的显示名称不必是唯一的。 **/Create**和 **/list**开关返回作业的 GUID。
 
-默认情况下，你可以访问你自己的作业的信息。 若要访问其他用户的作业信息，你必须拥有管理员权限。 如果作业是在提升的状态下创建的，则必须从提升的窗口中运行**bitsadmin** ;否则，你将拥有该作业的只读访问权限。
+默认情况下，你可以访问你自己的作业的信息。 若要访问其他用户的作业信息，你必须拥有管理员权限。 如果作业是在提升的状态下创建的，则必须从提升的窗口中运行 **bitsadmin** ;否则，你将拥有该作业的只读访问权限。
 
-许多开关对应于[BITS 接口](/windows/win32/bits/bits-interfaces)中的方法。 有关可能与使用开关相关的其他详细信息，请参阅相应的方法。
+许多开关对应于 [BITS 接口](/windows/win32/bits/bits-interfaces)中的方法。 有关可能与使用开关相关的其他详细信息，请参阅相应的方法。
 
-使用以下开关创建作业、设置和检索作业的属性，以及监视作业的状态。 有关演示如何使用其中一些开关执行任务的示例，请参阅[bitsadmin 示例](bitsadmin-examples.md)。
+使用以下开关创建作业、设置和检索作业的属性，以及监视作业的状态。 有关演示如何使用其中一些开关执行任务的示例，请参阅 [bitsadmin 示例](bitsadmin-examples.md)。
 
 ## <a name="available-switches"></a>可用开关
 

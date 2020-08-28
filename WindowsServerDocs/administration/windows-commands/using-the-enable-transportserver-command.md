@@ -1,18 +1,18 @@
 ---
 title: TransportServer
 description: TransportServer 的参考文章，可用于启用传输服务器的所有服务。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9d79dba1-4b57-4a00-8cba-877e6b8618e6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d49e8d39ea1e0de1a6f756ffa55e03f210100b4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e7b9fb6f7a646e448c4c4db6aba870f175d5661b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896416"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023281"
 ---
 # <a name="enable-transportserver"></a>TransportServer
 
@@ -25,7 +25,7 @@ ms.locfileid: "87896416"
 wdsutil [Options] /Enable-TransportServer [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |[/Server： <Server name> ]|指定传输服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定名称，则将使用本地服务器。|
 ## <a name="examples"></a>示例

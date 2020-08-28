@@ -1,18 +1,18 @@
 ---
 title: 替换图像
 description: 替换映像的参考文章，用该映像的新版本替换现有映像。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 68ded3df-e309-420f-9f5d-caeb609385a5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 599b1141d857d1fe5e70eab879af0f456dc13bea
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 405a8465c043250ee3177febc2ceab9b50b924b4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891892"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023061"
 ---
 # <a name="using-the-replace-image-command"></a>使用 replace 图像命令
 
@@ -44,7 +44,7 @@ wdsutil [Options] /replace-Imagmedia:<Image name> [/Server:<Server name>]
          [/Description:<Image description>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 许可证<Image name>|指定要替换的映像的名称。|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|

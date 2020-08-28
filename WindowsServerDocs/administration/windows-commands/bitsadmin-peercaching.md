@@ -1,18 +1,18 @@
 ---
 title: bitsadmin peercaching
 description: Bitsadmin 对等缓存命令的参考文章，其中列出了/peercaching 开关。
-ms.topic: article
+ms.topic: reference
 ms.assetid: c2eaa3c7-9d30-4731-8a78-4b6e6041d29a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa92e41579e95a24b7e2dfd83935aa07a531cf6e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4b6887b715ee3239150360cd8d128b5a1a413e21
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893537"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034755"
 ---
 # <a name="bitsadmin-peercaching"></a>bitsadmin peercaching
 
@@ -32,7 +32,7 @@ bitsadmin /peercaching /getconfigurationflags
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | [bitsadmin peercaching 和 help](bitsadmin-peercaching-and-help.md) | 显示/peercaching 开关的命令行用法。|
 | [bitsadmin peercaching 和 setconfigurationflags](bitsadmin-peercaching-and-setconfigurationflags.md) | 设置配置标志，这些标志确定计算机是否可以向对等方提供内容以及是否可以从对等方下载内容。 |

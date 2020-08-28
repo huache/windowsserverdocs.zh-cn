@@ -1,18 +1,18 @@
 ---
 title: 启用-服务器
 description: 启用-Server 的参考文章，启用所有服务 Windows 部署服务。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 939ffbfb-cf3c-4310-9627-6e7e0c0644d6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 04884c4f4648db4ff78446048f34ea1ec609d154
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8fdf1863fbf3136b6326db0f391a969b78d74fa7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896549"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023341"
 ---
 # <a name="enable-server"></a>启用-服务器
 
@@ -25,7 +25,7 @@ ms.locfileid: "87896549"
 wdsutil [Options] /Enable-Server [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
 ## <a name="examples"></a>示例

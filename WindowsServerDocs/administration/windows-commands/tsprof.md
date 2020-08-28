@@ -1,18 +1,18 @@
 ---
 title: tsprof
 description: Tsprof 的参考文章，可将远程桌面服务用户配置信息从一个用户复制到另一个用户。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 27047868-b706-4208-b7e0-1437a2325dd3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43a9c986a58a28b8de8110789be99f157be9fb66
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f676b1d11586d413e544d451043da242861083e1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896664"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023391"
 ---
 # <a name="tsprof"></a>tsprof
 
@@ -21,12 +21,10 @@ ms.locfileid: "87896664"
 将远程桌面服务用户配置信息从一个用户复制到另一个用户。
 远程桌面服务用户配置信息显示在 "本地用户和组" 和 "active directory 用户和计算机" 的远程桌面服务扩展中。
 
-**tsprof**还可以设置用户的配置文件路径。
-
-
+**tsprof** 还可以设置用户的配置文件路径。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11))。
+> 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的 [Windows server 2012 远程桌面服务中的新增功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) 。
 
 ## <a name="syntax"></a>语法
 ```
@@ -36,7 +34,7 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 ```
 
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |/update|更新域 <*DomainName*> 中 <*用户名*> 的配置文件路径信息，以 <*Profilepath*>。|
 |/domain\<DomainName>|指定应用操作的域的名称。|
@@ -49,8 +47,8 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 |/q|显示要为其查询服务器配置文件路径的用户的当前配置文件路径。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>备注
--   仅当你在运行 windows server 2008 R2 的计算机上运行 Windows Server 2008 或 RD 会话主机角色服务的计算机上安装了终端服务器角色服务时， **tsprof**命令才可用。
+## <a name="remarks"></a>注解
+-   仅当你在运行 windows server 2008 R2 的计算机上运行 Windows Server 2008 或 RD 会话主机角色服务的计算机上安装了终端服务器角色服务时， **tsprof** 命令才可用。
 
 ## <a name="examples"></a>示例
 -   若要将用户配置信息从 LocalUser1 复制到 LocalUser2，请键入：

@@ -1,18 +1,18 @@
 ---
 title: bitsadmin getreplyprogress
 description: Bitsadmin getreplyprogress 命令的参考文章，用于检索服务器上传的大小和进度。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7f7cb0b4-ad95-44fd-a35d-0ddf5fc0b0d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29a5f5f0023f6241ee70271de865ed14e379aa4c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 80c227d8de0148236a975a3d11162c0c152e5f7a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893877"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034865"
 ---
 # <a name="bitsadmin-getreplyprogress"></a>bitsadmin getreplyprogress
 
@@ -29,13 +29,13 @@ bitsadmin /getreplyprogress <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
 ## <a name="examples"></a>示例
 
-若要检索名为*myDownloadJob*的作业的上传应答进度：
+若要检索名为 *myDownloadJob*的作业的上传应答进度：
 
 ```
 bitsadmin /getreplyprogress myDownloadJob

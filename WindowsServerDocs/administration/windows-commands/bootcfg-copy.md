@@ -1,18 +1,18 @@
 ---
 title: bootcfg copy
 description: 用于生成现有启动项的副本的 bootcfg copy 命令的参考文章，可将命令行选项添加到其中。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2a236c2a-8675-444d-b695-9cbc9aff643b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5082f5d7e0cd585039b0ceb198052d528f1170cc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 03ecf61074b19f161ea98111f3500f5920c72de9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880724"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034535"
 ---
 # <a name="bootcfg-copy"></a>bootcfg copy
 
@@ -28,11 +28,11 @@ bootcfg /copy [/s <computer> [/u <domain>\<user> /p <password>]] [/d <descriptio
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `/s <computer>` | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 |
 | `/u <domain>\<user>`  | 使用或指定的用户的帐户权限运行命令 `<user>` `<domain>\<user>` 。 默认为发出命令的计算机上当前登录用户的权限。 |
-| `/p <password>` | 指定在 **/u**参数中指定的用户帐户的密码。 |
+| `/p <password>` | 指定在 **/u** 参数中指定的用户帐户的密码。 |
 | `/d <description>` | 指定新操作系统项的说明。 |
 | `/id <osentrylinenum>` | 在将操作系统加载选项添加到的 Boot.ini 文件的 "[操作系统]" 部分中指定操作系统条目行号。 [操作系统] 部分标题后面的第一行是1。 |
 | /? | 在命令提示符下显示帮助。 |

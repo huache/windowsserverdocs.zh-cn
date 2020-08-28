@@ -1,18 +1,18 @@
 ---
 title: eventcreate
 description: Eventcreate 命令的参考文章，它使管理员能够在指定的事件日志中创建自定义事件。
-ms.topic: article
+ms.topic: reference
 ms.assetid: f2b1b26d-a70e-49a6-832b-91eb5a1a159a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf5cc7e1c36dc0af7325172325a55edb314664ab
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 374dd015cdccbac308fa099854e46765a672ef9f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890582"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035195"
 ---
 # <a name="eventcreate"></a>eventcreate
 
@@ -29,21 +29,21 @@ eventcreate [/s <computer> [/u <domain\user> [/p <password>]] {[/l {APPLICATION|
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- |------------ |
-| /s`<computer>` | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 |
-| /u`<domain\user>` | 使用或指定的用户的帐户权限运行命令 `<user>` `<domain\user>` 。 默认为发出命令的计算机上当前登录用户的权限。 |
-| /p`<password>` | 指定在 **/u**参数中指定的用户帐户的密码。 |
-| /l`{APPLICATION | SYSTEM}` | 指定将在其中创建事件的事件日志的名称。 有效的日志名称为 "**应用程序**" 或 "**系统**"。 |
-| /so`<srcname>` | 指定要用于事件的源。 有效的源可以是任何字符串，并且应表示生成事件的应用程序或组件。 |
-| /t`{ERROR | WARNING | INFORMATION | SUCCESSAUDIT | FAILUREAUDIT}` | 指定要创建的事件类型。 有效的类型为**ERROR**、 **WARNING**、 **INFORMATION**、 **SUCCESSAUDIT**和**FAILUREAUDIT**。 |
-| /id`<eventID>` | 指定事件的事件 ID。 有效的 ID 是从1到1000的任何数字。 |
-| /d`<description>` | 指定要用于新创建的事件的说明。 |
+| /s `<computer>` | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 |
+| /u `<domain\user>` | 使用或指定的用户的帐户权限运行命令 `<user>` `<domain\user>` 。 默认为发出命令的计算机上当前登录用户的权限。 |
+| /p `<password>` | 指定在 **/u** 参数中指定的用户帐户的密码。 |
+| /l `{APPLICATION | SYSTEM}` | 指定将在其中创建事件的事件日志的名称。 有效的日志名称为 " **应用程序** " 或 " **系统**"。 |
+| /so `<srcname>` | 指定要用于事件的源。 有效的源可以是任何字符串，并且应表示生成事件的应用程序或组件。 |
+| /t `{ERROR | WARNING | INFORMATION | SUCCESSAUDIT | FAILUREAUDIT}` | 指定要创建的事件类型。 有效的类型为 **ERROR**、 **WARNING**、 **INFORMATION**、 **SUCCESSAUDIT**和 **FAILUREAUDIT**。 |
+| /id `<eventID>` | 指定事件的事件 ID。 有效的 ID 是从1到1000的任何数字。 |
+| /d `<description>` | 指定要用于新创建的事件的说明。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ### <a name="examples"></a>示例
 
-下面的示例演示如何使用**eventcreate**命令：
+下面的示例演示如何使用 **eventcreate** 命令：
 
 ```
 eventcreate /t error /id 100 /l application /d Create event in application log

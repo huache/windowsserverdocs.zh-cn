@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setvalidationstate
 description: Bitsadmin setvalidationstate 命令的参考文章，用于设置作业中给定文件的内容验证状态。
-ms.topic: article
+ms.topic: reference
 ms.assetid: e8fc8e8c-171c-4681-8057-6986b018e576
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1dcdbd017f225704fc20d0472346d98fd84bb2c0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5885f0f43e7c33e55dc05182819a339d69519d84
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881025"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034725"
 ---
 # <a name="bitsadmin-setvalidationstate"></a>bitsadmin setvalidationstate
 
@@ -26,15 +26,15 @@ bitsadmin /setvalidationstate <job> <file_index> <TRUE|FALSE>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ---------- |
 | 作业 | 作业的显示名称或 GUID。 |
 | file_index | 从0开始。 |
-| TRUE 或 FALSE | **如果为 TRUE，则**为指定文件启用内容验证，而**FALSE**则禁用。 |
+| TRUE 或 FALSE | **如果为 TRUE，则** 为指定文件启用内容验证，而 **FALSE** 则禁用。 |
 
 ## <a name="examples"></a>示例
 
-若要将名为*myDownloadJob*的作业的文件2的内容验证状态设置为 TRUE：
+若要将名为 *myDownloadJob*的作业的文件2的内容验证状态设置为 TRUE：
 
 ```
 bitsadmin /setvalidationstate myDownloadJob 2 TRUE

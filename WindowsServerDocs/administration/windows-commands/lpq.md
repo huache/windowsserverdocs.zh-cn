@@ -1,18 +1,18 @@
 ---
 title: lpq
 description: Lpq 命令的参考文章，其中显示了运行 Line printer Daemon (LPD) 的计算机上打印队列的状态。
-ms.topic: article
+ms.topic: reference
 ms.assetid: bb6abcc4-310a-4fa4-927b-4084b62ca02e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 550e94455ed7c57e723edb6608c42820e81fba0b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d495923b94884f0d4538839fcd3c1193e73ee938
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887059"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023701"
 ---
 # <a name="lpq"></a>lpq
 
@@ -28,10 +28,10 @@ lpq -S <servername> -P <printername> [-l]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| -S`<servername>` | 按名称或 IP 地址指定 () 使用要显示的状态承载 LPD 打印队列的计算机或打印机共享设备。 此参数是必需的，必须大写。 |
-| -P`<Printername>` | 按名称指定 () 要显示其状态的打印队列的打印机。 此参数是必需的，必须大写。 |
+| -S `<servername>` | 按名称或 IP 地址指定 () 使用要显示的状态承载 LPD 打印队列的计算机或打印机共享设备。 此参数是必需的，必须大写。 |
+| -P `<Printername>` | 按名称指定 () 要显示其状态的打印队列的打印机。 此参数是必需的，必须大写。 |
 | -l | 指定您希望显示有关打印队列状态的详细信息。 |
 | /? | 在命令提示符下显示帮助。 |
 

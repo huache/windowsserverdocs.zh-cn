@@ -1,18 +1,18 @@
 ---
 title: nfsstat
 description: Nfsstat 命令的参考文章，其中显示了有关网络文件系统 (NFS) 和远程过程调用 (RPC) 调用的统计信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: da7a9768-44bd-404b-97ee-c388d00dc395
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca87df561414a70091adc81ccd4e4ff11e583f02
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 343f8a0d6f34d9a92039104689f2f47080693480
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885963"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023621"
 ---
 # <a name="nfsstat"></a>nfsstat
 
@@ -28,11 +28,11 @@ nfsstat [-c][-s][-n][-r][-z][-m]
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| -c | 显示客户端发送和拒绝的客户端 NFS 和 RPC 调用。 若要仅显示 NFS 或 RPC 信息，请将此标志与 **-n**或 **-r**参数结合。 |
-| -S | 仅显示服务器端 NFS 和服务器发送和拒绝的 RPC 调用。 若要仅显示 NFS 或 RPC 信息，请将此标志与 **-n**或 **-r**参数结合。 |
-| -m | 显示有关装载选项设置的装载标志、系统内部装载标志以及其他装载信息的信息。 |
-| -n | 显示客户端和服务器的 NFS 信息。 若要仅显示 NFS 客户端或服务器信息，请将此标志与 **-c**或 **-s**参数组合在一起。 |
-| -r | 显示客户端和服务器的 RPC 信息。 若要仅显示 RPC 客户端或服务器信息，请将此标志与 **-c**或 **-s**参数组合在一起。 |
+| -c | 显示客户端发送和拒绝的客户端 NFS 和 RPC 调用。 若要仅显示 NFS 或 RPC 信息，请将此标志与 **-n** 或 **-r** 参数结合。 |
+| -S | 仅显示服务器端 NFS 和服务器发送和拒绝的 RPC 调用。 若要仅显示 NFS 或 RPC 信息，请将此标志与 **-n** 或 **-r** 参数结合。 |
+| -M | 显示有关装载选项设置的装载标志、系统内部装载标志以及其他装载信息的信息。 |
+| -n | 显示客户端和服务器的 NFS 信息。 若要仅显示 NFS 客户端或服务器信息，请将此标志与 **-c** 或 **-s** 参数组合在一起。 |
+| -r | 显示客户端和服务器的 RPC 信息。 若要仅显示 RPC 客户端或服务器信息，请将此标志与 **-c** 或 **-s** 参数组合在一起。 |
 | -Z | 重置呼叫统计信息。 此标志仅对根用户可用，并可与任何其他参数组合使用，以在显示后重置特定的统计信息集。 |
 
 ### <a name="examples"></a>示例

@@ -1,18 +1,18 @@
 ---
 title: 删除-命名空间
 description: 用于删除自定义命名空间的删除命名空间的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4eb758b6-8519-4e26-9fe0-2e19bb0e8702
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a85552109f85e0c4de5f3d09c9c0335dccc5af1f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3bef563a91ed4eb445cdf3c555025873078d2716
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891909"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023081"
 ---
 # <a name="using-the-remove-namespace-command"></a>使用移除命名空间命令
 
@@ -25,7 +25,7 @@ ms.locfileid: "87891909"
 wdsutil /remove-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/force]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |名称<Namespace name>|指定命名空间的名称。 这不是友好名称，并且必须是唯一的。<p>-   **部署服务器角色服务**：命名空间名称的语法为/NAMESPACE： WDS： <ImageGroup> / <ImageName> / <Index> 。 例如： **WDS： ImageGroup1/install/1**<br />-   **传输服务器角色服务**：此值必须与在服务器上创建命名空间时为命名空间指定的名称相匹配。|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名 (FQDN) 。 如果未指定服务器名称，则使用本地服务器。|

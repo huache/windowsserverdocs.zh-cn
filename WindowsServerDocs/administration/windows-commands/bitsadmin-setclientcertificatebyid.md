@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setclientcertificatebyid
 description: Bitsadmin setclientcertificatebyid 命令的参考文章，用于指定 HTTPS (SSL) 请求中用于客户端身份验证的客户端证书的标识符
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8585a7a1-7472-437b-b04a-a11925782a3a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e46219a52eda48ddb3e203730e6275fb5e534020
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c23868f24fca7e4792f26debe4921e6e9cc22750
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893266"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028555"
 ---
 # <a name="bitsadmin-setclientcertificatebyid"></a>bitsadmin setclientcertificatebyid
 
@@ -26,7 +26,7 @@ bitsadmin /setclientcertificatebyid <job> <store_location> <store_name> <hexadec
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | store_location | 标识用于查找证书的系统存储区的位置，包括：<ul><li>CURRENT_USER</li><li>LOCAL_MACHINE</li><li>CURRENT_SERVICE</li><li>服务</li><li>用户</li><li>CURRENT_USER_GROUP_POLICY</li><li>LOCAL_MACHINE_GROUP_POLICY</li><li>LOCAL_MACHINE_ENTERPRISE。</li></ul> |
@@ -35,7 +35,7 @@ bitsadmin /setclientcertificatebyid <job> <store_location> <store_name> <hexadec
 
 ## <a name="examples"></a>示例
 
-若要在 HTTPS 中指定用于客户端身份验证的客户端证书的标识符 (SSL) 请求名为*myDownloadJob*的作业：
+若要在 HTTPS 中指定用于客户端身份验证的客户端证书的标识符 (SSL) 请求名为 *myDownloadJob*的作业：
 
 ```
 bitsadmin /setclientcertificatebyid myDownloadJob BG_CERT_STORE_LOCATION_CURRENT_USER MY A106B52356D3FBCD1853A41B619358BD
