@@ -1,18 +1,18 @@
 ---
 title: ksetup
 description: Ksetup 命令的参考文章，它执行与设置和维护 Kerberos 协议和密钥发行中心 (KDC) 以支持 Kerberos 领域相关的任务。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4e046f8a-811b-48dc-9a69-18d8e097f353
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fc51f90f553ea2478c0c8f78cf77f7373eb47d7f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8745b095b097935661bd5d45190c4060d75261ce
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887673"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037695"
 ---
 # <a name="ksetup"></a>ksetup
 
@@ -54,7 +54,7 @@ ksetup
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | [ksetup setrealm](ksetup-setrealm.md) | 使此计算机成为 Kerberos 领域的成员。 |
 | [ksetup addkdc](ksetup-addkdc.md) | 为给定领域定义 KDC 条目。 |
@@ -64,9 +64,9 @@ ksetup
 | [ksetup server](ksetup-server.md) | 允许您指定要应用更改的 Windows 计算机的名称。 |
 | [ksetup setcomputerpassword](ksetup-setcomputerpassword.md) | 设置计算机的域帐户 (或主机主体) 的密码。 |
 | [ksetup removerealm](ksetup-removerealm.md) | 从注册表中删除指定领域的所有信息。 |
-| [ksetup domain](ksetup-domain.md) | 如果 `<domainname>` **/domain**参数) 尚未设置，则允许你指定域 (。 |
+| [ksetup domain](ksetup-domain.md) | 如果 `<domainname>` **/domain** 参数) 尚未设置，则允许你指定域 (。 |
 | [ksetup changepassword](ksetup-changepassword.md) | 允许你使用 kpasswd 更改已登录用户的密码。 |
-| [ksetup listrealmflags](ksetup-listrealmflags.md) | 列出**ksetup**可检测的可用领域标志。 |
+| [ksetup listrealmflags](ksetup-listrealmflags.md) | 列出 **ksetup** 可检测的可用领域标志。 |
 | [ksetup setrealmflags](ksetup-setrealmflags.md) | 设置特定领域的领域标志。 |
 | [ksetup addrealmflags](ksetup-addrealmflags.md) | 将其他领域标志添加到领域。 |
 | [ksetup delrealmflags](ksetup-delrealmflags.md) | 删除领域中的领域标志。 |

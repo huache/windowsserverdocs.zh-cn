@@ -1,18 +1,18 @@
 ---
 title: AllDevices
 description: AllDevices 的参考文章，用于显示所有预留计算机的 Windows 部署服务属性。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5824b3d2-2df1-4ed6-a289-e6c47c13fea2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e527be333570838ecb675d78742bbf55918eff3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8b0f1d17bf79628ca330302de1c8a53c9605f956
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896978"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026765"
 ---
 # <a name="get-alldevices"></a>AllDevices
 
@@ -25,9 +25,9 @@ ms.locfileid: "87896978"
 wdsutil [Options] /Get-AllDevices [/forest:{Yes | No}] [/ReferralServer:<Server name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
-|[/forest： {Yes &#124; No}]|指定 Windows 部署服务应返回整个林中的计算机还是本地域中的计算机。 默认设置为 "**否**"，这意味着只会返回本地域中的计算机。|
+|[/forest： {Yes &#124; No}]|指定 Windows 部署服务应返回整个林中的计算机还是本地域中的计算机。 默认设置为 " **否**"，这意味着只会返回本地域中的计算机。|
 |[/ReferralServer： <Server name> ]|仅返回为指定服务器预留的那些计算机。|
 ## <a name="examples"></a>示例
 若要查看所有计算机，请键入下列内容之一：

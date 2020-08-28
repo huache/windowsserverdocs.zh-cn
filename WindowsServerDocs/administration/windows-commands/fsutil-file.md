@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 9f3dc104-dd69-4b03-b824-a29896780164
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: 92b048d0ad3a7cb1f0c21dabf3cc14dc9850a251
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 69ef36a03c22d7e14d4d657ce5ebab85b63afbd7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889994"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037375"
 ---
 # <a name="fsutil-file"></a>fsutil file
 
@@ -40,7 +40,7 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | createnew | 使用由零组成的内容创建具有指定名称和大小的文件。 |
 | `<length>` | 指定文件的有效数据长度。 |
@@ -68,9 +68,9 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 | `<shortname>` | 指定文件的短名称。 |
 | setvaliddata | 为 NTFS 卷上的文件设置有效的数据长度。 |
 | `<datalength>` | 指定文件的长度（以字节为单位）。 |
-| setzerodata | 将 (的*偏移量*和*长度*) 指定的范围设置为零，这将清空文件。 如果该文件是稀疏文件，则退回基础分配单元。 |
+| setzerodata | 将 (的 *偏移量* 和 *长度*) 指定的范围设置为零，这将清空文件。 如果该文件是稀疏文件，则退回基础分配单元。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 在 NTFS 中，文件长度有两个重要概念：文件尾 (EOF) 标记和有效数据长度 (VDL) 。 EOF 指示文件的实际长度。 VDL 标识磁盘上有效数据的长度。 VDL 和 EOF 之间的任何读取都将自动返回0以保留 C2 对象重用要求。
 
@@ -84,7 +84,7 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 
 ### <a name="examples"></a>示例
 
-若要在驱动器 C 上查找*scottb*拥有的文件，请键入：
+若要在驱动器 C 上查找 *scottb* 拥有的文件，请键入：
 
 ```
 fsutil file findbysid scottb c:\users
@@ -114,7 +114,7 @@ fsutil file queryextents C:\Temp\sample.txt
 fsutil file seteof C:\testfile.txt 1000
 ```
 
-若要设置文件的短名称，请*longfilename.txt*在驱动器 C 上*longfile.txt*，键入：
+若要设置文件的短名称，请 *longfilename.txt* 在驱动器 C 上 *longfile.txt*，键入：
 
 ```
 fsutil file setshortname c:\longfilename.txt longfile.txt

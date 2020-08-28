@@ -1,18 +1,18 @@
 ---
 title: bitsadmin reset
 description: Bitsadmin reset 命令的参考文章，用于取消当前用户拥有的传输队列中的所有作业。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0e4f9d1d-072c-493f-8d7a-f6d713c3ef29
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b28ad601a40a9646ad64268aaca0320ea5165efd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6ab8c1e81fa2ede43897e05778b974b0ff094311
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893335"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026315"
 ---
 # <a name="bitsadmin-reset"></a>bitsadmin reset
 
@@ -29,7 +29,7 @@ bitsadmin /reset [/allusers]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | /allusers | 可选。 取消当前用户拥有的队列中的所有作业。 您必须具有管理员特权才能使用此参数。 |
 

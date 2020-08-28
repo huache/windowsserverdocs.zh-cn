@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 835fc6f1-cc84-4189-b29a-dde90792469e
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: f6a36be6c30e348ac488cfc2a8da7c312f64b3a6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9d3782736686106b892f3b35e74573e4e162ae80
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889973"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037355"
 ---
 # <a name="fsutil-hardlink"></a>fsutil hardlink
 
@@ -31,12 +31,12 @@ fsutil hardlink list <filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | create | 在现有文件和新文件之间建立 NTFS 硬链接。  (NTFS 硬链接类似于 POSIX 硬链接。 )  |
 | \<newfilename> | 指定要为其创建硬链接的文件。 |
 | \<existingfilename> | 指定要从其创建硬链接的文件。 |
-| list | 列出指向*文件名*的硬链接。 |
+| list | 列出指向 *文件名*的硬链接。 |
 
 ## <a name="additional-references"></a>其他参考
 

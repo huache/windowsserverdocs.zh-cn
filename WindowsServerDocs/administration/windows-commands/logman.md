@@ -1,18 +1,18 @@
 ---
 title: logman
 description: Logman 命令的参考文章，用于创建和管理事件跟踪会话和性能日志，并通过命令行支持性能监视器的许多功能。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 574a5203-5b3b-4759-a678-f26d00dde447
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f5983ff4534f2f017de92cbd672352084f6a7552
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b155e3cca0b9f5e35c1c817cfee4e96ca79b6610
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887107"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030545"
 ---
 # <a name="logman"></a>logman
 
@@ -28,7 +28,7 @@ logman [create | query | start | stop | delete| update | import | export | /?] [
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | [logman create](logman-create.md) | 创建计数器、跟踪、配置数据收集器或 API。 |
 | [logman query](logman-query.md) | 查询数据收集器属性。 |

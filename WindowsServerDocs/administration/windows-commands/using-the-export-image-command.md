@@ -1,18 +1,18 @@
 ---
 title: 导出-映像
 description: 有关导出的参考文章，可将映像存储中的现有映像导出到另一个 Windows 映像 ( .wim) 文件。
-ms.topic: article
+ms.topic: reference
 ms.assetid: a9b8b467-0f2d-4754-8998-55503a262778
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f06ded887cf7fcd134ffb8d5b9bfbe588a584e1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f31159d0cfaeb135bf1e5db6f1dec48352fbcf48
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896981"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026775"
 ---
 # <a name="export-image"></a>导出-映像
 
@@ -43,7 +43,7 @@ wdsutil [Options] /Export-Imagmedia:<Image name> [/Server:<Server name>]
      [/Overwrite:{Yes | No | append}]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 许可证<Image name>|指定要导出的映像的名称。|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
@@ -52,7 +52,7 @@ wdsutil [Options] /Export-Imagmedia:<Image name> [/Server:<Server name>]
 |/Architecture： {x86 &#124; ia64 &#124; x64}|指定要导出的映像的体系结构。 由于不同体系结构中的启动映像可能具有相同的映像名称，因此指定体系结构值可确保返回正确的映像。|
 |[/Filename： <Filename> ]|如果无法按名称唯一地标识图像，则必须指定文件名。|
 |/DestinationImage|指定目标映像的设置。 可以使用以下选项指定这些设置：<p>-/Filepath： <File path and name> -指定新映像的完整文件路径。<br />-[/Name： <Name> ]-设置图像的显示名称。 如果未指定名称，则使用源映像的显示名称。<br />-[/Description： <Description>]-设置映像的说明。|
-|[/Overwrite： {Yes &#124; No &#124; append}]|确定当/Filepath. 中已存在具有该名称的现有文件时，是否将覆盖在 **/DestinationImage**选项中指定的文件<p>-   **是**，将覆盖现有文件。<br />-   **No** (默认选项如果已存在具有相同名称的文件，则) 会导致错误发生。<br />-   **追加**导致生成的映像作为新映像追加到现有 .wim 文件中。|
+|[/Overwrite： {Yes &#124; No &#124; append}]|确定当/Filepath. 中已存在具有该名称的现有文件时，是否将覆盖在 **/DestinationImage** 选项中指定的文件<p>-   **是** ，将覆盖现有文件。<br />-   **No** (默认选项如果已存在具有相同名称的文件，则) 会导致错误发生。<br />-   **追加** 导致生成的映像作为新映像追加到现有 .wim 文件中。|
 ## <a name="examples"></a>示例
 若要导出启动映像，请键入下列内容之一：
 ```

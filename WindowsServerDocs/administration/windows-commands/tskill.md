@@ -1,18 +1,18 @@
 ---
 title: tskill
 description: Tskill 的参考文章，用于结束在远程桌面会话主机服务器上的会话中运行的进程。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 08986e6a-6900-4ece-85a1-8f73b14db1b3 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9fe3db1f218bc95fab4f3f2d917575679ab81931
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 357523ce9806910bfddc8ed8992a7ac7be388d3f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896679"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026805"
 ---
 # <a name="tskill"></a>tskill
 
@@ -22,7 +22,7 @@ ms.locfileid: "87896679"
 
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11))。
+> 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的 [Windows server 2012 远程桌面服务中的新增功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) 。
 
 ## <a name="syntax"></a>语法
 ```
@@ -31,7 +31,7 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |\<ProcessID>|指定要结束的进程的 ID。|
 |\<ProcessName>|指定要结束的进程的名称。 此参数可以包含通配符。|
@@ -41,10 +41,10 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>备注
-- 除非你是管理员，否则可以使用**tskill**仅结束属于你的进程。 管理员对所有**tskill**函数具有完全访问权限，并且可以结束其他用户会话中运行的进程。
+## <a name="remarks"></a>注解
+- 除非你是管理员，否则可以使用 **tskill** 仅结束属于你的进程。 管理员对所有 **tskill** 函数具有完全访问权限，并且可以结束其他用户会话中运行的进程。
 - 如果会话中正在运行的所有进程均结束，该进程也将结束。
-- 如果使用*ProcessName*和 **/server：**<em>ServerName</em>参数，则还必须指定 **/id：**<em>SessionID</em>或 **/a**参数。
+- 如果使用 *ProcessName* 和 **/server：**<em>ServerName</em> 参数，则还必须指定 **/id：**<em>SessionID</em> 或 **/a** 参数。
 
 ## <a name="examples"></a>示例
 - 若要结束进程6543，请键入：

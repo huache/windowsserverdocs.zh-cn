@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 21225c11-7c72-4ea2-96bd-e63d4beb3be5
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: 7edf7ac908df419611fb42dd819323b15c8ded4e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e59885b3cf2b51b8d62446a6f1e4ab2ff3b90b3f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889921"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037345"
 ---
 # <a name="fsutil-quota"></a>fsutil quota
 
@@ -33,7 +33,7 @@ fsutil quota [violations]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | disable | 在指定卷上禁用配额跟踪和强制。 |
 | 实行 | 在指定卷上强制实施配额。 |
@@ -46,11 +46,11 @@ fsutil quota [violations]
 | `<limit>` | 设置允许的最大磁盘使用量 (以字节为单位) 。 此参数对于命令是必需的 `fsutil quota modify` 。 |
 | `<username>` | 指定域或用户名。 此参数对于命令是必需的 `fsutil quota modify` 。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 磁盘配额是根据每个卷实现的，它们启用了基于每个用户的硬和软存储限制。
 
-- 你可以使用在每次添加新用户或自动跟踪配额限制、将其编译为报表以及自动通过电子邮件将其发送给系统管理员时使用**fsutil 配额**的编写脚本设置配额限制。
+- 你可以使用在每次添加新用户或自动跟踪配额限制、将其编译为报表以及自动通过电子邮件将其发送给系统管理员时使用 **fsutil 配额** 的编写脚本设置配额限制。
 
 ### <a name="examples"></a>示例
 

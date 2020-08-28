@@ -1,18 +1,18 @@
 ---
 title: ftp cd
 description: Ftp cd 命令的参考文章，用于更改远程计算机上的工作目录。
-ms.topic: article
+ms.topic: reference
 ms.assetid: a574855a-31b4-45c6-bce2-581c7231c99b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f38e8ff306bfcdf200c260df6cb4160f27c316d0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7ab8992bfcbd10d487b5a460ecd25a0dad349ffc
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889564"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037305"
 ---
 # <a name="ftp-cd"></a>ftp cd
 
@@ -28,19 +28,19 @@ cd <remotedirectory>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | <remotedirectory> | 指定要更改的远程计算机上的目录。 |
 
 ### <a name="examples"></a>示例
 
-若要将远程计算机上的目录更改为*文档*，请键入：
+若要将远程计算机上的目录更改为 *文档*，请键入：
 
 ```
 cd Docs
 ```
 
-若要将远程计算机上的目录更改为*可能的视频*，请键入：
+若要将远程计算机上的目录更改为 *可能的视频*，请键入：
 
 ```
 cd  May Videos

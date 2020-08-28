@@ -2,18 +2,18 @@
 title: bitsadmin getmaxdownloadtime
 description: Bitsadmin getmaxdownloadtime 命令的参考文章，用于检索下载超时值（秒）。
 ms.prod: windows-servemr
-ms.topic: article
+ms.topic: reference
 ms.assetid: cdce64f6-7125-489d-be3c-4af1dfc8c46a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8cf17898880975aaf214110b99b7cbc068c309ba
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 610553a839bb36bd764da1283ba398af49824731
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894211"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030335"
 ---
 # <a name="bitsadmin-getmaxdownloadtime"></a>bitsadmin getmaxdownloadtime
 
@@ -29,13 +29,13 @@ bitsadmin /getmaxdownloadtime <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
 ## <a name="examples"></a>示例
 
-若要获取名为*myDownloadJob*的作业的最大下载时间（以秒为单位）：
+若要获取名为 *myDownloadJob* 的作业的最大下载时间（以秒为单位）：
 
 ```
 bitsadmin /getmaxdownloadtime myDownloadJob

@@ -1,18 +1,18 @@
 ---
 title: bitsadmin cache
 description: Bitsadmin cache 命令的参考文章，其中包含 bitsadmin 缓存交换机的列表。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9ae4a283-a187-4fe3-b05c-4b53732c27cb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45d2fb96a8e405f93b1bb63a4eec00d817c6b420
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7dd6b5e7d23c0f2284699530cde659f3dbbefc9f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894652"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030495"
 ---
 # <a name="bitsadmin-cache"></a>bitsadmin cache
 
@@ -39,7 +39,7 @@ bitsadmin /cache /setexpirationtime
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | [bitsadmin cache 和 help](bitsadmin-cache-and-help.md) | 显示/cache 开关的命令行用法。 |
 | [bitsadmin cache 和 clear](bitsadmin-cache-clear.md) | 清除本地缓存。 |

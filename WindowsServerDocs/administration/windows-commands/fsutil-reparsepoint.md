@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: fb95c8ee-a418-4520-a12a-7754ae947c3c
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: b7742b7bb970394f0ef8602ae5c862c2ff9a1a41
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 94feb56f4c5ed590c87b20d475f4aefa7ba11dd4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889888"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037315"
 ---
 # <a name="fsutil-reparsepoint"></a>fsutil reparsepoint
 
@@ -37,19 +37,19 @@ fsutil reparsepoint [delete] <filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | query | 检索与指定句柄标识的文件或目录关联的重新分析点数据。 |
 | delete | 从文件或目录中删除由指定句柄标识的重新分析点，但不删除文件或目录。 |
-| `<filename>` | 指定文件的完整路径，包括文件名和扩展名，例如*C:\documents\filename.txt*。 |
+| `<filename>` | 指定文件的完整路径，包括文件名和扩展名，例如 *C:\documents\filename.txt*。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
-- 当程序设置重新分析点时，它将存储此数据以及一个重新分析标记，该标记可唯一地标识其存储的数据。 当文件系统使用重新分析点打开文件时，它会尝试查找关联的文件系统筛选器。 如果找到文件系统筛选器，筛选器将按重新分析数据的指示处理该文件。 如果找不到文件系统筛选器，则**文件打开**操作将失败。
+- 当程序设置重新分析点时，它将存储此数据以及一个重新分析标记，该标记可唯一地标识其存储的数据。 当文件系统使用重新分析点打开文件时，它会尝试查找关联的文件系统筛选器。 如果找到文件系统筛选器，筛选器将按重新分析数据的指示处理该文件。 如果找不到文件系统筛选器，则 **文件打开** 操作将失败。
 
 ### <a name="examples"></a>示例
 
-若要检索与*c:\server*关联的重新分析点数据，请键入：
+若要检索与 *c:\server*关联的重新分析点数据，请键入：
 
 ```
 fsutil reparsepoint query c:\server

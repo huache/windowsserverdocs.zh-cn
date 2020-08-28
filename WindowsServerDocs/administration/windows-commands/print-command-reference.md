@@ -1,18 +1,18 @@
 ---
 title: 打印命令行工具参考
 description: 有关使用打印命令行工具的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 88d8fa87-6fa8-4774-9294-080b0157ea8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f5d093393908cfcd81909d0a522f2ee423bcbad
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c0bad2d62add29da39cc7e2b5569f96fd0cfbd08
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884856"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037605"
 ---
 # <a name="print-command-line-tool-reference"></a>打印命令行工具参考
 
@@ -20,7 +20,7 @@ ms.locfileid: "87884856"
 
 每个关联打印命令行工具的信息和链接。
 
-| Command | 描述 |
+| Command | 说明 |
 |--|--|
 | [lpq](lpq.md) | 显示运行 Line printer Daemon (LPD) 的计算机上打印队列的状态。 |
 | [lpr](lpr.md) | 将文件发送到运行 Line printer Daemon (LPD) 服务的计算机或打印机共享设备，以便准备打印。 |

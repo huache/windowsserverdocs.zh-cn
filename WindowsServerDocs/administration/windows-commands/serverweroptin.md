@@ -1,18 +1,18 @@
 ---
 title: serverweroptin
 description: '* * * * 的参考文章'
-ms.topic: article
+ms.topic: reference
 ms.assetid: f3c0b0af-cafb-4f09-8b36-5a357ddf392d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9bcedf0d855980b193f466e719483ec268afd40c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8f7cb7608df0303cdbd119862cf1349f89c37d13
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882723"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037405"
 ---
 # <a name="serverweroptin"></a>serverweroptin
 
@@ -24,7 +24,7 @@ ms.locfileid: "87882723"
 serverweroptin [/query] [/detailed] [/summary]
 ```
 #### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |/query|验证当前设置。|
 |/detailed|自动发送详细报告。|

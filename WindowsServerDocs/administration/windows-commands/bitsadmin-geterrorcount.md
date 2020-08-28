@@ -1,18 +1,18 @@
 ---
 title: bitsadmin geterrorcount
 description: Bitsadmin geterrorcount 命令的参考文章，它检索指定作业产生暂时性错误的次数的计数。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8840ae78-52b0-4c7e-b592-0547359a237e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8cfe0065ca9cec6d903466428b78cb8c103de5e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1b6a4d3f0e77d8ffc0d7e538affe0fb8e77a5281
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894350"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030345"
 ---
 # <a name="bitsadmin-geterrorcount"></a>bitsadmin geterrorcount
 
@@ -26,13 +26,13 @@ bitsadmin /geterrorcount <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
 ## <a name="examples"></a>示例
 
-若要检索名为*myDownloadJob*的作业的错误计数信息：
+若要检索名为 *myDownloadJob*的作业的错误计数信息：
 
 ```
 bitsadmin /geterrorcount myDownloadJob

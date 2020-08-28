@@ -5,20 +5,20 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 62d77150-1d9e-4069-ab4a-299f33024912
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: 17deb2d592ba9b5532d33a71dd8687708c8bd0bf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9c26f2be8e586205271ba1d150bb2378cc8b2045
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889913"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037325"
 ---
 # <a name="fsutil-repair"></a>fsutil repair
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
-管理和监视 NTFS 自修复修复操作。 自愈 NTFS 试图联机更正 NTFS 文件系统的损坏，而无需运行**Chkdsk.exe** 。 有关详细信息，请参阅[自愈 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771388(v=ws.10))。
+管理和监视 NTFS 自修复修复操作。 自愈 NTFS 试图联机更正 NTFS 文件系统的损坏，而无需运行 **Chkdsk.exe** 。 有关详细信息，请参阅 [自愈 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771388(v=ws.10))。
 
 ## <a name="syntax"></a>语法
 
@@ -33,7 +33,7 @@ fsutil repair [wait][<waittype>] <volumepath>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 列举 | 枚举卷损坏日志的条目。 |
 | `<logname>` | 可以是 `$corrupt` 卷中已确认的损坏的集合，或 `$verify` 卷中一组潜在的未验证损坏。 |

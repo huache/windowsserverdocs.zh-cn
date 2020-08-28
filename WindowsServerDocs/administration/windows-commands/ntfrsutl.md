@@ -1,18 +1,18 @@
 ---
 title: ntfrsutl
 description: Ntfrsutl 命令的参考文章，用于转储 NT 文件复制服务 (NTFRS) 的内部表、线程和内存信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: d7721a19-5a87-4ab6-b816-65d2da2c811f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2676e4cc4d920d766f9cc122f127d3d5e8c9548a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6fdbb82322e2aaa130d396b4917f01e7b4391a31
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885297"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037255"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 
@@ -33,7 +33,7 @@ ntfrsutl poll[/quickly[=[<n>]]][/slowly[=[<n>]]][/now][<computer>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | idtable | 指定 ID 表。 |
 | configtable | 指定 FRS 配置表。 |
@@ -45,8 +45,8 @@ ntfrsutl poll[/quickly[=[<n>]]][/slowly[=[<n>]]][/now][<computer>]
 | 阶段 (stage) | 指定内存使用情况。 |
 | ds | 列出了 NTFRS 服务的 DS 视图。 |
 | 集 | 指定活动的副本集。 |
-| version | 指定 API 和 NTFRS 服务版本。 |
-| poll | 指定当前的轮询间隔。<ul><li>`/quickly`-迅速轮询，直到检索稳定的配置。</li><li>`/quickly=`-每隔默认分钟数快速轮询。</li><li>`/quickly=<n>`-每*n*分钟快速轮询一次。</li><li>`/slowly`-轮询速度缓慢，直到检索稳定的配置。</li><li>`/slowly=`-每隔默认分钟数缓慢轮询。</li><li>`/slowly=<n>`-每*n*分钟轮询缓慢。</li><li>`/now`-立即轮询。</li></ul>|
+| 版本 | 指定 API 和 NTFRS 服务版本。 |
+| poll | 指定当前的轮询间隔。<ul><li>`/quickly` -迅速轮询，直到检索稳定的配置。</li><li>`/quickly=` -每隔默认分钟数快速轮询。</li><li>`/quickly=<n>` -每 *n* 分钟快速轮询一次。</li><li>`/slowly` -轮询速度缓慢，直到检索稳定的配置。</li><li>`/slowly=` -每隔默认分钟数缓慢轮询。</li><li>`/slowly=<n>` -每 *n* 分钟轮询缓慢。</li><li>`/now` -立即轮询。</li></ul>|
 | /? | 在命令提示符下显示帮助。 |
 
 ### <a name="examples"></a>示例

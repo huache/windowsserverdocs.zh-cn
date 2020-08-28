@@ -1,18 +1,18 @@
 ---
 title: Diskshadow
 description: Diskshadow 命令的参考文章，它是一种工具，用于公开卷影复制服务所提供的功能 (VSS) 。
-ms.topic: article
+ms.topic: reference
 ms.assetid: e962537d-b759-4368-b6f1-e8391cf7b221
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3170cde50208eb54d1657ceee0c409d76ed3b806
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bf36485319a74694b08a094950d52d70f7cd213a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890810"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030855"
 ---
 # <a name="diskshadow"></a>Diskshadow
 
@@ -31,7 +31,7 @@ Diskshadow.exe 是一种工具，用于公开卷影复制服务 (VSS) 提供的�
 diskshadow
 ```
 
-对于 "脚本模式"，请键入以下内容，其中*script.txt*是包含 Diskshadow 命令的脚本文件：
+对于 "脚本模式"，请键入以下内容，其中 *script.txt* 是包含 Diskshadow 命令的脚本文件：
 
 ```
 diskshadow -s script.txt
@@ -39,9 +39,9 @@ diskshadow -s script.txt
 
 ### <a name="parameters"></a>参数
 
-你可以在 Diskshadow 命令解释器或通过脚本文件运行以下命令。 创建卷影副本至少需要 "**添加**" 和 "**创建**"。 但是，这丧失上下文和选项设置，将是副本备份，并创建没有备份执行脚本的卷影副本。
+你可以在 Diskshadow 命令解释器或通过脚本文件运行以下命令。 创建卷影副本至少需要 " **添加** " 和 " **创建** "。 但是，这丧失上下文和选项设置，将是副本备份，并创建没有备份执行脚本的卷影副本。
 
-| Command | 描述 |
+| Command | 说明 |
 | --------- | ----------- |
 | [set 命令](set_2.md) | 设置用于创建卷影副本的上下文、选项、详细模式和元数据文件。 |
 | [加载元数据命令](load-metadata.md) | 在导入可传送的卷影副本之前加载元数据 .cab 文件，或者在还原时加载写入器元数据。 |
@@ -50,16 +50,16 @@ diskshadow -s script.txt
 | [create 命令](create.md) | 使用当前上下文和选项设置启动卷影复制创建过程。 |
 | [exec 命令](exec.md) | 在本地计算机上执行文件。 |
 | [开始备份命令](begin-backup.md) | 启动完整备份会话。 |
-| [结束备份命令](end-backup.md) | 结束完整备份会话，并根据需要发出具有相应编写器状态的**backupcomplete**事件。 |
-| [开始 restore 命令](begin-restore.md) | 启动还原会话并向相关编写器发出**prerestore**事件。 |
-| [结束还原命令](end-restore.md) | 结束还原会话并向相关编写器发出**postrestore**事件。 |
+| [结束备份命令](end-backup.md) | 结束完整备份会话，并根据需要发出具有相应编写器状态的 **backupcomplete** 事件。 |
+| [开始 restore 命令](begin-restore.md) | 启动还原会话并向相关编写器发出 **prerestore** 事件。 |
+| [结束还原命令](end-restore.md) | 结束还原会话并向相关编写器发出 **postrestore** 事件。 |
 | [reset 命令](reset.md) | 将 Diskshadow 重置为默认状态。 |
 | [list 命令](list.md) | 列出系统上的编写器、卷影副本或当前注册的卷影复制提供程序。 |
 | [删除阴影命令](delete-shadows.md) | 删除卷影副本。 |
 | [导入命令](import.md) | 将已加载的元数据文件中的可传送影子副本导入到系统中。 |
-| [mask 命令](mask.md) | 删除使用**import**命令导入的硬件卷影副本。 |
+| [mask 命令](mask.md) | 删除使用 **import** 命令导入的硬件卷影副本。 |
 | [公开命令](expose.md) | 将永久性卷影副本作为驱动器号、共享或装入点公开。 |
-| [隐藏命令](unexpose.md) | Unexposes 使用**公开**命令公开的卷影副本。 |
+| [隐藏命令](unexpose.md) | Unexposes 使用 **公开** 命令公开的卷影副本。 |
 | [break 命令](break_2.md) | 将卷影副本卷与 VSS 解除。 |
 | [revert 命令](revert.md) | 将卷恢复到指定的卷影副本。 |
 | [exit 命令](exit.md) | 退出命令解释器或脚本。 |

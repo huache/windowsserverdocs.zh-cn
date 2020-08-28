@@ -1,18 +1,18 @@
 ---
 title: convert
 description: 转换命令的参考文章，可将磁盘从一种磁盘类型转换为另一种类型。
-ms.topic: article
+ms.topic: reference
 ms.assetid: ae151297-af21-4701-bd69-21d775518e03
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 76990eb33f58b871771e00c9fdef19d5d29c30e8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1da57e88027cedac0aad95891720dd3043de2a9d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892544"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030905"
 ---
 # <a name="convert"></a>convert
 
@@ -29,7 +29,7 @@ convert mbr
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | [convert basic 命令](convert-basic.md) | 将空动态磁盘转换为基本磁盘。 |
 | [转换动态命令](convert-dynamic.md) | 将基本磁盘转换为动态磁盘。 |

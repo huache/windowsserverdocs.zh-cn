@@ -1,18 +1,18 @@
 ---
 title: bitsadmin 示例
 description: 演示如何使用 bitsadmin 工具执行最常见任务的示例。
-ms.topic: article
+ms.topic: reference
 ms.assetid: cb8f8374-ba6e-4a68-85a1-9a95b8215354
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: 5cf827ebc96c2caf114a9605482a33636689dc25
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e1fcf545efee765b5130c616ddee53b25f03d0d3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894585"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030485"
 ---
 # <a name="bitsadmin-examples"></a>bitsadmin 示例
 
@@ -28,7 +28,7 @@ ms.locfileid: "87894585"
 
 ## <a name="create-a-download-job"></a>创建下载作业
 
-若要创建名为*myDownloadJob*的下载作业：
+若要创建名为 *myDownloadJob*的下载作业：
 
 ```
 bitsadmin /create myDownloadJob
@@ -48,7 +48,7 @@ BITSAdmin 返回一个用于唯一标识该作业的 GUID。 在后续调用中�
 bitsadmin /addfile myDownloadJob https://downloadsrv/10mb.zip c:\\10mb.zip
 ```
 
-对要添加的每个文件重复此调用。 如果有多个作业使用*myDownloadJob*作为其名称，则必须使用作业的 GUID 来唯一地标识该作业才能完成。
+对要添加的每个文件重复此调用。 如果有多个作业使用 *myDownloadJob* 作为其名称，则必须使用作业的 GUID 来唯一地标识该作业才能完成。
 
 ## <a name="activate-the-download-job"></a>激活下载作业
 
@@ -58,11 +58,11 @@ bitsadmin /addfile myDownloadJob https://downloadsrv/10mb.zip c:\\10mb.zip
 bitsadmin /resume myDownloadJob
 ```
 
-如果有多个作业使用*myDownloadJob*作为其名称，则必须使用作业的 GUID 来唯一地标识该作业才能完成。
+如果有多个作业使用 *myDownloadJob* 作为其名称，则必须使用作业的 GUID 来唯一地标识该作业才能完成。
 
 ## <a name="determine-the-progress-of-the-download-job"></a>确定下载作业的进度
 
-**/Info**开关返回作业的状态以及传输的文件和字节数。 当状态显示为时 `TRANSFERRED` ，表示 BITS 已成功传输作业中的所有文件。 还可以添加 **/verbose**参数以获取作业的完整详细信息，并添加 **/list**或 **/monitor**以获取传输队列中的所有作业。
+**/Info**开关返回作业的状态以及传输的文件和字节数。 当状态显示为时 `TRANSFERRED` ，表示 BITS 已成功传输作业中的所有文件。 还可以添加 **/verbose** 参数以获取作业的完整详细信息，并添加 **/list** 或 **/monitor** 以获取传输队列中的所有作业。
 
 返回作业的状态：
 
@@ -70,7 +70,7 @@ bitsadmin /resume myDownloadJob
 bitsadmin /info myDownloadJob /verbose
 ```
 
-如果有多个作业使用*myDownloadJob*作为其名称，则必须使用作业的 GUID 来唯一地标识该作业才能完成。
+如果有多个作业使用 *myDownloadJob* 作为其名称，则必须使用作业的 GUID 来唯一地标识该作业才能完成。
 
 ## <a name="complete-the-download-job"></a>完成下载作业
 
@@ -80,7 +80,7 @@ bitsadmin /info myDownloadJob /verbose
 bitsadmin /complete myDownloadJob
 ```
 
-必须先运行该 `/complete` 开关，然后才能使用该作业中的文件。 如果有多个作业使用*myDownloadJob*作为其名称，则必须使用作业的 GUID 来唯一地标识该作业才能完成。
+必须先运行该 `/complete` 开关，然后才能使用该作业中的文件。 如果有多个作业使用 *myDownloadJob* 作为其名称，则必须使用作业的 GUID 来唯一地标识该作业才能完成。
 
 ## <a name="monitor-jobs-in-the-transfer-queue-using-the-list-switch"></a>使用/list 开关监视传输队列中的作业
 

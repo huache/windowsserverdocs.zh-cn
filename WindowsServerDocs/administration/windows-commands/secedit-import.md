@@ -1,18 +1,18 @@
 ---
 title: secedit：导入
 description: '* * * * 的参考文章'
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1dd59d4c-9d48-444a-871b-b957eb682597
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38f6b55d8c6cec30fbaa7de1fa3295df5cbfc26d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8ad13d04ac894bc11aa26790239370147ce9d140
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882942"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037425"
 ---
 # <a name="seceditimport"></a>secedit：导入
 
@@ -28,7 +28,7 @@ Secedit /import /db <database file name> /cfg <configuration file name> [/overwr
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |db|必需。</br>指定数据库的路径和文件名，该数据库包含将在其中执行导入的存储配置。</br>如果文件名指定的数据库没有安全模板 (如关联的配置文件) 所表示的，则 `/cfg \<configuration file name>` 还必须指定命令行选项。|
 |overwrite|可选。</br>指定/cfg 参数中的安全模板是否应覆盖数据库中存储的任何模板或复合模板，而不是将结果追加到存储的模板。</br>此命令行选项仅在使用参数时才有效 `/cfg \<configuration file name>` 。 如果未指定此参数，则将/cfg 参数中的模板追加到存储的模板。|
@@ -38,13 +38,13 @@ Secedit /import /db <database file name> /cfg <configuration file name> [/overwr
 |log|可选。</br>指定进程的日志文件的路径和文件名。|
 |quiet|可选。</br>禁止显示屏幕和日志输出。 你仍可以通过使用 "安全配置和分析" 管理单元 (MMC) 来查看分析结果。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 在将 .inf 文件导入到另一台计算机之前，请在执行导入的数据库上运行命令 secedit/generaterollback，并在导入文件上对/validate 执行命令以验证其完整性。
 
 如果未提供日志文件的路径，则使用默认的日志文件 (*systemroot*\Documents and Settings \* 用户帐户<em>\My Documents\Security\Logs \* DatabaseName</em>) 。
 
-在 Windows Server 2008 中，已 `Secedit /refreshpolicy` 替换为 `gpupdate` 。 有关如何刷新安全设置的信息，请参阅[Gpupdate](gpupdate.md)。
+在 Windows Server 2008 中，已 `Secedit /refreshpolicy` 替换为 `gpupdate` 。 有关如何刷新安全设置的信息，请参阅 [Gpupdate](gpupdate.md)。
 
 ## <a name="examples"></a>示例
 

@@ -1,18 +1,18 @@
 ---
 title: msg
 description: Msg 命令的参考文章，可将消息发送到远程桌面会话主机服务器上的用户
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9501cf3e-568e-4982-9987-8daecc6c17ff
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 044d6c7e6dbf7c92cb0c947fcb60eb79ab1db05b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c2f26e12b10d0eb10197018d10d21f34f0da9cb5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886198"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037645"
 ---
 # <a name="msg"></a>msg
 
@@ -31,23 +31,23 @@ msg {<username> | <sessionname> | <sessionID>| @<filename> | *} [/server:<server
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<username>` | 指定要接收该消息的用户的名称。 如果未指定用户或会话，此命令会显示错误消息。 指定会话时，它必须是活动的。 |
 | `<sessionname>` | 指定要接收消息的会话的名称。 如果未指定用户或会话，此命令会显示错误消息。 指定会话时，它必须是活动的。 |
 | `<sessionID>` | 指定要接收消息的会话的数字 ID。 |
 | `@<filename>` | 标识一个文件，该文件包含要接收消息的用户名、会话名称和会话 Id 的列表。 |
 | * | 将消息发送到系统中的所有用户名。 |
-| /server:`<servername>` | 指定您要接收消息的会话或用户的远程桌面会话主机服务器。 如果未指定， **/server**将使用你当前登录到的服务器。 |
+| /server:`<servername>` | 指定您要接收消息的会话或用户的远程桌面会话主机服务器。 如果未指定， **/server** 将使用你当前登录到的服务器。 |
 | /time`<seconds>` | 指定您发送的消息在用户屏幕上显示的时间长度。 在达到时间限制后，消息将消失。 如果未设置时间限制，则在用户看到该消息并单击 **"确定"** 之前，消息将保留在用户屏幕上。 |
 | /v | 显示要执行的操作的相关信息。 |
-| /W | 等待用户确认已收到消息。 如果用户不立即响应，请将此参数与结合使用 `/time:<*seconds*>` 以避免可能的长时间延迟。 将此参数与 **/v**一起使用也很有用。 |
+| /W | 等待用户确认已收到消息。 如果用户不立即响应，请将此参数与结合使用 `/time:<*seconds*>` 以避免可能的长时间延迟。 将此参数与 **/v** 一起使用也很有用。 |
 | `<message>` | 指定要发送的消息的文本。 如果未指定邮件，系统将提示您输入一条消息。 若要发送文件中包含的消息，请键入小于 ( # A0) 符号后跟文件名。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ### <a name="examples"></a>示例
 
-若要发送有权使用的消息，*现在我们*将为*User1*的所有会话提供帮助，请键入：
+若要发送有权使用的消息， *现在我们* 将为 *User1*的所有会话提供帮助，请键入：
 
 ```
 msg User1 Let's meet at 1PM today
@@ -59,7 +59,7 @@ msg User1 Let's meet at 1PM today
 msg modem02 Let's meet at 1PM today
 ```
 
-若要将消息发送到文件*userlist*中包含的所有会话，请键入：
+若要将消息发送到文件 *userlist*中包含的所有会话，请键入：
 
 ```
 msg @userlist Let's meet at 1PM today

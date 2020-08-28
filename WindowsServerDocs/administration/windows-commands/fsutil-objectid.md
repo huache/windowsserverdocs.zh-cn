@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 693ab895-9d0c-47c1-9f52-df5cd287842a
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: f24a434a3b48186baa1743cc6159cac39443231e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 27b7048ebb659c29bd6aa7d41c0be9b26deca547
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889965"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037335"
 ---
 # <a name="fsutil-objectid"></a>fsutil objectid
 
@@ -34,19 +34,19 @@ fsutil objectid [set] <objectID> <birthvolumeID> <birthobjectID> <domainID> <fil
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| create | 如果指定的文件尚不具有对象标识符，则创建一个。 如果文件已有对象标识符，则此子命令等效于**query**子命令。 |
+| create | 如果指定的文件尚不具有对象标识符，则创建一个。 如果文件已有对象标识符，则此子命令等效于 **query** 子命令。 |
 | delete | 删除对象标识符。 |
 | query | 查询对象标识符。 |
 | set | 设置对象标识符。 |
 | `<objectID>` | 设置特定于文件的16字节十六进制标识符，该标识符在卷内保证是唯一的。 分布式链接跟踪使用对象标识符 (DLT) 客户端服务和文件复制服务 (FRS) 来识别文件。 |
 | `<birthvolumeID>` | 指示文件首次获得对象标识符时所在的卷。 此值是 DLT 客户端服务使用的16字节十六进制标识符。 |
-| `<birthobjectID>` | 指示文件的原始对象标识符 (*objectID*在文件移动) 时可能会更改。 此值是 DLT 客户端服务使用的16字节十六进制标识符。 |
+| `<birthobjectID>` | 指示文件的原始对象标识符 (*objectID* 在文件移动) 时可能会更改。 此值是 DLT 客户端服务使用的16字节十六进制标识符。 |
 | `<domainID>` | 16字节的十六进制域标识符。 当前未使用此值，因此必须将其设置为全零。 |
-| `<filename>` | 指定文件的完整路径，包括文件名和扩展名，例如*C:\documents\filename.txt*。 |
+| `<filename>` | 指定文件的完整路径，包括文件名和扩展名，例如 *C:\documents\filename.txt*。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 具有对象标识符的任何文件也有一个出生卷标识符、一个出生对象标识符和一个域标识符。 移动文件时，对象标识符可能会改变，但出生卷和出生对象标识符保持不变。 此行为使 Windows 操作系统能够始终查找文件，无论该文件移动到何处。
 

@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: a0c6dbfe-d898-496d-9356-825f7fbd90ec
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: 15d6b323248a51102b2ddcd6b2620722f22ae47a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7b5be73c47b419733e29e949327fd57c77967561
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890082"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030605"
 ---
 # <a name="fsutil-8dot3name"></a>fsutil 8dot3name
 
@@ -42,16 +42,16 @@ fsutil 8dot3name [strip] [/t] [/s] [/f] [/l [<log file.] ] [/v] <directorypath>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| query`[<volumepath>]` | 在文件系统中查询8dot3 短名称创建行为的状态。<p>如果未指定*volumepath*作为参数，则会显示所有卷的默认8dot3name 创建行为设置。 |
-| 检测`<directorypath>` | 如果文件名称中去除了8dot3 短名称，则扫描可能会受到影响的指定*directorypath*中的文件。 |
-| 字符集`<defaultvalue> | <volumepath>}` | 在以下实例中更改8dot3 名称创建的文件系统行为：<ul><li>如果指定了*defaultvalue* ，则注册表项**HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreationNtfsDisable8dot3NameCreationNtfsDisable8dot3NameCreation**设置为*defaultvalue*。<p>*DefaultValue*可以具有以下值：<ul><li>**0**：为系统上的所有卷启用8dot3 名称创建。</li><li>**1**：为系统上的所有卷禁用8dot3 名称创建。</li><li>**2**：按卷设置8dot3 名称创建。</li><li>**3**：对于除系统卷之外的所有卷禁用8dot3 名称创建。</li></ul><li>指定*volumepath*时，磁盘上指定的卷标志8dot3name 属性设置为为指定的卷启用8dot3 名称创建 (**0**) 或设置为在指定卷上禁用8dot3 名称创建 (**1**) 。<p>您必须将8dot3 名称创建的默认文件系统行为设置为值**2** ，然后才能启用或禁用指定卷的8dot3 名称创建。</li></ul> |
-| 条形`<directorypath>` | 删除位于指定*directorypath*中的所有文件的8dot3 文件名。 如果任何文件的*directorypath*与文件名一起包含的字符超过260个字符，则不会删除该文件的8dot3 文件名。<p>此命令会列出，但不会修改指向永久删除了8dot3 文件名称的文件的注册表项。 |
+| query `[<volumepath>]` | 在文件系统中查询8dot3 短名称创建行为的状态。<p>如果未指定 *volumepath* 作为参数，则会显示所有卷的默认8dot3name 创建行为设置。 |
+| 检测 `<directorypath>` | 如果文件名称中去除了8dot3 短名称，则扫描可能会受到影响的指定 *directorypath* 中的文件。 |
+| 字符集 `<defaultvalue> | <volumepath>}` | 在以下实例中更改8dot3 名称创建的文件系统行为：<ul><li>如果指定了 *defaultvalue* ，则注册表项 **HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreationNtfsDisable8dot3NameCreationNtfsDisable8dot3NameCreation**设置为 *defaultvalue*。<p>*DefaultValue*可以具有以下值：<ul><li>**0**：为系统上的所有卷启用8dot3 名称创建。</li><li>**1**：为系统上的所有卷禁用8dot3 名称创建。</li><li>**2**：按卷设置8dot3 名称创建。</li><li>**3**：对于除系统卷之外的所有卷禁用8dot3 名称创建。</li></ul><li>指定 *volumepath* 时，磁盘上指定的卷标志8dot3name 属性设置为为指定的卷启用8dot3 名称创建 (**0**) 或设置为在指定卷上禁用8dot3 名称创建 (**1**) 。<p>您必须将8dot3 名称创建的默认文件系统行为设置为值 **2** ，然后才能启用或禁用指定卷的8dot3 名称创建。</li></ul> |
+| 条形 `<directorypath>` | 删除位于指定 *directorypath*中的所有文件的8dot3 文件名。 如果任何文件的 *directorypath* 与文件名一起包含的字符超过260个字符，则不会删除该文件的8dot3 文件名。<p>此命令会列出，但不会修改指向永久删除了8dot3 文件名称的文件的注册表项。 |
 | `<volumepath>` | 指定驱动器名称后跟冒号或 GUID （格式为） `volume{GUID}` 。 |
-| /f | 指定位于指定*directorypath*中的所有文件都具有删除的8dot3 文件名，即使存在指向使用8dot3 文件名的文件的注册表项也是如此。 在这种情况下，操作将删除8dot3 文件名，但不会修改指向使用8dot3 文件名的文件的任何注册表项。 **警告：** 建议你在使用 **/f**参数之前备份目录或卷，因为这可能会导致意外的应用程序故障，包括无法卸载程序。 |
-| /l`[<log file>]` | 指定写入信息的日志文件。<p>如果未指定 **/l**参数，则所有信息都会写入默认日志文件： `%temp%\8dot3_removal_log@(GMT YYYY-MM-DD HH-MM-SS)` .log * * |
-| /s | 指定应将操作应用到指定*directorypath*的子目录。 |
+| /f | 指定位于指定 *directorypath* 中的所有文件都具有删除的8dot3 文件名，即使存在指向使用8dot3 文件名的文件的注册表项也是如此。 在这种情况下，操作将删除8dot3 文件名，但不会修改指向使用8dot3 文件名的文件的任何注册表项。 **警告：** 建议你在使用 **/f** 参数之前备份目录或卷，因为这可能会导致意外的应用程序故障，包括无法卸载程序。 |
+| /l `[<log file>]` | 指定写入信息的日志文件。<p>如果未指定 **/l** 参数，则所有信息都会写入默认日志文件： `%temp%\8dot3_removal_log@(GMT YYYY-MM-DD HH-MM-SS)` .log * * |
+| /s | 指定应将操作应用到指定 *directorypath*的子目录。 |
 | /t  | 指定是否应在测试模式下运行8dot3 文件名的删除操作。 执行除删除8dot3 文件名之外的所有操作。 你可以使用测试模式来了解哪些注册表项指向使用8dot3 文件名的文件。 |
 | /v | 指定写入日志文件的所有信息也会显示在命令行上。 |
 
@@ -63,9 +63,9 @@ fsutil 8dot3name [strip] [/t] [/s] [/f] [/l [<log file.] ] [/v] <directorypath>
 fsutil 8dot3name query volume{928842df-5a01-11de-a85c-806e6f6e6963}
 ```
 
-还可以通过使用 "**行为**" 子命令查询8dot3 名称行为。
+还可以通过使用 " **行为** " 子命令查询8dot3 名称行为。
 
-若要删除*D:\MyData*目录和所有子目录中的8dot3 文件名，并将该信息写入指定为*mylogfile.txt*的日志文件，请键入：
+若要删除 *D:\MyData* 目录和所有子目录中的8dot3 文件名，并将该信息写入指定为 *mylogfile.txt*的日志文件，请键入：
 
 ```
 fsutil 8dot3name strip /l mylogfile.log /s d:\MyData

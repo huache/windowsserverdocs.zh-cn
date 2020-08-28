@@ -1,18 +1,18 @@
 ---
 title: chcp
 description: 用于更改活动控制台代码页的 chcp 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: dc7b1c71-7b80-443d-9cf1-9bcf305aa1fd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21dcdc1e663656439bece576287877653d0dcd8c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8e725bb3220546864642b2e6a39ddcc0163b1b98
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892819"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031085"
 ---
 # <a name="chcp"></a>chcp
 
@@ -26,7 +26,7 @@ chcp [<nnn>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<nnn>` | 指定代码页。 |
 | /? | 在命令提示符下显示帮助。 |
@@ -48,7 +48,7 @@ chcp [<nnn>]
 | 869 | 现代希腊语 |
 | 936 | 中文 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 仅与 Windows 一起安装的原始设备制造商 (OEM) 代码页正常显示在命令提示符窗口使用光栅字体。 在全屏幕模式下或使用 TrueType 字体的命令提示符窗口中，其他代码页正确显示。
 
@@ -64,7 +64,7 @@ chcp [<nnn>]
 chcp
 ```
 
-将显示一条类似于以下内容的消息：`Active code page: 437`
+将显示一条类似于以下内容的消息： `Active code page: 437`
 
 若要将活动代码页更改为 850 (多语言) ，请键入：
 
@@ -72,7 +72,7 @@ chcp
 chcp 850
 ```
 
-如果指定的代码页无效，则会显示以下错误消息：`Invalid code page`
+如果指定的代码页无效，则会显示以下错误消息： `Invalid code page`
 
 ## <a name="additional-references"></a>其他参考
 

@@ -1,18 +1,18 @@
 ---
 title: bitsadmin 缓存和 deleteURL
 description: Bitsadmin cache 和 deleteURL 命令的参考文章，用于删除给定 URL 的所有缓存条目。
-ms.topic: article
+ms.topic: reference
 ms.assetid: e108b76b-fae9-4c16-bf4c-d74c9f025953
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1a21a1994711e2548e9e08094f88f46edafe481
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ed804580c4435b612b91875ef59cf6eb8ca4275b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894834"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026705"
 ---
 # <a name="bitsadmin-cache-and-deleteurl"></a>bitsadmin 缓存和 deleteURL
 
@@ -26,7 +26,7 @@ bitsadmin /deleteURL URL
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | URL | 标识远程文件的统一资源定位器。 |
 

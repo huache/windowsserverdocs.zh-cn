@@ -1,18 +1,18 @@
 ---
 title: 网络文件系统命令参考服务
 description: '* * * * 的参考文章'
-ms.topic: article
+ms.topic: reference
 ms.assetid: 06c81f88-a672-4405-9b73-085f8933114c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f471557214f51464c2f1285b64a76084ea1a487
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cbeea54c69cf5fe2a25409b9e45dffda1da4bdb2
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882713"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037385"
 ---
 # <a name="services-for-network-file-system-command-reference"></a>网络文件系统命令参考服务
 
@@ -20,7 +20,7 @@ ms.locfileid: "87882713"
 下面是 NFS 命令行工具的列表：
 
 
-| Command | 描述 |
+| Command | 说明 |
 | ------- | ----------- |
 | [mapadmin](mapadmin.md) | 管理用于网络文件系统的 Microsoft 服务用户名映射。 |
 | [装载](mount.md) |  (NFS) 网络共享装入网络文件系统。 |

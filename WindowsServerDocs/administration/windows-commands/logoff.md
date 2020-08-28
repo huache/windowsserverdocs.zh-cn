@@ -1,18 +1,18 @@
 ---
 title: 注销
 description: "\"注销\" 命令的参考文章，用于从远程桌面会话主机服务器上的会话中注销用户并删除会话。"
-ms.topic: article
+ms.topic: reference
 ms.assetid: 939f09cc-de8c-436c-a05d-aca5f2a06371
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b8eb1b13d7eeddc03ead24bcda10062aea5e1cfe
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 249b63e5b98d17b67c6d00fe6d2f8a634d67de6f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887071"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030525"
 ---
 # <a name="logoff"></a>注销
 
@@ -27,7 +27,7 @@ logoff [<sessionname> | <sessionID>] [/server:<servername>] [/v]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<sessionname>` | 指定会话的名称。 这必须是活动会话。|
 | `<sessionID>` | 指定标识服务器会话的数字 ID。 |
@@ -35,13 +35,13 @@ logoff [<sessionname> | <sessionID>] [/server:<servername>] [/v]
 | /v | 显示要执行的操作的相关信息。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
-- 你始终可以从你当前登录到的会话中注销。 但是，您必须拥有 "**完全控制**" 权限才能从其他会话注销用户。
+- 你始终可以从你当前登录到的会话中注销。 但是，您必须拥有 " **完全控制** " 权限才能从其他会话注销用户。
 
-- 从会话中注销用户而不发出警告可能导致用户会话中的数据丢失。 在执行此操作之前，应使用**msg**命令向用户发送消息来警告用户。
+- 从会话中注销用户而不发出警告可能导致用户会话中的数据丢失。 在执行此操作之前，应使用 **msg** 命令向用户发送消息来警告用户。
 
-- 如果 `<sessionID>` `<sessionname>` 未指定或，则**注销**将从当前会话中注销用户。
+- 如果 `<sessionID>` `<sessionname>` 未指定或，则 **注销** 将从当前会话中注销用户。
 
 - 注销用户后，所有进程都将结束，并且将从服务器中删除该会话。
 
@@ -55,7 +55,7 @@ logoff [<sessionname> | <sessionID>] [/server:<servername>] [/v]
 logoff
 ```
 
-若要使用会话的 ID （例如*会话 12*）从会话中注销用户，请键入：
+若要使用会话的 ID （例如 *会话 12*）从会话中注销用户，请键入：
 
 ```
 logoff 12

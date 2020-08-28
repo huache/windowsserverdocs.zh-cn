@@ -1,18 +1,18 @@
 ---
 title: secedit： export
 description: '* * * * 的参考文章'
-ms.topic: article
+ms.topic: reference
 ms.assetid: 49a8b241-aa8c-45b7-844d-67a29fab708e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5079ecc2874c1d834fb351ebb51bf140309e4248
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 04a03dd392fb333bb95bbd73a2694ce6bf548d9c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882986"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037445"
 ---
 # <a name="seceditexport"></a>secedit： export
 
@@ -28,7 +28,7 @@ Secedit /export /db <database file name> [/mergedpolicy] /cfg <configuration fil
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |db|必需。</br>指定数据库的路径和文件名，该数据库包含将对其执行分析的存储配置。</br>如果文件名指定的数据库没有安全模板 (如关联的配置文件) 所表示的，则 `/cfg \<configuration file name>` 还必须指定命令行选项。|
 |mergedpolicy|可选。</br>合并和导出域和本地策略安全设置。|
@@ -37,13 +37,13 @@ Secedit /export /db <database file name> [/mergedpolicy] /cfg <configuration fil
 |log|可选。</br>指定进程的日志文件的路径和文件名。|
 |quiet|可选。</br>禁止显示屏幕和日志输出。 你仍可以通过使用 "安全配置和分析" 管理单元 (MMC) 来查看分析结果。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 除了将设置导入另一台计算机之外，还可以使用此命令在本地计算机上备份安全策略。
 
 如果未提供日志文件的路径，则使用默认的日志文件 (*systemroot*\Documents and Settings \* 用户帐户<em>\My Documents\Security\Logs \* DatabaseName</em>) 。
 
-在 Windows Server 2008 中，已 `Secedit /refreshpolicy` 替换为 `gpupdate` 。 有关如何刷新安全设置的信息，请参阅[Gpupdate](gpupdate.md)。
+在 Windows Server 2008 中，已 `Secedit /refreshpolicy` 替换为 `gpupdate` 。 有关如何刷新安全设置的信息，请参阅 [Gpupdate](gpupdate.md)。
 
 ## <a name="examples"></a>示例
 

@@ -1,22 +1,22 @@
 ---
 title: driverquery
 description: Driverquery 命令的参考文章，它使管理员能够显示已安装设备驱动程序及其属性的列表。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 92ca4b84-e4e2-405b-9f31-bf6db9f66839
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a996d48927215f8304e5a16f9da67419cbf7de65
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dbd8ca2de7f15a5b5fb8682dae3a3aa2e105d7cd
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890756"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030795"
 ---
 # <a name="driverquery"></a>driverquery
 
-使管理员能够显示已安装设备驱动程序及其属性的列表。 如果在没有参数的情况下使用，则**driverquery**将在本地计算机上运行。
+使管理员能够显示已安装设备驱动程序及其属性的列表。 如果在没有参数的情况下使用，则 **driverquery** 将在本地计算机上运行。
 
 ## <a name="syntax"></a>语法
 
@@ -26,16 +26,16 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- |------------ |
-| /s`<system>` | 指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认为本地计算机。 |
-| /u`[<domain>]<username>` | 使用用户或*域 \**用户指定*的用户帐户的凭据运行该命令。 默认情况下， */s*使用当前登录到发出命令的计算机的用户的凭据。 除非指定 **/s** ，否则不能使用 **/u** 。 |
-| /p`<password>` | 指定在 **/u**参数中指定的用户帐户的密码。 除非指定 **/u** ，否则不能使用 **/p** 。 |
-| /fo 表 | 将输出的格式设置为一个表。 这是默认设置。 |
+| /s `<system>` | 指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认为本地计算机。 |
+| /u `[<domain>]<username>` | 使用用户或*域 \**用户指定*的用户帐户的凭据运行该命令。 默认情况下， */s* 使用当前登录到发出命令的计算机的用户的凭据。 除非指定 **/s** ，否则不能使用 **/u** 。 |
+| /p `<password>` | 指定在 **/u** 参数中指定的用户帐户的密码。 除非指定 **/u** ，否则不能使用 **/p** 。 |
+| /fo 表 | 将输出的格式设置为一个表。 这是默认值。 |
 | /fo list | 将输出的格式设置为列表。 |
 | /fo csv | 将输出的格式设置为逗号分隔值。 |
-| /nh | 省略显示的驱动程序信息中的标题行。 如果 **/fo**参数设置为**list**，则无效。 |
-| /v | 显示详细输出。 **/v**对于签名的驱动程序无效。 |
+| /nh | 省略显示的驱动程序信息中的标题行。 如果 **/fo** 参数设置为 **list**，则无效。 |
+| /v | 显示详细输出。 **/v** 对于签名的驱动程序无效。 |
 | /si | 提供有关签名驱动程序的信息。 |
 | /? | 在命令提示符下显示帮助。 |
 

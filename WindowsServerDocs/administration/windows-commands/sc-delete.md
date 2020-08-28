@@ -1,18 +1,18 @@
 ---
 title: Sc.exe 删除
 description: 了解如何使用 sc.exe 实用程序注销服务
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2fe94fb3-e4d1-47b5-b999-39995ecbb644
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5eb7bdd147d42c5b35106b65c512015526cb80cc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 09a3f43824c3e0c895331326341b92c7c6aa5727
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883268"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037535"
 ---
 # <a name="scexe-delete"></a>Sc.exe 删除
 
@@ -28,19 +28,19 @@ sc.exe [<ServerName>] delete [<ServiceName>]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<ServerName>|指定服务所在的远程服务器的名称。 名称必须使用通用命名约定 (UNC) 格式 (例如， \\ \\ myserver) 。 若要在本地运行 SC.exe，请省略此参数。|
-|\<ServiceName>|指定**getkeyname**操作返回的服务名称。|
+|\<ServiceName>|指定 **getkeyname** 操作返回的服务名称。|
 |?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-建议不要使用 sc.exe 删除内置的操作系统服务，例如 DHCP、DNS 或 Internet Information Services。 若要安装、删除或重新配置操作系统角色、服务和组件，请参阅[安装或卸载角色、角色服务或功能](/WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)
+建议不要使用 sc.exe 删除内置的操作系统服务，例如 DHCP、DNS 或 Internet Information Services。 若要安装、删除或重新配置操作系统角色、服务和组件，请参阅 [安装或卸载角色、角色服务或功能](/WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)
 
 ## <a name="examples"></a>示例
 
-若要从本地计算机上的注册表中删除服务子项**NewServ** ，请键入：
+若要从本地计算机上的注册表中删除服务子项 **NewServ** ，请键入：
 ```
 sc.exe delete newserv
 ```

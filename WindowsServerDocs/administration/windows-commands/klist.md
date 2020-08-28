@@ -1,25 +1,25 @@
 ---
 title: klist
 description: Klist 命令的参考文章，其中显示当前缓存的 Kerberos 票证的列表。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4689b4a9-1740-47dd-9240-02105efca428
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e37946106d7c47f058fd42b9926e388ab830e47
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d5284feae5da9c8c7fcdab90dd34ce7855128d5f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888182"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037715"
 ---
 # <a name="klist"></a>klist
 
 显示当前缓存的 Kerberos 票证的列表。
 
 > [!IMPORTANT]
-> 若要运行此命令的所有参数，您必须至少具有**域管理员**或同等身份。
+> 若要运行此命令的所有参数，您必须至少具有 **域管理员**或同等身份。
 
 ## <a name="syntax"></a>语法
 
@@ -29,7 +29,7 @@ klist [-lh <logonID.highpart>] [-li <logonID.lowpart>] tickets | tgt | purge | s
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | -lh | 表示以十六进制表示的用户本地唯一标识符 (LUID) 的高部分。 如果两者**都不**存在 **–li** ，则该命令默认为当前已登录用户的 LUID。 |
 | -li | 表示以十六进制表示的用户本地唯一标识符 (LUID) 的低部分。 如果两者**都不**存在 **–li** ，则该命令默认为当前已登录用户的 LUID。 |
@@ -45,9 +45,9 @@ klist [-lh <logonID.highpart>] [-li <logonID.lowpart>] tickets | tgt | purge | s
 | kdcoptions | 显示 RFC 4120 中指定的密钥发行中心 (KDC) 选项。 |
 | /? | 显示此命令的帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
-- 如果未提供任何参数， **klist**将检索当前已登录用户的所有票证。
+- 如果未提供任何参数， **klist** 将检索当前已登录用户的所有票证。
 
 - 参数显示以下信息：
 
@@ -99,11 +99,11 @@ klist [-lh <logonID.highpart>] [-li <logonID.lowpart>] tickets | tgt | purge | s
 
     - **EncodedTicket：** 编码的票证。
 
-  - **清除**-允许删除特定的票证。 清除票证会销毁已缓存的所有票证，因此请谨慎使用此属性。 它可能会阻止你无法对资源进行身份验证。 如果发生这种情况，则必须注销并重新登录。
+  - **清除** -允许删除特定的票证。 清除票证会销毁已缓存的所有票证，因此请谨慎使用此属性。 它可能会阻止你无法对资源进行身份验证。 如果发生这种情况，则必须注销并重新登录。
 
     - **LogonID：** 在十六进制中标识。
 
-  - **会话**-允许列出和显示此计算机上所有登录会话的信息。
+  - **会话** -允许列出和显示此计算机上所有登录会话的信息。
 
     - **LogonID：** 如指定，则只按给定的值显示登录会话。 如果未指定，则显示此计算机上的所有登录会话。
 
@@ -123,7 +123,7 @@ klist [-lh <logonID.highpart>] [-li <logonID.lowpart>] tickets | tgt | purge | s
 
   - **purge_bind** -允许删除域的缓存首选域控制器。
 
-  - **kdcoptions** -有关最新的选项列表及其说明，请参阅[RFC 4120](http://www.ietf.org/rfc/rfc4120.txt)。
+  - **kdcoptions** -有关最新的选项列表及其说明，请参阅 [RFC 4120](http://www.ietf.org/rfc/rfc4120.txt)。
 
 ### <a name="examples"></a>示例
 
