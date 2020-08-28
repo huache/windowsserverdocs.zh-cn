@@ -1,18 +1,18 @@
 ---
 title: extend
 description: "\"扩展\" 命令的参考文章，它将具有焦点的卷或分区扩展到了磁盘上的可用 (未分配) 空间。"
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2414e21d-fc0b-40e8-9e33-3e072f8ad76b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a64de5c0215568827b5440a3720946a86c7a891e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bef77ab0972390dcae85f46458989410b88cc64a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890387"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036665"
 ---
 # <a name="extend"></a>extend
 
@@ -29,14 +29,14 @@ extend filesystem [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 大小 =`<n>` | 指定要添加到当前卷或分区的空间量（以 mb 为单位） (MB) 。 如果没有给定大小，则使用磁盘上可用的所有连续可用空间。 |
 | 磁盘 =`<n>` | 指定扩展卷或分区的磁盘。 如果未指定磁盘，则在当前磁盘上扩展卷或分区。 |
 | filesystem | 扩展具有焦点的卷的文件系统。 仅适用于未使用卷进行扩展的文件系统。 |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 在基本磁盘上，可用空间必须与具有焦点的卷或分区位于同一磁盘上。 它还必须紧跟在包含焦点 (的卷或分区之后，必须从下一个扇区偏移量) 开始。
 

@@ -1,18 +1,18 @@
 ---
 title: extract
 description: 用于从源位置提取文件的 "提取" 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 20dab03e-f6e1-4eb8-b8a1-fd6f1d97ee83
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 130f9ee22e0603deaa50dfde267df1c39342e38c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 557ee765a40703d2781613549992c7668753f5a9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890372"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036635"
 ---
 # <a name="extract"></a>extract
 
@@ -28,11 +28,11 @@ extract [/y] /c source destination
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 程序包 | 如果要提取两个或更多文件，请使用。 |
 | filename | 要从 cab 文件中提取的文件的名称。 通配符和多个文件名 (用空白分隔) 可供使用。 |
-| source | 压缩文件 (仅包含一个文件) 的 cabinet 文件。 |
+| target | 压缩文件 (仅包含一个文件) 的 cabinet 文件。 |
 | newname | 用于为提取的文件指定的新文件名。 如果未提供，则使用原始名称。 |
 | /a | 处理所有 cabinet。 从前面提到的第一个 cabinet 开始，遵循 cabinet 链。 |
 | /c | 将源文件复制到目标 (，从 DMF 磁盘复制) 。 |

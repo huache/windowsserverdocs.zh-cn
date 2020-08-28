@@ -1,25 +1,25 @@
 ---
 title: chkntfs
 description: Chkntfs 命令的参考文章，用于在计算机启动时显示或修改自动磁盘检查。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 93eca810-8699-4716-8e9d-aecd54f704be
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0f0c0a956cb2b286d4f5b1f34332dc01d984462
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d60707f01fb72e9ceede68df7a33e488b6196f4c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892737"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026051"
 ---
 # <a name="chkntfs"></a>chkntfs
 
-在计算机启动时显示或修改自动磁盘检查。 如果使用时没有选项， **chkntfs**将显示指定卷的文件系统。 如果计划运行自动文件检查，则**chkntfs**会显示指定的卷是否已更新，或是否计划在下次启动计算机时进行检查。
+在计算机启动时显示或修改自动磁盘检查。 如果使用时没有选项， **chkntfs** 将显示指定卷的文件系统。 如果计划运行自动文件检查，则 **chkntfs** 会显示指定的卷是否已更新，或是否计划在下次启动计算机时进行检查。
 
 > [!NOTE]
-> 若要运行**chkntfs**，你必须是 Administrators 组的成员。
+> 若要运行 **chkntfs**，你必须是 Administrators 组的成员。
 
 ## <a name="syntax"></a>语法
 
@@ -33,13 +33,13 @@ chkntfs [/c <volume> [...]]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<volume>` [...] | 指定在计算机启动时要检查的一个或多个卷。 有效的卷包括 (后跟冒号) 、装入点或卷名称的驱动器号。 |
-| /d | 还原所有**chkntfs**默认设置，但自动文件检查的倒计时时间除外。 默认情况下，当计算机启动时，所有卷都处于选中状态，并且**chkdsk**在那些更新的计算机上运行。 |
-| /t [ `:<time>` ] | 将 Autochk.exe 初始倒计时时间更改为指定的时间量（以秒为单位）。 如果未输入时间，则 **/t**将显示当前倒计时时间。 |
-| /x `<volume>` [...] | 指定在计算机启动时要排除的一个或多个卷，即使卷被标记为需要**chkdsk**。 |
-| /c `<volume>` [...] | 在计算机启动时计划要检查的一个或多个卷，并在那些已更新的卷上运行**chkdsk** 。 |
+| /d | 还原所有 **chkntfs** 默认设置，但自动文件检查的倒计时时间除外。 默认情况下，当计算机启动时，所有卷都处于选中状态，并且 **chkdsk** 在那些更新的计算机上运行。 |
+| /t [ `:<time>` ] | 将 Autochk.exe 初始倒计时时间更改为指定的时间量（以秒为单位）。 如果未输入时间，则 **/t** 将显示当前倒计时时间。 |
+| /x `<volume>` [...] | 指定在计算机启动时要排除的一个或多个卷，即使卷被标记为需要 **chkdsk**。 |
+| /c `<volume>` [...] | 在计算机启动时计划要检查的一个或多个卷，并在那些已更新的卷上运行 **chkdsk** 。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ## <a name="examples"></a>示例

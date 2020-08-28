@@ -1,18 +1,18 @@
 ---
 title: ImageGroup
 description: ImageGroup 的参考文章，可将映像组添加到 Windows 部署服务服务器。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6ca88671-51de-4924-b969-88f3dfd84270
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 611425c7c3ff997009e16792fea1924a403f364e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4ee2af4677854e3a4abc727d399ce5a52244aaee
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896597"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029755"
 ---
 # <a name="add-imagegroup"></a>ImageGroup
 
@@ -25,7 +25,7 @@ ms.locfileid: "87896597"
 wdsutil [Options] /add-ImageGroumediaGroup:<Image group name> [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 mediaGroup:<Image group name>|指定要添加的映像组的名称。|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|

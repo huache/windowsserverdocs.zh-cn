@@ -1,18 +1,18 @@
 ---
 title: 获取-设备
 description: 获取设备的参考文章，它检索有关预留计算机的 Windows 部署服务信息 (即，已排入到 active directory 域服务中的计算机帐户的物理计算机。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1da79286-7e1d-45f2-aea2-d446e16a6911
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e50648a0a3e50542a7bb2ace4f887c08939ff7b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 118e14f738920527c61c8da25d19ab98126fc004
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896963"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029695"
 ---
 # <a name="get-device"></a>获取-设备
 
@@ -30,7 +30,7 @@ wdsutil /Get-Device {/Device:<Device name> | /ID:<MAC or UUID>} [/Domain:<Domain
 |装置<Device name>|指定 (SAMAccountName) 计算机的名称。|
 |识别<MAC or UUID>|指定计算机的 MAC 地址或 UUID (GUID) ，如以下示例中所示。 请注意，有效的 GUID 必须采用以下两种格式之一：二进制字符串或 GUID 字符串<p>-   **二进制字符串**：/ID： ACEFA3E81F20694E953EB2DAA1E8B1B6<br />-   **MAC 地址**： 00B056882FDC (没有短划线) 或 00-00-00-)  (2f-<br />-   **GUID 字符串**：/ID： E8A3EFAC-201F-4E69-953-B2DAA1E8B1B6|
 |[/Domain： <Domain> ]|指定要在其中搜索预留计算机的域。 此参数的默认值为本地域。|
-|[/forest： {Yes &#124; No}]|指定 Windows 部署服务应搜索整个林还是搜索本地域。 默认值为 "**否**"，这意味着只会搜索本地域。|
+|[/forest： {Yes &#124; No}]|指定 Windows 部署服务应搜索整个林还是搜索本地域。 默认值为 " **否**"，这意味着只会搜索本地域。|
 ## <a name="examples"></a>示例
 若要使用计算机名称获取信息，请键入：
 ```

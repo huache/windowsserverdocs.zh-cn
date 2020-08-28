@@ -1,31 +1,31 @@
 ---
 title: 取消初始化-服务器
 description: 有关 "取消初始化-服务器" 的参考文章，这会恢复在初始服务器配置期间对服务器所做的更改。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 015efb04-fe84-469f-bd81-49d0046296b2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 954c56d8a9c901431859e7a424c5df436ab6858a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4ce98df7fa7c094970474432dd8fdedc56e302c6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881451"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029975"
 ---
 # <a name="uninitialize-server"></a>取消初始化-服务器
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-恢复在初始服务器配置期间对服务器所做的更改。 这包括 **/initialize-server**选项或 Windows 部署服务 mmc 管理单元所做的更改。 请注意，此命令会将服务器重置为未配置状态。 此命令不会修改 remoteInstall 共享文件夹的内容。 相反，它会重置服务器的状态，以便您可以重新初始化服务器。
+恢复在初始服务器配置期间对服务器所做的更改。 这包括 **/initialize-server** 选项或 Windows 部署服务 mmc 管理单元所做的更改。 请注意，此命令会将服务器重置为未配置状态。 此命令不会修改 remoteInstall 共享文件夹的内容。 相反，它会重置服务器的状态，以便您可以重新初始化服务器。
 
 ## <a name="syntax"></a>语法
 ```
 wdsutil [Options] /Uninitialize-Server [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
 ## <a name="examples"></a>示例

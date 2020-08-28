@@ -1,18 +1,18 @@
 ---
 title: msdt
 description: 适用于 msdt 命令的参考文章，此命令在命令行或自动脚本中调用疑难解答包，并启用其他选项，无需用户输入。
-ms.topic: article
+ms.topic: reference
 ms.assetid: ead1b672-a120-4e16-94aa-a8e13602c1d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8ef856cd54b93c77d4e260a5e433c67407d9611
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fd61fd80f6b1a0249c506bcaa5ff2cda99c49820
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886208"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030065"
 ---
 # <a name="msdt"></a>msdt
 
@@ -26,16 +26,16 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| /id`<packagename>` | 指定要运行的诊断包。 有关可用包的列表，请参阅[可用的疑难解答包](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)。 |
-| /path`<directory|.diagpkg file|.diagcfg file>` | 指定诊断包的完整路径。 如果指定目录，则该目录必须包含诊断程序包。 不能将 **/path**参数与 * */id * *、 **/dci**或 **/cab**参数一起使用。 |                                                                                   |
-| /dci`<passkey>` | 预填充 "密钥" 字段。 仅当支持提供程序提供了密钥时，才使用此参数。 |
-| /dt`<directory>` | 显示指定目录中的故障排除历史记录。 诊断结果存储在用户的 **%LOCALAPPDATA%\Diagnostics**或 **%LOCALAPPDATA%\ElevatedDiagnostics**目录中。 |
-| /af`<answerfile>` | 指定 XML 格式的应答文件，该文件包含对一个或多个诊断交互的响应。 |
-| /modal`<ownerHWND>` | 使疑难解答包模式向父控制台窗口指定的窗口处理 (HWND) （以十进制表示）。 此参数通常由启动疑难解答包的应用程序使用。 有关获取控制台窗口句柄的详细信息，请参阅[如何获取控制台窗口句柄 (HWND) ](https://support.microsoft.com/help/124103/how-to-obtain-a-console-window-handle-hwnd)。 |
-| /moreoptions`<true|false>` | 启用 (true) 或取消显示询问用户是否要浏览其他选项的最终故障排除屏幕 () false。 当疑难解答包由不属于操作系统的疑难解答程序启动时，通常使用此参数。 |
-| /param returns`<parameters>` | 在命令行中指定一组交互响应，类似于答案文件。 此参数通常不在使用 TSP 设计器创建的疑难解答包的上下文中使用。 有关开发自定义参数的详细信息，请参阅[Windows 故障排除平台](/previous-versions/windows/desktop/wintt/windows-troubleshooting-toolkit-portal)。 |
+| /id `<packagename>` | 指定要运行的诊断包。 有关可用包的列表，请参阅 [可用的疑难解答包](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)。 |
+| /path `<directory|.diagpkg file|.diagcfg file>` | 指定诊断包的完整路径。 如果指定目录，则该目录必须包含诊断程序包。 不能将 **/path** 参数与 * */id * *、 **/dci**或 **/cab** 参数一起使用。 |                                                                                   |
+| /dci `<passkey>` | 预填充 "密钥" 字段。 仅当支持提供程序提供了密钥时，才使用此参数。 |
+| /dt `<directory>` | 显示指定目录中的故障排除历史记录。 诊断结果存储在用户的 **%LOCALAPPDATA%\Diagnostics** 或 **%LOCALAPPDATA%\ElevatedDiagnostics** 目录中。 |
+| /af `<answerfile>` | 指定 XML 格式的应答文件，该文件包含对一个或多个诊断交互的响应。 |
+| /modal `<ownerHWND>` | 使疑难解答包模式向父控制台窗口指定的窗口处理 (HWND) （以十进制表示）。 此参数通常由启动疑难解答包的应用程序使用。 有关获取控制台窗口句柄的详细信息，请参阅 [如何获取控制台窗口句柄 (HWND) ](https://support.microsoft.com/help/124103/how-to-obtain-a-console-window-handle-hwnd)。 |
+| /moreoptions `<true|false>` | 启用 (true) 或取消显示询问用户是否要浏览其他选项的最终故障排除屏幕 () false。 当疑难解答包由不属于操作系统的疑难解答程序启动时，通常使用此参数。 |
+| /param returns `<parameters>` | 在命令行中指定一组交互响应，类似于答案文件。 此参数通常不在使用 TSP 设计器创建的疑难解答包的上下文中使用。 有关开发自定义参数的详细信息，请参阅 [Windows 故障排除平台](/previous-versions/windows/desktop/wintt/windows-troubleshooting-toolkit-portal)。 |
 | /advanced | 启动疑难解答包时，默认展开 "欢迎" 页上的 "高级" 链接。 |
 | /custom | 提示用户在应用前确认每个可能的解决方法。 |
 

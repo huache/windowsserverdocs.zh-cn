@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setnotifycmdline
 description: Bitsadmin setnotifycmdline 命令的参考文章，用于设置在作业完成传输数据时或作业进入状态时将运行的命令行命令。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 415ae6ef-8549-48b2-9693-2368a6e24075
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a81b4521d8c765d85e6b4a92d0429b128f43198e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7f486efcbaef5f68d6f8be7cab1caba204c77c7a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893008"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026225"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 
@@ -29,15 +29,15 @@ bitsadmin /setnotifycmdline <job> <program_name> [program_parameters]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
-| program_name | 作业完成时要运行的命令的名称。 可以将此值设置为 NULL，但如果这样做，则还必须将*program_parameters*设置为 null。 |
-| program_parameters | 要传递给*program_name*的参数。 可以将此值设置为 NULL。 如果*program_parameters*未设置为 NULL，则*program_parameters*中的第一个参数必须与*program_name*匹配。 |
+| program_name | 作业完成时要运行的命令的名称。 可以将此值设置为 NULL，但如果这样做，则还必须将 *program_parameters* 设置为 null。 |
+| program_parameters | 要传递给 *program_name*的参数。 可以将此值设置为 NULL。 如果 *program_parameters* 未设置为 NULL，则 *program_parameters* 中的第一个参数必须与 *program_name*匹配。 |
 
 ## <a name="examples"></a>示例
 
-若要在完成名为*myDownloadJob*的作业时运行 Notepad.exe：
+若要在完成名为 *myDownloadJob*的作业时运行 Notepad.exe：
 
 ```
 bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe NULL

@@ -1,18 +1,18 @@
 ---
 title: 子命令集-设备
 description: 子命令集的参考文章-设备，它更改预留计算机的属性。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 401567f8-eaeb-4a2d-b811-140bb007028d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9593769d77d10eaff80b9d369e1f681f02c5d1fe
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8d259a06918e5cf0f8983f84533a37d42f146ece
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882269"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036885"
 ---
 # <a name="subcommand-set-device"></a>子命令：设置-设备
 
@@ -26,15 +26,15 @@ wdsutil [Options] /Set-Device /Device:<Device name> [/ID:<UUID | MAC address>] [
 [/WdsClientUnattend:<Relative path>] [/User:<Domain\User | User@Domain>] [/JoinRights:{JoinOnly | Full}] [/JoinDomain:{Yes | No}] [/BootImagepath:<Relative path>] [/Domain:<Domain>] [/resetAccount]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |装置<computer name>|指定计算机名称 (SAM-Name) 。|
-|[/ID： <UUID &#124; MAC 地址>]|指定计算机的 GUID/UUID 或 MAC 地址。 此值必须是以下三种格式之一：<p>-二进制字符串： **/id： ACEFA3E81F20694E953EB2DAA1E8B1B6**<br />-GUID/UUID 字符串：/ID：**E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<br />-MAC 地址： **00B056882FDC** (没有短划线) 或**00-00** -)  (2f-|
+|[/ID： <UUID &#124; MAC 地址>]|指定计算机的 GUID/UUID 或 MAC 地址。 此值必须是以下三种格式之一：<p>-二进制字符串： **/id： ACEFA3E81F20694E953EB2DAA1E8B1B6**<br />-GUID/UUID 字符串：/ID：**E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<br />-MAC 地址： **00B056882FDC** (没有短划线) 或 **00-00** -)  (2f-|
 |[/ReferralServer： <Server name> ]|指定要连接的服务器的名称，以使用普通文件传输协议 (tftp) 下载网络启动程序和启动映像。|
 |[/BootProgram： <Relative path> ]|指定从 remoteInstall 文件夹到指定计算机将接收的网络启动程序的相对路径。 例如： **boot\x86\pxeboot.com**|
 |[/WdsClientUnattend： <Relative path> ]|指定从 remoteInstall 文件夹到无人参与文件的相对路径，该文件自动执行 Windows 部署服务客户端的安装屏幕。|
 |[/User： <Domain\User &#124; User@Domain>]|设置计算机帐户对象的权限，以向指定的用户授予将计算机加入域所需的权限。|
-|[/JoinRights： {JoinOnly &#124; Full}]|指定要分配给用户的权限类型。<p>-   **JoinOnly**要求管理员重置计算机帐户，然后用户才能将计算机加入域。<br />-   **Full**给予用户完全访问权限，包括将计算机加入域的权限。|
+|[/JoinRights： {JoinOnly &#124; Full}]|指定要分配给用户的权限类型。<p>-   **JoinOnly** 要求管理员重置计算机帐户，然后用户才能将计算机加入域。<br />-   **Full** 给予用户完全访问权限，包括将计算机加入域的权限。|
 |[/JoinDomain： {Yes &#124; No}]|指定是否应在 Windows 部署服务安装期间将计算机作为此计算机帐户加入到域。 默认设置为“是”。|
 |[/BootImagepath： <Relative path> ]|指定从 remoteInstall 文件夹到计算机将使用的启动映像的相对路径。|
 |[/Domain： <Domain> ]|指定要在其中搜索预留计算机的域。 默认值为本地域。|

@@ -1,18 +1,18 @@
 ---
 title: DriverPackage
 description: DriverPackage 的参考文章，用于向服务器添加驱动程序包。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 3ac9e8d5-63ec-4ce8-86fc-85d28011050b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd7ba7897006a4db144fc8bd92317fb07a34b55f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0a1876727d4d79cf4ce3c86c654a9be0b7c6795d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881276"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029845"
 ---
 # <a name="add-driverpackage"></a>DriverPackage
 
@@ -26,7 +26,7 @@ WDSUTIL /Add-DriverPackage /InfFile:<Inf File path> [/Server:<Server name>] [/Ar
 
 ### <a name="parameters"></a>参数
 
-|          参数           |                                                              描述                                                              |
+|          参数           |                                                              说明                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 |   InfFile:\<Inf File path>   |                                           指定要添加的 .inf 文件的完整路径。                                            |
 |    服务\<Server name>    | 指定服务器的名称。 此名称可以是 NetBIOS 名称或 FQDN。 如果未指定服务器名称，则使用本地服务器。 |

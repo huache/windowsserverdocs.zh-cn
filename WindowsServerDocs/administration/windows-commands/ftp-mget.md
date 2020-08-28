@@ -1,18 +1,18 @@
 ---
 title: ftp mget
 description: Ftp mget 命令的参考文章，其中使用当前文件传输类型将远程文件复制到本地计算机。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6c85ae96-ec51-48a9-a227-7f02c7332c69
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9074df66e70961c74ef1b479f31ac316e34ff051
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e72d253fec35f366e2ab80a491c256e0de6c948f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889332"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025741"
 ---
 # <a name="ftp-mget"></a>ftp mget
 
@@ -28,13 +28,13 @@ mget <remotefile>[ ]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<remotefile>` | 指定要复制到本地计算机的远程文件。 |
 
 ### <a name="examples"></a>示例
 
-要使用当前文件传输类型将远程文件*a.exe*和*b.exe*复制到本地计算机，请键入：
+要使用当前文件传输类型将远程文件 *a.exe* 和 *b.exe* 复制到本地计算机，请键入：
 
 ```
 mget a.exe b.exe

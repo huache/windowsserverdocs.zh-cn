@@ -5,20 +5,20 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: 00fd11e577957e45bb8b2491b54cf1548effedc3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fa63ec550821f99dffa59f092bb0f0523bfb948b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890005"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030145"
 ---
 # <a name="fsutil-dirty"></a>fsutil dirty
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows 10，Windows Server 2012 R2，Windows 8.1，Windows Server 2012，Windows 8
 
-查询或设置卷的未更新位。 如果设置了卷的未更新位，则在下次重新启动计算机时， **autochk**会自动检查卷中是否存在错误。
+查询或设置卷的未更新位。 如果设置了卷的未更新位，则在下次重新启动计算机时， **autochk** 会自动检查卷中是否存在错误。
 
 ## <a name="syntax"></a>语法
 
@@ -28,13 +28,13 @@ fsutil dirty {query | set} <volumepath>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | query | 查询指定卷的已更新位。 |
 | set | 设置指定卷的未更新位。 |
 | `<volumepath>` | 指定驱动器名称后跟冒号或 GUID，格式如下： `volume{GUID}` 。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 卷的未更新位表示文件系统可能处于不一致的状态。 可以设置脏位，因为：
 
@@ -44,7 +44,7 @@ fsutil dirty {query | set} <volumepath>
 
     - 在卷上检测到损坏。
 
-- 如果在计算机重新启动时设置了脏位， **chkdsk**将运行以验证文件系统的完整性，并尝试修复卷的任何问题。
+- 如果在计算机重新启动时设置了脏位， **chkdsk** 将运行以验证文件系统的完整性，并尝试修复卷的任何问题。
 
 ### <a name="examples"></a>示例
 
@@ -54,9 +54,9 @@ fsutil dirty {query | set} <volumepath>
 fsutil dirty query c:
 ```
 
-- 如果卷处于脏区，则会显示以下输出：`Volume C: is dirty`
+- 如果卷处于脏区，则会显示以下输出： `Volume C: is dirty`
 
-- 如果卷未更新，则会显示以下输出：`Volume C: is not dirty`
+- 如果卷未更新，则会显示以下输出： `Volume C: is not dirty`
 
 若要设置驱动器 C 上的脏位，请键入：
 

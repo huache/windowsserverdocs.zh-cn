@@ -1,18 +1,18 @@
 ---
 title: ftp mkdir
 description: 用于在远程计算机上创建目录的 ftp mkdir 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5fac19fb-6835-4011-93cc-ac62f484d5d4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b8e7b0934c2b501f7a5dd31d07edc61e9209a65
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 95858c10ea3ed1aeda90c08773ab973f541af987
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889321"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025731"
 ---
 # <a name="ftp-mkdir"></a>ftp mkdir
 
@@ -28,13 +28,13 @@ mkdir <directory>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<directory>` | 指定新的远程目录的名称。 |
 
 ### <a name="examples"></a>示例
 
-若要在远程计算机上创建名为*dir1*的目录，请键入：
+若要在远程计算机上创建名为 *dir1* 的目录，请键入：
 
 ```
 mkdir dir1

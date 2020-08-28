@@ -1,18 +1,18 @@
 ---
 title: 添加图像
 description: 有关添加映像的参考文章，可将图像添加到 Windows 部署服务服务器。
-ms.topic: article
+ms.topic: reference
 ms.assetid: d5b6f4da-90ba-4b0e-9423-66c8ef5172e2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24afd8b608875fcb971efad50d4c8adf16541557
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 03f7a024b2d396f54db66a48353557f776552db1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896993"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029825"
 ---
 # <a name="add-image"></a>添加图像
 
@@ -40,7 +40,7 @@ wdsutil /add-ImagmediaFile:<wim file path>
      [/UnattendFile:<Unattend file path>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 mediaFile： < .wim 文件路径>|指定包含要添加的映像 () 文件的 Windows 映像的完整路径和文件名。|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|

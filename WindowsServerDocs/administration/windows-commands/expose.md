@@ -1,18 +1,18 @@
 ---
 title: expose
 description: 公开命令的参考文章，它将持久卷影副本公开为驱动器号、共享或装入点。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9b0a21cf-3bef-4ade-b8f1-ac42f9203947
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4b9e45013c928e2a65e86b21c37f2f10b215056
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 67e6b230b780e6ae84ea1ff30804c5722ca2337d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890406"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036685"
 ---
 # <a name="expose"></a>expose
 
@@ -26,9 +26,9 @@ expose <shadowID> {<drive:> | <share> | <mountpoint>}
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| shadowID | 指定要公开的卷影副本的卷影副本 ID。 你还可以使用现有的别名或环境变量来代替*shadowID*。 使用**add**而不使用参数查看现有别名。 |
+| shadowID | 指定要公开的卷影副本的卷影副本 ID。 你还可以使用现有的别名或环境变量来代替 *shadowID*。 使用 **add** 而不使用参数查看现有别名。 |
 | `<drive:>` | 将指定的卷影副本作为驱动器号公开 (例如， `p:`) 。 |
 | `<share>` | 在共享 (公开指定的卷影副本，例如 `\\machinename`) 。   |
 | `<mountpoint>` | 向装入点公开指定的卷影副本 (例如 `C:\shadowcopy`) 。 |

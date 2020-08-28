@@ -1,18 +1,18 @@
 ---
 title: 查询进程
 description: "\"查询处理\" 命令的参考文章，其中显示了有关在远程桌面会话主机服务器上运行的进程的信息。"
-ms.topic: article
+ms.topic: reference
 ms.assetid: 36ce3ffc-0092-4eb1-a374-28e6616ca946
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 204782437d9fb144a9738038e82cdbbbcdc9078f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c0cf1952be3e7885c4631c229061b4630ef4598c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884534"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037225"
 ---
 # <a name="query-process"></a>查询进程
 
@@ -31,7 +31,7 @@ ms.locfileid: "87884534"
 - 进程的 ID
 
 > [!NOTE]
-> 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
+> 若要了解最新版本中的新增功能，请参阅 [Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 
@@ -41,7 +41,7 @@ query process [*|<processID>|<username>|<sessionname>|/id:<nn>|<programname>] [/
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | * | 列出所有会话的进程。 |
 | `<processID>` | 指定标识要查询的进程的数字 ID。 |
@@ -52,13 +52,13 @@ query process [*|<processID>|<username>|<sessionname>|/id:<nn>|<programname>] [/
 | /server:`<servername>` | 指定要列出其进程的远程桌面会话主机服务器。 如果未指定，则使用你当前登录到的服务器。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
-- 管理员对所有**查询处理**函数具有完全访问权限。
+- 管理员对所有 **查询处理** 函数具有完全访问权限。
 
 - 如果未指定 <*用户名*>、<*会话*名称>、 */id `<nn>` ：*、<*programname*> 或 *&#42;* 参数，则此查询仅显示属于当前用户的进程。
 
-- 当**查询过程**返回信息时，将在 `(>)` 每个属于当前会话的进程之前显示大于号。
+- 当 **查询过程** 返回信息时，将在 `(>)` 每个属于当前会话的进程之前显示大于号。
 
 ## <a name="examples"></a>示例
 
@@ -68,7 +68,7 @@ query process [*|<processID>|<username>|<sessionname>|/id:<nn>|<programname>] [/
 query process *
 ```
 
-若要显示有关*会话 ID 2*使用的进程的信息，请键入：
+若要显示有关 *会话 ID 2*使用的进程的信息，请键入：
 
 ```
 query process /ID:2

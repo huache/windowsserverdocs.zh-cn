@@ -1,18 +1,18 @@
 ---
 title: ksetup delrealmflags
 description: Ksetup delrealmflags 命令的参考文章，用于删除指定领域中的领域标志。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 22053041-1eb4-47f5-bed9-3d5681bcde7d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 07d177f58f950b5e8e552e69c9f79054a379cc10
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9c82007f841c61cfeae90c1ebaceac5eca6dc7eb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887946"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025541"
 ---
 # <a name="ksetup-delrealmflags"></a>ksetup delrealmflags
 
@@ -26,15 +26,15 @@ ksetup /delrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，将作为默认领域或**领域 =** 列出。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 领域标志指定了不基于 Windows Server 操作系统的 Kerberos 领域的其他功能。 运行 Windows Server 的计算机可以使用 Kerberos 服务器来管理 Kerberos 领域中的身份验证，而不是使用运行 Windows Server 操作系统的域。 此条目将建立领域的功能，如下所示：
 
-| 值 | 领域标志 | 描述 |
+| “值” | 领域标志 | 说明 |
 | ----- | ---------- | ----------- |
 | 0xF | 全部 | 设置所有领域标志。 |
 | 0x00 | 无 | 未设置领域标志，并且未启用任何其他功能。 |
@@ -44,9 +44,9 @@ ksetup /delrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 | 0x08 | ncsupported | 此领域支持名称规范化，这允许 DNS 和领域的命名标准。 |
 | 0x80 | rc4 | 此领域支持 RC4 加密以启用跨领域信任，这允许使用 TLS。 |
 
-- 领域标志存储在下的注册表中 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\<realmname>` 。 默认情况下，注册表中不存在此项。 可以使用[ksetup addrealmflags 命令](ksetup-addrealmflags.md)填充注册表。
+- 领域标志存储在下的注册表中 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\<realmname>` 。 默认情况下，注册表中不存在此项。 可以使用 [ksetup addrealmflags 命令](ksetup-addrealmflags.md) 填充注册表。
 
-- 可以通过查看**ksetup**或的输出来查看可用的和设置领域标志 `ksetup /dumpstate` 。
+- 可以通过查看 **ksetup** 或的输出来查看可用的和设置领域标志 `ksetup /dumpstate` 。
 
 ### <a name="examples"></a>示例
 
@@ -62,7 +62,7 @@ ksetup /listrealmflags
 ksetup /delrealmflags CONTOSO ncsupported delegate
 ```
 
-若要验证是否已删除领域标志，请键入， `ksetup` 然后查看输出，查找文本 "**领域标志 =**"。
+若要验证是否已删除领域标志，请键入， `ksetup` 然后查看输出，查找文本 " **领域标志 =**"。
 
 ## <a name="additional-references"></a>其他参考
 

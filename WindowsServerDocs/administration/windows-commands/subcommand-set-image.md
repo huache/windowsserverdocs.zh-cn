@@ -1,18 +1,18 @@
 ---
 title: 子命令集-映像
 description: 子命令集-Image 的参考文章，用于更改映像的属性。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2ae03c86-7a13-4e38-9182-32e55fffd504
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 35fff7823b730c4b9cc98ed2daafd437f6eecc2e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ecb35deed9f938a7498aa282701034b5d9455233
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882195"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036815"
 ---
 # <a name="subcommand-set-image"></a>子命令：设置-图像
 
@@ -39,7 +39,7 @@ wdsutil /Set-Imagmedia:<Image name> [/Server:<Server name>]
          [/OverwriteUnattend:{Yes | No}]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 许可证<Image name>|指定映像的名称。|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
@@ -50,9 +50,9 @@ wdsutil /Set-Imagmedia:<Image name> [/Server:<Server name>]
 |/Description<Description>]|设置映像的说明。|
 |[/Enabled： {Yes &#124; No}]|启用或禁用图像。|
 |\mediaGroup： <Image group name> ]|指定包含图像的映像组。 如果未指定映像组名称，并且服务器上只存在一个映像组，则将使用该映像组。 如果服务器上存在多个映像组，则必须使用此选项来指定映像组。|
-|[/UserFilter： <SDDL> ]|设置图像上的用户筛选器。 筛选器字符串必须采用安全描述符定义语言 (SDDL) 格式。 请注意，与图像组的 **/Security**选项不同，此选项仅限制可查看图像定义的用户，而不限制实际图像文件资源。 若要限制对文件资源的访问权限，从而限制对映像组中的所有映像的访问，你将需要为映像组本身设置安全性。|
+|[/UserFilter： <SDDL> ]|设置图像上的用户筛选器。 筛选器字符串必须采用安全描述符定义语言 (SDDL) 格式。 请注意，与图像组的 **/Security** 选项不同，此选项仅限制可查看图像定义的用户，而不限制实际图像文件资源。 若要限制对文件资源的访问权限，从而限制对映像组中的所有映像的访问，你将需要为映像组本身设置安全性。|
 |[/UnattendFile： <Unattend file path> ]|设置要与映像关联的无人参与文件的完整路径。 例如： **D:\Files\Unattend\Img1Unattend.xml**|
-|[/OverwriteUnattend： {Yes &#124; No}]|如果已有与映像关联的无人参与文件，则可以指定 **/Overwrite**来覆盖无人参与文件。 请注意，默认设置为 "**否**"。|
+|[/OverwriteUnattend： {Yes &#124; No}]|如果已有与映像关联的无人参与文件，则可以指定 **/Overwrite** 来覆盖无人参与文件。 请注意，默认设置为 " **否**"。|
 ## <a name="examples"></a>示例
 若要设置启动映像的值，请键入下列内容之一：
 ```

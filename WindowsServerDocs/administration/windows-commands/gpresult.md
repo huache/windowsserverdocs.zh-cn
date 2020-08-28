@@ -1,18 +1,18 @@
 ---
 title: gpresult
 description: Gpresult 命令的参考文章，其中显示了策略的结果集 (RSoP) 为远程用户和计算机提供的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c65dd4799441dca44db24f532be66349b1249a5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5ef5de0c8e4e4c4f75d8ccd680e20b8cf00385f5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888572"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025671"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -31,31 +31,31 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| /s`<system>` | 指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认为本地计算机。 |
-| /u`<username>` | 使用指定用户的凭据运行该命令。 默认用户是登录到发出命令的计算机的用户。 |
-| /p`[<password>]` | 指定在 **/u**参数中提供的用户帐户的密码。 如果省略 **/p** ，则**gpresult**会提示输入密码。 **/P**参数不能与 **/x**或 **/h**一起使用。 |
-| /user`[<targetdomain>\]<targetuser>]` | 指定要显示其 RSoP 数据的远程用户。 |
-| /scope`{user | computer}` | 显示用户或计算机的 RSoP 数据。 如果省略 **/scope** ，则**gpresult**显示用户和计算机的 RSoP 数据。 |
-| `[/x | /h] <filename>` | 将报表以 XML (**/x**) 或 HTML (**/h**) 格式保存在该位置，并使用*filename*参数指定的文件名保存。 不能与 **/u**、 **/p**、 **/r**、 **/v**或 **/z**一起使用。 |
-| /f | 强制**gpresult**覆盖 **/x**或 **/h**选项中指定的文件名。 |
+| /s `<system>` | 指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认为本地计算机。 |
+| /u `<username>` | 使用指定用户的凭据运行该命令。 默认用户是登录到发出命令的计算机的用户。 |
+| /p `[<password>]` | 指定在 **/u** 参数中提供的用户帐户的密码。 如果省略 **/p** ，则 **gpresult** 会提示输入密码。 **/P**参数不能与 **/x**或 **/h**一起使用。 |
+| /user `[<targetdomain>\]<targetuser>]` | 指定要显示其 RSoP 数据的远程用户。 |
+| /scope `{user | computer}` | 显示用户或计算机的 RSoP 数据。 如果省略 **/scope** ，则 **gpresult** 显示用户和计算机的 RSoP 数据。 |
+| `[/x | /h] <filename>` | 将报表以 XML (**/x**) 或 HTML (**/h**) 格式保存在该位置，并使用 *filename* 参数指定的文件名保存。 不能与 **/u**、 **/p**、 **/r**、 **/v**或 **/z**一起使用。 |
+| /f | 强制 **gpresult** 覆盖 **/x** 或 **/h** 选项中指定的文件名。 |
 | /r | 显示 RSoP 摘要数据。 |
 | /v | 显示详细的策略信息。 这包括应用优先级为1的详细设置。 |
 | /z | 显示有关组策略的所有可用信息。 这包括应用优先级为1和更高的详细设置。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 组策略是为组织中的用户和计算机定义和控制程序、网络资源和操作系统运行方式的主要管理工具。 在 active directory 环境中，组策略基于其在站点、域或组织单位中的成员身份应用于用户或计算机。
 
 - 由于可以将重叠的策略设置应用于任何计算机或用户，因此在用户登录时，组策略功能将生成一组生成的策略设置。 **Gpresult**命令显示在用户登录时为指定用户在计算机上强制执行的策略设置的结果集。
 
-- 由于 **/v**和 **/z**产生了大量信息，因此将输出重定向到文本文件 (例如 `gpresult/z >policy.txt`) 。
+- 由于 **/v** 和 **/z** 产生了大量信息，因此将输出重定向到文本文件 (例如 `gpresult/z >policy.txt`) 。
 
 ### <a name="examples"></a>示例
 
-若要仅检索远程用户的 RSoP 数据，请*maindom\hiropln* ，并在 *p@ssW23* 计算机*srvmain*上键入：
+若要仅检索远程用户的 RSoP 数据，请 *maindom\hiropln* ，并在 *p@ssW23* 计算机 *srvmain*上键入：
 
 ```
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /scope user /r
@@ -67,7 +67,7 @@ gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /scope us
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /z > policy.txt
 ```
 
-若要显示已登录用户的 RSoP 数据，请*maindom\hiropln* ， *p@ssW23* 对于计算机*srvmain*，请键入：
+若要显示已登录用户的 RSoP 数据，请 *maindom\hiropln* ， *p@ssW23* 对于计算机 *srvmain*，请键入：
 
 ```
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /r
