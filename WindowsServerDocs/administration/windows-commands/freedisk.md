@@ -1,18 +1,18 @@
 ---
 title: freedisk
 description: Freedisk 命令的参考文章，用于检查是否有指定数量的可用磁盘空间，然后再继续执行安装过程。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 91c15166-5baa-4b80-9e0c-4cd815d00530
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6c5c09e35f852be9229180ae894356e127f8a03
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6a3f8543e6fd2cff9a4e086068155d84526d9377
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890092"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027605"
 ---
 # <a name="freedisk"></a>freedisk
 
@@ -28,21 +28,21 @@ freedisk [/s <computer> [/u [<domain>\]<user> [/p [<password>]]]] [/d <drive>] [
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| /s`<computer>` | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
-| /u`[<domain>\]<user>` | 用指定用户帐户的权限运行脚本。 默认值为 "系统权限"。 |
+| /s `<computer>` | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
+| /u `[<domain>\]<user>` | 用指定用户帐户的权限运行脚本。 默认值为 "系统权限"。 |
 | /p [ <password> ] | 指定在 **/u**中指定的用户帐户的密码。 |
-| /d`<drive>` | 指定要找出可用空间可用性的驱动器。 您必须 `<drive>` 为远程计算机指定。 |
+| /d `<drive>` | 指定要找出可用空间可用性的驱动器。 您必须 `<drive>` 为远程计算机指定。 |
 | `<value>` | 检查特定的可用磁盘空间量。 可以指定 `<value>` 字节、KB、MB、GB、TB、PB、EB、ZB 或 YB。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 仅当使用 **/s**时，才能使用 **/s**、 **/u**和 **/p**命令行选项。 必须使用 **/p** with **/u**来提供用户的密码。
 
-- 对于无人参与的安装，可以在安装批处理文件中使用**freedisk**来检查必备空间可用空间，然后再继续安装。
+- 对于无人参与的安装，可以在安装批处理文件中使用 **freedisk** 来检查必备空间可用空间，然后再继续安装。
 
-- 在批处理文件中使用**freedisk**时，如果有足够的空间，则返回**0** ; 如果空间不足，则返回**1** 。
+- 在批处理文件中使用 **freedisk** 时，如果有足够的空间，则返回 **0** ; 如果空间不足，则返回 **1** 。
 
 ### <a name="examples"></a>示例
 

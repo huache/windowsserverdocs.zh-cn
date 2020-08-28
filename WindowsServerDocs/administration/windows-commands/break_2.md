@@ -1,22 +1,22 @@
 ---
 title: '中断 (卷影副本卷) '
 description: 用于中断命令的参考文章，此命令将卷影副本卷与 VSS 解除阻止，并使其作为常规卷进行访问。
-ms.topic: article
+ms.topic: reference
 ms.assetid: de2b6c95-1c2e-4a43-bec5-341a9014371b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 125f986152d10844bbab5a7b57a1a2ea4080aa3e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d94275b83ad65f70db4bd1850f55ea527292d1bc
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880460"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034305"
 ---
 # <a name="break-shadow-copy-volume"></a>中断 (卷影副本卷) 
 
-将卷影副本卷与 VSS 解除映射，并使其作为常规卷进行访问。 然后，可以使用驱动器号 (如果分配的) 或卷名。 如果不使用参数， **break**将在命令提示符下显示帮助。
+将卷影副本卷与 VSS 解除映射，并使其作为常规卷进行访问。 然后，可以使用驱动器号 (如果分配的) 或卷名。 如果不使用参数， **break** 将在命令提示符下显示帮助。
 
 > [!NOTE]
 > 此命令仅适用于导入后的硬件卷影副本。
@@ -31,7 +31,7 @@ break [writable] <setid>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 编写 | 启用对卷的读/写访问。 |
 | \<setid> | 指定卷影副本集的 ID。 可以在*SetID*参数中使用卷影副本 ID 的别名，该 ID 由**load metadata**命令存储为环境变量。 |

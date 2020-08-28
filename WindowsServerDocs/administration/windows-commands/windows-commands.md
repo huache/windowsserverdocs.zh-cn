@@ -1,18 +1,18 @@
 ---
 title: Windows 命令
 description: 参考
-ms.topic: article
+ms.topic: reference
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
-ms.openlocfilehash: 5b596523cc47d9798733ce4f57da43faa9ac075b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c389d0889d4dfca46472215f014e77e9b2346f87
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991144"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022842"
 ---
 # <a name="windows-commands"></a>Windows 命令
 
@@ -36,9 +36,9 @@ ms.locfileid: "87991144"
 
 ### <a name="command-shell-overview"></a>命令外壳概述
 
-命令行界面是内置于 Windows 中的第一个 shell，用批处理 ( bat) 文件自动完成日常任务，如用户帐户管理或夜间备份。 借助 Windows 脚本宿主，你可以在命令行界面中运行更复杂的脚本。 有关详细信息，请参阅[cscript](cscript.md)或[wscript.echo](wscript.md)。 使用脚本可以更有效地执行操作，而不是使用用户界面。 脚本接受命令行中可用的所有命令。
+命令行界面是内置于 Windows 中的第一个 shell，用批处理 ( bat) 文件自动完成日常任务，如用户帐户管理或夜间备份。 借助 Windows 脚本宿主，你可以在命令行界面中运行更复杂的脚本。 有关详细信息，请参阅 [cscript](cscript.md) 或 [wscript.echo](wscript.md)。 使用脚本可以更有效地执行操作，而不是使用用户界面。 脚本接受命令行中可用的所有命令。
 
-Windows 有两个命令 shell：命令 shell 和[PowerShell](/powershell/scripting/overview)。 每个 shell 是一种软件程序，它提供你与操作系统或应用程序之间的直接通信，同时提供用于自动执行 IT 操作的环境。
+Windows 有两个命令 shell：命令 shell 和 [PowerShell](/powershell/scripting/overview)。 每个 shell 是一种软件程序，它提供你与操作系统或应用程序之间的直接通信，同时提供用于自动执行 IT 操作的环境。
 
 PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 PowerShell 命令。 Cmdlet 类似于 Windows 命令，但提供更可扩展的脚本语言。 可以在 Powershell 中运行 Windows 命令和 PowerShell cmdlet，但命令 shell 只能运行 Windows 命令，而不能运行 PowerShell cmdlet。
 
@@ -51,11 +51,11 @@ PowerShell 旨在扩展命令行界面的功能，以运行称为 cmdlet 的 Pow
 > 不正确地编辑注册表可能会对系统造成严重损坏。 在对注册表进行以下更改之前，应备份计算机上任何有价值的数据。
 
 > [!NOTE]
-> 若要在计算机或用户登录会话上的命令行界面中启用或禁用文件和目录名完成，请运行**regedit.exe** ，并设置以下**reg_DWOrd 值**：
+> 若要在计算机或用户登录会话上的命令行界面中启用或禁用文件和目录名完成，请运行 **regedit.exe** ，并设置以下 **reg_DWOrd 值**：
 >
 > HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
 >
-> 若要设置**reg_DWOrd**值，请将控制字符的十六进制值用于特定函数 (例如， **0 9**为 Tab， **0 08**为 Backspace) 。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
+> 若要设置 **reg_DWOrd** 值，请将控制字符的十六进制值用于特定函数 (例如， **0 9** 为 Tab， **0 08** 为 Backspace) 。 用户指定的设置优先于计算机设置，命令行选项优先于注册表设置。
 
 ## <a name="command-line-reference-a-z"></a>命令行参考 a-z
 

@@ -1,18 +1,18 @@
 ---
 title: mqbkup
 description: Mqbkup 命令的参考文章，可将 MSMQ 消息文件和注册表设置备份到存储设备，并还原以前存储的消息和设置。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7bdd41c4-75ef-455f-b241-1d64a4c7acf5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7eecb016efd039d87774c3fd869e746df1e60178
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0f10948a7f3561d8916c5ceb94aff58076cdd68f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886304"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033925"
 ---
 # <a name="mqbkup"></a>mqbkup
 
@@ -32,30 +32,30 @@ mqbkup {/b | /r} <folder path_to_storage_device>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
 | /b | 指定备份操作。 |
 | /r | 指定还原操作。 |
 | `<folder path_to_storage_device>` | 指定存储 MSMQ 消息文件和注册表设置的路径。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 如果在执行备份或还原操作时指定的文件夹不存在，则该实用工具会自动创建文件夹。
 
-- 如果选择指定现有文件夹，则该文件夹必须为空。 如果指定一个非空的文件夹，该实用工具将删除其中包含的每个文件和子文件夹。 在这种情况下，系统将提示你授予删除现有文件和子文件夹的权限。 您可以使用 **/y**参数指示您事先同意删除指定文件夹中的所有现有文件和子文件夹。
+- 如果选择指定现有文件夹，则该文件夹必须为空。 如果指定一个非空的文件夹，该实用工具将删除其中包含的每个文件和子文件夹。 在这种情况下，系统将提示你授予删除现有文件和子文件夹的权限。 您可以使用 **/y** 参数指示您事先同意删除指定文件夹中的所有现有文件和子文件夹。
 
 - 用于存储 MSMQ 消息文件的文件夹的位置存储在注册表中。 因此，实用工具会将 MSMQ 消息文件还原到注册表中指定的文件夹，而不是还原操作之前使用的存储文件夹。
 
 ### <a name="examples"></a>示例
 
-若要备份所有 MSMQ 消息文件和注册表设置，并将它们存储在 C：驱动器上的*msmqbkup*文件夹中，请键入：
+若要备份所有 MSMQ 消息文件和注册表设置，并将它们存储在 C：驱动器上的 *msmqbkup* 文件夹中，请键入：
 
 ```
 mqbkup /b c:\msmqbkup
 ```
 
-若要删除 C：驱动器上*oldbkup*文件夹中的所有现有文件和子文件夹，然后在该文件夹中存储 MSMQ 消息文件和注册表设置，请键入：
+若要删除 C：驱动器上 *oldbkup* 文件夹中的所有现有文件和子文件夹，然后在该文件夹中存储 MSMQ 消息文件和注册表设置，请键入：
 
 ```
 mqbkup /b /y c:\oldbkup

@@ -1,27 +1,27 @@
 ---
 title: CD
 description: Cd 命令的参考文章，其中显示了或更改当前目录的名称。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 932d9cc1-3dff-40da-835c-1cb0894874f1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87766cd7be95eeb9cbecd29ec88a044224dc81da
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ef5f6f247702c96b3dcca0bda7596ae43867d9e7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880383"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034195"
 ---
 # <a name="cd"></a>CD
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-显示当前目录的名称或更改当前目录。 如果仅用于驱动器号 (例如， `cd C:`) ， **cd**将显示指定驱动器中当前目录的名称。 如果在没有参数的情况下使用， **cd**将显示当前驱动器和目录。
+显示当前目录的名称或更改当前目录。 如果仅用于驱动器号 (例如， `cd C:`) ， **cd** 将显示指定驱动器中当前目录的名称。 如果在没有参数的情况下使用， **cd** 将显示当前驱动器和目录。
 
 > [!NOTE]
-> 此命令与[chdir 命令](chdir.md)相同。
+> 此命令与 [chdir 命令](chdir.md)相同。
 
 ## <a name="syntax"></a>语法
 
@@ -34,7 +34,7 @@ chdir [..]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /d | 更改当前驱动器以及驱动器的当前目录。 |
 | `<drive>:` | 指定要显示或更改的驱动器 (（如果不同于当前驱动器) ）。 |
@@ -42,9 +42,9 @@ chdir [..]
 | [..] | 指定要更改为父文件夹。 |
 | /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-如果启用了命令扩展，则以下条件适用于**cd**命令：
+如果启用了命令扩展，则以下条件适用于 **cd** 命令：
 
 - 当前目录字符串被转换为使用与磁盘上的名称相同的大小写。 例如， `cd c:\temp` 如果磁盘上出现这种情况，则会将当前目录设置为 C：\Temp。
 

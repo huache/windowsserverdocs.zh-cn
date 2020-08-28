@@ -1,18 +1,18 @@
 ---
 title: bitsadmin addfileset
 description: Bitsadmin addfileset 命令的参考文章，它将一个或多个文件添加到指定的作业。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 75466994-262f-4724-b14d-f813c5397675
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52a97817bd734a06ba787cb6faf17f2a03419da8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2b9b93f38f3604c4f0a9fcaf886d74356d355086
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894915"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033705"
 ---
 # <a name="bitsadmin-addfileset"></a>bitsadmin addfileset
 
@@ -26,7 +26,7 @@ bitsadmin /addfileset <job> <textfile>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | textfile | 一个文本文件，其中每行包含一个远程和一个本地文件名。 **注意：** 名称必须以空格分隔。 以字符开头的行 `#` 被视为注释。 |

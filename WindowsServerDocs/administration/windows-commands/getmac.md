@@ -1,18 +1,18 @@
 ---
 title: getmac
 description: Getmac 命令的参考文章，该命令返回 media access control (MAC) 地址以及与每个本地或网络之间的关联的网络协议列表。
-ms.topic: article
+ms.topic: reference
 ms.assetid: a749a348-7cd1-4336-9f33-bb42dd0e31e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ffc11e4aad7336e11cf65f8e51cdc155703c2dc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 901777744b98095e4e19ff39d9965d144ee1f1c8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888636"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034075"
 ---
 # <a name="getmac"></a>getmac
 
@@ -28,19 +28,19 @@ getmac[.exe][/s <computer> [/u <domain\<user> [/p <password>]]][/fo {table | lis
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- |------------ |
-| /s`<computer>` | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 |
-| /u`<domain>\<user>` | 使用*user*或*domain\user*指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
-| /p`<password>` | 指定在 **/u**参数中指定的用户帐户的密码。 |
-| /fo {table | list | .csv | 指定用于查询输出的格式。 有效值为**table**、 **list**和**csv**。 输出的默认格式为**table**。 |
-| /nh | 隐藏输出中的列标题。 当 **/fo**参数设置为**表**或**csv**时有效。 |
+| /s `<computer>` | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 |
+| /u `<domain>\<user>` | 使用 *user* 或 *domain\user*指定的用户的帐户权限运行命令。 默认为发出命令的计算机上当前登录用户的权限。 |
+| /p `<password>` | 指定在 **/u** 参数中指定的用户帐户的密码。 |
+| /fo {table | list | .csv | 指定用于查询输出的格式。 有效值为 **table**、 **list**和 **csv**。 输出的默认格式为 **table**。 |
+| /nh | 隐藏输出中的列标题。 当 **/fo** 参数设置为 **表** 或 **csv**时有效。 |
 | /v | 指定输出显示详细信息。 |
 | /? | 在命令提示符下显示帮助。 |
 
 ### <a name="examples"></a>示例
 
-下面的示例演示如何使用**getmac**命令：
+下面的示例演示如何使用 **getmac** 命令：
 
 ```
 getmac /fo table /nh /v

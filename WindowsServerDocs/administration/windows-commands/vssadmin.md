@@ -1,17 +1,17 @@
 ---
 title: Vssadmin
 description: Vssadmin 命令的概述。
-ms.topic: article
+ms.topic: reference
 author: JasonGerend
 ms.author: jgerend
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 529a135164495ad5d0cb2db09373139ac7663e57
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1c75271a8b3200072ad3c0c9bf4dd45894b9beb6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892270"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022921"
 ---
 # <a name="vssadmin"></a>Vssadmin
 
@@ -29,5 +29,5 @@ ms.locfileid: "87892270"
 |[Vssadmin list shadows](vssadmin-list-shadows.md)|列出现有的卷影副本。| 客户端和服务器
 |[Vssadmin list shadowstorage](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788045(v%3dws.11))|列出系统上的所有卷影副本存储关联。| 客户端和服务器
 |[Vssadmin 列出卷](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788064(v%3dws.11))|列出可用于卷影副本的卷。| 客户端和服务器
-|[Vssadmin list 编写器](vssadmin-list-writers.md)|列出系统上所有订阅的卷影复制编写器。| 客户端和服务器
+|[Vssadmin list writers](vssadmin-list-writers.md)|列出系统上所有订阅的卷影复制编写器。| 客户端和服务器
 |[Vssadmin 调整大小 shadowstorage](vssadmin-resize-shadowstorage.md)|调整卷影副本存储关联的最大大小。| 客户端和服务器

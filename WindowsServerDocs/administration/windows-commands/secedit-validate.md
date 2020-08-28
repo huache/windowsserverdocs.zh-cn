@@ -1,18 +1,18 @@
 ---
 title: secedit：验证
 description: '* * * * 的参考文章'
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9fb06354-f55a-4ca4-9fbc-9a872eb9b9cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30bb02f0d7947aa77f7ac41d5f7b179ca8fd236b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 47c0ec78cb49da3ce256e7a74ce8be003b0db85b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882936"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027975"
 ---
 # <a name="seceditvalidate"></a>secedit：验证
 
@@ -29,11 +29,11 @@ Secedit /validate <configuration file name>
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |配置文件名|必需。</br>指定将验证的安全模板的路径和文件名。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 如果安全模板已损坏或设置不当，则验证这些模板可以帮助你。
 
@@ -41,7 +41,7 @@ Secedit /validate <configuration file name>
 
 日志文件将不会更新。
 
-在 Windows Server 2008 中，已 `Secedit /refreshpolicy` 替换为 `gpupdate` 。 有关如何刷新安全设置的信息，请参阅[Gpupdate](gpupdate.md)。
+在 Windows Server 2008 中，已 `Secedit /refreshpolicy` 替换为 `gpupdate` 。 有关如何刷新安全设置的信息，请参阅 [Gpupdate](gpupdate.md)。
 
 ## <a name="examples"></a>示例
 

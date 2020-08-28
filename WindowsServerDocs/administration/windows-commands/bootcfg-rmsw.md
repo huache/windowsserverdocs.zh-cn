@@ -1,18 +1,18 @@
 ---
 title: bootcfg rmsw
 description: Bootcfg rmsw 命令的参考文章，用于删除指定操作系统项的操作系统加载选项。
-ms.topic: article
+ms.topic: reference
 ms.assetid: fd7e4248-880e-4e2b-929e-87f8d44b9a63
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ffe80c6a95421a66a1aebd119664c9e4f68952d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ad27ae706709467c693e008955bd2b1021ed972b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880540"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034355"
 ---
 # <a name="bootcfg-rmsw"></a>bootcfg rmsw
 
@@ -28,11 +28,11 @@ bootcfg /rmsw [/s <computer> [/u <domain>\<user> /p <password>]] [/mm] [/bv] [/s
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `/s <computer>` | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 |
 | `/u <domain>\<user>`  | 使用或指定的用户的帐户权限运行命令 `<user>` `<domain>\<user>` 。 默认为发出命令的计算机上当前登录用户的权限。 |
-| `/p <password>` | 指定在 **/u**参数中指定的用户帐户的密码。 |
+| `/p <password>` | 指定在 **/u** 参数中指定的用户帐户的密码。 |
 | /mm | 从指定的中删除/maxmem 选项及其关联的最大内存值 `<osentrylinenum>` 。 /Maxmem 选项指定操作系统可使用的最大 RAM 量。 |
 | /bv | 从指定的中删除/basevideo 选项 `<osentrylinenum>` 。 /Basevideo 选项指示操作系统使用已安装视频驱动程序的标准 VGA 模式。 |
 | /so | 从指定的中删除/sos 选项 `<osentrylinenum>` 。 /Sos 选项指示操作系统在加载时显示设备驱动程序名称。 |
@@ -42,7 +42,7 @@ bootcfg /rmsw [/s <computer> [/u <domain>\<user> /p <password>]] [/mm] [/bv] [/s
 
 ## <a name="examples"></a>示例
 
-使用**bootcfg/rmsw**命令：
+使用 **bootcfg/rmsw** 命令：
 
 ```
 bootcfg /rmsw /mm 64 /id 2

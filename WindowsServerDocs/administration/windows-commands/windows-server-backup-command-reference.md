@@ -1,28 +1,28 @@
 ---
 title: Windows Server 备份命令参考
 description: 有关备份命令参考的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 03de0a65-21f0-4dd7-a3ae-251c98bbf6eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2042c55774aefbb603c8592d48be12d22c0f545e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 14367db03c7ddbeae9f8e91179b6b5a4b8200e9b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896855"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022751"
 ---
 # <a name="windows-server-backup-command-reference"></a>Windows Server 备份命令参考
 
 
 
-以下用于**wbadmin**的子命令通过命令提示符提供备份和恢复功能。
+以下用于 **wbadmin** 的子命令通过命令提示符提供备份和恢复功能。
 
-若要配置备份计划，您必须是**Administrators**组的成员。 若要使用此命令执行所有其他任务，您必须是**Backup Operators**或**Administrators**组的成员，或者您必须被委派了适当的权限。
+若要配置备份计划，您必须是 **Administrators** 组的成员。 若要使用此命令执行所有其他任务，您必须是 **Backup Operators** 或 **Administrators** 组的成员，或者您必须被委派了适当的权限。
 
-必须从提升的命令提示符运行**wbadmin** 。  (若要打开提升的命令提示符，请单击 "**开始**"，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。 ) 
+必须从提升的命令提示符运行 **wbadmin** 。  (若要打开提升的命令提示符，请单击 " **开始**"，右键单击 " **命令提示符**"，然后单击 "以 **管理员身份运行**"。 ) 
 
 |子命令|说明|
 |----------|-----------|

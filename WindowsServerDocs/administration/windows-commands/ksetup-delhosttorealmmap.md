@@ -1,18 +1,18 @@
 ---
 title: ksetup delhosttorealmmap
 description: Ksetup delhosttorealmmap 命令的参考文章，该命令删除所述主机和领域之间 (SPN) 映射的服务主体名称。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 3faee482-a96c-4614-86fd-aaa446643ec4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 953a8d33a65bb9c5aafd4d549f762772bc059ba4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4401bc186a2471fdd300279b42d4eb1375fc1aa0
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888003"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033985"
 ---
 # <a name="ksetup-delhosttorealmmap"></a>ksetup delhosttorealmmap
 
@@ -28,7 +28,7 @@ ksetup /delhosttorealmmap <hostname> <realmname>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<hostname>` | 指定计算机的完全限定的域名。 |
 | `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM。 |

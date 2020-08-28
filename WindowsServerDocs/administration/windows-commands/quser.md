@@ -1,18 +1,18 @@
 ---
 title: quser
 description: Quser 命令的参考文章，其中显示了有关远程桌面会话主机服务器上的用户会话的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8056204f-ed11-4c91-bb1d-c799283a48a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd56263e65ed9b6749f6d3d63c60bce32bb8ed53
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0697fd6ef780f177f0905d2f2af5deb316c61037
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884381"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028075"
 ---
 # <a name="quser"></a>quser
 
@@ -33,7 +33,7 @@ ms.locfileid: "87884381"
 - 用户登录的日期和时间
 
 > [!NOTE]
-> 此命令与 "[查询用户" 命令](query-user.md)相同。 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
+> 此命令与 " [查询用户" 命令](query-user.md)相同。 若要了解最新版本中的新增功能，请参阅 [Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 
@@ -43,7 +43,7 @@ quser [<username> | <sessionname> | <sessionID>] [/server:<servername>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | `<username>` | 指定要查询的用户的登录名。 |
 | `<sessionname>` | 指定要查询的会话的名称。 |
@@ -51,13 +51,13 @@ quser [<username> | <sessionname> | <sessionID>] [/server:<servername>]
 | /server:`<servername>` | 指定要查询的远程桌面会话主机服务器。 否则，将使用当前远程桌面会话主机服务器。 仅当在远程服务器上使用此命令时，才需要此参数。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 若要使用此命令，您必须具有 "完全控制" 权限或 "特殊访问" 权限。
 
-- 如果未使用 <用户名> 指定用户，<*会话**名称*> 或*sessionID*参数，则将返回登录到服务器的所有用户的列表。 此外，还可以使用 "**查询会话**" 命令显示服务器上所有会话的列表。
+- 如果未使用 <用户名> 指定用户，<*会话**名称*> 或*sessionID*参数，则将返回登录到服务器的所有用户的列表。 此外，还可以使用 " **查询会话** " 命令显示服务器上所有会话的列表。
 
-- 当**quser**返回信息时，将在 `(>)` 当前会话之前显示大于号。
+- 当 **quser** 返回信息时，将在 `(>)` 当前会话之前显示大于号。
 
 ### <a name="examples"></a>示例
 

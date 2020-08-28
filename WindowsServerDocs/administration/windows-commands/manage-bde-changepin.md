@@ -1,18 +1,18 @@
 ---
 title: manage-bde changepin
 description: Manage-bde changepin 命令的参考文章，用于修改操作系统驱动器的 PIN。
-ms.topic: article
+ms.topic: reference
 ms.assetid: c85aa1c7-3485-4839-a292-99dfcd6db252
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b71c0087583732e638e0b6de9558e5c1c0655c9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 001f934e55e8b78cae5800dda59ec5d5a12fb606
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886893"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033975"
 ---
 # <a name="manage-bde-changepin"></a>manage-bde changepin
 
@@ -26,10 +26,10 @@ manage-bde -changepin [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<drive>` | 表示驱动器号后跟一个冒号。 |
-| -computername | 指定 manage-bde.exe 将用于修改其他计算机上的 BitLocker 保护。 你还可以使用 **-cn**作为此命令的缩写形式。 |
+| -computername | 指定 manage-bde.exe 将用于修改其他计算机上的 BitLocker 保护。 你还可以使用 **-cn** 作为此命令的缩写形式。 |
 | `<name>` | 表示要修改 BitLocker 保护的计算机的名称。 接受的值包括计算机的 NetBIOS 名称和计算机的 IP 地址。 |
 | -? 或 /? | 在命令提示符下显示 brief Help。 |
 | -help 或-h | 在命令提示符下显示完整的帮助。 |

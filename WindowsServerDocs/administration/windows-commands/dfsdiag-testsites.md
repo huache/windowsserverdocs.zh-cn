@@ -1,18 +1,18 @@
 ---
 title: dfsdiag testsites
 description: Dfsdiag testsites 参考文章，通过验证充当命名空间服务器或文件夹 (链接) 目标的服务器是否在所有域控制器上都具有相同的站点关联来检查 active directory 域服务 (AD DS) 站点的配置。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 39a0d415-7eb7-4a26-861b-7ff00c45dcda
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d40d7833cabb9e03875660c7d4ebbc129eff0255
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f024059f8b67b783da6a9ce574695aac7d7829b3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891119"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034155"
 ---
 # <a name="dfsdiag-testsites"></a>dfsdiag testsites
 
@@ -28,7 +28,7 @@ dfsdiag /testsites </machine:<server name>| /DFSpath:<namespace root or DFS fold
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `/machine:<server name>` | 要在其上验证站点关联的服务器的名称。 |
 | `/DFSpath:<namespace root or DFS folder>` | 命名空间 root 或分布式文件系统 (DFS) 文件夹 (与要验证其站点关联的目标) 链接。 |
@@ -37,7 +37,7 @@ dfsdiag /testsites </machine:<server name>| /DFSpath:<namespace root or DFS fold
 
 ## <a name="examples"></a>示例
 
-若要检查*machine\MyServer*上的站点关联，请键入：
+若要检查 *machine\MyServer*上的站点关联，请键入：
 
 ```
 dfsdiag /testsites /machine:MyServer

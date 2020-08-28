@@ -1,27 +1,27 @@
 ---
 title: ksetup addkdc
 description: Ksetup addkdc 命令的参考文章，用于广告给定 Kerberos 领域的密钥发行中心 (KDC) 地址。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 98bfc23a-14c4-401c-bcb3-9903c5cdde64
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13f3a2e2343ae8161968d6968babc2cafd78e053
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 79f279ddaa32c0b3411ca024b5d0b7f6d511d132
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888137"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034045"
 ---
 # <a name="ksetup-addkdc"></a>ksetup addkdc
 
 添加给定 Kerberos 领域的密钥发行中心 (KDC) 地址
 
-该映射存储在注册表中的**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains**下，必须重新启动计算机，然后才能使用新领域设置。
+该映射存储在注册表中的 **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains** 下，必须重新启动计算机，然后才能使用新领域设置。
 
 > [!NOTE]
-> 若要将 Kerberos 领域配置数据部署到多台计算机，必须在单独的计算机上显式使用**安全配置模板**管理单元和策略分发。 不能使用此命令。
+> 若要将 Kerberos 领域配置数据部署到多台计算机，必须在单独的计算机上显式使用 **安全配置模板** 管理单元和策略分发。 不能使用此命令。
 
 ## <a name="syntax"></a>语法
 
@@ -31,9 +31,9 @@ ksetup /addkdc <realmname> [<KDCname>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM。 在运行**ksetup**时，此值还显示为默认领域，并且是要添加其他 KDC 的领域。 |
+| `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM。 在运行 **ksetup** 时，此值还显示为默认领域，并且是要添加其他 KDC 的领域。 |
 | `<KDCname>` | 指定不区分大小写的完全限定的域名，例如 mitkdc.contoso.com。 如果省略了 KDC 名称，DNS 将定位 Kdc。 |
 
 ### <a name="examples"></a>示例

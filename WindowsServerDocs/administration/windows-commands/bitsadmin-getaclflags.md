@@ -1,18 +1,18 @@
 ---
 title: bitsadmin getaclflags
 description: Bitsadmin getaclflags 命令的参考文章，它检索访问控制列表 (ACL) 传播标志。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 99266def-7479-4430-a61c-98ec433fa88b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 437ad345ec778290499b7b128ee08ffd41be320c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5254d65bb5ba3e35fcf5368e24045530a76bfd95
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894571"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033695"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
@@ -26,11 +26,11 @@ bitsadmin /getaclflags <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 返回以下一个或多个标志值：
 
@@ -44,7 +44,7 @@ bitsadmin /getaclflags <job>
 
 ## <a name="examples"></a>示例
 
-若要检索名为*myDownloadJob*的作业的访问控制列表传播标志：
+若要检索名为 *myDownloadJob*的作业的访问控制列表传播标志：
 
 ```
 bitsadmin /getaclflags myDownloadJob

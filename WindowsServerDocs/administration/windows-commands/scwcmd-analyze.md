@@ -1,24 +1,24 @@
 ---
 title: Scwcmd 分析
 description: '* * * * 的参考文章'
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0259271b-be5b-48d7-a51d-8b9b6786efb4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 635da8cd31140ea0b1d0cd786e7b16e2ce692bcd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c839f8abdd3f5913b3ade7a8228ce5d070d0c278
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883224"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027985"
 ---
 # <a name="scwcmd-analyze"></a>Scwcmd: analyze
 
 > 适用于： Windows Server 2012 R2、Windows Server 2012
 
-确定计算机是否符合策略。 结果将返回到 .xml 文件中。 还接受计算机名称的列表作为输入。 若要在浏览器中查看结果，请使用**scwcmd 视图**并将 **%windir%\security\msscw\TransformFiles\scwanalysis.xsl**指定为 .xsl 转换。
+确定计算机是否符合策略。 结果将返回到 .xml 文件中。 还接受计算机名称的列表作为输入。 若要在浏览器中查看结果，请使用 **scwcmd 视图** 并将 **%windir%\security\msscw\TransformFiles\scwanalysis.xsl** 指定为 .xsl 转换。
 
 ## <a name="syntax"></a>语法
 
@@ -29,21 +29,21 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|一样\<ComputerName>|指定要分析的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。 如果指定了 **/m**参数，则还必须指定 **/p**参数。|
-|/ou\<OuName>|指定组织单位的完全限定的域名 (FQDN) 在 Active Directory 域服务中的组织单位 (OU) 。 如果指定 **/ou**参数，则还必须指定 **/p**参数。 OU 中的所有计算机都将针对给定策略进行分析。|
+|一样\<ComputerName>|指定要分析的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。 如果指定了 **/m** 参数，则还必须指定 **/p** 参数。|
+|/ou\<OuName>|指定组织单位的完全限定的域名 (FQDN) 在 Active Directory 域服务中的组织单位 (OU) 。 如果指定 **/ou** 参数，则还必须指定 **/p** 参数。 OU 中的所有计算机都将针对给定策略进行分析。|
 |/p\<Policy>|指定要用于执行分析的 .xml 策略文件的路径和文件名。|
 |/i\<ComputerList>|指定 .xml 文件的路径和文件名，该文件包含计算机的列表及其预期的策略文件。 .Xml 文件中的所有计算机都将针对其相应的策略文件进行分析。 示例 .xml 文件是% windir% \security\SampleMachineList.xml。|
 |/o\<ResultDir>|指定应在其中保存分析结果文件的路径和目录。 默认为当前目录。|
 |/u\<UserName>|指定在远程计算机上执行分析时要使用的备用用户凭据。 默认值为已登录的用户。|
 |pw\<Password>|指定在远程计算机上执行分析时要使用的备用用户凭据。 默认值为登录用户的密码。|
 |/t:\<Threads>|指定在分析过程中应保持的同时未完成的分析操作的数目 (DefaultValue = 40，MinValue = 1，) 。|
-|/l|导致记录分析进程。 将为要分析的每台计算机生成一个日志文件。 日志文件将与结果文件存储在同一目录中。 使用 **/o**选项指定结果文件的目录。|
+|/l|导致记录分析进程。 将为要分析的每台计算机生成一个日志文件。 日志文件将与结果文件存储在同一目录中。 使用 **/o** 选项指定结果文件的目录。|
 |/e|如果发现不匹配，请将事件记录到应用程序事件日志中。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 Scwcmd.exe 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
 

@@ -1,18 +1,18 @@
 ---
 title: compact vdisk
 description: Compact vdisk 命令的参考文章，可减小动态扩展虚拟硬盘 (VHD) 文件的物理大小。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 40ca0820-67de-4160-b62a-e9bf63fe2790
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e8f29cf7188d2630f15bee9bde2910c64f325b5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 505d04cea68a3b005490a264c8c9e77f60e22a35
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892623"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027745"
 ---
 # <a name="compact-vdisk"></a>compact vdisk
 
@@ -28,7 +28,7 @@ compact vdisk
 
 ### <a name="remarks"></a>备注
 
-- 若要成功执行此操作，必须选择动态扩展的 VHD。 使用 "[选择 vdisk" 命令](select-vdisk.md)选择 VHD 并将焦点移动到该 VHD。
+- 若要成功执行此操作，必须选择动态扩展的 VHD。 使用 " [选择 vdisk" 命令](select-vdisk.md) 选择 VHD 并将焦点移动到该 VHD。
 
 - 只能使用分离或附加为只读的压缩动态扩展 Vhd。
 

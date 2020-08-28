@@ -1,17 +1,17 @@
 ---
 title: Vssadmin 删除阴影
 description: Vssadmin 删除 shadows 命令的说明。
-ms.topic: article
+ms.topic: reference
 author: JasonGerend
 ms.author: jgerend
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 884407cee82926b3b258afba5ab2e47dc640e10f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 667aaa7477666c6128aaed4ddb10a9f3695e571a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891808"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022861"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin 删除阴影
 
@@ -27,15 +27,15 @@ vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---|---|
 |/for =\<ForVolumeSpec>|指定将删除的卷影副本。|
 |/oldest|仅删除最旧的卷影副本。|
 |/all|删除指定卷的所有卷影副本。|
-|/shadow =\<ShadowID>|删除由 ShadowID 指定的卷影副本。 若要获取卷影副本 ID，请使用**vssadmin list shadows**命令。 输入卷影副本 ID 时，请使用以下格式，其中每个*X*表示十六进制字符：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX）|
+|/shadow =\<ShadowID>|删除由 ShadowID 指定的卷影副本。 若要获取卷影副本 ID，请使用 **vssadmin list shadows** 命令。 输入卷影副本 ID 时，请使用以下格式，其中每个 *X* 表示十六进制字符：<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX （XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX）|
 |/quiet|指定命令在运行时不显示消息。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 只能删除具有客户端可访问的类型的卷影副本。
 

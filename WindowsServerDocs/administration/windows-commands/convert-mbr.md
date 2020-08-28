@@ -1,28 +1,28 @@
 ---
 title: convert mbr
 description: 转换 mbr 命令的参考文章，将具有 GUID 分区)  (表的空白基本磁盘转换为具有主启动记录 (MBR) 分区形式的基本磁盘。
-ms.topic: article
+ms.topic: reference
 ms.assetid: a635a4c0-af73-4330-b021-51d483424537
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61f387d55f310d2ea610aa3033464c66addfc353
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2a07ca0e6c3d07dadf416a04ac1c5c4adbeb5bfe
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892560"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034165"
 ---
 # <a name="convert-mbr"></a>convert mbr
 
-将具有 GUID 分区表 (GPT) 分区形式的空白基本磁盘转换为具有主启动记录 (MBR) 分区形式的基本磁盘。 若要成功执行此操作，必须选择基本磁盘。 使用 "[选择磁盘" 命令](select-disk.md)选择基本磁盘，并将焦点移动到该磁盘。
+将具有 GUID 分区表 (GPT) 分区形式的空白基本磁盘转换为具有主启动记录 (MBR) 分区形式的基本磁盘。 若要成功执行此操作，必须选择基本磁盘。 使用 " [选择磁盘" 命令](select-disk.md) 选择基本磁盘，并将焦点移动到该磁盘。
 
 > [!IMPORTANT]
 > 若要将磁盘转换成基本磁盘，该磁盘必须为空。 转换磁盘之前，请备份数据，然后删除全部分区或卷。
 
 > [!NOTE]
-> 有关如何使用此命令的说明，请参阅[将 GUID 分区表磁盘更改为主启动记录磁盘](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc725797(v=ws.11))。
+> 有关如何使用此命令的说明，请参阅 [将 GUID 分区表磁盘更改为主启动记录磁盘](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc725797(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 
@@ -32,7 +32,7 @@ convert mbr [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 

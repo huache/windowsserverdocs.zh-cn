@@ -1,24 +1,24 @@
 ---
 title: waitfor
-description: Waitfor 的参考文章，用于发送或等待系统上的信号。 **Waitfor**用于跨网络同步计算机。
-ms.topic: article
+description: Waitfor 的参考文章，用于发送或等待系统上的信号。 **Waitfor** 用于跨网络同步计算机。
+ms.topic: reference
 ms.assetid: a48ef70d-4d28-4035-b6b0-7d7b46ac2157
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e061c36f7cdf949ea76d548a4ed804a0e12169bf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1a55629f6715e8b1d2e1aaede4153f74ac05ac98
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892244"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022908"
 ---
 # <a name="waitfor"></a>waitfor
 
 
 
-发送或等待系统上的信号。 **Waitfor**用于跨网络同步计算机。
+发送或等待系统上的信号。 **Waitfor** 用于跨网络同步计算机。
 
 
 
@@ -33,23 +33,23 @@ waitfor [/t <Timeout>] <SignalName>
 
 |       参数       |                                                                                         说明                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s\<Computer>     | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
-| 形\<Domain>\]<User> |                              使用指定用户帐户的凭据运行脚本。 默认情况下， **waitfor**使用当前用户的凭据。                               |
-|   /p [ \<Password> ]    |                                                    指定在 **/u**参数中指定的用户帐户的密码。                                                     |
+|    /s \<Computer>     | 指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。 此参数适用于命令中指定的所有文件和文件夹。 |
+| 形\<Domain>\]<User> |                              使用指定用户帐户的凭据运行脚本。 默认情况下， **waitfor** 使用当前用户的凭据。                               |
+|   /p [ \<Password> ]    |                                                    指定在 **/u** 参数中指定的用户帐户的密码。                                                     |
 |          /si          |                                                                        通过网络发送指定的信号。                                                                        |
-|     /t\<Timeout>     |                                              指定等待信号的秒数。 默认情况下， **waitfor**无限期等待。                                               |
-|     \<SignalName>     |                                                指定**waitfor**等待或发送的信号。 *SignalName*不区分大小写。                                                 |
+|     /t \<Timeout>     |                                              指定等待信号的秒数。 默认情况下， **waitfor** 无限期等待。                                               |
+|     \<SignalName>     |                                                指定 **waitfor** 等待或发送的信号。 *SignalName* 不区分大小写。                                                 |
 |          /?           |                                                                             在命令提示符下显示帮助。                                                                             |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 -   信号名称不能超过225个字符。 有效字符包括 a-z、a-z、0-9 和 ASCII 扩展字符集 (128-255) 。
 -   如果不使用 **/s**，则信号会广播到域中的所有系统。 如果使用 **/s**，则信号只发送到指定的系统。
--   您可以在一台计算机上运行多个**waitfor**实例，但每个**waitfor**实例都必须等待不同的信号。 在给定计算机上，只能有一个**waitfor**实例可以等待给定的信号。
--   可以使用 **/si**命令行选项手动激活信号。
--   **Waitfor**只能在运行 windows Server 2003 操作系统的 windows XP 和服务器上运行，但它可以将信号发送到任何运行 windows 操作系统的计算机。
+-   您可以在一台计算机上运行多个 **waitfor** 实例，但每个 **waitfor** 实例都必须等待不同的信号。 在给定计算机上，只能有一个 **waitfor** 实例可以等待给定的信号。
+-   可以使用 **/si** 命令行选项手动激活信号。
+-   **Waitfor** 只能在运行 windows Server 2003 操作系统的 windows XP 和服务器上运行，但它可以将信号发送到任何运行 windows 操作系统的计算机。
 -   如果计算机与发送信号的计算机位于同一域中，则它们只能接收信号。
--   在测试软件生成时，可以使用**waitfor** 。 例如，编译计算机在成功完成编译后，可以将信号发送到运行**waitfor**的几台计算机。 收到信号后，包含**waitfor**的批处理文件可以指示计算机立即开始安装软件或对编译的生成运行测试。
+-   在测试软件生成时，可以使用 **waitfor** 。 例如，编译计算机在成功完成编译后，可以将信号发送到运行 **waitfor** 的几台计算机。 收到信号后，包含 **waitfor** 的批处理文件可以指示计算机立即开始安装软件或对编译的生成运行测试。
 
 ## <a name="examples"></a>示例
 
@@ -57,7 +57,7 @@ waitfor [/t <Timeout>] <SignalName>
 ```
 waitfor espresso\build007
 ```
-默认情况下， **waitfor**无限期地等待信号。
+默认情况下， **waitfor** 无限期地等待信号。
 
 若要在超时前等待10秒钟，让 espresso\compile007 收到信号，请键入：
 ```

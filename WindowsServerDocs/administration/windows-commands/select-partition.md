@@ -1,18 +1,18 @@
 ---
 title: select partition
 description: '* * * * 的参考文章'
-ms.topic: article
+ms.topic: reference
 ms.assetid: 25f70083-b8f7-4a8e-9b34-4b3ffbe06670
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c144bc3271fa4d10dfc006d8c08e1a737f763fe
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 816a235f7ba83320828a5dc72c9f2558c27b2ed8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882856"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027905"
 ---
 # <a name="select-partition"></a>select partition
 
@@ -30,13 +30,13 @@ select partition=<n>
 
 ### <a name="parameters"></a>参数
 
-|   参数    |                                                                                    描述                                                                                    |
+|   参数    |                                                                                    说明                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 依据\=<n> | 要接收焦点的分区号。 通过使用 DiskPart 中的 "**列出分区**" 命令，你可以查看当前所选磁盘上的所有分区的编号。 |
+| 依据\=<n> | 要接收焦点的分区号。 通过使用 DiskPart 中的 " **列出分区** " 命令，你可以查看当前所选磁盘上的所有分区的编号。 |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
--   必须先使用 "**选择磁盘**" 命令选择一个磁盘，然后才能选择分区。
+-   必须先使用 " **选择磁盘** " 命令选择一个磁盘，然后才能选择分区。
 
 -   如果未指定分区号，则此命令将显示当前在所选磁盘中有焦点的分区。
 
