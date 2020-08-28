@@ -1,18 +1,18 @@
 ---
 title: msiexec
 description: Msiexec 命令的参考文章，它提供了从命令行对 Windows Installer 执行安装、修改和执行操作的方法。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 122eb0ce-ecbc-4909-a52a-15c3413619af
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a72798d7bdd94b3315d54e866e78145af4db1d79
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1255cf26ac4dd3f9c28189ce7df76d63c875ee64
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886170"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025281"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -30,7 +30,7 @@ msiexec.exe [/i][/a][/j{u|m|/g|/t}][/x] <path_to_package>
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
 | /i | 指定正常安装。 |
 | /a | 指定管理安装。 |
@@ -43,7 +43,7 @@ msiexec.exe [/i][/a][/j{u|m|/g|/t}][/x] <path_to_package>
 
 #### <a name="examples"></a>示例
 
-若要使用正常的安装过程从 C：驱动器安装名为*example.msi*的包，请键入：
+若要使用正常的安装过程从 C：驱动器安装名为 *example.msi* 的包，请键入：
 
 ```
 msiexec.exe /i "C:\example.msi"
@@ -61,7 +61,7 @@ msiexec.exe /i <path_to_package> [/quiet][/passive][/q{n|b|r|f}]
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
 | `<path_to_package>` | 指定安装包文件的位置和名称。 |
 | /quiet | 指定静默模式，这意味着不需要用户交互。 |
@@ -73,13 +73,13 @@ msiexec.exe /i <path_to_package> [/quiet][/passive][/q{n|b|r|f}]
 | /qr | 指定在安装过程中减少的 UI 体验。 |
 | /qf | 指定在安装过程中的完整 UI 体验。 |
 
-##### <a name="remarks"></a>备注
+##### <a name="remarks"></a>注解
 
-- 如果用户取消了安装，则不会显示模式框。 可以使用**qb +！** 或**qb！ +** 隐藏 "**取消**" 按钮。
+- 如果用户取消了安装，则不会显示模式框。 可以使用 **qb +！** 或 **qb！ +** 隐藏 " **取消** " 按钮。
 
 #### <a name="examples"></a>示例
 
-若要使用普通安装过程和无 UI 安装包*C:\example.msi*，请键入：
+若要使用普通安装过程和无 UI 安装包 *C:\example.msi*，请键入：
 
 ```
 msiexec.exe /i "C:\example.msi" /qn
@@ -97,7 +97,7 @@ msiexec.exe /i <path_to_package> [/norestart][/promptrestart][/forcerestart]
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
 | `<path_to_package>` | 指定安装包文件的位置和名称。 |
 | /norestart | 安装完成后，停止设备重新启动。 |
@@ -106,7 +106,7 @@ msiexec.exe /i <path_to_package> [/norestart][/promptrestart][/forcerestart]
 
 #### <a name="examples"></a>示例
 
-若要安装包*C:\example.msi*，请在结束时使用不重启的正常安装过程，键入：
+若要安装包 *C:\example.msi*，请在结束时使用不重启的正常安装过程，键入：
 
 ```
 msiexec.exe /i "C:\example.msi" /norestart
@@ -124,7 +124,7 @@ msiexec.exe [/i][/x] <path_to_package> [/L{i|w|e|a|r|u|c|m|o|p|v|x+|!|*}] <path_
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
 | /i | 指定正常安装。 |
 | /x | 卸载包。 |
@@ -150,7 +150,7 @@ msiexec.exe [/i][/x] <path_to_package> [/L{i|w|e|a|r|u|c|m|o|p|v|x+|!|*}] <path_
 
 #### <a name="examples"></a>示例
 
-若要安装 package *C:\example.msi*，请使用具有所提供的所有日志记录信息的正常安装过程，包括详细输出，并将输出日志文件存储在*C:\package.log*中，键入：
+若要安装 package *C:\example.msi*，请使用具有所提供的所有日志记录信息的正常安装过程，包括详细输出，并将输出日志文件存储在 *C:\package.log*中，键入：
 
 ```
 msiexec.exe /i "C:\example.msi" /L*V "C:\package.log"
@@ -168,9 +168,9 @@ msiexec.exe [/p][/update][/uninstall[/package<product_code_of_package>]] <path_t
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
-| /p | 安装修补程序。 如果要以无提示方式安装，还必须将 REINSTALLMODE 属性设置为*ecmus* ，并将其重新安装为*ALL*。 否则，修补程序仅更新在目标设备上缓存的 MSI。 |
+| /p | 安装修补程序。 如果要以无提示方式安装，还必须将 REINSTALLMODE 属性设置为 *ecmus* ，并将其重新安装为 *ALL*。 否则，修补程序仅更新在目标设备上缓存的 MSI。 |
 | /update | 安装修补程序选项。 如果要应用多个更新，则必须使用分号 (; ) 分隔它们。 |
 | /package | 安装或配置产品。 |
 
@@ -200,7 +200,7 @@ msiexec.exe [/f{p|o|e|d|c|a|u|m|s|v}] <product_code>
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
 | /fp | 如果文件丢失，则修复包。 |
 | /fo | 如果文件丢失或安装了较早的版本，则修复包。 |
@@ -215,7 +215,7 @@ msiexec.exe [/f{p|o|e|d|c|a|u|m|s|v}] <product_code>
 
 #### <a name="examples"></a>示例
 
-若要强制根据要修复的 MSI 产品代码重新安装所有*文件，请*键入：
+若要强制根据要修复的 MSI 产品代码重新安装所有 *文件，请*键入：
 
 ```
 msiexec.exe /fa {AAD3D77A-7476-469F-ADF4-04424124E91D}
@@ -223,7 +223,7 @@ msiexec.exe /fa {AAD3D77A-7476-469F-ADF4-04424124E91D}
 
 ## <a name="set-public-properties"></a>设置公共属性
 
-可以通过此命令设置公共属性。 有关可用属性及其设置方法的信息，请参阅[公共属性](/windows/win32/msi/public-properties)。
+可以通过此命令设置公共属性。 有关可用属性及其设置方法的信息，请参阅 [公共属性](/windows/win32/msi/public-properties)。
 
 ## <a name="additional-references"></a>其他参考
 

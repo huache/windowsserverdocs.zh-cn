@@ -1,18 +1,18 @@
 ---
 title: TransportServer
 description: TransportServer 的参考文章，其中显示有关指定传输服务器的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: de634123-0179-41b2-9c6f-726508130ff5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bebe03058544591d98dd827325b9740fb0fa65df
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 83b79c689e16af16e0a6ca253dd9dce6afb1fa35
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896376"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029485"
 ---
 # <a name="get-transportserver"></a>TransportServer
 
@@ -25,7 +25,7 @@ ms.locfileid: "87896376"
 wdsutil [Options] /Get-TransportServer [/Server:<Server name>] /Show:{Config}
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
 |/Show： {Config}|返回有关指定传输服务器的配置信息。|

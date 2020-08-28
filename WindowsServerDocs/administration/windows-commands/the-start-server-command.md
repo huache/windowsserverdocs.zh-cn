@@ -1,18 +1,18 @@
 ---
 title: 启动-服务器
 description: 用于启动-server 的参考文章，可启动多播传输、命名空间、传输服务器或 Windows 部署服务服务器上的所有服务。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7bbb68e0-1275-4c5f-b276-383a5be4534b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2338472cfc0381ef70b4a055fee8802ba0b7cdc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: afbd60679081ffc460b492bd4e5bb548636a5792
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881496"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036145"
 ---
 # <a name="start-server"></a>启动-服务器
 

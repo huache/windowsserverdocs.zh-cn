@@ -1,24 +1,24 @@
 ---
 title: 初始化-服务器
 description: 用于 Windows 部署服务配置服务器角色后初始使用的初始化-Server 的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 68a26ad9-5eb2-4490-b782-b7cd46b8000d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac0cf322818f433df4f5f0751656d9eb66bf2fd4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e751ad7b035c82481eed29dcad36b33a64895d57
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896911"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036415"
 ---
 # <a name="initialize-server"></a>初始化-服务器
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-配置服务器角色后初始使用的 Windows 部署服务服务器。 运行此命令后，应使用 "[添加图像" 命令](using-the-add-image-command.md)命令向服务器中添加映像。
+配置服务器角色后初始使用的 Windows 部署服务服务器。 运行此命令后，应使用 " [添加图像" 命令](using-the-add-image-command.md) 命令向服务器中添加映像。
 ## <a name="syntax"></a>语法
 ```
 wdsutil /Initialize-Server [/Server:<Server name>] /remInst:<Full path> [/Authorize]

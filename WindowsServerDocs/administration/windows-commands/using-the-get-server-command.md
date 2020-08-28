@@ -1,18 +1,18 @@
 ---
 title: 获取服务器
 description: 用于从指定的 Windows 部署服务服务器中检索信息的获取服务器的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: bef60db4-d58d-4304-ab4b-be53dd3271c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a2756fe6b5a7e7790d779b06fa7def9d16c4f775
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 13bceebfb619fc93cbab7b2b45d3dd34838760ed
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896924"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029495"
 ---
 # <a name="get-server"></a>获取服务器
 
@@ -25,11 +25,11 @@ ms.locfileid: "87896924"
 wdsutil [Options] /Get-Server [/Server:<Server name>] /Show:{Config | Images | All} [/detailed]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名 (FQDN) 。 如果未指定服务器名称，则使用本地服务器。|
-|/Show： {Config &#124; &#124; All）|指定要返回的信息的类型。<p>-   **Config**返回配置信息。<br />-   **映像**返回有关映像组、启动映像和安装映像的信息。<br />-   **All**返回配置信息和图像信息。|
-|[/detailed]|可以将此选项与 **/show： Images**或 **/show： all**一起使用，以指示应返回每个图像中的所有图像元数据。 如果未使用 **/detailed**选项，则默认行为是返回映像名称、说明和文件名。|
+|/Show： {Config &#124; &#124; All）|指定要返回的信息的类型。<p>-   **Config** 返回配置信息。<br />-   **映像** 返回有关映像组、启动映像和安装映像的信息。<br />-   **All** 返回配置信息和图像信息。|
+|[/detailed]|可以将此选项与 **/show： Images** 或 **/show： all** 一起使用，以指示应返回每个图像中的所有图像元数据。 如果未使用 **/detailed** 选项，则默认行为是返回映像名称、说明和文件名。|
 ## <a name="examples"></a>示例
 若要查看有关服务器的信息，请键入：
 ```

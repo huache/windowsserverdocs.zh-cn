@@ -1,18 +1,18 @@
 ---
 title: ImageGroup
 description: ImageGroup 的参考文章，用于检索有关映像组及其图像的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0fc25aca-a529-44ee-bc8e-96bc8affb458
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfe2c804d24914b500703476d28e5281fdaef8c0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4ebf7ba1e207fddcef61952158d770fcfbd6df66
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879305"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029595"
 ---
 # <a name="get-imagegroup"></a>ImageGroup
 
@@ -25,7 +25,7 @@ ms.locfileid: "87879305"
 wdsutil [Options] /Get-ImageGroumediaGroup:<Image group name> [/Server:<Server name>] [/detailed]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 mediaGroup:<Image group name>|指定映像组的名称。|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|

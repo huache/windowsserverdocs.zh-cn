@@ -1,18 +1,18 @@
 ---
 title: MulticastTransmission
 description: MulticastTransmission 的参考文章，其中显示了有关指定映像的多播传输的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: b733737b-1e81-43d4-a058-d6985a613bef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 883bfb0d462ab87162d6e849947334eae010b0b1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9c5ac51a3ae3d17f21e15dafb940df8c020b221e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896943"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029525"
 ---
 # <a name="get-multicasttransmission"></a>MulticastTransmission
 
@@ -49,18 +49,18 @@ wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
 |-------|--------|
 许可证<Image name>|显示与此映像关联的多播传输。|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名 (FQDN) 。 如果未指定服务器名称，则使用本地服务器。|
-媒体媒体：安装|指定映像类型。 请注意，必须将此选项设置为 "**安装**"。|
+媒体媒体：安装|指定映像类型。 请注意，必须将此选项设置为 " **安装**"。|
 |\mediaGroup： <Image group name> ]|指定包含图像的映像组。 如果未指定映像组名称，并且服务器上只存在一个映像组，则使用该映像组。 如果服务器上存在多个映像组，则必须使用此选项来指定映像组。|
 |/Architecture： {x86 &#124; ia64 &#124; x64}|指定与传输关联的启动映像的体系结构。 由于不同体系结构中的启动映像可能具有相同的映像名称，因此应指定体系结构以确保使用正确的映像。|
 |[/Filename： <File name> ]|指定包含图像的文件。 如果无法按名称唯一地标识映像，则必须使用此选项指定文件名。|
 |[/Show：个客户端]<p>or<p>[/details：客户端]|显示有关连接到多播传输的客户端计算机的信息。|
 ## <a name="examples"></a>示例
-**Windows Server 2008**若要查看有关通过 Office 进行名为 Vista 的映像的传输的信息，请键入下列内容之一：
+**Windows Server 2008** 若要查看有关通过 Office 进行名为 Vista 的映像的传输的信息，请键入下列内容之一：
 ```
 wdsutil /Get-MulticastTransmissiomedia:Vista with Officemediatype:Install
 wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:Vista with Officemediatype:InstalmediaGroup:ImageGroup1 /Filename:install.wim /Show:Clients
 ```
-**Windows Server 2008 R2**若要查看有关通过 Office 进行名为 Vista 的映像的传输的信息，请键入下列内容之一：
+**Windows Server 2008 R2** 若要查看有关通过 Office 进行名为 Vista 的映像的传输的信息，请键入下列内容之一：
 ```
 wdsutil /Get-MulticastTransmissiomedia:Vista with Office
  /Imagetype:Install

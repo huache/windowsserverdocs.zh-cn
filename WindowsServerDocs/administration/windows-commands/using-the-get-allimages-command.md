@@ -1,18 +1,18 @@
 ---
 title: AllImages
 description: AllImages 的参考文章，用于检索有关服务器上所有映像的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 19de3720-4315-415a-8dc6-486caa0b2100
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 542de8f24f8bbb85a44fdefa9d25ca9acda66ba5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c4ebc0b36d832b6ce35168f6160b36c1c2ff896e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892034"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035985"
 ---
 # <a name="get-allimages"></a>AllImages
 
@@ -25,10 +25,10 @@ ms.locfileid: "87892034"
 wdsutil /Get-AllImages [/Server:<Server name>] /Show:{Boot | Install | LegacyRis | All} [/detailed]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
-|/Show： {Boot &#124; 安装 &#124; LegacyRis &#124; 全部}|-   **Boot**仅返回启动映像。<br />-   **Install**返回安装映像以及包含它们的映像组的相关信息。<br />-   **LegacyRis**只 (RIS) 映像返回远程安装服务。<br />-   **All**返回启动映像信息、安装映像信息 (包括有关映像组) 的信息，以及 RIS 映像信息。|
+|/Show： {Boot &#124; 安装 &#124; LegacyRis &#124; 全部}|-   **Boot** 仅返回启动映像。<br />-   **Install** 返回安装映像以及包含它们的映像组的相关信息。<br />-   **LegacyRis** 只 (RIS) 映像返回远程安装服务。<br />-   **All** 返回启动映像信息、安装映像信息 (包括有关映像组) 的信息，以及 RIS 映像信息。|
 |[/detailed]|指示应返回每个图像中的所有图像元数据。 如果未使用此选项，则默认行为是只返回映像名称、说明和文件名。|
 ## <a name="examples"></a>示例
 若要查看有关图像的信息，请键入下列内容之一：

@@ -1,18 +1,18 @@
 ---
 title: sfc
 description: 用于 sfc 的参考文章，用于扫描并验证所有受保护系统文件的完整性并将错误版本替换为正确的版本。
-ms.topic: article
+ms.topic: reference
 ms.assetid: c58c25da-e028-42a6-9e10-973484a4b953
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 56aa6a1f07b75e37111d265fc15253ba1d3a7f1d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6aa1fd38eaab1ffe3d6c3b9f2e4913d6a1e0ca4d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882478"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024881"
 ---
 # <a name="sfc"></a>sfc
 
@@ -27,7 +27,7 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 ```
 
 #### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |/scannow|扫描所有受保护系统文件的完整性，并在可能的情况中修复包含问题的文件。|
 |/verifyonly|扫描所有受保护系统文件的完整性。 不执行任何修复操作。|
@@ -38,15 +38,15 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 |/offbootdir|指定脱机启动目录的脱机位置|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>备注
--   您必须以 Administrators 组成员的身份登录才能运行**sfc.exe**。
--   如果**sfc**发现某个受保护的文件已被覆盖，则它将从**systemroot\system32\dllcache**文件夹中检索正确的文件版本，并替换错误的文件。
--   Windows Server 2003、Windows Server 2008 和 Windows Server 2008 R2 上的**sfc**之间存在功能差异：
--   有关 Windows Server 2003 上的**sfc**的详细信息，请参阅 Microsoft 知识库中的[文章 310747](https://go.microsoft.com/fwlink/?LinkId=227069) 。
--   有关 Windows Server 2008 和 Windows Server 2008 R2 上的**sfc**的详细信息，请参阅[系统文件检查器](https://go.microsoft.com/fwlink/?LinkId=227071)。
+## <a name="remarks"></a>注解
+-   您必须以 Administrators 组成员的身份登录才能运行 **sfc.exe**。
+-   如果 **sfc** 发现某个受保护的文件已被覆盖，则它将从 **systemroot\system32\dllcache** 文件夹中检索正确的文件版本，并替换错误的文件。
+-   Windows Server 2003、Windows Server 2008 和 Windows Server 2008 R2 上的 **sfc** 之间存在功能差异：
+-   有关 Windows Server 2003 上的 **sfc** 的详细信息，请参阅 Microsoft 知识库中的 [文章 310747](https://go.microsoft.com/fwlink/?LinkId=227069) 。
+-   有关 Windows Server 2008 和 Windows Server 2008 R2 上的 **sfc** 的详细信息，请参阅 [系统文件检查器](https://go.microsoft.com/fwlink/?LinkId=227071)。
 
 ## <a name="examples"></a>示例
-若要验证**kernel32.dll 文件**，请键入：
+若要验证 **kernel32.dll 文件**，请键入：
 ```
 sfc /verifyfile=c:\windows\system32\kernel32.dll
 ```

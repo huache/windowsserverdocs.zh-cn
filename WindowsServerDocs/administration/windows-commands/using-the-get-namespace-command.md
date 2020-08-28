@@ -1,18 +1,18 @@
 ---
 title: 获取-命名空间
 description: 获取命名空间的参考文章，其中显示了有关自定义命名空间的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: ea641bab-e97b-4909-918e-447730027dc1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e998334b8297b06bf5eb23b9106acd3770504ffb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1fddc140936643b32bbb27ff82578a01b8b7c893
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896933"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029505"
 ---
 # <a name="get-namespace"></a>获取-命名空间
 
@@ -31,7 +31,7 @@ wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/det
 ```
 ### <a name="parameters"></a>参数
 
-|               参数               |                                                                                                                                                                                         描述                                                                                                                                                                                          |
+|               参数               |                                                                                                                                                                                         说明                                                                                                                                                                                          |
 |---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      名称<Namespace name>      | 指定命名空间的名称。 请注意，这不是友好名称，并且必须是唯一的。<p>-Deployment Server：命名空间名称的语法为/Namspace： WDS： <ImageGroup> / <ImageName> / <Index> 。 例如： **WDS： ImageGroup1/install/1**<br />-传输服务器：此值应与在服务器上创建命名空间时提供的名称匹配。 |
 |        [/Server： <Server name> ]        |                                                                                                             指定服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名 (FQDN) 。 如果未指定服务器名称，则使用本地服务器。                                                                                                              |
@@ -43,8 +43,8 @@ wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/det
 wdsutil /Get-Namespace /Namespace:Custom Auto 1
 ```
 若要查看有关命名空间和连接的客户端的信息，请键入下列内容之一：
-- Windows Server 2008：`wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /Show:Clients`
-- Windows Server 2008 R2：`wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /details:Clients`
+- Windows Server 2008： `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /Show:Clients`
+- Windows Server 2008 R2： `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /details:Clients`
   ## <a name="additional-references"></a>其他参考
   - [命令行语法关键字](command-line-syntax-key.md) 
   [使用 AllNamespaces 命令](using-the-get-allnamespaces-command.md) 

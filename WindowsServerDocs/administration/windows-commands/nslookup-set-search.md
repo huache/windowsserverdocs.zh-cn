@@ -1,18 +1,18 @@
 ---
 title: nslookup set search
 description: "\"Nslookup 集搜索\" 命令的参考文章，该命令会在 DNS 域搜索列表中追加域名系统 (DNS) 域名发送给请求，直到收到答案。"
-ms.topic: article
+ms.topic: reference
 ms.assetid: 064ac660-8b04-4af9-8b2c-e4e0549771b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91592daf702741fafcb88de792836f5183868101
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 17cee7cbc2112db346c91ab4a7b88264eff6a850
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885544"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025151"
 ---
 # <a name="nslookup-set-search"></a>nslookup set search
 
@@ -26,10 +26,10 @@ set [no]search
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | nosearch | 停止在请求的 DNS 域搜索列表中追加域名系统 (DNS) 域名。 |
-| search | 将域名系统追加到请求的 DNS 域搜索列表中的域名系统 (DNS) 域名，直到接收到答案。 这是默认值。 |
+| 搜索 | 将域名系统追加到请求的 DNS 域搜索列表中的域名系统 (DNS) 域名，直到接收到答案。 这是默认值。 |
 | /? | 在命令提示符下显示帮助。 |
 | /help | 在命令提示符下显示帮助。 |
 

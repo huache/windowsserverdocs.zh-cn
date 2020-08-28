@@ -1,22 +1,22 @@
 ---
 title: append
 description: 追加命令的参考文章，使程序可以打开指定目录中的数据文件，就像它们位于当前目录中一样。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9c3fea20-9502-40ad-a442-7a927aad88eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 887d058baf333f068b2e1fb557f085f0cfe58615
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6a92b87a9e35af45480c01f0a2422abc14fb3ca1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895580"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029405"
 ---
 # <a name="append"></a>append
 
-允许程序在指定的目录中打开数据文件，就好像这些文件位于当前目录中一样。 如果在没有参数的情况下使用，则**append**将显示附加的目录列表。
+允许程序在指定的目录中打开数据文件，就好像这些文件位于当前目录中一样。 如果在没有参数的情况下使用，则 **append** 将显示附加的目录列表。
 
 > [!NOTE]
 > Windows 10 不支持此命令。
@@ -30,14 +30,14 @@ append ;
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `[\<drive>:]<path>` | 指定要追加的驱动器和目录。 |
 | /x：开启 | 将附加的目录应用于文件搜索和启动应用程序。 |
 | /x： off | 仅将附加的目录应用于打开文件的请求。 **/X： off**选项是默认设置。 |
-| /path： on | 将附加的目录应用到已指定路径的文件请求。 **/path： on**是默认设置。 |
+| /path： on | 将附加的目录应用到已指定路径的文件请求。 **/path： on** 是默认设置。 |
 | /path： off | 关闭 **/path： on**的效果。 |
-| /e | 将附加目录列表的副本存储在名为 APPEND 的环境变量中。 **/e**只能在启动系统后首次使用**append**时使用。 |
+| /e | 将附加目录列表的副本存储在名为 APPEND 的环境变量中。 **/e** 只能在启动系统后首次使用 **append** 时使用。 |
 | ; | 清除追加的目录列表。 |
 | /? | 在命令提示符下显示帮助。 |
 
@@ -49,7 +49,7 @@ append ;
 append ;
 ```
 
-若要将追加目录的副本存储到名为*append*的环境变量中，请键入：
+若要将追加目录的副本存储到名为 *append*的环境变量中，请键入：
 
 ```
 append /e

@@ -1,18 +1,18 @@
 ---
 title: setx
 description: 适用于 setx 的参考文章，用于在用户或系统环境中创建或修改环境变量，无需编程或编写脚本。
-ms.topic: article
+ms.topic: reference
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0edab4ce56d3e43e26c1d14b32403a2954cbbce6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 256f19453edd0c211215a0e161d7d60098ae9cc9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882527"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024891"
 ---
 # <a name="setx"></a>setx
 
@@ -30,31 +30,31 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 ### <a name="parameters"></a>参数
 
-|         参数          |                                                                                                                                              描述                                                                                                                                              |
+|         参数          |                                                                                                                                              说明                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /s\<Computer>       |                                                                                  指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认值为本地计算机的名称。                                                                                  |
+|       /s \<Computer>       |                                                                                  指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认值为本地计算机的名称。                                                                                  |
 | 形\<Domain>\]<User name> |                                                                                           用指定用户帐户的凭据运行脚本。 默认值为 "系统权限"。                                                                                            |
-|      /p [ \<Password> ]      |                                                                                                         指定在 **/u**参数中指定的用户帐户的密码。                                                                                                         |
+|      /p [ \<Password> ]      |                                                                                                         指定在 **/u** 参数中指定的用户帐户的密码。                                                                                                         |
 |        \<Variable>         |                                                                                                                 指定要设置的环境变量的名称。                                                                                                                  |
 |          \<Value>          |                                                                                                                指定要将环境变量设置为的值。                                                                                                                 |
-|         遇到\<Path>         | 指定根据注册表项中的信息设置变量。 P*a*使用以下语法：</br>`\\<HIVE>\<KEY>\...\<Value>`</br>例如，你可以指定以下路径：</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|         遇到 \<Path>         | 指定根据注册表项中的信息设置变量。 P*a* 使用以下语法：</br>`\\<HIVE>\<KEY>\...\<Value>`</br>例如，你可以指定以下路径：</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
 |      /f \<File name>       |                                                                                                                               指定要使用的文件。                                                                                                                                |
 |        /a \<X> ，<Y>         |                                                                                                                    指定绝对坐标，偏移量作为搜索参数。                                                                                                                    |
-|   /r \<X> 、 <Y><String>   |                                                                                                            指定相对坐标和作为搜索参数的**字符串**的偏移量。                                                                                                            |
+|   /r \<X> 、 <Y><String>   |                                                                                                            指定相对坐标和作为搜索参数的 **字符串** 的偏移量。                                                                                                            |
 |             /m             |                                                                                                指定在系统环境中设置变量。 默认设置为本地环境。                                                                                                 |
-|             /x             |                                                                                                       显示文件坐标，并忽略 **/a**、 **/r**和 **/d**命令行选项。                                                                                                        |
-|      /d\<Delimiters>      |                    指定除 **、** **\\** 空格、制表符、回车和换行以外，还可以使用除四个内置分隔符以外的分隔符。 有效的分隔符包含任何 ASCII 字符。 最大分隔符数为15，其中包括内置分隔符。                    |
+|             /x             |                                                                                                       显示文件坐标，并忽略 **/a**、 **/r**和 **/d** 命令行选项。                                                                                                        |
+|      /d \<Delimiters>      |                    指定除 **、** **\\** 空格、制表符、回车和换行以外，还可以使用除四个内置分隔符以外的分隔符。 有效的分隔符包含任何 ASCII 字符。 最大分隔符数为15，其中包括内置分隔符。                    |
 |             /?             |                                                                                                                                 在命令提示符下显示帮助。                                                                                                                                  |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 -   **Setx**命令类似于 UNIX 实用工具 SETENV。
--   **Setx**提供唯一直接且永久地设置系统环境值的命令行或编程方式。 可以通过 **"控制面板"** 或通过注册表编辑器手动配置系统环境变量。 **Set**命令（在命令解释器内部 ( # A0) ）仅为当前控制台窗口设置用户环境变量。
--   可以使用**setx**命令 (模式下三个源之一设置用户和系统环境变量的值) ：命令行模式、注册表模式或文件模式。
--   **Setx**将变量写入注册表中的主环境。 使用**setx**变量设置的变量仅在以后的命令窗口中可用，而不能在当前的命令窗口中使用。
--   **HKEY_CURRENT_USER**和**HKEY_LOCAL_MACHINE**是唯一受支持的配置单元。 REG_DWORD、REG_EXPAND_SZ、REG_SZ 和 REG_MULTI_SZ 都是有效的**RegKey**数据类型。
--   当你获取对注册表中**REG_MULTI_SZ**值的访问权限时，只提取并使用第一项。
--   不能使用**setx**命令删除已添加到本地或系统环境的值。 您可以使用带变量名称和无值的**set**从本地环境中删除相应的值。
+-   **Setx** 提供唯一直接且永久地设置系统环境值的命令行或编程方式。 可以通过 **"控制面板"** 或通过注册表编辑器手动配置系统环境变量。 **Set**命令（在命令解释器内部 ( # A0) ）仅为当前控制台窗口设置用户环境变量。
+-   可以使用 **setx** 命令 (模式下三个源之一设置用户和系统环境变量的值) ：命令行模式、注册表模式或文件模式。
+-   **Setx** 将变量写入注册表中的主环境。 使用 **setx** 变量设置的变量仅在以后的命令窗口中可用，而不能在当前的命令窗口中使用。
+-   **HKEY_CURRENT_USER** 和 **HKEY_LOCAL_MACHINE** 是唯一受支持的配置单元。 REG_DWORD、REG_EXPAND_SZ、REG_SZ 和 REG_MULTI_SZ 都是有效的 **RegKey** 数据类型。
+-   当你获取对注册表中 **REG_MULTI_SZ** 值的访问权限时，只提取并使用第一项。
+-   不能使用 **setx** 命令删除已添加到本地或系统环境的值。 您可以使用带变量名称和无值的 **set** 从本地环境中删除相应的值。
 -   REG_DWORD 在十六进制模式下提取和使用注册表值。
 -   文件模式支持仅) 文本文件 (CRLF 分析回车符和换行。
 
@@ -84,19 +84,19 @@ setx /s computer1 /u maindom\hiropln /p p@ssW23 MACHINE Brand1
 ```
 setx /s computer1 /u maindom\hiropln /p p@ssW23 MYPATH %PATH%
 ```
-若要将本地环境中的 TZONE 环境变量设置为**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\timezoneinformation\standardname**注册表项中找到的值，请键入：
+若要将本地环境中的 TZONE 环境变量设置为 **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\timezoneinformation\standardname** 注册表项中找到的值，请键入：
 ```
 setx TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName
 ```
-若要将名为 Computer1 的远程计算机的本地环境中的 TZONE 环境变量设置为**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\timezoneinformation\standardname**注册表项中找到的值，请键入：
+若要将名为 Computer1 的远程计算机的本地环境中的 TZONE 环境变量设置为 **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\timezoneinformation\standardname** 注册表项中找到的值，请键入：
 ```
 setx /s computer1 /u maindom\hiropln /p p@ssW23 TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName
 ```
-若要在系统环境中将生成环境变量设置为在**HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber**注册表项中找到的值，请键入：
+若要在系统环境中将生成环境变量设置为在 **HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber** 注册表项中找到的值，请键入：
 ```
 setx BUILD /k HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber /m
 ```
-若要在名为 Computer1 的远程计算机的系统环境中将生成环境变量设置为在**HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber**注册表项中找到的值，请键入：
+若要在名为 Computer1 的远程计算机的系统环境中将生成环境变量设置为在 **HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber** 注册表项中找到的值，请键入：
 ```
 setx /s computer1 /u maindom\hiropln /p p@ssW23  BUILD /k HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\CurrentBuildNumber /m
 ```

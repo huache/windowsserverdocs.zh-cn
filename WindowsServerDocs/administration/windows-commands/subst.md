@@ -1,24 +1,24 @@
 ---
 title: subst
 description: 了解如何将路径与驱动器号关联。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 3e69234c-2312-4343-868b-afc1017c622a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 385359a49ee1cc4df95a17bef6c2aed4704a2dcd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 680a3118d284d18946980ff8dc246ce08b5ea727
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881949"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024611"
 ---
 # <a name="subst"></a>subst
 
 
 
-将路径与驱动器号关联。 如果在没有参数的情况下使用，则**subst**显示有效虚拟驱动器的名称。
+将路径与驱动器号关联。 如果在没有参数的情况下使用，则 **subst** 显示有效虚拟驱动器的名称。
 
 
 
@@ -31,16 +31,16 @@ subst <Drive1>: /d
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |\<Drive1>:|指定要为其分配路径的虚拟驱动器。|
 |[\<Drive2>:]\<Path>|指定要分配给虚拟驱动器的物理驱动器和路径。|
 |/d|删除替换 (虚拟) 驱动器。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
--   以下命令不起作用，不应在**subst**命令中指定的驱动器上使用：
+-   以下命令不起作用，不应在 **subst** 命令中指定的驱动器上使用：
 
     **chkdsk**
 
@@ -53,7 +53,7 @@ subst <Drive1>: /d
     **label**
 
     **recover**
--   *Drive1*参数必须在**lastdrive**命令指定的范围内。 否则， **subst**会显示以下错误消息：
+-   *Drive1*参数必须在**lastdrive**命令指定的范围内。 否则， **subst** 会显示以下错误消息：
 
     `Invalid parameter - drive1:`
 

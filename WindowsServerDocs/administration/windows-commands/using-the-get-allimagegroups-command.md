@@ -1,18 +1,18 @@
 ---
 title: AllImageGroups
 description: AllImageGroups 的参考文章，它检索有关服务器上的所有映像组和这些映像组中的所有映像的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2ca06533-bcf5-4590-ac8e-263d6c9874f8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 523c761df06d11f6c1af5488370b540af9bc7326
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f472a1907e07e08ae646d9c454125dfb64ff54df
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879823"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036005"
 ---
 # <a name="get-allimagegroups"></a>AllImageGroups
 
@@ -25,7 +25,7 @@ ms.locfileid: "87879823"
 wdsutil [Options] /Get-AllImageGroups [/Server:<Server name>] [/detailed]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
 |[/detailed]|返回每个图像的图像元数据。 如果未使用此参数，则默认行为是只返回每个图像的映像名称、说明和文件名。|

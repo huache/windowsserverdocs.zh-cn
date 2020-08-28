@@ -1,22 +1,22 @@
 ---
 title: ksetup listrealmflags
 description: Ksetup listrealmflags 命令的参考文章，其中列出了可通过 ksetup 报告的可用领域标志。
-ms.topic: article
+ms.topic: reference
 ms.assetid: aa96e4da-6b98-4c05-bccf-73cbf33258c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e69b91c8fe5ca7bddecb12a72a1e8ef31bec3dd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d7c522449053a18cdd1e2a9e533dbce5d6e9f17c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887850"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025471"
 ---
 # <a name="ksetup-listrealmflags"></a>ksetup listrealmflags
 
-列出**ksetup**可以报告的可用领域标志。
+列出 **ksetup**可以报告的可用领域标志。
 
 ## <a name="syntax"></a>语法
 
@@ -28,7 +28,7 @@ ksetup /listrealmflags
 
 - 领域标志指定了不基于 Windows Server 操作系统的 Kerberos 领域的其他功能。 运行 Windows Server 的计算机可以使用 Kerberos 服务器来管理 Kerberos 领域中的身份验证，而不是使用运行 Windows Server 操作系统的域。 此条目将建立领域的功能，如下所示：
 
-| 值 | 领域标志 | 描述 |
+| “值” | 领域标志 | 说明 |
 | ----- | ---------- | ----------- |
 | 0xF | 全部 | 设置所有领域标志。 |
 | 0x00 | 无 | 未设置领域标志，并且未启用任何其他功能。 |
@@ -38,7 +38,7 @@ ksetup /listrealmflags
 | 0x08 | ncsupported | 此领域支持名称规范化，这允许 DNS 和领域的命名标准。 |
 | 0x80 | rc4 | 此领域支持 RC4 加密以启用跨领域信任，这允许使用 TLS。 |
 
-- 领域标志存储在下的注册表中 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\<realmname>` 。 默认情况下，注册表中不存在此项。 可以使用[ksetup addrealmflags 命令](ksetup-addrealmflags.md)填充注册表。
+- 领域标志存储在下的注册表中 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\<realmname>` 。 默认情况下，注册表中不存在此项。 可以使用 [ksetup addrealmflags 命令](ksetup-addrealmflags.md) 填充注册表。
 
 ## <a name="examples"></a>示例
 
@@ -48,7 +48,7 @@ ksetup /listrealmflags
 ksetup /listrealmflags
 ```
 
-若要设置**ksetup**不知道的可用领域标志，请键入：
+若要设置 **ksetup** 不知道的可用领域标志，请键入：
 
 ```
 ksetup /setrealmflags CORP.CONTOSO.COM sendaddress tcpsupported delete ncsupported

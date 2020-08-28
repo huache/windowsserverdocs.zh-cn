@@ -1,18 +1,18 @@
 ---
 title: 子命令集-TransportServer
 description: 子命令集的参考文章-TransportServer，用于设置传输服务器的配置设置。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7863225c-f4b2-4cd0-b929-78a454bef249
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b7725101bcc2230a07c8082f9a57b85d411e80d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 59833701a88af6280d7f033a8430d2fec882decd
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882123"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024771"
 ---
 # <a name="subcommand-set-transportserver"></a>子命令： set-TransportServer
 
@@ -39,13 +39,13 @@ wdsutil [Options] /Set-TransportServer [/Server:<Server name>]
                  [/Fallback:{Yes | No}]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |[/Server： <Server name> ]|指定传输服务器的名称。 此名称可以是 NetBIOS 名称或完全限定的域名 (FQDN) 。 如果未指定传输服务器名称，则使用本地服务器。|
-|[/ObtainIpv4From： {Dhcp &#124; 范围}]|设置 IPv4 地址的源，如下所示：<p>-[/start： <IP address> ] 设置 IP 地址范围的起始地址。 这是必需的，仅当此选项设置为 "**范围**" 时才有效。<br />-[/End： <IP address> ] 设置 IP 地址范围的结尾。 这是必需的，仅当此选项设置为 "**范围**" 时才有效。<br />-[/startPort： <port> ] 设置端口范围的开头。<br />-[/EndPort： <port> ] 设置端口范围的结尾。|
-|[/ObtainIpv6From： Range]|指定 IPv6 地址的源。 此选项仅适用于 Windows Server 2008 R2，唯一受支持的值为**范围**。<p>-[/start： <IP address> ] 设置 IP 地址范围的起始地址。 这是必需的，仅当此选项设置为 "**范围**" 时才有效。<br />-[/End： <IP address> ] 设置 IP 地址范围的结尾。 这是必需的，仅当此选项设置为 "**范围**" 时才有效。<br />-[/startPort： <port> ] 设置端口范围的开头。<br />-[/EndPort： <port> ] 设置端口范围的结尾。|
+|[/ObtainIpv4From： {Dhcp &#124; 范围}]|设置 IPv4 地址的源，如下所示：<p>-[/start： <IP address> ] 设置 IP 地址范围的起始地址。 这是必需的，仅当此选项设置为 " **范围**" 时才有效。<br />-[/End： <IP address> ] 设置 IP 地址范围的结尾。 这是必需的，仅当此选项设置为 " **范围**" 时才有效。<br />-[/startPort： <port> ] 设置端口范围的开头。<br />-[/EndPort： <port> ] 设置端口范围的结尾。|
+|[/ObtainIpv6From： Range]|指定 IPv6 地址的源。 此选项仅适用于 Windows Server 2008 R2，唯一受支持的值为 **范围**。<p>-[/start： <IP address> ] 设置 IP 地址范围的起始地址。 这是必需的，仅当此选项设置为 " **范围**" 时才有效。<br />-[/End： <IP address> ] 设置 IP 地址范围的结尾。 这是必需的，仅当此选项设置为 " **范围**" 时才有效。<br />-[/startPort： <port> ] 设置端口范围的开头。<br />-[/EndPort： <port> ] 设置端口范围的结尾。|
 |[/Profile： {10Mbps &#124; 100Mbps &#124; 1Gbps &#124; 自定义}]|指定要使用的网络配置文件。 此选项仅适用于运行 Windows Server 2008 或 Windows Server 2003 的服务器。|
-|[/MulticastSessionPolicy]|配置多播传输的传输设置。 此命令仅适用于 Windows Server 2008 R2。<p>-[/Policy： {None &#124; AutoDisconnect &#124; Multistream}] 确定如何处理速度缓慢的客户端。 "**无**" 表示将所有客户端保持在一个会话中的速度相同。 **AutoDisconnect**表示断开连接到指定 **/Threshold**以下的任何客户端。 **Multistream**表示客户端将被划分为 **/StreamCount**指定的多个会话。<br />-[/Threshold： <Speed in KBps> ] 设置/policy 的最小传输速率（KBps） **： AutoDisconnect**。 低于此速率的客户端将与多播传输断开连接。<br />-[/StreamCount： {2 &#124; 3}] [/Fallback： {Yes &#124; No}] 确定/Policy 的会话数 **： Multistream**。 **2**表示两个会话 (速度快、速度缓慢) ， **3**表示三个会话 (慢、中、快) 。<br />-[/Fallback： {Yes &#124; No}] 确定是否断开客户端的连接将使用另一种方法来继续传输 (如果客户端) 支持此方法。 如果你使用的是 WDS 客户端，则计算机将回退为单播。 Wdsmcast.exe 不支持回退机制。 此选项也适用于不支持**Multistream**的客户端。 在这种情况下，计算机将回退到其他方法，而不是移到较慢的传输会话。|
+|[/MulticastSessionPolicy]|配置多播传输的传输设置。 此命令仅适用于 Windows Server 2008 R2。<p>-[/Policy： {None &#124; AutoDisconnect &#124; Multistream}] 确定如何处理速度缓慢的客户端。 "**无**" 表示将所有客户端保持在一个会话中的速度相同。 **AutoDisconnect** 表示断开连接到指定 **/Threshold** 以下的任何客户端。 **Multistream** 表示客户端将被划分为 **/StreamCount**指定的多个会话。<br />-[/Threshold： <Speed in KBps> ] 设置/policy 的最小传输速率（KBps） **： AutoDisconnect**。 低于此速率的客户端将与多播传输断开连接。<br />-[/StreamCount： {2 &#124; 3}] [/Fallback： {Yes &#124; No}] 确定/Policy 的会话数 **： Multistream**。 **2** 表示两个会话 (速度快、速度缓慢) ， **3** 表示三个会话 (慢、中、快) 。<br />-[/Fallback： {Yes &#124; No}] 确定是否断开客户端的连接将使用另一种方法来继续传输 (如果客户端) 支持此方法。 如果你使用的是 WDS 客户端，则计算机将回退为单播。 Wdsmcast.exe 不支持回退机制。 此选项也适用于不支持 **Multistream**的客户端。 在这种情况下，计算机将回退到其他方法，而不是移到较慢的传输会话。|
 ## <a name="examples"></a>示例
 若要设置服务器的 IPv4 地址范围，请键入：
 ```

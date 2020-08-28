@@ -1,24 +1,24 @@
 ---
 title: ksetup removerealm
 description: 用于从注册表中删除指定领域的所有信息的 ksetup removerealm 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 39f0c6f0-4c50-4781-941e-0893495405e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a755600bc0d1bdbc7a1b19bed041cb4a7c5dea90
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 801ef79449cabed4718e417cac9aba9173dd07fb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887821"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025451"
 ---
 # <a name="ksetup-removerealm"></a>ksetup removerealm
 
 从注册表中删除指定领域的所有信息。
 
-领域名称存储在和下的注册表中 `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001` `\CurrentControlSet\Control\Lsa\Kerberos` 。 默认情况下，注册表中不存在此项。 可以使用[ksetup addrealmflags](ksetup-addrealmflags.md)命令填充注册表。
+领域名称存储在和下的注册表中 `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001` `\CurrentControlSet\Control\Lsa\Kerberos` 。 默认情况下，注册表中不存在此项。 可以使用 [ksetup addrealmflags](ksetup-addrealmflags.md) 命令填充注册表。
 
 > [!IMPORTANT]
 > 无法从域控制器中删除默认的领域名称，因为这会重置其 DNS 信息，删除它可能会使域控制器不可用。
@@ -30,7 +30,7 @@ ksetup /removerealm <realmname>
 ```
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，将作为默认领域或**领域 =** 列出。 |
 
@@ -41,7 +41,7 @@ ksetup /removerealm <realmname>
 ksetup /removerealm CORP.CONTOSO.CON
 ```
 
-若要验证删除，你可以运行**ksetup**命令并查看输出。
+若要验证删除，你可以运行 **ksetup** 命令并查看输出。
 
 ## <a name="additional-references"></a>其他参考
 

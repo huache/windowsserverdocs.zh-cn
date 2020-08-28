@@ -1,24 +1,24 @@
 ---
 title: showmount
 description: 用于显示已装载目录的 showmount 的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: a6dd562e-e3bd-4ee6-be3b-6d29e29fd20e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0be623eadd56a55a87f2df57fec9b4c6558770c9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ba118e711af040bba7dd6c1e63a14405b3116743
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882402"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024791"
 ---
 # <a name="showmount"></a>showmount
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-可以使用**showmount**显示已装载的目录。
+可以使用 **showmount** 显示已装载的目录。
 
 ## <a name="syntax"></a>语法
 ```
@@ -26,7 +26,7 @@ showmount {-e|-a|-d} <Server>
 ```
 
 ## <a name="description"></a>说明
-**Showmount**命令 \- 行实用工具显示*服务器*指定的计算机上的 NFS 服务器导出的已装载文件系统的相关信息。 如果未提供*服务器*， **showmount**将显示运行**showmount**命令的计算机的相关信息。
+**Showmount**命令 \- 行实用工具显示*服务器*指定的计算机上的 NFS 服务器导出的已装载文件系统的相关信息。 如果未提供 *服务器* ， **showmount** 将显示运行 **showmount** 命令的计算机的相关信息。
 
 您必须提供以下选项之一：
 

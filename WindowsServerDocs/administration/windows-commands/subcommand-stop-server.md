@@ -1,18 +1,18 @@
 ---
 title: 子命令停止-服务器
 description: 子命令停止-服务器的参考文章，用于停止 Windows 部署服务服务器上的所有服务。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 09f411c0-099f-4591-95fd-b77b3fd9118a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e923ad4a7151ada5b23beb149b9aadc02f4573b8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1fd4a2e249b5bbf52cce9d35fcb07821b793fb23
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882028"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024661"
 ---
 # <a name="subcommand-stop-server"></a>子命令：停止-服务器
 
@@ -25,7 +25,7 @@ ms.locfileid: "87882028"
 wdsutil [Options] /Stop-Server [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |[/Server： <Server name> ]|指定服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定服务器名称，将使用本地服务器。|
 ## <a name="examples"></a>示例

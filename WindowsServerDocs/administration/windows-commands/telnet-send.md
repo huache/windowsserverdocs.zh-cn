@@ -1,18 +1,18 @@
 ---
 title: telnet send
 description: 用于 telnet send 的参考文章，可将 telnet 命令发送到 telnet 服务器。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7c217abc-1182-466e-914c-1ff16755021b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9045707dc156d3169bacfe55e9094c200d6f5166
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4e8621d163e4f0bf7022f2cab1a67f188bc47dfd
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881692"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024581"
 ---
 # <a name="telnet-send"></a>telnet：发送
 
@@ -26,7 +26,7 @@ sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]
 ```
 #### <a name="parameters"></a>参数
 
-| 参数 |                     描述                      |
+| 参数 |                     说明                      |
 |-----------|------------------------------------------------------|
 |    ao     |       发送 telnet 命令中止输出。        |
 |    ayt    |       发送 telnet 命令。       |

@@ -1,18 +1,18 @@
 ---
 title: Scwcmd 回滚
 description: '* * * * 的参考文章'
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4fd9f89b-0420-420a-ad20-4a328636b1e7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e0fc158584c15c021b14c96829fe0266c3193be
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 25c726b649028f66ca97ebc0280175d1713b7ef7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883125"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036175"
 ---
 # <a name="scwcmd-rollback"></a>Scwcmd: rollback
 
@@ -28,14 +28,14 @@ scwcmd rollback /m:<ComputerName> [/u:<UserName>] [/pw:<Password>]
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |一样\<ComputerName>|指定应在其中执行回滚操作的计算机的 NetBIOS 名称、DNS 名称或 IP 地址。|
 |/u\<UserName>|指定执行远程回滚时要使用的备用用户帐户。 默认值为已登录的用户。|
 |pw\<Password>|指定执行远程回滚时要使用的备用用户凭据。 默认值为已登录的用户。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 Scwcmd.exe 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
 
