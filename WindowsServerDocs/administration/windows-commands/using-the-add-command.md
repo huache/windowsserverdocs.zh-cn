@@ -1,18 +1,18 @@
 ---
 title: 使用 "添加" 命令
 description: 各种 add 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6fcdd154-baaf-4288-a355-2a95a3028bce
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c72a16c79e50ee69047a93e29d1e83e89299b5b8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0eaeac06ccbd01ee551808f6fcb0b95af7d8d6ee
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897027"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032172"
 ---
 # <a name="using-the-add-command"></a>使用 "添加" 命令
 

@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setclientcertificatebyname
 description: Bitsadmin setclientcertificatebyname 命令的参考文章，其中指定了用于 HTTPS (SSL) 请求中的客户端身份验证的客户端证书的使用者名称。
-ms.topic: article
+ms.topic: reference
 ms.assetid: f308a6d9-d0da-48be-ae41-eced14b3cccb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d51924153af90991c9417307d1f57e5d745dfa3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ac3a05733f10853074d111c8995879922440f833
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893255"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031325"
 ---
 # <a name="bitsadmin-setclientcertificatebyname"></a>bitsadmin setclientcertificatebyname
 
@@ -26,7 +26,7 @@ bitsadmin /setclientcertificatebyname <job> <store_location> <store_name> <subje
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | store_location | 标识用于查找证书的系统存储区的位置。 可能的值包括：<ul><li>1 (CURRENT_USER) </li><li>2 (LOCAL_MACHINE) </li><li>3 (CURRENT_SERVICE) </li><li>4 (SERVICES) </li><li>5 (用户) </li><li>6 (CURRENT_USER_GROUP_POLICY) </li><li>7 (LOCAL_MACHINE_GROUP_POLICY) </li><li>8 (LOCAL_MACHINE_ENTERPRISE) </li></ul> |
@@ -35,7 +35,7 @@ bitsadmin /setclientcertificatebyname <job> <store_location> <store_name> <subje
 
 ## <a name="examples"></a>示例
 
-若要指定客户端证书*myCertificate*的名称以用于 HTTPS 中的客户端身份验证 (SSL) 请求名为*myDownloadJob*的作业：
+若要指定客户端证书 *myCertificate* 的名称以用于 HTTPS 中的客户端身份验证 (SSL) 请求名为 *myDownloadJob*的作业：
 
 ```
 bitsadmin /setclientcertificatebyname myDownloadJob 1 MY myCertificate

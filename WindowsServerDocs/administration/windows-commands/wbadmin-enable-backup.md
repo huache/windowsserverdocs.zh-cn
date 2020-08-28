@@ -1,18 +1,18 @@
 ---
 title: wbadmin enable backup
 description: 用于 wbadmin enable backup 的参考文章，可创建并启用每日备份计划或修改现有备份计划。
-ms.topic: article
+ms.topic: reference
 ms.assetid: c0e57f8a-70fa-4c60-9754-e762e8ad8772
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad192f90ca89eda75accb02aad1ad07e4c3e9ce2
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6be32f6134bacf698d6e28998cbed76e8b50155f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896343"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032065"
 ---
 # <a name="wbadmin-enable-backup"></a>wbadmin enable backup
 
@@ -20,7 +20,7 @@ ms.locfileid: "87896343"
 
 创建并启用每日备份计划或修改现有备份计划。 如果未指定参数，则将显示当前计划的备份设置。
 
-若要配置或修改每日备份计划，您必须是**Administrators**组或**backup Operators**组的成员。 此外，必须在提升的命令提示符下运行**wbadmin** 。  (打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。 ) 
+若要配置或修改每日备份计划，您必须是 **Administrators** 组或 **backup Operators** 组的成员。 此外，必须在提升的命令提示符下运行 **wbadmin** 。  (打开提升的命令提示符，右键单击 " **命令提示符** "，然后单击 "以 **管理员身份运行**"。 ) 
 
 ## <a name="syntax"></a>语法
 
@@ -72,7 +72,7 @@ wbadmin enable backup
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |-addtarget|对于 Windows Server 2008，指定备份的存储位置。 要求您将备份的目标指定为磁盘标识符 (参阅备注) 。 磁盘在使用之前已经过格式化，并永久删除该磁盘上的任何现有数据。</br>对于 Windows Server 2008 R2 及更高版本，指定备份的存储位置。 要求你将位置指定为磁盘、卷或通用命名约定 ( (远程共享文件夹的 UNC) 路径 \\ \\ \<servername> \<sharename> \) 。 默认情况下，将在以下位置保存备份： \\ \\ <servername> \<sharename> \WindowsImageBackup\<ComputerBackedUp>\. 如果指定磁盘，则会在使用之前对磁盘进行格式化，并永久删除该磁盘上的任何现有数据。 如果指定共享文件夹，则不能添加更多位置。 一次只能将一个共享文件夹指定为存储位置。</br>重要提示：如果将备份保存到远程共享文件夹，则在使用同一文件夹再次备份同一台计算机时，将覆盖该备份。 另外，如果备份操作失败，则最终可能得不到任何备份，这是因为原有备份已被覆盖，而新备份却不可用。 可以通过在远程共享文件夹中创建子文件夹来组织您的备份，避免出现这种情况。 如果执行此操作，子文件夹将需要两倍于父文件夹的空间。</br>只能在单个命令中指定一个位置。 可以通过再次运行命令来添加多个卷和磁盘备份存储位置。|
 |-removetarget|指定要从现有备份计划中删除的存储位置。 要求将位置指定为磁盘标识符 (参阅备注) 。|
@@ -82,8 +82,8 @@ wbadmin enable backup
 |-exclude|对于 Windows Server 2008 R2 及更高版本，指定要从备份中排除的以逗号分隔的项列表。 可以排除文件、文件夹或卷。 可以使用卷驱动器号、卷装入点或基于 GUID 的卷名称指定卷路径。 如果使用基于 GUID 的卷名，则应使用反斜杠 (终止它 \) 。 指定文件路径时，可以在文件名中使用通配符 ( * ) 。|
 |-nonRecurseExclude|对于 Windows Server 2008 R2 及更高版本，指定要从备份中排除的非递归、以逗号分隔的项列表。 可以排除文件、文件夹或卷。 可以使用卷驱动器号、卷装入点或基于 GUID 的卷名称指定卷路径。 如果使用基于 GUID 的卷名，则应使用反斜杠 (终止它 \) 。 指定文件路径时，可以在文件名中使用通配符 ( * ) 。|
 |-hyperv|指定要包含在备份中的以逗号分隔的组件列表。 标识符可以是带有或不带大括号)  (的组件名称或组件 GUID。|
-|-systemState|对于 Windows 7 和 Windows Server 2008 R2 及更高版本，将创建一个包含系统状态的备份以及使用 **-include**参数指定的任何其他项。 系统状态包含启动文件 ( # A0、NDTLDR、NTDetect.com) 、Windows 注册表（包括 COM 设置、SYSVOL (组策略和登录脚本) 、Active Directory 和 NTDS）。域控制器上的 DIT 以及证书服务（如果安装了证书服务）。 如果服务器已安装 Web 服务器角色，则将包括 IIS 元目录。 如果该服务器是群集的一部分，则还会包含群集服务信息。|
-|-allCritical|指定包含操作系统状态 (卷) 包含在备份中的所有关键卷。 如果要为完全系统或系统状态恢复创建备份，此参数非常有用。 仅当指定了-backupTarget 时才应使用它，否则命令将失败。 可以与 **-include**选项一起使用。</br>提示：关键卷备份的目标卷可以是本地驱动器，但不能是备份中包含的任何卷。|
+|-systemState|对于 Windows 7 和 Windows Server 2008 R2 及更高版本，将创建一个包含系统状态的备份以及使用 **-include** 参数指定的任何其他项。 系统状态包含启动文件 ( # A0、NDTLDR、NTDetect.com) 、Windows 注册表（包括 COM 设置、SYSVOL (组策略和登录脚本) 、Active Directory 和 NTDS）。域控制器上的 DIT 以及证书服务（如果安装了证书服务）。 如果服务器已安装 Web 服务器角色，则将包括 IIS 元目录。 如果该服务器是群集的一部分，则还会包含群集服务信息。|
+|-allCritical|指定包含操作系统状态 (卷) 包含在备份中的所有关键卷。 如果要为完全系统或系统状态恢复创建备份，此参数非常有用。 仅当指定了-backupTarget 时才应使用它，否则命令将失败。 可以与 **-include** 选项一起使用。</br>提示：关键卷备份的目标卷可以是本地驱动器，但不能是备份中包含的任何卷。|
 |-vssFull|对于 Windows Server 2008 R2 及更高版本，使用卷影复制服务 (VSS) 执行完整备份。 所有文件均已备份，每个文件的历史记录都会更新以反映它已备份，并且以前的备份的日志可能会被截断。 如果未使用此参数，则 wbadmin start backup 会进行复制备份，但不会更新正在备份的文件的历史记录。</br>警告：如果你使用的产品不是 Windows Server 备份来备份当前备份中包含的卷上的应用程序，请勿使用此参数。 这样做可能会破坏其他备份产品所创建的增量备份、差异备份或其他类型的备份，因为他们要依赖的历史记录确定要备份的数据量，并且可能不必要地执行完整备份。|
 |-vssCopy|对于 Windows Server 2008 R2 及更高版本，使用 VSS 执行副本备份。 所有文件都已备份，但不会更新正在备份的文件的历史记录，因此，你可以保留更改、删除等文件的所有信息以及任何应用程序日志文件。 使用这种类型的备份不会影响独立于此副本备份而发生的增量备份和差异备份的序列。 这是默认值。</br>警告：不能将副本备份用于增量备份或差异备份或还原。|
 |-user|对于 Windows Server 2008 R2 及更高版本，指定对备份存储目标 (具有写入权限的用户（如果它是远程共享文件夹) ）。 用户必须是要备份的计算机上的 Administrators 组或 Backup Operators 组的成员。|
@@ -91,13 +91,13 @@ wbadmin enable backup
 |-quiet|对用户运行无提示的子命令。|
 |-allowDeleteOldBackups|覆盖在升级计算机之前所做的任何备份。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 若要查看磁盘的磁盘标识符值，请键入 " **wbadmin 获取磁盘**"。
 
 ## <a name="examples"></a>示例
 
-下面的示例演示如何在不同的备份方案中使用**wbadmin enable backup**命令：
+下面的示例演示如何在不同的备份方案中使用 **wbadmin enable backup** 命令：
 
 方案 #1
 - 计划磁盘驱动器的备份 e：、d:\mountpoint 和 \\ \\ ？ \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\

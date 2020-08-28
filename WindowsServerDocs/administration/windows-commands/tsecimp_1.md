@@ -1,18 +1,18 @@
 ---
 title: tsecimp
 description: '有关 tsecimp 的参考文章，可将可扩展标记语言 (XML) 文件中的分配信息导入到 TAPI 服务器安全文件 ( # A0) 。'
-ms.topic: article
+ms.topic: reference
 ms.assetid: d7488ec6-0eff-45ff-89ee-9cbe752416bf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 641e9724211034fa6e5bd76d0d3705b175a18b4c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f8ad2f4f29537c2f575ba96d172c9405d9680187
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896681"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026865"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -27,7 +27,7 @@ tsecimp /d
 
 #### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/f \<Filename>|必需。 指定 XML 文件的名称，该文件包含要导入的分配信息。|
 |/v|验证 XML 文件的结构而无须将该信息导入 Tsec.ini 文件。|
@@ -35,29 +35,29 @@ tsecimp /d
 |/d|显示已安装电话服务提供程序的列表。 对于每个电话服务提供程序，均会列出关联的线路设备，以及与每个线路设备关联的地址和用户。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 -   要导入其分配信息的 XML 文件必须采用如下所述的结构。
-    -   **UserList**元素
+    -   **UserList** 元素
 
         **UserList**是 XML 文件的顶级元素。
-    -   **User**元素
+    -   **User** 元素
 
-        每个**User**元素都包含有关作为域成员的用户的信息。 可能为每个用户分配了一个或多个线路设备。
+        每个 **User** 元素都包含有关作为域成员的用户的信息。 可能为每个用户分配了一个或多个线路设备。
 
-        此外，每个**用户**元素可能有一个名为**NoMerge**的属性。 如果指定了该属性，则在为该用户分配新线路设备之前，将删除所有当前的线路设备分配。 可以使用该属性轻松删除不需要的用户分配。 默认情况下，不设置该属性。
+        此外，每个 **用户** 元素可能有一个名为 **NoMerge**的属性。 如果指定了该属性，则在为该用户分配新线路设备之前，将删除所有当前的线路设备分配。 可以使用该属性轻松删除不需要的用户分配。 默认情况下，不设置该属性。
 
         **User**元素必须包含单个**DomainUserName**元素，该元素指定用户的域和用户名。 **User**元素还可能包含一个**FriendlyName**元素，该元素指定用户的友好名称。
 
-        **User**元素可能包含一个**LineList**元素。 如果**LineList**元素不存在，则将删除该用户的所有线路设备。
-    -   **LineList**元素
+        **User**元素可能包含一个**LineList**元素。 如果 **LineList** 元素不存在，则将删除该用户的所有线路设备。
+    -   **LineList** 元素
 
-        **LineList**元素包含有关可能分配给用户的每个线路或设备的信息。 每个**LineList**元素可以包含多个**Line**元素。
-    -   **线条**元素
+        **LineList**元素包含有关可能分配给用户的每个线路或设备的信息。 每个 **LineList** 元素可以包含多个 **Line** 元素。
+    -   **线条** 元素
 
-        每个**线条**元素都指定了线条设备。 必须通过在**line**元素下添加**Address**元素或**PermanentID**元素来标识每个行设备。
+        每个 **线条** 元素都指定了线条设备。 必须通过在**line**元素下添加**Address**元素或**PermanentID**元素来标识每个行设备。
 
-        对于每个**Line**元素，可以设置**Remove**特性。 如果设置了该属性，将不再向用户分配该线路设备。 如果未设置该属性，则用户可访问该线路设备。 如果用户无法使用线路设备，则不会提供错误。
+        对于每个 **Line** 元素，可以设置 **Remove** 特性。 如果设置了该属性，将不再向用户分配该线路设备。 如果未设置该属性，则用户可访问该线路设备。 如果用户无法使用线路设备，则不会提供错误。
 
 ## <a name="examples"></a>示例
 - 下列 XML 代码段示例说明了上述定义元素的正确使用方法。
@@ -132,7 +132,7 @@ tsecimp /d
     </UserList>
     ```
 
--   指定了 **/d**命令行选项以显示当前 TAPI 配置后，会显示以下示例输出。 对于每个电话服务提供程序，均会列出关联的线路设备，以及与每个线路设备关联的地址和用户。
+-   指定了 **/d** 命令行选项以显示当前 TAPI 配置后，会显示以下示例输出。 对于每个电话服务提供程序，均会列出关联的线路设备，以及与每个线路设备关联的地址和用户。
     ```
     NDIS Proxy TAPI Service Provider
             Line: WAN Miniport (L2TP)

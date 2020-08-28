@@ -1,18 +1,18 @@
 ---
 title: bdehdcfg
 description: Bdehdcfg 命令的参考文章，该命令使用 BitLocker 驱动器加密所需的分区来准备硬盘驱动器。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4c92cd74-188e-4fec-b7c4-fe4e8903e032
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54c43212413aa18f1390a06ddaed81fbdcd80732
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ea7806fc75d01e3b261296ff6fd462473ca5683b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895017"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031455"
 ---
 # <a name="bdehdcfg"></a>bdehdcfg
 
@@ -39,7 +39,7 @@ bdehdcfg [–driveinfo <drive_letter>] [-target {default|unallocated|<drive_lett
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- |----------- |
 | [bdehdcfg： system.io.driveinfo](bdehdcfg-driveinfo.md) | 显示指定驱动器上的驱动器号、总大小、最大可用空间和分区特征。 仅列出了有效的分区。 如果已存在四个主分区或扩展分区，则不会列出未分配的空间。 |
 | [bdehdcfg：目标](bdehdcfg-target.md) | 定义要用作系统驱动器的驱动器部分，并使该部分处于活动状态。 |

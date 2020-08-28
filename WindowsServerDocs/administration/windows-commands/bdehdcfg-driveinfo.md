@@ -1,18 +1,18 @@
 ---
 title: bdehdcfg driveinfo
 description: 用于显示驱动器号、总大小、最大可用空间和分区特征的 bdehdcfg system.io.driveinfo 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: f2d065e7-eced-4509-a1a0-ee2521a7f02e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4836105bf3141cef036aa4f2e2630ea266e150d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 016733e2a10bd942b04a77af3d8e01577d4fff86
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895133"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031555"
 ---
 # <a name="bdehdcfg-driveinfo"></a>bdehdcfg： system.io.driveinfo
 
@@ -31,7 +31,7 @@ bdehdcfg -driveinfo <drive_letter>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | <drive_letter> | 指定后跟冒号的驱动器号。 |
 

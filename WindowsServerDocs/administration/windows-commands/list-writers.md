@@ -1,22 +1,22 @@
 ---
 title: list writers
 description: 用于列出系统上的编写器的列表编写器命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1c30cbc4-f568-4fa7-b564-66c41d3ca82d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a7176c949eb20af3488abe772c6ba683e1789f8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2fd3f035db63281b75ab2232503587dd535ef8d9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887551"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037905"
 ---
 # <a name="list-writers"></a>list writers
 
-列出系统上的编写器。 如果在没有参数的情况下使用，则默认情况下， **list**显示**列表元数据**的输出。
+列出系统上的编写器。 如果在没有参数的情况下使用，则默认情况下， **list** 显示 **列表元数据** 的输出。
 
 ## <a name="syntax"></a>语法
 
@@ -26,10 +26,10 @@ list writers [metadata | detailed | status]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | metadata | 列出编写器的标识和状态，并显示元数据（如组件详细信息和排除的文件）。 这是默认参数。 |
-| 详情 | 列出与**元数据**相同的信息，但还包括所有组件的完整文件列表。 |
+| 详情 | 列出与 **元数据**相同的信息，但还包括所有组件的完整文件列表。 |
 | 状态 | 仅列出已注册编写器的标识和状态。 |
 
 ### <a name="examples"></a>示例

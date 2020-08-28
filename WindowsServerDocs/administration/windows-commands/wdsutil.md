@@ -1,26 +1,26 @@
 ---
 title: wdsutil
 description: Wdsutil 的参考文章，它是用于管理 Windows 部署服务服务器的命令行实用工具。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 3a1965a0-8677-40cc-9495-30ae806808d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ff4ca30ff0e762cc1a51538088bd0bba376f0d6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 59af6cf2d609d3304634a9535d401767c21c97c1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881204"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031745"
 ---
 # <a name="wdsutil"></a>wdsutil
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-wdsutil 是用于管理 Windows 部署服务服务器的命令行实用工具。 若要运行这些命令，请单击 "**开始**"，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。
+wdsutil 是用于管理 Windows 部署服务服务器的命令行实用工具。 若要运行这些命令，请单击 " **开始**"，右键单击 " **命令提示符**"，然后单击 "以 **管理员身份运行**"。
 ## <a name="commands"></a>命令
-|命令|描述|
+|Command|说明|
 |------|--------|
 |[使用 "添加" 命令](using-the-add-command.md)|添加对象或其预留计算机。|
 |[使用 AutoaddDevices 命令](using-the-approve-autoadddevices-command.md)|批准等待管理员批准的计算机。|

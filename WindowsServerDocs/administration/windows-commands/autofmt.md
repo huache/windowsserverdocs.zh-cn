@@ -1,25 +1,25 @@
 ---
 title: autofmt
 description: Autofmt 命令的参考文章，在 Windows 恢复控制台中调用时，该命令将格式化驱动器或分区。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 81f9abac-f927-41d8-8667-f056db4cb2af
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4fca51609945085e2a8aa34670a9b34660d30d29
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 20959ccb0b910529bf27c5a24b6ce672c6a05d27
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895252"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031675"
 ---
 # <a name="autofmt"></a>autofmt
 
 启动自动文件系统格式实用程序，该实用程序在从 Windows 恢复控制台调用时格式化驱动器或分区。
 
 > [!IMPORTANT]
-> 不能直接从命令行运行**autofmt** 。
+> 不能直接从命令行运行 **autofmt** 。
 
 ## <a name="additional-references"></a>其他参考
 

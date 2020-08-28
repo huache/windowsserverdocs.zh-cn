@@ -1,22 +1,22 @@
 ---
 title: tasklist
 description: 了解如何显示在本地或远程计算机上运行的进程的列表。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8dbe30ee-1484-46be-917b-5ca3ff4fdc9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4f87c4cc2dc80c67e2004c929fa23aea8791fb9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8250828310b42646a48a5dbf454a01643fbb8ef3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881813"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027105"
 ---
 # <a name="tasklist"></a>tasklist
 
-显示本地计算机或远程计算机上当前正在运行的进程列表。 **Tasklist**替换**tlist.exe**工具。
+显示本地计算机或远程计算机上当前正在运行的进程列表。 **Tasklist** 替换 **tlist.exe** 工具。
 
 
 
@@ -28,17 +28,17 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 
 ### <a name="parameters"></a>参数
 
-|          参数           |                                                                                                                                            描述                                                                                                                                             |
+|          参数           |                                                                                                                                            说明                                                                                                                                             |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        /s\<Computer>        |                                                                                         指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。                                                                                         |
+|        /s \<Computer>        |                                                                                         指定远程计算机的名称或 IP 地址， (不要使用反斜杠) 。 默认为本地计算机。                                                                                         |
 | 形\<Domain>\\\]\<UserName> | 使用*用户名*或*域*用户名指定的用户的帐户权限运行命令 \* <em>。 \* \*</em> \* 只有指定 **/s**时才能指定/u。 默认值是当前登录到发出命令的计算机的用户的权限。 |
-|        /p\<Password>        |                                                                                                       指定在 **/u**参数中指定的用户帐户的密码。                                                                                                        |
-|         一样\<Module>         |                                                               列出与给定模式名称匹配的、加载了 DLL 模块的所有任务。 如果未指定模块名称，此选项将显示每个任务加载的所有模块。                                                                |
-|             /svc             |                                                                                    列出每个进程的所有不截断的服务信息。 当 **/fo**参数设置为**表**时有效。                                                                                    |
-|              /v              |                                                                                 在输出中显示详细的任务信息。 若要在不截断的情况下完成详细的输出，请将 **/v**和 **/svc**一起使用。                                                                                 |
-|  /fo {表 \| 列表 \| csv}  |                                                                             指定要用于输出的格式。 有效值为**table**、 **list**和**csv**。 输出的默认格式为**table**。                                                                             |
-|             /nh              |                                                                                             取消输出中的列标题。 当 **/fo**参数设置为**表**或**csv**时有效。                                                                                              |
-|        /fi\<Filter>         |                                                                          指定要包含在查询中或从查询中排除的进程的类型。 有关有效的筛选器名称、运算符和值，请参阅下表。                                                                          |
+|        /p \<Password>        |                                                                                                       指定在 **/u** 参数中指定的用户帐户的密码。                                                                                                        |
+|         一样 \<Module>         |                                                               列出与给定模式名称匹配的、加载了 DLL 模块的所有任务。 如果未指定模块名称，此选项将显示每个任务加载的所有模块。                                                                |
+|             /svc             |                                                                                    列出每个进程的所有不截断的服务信息。 当 **/fo** 参数设置为 **表**时有效。                                                                                    |
+|              /v              |                                                                                 在输出中显示详细的任务信息。 若要在不截断的情况下完成详细的输出，请将 **/v** 和 **/svc** 一起使用。                                                                                 |
+|  /fo {表 \| 列表 \| csv}  |                                                                             指定要用于输出的格式。 有效值为 **table**、 **list**和 **csv**。 输出的默认格式为 **table**。                                                                             |
+|             /nh              |                                                                                             取消输出中的列标题。 当 **/fo** 参数设置为 **表** 或 **csv**时有效。                                                                                              |
+|        /fi \<Filter>         |                                                                          指定要包含在查询中或从查询中排除的进程的类型。 有关有效的筛选器名称、运算符和值，请参阅下表。                                                                          |
 |              /?              |                                                                                                                                在命令提示符下显示帮助。                                                                                                                                |
 
 ### <a name="filter-names-operators-and-values"></a>筛选器名称、运算符和值
@@ -50,14 +50,14 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 |     PID     | eq、ne、gt、lt、ge、le |                                                                  PID 值                                                                   |
 |   SESSION   | eq、ne、gt、lt、ge、le |                                                                会话号                                                                |
 | SESSIONNAME |         eq、ne         |                                                                 “会话名称”                                                                 |
-|   CPUTIME   | eq、ne、gt、lt、ge、le | 采用<em>HH</em>**：**<em>MM</em>**：**<em>SS</em>格式的 CPU 时间，其中*MM*和*SS*介于0到59之间， *HH*是任意无符号数字 |
+|   CPUTIME   | eq、ne、gt、lt、ge、le | 采用 <em>HH</em>**：**<em>MM</em>**：**<em>SS</em>格式的 CPU 时间，其中 *MM* 和 *SS* 介于0到59之间， *HH* 是任意无符号数字 |
 |  MEMUSAGE   | eq、ne、gt、lt、ge、le |                                                              内存使用量（KB）                                                              |
 |  USERNAME   |         eq、ne         |                                                             任何有效的用户名                                                              |
 |  服务   |         eq、ne         |                                                                 服务名称                                                                 |
 | SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE |         eq、ne         |                                                                 窗口标题                                                                 |
 |   模块   |         eq、ne         |                                                                   DLL 名称                                                                   |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 指定远程系统时，不支持 SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE 和 STATUS 筛选器。
 

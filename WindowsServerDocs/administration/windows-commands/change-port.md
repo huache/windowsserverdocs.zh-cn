@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64c0d012d8106d99f1d7a167dd8f2d1d9107150b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8014ba67b2c4383aa56a6fce5eb486bbccfba7e7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880264"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031155"
 ---
 # <a name="change-port"></a>change port
 
@@ -21,7 +21,7 @@ ms.locfileid: "87880264"
 列出或更改要与 MS-DOS 应用程序兼容的 COM 端口映射。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
+> 若要了解最新版本中的新增功能，请参阅 [Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 
@@ -31,18 +31,18 @@ change port [<portX>=<portY| /d <portX | /query]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |-----------------|----------------------------------------|
-| <portX>=<portY> | 将 COM 映射 `<*portX*>` 到`<*portY*>` |
-| /d<portX> | 删除 COM 的映射`<*portX*>` |
+| <portX>=<portY> | 将 COM 映射 `<*portX*>` 到 `<*portY*>` |
+| /d <portX> | 删除 COM 的映射 `<*portX*>` |
 | /query | 显示当前端口映射。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
-- 大多数 MS-DOS 应用程序仅支持 COM1 到 COM4 串行端口。 "**更改端口**" 命令将串行端口映射到不同的端口号，允许不支持高编号 COM 端口的应用访问串行端口。 重新映射仅适用于当前会话，如果从会话中注销然后重新登录，则不会保留。
+- 大多数 MS-DOS 应用程序仅支持 COM1 到 COM4 串行端口。 " **更改端口** " 命令将串行端口映射到不同的端口号，允许不支持高编号 COM 端口的应用访问串行端口。 重新映射仅适用于当前会话，如果从会话中注销然后重新登录，则不会保留。
 
-- 使用不带任何参数的**change 端口**显示可用 COM 端口及其当前映射。
+- 使用不带任何参数的 **change 端口** 显示可用 COM 端口及其当前映射。
 
 ## <a name="examples"></a>示例
 

@@ -1,26 +1,26 @@
 ---
 title: wbadmin get versions
 description: Wbadmin get 版本参考文章，其中列出了存储在本地计算机或另一台计算机上的可用备份的详细信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: b986acc4-d083-4d32-9434-862314ed5e97
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 209244f18758a13838a27ffd2f44e871cf5971c1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 390d9152b53578ef26ff978d9cdcf43ac8f5f64e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891721"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031935"
 ---
 # <a name="wbadmin-get-versions"></a>wbadmin get versions
 
 
 
-列出有关存储在本地计算机或另一台计算机上的可用备份的详细信息。 如果在没有参数的情况下使用此子命令，它将列出本地计算机的所有备份，即使这些备份不可用。 为备份提供的详细信息包括：备份时间、备份存储位置、 **wbadmin get items**子命令所需的版本标识符 (，以及执行恢复) ，以及可执行的恢复类型。
+列出有关存储在本地计算机或另一台计算机上的可用备份的详细信息。 如果在没有参数的情况下使用此子命令，它将列出本地计算机的所有备份，即使这些备份不可用。 为备份提供的详细信息包括：备份时间、备份存储位置、 **wbadmin get items** 子命令所需的版本标识符 (，以及执行恢复) ，以及可执行的恢复类型。
 
-若要使用此子命令获取有关可用备份的详细信息，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。  (打开提升的命令提示符**命令提示符**，然后单击 "以**管理员身份运行**"。 ) 
+若要使用此子命令获取有关可用备份的详细信息，您必须是 **Backup Operators** 组或 **Administrators** 组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行 **wbadmin** 。  (打开提升的命令提示符 **命令提示符** ，然后单击 "以 **管理员身份运行**"。 ) 
 
 ## <a name="syntax"></a>语法
 
@@ -32,14 +32,14 @@ wbadmin get versions
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|-backupTarget|指定包含您要了解其详细信息的备份的存储位置。 用于列出存储在该目标位置的备份。 备份目标位置可以是本地附加的磁盘驱动器、卷、远程共享文件夹、可移动媒体（如 DVD 驱动器或其他光学媒体）。 如果在创建备份的同一台计算机上运行**wbadmin get 版本**，则不需要此参数。 但是，若要获取有关从另一台计算机创建的备份的信息，需要使用此参数。|
-|-计算机|指定您想要备份其详细信息的计算机。 当多台计算机的备份存储在同一位置时使用。 当指定 **-backupTarget**时，应使用。|
+|-backupTarget|指定包含您要了解其详细信息的备份的存储位置。 用于列出存储在该目标位置的备份。 备份目标位置可以是本地附加的磁盘驱动器、卷、远程共享文件夹、可移动媒体（如 DVD 驱动器或其他光学媒体）。 如果在创建备份的同一台计算机上运行 **wbadmin get 版本** ，则不需要此参数。 但是，若要获取有关从另一台计算机创建的备份的信息，需要使用此参数。|
+|-计算机|指定您想要备份其详细信息的计算机。 当多台计算机的备份存储在同一位置时使用。 当指定 **-backupTarget** 时，应使用。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-若要列出可从特定备份中恢复的项，请使用**wbadmin get items**。
+若要列出可从特定备份中恢复的项，请使用 **wbadmin get items**。
 
 ## <a name="examples"></a>示例
 

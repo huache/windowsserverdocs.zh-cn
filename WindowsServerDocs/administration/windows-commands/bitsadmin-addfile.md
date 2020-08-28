@@ -1,18 +1,18 @@
 ---
 title: bitsadmin addfile
 description: Bitsadmin addfile 命令的参考文章，可将文件添加到指定的作业。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1b31aa93-0364-465b-af36-754968825989
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9bc00f1b63c559d048c9ae590df29f7421e42ec
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 63df6c33bae3022c91633d4507c1fe9709cdd65e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894940"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031375"
 ---
 # <a name="bitsadmin-addfile"></a>bitsadmin addfile
 
@@ -26,11 +26,11 @@ bitsadmin /addfile <job> <remoteURL> <localname>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | remoteURL | 服务器上的文件的 URL。 |
-| localname | 本地计算机上的文件的名称。 *Localname*必须包含文件的绝对路径。 |
+| localname | 本地计算机上的文件的名称。 *Localname* 必须包含文件的绝对路径。 |
 
 ## <a name="examples"></a>示例
 

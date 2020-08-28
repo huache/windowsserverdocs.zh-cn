@@ -1,18 +1,18 @@
 ---
 title: change logon
 description: 更改登录命令的参考文章，用于启用或禁用来自客户端会话的登录，或者显示当前登录状态。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 41466260-aee9-4333-bcb6-178112c22afd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1196ec063ce6ab6d2ede64d58d22608e2e76c48
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 67f6a5b93fbe5ec16c4cece1c5c8429de06ce494
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880277"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031165"
 ---
 # <a name="change-logon"></a>change logon
 
@@ -21,7 +21,7 @@ ms.locfileid: "87880277"
 启用或禁用来自客户端会话的登录，或者显示当前登录状态。 此实用程序对于系统维护非常有用。 您必须是管理员才能运行此命令。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
+> 若要了解最新版本中的新增功能，请参阅 [Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 
@@ -31,7 +31,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /query | 显示当前登录状态，不管是启用还是禁用。 |
 | /enable | 允许来自客户端会话的登录，但不允许来自控制台的登录。 |
@@ -40,7 +40,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 | /drainuntilrestart | 禁止在重新启动计算机之前从新的客户端会话登录，但允许重新与现有会话进行重新启动。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 重新启动系统时，将重新启用登录。
 

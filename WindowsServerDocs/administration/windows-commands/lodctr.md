@@ -1,18 +1,18 @@
 ---
 title: lodctr
 description: Lodctr 命令的参考文章，可用于在文件中注册或保存性能计数器名称和注册表设置，并指定受信任的服务。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5a849abd-6b31-4833-bc8a-306c05eca29a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 428830b06796914e66434c90f7624cc7c64eec5b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 61b449678fae62e0909d19b8cae8411102898bd8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887470"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037875"
 ---
 # <a name="lodctr"></a>lodctr
 
@@ -28,7 +28,7 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<filename>` | 指定用于注册性能计数器名称设置和说明性文本的初始化文件的名称。 |
 | /s`<filename>` | 指定性能计数器注册表设置和说明性文本要保存到的文件的名称。 |
@@ -37,7 +37,7 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 | /t:`<servicename>` | 指示服务 `<servicename>` 受信任。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 如果提供的信息包含空格，请使用引号将文本括 (例如，"文件名 1" ) 。
 

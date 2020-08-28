@@ -1,18 +1,18 @@
 ---
 title: ren
 description: 用于重命名文件或目录的 ren 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 60398e12-a05d-4524-a73a-0a925943e21d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: e21b521947ed02307c470932fffcf466016bae8b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0254eca7d68f653f8f8a8ab9099f535c4635f8a4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883801"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027295"
 ---
 # <a name="ren"></a>ren
 
@@ -21,7 +21,7 @@ ms.locfileid: "87883801"
 重命名文件或目录。
 
 > [!NOTE]
-> 此命令与 "[重命名" 命令](rename.md)相同。
+> 此命令与 " [重命名" 命令](rename.md)相同。
 
 ## <a name="syntax"></a>语法
 
@@ -31,19 +31,19 @@ ren [<drive>:][<path>]<filename1> <filename2>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
-| `[<drive>:][<path>]<filename1>` | 指定要重命名的文件或文件集的位置和名称。 *Filename1*可以包含 (**&#42;** 和 **？**) 的通配符字符。 |
+| `[<drive>:][<path>]<filename1>` | 指定要重命名的文件或文件集的位置和名称。 *Filename1* 可以包含 (**&#42;** 和 **？**) 的通配符字符。 |
 | `<filename2>` | 指定文件的新名称。 您可以使用通配符来指定多个文件的新名称。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 在重命名文件时，不能指定新的驱动器或路径。 还不能使用此命令在驱动器之间重命名文件，或将文件移动到不同的目录。
 
 - *Filename2*中的通配符所表示的字符将与*filename1*中的相应字符相同。
 
-- *Filename2*必须是唯一的文件名。 如果*filename2*与现有文件名匹配，将显示以下消息： `Duplicate file name or file not found` 。
+- *Filename2* 必须是唯一的文件名。 如果 *filename2* 与现有文件名匹配，将显示以下消息： `Duplicate file name or file not found` 。
 
 ### <a name="examples"></a>示例
 
@@ -53,7 +53,7 @@ ren [<drive>:][<path>]<filename1> <filename2>
 ren *.txt *.doc
 ```
 
-若要将目录的名称从*Chap10*更改为*Part10*，请键入：
+若要将目录的名称从 *Chap10* 更改为 *Part10*，请键入：
 
 ```
 ren chap10 part10

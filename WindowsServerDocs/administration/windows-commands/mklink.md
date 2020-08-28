@@ -1,18 +1,18 @@
 ---
 title: mklink
 description: 用于创建目录或文件符号或硬链接的 mklink 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0ce4df22-2dbc-48fc-9c16-b721ae85f857
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 76c97032874fe23fea773dbf5e2d1d862a6048af
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 13d842dcad62392fa36dc705233f292b7aa1d48f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886431"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037815"
 ---
 # <a name="mklink"></a>mklink
 
@@ -26,7 +26,7 @@ mklink [[/d] | [/h] | [/j]] <link> <target>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /d | 创建目录符号链接。 默认情况下，此命令将创建文件符号链接。 |
 | /h | 创建硬链接，而不是符号链接。 |

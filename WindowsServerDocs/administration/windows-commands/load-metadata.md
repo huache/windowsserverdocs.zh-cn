@@ -1,22 +1,22 @@
 ---
 title: load metadata
 description: 加载元数据命令的参考文章，此命令在导入可传送的卷影副本之前加载元数据 .cab 文件，或者在还原时加载写入器元数据。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2c535487-668b-44fc-babb-ff59cf7d190e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b0f5412ee189814fcdf1f020f238e19dc308b7d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9953b06b46b82466dbf4fcba97c2d902c88d301c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887483"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037885"
 ---
 # <a name="load-metadata"></a>加载元数据
 
-在导入可传送的卷影副本之前加载元数据 .cab 文件，或者在还原时加载写入器元数据。 如果在没有参数的情况下使用，**加载元数据**将在命令提示符下显示帮助。
+在导入可传送的卷影副本之前加载元数据 .cab 文件，或者在还原时加载写入器元数据。 如果在没有参数的情况下使用， **加载元数据** 将在命令提示符下显示帮助。
 
 ## <a name="syntax"></a>语法
 
@@ -26,14 +26,14 @@ load metadata [<drive>:][<path>]<metadata.cab>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `[<drive>:][<path>]` | 指定元数据文件的位置。 |
 | metadata.cab | 指定要加载的元数据 .cab 文件。 |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-- 您可以使用 "**导入**" 命令根据**负载元数据**指定的元数据导入可传送的卷影副本。
+- 您可以使用 " **导入** " 命令根据 **负载元数据**指定的元数据导入可传送的卷影副本。
 
 - 必须先运行此命令，然后才能加载所选的编写器和组件以**进行还原。**
 

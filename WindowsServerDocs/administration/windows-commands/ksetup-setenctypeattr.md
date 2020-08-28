@@ -1,24 +1,24 @@
 ---
 title: ksetup setenctypeattr
 description: 用于设置域的加密类型属性的 ksetup setenctypeattr 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 88fb913e-6b57-48d9-8c16-a035ab2977ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50d5c5be2382cc1d811066d577f8f092b676853a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 99a05954a2682ff8cdc4f5bb66e49d68fdf132eb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887767"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037915"
 ---
 # <a name="ksetup-setenctypeattr"></a>ksetup setenctypeattr
 
 设置域的加密类型属性。 成功或失败完成时，将显示一条状态消息。
 
-可以通过运行**klist**命令并查看输出，查看 Kerberos 票证授予票证 (TGT) 和会话密钥的加密类型。 可以通过运行命令来设置要连接和使用的域 `ksetup /domain <domainname>` 。
+可以通过运行 **klist** 命令并查看输出，查看 Kerberos 票证授予票证 (TGT) 和会话密钥的加密类型。 可以通过运行命令来设置要连接和使用的域 `ksetup /domain <domainname>` 。
 
 ## <a name="syntax"></a>语法
 
@@ -28,12 +28,12 @@ ksetup /setenctypeattr <domainname> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<domainname>` | 要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 corp.contoso.com 或 contoso。 |
 | 加密类型 | 必须是以下受支持的加密类型之一：<ul><li>DES-CBC</li><li>DES-CBC-MD5</li><li>RC4-HMAC-MD5</li><li>AES128--HMAC--SHA1-96</li><li>AES256--HMAC--SHA1-96</li></ul> |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 可以通过使用空格将命令中的加密类型隔开，来设置或添加多个加密类型。 不过，每次只能对一个域执行此操作。
 

@@ -1,18 +1,18 @@
 ---
 title: wbadmin start sysrecovery
 description: Wbadmin start sysrecovery 参考文章，它使用指定的参数 (裸机恢复) 执行系统恢复。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 95b8232f-7c42-452b-838e-15b0cf6faebe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 66f302d07a5776757d9094299c8961161f2d6a15
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c108636533b333224b925f22854622fff023abba
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879686"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031895"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>wbadmin start sysrecovery
 
@@ -21,9 +21,9 @@ ms.locfileid: "87879686"
 使用指定的参数 (裸机恢复) 执行系统恢复。
 
 > [!NOTE]
-> 此子命令只能从 Windows 恢复环境运行，并且默认情况下不会在**Wbadmin**的使用文本中列出。 有关详细信息，请参阅 windows[恢复环境 (WINDOWS RE) 概述](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10))。
+> 此子命令只能从 Windows 恢复环境运行，并且默认情况下不会在 **Wbadmin**的使用文本中列出。 有关详细信息，请参阅 windows [恢复环境 (WINDOWS RE) 概述](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10))。
 
-若要使用此子命令执行系统恢复，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。
+若要使用此子命令执行系统恢复，您必须是 **Backup Operators** 组或 **Administrators** 组的成员，或者您必须被委派了适当的权限。
 
 ## <a name="syntax"></a>语法
 
@@ -41,15 +41,15 @@ wbadmin start sysrecovery
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|-version|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入**wbadmin get 版本**。|
+|-version|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入 **wbadmin get 版本**。|
 |-backupTarget|指定包含要恢复的备份的存储位置。 当存储位置不同于通常存储此计算机的备份的位置时，此参数非常有用。|
-|-计算机|指定要恢复的计算机的名称。 当多台计算机备份到同一位置时，此参数非常有用。 当指定 **-backupTarget**参数时，应使用。|
+|-计算机|指定要恢复的计算机的名称。 当多台计算机备份到同一位置时，此参数非常有用。 当指定 **-backupTarget** 参数时，应使用。|
 |-restoreAllVolumes|恢复所选备份中的所有卷。 如果未指定此参数，则将仅恢复包含系统状态和操作系统组件)  (卷的关键卷。 当你需要在系统恢复过程中恢复非关键卷时，此参数非常有用。|
 |-recreateDisks|将磁盘配置恢复到创建备份时存在的状态。</br>警告：此参数删除托管操作系统组件的卷上的所有数据。 它还可能会删除数据卷中的数据。|
-|-excludeDisks|仅在使用 **-recreateDisks**参数指定时有效，且必须以逗号分隔的磁盘标识符列表的形式输入 (如**wbadmin get** disk) 的输出中所列。 排除的磁盘未分区或未格式化。 此参数有助于保留在恢复操作过程中不需要修改的磁盘上的数据。|
-|-skipBadClusterCheck|跳过检查恢复磁盘是否有损坏的群集信息。 如果要还原到备用服务器或硬件，则建议不要使用此参数。 你可以随时在恢复磁盘上手动运行**chkdsk/b**来检查是否有坏群集，然后相应地更新文件系统信息。</br>警告：在运行**Chkdsk**之前，在恢复的系统上报告的坏簇可能不准确。|
+|-excludeDisks|仅在使用 **-recreateDisks** 参数指定时有效，且必须以逗号分隔的磁盘标识符列表的形式输入 (如 **wbadmin get** disk) 的输出中所列。 排除的磁盘未分区或未格式化。 此参数有助于保留在恢复操作过程中不需要修改的磁盘上的数据。|
+|-skipBadClusterCheck|跳过检查恢复磁盘是否有损坏的群集信息。 如果要还原到备用服务器或硬件，则建议不要使用此参数。 你可以随时在恢复磁盘上手动运行 **chkdsk/b** 来检查是否有坏群集，然后相应地更新文件系统信息。</br>警告：在运行 **Chkdsk** 之前，在恢复的系统上报告的坏簇可能不准确。|
 |-quiet|运行命令时不提示用户。|
 
 ## <a name="examples"></a>示例

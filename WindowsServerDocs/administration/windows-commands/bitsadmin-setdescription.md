@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setdescription
 description: Bitsadmin setdescription 命令的参考文章，用于设置指定作业的说明。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1e46a5dd-4637-4a2e-b88f-d3f85b177db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d499b152f5cb3a846cc1de6ec65f07903421cf49
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 86f63a553b9d308ef3e8bfe5bfc2a2334b5d28e8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893178"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031255"
 ---
 # <a name="bitsadmin-setdescription"></a>bitsadmin setdescription
 
@@ -26,14 +26,14 @@ bitsadmin /setdescription <job> <description>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
-| description | 用于描述作业的文本。 |
+| 描述 | 用于描述作业的文本。 |
 
 ## <a name="examples"></a>示例
 
-若要检索名为*myDownloadJob*的作业的说明：
+若要检索名为 *myDownloadJob*的作业的说明：
 
 ```
 bitsadmin /setdescription myDownloadJob music_downloads

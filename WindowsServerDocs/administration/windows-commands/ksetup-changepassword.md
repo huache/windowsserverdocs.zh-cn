@@ -1,18 +1,18 @@
 ---
 title: ksetup changepassword
 description: Ksetup changepassword 命令的参考文章，此命令使用密钥发行中心 (KDC) password (kpasswd) 值来更改登录用户的密码。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 283078e7-a88f-4875-90e6-f8605e6b7ea7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69f92dc7b3f37e08e035d635a46c9fc5fc57e1a7
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 89a01291d1f766f5d3235f0029ed84198531116a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888058"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037935"
 ---
 # <a name="ksetup-changepassword"></a>ksetup changepassword
 
@@ -29,12 +29,12 @@ ksetup /changepassword <oldpassword> <newpassword>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<oldpassword>` | 指定已登录用户的现有密码。 |
 | `<newpassword>` | 指定已登录用户的新密码。 此密码必须满足在此计算机上设置的所有密码要求。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 如果在当前域中找不到用户帐户，系统将要求你提供用户帐户所在的域名。
 

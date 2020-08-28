@@ -1,18 +1,18 @@
 ---
 title: ftp debug
 description: 用于切换调试模式的 ftp 调试命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 16293dbf-1b7f-4b62-be4d-876179563ad7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: adcf1a761d8c5549038dc37c5d18a606549b7325
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0a870423a2caa4f5642dc7c3ff85e498fcb9ced1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889549"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038045"
 ---
 # <a name="ftp-debug"></a>ftp debug
 

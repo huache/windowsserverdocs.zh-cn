@@ -1,24 +1,24 @@
 ---
 title: whoami
 description: Whoami 的参考文章，其中显示了当前登录到本地系统的用户的用户、组和特权信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6e3f4d5c-f1f5-4429-b602-afad2b3488bf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bdcef4072fe692f2717fe79814af926a2c151636
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f3b66a8f8e45edc540745a210ef42b49740052e0
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896497"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031705"
 ---
 # <a name="whoami"></a>whoami
 
 
 
-显示当前登录到本地系统的用户的用户、组和特权信息。 如果在没有参数的情况下使用，则**whoami**将显示当前的域和用户名。
+显示当前登录到本地系统的用户的用户、组和特权信息。 如果在没有参数的情况下使用，则 **whoami** 将显示当前的域和用户名。
 
 
 
@@ -32,7 +32,7 @@ whoami /all [/fo <Format>] [/nh]
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
 |/upn| (UPN) 格式显示用户主体名称中的用户名。|
 |/fqdn|显示 (FQDN) 格式的完全限定域名中的用户名。|
@@ -40,7 +40,7 @@ whoami /all [/fo <Format>] [/nh]
 |/user|显示 (SID) 的当前域和用户名以及安全标识符。|
 |/groups|显示当前用户所属的用户组。|
 |/priv|显示当前用户的安全权限。|
-|/fo\<Format>|指定输出格式。 有效值包括：</br>**表**显示表中的输出。 这是默认值。</br>**列表**在列表中显示输出。</br>**csv**以逗号分隔的值（ (CSV) 格式显示输出。|
+|/fo \<Format>|指定输出格式。 有效值包括：</br>**表** 显示表中的输出。 这是默认值。</br>**列表** 在列表中显示输出。</br>**csv** 以逗号分隔的值（ (CSV) 格式显示输出。|
 |/all|显示当前访问令牌中的所有信息，包括当前用户名、安全标识符 (当前用户所属的 SID) 、特权和组。|
 |/nh|指定列标题不应显示在输出中。 这仅对表和 CSV 格式有效。|
 |/?|在命令提示符下显示帮助。|

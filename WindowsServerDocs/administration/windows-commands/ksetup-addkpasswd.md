@@ -1,18 +1,18 @@
 ---
 title: ksetup addkpasswd
 description: Ksetup addkpasswd 命令的参考文章，用于为领域添加 Kerberos 密码 (kpasswd) 服务器地址。
-ms.topic: article
+ms.topic: reference
 ms.assetid: d3196995-1b38-48ff-ba08-911cfab77317
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96dd96b3f66a41d75b943fd74ea9fb674f393d09
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 62123fc8a04006078c42894ee53f11346dec0e59
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888127"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037945"
 ---
 # <a name="ksetup-addkpasswd"></a>ksetup addkpasswd
 
@@ -26,12 +26,12 @@ ksetup /addkpasswd <realmname> [<kpasswdname>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，将作为默认领域或**领域 =** 列出。 |
 | `<kpasswdname>` | 指定 Kerberos 密码服务器。 它被表述为不区分大小写的完全限定的域名，例如 mitkdc.contoso.com。 如果省略了 KDC 名称，则可以使用 DNS 来查找 Kdc。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 如果工作站将对其进行身份验证的 Kerberos 领域支持 Kerberos 更改密码协议，则可以将运行 Windows 操作系统的客户端计算机配置为使用 Kerberos 密码服务器。
 
@@ -45,7 +45,7 @@ ksetup /addkpasswd <realmname> [<kpasswdname>]
 ksetup /addkpasswd CORP.CONTOSO.COM mitkdc.contoso.com
 ```
 
-若要验证是否已设置 KDC 名称，请键入， `ksetup` 然后查看输出，查找文本**kpasswd =**。 如果看不到文本，则表示尚未配置映射。
+若要验证是否已设置 KDC 名称，请键入， `ksetup` 然后查看输出，查找文本 **kpasswd =**。 如果看不到文本，则表示尚未配置映射。
 
 ## <a name="additional-references"></a>其他参考
 

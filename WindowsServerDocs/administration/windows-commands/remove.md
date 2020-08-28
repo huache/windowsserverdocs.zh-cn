@@ -1,18 +1,18 @@
 ---
 title: remove
 description: 删除命令的参考文章，用于从卷中删除驱动器号或装入点。
-ms.topic: article
+ms.topic: reference
 ms.assetid: b0886140-da8b-4231-8cb2-f280874d99c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 469b3ac1783dfff5228778d11532448bee49346c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5b8e2fc967a4ebe22ba1f7932be9d14a00511ddb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883832"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027315"
 ---
 # <a name="remove"></a>remove
 
@@ -21,7 +21,7 @@ ms.locfileid: "87883832"
 "删除" 命令还可用于更改与可移动驱动器关联的驱动器号。 不能删除系统卷、启动卷或分页卷上的驱动器号。 此外，无法删除 OEM 分区、具有无法识别的 GUID 的任何 GPT 分区或任何特殊的非数据分区分区（如 EFI 系统分区）的驱动器号。
 
 > [!NOTE]
-> 必须选择一个卷，"**删除**" 命令才会成功。 使用 "[选择卷](select-volume.md)" 命令选择磁盘，并将焦点移动到该磁盘。
+> 必须选择一个卷，" **删除** " 命令才会成功。 使用 " [选择卷](select-volume.md) " 命令选择磁盘，并将焦点移动到该磁盘。
 
 ## <a name="syntax"></a>语法
 
@@ -31,7 +31,7 @@ remove [{letter=<drive> | mount=<path> [all]}] [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 字母 =`<drive>` | 要删除的驱动器号。 |
 | 装载 =`<path>` | 要删除的装入点路径。 |

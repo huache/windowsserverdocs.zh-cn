@@ -1,18 +1,18 @@
 ---
 title: pushprinterconnections
 description: Pushprinterconnections.exe 命令的参考文章，其中从组策略读取已部署的打印机连接设置，并根据需要部署/删除打印机连接。
-ms.topic: article
+ms.topic: reference
 ms.assetid: c30afb97-b149-478f-a4b9-2cbc25361818
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 07d792b31b6ff8ead9e027c711fb91d87ba54ebd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 41ed8af3b4d70058887de10215f36e1aa530e912
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884574"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032367"
 ---
 # <a name="pushprinterconnections"></a>pushprinterconnections
 
@@ -29,7 +29,7 @@ pushprinterconnections <-log> <-?>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | < 日志> | 将每个用户的调试日志文件写入 *% temp*，或将每个计算机的调试日志写入 *%windir%\temp*。 |
 | <-？ > | 在命令提示符下显示帮助。 |

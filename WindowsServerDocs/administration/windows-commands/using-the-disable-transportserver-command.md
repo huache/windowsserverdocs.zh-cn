@@ -1,18 +1,18 @@
 ---
 title: TransportServer
 description: TransportServer 的参考文章，可禁用传输服务器的所有服务。
-ms.topic: article
+ms.topic: reference
 ms.assetid: a009706b-8e89-486b-8e3d-512cd9f4de74
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 48909ffb5a452d4bac1058acc5ddc48ed69b371f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 361a963f1e2e7fd98d05dc288dbca06353ae22f0
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892120"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032142"
 ---
 # <a name="disable-transportserver"></a>TransportServer
 
@@ -25,7 +25,7 @@ ms.locfileid: "87892120"
 wdsutil [Options] /Disable-TransportServer [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |[/Server： <Server name> ]|指定要禁用的传输服务器的名称。 此名称可以是 NetBIOS 名称，也可以是完全限定的域名 (FQDN) 。 如果未指定传输服务器名称，将使用本地服务器。|
 ## <a name="examples"></a>示例

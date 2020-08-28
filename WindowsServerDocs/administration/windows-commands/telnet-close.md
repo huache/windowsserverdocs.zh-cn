@@ -1,18 +1,18 @@
 ---
 title: telnet close
 description: 用于关闭当前 telnet 连接的 telnet close 参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9330a5e0-bdb5-446b-8c25-c2c460df8b6b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8952a846bd757406f4242de1f3d0813e606c651e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6585c27a7247d901beefe24b66706522a2fd8209
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881734"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027075"
 ---
 # <a name="telnet-close"></a>telnet：关闭
 

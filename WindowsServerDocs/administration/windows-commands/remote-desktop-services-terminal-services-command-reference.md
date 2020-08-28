@@ -1,18 +1,18 @@
 ---
 title: 远程桌面服务 (终端服务) 命令行工具参考
 description: 远程桌面服务 (RDS) 命令行工具的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2f371848-5c48-470c-908c-afbc95d3a805
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ae8156298c9b5108748afa114e1e3cabc0180441
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5657ab1d0018f7bc854ebfa5dbd2985f8399d1af
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883841"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027355"
 ---
 # <a name="remote-desktop-services-terminal-services-command-line-tools-reference"></a>远程桌面服务 (终端服务) 命令行工具参考
 
@@ -21,9 +21,9 @@ ms.locfileid: "87883841"
 了解远程桌面服务 (终端服务) 命令行工具的可用，并提供有关更多详细信息的说明和链接。
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
+> 若要了解最新版本中的新增功能，请参阅 [Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
-| Command | 描述 |
+| Command | 说明 |
 |--|--|--|
 | [change](change.md) | 更改用于登录、COM 端口映射和安装模式的远程桌面会话主机服务器设置。 |
 | [change logon](change-logon.md) | 启用或禁用远程桌面会话主机服务器上的客户端会话登录，或显示当前登录状态。 |

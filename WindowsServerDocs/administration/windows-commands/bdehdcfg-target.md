@@ -1,18 +1,18 @@
 ---
 title: bdehdcfg target
 description: Bdehdcfg 目标命令的参考文章，用于准备要由 BitLocker 和 Windows 恢复用作系统驱动器的分区。
-ms.topic: article
+ms.topic: reference
 ms.assetid: f761d25d-8349-4ac7-ac46-6bb340a4348f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4da764bf25a661c53c27b15cbbee8e4d4ec2981
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 173dfa5a8e873b76e512ce1d657eb1d51391640a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895036"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031465"
 ---
 # <a name="bdehdcfg-target"></a>bdehdcfg：目标
 
@@ -26,12 +26,12 @@ bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | default | 指示命令行工具将遵循与 BitLocker 安装向导相同的过程。 |
 | 分配 | 使用磁盘上的未分配空间创建系统分区。 |
-| `<drive_letter>`收缩 | 减少创建活动系统分区所需的驱动器数量。 若要使用此命令，指定的驱动器必须至少有5% 的可用空间。 |
-| `<drive_letter>`merge | 使用指定为活动系统分区的驱动器。 操作系统驱动器不能是合并目标。 |
+| `<drive_letter>` 收缩 | 减少创建活动系统分区所需的驱动器数量。 若要使用此命令，指定的驱动器必须至少有5% 的可用空间。 |
+| `<drive_letter>` merge | 使用指定为活动系统分区的驱动器。 操作系统驱动器不能是合并目标。 |
 
 ## <a name="examples"></a>示例
 

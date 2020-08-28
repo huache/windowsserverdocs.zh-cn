@@ -1,18 +1,18 @@
 ---
 title: wbadmin start systemstaterecovery
 description: 用于从指定的位置执行系统状态恢复的 wbadmin start systemstaterecovery 的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 208b1be9-3452-4aba-bb49-46bc587fca96
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f77b3d91172ccf5c01abf18ac1beb5269933b27c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: da4ed85bbeddc6434f5f5d9fbf0f078b70a13e2d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879583"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031835"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -23,7 +23,7 @@ ms.locfileid: "87879583"
 > [!NOTE]
 > Windows Server 备份不会作为系统状态备份或系统状态恢复的一部分，备份或恢复注册表用户配置 (HKEY_CURRENT_USER) 。
 
-若要使用此子命令执行系统状态恢复，您必须是**Backup Operators**组或**Administrators**组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行**wbadmin** 。  (打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。 ) 
+若要使用此子命令执行系统状态恢复，您必须是 **Backup Operators** 组或 **Administrators** 组的成员，或者您必须被委派了适当的权限。 此外，必须在提升的命令提示符下运行 **wbadmin** 。  (打开提升的命令提示符，右键单击 " **命令提示符**"，然后单击 "以 **管理员身份运行**"。 ) 
 
 
 
@@ -55,12 +55,12 @@ wbadmin start systemstaterecovery
 
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |---------|-----------|
-|-version|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入**wbadmin get 版本**。|
+|-version|以 MM/DD/YYYY： MM 格式指定要恢复的备份的版本标识符。 如果你不知道版本标识符，请键入 **wbadmin get 版本**。|
 |-showsummary|报告完成操作所需的重启后，最后一个系统状态恢复 (的摘要) 。 此参数不能与任何其他参数一起使用。|
 |-backupTarget|指定包含要恢复的备份或备份的存储位置。 当存储位置不同于通常存储此计算机的备份的位置时，此参数非常有用。|
-|-计算机|指定要恢复的计算机的名称。 当多台计算机备份到同一位置时，此参数非常有用。 当指定 **-backupTarget**参数时，应使用。|
+|-计算机|指定要恢复的计算机的名称。 当多台计算机备份到同一位置时，此参数非常有用。 当指定 **-backupTarget** 参数时，应使用。|
 |-recoveryTarget|指定要还原到的目录。 如果将备份还原到备用位置，则此参数很有用。|
 |-authsysvol|如果使用，则对系统卷共享目录) 执行 SYSVOL (权威还原。|
 |-autoReboot|指定在系统状态恢复操作结束时重新启动系统。 此参数仅对恢复到原始位置有效。 如果需要在执行恢复操作后执行步骤，则不建议使用此参数。|

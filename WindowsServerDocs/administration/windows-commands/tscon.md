@@ -1,18 +1,18 @@
 ---
 title: tscon
 description: Tscon 的参考文章，用于连接到远程桌面会话主机 (rd 会话主机) 服务器上的另一个会话。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 315a9793-cd10-4987-bb68-89a9d13f7fce
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96f23a310d1cf9b1843194ee233b84f69c84bb0c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d0acb75411cae8c4d844e8ff2b113c6a9c638a9b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897087"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026875"
 ---
 # <a name="tscon"></a>tscon
 
@@ -23,7 +23,7 @@ ms.locfileid: "87897087"
 
 
 > [!NOTE]
-> 在 Windows Server 2008 R2 中，终端服务被重命名为远程桌面服务。 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的[Windows server 2012 远程桌面服务中的新增功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11))。
+> 若要了解最新版本中的新增功能，请参阅 Windows server TechNet 库中的 [Windows server 2012 远程桌面服务中的新增功能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) 。
 
 ## <a name="syntax"></a>语法
 ```
@@ -31,7 +31,7 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 ```
 ### <a name="parameters"></a>参数
 
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |\<SessionID>|指定要连接到的会话的 ID。 如果使用可选的 **/dest：** < *SessionName*> 参数，则这是要连接到的会话的 ID。|
 |\<SessionName>|指定要连接到的会话的名称。|
@@ -41,10 +41,10 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 -   您必须具有 "完全控制" 访问权限或 "连接" 特殊访问权限才能连接到另一个会话。
 -   使用 **/dest：** < *SessionName*> 参数，可以将另一个用户的会话连接到不同的会话。
--   如果未在 <*password*> 参数中指定密码，并且目标会话所属的用户不是当前用户，则**tscon**会失败。
+-   如果未在 <*password*> 参数中指定密码，并且目标会话所属的用户不是当前用户，则 **tscon** 会失败。
 -   你无法连接到控制台会话。
 
 ## <a name="examples"></a>示例

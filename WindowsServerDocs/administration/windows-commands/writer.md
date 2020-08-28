@@ -1,24 +1,24 @@
 ---
 title: writer
 description: 编写器的参考文章，用于验证是否包括了写入器或组件，或者从备份或还原过程中排除了写入器或组件。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7cf98295-411d-4705-8573-f898ff45c140
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9fbcca5f9bc15e77b812368fadfbc7af8f4fff96
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: db18b7f03bed4fc43da2ebee71c2e2a536d5e1d5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896453"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038075"
 ---
 # <a name="writer"></a>writer
 
 
 
-验证是否包括了写入器或组件，或者是否从备份或还原过程中排除了写入器或组件。 如果在没有参数的情况下使用，则**编写器**会在命令提示符下显示帮助。
+验证是否包括了写入器或组件，或者是否从备份或还原过程中排除了写入器或组件。 如果在没有参数的情况下使用，则 **编写器** 会在命令提示符下显示帮助。
 
 ## <a name="syntax"></a>语法
 

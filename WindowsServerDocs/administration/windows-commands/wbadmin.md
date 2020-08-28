@@ -1,18 +1,18 @@
 ---
 title: wbadmin
 description: 用于 wbadmin 的参考文章，可用于在命令提示符下备份和还原操作系统、卷、文件、文件夹和应用程序。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4b0b3f32-d21f-4861-84bb-b2eadbf1e7b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3739695a805534d47500380a76951405af7c7f1b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9eef9eb53c38d97f4ab69268632f642583aa8acf
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879541"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031785"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -20,9 +20,9 @@ ms.locfileid: "87879541"
 
 使你能够从命令提示符备份和还原操作系统、卷、文件、文件夹和应用程序。
 
-若要配置定期计划的备份，您必须是**Administrators**组的成员。 若要使用此命令执行所有其他任务，您必须是**Backup Operators**或**Administrators**组的成员，或者您必须被委派了适当的权限。
+若要配置定期计划的备份，您必须是 **Administrators** 组的成员。 若要使用此命令执行所有其他任务，您必须是 **Backup Operators** 或 **Administrators** 组的成员，或者您必须被委派了适当的权限。
 
-必须从提升的命令提示符运行**wbadmin** 。  (打开提升的命令提示符，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。 ) 
+必须从提升的命令提示符运行 **wbadmin** 。  (打开提升的命令提示符，右键单击 " **命令提示符**"，然后单击 "以 **管理员身份运行**"。 ) 
 
 ## <a name="subcommands"></a>个子
 
