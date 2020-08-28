@@ -1,18 +1,18 @@
 ---
 title: tftp
 description: 在远程计算机之间传输文件。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e085d86ea8dff5261f77505df4d5d7c2c6adb675
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 94884e2ae992441bb0031e25f9aeebe5984c207d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881616"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038275"
 ---
 # <a name="tftp"></a>tftp
 
@@ -26,16 +26,16 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 ```
 
 #### <a name="parameters"></a>参数
-|参数|描述|
+|参数|说明|
 |-------|--------|
 |-i|指定二进制图像传输模式 (也称为八进制模式) 。 在二进制图像模式下，文件以一字节单位传输。 传输二进制文件时，请使用此模式。 如果省略 **-i** ，则文件将在 ASCII 模式下传输。 这是默认传输模式。 此模式将 (EOL 行尾) 字符转换为指定计算机的相应格式。 在传输文本文件时使用此模式。 如果文件传输成功，将显示数据传输速率。|
 |\<Host\>|指定本地或远程计算机。|
-|put|将本地计算机上的文件*源*传输到远程计算机上的文件*目标*。 由于 tftp 协议不支持用户身份验证，因此用户必须登录到远程计算机上，并且这些文件必须可在远程计算机上写入。|
-|get|将远程计算机上的文件*目标*传输到本地计算机上的文件*源*。|
+|put|将本地计算机上的文件 *源* 传输到远程计算机上的文件 *目标* 。 由于 tftp 协议不支持用户身份验证，因此用户必须登录到远程计算机上，并且这些文件必须可在远程计算机上写入。|
+|get|将远程计算机上的文件 *目标* 传输到本地计算机上的文件 *源* 。|
 |\<Source\>|指定要传输的文件。|
 |\<Destination\>|指定文件传输位置。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 -   您可以使用 "添加功能向导" 安装 tftp 客户端。
 -   Tftp 协议不支持任何身份验证或加密机制，因此在存在时可能会带来安全风险。 不建议在连接到 Internet 的系统上安装 tftp 客户端。
 -   Tftp 客户端是可选软件，在 Windows Vista 和更高版本的 Windows 操作系统上被标记为已弃用。 出于安全原因，Microsoft 不再提供 tftp 服务器服务。

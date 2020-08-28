@@ -1,18 +1,18 @@
 ---
 title: 使用复制命令
 description: 用于复制映像或驱动程序组的复制参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5228b72f-659f-4692-960b-0fae0d16cf2e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 723f8a902e8713ee2fb869d8cfb73bf89e0f9f12
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c38ffdaf42023a048329437b1c99264b70b4f70b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896561"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038225"
 ---
 # <a name="using-the-copy-command"></a>使用复制命令
 

@@ -1,24 +1,24 @@
 ---
 title: prncnfg
 description: Prncnfg 命令的参考文章，它配置或显示有关打印机的配置信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 38a4e8fa-3122-495b-a125-35b926bc6415
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4f7329d4f5c7441232efffbc40dcc1177f083e1e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ba5d465a46a23261942428761d11ef279b78a62e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884767"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038718"
 ---
 # <a name="prncnfg"></a>prncnfg
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-配置或显示有关打印机的配置信息。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入**cscript** ，然后键入 prncnfg 文件的完整路径，或将目录更改为相应的文件夹。 例如： `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg`。
+配置或显示有关打印机的配置信息。 此命令是位于目录中的 Visual Basic 脚本 `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 若要在命令提示符下使用此命令，请键入 **cscript** ，然后键入 prncnfg 文件的完整路径，或将目录更改为相应的文件夹。 例如：`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg`。
 
 ## <a name="syntax"></a>语法
 
@@ -28,25 +28,25 @@ cscript prncnfg {-g | -t | -x | -?} [-S <Servername>] [-P <Printername>] [-z <ne
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | -g | 显示有关打印机的配置信息。 |
 | -t | 配置打印机。 |
 | -X | 重命名打印机。 |
-| -S`<Servername>` | 指定承载要管理的打印机的远程计算机的名称。 如果未指定计算机，则使用本地计算机。 |
-| -P`<Printername>` | 指定要管理的打印机的名称。 必需。 |
-| -z`<newprintername>` | 指定新的打印机名称。 需要 **-x**和 **-P**参数。 |
-| -u `<Username>` -w`<password>` | 指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。 |
-| -r`<portname>` | 指定打印机的连接端口。 如果这是并行端口或串行端口，请使用端口 ID (例如，LPT1 或 COM1) 。 如果这是 TCP/IP 端口，请使用添加端口时指定的端口名称。 |
-| -l`<location>` | 指定打印机位置，如**Copyroom**。 如果位置中包含空格，请使用引号将文本括起来，如 **"复制房间"**。|
-| -h`<sharename>` | 指定打印机的共享名。 |
-| -m`<comment>` | 指定打印机的注释字符串。 |
-| -f`<separatorfilename>` | 指定一个文件，该文件包含在 "分隔符" 页上显示的文本。 |
-| -y`<datatype>` | 指定打印机可接受的数据类型。 |
-| -st`<starttime>` | 配置打印机的可用性有限。 指定打印机的可用时间。 如果将文档发送到打印机时无法使用，则会将文档保存 (后台处理) ，直到打印机可用为止。 必须将时间指定为24小时制。 例如，若要指定 11:00 P.M.，请键入**2300**。 |
-| -未`<endtime>` | 配置打印机的可用性有限。 指定打印机不再可用的时间。 如果将文档发送到打印机时无法使用，则会将文档保存 (后台处理) ，直到打印机可用为止。 必须将时间指定为24小时制。 例如，若要指定 11:00 P.M.，请键入**2300**。 |
-| -o`<priority>` | 指定后台处理程序用于将打印作业路由到打印队列的优先级。 优先级较高的打印队列会在具有较低优先级的任何队列之前接收其所有作业。 |
-| -i`<defaultpriority>` | 指定分配给每个打印作业的默认优先级。 |
+| -S `<Servername>` | 指定承载要管理的打印机的远程计算机的名称。 如果未指定计算机，则使用本地计算机。 |
+| -P `<Printername>` | 指定要管理的打印机的名称。 必需。 |
+| -z `<newprintername>` | 指定新的打印机名称。 需要 **-x** 和 **-P** 参数。 |
+| -u `<Username>` -w `<password>` | 指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。 |
+| -r `<portname>` | 指定打印机的连接端口。 如果这是并行端口或串行端口，请使用端口 ID (例如，LPT1 或 COM1) 。 如果这是 TCP/IP 端口，请使用添加端口时指定的端口名称。 |
+| -l `<location>` | 指定打印机位置，如 **Copyroom**。 如果位置中包含空格，请使用引号将文本括起来，如 **"复制房间"**。|
+| -h `<sharename>` | 指定打印机的共享名。 |
+| -m `<comment>` | 指定打印机的注释字符串。 |
+| -f `<separatorfilename>` | 指定一个文件，该文件包含在 "分隔符" 页上显示的文本。 |
+| -y `<datatype>` | 指定打印机可接受的数据类型。 |
+| -st `<starttime>` | 配置打印机的可用性有限。 指定打印机的可用时间。 如果将文档发送到打印机时无法使用，则会将文档保存 (后台处理) ，直到打印机可用为止。 必须将时间指定为24小时制。 例如，若要指定 11:00 P.M.，请键入 **2300**。 |
+| -未 `<endtime>` | 配置打印机的可用性有限。 指定打印机不再可用的时间。 如果将文档发送到打印机时无法使用，则会将文档保存 (后台处理) ，直到打印机可用为止。 必须将时间指定为24小时制。 例如，若要指定 11:00 P.M.，请键入 **2300**。 |
+| -o `<priority>` | 指定后台处理程序用于将打印作业路由到打印队列的优先级。 优先级较高的打印队列会在具有较低优先级的任何队列之前接收其所有作业。 |
+| -i `<defaultpriority>` | 指定分配给每个打印作业的默认优先级。 |
 | `{+|-}`共享 | 指定是否在网络上共享此打印机。 |
 | `{+|-}`直 | 指定是否应将文档直接发送到打印机而不进行后台处理。 |
 | `{+|-}`发布 | 指定是否应在 active directory 中发布此打印机。 如果您发布打印机，其他用户可以根据其位置和功能 (例如彩色打印和装订) 搜索该打印机。 |
@@ -68,13 +68,13 @@ cscript prncnfg {-g | -t | -x | -?} [-S <Servername>] [-P <Printername>] [-z <ne
 cscript prncnfg -g -S HRServer -P colorprinter_2
 ```
 
-若要配置名为*colorprinter_2*的打印机，以便在打印作业后，名为*HRServer*的远程计算机上的后台处理程序保留打印作业，请键入：
+若要配置名为 *colorprinter_2* 的打印机，以便在打印作业后，名为 *HRServer* 的远程计算机上的后台处理程序保留打印作业，请键入：
 
 ```
 cscript prncnfg -t -S HRServer -P colorprinter_2 +keepprintedjobs
 ```
 
-若要将名为*HRServer*的远程计算机上的打印机名称从*colorprinter_2*更改为*colorprinter 3*，请键入：
+若要将名为 *HRServer* 的远程计算机上的打印机名称从 *colorprinter_2* 更改为 *colorprinter 3*，请键入：
 
 ```
 cscript prncnfg -x -S HRServer -P colorprinter_2 -z "colorprinter 3"

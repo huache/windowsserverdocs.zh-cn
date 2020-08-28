@@ -1,18 +1,18 @@
 ---
 title: online disk
 description: 联机磁盘命令的参考文章，该命令使脱机磁盘进入联机状态。
-ms.topic: article
+ms.topic: reference
 ms.assetid: bc44a783-eaa4-40ca-be01-5703b5bf4eb3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81bfd2dfc8e32656602066d702e8c1af5f4d1c82
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 934e6bb1d7d5b52b00ac7eadea35e6f022906e5b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885244"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032695"
 ---
 # <a name="online-disk"></a>online disk
 
@@ -21,7 +21,7 @@ ms.locfileid: "87885244"
 如果磁盘组中的动态磁盘处于联机状态，并且它是组中的唯一磁盘，则会重新创建原始组，并将磁盘移到该组。 如果组中有其他磁盘并且它们处于联机状态，则磁盘只会重新添加到组中。 如果选定磁盘的组包含镜像卷或 RAID-5 卷，此命令还会重新同步这些卷。
 
 > [!NOTE]
-> 必须选择磁盘才能使**联机磁盘**命令成功。 使用 "[选择磁盘](select-disk.md)" 命令选择磁盘，并将焦点移动到该磁盘。
+> 必须选择磁盘才能使 **联机磁盘** 命令成功。 使用 " [选择磁盘](select-disk.md) " 命令选择磁盘，并将焦点移动到该磁盘。
 
 > [!IMPORTANT]
 > 如果在只读磁盘上使用此命令，则此命令将失败。
@@ -34,9 +34,9 @@ online disk [noerr]
 
 ### <a name="parameters"></a>参数
 
-有关使用此命令的说明，请参阅[重新激活丢失或脱机的动态磁盘](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732026(v=ws.11))。
+有关使用此命令的说明，请参阅 [重新激活丢失或脱机的动态磁盘](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732026(v=ws.11))。
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 

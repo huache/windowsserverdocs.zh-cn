@@ -1,18 +1,18 @@
 ---
 title: bitsadmin getnotifycmdline
 description: Bitsadmin getnotifycmdline 命令的参考文章，它检索在作业完成传输数据时运行的命令行命令。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 90fa33e6-aca5-4a23-82bd-19a9f13f8416
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5726147701e3ef09e40b3edf900a2e4d417f95cc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d85ed3dc301aed9d79619a1bbc6e9dc835b2102a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894104"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033475"
 ---
 # <a name="bitsadmin-getnotifycmdline"></a>bitsadmin getnotifycmdline
 
@@ -29,13 +29,13 @@ bitsadmin /getnotifycmdline <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
 ## <a name="examples"></a>示例
 
-在名为*myDownloadJob*的作业完成时检索服务使用的命令行命令。
+在名为 *myDownloadJob* 的作业完成时检索服务使用的命令行命令。
 
 ```
 bitsadmin /getnotifycmdline myDownloadJob

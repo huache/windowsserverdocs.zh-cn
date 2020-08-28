@@ -1,22 +1,22 @@
 ---
 title: rem
 description: 用于在脚本、批处理或 config.sys 文件中记录注释的 rem 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1a45b585-a83c-4ff6-badd-ff40f34cec23
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6593e7700853af3658206b741817a86933fa66d1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 741b3e8930188957fde0efc66b7d5584233f6877
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883849"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027405"
 ---
 # <a name="rem"></a>rem
 
-记录脚本、批处理或 config.sys 文件中的注释。 如果未指定任何注释，则**rem**将增加垂直间距。
+记录脚本、批处理或 config.sys 文件中的注释。 如果未指定任何注释，则 **rem** 将增加垂直间距。
 
 ## <a name="syntax"></a>语法
 
@@ -26,18 +26,18 @@ rem [<comment>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | `<comment>` | 指定要包含为注释的字符串。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
-- **Rem**命令不在屏幕上显示注释。 若要在屏幕上显示注释，必须在文件中包括**echo on**命令。
+- **Rem**命令不在屏幕上显示注释。 若要在屏幕上显示注释，必须在文件中包括 **echo on** 命令。
 
 - 不能 `<` 在批处理文件注释中使用重定向字符 (或 `>`) 或管道 (`|`) 。
 
-- 尽管可以使用不带注释的**rem**来向批处理文件添加垂直间距，但也可以使用空行。 处理批处理程序时，将忽略空白行。
+- 尽管可以使用不带注释的 **rem** 来向批处理文件添加垂直间距，但也可以使用空行。 处理批处理程序时，将忽略空白行。
 
 ### <a name="examples"></a>示例
 
@@ -53,7 +53,7 @@ pause
 format b: /v chkdsk b:
 ```
 
-若要在 config.sys 文件中的**prompt**命令之前包含解释性注释，请键入：
+若要在 config.sys 文件中的 **prompt** 命令之前包含解释性注释，请键入：
 
 ```
 rem Set prompt to indicate current directory

@@ -1,25 +1,25 @@
 ---
 title: 使用 "删除" 命令
 description: 删除的参考文章，用于删除各种与驱动程序相关的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: e3f1644d-6028-4c47-a9fd-227bcdcc6123
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf3dfa5481c000a6b81a1c4da07493099bbe81a8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9497662d8a19a2f9c928dd7ebcd1a3fa5f23df89
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892381"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038115"
 ---
 # <a name="using-the-remove-command"></a>使用 "删除" 命令
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
 ## <a name="subcommands"></a>个子
-|Subommand|描述|
+|Subommand|说明|
 |-------|--------|
 |[使用删除图像命令](using-the-remove-image-command.md)|从服务器中删除启动或安装映像。|
 |[使用 ImageGroup 命令](using-the-remove-imagegroup-command.md)|从服务器中删除映像组。|

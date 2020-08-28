@@ -1,73 +1,81 @@
 ---
 title: repair-bde
-description: '* * * * 的参考文章'
-ms.topic: article
+description: 有关 repair 命令的参考文章，可尝试重建严重损坏驱动器的关键部分，并在使用 BitLocker 对驱动器进行加密时抢救可恢复数据。
+ms.topic: reference
 ms.assetid: 534dca1a-05f7-4ea8-ac24-4fe5f14f988a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1ba55b5a1689ecfc6ebe8fb6ab3d02b717e7d38
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a5154a88778dbc3877e3075c813dae06937c1322
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883767"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038353"
 ---
 # <a name="repair-bde"></a>repair-bde
 
+如果驱动器已使用 BitLocker 加密，并且它具有有效的恢复密码或恢复密钥用于解密，则会尝试重建严重损坏的驱动器的关键部分，并抢救可恢复数据。
 
-
-如果已使用 BitLocker 对驱动器进行加密，请访问严重损坏的硬盘上的加密数据。 只要使用有效的恢复密码或恢复密钥来解密数据，Repair 就可以重建驱动器的关键部分并抢救可恢复数据。 如果驱动器上的 BitLocker 元数据数据已损坏，则除了恢复密码或恢复密钥以外，还必须能够提供备份密钥包。 如果你使用 AD DS 备份的默认设置，则 Active Directory 域服务 (AD DS) 中备份此密钥包。 使用此密钥包以及恢复密码或恢复密钥，可以在磁盘损坏的情况下解密受 BitLocker 保护的驱动器的部分。 每个密钥包仅适用于具有相应驱动器标识符的驱动器。 你可以使用[Active Directory 的 BitLocker 恢复密码查看器](/previous-versions/windows/it-pro/windows-7/dd875531(v=ws.10))从 AD DS 中获取此密钥包。
-
-> [!NOTE]
-> BitLocker 恢复密码查看器包含为在 Windows Server 2012 上使用服务器管理安装的可选管理功能之一。
-
-对于 Repair 命令行工具存在以下限制：
--   Manage-bde 无法修复在加密或解密过程中失败的驱动器。
--   Manage-bde 假设如果驱动器具有任何加密，则驱动器已完全加密。
-
-
+> [!IMPORTANT]
+> 如果驱动器上的 BitLocker 元数据数据已损坏，则除了恢复密码或恢复密钥以外，还必须能够提供备份密钥包。 如果使用 Active Directory 域服务的默认密钥备份设置，则会在此处备份密钥包。 你可以使用 [bitlocker：使用 Bitlocker 恢复密码查看器](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-recovery-password-viewer) 从 AD DS 获取密钥包。
+>
+> 使用密钥包以及恢复密码或恢复密钥，可以解密受 BitLocker 保护的驱动器的部分，即使磁盘已损坏。 每个密钥包仅适用于具有相应驱动器标识符的驱动器。
 
 ## <a name="syntax"></a>语法
 
 ```
-repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–lf] [-f] [{-?|/?}]
+repair-bde <inputvolume> <outputvolumeorimage> [-rk] [–rp] [-pw] [–kp] [–lf] [-f] [{-?|/?}]
 ```
 
-#### <a name="parameters"></a>参数
+### <a name="parameters"></a>参数
 
-|参数|描述|
-|---------|-----------|
-|\<InputVolume>|标识要修复的 BitLocker 加密驱动器的驱动器号。 驱动器号必须包含冒号;例如： **C：**。|
-|\<OutputVolumeorImage>|标识要在其上存储已修复驱动器的内容的驱动器。 输出驱动器上的所有信息都将被覆盖。|
-|-rk|标识应用于解锁卷的恢复密钥的位置。 此命令还可以指定为 **-recoverykey**。|
-|-rp|标识用于解锁卷的数字恢复密码。 此命令还可以指定为 **-ms-fve-recoverypassword**。|
-|-pw|标识用于对卷进行解锁的密码。 此命令也可以指定为 **-password**|
-|-kp|标识可用于解锁卷的恢复密钥包。 此命令还可以指定为 **-ms-fve-keypackage**。|
-|-lf|指定文件的路径，该文件将存储 Repair 错误、警告和信息消息。 此命令也可以指定为 **-logfile**。|
-|-f|强制卸除卷，即使它无法锁定也是如此。 此命令也可以指定为 **-force**。|
-|-? 或 /?|在命令提示符下显示帮助。|
+| 参数 | 说明 |
+|--|--|
+| `<inputvolume>` | 标识要修复的 BitLocker 加密驱动器的驱动器号。 驱动器号必须包含冒号;例如： **C：**。 如果未指定密钥包的路径，此命令将在驱动器中搜索密钥包。 如果硬盘驱动器损坏，此命令可能找不到包，并会提示你提供路径。 |
+| `<outputvolumeorimage>` | 标识要在其上存储已修复驱动器的内容的驱动器。 输出驱动器上的所有信息都将被覆盖。 |
+| -rk | 标识应用于解锁卷的恢复密钥的位置。 此命令还可以指定为 **-recoverykey**。 |
+| -rp | 标识用于解锁卷的数字恢复密码。 此命令还可以指定为 **-ms-fve-recoverypassword**。 |
+| -pw | 标识用于对卷进行解锁的密码。 此命令还可以指定为 **-password** |
+| -kp | 标识可用于解锁卷的恢复密钥包。 此命令还可以指定为 **-ms-fve-keypackage**。 |
+| -lf | 指定文件的路径，该文件将存储 Repair 错误、警告和信息消息。 此命令也可以指定为 **-logfile**。 |
+| -f | 强制卸除卷，即使它无法锁定也是如此。 此命令还可以指定为 **-force**。 |
+| -? 或 /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>备注
+### <a name="limitations"></a>限制
 
-如果未指定密钥包的路径，则**repair**将在驱动器上搜索密钥包。 但是，如果硬盘驱动器已损坏，则**manage-bde**可能找不到包，并会提示你提供路径。
+此命令存在以下限制：
+
+- 此命令无法修复在加密或解密过程中失败的驱动器。
+
+- 此命令假设如果驱动器具有任何加密，则驱动器已完全加密。
 
 ## <a name="examples"></a>示例
 
-若要尝试修复驱动器 C，并使用恢复密钥文件将 RecoveryKey 中的内容写入驱动器 D，请在驱动器 Z 上存储 (bek) ，并将此尝试的结果写入到驱动器 Z ( # A0) 。
+若要尝试修复驱动器 C：，以将内容从驱动器 C：写入驱动器 D：使用恢复密钥文件 (在驱动器 F：上存储) ，并将此尝试的结果写入到驱动器 Z 上 ( # A0) ：，键入：
+
 ```
 repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```
-若要尝试修复驱动器 C，并使用指定的48位数恢复密码将驱动器 C 上的内容写入驱动器 D。 应在八个包含六个数字的块中键入恢复密码，并使用连字符分隔每个块。
+
+若要尝试修复驱动器 C：并将内容从驱动器 C：写入驱动器 D：使用指定的48位数的恢复密码，请键入：
+
 ```
 repair-bde C: D: -rp 111111-222222-333333-444444-555555-666666-777777-888888
 ```
-若要强制卸除驱动器 C，然后尝试使用恢复密钥包和恢复密钥文件将驱动器 c 上的内容写入驱动器 D，请在驱动器 F 上存储 (RecoveryKey. bek) 。
+
+>[!NOTE]
+> 应在八个包含六个数字的块中键入恢复密码，并使用连字符分隔每个块。
+
+若要强制驱动器 C：卸载，请尝试修复驱动器 C：，然后尝试修复驱动器 c：，然后将内容从驱动器 C：写入驱动器 D：使用恢复密钥包和恢复密钥文件 (在驱动器 F：上存储) ，键入：
+
 ```
 repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 ```
-若要尝试修复驱动器 C 并将内容从驱动器 C 写入驱动器 D，则在出现提示时必须键入密码来解锁驱动器 C：
+
+若要尝试修复驱动器 C：并将内容从驱动器 C：写入驱动器 D：，其中必须键入密码以解锁驱动器 C：在提示) 时 (，请键入：
+
 ```
 repair-bde C: D: -pw
 ```

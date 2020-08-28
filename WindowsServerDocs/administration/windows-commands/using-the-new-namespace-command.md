@@ -1,24 +1,24 @@
 ---
 title: 新命名空间
 description: 用于创建和配置新命名空间的新命名空间的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6df60703-30bd-4d59-a8d9-9fe3efe96add
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f96181b9ce85a80ccc3d1bd344105dcc1e7f8d2d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8e9bcece219117c559c298bb97726d60c11faa44
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896891"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038135"
 ---
 # <a name="new-namespace"></a>新命名空间
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-创建并配置新的命名空间。 当你只安装了传输服务器角色服务时，应使用此选项。 如果同时安装了 "部署服务器" 角色服务和 "传输服务器" 角色服务 (这是默认) ，请使用[MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)。 请注意，在使用此选项之前，必须注册该内容提供程序。
+创建并配置新的命名空间。 当你只安装了传输服务器角色服务时，应使用此选项。 如果同时安装了 "部署服务器" 角色服务和 "传输服务器" 角色服务 (这是默认) ，请使用 [MulticastTransmission 命令](using-the-new-multicasttransmission-command.md)。 请注意，在使用此选项之前，必须注册该内容提供程序。
 ## <a name="syntax"></a>语法
 ```
 wdsutil [Options] /New-Namespace [/Server:<Server name>]

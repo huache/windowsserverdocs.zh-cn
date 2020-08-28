@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 0397c204-b3f8-4fd8-b71d-b7efb117766d
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: b6bcd763643eba8c82fbd1ebd82199aa46f8f0dd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c51d7c993199c395d2074fc1db393239a9b4b603
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889755"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032885"
 ---
 # <a name="fsutil-volume"></a>fsutil volume
 
@@ -33,7 +33,7 @@ fsutil volume [querycluster] <volumepath> <cluster> [<cluster>] … …
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | allocationreport | 显示有关在给定卷上如何使用存储的信息。 |
 | `<volumepath>` | 指定驱动器号 (后跟冒号) 。 |
@@ -42,7 +42,7 @@ fsutil volume [querycluster] <volumepath> <cluster> [<cluster>] … …
 | filelayout | 显示给定文件的 NTFS 元数据。 |
 | `<fileID>` | 指定文件 id。 |
 | list | 列出系统上的所有卷。 |
-| querycluster | 查找使用指定群集的文件。 可以指定包含**querycluster**参数的多个群集。 |
+| querycluster | 查找使用指定群集的文件。 可以指定包含 **querycluster** 参数的多个群集。 |
 | `<cluster>` | 指定 (LCN) 的逻辑群集号。 |
 
 ### <a name="examples"></a>示例

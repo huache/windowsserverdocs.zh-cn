@@ -1,18 +1,18 @@
 ---
 title: bitsadmin getfilestotal
 description: Bitsadmin getfilestotal 命令的参考文章，可检索指定作业中的文件数。
-ms.topic: article
+ms.topic: reference
 ms.assetid: c5de113e-f29c-4cd3-9392-0e300018d516
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09867e5ed8b060f7a9cbfe573c6e98bfbac831df
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 74e5dad863b12b7f90ed74bca0e6b0b352fb1360
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894340"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033605"
 ---
 # <a name="bitsadmin-getfilestotal"></a>bitsadmin getfilestotal
 
@@ -26,13 +26,13 @@ bitsadmin /getfilestotal <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
 ## <a name="examples"></a>示例
 
-若要检索包含在名为*myDownloadJob*的作业中的文件数：
+若要检索包含在名为 *myDownloadJob*的作业中的文件数：
 
 ```
 bitsadmin /getfilestotal myDownloadJob

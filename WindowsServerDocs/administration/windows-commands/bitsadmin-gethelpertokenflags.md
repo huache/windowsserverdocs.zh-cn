@@ -1,17 +1,17 @@
 ---
 title: bitsadmin gethelpertokenflags
 description: Bitsadmin gethelpertokenflags 命令的参考文章，它返回与 BITS 传输作业关联的帮助程序令牌的用法标志。
-ms.topic: article
+ms.topic: reference
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: d49a2aef829b3e443ad5e1fd3e70d8c260f59ec8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 59c6f2913c3c0f9bde3bbd591cf4a887e50af801
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894244"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033555"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 
@@ -28,11 +28,11 @@ bitsadmin /gethelpertokenflags <job>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 可能的返回值，包括：
 
@@ -42,7 +42,7 @@ bitsadmin /gethelpertokenflags <job>
 
 ## <a name="examples"></a>示例
 
-若要检索与名为*myDownloadJob*的 BITS 传输作业关联的帮助程序令牌的使用标志：
+若要检索与名为 *myDownloadJob*的 BITS 传输作业关联的帮助程序令牌的使用标志：
 
 ```
 bitsadmin /gethelpertokenflags myDownloadJob

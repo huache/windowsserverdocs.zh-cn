@@ -1,18 +1,18 @@
 ---
 title: PowerShell
 description: PowerShell 命令的参考文章，可从命令提示符中打开 PowerShell 控制台。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 694fc970-0b6c-4046-b1b5-7eb1a0d26609
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 29751bdb6f17c167ffa17170be24c302fda557fd
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5c34e00ec2899d615c25808313db821f29c069f5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991153"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032454"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -20,23 +20,23 @@ Windows PowerShell 是一种基于任务的命令行 shell 和脚本语言，专
 
 ## <a name="using-powershellexe"></a>使用 PowerShell.exe
 
-**PowerShell.exe**命令行工具在命令提示符窗口中启动 Windows PowerShell 会话。 使用**PowerShell.exe**时，可以使用其可选参数自定义会话。 例如，可以启动使用特定执行策略或排除 Windows PowerShell 配置文件的会话。 否则，该会话与 Windows PowerShell 控制台中启动的任何会话相同。
+**PowerShell.exe**命令行工具在命令提示符窗口中启动 Windows PowerShell 会话。 使用 **PowerShell.exe**时，可以使用其可选参数自定义会话。 例如，可以启动使用特定执行策略或排除 Windows PowerShell 配置文件的会话。 否则，该会话与 Windows PowerShell 控制台中启动的任何会话相同。
 
-- 若要在命令提示符窗口中启动 Windows PowerShell 会话，请键入 `PowerShell` 。 将**PS**前缀添加到命令提示符，以指示你处于 Windows PowerShell 会话中。
+- 若要在命令提示符窗口中启动 Windows PowerShell 会话，请键入 `PowerShell` 。 将 **PS** 前缀添加到命令提示符，以指示你处于 Windows PowerShell 会话中。
 
-- 若要使用特定执行策略启动会话，请使用**set-executionpolicy**参数，并键入：
+- 若要使用特定执行策略启动会话，请使用 **set-executionpolicy** 参数，并键入：
 
     ```powershell
     PowerShell.exe -ExecutionPolicy Restricted
     ```
 
-- 若要启动 Windows PowerShell 会话而不使用 Windows PowerShell 配置文件，请使用**NoProfile**参数，并键入：
+- 若要启动 Windows PowerShell 会话而不使用 Windows PowerShell 配置文件，请使用 **NoProfile** 参数，并键入：
 
     ```powershell
     PowerShell.exe -NoProfile
     ```
 
-- 若要启动会话，请使用**set-executionpolicy**参数，并键入：
+- 若要启动会话，请使用 **set-executionpolicy** 参数，并键入：
 
     ```powershell
     PowerShell.exe -ExecutionPolicy Restricted
@@ -52,13 +52,13 @@ Windows PowerShell 是一种基于任务的命令行 shell 和脚本语言，专
 
 - 若要在命令提示符窗口中结束 Windows PowerShell 会话，请键入 `exit` 。 典型的命令提示符返回。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-- 有关**PowerShell.exe**命令行参数的完整列表，请参阅[about_PowerShell.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe)。
+- 有关 **PowerShell.exe** 命令行参数的完整列表，请参阅 [about_PowerShell.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe)。
 
-- 有关启动 Windows PowerShell 的其他方法的信息，请参阅[启动 Windows powershell](/powershell/scripting/windows-powershell/starting-windows-powershell)。
+- 有关启动 Windows PowerShell 的其他方法的信息，请参阅 [启动 Windows powershell](/powershell/scripting/windows-powershell/starting-windows-powershell)。
 
-- Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，需要图形用户界面的功能（如[Windows PowerShell 集成脚本环境 (ISE) ](/previous-versions/hh849182(v=technet.10))，以及[Out](/powershell/module/microsoft.powershell.utility/out-gridview)和[Show-Command](/powershell/module/microsoft.powershell.utility/show-command) cmdlet）不在服务器核心安装上运行。
+- Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，需要图形用户界面的功能（如 [Windows PowerShell 集成脚本环境 (ISE) ](/previous-versions/hh849182(v=technet.10))，以及 [Out](/powershell/module/microsoft.powershell.utility/out-gridview) 和 [Show-Command](/powershell/module/microsoft.powershell.utility/show-command) cmdlet）不在服务器核心安装上运行。
 
 ## <a name="additional-references"></a>其他参考
 

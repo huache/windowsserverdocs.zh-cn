@@ -1,18 +1,18 @@
 ---
 title: ftp
 description: Ftp 命令的参考文章，用于在运行文件传输协议 (ftp) 服务器服务的计算机之间传输文件。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 758335e1-fd8d-448c-a654-993126239dd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 369a41cf6ad803a4fce939da58228997410cf177
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9f5cb70e6b42e390f8e279152e736b0226e74f9d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888790"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038898"
 ---
 # <a name="ftp"></a>ftp
 
@@ -28,14 +28,14 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ----------| ----------- |
 | -v | 禁止显示远程服务器响应。 |
 | -d | 启用调试，并显示在 FTP 客户端和 FTP 服务器之间传递的所有命令。 |
 | -i | 在多个文件传输过程中禁用交互式提示。 |
 | -n | 在初始连接时禁止自动登录。 |
-| -g | 禁用文件名组合。  **Glob**允许使用星号 ( * ) 和问号 (？ ) 作为本地文件和路径名称中的通配符。 |
-| 些`<filename>` | 指定包含**ftp**命令的文本文件。 这些命令将在**ftp**启动后自动运行。 此参数不允许有空格。 使用此参数，而不是重定向 (`<`) 。 **注意：** 在 Windows 8 和 Windows Server 2012 或更高版本的操作系统中，必须用 UTF-8 编写文本文件。 |
+| -g | 禁用文件名组合。  **Glob** 允许使用星号 ( * ) 和问号 (？ ) 作为本地文件和路径名称中的通配符。 |
+| 些`<filename>` | 指定包含 **ftp** 命令的文本文件。 这些命令将在 **ftp** 启动后自动运行。 此参数不允许有空格。 使用此参数，而不是重定向 (`<`) 。 **注意：** 在 Windows 8 和 Windows Server 2012 或更高版本的操作系统中，必须用 UTF-8 编写文本文件。 |
 | -a | 指定在绑定 ftp 数据连接时可以使用任何本地接口。 |
 | -A | 以匿名方式登录到 ftp 服务器。 |
 | x-blade`<sendbuffer> `| 覆盖默认 SO_SNDBUF 大小为8192。 |
@@ -45,13 +45,13 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 | `<host>` | 指定要连接的 ftp 服务器的计算机名称、IP 地址或 IPv6 地址。 如果指定，主机名或地址必须是行中的最后一个参数。 |
 | -? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - **Ftp**命令行参数区分大小写。
 
-- 仅当在 "网络连接" 中网络适配器的属性中将 " **Internet 协议" (tcp/ip) **协议安装为组件时，此命令才可用。
+- 仅当在 "网络连接" 中网络适配器的属性中将 " **Internet 协议" (tcp/ip) ** 协议安装为组件时，此命令才可用。
 
-- **Ftp**命令可以交互方式使用。 启动后， **ftp**将创建一个可在其中使用**ftp**命令的子环境。 可以通过键入**quit**命令返回到命令提示符。 当**ftp**子环境正在运行时，它由 `ftp >` 命令提示符指示。 有关详细信息，请参阅**ftp**命令。
+- **Ftp**命令可以交互方式使用。 启动后， **ftp** 将创建一个可在其中使用 **ftp** 命令的子环境。 可以通过键入 **quit** 命令返回到命令提示符。 当 **ftp** 子环境正在运行时，它由 `ftp >` 命令提示符指示。 有关详细信息，请参阅 **ftp** 命令。
 
 - **Ftp**命令支持在安装 ipv6 协议时使用 ipv6。
 

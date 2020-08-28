@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 77545920-2d13-4f35-a4d1-14dbec8340dc
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: d79144d3894e9e181ebd889ce7bf281b827dea26
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 50b8fb1428de955b38d2f6e3a059046d7f670558
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889834"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032995"
 ---
 # <a name="fsutil-sparse"></a>fsutil sparse
 
@@ -33,17 +33,17 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | queryflag | 查询稀疏。 |
 | queryrange | 扫描文件并搜索可能包含非零数据的范围。 |
 | setflag | 将所指示的文件标记为稀疏。 |
 | setrange | 使用零填充文件的指定范围。 |
-| `<filename>` | 指定文件的完整路径，包括文件名和扩展名，例如*C:\documents\filename.txt*。 |
+| `<filename>` | 指定文件的完整路径，包括文件名和扩展名，例如 *C:\documents\filename.txt*。 |
 | `<beginningoffset>` | 指定文件中的偏移量，以将其标记为稀疏。 |
 | `<length>` | 指定文件中要标记为稀疏 (的区域的长度) 以字节为单位）。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
 - 所有有意义或非零的数据都将被分配，而所有无意义的数据 (由零组成的大型数据字符串) 未分配。
 
@@ -55,7 +55,7 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 
 ### <a name="examples"></a>示例
 
-若要将名为*sample.txt* *的文件作为稀疏目录标记*，请键入：
+若要将名为 *sample.txt* *的文件作为稀疏目录标记* ，请键入：
 
 ```
 fsutil sparse setflag c:\temp\sample.txt

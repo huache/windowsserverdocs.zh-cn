@@ -1,18 +1,18 @@
 ---
 title: prompt
 description: Prompt 命令的参考文章，可自定义 Cmd.exe 命令提示符。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 3d98e965-02eb-46ad-9d0a-5dc44830373e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: df849e70da973276360da6e81390466f0484f4b5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b674f219147471c872f5fa8db0d266e3f664c302
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884628"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032403"
 ---
 # <a name="prompt"></a>prompt
 
@@ -26,16 +26,16 @@ prompt [<text>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | `<text>` | 指定要包括在命令提示符中的文本和信息。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>备注
+#### <a name="remarks"></a>注解
 
-- 可以包含的字符组合（而不是）*文本*参数中有一个或多个字符串：
+- 可以包含的字符组合（而不是） *文本* 参数中有一个或多个字符串：
 
-    | 字符 | 描述 |
+    | 字符 | 说明 |
     |--|--|
     | $q | = (等号)  |
     | $$ | $ (美元符号)  |
@@ -55,14 +55,14 @@ prompt [<text>]
     | $f | )  (右括号)  |
     | $s | Space |
 
-- 当启用命令扩展时， **prompt**命令支持以下格式字符：
+- 当启用命令扩展时， **prompt** 命令支持以下格式字符：
 
-    | 字符 | 描述 |
+    | 字符 | 说明 |
     |--|--|
-    | $+ | 零个或多个加符号 (**+**) 个字符，具体取决于**pushd**目录堆栈的深度 (推送) 的每个级别一个字符。 |
+    | $+ | 零个或多个加符号 (**+**) 个字符，具体取决于 **pushd** 目录堆栈的深度 (推送) 的每个级别一个字符。 |
     | $m | 与当前驱动器号关联的远程名称; 如果当前驱动器不是网络驱动器，则为空字符串。 |
 
-- 如果在 text 参数中包含 **$p**字符，则在输入每个命令 (来确定当前驱动器和路径) 后，会读取磁盘。 这可能需要额外的时间，特别是对于软盘驱动器。
+- 如果在 text 参数中包含 **$p** 字符，则在输入每个命令 (来确定当前驱动器和路径) 后，会读取磁盘。 这可能需要额外的时间，特别是对于软盘驱动器。
 
 ### <a name="examples"></a>示例
 

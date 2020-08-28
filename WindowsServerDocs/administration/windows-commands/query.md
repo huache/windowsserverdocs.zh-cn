@@ -1,24 +1,24 @@
 ---
 title: query
 description: 查询命令的参考文章，其中显示了有关进程、会话和远程桌面会话主机服务器的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 675c5128-f3cf-4e8f-8a3f-b29ab2a8b6de
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f5374779fa727e9bde33553c4293f6f31ff0d15a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9ca1972831178c1f807766e5d62e0a58740ad5b7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884393"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038375"
 ---
 # <a name="query"></a>query
 
 > 适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012
 
-显示有关进程、会话和远程桌面会话主机服务器的信息。 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
+显示有关进程、会话和远程桌面会话主机服务器的信息。 若要了解最新版本中的新增功能，请参阅 [Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 
@@ -31,7 +31,7 @@ query user
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | [query process](query-process.md) | 显示有关在远程桌面会话主机服务器上运行的进程的信息。 |
 | [query session](query-session.md) | 显示有关远程桌面会话主机服务器上的会话的信息。 |

@@ -1,18 +1,18 @@
 ---
 title: query termserver
 description: Query termserver 命令的参考文章，其中显示了网络上所有远程桌面会话主机服务器的列表。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 3b89d3b4-236f-4376-90b6-939a0ec4b288
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 755220fc5c105b97ae7d210857b662095fd306da
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 103e1c888f20e368e014eba762b739e099d9e491
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884413"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038395"
 ---
 # <a name="query-termserver"></a>query termserver
 
@@ -25,7 +25,7 @@ ms.locfileid: "87884413"
 - 如果使用/address 选项，则为网络 (和节点地址) 
 
 > [!NOTE]
-> 若要了解最新版本中的新增功能，请参阅[Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
+> 若要了解最新版本中的新增功能，请参阅 [Windows Server 中远程桌面服务的新增功能](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))。
 
 ## <a name="syntax"></a>语法
 
@@ -35,7 +35,7 @@ query termserver [<servername>] [/domain:<domain>] [/address] [/continue]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |--|--|
 | `<servername>` | 指定标识远程桌面会话主机服务器的名称。 |
 | /domain`<domain>` | 指定要查询终端服务器的域。 如果要查询当前正在工作的域，则无需指定域。 |
@@ -51,19 +51,19 @@ query termserver [<servername>] [/domain:<domain>] [/address] [/continue]
 query termserver
 ```
 
-若要显示有关名为*Server3*的远程桌面会话主机服务器的信息，请键入：
+若要显示有关名为 *Server3*的远程桌面会话主机服务器的信息，请键入：
 
 ```
 query termserver Server3
 ```
 
-若要显示有关域*CONTOSO*中所有远程桌面会话主机服务器的信息，请键入：
+若要显示有关域 *CONTOSO*中所有远程桌面会话主机服务器的信息，请键入：
 
 ```
 query termserver /domain:CONTOSO
 ```
 
-若要显示名为*Server3*的远程桌面会话主机服务器的网络和节点地址，请键入：
+若要显示名为 *Server3*的远程桌面会话主机服务器的网络和节点地址，请键入：
 
 ```
 query termserver Server3 /address

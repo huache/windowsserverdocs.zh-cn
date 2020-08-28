@@ -1,18 +1,18 @@
 ---
 title: ftp mdelete
 description: Ftp mdelete 命令的参考文章，用于删除远程计算机上的文件。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8a80a8f5-e880-40a8-abc9-29a41836844f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 04172b8b69af40b7fa9056118a230671641a09fb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 647f7aa532f15e5391f68ef2121766e9aa31ff85
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888763"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038888"
 ---
 # <a name="ftp-mdelete"></a>ftp mdelete
 
@@ -27,13 +27,13 @@ mdelete <remotefile>[...]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<remotefile>` | 指定要删除的远程文件。 |
 
 ### <a name="examples"></a>示例
 
-若要删除*a.exe*和*b.exe*的远程文件，请键入：
+若要删除 *a.exe* 和 *b.exe*的远程文件，请键入：
 
 ```
 mdelete a.exe b.exe

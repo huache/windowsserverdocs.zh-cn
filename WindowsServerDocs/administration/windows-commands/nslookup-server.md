@@ -1,18 +1,18 @@
 ---
 title: nslookup server
 description: Nslookup 服务器命令的参考文章，该命令会将默认服务器更改为指定的域名系统 (DNS) 域。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 608267f8-f7b4-412a-8dcd-e08b5ffc2085
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eacb1807810627956fcf75455e861d3ac381cf13
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 32450197fe7d3c04258b7fb3f77f8e17cd1c113e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885786"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038758"
 ---
 # <a name="nslookup-server"></a>nslookup server
 
@@ -20,7 +20,7 @@ ms.locfileid: "87885786"
 
  (DNS) 域将默认服务器更改为指定的域名系统。
 
-此命令使用当前默认服务器来查找有关指定 DSN 域的信息。 如果要使用初始服务器查找信息，请使用[nslookup lserver](nslookup-lserver.md)命令。
+此命令使用当前默认服务器来查找有关指定 DSN 域的信息。 如果要使用初始服务器查找信息，请使用 [nslookup lserver](nslookup-lserver.md) 命令。
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +30,7 @@ server <DNSdomain>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<DNSdomain>` | 指定默认服务器的 DNS 域。 |
 | /? | 在命令提示符下显示帮助。 |

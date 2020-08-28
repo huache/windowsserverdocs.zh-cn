@@ -1,18 +1,18 @@
 ---
 title: 使用 set 命令
 description: Set 的参考文章，用于设置 Windows 部署服务服务器、预留计算机、映像、映像组和传输服务器的属性和属性。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5def6be0-83b9-4133-bc1b-bbe6d407eca7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c454a07ba0ccc0b3a78432ab0cff701e5f7ea1b8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 580d094b6d8a030e5e7d8649fa2d7dd67009c052
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881506"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038265"
 ---
 # <a name="using-the-set-command"></a>使用 set 命令
 

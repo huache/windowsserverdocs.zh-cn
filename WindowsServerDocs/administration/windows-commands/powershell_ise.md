@@ -1,18 +1,18 @@
 ---
 title: PowerShell_ise
 description: PowerShell_ise 命令的参考文章，用于启动 Windows PowerShell 集成脚本环境 (ISE) 会话。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 32c41b5b-a210-47d9-bd8c-91eb9830b4f0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f82779d122d3fedf3dac7ecf51b6da0601373421
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ec82a8ca484e8392339be9489990da4e633da475
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884872"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032464"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -20,9 +20,9 @@ Windows PowerShell 集成脚本环境 (ISE) 是一种图形化主机应用程序
 
 ## <a name="using-powershellexe"></a>使用 PowerShell.exe
 
-**PowerShell_ISE.exe**工具启动 Windows PowerShell ISE 会话。 使用**PowerShell_ISE.exe**时，可以使用其可选参数打开 Windows PowerShell ISE 中的文件，或启动没有配置文件或多线程单元的 Windows PowerShell ISE 会话。
+**PowerShell_ISE.exe**工具启动 Windows PowerShell ISE 会话。 使用 **PowerShell_ISE.exe**时，可以使用其可选参数打开 Windows PowerShell ISE 中的文件，或启动没有配置文件或多线程单元的 Windows PowerShell ISE 会话。
 
-- 若要在命令提示符窗口、Windows PowerShell 或 "**开始**" 菜单中启动 Windows PowerShell ISE 会话，请键入：
+- 若要在命令提示符窗口、Windows PowerShell 或 " **开始** " 菜单中启动 Windows PowerShell ISE 会话，请键入：
 
   ```powershell
   PowerShell_Ise.exe
@@ -34,13 +34,13 @@ Windows PowerShell 集成脚本环境 (ISE) 是一种图形化主机应用程序
   PowerShell_Ise.exe <filepath>
   ```
 
-  在 Windows PowerShell 3.0 中，可以使用可选**文件**参数，如下所示：
+  在 Windows PowerShell 3.0 中，可以使用可选 **文件** 参数，如下所示：
 
   ```powershell
   PowerShell_Ise.exe -file <filepath>
   ```
 
-- 若要在不使用 Windows PowerShell 配置文件的情况下启动 Windows PowerShell ISE 会话，请使用**NoProfile**参数。  (在 Windows PowerShell 3.0 ) 中引入了**NoProfile**参数，请键入：
+- 若要在不使用 Windows PowerShell 配置文件的情况下启动 Windows PowerShell ISE 会话，请使用 **NoProfile** 参数。  (在 Windows PowerShell 3.0 ) 中引入了 **NoProfile** 参数，请键入：
 
   ```powershell
   PowerShell_Ise.exe -NoProfile
@@ -54,11 +54,11 @@ Windows PowerShell 集成脚本环境 (ISE) 是一种图形化主机应用程序
     PowerShell_Ise.exe /?
     ```
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-- 有关**PowerShell_ISE.exe**命令行参数的完整列表，请参阅[about_PowerShell_Ise.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)。
+- 有关 **PowerShell_ISE.exe** 命令行参数的完整列表，请参阅 [about_PowerShell_Ise.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe)。
 
-- 有关启动 Windows PowerShell 的其他方法的信息，请参阅[启动 Windows powershell](/powershell/scripting/windows-powershell/starting-windows-powershell)。
+- 有关启动 Windows PowerShell 的其他方法的信息，请参阅 [启动 Windows powershell](/powershell/scripting/windows-powershell/starting-windows-powershell)。
 
 - Windows PowerShell 在 Windows Server 操作系统的服务器核心安装选项上运行。 但是，因为 Windows PowerShell ISE 需要图形用户界面，所以它不在服务器核心安装上运行。
 

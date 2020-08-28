@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 6c6ff819-f349-4aea-b0be-1f637f631736
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: f709ec86924f24e7321e4de14d3e21615f207903
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6e1bb492911250161e1e4a57983ea9c58f3a34ff
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889750"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032865"
 ---
 # <a name="fsutil-wim"></a>fsutil wim
 
@@ -31,7 +31,7 @@ fsutil wim [removewim] <drive name> <data source>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | enumfiles | 枚举支持 WIM 的文件。 |
 | `<drive name>` | 指定驱动器名称。 |

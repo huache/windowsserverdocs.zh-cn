@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: f70281af6ecf652cc1dba95ec09b07529f71752e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4eeefc4e98e621cf44baa881c69ccbe36d20a689
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889794"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032935"
 ---
 # <a name="fsutil-transaction"></a>fsutil transaction
 
@@ -32,7 +32,7 @@ fsutil transaction [rollback] <GUID>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 提交 (commit) | 标记成功的隐式或显式指定的事务的结束。 |
 | `<GUID>` | 指定表示事务的 GUID 值。 |
@@ -44,7 +44,7 @@ fsutil transaction [rollback] <GUID>
 
 ### <a name="examples"></a>示例
 
-若要显示文件*c:\test.txt*的事务信息，请键入：
+若要显示文件 *c:\test.txt*的事务信息，请键入：
 
 ```
 fsutil transaction fileinfo c:\test.txt
