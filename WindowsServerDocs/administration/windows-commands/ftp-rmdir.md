@@ -1,18 +1,18 @@
 ---
 title: ftp rmdir
 description: 用于删除根目录的 ftp rmdir 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: cf4778a4-9534-49c7-a061-850dc3504a67
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dfdb8f8638d12a70e526e7165367807260a4ca8f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6a9989a8d0c26820eb92c9f5794b4c877fe1efa8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888955"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035745"
 ---
 # <a name="ftp-rmdir"></a>ftp rmdir
 
@@ -28,13 +28,13 @@ rmdir <directory>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<directory>` | 指定要删除的远程目录的名称。 |
 
 ### <a name="examples"></a>示例
 
-若要删除*图片*远程目录，请键入：
+若要删除 *图片* 远程目录，请键入：
 
 ```
 rmdir pictures

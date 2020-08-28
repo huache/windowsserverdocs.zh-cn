@@ -1,18 +1,18 @@
 ---
 title: ftp remotehelp
 description: Ftp remotehelp 命令的参考文章，其中显示了有关远程命令的帮助。
-ms.topic: article
+ms.topic: reference
 ms.assetid: ef23adf3-ead4-44c8-ac1d-c8a6f4b2bf73
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e428a43ddcf36f1125c3fa83ddeeeff3cae979d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e404b9c75d28c45feebb300d8538d9998b2d9753
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889016"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035785"
 ---
 # <a name="ftp-remotehelp"></a>ftp remotehelp
 
@@ -28,9 +28,9 @@ remotehelp [<command>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
-| `[<command>]` | 指定需要帮助的命令的名称。 如果 `<command>` 未指定，则此命令将显示所有远程命令的列表。 还可以使用[ftp 引号](ftp-quote.md)或[ftp 文本](ftp-literal_1.md)运行远程命令。 |
+| `[<command>]` | 指定需要帮助的命令的名称。 如果 `<command>` 未指定，则此命令将显示所有远程命令的列表。 还可以使用 [ftp 引号](ftp-quote.md) 或 [ftp 文本](ftp-literal_1.md)运行远程命令。 |
 
 ### <a name="examples"></a>示例
 
@@ -40,7 +40,7 @@ remotehelp [<command>]
 remotehelp
 ```
 
-若要显示适用于 "*远程操作" 命令*的语法，请键入：
+若要显示适用于 " *远程操作" 命令* 的语法，请键入：
 
 ```
 remotehelp feat

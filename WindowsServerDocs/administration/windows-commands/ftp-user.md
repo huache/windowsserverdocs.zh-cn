@@ -1,18 +1,18 @@
 ---
 title: ftp user
 description: Ftp 用户命令的参考文章，用于指定远程计算机的用户。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0a77bfeb-27a9-4f2f-a3c4-2fef529fb569
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd015b7f84a6f5a4f3ee10a3cbe351a5bfa4a563
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7c1e928dd3aa30784d607da6f84ad9ae024881f3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888825"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035655"
 ---
 # <a name="ftp-user"></a>ftp user
 
@@ -28,11 +28,11 @@ user <username> [<password>] [<account>]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<username>` | 指定登录到远程计算机时使用的用户名。 |
-| `[<password>]` | 指定*用户名*的密码。 如果未指定密码，但需要密码， **ftp**命令会提示输入密码。 |
-| `[<account>]` | 指定用于登录到远程计算机的帐户。 如果未指定*帐户*，但需要， **ftp**命令会提示输入帐户。 |
+| `[<password>]` | 指定 *用户名*的密码。 如果未指定密码，但需要密码， **ftp** 命令会提示输入密码。 |
+| `[<account>]` | 指定用于登录到远程计算机的帐户。 如果未指定 *帐户* ，但需要， **ftp** 命令会提示输入帐户。 |
 
 ### <a name="examples"></a>示例
 

@@ -1,18 +1,18 @@
 ---
 title: ftp rename
 description: 用于重命名远程文件的 ftp rename 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 977b7c95-6428-4980-80ec-79c3ae7e8c4d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c85903987be9df566f4c07bc7fb5b96e76b0aa43
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a722605e451fff3ea8d4a758434a7509deaf355c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888987"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035735"
 ---
 # <a name="ftp-rename"></a>ftp rename
 
@@ -28,14 +28,14 @@ rename <filename> <newfilename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | `<filename>` | 指定要重命名的文件。 |
 | `<newfilename>` | 指定新的文件名。 |
 
 ### <a name="examples"></a>示例
 
-若要将远程文件*example.txt*重命名为*example1.txt*，请键入：
+若要将远程文件 *example.txt* 重命名为 *example1.txt*，请键入：
 
 ```
 rename example.txt example1.txt

@@ -1,18 +1,18 @@
 ---
 title: ftp mdir
 description: Ftp mdir 命令的参考文章，其中显示远程目录中的文件和子目录的目录列表。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 90eec45b-558b-4b8d-bbe4-b56d98e1ca70
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ddd4a5adb282464d2b5a202ea8ed2838be7a4676
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3f5666157032df499309118955a8f39b668ee980
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888719"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035565"
 ---
 # <a name="ftp-mdir"></a>ftp mdir
 
@@ -28,9 +28,9 @@ mdir <remotefile>[...] <localfile>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| `<remotefile>` | 指定要查看其列表的目录或文件。 可以指定多个*remotefiles*。 键入连字符 ( ) ，以便使用远程计算机上的当前工作目录。 |
+| `<remotefile>` | 指定要查看其列表的目录或文件。 可以指定多个 *remotefiles*。 键入连字符 ( ) ，以便使用远程计算机上的当前工作目录。 |
 | `<localfile>` | 指定用于存储列表的本地文件。 此参数是必需的。 键入连字符 (-) 以在屏幕上显示列表。 |
 
 ### <a name="examples"></a>示例

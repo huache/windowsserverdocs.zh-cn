@@ -1,18 +1,18 @@
 ---
 title: auditpol get
 description: 用于检索系统策略、每用户策略、审核选项和审核安全描述符对象的 auditpol get 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: fe13de4e-836c-4207-b47c-64b6272d6c41
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: edb6619ed551de481b77009c320240951cdca06e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 23de44ebc9bc91ad4db52ee7362b14d9c93648d8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895435"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029085"
 ---
 # <a name="auditpol-get"></a>auditpol get
 
@@ -20,7 +20,7 @@ ms.locfileid: "87895435"
 
 检索系统策略、每个用户的策略、审核选项和审核安全描述符对象。
 
-若要对*每个用户*和*系统*策略执行*get*操作，您必须对安全描述符中的该对象集具有 "**读取**" 权限。 如果你具有 "**管理审核和安全日志** (") 用户权限，则还可以执行*get*操作。 但是，此权限允许执行整体*get*操作所不需要的其他访问权限。
+若要对*每个用户*和*系统*策略执行*get*操作，您必须对安全描述符中的该对象集具有 "**读取**" 权限。 如果你具有 "**管理审核和安全日志** (") 用户权限，则还可以执行*get*操作。 但是，此权限允许执行整体 *get* 操作所不需要的其他访问权限。
 
 ## <a name="syntax"></a>语法
 
@@ -36,7 +36,7 @@ auditpol /get
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /user | 显示要为其查询每用户审核策略的安全主体。 必须指定/category 或/subcategory 参数。 用户可以指定为安全标识符 (SID) 或名称。 如果未指定用户帐户，则查询系统审核策略。 |
 | /category | 由全局唯一标识符指定的一个或多个审核类别 (GUID) 或名称。 星号 ( * ) 可用于指示应查询所有审核类别。 |
@@ -46,7 +46,7 @@ auditpol /get
 | /r | 以逗号分隔 (CSV) 格式显示输出。 |
 | /? | 在命令提示符下显示帮助。 |
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 所有类别和子类别都可以由用引号引起来的 GUID 或名称指定 ( ") 。 可以通过 SID 或名称指定用户。
 

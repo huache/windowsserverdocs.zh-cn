@@ -1,18 +1,18 @@
 ---
 title: auditpol backup
 description: 引用用于将系统审核策略设置、所有用户的按用户审核策略设置和所有审核选项设置为逗号分隔值 (CSV) 文本文件的引用项目。
-ms.topic: article
+ms.topic: reference
 ms.assetid: dc84e581-aa0f-4c91-b13b-1d970bad5517
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f1ddca1dc141e4905ae4b1cd6e9041d9c8c1ce0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4c5dc71ef737c3c939d895a0693ff8213105caa1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895462"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029145"
 ---
 # <a name="auditpol-backup"></a>auditpol backup
 
@@ -20,7 +20,7 @@ ms.locfileid: "87895462"
 
 将所有用户的系统审核策略设置、每用户审核策略设置和所有审核选项 (CSV) 文本文件备份为逗号分隔值。
 
-若要对*每个用户*和*系统*策略执行*备份*操作，您必须对安全描述符中的该对象集具有 "**写入**" 或 "**完全控制**" 权限。 如果你具有 "**管理审核和安全日志** (") 用户权限，则还可以执行*备份*操作。 但是，此权限允许执行整个*备份*操作所不需要的其他访问权限。
+若要对*每个用户*和*系统*策略执行*备份*操作，您必须对安全描述符中的该对象集具有 "**写入**" 或 "**完全控制**" 权限。 如果你具有 "**管理审核和安全日志** (") 用户权限，则还可以执行*备份*操作。 但是，此权限允许执行整个 *备份* 操作所不需要的其他访问权限。
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +30,7 @@ auditpol /backup /file:<filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 |-----------|------------- |
 | /file | 指定审核策略将备份到的文件的名称。 |
 | /? | 在命令提示符下显示帮助。 |

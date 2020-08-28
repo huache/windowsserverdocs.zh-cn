@@ -1,18 +1,18 @@
 ---
 title: dfsdiag testdfsconfig
 description: 用于检查 (DFS) 命名空间的分布式文件系统配置的 dfsdiag testdfsconfig 参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 106aeeb9-ea79-4e6e-829c-eca06309bab2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c714780d43f0fbd95c18f2041c54df8fd23282e8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 60070b9f4076ee90cf0705992f31aff583f92968
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891166"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024001"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag testdfsconfig
 
@@ -20,7 +20,7 @@ ms.locfileid: "87891166"
 
 通过执行以下操作，检查分布式文件系统 (DFS) 命名空间的配置：
 
-- 验证 DFS 命名空间服务是否正在运行，并且其启动类型在所有命名空间服务器上是否设置为**自动**。
+- 验证 DFS 命名空间服务是否正在运行，并且其启动类型在所有命名空间服务器上是否设置为 **自动** 。
 
 - 验证 DFS 注册表配置在命名空间服务器之间是否一致。
 
@@ -40,13 +40,13 @@ dfsdiag /testdfsconfig /DFSroot:<namespace>
 
 #### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | /DFSroot:`<namespace>` | 命名空间 (要诊断的 DFS 根) 。 |
 
 ## <a name="examples"></a>示例
 
-若要验证*com\MyNamespace*中 (DFS) 命名空间的配置分布式文件系统，请键入：
+若要验证 *com\MyNamespace*中 (DFS) 命名空间的配置分布式文件系统，请键入：
 
 ```
 dfsdiag /testdfsconfig /DFSroot:\contoso.com\MyNamespace

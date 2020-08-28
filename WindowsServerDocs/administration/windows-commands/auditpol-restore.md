@@ -1,18 +1,18 @@
 ---
 title: auditpol restore
 description: 用于从语法上与以逗号分隔的值（ (CSV) 文件格式（由/backup 选项使用）进行语法一致的一个文件中，用于还原系统审核策略设置、为所有用户还原系统审核策略设置、每用户审核策略设置和所有审核选项的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: ad73e520-484f-4cf1-a7f9-ae7488e9edf6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3a9f5b159280631c42cc22c6b59fd571a5550835
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dcf4f85da5955f49e644962de82a66a4dedaea64
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895314"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029005"
 ---
 # <a name="auditpol-restore"></a>auditpol restore
 
@@ -30,7 +30,7 @@ auditpol /restore /file:<filename>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ------- | -------- |
 | /file | 指定应将审核策略还原到的文件。 该文件必须使用/backup 选项创建，或者必须在语法上与/backup 选项使用的 CSV 文件格式一致。 |
 | /? |在命令提示符下显示帮助。 |

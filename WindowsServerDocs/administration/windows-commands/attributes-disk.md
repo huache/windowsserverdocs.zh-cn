@@ -1,25 +1,25 @@
 ---
 title: attributes disk
 description: "\"属性\" 磁盘命令的参考文章，其中显示、设置或清除磁盘的属性。"
-ms.topic: article
+ms.topic: reference
 ms.assetid: eed57071-c1c6-4394-9542-62b52a878c92
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6ebdd831a9ddfe1224c641a979ed972672a3ba3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 72b4a99c36085062441a7a8751a065dad1dd0c51
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895499"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029195"
 ---
 # <a name="attributes-disk"></a>attributes disk
 
 显示、设置或清除磁盘的属性。 使用此命令显示磁盘的当前属性时，"启动磁盘" 属性表示用于启动计算机的磁盘。 对于动态镜像，它会显示包含启动卷的启动丛的磁盘。
 
 > [!IMPORTANT]
-> 必须选择磁盘，"属性"**磁盘**命令才能成功。 使用 "**选择磁盘**" 命令选择磁盘，并将焦点移动到该磁盘。
+> 必须选择磁盘，"属性" **磁盘** 命令才能成功。 使用 " **选择磁盘** " 命令选择磁盘，并将焦点移动到该磁盘。
 
 ## <a name="syntax"></a>语法
 
@@ -29,7 +29,7 @@ attributes disk [{set | clear}] [readonly] [noerr]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | set | 设置具有焦点的磁盘的指定属性。 |
 | clear | 清除具有焦点的磁盘的指定属性。 |

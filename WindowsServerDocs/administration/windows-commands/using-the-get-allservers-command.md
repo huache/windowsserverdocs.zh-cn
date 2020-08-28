@@ -1,18 +1,18 @@
 ---
 title: AllServers
 description: AllServers 的参考文章，用于检索有关所有 Windows 部署服务服务器的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: fe2e3c69-8f2e-457d-af55-d249ebf70f53
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6218b3dba4e87758322a7d33865b9a1a69dcb9fa
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3cd70245754ff544524ed9511f1b6cc5c9574e2f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896383"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035885"
 ---
 # <a name="get-allservers"></a>AllServers
 
@@ -29,10 +29,10 @@ WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Fo
 
 ### <a name="parameters"></a>参数
 
-|   参数   |                                                                                                                 描述                                                                                                                  |
+|   参数   |                                                                                                                 说明                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /Show： {Config |                                                                                                                    映像                                                                                                                    |
-|  [/Detailed]  | 与 **/show： Images**或 **/show： All**结合使用时，将返回每个映像中的所有映像元数据。 如果未指定 **/Detailed**选项，则默认行为是返回映像名称、说明和文件名。 |
+| /Show： {Config |                                                                                                                    图像                                                                                                                    |
+|  [/Detailed]  | 与 **/show： Images** 或 **/show： All**结合使用时，将返回每个映像中的所有映像元数据。 如果未指定 **/Detailed** 选项，则默认行为是返回映像名称、说明和文件名。 |
 | [/Forest： {Yes |                                                                                                                     No}]                                                                                                                     |
 
 ## <a name="examples"></a>示例

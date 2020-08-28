@@ -1,18 +1,18 @@
 ---
 title: logman delete
 description: 用于删除现有数据收集器的 logman delete 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8f3b2422-3dce-4fb4-adbb-8536b1d7da2b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f83e903d6e9c3b9679f736bdba309498473ce52
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dbcae06f149f0ea1c443f91fec45d87b5a358136
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887312"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023801"
 ---
 # <a name="logman-delete"></a>logman delete
 
@@ -28,18 +28,18 @@ logman delete <[-n] <name>> [options]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| -s`<computer name>` | 在指定的远程计算机上执行命令。 |
-| -config`<value>` | 指定包含命令选项的设置文件。 |
-| [-n]`<name>` | 目标对象的名称。 |
+| -s `<computer name>` | 在指定的远程计算机上执行命令。 |
+| -config `<value>` | 指定包含命令选项的设置文件。 |
+| [-n] `<name>` | 目标对象的名称。 |
 | -ets | 直接向事件跟踪会话发送命令，而无需保存或计划。 |
-| -[-] u`<user [password]>` | 指定要以其身份运行的用户。 输入 \* 密码将生成密码提示。 如果你在密码提示符处键入密码，密码不会显示。 |
+| -[-] u `<user [password]>` | 指定要以其身份运行的用户。 输入 \* 密码将生成密码提示。 如果你在密码提示符处键入密码，密码不会显示。 |
 | /? | 显示区分上下文的帮助。 |
 
 ### <a name="examples"></a>示例
 
-若要删除数据收集器*perf_log*，请键入：
+若要删除数据收集器 *perf_log*，请键入：
 
 ```
 logman delete perf_log

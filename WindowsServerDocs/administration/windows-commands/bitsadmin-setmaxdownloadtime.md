@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setmaxdownloadtime
 description: Bitsadmin setmaxdownloadtime 命令的参考文章，用于设置下载超时（以秒为单位）。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 16b96cf1-5738-415c-9b9d-c4ea8d5e4fec
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5453c476f304bce3564167da93518793d7eef043
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a4b0096aeb14c4c8cb69654ad4b3723977d759ef
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893116"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024247"
 ---
 # <a name="bitsadmin-setmaxdownloadtime"></a>bitsadmin setmaxdownloadtime
 
@@ -26,14 +26,14 @@ bitsadmin /setmaxdownloadtime <job> <timeout>
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 | timeout | 下载超时的长度（以秒为单位）。 |
 
 ## <a name="examples"></a>示例
 
-将名为*myDownloadJob*的作业的超时值设置为10秒。
+将名为 *myDownloadJob* 的作业的超时值设置为10秒。
 
 ```
 bitsadmin /setmaxdownloadtime myDownloadJob 10

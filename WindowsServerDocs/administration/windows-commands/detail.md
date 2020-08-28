@@ -1,18 +1,18 @@
 ---
 title: 详细信息
 description: 详细信息命令的参考文章，其中显示有关所选磁盘、分区、卷或虚拟硬盘 (VHD) 的信息。
-ms.topic: article
+ms.topic: reference
 ms.assetid: 305755bd-1a51-486b-8515-62d3f227c291
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23768b86f0ac3885b0cae92b62d06b830b893a8d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a63af5f137cb7456d73a1c9b9e03552eafd53b35
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891249"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024031"
 ---
 # <a name="detail"></a>详细信息
 
@@ -29,7 +29,7 @@ detail vdisk
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
 | [详细信息磁盘](detail-disk.md) | 显示所选磁盘的属性和该磁盘上的卷。 |
 | [详细信息分区](detail-partition.md) | 显示选中分区的属性。 |

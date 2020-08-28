@@ -1,18 +1,18 @@
 ---
 title: delete shadows
 description: 删除阴影命令的参考文章，用于删除卷影副本。
-ms.topic: article
+ms.topic: reference
 ms.assetid: e29a84d2-04d1-4eb1-910a-5a47bddbc24d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29d1679b2d05265aa1fb5a089fab9cf99f840cd9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d2613fc978db8c8e5b323df142b204a7270f6bad
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891380"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024201"
 ---
 # <a name="delete-shadows"></a>delete shadows
 
@@ -26,13 +26,13 @@ delete shadows [all | volume <volume> | oldest <volume> | set <setID> | id <shad
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | ---- | ---- |
 | all | 删除所有卷影副本。 |
-| 量`<volume>` | 删除给定卷的所有卷影副本。 |
-| 古老`<volume>` | 删除给定卷的最旧的卷影副本。 |
-| 字符集`<setID>` | 删除具有给定 ID 的卷影副本集中的卷影副本。 **%** 如果当前环境中存在别名，则可以使用符号指定别名。 |
-| 识别`<shadowID>` | 删除给定 ID 的卷影副本。 **%** 如果当前环境中存在别名，则可以使用符号指定别名。 |
+| 量 `<volume>` | 删除给定卷的所有卷影副本。 |
+| 古老 `<volume>` | 删除给定卷的最旧的卷影副本。 |
+| 字符集 `<setID>` | 删除具有给定 ID 的卷影副本集中的卷影副本。 **%** 如果当前环境中存在别名，则可以使用符号指定别名。 |
+| 识别 `<shadowID>` | 删除给定 ID 的卷影副本。 **%** 如果当前环境中存在别名，则可以使用符号指定别名。 |
 | 公开 {<drive> | <mountpoint>} |
 
 ## <a name="additional-references"></a>其他参考

@@ -1,18 +1,18 @@
 ---
 title: logman import and logman export
 description: 用于从 XML 文件导入数据收集器集或将数据收集器集导出到 XML 文件的 logman 导入和 logman 导出的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: c258daba-fb93-47c0-a53b-2fe83ed2c743
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d09d0e517acf19ba1cbb167eb24b16aea3ff2bc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5fb750b2ba514c28b05b7b7817994aef3b83eb62
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887295"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023791"
 ---
 # <a name="logman-import-and-logman-export"></a>logman import and logman export
 
@@ -29,14 +29,14 @@ logman export <[-n] <name> <-xml <name> [options]
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --------- | ----------- |
-| -s`<computer name>` | 在指定的远程计算机上执行命令。 |
-| -config`<value>` | 指定包含命令选项的设置文件。 |
-| [-n]`<name>` | 目标对象的名称。 |
-| -xml`<name>` | 要导入或导出的 XML 文件的名称。 |
+| -s `<computer name>` | 在指定的远程计算机上执行命令。 |
+| -config `<value>` | 指定包含命令选项的设置文件。 |
+| [-n] `<name>` | 目标对象的名称。 |
+| -xml `<name>` | 要导入或导出的 XML 文件的名称。 |
 | -ets | 直接向事件跟踪会话发送命令，而无需保存或计划。 |
-| -[-] u`<user [password]>` | 指定要以其身份运行的用户。 输入 `*` 密码将生成密码提示。 如果你在密码提示符处键入密码，密码不会显示。 |
+| -[-] u `<user [password]>` | 指定要以其身份运行的用户。 输入 `*` 密码将生成密码提示。 如果你在密码提示符处键入密码，密码不会显示。 |
 | -y | 在不提示的情况下回答 "是"。 |
 | /? | 显示区分上下文的帮助。 |
 

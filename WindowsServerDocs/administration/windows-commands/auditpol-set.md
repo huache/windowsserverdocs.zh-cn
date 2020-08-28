@@ -1,18 +1,18 @@
 ---
 title: auditpol set
 description: 用于设置每用户审核策略、系统审核策略或审核选项的 auditpol set 命令的参考文章。
-ms.topic: article
+ms.topic: reference
 ms.assetid: f4947486-87bd-48cb-ba81-7230c8e70895
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 06dcac123a56adbab93aab4dfa44fcc47d26220d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 674de256eba3ee4b55f2b889717b7c2ed2defa3d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895326"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028965"
 ---
 # <a name="auditpol-set"></a>auditpol set
 
@@ -20,7 +20,7 @@ ms.locfileid: "87895326"
 
 设置每用户审核策略、系统审核策略或审核选项。
 
-若要对*每个用户*和*系统*策略执行*set*操作，您必须对安全描述符中的该对象集具有 "**写入**" 或 "**完全控制**" 权限。 如果具有 "**管理审核和安全日志** (SeSecurityPrivilege") 用户权限，则还可以执行*set*操作。 但是，此权限允许执行整体*集*操作所不需要的其他访问权限。
+若要对*每个用户*和*系统*策略执行*set*操作，您必须对安全描述符中的该对象集具有 "**写入**" 或 "**完全控制**" 权限。 如果具有 "**管理审核和安全日志** (SeSecurityPrivilege") 用户权限，则还可以执行*set*操作。 但是，此权限允许执行整体 *集* 操作所不需要的其他访问权限。
 
 ## <a name="syntax"></a>语法
 
