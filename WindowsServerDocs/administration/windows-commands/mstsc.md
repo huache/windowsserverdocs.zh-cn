@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 684ab29a9e1ded85443a2ec2d05ad4f55ec2cd5c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0a9c1eb46e2d6802c50dfc89e4a3085e6a6afca2
+ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025211"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89057559"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -28,7 +28,7 @@ mstsc.exe /edit <connectionfile>
 mstsc.exe /migrate
 ```
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
 | 参数 | 说明 |
 | --------- | ------------|
@@ -44,7 +44,7 @@ mstsc.exe /migrate
 | /migrate | 将通过客户端连接管理器创建的旧连接文件迁移到新的 .rdp 连接文件。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 默认情况下，将为每个用户在用户的 **Documents** 文件夹中存储为隐藏文件。
 
@@ -59,7 +59,15 @@ mstsc.exe /migrate
 ```
 mstsc /f
 ```
+或
+```
+mstsc /v:computer1 /f
+```
+若要分配宽度/高度，请键入：
 
+```
+mstsc /v:computer1 /w:1920 /h:1080
+```
 若要打开一个名为 *.rdp* 的文件进行编辑，请键入：
 
 ```

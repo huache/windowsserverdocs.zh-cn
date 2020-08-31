@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: b149294436c78c3c9c223973fb3e9b423ff3dfd0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 48d9d564c7badf8ea34c77ce7004d0ce642b78cb
+ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036205"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89057579"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -30,7 +30,7 @@ robocopy <source> <destination> [<file>[ ...]] [<options>]
 robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 ```
 
-### <a name="parameters"></a>参数
+### <a name="parameters"></a>parameters
 
 | 参数 | 说明 |
 |--|--|
@@ -44,7 +44,7 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 | 选项 | 说明 |
 |--|--|
 | /s | 复制子目录。 此选项将自动排除空目录。 |
-| /e | 复制子目录。 此选项将自动排除空目录。 |
+| /e | 复制子目录。 此选项将自动包含空目录。 |
 | 列弗`<n>` | 仅复制源目录树的前 *n* 个级别。 |
 | /z | 在可重启模式下复制文件。 |
 | /b | 在备份模式下复制文件。 |
@@ -159,7 +159,7 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 ### <a name="exit-return-codes"></a>退出 (返回) 代码
 
-| “值” | 说明 |
+| 值 | 说明 |
 |--|--|
 | 0 | 未复制文件。 未遇到任何故障。 没有文件不匹配。 文件已存在于目标目录中;因此，已跳过复制操作。 |
 | 1 | 已成功复制所有文件。 |

@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.openlocfilehash: 0dc49603099427fb00507db021c391500a7c42f2
-ms.sourcegitcommit: 3d59c2aaebcd190b20d24bc8a449eee0681b6a3c
+ms.openlocfilehash: ea138d8bb0b804ae4d08ed6ffe330e9714af43f3
+ms.sourcegitcommit: 2b1a12c85acff137e5ac84cd0e62d8353fcdde31
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88583312"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89087480"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -83,7 +83,7 @@ Transfer Log - Please check file sharing is allowed in your firewall. : This req
 
 3. 在 orchestrator 计算机上，启动 Regedit.exe
 
-4. 找到并单击以下注册表子项：
+4. 如果以下注册表子项尚不存在，请创建它：
 
     `HKEY_LOCAL_MACHINE\Software\Microsoft\SMSPowershell`
 
@@ -101,7 +101,7 @@ Transfer Log - Please check file sharing is allowed in your firewall. : This req
 
 11. 尝试再次下载错误的 CSV 文件。
 
-我们打算在更高版本的 Windows Server 2019 中更改此行为。
+如果要迁移的文件量非常大，则可能需要将此超时值提高到超过10分钟。 
 
 ## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>目标代理和凭据管理权限的验证警告
 
