@@ -5,22 +5,22 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/19/2020
+ms.date: 08/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dbaaafe2c01d41a9786d6718bad850dc08deaa81
-ms.sourcegitcommit: 6d991b16a6d9129e1f5d1ca7d688bd621b72d586
+ms.openlocfilehash: 56e2a5f91983f8fe64382e162ecf18b30e75b41d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88638874"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938787"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Windows 应用商店客户端中的新增功能
 
 我们会定期更新 [Microsoft Store 客户端](windows.md)，添加新功能并修复问题。 可在下面找到最新更新。
 
-## <a name="updates-for-version-1021519-insider"></a>针对版本 10.2.1519 的更新（预览体验计划）
+## <a name="updates-for-version-1021522"></a>针对版本 10.2.1522 的更新
 
-*发布日期：2020/08/19*
+*发布日期：2020/08/26*
 
 - 重写了客户端，使其使用与 iOS、macOS 和 Android 客户端相同的基础 RDP 核心引擎。
 - 现支持 Windows 虚拟桌面的 Windows 资源管理器集成版本。

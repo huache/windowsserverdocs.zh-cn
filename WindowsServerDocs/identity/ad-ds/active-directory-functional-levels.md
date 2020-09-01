@@ -1,19 +1,19 @@
 ---
 ms.assetid: f964d056-11bf-4d9b-b5ab-dceaad8bfbc3
 title: Windows Server 2016 功能级别
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
-ms.date: 10/29/2018
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
+ms.date: 08/25/2020
 ms.topic: article
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.openlocfilehash: 75ba30502c7de1b0a88886f42c3a8ef9a84a7e18
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e82dccb79a4fc3452d528581beb43ef32d52ecfc
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938626"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940937"
 ---
 # <a name="forest-and-domain-functional-levels"></a>林和域功能级别
 
@@ -23,9 +23,9 @@ ms.locfileid: "87938626"
 
 部署 AD DS 时，请将域和林功能级别设置为环境可以支持的最高值。 这样一来，你就可以尽可能使用多项 AD DS 功能。 部署新的林时，系统会提示你设置林功能级别，然后设置域功能级别。 可以将域功能级别设置为高于林功能级别的值，但不能将域功能级别设置为低于林功能级别的值。
 
-随着 Windows 2003 生存期的结束，Windows 2003 域控制器 (DC) 需更新到 Windows Server 2008、2008R2、2012、2012R2、2016 或 2019。 因此，应从域中删除任何运行 Windows Server 2003 的域控制器。
+随着 Windows Server 2003、2008 和 2008 R2 生存期的结束，这些域控制器 (DC) 需要更新到 Windows Server 2012、2012 R2、2016 或 2019。 因此，应从域中删除任何运行 Windows Server 2008 R2 及更低版本的域控制器。
 
-在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 有关迁移步骤，可以参阅 [TechNet 上的过程](../../storage/dfs-replication/migrate-sysvol-to-dfsr.md)，也可参阅[存储团队文件柜博客上的简化步骤集](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
+在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 有关迁移步骤，可以参阅 [TechNet 上的过程](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可参阅[存储团队文件柜博客上的简化步骤集](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。 Windows Server 2016 RS1 是最后一个包含 FRS 的 Windows Server 版本。
 
 ## <a name="windows-server-2019"></a>Windows Server Standard 2012 R2
 
@@ -162,6 +162,7 @@ ms.locfileid: "87938626"
 
 支持的域控制器操作系统：
 
+* Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2

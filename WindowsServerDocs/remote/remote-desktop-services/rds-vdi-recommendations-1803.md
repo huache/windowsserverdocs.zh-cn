@@ -6,12 +6,12 @@ ms.author: jaimeo, robsmi
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: e7bd68264f60b61a5c1063a51217bedb0c6c80ec
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: eb222547518dc0ee13e2c7a47037ffae74fee1fa
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989829"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036765"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>针对虚拟桌面基础结构 (VDI) 角色优化 Windows 10 版本 1803
 
@@ -566,7 +566,7 @@ Windows 默认配置为收集并保存有限的诊断数据。 目的是启用�
 对于 Windows Defender，可能最好是安装更新，即使是在非持久性 VDI 上。 几乎每次建立登录会话都会应用更新，但这些更新的规模较小，应该不会造成问题。 此外，VM 在更新时不会减慢速度，因为只会应用最新可用的更新。 更新非 Microsoft 定义文件时可能也是如此。
 
 > [!NOTE]
-> 通过 Windows Store 更新 Store 应用（UWP 应用）。 新版 Office（例如 Office 365）在已直接连接到 Internet 的情况下可通过自身的机制更新，在未连接到 Internet 的情况下可通过管理技术更新。
+> 通过 Windows Store 更新 Store 应用（UWP 应用）。 新版 Office（例如 Microsoft 365）在已直接连接到 Internet 的情况下可通过自身的机制更新，在未连接到 Internet 的情况下可通过管理技术更新。
 
 ### <a name="windows-defender-optimization-with-vdi"></a>使用 VDI 进行 Windows Defender 优化
 

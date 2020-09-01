@@ -7,12 +7,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 7b9500c11ca5dba7ed2f51d1d6b32b7cf689f070
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: eeadbdea10f08372cd927808b4b433d8ba7ee85f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997124"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037825"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>针对虚拟桌面基础结构 (VDI) 角色优化 Windows 10 版本 1909
 
@@ -666,7 +666,7 @@ add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /
 对于 Windows Defender，可能最好是安装更新，即使是在非持久性 VDI 上。 几乎每次建立登录会话都会应用更新，但这些更新的规模较小，应该不会造成问题。 此外，VM 在更新时不会减慢速度，因为只会应用最新可用的更新。 对于第三方定义文件也是如此。
 
 > [!NOTE]
-> 通过 Windows Store 更新 Store 应用（UWP 应用）。 新版 Office（例如 Office 365）在已直接连接到 Internet 的情况下可通过自身的机制更新，在未连接到 Internet 的情况下可通过管理技术更新。
+> 通过 Windows Store 更新 Store 应用（UWP 应用）。 新版 Office（例如 Microsoft 365）在已直接连接到 Internet 的情况下可通过自身的机制更新，在未连接到 Internet 的情况下可通过管理技术更新。
 
 ### <a name="windows-system-startup-event-traces"></a>Windows 系统启动事件跟踪
 

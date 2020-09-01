@@ -6,14 +6,14 @@ ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/06/2020
+ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 524b90965ca1dfca726294d4518fcefa4a470cf2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a44926d50fae9dea38e3f5c46db423991a414a87
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970104"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941507"
 ---
 # <a name="compare-the-clients"></a>比较客户端
 
@@ -34,7 +34,7 @@ ms.locfileid: "87970104"
 | Keyboard    | X                         | X                           | X             | X       | X   | X     | X             |
 | 鼠标       | X                         | X                           | X             | X       | X\* | X     | X             |
 | 触摸       | X                         | X                           | X             | X       | X   |       | X（IE 除外） |
-| 笔         | X                         | X                           |               |         |     |       |               |
+| 笔         | X                         | X                           |               | X（与触控相同） |  X（与触控相同）  |       |               |
 
 *请查看[远程桌面 iOS 客户端支持的输入设备列表](remote-desktop-ios.md#supported-input-devices)。
 
@@ -51,7 +51,7 @@ ms.locfileid: "87970104"
 
 | 重定向         | Windows 收件箱</br>(MSTSC) | Windows 桌面</br>(MSRDC) | Windows 应用商店 | Android | iOS         | macOS                           | Web 客户端    |
 |---------------------|---------------------------|-----------------------------|---------------|---------|-------------|---------------------------------|---------------|
-| 相机             | X                         | X                           |               |         |   X         | X                               |               |
+| 相机             | X                         | X                           |               |     X    |   X         | X                               |               |
 | 剪贴板           | X                         | X                           | X             | 文本    | 文本、图像 | X                               | 文本          |
 | 本地驱动器/存储 | X                         | X                           |               | X       |   X        | X                               |               |
 | 位置            | X                         | X                           |               |         |             |                                 |               |

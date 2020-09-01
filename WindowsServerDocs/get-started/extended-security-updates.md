@@ -7,12 +7,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: c74c8a278612d2ca47346ad95105f1258761494a
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f405486c5ea34b26f23a16552c24527939ca1fd4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990472"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024561"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>如何使用 Windows Server 2008 和 2008 R2 的扩展安全更新 (ESU)
 
@@ -44,6 +44,9 @@ Windows Server 的扩展安全更新 (ESU) 在 2020 年 1 月 14 日之后最多
 ## <a name="how-to-use-extended-security-updates"></a>如何使用扩展安全更新
 
 如果在 Azure 中运行 Windows Server 2008 或 2008 R2 VM，系统会自动为其启用扩展安全更新。 无需配置任何内容，且将扩展安全更新用于 Azure VM 没有额外费用。 如果将 Azure VM 配置为接收扩展安全更新，则这些更新会自动传送到 Azure VM。
+
+> [!NOTE]
+> Microsoft.ClassicCompute VM 要求对扩展安全更新部署进行额外的配置，原因是它们无权访问 [Azure 实例元数据服务](https://docs.microsoft.com/azure/virtual-machines/windows/instance-metadata-service)，而该服务决定了扩展安全更新的资格。 请联系 [Microsoft 支持部门](https://support.microsoft.com/contactus?PID=17336)获取更多帮助。
 
 对于其他环境（如本地 VM 或物理服务器），需要手动请求和配置扩展安全更新。 可以通过批量许可计划（如企业协议 (EA)、企业协议订阅 (EAS)、教育解决方案合约 (EES) 或服务器和云合约 (SCE)）购买扩展安全更新。
 
