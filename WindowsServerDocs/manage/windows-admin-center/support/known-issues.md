@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 91e14b5ac023f6726ffc508f945567b83311d7a4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b4d7d039c775b85321d168f8de7415de6b92e784
+ms.sourcegitcommit: 97a65d8f52514848963e8917021bd9a1f6ee3b19
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997021"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89287819"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center 已知问题
 
@@ -19,7 +19,7 @@ ms.locfileid: "87997021"
 
 如果遇到此页中未列出的问题，请[告诉我们](https://aka.ms/WACfeedback)。
 
-## <a name="installer"></a>安装程序
+## <a name="installer"></a>Installer
 
 - 使用你自己的证书安装 Windows Admin Center 时，请注意，如果你从证书管理器 MMC 工具中复制指纹，[指纹开头将包含无效字符。](https://support.microsoft.com/help/2023835/certificate-thumbprint-displayed-in-mmc-certificate-snap-in-has-extra) 解决方法是键入指纹的第一个字符，然后复制/粘贴其余字符。
 
@@ -27,9 +27,9 @@ ms.locfileid: "87997021"
 
 ## <a name="general"></a>常规
 
-- 在 Windows 管理中心的1910.2 版本中，你可能无法连接到特定硬件上的 Hyper-v 服务器。 如果已阻止此问题，[请下载以前的版本](https://aka.ms/wacprevious)。
+- 在 Windows 管理中心的1910.2 版本中，你可能无法连接到特定硬件上的 Hyper-v 服务器。 如果已阻止此问题， [请下载以前的版本](https://aka.ms/wacprevious)。
 
-- 如果你已在**Windows Server 2016**上将 windows 管理中心作为网关安装，则该服务可能会崩溃，并在包含和的事件日志中出现错误 ```Faulting application name: sme.exe``` ```Faulting module name: WsmSvc.dll``` 。 这是由 Windows Server 2019 中已修复的 bug 引起的。 Windows Server 2016 的修补程序包含在 2 2019 月的累积更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
+- 如果你已在 **Windows Server 2016** 上将 windows 管理中心作为网关安装，则该服务可能会崩溃，并在包含和的事件日志中出现错误 ```Faulting application name: sme.exe``` ```Faulting module name: WsmSvc.dll``` 。 这是由 Windows Server 2019 中已修复的 bug 引起的。 Windows Server 2016 的修补程序包含在 2 2019 月的累积更新（ [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)）。
 
 - 如果已将 Windows 管理中心作为网关安装，且连接列表似乎已损坏，请执行以下步骤：
 
@@ -40,7 +40,7 @@ ms.locfileid: "87997021"
   2. 删除 **C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft** 下面的 **Server Management Experience** 文件夹
   3. 重新安装 Windows Admin Center
 
-- 如果长期让工具保持打开和空闲状态，则可能会出现一些**错误：运行空间状态对此操作无效**错误。 如果出现这种情况，请刷新浏览器。 如果遇到这种情况，请[向我们发送反馈](https://aka.ms/WACfeedback)。
+- 如果长期让工具保持打开和空闲状态，则可能会出现一些**错误：运行空间状态对此操作无效**错误。 如果出现这种情况，请刷新浏览器。 如果遇到这种情况，请 [向我们发送反馈](https://aka.ms/WACfeedback)。
 
 - Windows 管理中心模块中运行的 OSS 版本号与第三方软件通知中列出的版本之间可能存在细微的差异。
 
@@ -53,11 +53,11 @@ ms.locfileid: "87997021"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试解决此问题，方法是将 https://login.microsoftonline.com 、 https://login.live.com 和网关的 URL 添加为客户端浏览器的 "受信任的站点" 和 "允许的站点" 弹出窗口阻止程序设置。 有关解决此问题的更多指导，请查看[故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
+- 如果已将 Windows 管理中心部署为服务，并使用 Microsoft Edge 作为浏览器，则在生成新的浏览器窗口后，将网关连接到 Azure 可能会失败。 尝试解决此问题，方法是将 https://login.microsoftonline.com 、 https://login.live.com 和网关的 URL 添加为客户端浏览器的 "受信任的站点" 和 "允许的站点" 弹出窗口阻止程序设置。 有关解决此问题的更多指导，请查看 [故障排除指南](troubleshooting.md#azure-features-dont-work-properly-in-edge)。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
-- 早于10月 (发布70版之前，2018) Chrome 有一个有关 websocket 协议和 NTLM 身份验证的[bug](https://bugs.chromium.org/p/chromium/issues/detail?id=423609) 。 这会影响以下工具：事件、PowerShell、远程桌面。
+- 早于10月 (发布70版之前，2018) Chrome 有一个有关 websocket 协议和 NTLM 身份验证的 [bug](https://bugs.chromium.org/p/chromium/issues/detail?id=423609) 。 这会影响以下工具：事件、PowerShell、远程桌面。
 
 - Chrome 可能会弹出多个凭据提示，尤其是在**工作组**（非域）环境中添加连接体验期间。
 
@@ -102,7 +102,7 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 - 导出大日志文件时，你可能会遇到一个引用“数据包大小”的错误。
 
-  - 若要解决此问题，请在网关计算机上的权限提升的命令提示符中使用以下命令：```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - 若要解决此问题，请在网关计算机上的权限提升的命令提示符中使用以下命令： ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
 ### <a name="files"></a>文件
 
@@ -130,9 +130,9 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 - 使用远程桌面连接到未加入域的计算机时，你必须以格式输入你的帐户 ```MACHINENAME\USERNAME``` 。
 
-- 某些配置可以通过组策略阻止 Windows 管理中心的远程桌面客户端。 如果遇到这种情况，请 ```Allow users to connect remotely by using Remote Desktop Services``` 在```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
+- 某些配置可以通过组策略阻止 Windows 管理中心的远程桌面客户端。 如果遇到这种情况，请 ```Allow users to connect remotely by using Remote Desktop Services``` 在 ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
-- 远程桌面受[websocket 兼容性影响。](#websocket-compatibility-when-using-a-proxy-service)
+- 远程桌面受 [websocket 兼容性影响。](#websocket-compatibility-when-using-a-proxy-service)
 
 - 远程桌面工具当前不支持在本地桌面和远程会话之间复制/粘贴任何文本、图像或文件。
 
@@ -189,7 +189,7 @@ Windows Admin Center 中的远程桌面、PowerShell 和事件模块使用 WebSo
 
 - 如果使用 Microsoft 帐户 ([MSA](https://account.microsoft.com/account/)) 或者使用 AZURE ACTIVE DIRECTORY (AAD) 登录到 Windows 10 计算机，则必须使用 "管理身份" 来提供本地管理员帐户的凭据 [16568455]
 
-- 尝试管理 localhost 时，将提示你提升网关进程。 如果单击后面的 "用户帐户控制" 弹出窗口中的 "**否**"，则必须取消连接尝试并重新启动。
+- 尝试管理 localhost 时，将提示你提升网关进程。 如果单击后面的 "用户帐户控制" 弹出窗口中的 " **否** "，则必须取消连接尝试并重新启动。
 
 - 默认情况下，Windows 10 不会启用 WinRM/PowerShell 远程处理。
 
@@ -210,7 +210,7 @@ Hyper-v 需要安装在运行 Azure Stack HCI OS 的虚拟机上。 尝试为这
 若要在运行 Azure Stack HCI OS 的虚拟机上安装 Hyper-v，请运行以下命令：
 
 ```PowerShell
-Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v
+Enable-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Hyper-V'
 ```
 
 ### <a name="step-17"></a>步骤1。7
@@ -222,7 +222,7 @@ Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v
 建议在创建 stretch 群集时使用已加入域的服务器。 由于 WinRM 限制，尝试将工作组计算机用于 stretch 群集部署时出现网络分段问题。
 
 ### <a name="undo-and-start-over"></a>撤消并重新开始
-如果为群集部署重复使用相同的计算机，则在同一组计算机中进行成功的群集部署非常重要。 有关如何清理群集的说明，请参阅[部署超聚合基础结构](../use/deploy-hyperconverged-infrastructure.md#undo-and-start-over)页。
+如果为群集部署重复使用相同的计算机，则在同一组计算机中进行成功的群集部署非常重要。 有关如何清理群集的说明，请参阅 [部署超聚合基础结构](../use/deploy-hyperconverged-infrastructure.md#undo-and-start-over) 页。
 
 ### <a name="credssp"></a>CredSSP
 Windows 管理中心群集部署向导在多个位置使用 CredSSP。 在向导过程中遇到此错误消息 (在验证群集步骤) 中最常见的情况：
@@ -291,15 +291,15 @@ Windows 管理中心版本2007中的群集部署向导不为 RDMA 配置提供�
 
 ### <a name="azure-file-sync-permissions"></a>Azure 文件同步权限
 
-Azure 文件同步需要 Azure 中的权限，但 Windows 管理中心未在版本1910之前提供。 如果使用早于 Windows 管理中心版本1910的版本向 Azure 注册了 Windows 管理中心网关，则需要更新 Azure Active Directory 应用程序，以获取最新版本的 Windows 管理中心中的 Azure 文件同步的正确权限。 其他权限允许 Azure 文件同步按本文中所述执行存储帐户访问的自动配置：[确保 Azure 文件同步有权访问存储帐户](/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
+Azure 文件同步需要 Azure 中的权限，但 Windows 管理中心未在版本1910之前提供。 如果使用早于 Windows 管理中心版本1910的版本向 Azure 注册了 Windows 管理中心网关，则需要更新 Azure Active Directory 应用程序，以获取最新版本的 Windows 管理中心中的 Azure 文件同步的正确权限。 其他权限允许 Azure 文件同步按本文中所述执行存储帐户访问的自动配置： [确保 Azure 文件同步有权访问存储帐户](/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)。
 
 若要更新 Azure Active Directory 应用，可以执行以下两项操作之一
 1. 请参阅**Settings**  >  "**azure**  >  **注销**" 设置，然后再次向 azure 注册 Windows 管理中心，确保你选择创建新的 Azure Active Directory 应用程序。
-2. 中转到 Azure Active Directory 应用程序，并手动添加向 Windows 管理中心注册的现有 Azure Active Directory 应用所需的权限。 为此，请**Settings**  >  **Azure**  >  **在 azure 中**中转到 "设置" "azure 视图"。 从 Azure 中的 "**应用注册**" 边栏选项卡中转到 " **API 权限**"，选择 "**添加权限**"。 向下滚动以选择**Azure Active Directory 关系图**，选择 "**委托的权限**"，展开 "**目录**"，然后选择 " **AccessAsUser**"。 单击 "**添加权限**"，将更新保存到应用中。
+2. 中转到 Azure Active Directory 应用程序，并手动添加向 Windows 管理中心注册的现有 Azure Active Directory 应用所需的权限。 为此，请**Settings**  >  **Azure**  >  **在 azure 中**中转到 "设置" "azure 视图"。 从 Azure 中的 " **应用注册** " 边栏选项卡中转到 " **API 权限**"，选择 " **添加权限**"。 向下滚动以选择 **Azure Active Directory 关系图**，选择 " **委托的权限**"，展开 " **目录**"，然后选择 " **AccessAsUser**"。 单击 " **添加权限** "，将更新保存到应用中。
 
 ### <a name="options-for-setting-up-azure-management-services"></a>用于设置 Azure 管理服务的选项
 
 Azure 管理服务（包括 Azure Monitor、Azure 更新管理和 Azure 安全中心）为本地服务器使用同一代理： Microsoft Monitoring Agent。 Azure 更新管理包含一组受支持的受支持区域，需要将 Log Analytics 工作区链接到 Azure 自动化帐户。 由于此限制，如果想要在 Windows 管理中心中设置多个服务，则必须首先设置 Azure 更新管理，然后设置 Azure 安全中心或 Azure Monitor。 如果已配置任何使用 Microsoft Monitoring Agent 的 Azure 管理服务，然后尝试使用 Windows 管理中心设置 Azure 更新管理，则在链接到 Microsoft Monitoring Agent 的现有资源支持 Azure 更新管理时，Windows 管理中心将仅允许配置 Azure 更新管理。 如果不是这种情况，则有两个选择：
 
-1. 请通过 "控制面板" > Microsoft Monitoring Agent 断开服务器与 Azure Monitor 或 Azure 安全) 中心等 ([的现有 Azure 管理解决方案的连接](/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)。 然后在 Windows 管理中心中设置 Azure 更新管理。 之后，你可以返回到通过 Windows 管理中心设置其他 Azure 管理解决方案，而不会出现问题。
-2. 可以[手动设置 azure 更新管理所需的 azure 资源](/azure/automation/automation-update-management)，然后在 Windows 管理中心) 外部[手动更新 Microsoft Monitoring Agent](/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) (，以添加与要使用的更新管理解决方案相对应的新工作区。
+1. 请通过 "控制面板" > Microsoft Monitoring Agent 断开服务器与 Azure Monitor 或 Azure 安全) 中心等 ([的现有 Azure 管理解决方案的连接](/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics) 。 然后在 Windows 管理中心中设置 Azure 更新管理。 之后，你可以返回到通过 Windows 管理中心设置其他 Azure 管理解决方案，而不会出现问题。
+2. 可以 [手动设置 azure 更新管理所需的 azure 资源](/azure/automation/automation-update-management) ，然后在 Windows 管理中心) 外部 [手动更新 Microsoft Monitoring Agent](/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) (，以添加与要使用的更新管理解决方案相对应的新工作区。
