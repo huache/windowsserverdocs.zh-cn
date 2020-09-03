@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 995a115b9e611500732e4674880ee4ca4b204e14
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 0f9499402a5788cd3dc9ad9cd262d65636f9284c
+ms.sourcegitcommit: 076504a92cddbd4b84bfcd89da1bf1c8c9e79495
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989118"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89427489"
 ---
 # <a name="obtain-certificates-for-hgs"></a>获取 HGS 证书
 
@@ -37,8 +37,8 @@ ms.locfileid: "87989118"
 密钥算法                 | RSA
 最小密钥大小              | 2048 位
 签名算法           | 建议： SHA256
-密钥使用情况                     | 数字签名*和*数据加密
-增强型密钥用法            | 服务器身份验证
+密钥使用情况                     | 数字签名 *和* 数据加密
+增强型密钥使用            | 服务器身份验证
 密钥续订策略            | 用相同的密钥续订。 续订包含不同密钥的 HGS 证书会阻止受防护的 Vm 启动。
 使用者名称                  | 建议：你的公司名称或 web 地址。 此信息将显示在 "防护数据文件" 向导中的 "VM 所有者"。
 
@@ -49,7 +49,7 @@ ms.locfileid: "87989118"
 每个 HGS 节点将需要访问相同的签名证书和加密证书。
 如果使用的是软件支持的证书，则可将证书导出到具有密码的 PFX 文件，并允许 HGS 管理证书。
 你还可以选择在每个 HGS 节点上的本地计算机证书存储中安装证书，并将指纹提供给 HGS。
-在[初始化 HGS 群集](guarded-fabric-initialize-hgs.md)主题中介绍了这两个选项。
+在 [初始化 HGS 群集](guarded-fabric-initialize-hgs.md) 主题中介绍了这两个选项。
 
 ## <a name="create-self-signed-certificates-for-test-scenarios"></a>为测试方案创建自签名证书
 
@@ -61,11 +61,11 @@ ms.locfileid: "87989118"
 ```powershell
 $certificatePassword = Read-Host -AsSecureString -Prompt "Enter a password for the PFX file"
 
-$signCert = New-SelfSignedCertificate -Subject "CN=HGS Signing Certificate"
+$signCert = New-SelfSignedCertificate -Subject "CN=HGS Signing Certificate" -KeyUsage DataEncipherment, DigitalSignature
 Export-PfxCertificate -FilePath .\signCert.pfx -Password $certificatePassword -Cert $signCert
 Remove-Item $signCert.PSPath
 
-$encCert = New-SelfSignedCertificate -Subject "CN=HGS Encryption Certificate"
+$encCert = New-SelfSignedCertificate -Subject "CN=HGS Encryption Certificate" -KeyUsage DataEncipherment, DigitalSignature
 Export-PfxCertificate -FilePath .\encCert.pfx -Password $certificatePassword -Cert $encCert
 Remove-Item $encCert.PSPath
 ```
@@ -82,8 +82,8 @@ SSL 证书属性 | 所需的值
 使用者名称             | 你的 HGS 群集名称 (称为分布式网络名称或虚拟计算机对象 FQDN) 。 这将是提供给的 HGS 服务名称与你的 `Initialize-HgsServer` hgs 域名的串联。
 使用者可选名称 | 如果你将使用不同的 DNS 名称来访问 HGS 群集 (例如，如果它位于负载均衡器) 后面，请确保在证书请求的 SAN 字段中包含这些 DNS 名称。
 
-在[配置第一个 hgs 节点](guarded-fabric-initialize-hgs.md)时，会介绍用于指定此证书的选项。
-你还可以在以后使用[HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps) cmdlet 添加或更改 SSL 证书。
+在 [配置第一个 hgs 节点](guarded-fabric-initialize-hgs.md)时，会介绍用于指定此证书的选项。
+你还可以在以后使用 [HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps) cmdlet 添加或更改 SSL 证书。
 
 ## <a name="next-step"></a>后续步骤
 
