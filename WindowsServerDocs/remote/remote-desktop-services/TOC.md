@@ -72,9 +72,9 @@
 #### [Windows 桌面客户端入门](clients/windowsdesktop.md)
 #### [适用于管理员的 Windows 桌面客户端](clients/windowsdesktop-admin.md)
 #### [Windows 桌面客户端中的新功能](clients/windowsdesktop-whatsnew.md)
-### Windows Store 客户端
-#### [Windows Store 客户端入门](clients/windows.md)
-#### [Windows Store 客户端中的新增功能](clients/windows-whatsnew.md)
+### Microsoft Store 客户端
+#### [Microsoft Store 客户端入门](clients/windows.md)
+#### [Microsoft Store 客户端中的新增功能](clients/windows-whatsnew.md)
 ### Android 客户端
 #### [Android 客户端入门](clients/remote-desktop-android.md)
 #### [Android 客户端中的新增功能](clients/android-whatsnew.md)
