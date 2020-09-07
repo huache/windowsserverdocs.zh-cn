@@ -8,12 +8,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 01/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e453e6e65dc0850b7e872f655eda28a6e319c5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a51e21877cc0e0e066765d9f73e74103f3a96245
+ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958045"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89282089"
 ---
 # <a name="remote-desktop-clients"></a>远程桌面客户端
 
@@ -28,7 +28,7 @@ ms.locfileid: "87958045"
 | 设备          | 获取应用                                                                                                  | 设置说明                                                                |
 |-----------------|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
 | Windows 桌面 | [Windows 桌面客户端](windowsdesktop.md#install-the-client)                                               | [Windows 桌面客户端入门](windowsdesktop.md) |
-| Windows 应用商店   | [Microsoft Store 中的 Windows 10 客户端](https://go.microsoft.com/fwlink/?LinkID=616709)                   | [Windows Store 客户端入门](windows.md)          |
+| Windows 应用商店   | [Microsoft Store 中的 Windows 10 客户端](https://go.microsoft.com/fwlink/?LinkID=616709)                   | [Microsoft Store 客户端入门](windows.md)          |
 | Android         | [Google Play 中的 Android 客户端](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)     | [Android 客户端入门](remote-desktop-android.md) |
 | iOS             | [iTunes 商店中的 iOS 客户端](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)     | [iOS 客户端入门](remote-desktop-ios.md)         |
 | macOS           | [iTunes 商店中的 macOS 客户端](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) | [macOS 客户端入门](remote-desktop-mac.md)       |
