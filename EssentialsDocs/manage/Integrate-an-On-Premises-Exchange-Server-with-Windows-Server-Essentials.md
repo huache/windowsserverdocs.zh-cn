@@ -7,12 +7,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cef547570c58c405ac563a1c2215feda120350f4
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.openlocfilehash: 7975f70d75a33549d0a3c7616b5260064d5cb323
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837876"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554420"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>将本地 Exchange Server 与 Windows Server Essentials 集成
 
@@ -25,7 +25,7 @@ ms.locfileid: "87837876"
 > [!NOTE]
 >  Exchange Server 2010 不支持在运行 Windows Server 2012 的计算机上进行安装。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
  在 Windows Server Essentials 网络上安装 Exchange Server 之前，请务必完成本节所述的任务。
 
 -   [设置一个运行 Windows Server Essentials 的服务器](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)
@@ -34,18 +34,18 @@ ms.locfileid: "87837876"
 
 -   [配置 Internet 域名](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_DomainNames)
 
-###  <a name="set-up-a-server-that-is-running-windows-server-essentials"></a><a name="BKMK_SetUpSBS8"></a>设置运行 Windows Server Essentials 的服务器
+###  <a name="set-up-a-server-that-is-running-windows-server-essentials"></a><a name="BKMK_SetUpSBS8"></a> 设置运行 Windows Server Essentials 的服务器
  必须已设置好一个运行 Windows Server Essentials 的服务器。 该服务器将作为运行 Exchange Server 的服务器的域控制器。 有关如何设置 Windows Server Essentials 的信息，请参阅[安装 Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)。
 
-###  <a name="prepare-a-second-server-on-which-to-install-exchange-server"></a><a name="BKMK_SecondServer"></a>准备要在其上安装 Exchange Server 的第二台服务器
+###  <a name="prepare-a-second-server-on-which-to-install-exchange-server"></a><a name="BKMK_SecondServer"></a> 准备要在其上安装 Exchange Server 的第二台服务器
  必须在运行 Windows Server 操作系统，且该版本的操作系统支持 Exchange Server 2010 或 Exchange Server 2013 的第二个服务器上安装 Exchange Server。 必须将第二个服务器加入 Windows Server Essentials 域。
 
- 有关如何将第二台服务器加入 Windows Server Essentials 域的信息，请参阅在 "[连接](../use/Get-Connected-in-Windows-Server-Essentials.md)" 中将第二台服务器加入到网络中。
+ 有关如何将第二台服务器加入 Windows Server Essentials 域的信息，请参阅在 " [连接](../use/Get-Connected-in-Windows-Server-Essentials.md)" 中将第二台服务器加入到网络中。
 
 > [!NOTE]
 >  Microsoft 不支持在运行 Windows Server Essentials 的服务器上安装 Exchange Server。
 
-###  <a name="configure-your-internet-domain-name"></a><a name="BKMK_DomainNames"></a>配置 Internet 域名
+###  <a name="configure-your-internet-domain-name"></a><a name="BKMK_DomainNames"></a> 配置 Internet 域名
  若要将运行 Exchange Server 的本地服务器与 Windows Server Essentials 集成，你必须为你的企业注册一个有效的 Internet 域名（如 *contoso.com*）。 必须与你的域名提供商合作创建 Exchange Server 所需的 DNS 资源记录。
 
  例如，如果你的公司 Internet 域名为 contoso.com，而且你希望使用 *mail.contoso.com* 的完全限定域名 (FQDN) 来引用运行 Exchange Server 的本地服务器，请与你的域名提供商合作创建下表中的 DNS 资源记录。
@@ -78,7 +78,7 @@ ms.locfileid: "87837876"
 
 2.  以管理员身份运行 Windows PowerShell。
 
-3.  在 Windows PowerShell 命令提示符下，键入**add-adgroupmember "Enterprise Admins" $env： username**，然后按 enter。
+3.  在 Windows PowerShell 命令提示符下，键入 **add-adgroupmember "Enterprise Admins" $env： username**，然后按 enter。
 
 #### <a name="to-install-exchange-server"></a>安装 Exchange Server 的步骤
 
@@ -362,7 +362,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
       **ARRConfig 配置-** _证书文件的证书路径_ **-** _Exchange Server_的主机名主机名
 
      > [!NOTE]
-     >  例如，**ARRConfig 配置-cert** _c:\temp\certificate.pfx_ **-主机名** _mail.contoso.com_
+     >  例如， **ARRConfig 配置-cert** _c:\temp\certificate.pfx_ **-主机名** _mail.contoso.com_
      >
      >  将 *mail.contoso.com* 替换为受此证书保护的域的名称。
 
@@ -370,7 +370,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
       **ARRConfig 配置-** _证书文件的证书路径_ **-** _exchange Server 的主机名主机名_ **-** _exchange server 的 targetserver 服务器名称_
 
-      例如，**ARRConfig 配置-cert** _c:\temp\certificate.pfx_ **-主机名** _mail.contoso.com_ **-targetserver** _ExchangeSvr_
+      例如， **ARRConfig 配置-cert** _c:\temp\certificate.pfx_ **-主机名** _mail.contoso.com_ **-targetserver** _ExchangeSvr_
 
       将 *mail.contoso.com* 替换为你的域名。 将 *ExchangeSvr* 替换为运行 Exchange Server 的服务器的名称。
 
@@ -426,9 +426,9 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
  如果禁用与本地 Exchange Server 的集成，你将不再能够使用 Windows Server Essentials 仪表板来查看、创建或管理 Exchange Server 邮箱。
 
 ### <a name="what-do-i-need-to-know-about-email-accounts"></a>关于电子邮件帐户，我需要知道哪些信息？
- 在服务器上配置托管电子邮件解决方案。 托管电子邮件提供商提供的解决方案（如 Microsoft Office 365）可以为网络用户提供个人电子邮件帐户。 当你在 Windows Server Essentials 中运行“添加用户帐户”向导来创建用户帐户时，该向导会尝试将用户帐户添加到可用的托管电子邮件解决方案。 同时，该向导将向用户分配电子邮件名称（别名），并设置邮箱的最大大小（配额）。 邮箱的最大大小根据使用的电子邮件提供商的不同而有所不同。 添加用户帐户之后，可以继续从用户的属性页管理邮箱别名和配额信息。 若要完全管理用户帐户和托管电子邮件提供商，请使用托管提供商的管理控制台。 可以从基于 Web 的门户，或从服务器仪表板中的选项卡访问提供商的管理控制台，具体取决于你的提供商。
+ 在服务器上配置托管电子邮件解决方案。 托管电子邮件提供商提供的解决方案（如 Microsoft 365）可以为网络用户提供个人电子邮件帐户。 当你在 Windows Server Essentials 中运行“添加用户帐户”向导来创建用户帐户时，该向导会尝试将用户帐户添加到可用的托管电子邮件解决方案。 同时，该向导将向用户分配电子邮件名称（别名），并设置邮箱的最大大小（配额）。 邮箱的最大大小根据使用的电子邮件提供商的不同而有所不同。 添加用户帐户之后，可以继续从用户的属性页管理邮箱别名和配额信息。 若要完全管理用户帐户和托管电子邮件提供商，请使用托管提供商的管理控制台。 可以从基于 Web 的门户，或从服务器仪表板中的选项卡访问提供商的管理控制台，具体取决于你的提供商。
 
- 在运行“添加用户帐户”向导时所提供的别名，将作为用户别名的建议名称发送给托管电子邮件提供商。 例如，如果用户别名为*FrankM*，则用户的电子邮件地址可能是 <em>FrankM@Contoso.com</em> 。
+ 在运行“添加用户帐户”向导时所提供的别名，将作为用户别名的建议名称发送给托管电子邮件提供商。 例如，如果用户别名为 *FrankM*，则用户的电子邮件地址可能是 <em>FrankM@Contoso.com</em> 。
 
  此外，在“添加用户帐户”向导中为用户设置的密码将是托管电子邮件解决方案中的用户初始密码。
 

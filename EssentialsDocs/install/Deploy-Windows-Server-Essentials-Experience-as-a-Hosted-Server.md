@@ -7,12 +7,12 @@ ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7dd1aa46786a3768127ba7934c8a8767d40e6654
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.openlocfilehash: 0f47c3870ad8254fb1c8cf63fc8f4fd055235d50
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838016"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554500"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>将 Windows Server Essentials 体验部署为托管服务器
 
@@ -46,43 +46,43 @@ ms.locfileid: "87838016"
 -   [支持信息](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Support)
 
 
-##  <a name="windows-server-essentials-experience-overview"></a><a name="BKMK_WSEEOverview"></a>Windows Server Essentials 体验概述
+##  <a name="windows-server-essentials-experience-overview"></a><a name="BKMK_WSEEOverview"></a> Windows Server Essentials 体验概述
  Windows Server Essentials 体验是 Windows Server 2012 R2 Standard 和 Windows Server 2012 R2 Datacenter 中可用的服务器角色。 当 Windows Server Essentials Experience 角色安装在运行 Windows Server 2012 R2 的服务器上时，客户可以利用 Windows Server Essentials 中提供的所有功能，而无需锁定和限制。 Windows Server Essentials 体验为中小型企业启用以下跨界解决方案：
 
--   **数据存储和保护**你可以将客户的 "存储数据" 存储在一个集中的位置，并通过备份服务器和客户端计算机在网络中 (小于 75) 来保护服务器和客户端数据。
+-   **数据存储和保护** 你可以将客户的 "存储数据" 存储在一个集中的位置，并通过备份服务器和客户端计算机在网络中 (小于 75) 来保护服务器和客户端数据。
 
--   **用户管理**可以通过简化的服务器仪表板来管理用户和组。 此外，与 Microsoft Azure Active Directory (Azure AD) 的集成可使用其域凭据为 Microsoft 联机服务 (、Office 365、Exchange Online 和 SharePoint Online) 提供简单的数据访问权限。
+-   **用户管理**可以通过简化的服务器仪表板来管理用户和组。 此外，通过与 Microsoft Azure Active Directory (Azure AD) 的集成，可以使用用户的域凭据，对 Microsoft 联机服务 (、Microsoft 365、Exchange Online 和 SharePoint Online) 进行简单的数据访问。
 
--   **服务集成**你可以将服务器与 Microsoft 联机服务 (（如 Office 365、SharePoint Online 和 Microsoft Azure 备份) 集成。 还可以将服务器与你的服务或由第三方提供商提供的服务集成。
+-   **服务集成** 你可以将服务器与 Microsoft 联机服务 (例如 Microsoft 365、SharePoint Online 和 Microsoft Azure 备份) 集成。 还可以将服务器与你的服务或由第三方提供商提供的服务集成。
 
 -   **随处访问**客户几乎可以从任何有 Internet 连接的位置通过使用几乎所有设备访问服务器、网络计算机和数据。 远程 Web 访问为用户提供了在访问应用程序和数据时简化的、触摸友好的浏览器体验。 "我的服务器" 应用使他们能够访问 Windows Phone 或 Microsoft Store 应用中的数据。
 
--   **媒体流式处理**如果在启用了 Windows Server Essentials Experience 的服务器上安装媒体包，则最终用户可以将音乐、视频和照片存储在共享文件夹中，然后从联网的计算机或远程 Web 访问访问这些媒体文件。
+-   **媒体流式处理** 如果在启用了 Windows Server Essentials Experience 的服务器上安装媒体包，则最终用户可以将音乐、视频和照片存储在共享文件夹中，然后从联网的计算机或远程 Web 访问访问这些媒体文件。
 
 -   **运行状况监视**你可以监视网络运行状况并获得自定义的运行状况报告。
 
-##  <a name="benefits-of-hosting-windows-server-essentials-experience"></a><a name="BKMK_Benefits"></a>托管 Windows Server Essentials 体验的优点
+##  <a name="benefits-of-hosting-windows-server-essentials-experience"></a><a name="BKMK_Benefits"></a> 托管 Windows Server Essentials 体验的优点
   Windows Server Essentials 体验是 Windows Server 中的一个角色，因此你可以重复使用 Windows Server 中的现有部署和管理框架来部署和配置 Windows Server Essentials 体验角色。 托管 Windows Server Essentials 体验角色具有以下优点：
 
--   **简化的部署**只需打开 Windows Server Essentials 体验角色，一些最常用的角色和功能就会启用，并配置为适用于中小型企业的最佳做法。 可以自定义 Windows Server Essentials 功能，或隐藏某些本地功能。 如果使用 Windows Azure Pack，则可以下载 windows server 2012 R2 上 Windows Server Essentials 体验的库模板。
+-   **简化的部署** 只需打开 Windows Server Essentials 体验角色，一些最常用的角色和功能就会启用，并配置为适用于中小型企业的最佳做法。 可以自定义 Windows Server Essentials 功能，或隐藏某些本地功能。 如果使用 Windows Azure Pack，则可以下载 windows server 2012 R2 上 Windows Server Essentials 体验的库模板。
 
 -   **简化仪表板** Windows Server Essentials 仪表板简化了常见任务，如管理服务器文件夹、服务器存储、备份和还原、用户或组帐户、设备、远程访问和电子邮件。 中小型企业客户可以执行日常管理任务，而不是呼叫服务台来寻求技术支持。
 
 -   **扩展性** Windows Server Essentials 仪表板和 Windows Server Essentials 连接器软件都是可扩展的。 你可以添加自己的品牌和服务集成，以便你的客户在所有有关其服务器和服务内容中都有一个入口点。
 
--   **监视**新版本的 System Center 监视包可用来监视并管理运行 Windows Server Essentials 的多台服务器。 若要下载管理包，请参阅[适用于 Windows Server Essentials 的 System Center 管理包](https://www.microsoft.com/download/details.aspx?id=40809)。
+-   **监视**新版本的 System Center 监视包可用来监视并管理运行 Windows Server Essentials 的多台服务器。 若要下载管理包，请参阅 [适用于 Windows Server Essentials 的 System Center 管理包](https://www.microsoft.com/download/details.aspx?id=40809)。
 
-##  <a name="supported-deployment-options"></a><a name="BKMK_SupportedDeployment"></a>支持的部署选项
+##  <a name="supported-deployment-options"></a><a name="BKMK_SupportedDeployment"></a> 支持的部署选项
   Windows Server Essentials 体验可以作为域控制器部署到新的 Active Directory 环境中;也可以将其作为域成员部署到现有 Active Directory 环境中。
 
  建议首先部署 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter，然后安装 Windows Server Essentials 体验角色。 利用此部署方法，你可以获得 Windows Server Essentials edition 的所有功能，而无需锁和限制。
 
 
- 有关安装带有 Windows Server Essentials 体验角色的 Windows Server 2012 R2 的详细信息，请参阅[安装和配置 Windows Server essentials](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+ 有关安装带有 Windows Server Essentials 体验角色的 Windows Server 2012 R2 的详细信息，请参阅 [安装和配置 Windows Server essentials](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 
 
 
-##  <a name="supported-network-topologies"></a><a name="BKMK_SupportedToplogy"></a>支持的网络拓扑
+##  <a name="supported-network-topologies"></a><a name="BKMK_SupportedToplogy"></a> 支持的网络拓扑
  若要从漫游客户端使用 Windows Server Essentials 体验，应启用 VPN。 若要允许从漫游客户端远程访问到服务器，你需要在服务器上打开端口 443 和端口 80。
 
  以下是两个典型的服务器端网络拓扑，同时介绍了如何配置 VPN 和远程 Web 访问：
@@ -139,7 +139,7 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 > [!NOTE]
 >  如果在客户接管服务器之前不能提供 VPN 连接，请确保服务器端口 3389 可通过 Internet 访问，以便客户可以使用远程桌面协议连接到服务器并对其进行配置。
 
-##  <a name="customize-the-image-of-windows-server-essentials-experience-role"></a><a name="BKMK_CustomizeImage"></a>自定义 Windows Server Essentials 体验角色的映像
+##  <a name="customize-the-image-of-windows-server-essentials-experience-role"></a><a name="BKMK_CustomizeImage"></a> 自定义 Windows Server Essentials 体验角色的映像
  在配置 Windows Server Essentials 体验角色之前可以自定义映像。 若要了解标准 Windows Server Sysprep 过程，请参阅 [Windows 评估和部署工具包](/previous-versions/windows/hh825420(v=win.10))。 在使用 Sysprep 准备好映像后，可以使用它或将它封装到 Install.wim 中，以供进行新部署。
 
  如果你使用的是虚拟机管理器，则可以使用正在运行的实例来创建模板。 此过程使用 Sysprep 准备实例，并关闭计算机。 将模板存储在库中之后，可以根据情况使用它。
@@ -162,12 +162,12 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 
   如果想要控制列出的每个功能的行为，你可以为每个功能设置相应的注册表项。 有关如何设置注册表项的信息，请参考 [在 Windows Server 2012 R2 中自定义和部署 Windows Server Essentials](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))
 
-##  <a name="automate-the-deployment-of-windows-server-essentials-experience"></a><a name="BKMK_AutomateDeployment"></a>自动部署 Windows Server Essentials 体验
+##  <a name="automate-the-deployment-of-windows-server-essentials-experience"></a><a name="BKMK_AutomateDeployment"></a> 自动部署 Windows Server Essentials 体验
  若要自动执行部署，你需要先部署操作系统，然后安装 Windows Server Essentials 体验角色。
 
--   若要自动部署 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter，请按照[Windows 评估和部署工具包](/previous-versions/windows/hh825420(v=win.10))中的说明进行操作。
+-   若要自动部署 Windows Server 2012 R2 Standard 或 Windows Server 2012 R2 Datacenter，请按照 [Windows 评估和部署工具包](/previous-versions/windows/hh825420(v=win.10))中的说明进行操作。
 
--   若要了解如何使用 Windows PowerShell 安装 Windows Server Essentials 体验角色，请参阅[安装和配置 Windows Server essentials](/previous-versions/windows/it-pro/windows-server-essentials-sbs/dn281793(v=ws.11))。
+-   若要了解如何使用 Windows PowerShell 安装 Windows Server Essentials 体验角色，请参阅 [安装和配置 Windows Server essentials](/previous-versions/windows/it-pro/windows-server-essentials-sbs/dn281793(v=ws.11))。
 
 > [!NOTE]
 >  确保主机虚拟机和 Windows Server Essentials 体验的时区设置相同。 否则，可能会遇到一些错误。 其中包括：服务器的初始配置可能不会对证书相关任务成功，证书可能在安装 Windows Server Essentials Experience 角色后的几小时内不起作用，并且设备信息将不会正确更新。
@@ -183,8 +183,8 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
  开始进行初始配置后，可以使用 **Get-WssConfigurationStatus** 检查初始配置状态，当状态为“PendingReboot”**** 时，可以重新启动服务器。
 
-##  <a name="migrate-data-from-windows-small-business-server-to-windows-server-essentials-experience"></a><a name="BKMK_Migrate"></a>将数据从 Windows Small Business Server 迁移到 Windows Server Essentials 体验
- 你可以将数据从运行 Windows Small Business Server 2011、Windows Small Business Server 2008、Windows Small Business Server 2003 或 Windows Server Essentials 的服务器迁移到运行 Windows Server Essentials 的服务器。 查看针对本地2migrations 的[迁移到 Windows Server Essentials](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)迁移指南，并根据你的托管环境进行必要的自定义。
+##  <a name="migrate-data-from-windows-small-business-server-to-windows-server-essentials-experience"></a><a name="BKMK_Migrate"></a> 将数据从 Windows Small Business Server 迁移到 Windows Server Essentials 体验
+ 你可以将数据从运行 Windows Small Business Server 2011、Windows Small Business Server 2008、Windows Small Business Server 2003 或 Windows Server Essentials 的服务器迁移到运行 Windows Server Essentials 的服务器。 查看针对本地2migrations 的 [迁移到 Windows Server Essentials](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md) 迁移指南，并根据你的托管环境进行必要的自定义。
 
 > [!NOTE]
 >  建议将源服务器和目标服务器放在同一个子网内。 如果无法放在同一子网内，请确保：
@@ -192,9 +192,9 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 > - 源服务器和目标服务器可以访问彼此的 "存储内部 DNS 名称"。
 >   -   所有必要的端口都已打开。
 
- 迁移完成后，你可以升级许可证以删除锁定和限制。 有关详细信息，请参阅[从 Windows Server Essentials 转换到 Windows server 2012 Standard](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj247582(v=ws.11))。
+ 迁移完成后，你可以升级许可证以删除锁定和限制。 有关详细信息，请参阅 [从 Windows Server Essentials 转换到 Windows server 2012 Standard](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj247582(v=ws.11))。
 
-##  <a name="perform-common-tasks-by-using-windows-powershell"></a><a name="BKMK_PowerShell"></a>使用 Windows PowerShell 执行常见任务
+##  <a name="perform-common-tasks-by-using-windows-powershell"></a><a name="BKMK_PowerShell"></a> 使用 Windows PowerShell 执行常见任务
  本部分介绍一些可以通过使用 Windows PowerShell 执行的常见任务。
 
 ### <a name="enable-remote-web-access"></a>启用远程 Web 访问
@@ -230,10 +230,10 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
  此命令将在指定位置添加一个名为 MyTestFolder 的服务器文件夹。
 
-##  <a name="email-integration-with-windows-server-essentials"></a><a name="BKMK_EmailIntegration"></a>Windows Server Essentials 的电子邮件集成
- 你可以将 Windows Server Essentials 体验与 Office 365 或托管 Exchange Server 集成。 如果你希望你的客户使用托管的电子邮件，则需要开发外接程序以将 Windows Server Essentials 体验与托管的电子邮件解决方案集成。 有关详细信息，请参阅 [Windows Server Essentials SDK](/previous-versions/windows/server-essentials/gg513877(v=msdn.10))。
+##  <a name="email-integration-with-windows-server-essentials"></a><a name="BKMK_EmailIntegration"></a> Windows Server Essentials 的电子邮件集成
+ 可以将 Windows Server Essentials 体验与 Microsoft 365 或托管的 Exchange Server 集成。 如果你希望你的客户使用托管的电子邮件，则需要开发外接程序以将 Windows Server Essentials 体验与托管的电子邮件解决方案集成。 有关详细信息，请参阅 [Windows Server Essentials SDK](/previous-versions/windows/server-essentials/gg513877(v=msdn.10))。
 
-##  <a name="monitor-and-manage-by-using-native-tools"></a><a name="BKMK_Monitoring"></a>使用本机工具进行监视和管理
+##  <a name="monitor-and-manage-by-using-native-tools"></a><a name="BKMK_Monitoring"></a> 使用本机工具进行监视和管理
  本部分讨论在 Windows Server 2012 R2 中提供的可用于监视和管理服务器的本机工具。
 
 ### <a name="group-policy"></a>组策略
@@ -243,7 +243,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 >  在托管环境中，用户配置文件的文件夹重定向一旦启用，当数据量很大时就有可能增加最终用户的登录时间。
 
 ### <a name="system-center-monitoring-pack"></a>System Center 监视包
- 适用于 Windows Server Essentials 体验的 System Center 监视包将监视运行状况警报系统，以帮助你管理运行 Windows Server Essentials 的大量服务器，这些服务器专用于小型企业组织。 有关详细信息，请参阅[适用于 Windows Server Essentials 的 System Center 管理包](https://www.microsoft.com/download/details.aspx?id=40809)。
+ 适用于 Windows Server Essentials 体验的 System Center 监视包将监视运行状况警报系统，以帮助你管理运行 Windows Server Essentials 的大量服务器，这些服务器专用于小型企业组织。 有关详细信息，请参阅 [适用于 Windows Server Essentials 的 System Center 管理包](https://www.microsoft.com/download/details.aspx?id=40809)。
 
 ### <a name="backup-and-restore"></a>备份和还原
   带有 Windows Server Essentials 体验的 windows Server 2012 R2 允许你备份网络中的服务器和客户端计算机。
@@ -258,7 +258,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
 -   **异地备份** 允许你定期地将服务器数据备份到基于云的服务。 您可以下载并安装适用于 Windows Server Essentials 的 Microsoft Azure 备份集成模块，以利用 Microsoft 提供的 Azure 备份。
 
-     有关详细信息，请参阅[管理服务器备份](../manage/Manage-Server-Backup-in-Windows-Server-Essentials.md)中的将 Windows Azure Backup 与 Windows Server Essentials 集成部分。
+     有关详细信息，请参阅 [管理服务器备份](../manage/Manage-Server-Backup-in-Windows-Server-Essentials.md)中的将 Windows Azure Backup 与 Windows Server Essentials 集成部分。
 
      如果你或你的用户希望使用其他云服务，你应该考虑以下各项：
 
@@ -293,7 +293,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 ### <a name="storage-management"></a>存储管理
  存储空间允许你将分散的硬盘的物理存储容量集合起来，以动态地增加硬盘，并根据指定的修复能力级别创建数据卷。 可以在主机上或虚拟机上执行此操作。 如果你希望在运行 Windows Server Essentials 的虚拟机中隐藏此功能，请按照 [自定义和部署 Windows Server 2012 R2 中的 Windows Server Essentials](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))中的说明进行操作。
 
-##  <a name="test-scenarios"></a><a name="BKMK_Scenarios"></a>测试方案
+##  <a name="test-scenarios"></a><a name="BKMK_Scenarios"></a> 测试方案
  从托管的角度来看，建议你测试以下方案：
 
 
@@ -306,7 +306,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 -   [客户端体验](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ClientXP)
 
 
-###  <a name="server-deployment"></a><a name="BKMK_ServerDeploy"></a>服务器部署
+###  <a name="server-deployment"></a><a name="BKMK_ServerDeploy"></a> 服务器部署
  你可以测试以下服务器部署方案：
 
 -   在实验室环境中将运行 Windows Server 2012 R2 的服务器部署为域控制器，然后安装 Windows Server Essentials 体验角色。
@@ -319,7 +319,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
 -   将运行 Windows Small Business Server 的本地服务器迁移到运行 Windows Server Essentials 的托管服务器。
 
-###  <a name="server-configuration"></a><a name="BKMK_ServerConfig2"></a>服务器配置
+###  <a name="server-configuration"></a><a name="BKMK_ServerConfig2"></a> 服务器配置
  你可以测试以下服务器配置方案：
 
 -   配置随处访问（虚拟专用网络、远程 Web 访问和 DirectAccess）。
@@ -332,13 +332,13 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
 -   （如需要）配置并管理存储空间。
 
--   （如需要）配置电子邮件解决方案集成（Office 365 和托管的 Exchange Server）。
+-    (（如果适用）) 配置电子邮件解决方案集成 (Microsoft 365 和托管 Exchange Server) 。
 
 -   （如需要）配置与其他 Microsoft Online Services 的集成。
 
 -   （如需要）配置 Media Server（媒体服务器）。
 
-###  <a name="server-management"></a><a name="BKMK_ServerManage"></a>服务器管理
+###  <a name="server-management"></a><a name="BKMK_ServerManage"></a> 服务器管理
  你可以测试以下服务器管理方案：
 
 -   管理用户和组。
@@ -351,7 +351,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
 -   操作系统发生损坏时，配置服务器恢复。
 
-###  <a name="client-experience"></a><a name="BKMK_ClientXP"></a>客户端体验
+###  <a name="client-experience"></a><a name="BKMK_ClientXP"></a> 客户端体验
  可以测试以下最终用户方案：
 
 -   通过 Internet 部署客户端（PC 或 Mac 操作系统）。
@@ -366,7 +366,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
 -   （如需要）验证电子邮件集成体验。
 
-##  <a name="support-information"></a><a name="BKMK_Support"></a>支持信息
+##  <a name="support-information"></a><a name="BKMK_Support"></a> 支持信息
  可以下载 Windows Server Essentials 软件开发工具包 (SDK) 和 Windows Server Essentials 评估和部署工具包 (ADK) ：
 
 -   [Windows Server Essentials 软件开发工具包](/previous-versions/windows/server-essentials/gg513877(v=msdn.10))SDK

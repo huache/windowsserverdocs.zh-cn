@@ -7,19 +7,19 @@ ms.assetid: 9bd191d6-ecc5-4230-a88e-f3fc281cb956
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c1d6d9b056c4ccc5b6961023e1f0c22034321960
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 807aacc5039bf90ea4dd7c7859c232d8c8b3011a
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181573"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554340"
 ---
 # <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>添加 Microsoft Online Services 合作伙伴协议记录的合作伙伴信息
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 ##  <a name="BKMK_3rdLevelDomanNames"></a>
- 如果你是 Office 365 的 Microsoft 联机服务合作伙伴协议（MOSPA）合作伙伴，则为了确保你在通过 Office 365 集成模块从 Windows Server Essentials 发起订阅请求时得到正确补偿，你需要创建一个包含记录的合作伙伴标识（POR ID）的注册表项。 以下信息将通过 Office 365 注册 URL 读取并传达给服务提供商。
+ 如果你是适用于 Microsoft 365 的 Microsoft 联机服务合作伙伴协议 (MOSPA) Partner for，若要确保在通过 Microsoft 365 集成模块从 Windows Server Essentials 发起订阅请求时正确补偿，你需要创建一个注册表项，其中包含 POR ID (的记录合作伙伴标识。 通过 Microsoft 365 注册 Url 读取以下信息并将其传递给服务提供商。
 
 -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO
 

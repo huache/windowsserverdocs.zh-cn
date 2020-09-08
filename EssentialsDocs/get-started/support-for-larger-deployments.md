@@ -7,12 +7,12 @@ ms.assetid: 07d0c4c6-3e92-4969-82b8-105e46ab8d97
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d98ab8b203bc73da4129d63b5a2b7518742a3667
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9013d63d0fbedfd679b8d717b9501f4af567b6f5
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181643"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554410"
 ---
 # <a name="support-for-larger-deployments"></a>对于更大部署的支持
 
@@ -35,7 +35,7 @@ Windows server 2012 R2 Essentials 只支持每个服务器一个域，这是必�
 
 ## <a name="support-for-multiple-domain-controllers"></a>支持多个域控制器
 
- Windows Server Essentials 2012 R2 会阻止利用 Azure Active Directory 的任何服务，例如 Office 365，其中部署了多个域控制器。 原因是本地域控制器与 Azure Active Directory 之间的帐户和密码同步可能会导致帐户凭据包含不同步的密码。此限制已在 Windows Server 2016 Essentials 中删除。
+ Windows Server Essentials 2012 R2 会阻止利用 Azure Active Directory 的任何服务，如 Microsoft 365，其中部署了多个域控制器。 原因是本地域控制器与 Azure Active Directory 之间的帐户和密码同步可能会导致帐户凭据包含不同步的密码。此限制已在 Windows Server 2016 Essentials 中删除。
 
 ## <a name="ability-to-specify-a-designated-domain-controller"></a>指定指定域控制器的能力
 
@@ -50,7 +50,7 @@ Windows server 2012 R2 Essentials 只支持每个服务器一个域，这是必�
 
 Windows Server 2012 R2 Essentials 中受支持的用户和设备的最大数量分别为25和50。 随着 Windows Server Essentials Experience 服务器角色的引入，此限制增加到了100用户和200设备。
 
-Windows Server 2016 Essentials 支持500用户和500设备。 这样做可能是对提供程序框架和对象列表控件的更新，以便它们缓存并快速呈现大型用户和设备对象列表。 此外，还添加了搜索和筛选功能，以快速查找你可能要查找的用户或设备（请参阅图5-2）。 你将在**Windows Server Essentials 仪表板**、**远程 Web 访问**、Windows 和 Windows Phone 存储**我的服务器**应用程序中找到搜索和筛选功能。
+Windows Server 2016 Essentials 支持500用户和500设备。 这样做可能是对提供程序框架和对象列表控件的更新，以便它们缓存并快速呈现大型用户和设备对象列表。 此外，还添加了搜索和筛选功能，可快速查找你可能正在查找的用户或设备 (参见图 5-2) 。 你将在 **Windows Server Essentials 仪表板**、 **远程 Web 访问**、Windows 和 Windows Phone 存储 **我的服务器** 应用程序中找到搜索和筛选功能。
 
 ![显示使用 Windows Server Essentials 仪表板的搜索功能以搜索字符串 "d5c" 的屏幕截图。 此搜索的结果包括两个文件和文件夹，以及两个用户。](media/larger-deployments-2.PNG)
 

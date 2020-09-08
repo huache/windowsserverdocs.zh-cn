@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: 48d9d564c7badf8ea34c77ce7004d0ce642b78cb
-ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
+ms.openlocfilehash: d08e969d0296c9ca1efc34bfd0ac6ad7e42519cf
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89057579"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554540"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -30,7 +30,7 @@ robocopy <source> <destination> [<file>[ ...]] [<options>]
 robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 |--|--|
@@ -61,8 +61,8 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 | /mir | 镜像目录树 (等效于 **/e** plus **/purge**) 。 将此选项与 **/e** 选项和目标目录一起使用将覆盖目标目录安全设置。 |
 | /mov | 移动文件，并在复制后从源中删除它们。 |
 | /move | 移动文件和目录，并在复制后从源中删除这些文件和目录。 |
-| /a +： [RASHCNET] | 将指定的属性添加到复制的文件。 |
-| /a-： [RASHCNET] | 从复制的文件中删除指定的属性。 |
+| /a +： [RASHCNET] | 将指定的属性添加到复制的文件。  此选项的有效值为： <ul><li>**R** -只读</li><li>**A** -存档</li><li>**S** -系统</li><li>**H** -隐藏</li><li>**C** -压缩</li><li>**N** -未索引内容</li><li>**E** -已加密</li><li>**T** -临时</li></ul> |
+| /a-： [RASHCNET] | 从复制的文件中删除指定的属性。 此选项的有效值为： <ul><li>**R** -只读</li><li>**A** -存档</li><li>**S** -系统</li><li>**H** -隐藏</li><li>**C** -压缩</li><li>**N** -未索引内容</li><li>**E** -已加密</li><li>**T** -临时</li></ul> |
 | /create | 仅创建目录树和长度为零的文件。 |
 | /fat | 仅使用8.3 的字符长度 FAT 文件名创建目标文件。 |
 | /256 | 关闭对长度超过256个字符的路径的支持。 |
@@ -89,8 +89,8 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 |--|--|
 | /a | 仅复制为其设置了 **存档** 属性的文件。 |
 | /m | 仅复制设置了 **存档** 属性的文件，并重置 **存档** 属性。 |
-| i`[RASHCNETO]` | 仅包括为其设置了任何指定属性的文件。 |
-| xa`[RASHCNETO]` | 排除为其设置了任何指定属性的文件。 |
+| i`[RASHCNETO]` | 仅包括为其设置了任何指定属性的文件。  此选项的有效值为： <ul><li>**R** -只读</li><li>**A** -存档</li><li>**S** -系统</li><li>**H** -隐藏</li><li>**C** -压缩</li><li>**N** -未索引内容</li><li>**E** -已加密</li><li>**T** -临时</li><li>**O** -脱机</li></ul> |
+| xa`[RASHCNETO]` | 排除为其设置了任何指定属性的文件。 此选项的有效值为： <ul><li>**R** -只读</li><li>**A** -存档</li><li>**S** -系统</li><li>**H** -隐藏</li><li>**C** -压缩</li><li>**N** -未索引内容</li><li>**E** -已加密</li><li>**T** -临时</li><li>**O** -脱机</li></ul> |
 | /xf `<filename>[ ...]` | 排除匹配指定名称或路径的文件。 支持 (**&#42;** 和 **？**) 的通配符。 |
 | /xd `<directory>[ ...]` | 排除匹配指定名称和路径的目录。 |
 | /xc | 排除已更改的文件。 |

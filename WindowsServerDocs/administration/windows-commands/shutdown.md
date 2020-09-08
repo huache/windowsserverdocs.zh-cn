@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44ee776ec2ec199fe39cfd17a05dfc3b8ba4502c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f83788b4d8e8f92ea1375b9a0f245f9bfa63bc85
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036445"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554380"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -23,7 +23,7 @@ ms.locfileid: "89036445"
 ## <a name="syntax"></a>语法
 
 ```
-shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c comment]]
+shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c "descriptive comment"]]
 ```
 
 ### <a name="parameters"></a>参数
@@ -45,25 +45,25 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |/c \<Comment>|让你可以对关闭原因作详细注释。 必须首先使用 **/d** 选项提供原因。 必须用引号将注释引起来。 最多可使用 511 个字符。|
 |/?|在命令提示符下显示帮助，其中包含在本地计算机上定义的主要原因和次要原因的列表。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
--   必须为用户分配 " **关闭系统** 用户" 权限，以便关闭使用 **shutdown** 命令的本地或远程管理的计算机。
--   用户必须是 Administrators 组的成员，才能批注本地或远程管理的计算机意外关闭。 如果目标计算机已加入域，则 Domain Admins 组的成员也许能够执行此过程。 有关详细信息，请参阅：
-    -   [默认本地组](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
-    -   [默认组](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
--   如果希望一次关闭多台计算机，则可以使用脚本为每台计算机调用 " **关闭** "，也可以使用 **shutdown** **/I** 来显示 "远程关机" 对话框。
--   如果指定主要和次要原因代码，则必须先在计划使用原因的每台计算机上定义这些原因代码。 如果目标计算机上未定义原因代码，则关闭事件跟踪程序无法记录正确的原因文本。
--   请记住，使用 **p：** 参数指示关闭已计划。 省略 **p：** 指示关闭是不计划的。 如果键入 **p：** ，后跟计划外关机的原因代码，则该命令不会执行关闭。 相反，如果省略 **p：** 并键入计划关闭的原因代码，则该命令不会执行关闭。
+- 必须为用户分配 " **关闭系统** 用户" 权限，以便关闭使用 **shutdown** 命令的本地或远程管理的计算机。
+- 用户必须是 Administrators 组的成员，才能批注本地或远程管理的计算机意外关闭。 如果目标计算机已加入域，则 Domain Admins 组的成员也许能够执行此过程。 有关详细信息，请参见:
+    - [默认本地组](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
+    - [默认组](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
+- 如果希望一次关闭多台计算机，则可以使用脚本为每台计算机调用 " **关闭** "，也可以使用 **shutdown** **/I** 来显示 "远程关机" 对话框。
+- 如果指定主要和次要原因代码，则必须先在计划使用原因的每台计算机上定义这些原因代码。 如果目标计算机上未定义原因代码，则关闭事件跟踪程序无法记录正确的原因文本。
+- 请记住，使用 **p：** 参数指示关闭已计划。 省略 **p：** 指示关闭是不计划的。 如果键入 **p：** ，后跟计划外关机的原因代码，则该命令不会执行关闭。 相反，如果省略 **p：** 并键入计划关闭的原因代码，则该命令不会执行关闭。
 
 ## <a name="examples"></a>示例
 
 强制应用程序在一分钟的延迟后关闭并重新启动本地计算机，原因是应用程序：维护 (计划) ，注释重新配置 myapp.exe 类型：
 ```
-shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
+shutdown /r /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```
 若要重新启动 \\ \\ 具有相同参数的远程计算机服务器名称，请键入：
 ```
-shutdown /r /m \\servername /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
+shutdown /r /m \\servername /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```
 
 ## <a name="additional-references"></a>其他参考
