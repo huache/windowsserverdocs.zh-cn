@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 11/15/2019
+ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 80663da151137d093634c36a25d4d061c8038e60
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 18142988108e1eafe59ca7fd83a29dd4dfb87720
+ms.sourcegitcommit: 664ed9bb0bbac2c9c0727fc2416d8c437f2d5cbe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961861"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89472027"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web 客户端中的新增功能
 
@@ -20,6 +20,17 @@ ms.locfileid: "87961861"
 
 > [!NOTE]
 > 我们为 Web 客户端更改了版本控制系统。 从版本 1.0.18.0 开始，所有 Web 客户端发行版本都会包含编号（采用“W.X.Y.Z”的格式）。 远程桌面 Web 客户端的发行版号会始终以 0 结尾（例如 W.X.Y.0）。 每个 Windows 虚拟桌面 Web 客户端发行版都会更改最后一个数字，直到下一个远程桌面 Web 客户端发行版（例如 1.0.18.1）。
+
+## <a name="updates-for-10220"></a>针对 1.0.22.0 的更新
+*发布日期：2020/9/2*
+
+- 用户现可移动最小化菜单。
+- 改进了对 4K 和超宽显示屏的支持，解决了复制大量数据导致会话崩溃的问题。
+- 改进了对在远程会话中使用输入方法编辑器的支持。 若要详细了解如何将输入方法编辑器与 Web 客户端结合使用，请查看[使用 Web 客户端连接到 Windows 虚拟桌面](/azure-docs/articles/virtual-desktop/connect-web.md)。
+- 更改了“所有资源”页面 UI。
+- 解决了导致 Web 客户端返回一般协议错误的多个连接序列失败的问题。
+- 解决了特定键序列未得到适当处理的键盘输入问题。
+- 辅助功能改进。
 
 ## <a name="updates-for-version-10210"></a>针对版本 1.0.21.0 的更新
 *发布日期：2019 年 11 月 15 日*

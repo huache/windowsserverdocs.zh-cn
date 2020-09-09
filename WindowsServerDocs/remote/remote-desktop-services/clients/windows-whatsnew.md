@@ -1,5 +1,5 @@
 ---
-title: Windows 应用商店客户端中的新增功能
+title: Microsoft Store 客户端中的新增功能
 description: 了解适用于 Windows 应用商店的远程桌面客户端的最新更改
 ms.topic: article
 author: heidilohr
@@ -7,14 +7,14 @@ manager: lizross
 ms.author: helohr
 ms.date: 08/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 56e2a5f91983f8fe64382e162ecf18b30e75b41d
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: f33c60cb318466b6dbbff2edb3ab8efa7bb4be78
+ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938787"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89282099"
 ---
-# <a name="whats-new-in-the-windows-store-client"></a>Windows 应用商店客户端中的新增功能
+# <a name="whats-new-in-the-microsoft-store-client"></a>Microsoft Store 客户端中的新增功能
 
 我们会定期更新 [Microsoft Store 客户端](windows.md)，添加新功能并修复问题。 可在下面找到最新更新。
 

@@ -1,5 +1,5 @@
 ---
-title: Windows 应用商店客户端入门
+title: Microsoft Store 客户端入门
 description: 适用于 Windows 应用商店的远程桌面客户端的基本设置步骤。
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
@@ -8,14 +8,14 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e32c05aaafb941958e025253e67c856d81257d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c28ccbe0cfd49f1cf774031b002bf7b6142d0a00
+ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990366"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89282109"
 ---
-# <a name="get-started-with-the-windows-store-client"></a>Windows 应用商店客户端入门
+# <a name="get-started-with-the-microsoft-store-client"></a>Microsoft Store 客户端入门
 
 >适用于：Windows 10
 
