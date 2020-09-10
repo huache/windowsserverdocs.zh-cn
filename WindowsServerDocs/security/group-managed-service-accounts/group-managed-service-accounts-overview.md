@@ -3,16 +3,16 @@ title: Group Managed Service Accounts Overview
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: cef0693c-f861-48a7-a1c0-8d1bc06143ce
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 09405b940e9fd862372fe80c4a5194caa205e5ea
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: ce51e1f1dab3940154ecee6b2743c39e2ff654b5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991503"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638046"
 ---
 # <a name="group-managed-service-accounts-overview"></a>Group Managed Service Accounts Overview
 
@@ -58,7 +58,7 @@ Gmsa 不适用于 Windows Server 2012 之前的 Windows 操作系统。
 |规划|目前不可用|
 |**部署**|目前不可用|
 |**操作**|[Active Directory 中的托管服务帐户](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378925(v=ws.10))|
-|**故障排除**|目前不可用|
+|**疑难解答**|目前不可用|
 |**Evaluation**|[与组托管服务帐户入门](getting-started-with-group-managed-service-accounts.md)|
 |**工具和设置**|[Active Directory 域服务中的托管服务帐户](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378925(v=ws.10))|
 |**社区资源**|[托管服务帐户：了解、实现、最佳做法和故障排除](/archive/blogs/askds/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting)|

@@ -3,16 +3,16 @@ title: setlocal
 description: Setlocal 的参考文章，用于开始批处理文件中的环境变量的本地化。
 ms.topic: reference
 ms.assetid: e4e4b6d3-3f1a-4851-a782-25ee2470e16e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b82b6027dfe10817a78708c426f934d6543da345
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 807bcb1d5694617f9632e88a4bc200a714048cc9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023401"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639461"
 ---
 # <a name="setlocal"></a>setlocal
 
@@ -26,7 +26,7 @@ ms.locfileid: "89023401"
 setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabledelayedexpansion]
 ```
 
-## <a name="arguments"></a>自变量
+## <a name="arguments"></a>参数
 
 |参数|说明|
 |--------|-----------|
@@ -36,7 +36,7 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 |disabledelayedexpansion|在遇到匹配的 **endlocal** 命令之前，禁用延迟的环境变量扩展，而不考虑在运行 **setlocal** 命令之前的设置。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   使用 **setlocal**
 

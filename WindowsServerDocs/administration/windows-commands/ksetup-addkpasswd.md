@@ -3,16 +3,16 @@ title: ksetup addkpasswd
 description: Ksetup addkpasswd 命令的参考文章，用于为领域添加 Kerberos 密码 (kpasswd) 服务器地址。
 ms.topic: reference
 ms.assetid: d3196995-1b38-48ff-ba08-911cfab77317
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 62123fc8a04006078c42894ee53f11346dec0e59
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 21cbbfeeedccc54dc81121502a858e9418bec07d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037945"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639736"
 ---
 # <a name="ksetup-addkpasswd"></a>ksetup addkpasswd
 
@@ -31,7 +31,7 @@ ksetup /addkpasswd <realmname> [<kpasswdname>]
 | `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM，在**ksetup**运行时，将作为默认领域或**领域 =** 列出。 |
 | `<kpasswdname>` | 指定 Kerberos 密码服务器。 它被表述为不区分大小写的完全限定的域名，例如 mitkdc.contoso.com。 如果省略了 KDC 名称，则可以使用 DNS 来查找 Kdc。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果工作站将对其进行身份验证的 Kerberos 领域支持 Kerberos 更改密码协议，则可以将运行 Windows 操作系统的客户端计算机配置为使用 Kerberos 密码服务器。
 

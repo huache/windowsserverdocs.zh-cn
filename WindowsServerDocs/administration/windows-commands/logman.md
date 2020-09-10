@@ -3,16 +3,16 @@ title: logman
 description: Logman 命令的参考文章，用于创建和管理事件跟踪会话和性能日志，并通过命令行支持性能监视器的许多功能。
 ms.topic: reference
 ms.assetid: 574a5203-5b3b-4759-a678-f26d00dde447
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b155e3cca0b9f5e35c1c817cfee4e96ca79b6610
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ac3e541436ca6f3b0e9d7c0dc03154ffefdfda0d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030545"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639516"
 ---
 # <a name="logman"></a>logman
 

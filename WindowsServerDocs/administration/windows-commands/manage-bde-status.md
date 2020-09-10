@@ -3,16 +3,16 @@ title: manage-bde 状态
 description: Manage-bde 状态命令的参考文章，其中提供了有关计算机上所有驱动器的信息，而不考虑它们是否受 BitLocker 保护。
 ms.topic: reference
 ms.assetid: 1444a360-fabf-4dd3-b67f-188e6ea3fa5b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 632e286b15d65c066a6f2229b98e12a23014f998
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ad22cf542aaf3f61d9fe861d20ad25087adfe0a1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027475"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639281"
 ---
 # <a name="manage-bde-status"></a>manage-bde 状态
 

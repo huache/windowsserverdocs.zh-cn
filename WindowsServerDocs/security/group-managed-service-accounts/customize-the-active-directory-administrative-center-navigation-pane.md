@@ -2,16 +2,16 @@
 title: 自定义 Active Directory 管理中心导航窗格
 description: Windows Server 安全
 ms.assetid: c9933d16-e153-435a-b5b7-3e594db42d5c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ecadc09eaa0433458a0224582c3c2ba67dd938f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 34a15b768d3143d7083ab62bb9aa537a2c8bdeb4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971474"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639795"
 ---
 # <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>自定义 Active Directory 管理中心导航窗格
 
@@ -19,7 +19,7 @@ ms.locfileid: "87971474"
 
   您可以使用树视图浏览 Active Directory 管理中心导航窗格，该视图与 "Active Directory 用户和计算机" 控制台树或通过使用列表视图相同。
 
- 无论你使用树视图还是列表视图，你都可以随时通过添加本地域或任何外域中的不同容器来自定义你的 Active Directory 管理中心导航窗格，此域 \( 不是 \) 作为独立节点的导航窗格与本地域建立了信任关系的本地域。 自定义 Active Directory 管理中心导航窗格可以更快地访问 Active Directory 对象。 有关详细信息，请参阅[在 Active Directory 管理中心中管理不同的域](manage-different-domains-in-active-directory-administrative-center.md)。
+ 无论你使用树视图还是列表视图，你都可以随时通过添加本地域或任何外域中的不同容器来自定义你的 Active Directory 管理中心导航窗格，此域 \( 不是 \) 作为独立节点的导航窗格与本地域建立了信任关系的本地域。 自定义 Active Directory 管理中心导航窗格可以更快地访问 Active Directory 对象。 有关详细信息，请参阅 [在 Active Directory 管理中心中管理不同的域](manage-different-domains-in-active-directory-administrative-center.md)。
 
  此外，若要进一步自定义导航窗格，可以重命名或删除这些手动添加的导航窗格节点，创建这些节点的副本，或者在导航窗格中向上或向下移动它们。
 
@@ -36,7 +36,7 @@ ms.locfileid: "87971474"
 
    -   **创建重复节点**
 
-   -   **删除**
+   -   **Remove**
 
    -   **上移**
 

@@ -3,16 +3,16 @@ title: 配置其他 LSA 保护
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 038e7c2b-c032-491f-8727-6f3f01116ef9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: bfb40249dffa08e1c05aa1dc7cbc26fad6f7885d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 54bc100c935df2ff0cc7086b258fb395458f259f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995885"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638083"
 ---
 # <a name="configuring-additional-lsa-protection"></a>配置其他 LSA 保护
 
@@ -29,7 +29,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
     保护模式要求加载到 LSA 中的任何插件都已使用 Microsoft 签名进行数字签名。 因此，未签名的或者未使用 Microsoft 签名进行签名的任何插件都无法加载到 LSA 中。 这些插件的示例包括智能卡驱动程序、加密插件和密码筛选器。
 
-    用作驱动程序（例如智能卡驱动程序）的 LSA 插件需要使用 WHQL 认证进行签名。 有关详细信息，请参阅[WHQL 发行版签名](/windows-hardware/drivers/install/whql-release-signature)。
+    用作驱动程序（例如智能卡驱动程序）的 LSA 插件需要使用 WHQL 认证进行签名。 有关详细信息，请参阅 [WHQL 发行版签名](/windows-hardware/drivers/install/whql-release-signature)。
 
     不需要经历 WHQL 认证过程的 LSA 插件必须使用 [LSA 的文件签名服务](https://go.microsoft.com/fwlink/?LinkId=392590)进行签名。
 
@@ -98,7 +98,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 5.  右键单击“注册表”****，指向“新建”****，然后单击“注册表项”****。 此时将出现“新建注册表属性”对话框****。
 
-6.  在**Hive**列表中，单击 " **HKEY_LOCAL_MACHINE"。**
+6.  在 **Hive** 列表中，单击 " **HKEY_LOCAL_MACHINE"。**
 
 7.  在“注册表项路径”**** 列表中浏览到“**SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe**”。
 
@@ -108,7 +108,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 10. 在 **值数据** 框中，键入 **00000008**。
 
-11. 单击“确定”。
+11. 单击“确定”。 
 
 > [!NOTE]
 > 要使该 GPO 生效，必须将 GPO 更改复制到域中的所有域控制器。
@@ -168,7 +168,7 @@ LSA 包含本地安全机构服务器服务 (LSASS) 进程，可以验证用户�
 
 10. 在“值数据”**** 框中，键入 **00000001**。
 
-11. 单击“确定”。
+11. 单击“确定”。 
 
 ##### <a name="to-disable-lsa-protection"></a>禁用 LSA 保护的步骤
 

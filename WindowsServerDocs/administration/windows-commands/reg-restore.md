@@ -3,16 +3,16 @@ title: reg restore
 description: Reg restore 命令的参考文章，它将已保存的子项和条目写入注册表。
 ms.topic: reference
 ms.assetid: a51f1c0c-969b-4b76-930a-c8bb14dea26e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c3f1d864ce0a9d4fc6f244b3affe4b762f95d145
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d5c0e51ed3b16c2655647919f360a56b2aee6344
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025071"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639858"
 ---
 # <a name="reg-restore"></a>reg restore
 
@@ -32,7 +32,7 @@ reg restore <keyname> <filename>
 | `<filename>` | 指定包含要写入注册表的内容的文件的名称和路径。 必须使用 **reg save** 命令提前创建此文件，并且该文件的扩展名必须为 hiv。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 在编辑任何注册表项之前，必须使用 **reg save** 命令保存父子项。 如果编辑失败，则可以使用 **reg restore** 操作还原原始子项。
 

@@ -3,16 +3,16 @@ title: ksetup dumpstate
 description: Ksetup dumpstate 命令参考文章，其中显示了计算机上定义的所有领域的领域设置当前状态。
 ms.topic: reference
 ms.assetid: 3ef2f7b8-97af-4f42-9542-cff324840637
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8723eac23cc2444bf4c16a661b13cc8cef4798dc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5f9d16a094dd3d3bbcdd5e9cb740e1bca5203a6d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025521"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639661"
 ---
 # <a name="ksetup-dumpstate"></a>ksetup dumpstate
 

@@ -3,16 +3,16 @@ title: net print
 description: Net print 命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.topic: reference
 ms.assetid: f59b2015-4698-415d-9a74-09566c466f40
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a12f11f9552df417f792078d210655eb5893619a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 10e153da203e0e11c1560417f363e17b6b18aaa7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037785"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637964"
 ---
 # <a name="net-print"></a>net print
 
@@ -37,7 +37,7 @@ net print {\\<computername>\<sharename> | \\<computername> <jobnumber> [/hold | 
 | `[/hold | /release | /delete]` | 指定要对打印作业执行的操作。 如果指定了作业编号，但未指定任何操作，则会显示有关打印作业的信息。<ul><li>**/hold** -延迟作业，允许其他打印作业绕过它。</li><li>**/release** -释放已延迟的打印作业。</li><li>**/delete** -从打印队列中删除打印作业。</li></ul> |
 | help | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 该 `net print\\<computername>` 命令显示有关共享打印机队列中的打印作业的信息。 下面的示例显示了名为 *激光器*的共享打印机的队列中所有打印作业的报表：
 

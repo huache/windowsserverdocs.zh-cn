@@ -3,16 +3,16 @@ title: load metadata
 description: 加载元数据命令的参考文章，此命令在导入可传送的卷影副本之前加载元数据 .cab 文件，或者在还原时加载写入器元数据。
 ms.topic: reference
 ms.assetid: 2c535487-668b-44fc-babb-ff59cf7d190e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9953b06b46b82466dbf4fcba97c2d902c88d301c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1d2895b4122d54de92dd595c5dc7218b5579acb6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037885"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639534"
 ---
 # <a name="load-metadata"></a>加载元数据
 
@@ -31,7 +31,7 @@ load metadata [<drive>:][<path>]<metadata.cab>
 | `[<drive>:][<path>]` | 指定元数据文件的位置。 |
 | metadata.cab | 指定要加载的元数据 .cab 文件。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - 您可以使用 " **导入** " 命令根据 **负载元数据**指定的元数据导入可传送的卷影副本。
 

@@ -3,16 +3,16 @@ title: 注销
 description: "\"注销\" 命令的参考文章，用于从远程桌面会话主机服务器上的会话中注销用户并删除会话。"
 ms.topic: reference
 ms.assetid: 939f09cc-de8c-436c-a05d-aca5f2a06371
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 249b63e5b98d17b67c6d00fe6d2f8a634d67de6f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b7a211f1b4bcb76ea63d79ae38d1cf78c757d6e0
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030525"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639319"
 ---
 # <a name="logoff"></a>注销
 
@@ -35,7 +35,7 @@ logoff [<sessionname> | <sessionID>] [/server:<servername>] [/v]
 | /v | 显示要执行的操作的相关信息。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 你始终可以从你当前登录到的会话中注销。 但是，您必须拥有 " **完全控制** " 权限才能从其他会话注销用户。
 

@@ -3,16 +3,16 @@ title: ipconfig
 description: "\"Ipconfig\" 命令的参考文章，其中显示了所有当前 TCP/IP 网络配置值并刷新动态主机配置协议 (DHCP) 和域名系统 (DNS) 设置。"
 ms.topic: reference
 ms.assetid: 15071c2c-4815-4893-93b2-ab30232e312e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d683053c1a696ec2aa0f0f2441fdde22eccb479d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 20005fff04df421e5f3699600278d51b8711337d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035445"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639585"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -40,7 +40,7 @@ ipconfig [/allcompartments] [/all] [/renew [<adapter>]] [/release [<adapter>]] [
 | /showclassid `<adapter>` | 显示指定适配器的 DHCP 类 ID。 若要查看所有适配器的 DHCP 类 ID，请使用星号 (**&#42;**) 通配符来替换 *适配器*。 此参数仅在配置为自动获取 IP 地址的适配器的计算机上可用。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 在配置为自动获取 IP 地址的计算机上，此命令最有用。 这样，用户便可以确定 DHCP 配置了哪些 TCP/IP 配置值、自动专用 IP 寻址 (APIPA) 或备用配置。
 

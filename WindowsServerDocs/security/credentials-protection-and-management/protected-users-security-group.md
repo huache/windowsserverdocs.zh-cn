@@ -3,16 +3,16 @@ title: 受保护的用户安全组
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f296
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: fb8fef4b954416e7ed284db9cf57b77f5a84c594
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: ba53c87119e798c3d3346b8fc245ffcc4e092a4d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995810"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639804"
 ---
 # <a name="protected-users-security-group"></a>受保护的用户安全组
 
@@ -29,7 +29,7 @@ ms.locfileid: "87995810"
 
 在运行 Windows Server 2012 R2 的设备和主机计算机上，此域相关的全局组将触发不可配置的保护，并且在具有运行 Windows Server 2012 R2 的主域控制器的域中的用户 Windows 8.1 或更高版本。 当用户登录到具有这些保护的计算机时，这会大大减少凭据的默认内存占用量。
 
-有关详细信息，请参阅本主题中[的受保护用户组的工作原理](#BKMK_HowItWorks)。
+有关详细信息，请参阅本主题中 [的受保护用户组的工作原理](#BKMK_HowItWorks) 。
 
 
 ## <a name="protected-users-group-requirements"></a><a name="BKMK_Requirements"></a>受保护用户组要求
@@ -37,7 +37,7 @@ ms.locfileid: "87995810"
 
 - 受保护用户全局安全组被复制到帐户域中的所有域控制器。
 
-- 默认情况下，Windows 8.1 和 Windows Server 2012 R2 已添加支持。 [Microsoft 安全公告 2871997](/security-updates/SecurityAdvisories/2016/2871997)添加了对 windows 7、windows Server 2008 R2 和 windows server 2012 的支持。
+- 默认情况下，Windows 8.1 和 Windows Server 2012 R2 已添加支持。 [Microsoft 安全公告 2871997](/security-updates/SecurityAdvisories/2016/2871997) 添加了对 windows 7、windows Server 2008 R2 和 windows server 2012 的支持。
 
 为受保护用户组的成员提供域控制器保护的要求包括：
 
@@ -50,19 +50,19 @@ ms.locfileid: "87995810"
 > [!Note]
 > 域控制器将不支持域保护。
 
-可以通过将[主域控制器 (PDC) 模拟器角色传输](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10))到运行 Windows Server 2012 R2 的域控制器来创建受保护的用户组。 将该组对象复制到其他域控制器后，PDC 模拟器角色可以托管在运行较早版本的 Windows Server 的域控制器上。
+可以通过将 [主域控制器 (PDC) 模拟器角色传输](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10)) 到运行 Windows Server 2012 R2 的域控制器来创建受保护的用户组。 将该组对象复制到其他域控制器后，PDC 模拟器角色可以托管在运行较早版本的 Windows Server 的域控制器上。
 
 ### <a name="protected-users-group-ad-properties"></a><a name="BKMK_ADgroup"></a>受保护用户组的 AD 属性
 
 下表指定受保护的用户组的属性。
 
-|属性|值|
+|Attribute|Value|
 |-------|-----|
 |已知 SID/RID|S-1-5-21-<domain>-525|
 |类型|域全局|
 |默认容器|CN=Users，DC=<domain>，DC=|
-|默认成员|None|
-|默认成员|None|
+|默认成员|无|
+|默认成员|无|
 |通过 ADMINSDHOLDER 受保护吗？|否|
 |移出默认容器是否安全？|是|
 |将此组的管理委派给非服务管理员是否安全？|否|
@@ -78,12 +78,12 @@ ms.locfileid: "87995810"
 ### <a name="device-protections-for-signed-in-protected-users"></a>受保护用户登录的设备保护
 当登录用户是受保护用户组的成员时，将应用以下保护：
 
-- 即使启用了 "**允许委派默认凭据**" 组策略设置，凭据委托 (CredSSP) 也不会缓存用户的纯文本凭据。
+- 即使启用了 " **允许委派默认凭据** " 组策略设置，凭据委托 (CredSSP) 也不会缓存用户的纯文本凭据。
 
 - 从 Windows 8.1 和 Windows Server 2012 R2 开始，即使启用了 Windows Digest，Windows 摘要式也不会缓存用户的纯文本凭据。
 
 > [!Note]
-> 安装[Microsoft 安全公告 2871997](/security-updates/SecurityAdvisories/2016/2871997)后，Windows 摘要将继续缓存凭据，直到配置了注册表项。 有关说明，请参阅[Microsoft 安全公告：更新以改进凭据保护和管理：5月13日，2014](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) 。
+> 安装 [Microsoft 安全公告 2871997](/security-updates/SecurityAdvisories/2016/2871997) 后，Windows 摘要将继续缓存凭据，直到配置了注册表项。 有关说明，请参阅 [Microsoft 安全公告：更新以改进凭据保护和管理：5月13日，2014](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) 。
 
 - NTLM 不会缓存用户的纯文本凭据或 NT 单向功能 (NTOWF) 。
 
@@ -109,9 +109,9 @@ ms.locfileid: "87995810"
 有关详细信息，请参阅[如何配置受保护的帐户](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)。
 
 ## <a name="troubleshooting"></a>疑难解答
-提供两个操作管理日志，以帮助对受保护用户的相关事件进行疑难解答。 这些新日志位于事件查看器中，默认情况下被禁用，并且位于 "**应用程序和服务 Logs\Microsoft\Windows\Authentication**" 下。
+提供两个操作管理日志，以帮助对受保护用户的相关事件进行疑难解答。 这些新日志位于事件查看器中，默认情况下被禁用，并且位于 " **应用程序和服务 Logs\Microsoft\Windows\Authentication**" 下。
 
-|事件 ID 和日志|描述|
+|事件 ID 和日志|说明|
 |----------|--------|
 |104<p>“受保护用户客户端”****|原因：客户端上的安全程序包不包含这些凭据。<p>当该帐户是受保护的用户安全组的成员时，将在客户端计算机中记录错误。 此事件指示安全程序包不会缓存在对服务器进行身份验证时所需的凭据。<p>显示程序包名称、用户名、域名和服务器名称。|
 |304<p>“受保护用户客户端”****|原因：安全程序包不会存储受保护用户的凭据。<p>将在客户端中记录信息性事件，以指示安全程序包不会缓存用户的登录凭据。 预期结果是 Digest (WDigest)、凭据委派 (CredSSP) 和 NTLM 无法具有受保护用户的登录凭据。 如果提示输入凭据，则仍然能够成功执行应用程序。<p>显示程序包名称、用户名和域名。|

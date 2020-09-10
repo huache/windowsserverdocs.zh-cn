@@ -3,16 +3,16 @@ title: Getting Started with Group Managed Service Accounts
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 7130ad73-9688-4f64-aca1-46a9187a46cf
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 979a6cf1e0b5e2d68c05f6285a9d745eabe41fa4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 19da2b6ec2a7a3ca31c479388c087850c77d9c23
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991522"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638049"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
@@ -52,12 +52,12 @@ ms.locfileid: "87991522"
 
 |主体|范围|支持的服务|密码管理|
 |-------|-----|-----------|------------|
-|Windows 系统的计算机帐户|Domain|限于一个加入域的服务器|计算机管理|
-|没有 Windows 系统的计算机帐户|Domain|任何加入域的服务器|None|
-|虚拟帐户|本地|限于一台服务器|计算机管理|
-|Windows 7 独立托管服务帐户|Domain|限于一个加入域的服务器|计算机管理|
-|用户帐户|Domain|任何加入域的服务器|None|
-|组托管服务帐户|Domain|任何已加入域的 Windows Server 2012 服务器|域控制器管理，以及主机检索|
+|Windows 系统的计算机帐户|域|限于一个加入域的服务器|计算机管理|
+|没有 Windows 系统的计算机帐户|域|任何加入域的服务器|无|
+|虚拟帐户|Local|限于一台服务器|计算机管理|
+|Windows 7 独立托管服务帐户|域|限于一个加入域的服务器|计算机管理|
+|用户帐户|域|任何加入域的服务器|无|
+|组托管服务帐户|域|任何已加入域的 Windows Server 2012 服务器|域控制器管理，以及主机检索|
 
 Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟帐户无法在多个系统之间进行共享。 如果你为服务器场上的服务配置一个帐户以进行共享，则除了 Windows 系统以外，还必须选择一个用户帐户或计算机帐户。 无论哪种方式，这些帐户不具有单点控制密码管理功能。 这样做会带来麻烦，因为每个组织需要创建一个昂贵的解决方案，以便更新 Active Directory 中服务的密钥，然后将密钥分发给这些服务的所有实例。
 
@@ -103,7 +103,7 @@ Windows 计算机帐户或 Windows 7 独立托管服务帐户 (sMSA) 或虚拟�
 
 -   如果 Active Directory 的第一个主根密钥未在域中部署，或者尚未创建，则创建它。 可以在 KdsSvc 运行日志的事件 ID 4004 中验证其创建结果。
 
-有关如何创建密钥的说明，请参阅[创建密钥分发服务 KDS 根密钥](create-the-key-distribution-services-kds-root-key.md)。 Microsoft 密钥分发服务 (kdssvc.dll) AD 的根密钥。
+有关如何创建密钥的说明，请参阅 [创建密钥分发服务 KDS 根密钥](create-the-key-distribution-services-kds-root-key.md)。 Microsoft 密钥分发服务 (kdssvc.dll) AD 的根密钥。
 
 **生命周期**
 

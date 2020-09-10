@@ -3,16 +3,16 @@ title: freedisk
 description: Freedisk 命令的参考文章，用于检查是否有指定数量的可用磁盘空间，然后再继续执行安装过程。
 ms.topic: reference
 ms.assetid: 91c15166-5baa-4b80-9e0c-4cd815d00530
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a3f8543e6fd2cff9a4e086068155d84526d9377
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ad9c7faf65ffe8d4547f6a6de88e299b76ac05b2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027605"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638012"
 ---
 # <a name="freedisk"></a>freedisk
 
@@ -36,7 +36,7 @@ freedisk [/s <computer> [/u [<domain>\]<user> [/p [<password>]]]] [/d <drive>] [
 | /d `<drive>` | 指定要找出可用空间可用性的驱动器。 您必须 `<drive>` 为远程计算机指定。 |
 | `<value>` | 检查特定的可用磁盘空间量。 可以指定 `<value>` 字节、KB、MB、GB、TB、PB、EB、ZB 或 YB。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 仅当使用 **/s**时，才能使用 **/s**、 **/u**和 **/p**命令行选项。 必须使用 **/p** with **/u**来提供用户的密码。
 

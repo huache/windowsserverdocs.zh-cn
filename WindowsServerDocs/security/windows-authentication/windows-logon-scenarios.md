@@ -3,16 +3,16 @@ title: Windows 登录方案
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 66b7c568-67b7-4ac9-a479-a5a3b8a66142
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: b1a7783e02746f53d818066eb20ceb3094bd2707
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 1ea8f8cde4dd99c50e9dbc1d5a035f413c875114
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990033"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638729"
 ---
 # <a name="windows-logon-scenarios"></a>Windows 登录方案
 
@@ -22,11 +22,11 @@ ms.locfileid: "87990033"
 
 Windows 操作系统要求所有用户使用有效的帐户登录到计算机以访问本地和网络资源。 基于 Windows 的计算机通过实现登录进程（在其中对用户进行身份验证）来保护资源。 在对用户进行身份验证后，授权和访问控制技术实现了保护资源的第二阶段：确定经过身份验证的用户是否有权访问某个资源。
 
-本主题的内容适用于本主题开头 "**适用**于" 列表中指定的 Windows 版本。
+本主题的内容适用于本主题开头 " **适用** 于" 列表中指定的 Windows 版本。
 
 此外，应用程序和服务可能要求用户登录以访问应用程序或服务提供的资源。 登录过程类似于登录过程，因为需要有效的帐户和正确的凭据，但登录信息存储在本地计算机上的安全帐户管理器 (SAM) 数据库中，在适用的情况下存储在 Active Directory 中。 登录帐户和凭据信息由应用程序或服务进行管理，并且可以选择本地存储在凭据保险箱中。
 
-若要了解身份验证的工作原理，请参阅[Windows 身份验证概念](windows-authentication-concepts.md)。
+若要了解身份验证的工作原理，请参阅 [Windows 身份验证概念](windows-authentication-concepts.md)。
 
 本主题将介绍下列方案：
 
@@ -103,12 +103,12 @@ RDP 管理用户使用远程桌面客户端输入的凭据。 这些凭据适用
 
 当使用智能卡而不是密码时，存储在用户智能卡上的私钥/公钥对将替换为从用户的密码派生的共享密钥。 私钥仅存储在智能卡上。 公钥可供所有者要交换机密信息的任何人使用。
 
-有关 Windows 中智能卡登录过程的详细信息，请参阅[windows 中的智能卡登录的工作原理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff404285(v=ws.10))。
+有关 Windows 中智能卡登录过程的详细信息，请参阅 [windows 中的智能卡登录的工作原理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff404285(v=ws.10))。
 
 ## <a name="biometric-logon"></a><a name="BKMK_BioLogon"></a>生物识别登录
-设备用于捕获和生成项目的数字特征，如指纹。 然后，将此数字表示形式与相同项目的示例进行比较，并在两个成功比较时进行身份验证。 运行本主题开头的 "**适用**于" 列表中指定的任意操作系统的计算机都可以配置为接受这种形式的登录。 但是，如果生物识别登录仅配置为本地登录，则用户在访问 Active Directory 域时需要提供域凭据。
+设备用于捕获和生成项目的数字特征，如指纹。 然后，将此数字表示形式与相同项目的示例进行比较，并在两个成功比较时进行身份验证。 运行本主题开头的 " **适用** 于" 列表中指定的任意操作系统的计算机都可以配置为接受这种形式的登录。 但是，如果生物识别登录仅配置为本地登录，则用户在访问 Active Directory 域时需要提供域凭据。
 
 ## <a name="additional-resources"></a>其他资源
-有关 Windows 如何管理在登录过程中提交的凭据的信息，请参阅[Windows 身份验证中的凭据管理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169014(v=ws.10))。
+有关 Windows 如何管理在登录过程中提交的凭据的信息，请参阅 [Windows 身份验证中的凭据管理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169014(v=ws.10))。
 
 [Windows 登录和身份验证技术概述](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169029(v=ws.10))

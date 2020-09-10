@@ -3,16 +3,16 @@ title: msiexec
 description: Msiexec 命令的参考文章，它提供了从命令行对 Windows Installer 执行安装、修改和执行操作的方法。
 ms.topic: reference
 ms.assetid: 122eb0ce-ecbc-4909-a52a-15c3413619af
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1255cf26ac4dd3f9c28189ce7df76d63c875ee64
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 93ce1de1f75ff03bc7bb5f79d2046502c2d81bc4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025281"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639619"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -73,7 +73,7 @@ msiexec.exe /i <path_to_package> [/quiet][/passive][/q{n|b|r|f}]
 | /qr | 指定在安装过程中减少的 UI 体验。 |
 | /qf | 指定在安装过程中的完整 UI 体验。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 如果用户取消了安装，则不会显示模式框。 可以使用 **qb +！** 或 **qb！ +** 隐藏 " **取消** " 按钮。
 

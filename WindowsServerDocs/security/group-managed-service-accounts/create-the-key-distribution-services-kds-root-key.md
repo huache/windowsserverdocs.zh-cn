@@ -3,16 +3,16 @@ title: 创建密钥分发服务 KDS 根密钥
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 42e5db8f-1516-4d42-be0a-fa932f5588e9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: b90ea772874c2a5731e03f4bcbc44de6efc34a20
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 6f1852e245bb2f8a26fb15ebe67bfaab8c260192
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995035"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638071"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>创建密钥分发服务 KDS 根密钥
 
@@ -57,7 +57,7 @@ ms.locfileid: "87995035"
 
     或使用单个命令
 
-    **New-kdsrootkey-EffectiveTime ( # B1 获取-日期) . addhours (-10) # B5**
+    **New-kdsrootkey-EffectiveTime ( # B1 获取-日期) . addhours (-10) # B5 **
 
 ## <a name="see-also"></a>另请参阅
 [与组托管服务帐户入门](getting-started-with-group-managed-service-accounts.md)

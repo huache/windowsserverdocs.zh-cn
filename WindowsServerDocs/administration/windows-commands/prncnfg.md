@@ -3,16 +3,16 @@ title: prncnfg
 description: Prncnfg 命令的参考文章，它配置或显示有关打印机的配置信息。
 ms.topic: reference
 ms.assetid: 38a4e8fa-3122-495b-a125-35b926bc6415
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: ba5d465a46a23261942428761d11ef279b78a62e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2b72f453b016428537800997fc0a7056c211a3b2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038718"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638364"
 ---
 # <a name="prncnfg"></a>prncnfg
 
@@ -50,7 +50,7 @@ cscript prncnfg {-g | -t | -x | -?} [-S <Servername>] [-P <Printername>] [-z <ne
 | `{+|-}`共享 | 指定是否在网络上共享此打印机。 |
 | `{+|-}`直 | 指定是否应将文档直接发送到打印机而不进行后台处理。 |
 | `{+|-}`发布 | 指定是否应在 active directory 中发布此打印机。 如果您发布打印机，其他用户可以根据其位置和功能 (例如彩色打印和装订) 搜索该打印机。 |
-| `{+|-}`消隐 | Reserved 函数。 |
+| `{+|-}`隐藏 | Reserved 函数。 |
 | `{+|-}`rawonly | 指定是否只有原始数据打印作业可以在此队列中进行后台处理。 |
 | `{+|-}`} 已排队 | 指定在文档的最后一页进行后台处理之前，打印机不应该开始打印。 打印程序在文档完成打印之前不可用。 但是，使用此参数可确保整个文档可用于打印机。 |
 | `{+|-}`keepprintedjobs | 指定后台处理程序在打印后是否应保留文档。 启用此选项后，用户可以从打印队列（而不是打印程序）将文档提交到打印机。 |

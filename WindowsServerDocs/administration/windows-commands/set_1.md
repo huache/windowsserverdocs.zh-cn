@@ -3,16 +3,16 @@ title: set
 description: Set 的参考文章，其中显示、设置或删除 cmd.exe 环境变量。
 ms.topic: reference
 ms.assetid: 5fdd60d6-addf-4574-8c92-8aa53fa73d76
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 30240d4ae286c472cfbce932201435097df33ddb
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 70ce8bf85bbafc68e4ffe09170d9e21738315560
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023431"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639488"
 ---
 # <a name="set"></a>set
 
@@ -38,7 +38,7 @@ set /a <Variable>=<Expression>
 |\<Expression>|指定数值表达式。 有关可在 *表达式*中使用的有效运算符，请参阅备注。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - 使用启用了命令扩展的**set**
 
@@ -61,7 +61,7 @@ set /a <Variable>=<Expression>
 
   下表按优先顺序列出了 **/a** 支持的运算符。
 
-  |        操作员         | 执行的操作  |
+  |        运算符         | 执行的操作  |
   |-------------------------|----------------------|
   |           ( )           |       分组       |
   |          ! ~ -          |        一元         |

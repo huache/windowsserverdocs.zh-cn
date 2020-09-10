@@ -3,16 +3,16 @@ title: prndrvr
 description: 用于添加、删除和列出打印机驱动程序的 prndrvr 命令的参考文章。
 ms.topic: reference
 ms.assetid: 82b09e3e-bd38-4df1-9953-b0e9ee2565a3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 36ad4a4206e26065dfad9ff2d970da11e4efaa66
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6fd276adb02281ab488c31db75563552f8495008
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038698"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638357"
 ---
 # <a name="prndrvr"></a>prndrvr
 
@@ -45,7 +45,7 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}] [-e <enviro
 | -i `<filename.inf>` | 指定要安装的驱动程序的完整路径和文件名。 如果未指定文件名，该脚本将使用 Windows 目录的 inf 子目录中的某个收件箱打印机 .inf 文件。<p>如果未指定驱动程序路径，则脚本将在 driver.cab 文件中搜索驱动程序文件。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格，请使用引号将文本括起来 (例如，"Computer Name" ) 。
 

@@ -3,16 +3,16 @@ title: pushprinterconnections
 description: Pushprinterconnections.exe 命令的参考文章，其中从组策略读取已部署的打印机连接设置，并根据需要部署/删除打印机连接。
 ms.topic: reference
 ms.assetid: c30afb97-b149-478f-a4b9-2cbc25361818
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 41ed8af3b4d70058887de10215f36e1aa530e912
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ef1cfc110d446da461251b9c7e28a4595edee291
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032367"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639934"
 ---
 # <a name="pushprinterconnections"></a>pushprinterconnections
 

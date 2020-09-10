@@ -3,16 +3,16 @@ title: 查询进程
 description: "\"查询处理\" 命令的参考文章，其中显示了有关在远程桌面会话主机服务器上运行的进程的信息。"
 ms.topic: reference
 ms.assetid: 36ce3ffc-0092-4eb1-a374-28e6616ca946
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c0cf1952be3e7885c4631c229061b4630ef4598c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: eb2deaeac012eba4dad06ae6084474942536adfd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037225"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639900"
 ---
 # <a name="query-process"></a>查询进程
 
@@ -52,7 +52,7 @@ query process [*|<processID>|<username>|<sessionname>|/id:<nn>|<programname>] [/
 | /server:`<servername>` | 指定要列出其进程的远程桌面会话主机服务器。 如果未指定，则使用你当前登录到的服务器。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 管理员对所有 **查询处理** 函数具有完全访问权限。
 

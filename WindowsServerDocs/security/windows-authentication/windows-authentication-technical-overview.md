@@ -3,16 +3,16 @@ title: Windows 身份验证技术概述
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 286d3e41-434f-4703-9320-706d06ebda51
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: c2ac43da06d6df177523b389eac90f02e6e26b93
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c64df4b76c67f1dd0dbe696812d79d83b5997813
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989969"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638688"
 ---
 # <a name="windows-authentication-technical-overview"></a>Windows 身份验证技术概述
 
@@ -55,11 +55,11 @@ ms.locfileid: "87989969"
 ## <a name="what-is-not-covered"></a>不包含的内容
 这一系列主题不涉及在 Windows 环境中设计、实现或监视身份验证技术的过程。
 
--   有关 Windows 授权策略的设计信息，请参阅 "[设计资源授权策略](/previous-versions/windows/it-pro/windows-server-2003/cc783368(v=ws.10))"。
+-   有关 Windows 授权策略的设计信息，请参阅 " [设计资源授权策略](/previous-versions/windows/it-pro/windows-server-2003/cc783368(v=ws.10))"。
 
--   有关 Windows 身份验证策略的设计信息，请参阅[设计身份验证策略](/previous-versions/windows/it-pro/windows-server-2003/cc758124(v=ws.10))。
+-   有关 Windows 身份验证策略的设计信息，请参阅 [设计身份验证策略](/previous-versions/windows/it-pro/windows-server-2003/cc758124(v=ws.10))。
 
--   有关 Windows 公钥基础结构实现策略的设计信息，请参阅[设计公钥基础结构](/previous-versions/windows/it-pro/windows-server-2003/cc773138(v=ws.10))。
+-   有关 Windows 公钥基础结构实现策略的设计信息，请参阅 [设计公钥基础结构](/previous-versions/windows/it-pro/windows-server-2003/cc773138(v=ws.10))。
 
 -   若要在 Windows 环境中配置和监视安全（包括身份验证），请参阅：
 
@@ -67,10 +67,10 @@ ms.locfileid: "87989969"
 
     -   [Windows Vista 安全基线](/previous-versions/tn-archive/dd450978(v=technet.10))
 
-    -   [Windows Server 2003 安全基准](/previous-versions/tn-archive/cc163140(v=technet.10))和[威胁和对策指南](/previous-versions/tn-archive/dd162275(v=technet.10))
+    -   [Windows Server 2003 安全基准](/previous-versions/tn-archive/cc163140(v=technet.10)) 和 [威胁和对策指南](/previous-versions/tn-archive/dd162275(v=technet.10))
 
     -   [Windows Server 2008 安全指南](https://www.microsoft.com/download/details.aspx?id=17606)
 
     -   [Windows Server 2008 R2 安全基线](/previous-versions/tn-archive/gg236605(v=technet.10))
 
--   有关在 Windows 中审核登录和身份验证事件的信息，请参阅[审核安全事件](/previous-versions/windows/it-pro/windows-server-2003/cc776394(v=ws.10))。
+-   有关在 Windows 中审核登录和身份验证事件的信息，请参阅 [审核安全事件](/previous-versions/windows/it-pro/windows-server-2003/cc776394(v=ws.10))。

@@ -3,16 +3,16 @@ title: reg
 description: 用于对注册表项中的注册表子项信息和值执行操作的 reg 命令的参考文章。
 ms.topic: reference
 ms.assetid: c97496b2-d1ff-4887-b5d2-6e1524be465a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a71cbb0bd6b6b902407cd4e6bea92d6e5d7dd967
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a39fc22c2fe845d8cbbb64cf751455316bdc8747
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038365"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639498"
 ---
 # <a name="reg"></a>reg
 

@@ -3,16 +3,16 @@ title: route
 description: 路由命令的参考文章，用于修改和显示本地 IP 路由表中的条目。
 ms.topic: reference
 ms.assetid: afcd666c-0cef-47c2-9bcc-02d202b983b3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: a15e9190ac135a49cfacfd259a7058765cafa8a4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3c38c1946c49318fc9aae901758eef412a8a586a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033755"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639834"
 ---
 # <a name="route"></a>route
 
@@ -43,7 +43,7 @@ route [/f] [/p] [<command> [<destination>] [mask <netmask>] [<gateway>] [metric 
 | 如果 `<interface>` | 指定访问目标所使用的接口的接口索引。 有关接口及其对应的接口索引的列表，请使用路由打印命令的显示功能。 可以对接口索引使用十进制或十六进制值。 十六进制数以 0x 开头。 省略 if 参数时，接口将通过网关地址确定。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 路由表的 " **指标** " 列中的大值是允许 tcp/ip 根据每个 LAN 接口的 IP 地址、子网掩码和默认网关的配置，自动确定路由表中的路由指标的结果。 默认情况下，自动确定接口指标，可确定每个接口的速度，并调整每个接口的路由指标，以便最快的接口创建指标最低的路由。 若要删除大指标，请从每个 LAN 连接的 TCP/IP 协议的高级属性中禁用接口跃点的自动确定。
 

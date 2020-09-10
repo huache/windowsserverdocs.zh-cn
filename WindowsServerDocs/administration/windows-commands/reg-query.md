@@ -3,16 +3,16 @@ title: reg query
 description: Reg query 命令的参考文章，它返回位于注册表中指定子项下的子项和条目的列表。
 ms.topic: reference
 ms.assetid: 0e6a0d7c-ed9b-4318-833d-33f265a81f39
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 633928d89059e1b9a9677141011b391ee0d34757
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d004c42e4561cd96502e8dedc9ee472df964b5b8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025081"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639863"
 ---
 # <a name="reg-query"></a>reg query
 
@@ -42,7 +42,7 @@ reg query <keyname> [{/v <Valuename> | /ve}] [/s] [/se <separator>] [/f <data>] 
 | /z | 指定在搜索结果中包含注册表类型的等价数值。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - **Reg 查询**操作的返回值为：
 

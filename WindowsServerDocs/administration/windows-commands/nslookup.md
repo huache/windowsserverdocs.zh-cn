@@ -3,16 +3,16 @@ title: nslookup
 description: Nslookup 命令的参考文章，其中显示了可用于诊断域名系统 (DNS) 基础结构的信息。
 ms.topic: reference
 ms.assetid: 41516932-7833-434a-aa92-b4cf0f9a7ef7
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c06121384ec18a879eaccbb34c926ce68cff9f49
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a8132bfb01bf05b1a92042ea804c2206f009c2fd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032775"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639274"
 ---
 # <a name="nslookup"></a>nslookup
 
@@ -67,7 +67,7 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
 | [nslookup set vc](nslookup-set-vc.md) | 指定在向服务器发送请求时使用或不使用虚拟线路。 |
 | [nslookup view](nslookup-view.md) | 排序并列出上一 **ls** 子命令或命令的输出。 |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 - 如果 *computerTofind* 是 IP 地址，并且查询用于 **A** 或 **PTR** 资源记录类型，则返回该计算机的名称。
 

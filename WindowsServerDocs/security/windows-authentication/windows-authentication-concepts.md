@@ -3,16 +3,16 @@ title: Windows 身份验证概念
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 29d1db15-cae0-4e3d-9d8e-241ac206bb8b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 7ef3b9fde0ca9b9364a1fdcc99690b58f4f14f68
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5772a2dd56c60d1c5ce037181940f0593cede12f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990001"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638703"
 ---
 # <a name="windows-authentication-concepts"></a>Windows 身份验证概念
 
@@ -50,12 +50,12 @@ ms.locfileid: "87990001"
 同样，你可以向所有用户授予某个域的权限以访问资源。 属于该域的任何用户都有权访问该资源，正如加拿大，美国公民进入加拿大。 然而，尝试输入巴西或印度的美国公民发现，他们无法通过提供 passport 来输入这些国家，因为这两个国家都需要访问美国公民才能获得有效的签证。 因此，身份验证不能保证对资源的访问权限，也不能授权使用资源。
 
 ## <a name="credentials"></a>凭据
-Passport 和可能关联的 visas 是用于出差的已接受凭据。 但是，这些凭据可能不允许出差人员输入或访问国家/地区内的所有资源。 例如，参加会议需要其他凭据。 在 Windows 中，可以对凭据进行管理，使帐户持有者可以通过网络访问资源，而无需反复提供凭据。 这种类型的访问权限允许用户一次对用户进行身份验证，以访问他们有权使用的所有应用程序和数据源，而无需输入其他帐户标识符或密码。 Windows 平台通过在操作系统的本地安全机构 (LSA) 中以本地方式缓存用户凭据，从而使使用单个用户标识 (通过网络 Active Directory) 维护的能力。 当用户登录到域时，Windows 身份验证包在对网络资源的凭据进行身份验证时，透明地使用凭据来提供单一登录。 有关凭据的详细信息，请参阅[Windows 身份验证中的凭据处理](credentials-processes-in-windows-authentication.md)。
+Passport 和可能关联的 visas 是用于出差的已接受凭据。 但是，这些凭据可能不允许出差人员输入或访问国家/地区内的所有资源。 例如，参加会议需要其他凭据。 在 Windows 中，可以对凭据进行管理，使帐户持有者可以通过网络访问资源，而无需反复提供凭据。 这种类型的访问权限允许用户一次对用户进行身份验证，以访问他们有权使用的所有应用程序和数据源，而无需输入其他帐户标识符或密码。 Windows 平台通过在操作系统的本地安全机构 (LSA) 中以本地方式缓存用户凭据，从而使使用单个用户标识 (通过网络 Active Directory) 维护的能力。 当用户登录到域时，Windows 身份验证包在对网络资源的凭据进行身份验证时，透明地使用凭据来提供单一登录。 有关凭据的详细信息，请参阅 [Windows 身份验证中的凭据处理](credentials-processes-in-windows-authentication.md)。
 
 用于出差的多重身份验证形式可能要求携带和提供多个文档来对其身份进行身份验证，例如 passport 和会议注册信息。 Windows 通过智能卡、虚拟智能卡和生物识别技术实现此窗体或身份验证。
 
 ## <a name="security-principals-and-accounts"></a>安全主体和帐户
-在 Windows 中，可以启动操作的任何用户、服务、组或计算机都是安全主体。 安全主体具有可在计算机本地或基于域的帐户。 例如，即使没有人为用户登录，Windows 客户端加入域的计算机也可以通过与域控制器通信来加入网络域。 若要启动通信，计算机必须在域中具有活动帐户。 在接受来自计算机的通信之前，域控制器上的本地安全机构会对计算机的标识进行身份验证，然后定义计算机的安全上下文，就像对安全主体而言。 此安全上下文定义特定计算机或网络上的用户、服务、组或计算机上的用户或服务的标识和功能。 例如，它定义了可以访问的资源（例如文件共享或打印机）以及可以由用户、服务或该资源上的计算机执行的操作，如读取、写入或修改。 有关详细信息，请参阅[安全主体](/windows/security/identity-protection/access-control/security-principals)。
+在 Windows 中，可以启动操作的任何用户、服务、组或计算机都是安全主体。 安全主体具有可在计算机本地或基于域的帐户。 例如，即使没有人为用户登录，Windows 客户端加入域的计算机也可以通过与域控制器通信来加入网络域。 若要启动通信，计算机必须在域中具有活动帐户。 在接受来自计算机的通信之前，域控制器上的本地安全机构会对计算机的标识进行身份验证，然后定义计算机的安全上下文，就像对安全主体而言。 此安全上下文定义特定计算机或网络上的用户、服务、组或计算机上的用户或服务的标识和功能。 例如，它定义了可以访问的资源（例如文件共享或打印机）以及可以由用户、服务或该资源上的计算机执行的操作，如读取、写入或修改。 有关详细信息，请参阅 [安全主体](/windows/security/identity-protection/access-control/security-principals)。
 
 帐户是一种标识 claimant 的方式，即用户或服务请求的访问权限或资源。 持有真实 passport 的旅行拥有主机所在国家/地区的帐户。 用户、用户组、对象和服务都可以有个人帐户或共享帐户。 帐户可以是组的成员，并且可以分配有特定权限和权限。 帐户可以限制为本地计算机、工作组、网络，或分配给域的成员身份。
 
@@ -89,17 +89,17 @@ Windows Server 2008 R2 和 Windows 7 中引入了独立托管服务帐户和虚�
 
 特定信任通过身份验证请求的方式取决于其配置方式。 信任关系可以是单向的，即提供从受信任域到信任域中资源的访问权限，或通过提供从每个域到其他域中资源的访问权限来实现双向关系。 信任也是不可传递的，在这种情况下，信任关系仅存在于两个信任伙伴域之间，或者是可传递的，在这种情况下，信任会自动扩展到合作伙伴信任的任何其他域。
 
-有关信任如何工作的信息，请参阅[域和林信任的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc773178(v=ws.10))。
+有关信任如何工作的信息，请参阅 [域和林信任的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc773178(v=ws.10))。
 
 ### <a name="protocol-transition"></a>协议转换
 协议转换通过允许应用程序在用户身份验证层支持不同的身份验证机制，并通过在后续应用程序层切换到 Kerberos 协议（如相互身份验证和约束委派）来帮助应用程序设计人员。
 
-有关协议转换的详细信息，请参阅[Kerberos 协议转换和约束委派](/previous-versions/windows/it-pro/windows-server-2003/cc758097(v=ws.10))。
+有关协议转换的详细信息，请参阅 [Kerberos 协议转换和约束委派](/previous-versions/windows/it-pro/windows-server-2003/cc758097(v=ws.10))。
 
 ### <a name="constrained-delegation"></a>约束委派
 约束委派使管理员能够通过限制应用程序服务可以代表用户操作的范围来指定和强制实施应用程序信任边界。 你可以指定特定服务，通过这些服务，可委托的计算机可以请求资源。 限制服务的授权权限的灵活性有助于通过减少不受信任的服务的泄露机会来改善应用程序安全设计。
 
-有关约束委派的详细信息，请参阅[Kerberos 约束委派概述](../kerberos/kerberos-constrained-delegation-overview.md)。
+有关约束委派的详细信息，请参阅 [Kerberos 约束委派概述](../kerberos/kerberos-constrained-delegation-overview.md)。
 
 ## <a name="additional-references"></a>其他参考
 [Windows 登录和身份验证技术概述](https://technet.microsoft.com/library/dn269029.aspx)

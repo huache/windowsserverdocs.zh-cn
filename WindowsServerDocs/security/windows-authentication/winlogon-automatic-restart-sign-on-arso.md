@@ -2,16 +2,16 @@
 title: Winlogon 自动重启登录 (ARSO)
 ms.topic: article
 ms.assetid: 15cddcfa-8a8e-45e4-bb76-b8e1a14ceac0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: ee6e5817564389c1870e72543a0c073dd40df4db
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 450c57fae13dc4a970c047cceb356a8fab227066
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989067"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638738"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自动重启登录 (ARSO)
 
@@ -41,7 +41,7 @@ Windows 8 引入了锁定屏幕应用。  这些应用程序在用户的会话�
 
 -   Windows 更新需要重新启动
 
--   计算机能否重新启动 (不会) *运行的应用程序*？
+-   计算机能否重新启动 (不会) *运行的应用程序* ？
 
     -   重新启动
 

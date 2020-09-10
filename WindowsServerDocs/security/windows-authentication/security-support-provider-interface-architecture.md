@@ -3,16 +3,16 @@ title: 安全支持提供程序接口体系结构
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: de09e099-5711-48f8-adbd-e7b8093a0336
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 636723dafc6ddc8e346a7272978a1abf9338baad
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: aec55bca0be096a3866cc49e718743a9c32d8f6b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991461"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638743"
 ---
 # <a name="security-support-provider-interface-architecture"></a>安全支持提供程序接口体系结构
 
@@ -77,7 +77,7 @@ SSPI 是通用安全服务 API 在 Windows Server 操作系统中 (GSSAPI) 的�
 
 位置：% windir% \Windows\System32\kerberos.dll
 
-默认情况下，此提供程序包含在本主题开头的 "**应用于**" 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
+默认情况下，此提供程序包含在本主题开头的 " **应用于** " 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
 
 **Kerberos 协议和 Kerberos SSP 的其他资源**
 
@@ -110,7 +110,7 @@ Ntlm 安全支持提供程序 (NTLM SSP) 是安全支持提供程序接口使用
 
 位置：% windir% \Windows\System32\msv1_0.dll
 
-默认情况下，此提供程序包含在本主题开头的 "**应用于**" 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
+默认情况下，此提供程序包含在本主题开头的 " **应用于** " 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
 
 **NTLM 协议和 NTLM SSP 的其他资源**
 
@@ -133,11 +133,11 @@ Ntlm 安全支持提供程序 (NTLM SSP) 是安全支持提供程序接口使用
 
 位置：% windir% \Windows\System32\Digest.dll
 
-默认情况下，此提供程序包含在本主题开头的 "**应用于**" 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
+默认情况下，此提供程序包含在本主题开头的 " **应用于** " 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
 
 **摘要式协议和摘要 SSP 的其他资源**
 
--   [ (Windows) Microsoft Digest 身份验证](/windows/win32/secauthn/microsoft-digest-ssp)
+-   [ (Windows) Microsoft Digest 身份验证 ](/windows/win32/secauthn/microsoft-digest-ssp)
 
 -   [\[DPSP \] ：摘要式协议扩展](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
@@ -158,15 +158,15 @@ TLS 协议、SSL 协议、专用通信技术 (PCT) 协议、数据报传输层 (
 
 -   专用通信技术 (PCT) 
 
-    **注意**默认情况下，PCT 处于禁用状态。
+    **注意** 默认情况下，PCT 处于禁用状态。
 
 选择的协议是客户端和服务器可以支持的首选身份验证协议。 例如，如果服务器支持所有 Schannel 协议，而客户端仅支持 SSL 3.0 和 SSL 2.0，则身份验证过程使用 SSL 3.0。
 
-当应用程序显式调用 DTLS 时使用。 有关 Schannel 提供程序使用的 DTLS 和其他协议的详细信息，请参阅[Schannel 安全支持提供程序技术参考](../tls/schannel-security-support-provider-technical-reference.md)。
+当应用程序显式调用 DTLS 时使用。 有关 Schannel 提供程序使用的 DTLS 和其他协议的详细信息，请参阅 [Schannel 安全支持提供程序技术参考](../tls/schannel-security-support-provider-technical-reference.md)。
 
 位置：% windir% \Windows\System32\Schannel.dll
 
-默认情况下，此提供程序包含在本主题开头的 "**应用于**" 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
+默认情况下，此提供程序包含在本主题开头的 " **应用于** " 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
 
 > [!NOTE]
 > 此提供程序在 Windows Server 2008 R2 和 Windows 7 中引入了 TLS 1.2。 Windows Server 2012 和 Windows 8 中的此提供程序中引入了 DTLS。
@@ -188,7 +188,7 @@ RFC 2478 中指定了 SPNEGO。
 
 位置：% windir% \Windows\System32\lsasrv.dll
 
-默认情况下，此提供程序包含在本主题开头的 "**应用于**" 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
+默认情况下，此提供程序包含在本主题开头的 " **应用于** " 列表中指定的版本中，以及 windows Server 2003 和 windows XP。
 
 **用于协商 SSP 的其他资源**
 
@@ -203,7 +203,7 @@ RFC 2478 中指定了 SPNEGO。
 
 位置：% windir% \Windows\System32\credssp.dll
 
-默认情况下，此提供程序包含在本主题开头的 "**适用**于" 列表中指定的版本中。
+默认情况下，此提供程序包含在本主题开头的 " **适用** 于" 列表中指定的版本中。
 
 **凭据 SSP 的其他资源**
 
@@ -230,14 +230,14 @@ NegoExts 支持的 Ssp 不是独立的 Ssp，如 Kerberos 和 NTLM。 因此，�
 
 位置：% windir% \Windows\System32\negoexts.dll
 
-默认情况下，此提供程序包含在本主题开头的 "**适用于**" 列表中指定的版本中，不包括 windows Server 2008 和 windows Vista。
+默认情况下，此提供程序包含在本主题开头的 " **适用于** " 列表中指定的版本中，不包括 windows Server 2008 和 windows Vista。
 
 ### <a name="pku2u-security-support-provider"></a><a name="BKMK_PKU2USSP"></a>PKU2U 安全支持提供程序
 Windows 7 和 Windows Server 2008 R2 中引入了 PKU2U 协议，并将其作为 SSP 实现。 此 SSP 启用对等身份验证，特别是在 Windows 7 中引入了名为 "家庭组" 的媒体和文件共享功能。 此功能允许在非域成员的计算机之间共享。
 
 位置：% windir% \Windows\System32\pku2u.dll
 
-默认情况下，此提供程序包含在本主题开头的 "**适用于**" 列表中指定的版本中，不包括 windows Server 2008 和 windows Vista。
+默认情况下，此提供程序包含在本主题开头的 " **适用于** " 列表中指定的版本中，不包括 windows Server 2008 和 windows Vista。
 
 **PKU2U 协议和 PKU2U SSP 的其他资源**
 
@@ -246,7 +246,7 @@ Windows 7 和 Windows Server 2008 R2 中引入了 PKU2U 协议，并将其作为
 ## <a name="security-support-provider-selection"></a><a name="BKMK_SecuritySupportProviderSelection"></a>安全支持提供程序选择
 Windows SSPI 可以使用通过安装的安全支持提供程序支持的任何协议。 但是，由于并非所有操作系统都支持与运行 Windows Server 的任何给定计算机相同的 SSP 包，因此，客户端和服务器必须协商使用两者都支持的协议。 Windows Server 倾向于客户端计算机和应用程序使用 Kerberos 协议，这是一种基于标准的强大协议，但操作系统继续允许不支持 Kerberos 协议进行身份验证的客户端计算机和客户端应用程序。
 
-在进行身份验证之前，两台通信计算机必须同意它们都可以支持的协议。 对于任何可通过 SSPI 使用的协议，每台计算机都必须具有相应的 SSP。 例如，要使客户端计算机和服务器使用 Kerberos 身份验证协议，它们必须都支持 Kerberos v5。 Windows Server 使用函数**EnumerateSecurityPackages**来确定计算机上支持的 ssp 以及这些 ssp 的功能。
+在进行身份验证之前，两台通信计算机必须同意它们都可以支持的协议。 对于任何可通过 SSPI 使用的协议，每台计算机都必须具有相应的 SSP。 例如，要使客户端计算机和服务器使用 Kerberos 身份验证协议，它们必须都支持 Kerberos v5。 Windows Server 使用函数 **EnumerateSecurityPackages** 来确定计算机上支持的 ssp 以及这些 ssp 的功能。
 
 可以通过以下两种方式之一来处理身份验证协议的选择：
 

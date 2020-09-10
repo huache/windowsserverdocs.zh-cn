@@ -3,16 +3,16 @@ title: logman query
 description: 用于查询数据收集器或数据收集器集属性的 logman 查询命令的参考文章。
 ms.topic: reference
 ms.assetid: 1116a0f0-5415-4369-a045-12f79f8f66de
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e7d3d9da5b5885c15135b764454bd68818c4aded
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d71db298961409ddd3ebd968fda4c84e6a4e4fba
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023781"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639980"
 ---
 # <a name="logman-query"></a>logman query
 

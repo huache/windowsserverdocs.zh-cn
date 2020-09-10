@@ -3,16 +3,16 @@ title: logman create api
 description: 用于创建 API 跟踪数据收集器的 logman create api 命令的参考文章。
 ms.topic: reference
 ms.assetid: 2ecc0a75-2613-464a-8616-c5dc404bb736
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 12d22cb323891f0c227442f959d6f62a52396de4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 75c9a582073fe9c3647567ba6b035c81b0ae10dc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035025"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639993"
 ---
 # <a name="logman-create-api"></a>logman create api
 
@@ -57,7 +57,7 @@ logman create api <[-n] <name>> [options]
 | -exe `<value>` | 指定 API 跟踪的可执行文件的完整路径。 |
 | /? | 显示区分上下文的帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 其中列出了 [-]，添加了额外的连字符 ( ) 对该选项求反。
 

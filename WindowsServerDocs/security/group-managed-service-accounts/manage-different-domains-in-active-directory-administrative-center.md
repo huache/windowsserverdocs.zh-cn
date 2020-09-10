@@ -2,16 +2,16 @@
 title: 管理 Active Directory 管理中心中的不同域
 description: Windows Server 安全
 ms.assetid: 166351c3-4076-48be-aa8f-797adf1e9d68
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 8ccd183e3450fd6c520790d9130d27b99b06a5ed
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c793c30c6637a050d2b2cbb055ec289e3c3e8f20
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971444"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638036"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>管理 Active Directory 管理中心中的不同域
 
@@ -28,46 +28,46 @@ ms.locfileid: "87971444"
 
 ### <a name="windows-server-2012-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2012：使用当前登录凭据集在所选实例中管理外域 Active Directory 管理中心
 
-1.  若要打开 Active Directory 管理中心，请在**服务器管理器**中单击 "**工具**"，然后单击 " **Active Directory 管理中心**"。
+1.  若要打开 Active Directory 管理中心，请在 **服务器管理器**中单击 " **工具**"，然后单击 " **Active Directory 管理中心**"。
 
     > [!NOTE]
-    >  打开 Active Directory 管理中心的另一种方法是单击 "**开始**"，然后键入**dsac.exe**。
+    >  打开 Active Directory 管理中心的另一种方法是单击 " **开始**"，然后键入 **dsac.exe**。
 
-2.  若要打开 "**添加导航节点**"，请单击 "**管理**"，然后单击 "**添加导航节点**"，如下图所示。
+2.  若要打开 " **添加导航节点**"，请单击 " **管理**"，然后单击 " **添加导航节点** "，如下图所示。
 
      ![显示 * * 添加导航节点的屏幕截图 * * UI](media/ADDS_ADACAddNavNode.gif)
 
-3.  在 "**添加导航节点**" 中，单击 "**连接到其他域**"，如下图所示。
+3.  在 " **添加导航节点**" 中，单击 " **连接到其他域** "，如下图所示。
 
      ![显示 * * 添加导航节点的屏幕截图 * * UI](media/ADDS_ADACConnectToDomain.gif)
 
 4.  在 "**连接到**" 中，键入要管理的外部域的名称 \( （例如**contoso.com** \) ），然后单击 **"确定"**。
 
-5.  成功连接到外部域后，浏览 "**添加导航节点**" 窗口中的列，选择要添加到 Active Directory 管理中心导航窗格中的容器，然后单击 **"确定"**。
+5.  成功连接到外部域后，浏览 " **添加导航节点** " 窗口中的列，选择要添加到 Active Directory 管理中心导航窗格中的容器，然后单击 **"确定"**。
 
 ### <a name="windows-server-2008-r2-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2008 R2：使用当前登录凭据集在所选实例中管理外域 Active Directory 管理中心
 
-1. 若要打开 Active Directory 管理中心，请单击 "**开始**"，单击 "**管理工具**"，然后单击 " **Active Directory 管理中心**"。
+1. 若要打开 Active Directory 管理中心，请单击 " **开始**"，单击 " **管理工具**"，然后单击 " **Active Directory 管理中心**"。
 
    > [!NOTE]
-   >  打开 Active Directory 管理中心的另一种方法是依次单击 "**开始**"、"**运行**"，然后键入**dsac.exe**。
+   >  打开 Active Directory 管理中心的另一种方法是依次单击 " **开始**"、" **运行**"，然后键入 **dsac.exe**。
 
-2. 若要打开 "**添加导航节点**"，在 "Active Directory 管理中心" 窗口顶部附近，单击 "**添加导航节点**"，如下图所示。
+2. 若要打开 " **添加导航节点**"，在 "Active Directory 管理中心" 窗口顶部附近，单击 " **添加导航节点** "，如下图所示。
 
     ![显示 * * 添加导航节点的屏幕截图 * * UI](media/click_add_nav_nodes.gif)
 
    > [!NOTE]
-   >  打开 "**添加导航节点**" 的另一种方法是右键 \- 单击 Active Directory 管理中心导航窗格中的空白区域中的任意位置，然后单击 "**添加导航节点**"。
+   >  打开 " **添加导航节点** " 的另一种方法是右键 \- 单击 Active Directory 管理中心导航窗格中的空白区域中的任意位置，然后单击 " **添加导航节点**"。
 
-3. 在 "**添加导航节点**" 中，单击 "**连接到其他域**"，如下图所示。
+3. 在 " **添加导航节点**" 中，单击 " **连接到其他域** "，如下图所示。
 
     ![显示 * * 添加导航节点的屏幕截图 * * * 连接到其他域 * * UI](media/add_nav_nodes.gif)
 
 4. 在 "**连接到**" 中，键入要管理的外部域的名称 \( （例如**contoso.com** \) ），然后单击 **"确定"**。
 
-5. 成功连接到外部域后，浏览 "**添加导航节点**" 窗口中的列，选择要添加到 Active Directory 管理中心导航窗格中的容器，然后单击 **"确定"**。
+5. 成功连接到外部域后，浏览 " **添加导航节点** " 窗口中的列，选择要添加到 Active Directory 管理中心导航窗格中的容器，然后单击 **"确定"**。
 
-   有关自定义 Active Directory 管理中心导航窗格的详细信息，请参阅[自定义 Active Directory 管理中心导航窗格](customize-the-active-directory-administrative-center-navigation-pane.md)。
+   有关自定义 Active Directory 管理中心导航窗格的详细信息，请参阅 [自定义 Active Directory 管理中心导航窗格](customize-the-active-directory-administrative-center-navigation-pane.md)。
 
    还可以使用与当前登录凭据集不同的登录凭据集打开 Active Directory 管理中心。 如果使用普通用户凭据登录到运行 Active Directory 管理中心的计算机，但希望以管理员身份使用此计算机上的 Active Directory 管理中心来管理本地域，则以下过程中的命令可用会非常有用。 \(如果你想要使用 Active Directory 管理中心远程管理与你的本地域不同的外域，并使用一组与当前的登录凭据不同的凭据，则此命令也会很有用。 但是，外部域必须与本地域建立了信任关系。\)
 

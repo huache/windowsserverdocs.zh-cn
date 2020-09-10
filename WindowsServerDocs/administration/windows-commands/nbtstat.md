@@ -3,16 +3,16 @@ title: nbtstat
 description: Nbtstat 命令的参考文章，其中显示了 TCP/IP 上的 NetBIOS (NetBT) 协议统计信息、本地计算机和远程计算机的 NetBIOS 名称表以及 NetBIOS 名称缓存。
 ms.topic: reference
 ms.assetid: 1d2ea99e-72f1-471f-9525-d2c49bf3be82
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 273aaadcf537864512d6dc7aedff0c9872c3cd05
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f56068baab8832cb25f62e43f550fdcf7c4e1092
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037795"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637974"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -44,7 +44,7 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 | `<interval>` | 显示所选统计信息，并按每个显示的 *间隔* 暂停指定的秒数。 按 CTRL + C 停止显示统计信息。 如果省略此参数，则 **nbtstat** 仅打印当前配置信息一次。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - **Nbtstat**命令行参数区分大小写。
 
@@ -59,7 +59,7 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     | 本机名称 | 与连接关联的本地 NetBIOS 名称。 |
     | 远程主机 | 与远程计算机关联的名称或 IP 地址。 |
     | `<03>` | NetBIOS 名称的最后一个字节转换为十六进制。 每个 NetBIOS 名称长度为16个字符。 最后一个字节通常具有特殊意义，因为同一名称可能在计算机上出现多次，只是在最后一个字节内有所不同。 例如， `<20>` 是 ASCII 文本中的空格。 |
-    | type | 名称的类型。 名称可以为唯一名称或组名称。 |
+    | 类型 | 名称的类型。 名称可以为唯一名称或组名称。 |
     | 状态 | 远程计算机上的 NetBIOS 服务是否正在运行 (注册的) 或者重复的计算机名是否已注册了相同的服务 (冲突) 。 |
     | 状态 | NetBIOS 连接的状态。 |
 
@@ -67,7 +67,7 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
     | 状态 | 说明 |
     | ------- | ----------- |
-    | 连续 | 已建立会话。 |
+    | 已连接 | 已建立会话。 |
     | 收听 | 此终结点可用于入站连接。 |
     | 空闲 | 此终结点已打开，但无法接收连接。 |
     | Connecting | 会话正在连接阶段，正在解析目标的名称到 IP 地址映射。 |

@@ -3,16 +3,16 @@ title: ftp
 description: Ftp 命令的参考文章，用于在运行文件传输协议 (ftp) 服务器服务的计算机之间传输文件。
 ms.topic: reference
 ms.assetid: 758335e1-fd8d-448c-a654-993126239dd9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f5cb70e6b42e390f8e279152e736b0226e74f9d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 65d7ff4ef7202406541ec767920cb75526500567
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038898"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638422"
 ---
 # <a name="ftp"></a>ftp
 
@@ -45,7 +45,7 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 | `<host>` | 指定要连接的 ftp 服务器的计算机名称、IP 地址或 IPv6 地址。 如果指定，主机名或地址必须是行中的最后一个参数。 |
 | -? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - **Ftp**命令行参数区分大小写。
 

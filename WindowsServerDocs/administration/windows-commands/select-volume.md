@@ -3,16 +3,16 @@ title: select volume
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: 5d70d776-80ad-4f20-8288-a7997fb1df28
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d2737a25eb9095b70fd6939a4f38b751868323f3
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 14162cc594011352ea43c6732bdb3365ea6c5fa4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024981"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639020"
 ---
 # <a name="select-volume"></a>select volume
 
@@ -35,7 +35,7 @@ select volume={<n>|<d>}
 |    <n>    | 要接收焦点的卷的编号。 可以通过使用 DiskPart 中的 " **列出卷** " 命令，查看当前所选磁盘上的所有卷的编号。 |
 |    <d>    |                                                 要接收焦点的卷的驱动器号或装入点路径。                                                 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   如果未指定卷，则此命令将显示当前在所选磁盘中有焦点的卷。
 
