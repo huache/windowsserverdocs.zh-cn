@@ -3,16 +3,16 @@ title: wbadmin start systemstatebackup
 description: 用于 wbadmin start systemstatebackup 的参考文章，用于创建本地计算机的系统状态备份并将其存储在指定的位置。
 ms.topic: reference
 ms.assetid: 998366c1-0a64-45e6-9ed3-4c3f5b8406f0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b2910a6c6cbcd9fbf6bd8d8564425128b98af24
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7bd0df6e0cbfd7e34439e858865420002f5fb364
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031855"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621480"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 
@@ -40,7 +40,7 @@ wbadmin start systemstatebackup
 | -backupTarget | 指定要存储备份的位置。 存储位置需要驱动器号或基于 GUID 的卷，格式为： \\ \\ ？ \Volume{*GUID*}。</br>在运行 Windows Server 2008 的计算机上不支持对共享网络文件夹进行系统状态备份。 如果你的服务器运行的是 Windows Server 2008 R2 或更高版本，则可以使用**backuptarget： \\ \\ servername\sharedFolder \\ **存储系统状态备份。 |
 |    -quiet     |                                                                                                                                                                                                   对用户运行无提示的子命令。                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 有关将系统状态备份保存到卷的详细信息（依次包含系统状态文件），请参阅 Microsoft 知识库中的文章 944530 ([https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439)) 。
 

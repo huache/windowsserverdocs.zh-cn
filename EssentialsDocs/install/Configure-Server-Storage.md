@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ef7ddcdd-3a74-40ca-9487-c3a6fc5155a5
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 616b727ad75beefd0ac61c6a715ed1515d7712e5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: be4bf42f2fe287ad6bd96b9ea5735147ec253e0d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181443"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621832"
 ---
 # <a name="configure-server-storage"></a>配置服务器存储
 
@@ -27,7 +27,7 @@ ms.locfileid: "87181443"
 |服务器级别|磁盘配置|
 |------------------|------------------------|
 |条目|-两个物理磁盘<br /><br /> -配置为 RAID 1 镜像集，其中包含以下内容：<br /><br /> -C：卷？ 60 GB<br /><br /> -D：卷？ 1000 GB|
-|中型|-三个物理磁盘<br /><br /> -配置为 RAID 5 集，其中包含以下内容：<br /><br /> -C：卷？ 60 GB<br /><br /> -D：卷？ 1500 GB|
+|中|-三个物理磁盘<br /><br /> -配置为 RAID 5 集，其中包含以下内容：<br /><br /> -C：卷？ 60 GB<br /><br /> -D：卷？ 1500 GB|
 |高|-5 个或更多物理磁盘总数<br /><br /> -第两个磁盘位于 RAID 1 镜像集内，其中包含 C：卷？ 100 GB<br /><br /> -RAID 5 集中的所有剩余磁盘，其中包含以下内容：<br /><br /> -D：卷？ 1500 GB<br /><br /> -E：卷？ 1500 GB|
 
  这些建议考虑到已安装的操作系统的大小、服务器使用的数据存储的平均大小，以及在服务器的整个生命周期内预期的数据存储增长情况。 卷可以是单个物理磁盘上的分区，也可以置于单独的物理磁盘上。 由于服务器存储客户的重要数据，因此建议你使用多个物理磁盘并使用硬件 RAID 或存储空间来帮助保护客户的数据。

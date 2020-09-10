@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f6b4db262d3eda9f1497ffce9c604d7dd72290b3
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 9a1133623af3a05f8aa0e867b1d3d66cbadd717f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180753"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622813"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>将计算机加入新的 Windows Server Essentials
 
@@ -40,11 +40,11 @@ ms.locfileid: "87180753"
 
  当源服务器和目标服务器仍处于联机状态时，你应该确保组策略设置已从目标服务器复制到客户端计算机。 在每个客户端计算机上执行以下步骤：
 
-1.  打开命令提示符窗口。
+1.  打开“命令提示符”窗口。
 
 2.  在命令提示符处键入 **GPRESULT /R**，然后按 Enter。
 
-3.  查看应用组策略部分生成的输出，并确保它列出了目标服务器，例如**destinationsrv.domain.local**。 例如：
+3.  查看应用组策略部分生成的输出，并确保它列出了目标服务器，例如 **destinationsrv.domain.local**。 例如：
 
     ```
     USER SETTINGS

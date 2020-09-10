@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 9cb68b88bc19b8f0f62c5586e39e010d9caad151
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 1672c8168dd206c166ca44392ca290ebb311dcc6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181233"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623517"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>目标计算机的硬件要求
 
@@ -36,10 +36,10 @@ ms.locfileid: "87181233"
 ## <a name="additional-hardware-and-software-requirements"></a>其他硬件和软件要求
  下表列出了其他硬件和软件要求。
 
-|组件|描述|
+|组件|说明|
 |---------------|-----------------|
 |网络适配器|千兆以太网适配器 (10/100/1000baseT PHY/MAC)|
-|Internet 的虚拟网络适配器|某些功能可能需要 Internet 访问（可能收费）或 Windows Live &reg; ID 帐户|
+|Internet|某些功能可能需要 Internet 访问 (费用) 或 Windows Live &reg; ID 帐户|
 |受支持的客户端操作系统|-Windows 7<br />-Windows 8<br />-Macintosh OS X 10.5 到10.8。<br /><br /> **注意：** 某些功能需要专业版或更高版本。<br /><br /> 1 GB 的可用硬盘空间（安装后会释放此磁盘上的一个分区）|
 |路由器|支持 IPv4 NAT 的路由器或防火墙|
 |其他需求|DVD-ROM 驱动器|

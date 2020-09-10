@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: b2913e51-7979-4d48-a431-d2ec5f1042be
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 47d29fd8960de3f85031e59552219166946474f7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 8450d96caede5a08d123f9bf5844953735d4c2b4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181463"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621916"
 ---
 # <a name="change-the-color-scheme-of-the-dashboard-and-launchpad"></a>更改仪表板和快速启动板的配色方案
 
@@ -137,30 +137,30 @@ ms.locfileid: "87181463"
 
 8.  将文件复制到 %programFiles%\Windows Server\Bin\OEM。 如果 OEM 目录不存在，请创建该目录。
 
-##  <a name="dashboard-and-launchpad-areas-that-can-be-changed"></a><a name="BKMK_Dashboard"></a>可以更改的仪表板和快速启动板区域
+##  <a name="dashboard-and-launchpad-areas-that-can-be-changed"></a><a name="BKMK_Dashboard"></a> 可以更改的仪表板和快速启动板区域
  本节包含可以自定义的仪表板和快速启动板区域的示例。
 
 ### <a name="examples"></a>示例
 
-####  <a name="figure-1-sign-in-page-of-the-dashboard"></a><a name="BKMK_Figure1"></a>图1：仪表板的登录页
+####  <a name="figure-1-sign-in-page-of-the-dashboard"></a><a name="BKMK_Figure1"></a> 图1：仪表板的登录页
  ![Windows Server Essentials 仪表板](media/SBS8_ADK_Dashboard_Signin_RC.png "SBS8_ADK_Dashboard_Signin_RC")
 
-####  <a name="figure-2-launchpad"></a><a name="BKMK_Figure2"></a>图2：快速启动板
+####  <a name="figure-2-launchpad"></a><a name="BKMK_Figure2"></a> 图2：快速启动板
  ![Windows SBS 启动板签名&#45;](media/SBS8_ADK_LaunchpadSignin2.png "SBS8_ADK_LaunchpadSignin2")
 
-####  <a name="figure-3-sign-in-page-of-the-launchpad"></a><a name="BKMK_Figure3"></a>图3：快速启动板的登录页
+####  <a name="figure-3-sign-in-page-of-the-launchpad"></a><a name="BKMK_Figure3"></a> 图3：快速启动板的登录页
  ![Windows Server Essentials 启动板](media/SBS8_ADK_Launchpad_Signin_RC.png "SBS8_ADK_Launchpad_Signin_RC")
 
-####  <a name="figure-4-dashboard-text"></a><a name="BKMK_Figure4"></a>图4：仪表板文本
+####  <a name="figure-4-dashboard-text"></a><a name="BKMK_Figure4"></a> 图4：仪表板文本
  ![Windows Server Essentials 导航窗格](media/SBS8_ADK_Navigation_RC.png "SBS8_ADK_Navigation_RC")
 
-####  <a name="figure-5-subtab-border"></a><a name="BKMK_Figure5"></a>图5：子标签边框
+####  <a name="figure-5-subtab-border"></a><a name="BKMK_Figure5"></a> 图5：子标签边框
  ![Windows SBS 仪表板子选项卡边框](media/SBS8_ADK_DashboardSubtabborder.png "SBS8_ADK_DashboardSubtabborder")
 
-####  <a name="figure-6-task-pane"></a><a name="BKMK_Figure6"></a>图6：任务窗格
+####  <a name="figure-6-task-pane"></a><a name="BKMK_Figure6"></a> 图6：任务窗格
  ![Windows SBS 仪表板任务窗格](media/SBS8_ADK_DashboardTaskPane.png "SBS8_ADK_DashboardTaskPane")
 
-####  <a name="figure-7a-product-splash-screen"></a><a name="BKMK_Figure9"></a>图7a：产品初始屏幕
+####  <a name="figure-7a-product-splash-screen"></a><a name="BKMK_Figure9"></a> 图7a：产品初始屏幕
  ![Windows Server Essentials 初始屏幕](media/SBS8_ADK_productspalshscreen_RC.png "SBS8_ADK_productspalshscreen_RC")
 
 #### <a name="figure-7b-home-page"></a>图 7b：主页

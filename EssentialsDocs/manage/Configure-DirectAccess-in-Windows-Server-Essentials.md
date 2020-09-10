@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: e24d6ce2e123deb741bcd39dc77f9a893a27df89
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 2d05c5d62eae5effda2c6b73adf71daf1cd0080c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837906"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623324"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>在 Windows Server Essentials 中配置 DirectAccess
 
@@ -23,13 +23,13 @@ ms.locfileid: "87837906"
  在 Windows Server Essentials 中，如果域包含多个 Windows Server Essentials 服务器，则必须在域控制器上配置 DirectAccess。
 
 > [!NOTE]
->  本主题提供有关在 Windows Server Essentials 服务器是域控制器时配置 DirectAccess 的说明。 如果 Windows Server Essentials 服务器是域成员，请按照[将 Directaccess 添加到现有远程访问 (VPN) 部署](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574220(v=ws.11))中的在域成员上配置 directaccess 的说明进行操作。
+>  本主题提供有关在 Windows Server Essentials 服务器是域控制器时配置 DirectAccess 的说明。 如果 Windows Server Essentials 服务器是域成员，请按照 [将 Directaccess 添加到现有远程访问 (VPN) 部署](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574220(v=ws.11)) 中的在域成员上配置 directaccess 的说明进行操作。
 
 ## <a name="process-overview"></a>过程概述
  若要在 Windows Server Essentials 中配置 DirectAccess，请完成以下步骤。
 
 > [!IMPORTANT]
->  使用本指南中的过程在 Windows Server Essentials 中配置 DirectAccess 之前，必须在服务器上启用 VPN。 有关说明，请参阅[管理 VPN](Manage-VPN-in-Windows-Server-Essentials.md)。
+>  使用本指南中的过程在 Windows Server Essentials 中配置 DirectAccess 之前，必须在服务器上启用 VPN。 有关说明，请参阅 [管理 VPN](Manage-VPN-in-Windows-Server-Essentials.md)。
 
 -   [步骤 1：将远程访问管理工具添加到你的服务器](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_AddRAM)
 
@@ -70,9 +70,9 @@ ms.locfileid: "87837906"
 > [!NOTE]
 >  [附录：使用 Windows PowerShell 设置 DirectAccess](#BKMK_AppendixBPowerShellScript) 提供了可用于执行 DirectAccess 安装的 Windows PowerShell 脚本。
 
-##  <a name="step-1-add-remote-access-management-tools-to-your-server"></a><a name="BKMK_AddRAM"></a>步骤1：将远程访问管理工具添加到服务器
+##  <a name="step-1-add-remote-access-management-tools-to-your-server"></a><a name="BKMK_AddRAM"></a> 步骤1：将远程访问管理工具添加到服务器
 
-#### <a name="to-add-remote-accregss-management-tools--reg"></a>添加远程 Acc &reg; Ss 管理工具&reg;
+#### <a name="to-add-remote-accregss-management-tools--reg"></a>添加远程 Acc &reg; Ss 管理工具  &reg;
 
 1.  在服务器上，在“开始”页的左下角，单击“服务器管理器”**** 图标。
 
@@ -86,13 +86,13 @@ ms.locfileid: "87837906"
 
     1.  在“安装类型”**** 页上，选择“基于角色或基于功能的安装”****。
 
-    2.  在 "**服务器选择" 页**上 (或 Windows Server Essentials) 中的 "**选择目标服务器**" 页上，单击 **"从服务器池中选择一个服务器"**。
+    2.  在 " **服务器选择" 页** 上 (或 Windows Server Essentials) 中的 " **选择目标服务器** " 页上，单击 **"从服务器池中选择一个服务器"**。
 
     3.  在“功能”**** 页上，依次展开“远程服务器管理工具（已安装）”****、“远程访问管理工具（已安装）”****、“角色管理工具（已安装）”****、“远程访问管理工具”****，然后选择“远程访问 GUI 和命令行工具”****。
 
     4.  按照说明完成向导。
 
-##  <a name="step-2-change-the-network-adapter-address-of-the-server-to-a-static-ip-address"></a><a name="BKMK_AddStaticIP"></a>步骤2：将服务器的网络适配器地址更改为静态 IP 地址
+##  <a name="step-2-change-the-network-adapter-address-of-the-server-to-a-static-ip-address"></a><a name="BKMK_AddStaticIP"></a> 步骤2：将服务器的网络适配器地址更改为静态 IP 地址
  DirectAccess 需要使用具有静态 IP 地址的适配器。 你需要更改服务器本地网络适配器的 IP 地址。
 
 #### <a name="to-add-a-static-ip-address"></a>添加静态 IP 地址的步骤
@@ -125,7 +125,7 @@ ms.locfileid: "87837906"
 > [!IMPORTANT]
 >  确保配置路由器将端口 80 和 443 转发到服务器的新静态 IP 地址。
 
-##  <a name="step-3-prepare-a-certificate-and-dns-record-for-the-network-location-server"></a><a name="BKMK_DNS"></a>步骤3：准备网络位置服务器的证书和 DNS 记录
+##  <a name="step-3-prepare-a-certificate-and-dns-record-for-the-network-location-server"></a><a name="BKMK_DNS"></a> 步骤3：准备网络位置服务器的证书和 DNS 记录
  若要准备网络位置服务器的证书和 DNS 记录，请执行以下任务：
 
 -   [步骤3a：向经过身份验证的用户授予 Web 服务器的证书模板的完全权限](#BKMK_GrantFullPermissions)
@@ -134,14 +134,14 @@ ms.locfileid: "87837906"
 
 -   [步骤 3c：在 DNS 服务器上添加一个新主机，并将其映射到 Windows Server Essentials 服务器地址](#BKMK_MapNewHosttoServerAddress)
 
-###  <a name="step-3a-grant-full-permissions-to-authenticated-users-for-the-web-servers-certificate-template"></a><a name="BKMK_GrantFullPermissions"></a>步骤3a：向经过身份验证的用户授予 Web 服务器的证书模板的完全权限
+###  <a name="step-3a-grant-full-permissions-to-authenticated-users-for-the-web-servers-certificate-template"></a><a name="BKMK_GrantFullPermissions"></a> 步骤3a：向经过身份验证的用户授予 Web 服务器的证书模板的完全权限
  你的第一项任务是在证书颁发机构中授予对 Web 服务器的证书模板的用户进行身份验证的完全权限。
 
-####  <a name="to-grant-full-permissions-to-authenticated-users-for-the-web-servers-certificate-template"></a><a name="BKMK_ToGrantFullPermissions"></a>向经过身份验证的用户授予 Web 服务器的证书模板的完全权限
+####  <a name="to-grant-full-permissions-to-authenticated-users-for-the-web-servers-certificate-template"></a><a name="BKMK_ToGrantFullPermissions"></a> 向经过身份验证的用户授予 Web 服务器的证书模板的完全权限
 
 1.  在“开始”**** 页上，打开“证书颁发机构”****。
 
-2.  在控制台树中的 "**证书颁发机构 (本地) **" 下，展开 " **<servername \> -CA**"，右键单击 "**证书模板**"，然后单击 "**管理**"。
+2.  在控制台树中的 " **证书颁发机构 (本地) **" 下，展开 " **<servername \> -CA**"，右键单击 " **证书模板**"，然后单击 " **管理**"。
 
 3.  在“证书颁发机构（本地）”**** 中，右键单击“Web 服务器”****，然后单击“属性”****。
 
@@ -149,10 +149,10 @@ ms.locfileid: "87837906"
 
 5.  重新启动“Active Directory 证书服务”****。 在控制面板中，打开“查看本地服务”****。 在服务列表中，右键单击“Active Directory 证书服务”****，然后单击“重新启动”****。
 
-###  <a name="step-3b-enroll-a-certificate-for-the-network-location-server-with-a-common-name-that-is-unresolvable-from-the-external-network"></a><a name="BKMK_EnrollaCertificate"></a>步骤3b：使用无法从外部网络解析的公用名为网络位置服务器注册证书
+###  <a name="step-3b-enroll-a-certificate-for-the-network-location-server-with-a-common-name-that-is-unresolvable-from-the-external-network"></a><a name="BKMK_EnrollaCertificate"></a> 步骤3b：使用无法从外部网络解析的公用名为网络位置服务器注册证书
  接下来，使用无法从外部网络解析的公用名来为网络位置服务器注册证书。
 
-####  <a name="to-enroll-a-certificate-for-the-network-location-server"></a><a name="BKMK_ToEnrollaCertificate"></a>为网络位置服务器注册证书
+####  <a name="to-enroll-a-certificate-for-the-network-location-server"></a><a name="BKMK_ToEnrollaCertificate"></a> 为网络位置服务器注册证书
 
 1.  在“开始”**** 页上，打开“mmc”****（Microsoft 管理控制台）。
 
@@ -186,20 +186,20 @@ ms.locfileid: "87837906"
 
 12. 证书注册完成后，单击“完成”****。
 
-###  <a name="step-3c-add-a-new-host-on-the-dns-server-and-map-it-to-the-windows-server-essentials-server-address"></a><a name="BKMK_MapNewHosttoServerAddress"></a>步骤3c：在 DNS 服务器上添加一个新主机，并将其映射到 Windows Server Essentials 服务器地址
+###  <a name="step-3c-add-a-new-host-on-the-dns-server-and-map-it-to-the-windows-server-essentials-server-address"></a><a name="BKMK_MapNewHosttoServerAddress"></a> 步骤3c：在 DNS 服务器上添加一个新主机，并将其映射到 Windows Server Essentials 服务器地址
  若要完成 DNS 配置，请在 DNS 服务器上添加一个新主机，并将其映射到 Windows Server Essentials 服务器地址。
 
-####  <a name="to-map-a-new-host-to-the-windows-server-essentials-server-address"></a><a name="BKMK_ToMapNewHosttoServerAddress"></a>将新主机映射到 Windows Server Essentials 服务器地址
+####  <a name="to-map-a-new-host-to-the-windows-server-essentials-server-address"></a><a name="BKMK_ToMapNewHosttoServerAddress"></a> 将新主机映射到 Windows Server Essentials 服务器地址
 
 1.  在“开始”页上，打开 DNS 管理器。 若要打开 DNS 管理器，请搜索 **dnsmgmt.msc**，然后单击结果中的“dnsmgmt.msc” **** 。
 
-2.  在 DNS 管理器控制台树中，展开本地服务器，展开 "**正向查找区域**"，右键单击带有服务器域后缀的区域，然后单击 "**新建主机 (A 或 AAAA) **。
+2.  在 DNS 管理器控制台树中，展开本地服务器，展开 " **正向查找区域**"，右键单击带有服务器域后缀的区域，然后单击 " **新建主机 (A 或 AAAA) **。
 
 3.  键入该服务器的名称和 IP 地址（例如，DirectAccess-NLS.contoso.local）及其对应的服务器地址（例如，192.168.x.x）。
 
 4.  依次单击“添加主机”****、“确定”****，然后单击“完成”****。
 
-##  <a name="step-4-create-a-security-group-for-directaccess-client-computers"></a><a name="BKMK_AddSecurityGroup"></a>步骤4：为 DirectAccess 客户端计算机创建安全组
+##  <a name="step-4-create-a-security-group-for-directaccess-client-computers"></a><a name="BKMK_AddSecurityGroup"></a> 步骤4：为 DirectAccess 客户端计算机创建安全组
  接下来，创建用于 DirectAccess 客户端计算机的安全组，然后将计算机帐户添加到该组。
 
 #### <a name="to-add-a-security-group-for-client-computers-that-use-directaccess"></a>添加使用 DirectAccess 的客户端计算机的安全组的步骤
@@ -232,7 +232,7 @@ ms.locfileid: "87837906"
 > [!NOTE]
 >  你还可以使用计算机帐户属性中的“成员所属的组”**** 选项卡将帐户添加到安全组。
 
-##  <a name="step-5-enable-and-configure-directaccess"></a><a name="BKMK_EnableConfigureDA"></a>步骤5：启用和配置 DirectAccess
+##  <a name="step-5-enable-and-configure-directaccess"></a><a name="BKMK_EnableConfigureDA"></a> 步骤5：启用和配置 DirectAccess
  若要在 Windows Server Essentials 中启用和配置 DirectAccess，必须完成以下步骤：
 
 -   [步骤 5a：使用远程访问管理控制台启用 DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableDA)
@@ -245,8 +245,8 @@ ms.locfileid: "87837906"
 
 -   [步骤 5e：建立 IPsec 通道时，添加注册表项以避免使用 CA 证书](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_CA)
 
-###  <a name="step-5a-enable-directaccess-by-using-the-remote-access-management-console"></a><a name="BKMK_EnableDA"></a>步骤5a：通过使用远程访问管理控制台启用 DirectAccess
- 本部分提供在 Windows Server Essentials 中启用 DirectAccess 的分步说明。 如果你尚未在服务器上配置 VPN，则应该在开始此过程之前执行该操作。 有关说明，请参阅[管理 VPN](Manage-VPN-in-Windows-Server-Essentials.md)。
+###  <a name="step-5a-enable-directaccess-by-using-the-remote-access-management-console"></a><a name="BKMK_EnableDA"></a> 步骤5a：通过使用远程访问管理控制台启用 DirectAccess
+ 本部分提供在 Windows Server Essentials 中启用 DirectAccess 的分步说明。 如果你尚未在服务器上配置 VPN，则应该在开始此过程之前执行该操作。 有关说明，请参阅 [管理 VPN](Manage-VPN-in-Windows-Server-Essentials.md)。
 
 ##### <a name="to-enable-directaccess-by-using-the-remote-access-management-console"></a>使用远程访问管理控制台启用 DirectAccess 的步骤
 
@@ -256,7 +256,7 @@ ms.locfileid: "87837906"
 
     1.  查看“DirectAccess 先决条件”****，然后单击“下一步”****。
 
-    2.  在“选择组”**** 选项卡上，添加你以前为 DirectAccess 客户端创建的安全组。  (如果尚未创建安全组，请参阅[步骤4：为 DirectAccess 客户端计算机创建安全组](#BKMK_AddSecurityGroup)以获取说明。 ) 
+    2.  在“选择组”**** 选项卡上，添加你以前为 DirectAccess 客户端创建的安全组。  (如果尚未创建安全组，请参阅 [步骤4：为 DirectAccess 客户端计算机创建安全组](#BKMK_AddSecurityGroup) 以获取说明。 ) 
 
     3.  如果要让移动计算机使用 DirectAccess 远程访问该服务器，请在“选择组”**** 选项卡上，单击“仅为移动计算机启用 DirectAccess”****，然后单击“下一步”****。
 
@@ -277,7 +277,7 @@ ms.locfileid: "87837906"
         Restart-Service RaMgmtSvc
         ```
 
-###  <a name="step-5b-remove-the-invalid-ipv6prefix-in-rras-gpo-windows-server-essentials-only"></a><a name="BKMK_RemoveIPv6"></a>步骤5b：删除 RRAS GPO 中的无效 IPv6Prefix， (仅限 Windows Server Essentials) 
+###  <a name="step-5b-remove-the-invalid-ipv6prefix-in-rras-gpo-windows-server-essentials-only"></a><a name="BKMK_RemoveIPv6"></a> 步骤5b：删除 RRAS GPO 中的无效 IPv6Prefix， (仅限 Windows Server Essentials) 
   本节适用于运行 Windows Server Essentials 的服务器。
 
  以管理员身份打开 Windows PowerShell，并运行下列命令：
@@ -289,30 +289,30 @@ Remove-GPRegistryValue -Name "DirectAccess Server Settings" -Key $key.Name -Valu
 gpupdate
 ```
 
-###  <a name="step-5c-enable-client-computers-running-windows-7-enterprise-to-use-directaccess"></a><a name="BKMK_Step4cWindows7Setup"></a>步骤5c：使运行 Windows 7 企业版的客户端计算机能够使用 DirectAccess
+###  <a name="step-5c-enable-client-computers-running-windows-7-enterprise-to-use-directaccess"></a><a name="BKMK_Step4cWindows7Setup"></a> 步骤5c：使运行 Windows 7 企业版的客户端计算机能够使用 DirectAccess
  如果客户端计算机运行的是 Windows 7 企业版，请完成以下过程以从这些计算机启用 DirectAccess。
 
 ##### <a name="to-enable--windows-7-enterprise-computers-to-use-directaccess"></a>使 Windows 7 企业计算机能够使用 DirectAccess
 
-1.  在服务器的 "开始" 页上，打开 "**远程访问管理**"。
+1.  在服务器的 "开始" 页上，打开 " **远程访问管理**"。
 
 2.  在远程访问管理控制台中，单击“配置”****。 然后在“设置详细信息”**** 窗格中的“步骤 2”**** 下，单击“编辑”****。
 
      远程访问服务器设置向导将打开。
 
-3.  在 "**身份验证**" 选项卡上，选择将成为受信任根证书的证书颁发机构 (CA) 证书， (可以选择 Windows Server Essentials 服务器) 的 ca 证书。 单击“使 Windows 7 客户端计算机能够通过 DirectAccess 进行连接”****，然后单击“下一步”****。
+3.  在 " **身份验证** " 选项卡上，选择将成为受信任根证书的证书颁发机构 (CA) 证书， (可以选择 Windows Server Essentials 服务器) 的 ca 证书。 单击“使 Windows 7 客户端计算机能够通过 DirectAccess 进行连接”****，然后单击“下一步”****。
 
 4.  按照说明完成向导。
 
 > [!IMPORTANT]
 >  如果 Windows Server Essentials 服务器未附带预安装的 UR1，则通过 DirectAccess 连接的 Windows 7 企业计算机存在一个已知问题。 若要在该环境中启用 DirectAccess 连接，必须执行以下附加步骤：
 >
-> 1. 在 Windows Server Essentials 服务器上安装[Microsoft 知识库 (KB) 文章 2796394](https://support.microsoft.com/kb/2796394)中所述的修补程序。 然后重新启动该服务器。
->    2. 然后在每个 Windows 7 计算机上安装[Microsoft 知识库 (KB) 文章 2615847](https://support.microsoft.com/kb/2615847)中所述的修补程序。
+> 1. 在 Windows Server Essentials 服务器上安装 [Microsoft 知识库 (KB) 文章 2796394](https://support.microsoft.com/kb/2796394) 中所述的修补程序。 然后重新启动该服务器。
+>    2. 然后在每个 Windows 7 计算机上安装 [Microsoft 知识库 (KB) 文章 2615847](https://support.microsoft.com/kb/2615847) 中所述的修补程序。
 >
 >    此问题已在 Windows Server Essentials 中解决。
 
-###  <a name="step-5d-configure-the-network-location-server"></a><a name="BKMK_NLS"></a>步骤5d：配置网络位置服务器
+###  <a name="step-5d-configure-the-network-location-server"></a><a name="BKMK_NLS"></a> 步骤5d：配置网络位置服务器
  本节提供配置网络位置服务器设置的分步操作说明。
 
 > [!NOTE]
@@ -328,7 +328,7 @@ gpupdate
 
 4.  按照说明完成向导，然后单击“完成”****。
 
-###  <a name="step-5e-add-a-registry-key-to-bypass-ca-certification-when-you-establish-an-ipsec-channel"></a><a name="BKMK_CA"></a>步骤5e：建立 IPsec 通道时，添加注册表项以避免使用 CA 证书
+###  <a name="step-5e-add-a-registry-key-to-bypass-ca-certification-when-you-establish-an-ipsec-channel"></a><a name="BKMK_CA"></a> 步骤5e：建立 IPsec 通道时，添加注册表项以避免使用 CA 证书
  下一步是将该服务器配置为在建立 IPsec 通道时避免使用 CA 证书。
 
 ##### <a name="to-add-a-registry-key-to-bypass-the-ca-certification"></a>添加注册表项以避免使用 CA 证书的步骤
@@ -348,7 +348,7 @@ gpupdate
 >
 >  `Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\IKEEXT\Parameters -Name ikeflags -Type DWORD -Value 0x8000`
 
-##  <a name="step-6-configure-name-resolution-policy-table-settings-for-the-directaccess-server"></a><a name="BKMK_NRPT"></a>步骤6：为 DirectAccess 服务器配置名称解析策略表设置
+##  <a name="step-6-configure-name-resolution-policy-table-settings-for-the-directaccess-server"></a><a name="BKMK_NRPT"></a> 步骤6：为 DirectAccess 服务器配置名称解析策略表设置
  本节提供以下相关说明：编辑 DirectAccess 客户端 GPO 内部地址（例如，带有 contoso.local 后缀的项）名称解析策略表 (NPRT) 项，然后设置 IPHTTPS 接口地址。
 
 #### <a name="to-configure-name-resolution-policy-table-entries"></a>配置名称解析策略表项的步骤
@@ -366,7 +366,7 @@ gpupdate
     >
     >  `(Get-NetIPInterface -InterfaceAlias IPHTTPSInterface | Get-NetIPAddress -PrefixLength 128)[1].IPAddress`
 
-##  <a name="step-7-configure-tcp-and-udp-firewall-rules-for-the-directaccess-server-gpos"></a><a name="BKMK_TCPUDP"></a>步骤7：为 DirectAccess 服务器 Gpo 配置 TCP 和 UDP 防火墙规则
+##  <a name="step-7-configure-tcp-and-udp-firewall-rules-for-the-directaccess-server-gpos"></a><a name="BKMK_TCPUDP"></a> 步骤7：为 DirectAccess 服务器 Gpo 配置 TCP 和 UDP 防火墙规则
  本节包含为 DirectAccess 服务器 GPO 配置 TCP 和 UDP 防火墙规则的分步操作说明。
 
 #### <a name="to-configure-firewall-rules"></a>配置防火墙规则的步骤
@@ -381,14 +381,14 @@ gpupdate
 
 5.  针对“域名服务器(UDP-In)”**** 重复同样的过程。
 
-##  <a name="step-8-change-the-dns64-configuration-to-listen-to-the-ip-https-interface"></a><a name="BKMK_DNS64"></a>步骤8：更改 DNS64 配置以侦听 IP-HTTPS 接口
+##  <a name="step-8-change-the-dns64-configuration-to-listen-to-the-ip-https-interface"></a><a name="BKMK_DNS64"></a> 步骤8：更改 DNS64 配置以侦听 IP-HTTPS 接口
  必须更改 DNS64 配置，以便使用以下 Windows PowerShell 命令侦听 IP-HTTPS 接口。
 
 ```powershell
 Set-NetDnsTransitionConfiguration -AcceptInterface IPHTTPSInterface
 ```
 
-##  <a name="step-9-reserve-ports-for-the-winnat-service"></a><a name="BKMK_ExemptPort"></a>步骤9：保留 WinNat 服务的端口
+##  <a name="step-9-reserve-ports-for-the-winnat-service"></a><a name="BKMK_ExemptPort"></a> 步骤9：保留 WinNat 服务的端口
  使用以下 Windows PowerShell 命令保留 WinNat 服务的端口。 请将 "192.168.1.100" 替换为 Windows Server Essentials 服务器的实际 IPv4 地址。
 
 ```powershell
@@ -398,22 +398,22 @@ Set-NetNatTransitionConfiguration -IPv4AddressPortPool @("192.168.1.100, 10000-4
 > [!IMPORTANT]
 >  若要避免与应用程序的端口冲突，请确保你为 WinNat 服务保留的端口范围不包括端口 6602。
 
-##  <a name="step-10-restart-the-winnat-service"></a><a name="BKMK_WinNAT"></a>步骤10：重新启动 WinNat 服务
+##  <a name="step-10-restart-the-winnat-service"></a><a name="BKMK_WinNAT"></a> 步骤10：重新启动 WinNat 服务
  通过运行以下 Windows PowerShell 命令重新启动 Windows NAT 驱动程序 (WinNat) 服务。
 
 ```powershell
 Restart-Service winnat
 ```
 
-##  <a name="appendix-set-up-directaccess-by-using-windows-powershell"></a><a name="BKMK_AppendixBPowerShellScript"></a>附录：使用 Windows PowerShell 设置 DirectAccess
+##  <a name="appendix-set-up-directaccess-by-using-windows-powershell"></a><a name="BKMK_AppendixBPowerShellScript"></a> 附录：使用 Windows PowerShell 设置 DirectAccess
  本节介绍如何使用 Windows PowerShell 设置和配置 DirectAccess。
 
-### <a name="preparation"></a>准备
+### <a name="preparation"></a>准备工作
  在开始为 DirectAccess 配置服务器之前，必须完成以下操作：
 
-1.  请按照[步骤3：为网络位置服务器准备证书和 DNS 记录](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)中的过程注册一个名为**DirectAccess-NLS.contoso.com** (证书，其中**contoso.com**替换为实际内部域名) ，并为网络位置服务器添加 DNS 记录 (NLS) 。
+1.  请按照 [步骤3：为网络位置服务器准备证书和 DNS 记录](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS) 中的过程注册一个名为 **DirectAccess-NLS.contoso.com** (证书，其中 **contoso.com** 替换为实际内部域名) ，并为网络位置服务器添加 DNS 记录 (NLS) 。
 
-2.  在 Active Directory 中添加名为“DirectAccessClients”的安全组****，然后添加要提供 DirectAccess 功能的客户端计算机。 有关详细信息，请参阅[步骤4：为 DirectAccess 客户端计算机创建安全组](#BKMK_AddSecurityGroup)。
+2.  在 Active Directory 中添加名为“DirectAccessClients”的安全组****，然后添加要提供 DirectAccess 功能的客户端计算机。 有关详细信息，请参阅 [步骤4：为 DirectAccess 客户端计算机创建安全组](#BKMK_AddSecurityGroup)。
 
 ### <a name="commands"></a>命令
 

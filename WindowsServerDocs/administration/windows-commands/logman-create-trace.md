@@ -3,16 +3,16 @@ title: logman create trace
 description: 用于创建事件跟踪数据收集器的 logman create trace 命令的参考文章。
 ms.topic: reference
 ms.assetid: 1b4dfecd-6f56-4c51-b622-c2054b4aabd7
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ac0f8350e6dd42995c5d066201e1338f6d014a6d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 31a286d90873d76ad604de27ac94a0668939d8da
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023831"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622758"
 ---
 # <a name="logman-create-trace"></a>logman create trace
 
@@ -61,7 +61,7 @@ logman create trace <[-n] <name>> [options]
 | -模式 `<globalsequence|localsequence|pagedmemory>` | 指定事件跟踪会话记录器模式，其中包括：<ul><li>**Globalsequence** -指定事件跟踪器将序列号添加到它接收的每个事件，而不考虑哪个跟踪会话收到了该事件。</li><li>**Localsequence** -指定事件跟踪器为在特定跟踪会话中接收的事件添加序列号。 使用此选项时，重复的序列号可以在所有会话中存在，但在每个跟踪会话中是唯一的。</li><li>**Pagedmemory** -指定事件跟踪器使用分页内存而不是默认的非分页内存池来实现其内部缓冲区分配。</li></ul> |
 | /? | 显示区分上下文的帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 其中列出了 [-]，添加了额外的连字符 ( ) 对该选项求反。
 

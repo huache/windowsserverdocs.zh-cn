@@ -3,16 +3,16 @@ title: ksetup mapuser
 description: Ksetup mapuser 命令的参考文章，可将 Kerberos 主体的名称映射到帐户。
 ms.topic: reference
 ms.assetid: 84113e6e-89ff-488a-9cd0-f14bbf23b543
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: de3eeafdcd1ef94bf1e6c50009742b2981d0d7dc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e8e676218455147e68f84b42bcbad2dcd7285a01
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025461"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622791"
 ---
 # <a name="ksetup-mapuser"></a>ksetup mapuser
 
@@ -31,7 +31,7 @@ ksetup /mapuser <principal> <account>
 | `<principal>` | 指定任何主体用户的完全限定的域名。 例如，mike@corp.CONTOSO.COM。 如果未指定帐户参数，则将删除指定主体的映射。 |
 | `<account>` | 指定此计算机上存在的任何帐户或安全组名称，如 **来宾**、 **域用户**或 **管理员**。 如果省略此参数，则将删除指定主体的映射。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 可以专门确定帐户（如 **域来宾**），也可以使用通配符 ( * ) 包含所有帐户。
 

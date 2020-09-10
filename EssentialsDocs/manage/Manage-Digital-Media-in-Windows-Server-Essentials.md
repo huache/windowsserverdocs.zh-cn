@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9378bffa-487c-43ca-9ec3-7e7864d2dd9a
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: c59fd121fdf628fc0943214b699599f2f20625b3
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: b5788495a2d622a74d5099d3e7c91e62c8d84a6f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837826"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623136"
 ---
 # <a name="manage-digital-media-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的数字媒体
 
@@ -45,7 +45,7 @@ ms.locfileid: "87837826"
 
 -   [媒体文件类型的已知问题](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_KnownIssues)
 
-##  <a name="digital-media-overview"></a><a name="BKMK_1"></a>数字媒体概述
+##  <a name="digital-media-overview"></a><a name="BKMK_1"></a> 数字媒体概述
  数字媒体是指已编码（数字压缩）的音频、视频和照片内容。 编码内容包括将音频和视频输入转换为数字媒体文件，如 Windows Media 文件。 对数字媒体进行编码后，它可以通过计算机方便地操作、分发和播放，并且轻松地通过计算机网络传输。
 
  数字媒体类型的示例包括：Windows Media 音频 (WMA)、Windows Media 视频 (WMV)、MP3、JPEG　和 AVI。 有关 Windows Media Player 支持的数字媒体类型的信息，请参阅 [Windows Media Player 支持的文件类型](https://support.microsoft.com/kb/316992)。
@@ -59,12 +59,12 @@ ms.locfileid: "87837826"
 
 -   **显示照片幻灯片**。 可以将你的数字照片存储在服务器上的 **“照片”** 共享文件夹中，然后从任何计算机或连接到你家庭或办公室中的电视的 Xbox 360 访问它们。 可以观看照片幻灯片，就像将你的电视变成大相框一样。
 
-###  <a name="sharing-copy-protected-media"></a><a name="BKMK_1.5"></a>共享受版权保护的媒体
+###  <a name="sharing-copy-protected-media"></a><a name="BKMK_1.5"></a> 共享受版权保护的媒体
   Windows Server Essentials 不支持共享受版权保护的媒体。 这包括通过在线音乐商店购买的音乐。
 
  仅可以在用于购买它的计算机或设备上播放受版权保护的媒体。 版权保护防止你在多个计算机或设备上播放媒体，即使你将媒体复制到服务器并从那里播放它。 但是，可以在 Windows Server Essentials 上存储受版权保护的媒体，并继续在用来购买它的计算机或设备上播放该媒体。
 
-##  <a name="manage-media-server-using-the-dashboard"></a><a name="BKMK_2"></a>使用仪表板管理媒体服务器
+##  <a name="manage-media-server-using-the-dashboard"></a><a name="BKMK_2"></a> 使用仪表板管理媒体服务器
   Windows Server Essentials 使你可以使用 Windows Server Essentials 仪表板执行常见管理任务。 服务器的 **“媒体”** 选项卡和仪表板的 **“设置”** 页提供了以下内容：
 
 |部分|功能|
@@ -75,7 +75,7 @@ ms.locfileid: "87837826"
 
  有关详细信息，请参阅[允许或限制对服务器上的媒体库的访问](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)和[共享受版权保护的媒体](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1.5)。
 
-##  <a name="how-media-streaming-works"></a><a name="BKMK_3"></a>媒体流的工作原理
+##  <a name="how-media-streaming-works"></a><a name="BKMK_3"></a> 媒体流的工作原理
  Windows Server Essentials 中的媒体流功能使联网的计算机和某些联网数字媒体设备可以播放存储在服务器上的数字媒体文件。
 
  当你打开媒体服务器时，在能够从你的服务器中接收流媒体的网络中的设备上，媒体库中共享的内容将可用于播放。 可以传输大多数类型的数字媒体文件。 一些较常见的可以流媒体传送的文件类型包括：
@@ -90,7 +90,7 @@ ms.locfileid: "87837826"
 
 - CD 音频曲目 (.cda)
 
-  若要播放文件，只需在共享文件夹中找到一首歌曲、视频或图片，双击该文件，然后将内容从服务器传输到你的计算机并且播放。 有关如何查找和播放存储在服务器上的数字媒体文件的信息，请参阅[播放数字媒体](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)。
+  若要播放文件，只需在共享文件夹中找到一首歌曲、视频或图片，双击该文件，然后将内容从服务器传输到你的计算机并且播放。 有关如何查找和播放存储在服务器上的数字媒体文件的信息，请参阅 [播放数字媒体](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)。
 
   若要流式传输媒体，你需要以下硬件：
 
@@ -98,17 +98,17 @@ ms.locfileid: "87837826"
 
 - 你的网络上的另一台计算机或称为数字媒体接收器（有时称为网络数字媒体播放机）的设备。 数字媒体接收器是连接到有线或无线网络的硬件设备，您可以使用您的计算机来控制该网络，即使您的计算机在另一个房间内也是如此。
 
-  有关详细信息，请参阅[打开或关闭媒体流](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)。
+  有关详细信息，请参阅 [打开或关闭媒体流](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)。
 
-##  <a name="turn-media-streaming-on-or-off"></a><a name="BKMK_4"></a>启用或禁用媒体流
+##  <a name="turn-media-streaming-on-or-off"></a><a name="BKMK_4"></a> 启用或禁用媒体流
  可以通过将文件流式传输到任何支持的数字媒体接收器（如计算机、移动电话、电视、数字媒体接收器、Windows Media (Center （包括 Xbox 360) 和其他个人电子设备）的扩展程序 (DMR) ，从 Windows Server Essentials 共享音乐、视频和图片。
 
- 有关与 Windows Server Essentials 兼容的数字媒体设备的当前列表，请参阅[Windows 兼容性中心](https://www.microsoft.com/windows/compatibility/CompatCenter/Home)。
+ 有关与 Windows Server Essentials 兼容的数字媒体设备的当前列表，请参阅 [Windows 兼容性中心](https://www.microsoft.com/windows/compatibility/CompatCenter/Home)。
 
 ### <a name="enabling-media-sharing"></a>启用媒体共享
  若要共享 Windows Server Essentials 中存储的媒体，你需要打开媒体流。 默认情况下，媒体流已关闭。
 
-####  <a name="to-turn-media-streaming-on-or-off"></a><a name="BKMK_2.5"></a>打开或关闭媒体流
+####  <a name="to-turn-media-streaming-on-or-off"></a><a name="BKMK_2.5"></a> 打开或关闭媒体流
 
 1. 打开 Windows Server Essentials 仪表板。
 
@@ -126,11 +126,11 @@ ms.locfileid: "87837826"
 
    有关详细信息，请参阅[允许或限制对服务器上的媒体库的访问](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)。
 
-##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_5"></a>将数字媒体文件添加到服务器
- 服务器管理员可以通过直接访问服务器或通过使用远程 Web 访问站点登录到仪表板，将数字媒体添加到媒体库中的共享文件夹。 其他用户可以通过使用 "快速启动板" 上的 "**共享文件夹**" 连接、通过使用远程 Web 访问站点或使用适用于 Windows Phone 的 My server 应用，将媒体文件添加到服务器。 有关播放媒体的信息，请参阅[播放数字媒体](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)。
+##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_5"></a> 将数字媒体文件添加到服务器
+ 服务器管理员可以通过直接访问服务器或通过使用远程 Web 访问站点登录到仪表板，将数字媒体添加到媒体库中的共享文件夹。 其他用户可以通过使用 "快速启动板" 上的 " **共享文件夹** " 连接、通过使用远程 Web 访问站点或使用适用于 Windows Phone 的 My server 应用，将媒体文件添加到服务器。 有关播放媒体的信息，请参阅 [播放数字媒体](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)。
 
 > [!NOTE]
->  通过使用适用于 Windows Phone 的 My Server 应用，还可以将媒体文件上载到服务器。 你可以从 [Windows Phone 应用商店](https://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)下载 My Server 应用。 有关适用于 Windows phone 的 My Server 应用的详细信息，请参阅博客文章[适用于 Windows Server Essentials 的 My server 应用](/archive/blogs/sbs/my-server-phone-app-for-windows-server-2012-essentials)。
+>  通过使用适用于 Windows Phone 的 My Server 应用，还可以将媒体文件上载到服务器。 你可以从 [Windows Phone 应用商店](https://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)下载 My Server 应用。 有关适用于 Windows phone 的 My Server 应用的详细信息，请参阅博客文章 [适用于 Windows Server Essentials 的 My server 应用](/archive/blogs/sbs/my-server-phone-app-for-windows-server-2012-essentials)。
 
 #### <a name="to-add-digital-media-files-to-shared-folders-on-the-server"></a>将数字媒体文件添加到服务器上的共享文件夹
 
@@ -138,13 +138,13 @@ ms.locfileid: "87837826"
 
     1.  有关登录到远程 Web 访问的信息，请参阅[登录到远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)。
 
-    2.  有关通过快速启动板登录的信息，请参阅[快速启动板概述](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)。
+    2.  有关通过快速启动板登录的信息，请参阅 [快速启动板概述](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)。
 
 2.  搜索并单击你要添加的媒体的文件夹。
 
 3.  将你想要添加的媒体文件复制和粘贴或拖放到服务器上相应的共享文件夹中。
 
-##  <a name="allow-or-restrict-access-to-a-media-library-on-the-server"></a><a name="BKMK_6"></a>允许或限制对服务器上的媒体库的访问
+##  <a name="allow-or-restrict-access-to-a-media-library-on-the-server"></a><a name="BKMK_6"></a> 允许或限制对服务器上的媒体库的访问
 
 -   当你打开媒体共享时，它会创建四个预定义的文件夹：音乐、图片、视频和录制的电视节目。 如果在服务器上预先存在任何这些文件夹，则现有文件夹将作为媒体共享的共享文件夹重复使用。 将保留现有文件夹的所有媒体内容和用户权限，并将它们与所有网络用户共享。
 
@@ -152,8 +152,8 @@ ms.locfileid: "87837826"
 
 -   如果为共享文件夹启用媒体库共享，则任何支持的数字媒体播放器或可以访问 Windows Server Essentials 网络的 DMR 也可以访问该共享文件夹中的数字媒体。 例如，如果你有无线网络而且你尚未保护它，则你的无线网络范围内的任何人都可能会访问该文件夹中的数字媒体。 在你启用媒体库共享之前，请确保你的无线网络的安全。 有关详细信息，请参阅你的无线访问点的文档。
 
-##  <a name="rename-the-media-library"></a><a name="BKMK_8"></a>重命名媒体库
- 媒体库的默认名称是 **“数字媒体服务器”**。 它是在 Windows Server Essentials 中打开媒体流时创建的。 有关启用媒体流的详细信息，请参阅[打开或关闭媒体流](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.5)。 通过使用服务器仪表板，可以随时修改媒体库的名称。
+##  <a name="rename-the-media-library"></a><a name="BKMK_8"></a> 重命名媒体库
+ 媒体库的默认名称是 **“数字媒体服务器”**。 它是在 Windows Server Essentials 中打开媒体流时创建的。 有关启用媒体流的详细信息，请参阅 [打开或关闭媒体流](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.5)。 通过使用服务器仪表板，可以随时修改媒体库的名称。
 
 #### <a name="to-rename-the-media-library"></a>重命名媒体库
 
@@ -167,7 +167,7 @@ ms.locfileid: "87837826"
 
 5.  在 **“更改媒体库名称”** 对话框中，键入媒体库的新名称，然后单击 **“确定”**。
 
-##  <a name="stop-sharing-digital-media"></a><a name="BKMK_9"></a>停止共享数字媒体
+##  <a name="stop-sharing-digital-media"></a><a name="BKMK_9"></a> 停止共享数字媒体
  服务器管理员可以停止共享存储在运行 Windows Server Essentials 的服务器上的共享文件夹中的数字媒体。
 
 #### <a name="to-stop-sharing-media-in-shared-folders"></a>停止共享文件夹中的共享媒体
@@ -184,13 +184,13 @@ ms.locfileid: "87837826"
 
 4.  单击 **“应用”** 或 **“确定”** 以保存你的更改。
 
-##  <a name="enable-media-devices-that-use-the-server-message-block-smb-protocol-to-access-shared-files-on-the-server"></a><a name="BKMK_10"></a>启用使用服务器消息块 (SMB) 协议的媒体设备来访问服务器上的共享文件
+##  <a name="enable-media-devices-that-use-the-server-message-block-smb-protocol-to-access-shared-files-on-the-server"></a><a name="BKMK_10"></a> 启用使用服务器消息块 (SMB) 协议的媒体设备来访问服务器上的共享文件
  将服务器消息块 (SMB) 用于网络文件和共享访问而不是使用 DLNA （适用于媒体流）的设备需要激活来宾帐户。 这允许网络上的任何设备或用户无需身份验证即可查看共享文件夹的内容。
 
 > [!CAUTION]
 >  默认情况下，启用来宾帐户后，任何人都可以访问服务器上的共享资源。
 
-##  <a name="common-processors-and-the-video-profiles-they-support"></a><a name="BKMK_CommonProcessors"></a>常见处理器和它们支持的视频配置文件
+##  <a name="common-processors-and-the-video-profiles-they-support"></a><a name="BKMK_CommonProcessors"></a> 常见处理器和它们支持的视频配置文件
  若要从 Windows Server Essentials 服务器流式传输媒体，可以使用运行 Windows 7 或 Windows 8 操作系统的计算机或其他联网设备 (如数字媒体播放器) 或 Media Center 扩展器 (如 Xbox 360) 。 当你离开网络时，使用远程 Web 访问 Media Player 播放存储在你服务器上的文件。
 
  你需要介于 200 KBps 和 10 MBps 之间的数据传输速率。 你需要使用你的计算机和设备可以识别和播放的媒体格式。 并非所有的设备支持相同的媒体格式，因此必须有为你的计算机和设备播放你具有的媒体文件的方法。
@@ -199,7 +199,7 @@ ms.locfileid: "87837826"
 
  为转码选择的格式和比特率很大程度上取决于服务器处理器的性能。 处理器性能被标识为 Windows 体验指数的一部分。 若要确定你的服务器的性能分数，请执行下列任一操作：
 
-- 在运行 Windows 7 或 Windows 8 的网络计算机上，该计算机具有与你的服务器相同的处理器，请在 "**控制面板**" 中，单击 "**性能信息和工具**"，然后查看 "**速率和提高计算机的性能**" 页上的信息。
+- 在运行 Windows 7 或 Windows 8 的网络计算机上，该计算机具有与你的服务器相同的处理器，请在 " **控制面板**" 中，单击 " **性能信息和工具**"，然后查看 " **速率和提高计算机的性能** " 页上的信息。
 
 - 与处理器的制造商联系。
 
@@ -218,7 +218,7 @@ ms.locfileid: "87837826"
 > [!NOTE]
 >  若要通过远程 Web 访问流传输高清晰度视频，你需要有至少 6.0 分的处理器。
 
-##  <a name="known-issues-with-media-file-types"></a><a name="BKMK_KnownIssues"></a>媒体文件类型的已知问题
+##  <a name="known-issues-with-media-file-types"></a><a name="BKMK_KnownIssues"></a> 媒体文件类型的已知问题
  远程 Web 访问中的媒体流功能使用 Windows Media Player 12 网络共享服务。 远程 Web 访问媒体流支持音频、视频和图片文件类型，这些文件类型在 Windows Media Player 12 和 Silverlight 4 中受支持。
 
  下表列出了远程 Web 访问媒体流支持的文件类型（格式）。 如果你的服务器上有该表中不包括的媒体文件类型，则你无法通过远程 Web 访问媒体流来流媒体传送它们。

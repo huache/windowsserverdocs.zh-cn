@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d9f18b29-8e03-439e-bdf0-1dac5e4f70c5
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: e55c717b1eeb5b8f75ebfb7b48abd656dd4ddaa3
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 3e0902f99be96e3197b90b4892f78849a5c84125
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838424"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622881"
 ---
 # <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>从新的 Windows Server Essentials 中降级和删除源服务器
 
@@ -32,7 +32,7 @@ ms.locfileid: "87838424"
 5.  [删除源服务器并重新调整其用途](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)。
 
 
-###  <a name="uninstall-exchange-server-2003"></a><a name="BKMK_UninstallExchangeServer2003"></a>卸载 Exchange Server 2003
+###  <a name="uninstall-exchange-server-2003"></a><a name="BKMK_UninstallExchangeServer2003"></a> 卸载 Exchange Server 2003
 
 > [!IMPORTANT]
 >  如果在将邮箱移动到目标服务器之后、在从源服务器卸载 Exchange Server 2003 之前添加用户帐户，将在源服务器上添加邮箱。 这是设计的结果。 你必须为所有在此期间添加的用户帐户将邮箱移动到目标服务器。 在卸载 Exchange Server 2003 之前，请重复移动 Exchange Server 邮箱和用于 Windows Server Essentials 迁移的设置中的说明。
@@ -45,7 +45,7 @@ ms.locfileid: "87838424"
 
 2. 依次单击“开始”****、“控制面板”****，然后单击“添加或删除程序”****。
 
-3. 在程序列表中，选择 " **Windows Small Business Server 2003**"，然后单击 "**更改/删除**"。
+3. 在程序列表中，选择 " **Windows Small Business Server 2003**"，然后单击 " **更改/删除**"。
 
 4. 在设置向导中，单击“下一步”****，直到“组件选择”**** 页面出现。
 
@@ -53,17 +53,17 @@ ms.locfileid: "87838424"
 
    > [!NOTE]
    >
-   >  Exchange Server 将进行检查以确保服务器上没有邮箱或公共文件夹。 如果保留了任何数据，将在你单击“删除”**** 时显示错误消息。 若要避免此问题，请确保已完成将[SBS 2003 设置和数据移到目标服务器](./move-windows-sbs-2003-to-the-destination-server-for-migration.md)主题中的所有过程。
+   >  Exchange Server 将进行检查以确保服务器上没有邮箱或公共文件夹。 如果保留了任何数据，将在你单击“删除”**** 时显示错误消息。 若要避免此问题，请确保已完成将 [SBS 2003 设置和数据移到目标服务器](./move-windows-sbs-2003-to-the-destination-server-for-migration.md)主题中的所有过程。
 
 
-6. 单击“下一步” 。
+6. 单击“下一步”。 
 
 7. 出现提示时，插入 Windows Small Business Server 2003 CD#3，并按照屏幕上的说明进行操作。
 
-###  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a>断开直接连接到源服务器的打印机的连接
+###  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a> 断开直接连接到源服务器的打印机的连接
  在降级源服务器之前，请以物理方式断开直接连接到源服务器并通过源服务器共享的所有打印机的连接。 确保不会为已直接连接到源服务器的打印机保留任何 Active Directory 对象。 然后，可以将打印机直接连接到目标服务器并从 Windows Server Essentials 进行共享。
 
-###  <a name="demote-the-source-server"></a><a name="BKMK_DemoteTheSourceServer"></a>降级源服务器
+###  <a name="demote-the-source-server"></a><a name="BKMK_DemoteTheSourceServer"></a> 降级源服务器
  在将源服务器从 AD DS 域控制器的角色降级为域成员服务器的角色之前，请确保将组策略设置应用于所有的客户端计算机，如以下过程中所述。
 
 > [!IMPORTANT]
@@ -77,7 +77,7 @@ ms.locfileid: "87838424"
 
 3.  在命令提示符下，键入 **gpupdate /force**，然后按 Enter。
 
-4.  该过程可能需要注销并重新登录才能完成。 单击“是”**** 以确认。
+4.  该过程可能需要注销并重新登录才能完成。 单击“是”  以确认。
 
 ##### <a name="to-demote-the-source-server"></a>对源服务器进行降级
 
@@ -90,7 +90,7 @@ ms.locfileid: "87838424"
 
 3. 在服务器上，键入新的管理员帐户的密码，然后单击“下一步”****。
 
-4. 在 "**摘要**" 对话框中，通知您 AD DS 将从计算机中删除，并且该服务器将成为该域的成员。 单击“下一步”。
+4. 在 " **摘要** " 对话框中，通知您 AD DS 将从计算机中删除，并且该服务器将成为该域的成员。 单击“下一步”。
 
 5. 单击“完成”。 源服务器将重新启动。
 
@@ -108,7 +108,7 @@ ms.locfileid: "87838424"
 
 4.  验证源服务器是否未列出，然后关闭“Active Directory 用户和计算机”****。
 
-###  <a name="move-the-dhcp-server-role-from-the-source-server-to-the-router"></a><a name="BKMK_MoveTheDHCPRole"></a>将 DHCP 服务器角色从源服务器移到路由器
+###  <a name="move-the-dhcp-server-role-from-the-source-server-to-the-router"></a><a name="BKMK_MoveTheDHCPRole"></a> 将 DHCP 服务器角色从源服务器移到路由器
 
 > [!NOTE]
 >
@@ -138,7 +138,7 @@ ms.locfileid: "87838424"
     > [!IMPORTANT]
     >  如果你尚未为目标服务器在路由器上设置静态 IP 或 DHCP 预留，并且 DHCP 范围与源服务器不同，则可能路由器将为目标服务器颁发一个新的 IP 地址。 如果发生这种情况，则请重置路由器的端口转发规则，以转发到目标服务器的新 IP 地址。
 
-###  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a>删除源服务器并重新调整其用途
+###  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a> 删除源服务器并重新调整其用途
  关闭源服务器并断开它到网络的连接。 我们建议你至少在一周的时间内不要重新格式化源服务器，以确保所有必要的数据都迁移到目标服务器。 在验证所有数据已迁移之后，如有必要，你可以在网络上将此服务器作为辅助服务器进行重新安装，以用于其他任务。
 
 > [!NOTE]

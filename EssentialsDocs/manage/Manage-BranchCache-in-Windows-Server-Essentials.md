@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f6e05aec-d07c-4e0b-94ab-f20279e9ffd1
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: aae5c0c8a3a98b25d13d7bf11f6fb14963714c24
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 52493dae886eb8f74a6276854c7b7cce2f77470f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837916"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623208"
 ---
 # <a name="manage-branchcache-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的 BranchCache
 
@@ -36,7 +36,7 @@ BranchCache 有助于优化 Internet 使用情况，提高联网应用程序的�
 -   Windows Server Essentials 服务器位于另一办公室的不同物理位置。
 
 ## <a name="distributed-cache-mode"></a>分布式缓存模式
- 在 Windows Server Essentials 中，BranchCache 采用*分布式缓存模式*实现，该模式是 branchcache 中可用的两种缓存模式之一。 在分布式缓存模式下，会在客户端计算机之间分布分支机构的内容缓存。 由于无需更改任何其他硬件或拓扑，此模式非常适合使用远程服务器或本地服务器访问 SharePoint Online 等基于云的服务的小型机构。 当你在 Windows Server Essentials 中打开 BranchCache 时，将实现分布式缓存模式。
+ 在 Windows Server Essentials 中，BranchCache 采用 *分布式缓存模式*实现，该模式是 branchcache 中可用的两种缓存模式之一。 在分布式缓存模式下，会在客户端计算机之间分布分支机构的内容缓存。 由于无需更改任何其他硬件或拓扑，此模式非常适合使用远程服务器或本地服务器访问 SharePoint Online 等基于云的服务的小型机构。 当你在 Windows Server Essentials 中打开 BranchCache 时，将实现分布式缓存模式。
 
 > [!NOTE]
 >  在具有多个子网或大量员工使用网络应用程序的较大型分支机构中，在*托管缓存模式*下实现 BranchCache 可能非常有益。 在托管缓存模式下，内容缓存存储在分支机构的一个或多个托管缓存服务器上。
@@ -63,7 +63,7 @@ BranchCache 有助于优化 Internet 使用情况，提高联网应用程序的�
 
 1.  用管理员帐户登录 Windows Server Essentials 服务器。
 
-2.  在 Windows Server Essentials 仪表板上，单击 "**设置**"。
+2.  在 Windows Server Essentials 仪表板上，单击 " **设置**"。
 
      设置向导将打开。
 

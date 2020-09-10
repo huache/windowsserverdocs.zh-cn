@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c369c317-f94d-4179-a735-e74bf6f62692
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: a52c604aa9d79fe95d4e34673a94ff91c5cc4b7a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 1bd8f498cef17edc73569077dc03d4b7b4e26d66
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181053"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623291"
 ---
 # <a name="manage-anywhere-access-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的随处访问
 
@@ -30,7 +30,7 @@ ms.locfileid: "87181053"
 
 -   [配置 DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md)
 
-     使用 DirectAccess，可以从任何支持 Internet 的远程位置无缝连接到组织的存储网络，而不必建立虚拟专用网络（VPN）连接。 DirectAccess 通过在办公室内外提供同样的连接体验，为组织的存储移动办公人员提高工作效率。
+     使用 DirectAccess，可以从任何支持 Internet 的远程位置无缝连接到组织的存储网络，而不必建立虚拟专用网络 (VPN) 连接。 DirectAccess 通过在办公室内外提供同样的连接体验，为组织的存储移动办公人员提高工作效率。
 
 ## <a name="additional-references"></a>其他参考
 

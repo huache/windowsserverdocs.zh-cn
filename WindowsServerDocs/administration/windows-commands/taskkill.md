@@ -3,16 +3,16 @@ title: taskkill
 description: Taskkill 的参考文章，用于结束一个或多个任务或进程。
 ms.topic: reference
 ms.assetid: 2b71e792-08b6-46d4-95a5-cb6336a79524
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b3b0a2727116ca2a073e5ad5b17c4fe065453ab6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f750f7487e8220c93ea30a78ee185f28a74fd512
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027115"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622367"
 ---
 # <a name="taskkill"></a>taskkill
 
@@ -56,7 +56,7 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 | SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE |         eq、ne         |                                                                 窗口标题                                                                 |
 |   模块   |         eq、ne         |                                                                   DLL 名称                                                                   |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 * 指定远程系统时，不支持 SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE 和 STATUS 筛选器。
 * **\\**仅当应用了筛选器时，才<em>接受 **/im</em> *选项 () 通配符。
 * 不管是否指定了 **/f** 选项，远程进程的终止始终都是强制执行的。

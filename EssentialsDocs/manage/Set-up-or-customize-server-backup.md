@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 441c2d6c-435a-42cb-90f2-6d680d279d34
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 8342c542861598411570c4e702aea5a94f992c79
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 464b30d610dcf25dc53c12bf38f8ec3da8691e2a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180803"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622947"
 ---
 # <a name="set-up-or-customize-server-backup"></a>设置或自定义服务器备份
 
@@ -30,7 +30,7 @@ ms.locfileid: "87180803"
 
 -   [要备份的项](Set-up-or-customize-server-backup.md#BKMK_4)
 
-##  <a name="set-up-or-change-server-backup-settings"></a><a name="BKMK_1"></a>设置或更改服务器备份设置
+##  <a name="set-up-or-change-server-backup-settings"></a><a name="BKMK_1"></a> 设置或更改服务器备份设置
 
 #### <a name="to-set-up-or-change-server-backup-settings"></a>设置或更改服务器备份设置
 
@@ -57,10 +57,10 @@ ms.locfileid: "87180803"
 >    4. 在“优化驱动器”**** 页面上，选择一个驱动器，然后单击“更改设置”****。
 >    5. 在“优化计划”**** 窗口中，清除“按计划运行(推荐)”**** 复选框，然后单击“确定”**** 以保存更改。
 
-##  <a name="server-backup-schedule"></a><a name="BKMK_2"></a>服务器备份计划
+##  <a name="server-backup-schedule"></a><a name="BKMK_2"></a> 服务器备份计划
  当你使用设置服务器备份向导或自定义服务器备份向导时，你可以选择在一天内多次备份服务器数据。 因为向导将计划基于增量的备份，因此备份将快速运行，并且不会显著影响服务器性能。 默认情况下，向导将计划一个要在每天 12:00 PM 和 11:00 PM 运行的备份。 但是，你可以根据组织需求调整备份计划。 你应该不定期评估备份计划的有效性，并根据需要更改计划。
 
-##  <a name="backup-target-drive"></a><a name="BKMK_Target"></a>备份目标驱动器
+##  <a name="backup-target-drive"></a><a name="BKMK_Target"></a> 备份目标驱动器
  你可以使用多个外部存储驱动器进行备份，也可以在现场和场外存储位置之间旋转驱动器。 如果现场硬件发生物理损坏，则通过帮助恢复你的数据，此操作可改进灾难预防计划。
 
  为你的服务器备份选择存储驱动器时，请考虑以下方面：
@@ -107,12 +107,12 @@ ms.locfileid: "87180803"
 > 1. 在控制面板中，打开“系统和安全”****。
 >    2. 在“管理工具”**** 下，单击“创建和格式化硬盘分区”****。
 >    3. 右键单击该驱动器，然后单击“更改驱动器号和路径”****。
->    4. 单击“添加”  。
->    5. 在“添加驱动器号或路径”对话框中，选择要分配的驱动器号。 （可以重新分配相同的驱动器号。）然后单击 **"确定"**。
+>    4. 单击“添加”。
+>    5. 在“添加驱动器号或路径”对话框中，选择要分配的驱动器号。  (可以重新分配相同的驱动器号。 ) 然后单击 **"确定"**。
 >
 >    该驱动器将立即显示在仪表板上。
 
-##  <a name="items-to-be-backed-up"></a><a name="BKMK_4"></a>要备份的项
+##  <a name="items-to-be-backed-up"></a><a name="BKMK_4"></a> 要备份的项
  你可以选择备份服务器上的所有驱动器、文件和文件夹，或仅选择单独的硬盘、文件或文件夹进行备份。
 
  在添加或删除驱动器时，或者添加或删除共享文件和文件夹时，你应该重新访问服务器备份配置，以确保将这些项添加到备份配置中或从其中删除它们。 若要添加或删除要备份的项，请执行以下操作之一：

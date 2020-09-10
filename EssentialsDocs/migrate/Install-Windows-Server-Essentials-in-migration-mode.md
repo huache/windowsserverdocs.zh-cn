@@ -5,17 +5,17 @@ ms.date: 04/29/2020
 ms.topic: article
 ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
+ms.author: geschuma
+manager: mtillman
 ms.custom:
 - CI ID 117135
 - CSSTroubleshoot
-ms.openlocfilehash: 5e6db88b9888726fbec62d953b3510142ff1a699
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: ada3b5fa3b95fa6de45177513b26589c4180696d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180763"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622832"
 ---
 # <a name="install-windows-server-essentials-in-migration-mode"></a>在迁移模式下安装 Windows Server Essentials
 
@@ -40,7 +40,7 @@ ms.locfileid: "87180763"
 
 6.  将目标服务器配置为站点授权服务器。
 
-##  <a name="install-windows-server-essentials-on-the-destination-server"></a><a name="BKMK_Install"></a>在目标服务器上安装 Windows Server Essentials
+##  <a name="install-windows-server-essentials-on-the-destination-server"></a><a name="BKMK_Install"></a> 在目标服务器上安装 Windows Server Essentials
  若要在迁移模式下在目标服务器上安装并配置 Windows Server Essentials，请执行以下过程。
 
 #### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>在目标服务器上安装 Windows Server Essentials
@@ -48,7 +48,7 @@ ms.locfileid: "87180763"
 1. 打开目标服务器并将 Windows Server Essentials DVD1 插入 DVD 驱动器。 如果你看到一条消息，询问你是否要从 CD 或 DVD 启动，请按任意键来执行该操作。
 
    > [!NOTE]
-   >  如果目标服务器支持从 u 盘启动，则可以使用**windows 7 USB/DVD 下载工具**从 Windows SERVER Essentials ISO 文件创建可启动的 u 盘。 因为 U 盘读取数据的速度比 DVD-ROM 驱动器要快得多，所以使用 U 盘可以显著加快安装过程。 在创建可启动的 U 盘之后，可以将应答文件添加到 U 盘中。 你可以在 Microsoft Store 网站上免费[下载 Windows 7 USB/DVD 下载工具](https://go.microsoft.com/fwlink/p/?LinkId=248282)。
+   >  如果目标服务器支持从 u 盘启动，则可以使用 **windows 7 USB/DVD 下载工具** 从 Windows SERVER Essentials ISO 文件创建可启动的 u 盘。 因为 U 盘读取数据的速度比 DVD-ROM 驱动器要快得多，所以使用 U 盘可以显著加快安装过程。 在创建可启动的 U 盘之后，可以将应答文件添加到 U 盘中。 你可以在 Microsoft Store 网站上免费 [下载 Windows 7 USB/DVD 下载工具](https://go.microsoft.com/fwlink/p/?LinkId=248282) 。
 
    > [!NOTE]
    >  如果目标服务器不从 DVD 启动，则请重新启动计算机并检查 BIOS 设置，以确保在启动序列中首先列出“DVD-ROM”****。 有关如何更改 BIOS 设置启动序列的详细信息，请参阅硬件制造商提供的文档。
@@ -68,7 +68,7 @@ ms.locfileid: "87180763"
 > [!NOTE]
 >  若要在 Windows Server Essentials 安装时解锁桌面，请使用内置管理员帐户并将密码保留为空白。
 
-##  <a name="verify-the-health-of-the-domain-controller"></a><a name="BKMK_VerifyTheHealthOfDC"></a>验证域控制器的运行状况
+##  <a name="verify-the-health-of-the-domain-controller"></a><a name="BKMK_VerifyTheHealthOfDC"></a> 验证域控制器的运行状况
  在继续进行迁移之前，应确保域控制器和 Windows Server Essentials 网络正常。
 
  下表列出了可用于在目标服务器、网络和域中诊断问题的工具：
@@ -82,4 +82,4 @@ ms.locfileid: "87180763"
  应先更正这些工具报告的所有问题，而后才能继续进行迁移。
 
 > [!NOTE]
->  如果你计划将电子邮件迁移到另一个本地 Exchange 服务器，请参阅将[本地 Exchange server 与 Windows Server Essentials 集成](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md)，了解有关如何设置本地 exchange server 的信息。
+>  如果你计划将电子邮件迁移到另一个本地 Exchange 服务器，请参阅将 [本地 Exchange server 与 Windows Server Essentials 集成](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md) ，了解有关如何设置本地 exchange server 的信息。

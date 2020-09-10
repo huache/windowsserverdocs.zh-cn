@@ -3,16 +3,16 @@ title: ftp get
 description: Ftp get 命令的参考文章，其中使用当前文件传输类型将远程文件复制到本地计算机。
 ms.topic: reference
 ms.assetid: d70355c4-58ef-43e0-916b-c7ecf77e6ee4
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 55e57167b7918aee7db9fc8f6f9304273dfcc4e0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 749c32160c58e2d59563b2355fa0b4c6e6a4c82a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037735"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621777"
 ---
 # <a name="ftp-get"></a>ftp get
 

@@ -3,16 +3,16 @@ title: 获取-设备
 description: 获取设备的参考文章，它检索有关预留计算机的 Windows 部署服务信息 (即，已排入到 active directory 域服务中的计算机帐户的物理计算机。
 ms.topic: reference
 ms.assetid: 1da79286-7e1d-45f2-aea2-d446e16a6911
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 118e14f738920527c61c8da25d19ab98126fc004
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4fdbdfa843376b328cac0fe06e68a5a215ddd915
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029695"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622591"
 ---
 # <a name="get-device"></a>获取-设备
 

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d7d38505-cff5-4f15-9fd5-ae6dba15ce88
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 5ff685960c5690e1bdda47742d81ec44a38aeb8b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 15a4c28c192ed93c18ad9ac515bdccda24293c6e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181673"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622557"
 ---
 # <a name="azure-virtual-network-integration"></a>Azure 虚拟网络集成
 
@@ -20,13 +20,13 @@ ms.locfileid: "87181673"
 
 随着组织做出云计算的方式，他们很少会一次移动其所有资源100%，而是采取一种方法，其中某些资源在云中，一些资源仍在本地。 利用这种混合方法，组织不仅可以将一些计算资源转移到云，而且还能使其在无需购买新硬件的情况下增长其 IT 基础结构。
 
-实现这种混合方法以进行计算时，需要在两个位置中的资源之间进行无缝的方法来相互通信。 Azure 虚拟网络是一项 Azure 服务，使组织能够创建点到点（P2P）或站点到站点（S2S）虚拟专用网络，使在 Azure 中运行的资源（例如虚拟机和存储）看起来就像是在本地网络上无缝应用程序和资源访问。
+实现这种混合方法以进行计算时，需要在两个位置中的资源之间进行无缝的方法来相互通信。 Azure 虚拟网络是一项 Azure 服务，使组织能够创建点到点 (P2P) 或站点到站点 (S2S) 虚拟专用网络，使在 Azure 中运行的资源 (例如虚拟机和存储) 查看本地网络中的无缝应用程序和资源访问权限。
 
 Azure 虚拟网络的配置可能很复杂。 使用 Windows Server Essentials 2016，你可以通过一个简单的向导轻松地配置 Azure 虚拟网络，此向导可帮助你为网络环境选择最适合的默认值。 如下面的屏幕截图中所示，新的 Azure 虚拟网络集成任务已添加到 Windows Essentials 仪表板的 "Microsoft 云服务" 部分，用于引入 Azure 虚拟网络，并提供快速链接来启动集成。
 
 ![在 Windows Server Essentials 仪表板的主页上显示 "入门" 选项卡的屏幕截图。 在 "开始" 选项卡上，已选择 "服务" 部分，仪表板指示 Azure 虚拟网络当前已禁用 Microsoft 云服务集成。](media/azure-virtual-network-1.PNG)
 
-单击上面屏幕截图中的 "**立即集成**" 链接时，将出现一个对话框，要求你登录到 Microsoft Azure 帐户。 如果你没有 Microsoft Azure 帐户，你可以在此屏幕上注册一个帐户，这会将你重定向到 Azure 帐户注册门户：
+单击上面屏幕截图中的 " **立即集成** " 链接时，将出现一个对话框，要求你登录到 Microsoft Azure 帐户。 如果你没有 Microsoft Azure 帐户，你可以在此屏幕上注册一个帐户，这会将你重定向到 Azure 帐户注册门户：
 
 ![显示 "与 Azure 虚拟网络集成" 向导的 "登录到 Microsoft Azure" 页的屏幕截图。](media/azure-virtual-network-2.PNG)
 
@@ -54,15 +54,15 @@ Azure 虚拟网络的配置完成后，状态将更改为 "已连接"，并显�
 
 在仪表板右侧的 "任务" 窗格中，你可以使用 Azure 虚拟网络进行各种任务。
 
--   **从 AZURE VNET 断开连接**设置 Azure 虚拟网络是免费的，但对于连接到本地的 VPN 网关和 Azure 中的其他 Vnet，会收取费用。 从 Azure VNET 断开连接将停止所有计费。
+-   **从 AZURE VNET 断开连接** 设置 Azure 虚拟网络是免费的，但对于连接到本地的 VPN 网关和 Azure 中的其他 Vnet，会收取费用。 从 Azure VNET 断开连接将停止所有计费。
 
--   **切换 VPN 设备**如果要将 VPN 服务器更改为 VPN 路由器，此任务将使你能够进行切换并通知 Azure VNET。
+-   **切换 VPN 设备** 如果要将 VPN 服务器更改为 VPN 路由器，此任务将使你能够进行切换并通知 Azure VNET。
 
--   **配置 AZURE VNET**此任务允许更改 Azure VNET 的高级配置选项，方法是将其重定向到 Azure VNET 的 "Azure 门户配置" 页。
+-   **配置 AZURE VNET** 此任务允许更改 Azure VNET 的高级配置选项，方法是将其重定向到 Azure VNET 的 "Azure 门户配置" 页。
 
--   **刷新状态**刷新 "状态" 页，更新 Azure VNET 的连接状态，包括 "传入/传出"。
+-   **刷新状态** 刷新 "状态" 页，更新 Azure VNET 的连接状态，包括 "传入/传出"。
 
--   **禁用 Azure VNET 集成**断开 Azure VNET 的连接并从 Windows Server Essentials 仪表板中删除集成。 请注意，这不会删除 Azure VNET，如果以后想要将 Azure VNET 与仪表板重新集成，则这些设置仍保留在 Azure 中。
+-   **禁用 Azure VNET 集成** 断开 Azure VNET 的连接并从 Windows Server Essentials 仪表板中删除集成。 请注意，这不会删除 Azure VNET，如果以后想要将 Azure VNET 与仪表板重新集成，则这些设置仍保留在 Azure 中。
 
 -   **了解有关 AZURE VNET 的详细信息** [https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/) 。
 

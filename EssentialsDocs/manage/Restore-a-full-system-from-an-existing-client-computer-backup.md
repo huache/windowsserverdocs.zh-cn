@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 885a10ee9b5a684c385de9baa0ebcdfac61f2c0e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6b93e0e31c592a11d44aca74029012a1b6229227
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180823"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622980"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>从现有客户端计算机备份还原完整系统
 
@@ -32,7 +32,7 @@ ms.locfileid: "87180823"
 
 -   [在哪里可以找到适用于我的硬件的驱动程序？](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers)
 
-##  <a name="what-is-computer-full-system-restore"></a><a name="BKMK_WhatIs"></a>什么是计算机完整系统还原？
+##  <a name="what-is-computer-full-system-restore"></a><a name="BKMK_WhatIs"></a> 什么是计算机完整系统还原？
  如果你更换硬盘或计算机由于故障而无法使用或启动，则可以从先前的计算机备份还原系统。 完整系统还原会将系统还原为备份时的状态。
 
 > [!IMPORTANT]
@@ -48,20 +48,20 @@ ms.locfileid: "87180823"
  Windows PE 不支持无线连接。 因此，要还原的计算机必须物理连接到小型企业网络。
 
 ### <a name="bitlocker"></a>BitLocker
- BitLocker 驱动器加密（BitLocker）是在某些版本的 Windows Vista、Windows 7 和 Windows 8 中提供的一项数据保护功能。 BitLocker 可保护丢失或被盗的计算机中的数据免遭偷窃或泄漏，并提供在计算机淘汰时更安全地删除数据的方法。
+ BitLocker 驱动器加密 (BitLocker) 是在某些版本的 Windows Vista、Windows 7 和 Windows 8 中提供的一项数据保护功能。 BitLocker 可保护丢失或被盗的计算机中的数据免遭偷窃或泄漏，并提供在计算机淘汰时更安全地删除数据的方法。
 
- **对于 Windows Server Essentials：** 如果需要还原的计算机是使用 BitLocker 加密的（无论是操作系统驱动器还是操作系统驱动器以及单个或多个固定驱动器），你仍可以使用服务器随附的 CD 中包含的完整系统还原介质，并使用完整系统还原向导从备份中重新安装硬盘驱动器映像（包括操作系统），并将数据还原到新的或已修复的计算机。
+ **对于 Windows Server Essentials：** 如果需要还原的计算机是使用 BitLocker 加密的 (它是只是操作系统驱动器还是操作系统驱动器以及单个或多个固定驱动器) ，你仍可以使用服务器随附的 CD 中包含的完整系统还原介质，并使用完整系统还原向导从备份中重新安装硬盘驱动器映像（包括操作系统），并将数据还原到新的或已修复的计算机。
 
- **对于 Windows Server Essentials：** 如果需要还原的计算机是使用 BitLocker 加密的（无论是操作系统驱动器还是操作系统驱动器以及单个或多个固定驱动器），仍可以使用完整系统还原向导从备份中重新安装硬盘映像（包括操作系统），然后将数据还原到新的或已修复的计算机。
+ **对于 Windows Server Essentials：** 如果你需要还原的计算机已使用 BitLocker 加密 (不管是只是操作系统驱动器还是操作系统驱动器以及单个或多个其他固定驱动器) ，你仍可以使用完整系统还原向导从备份中重新安装硬盘映像，包括操作系统，然后将数据还原到新的或已修复的计算机。
 
  当服务器备份驱动器、文件夹和文件时，会将未加密版本保存到服务器。 完整系统还原过程中，会将此未加密的版本复制到计算机中。
 
 > [!NOTE]
 >  成功执行完整系统还原后，你必须重新激活计算机上的 BitLocker。
 >
->  有关如何在运行 Windows 8 的计算机上启用 BitLocker 的说明，请参阅[bitlocker：如何启用 bitlocker](https://go.microsoft.com/fwlink/p/?LinkID=254918)。
+>  有关如何在运行 Windows 8 的计算机上启用 BitLocker 的说明，请参阅 [bitlocker：如何启用 bitlocker](https://go.microsoft.com/fwlink/p/?LinkID=254918)。
 >
->  有关如何在运行 Windows 7 的计算机上启用 BitLocker 的说明，请参阅[BitLocker 驱动器加密适用于 windows 7 的循序渐进指南](https://go.microsoft.com/fwlink/p/?LinkId=140225)。
+>  有关如何在运行 Windows 7 的计算机上启用 BitLocker 的说明，请参阅 [BitLocker 驱动器加密适用于 windows 7 的循序渐进指南](https://go.microsoft.com/fwlink/p/?LinkId=140225)。
 
  有关 BitLocker 驱动器加密基础知识的详细信息，请参阅 [BitLocker 常见问题 (FAQ)](https://go.microsoft.com/fwlink/p/?LinkID=254917)。
 
@@ -85,8 +85,8 @@ ms.locfileid: "87180823"
 ### <a name="raid-and-dynamic-disks"></a>RAID 和动态磁盘
  不支持备份独立磁盘的冗余阵列 (RAID) 和动态磁盘。
 
-##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a>系统还原环境是如何工作的？
- 随 Windows Server 2012 Essentials 一起提供的系统还原介质会 &reg; 在计算机上安装 Windows 预安装环境（WINDOWS PE）。 Windows PE 会替换 MS-DOS 环境并包含 Windows 的核心程序文件。 在 Windows Server Essentials 中，有两种支持的系统还原方法：使用客户端还原服务，该服务使用网络并且不依赖于媒体，或使用 USB 闪存驱动器。
+##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a> 系统还原环境是如何工作的？
+ 随 Windows Server 2012 Essentials 一起提供的系统还原介质将 &reg; Windows 预安装环境计算机上 (WINDOWS PE) 安装。 Windows PE 会替换 MS-DOS 环境并包含 Windows 的核心程序文件。 在 Windows Server Essentials 中，有两种支持的系统还原方法：使用客户端还原服务，该服务使用网络并且不依赖于媒体，或使用 USB 闪存驱动器。
 
 > [!NOTE]
 >  Windows PE 不支持无线连接。 因此，要还原的计算机必须物理连接到小型企业网络。
@@ -97,8 +97,8 @@ ms.locfileid: "87180823"
 
  在大多数情况下，系统还原环境上包含的程序文件和驱动程序是重新启动新计算机或已还原计算机所需的所有内容。 系统还原环境可能不包括重新启动新计算机或已还原计算机时所需的所有存储和网络适配器驱动程序，具体取决于新计算机或已还原的计算机硬件。 完整系统还原向导使你有机会安装驱动程序（如果需要）。 有关查找硬件驱动程序的信息，请参阅[在哪里可以找到适用于我的硬件的驱动程序？](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers)。 有关如何使用系统还原介质的信息，请参阅[使用完整系统还原向导](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_Using)。
 
-##  <a name="create-a-bootable-usb-flash-drive-to-restore-a-client-computer"></a><a name="BKMK_CreateBootable"></a>创建可启动的 u 盘以还原客户端计算机
- 如果需要从现有备份还原客户端计算机，但找不到服务器附带的还原 CD （在 Windows Server Essentials 中），或者你不希望在服务器上设置客户端还原服务（在 Windows Server Essentials 中），则可以创建可启动的 u 盘。 然后可以使用 U 盘启动客户端计算机并还原系统。 使用的 U 盘必须至少有 1 GB 或更大的可用空间。
+##  <a name="create-a-bootable-usb-flash-drive-to-restore-a-client-computer"></a><a name="BKMK_CreateBootable"></a> 创建可启动的 u 盘以还原客户端计算机
+ 如果需要从现有备份还原客户端计算机，但找不到 (在 Windows Server Essentials 中的服务器附带的还原 CD) 或者你不希望在 Windows Server Essentials) 中的服务器 (上设置客户端还原服务，则可以创建可启动的 u 盘。 然后可以使用 U 盘启动客户端计算机并还原系统。 使用的 U 盘必须至少有 1 GB 或更大的可用空间。
 
 #### <a name="to-create-a-bootable-usb-flash-drive"></a>创建可启动的 U 盘
 
@@ -109,7 +109,7 @@ ms.locfileid: "87180823"
 3.  在 **“任务”** 窗格中，单击 **“自定义计算机备份和文件历史记录设置”**。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，单击 "**客户端计算机备份任务**"。
+    >  在 Windows Server Essentials 中，单击 " **客户端计算机备份任务**"。
 
 4.  单击 **“工具”** 选项卡，然后单击 **“计算机恢复”** 部分的 **“创建密钥”**。 创建计算机恢复密钥向导随即打开。
 
@@ -118,13 +118,13 @@ ms.locfileid: "87180823"
     > [!CAUTION]
     >  U 盘中的所有数据都将删除。
 
-##  <a name="using-the-full-system-restore-wizard"></a><a name="BKMK_Using"></a>使用完整系统还原向导
+##  <a name="using-the-full-system-restore-wizard"></a><a name="BKMK_Using"></a> 使用完整系统还原向导
  使用还原介质、客户端还原服务或 U 盘成功启动计算机并确认所有硬件驱动程序已加载到已还原的或新的客户端计算机后，将显示“完整系统还原”向导。 借助此向导，你可以访问服务器、计算机备份和你要还原到计算机的源卷，也可以执行实际还原过程。
 
 > [!NOTE]
 >   Windows Server Essentials 不支持以下还原方案：
 >
-> - 将主启动记录（MBR）磁盘还原到基于统一可扩展固件接口（UEFI）的计算机。
+> - 将主启动记录 (MBR) 磁盘还原到统一可扩展固件接口 (基于 UEFI) 的计算机。
 >   -   将 UEFI/GPT 备份还原到 BIOS 系统。
 >
 >   如果在以上任一方案中还原数据，则将无法启动系统。 此外，还可能无法使用大小大于 2 TB 的硬盘。
@@ -150,7 +150,7 @@ ms.locfileid: "87180823"
 
         再次打开该计算机，并在开机自检 (POST) 过程中，按相应的功能键（F 键）来访问启动设备菜单，然后选择 CD/DVD 驱动器。 Windows 启动管理器将启动。
 
-   -   Windows Server Essentials：如果你使用的是客户端还原服务，请使用 "**从网络启动**" 选项重新启动计算机。 否则，请使用 USB 密钥启动计算机。
+   -   Windows Server Essentials：如果你使用的是客户端还原服务，请使用 " **从网络启动** " 选项重新启动计算机。 否则，请使用 USB 密钥启动计算机。
 
         再次打开计算机，在开机自检 (POST) 过程中，按相应的功能键（F 键）来访问启动设备菜单，然后选择“从网络启动”****（或者可以选择从 USB 密钥启动）。 Windows 启动管理器将启动。
 
@@ -190,7 +190,7 @@ ms.locfileid: "87180823"
     > [!IMPORTANT]
     >  必须使用以英语创建的管理员帐户。 如果你没有此类帐户，那么你必须创建一个新的管理员帐户。 若要执行此操作，请先打开服务器仪表板上的“用户”**** 选项卡，接着将键盘语言格式设置为英语，然后运行“添加用户帐户”**** 任务以创建管理员帐户。 接下来，使用新的管理员帐户继续还原客户端计算机。
 
-10. 在****“选择要还原的计算机”页上，选择要还原的计算机，然后单击****“下一步”。 你可以选择 " **<ComputerName \> ：（此计算机）** "，或者从 "**另一台计算机**" 下拉列表中选择网络上的其他计算机。
+10. 在****“选择要还原的计算机”页上，选择要还原的计算机，然后单击****“下一步”。 你可以选择 " **<ComputerName \> ： (此计算机") ** 或者从 " **另一台计算机** " 下拉列表中选择网络上的其他计算机。
 
     > [!NOTE]
     >  如果此计算机对服务器来说未知（例如，新的或重新使用的计算机），则不会显示****“此计算机”选项。
@@ -235,14 +235,14 @@ ms.locfileid: "87180823"
        1. 单击****“运行磁盘管理器(高级)”，然后创建一个与系统保留卷大小相同的新卷。
 
           > [!NOTE]
-          >  如果客户端计算机基于统一可扩展固件接口（UEFI），则必须使用**diskpart**工具初始化系统磁盘。 为此，请打开命令窗口（在 WinPE 环境中按 Ctrl+Alt+Shift 5 秒钟），运行 **diskpart.exe**，然后运行以下 diskpart 命令：
+          >  如果客户端计算机统一可扩展固件接口 (基于 UEFI) ，则必须使用 **diskpart** 工具初始化系统磁盘。 为此，请打开命令窗口（在 WinPE 环境中按 Ctrl+Alt+Shift 5 秒钟），运行 **diskpart.exe**，然后运行以下 diskpart 命令：
           >
           > 1. **DISKPART> 列出磁盘**
           >    2. **DISKPART> 选择磁盘号** *<磁盘 \> *
           >    3. **DISKPART>clean**
           >    4. **DISKPART>convert gpt**
-          >    5. **DISKPART> create partition efi size =** *100* （其中*100*是示例分区大小，单位为 MB，应与原始分区相同）
-          >    6. **DISKPART> create partition msr size =** *128* （其中*128*是示例分区大小，单位为 MB，应与原始分区相同）
+          >    5. **DISKPART> create partition efi size =** *100* (其中 *100* 是示例分区大小，单位为 MB，应与原始分区相同) 
+          >    6. **DISKPART> create partition msr size =** *128* (其中 *128* 是示例分区大小，单位为 MB，应与原始分区相同) 
           >    7. **DISKPART>exit**
 
        2. *（可选）* 选择选项“不分配驱动器号或驱动器路径”****。
@@ -268,7 +268,7 @@ ms.locfileid: "87180823"
     > [!IMPORTANT]
     >  如果还原前计算机上启用了 BitLocker 驱动器加密，则必须在计算机重新启动后手动启用 BitLocker。
 
-##  <a name="where-can-i-find-the-drivers-for-my-hardware"></a><a name="BKMK_FindDrivers"></a>在哪里可以找到适用于我的硬件的驱动程序？
+##  <a name="where-can-i-find-the-drivers-for-my-hardware"></a><a name="BKMK_FindDrivers"></a> 在哪里可以找到适用于我的硬件的驱动程序？
  还原介质可能不包括重新启动已还原计算机时所需的所有存储和网络适配器驱动程序，具体取决于新计算机或已还原计算机硬件。 您必须确定缺少的驱动程序，在现有介质或制造商的网站上找到这些驱动程序，将它们复制到闪存驱动器，然后在运行完整系统还原向导时将它们从闪存驱动器复制到新的或还原的计算机。
 
  备份计算机后，计算机的驱动程序将保存在此备份中。 如果恢复介质不包括你所需要的所有驱动程序，你可以打开该计算机的一个备份，然后将驱动程序复制到 U 盘。

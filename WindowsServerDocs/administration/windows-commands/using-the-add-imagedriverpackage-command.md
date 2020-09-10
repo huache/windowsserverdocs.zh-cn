@@ -3,16 +3,16 @@ title: ImageDriverPackage
 description: ImageDriverPackage 的参考文章，可将驱动程序存储区中的驱动程序包添加到服务器上的现有启动映像。
 ms.topic: reference
 ms.assetid: 6c2a4833-6427-47f8-9ffb-20b3786cb406
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1aca048fe3a9d7d3307c0a860d2dbd6edda0400a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 81f013fb8564a0c98abde7f63b844f206df0f98e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029835"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622244"
 ---
 # <a name="add-imagedriverpackage"></a>ImageDriverPackage
 

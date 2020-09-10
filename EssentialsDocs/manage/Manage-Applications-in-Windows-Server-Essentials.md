@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 7f83d595b56c1c6e2ae0e2565dd607a403b429b0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 30b8dfa2087e76cc80011eb359715c95564ec1b6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181043"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623272"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的应用程序
 
@@ -24,7 +24,7 @@ ms.locfileid: "87181043"
 
 -   [使用仪表板安装或删除加载项](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_2)
 
-##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a>仪表板中的应用程序管理任务
+##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a> 仪表板中的应用程序管理任务
  仪表板的“应用程序”**** 管理页面提供以下内容：
 
 - 已安装的加载项列表，它显示如下内容：
@@ -53,14 +53,14 @@ ms.locfileid: "87181043"
 |阅读加载项的隐私声明|打开 Internet 浏览器，然后浏览到可从其中查看隐私声明的网站。|
 |如何安装或删除加载项？|打开 Internet 浏览器，然后浏览到显示“帮助”主题的网页。|
 
-##  <a name="install-or-remove-add-ins-using-the-dashboard"></a><a name="BKMK_2"></a>使用仪表板安装或删除外接程序
+##  <a name="install-or-remove-add-ins-using-the-dashboard"></a><a name="BKMK_2"></a> 使用仪表板安装或删除外接程序
  加载项是一种软件应用程序，它为服务器提供其他特性和功能。 从 Microsoft 和其他独立软件供应商 (ISV) 可获得越来越多的加载项。
 
  在可以利用某个加载项提供的扩展功能之前，必须先在服务器上安装该加载项。
 
 #### <a name="to-install-an-add-in-from-microsoft-pinpoint"></a>从 Microsoft Pinpoint 安装加载项
 
-1.  在服务器仪表板中，单击 "**应用程序**"，然后单击 " **Microsoft 查明**" 选项卡。 出现可用外接程序列表。
+1.  在服务器仪表板中，单击 " **应用程序**"，然后单击 " **Microsoft 查明** " 选项卡。 出现可用外接程序列表。
 
 2.  单击要安装的加载项。 将显示该加载项的信息页。
 

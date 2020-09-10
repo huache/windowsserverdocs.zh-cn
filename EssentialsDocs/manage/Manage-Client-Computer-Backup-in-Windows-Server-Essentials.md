@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 1b4776e8-9504-4b98-ae80-11da797d9819
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ba0c7a6e9adf4700754d01800ec80a805e10c9d5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c743e0a30796eac374052787f7c47b0af6e656b6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181013"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623168"
 ---
 # <a name="manage-client-computer-backup-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的客户端计算机备份
 
@@ -56,7 +56,7 @@ ms.locfileid: "87181013"
 
 -   [了解文件历史记录](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_FileHistory)
 
-##  <a name="how-the-repair-the-backup-database-wizard-works"></a><a name="BKMK_1"></a>修复备份数据库向导的工作原理
+##  <a name="how-the-repair-the-backup-database-wizard-works"></a><a name="BKMK_1"></a> 修复备份数据库向导的工作原理
  如果 Windows Server Essentials 在备份数据库中检测到错误，它会向你发送一个运行状况通知，并且警报状态将更改为红色（指示紧急情况）。
 
  在 Windows Server Essentials 仪表板上，单击警报状态图标以查看备份数据库错误通知。 该通知包括“修复”**** 按钮，用于启动“修复备份数据库”向导。 完成该向导可能需要几个小时。
@@ -66,7 +66,7 @@ ms.locfileid: "87181013"
 > [!CAUTION]
 >  应在尝试修复数据库之前备份该数据库。 该向导可能无法恢复某些备份，具体取决于在备份数据库中找到的错误类型。 某些或所有备份可能会永久丢失。
 
-##  <a name="understand-the-computer-backup-settings"></a><a name="BKMK_2"></a>了解计算机备份设置
+##  <a name="understand-the-computer-backup-settings"></a><a name="BKMK_2"></a> 了解计算机备份设置
  在为客户端计算机配置了备份后，你可以为要发生的备份指定不同的时间窗口。 同样，可以指定长于或短于默认时间的备份保留时间。
 
  使用“还原为默认值”**** 选项，你可以将备份窗口和保留策略重置为在初始备份配置期间提供的默认值。
@@ -81,7 +81,7 @@ ms.locfileid: "87181013"
 |保留每周备份|4 周|指定保留每周最后一个备份的周数。 例如，使用默认设置，即将每周备份保留 4 周。 在第 5 周以及之后的每一周，都将删除最旧的每周备份。|
 |保留每月备份|6 个月|指定保留每月最后一个备份的月数。 例如，使用默认设置，即将每月备份保留 6 个月。 在第 7 个月以及之后的每一个月，都将删除最旧的每月备份。|
 
-##  <a name="set-up-backup-for-a-client-computer"></a><a name="BKMK_3"></a>为客户端计算机设置备份
+##  <a name="set-up-backup-for-a-client-computer"></a><a name="BKMK_3"></a> 为客户端计算机设置备份
  如果备份处于禁用状态，则可以从仪表板中设置计算机的备份。 当你为计算机设置备份时，你可以选择备份计算机上的所有内容，或选择想要备份的卷和文件夹。
 
 > [!NOTE]
@@ -129,7 +129,7 @@ ms.locfileid: "87181013"
 > [!IMPORTANT]
 >  卷影复制服务 (VSS) 不支持在同一快照集中创建虚拟卷和主机卷的卷影副本。 如果有必要备份虚拟卷，则 VSS 支持在虚拟硬盘 (VHD) 上创建卷的快照。 有关详细信息，请参阅 [Servicing and Backing Up Virtual Hard Disks](https://go.microsoft.com/fwlink/p/?LinkId=256577)（维护和备份虚拟硬盘）。
 
-##  <a name="change-the-time-that-backup-is-scheduled-to-run"></a><a name="BKMK_4"></a>更改计划运行备份的时间
+##  <a name="change-the-time-that-backup-is-scheduled-to-run"></a><a name="BKMK_4"></a> 更改计划运行备份的时间
  应在尽可能少的用户使用联网计算机时计划备份过程。 此时间通常介于傍晚或早晨之间。 备份的默认时间为下午 6:00 到上午 9:00。 服务器仅在计划的时间窗口期间尝试备份客户端计算机。
 
  但是，如果你的企业在这些传统的休息时间期间仍处于工作状态，则你可能想要更改这些默认设置。
@@ -141,13 +141,13 @@ ms.locfileid: "87181013"
 2.  在“设备任务”**** 中，单击“自定义计算机备份和文件历史记录设置”****。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，已将此任务重命名为 "**客户端计算机备份任务**"。
+    >  在 Windows Server Essentials 中，已将此任务重命名为 " **客户端计算机备份任务**"。
 
 3.  在“客户端计算机备份设置和工具”**** 中的“计算机备份”**** 选项卡上，你可以更改开始时间和结束时间以满足你的需求。
 
 4.  单击“应用”****，然后单击“确定”****。
 
-##  <a name="change-the-computer-backup-retention-policy"></a><a name="BKMK_5"></a>更改计算机备份保留策略
+##  <a name="change-the-computer-backup-retention-policy"></a><a name="BKMK_5"></a> 更改计算机备份保留策略
  随着时间的推移，所有计算机的每日备份都会在服务器上累积增加。 若要帮助你管理这些备份，Windows Server Essentials 有助于管理计算机备份的数据库。 你可以配置所有计算机的备份保留数量。
 
  备份保留策略可确定在备份清理过程中删除备份之前备份的保留时间。 备份清理在每个星期六的下午 11:59 运行。 它将删除超出备份保留策略的所有备份。 备份保留策略的默认值如下：
@@ -167,7 +167,7 @@ ms.locfileid: "87181013"
 3.  在“设备任务”**** 窗格中，单击“自定义计算机备份和文件历史记录设置”****。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，已将此任务重命名为 "**客户端计算机备份任务**"。
+    >  在 Windows Server Essentials 中，已将此任务重命名为 " **客户端计算机备份任务**"。
 
 4.  在“客户端计算机备份设置和工具”**** 的“客户端计算机备份保留策略”**** 部分中，对满足你的需求的保留策略进行更改。
 
@@ -176,7 +176,7 @@ ms.locfileid: "87181013"
     > [!NOTE]
     >  更新的保留策略适用于网络上为进行备份而配置的所有客户端计算机。
 
-##  <a name="reset-backup-to-default-settings"></a><a name="BKMK_6"></a>将备份重置为默认设置
+##  <a name="reset-backup-to-default-settings"></a><a name="BKMK_6"></a> 将备份重置为默认设置
  为客户端计算机配置了备份后，网络管理员可以指定不同的时间窗口。 同样，管理员可以指定长于或短于默认时间的备份保留时间。 使用“重置为默认值”**** 按钮，你可以将备份窗口和保留策略重置为在初始备份配置期间提供的默认值。
 
  默认值为：
@@ -198,7 +198,7 @@ ms.locfileid: "87181013"
 2.  在“设备任务”**** 中，单击“自定义计算机备份和文件历史记录设置”****。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，单击 "**客户端计算机备份任务**"。
+    >  在 Windows Server Essentials 中，单击 " **客户端计算机备份任务**"。
 
 3.  在“客户端计算机备份设置和工具”**** 页面上的“计算机备份”**** 选项卡上，单击“重置为默认值”****。
 
@@ -207,7 +207,7 @@ ms.locfileid: "87181013"
 
 4.  单击“应用”****，然后单击“确定”****。
 
-##  <a name="use-repair-and-recovery-tools"></a><a name="BKMK_7"></a>使用修复和恢复工具
+##  <a name="use-repair-and-recovery-tools"></a><a name="BKMK_7"></a> 使用修复和恢复工具
  **修复备份**：如果计算机备份的数据库由于某些原因而损坏或无法使用，你可以尝试使用“修复备份数据库”向导修复该数据库。 该向导将分析备份文件，以确定是否有可以修复的任何问题。 然后，该向导将尝试修复找到的所有问题。
 
 > [!WARNING]
@@ -215,7 +215,7 @@ ms.locfileid: "87181013"
 
  **计算机恢复**：你可以创建可启动 U 盘，以用于从现有备份中恢复计算机。 必须使用大小为 1 GB 或更大的 U 盘。 创建可启动 U 盘后，将其插入到要还原的计算机中，然后启动到 U 盘以启动完整系统还原过程。
 
-##  <a name="repair-the-backup-database"></a><a name="BKMK_8"></a>修复备份数据库
+##  <a name="repair-the-backup-database"></a><a name="BKMK_8"></a> 修复备份数据库
  如果收到一条告知你计算机备份数据库有问题的警报，则可以尝试修复它。
 
 #### <a name="to-repair-the-backup-database"></a>修复备份数据库
@@ -227,7 +227,7 @@ ms.locfileid: "87181013"
 3.  在“设备任务”**** 窗格中，单击“自定义计算机备份和文件历史记录设置”****。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，单击 "**客户端计算机备份任务**"。
+    >  在 Windows Server Essentials 中，单击 " **客户端计算机备份任务**"。
 
 4.  在“客户端计算机备份设置和工具”**** 中，请单击“工具”**** 选项卡。
 
@@ -238,7 +238,7 @@ ms.locfileid: "87181013"
 7.  数据库修复可能需要几个小时，具体取决于备份数据库的大小。 单击“关闭”****，然后单击“确定”**** 以关闭“自定义计算机备份和文件历史记录设置”**** 页面。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，单击 "**客户端计算机备份设置和工具**"。
+    >  在 Windows Server Essentials 中，单击 " **客户端计算机备份设置和工具**"。
 
 #### <a name="to-review-the-results-of-the-backup-database-repair"></a>查看备份数据库修复结果
 
@@ -249,13 +249,13 @@ ms.locfileid: "87181013"
 3.  在“设备任务”**** 窗格中，单击“自定义计算机备份和文件历史记录设置”****。
 
     > [!NOTE]
-    >  在 Windows Server Essentials 中，单击 "**客户端计算机备份任务**"。
+    >  在 Windows Server Essentials 中，单击 " **客户端计算机备份任务**"。
 
 4.  在“客户端计算机备份设置和工具”**** 中，请单击“工具”**** 选项卡。
 
 5.  结果将显示在“修复备份”**** 部分中。
 
-##  <a name="disable-backup-for-a-computer"></a><a name="BKMK_9"></a>禁用计算机备份
+##  <a name="disable-backup-for-a-computer"></a><a name="BKMK_9"></a> 禁用计算机备份
  使用仪表板快速禁用网络上计算机的备份。
 
 #### <a name="to-disable-backup-for-a-computer"></a>禁用计算机备份
@@ -274,7 +274,7 @@ ms.locfileid: "87181013"
 
    有关如何在禁用备份后启用计算机备份的信息，请参阅[为客户端计算机设置备份](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_3)。
 
-##  <a name="run-the-backup-cleanup-task"></a><a name="BKMK_10"></a>运行备份清理任务
+##  <a name="run-the-backup-cleanup-task"></a><a name="BKMK_10"></a> 运行备份清理任务
  完成所有备份后，计划在每个星期六的下午 11:59 运行客户端计算机备份清理任务。 根据备份保留策略，清理任务将从客户端计算机备份数据库中删除备份。 备份保留策略的默认设置如下：
 
 - 保留每日备份的天数：5 天
@@ -295,7 +295,7 @@ ms.locfileid: "87181013"
 
 4.  单击“备份清理”**** 任务，然后在“操作”**** 窗格中单击“运行”****。 将状态更改为“正在运行”****，直到完成该任务为止。
 
-##  <a name="view-alerts-in-the-task-bar-on-a-client-computer"></a><a name="BKMK_11"></a>在客户端计算机上的任务栏中查看警报
+##  <a name="view-alerts-in-the-task-bar-on-a-client-computer"></a><a name="BKMK_11"></a> 在客户端计算机上的任务栏中查看警报
  出于以下原因，你可以在计算机的任务栏中收到备份通知：
 
 -   备份已开始。
@@ -306,7 +306,7 @@ ms.locfileid: "87181013"
 
 -    仅限 Windows Server Essentials：向计算机添加一个新卷。 管理你的网络的用户需要运行自定义备份向导，以包括或排除用于以后备份的卷。
 
-##  <a name="view-backup-status-from-the-launchpad"></a><a name="BKMK_12"></a>从快速启动板中查看备份状态
+##  <a name="view-backup-status-from-the-launchpad"></a><a name="BKMK_12"></a> 从快速启动板中查看备份状态
  使用快速启动板查看计算机的快速备份状态。
 
 > [!TIP]
@@ -343,7 +343,7 @@ ms.locfileid: "87181013"
 
 4.  单击“确定”**** 以关闭“备份属性”**** 对话框。
 
-##  <a name="stop-a-backup-in-progress-from-the-launchpad"></a><a name="BKMK_13"></a>从快速启动板中停止正在进行的备份
+##  <a name="stop-a-backup-in-progress-from-the-launchpad"></a><a name="BKMK_13"></a> 从快速启动板中停止正在进行的备份
  你可以轻松停止正在进行的备份。
 
 #### <a name="to-stop-a-backup-in-progress"></a>停止正在进行的备份
@@ -361,7 +361,7 @@ ms.locfileid: "87181013"
 
 5.  单击“确定”**** 以关闭“备份属性”**** 对话框。
 
-##  <a name="start-a-backup-from-the-launchpad"></a><a name="BKMK_14"></a>从快速启动板中启动备份
+##  <a name="start-a-backup-from-the-launchpad"></a><a name="BKMK_14"></a> 从快速启动板中启动备份
  有时候，你希望在服务器上设置定期计划的备份时间之前备份你的文件和文件夹。 快速启动板使你能够手动启动计算机备份。
 
 #### <a name="to-start-a-backup"></a>启动备份
@@ -383,7 +383,7 @@ ms.locfileid: "87181013"
 
 7.  单击“确定”**** 以关闭“备份属性”**** 对话框。
 
-##  <a name="how-computer-backup-works"></a><a name="BKMK_15"></a>计算机备份的工作原理
+##  <a name="how-computer-backup-works"></a><a name="BKMK_15"></a> 计算机备份的工作原理
  在每天进行备份期间，都会发生以下情况：
 
 -   逐一备份网络计算机。
@@ -397,7 +397,7 @@ ms.locfileid: "87181013"
 > [!IMPORTANT]
 >  卷影复制服务 (VSS) 不支持在同一快照集中创建虚拟卷和主机卷的卷影副本。 如果有必要备份虚拟卷，则 VSS 支持在虚拟硬盘 (VHD) 上创建卷的快照。 有关详细信息，请参阅 [Servicing and Backing Up Virtual Hard Disks](https://go.microsoft.com/fwlink/p/?LinkId=256577)（维护和备份虚拟硬盘）。
 
-##  <a name="tips-to-help-prevent-data-loss-due-to-corruption-of-the-client-backup-database"></a><a name="BKMK_16"></a>有助于防止数据因客户端备份数据库损坏而丢失的提示
+##  <a name="tips-to-help-prevent-data-loss-due-to-corruption-of-the-client-backup-database"></a><a name="BKMK_16"></a> 有助于防止数据因客户端备份数据库损坏而丢失的提示
  如果客户端备份数据库损坏，你可能会丢失重要数据。
 
  若要防止数据因客户端备份数据库的损坏而丢失，请考虑以下方面：
@@ -417,7 +417,7 @@ ms.locfileid: "87181013"
 
      完成还原操作后，请重新启动该服务。
 
-##  <a name="restore-files-or-folders-from-a-client-computer-backup"></a><a name="BKMK_17"></a>从客户端计算机备份中还原文件或文件夹
+##  <a name="restore-files-or-folders-from-a-client-computer-backup"></a><a name="BKMK_17"></a> 从客户端计算机备份中还原文件或文件夹
  你可以从备份中浏览和还原单独的文件和文件夹。
 
 > [!NOTE]
@@ -436,18 +436,18 @@ ms.locfileid: "87181013"
 
 4.  按照向导中的说明进行操作。
 
-##  <a name="understanding-file-history"></a><a name="BKMK_FileHistory"></a>了解文件历史记录
+##  <a name="understanding-file-history"></a><a name="BKMK_FileHistory"></a> 了解文件历史记录
  Windows Server Essentials 的文件历史记录功能将自动备份位于具有文件历史记录功能的网络计算机的库、联系人、桌面和收藏夹文件夹中的文件。 如果丢失、损坏或删除原始文件，则可以还原它们。 还可以从某个特定时间点查找不同版本的文件。 随着时间的推移，你将具有一个完整的文件历史记录。
 
  在 Windows Server Essentials 中，可以从 "**客户端计算机备份设置和工具**" 的 "**文件历史记录**" 页中自定义文件历史记录设置。
 
- 在 Windows Server Essentials 中，可以通过转到 "**用户**" 选项卡，然后选择 "**更改文件历史记录设置**" 任务来自定义文件历史记录设置。
+ 在 Windows Server Essentials 中，可以通过转到 " **用户** " 选项卡，然后选择 " **更改文件历史记录设置** " 任务来自定义文件历史记录设置。
 
  文件历史记录页面提供了以下选项：
 
 |备份设置|默认|说明|
 |--------------------|-------------|-----------------|
-|打开/关闭|启用|默认情况下，当安装 Windows Server Essentials 时，文件历史记录处于打开状态。|
+|打开/关闭|开|默认情况下，当安装 Windows Server Essentials 时，文件历史记录处于打开状态。|
 |备份数据|文档和桌面|有三个预配置的设置，允许你指定各种备份解决方案。 你可以选择以下选项之一：<br /><br /> -文档和桌面<br /><br /> -所有库、桌面、联系人和收藏夹<br /><br /> -库、桌面、联系人和收藏夹中的所有数据，不包括音乐、视频和图片库中的数据|
 |备份频率|每小时|指定文件历史记录创建选定数据备份的频率。 你可以从若干选项中进行选择，频率范围介于每 10 分钟到每天。|
 |副本保留时间|1 年|指定文件历史记录保留备份副本的时间量。|

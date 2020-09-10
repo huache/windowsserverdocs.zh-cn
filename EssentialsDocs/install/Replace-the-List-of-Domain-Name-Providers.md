@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 104d0412-2d77-4cd4-99f7-65a885522850
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 736d7c2271752c79678c2d332ed450e6ba35b299
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 74509a7d64e718fe1d2b62f806306235e7d827e4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181103"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623359"
 ---
 # <a name="replace-the-list-of-domain-name-providers"></a>替换域名提供商列表
 
@@ -30,14 +30,14 @@ ms.locfileid: "87181103"
 -   [向引用计算机的注册表中添加项](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)
 
 
-###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a>创建引用服务文件
+###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a> 创建引用服务文件
  推荐服务管理工具将创建用于定义在“设置域名”向导中显示的域名提供商列表的文件集。 将为全球每个地区创建一个 XML 格式的文件，其中包含有关你在该工具中指定的域名提供商的信息。 该工具创建的文件必须位于可通过你在 Internet 上管理的安全链接 (HTTPS) 访问的文件夹中。
 
 ##### <a name="to-create-the-referral-files"></a>创建推荐文件
 
 1.  打开推荐服务管理工具。
 
-2.  单击“添加”  。
+2.  单击“添加”。
 
 3.  在“添加域名提供商”对话框中，输入域名提供商的名称。
 
@@ -57,7 +57,7 @@ ms.locfileid: "87181103"
 
 11. 单击 **“在文件系统中生成文件”**。
 
-###  <a name="add-an-entry-to-the-registry-on-the-reference-computer"></a><a name="BKMK_AddRegistry"></a>向引用计算机上的注册表中添加项
+###  <a name="add-an-entry-to-the-registry-on-the-reference-computer"></a><a name="BKMK_AddRegistry"></a> 向引用计算机上的注册表中添加项
  必须添加注册表项，以指定操作系统可在其中找到推荐服务文件的位置。
 
 ##### <a name="to-add-a-key-to-the-registry"></a>向注册表添加项
@@ -83,12 +83,12 @@ ms.locfileid: "87181103"
 >  A slash (/) is required at the end of the URL.
 ~~~
 
-###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a>域名状态问题
- 如果合作伙伴添加域名提供商并使用 Windows Server Essentials SDK 中的应用程序编程接口（API）来为证书设置 Unknown、Failed 和 CertificateRequestNotSubmitted 状态，则客户会收到错误的消息和配置结果。 这是因为上述情况会得到例外处理，而不返回状态。
+###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a> 域名状态问题
+ 如果合作伙伴添加域名提供者，并使用 Windows Server Essentials SDK 中 (API) 的应用程序编程接口为证书设置 Unknown、Failed 和 CertificateRequestNotSubmitted 状态，则客户会收到错误的消息和配置结果。 这是因为上述情况会得到例外处理，而不返回状态。
 
  下列域状态为失败结果，应作为错误进行报告：
 
-- 失败
+- Failed
 
 - PendingCustomerInterventionRequired
 

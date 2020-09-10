@@ -3,16 +3,16 @@ title: find
 description: "\"查找\" 命令的参考文章，可搜索文件中的文本字符串，在文件中显示指定的文本字符串。"
 ms.topic: reference
 ms.assetid: 2ca66b22-3b7c-4166-8503-eb75fc53ab46
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 34eb1f1cf3071147878f421307a91de921678cfc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b0317e856153c014df2656f0a98452b0c6428e82
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036533"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622373"
 ---
 # <a name="find"></a>find
 
@@ -37,7 +37,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <string> [[<drive>:][<path>]<filename>[...
 | `[<drive>:][<path>]<filename>` | 指定要在其中搜索指定字符串的文件的位置和名称。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果不使用 **/i**，则此命令将搜索为 *字符串*指定的确切内容。 例如，此命令将处理字符 `a` 并 `A` 不同。 但是，如果使用 **/i**，搜索将变为不区分大小写，并且会将和视为 `a` `A` 相同的字符。
 

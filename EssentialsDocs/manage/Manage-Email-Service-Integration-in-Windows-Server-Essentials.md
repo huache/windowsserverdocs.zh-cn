@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 4c35d230-02ec-4374-b4c5-2da19fe151ee
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f78c211cc227b753af63c4e15884f3bb760a1c0a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 4eefd2a041943b35c5e4ad9b484aa13ead47d111
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180983"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623099"
 ---
 # <a name="manage-email-service-integration-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的电子邮件服务集成
 
@@ -26,8 +26,8 @@ ms.locfileid: "87180983"
 
 ## <a name="additional-references"></a>其他参考
 
--   [管理 Office 365](Manage-Office-365-in-Windows-Server-Essentials.md)
+-   [管理 Microsoft 365](Manage-Office-365-in-Windows-Server-Essentials.md)
 
--   [使用 Microsoft Office 365 的快速入门指南](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)
+-   [使用 Microsoft 365 快速入门指南](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)
 
 -   [管理 Windows Server Essentials](Manage-Windows-Server-Essentials.md)

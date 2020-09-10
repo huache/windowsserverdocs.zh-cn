@@ -3,16 +3,16 @@ title: 身份验证策略和身份验证策略接收器
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 7eb0e640-033d-49b5-ab44-3959395ad567
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: ad453c5581f966a2e21a5cd8b4ed1c9cb28fe9a8
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 931ebeda8b865c16dc6f67ae765b6bc6f7aaed1f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995901"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621931"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>身份验证策略和身份验证策略接收器
 
@@ -226,7 +226,7 @@ Active Directory 帐户类型将调用方的角色确定为以下其中一项：
 
 有关使用这些事件的疑难解答步骤，请参阅[解决关于身份验证策略的问题](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md#BKMK_CreateAuthNPolicies)和[对受保护用户的相关事件进行疑难解答](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md#BKMK_TrubleshootingEvents)。
 
-|事件 ID 和日志|描述|
+|事件 ID 和日志|说明|
 |----------|--------|
 |101<p>**AuthenticationPolicyFailures-DomainController**|原因：NTLM 登录出现故障，因为已配置身份验证策略。<p>在域控制器中记录了一个事件，以指示 NTLM 身份验证失败，原因在于需要访问控制限制，但无法将这些限制应用到 NTLM。<p>显示帐户、设备、策略和接收器的名称。|
 |105<p>**AuthenticationPolicyFailures-DomainController**|原因：Kerberos 限制出现故障，原因在于未允许来自特定设备的身份验证。<p>在域控制器中记录了一个事件，以指示 Kerberos TGT 受到拒绝，原因在于设备不满足强制执行的访问控制限制。<p>显示帐户、设备、策略和接收器的名称以及 TGT 生存期。|
