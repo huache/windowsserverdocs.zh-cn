@@ -3,16 +3,16 @@ title: bootcfg delete
 description: Bootcfg delete 命令的参考文章，可用于删除 Boot.ini 文件的操作系统部分中的操作系统条目。
 ms.topic: reference
 ms.assetid: 71382e29-9b39-41c8-9c23-cf0ff829440a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9eedad8157dbf25167c484e276167c038adb5667
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f848d42e9b6cabb8fe5765d1c5c5cb9b9b982e0c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034465"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630214"
 ---
 # <a name="bootcfg-delete"></a>bootcfg delete
 

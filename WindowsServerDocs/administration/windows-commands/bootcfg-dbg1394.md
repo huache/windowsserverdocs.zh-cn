@@ -3,16 +3,16 @@ title: bootcfg dbg1394
 description: Bootcfg dbg1394 命令的参考文章，该命令为指定的操作系统条目配置1394端口调试
 ms.topic: reference
 ms.assetid: 35724697-90dd-4dbe-85b0-337fbd369dcc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f24561751d3a41bf1bf12148dc550f0a56c159c6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 56d91256a74bc247749956bc8948245636b085d1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034525"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630271"
 ---
 # <a name="bootcfg-dbg1394"></a>bootcfg dbg1394
 

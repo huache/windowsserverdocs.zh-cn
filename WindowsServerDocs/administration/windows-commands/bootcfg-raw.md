@@ -3,16 +3,16 @@ title: bootcfg raw
 description: Bootcfg raw 命令的参考文章，它将指定为字符串的操作系统加载选项添加到 Boot.ini 文件的操作系统部分中的操作系统项。
 ms.topic: reference
 ms.assetid: e3458749-b0a0-460f-a022-3ff199a71f27
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d0ca0d6a4201ae292998de420a80b781c9bb1b6c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b86945a126c73742982ea01442101c6d1250226d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034405"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630147"
 ---
 # <a name="bootcfg-raw"></a>bootcfg raw
 

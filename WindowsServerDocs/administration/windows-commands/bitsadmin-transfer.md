@@ -3,16 +3,16 @@ title: bitsadmin transfer
 description: 用于传输一个或多个文件的 bitsadmin 传输命令的参考文章。
 ms.topic: reference
 ms.assetid: fe302141-b33a-4a05-835e-dc4fc4db7d5a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 989c2ace5aa8cb0f123dec6f2ad490c1c8c778cd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6f4171e5544b468012e308910b4601cd9bde1406
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033345"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630549"
 ---
 # <a name="bitsadmin-transfer"></a>bitsadmin transfer
 
@@ -34,7 +34,7 @@ bitsadmin /transfer <name> [<type>] [/priority <job_priority>] [/ACLflags <flags
 | 参数 | 说明 |
 | --------- | ----------- |
 | name | 作业的名称。 此命令不能是 GUID。 |
-| type | 可选。 设置作业的类型，包括：<ul><li>**下载.** 默认值。 为下载作业选择此类型。</li><li>**上.** 为上载作业选择此类型。</li></ul> |
+| 类型 | 可选。 设置作业的类型，包括：<ul><li>**下载.** 默认值。 为下载作业选择此类型。</li><li>**上.** 为上载作业选择此类型。</li></ul> |
 | priority | 可选。 设置作业的优先级，包括：<ul><li>FOREGROUND</li><li>HIGH</li><li>NORMAL</li><li>LOW</li></ul> |
 | ACLflags | 可选。 指示你希望在要下载的文件中维护所有者和 ACL 信息。 指定一个或多个值，包括：<ul><li>**o** -将所有者信息复制到文件。</li><li>**g** -复制组信息和文件。</li><li>**d** -复制任意访问控制列表 (DACL) 包含文件的信息。</li><li>**s** -复制系统访问控制列表 (SACL) 包含文件的信息。</li></ul> |
 | /DYNAMIC | 使用 [**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](/windows/win32/api/bits5_0/ne-bits5_0-bits_job_property_id)配置作业，放宽服务器端要求。 |

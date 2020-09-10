@@ -3,16 +3,16 @@ title: bootcfg addsw
 description: Bootcfg addsw 命令的参考文章，它为指定的操作系统条目添加操作系统加载选项。
 ms.topic: reference
 ms.assetid: d8389293-ecd9-42f0-b84b-b9ead4cf52e6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e47d9001dc9b2bac7f08036f15408a1e35aaf075
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 45f8d0b567e1fa2bd9e5ddd084e7f63c5d6c6c74
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034545"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630362"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 

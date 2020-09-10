@@ -3,16 +3,16 @@ title: change port
 description: "\"更改端口\" 命令的参考文章，此命令可列出或更改 COM 端口映射，使其与 MS-DOS 应用程序兼容。"
 ms.topic: article
 ms.assetid: 3d772c90-e849-4e74-b9ec-b6cae1159336 Lizap
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8014ba67b2c4383aa56a6fce5eb486bbccfba7e7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a38f4f4885ac13c40a7e2a340bf94623bcbdd77d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031155"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629891"
 ---
 # <a name="change-port"></a>change port
 
@@ -38,7 +38,7 @@ change port [<portX>=<portY| /d <portX | /query]
 | /query | 显示当前端口映射。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 大多数 MS-DOS 应用程序仅支持 COM1 到 COM4 串行端口。 " **更改端口** " 命令将串行端口映射到不同的端口号，允许不支持高编号 COM 端口的应用访问串行端口。 重新映射仅适用于当前会话，如果从会话中注销然后重新登录，则不会保留。
 

@@ -3,16 +3,16 @@ title: call
 description: Call 命令的参考文章，用于从一个批处理程序调用另一个批处理程序，而不停止父批处理程序。
 ms.topic: reference
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 06/05/2018
-ms.openlocfilehash: 749f073fa3f96f51aec5bf47e4e09ce7263d3205
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ff00048be6cc44b91d2a2a67bd186a39b13e2ac7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034255"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630016"
 ---
 # <a name="call"></a>call
 
@@ -70,7 +70,7 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 在上面的示例中， **%1** 和 PATH 可替换为其他有效值。 **%~** 语法由有效的参数号终止。 **%~** 修饰符不能与 **% &#42;** 一起使用。
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 - 使用批处理参数：
 

@@ -2,16 +2,16 @@
 title: bitsadmin sethelpertoken
 description: Bitsadmin sethelpertoken 命令的参考文章，如果指定) 作为 BITS 传输作业的帮助程序令牌，则该命令将 (或任意本地用户帐户的令牌设置为当前命令提示符的主要令牌。
 ms.topic: reference
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 03/01/2019
-ms.openlocfilehash: 37adfc2145089a871dca819745160794ed93a68e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a691d010aa112f1ac609077be6a6968f79d73c72
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028525"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630918"
 ---
 # <a name="bitsadmin-sethelpertoken"></a>bitsadmin sethelpertoken
 

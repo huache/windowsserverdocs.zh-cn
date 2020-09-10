@@ -3,16 +3,16 @@ title: change logon
 description: 更改登录命令的参考文章，用于启用或禁用来自客户端会话的登录，或者显示当前登录状态。
 ms.topic: reference
 ms.assetid: 41466260-aee9-4333-bcb6-178112c22afd
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 67f6a5b93fbe5ec16c4cece1c5c8429de06ce494
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 55732dc5803f4ac783828293f5da839cca364b40
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031165"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629900"
 ---
 # <a name="change-logon"></a>change logon
 
@@ -40,7 +40,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 | /drainuntilrestart | 禁止在重新启动计算机之前从新的客户端会话登录，但允许重新与现有会话进行重新启动。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 重新启动系统时，将重新启用登录。
 

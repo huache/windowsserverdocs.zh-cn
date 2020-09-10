@@ -3,16 +3,16 @@ title: bitsadmin util 和 getieproxy
 description: Bitsadmin util 和 getieproxy 命令的参考文章，它检索给定服务帐户的代理使用情况。
 ms.topic: reference
 ms.assetid: 6d50c7e3-f4eb-4ca5-9f0c-4ed396087db6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 87a67dbdf1495b3cb8398fdbc0cc3cfed1c4e577
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c10fa442f19ff7d5de44e12986b8af4be3f39e19
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033255"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630491"
 ---
 # <a name="bitsadmin-util-and-getieproxy"></a>bitsadmin util 和 getieproxy
 

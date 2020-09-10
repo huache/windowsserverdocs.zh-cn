@@ -3,16 +3,16 @@ title: bitsadmin monitor
 description: 用于监视当前用户所拥有的传输队列中的作业的 bitsadmin monitor 命令的参考文章。
 ms.topic: reference
 ms.assetid: 2c424d27-e011-49c2-b579-a2c235467c39
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4188301d1f76a84762841982f782575bcfb912b1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2245d9e4375130877755f96eed42a46a479742f3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026665"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631473"
 ---
 # <a name="bitsadmin-monitor"></a>bitsadmin monitor
 

@@ -3,16 +3,16 @@ title: change user
 description: 更改用户命令的参考文章，用于更改远程桌面会话主机服务器的安装模式。
 ms.topic: reference
 ms.assetid: 6202f024-8cf5-411e-89b1-ee37ff46499d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c473349b75a5963cb66997ea568f5634eea194d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 59e290b3c80bfb85e5cef9ae3cffb20c121f71b6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031145"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629854"
 ---
 # <a name="change-user"></a>change user
 
@@ -33,12 +33,12 @@ change user {/execute | /install | /query}
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| / execute | 使.ini 文件映射到主目录。 这是默认设置。 |
+| / execute | 使.ini 文件映射到主目录。 此为默认设置。 |
 | /install | 禁用.ini 文件映射到主目录。 所有的.ini 文件读取并写入到系统目录中。 在远程桌面会话主机服务器上安装应用程序时，必须禁用 .ini 文件映射。 |
 | /query | 显示当前设置的.ini 文件映射。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 使用 **更改 user /install** 之前安装的应用程序在系统目录中创建的应用程序的.ini 文件。 创建特定于用户的.ini 文件时，这些文件使用作为源。 安装后该应用程序，使用 **更改用户 / execute** ，将恢复为标准.ini 文件映射。
 

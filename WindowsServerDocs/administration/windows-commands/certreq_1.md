@@ -3,16 +3,16 @@ title: certreq
 description: 用于从证书颁发机构 (CA) 请求证书、从证书颁发机构请求证书、从 .inf 文件创建新请求、接受并安装对请求的响应、从现有 CA 证书或请求构造交叉证书或合格的部属请求，以及对交叉证书或合格的部属请求进行签名的参考文章。
 ms.topic: reference
 ms.assetid: 7a04e51f-f395-4bff-b57a-0e9efcadf973
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: eb910415c46a57353eeffe7168ce71c055d82eca
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1f2cdc1123595dae9c0c72bcdc77c2f55382c760
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031245"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629946"
 ---
 # <a name="certreq"></a>certreq
 
@@ -63,7 +63,7 @@ certreq –enroll –cert certId [options] renew [reusekeys]
 certreq –submit certrequest.req certnew.cer certnew.pfx
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 这是默认的 certreq.exe 参数。 如果在命令行提示符处未指定任何选项，certreq.exe 将尝试向证书颁发机构提交证书申请。 使用 **– submit** 选项时，必须指定证书请求文件。 如果省略此参数，则会出现一个公共的 **文件打开** 窗口，让你选择适当的证书请求文件。
 
@@ -77,7 +77,7 @@ certreq –submit certrequest.req certnew.cer certnew.pfx
 certreq -retrieve 20 MyCertificate.cer
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 使用 *certreq 检索证书* 颁发机构颁发的证书。 *Requestid* PKC 可以是具有0x 前缀的十进制或十六进制，它可以是不带0x 前缀的证书序列号。 你还可以使用它来检索证书颁发机构曾经颁发的任何证书，包括吊销或过期证书，而不考虑证书的请求是否曾处于挂起状态。
 
@@ -130,7 +130,7 @@ INF 文件的此区域对于任何新的证书请求模板都是必需的，并�
 | KeyProtection | 指定一个值，该值指示在使用之前私钥的保护方式。 | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | 指定一个布尔值，该值指示是否在请求中包含默认扩展和属性。 默认值由其对象标识符表示 (Oid) 。 | `true | false` | `SuppressDefaults = true` |
 | FriendlyName | 新证书的友好名称。 | 文本 | `FriendlyName = Server1` |
-| ValidityPeriodUnits | 指定要用于 ValidityPeriod 的单位数。 注意：仅当时才使用 `request type=cert` 。 | Numeric | `ValidityPeriodUnits = 3` |
+| ValidityPeriodUnits | 指定要用于 ValidityPeriod 的单位数。 注意：仅当时才使用 `request type=cert` 。 | 数字 | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod 必须是美国英语复数时间段。 注意：仅当请求类型 = cert 时才使用此类型。 | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
 <sup>1</sup>等号左侧的参数 (=) 
@@ -258,7 +258,7 @@ certreq -sign myrequest.req myrequest.req
 certreq -submit myrequest_sign.req myrequest_cert.cer
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - `certreq -sign`如果不使用任何其他参数，它将打开一个对话框窗口，以便你可以选择请求的文件 (请求、cmc、txt、der、cer 或 crt) 。
 

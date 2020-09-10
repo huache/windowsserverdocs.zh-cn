@@ -3,16 +3,16 @@ title: bitsadmin setclientcertificatebyid
 description: Bitsadmin setclientcertificatebyid 命令的参考文章，用于指定 HTTPS (SSL) 请求中用于客户端身份验证的客户端证书的标识符
 ms.topic: reference
 ms.assetid: 8585a7a1-7472-437b-b04a-a11925782a3a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c23868f24fca7e4792f26debe4921e6e9cc22750
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: aa49c0fc93972ce447c114ec20722afe67ca5dda
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028555"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631037"
 ---
 # <a name="bitsadmin-setclientcertificatebyid"></a>bitsadmin setclientcertificatebyid
 

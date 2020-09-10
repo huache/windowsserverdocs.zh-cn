@@ -3,16 +3,16 @@ title: bootcfg query
 description: 用于从 Boot.ini 查询和显示启动加载器和操作系统部分条目的 bootcfg query 命令的参考文章。
 ms.topic: reference
 ms.assetid: a4cacfd1-10a6-4a11-b0c5-f8abde72bfc8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9e6b5a34a0af467c12549f4921d8d5c99e79aaa9
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8debee9f799a89f80c82b25242127c42fd00189f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034435"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630194"
 ---
 # <a name="bootcfg-query"></a>bootcfg query
 

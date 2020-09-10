@@ -3,16 +3,16 @@ title: certutil
 description: Certutil 命令的参考文章，这是一个命令行程序，可将证书颁发机构转储并显示 (CA) 配置信息、配置证书服务、备份和还原 CA 组件以及验证证书、密钥对和证书链。
 ms.topic: reference
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 99c9d0ddca6ce1b91d86733995c30c46b747b7af
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fc1065ab3853f6098c725f4ccaaafc483cb6015d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031205"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629916"
 ---
 # <a name="certutil"></a>certutil
 
@@ -128,7 +128,7 @@ certutil [options] -setattributes RequestID attributestring
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 名称和值必须用冒号分隔，而多个名称、值对必须以换行符分隔。 例如： `CertificateTemplate:User\nEMail:User@Domain.com` `\n` 序列转换为换行符的位置。
 
@@ -152,7 +152,7 @@ certutil [options] -setextension requestID extensionname flags {long | date | st
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果最后一个参数是数值，则将其视为一个 **长整型值**。
 
@@ -517,7 +517,7 @@ certutil [options] -view [queue | log | logfail | revoked | ext | attrib | crl] 
 [-silent] [-split] [-config Machine\CAName] [-restrict RestrictionList] [-out ColumnList]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 若要显示所有条目的 **StatusCode** 列，请键入 `-out StatusCode`
 
@@ -719,7 +719,7 @@ certutil [options] -importpfx [certificatestorename] pfxfile [modifiers]
 [-f] [-user] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 默认为 "个人计算机存储"。
 
@@ -1094,7 +1094,7 @@ certutil [options] -setcasites delete
 [-f] [-config Machine\CAName] [-dc DCName]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - `-config`选项以单个证书颁发机构为目标 (默认值为 "所有 ca) "。
 
@@ -1358,7 +1358,7 @@ certutil [options] -verifykeys [keycontainername cacertfile]
 [-f] [-user] [-silent] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果未指定任何参数，则将根据其私钥验证每个签名 CA 证书。
 
@@ -1397,7 +1397,7 @@ certutil [options] -verify CRLfile cacertfile [deltaCRLfile]
 [-f] [-enterprise] [-user] [-silent] [-split] [-urlfetch] [-t timeout]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 使用 **applicationpolicylist** 会将生成限制为仅对指定的应用程序策略使用有效的链。
 
@@ -1491,7 +1491,7 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgor
 [-nullsign] [-f] [-silent] [-cert certID]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 使用减号 (-) 删除序列号和扩展。
 
@@ -1683,7 +1683,7 @@ certutil [options] -getreg [{ca | restore | policy | exit | template | enroll |c
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果字符串值以或开头 `+` `-` ，并且现有值为 `REG_MULTI_SZ` 值，则会将该字符串添加到现有注册表值或从中删除。 若要强制创建 `REG_MULTI_SZ` 值，请将添加 `\n` 到字符串值的末尾。
 
@@ -1727,7 +1727,7 @@ certutil [options] -setreg [{ca | restore | policy | exit | template | enroll |c
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果字符串值以或开头 `+` `-` ，并且现有值为 `REG_MULTI_SZ` 值，则会将该字符串添加到现有注册表值或从中删除。 若要强制创建 `REG_MULTI_SZ` 值，请将添加 `\n` 到字符串值的末尾。
 
@@ -1771,7 +1771,7 @@ certutil [options] -delreg [{ca | restore | policy | exit | template | enroll |c
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果字符串值以或开头 `+` `-` ，并且现有值为 `REG_MULTI_SZ` 值，则会将该字符串添加到现有注册表值或从中删除。 若要强制创建 `REG_MULTI_SZ` 值，请将添加 `\n` 到字符串值的末尾。
 
@@ -1821,7 +1821,7 @@ certutil [options] -importcert certfile [existingrow]
 [-f] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 证书颁发机构可能还需要配置为支持外部证书。 为此，请键入 `import - certutil -setreg ca\KRAFlags +KRAF_ENABLEFOREIGN` 。
 
@@ -1899,7 +1899,7 @@ certutil [options] -mergePFX PFXinfilelist PFXoutfile [extendedproperties]
 [-f] [-user] [-split] [-p password] [-protectto SAMnameAndSIDlist] [-csp provider]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 在命令行中指定的密码必须是以逗号分隔的密码列表。
 
@@ -1934,7 +1934,7 @@ certutil [options] -convertEPF PFXinfilelist PFXoutfile [cast | cast-] [V3CAcert
 [-f] [-silent] [-split] [-dc DCName] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 在命令行中指定的密码必须是以逗号分隔的密码列表。
 

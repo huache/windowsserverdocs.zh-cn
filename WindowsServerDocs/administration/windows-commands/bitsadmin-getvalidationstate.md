@@ -3,16 +3,16 @@ title: bitsadmin getvalidationstate
 description: Bitsadmin getvalidationstate 命令的参考文章，它报告作业中给定文件的内容验证状态。
 ms.topic: reference
 ms.assetid: 6ada3f1f-9967-4262-9d22-ed641e23f516
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 173bbaad6508ec3ae8100232fda598fe7a422296
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5f85f006efa18baa95a491b84e365e707cdf225c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028635"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631552"
 ---
 # <a name="bitsadmin-getvalidationstate"></a>bitsadmin getvalidationstate
 
