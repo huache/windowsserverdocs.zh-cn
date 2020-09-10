@@ -3,16 +3,16 @@ title: auditpol resourceSACL
 description: 用于配置全局资源系统访问控制列表 (Sacl) 的 auditpol resourceSACL 命令的参考文章。
 ms.topic: reference
 ms.assetid: 28771ba7-967a-45e9-9bf0-b2a2673070f0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 408dadfd29fb1dd6227d4d27651da400d1ede333
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 26353e339329553a977809310d3a93e95076dfdb
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028995"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633167"
 ---
 # <a name="auditpol-resourcesacl"></a>auditpol resourceSACL
 
@@ -42,7 +42,7 @@ auditpol /resourceSACL
 | /view | 列出资源 SACL 中的全局对象访问审核条目。 用户和资源类型是可选的。 |
 | /? | 在命令提示符下显示帮助。 |
 
-### <a name="arguments"></a>自变量
+### <a name="arguments"></a>参数
 
 | 参数 | 说明 |
 | -------- | ----------- |

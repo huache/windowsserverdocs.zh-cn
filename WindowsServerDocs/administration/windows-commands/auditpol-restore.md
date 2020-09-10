@@ -3,16 +3,16 @@ title: auditpol restore
 description: 用于从语法上与以逗号分隔的值（ (CSV) 文件格式（由/backup 选项使用）进行语法一致的一个文件中，用于还原系统审核策略设置、为所有用户还原系统审核策略设置、每用户审核策略设置和所有审核选项的参考文章。
 ms.topic: reference
 ms.assetid: ad73e520-484f-4cf1-a7f9-ae7488e9edf6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: dcf4f85da5955f49e644962de82a66a4dedaea64
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d6dc8dde77189cbd1134779bf89f253402f181dc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029005"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633114"
 ---
 # <a name="auditpol-restore"></a>auditpol restore
 

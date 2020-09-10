@@ -3,16 +3,16 @@ title: openfiles
 description: Openfiles 命令的参考文章，它使管理员能够查询、显示或断开在系统上打开的文件和目录。
 ms.topic: reference
 ms.assetid: c3be561d-a11f-4bf1-9835-8e4e96fe98ec
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d2f148ef753e264256461b1135d84d325c1e1b70
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: eb7d67d082c948c5f91d7551033143a2aac79f2a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032625"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633682"
 ---
 # <a name="openfiles"></a>openfiles
 

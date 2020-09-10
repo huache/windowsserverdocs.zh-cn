@@ -3,16 +3,16 @@ title: at
 description: At 命令的参考文章，用于计划在指定的时间和日期在计算机上运行命令和程序。
 ms.topic: reference
 ms.assetid: ff18fd16-9437-4c53-8794-bfc67f5256b3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 017e6bb59b891fddfff9e695f8e3040f678bd611
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8cd6762c6a88e24b6092dcce519582a0f627c77f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029285"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633423"
 ---
 # <a name="at"></a>at
 
@@ -43,7 +43,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 | `<command>` | 指定要运行的 Windows 命令、程序 (，即 .exe 或 .com 文件) 或批处理程序 (，即 .bat 或 .cmd 文件) 。 当命令需要路径作为参数时，请使用绝对路径 (即，以驱动器号) 开头的整个路径。 如果命令在远程计算机上，请为服务器和共享名称指定通用命名约定 (UNC) 表示法，而不是远程驱动器号。 |
 | /? | 在命令提示符下显示帮助。 |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 - 在运行命令之前，此命令不会自动加载 cmd.exe。 如果未运行可执行文件 ( .exe) 文件，则必须在命令开头显式加载 cmd.exe，如下所示：
 
@@ -115,7 +115,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
         - **数据类型。** reg_DWOrd
 
-        - **基数.** 十进制
+        - **基数.** Decimal
 
         - **值数据：** 0. **值数据**字段中的值为**0** ，表示没有限制，也不会停止。 介于1到99之间的值表示小时数。
 

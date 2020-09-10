@@ -3,16 +3,16 @@ title: dfsdiag testdcs
 description: Dfsdiag testdcs 命令的参考文章，用于检查指定域中的域控制器的配置。
 ms.topic: reference
 ms.assetid: abb915ab-23eb-45d7-9a2e-b6b9a5756a70
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 54bb3f2a1c724a77ab3a55c6f5158bda81de94f8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0c2796cc149d905abae56bb909d337862c5fd7f2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024021"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633853"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag testdcs
 
@@ -36,7 +36,7 @@ dfsdiag /testdcs [/domain:<domain_name>]
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| /domain`<domain_name>` | 要检查的域的名称。 此参数可选。 默认值为本地主机所联接到的本地域。 |
+| /domain`<domain_name>` | 要检查的域的名称。 此参数是可选的。 默认值为本地主机所联接到的本地域。 |
 
 ## <a name="examples"></a>示例
 

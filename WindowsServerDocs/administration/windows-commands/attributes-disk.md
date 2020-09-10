@@ -3,16 +3,16 @@ title: attributes disk
 description: "\"属性\" 磁盘命令的参考文章，其中显示、设置或清除磁盘的属性。"
 ms.topic: reference
 ms.assetid: eed57071-c1c6-4394-9542-62b52a878c92
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 72b4a99c36085062441a7a8751a065dad1dd0c51
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c86d499f179453f75e05ae3a871de013e389341a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029195"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633302"
 ---
 # <a name="attributes-disk"></a>attributes disk
 

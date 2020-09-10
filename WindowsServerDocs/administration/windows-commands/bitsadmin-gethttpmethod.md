@@ -2,16 +2,16 @@
 title: bitsadmin gethttpmethod
 description: Bitsadmin gethttpmethod 命令的参考文章，用于获取用于作业的 HTTP 谓词。
 ms.topic: reference
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 03/01/2019
-ms.openlocfilehash: 5bbd2509cabea7ae68240a31cee78d9ffd3ac5e0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0d96c85aa99330b133954a77ca5584fe2d02cd43
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033525"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632032"
 ---
 # <a name="bitsadmin-gethttpmethod"></a>bitsadmin gethttpmethod
 

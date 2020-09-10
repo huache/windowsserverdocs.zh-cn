@@ -3,16 +3,16 @@ title: bitsadmin getmodificationtime
 description: Bitsadmin getmodificationtime 命令的参考文章，用于检索上次修改作业或成功传输数据的时间。
 ms.topic: reference
 ms.assetid: e543945e-92c4-491e-8c2d-344f8a3e342d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 763ca0f60fa834ad14b92eb7963107fa407a8964
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 293b8ef47374c0df3f9b1cd3d76802d592c3c522
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028725"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631936"
 ---
 # <a name="bitsadmin-getmodificationtime"></a>bitsadmin getmodificationtime
 

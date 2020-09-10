@@ -3,16 +3,16 @@ title: arp
 description: Arp 命令的参考文章，其中显示和修改 address 解析协议中的条目 (arp) 缓存，用于存储 IP 地址及其已解决的物理地址。
 ms.topic: reference
 ms.assetid: 827e96eb-1945-483f-980f-714703456f7c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b97c285f36bac3fd8587abddaf0a70423eb26155
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 33b636bb27a6dcb9bc5d744e164fb16051cf4f05
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029385"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633458"
 ---
 # <a name="arp"></a>arp
 
@@ -36,7 +36,7 @@ arp [/a [<inetaddr>] [/n <ifaceaddr>]] [/g [<inetaddr>] [-n <ifaceaddr>]] [/d <i
 | `[/s <inetaddr> <etheraddr> [<ifaceaddr>]` | 将一个静态条目添加到 arp 缓存，将 IP 地址 **inetaddr** 解析为物理地址 **etheraddr**。 若要为特定接口将静态 arp 缓存条目添加到表中，请使用 **ifaceaddr** 参数，其中 **ifaceaddr** 是分配给接口的 IP 地址。 |
 | /? | 在命令提示符下显示帮助。 |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 - **Inetaddr**和**ifaceaddr**的 IP 地址以点分隔的十进制表示法表示。
 

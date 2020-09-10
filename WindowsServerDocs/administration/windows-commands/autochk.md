@@ -3,16 +3,16 @@ title: autochk
 description: 用于在计算机启动时或在 Windows Server 开始验证文件系统的逻辑完整性之前运行的 autochk 命令的参考文章。
 ms.topic: reference
 ms.assetid: 8787e6a3-f023-4ea5-b2d1-61c6876d8aff
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: acdb9330ca1b99578c43c98e30c647171413ddd2
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bb360c4207371d8056d3a3840951b5eaa10eb9bf
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028925"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633022"
 ---
 # <a name="autochk"></a>autochk
 
@@ -26,7 +26,7 @@ ms.locfileid: "89028925"
 
 - 如果将卷标记为 "脏"。
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 > [!WARNING]
 > 不能从命令行直接运行 **autochk** 命令行工具。 请改用 **chkntfs** 命令行工具来配置在启动时要运行 **autochk** 的方式。

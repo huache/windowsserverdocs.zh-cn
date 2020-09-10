@@ -3,16 +3,16 @@ title: begin backup
 description: 用于启动完整备份会话的开始备份命令的参考文章。
 ms.topic: reference
 ms.assetid: 8a53b5d5-e24c-4fc3-a3d8-c622c1bbf8f0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 298d7110f327f67e08cbc3d53928cfbb17728fac
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f959a5634754ad3125e0cef50737e21c5c1b72f6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031435"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632771"
 ---
 # <a name="begin-backup"></a>begin backup
 

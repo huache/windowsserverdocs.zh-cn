@@ -2,16 +2,16 @@
 title: bitsadmin gethelpertokenflags
 description: Bitsadmin gethelpertokenflags 命令的参考文章，它返回与 BITS 传输作业关联的帮助程序令牌的用法标志。
 ms.topic: reference
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 03/01/2019
-ms.openlocfilehash: 59c6f2913c3c0f9bde3bbd591cf4a887e50af801
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 244dee15e201c877bdf3c17a219e190bee9a5821
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033555"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632049"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 
@@ -32,7 +32,7 @@ bitsadmin /gethelpertokenflags <job>
 | -------------- | -------------- |
 | 作业 (job) | 作业的显示名称或 GUID。 |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 可能的返回值，包括：
 

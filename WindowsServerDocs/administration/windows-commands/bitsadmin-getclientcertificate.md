@@ -3,16 +3,16 @@ title: bitsadmin getclientcertificate
 description: 用于从作业中检索客户端证书的 bitsadmin getclientcertificate 命令的参考文章。
 ms.topic: reference
 ms.assetid: 4fc8f408-085e-43a0-9fa8-3d798ef107b1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a2fe63369aab098b012462e063518463047218d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 71f1ed8920ba2bd3aa0a0f48683d8841e08afb6d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027825"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632265"
 ---
 # <a name="bitsadmin-getclientcertificate"></a>bitsadmin getclientcertificate
 

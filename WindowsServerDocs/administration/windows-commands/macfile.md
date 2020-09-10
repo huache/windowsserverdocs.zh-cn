@@ -3,16 +3,16 @@ title: macfile
 description: Macfile 命令的参考文章，其中管理了 Macintosh 服务器、卷、目录和文件的文件服务器。
 ms.topic: reference
 ms.assetid: e2ce586c-b316-41d3-90f8-4be0d074cc0e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 06095d99c6cfbdc51fd28f51f9bc06f08d959edf
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6ed5af42108d56016a4b5793993cf19c80a87ff3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023691"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633832"
 ---
 # <a name="macfile"></a>macfile
 
@@ -59,7 +59,7 @@ macfile directory[/server:\\<computername>] /path:<directory> [/owner:<ownername
 | 十分 | 不能重命名、移动或删除该目录。 |
 | 第 | 更改将应用到当前目录和所有子目录。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格或特殊字符，请在文本两侧使用引号 (例如，" `<computer name>` " ) 。
 
@@ -99,7 +99,7 @@ macfile forkize[/server:\\<computername>] [/creator:<creatorname>] [/type:<typen
 | /targetfile`<filepath>` | 指定通过联接数据分叉和资源分叉创建的文件的位置，或指定要更改其类型或创建者的文件的位置。 文件必须位于指定服务器上。 此参数是必需的。 |
 | /? | 在命令提示符下显示帮助。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格或特殊字符，请在文本两侧使用引号 (例如，" `<computer name>` " ) 。
 
@@ -136,7 +136,7 @@ macfile server [/server:\\<computername>] [/maxsessions:{number | unlimited}] [/
 | /loginmessage:`<message>` | 更改 Macintosh 用户在登录到 Macintosh 服务器的文件服务器时看到的消息。 登录消息的最大字符数为199。 如果省略，则服务器的 **loginmessage** 消息将保持不变。 若要删除现有的登录消息，请包含 **/loginmessage** 参数，但将该 *消息* 变量留空。 |
 | /? | 在命令提示符下显示帮助。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格或特殊字符，请在文本两侧使用引号 (例如，" `<computer name>` " ) 。
 
@@ -174,7 +174,7 @@ macfile volume /remove[/server:\\<computername>] /name:<volumename>
 | /remove | 删除 Macintosh 可访问的卷时是必需的。 删除指定的卷。 |
 | /? | 在命令提示符下显示帮助。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格或特殊字符，请在文本两侧使用引号 (例如，" `<computer name>` " ) 。
 

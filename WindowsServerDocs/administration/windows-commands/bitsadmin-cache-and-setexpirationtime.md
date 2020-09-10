@@ -3,16 +3,16 @@ title: bitsadmin cache 和 setexpirationtime
 description: 用于设置缓存过期时间的 bitsadmin cache 和 setexpirationtime 命令的参考文章。
 ms.topic: reference
 ms.assetid: 00ea6e4e-b707-4b31-88dd-b61a78565c8d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e07e862d8577c33daec24bbc93fe5859f13944db
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0d9bc67292796afdbcec695ea2e65966b5b5e46d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028805"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632532"
 ---
 # <a name="bitsadmin-cache-and-setexpirationtime"></a>bitsadmin cache 和 setexpirationtime
 

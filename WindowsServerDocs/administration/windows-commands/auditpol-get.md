@@ -3,16 +3,16 @@ title: auditpol get
 description: 用于检索系统策略、每用户策略、审核选项和审核安全描述符对象的 auditpol get 命令的参考文章。
 ms.topic: reference
 ms.assetid: fe13de4e-836c-4207-b47c-64b6272d6c41
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 23de44ebc9bc91ad4db52ee7362b14d9c93648d8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 309e54170b7a154629a17e5fde1ed4943d0b180c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029085"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633228"
 ---
 # <a name="auditpol-get"></a>auditpol get
 
@@ -46,7 +46,7 @@ auditpol /get
 | /r | 以逗号分隔 (CSV) 格式显示输出。 |
 | /? | 在命令提示符下显示帮助。 |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 所有类别和子类别都可以由用引号引起来的 GUID 或名称指定 ( ") 。 可以通过 SID 或名称指定用户。
 

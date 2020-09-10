@@ -3,16 +3,16 @@ title: bitsadmin addfilewithranges
 description: Bitsadmin addfilewithranges 命令的参考文章，可将文件添加到指定的作业。 BITS 从远程文件下载指定的范围。
 ms.topic: reference
 ms.assetid: df0ce0bf-dff1-4a48-a16f-fd2f4d5f7189
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 08f9031ebd6ffe2e1480e59e5e357a33b9895766
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5eda860558f43b5f692bd41167617b24dbb6f86b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027845"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632650"
 ---
 # <a name="bitsadmin-addfilewithranges"></a>bitsadmin addfilewithranges
 
@@ -33,7 +33,7 @@ bitsadmin /addfilewithranges <job> <remoteURL> <localname> <rangelist>
 | localname | 本地计算机上的文件的名称。 必须包含文件的绝对路径。 |
 | rangelist | 偏移量：长度对的逗号分隔列表。 使用冒号将 offset 值与 length 值分隔开。 例如，如果值为，则 "通知位" 将从偏移量 `0:100,2000:100,5000:eof` 0 传输100个字节，从偏移为 2000 100 个字节，将其余字节从偏移量5000传输到文件末尾。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - 标记 **eof** 是中的偏移量和长度对内的有效长度值 `<rangelist>` 。 它指示服务读取到指定文件的末尾。
 

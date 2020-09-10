@@ -3,16 +3,16 @@ title: assoc
 description: 关联命令的参考文章，其中显示或修改文件扩展名关联。
 ms.topic: reference
 ms.assetid: 237bedda-b24c-4fec-a39c-9b7eacf96417
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c769be5e473f4d7fc21317309036336678b435c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1ce1ee97dd386757ab5802ac2f493e25635ff66f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029305"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633442"
 ---
 # <a name="assoc"></a>assoc
 
@@ -36,7 +36,7 @@ assoc [<.ext>[=[<filetype>]]]
 | `<filetype>` | 指定与指定的文件扩展名关联的文件类型。 |
 | /? | 在命令提示符下显示帮助。 |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 - 若要删除文件扩展名的文件类型关联，请按空格键，在等号后面添加一个空格。
 
