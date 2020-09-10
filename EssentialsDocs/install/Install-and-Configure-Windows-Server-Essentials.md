@@ -5,14 +5,14 @@ ms.date: 06/17/2013
 ms.topic: article
 ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ce8f1dda49144a817f405d04f17046f701230446
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c6fe658db8756856a65bb5284731b949d8edbd31
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181173"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626237"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>安装和配置 Windows Server Essentials
 
@@ -20,17 +20,17 @@ ms.locfileid: "87181173"
 
 ##  <a name="BKMK_InstallConfigure"></a>
 
- 本文档提供有关安装和配置 Windows Server Essentials 的分步说明。 在开始安装之前，请在[安装 Windows Server Essentials 之前](Before-You-Install-Windows-Server-Essentials.md)查看并完成中所述的任务。
+ 本文档提供有关安装和配置 Windows Server Essentials 的分步说明。 在开始安装之前，请在 [安装 Windows Server Essentials 之前](Before-You-Install-Windows-Server-Essentials.md)查看并完成中所述的任务。
 
- 本文档提供有关安装和配置 Windows Server Essentials 的分步说明。 在开始安装之前，请在[安装 Windows Server Essentials 之前](../install/Before-You-Install-Windows-Server-Essentials.md)查看并完成中所述的任务。
+ 本文档提供有关安装和配置 Windows Server Essentials 的分步说明。 在开始安装之前，请在 [安装 Windows Server Essentials 之前](../install/Before-You-Install-Windows-Server-Essentials.md)查看并完成中所述的任务。
 
  安装和配置 Windows Server Essentials 的步骤分为两个步骤：
 
 
-###  <a name="step-1-install-the-windows-server-essentials-operating-system"></a><a name="BKMK_ManualInstallation"></a>步骤1：安装 Windows Server Essentials 操作系统
+###  <a name="step-1-install-the-windows-server-essentials-operating-system"></a><a name="BKMK_ManualInstallation"></a> 步骤1：安装 Windows Server Essentials 操作系统
 
 > [!IMPORTANT]
->  安装操作系统后，在完成[步骤2：配置 Windows Server Essentials 操作系统](#BKMK_Step2Configure)之前，请勿自定义服务器。
+>  安装操作系统后，在完成 [步骤2：配置 Windows Server Essentials 操作系统](#BKMK_Step2Configure)之前，请勿自定义服务器。
 
  **估计完成时间：** 大约30分钟。
 
@@ -90,7 +90,7 @@ ms.locfileid: "87181173"
 
    在安装过程中，临时文件会复制到计算机上的安装文件夹中，这需要约 30 分钟。 安装 Windows Server Essentials 操作系统后，计算机将重新启动。 现在，你已准备好配置 Windows Server Essentials 操作系统。
 
-###  <a name="step-2-configure-the-windows-server-essentials-operating-system"></a><a name="BKMK_Step2Configure"></a>步骤2：配置 Windows Server Essentials 操作系统
+###  <a name="step-2-configure-the-windows-server-essentials-operating-system"></a><a name="BKMK_Step2Configure"></a> 步骤2：配置 Windows Server Essentials 操作系统
 
 > [!IMPORTANT]
 >  如果要从以前版本的 Windows Small Business Server 迁移到 Windows Server Essentials，则必须遵循不同的流程。 有关迁移安装的信息如下所述：
@@ -114,16 +114,16 @@ ms.locfileid: "87181173"
 
 2.  在 **“选择服务器安装模式”** 页面上，请执行下列操作之一：
 
-    1.  选择 "**全新安装**" 以设置 Windows Server Essentials 服务器软件的全新安装。
+    1.  选择 " **全新安装** " 以设置 Windows Server Essentials 服务器软件的全新安装。
 
-    2.  选择 "**服务器迁移**" 以安装 Windows Server Essentials 并将此服务器加入现有 Windows 域。
+    2.  选择 " **服务器迁移** " 以安装 Windows Server Essentials 并将此服务器加入现有 Windows 域。
 
 3.  在 **“个性化服务器”** 页面上，输入组织名称、内部域名和服务器名称。
 
     > [!IMPORTANT]
     >  在网络上，服务器名称必须为唯一名称。 完成这一步后不能更改服务器名称或内部域名。
 
-4.  单击“下一步”。
+4.  单击“下一步”。 
 
 5.  在 **“提供管理员帐户信息”** 页面上，输入新管理员帐户的信息。
 
@@ -136,31 +136,31 @@ ms.locfileid: "87181173"
 
 8.  **“更新和准备服务器”** 页面会显示最终安装过程的进度。 这需要一定的时间才能完成，并且你的计算机会重新启动几次。
 
-9. 服务器最后一次重新启动后，会显示 **“服务器已就绪，可供使用”** 页面。 单击 **“关闭”** 。
+9. 服务器最后一次重新启动后，会显示 **“服务器已就绪，可供使用”** 页面。 单击“关闭” 。
 
 10. 在 **“开始”** 屏幕上单击仪表板标题，然后在仪表板上，完成 **“主页”** 上的 **“设置我的服务器”** 任务。 Windows Server Essentials 安装完成后，应立即完成这些任务。
 
 > [!NOTE]
 >  安装完成后，你会使用安装过程中添加的新管理员帐户自动登录到服务器。 内建管理员帐户密码设置为与新管理员帐户的密码相同，然后内建管理员帐户被禁用。
 
- 在不输入产品密钥的情况下，你可以使用新安装的服务器的时间有限（称为 "评估期"）。 评估期结束后，你必须输入产品密钥才能激活服务器或延长评估期。 你最多可以延长评估期两次。 当你达到评估期所允许的最长天数时，必须使用产品密钥激活服务器。
+ 在不输入产品密钥的情况下，你可以使用新安装的服务器 (称为 "评估期") 。 评估期结束后，你必须输入产品密钥才能激活服务器或延长评估期。 你最多可以延长评估期两次。 当你达到评估期所允许的最长天数时，必须使用产品密钥激活服务器。
 
 ### <a name="customize-windows-server-essentials"></a>自定义 Windows Server Essentials
- Windows Server Essentials 仪表板的 "**主页**" 链接到在安装服务器后应立即完成的**设置**任务。 通过执行这些任务，您可以帮助保护存储在服务器上的信息，并启用 Windows Server Essentials 中的可用功能。
+ Windows Server Essentials 仪表板的 " **主页** " 链接到在安装服务器后应立即完成的 **设置** 任务。 通过执行这些任务，您可以帮助保护存储在服务器上的信息，并启用 Windows Server Essentials 中的可用功能。
 
- 如果你选择不执行这些任务，用户可能无法访问某些网络功能。 若要以后返回这些任务，请返回到 Windows Server Essentials 仪表板**主页**。
+ 如果你选择不执行这些任务，用户可能无法访问某些网络功能。 若要以后返回这些任务，请返回到 Windows Server Essentials 仪表板 **主页** 。
 
  下表定义可显示在设置任务列表中的项目。
 
-|任务|描述
+|任务|说明
 |----------|-----------------|
 |获取其他 Microsoft 产品的更新|单击此任务可访问一个链接，该链接运行的工具可用于指定是否要使用 Microsoft 更新来自动获取 Windows Server Essentials 和其他 Microsoft 产品（如 Office）的更新。
 |添加用户帐户|单击此任务可查看关于添加用户帐户的信息摘要。 提供了运行 **“添加用户帐户向导”** 的链接。 有关详细信息，请参阅[添加用户帐户](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)。
 |添加服务器文件夹|单击此任务可查看关于添加服务器文件夹的信息摘要。 提供了运行 **“添加文件夹向导”** 的链接。 还提供了指向使用服务器文件夹的在线帮助主题的链接。 有关详细信息，请参阅[添加或移动服务器文件夹](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)。
 |设置服务器备份|单击此任务可查看关于使用服务器备份来保护数据的信息摘要。 提供了运行 **“设置服务器备份向导”** 的链接。 有关详细信息，请参阅[设置或自定义服务器备份](../manage/Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1)。
-|设置“随处访问”|单击此任务可查看有关 Windows Server Essentials 中的 "随处访问" 功能的信息摘要。 提供了指向 **“随处访问设置”** 页面的链接。 有关详细信息，请参阅[管理随处访问](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)。
+|设置“随处访问”|单击此任务可查看有关 Windows Server Essentials 中的 "随处访问" 功能的信息摘要。 提供了指向 **“随处访问设置”** 页面的链接。 有关详细信息，请参阅 [管理随处访问](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)。
 |设置电子邮件警报通知|单击此任务可查看关于电子邮件警报通知的信息摘要。 提供了运行 **“设置警报电子邮件通知”** 的链接。 有关详细信息，请参阅[设置警报电子邮件通知](../manage/Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email)。
-|设置媒体服务器|单击此任务可查看关于使用媒体服务器来共享音乐、视频和图像文件的信息摘要。 提供了指向“媒体设置”  **** 页面的链接。 还提供了指向在线帮助主题的链接，可了解关于媒体服务器的详细信息。 有关详细信息，请参阅[管理数字媒体](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)。
+|设置媒体服务器|单击此任务可查看关于使用媒体服务器来共享音乐、视频和图像文件的信息摘要。 提供了指向“媒体设置”  **** 页面的链接。 还提供了指向在线帮助主题的链接，可了解关于媒体服务器的详细信息。 有关详细信息，请参阅 [管理数字媒体](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)。
 |连接计算机|单击此任务可查看关于如何将网络计算机连接到服务器的信息摘要。 有关详细信息，请参阅[如何将计算机连接到服务器](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
 
 ## <a name="additional-references"></a>其他参考

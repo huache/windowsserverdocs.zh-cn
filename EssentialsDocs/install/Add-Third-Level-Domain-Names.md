@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e5b4a362-1881-4024-ae4e-cc3b05e50103
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 48bfc36ba6f3fa369b694b2e160a5ee1282517f2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: dd68308646eba5fba2f79593cba82de467c1888b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181563"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626367"
 ---
 # <a name="add-third-level-domain-names"></a>添加三级域名
 
@@ -33,7 +33,7 @@ ms.locfileid: "87181563"
 
 -   [重新启动 Windows Server Domain Name Management 服务](Add-Third-Level-Domain-Names.md#BKMK_RestartService)
 
-###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a>向程序集添加 IDomainSignupProvider 接口的实现
+###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a> 向程序集添加 IDomainSignupProvider 接口的实现
  IDomainSignupProvider 接口用于为向导添加域服务。
 
 ##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>向程序集添加 IDomainSignupProvider 代码
@@ -273,7 +273,7 @@ ms.locfileid: "87181563"
 
 21. 保存但不关闭该项目，因为你将在下一个步骤中添加该项目。 在完成下一个步骤之前，将不能生成项目。
 
-###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a>向程序集添加 IDomainMaintenanceProvider 接口的实现
+###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a> 向程序集添加 IDomainMaintenanceProvider 接口的实现
  IDomainMaintenanceProvider 用于在创建域之后维护域。
 
 ##### <a name="to-add-the-idomainmaintenanceprovider-code-to-the-assembly"></a>向程序集添加 IDomainMaintenanceProvider 代码
@@ -512,10 +512,10 @@ ms.locfileid: "87181563"
 
 14. 保存并生成解决方案。
 
-###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>使用 Authenticode 签名为程序集签名
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a> 使用 Authenticode 签名为程序集签名
  你必须使用验证码签名进行程序集签名，因为该签名将在操作系统中使用。 有关对程序集签名的详细信息，请参阅 [Signing and Checking Code with Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)（使用验证码对代码进行签名和检查）。
 
-###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>在引用计算机上安装程序集
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a> 在引用计算机上安装程序集
  将程序集放置在引用计算机上的某个文件夹中。 记下该文件夹的路径，因为需要在下一步中将其输入注册表中。
 
 ### <a name="add-a-key-to-the-registry"></a>向注册表添加项
@@ -555,7 +555,7 @@ ms.locfileid: "87181563"
 
 16. 输入在程序集中定义的提供程序的完整类名，然后单击 **“确定”**。
 
-###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a>重启 Windows Server 域名管理服务
+###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a> 重启 Windows Server 域名管理服务
  你必须重新启动 Windows Server Domain Management 服务，以便该提供程序对操作系统可用。
 
 ##### <a name="restart-the-service"></a>重新启动服务。

@@ -3,16 +3,16 @@ title: Diskraid
 description: 有关 Diskraid 命令行工具的参考文章，使你能够配置和管理独立 (或廉价) 磁盘的冗余阵列， (RAID) 存储子系统。
 ms.topic: reference
 ms.assetid: 20aef1e5-7641-47cf-b4eb-cda117f65b6e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b153d0ab1ec52f023c12b240518c6304d76e9093
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 49d190f257c93a026f29188fa26af7409c611f44
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030915"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627168"
 ---
 # <a name="diskraid"></a>Diskraid
 
@@ -188,7 +188,7 @@ create tpgroup [noerr]
 | tpgroup | 在当前选定的目标上创建新的 iSCSI 目标门户组。 |
 | noerr | 仅用于脚本。 遇到错误时，Diskraid 将继续处理命令，就像未发生错误一样。 |
 
-### <a name="delete"></a>delete
+### <a name="delete"></a>删除
 
 删除当前所选的 LUN，即 iSCSI 目标 (，前提是没有任何与 iSCSI 目标) 或 iSCSI 目标门户组相关联的 Lun。
 
@@ -623,7 +623,7 @@ select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| 对象 (object) | 指定要选择的对象类型，包括： **提供程序**、 **子系统**、 **控制器**、 **驱动器**或 **LUN**。 |
+| object | 指定要选择的对象类型，包括： **提供程序**、 **子系统**、 **控制器**、 **驱动器**或 **LUN**。 |
 | hbaport `[<n>]` | 将焦点设置到指定的本地 HBA 端口。 如果未指定 HBA 端口，则该命令将显示当前所选 HBA 端口 (如果有任何) 。 指定无效的 HBA 端口索引将导致未处于焦点的 HBA 端口。 选择 HBA 端口会取消选择任何所选的发起程序适配器和发起程序门户。 |
 | iadapter `[<n>]` | 将焦点设置到指定的本地 iSCSI 发起程序适配器。 如果未指定发起程序适配器，则该命令将显示当前所选的发起程序适配器 (如果有任何) 。 指定无效的发起程序适配器索引会导致不存在焦点发起程序适配器。 选择发起程序适配器会取消选择任何所选 HBA 端口和发起程序门户。 |
 | iportal `[<n>]` | 将焦点设置到所选 iSCSI 发起程序适配器中指定的本地 iSCSI 发起程序门户。 如果未指定发起程序门户，则该命令将显示当前所选的发起程序门户 (如果有任何) 。 指定无效的发起方门户索引会导致所选的发起方门户。 |
@@ -702,7 +702,7 @@ unmask lun {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| all | 指定应对 LUN 的所有主机进行访问。 但是，不能取消对 iSCSI 子系统中的所有目标的 LUN 的屏蔽。<P>在运行该命令之前，必须先注销目标 `unmask lun all` 。 |
+| 全部 | 指定应对 LUN 的所有主机进行访问。 但是，不能取消对 iSCSI 子系统中的所有目标的 LUN 的屏蔽。<P>在运行该命令之前，必须先注销目标 `unmask lun all` 。 |
 | 无 | 指定 LUN 不应可供任何主机访问。<P>在运行该命令之前，必须先注销目标 `unmask lun none` 。 |
 | add | 指定必须将指定的主机添加到可从其访问此 LUN 的现有主机列表。 如果未指定此参数，则提供的主机列表将替换此 LUN 可访问的主机的现有列表。 |
 | wwn = | 指定一个十六进制数字的列表，该数字表示要从其访问 LUN 或主机的全球名称。 若要屏蔽/屏蔽到光纤通道子系统中的一组特定主机，可以在相关主机计算机上键入以分号分隔的 WWN 列表。 |

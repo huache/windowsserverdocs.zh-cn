@@ -3,16 +3,16 @@ title: typeperf
 description: 用于将性能数据写入到 "命令" 窗口或日志文件的 typeperf 的参考文章。
 ms.topic: reference
 ms.assetid: 0c7ca89a-03b3-4626-afcf-ef8565e90043
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 856279c96a8c1904dcf182dbf613447e02291330
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b7c28b77bb374d8a7ece9163458cfd09418ca890
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023381"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626597"
 ---
 # <a name="typeperf"></a>typeperf
 

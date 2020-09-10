@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f695ae90-3160-407b-bebf-9e460f22c86d
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 98045fc4d918034dbe8a3c8d5ea63fc0bd3f5a94
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 704fc7fa97c949080104846011cf07e8e28da73a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180713"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625862"
 ---
 # <a name="migrate-windows-server-essentials-to-new-hardware"></a>将 Windows Server Essentials 迁移到新硬件
 
@@ -25,11 +25,11 @@ ms.locfileid: "87180713"
 >
 > [!NOTE]
 >
->  若要将服务器数据迁移到 Windows Server Essentials 的最新版本，请参阅[迁移到 Windows Server essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+>  若要将服务器数据迁移到 Windows Server Essentials 的最新版本，请参阅 [迁移到 Windows Server essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 
 
 ## <a name="additional-resources"></a>其他资源
- 有关可帮助指导你完成迁移过程的其他信息、工具和社区资源的链接，请访问[Windows Small Business Server 迁移](https://go.microsoft.com/fwlink/?LinkId=217520)网站。
+ 有关可帮助指导你完成迁移过程的其他信息、工具和社区资源的链接，请访问 [Windows Small Business Server 迁移](https://go.microsoft.com/fwlink/?LinkId=217520) 网站。
 
 ## <a name="terms-and-definitions"></a>术语和定义
  **源服务器：** 要从中迁移设置和数据的现有服务器。

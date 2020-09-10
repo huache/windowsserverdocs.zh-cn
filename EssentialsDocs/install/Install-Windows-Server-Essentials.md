@@ -5,14 +5,14 @@ ms.date: 01/02/2017
 ms.topic: article
 ms.assetid: fdf020cd-3184-4886-9f9d-7d729a89057e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d96f2fdb8ca69c1889c39bf8d868fc53f484304b
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 007ca6d41bbbb638bd1f3ededce15f294d7cb2d1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837896"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626316"
 ---
 # <a name="install-windows-server-essentials"></a>安装 Windows Server Essentials
 
@@ -43,11 +43,11 @@ ms.locfileid: "87837896"
 
 ## <a name="end-to-end-solution-guides"></a>端到端解决方案指南
 
--    若要了解如何集中数据存储、限制数据访问权限并在本地和云中备份数据，请参阅[在中小型企业中提供数据保护](/previous-versions/orphan-topics/ws.11/dn582043(v=ws.11))。
+-    若要了解如何集中数据存储、限制数据访问权限并在本地和云中备份数据，请参阅 [在中小型企业中提供数据保护](/previous-versions/orphan-topics/ws.11/dn582043(v=ws.11))。
 
--    若要了解如何从任何位置安全地访问任何连接到 Internet 的设备上的业务数据，请参阅[在中小型企业中保护远程访问](/previous-versions/windows/it-pro/solutions-guidance/dn629457(v=ws.11))。
+-    若要了解如何从任何位置安全地访问任何连接到 Internet 的设备上的业务数据，请参阅 [在中小型企业中保护远程访问](/previous-versions/windows/it-pro/solutions-guidance/dn629457(v=ws.11))。
 
--    若要了解如何与合作伙伴和供应商安全地协作，请参阅[在中小型企业中改进协作](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11))。
+-    若要了解如何与合作伙伴和供应商安全地协作，请参阅 [在中小型企业中改进协作](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11))。
 
 ## <a name="additional-references"></a>其他参考
 

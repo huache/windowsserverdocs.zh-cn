@@ -3,16 +3,16 @@ title: reg copy
 description: Reg copy 命令的参考文章，它将注册表项复制到本地或远程计算机上的指定位置。
 ms.topic: reference
 ms.assetid: 3fe74213-39ec-4b2d-ba3d-086243eac997
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a56f4d14c7dd52ba23f126c44ff940c694993377
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7788130e942fb912ac4cf940df48d0bc54a1903b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028065"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627085"
 ---
 # <a name="reg-copy"></a>reg copy
 
@@ -34,7 +34,7 @@ reg copy <keyname1> <keyname2> [/s] [/f]
 | /f | 复制子项，而不提示确认。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 此命令在复制子项时不要求确认。
 

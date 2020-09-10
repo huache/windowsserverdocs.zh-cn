@@ -3,16 +3,16 @@ title: reset session
 description: 用于重置会话命令的参考文章，可用于重置远程桌面会话主机服务器上的会话。
 ms.topic: reference
 ms.assetid: 4f029ecc-874e-415a-95a8-8b731bae35f9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: a154ffb27ac8ead093c0e41f9a50d0952b736abc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 745a3ba51714ad3f5431dedbe9cebedf77e4ae72
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037025"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626910"
 ---
 # <a name="reset-session"></a>reset session
 
@@ -39,7 +39,7 @@ reset session {<sessionname> | <sessionID>} [/server:<servername>] [/v]
 | /v | 显示要执行的操作的相关信息。 |
 | /? | 在命令提示符下显示帮助。 |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 - 你可以始终重置自己的会话，但必须具有 " **完全控制** " 访问权限才能重置其他用户的会话。 请注意，在不发出警告的情况下重置用户会话可能导致会话中的数据丢失。
 

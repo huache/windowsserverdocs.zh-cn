@@ -3,16 +3,16 @@ title: tsecimp
 description: '有关 tsecimp 的参考文章，可将可扩展标记语言 (XML) 文件中的分配信息导入到 TAPI 服务器安全文件 ( # A0) 。'
 ms.topic: reference
 ms.assetid: d7488ec6-0eff-45ff-89ee-9cbe752416bf
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f8ad2f4f29537c2f575ba96d172c9405d9680187
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3ddc56b959f716840d033508ea253efbc446d74f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026865"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626700"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -35,7 +35,7 @@ tsecimp /d
 |/d|显示已安装电话服务提供程序的列表。 对于每个电话服务提供程序，均会列出关联的线路设备，以及与每个线路设备关联的地址和用户。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   要导入其分配信息的 XML 文件必须采用如下所述的结构。
     -   **UserList** 元素

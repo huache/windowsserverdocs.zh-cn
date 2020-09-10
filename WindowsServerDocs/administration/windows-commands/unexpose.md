@@ -3,16 +3,16 @@ title: unexpose
 description: 隐藏的参考文章，其中 unexposes 了使用公开命令公开的卷影副本。
 ms.topic: reference
 ms.assetid: 58dc7d0f-52e9-4587-9487-d3b4c3e52640
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 13e14941e2c67aa0361dcc0af2cdb1a36bf7e651
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 76e1666bd87a3304dcbe8de3025a0ec790cf83d7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036405"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626580"
 ---
 # <a name="unexpose"></a>unexpose
 
@@ -35,7 +35,7 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 |\<Share>|Unexposes 与指定共享关联的卷影副本 (例如， \\ \\ *计算机名* \) 。|
 |\<MountPoint>|Unexposes 与指定装入点关联的卷影副本 (例如，C:\shadowcopy \) 。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   您可以使用现有的别名或环境变量来代替 *ShadowID*。 使用 **add** 而不使用参数查看现有别名。
 

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 275024e1c3209e33edda79a685b9d45002369398
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 79ffa14cfabc26afd87c0771f7412c98e661421d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181143"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626157"
 ---
 # <a name="preconfiguring-a-router"></a>预配置路由器
 
@@ -26,8 +26,8 @@ ms.locfileid: "87181143"
 
 |配置设置|详细信息|
 |---------------------------|-------------|
-|DHCP|启用|
-|端口转发|应将以下端口转发到服务器的地址：<br /><br /> -80 （对于托管配置，只使用443）<br />-443|
+|DHCP|开|
+|端口转发|应将以下端口转发到服务器的地址：<br /><br /> -80 (用于托管配置，只使用 443) <br />-443|
 |UPnP 支持|应启用 UPnP 支持，为客户提供最方便的路由器配置，并提供最佳的客户体验。<br /><br /> **警告：** 如果已启用，则 UPnP 体系结构可能会带来安全风险。|
 
  除了基本的路由器预配置设置之外，还可完成以下任务以提供集成度更高的路由器管理用户体验：

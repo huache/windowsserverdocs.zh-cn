@@ -5,21 +5,21 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 98f13f63-4480-40ba-a7ef-d1d9b7582e5f
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 9999b78b1b0a4b1823162158b95d175f9c159091
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 50fd17a057e15661ed6c3440bdea8f22bea1bada
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837926"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626202"
 ---
 # <a name="install-or-remove-language-packs"></a>安装或删除语言包
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 > [!NOTE]
->  添加 Windows Server Essentials 语言包之前，必须先按照[语言包和部署](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824829(v=win.10))中的说明创建多语言 Windows 映像。
+>  添加 Windows Server Essentials 语言包之前，必须先按照 [语言包和部署](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824829(v=win.10)) 中的说明创建多语言 Windows 映像。
 
  语言包只能用于创建多语言映像。 本部分中的信息特定于在 Windows Server Essentials 上安装或删除语言包。
 

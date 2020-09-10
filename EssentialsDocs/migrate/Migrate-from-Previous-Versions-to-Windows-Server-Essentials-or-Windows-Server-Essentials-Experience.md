@@ -5,20 +5,20 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 4ba2bad257a7c2d56b878a8061053f7af206d40e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: ac59e41aab7c5085f9a9acdb781582c9cdecea54
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180593"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625732"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>从早期版本迁移到 Windows Server Essentials 或 Windows Server Essentials 体验
 
 >适用于： Windows Server 2012 R2 Essentials
 
-本指南介绍了如何从以前版本的 Windows Small Business Server 和 Windows Server Essentials （包括 Windows Server Essentials、Windows Small Business Server 2011 Standard、Windows Small Business server 2011 Essentials、Windows Small business Server 2008 和 Windows Small Business Server 2003）迁移到 Windows Server Essentials 或装有 Windows Server Essentials 体验角色的 Windows Server 2012 R2。
+本指南介绍了如何从以前版本的 Windows Small Business Server 和 Windows Server Essentials (（包括 Windows Server Essentials、Windows Small Business Server 2011 Standard、Windows Small Business Server 2011 Essentials、Windows Small Business Server 2008 和 Windows Small Business Server 2003) 迁移到 Windows Server Essentials 或装有 Windows Server Essentials Experience 角色的 Windows Server 2012 R2）。
 
  **对于具有最多25个用户和50设备的环境**，你可以按照本指南中的步骤从早期版本的 windows SBS 迁移到 Windows Server Essentials。
 
@@ -37,7 +37,7 @@ ms.locfileid: "87180593"
 
 1. [步骤1：为 Windows Server Essentials 迁移准备源服务器](Step-1--Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md)。  必须确保源服务器和网络已准备好执行迁移操作。 本节指导你完成下列操作：备份源服务器，评估源服务器系统的运行状况，安装最新的 Service Pack 和修补程序，以及验证网络配置。
 
-2. [步骤2：将 Windows Server Essentials 作为新的副本域控制器进行安装](Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md)。 本部分介绍如何将 Windows server Essentials 或 Windows Server 2012 R2 Standard （启用 Windows Server Essentials Experience 角色）安装为域控制器。
+2. [步骤2：将 Windows Server Essentials 作为新的副本域控制器进行安装](Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md)。 本部分介绍如何在作为域控制器启用) Windows server Essentials Experience 角色的情况下安装 Windows server Essentials 或 Windows Server 2012 R2 Standard (。
 
 3. [步骤3：将计算机加入到新的 Windows Server Essentials 服务器](Step-3--Join-computers-to-the-new-Windows-Server-Essentials-server.md)。  本部分介绍如何将客户端计算机加入到运行 Windows Server Essentials 的新服务器并更新组策略设置。
 
@@ -49,11 +49,11 @@ ms.locfileid: "87180593"
 
 7. [步骤7：执行 Windows Server Essentials 迁移的迁移后任务](Step-7--Perform-post-migration-tasks-for-the-Windows-Server-Essentials-migration.md)。  完成将所有设置和数据迁移到 Windows Server Essentials 后，你可能需要将允许的计算机映射到用户帐户。
 
-8. [步骤8：运行 Windows Server Essentials 最佳做法分析器](Step-8--Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)。  在完成将设置和数据迁移到 Windows Server Essentials 后，应运行 Windows Server Essentials 最佳做法分析器（BPA）。
+8. [步骤8：运行 Windows Server Essentials 最佳做法分析器](Step-8--Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)。  完成将设置和数据迁移到 Windows Server Essentials 后，应最佳做法分析器 (BPA) 运行 Windows Server Essentials。
 
    某些迁移过程需要以管理员身份打开命令提示符窗口。 以下过程介绍如何执行此操作。
 
-###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>在源服务器上以管理员身份打开 "命令提示符" 窗口
+###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a> 在源服务器上以管理员身份打开 "命令提示符" 窗口
 
 1.  单击“启动”。
 

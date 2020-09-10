@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f1d9beed01d17abfd88a135fb5ade48d0b6178ab
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 50f610bec8573916edffd3efb5e551a45fc6e72a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554510"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625957"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Windows Server Essentials 仪表板概述
 
@@ -94,7 +94,7 @@ ms.locfileid: "89554510"
 |设备|在将计算机连接到 Windows Server Essentials 网络后，你可以通过仪表板的“设备”**** 页面管理计算机。 可在此页面上执行的任务包括：<br /><br /> -查看加入到网络的计算机的列表。<br /><br /> -通过利用 Microsoft 365 移动设备管理功能来管理移动设备。<br /><br /> **注意：** 此功能仅在已启用 Windows Server Essentials 体验角色的 Windows Server Essentials 和 Windows Server 2012 R2 Standard 中可用。<br /><br /> -查看每台计算机的计算机属性和运行状况警报。<br /><br /> -设置和管理计算机备份。<br /><br /> -将文件和文件夹还原到计算机。<br /><br /> -建立与计算机的远程桌面连接<br /><br /> -自定义计算机备份和文件历史记录设置<br /><br /> 有关管理计算机和备份的信息，请参阅 [管理设备](Manage-Devices-in-Windows-Server-Essentials.md)。|
 |存储|默认情况下，仪表板的“存储”**** 部分包含以下部分，具体取决于你所运行的 Windows Server Essentials 版本。<br /><br /> -" **服务器文件夹** " 子节包含可帮助您查看和管理服务器文件夹属性的任务。 该页面还包括用于打开和添加服务器文件夹的任务。<br /><br /> -" **硬盘驱动器** " 页面包括的任务可帮助您查看和检查附加到服务器的驱动器的运行状况。<br /><br /> -在 Windows server Essentials 和 Windows Server 2012 R2 Standard 中，启用 Windows Server Essentials Experience 角色后， **SharePoint 库** 页面包含可帮助你在 Microsoft 365 service 中管理 SharePoint 库的任务。<br /><br /> 有关管理服务器文件夹的信息，请参阅 [管理服务器文件夹](Manage-Server-Folders-in-Windows-Server-Essentials.md)。<br /><br /> 有关管理硬盘驱动器的信息，请参阅 [管理服务器存储](Manage-Server-Storage-in-Windows-Server-Essentials.md)。|
 |应用程序|-默认情况下，Windows Server Essentials 仪表板的 " **应用程序** " 部分包含两个子部分。<br /><br /> 有关管理外接程序应用程序的信息，请参阅 [管理应用程序](Manage-Applications-in-Windows-Server-Essentials.md)。<br /><br /> -" **外接程序** " 子节显示已安装加载项的列表，并提供使您能够删除外接程序和访问有关选定外接程序的其他信息的任务。<br /><br /> - **Microsoft** "查找" 子节显示 microsoft 查明可用的应用程序的列表。|
-|Office 365|仅当 Windows Server Essentials 与 Microsoft 365 集成时，" **Office 365** " 选项卡才会显示。 本部分包含 Office 365 订阅和管理员帐户信息。|
+|Microsoft 365|仅当 Windows Server Essentials 与 Microsoft 365 集成时，" **Microsoft 365** " 选项卡才会显示。 本部分包含 Microsoft 365 订阅和管理员帐户信息。|
 
 > [!NOTE]
 >  如果为 Windows Server Essentials 仪表板安装一个加载项，则该加载项将可能创建其他管理部分。 这些部分可能会显示在主导航栏或子部分选项卡上。

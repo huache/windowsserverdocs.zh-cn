@@ -3,16 +3,16 @@ title: reg load
 description: Reg load 命令的参考文章，可将保存的子项和条目写入注册表中的不同子项。
 ms.topic: reference
 ms.assetid: 3b0b2b1b-f510-4108-9e9d-7057e924aa6e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8647b417999459b210986187bd523b3953a8b2d6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 31b0baf4f4c6e903c7dc9716f8a9dc47d29227b5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028025"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627061"
 ---
 # <a name="reg-load"></a>reg load
 
@@ -32,7 +32,7 @@ reg load <keyname> <filename>
 | `<filename>` | 指定要加载的文件的名称和路径。 必须使用 **reg save** 命令提前创建此文件，并且该文件的扩展名必须为 hiv。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - **Reg load**操作的返回值为：
 

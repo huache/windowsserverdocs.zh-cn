@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 98a4b154a9b3cea9ebc92da1eb807bc73e98d5d2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 78b0b9f8cb2056bc307fd66b9fa70f3d128012cf
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180883"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626040"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的系统运行状况
 
@@ -23,7 +23,7 @@ ms.locfileid: "87180883"
 > [!NOTE]
 >  在安装了 Windows Server Essentials Experience 角色的 Windows Server Essentials 和 Windows Server 2012 R2 中，网络中的服务器和客户端计算机的运行状况警报不再在警报查看器中显示，而是可以在**主页**的 "**运行状况报告**" 选项卡上查看。
 
- Windows Server Essentials 主动监视连接到服务器的每台计算机，并通知管理员与系统运行状况相关的问题，包括关键更新、缺少恶意软件防护、客户端计算机上的过期病毒定义以及其他需要操作的重要问题。 这些问题在警报查看器中显示为警报，可从服务器的仪表板或 Windows Server Essentials 中的客户端计算机的快速启动板或 Windows Server Essentials 中的 "**运行状况报告**" 选项卡上启动。 默认情况下，警报每隔三十分钟刷新一次，但你可以通过单击警报查看器中或 **“运行状况报告”** 选项卡上的 **“刷新”**，随时评估用于警报的网络。
+ Windows Server Essentials 主动监视连接到服务器的每台计算机，并通知管理员与系统运行状况相关的问题，包括关键更新、缺少恶意软件防护、客户端计算机上的过期病毒定义以及其他需要操作的重要问题。 这些问题在警报查看器中显示为警报，可从服务器的仪表板或 Windows Server Essentials 中的客户端计算机的快速启动板或 Windows Server Essentials 中的 " **运行状况报告** " 选项卡上启动。 默认情况下，警报每隔三十分钟刷新一次，但你可以通过单击警报查看器中或 **“运行状况报告”** 选项卡上的 **“刷新”**，随时评估用于警报的网络。
 
  以下主题将帮助你了解、查看和响应警报查看器中的警报，还提供了如何配置服务器以通过电子邮件接收警报的说明。
 
@@ -39,7 +39,7 @@ ms.locfileid: "87180883"
 
 -   [潜在的计算机警报](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Potential)
 
-##  <a name="about-the-health-report-add-in"></a><a name="BKMK_AddIn"></a>关于运行状况报告外接程序
+##  <a name="about-the-health-report-add-in"></a><a name="BKMK_AddIn"></a> 关于运行状况报告外接程序
  Windows Server Essentials 的运行状况报告外接程序向你提供有关 Windows Server Essentials 网络的综合信息，并使你能够将此信息分发给其他人。 可以在仪表板的 **“报告”** 选项卡上查看此信息。 使用 **“报告”** 选项卡，可以执行以下操作：
 
 -   [按需或按计划生成报告](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Generate)
@@ -49,18 +49,18 @@ ms.locfileid: "87180883"
 -   [通过电子邮件发送报告](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_emailreport)
 
 > [!NOTE]
->  **Windows Server Essentials：** 你可以从[Microsoft 下载中心](https://go.microsoft.com/fwlink/p/?LinkId=266342)下载适用于 Windows Server Essentials 的运行状况报告外接程序。
+>  **Windows Server Essentials：** 你可以从 [Microsoft 下载中心](https://go.microsoft.com/fwlink/p/?LinkId=266342)下载适用于 Windows Server Essentials 的运行状况报告外接程序。
 >
 >  **Windows Server Essentials：** 默认情况下，运行状况报告外接程序与安装了 Windows Server Essentials Experience 角色的 Windows Server Essentials 或 Windows Server 2012 R2 集成，并且运行状况报告显示在仪表板**主页**的 "**运行状况报告**" 选项卡上。
 
-###  <a name="generate-a-report-on-demand-or-on-schedule"></a><a name="BKMK_Generate"></a>按需或按计划生成报告
+###  <a name="generate-a-report-on-demand-or-on-schedule"></a><a name="BKMK_Generate"></a> 按需或按计划生成报告
  安装运行状况报告外接程序并重新启动仪表板之后，将一个新的选项卡 **“报告”** 添加到仪表板。 可以通过单击 **“报告”** 选项卡上的 **“生成运行状况报告”** 任务，根据需要随时生成运行状况报告。
 
  生成运行状况报告之后，在列表窗格中创建一个新的项，并由生成该报告的日期和时间来标识。 若要打开某项，可以在列表窗格中双击此项，或者可以选择它，然后单击任务窗格中的 **“打开运行状况报告”**。 该报告将以 HTML 格式在新窗口中显示。
 
- 除了手动生成报告外，你还可能要按每天或每小时的计划自动生成报告。 为此，请在任务窗格中，单击 "**自定义运行状况报告设置**"，然后单击 "**计划和电子邮件**" 选项卡。默认情况下，"**计划**" 功能处于关闭状态，你可以通过选中 "在**其计划时间生成运行状况报告**" 复选框将其打开。
+ 除了手动生成报告外，你还可能要按每天或每小时的计划自动生成报告。 为此，请在任务窗格中，单击 " **自定义运行状况报告设置**"，然后单击 " **计划和电子邮件** " 选项卡。默认情况下，" **计划** " 功能处于关闭状态，你可以通过选中 "在 **其计划时间生成运行状况报告** " 复选框将其打开。
 
-###  <a name="customize-the-content-of-the-report"></a><a name="BKMK_Customize"></a>自定义报表内容
+###  <a name="customize-the-content-of-the-report"></a><a name="BKMK_Customize"></a> 自定义报表内容
  运行状况报告包含以下项目：
 
 - **严重警报和警告**，这与你在仪表板上的警报查看器中看到的严重警报和警告一致。 运行状况报告中不包含信息警报。
@@ -77,16 +77,16 @@ ms.locfileid: "87180883"
 
   在运行状况报告中，首先查看 **“摘要”**，然后对于带有红色错误图标或黄色警告图标的项目，单击同一行上的 **“详细信息”** 链接以查看有关此项的详细信息。
 
-  如果你对报表中包含的某些数据点不感兴趣，则可以通过单击任务窗格中的 "**自定义运行状况报告设置**"，然后单击 "**内容**" 选项卡，自定义报表的内容。清除你不希望在报表中看到的内容的复选框。 例如，如果你有自己的服务器备份计划，并且不希望看到有关服务器备份的警告，则可以通过清除 "**服务器备份**" 复选框从报告中排除服务器备份。
+  如果你对默认情况下在报表中包含的某些数据点不感兴趣，则可以通过单击任务窗格中的 " **自定义运行状况报告设置** "，然后单击 " **内容** " 选项卡，自定义报表的内容。清除不希望在报表中看到的内容的复选框。 例如，如果你有自己的服务器备份计划，并且不希望看到有关服务器备份的警告，则可以通过清除 " **服务器备份** " 复选框从报告中排除服务器备份。
 
-###  <a name="email-the-report"></a><a name="BKMK_emailreport"></a>通过电子邮件发送报表
+###  <a name="email-the-report"></a><a name="BKMK_emailreport"></a> 通过电子邮件发送报表
  必须登录到仪表板才能阅读报告对于某些管理员来说仍然不方便，尤其在他们有多个服务器要管理的时候。 生成报告之后，借助打开的电子邮件功能，将一封电子邮件与该报告的内容发送到指定的电子邮件地址列表。 管理员可以从任何设备或任何客户端应用程序中轻松地查看此报告，并确保该服务器处于最佳状态。
 
  在“自定义运行状况报告设置”**** 对话框中，启用电子邮件、更改 SMTP 设置并指定电子邮件收件人列表后，你将注意到任务窗格中显示了一项新任务：**通过电子邮件发送运行状况报告**。 有关 SMTP 设置的详细信息，请参阅[“设置警报的电子邮件通知”](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email)。
 
  你可以选择一个现有的报告，然后单击 **“通过电子邮件发送运行状况报告”**。 你还可以生成新的报告，并将其自动发送到你的收件箱。 如果你已配置了自动生成该报告的计划，则该报告在按计划每天（或每小时）生成后，将自动传递到你的收件箱。
 
-##  <a name="view-alerts-by-using-the-alert-viewer"></a><a name="BKMK_View"></a>使用警报查看器查看警报
+##  <a name="view-alerts-by-using-the-alert-viewer"></a><a name="BKMK_View"></a> 使用警报查看器查看警报
  本部分讨论如何使用仪表板或快速启动板打开警报查看器以查看服务器网络上的所有计算机的运行状况。
 
 #### <a name="to-open-the-alert-viewer-by-using-the-dashboard"></a>通过使用仪表板打开警报查看器
@@ -101,7 +101,7 @@ ms.locfileid: "87180883"
 
 2.  单击任何快速启动板底部显示的警报图标（关键、警告和信息性）来打开警报查看器，然后按照说明在警报查看器的详细信息窗格中解决该警报。
 
-##  <a name="organize-alerts-in-the-alert-viewer"></a><a name="BKMK_Organize"></a>组织警报查看器中的警报
+##  <a name="organize-alerts-in-the-alert-viewer"></a><a name="BKMK_Organize"></a> 组织警报查看器中的警报
  你可以组织警报查看器中的警报，并基于其严重程度（关键、警告和信息性）或基于计算机的名称显示它们。
 
 #### <a name="to-organize-alerts-in-the-alert-viewer"></a>组织警报查看器中的警报
@@ -116,7 +116,7 @@ ms.locfileid: "87180883"
 
     2.  选择 **“按警报类型筛选”**，然后单击你要查看的警报的警报类型（关键、警告和信息性）。 这仅显示警报查看器中所选的警报类型。
 
-##  <a name="respond-to-alerts"></a><a name="BKMK_Respond"></a>响应警报
+##  <a name="respond-to-alerts"></a><a name="BKMK_Respond"></a> 响应警报
  当你遇到警报时，可以选择执行下列操作之一：
 
 -   [解决警报](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Resolve)
@@ -127,10 +127,10 @@ ms.locfileid: "87180883"
 
 -   [删除警报](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_4)
 
-###  <a name="resolve-an-alert"></a><a name="BKMK_Resolve"></a>解决警报
+###  <a name="resolve-an-alert"></a><a name="BKMK_Resolve"></a> 解决警报
  按照警报查看器中的解决方案说明来解决该警报。 解决警报后，它仍在警报查看器中显示，直到将它刷新。
 
-###  <a name="ignore-an-alert"></a><a name="BKMK_3"></a>忽略警报
+###  <a name="ignore-an-alert"></a><a name="BKMK_3"></a> 忽略警报
  如果你更愿意稍后响应警报，则可以选择忽略它。 当你忽略警报时，它仍列在警报查看器中，但将禁用且灰显。 计算机的总体运行状态评估中不包括忽略的警报。 若要解决忽略的警报，首先需要启用警报。
 
 ##### <a name="to-ignore-an-alert"></a>忽略警报
@@ -143,7 +143,7 @@ ms.locfileid: "87180883"
 
    若要响应已禁用的警报，需要首先启用该警报。
 
-###  <a name="enable-an-alert"></a><a name="BKMK_5"></a>启用警报
+###  <a name="enable-an-alert"></a><a name="BKMK_5"></a> 启用警报
  可以启用你之前选择忽略的警报。 启用该警报后，你可以解决它，或者根据需要将其删除。 当标记警报为忽略时，显示它为禁用。 当你启用以前已禁用的警报时，它将变为活动状态，并再次包括在计算机的总体运行状况评估中。
 
 ##### <a name="to-enable-an-alert"></a>启用警报
@@ -154,7 +154,7 @@ ms.locfileid: "87180883"
 
 3.  在警报查看器中，右键单击你要启用的警报，然后单击 **“启用警报”**。
 
-###  <a name="delete-an-alert"></a><a name="BKMK_4"></a>删除警报
+###  <a name="delete-an-alert"></a><a name="BKMK_4"></a> 删除警报
  如果你不希望解决或忽略警报，则可以删除它。 可以使用快速启动板上的警报查看器来删除针对你的计算机而生成的警报。 如果你删除警报，而且服务器在下一轮网络运行状况评估周期中再次检测到问题，则它会生成新的警报。
 
 ##### <a name="to-delete-an-alert"></a>删除警报
@@ -165,14 +165,14 @@ ms.locfileid: "87180883"
 
 3.  在警报查看器中，右键单击你要删除的警报，然后单击 **“删除警报”**。
 
-##  <a name="set-up-email-notifications-for-alerts"></a><a name="BKMK_Email"></a>为警报设置电子邮件通知
+##  <a name="set-up-email-notifications-for-alerts"></a><a name="BKMK_Email"></a> 为警报设置电子邮件通知
  你可以配置服务器以通过电子邮件通知你有关警报的发生。 这些警报的电子邮件通知包含有关网络问题和其解决方案步骤的信息，这等同于警报查看器中显示的信息。 某些网络运行状况评估是以编程方式进行的。
 
  当你将服务器配置为使用电子邮件发送警报通知时，将为网络运行状况评估期间发现的警报发送一封电子邮件通知。 但是，不是所有在警报查看器中报告的警报都通过电子邮件报告。
 
  每隔 30 分钟，警报电子邮件评估任务在服务器上运行，该任务评估用于警报的网络。 如果为电子邮件通知设置的任何警报发生，将发送一封电子邮件通知。 如果在下一轮评估周期中该警报仍处于活动状态，则不会发送第二封电子邮件，以避免邮件大量涌进你的邮箱。 但是，如果在未来的警报评估周期内检测到新的警报，则将发送电子邮件通知，其中包括新的和以前的警报。
 
-###  <a name="alerts-that-result-in-email-notifications"></a><a name="BKMK_list"></a>导致电子邮件通知的警报
+###  <a name="alerts-that-result-in-email-notifications"></a><a name="BKMK_list"></a> 导致电子邮件通知的警报
  当你设置服务器以发送警报的电子邮件通知时，警报查看器中的以下警报将导致电子邮件通知：
 
 -   客户端计算机备份中存在错误。
@@ -221,17 +221,17 @@ ms.locfileid: "87180883"
 
 -   许可错误：Active Directory 域服务。
 
--   你的 Office 365 订阅已过期。
+-   你的 Microsoft 365 订阅已过期。
 
--   Office 365 验证不成功。
+-   Microsoft 365 身份验证未成功。
 
 -   密码策略不正确。
 
--   密码同步服务不能与使用 Office 365 的用户密码同步。
+-   密码同步服务无法同步用户密码与 Microsoft 365。
 
 -   更改 Windows 密码。
 
--   你的 Office 365 密码与你的 Windows 密码不同。
+-   你的 Microsoft 365 密码与你的 Windows 密码不同。
 
 -   无法连接到 Exchange Server。
 
@@ -255,11 +255,11 @@ ms.locfileid: "87180883"
 
 -   一个或多个驱动器无法正常工作，并且处于脱机状态。
 
-###  <a name="configuring-smtp-on-your-server-to-send-alert-notifications-by-email-in-windows-server-essentials"></a><a name="BKMK_SMTP"></a>在服务器上配置 SMTP，以通过电子邮件在 Windows Server Essentials 中发送警报通知
+###  <a name="configuring-smtp-on-your-server-to-send-alert-notifications-by-email-in-windows-server-essentials"></a><a name="BKMK_SMTP"></a> 在服务器上配置 SMTP，以通过电子邮件在 Windows Server Essentials 中发送警报通知
  本部分讨论如何配置你的服务器以发送警报的电子邮件通知。
 
 > [!NOTE]
->  你可以从[Microsoft 下载中心](https://go.microsoft.com/fwlink/p/?LinkId=266342)下载适用于 Windows Server Essentials 的运行状况报告外接程序。
+>  你可以从 [Microsoft 下载中心](https://go.microsoft.com/fwlink/p/?LinkId=266342)下载适用于 Windows Server Essentials 的运行状况报告外接程序。
 
 ##### <a name="to-set-up-email-notification-for-alerts"></a>设置警报的电子邮件通知
 
@@ -288,8 +288,8 @@ ms.locfileid: "87180883"
 
     |SMTP 服务器|所需的 SSL|所需的身份验证|端口号|帐户名称/登录名|
     |-----------------|------------------|-----------------------------|-----------------|------------------------------|
-    |smtp.gmail.com|“是”|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
-    |smtp.live.com|“是”|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
+    |smtp.gmail.com|是|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
+    |smtp.live.com|是|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
     |smtp.comcast.net|是|否|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
     |smtp.mail.yahoo.com|否|是|25|仅提供电子邮件地址，无需用于用户名的域名。|
 
@@ -338,8 +338,8 @@ ms.locfileid: "87180883"
 
     |SMTP 服务器|所需的 SSL|所需的身份验证|端口号|帐户名称/登录名|
     |-----------------|------------------|-----------------------------|-----------------|------------------------------|
-    |smtp.gmail.com|“是”|“是”|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
-    |smtp.live.com|“是”|“是”|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
+    |smtp.gmail.com|是|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
+    |smtp.live.com|是|是|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
     |smtp.comcast.net|是|否|587|提供具有域用户名和密码的完整电子邮件地址进行身份验证。|
     |smtp.mail.yahoo.com|否|是|25|仅提供电子邮件地址，无需用于用户名的域名。|
 
@@ -347,7 +347,7 @@ ms.locfileid: "87180883"
 
 7.  若要验证你已正确配置 SMTP 服务器设置，以通过电子邮件发送运行状况报告，则从仪表板上的运行状况报告选项卡中选择一个报告，然后从任务窗格中单击 **“电子邮件运行状况报告”**。
 
-##  <a name="potential-computer-alerts"></a><a name="BKMK_Potential"></a>潜在的计算机警报
+##  <a name="potential-computer-alerts"></a><a name="BKMK_Potential"></a> 潜在的计算机警报
  本部分讨论关于了解和管理特定于你的已连接到服务器的计算机并在计算机的快速启动板中显示的警报。
 
  下表列出了一些可以生成并在警报查看器上显示的计算机警报（如果适用于你的计算机）。
@@ -360,13 +360,13 @@ ms.locfileid: "87180883"
 |Windows Update 处于关闭状态。|你将无法利用更新的新功能和更正功能，除非 Windows Update 处于打开状态。 若要在警报查看器中打开 Windows 更新，请单击 **“打开 Windows 更新”**。<br /><br /> 如果未显示 **“打开 Windows 更新”** 任务，则你将无法登录到引发警报的计算机。 你必须登录到引发警报的计算机，才能在警报查看器中运行此任务。|
 |应安装重要更新。|你将无法利用更新的新功能和更正功能，除非 Windows Update 处于打开状态。 若要在警报查看器中打开 Windows 更新，请单击 **“打开 Windows 更新”**。<br /><br /> 如果未显示 **“打开 Windows 更新”** 任务，则你将无法登录到引发警报的计算机。 你必须登录到引发警报的计算机，才能在警报查看器中运行此任务。|
 |重新启动计算机才能应用更新。|你将无法利用更新的新功能和更正功能，直到应用它们。 保存你的所有数据并重新启动计算机才能应用这些更新。|
-|硬盘驱动器上的可用空间很少。|如果空间不可用，则你将无法保存其他信息。 若要提高计算机上的可用空间，请考虑以下选项：<br /><br /> -添加新的硬盘驱动器。<br /><br /> -运行 "**磁盘清理**" 以删除旧文件和临时文件。<br /><br /> -将文件移到另一台计算机上的共享文件夹中。<br /><br /> -存档可移动介质上的文件，例如 CD、DVD 或外部硬盘驱动器。|
+|硬盘驱动器上的可用空间很少。|如果空间不可用，则你将无法保存其他信息。 若要提高计算机上的可用空间，请考虑以下选项：<br /><br /> -添加新的硬盘驱动器。<br /><br /> -运行 " **磁盘清理** " 以删除旧文件和临时文件。<br /><br /> -将文件移到另一台计算机上的共享文件夹中。<br /><br /> -存档可移动介质上的文件，例如 CD、DVD 或外部硬盘驱动器。|
 |服务器上的 **“文件历史记录”** 代理配置不正确，无法在此计算机上运行。|无法创建文件历史记录备份。|
 |一个或多个服务不在运行。||
 |更改 Windows 密码。||
-|你的 Microsoft Office 365 密码与你的 Windows 密码不同。||
+|你的 Microsoft Microsoft 365 密码与你的 Windows 密码不同。||
 
-###  <a name="to-protect-your-computer"></a><a name="BKMK_Protect"></a>保护您的计算机
+###  <a name="to-protect-your-computer"></a><a name="BKMK_Protect"></a> 保护您的计算机
 
 1.  打开安全中心。
 

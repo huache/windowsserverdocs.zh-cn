@@ -3,16 +3,16 @@ title: logman update trace
 description: 用于更新现有事件跟踪数据收集器属性的 logman update trace 命令的参考文章。
 ms.topic: reference
 ms.assetid: b7111f7f-4162-4d1a-8e53-d766db0ede1f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 17a63116408458edaf11c2ff44ccf2c1a978cea0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: cb17630384e4daf2371a6f67ea20fc2b25ef61ec
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036345"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627541"
 ---
 # <a name="logman-update-trace"></a>logman update trace
 
@@ -61,7 +61,7 @@ logman update trace <[-n] <name>> [options]
 | -模式 `<globalsequence|localsequence|pagedmemory>` | 指定事件跟踪会话记录器模式，其中包括：<ul><li>**Globalsequence** -指定事件跟踪器将序列号添加到它接收的每个事件，而不考虑哪个跟踪会话收到了该事件。</li><li>**Localsequence** -指定事件跟踪器为在特定跟踪会话中接收的事件添加序列号。 使用此选项时，重复的序列号可以在所有会话中存在，但在每个跟踪会话中是唯一的。</li><li>**Pagedmemory** -指定事件跟踪器使用分页内存而不是默认的非分页内存池来实现其内部缓冲区分配。</li></ul> |
 | /? | 显示区分上下文的帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 其中列出了 [-]，添加了额外的连字符 ( ) 对该选项求反。
 

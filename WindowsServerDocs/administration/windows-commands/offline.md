@@ -3,16 +3,16 @@ title: offline
 description: 脱机命令的参考文章，它将联机磁盘或卷进入脱机状态。
 ms.topic: reference
 ms.assetid: 44b265b2-fb08-4e7a-8939-c004258196b2
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b54fc396f1f2eb983c079f931c44ba62bcdb98c6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 50fc5436f65ca612ac278af5398fa3ad09665eeb
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032745"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627361"
 ---
 # <a name="offline"></a>offline
 

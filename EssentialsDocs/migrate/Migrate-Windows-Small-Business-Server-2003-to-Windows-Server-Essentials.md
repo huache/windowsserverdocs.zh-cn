@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 119a7fbc-2c76-4aa3-8a7f-c7073d461b5b
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 4883f8daed21b89cac6906ddf68e06d71a95364e
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: b871fae4a34aebaf87107c534a65035626d653fa
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838386"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625857"
 ---
 # <a name="migrate-windows-small-business-server-2003-to-windows-server-essentials"></a>将 Windows Small Business Server 2003 迁移到 Windows Server Essentials
 
@@ -28,11 +28,11 @@ ms.locfileid: "87838386"
 >
 > [!NOTE]
 >
->  若要将服务器数据迁移到 Windows Server Essentials 的最新版本，请参阅[迁移到 Windows Server essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+>  若要将服务器数据迁移到 Windows Server Essentials 的最新版本，请参阅 [迁移到 Windows Server essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 
 
 ## <a name="additional-resources"></a>其他资源
- 有关可帮助指导你完成迁移过程的其他信息、工具和社区资源的链接，请访问[Windows Small Business Server 迁移](https://go.microsoft.com/fwlink/?LinkId=217520)网站。
+ 有关可帮助指导你完成迁移过程的其他信息、工具和社区资源的链接，请访问 [Windows Small Business Server 迁移](https://go.microsoft.com/fwlink/?LinkId=217520) 网站。
 
 ## <a name="terms-and-definitions"></a>术语和定义
  **源服务器：** 要从中迁移设置和数据的现有服务器。
@@ -62,7 +62,7 @@ ms.locfileid: "87838386"
 
  某些迁移过程需要以管理员身份打开命令提示符窗口。
 
-###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>在源服务器上以管理员身份打开 "命令提示符" 窗口
+###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a> 在源服务器上以管理员身份打开 "命令提示符" 窗口
 
 1.  单击“开始”。
 

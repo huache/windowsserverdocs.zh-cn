@@ -3,16 +3,16 @@ title: offline volume
 description: 脱机 volume 命令的参考文章，该命令会将具有焦点的联机卷置于脱机状态。
 ms.topic: reference
 ms.assetid: b8f7192f-ea38-47d0-9d4e-58ef68336ae6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c38a38e8e907cc557f0c13690de3941c10f4065
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7902ef109c7e893d2610ae308a391d9efafbabfd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032735"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627369"
 ---
 # <a name="offline-volume"></a>offline volume
 

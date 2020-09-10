@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 0302d070-c58a-40f2-b56d-7e7842813d02
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 611f3824493acd6047c55f83cf17ba81daf8c923
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: f2b1e0205578cbf629418a2b78d6b27199cf694a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180923"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626148"
 ---
 # <a name="manage-server-backup-in-windows-server-essentials"></a>管理 Windows Server Essentials 中的服务器备份
 
@@ -36,7 +36,7 @@ ms.locfileid: "87180923"
 
 -   [从服务器备份中还原文件和文件夹](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_7)
 
-##  <a name="which-backup-should-i-choose"></a><a name="BKMK_WhichBackup"></a>我应该选择哪个备份？
+##  <a name="which-backup-should-i-choose"></a><a name="BKMK_WhichBackup"></a> 我应该选择哪个备份？
  如果你最近成功创建了备份，并且你确定该备份包含所有重要数据，则选择服务器备份非常简单。 如果你正尝试从较旧的备份还原到服务器或计算机，则选择一个好的要还原到的备份可能需要进行某些调查，并且可能作出一些妥协。
 
 #### <a name="to-choose-a-backup"></a>选择备份
@@ -49,10 +49,10 @@ ms.locfileid: "87180923"
 
 4.  最佳做法是，你可以将文件和文件夹还原到备用位置，然后让文件和文件夹的所有者将所需文件和文件夹移动到原始位置。 完成上述操作后，即可删除保留在备用位置中的文件和文件夹。
 
-##  <a name="set-up-or-customize-server-backup"></a><a name="BKMK_1"></a>设置或自定义服务器备份
+##  <a name="set-up-or-customize-server-backup"></a><a name="BKMK_1"></a> 设置或自定义服务器备份
  在安装期间不会自动配置服务器备份。 你应通过计划每日备份来自动保护你的服务器及其数据。 建议维护每日备份计划，因为大多数组织都不能承受丢失在几天内创建的数据的后果。 有关详细信息，请参阅[设置或自定义服务器备份](Set-up-or-customize-server-backup.md)。
 
-##  <a name="stop-server-backup-in-progress"></a><a name="BKMK_2"></a>正在停止服务器备份
+##  <a name="stop-server-backup-in-progress"></a><a name="BKMK_2"></a> 正在停止服务器备份
  无论是在计划的时间定期启动服务器备份，还是手动启动服务器备份，你都可以停止正在进行的备份。
 
 #### <a name="to-stop-a-backup-in-progress"></a>停止正在进行的备份
@@ -65,7 +65,7 @@ ms.locfileid: "87180923"
 
 4.  单击“是”**** 以确认你的操作。
 
-##  <a name="remotely-manage-your-backups"></a><a name="BKMK_3"></a>远程管理备份
+##  <a name="remotely-manage-your-backups"></a><a name="BKMK_3"></a> 远程管理备份
  当你离开办公室时，你可以使用 Windows Server Essentials 远程 Web 访问来访问 Remote Web Access 仪表板，进而管理你的服务器。
 
 #### <a name="to-use-remote-web-access-to-manage-your-server"></a>使用远程 Web 访问管理服务器
@@ -80,9 +80,9 @@ ms.locfileid: "87180923"
 
 5. 以管理员身份登录到仪表板，然后单击“设备”****。
 
-   有关远程 Web 访问的详细信息，请参阅[远程 Web 访问概述](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview)。
+   有关远程 Web 访问的详细信息，请参阅 [远程 Web 访问概述](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview)。
 
-##  <a name="disable-server-backup"></a><a name="BKMK_4"></a>禁用服务器备份
+##  <a name="disable-server-backup"></a><a name="BKMK_4"></a> 禁用服务器备份
  你应通过计划每日备份来自动保护你的服务器及其数据。 建议维护每日备份计划，因为大多数组织都不能承受丢失在几天内创建的数据的后果。
 
  如果你已配置服务器备份，并且稍后想要使用第三方应用程序备份服务器，则你可以禁用 Windows Server Essentials 服务器备份。
@@ -102,13 +102,13 @@ ms.locfileid: "87180923"
 
 5.  在“配置选项”**** 页面上，单击“禁用服务器备份”****。 按照向导中的说明进行操作。
 
-##  <a name="learn-more-about-setting-up-server-backup"></a><a name="BKMK_5"></a>了解有关设置服务器备份的详细信息
+##  <a name="learn-more-about-setting-up-server-backup"></a><a name="BKMK_5"></a> 了解有关设置服务器备份的详细信息
  在服务器设置期间不会启用服务器备份。
 
 > [!NOTE]
 >  当你配置服务器备份时，你应将至少一个外部硬盘驱动器连接到服务器以用作备份目标硬盘驱动器。
 
-###  <a name="backup-destination-drive"></a><a name="BKMK_Target"></a>备份目标驱动器
+###  <a name="backup-destination-drive"></a><a name="BKMK_Target"></a> 备份目标驱动器
  你可以使用多个外部存储驱动器进行备份，也可以在现场和场外存储位置之间旋转驱动器。 如果现场硬件发生物理损坏，则通过帮助恢复你的数据，此操作可改进灾难预防计划。
 
  为你的服务器备份选择存储驱动器时，请考虑以下方面：
@@ -154,7 +154,7 @@ ms.locfileid: "87180923"
 
  例如，你可能有一个包含录制的电视节目的文件夹（使用大量硬盘驱动器空间）。 你可以选择不备份这些文件，因为通常无论如何你都会在查看这些文件后删除它们。 或者，你可能有一个包含不想要保留的临时文件的文件夹。
 
-##  <a name="repartition-a-hard-drive-on-the-server"></a><a name="BKMK_6"></a>对服务器上的硬盘驱动器进行重新分区
+##  <a name="repartition-a-hard-drive-on-the-server"></a><a name="BKMK_6"></a> 对服务器上的硬盘驱动器进行重新分区
  当在 Windows Server Essentials 服务器上检测到未格式化的内部硬盘驱动器时，将引发一个运行状况警报，其中包含指向“添加新硬盘驱动器向导”的链接。 “添加新硬盘驱动器向导”将向你演练用于格式化硬盘驱动器的各种选项。 完成该向导后，将在硬盘驱动器上创建一个或多个（具体取决于该驱动器大小）已格式化的逻辑硬盘驱动器，并将其格式化为 NTFS。
 
  如果有必要对硬盘驱动器进行重新分区，请按照以下说明操作：
@@ -177,7 +177,7 @@ ms.locfileid: "87180923"
     > [!NOTE]
     >  重复此步骤，直到使用硬盘驱动器上的所有未分配空间为止。
 
-##  <a name="restore-files-and-folders-from-a-server-backup"></a><a name="BKMK_7"></a>从服务器备份中还原文件和文件夹
+##  <a name="restore-files-and-folders-from-a-server-backup"></a><a name="BKMK_7"></a> 从服务器备份中还原文件和文件夹
  你可以从服务器备份中浏览和还原单独的文件和文件夹。
 
 #### <a name="to-restore-files-and-folders-from-a-server-backup"></a>从服务器备份中还原文件和文件夹

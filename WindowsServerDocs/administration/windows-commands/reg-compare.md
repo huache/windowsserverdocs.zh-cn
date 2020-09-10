@@ -3,16 +3,16 @@ title: reg compare
 description: 用于比较指定注册表子项或项的 "reg compare" 命令的参考文章。
 ms.topic: reference
 ms.assetid: 177dc6a3-034e-4846-a394-330d03c14e0b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3541ac56a59725d966e726301796f4467044cf6b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 51c385b9a051574602c2508b8efd8f657c62ec7c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037055"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627090"
 ---
 # <a name="reg-compare"></a>reg compare
 
@@ -39,7 +39,7 @@ reg compare <keyname1> <keyname2> [{/v Valuename | /ve}] [{/oa | /od | /os | on}
 | /s | 递归比较所有子项和项。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - **Reg 比较**操作的返回值为：
 

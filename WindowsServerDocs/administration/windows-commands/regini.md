@@ -3,16 +3,16 @@ title: regini
 description: 用于从命令行或脚本修改注册表并应用在一个或多个文本文件中预设的更改的 regini.exe 命令的参考文章。
 ms.topic: reference
 ms.assetid: 5ff18dc3-5bd8-400a-b311-fd73a3267e8c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: a779c41dba46e86f862982de0b203a09dd6c8384
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 78c56a68392d066047123dc77bafc3d1b01de127
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027435"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627477"
 ---
 # <a name="regini"></a>regini
 
@@ -37,7 +37,7 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputwidth][-b] text
 | -b | 指定 **regini.exe** 输出与以前的 **regini.exe**版本向后兼容。 |
 | textfiles | 指定包含注册表数据的一个或多个文本文件的名称。 可以列出任意数目的 ANSI 或 Unicode 文本文件。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 以下准则主要适用于包含使用 **regini.exe**应用的注册表数据的文本文件内容。
 

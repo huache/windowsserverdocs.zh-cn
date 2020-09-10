@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f22fc0a4-cb82-4e60-afe6-2d03145745e7
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 74b79e3306ee34708b079b09f445a00ddfc15fdb
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 7ccb0e79094c5d3393b9548fc733224fd8fa9cbf
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838375"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625869"
 ---
 # <a name="migrate-windows-server-2008-foundation-to-windows-server-essentials"></a>将 Windows Server 2008 Foundation 迁移到 Windows Server Essentials
 
@@ -24,7 +24,7 @@ ms.locfileid: "87838375"
 >  为了避免迁移过程中出现问题，Windows Server Essentials 产品开发团队强烈建议你在开始迁移之前先阅读本文档。
 
 ## <a name="additional-resources"></a>其他资源
- 有关可帮助指导你完成迁移过程的其他信息、工具和社区资源的链接，请参阅[Windows Small Business Server 迁移](https://go.microsoft.com/fwlink/?LinkId=217520)。
+ 有关可帮助指导你完成迁移过程的其他信息、工具和社区资源的链接，请参阅 [Windows Small Business Server 迁移](https://go.microsoft.com/fwlink/?LinkId=217520)。
 
 ## <a name="terms-and-definitions"></a>术语和定义
  **源服务器：** 要从中迁移设置和数据的现有服务器。
@@ -52,7 +52,7 @@ ms.locfileid: "87838375"
 
  某些迁移过程需要以管理员身份打开命令提示符窗口。
 
-###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>在源服务器上以管理员身份打开 "命令提示符" 窗口
+###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a> 在源服务器上以管理员身份打开 "命令提示符" 窗口
 
 1.  单击“启动”。
 

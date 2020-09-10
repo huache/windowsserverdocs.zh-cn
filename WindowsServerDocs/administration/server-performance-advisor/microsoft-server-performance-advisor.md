@@ -2,17 +2,17 @@
 title: Microsoft Server Performance Advisor
 description: Microsoft Server Performance Advisor
 ms.assetid: 468ebcb3-9eaf-477c-ab10-e3f1b3ce63dc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
 ms.topic: article
-ms.openlocfilehash: 4ec0190c97c5afc761c27c7c3156380441951544
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bd359e71cfb48ecd8aab24a8538369622dd1d271
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895681"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627705"
 ---
 # <a name="microsoft-server-performance-advisor"></a>Microsoft Server Performance Advisor
 
@@ -46,7 +46,7 @@ SPA 顾问包是所有优化规则的中心，其中包含一系列的元数据�
 
 -   Hyper-v Advisor 包分析 Hyper-v 服务器角色的常规性能。
 
-    **注意**Hyper-v Advisor 包不分析来宾操作系统。
+    **注意** Hyper-v Advisor 包不分析来宾操作系统。
 
 
 
@@ -54,7 +54,7 @@ SPA 顾问包是所有优化规则的中心，其中包含一系列的元数据�
 
 SPA 还为非 Microsoft 开发人员提供了一个可扩展模型，以满足其需求。
 
-**注意**SPA 无法识别所有硬件和用户方案上下文。 你应使用该工具提供的建议来帮助你做出决策，并了解对服务器所做的任何可能更改的后果。
+**注意** SPA 无法识别所有硬件和用户方案上下文。 你应使用该工具提供的建议来帮助你做出决策，并了解对服务器所做的任何可能更改的后果。
 
 
 
@@ -69,11 +69,11 @@ SPA 还为非 Microsoft 开发人员提供了一个可扩展模型，以满足�
 
 可以使用以下命令提取 CAB 文件中的文件：
 
--   对于 x86 版本：`extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_x86.cab`
+-   对于 x86 版本： `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_x86.cab`
 
--   对于 x64 版本：`extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_amd64.cab`
+-   对于 x64 版本： `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_amd64.cab`
 
-**警告**提取 .cab 文件时，SPA 必须保留分层目录结构才能正常工作。 根据您的服务器上安装的 CAB 工具，提取可能会导致无法操作的目录结构。 若要保留分层目录结构，可以使用解压缩文件目录结构的 CAB 提取实用工具工具。
+**警告** 提取 .cab 文件时，SPA 必须保留分层目录结构才能正常工作。 根据您的服务器上安装的 CAB 工具，提取可能会导致无法操作的目录结构。 若要保留分层目录结构，可以使用解压缩文件目录结构的 CAB 提取实用工具工具。
 
 如果 CAB 提取工具正确提取了文件，子文件夹将自动显示在提取目标文件夹中。
 

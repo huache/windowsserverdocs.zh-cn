@@ -3,16 +3,16 @@ title: takeown
 description: 了解如何通过成为文件所有者来获取对文件的访问权限。
 ms.topic: reference
 ms.assetid: 0683cd65-a6db-4cab-962b-45a0ff61f43c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b87f773f1b42291a679a642793f2b534982164d2
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 93b8f58106b6e827254b3ab91f859767da9dae7c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027195"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626736"
 ---
 # <a name="takeown"></a>takeown
 
@@ -39,7 +39,7 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 |/d {Y \| N}|取消当当前用户对指定目录没有 "列出文件夹" 权限时显示的确认提示，而是使用指定的默认值。 **/D**选项的有效值如下所示：</br>-Y：取得目录的所有权。</br>-N：跳过目录。</br>请注意，必须将此选项与 **/r** 选项一起使用。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   通常在批处理文件中使用此命令。
 -   如果未指定 **/a** 参数，则会为当前登录到计算机的用户提供文件所有权。

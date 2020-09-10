@@ -3,16 +3,16 @@ title: tsprof
 description: Tsprof 的参考文章，可将远程桌面服务用户配置信息从一个用户复制到另一个用户。
 ms.topic: reference
 ms.assetid: 27047868-b706-4208-b7e0-1437a2325dd3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f676b1d11586d413e544d451043da242861083e1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: de1acc0c99f91f3ebf01d09d39d9fb0685d7f8f6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023391"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626697"
 ---
 # <a name="tsprof"></a>tsprof
 
@@ -47,7 +47,7 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 |/q|显示要为其查询服务器配置文件路径的用户的当前配置文件路径。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 -   仅当你在运行 windows server 2008 R2 的计算机上运行 Windows Server 2008 或 RD 会话主机角色服务的计算机上安装了终端服务器角色服务时， **tsprof** 命令才可用。
 
 ## <a name="examples"></a>示例

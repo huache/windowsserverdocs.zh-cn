@@ -3,16 +3,16 @@ title: 使用 AllDriverPackages 子命令
 description: AllDriverPackages 的参考文章，用于将文件夹中存储的所有驱动程序包添加到服务器。
 ms.topic: reference
 ms.assetid: ba6641c1-d7e9-43a9-9819-702dad5484ed
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ccdd132687fdc65336aeb49d317f9ccf5fbcd968
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 71b081f8d0617aaa91e75e73705d53ab20661076
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032182"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626547"
 ---
 # <a name="add-alldriverpackages"></a>AllDriverPackages
 
