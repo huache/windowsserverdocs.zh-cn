@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 3ff7d040-ebd1-421c-80db-765deacedd4c
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 99c7eb77c0bd768cb8e74d476bd2ffcf6b468a53
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c2426e535ff67b1e76668e5fd2abefbd3f5569bb
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180544"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625659"
 ---
 # <a name="move-windows-server-2008-foundation-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>将 Windows Server 2008 Foundation 设置和数据移动到目标服务器以进行 Windows Server Essentials 迁移
 
@@ -22,7 +22,7 @@ ms.locfileid: "87180544"
 
 1. [将数据复制到目标服务器（可选）](#copy-data-to-the-destination-server)
 
-2. [将 Active Directory 用户帐户导入 Windows Server Essentials 仪表板（可选）](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [将 Active Directory 用户帐户导入到 Windows Server Essentials 仪表板 (可选) ](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
 3. [将 DHCP 服务器角色从源服务器移到路由器](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
 
@@ -50,8 +50,8 @@ ms.locfileid: "87180544"
      其中：
      - \<SourceServerName\> 是源服务器的名称
      - \<SharedSourceFolderName\> 是源服务器上的共享文件夹名称
-     - \<DestinationServerName\>目标服务器的名称，
-     - \<SharedDestinationFolderName\>是将数据复制到的目标服务器上的共享文件夹。
+     - \<DestinationServerName\> 目标服务器的名称，
+     - \<SharedDestinationFolderName\> 是将数据复制到的目标服务器上的共享文件夹。
 
 3.  对每个要从源服务器迁移的共享文件夹重复上一步。
 

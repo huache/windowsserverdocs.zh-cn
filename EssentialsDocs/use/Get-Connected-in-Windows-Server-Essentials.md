@@ -5,14 +5,14 @@ ms.date: 05/07/2016
 ms.topic: article
 ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: c1dafb9fb89109a16f2f28662464494691a2f2f0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: ef0cdcffb90ba14eca6ccff50e4a297662bd61c6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179943"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624975"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>在 Windows Server Essentials 中进行连接
 
@@ -36,7 +36,7 @@ ms.locfileid: "87179943"
 -   [使用快速启动板](Get-Connected-in-Windows-Server-Essentials.md#BKMK_C)
 
 
-##  <a name="prepare-to-connect-computers-to-the-server"></a><a name="BKMK_A"></a>准备将计算机连接到服务器
+##  <a name="prepare-to-connect-computers-to-the-server"></a><a name="BKMK_A"></a> 准备将计算机连接到服务器
  本部分讨论了连接器软件、受 Windows Server Essentials 支持的操作系统、必须在将计算机连接到服务器之前完成的先决条件任务，以及在运行连接器软件时服务器对计算机所做的更改。
 
 
@@ -56,7 +56,7 @@ ms.locfileid: "87179943"
 
 -   [从 Windows 域中删除计算机](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)
 
-###  <a name="connector-software-overview"></a><a name="BKMK_1"></a>连接器软件概述
+###  <a name="connector-software-overview"></a><a name="BKMK_1"></a> 连接器软件概述
  Windows Server Essentials 操作系统的连接器软件可将网络中的计算机连接到 Windows Server Essentials 服务器。 当你将计算机连接到服务器时，连接器软件允许你自动备份计算机并监视其运行状况。 连接器软件还允许你配置并远程管理 Windows Server Essentials 服务器。 在将客户端计算机连接到服务器时安装连接器软件。 有关将客户端计算机连接到 Windows Server Essentials 服务器的详细说明，请参阅本主题后面的[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
 
 -   [连接器软件概述](Get-Connected-in-Windows-Server-Essentials.md#BKMK_1)
@@ -75,11 +75,11 @@ ms.locfileid: "87179943"
 
 -   [从 Windows 域中删除计算机](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)
 
-###  <a name="connector-software-overview"></a><a name="BKMK_1"></a>连接器软件概述
+###  <a name="connector-software-overview"></a><a name="BKMK_1"></a> 连接器软件概述
  Windows Server Essentials 操作系统的连接器软件可将网络中的计算机连接到 Windows Server Essentials 服务器。 当你将计算机连接到服务器时，连接器软件允许你自动备份计算机并监视其运行状况。 连接器软件还允许你配置并远程管理 Windows Server Essentials 服务器。 在将客户端计算机连接到服务器时安装连接器软件。 有关将客户端计算机连接到 Windows Server Essentials 服务器的详细说明，请参阅本主题后面的[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
 
 
-###  <a name="prerequisites-for-connecting-a-computer-to-the-server"></a><a name="BKMK_2"></a>将计算机连接到服务器的先决条件
+###  <a name="prerequisites-for-connecting-a-computer-to-the-server"></a><a name="BKMK_2"></a> 将计算机连接到服务器的先决条件
  在将计算机连接到网络之前，必须先满足以下要求：
 
 -   Windows Server Essentials 的安装已完成，并且该服务器处于运行状态。 如果连接器软件无法与服务器通信，则它将退出安装。
@@ -125,7 +125,7 @@ ms.locfileid: "87179943"
  有关将计算机连接到运行 Windows Server Essentials 的服务器的分步说明，请参阅[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
 
 
-###  <a name="prerequisites-for-connecting-a-mac-computer-to-the-network"></a><a name="BKMK_3"></a>将 Mac 计算机连接到网络的先决条件
+###  <a name="prerequisites-for-connecting-a-mac-computer-to-the-network"></a><a name="BKMK_3"></a> 将 Mac 计算机连接到网络的先决条件
  在将 Mac 计算机连接到网络之前，必须先满足以下要求：
 
 -   服务器操作系统的安装已完成，并且该服务器处于运行状态。 如果连接器软件无法与服务器通信，则不会安装该连接器软件。
@@ -146,7 +146,7 @@ ms.locfileid: "87179943"
 
 -   在任何给定时间，都只能将客户端计算机连接到一台服务器。
 
-###  <a name="supported-operating-systems-for-client-computers"></a><a name="BKMK_4"></a>客户端计算机支持的操作系统
+###  <a name="supported-operating-systems-for-client-computers"></a><a name="BKMK_4"></a> 客户端计算机支持的操作系统
  Windows Server Essentials 为所有受支持的客户端计算机提供了同一组功能。 这些功能包括域加入、快速启动板和客户端运行状况通知。
 
 > [!IMPORTANT]
@@ -157,17 +157,17 @@ ms.locfileid: "87179943"
 
  **Windows 7 操作系统**
 
-- Windows 7 家庭普通版 SP1 （x86 和 x64）
+- Windows 7 家庭普通版 SP1 (x86 和 x64) 
 
-- Windows 7 家庭高级版 SP1 （x86 和 x64）
+- Windows 7 家庭高级版 SP1 (x86 和 x64) 
 
-- Windows 7 Professional SP1 （x86 和 x64）
+- Windows 7 Professional SP1 (x86 和 x64) 
 
-- Windows 7 旗舰版 SP1 （x86 和 x64）
+- Windows 7 旗舰版 SP1 (x86 和 x64) 
 
-- Windows 7 Enterprise SP1 （x86 和 x64）
+- Windows 7 Enterprise SP1 (x86 和 x64) 
 
-- Windows 7 简易版 SP1 （x86）
+- Windows 7 Starter SP1 (x86) 
 
   **Windows 8 操作系统**
 
@@ -179,7 +179,7 @@ ms.locfileid: "87179943"
 
   **Windows 8.1 操作系统**
 
-- Windows 8.1
+- Windows 8。1
 
 - Windows 8.1 专业版
 
@@ -213,17 +213,17 @@ ms.locfileid: "87179943"
 
  **Windows 7 操作系统**
 
-- Windows 7 家庭普通版（x86 和 x64）
+- Windows 7 家庭普通 (x86 和 x64) 
 
-- Windows 7 家庭高级版（x86 和 x64）
+- Windows 7 家庭高级版 (x86 和 x64) 
 
-- Windows 7 专业版（x86 和 x64）
+- Windows 7 Professional (x86 和 x64) 
 
-- Windows 7 旗舰版（x86 和 x64）
+- Windows 7 旗舰版 (x86 和 x64) 
 
-- Windows 7 企业版（x86 和 x64）
+- Windows 7 Enterprise (x86 和 x64) 
 
-- Windows 7 简易版（x86）
+- Windows 7 Starter (x86) 
 
   **Windows 8 操作系统**
 
@@ -254,7 +254,7 @@ ms.locfileid: "87179943"
 > [!NOTE]
 >  你可以从 Windows Server Essentials 仪表板查看 Mac 计算机的运行状况和备份状态。 但是，不能配置计算机备份，或从仪表板中开始备份。 此外，不能使用远程 Web 访问连接 Mac 计算机。
 
-###  <a name="changes-the-server-makes-to-a-client-computer"></a><a name="BKMK_5"></a>服务器对客户端计算机所做的更改
+###  <a name="changes-the-server-makes-to-a-client-computer"></a><a name="BKMK_5"></a> 服务器对客户端计算机所做的更改
  当你将计算机连接到服务器时，Windows Server Essentials 软件会对计算机进行大量更改，以便计算机和服务器可以协同工作。
 
  该软件将执行以下操作：
@@ -292,16 +292,16 @@ ms.locfileid: "87179943"
 
  有关将计算机连接到服务器的信息，请参阅[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
 
-###  <a name="network-user-name-and-password-information"></a><a name="BKMK_6"></a>网络用户名和密码信息
+###  <a name="network-user-name-and-password-information"></a><a name="BKMK_6"></a> 网络用户名和密码信息
  你可以从管理服务器的人员处获取网络用户名和密码信息。 你可以使用这些凭据将计算机连接到服务器并访问服务器中的信息。
 
-###  <a name="network-user-name-and-password-information"></a><a name="BKMK_6"></a>网络用户名和密码信息
+###  <a name="network-user-name-and-password-information"></a><a name="BKMK_6"></a> 网络用户名和密码信息
  你可以从管理服务器的人员处获取网络用户名和密码信息。 你可以使用这些凭据将计算机连接到服务器并访问服务器中的信息。
 
 
  如果你是服务器管理员，则可以通过从仪表板的“用户”**** 选项卡添加用户帐户来创建网络凭据。 有关用户帐户的详细信息，请参阅[使用仪表板管理用户帐户](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)。
 
-###  <a name="server-administrators-account"></a><a name="BKMK_7"></a>服务器管理员帐户
+###  <a name="server-administrators-account"></a><a name="BKMK_7"></a> 服务器管理员帐户
  你必须能够提供网络管理员帐户名称和密码，才能安装连接器软件。 网络管理员帐户使用户能够管理组织的局域网并帮助管理和维护网络设备（例如交换机和路由器）。
 
  可通过使用网络管理员帐户执行的任务包括：
@@ -318,7 +318,7 @@ ms.locfileid: "87179943"
 
   在安装了 Windows Server Essentials Experience 角色的 Windows Server Essentials、Windows Server Essentials 和 Windows Server 2012 R2 中，你可以向任何用户帐户分配网络管理员访问级别。 这将授予执行网络管理员任务所需的权限。 当用户分配网络管理员访问级别时，将为需要管理员权限的任何任务打开“用户访问控制”**** 提示。
 
-###  <a name="remove-a-computer-from-a-windows-domain"></a><a name="BKMK_8"></a>从 Windows 域中删除计算机
+###  <a name="remove-a-computer-from-a-windows-domain"></a><a name="BKMK_8"></a> 从 Windows 域中删除计算机
  若要从其域中删除计算机，系统将提示你输入域帐户的用户名和密码。
 
 ##### <a name="to-remove-a-computer-from-a-windows-domain"></a>从 Windows 域中删除计算机
@@ -341,7 +341,7 @@ ms.locfileid: "87179943"
         > [!NOTE]
         >  将从域中删除你的计算机，并将禁用该域上的计算机帐户。
 
-##  <a name="connect-computers-to-the-server-by-using-the-connector-software"></a><a name="BKMK_B"></a>使用连接器软件将计算机连接到服务器
+##  <a name="connect-computers-to-the-server-by-using-the-connector-software"></a><a name="BKMK_B"></a> 使用连接器软件将计算机连接到服务器
  本部分提供了对将帮助你执行以下操作的过程和信息的访问权限：安装连接器软件、将计算机连接到服务器，以及解答将计算机连接到服务器的问题。
 
 
@@ -362,7 +362,7 @@ ms.locfileid: "87179943"
 -   [如何使备份适用于睡眠和休眠模式](Get-Connected-in-Windows-Server-Essentials.md#BKMK_Sleep)
 
 
-###  <a name="connect-computers-to-the-server"></a><a name="BKMK_9"></a>将计算机连接到服务器
+###  <a name="connect-computers-to-the-server"></a><a name="BKMK_9"></a> 将计算机连接到服务器
  当你将计算机连接到运行 Windows server essentials 或 Windows Server 2012 R2 且安装了 Windows Server Essentials Experience 角色的服务器时，请确保客户端计算机具有与 Internet 的有效连接。
 
  在所有客户端计算机上完成以下过程以将它们连接到服务器。
@@ -389,10 +389,10 @@ ms.locfileid: "87179943"
 
 2.  打开 Internet 浏览器，如 Internet Explorer。
 
-3.  在地址栏中，键入**http://<servername \> /Connect**，然后按 enter。
+3.  在地址栏中，键入 **http://<servername \> /Connect**，然后按 enter。
 
     > [!NOTE]
-    >  如果计算机位于 Windows Server Essentials 网络之外的远程位置，若要运行 "将计算机连接到服务器" 向导，请在 web 浏览器的地址栏中键入 " **http://<domainname \> /connect** " （其中 <domain \> 是组织的域名）。 你可以从网络管理员处获得你的域名信息。
+    >  如果计算机位于 Windows Server Essentials 网络之外的远程位置，若要运行 "将计算机连接到服务器" 向导，请在 web 浏览器的地址栏中键入 " **http://<domainname \> /connect** " (其中 <domain \> 是组织) 的域名。 你可以从网络管理员处获得你的域名信息。
 
 4.  此时将显示 **“将你的计算机连接到服务器”** 页面。 执行下列操作之一：
 
@@ -427,7 +427,7 @@ ms.locfileid: "87179943"
     > [!NOTE]
     >  当首次使用你的网络帐户登录运行 Windows 8 的计算机时，连接到该服务器后，将显示从旧用户帐户迁移文件和应用程序的说明。 按照 **“如何从我的旧用户帐户迁移文件和应用程序?”** 页面上的说明，将所有文件和应用程序迁移到此网络用户帐户。
 
-9. 在计算机成功连接到服务器之后，连接器 TrayApp 和服务器仪表板的快捷方式将出现在 "开始" 菜单上，可按如下所示使用（如果计算机运行的是 Windows 8、Windows 8.1 或 Windows 10，则仪表板和连接器 TrayApp 将在计算机的 "开始" 屏幕中提供）：
+9. 在计算机成功连接到服务器之后，连接器 TrayApp 和服务器仪表板的快捷方式将出现在 "开始" 菜单上，可按 (以下方式使用：如果你的计算机运行的是 Windows 8、Windows 8.1 或 Windows 10，则可以从计算机的 "开始" 屏幕) ：
 
     -   如果你的计算机运行的是 Windows 8、Windows 8.1 或 Windows 10，则仪表板和连接器 TrayApp 将可作为应用进行搜索。
 
@@ -435,7 +435,7 @@ ms.locfileid: "87179943"
 
     -   通过“仪表板”**** 链接，你可以管理服务器。
 
-###  <a name="connect-computers-to-a-windows-server-essentials-server-without-joining-the-domain"></a><a name="BKMK_10"></a>在不加入域的情况下将计算机连接到 Windows Server Essentials 服务器
+###  <a name="connect-computers-to-a-windows-server-essentials-server-without-joining-the-domain"></a><a name="BKMK_10"></a> 在不加入域的情况下将计算机连接到 Windows Server Essentials 服务器
  本主题介绍如何将 Windows 7、Windows 8、Windows 8.1 或 Windows 10 计算机添加到 Windows Server Essentials 网络，而无需将计算机加入到本地客户端部署中的 Windows Server Essentials 域。 Windows Server Essentials 和 Windows Server Essentials 支持此连接方法。
 
  这是常用方法的替代方法，需要将计算机加入到 Windows Server Essentials 域。 借助该方法，如果计算机位于另一个域中，则必须从该域中删除此计算机，然后才能将它添加到 Windows Server Essentials 域中。
@@ -443,7 +443,7 @@ ms.locfileid: "87179943"
 #### <a name="feature-limits"></a>功能限制
  当客户端计算机未添加到 Windows Server Essentials 域时，某些功能将受到限制：
 
--   需要将计算机加入域的所有功能（包括域凭据、组策略和虚拟专用网络（Vpn））均不可用。
+-   需要将计算机加入域的所有功能（包括域凭据、组策略和虚拟专用网络 (Vpn) ？不可用。
 
 -   将计算机加入到域所需的任何第三方加载项都无法正常工作。
 
@@ -459,7 +459,7 @@ ms.locfileid: "87179943"
 
     -    Windows 8.1 Pro、Windows 8.1 Enterprise、Windows 8 专业版、Windows 8 企业版
 
-    -    Windows 7 专业版（x86 和 x64）、Windows 7 企业版（x86 和 x64）、Windows 7 旗舰版（x86 和 x64）
+    -    Windows 7 Professional (x86 和 x64) ，Windows 7 企业版 (x86 和 x64) ，Windows 7 旗舰版 (x86 和 x64) 
 
 
 -   计算机必须满足 Windows Server Essentials 中客户端计算机的所有其他要求。 有关详细信息，请参阅[将计算机连接到服务器的先决条件](Get-Connected-in-Windows-Server-Essentials.md#BKMK_2)。
@@ -484,9 +484,9 @@ ms.locfileid: "87179943"
 
     -   在 Windows 10 中，单击 "**开始**" 按钮，选择 "**所有应用**" "  ->  **Windows 系统工具**  ->  " "**命令提示符**"，右键单击 "命令提示符"，然后单击 "以**管理员身份运行**"。
 
-    -   在 Windows 8 中，在 "**开始**" 页上键入**command** ，然后按 enter。 在结果中，右键单击“命令提示符”****，然后单击“以管理员身份运行”****。
+    -   在 Windows 8 中，在 " **开始** " 页上键入 **command** ，然后按 enter。 在结果中，右键单击“命令提示符”****，然后单击“以管理员身份运行”****。
 
-    -   在 Windows 7 中，在 "**开始**" 菜单上的 "搜索" 框中输入**命令**，右键单击 "**命令提示符**"，然后单击 "以**管理员身份运行**"。
+    -   在 Windows 7 中，在 " **开始** " 菜单上的 "搜索" 框中输入 **命令** ，右键单击 " **命令提示符**"，然后单击 "以 **管理员身份运行**"。
 
 3.  在命令提示符下，键入以下命令，然后按 Enter：
 
@@ -498,7 +498,7 @@ ms.locfileid: "87179943"
 4.  完成[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)中的步骤。
 
 
-####  <a name="join-a-second-server-to-the-network"></a><a name="BKMK_SecondServer"></a>将第二台服务器加入到网络
+####  <a name="join-a-second-server-to-the-network"></a><a name="BKMK_SecondServer"></a> 将第二台服务器加入到网络
 
 ###### <a name="to-join-a-second-server-to-the-network"></a>将第二台服务器加入到网络
 
@@ -510,15 +510,15 @@ ms.locfileid: "87179943"
 
     1.  若要接受阻止消息，请单击“关闭”****。
 
-    2.  将**http://<servername \> /Connect**网站添加到受信任的网站，如下所示：
+    2.  将 **http://<servername \> /Connect** 网站添加到受信任的网站，如下所示：
 
         1.  在浏览器导航窗格中，单击“工具”****，然后单击“Internet 选项”****。
 
         2.  单击“安全”**** 选项卡，然后单击“受信任站点”****。
 
-        3.  单击“站点”****。
+        3.  单击 **“站点”** 。
 
-        4.  该网站应该显示在“将该网站添加到区域”**** 字段中。 单击“添加”  。
+        4.  该网站应该显示在“将该网站添加到区域”**** 字段中。 单击“添加”。
 
         5.  单击“关闭”****，然后单击“确定”****。
 
@@ -554,17 +554,17 @@ ms.locfileid: "87179943"
 
 - 因为第二台服务器不支持客户端计算机备份，因此备份状态将显示为“不支持”****。 此外，如果你选择第二台服务器并右键单击，则没有任何备份，并还原为第二台服务器显示的相关任务。
 
-- 如果选择第二台服务器，然后单击 "**查看服务器属性**" 任务，则服务器的 "属性" 页上不会显示任何 "**备份**" 选项卡。
+- 如果选择第二台服务器，然后单击 " **查看服务器属性** " 任务，则服务器的 "属性" 页上不会显示任何 " **备份** " 选项卡。
 
-- 由于 Windows Server 操作系统上没有安全中心，因此第二台服务器的安全状态将显示为 "**不适用**"。
+- 由于 Windows Server 操作系统上没有安全中心，因此第二台服务器的安全状态将显示为 " **不适用**"。
 
-- 第二台服务器的组策略状态显示为 "**不适用**"。
+- 第二台服务器的组策略状态显示为 " **不适用**"。
 
-###  <a name="install-the-connector-software"></a><a name="BKMK_11"></a>安装连接器软件
- 在使用“将计算机连接到服务器”向导来将计算机连接到服务器时安装 Windows Server Essentials 中的连接器软件。 可以通过在 web 浏览器的地址栏中键入 " **http://<ServerName \> /connect** " （其中 *<ServerName \> *是服务器的名称）来启动此向导。
+###  <a name="install-the-connector-software"></a><a name="BKMK_11"></a> 安装连接器软件
+ 在使用“将计算机连接到服务器”向导来将计算机连接到服务器时安装 Windows Server Essentials 中的连接器软件。 可以通过在 web 浏览器的地址栏中键入 " **http://<ServerName \> /connect** " 来启动此向导 (其中 *<ServerName \> *是服务器) 的名称。
 
 > [!NOTE]
->  如果计算机位于远程位置，若要运行 "将计算机连接到服务器" 向导，请在 web 浏览器的地址栏中键入 " **http://<domainname \> /connect** " （其中 *<\> 域*是组织的域名）。 你可以从网络管理员处获得你的域名信息。
+>  如果计算机位于远程位置，若要运行 "将计算机连接到服务器" 向导，请在 web 浏览器的地址栏中键入 " **http://<domainname \> /connect** " (其中 *<\> domain*是组织) 域名。 你可以从网络管理员处获得你的域名信息。
 
  连接器软件将执行以下操作：
 
@@ -580,17 +580,17 @@ ms.locfileid: "87179943"
  有关将计算机连接到 Windows Server Essentials 服务器的分步说明，请参阅[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
 
 
-###  <a name="move-computer-data-and-settings-manually"></a><a name="BKMK_12"></a>手动移动计算机数据和设置
+###  <a name="move-computer-data-and-settings-manually"></a><a name="BKMK_12"></a> 手动移动计算机数据和设置
   Windows Server Essentials 和 Windows Server Essentials 仅支持用于运行 Windows 7 操作系统的客户端计算机的用户配置文件迁移。 当你将基于 Windows 7 的计算机连接到服务器时，“将计算机连接到服务器”向导可以自动迁移用户配置文件。
 
  将 Windows 8、Windows 8.1 或 Windows 10 计算机连接到服务器时，无法自动传输用户配置文件。 但是，在 Windows 8 计算机上，你可以使用 Windows 轻松传送将数据和设置从原始本地用户传输到加入域的计算机。 若要实现这一点，你必须同时是 Windows 8 源计算机和 Windows 8 目标计算机上的管理员。 有关使用“Windows 轻松传送”来传输文件和设置的信息，请参阅 Microsoft 知识库中的 [文章 2735227](https://support.microsoft.com/kb/2735227) 。
 
-###  <a name="transfer-multiple-user-profiles-during-computer-deployment"></a><a name="BKMK_Transfer"></a>在计算机部署期间传输多个用户配置文件
+###  <a name="transfer-multiple-user-profiles-during-computer-deployment"></a><a name="BKMK_Transfer"></a> 在计算机部署期间传输多个用户配置文件
  在将运行 Windows 7 或 Windows 7 SP1 操作系统的计算机连接到 Windows Server Essentials 服务器之前，你必须先在服务器上创建相应的网络用户帐户，以便传输多个本地用户配置文件。 有关创建网络用户帐户的详细信息，请参阅[添加用户帐户](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)。
 
- 用户配置文件迁移仅在运行 Windows 7 （适用于 Windows Server Essentials）或 Windows 7 SP1 （适用于 Windows Server Essentials）的计算机上受支持。 当你使用“将计算机连接到服务器”向导将计算机连接到 Windows Server Essentials 服务器时，系统将向你提供一个选项，用于将旧的本地用户帐户的用户数据和设置移动到新的网络用户帐户中。 为此，在该向导的“移动现有用户数据和设置”**** 页面上，将网络用户帐户映射到存在于计算机上的本地用户帐户，以便传输位于客户端计算机上的多个用户配置文件。
+ 用户配置文件迁移仅在 (运行 windows Server Essentials) 或 windows 7 SP1 (for Windows Server Essentials) 的计算机上受支持。 当你使用“将计算机连接到服务器”向导将计算机连接到 Windows Server Essentials 服务器时，系统将向你提供一个选项，用于将旧的本地用户帐户的用户数据和设置移动到新的网络用户帐户中。 为此，在该向导的“移动现有用户数据和设置”**** 页面上，将网络用户帐户映射到存在于计算机上的本地用户帐户，以便传输位于客户端计算机上的多个用户配置文件。
 
-###  <a name="uninstall-the-connector-software"></a><a name="BKMK_13"></a>卸载连接器软件
+###  <a name="uninstall-the-connector-software"></a><a name="BKMK_13"></a> 卸载连接器软件
  你可以使用“控制面板”从计算机中卸载连接器软件。 如果连接器软件出现问题或你需要安装较新版本的连接器软件，则通常将执行此操作。 必须以管理员身份登录计算机，才能完成此过程。
 
 > [!IMPORTANT]
@@ -617,7 +617,7 @@ ms.locfileid: "87179943"
 > -   卸载连接器软件不会使计算机脱离原始域。 你必须手动从域中脱离计算机。 有关说明，请参阅[从 Windows 域中删除计算机](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)。
 
 
-###  <a name="disconnect-your-computer-from-or-reconnect-your-computer-to-the-server"></a><a name="BKMK_14"></a>断开计算机与服务器的连接或将计算机重新连接到服务器
+###  <a name="disconnect-your-computer-from-or-reconnect-your-computer-to-the-server"></a><a name="BKMK_14"></a> 断开计算机与服务器的连接或将计算机重新连接到服务器
  若要从服务器中断开计算机连接，你必须完成以下步骤：
 
 
@@ -637,10 +637,10 @@ ms.locfileid: "87179943"
 
 6. 使用连接计算机向导将计算机连接到服务器 有关分步说明，请参阅[将计算机连接到服务器](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)。
 
-###  <a name="how-backup-works-with-sleep-and-hibernate-modes"></a><a name="BKMK_Sleep"></a>备份如何处理睡眠和休眠模式
- 如果你在将计算机连接到服务器时选择“唤醒此电脑以供备份”**** 选项，计算机每天将根据备份计划所指定的时间自动从睡眠或休眠模式中唤醒，以便对该计算机进行备份。 完成备份后，计算机将基于其电源管理设置返回到睡眠或休眠模式。 如果不选择此选项，则服务器在计算机处于睡眠或休眠状态时不会备份计算机。 有关详细信息，请参阅[管理客户端备份](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)。
+###  <a name="how-backup-works-with-sleep-and-hibernate-modes"></a><a name="BKMK_Sleep"></a> 备份如何处理睡眠和休眠模式
+ 如果你在将计算机连接到服务器时选择“唤醒此电脑以供备份”**** 选项，计算机每天将根据备份计划所指定的时间自动从睡眠或休眠模式中唤醒，以便对该计算机进行备份。 完成备份后，计算机将基于其电源管理设置返回到睡眠或休眠模式。 如果不选择此选项，则服务器在计算机处于睡眠或休眠状态时不会备份计算机。 有关详细信息，请参阅 [管理客户端备份](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)。
 
-##  <a name="use-the-launchpad"></a><a name="BKMK_C"></a>使用快速启动板
+##  <a name="use-the-launchpad"></a><a name="BKMK_C"></a> 使用快速启动板
  你可以使用快速启动板访问 Windows Server Essentials 服务器中的共享资源、执行计算机备份以及响应系统运行状况警报。
 
 -   [快速启动板概述](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)

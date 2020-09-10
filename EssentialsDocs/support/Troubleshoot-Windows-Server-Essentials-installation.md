@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ecf19216-7aac-4aca-839a-342ac28f5329
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 4afba33d105f0348aaf7c130ccbe5a3b87fc1cb2
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: d46e760fd168d44cb8f036d6b1b28180db2ffce2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838306"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625111"
 ---
 # <a name="troubleshoot-windows-server-essentials-installation"></a>Windows Server Essentials 安装疑难解答
 
@@ -31,9 +31,9 @@ ms.locfileid: "87838306"
 
 
 > [!NOTE]
->  有关 Windows Server Essentials 社区中的最新疑难解答信息，建议访问[Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html/threads)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
+>  有关 Windows Server Essentials 社区中的最新疑难解答信息，建议访问 [Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html/threads)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
 
-##  <a name="general-troubleshooting-steps"></a><a name="BKMK_GeneralTroubleshootingSteps"></a>一般故障排除步骤
+##  <a name="general-troubleshooting-steps"></a><a name="BKMK_GeneralTroubleshootingSteps"></a> 一般故障排除步骤
  如果 Windows Server Essentials 的安装失败，请执行以下步骤来帮助确定导致失败的问题。
 
 > [!IMPORTANT]
@@ -41,9 +41,9 @@ ms.locfileid: "87838306"
 
 #### <a name="to-identify-issues-in-a-failed-installation-of-windows-server-essentials"></a>确定 Windows Server Essentials 安装失败的问题
 
-1.  严重你的服务器硬件是否符合最低要求。 有关硬件要求的信息，请参阅[Windows Server Essentials 的系统要求](../get-started/system-requirements.md)。
+1.  严重你的服务器硬件是否符合最低要求。 有关硬件要求的信息，请参阅 [Windows Server Essentials 的系统要求](../get-started/system-requirements.md)。
 
-2.  如果你从 MSDN 收到 Windows Server Essentials 安装 DVD，请通过检查 SHA1 和验证该 DVD 是否有效。 有关详细信息，请参阅[文件校验和完整性验证程序实用工具的可用性和描述](https://go.microsoft.com/fwlink/?LinkId=220495) (https://go.microsoft.com/fwlink/?LinkId=220495) 。
+2.  如果你从 MSDN 收到 Windows Server Essentials 安装 DVD，请通过检查 SHA1 和验证该 DVD 是否有效。 有关详细信息，请参阅 [文件校验和完整性验证程序实用工具的可用性和描述](https://go.microsoft.com/fwlink/?LinkId=220495) (https://go.microsoft.com/fwlink/?LinkId=220495) 。
 
 3.  确认服务器上的网络适配器是否已通过网线连接到路由器。
 
@@ -56,12 +56,12 @@ ms.locfileid: "87838306"
 
 6.  如果收到错误消息 "在安装过程中设置服务器时出错"，请使用服务器恢复 DVD 和硬件制造商提供的说明将服务器还原为出厂默认设置。
 
-##  <a name="troubleshoot-driver-issues"></a><a name="BKMK_TroubleshootDrivers"></a>解决驱动程序问题
+##  <a name="troubleshoot-driver-issues"></a><a name="BKMK_TroubleshootDrivers"></a> 解决驱动程序问题
  安装 Windows Server Essentials 时最常见的问题是需要手动安装驱动程序的存储控制器。 Windows 包含适用于很多存储控制器的驱动程序，但它可能不包含适用于特定硬件的驱动程序。
 
  你可能需要为你的特定硬件手动安装网卡驱动程序。
 
-###  <a name="adding-drivers-for-storage-controllers"></a><a name="BKMK_StorageDrivers"></a>为存储控制器添加驱动程序
+###  <a name="adding-drivers-for-storage-controllers"></a><a name="BKMK_StorageDrivers"></a> 为存储控制器添加驱动程序
  如果你的硬件需要未包含在 Windows Server Essentials 中的存储驱动程序，请使用以下信息来完成安装。
 
  如果在安装过程中看到以下消息，则需要手动添加适用于你的存储控制器的驱动程序：
@@ -95,7 +95,7 @@ ms.locfileid: "87838306"
 
    安装程序现在应继续正常运行。
 
-###  <a name="adding-drivers-for-network-adapters"></a><a name="BKMK_AddingNICdrivers"></a>为网络适配器添加驱动程序
+###  <a name="adding-drivers-for-network-adapters"></a><a name="BKMK_AddingNICdrivers"></a> 为网络适配器添加驱动程序
  如果 Windows Server Essentials 不支持计算机上的网络适配器，则在安装程序完成后，您的服务器将无法建立网络连接，并且您将无法将计算机连接到您的服务器。
 
  Windows Server Essentials 安装结束时，系统将通知你网络适配器驱动程序是否没有自动安装。 你也可以使用“控制面板”中的“网络连接”**** 来检查缺少的网络适配器驱动程序。 如果在服务器上看不到与网络适配器相关联的网络连接，则需要安装驱动程序。

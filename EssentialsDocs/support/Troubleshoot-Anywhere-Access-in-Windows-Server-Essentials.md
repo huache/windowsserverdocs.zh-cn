@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 68f2b05c-09eb-4cba-8db4-a91353b513c6
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 241e2225c9e1dfdea3189e938a04c4af4c033c3f
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 4de71e30e4dd706a52587dc1c869960c9b83bc5c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838316"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625236"
 ---
 # <a name="troubleshoot-anywhere-access-in-windows-server-essentials"></a>Windows Server Essentials 中的随处访问疑难解答
 
@@ -23,7 +23,7 @@ ms.locfileid: "87838316"
 修复随处访问向导将尝试标识并修复路由器、域名或防火墙的问题，这些问题阻止了网络用户远程访问服务器资源。
 
 > [!NOTE]
-> 有关 Windows Server Essentials 社区中的最新疑难解答信息，建议访问[Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
+> 有关 Windows Server Essentials 社区中的最新疑难解答信息，建议访问 [Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
 
 ## <a name="to-repair-anywhere-access"></a>修复随处访问
 
@@ -33,7 +33,7 @@ ms.locfileid: "87838316"
 
 3. 单击“修复”****。 修复随处访问向导将启动。
 
-4. 单击“下一步” 。 该向导将分析随处访问、标识问题并尝试修复问题。
+4. 单击“下一步”。  该向导将分析随处访问、标识问题并尝试修复问题。
 
 5. 如果你在向导完成后收到一个警报，你可以单击“重试”**** 以尝试重新修复问题。 如果你仍收到警报，请检查该警报以获取有关问题和疑难解答步骤的其他信息。
 
@@ -50,4 +50,4 @@ ms.locfileid: "87838316"
 
 - [防火墙疑难解答](Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)
 
-- 查看[Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html)，了解 Windows server essentials 社区报告的最新问题。
+- 查看 [Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html) ，了解 Windows server essentials 社区报告的最新问题。

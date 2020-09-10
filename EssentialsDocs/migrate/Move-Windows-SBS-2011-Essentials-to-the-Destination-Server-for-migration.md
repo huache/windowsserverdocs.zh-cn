@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47548994-9fa0-42e0-afa4-c2ccbd063acb
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: a5f4aa55cb7c17568c97c933a9eed8f18ce03bd1
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 5ab8e54fe94fa2f733e28dd461b7d35988589864
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180563"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625689"
 ---
 # <a name="move-windows-sbs-2011-essentials-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>将 Windows SBS 2011 Essentials 设置和数据移到目标服务器以进行 Windows Server Essentials 迁移
 
@@ -23,13 +23,13 @@ ms.locfileid: "87180563"
 
 1.  [将数据复制到目标服务器](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_CopyData)
 
-2.  [将 Active Directory 用户帐户导入 Windows Server Essentials 仪表板（可选）](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_ImportADaccounts)
+2.  [将 Active Directory 用户帐户导入到 Windows Server Essentials 仪表板 (可选) ](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_ImportADaccounts)
 
 3.  [配置网络](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_Network)
 
 4.  [将允许的计算机映射到用户帐户](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_MapPermittedComputers)
 
-##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a>将数据复制到目标服务器
+##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a> 将数据复制到目标服务器
  在将数据从源服务器复制到目标服务器之前，请执行以下任务：
 
 -   在源服务器上查看共享文件夹列表（包括每个文件夹的权限）。 在目标服务器上创建或自定义这些文件夹，使其与要从源服务器迁移的文件夹结构相匹配。
@@ -49,12 +49,12 @@ ms.locfileid: "87180563"
      其中：
      - \<SourceServerName\> 是源服务器的名称
      - \<SharedSourceFolderName\> 是源服务器上的共享文件夹名称
-     - \<DestinationServerName\>目标服务器的名称，
-     - \<SharedDestinationFolderName\>是将数据复制到的目标服务器上的共享文件夹。
+     - \<DestinationServerName\> 目标服务器的名称，
+     - \<SharedDestinationFolderName\> 是将数据复制到的目标服务器上的共享文件夹。
 
 3.  对每个要从源服务器迁移的共享文件夹重复上一步。
 
-##  <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard-optional"></a><a name="BKMK_ImportADaccounts"></a>将 Active Directory 用户帐户导入 Windows Server Essentials 仪表板（可选）
+##  <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard-optional"></a><a name="BKMK_ImportADaccounts"></a> 将 Active Directory 用户帐户导入到 Windows Server Essentials 仪表板 (可选) 
  默认情况下，在源服务器上创建的所有用户帐户都会自动迁移到 Windows Server Essentials 中的仪表板。 但是，如果并非所有属性都满足迁移要求，则 Active Directory 用户帐户的自动迁移将会失败。 可以使用以下 Windows PowerShell cmdlet 导入 Active Directory 用户。
 
 #### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>将 Active Directory 用户帐户导入到 Windows Server Essentials 仪表板
@@ -67,7 +67,7 @@ ms.locfileid: "87180563"
 
      `Import-WssUser  SamAccountName [AD username]`
 
-##  <a name="configure-the-network"></a><a name="BKMK_Network"></a>配置网络
+##  <a name="configure-the-network"></a><a name="BKMK_Network"></a> 配置网络
 
 #### <a name="to-configure-the-network"></a>配置网络
 
@@ -83,7 +83,7 @@ ms.locfileid: "87180563"
 
 -   端口 443：HTTP Web 流量
 
-##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a>将允许的计算机映射到用户帐户
+##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a> 将允许的计算机映射到用户帐户
  从 Windows Small Business Server 2011 Essentials 迁移的每个用户帐户都必须映射到一台或多台计算机。
 
 #### <a name="to-map-user-accounts-to-computers"></a>将用户帐户映射到计算机

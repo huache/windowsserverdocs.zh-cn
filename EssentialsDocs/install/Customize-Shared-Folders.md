@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f6b5de8ea45ea219f55b04ef675a3853b403fafb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c1a6276199964ac7fd2eb3953cb3fac828063dfc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181313"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623677"
 ---
 # <a name="customize-shared-folders"></a>自定义共享文件夹
 
@@ -48,11 +48,11 @@ ms.locfileid: "87181313"
 
    或者，合作伙伴可以将数据文件夹留在驱动器 C 中。这样可以由最终用户或经销商决定数据驱动器上的数据文件夹的布局。
 
-###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a>示例1：使用 Windows PowerShell 创建自定义文件夹并将默认文件夹从 Postic.cmd 移动到新位置
+###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a> 示例1：使用 Windows PowerShell 创建自定义文件夹并将默认文件夹从 Postic.cmd 移动到新位置
 
 1.  创建用于运行后初始配置任务的 PostIC.cmd 文件，[创建用于运行后初始配置任务的 PostIC.cmd 文件](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)部分有详细描述。
 
-2.  使用记事本在 C:\Windows\Setup\Scripts 文件夹中创建一个名为**customizefolders.ps1**的文件，然后将以下 Windows PowerShell &reg; 命令粘贴到该文件中（根据所需的行为，取消相应行的标记）。
+2.  使用记事本在 C:\Windows\Setup\Scripts 文件夹中创建一个名为 **customizefolders.ps1** 的文件，然后将以下 Windows PowerShell &reg; 命令粘贴到该文件 (根据所需的行为) ，将以下 Windows PowerShell 命令粘贴到相应的行中。
 
     ```
     # Move the Documents folder to D:\ServerFolders
@@ -94,7 +94,7 @@ ms.locfileid: "87181313"
     Set ERRORLEVEL=%error_level%
     ```
 
-###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a>示例2：使用 Windows Server 解决方案 SDK 创建自定义文件夹并移动现有文件夹
+###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a> 示例2：使用 Windows Server 解决方案 SDK 创建自定义文件夹并移动现有文件夹
  你所创建的代码可以编译为可执行文件，然后从 PostIC.cmd 文件或直接从安装的加载项进行调用。
 
 ```

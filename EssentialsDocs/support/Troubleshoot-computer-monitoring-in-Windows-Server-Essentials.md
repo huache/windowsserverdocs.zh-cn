@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 3d1428fa258f661636d599dd8dcf41acaaf59082
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 55daffa3c1db284d3772fa39eb64e0411ad1c7a6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838276"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625094"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>解决在 Windows Server Essentials 中监视计算机的问题
 
@@ -21,7 +21,7 @@ ms.locfileid: "87838276"
 本主题提供有关在警报查看器中监视计算机的运行状况状态和通过 Windows Server Essentials 中的电子邮件通知监视计算机的运行状况的问题的疑难解答。
 
 > [!NOTE]
-> 有关 Windows Server Essentials 社区中的最新疑难解答信息，建议访问[Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
+> 有关 Windows Server Essentials 社区中的最新疑难解答信息，建议访问 [Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
 
 ## <a name="troubleshooting-email-notifications-for-alerts"></a>警报的电子邮件通知疑难解答
 
@@ -29,7 +29,7 @@ ms.locfileid: "87838276"
 
 ### <a name="cannot-send-the-test-email-for-the-alert"></a>无法发送警报的测试电子邮件
 
- **问题**收到一条错误消息，显示 "无法发送警报的测试电子邮件"。
+ **问题** 收到一条错误消息，显示 "无法发送警报的测试电子邮件"。
 
  **原因** 警报通知设置中的以下任一问题都可能导致此错误：
 
@@ -50,7 +50,7 @@ ms.locfileid: "87838276"
     ` %ProgramData%\Microsoft\Windows Server\Logs\SharedServiceHost-AlertServiceConfig.log`
 
     > [!TIP]
-    > 若要查看 ProgramData 文件夹，必须显示隐藏的项目。 如果看不到 ProgramData 文件夹，请在功能区的 "**视图**" 选项卡上的 "**显示/隐藏**" 组中，选择 "**隐藏项**" 文本框。
+    > 若要查看 ProgramData 文件夹，必须显示隐藏的项目。 如果看不到 ProgramData 文件夹，请在功能区的 " **视图** " 选项卡上的 " **显示/隐藏** " 组中，选择 " **隐藏项** " 文本框。
 
 #### <a name="to-update-your-email-notification-setup-for-alerts"></a>更新警报的电子邮件通知
 

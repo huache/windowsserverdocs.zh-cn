@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 031f407b392e02e9867640975520475acd5f8cbb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 90f931c128d4e4eb9747203db7d097c68d451702
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180323"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625204"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>解决 Windows Server Essentials 中的文件历史记录问题
 
@@ -30,7 +30,7 @@ ms.locfileid: "87180323"
 
   若要解决此问题，你必须使用以下过程手动删除文件历史记录：
 
-####  <a name="to-manually-delete-file-history-backups-for-a-user-or-a-computer"></a><a name="BKMK_manuallyDelete"></a>手动删除用户或计算机的文件历史记录备份
+####  <a name="to-manually-delete-file-history-backups-for-a-user-or-a-computer"></a><a name="BKMK_manuallyDelete"></a> 手动删除用户或计算机的文件历史记录备份
 
 1.  以管理员身份登录到服务器。
 
@@ -67,13 +67,13 @@ ms.locfileid: "87180323"
 
 4.  重命名已删除用户的子文件夹，例如， ** < *用户名*>_Deleted**。 如果不再需要该用户的文件历史记录，可删除该文件夹。
 
-5. 现在可以添加新用户。 有关说明，请参阅添加用户帐户？在 "[管理用户帐户](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)" 中。
+5. 现在可以添加新用户。 有关说明，请参阅添加用户帐户？在 " [管理用户帐户](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)" 中。
 
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>用户帐户已删除，但用户的文件历史记录仍保留
  在某些情况下，网络管理员可以选择从服务器中删除用户或计算机，但保留文件历史记录备份以供将来使用。 当不再需要文件历史记录时，请从服务器上的共享文件夹中删除用户或计算机的文件历史记录备份文件夹。 若要执行此操作，请参阅 [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)。
 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 -   [管理客户端备份](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)
 

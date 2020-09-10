@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c0a8f10d-fd85-4c8d-b9bb-176cb1db1f46
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: fe7bcc54ab342ae1df4299db9585e0656a7ba5c8
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: b8abf96a5d07d3bcda3cfc43c4e0e960a38e465b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181593"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624087"
 ---
 # <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>向“设置”、“加载项”、“快速状态”和“帮助链接”添加条目
 
@@ -98,7 +98,7 @@ ms.locfileid: "87181593"
    |---------------|-----------------|
    |名称（任务）|列表中任务的显示名称。 如果要创建嵌入式资源文件，则此属性的值为字符串资源。|
    |说明（任务）|任务的描述。 如果要创建嵌入式资源文件，则此属性的值为字符串资源。|
-   |ID（任务）|任务的标识符。 此标识符必须是 GUID。 为**exe**任务创建新的 GUID，但是对于**全局**任务，使用在为子选项卡的任务窗格定义任务时所创建的 guid。有关创建 GUID 的详细信息，请参阅[创建 guid （guidgen.exe）](https://go.microsoft.com/fwlink/?LinkId=116098)。|
+   |ID（任务）|任务的标识符。 此标识符必须是 GUID。 为 **exe** 任务创建新的 GUID，但是对于 **全局** 任务，使用在为子选项卡的任务窗格定义任务时所创建的 guid。有关创建 GUID 的详细信息，请参阅 [Create guid ( # A0) ](https://go.microsoft.com/fwlink/?LinkId=116098)。|
    |image|将忽略此字段。|
    |名称（操作）|显示任务的名称。|
    |类型（操作）|描述任务的类型。 任务可以是以下任务之一：**全局**任务、**exe** 或 url 任务。 **全局**任务与你在为子选项卡的任务窗格定义任务时所创建的全局任务相同。若要详细了解如何创建可在子选项卡的任务窗格和主页的 "入门任务" 或 "常见任务" 列表中使用的全局任务，请参阅œCreating the support 类？在如何中：创建子选项卡？[Windows Server 解决方案 SDK](https://go.microsoft.com/fwlink/?LinkID=248648)。 **exe** 任务可用于从“开始任务”或“常见任务”列表运行应用程序。|
@@ -196,7 +196,7 @@ ms.locfileid: "87181593"
 
 5.  保存 OEMHomePageContent.home.resx 文件，然后生成解决方案。
 
-#####  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>使用 Authenticode 签名为程序集签名
+#####  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a> 使用 Authenticode 签名为程序集签名
  你必须使用验证码签名进行程序集签名，因为该签名将在操作系统中使用。 有关对程序集签名的详细信息，请参阅 [Signing and Checking Code with Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)（使用验证码对代码进行签名和检查）。
 
 ##### <a name="install-the-task-files"></a>安装任务文件

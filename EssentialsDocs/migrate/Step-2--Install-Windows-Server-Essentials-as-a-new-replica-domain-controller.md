@@ -5,20 +5,20 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c7ccfc34-63fd-436b-a1cd-e05810f60bfe
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 6efaaf1e7c9bdc6cf4224700feeae463a1bb8883
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 9d70a4d5aae1269f10958f808692fffde9c83de8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180473"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625489"
 ---
 # <a name="step-2-install-windows-server-essentials-as-a-new-replica-domain-controller"></a>步骤 2：将 Windows Server Essentials 安装为新副本域控制器
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
-本部分介绍如何将 Windows Server Essentials 和 Windows Server 2012 R2 Standard （已启用 Windows Server Essentials Experience 角色）安装为域控制器。
+本部分介绍如何在作为域控制器启用) 的情况下，安装 Windows server Essentials 体验角色和 Windows Server 2012 R2 Standard (。
 
  对于具有最多25个用户和50设备的环境，你可以按照本指南中的步骤从早期版本的 Windows SBS 迁移到 Windows Server Essentials。 对于最多包含100个用户和200台设备的环境，你可以按照相同的指南迁移到安装了 Windows Server Essentials Experience 角色的 Windows Server 2012 R2 的标准版和 Datacenter 版本。 本文档将对这两种方案进行介绍。
 
@@ -27,7 +27,7 @@ ms.locfileid: "87180473"
 
 #### <a name="install-windows-server-essentials-or-windows-server-2012-r2-standard-on-the-destination-server"></a>在目标服务器上安装 Windows Server Essentials 或 Windows Server 2012 R2 Standard
 
-1.  按照[安装和配置 Windows Server essentials](../install/Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)中的说明，安装已启用 windows Server essentials 体验角色的 Windows server Essentials 或 windows Server 2012 R2 Standard。
+1.  按照 [安装和配置 Windows Server essentials](../install/Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)中的说明，安装已启用 windows Server essentials 体验角色的 Windows server Essentials 或 windows Server 2012 R2 Standard。
 
     > [!NOTE]
     >  如果启动了“配置 Windows Server Essentials”向导，请取消它。
@@ -56,7 +56,7 @@ ms.locfileid: "87180473"
     2.  单击“用户”**** 选项卡，并验证是否列出了 Active Directory 中的用户帐户。
 
 ### <a name="transfer-the-operations-master-roles"></a>传送操作主机角色
- 操作主机（也称为灵活单主机操作或 FSMO）角色必须在目标服务器上安装 Windows Server Essentials 21 天内从源服务器传输到目标服务器。
+ 在目标服务器上安装 Windows Server Essentials 之前，必须在21天内将操作主机 (也称为灵活单主机操作或 FSMO) 角色。
 
 ##### <a name="to-transfer-the-operations-master-roles"></a>传送操作主机角色
 
@@ -74,7 +74,7 @@ ms.locfileid: "87180473"
 
     3.  键入 **connection**，然后按 ENTER。
 
-    4.  键入**connect to server** *<servername \> * （其中 *<ServerName \> *是目标服务器的名称），然后按 enter。
+    4.  键入 "**连接到服务器** *<\> servername* (，其中 *<ServerName \> *是目标服务器) 的名称，然后按 enter。
 
     5.  在命令提示符处键入 **q**，然后按 ENTER。
 
@@ -94,7 +94,7 @@ ms.locfileid: "87180473"
 >  你可以从网络上的任意服务器中，确认操作主机角色已传送到目标服务器。 以管理员身份打开命令提示符窗口（有关详细信息，请参阅 [以管理员身份打开命令提示符窗口](https://technet.microsoft.com/library/cc947813\(v=WS.10\).aspx)）。 键入 **netdom query fsmo**，然后按 ENTER。
 
 ## <a name="next-steps"></a>后续步骤
- 已将 Windows Server Essentials 安装为新的副本域控制器。 现在，请[执行步骤3：将计算机加入到新的 Windows Server Essentials 服务器](Step-3--Join-computers-to-the-new-Windows-Server-Essentials-server.md)。
+ 已将 Windows Server Essentials 安装为新的副本域控制器。 现在，请 [执行步骤3：将计算机加入到新的 Windows Server Essentials 服务器](Step-3--Join-computers-to-the-new-Windows-Server-Essentials-server.md)。
 
-若要查看所有步骤，请参阅[迁移到 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+若要查看所有步骤，请参阅 [迁移到 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 

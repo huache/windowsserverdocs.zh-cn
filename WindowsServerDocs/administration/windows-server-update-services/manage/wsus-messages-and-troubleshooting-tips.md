@@ -3,16 +3,16 @@ title: WSUS 消息和疑难解答提示
 description: Windows Server Update 服务 (WSUS) 主题-使用 WSUS 消息进行故障排除
 ms.topic: article
 ms.assetid: 9f6317f7-bfe0-42d9-87ce-d8f038c728ca
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: cf3d0337dfa7360bdf8304c587c4ea31b7607e27
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8abb77727139652f7d3d1ef2e4ce8dd8320db47a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990964"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624236"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>WSUS 消息和疑难解答提示
 
@@ -69,22 +69,22 @@ WSUS 安装程序使用 Microsoft SQL Server 执行安装。 之所以出现此�
 
 ## <a name="some-services-are-not-running-check-the-following-services"></a>某些服务没有运行。 检查以下服务：
 
-- **Selfupdate：** 有关 Selfupdate 服务疑难解答的信息，请参阅[必须更新自动更新](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708554(v=ws.10))。
+- **Selfupdate：** 有关 Selfupdate 服务疑难解答的信息，请参阅 [必须更新自动更新](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708554(v=ws.10)) 。
 
-- **WSSUService.exe：** 此服务有助于同步。 如果同步出现问题，请单击 "**开始**"，指向 "**管理工具**"，单击 "**服务**"，然后在服务列表中查找 " **Windows Server Update Service** "，以访问 WSUSService.exe。 请执行以下操作：
+- **WSSUService.exe：** 此服务有助于同步。 如果同步出现问题，请单击 " **开始**"，指向 " **管理工具**"，单击 " **服务**"，然后在服务列表中查找 " **Windows Server Update Service** "，以访问 WSUSService.exe。 执行以下操作：
 
     -   验证此服务是否正在运行。 如果 "已停止" 或 "**重新启动**" 来刷新服务，请单击 "**启动**"。
 
-    -   使用事件查看器来检查**应用程序**、 **Securit**y 和**系统**事件日志，以查看是否存在可能指示问题的事件。
+    -   使用事件查看器来检查 **应用程序**、 **Securit**y 和 **系统** 事件日志，以查看是否存在可能指示问题的事件。
 
     -   你还可以检查 SoftwareDistribution 以查看是否存在可能指示问题的事件。
 
-- **Web ServicesSQL 服务：** Web 服务承载于 IIS 中。 如果未运行，请确保 IIS 正在运行 (或) 启动。 还可以通过在命令提示符处键入**iisreset**来重置 Web 服务。
+- **Web ServicesSQL 服务：** Web 服务承载于 IIS 中。 如果未运行，请确保 IIS 正在运行 (或) 启动。 还可以通过在命令提示符处键入 **iisreset** 来重置 Web 服务。
 
-- **SQL 服务：** 除 selfupdate 服务之外的每个服务都需要 SQL 服务正在运行。 如果有任何日志文件指示 SQL 连接问题，请先检查 SQL 服务。 若要访问 SQL 服务，请单击 "**开始**"，指向 "**管理工具**"，单击 "**服务**"，然后查找下列各项之一：
+- **SQL 服务：** 除 selfupdate 服务之外的每个服务都需要 SQL 服务正在运行。 如果有任何日志文件指示 SQL 连接问题，请先检查 SQL 服务。 若要访问 SQL 服务，请单击 " **开始**"，指向 " **管理工具**"，单击 " **服务**"，然后查找下列各项之一：
 
   - 如果使用的是 WMSDE 或 MSDE，或者使用的是 SQL Server 并使用实例名称的默认实例名称，则**MSSQLSERver** () 
 
   - 如果你使用的是 SQL Server 数据库并且已命名数据库实例 WSUS， **MSSQL $ WSUS** () 
 
-    右键单击该服务，如果该服务未运行，则单击 "**启动**"; 如果该服务正在运行，则单击 "**重新启动**" 以刷新它。
+    右键单击该服务，如果该服务未运行，则单击 " **启动** "; 如果该服务正在运行，则单击 " **重新启动** " 以刷新它。

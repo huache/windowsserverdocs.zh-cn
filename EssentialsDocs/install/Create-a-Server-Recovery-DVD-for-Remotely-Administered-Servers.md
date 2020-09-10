@@ -5,20 +5,20 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 6141fa69-5952-4e3c-a868-40ef3f4badd2
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 3f9bfeb2dbadd4d3d6cadd0200f05759d75f5519
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: fda6cf3ef25a2127aa0982674ff0f7d0960bfb08
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409547"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623846"
 ---
 # <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a>为远程管理的服务器创建服务器恢复 DVD
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a><a name="BKMK_HeadlessRecovery"></a>为远程管理的服务器创建服务器恢复 DVD
+##  <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a><a name="BKMK_HeadlessRecovery"></a> 为远程管理的服务器创建服务器恢复 DVD
  恢复出厂设置和服务器恢复有两种模式，这两种模式因客户收到的硬件而有所差异。
 
  **远程管理的服务器**
@@ -70,12 +70,12 @@ ms.locfileid: "87409547"
 
 6.  [测试恢复 DVD](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md#BKMK_Testing)
 
-####  <a name="step-1-optional-update-winpe"></a><a name="BKMK_Updating"></a>步骤1：（可选）更新 WinPE
+####  <a name="step-1-optional-update-winpe"></a><a name="BKMK_Updating"></a> 步骤1： (可选) 更新 WinPE
  ADK 包括了一份自定义的 Windows PE 副本。 此映像被启动后会自动启动客户端恢复应用程序用于连接到处于恢复模式的服务器的信号。
 
  Windows PE 需要通过添加特定于硬件的驱动程序（例如网络或磁盘控制器驱动程序）进行进一步自定义。 从 WinPE 启动后，系统上的硬盘应是可以识别的，并且网络必须处于工作状态。
 
-####  <a name="step-2-collect-the-factory-reset-images-and-xml-files"></a><a name="BKMK_Collecting"></a>步骤2：收集出厂重置映像和 XML 文件
+####  <a name="step-2-collect-the-factory-reset-images-and-xml-files"></a><a name="BKMK_Collecting"></a> 步骤2：收集出厂重置映像和 XML 文件
  要为服务器重设出厂默认值，需要截取以下两个映像：
 
 - 系统驱动器映像
@@ -91,7 +91,7 @@ ms.locfileid: "87409547"
     > [!NOTE]
     >  为了满足文件不得大于 4 GB 的 FAT32 要求，系统 .wim 文件会被分割。 在此过程中，用于截取 .wim 文件的目标的容量要大于 8 GB 才能满足分割程序的要求。
 
-####  <a name="step-3-create-the-server-recovery-dvd"></a><a name="BKMK_Creating"></a>步骤3：创建服务器恢复 DVD
+####  <a name="step-3-create-the-server-recovery-dvd"></a><a name="BKMK_Creating"></a> 步骤3：创建服务器恢复 DVD
  每台服务器出厂时都必须随附一份服务器恢复 DVD。 你的 ADK 工具 DVD 中包含创建 DVD 必需的文件。
 
 ##### <a name="to-create-the-server-recovery-dvd"></a>创建服务器恢复 DVD
@@ -106,7 +106,7 @@ ms.locfileid: "87409547"
 
 5.  将 GenDiskXML.exe 从文件夹中删除。 此工具仅供工厂处理之用，不应包含在发运给客户的 DVD 中。
 
-####  <a name="step-4-customize-the-wizard"></a><a name="BKMK_Customizing"></a>步骤4：自定义向导
+####  <a name="step-4-customize-the-wizard"></a><a name="BKMK_Customizing"></a> 步骤4：自定义向导
  服务器恢复应用程序必须使用设备图像和说明如何以恢复模式启动特定设备的文本来进行自定义。 因为还原文件和文件夹向导页面是特定于硬件的，因此以恢复模式启动服务器的步骤会因情况而异。
 
 > [!NOTE]
@@ -138,7 +138,7 @@ ms.locfileid: "87409547"
 
    - cs-CZ
    - de-DE
-   - en-US
+   - zh-CN
    - es-ES
    - fr-FR
    - hu-HU
@@ -156,10 +156,10 @@ ms.locfileid: "87409547"
    - zh-HK
    - zh-TW
 
-####  <a name="step-5-create-the-iso-file"></a><a name="BKMK_CreatingISO"></a>步骤5：创建 ISO 文件
+####  <a name="step-5-create-the-iso-file"></a><a name="BKMK_CreatingISO"></a> 步骤5：创建 ISO 文件
  创建的文件夹以及所有的内容都可以刻入 DVD。 此 DVD 将随新服务器一起提供给客户。
 
-####  <a name="step-6-test-the-recovery-dvd"></a><a name="BKMK_Testing"></a>步骤6：测试恢复 DVD
+####  <a name="step-6-test-the-recovery-dvd"></a><a name="BKMK_Testing"></a> 步骤6：测试恢复 DVD
  完成服务器安装后，配置服务器备份，运行服务器备份，然后测试恢复 DVD。
 
 ###### <a name="to-configure-and-run-a-server-backup"></a>配置和运行服务器备份

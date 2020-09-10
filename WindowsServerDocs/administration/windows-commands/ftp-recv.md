@@ -3,16 +3,16 @@ title: ftp recv
 description: Ftp 接收命令的参考文章，它使用当前文件传输类型将远程文件复制到本地计算机。
 ms.topic: reference
 ms.assetid: f249ce61-247d-421b-9b93-48bce5108800
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a80c00c99df3466fc1077c3a09cab29f9e59860
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 65acf6bae09d9b1cad1bf89028b4a51232116c60
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038908"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624653"
 ---
 # <a name="ftp-recv"></a>ftp recv
 

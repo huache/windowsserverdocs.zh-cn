@@ -5,20 +5,20 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ef3a7934-e36f-40d8-9e0b-7ed59089f85e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 2ac063330cc1ae99bfd7d0d65950ba17ad815c87
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6198e8d8e06a76b9768f5c1166b438639d2ffca2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181513"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623976"
 ---
 # <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Windows Server Essentials 的评估和部署工具包
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-Windows Server &reg; 2012 Essentials 评估和部署工具包（ADK）是可以用于在新计算机上自定义、评估和部署 Windows Server Essentials 的工具、二进制文件和操作系统语言包的集合。 本文档包含特定于要为其客户预安装操作系统的合作伙伴的信息，并包含以下主题：
+Windows Server &reg; 2012 Essentials 评估和部署工具包 (ADK) 是可用于在新计算机上自定义、评估和部署 Windows Server Essentials 的工具、二进制文件和操作系统语言包的集合。 本文档包含特定于要为其客户预安装操作系统的合作伙伴的信息，并包含以下主题：
 
 
 -   [Windows Server Essentials ADK 入门](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)
@@ -71,7 +71,7 @@ Windows Server &reg; 2012 Essentials 评估和部署工具包（ADK）是可以�
 
     -   [添加 Microsoft Online Services 合作伙伴协议记录的合作伙伴信息](Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)
 
-    -   [替换 O365 集成模块购买-尝试终结点 URL 以支持 Microsoft Online Services 经销商协议](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
+    -   [替换 Microsoft 365 集成模块购买-尝试终结点 URL 以支持 Microsoft Online Services 经销商协议](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
 
     -   [为远程管理的服务器创建服务器恢复 DVD](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)
 
@@ -83,8 +83,8 @@ Windows Server &reg; 2012 Essentials 评估和部署工具包（ADK）是可以�
 
 
 ## <a name="copyright-information"></a>版权信息
- 本文档按“现样”提供。 本文档中表达的信息和视图（包括 URL 和其他 Internet 网站引用）如有更改，恕不另行通知。 本书中提及的一些示例仅用于说明，纯属虚构。 不存在任何实际关联或联系，请勿妄加推断。 本文档未向你提供针对任何 Microsoft 产品的任何知识产权的任何法律权限。 可以复制本文档并将其用于进行内部参考。
+ 本文档按“现样”提供。 本文档中表达的信息和视图（包括 URL 和其他 Internet 网站引用）如有更改，恕不另行通知。 本书中提及的一些示例仅用于说明，纯属虚构。 不存在任何实际关联或联系，请勿妄加推断。 本文档未向您提供任何 Microsoft 产品中任何知识产权的任何合法权利。 您可为了内部参考目的复制和使用本文档。
 
  Active Directory、Microsoft、Windows Live、Windows PowerShell、Windows 和 Windows Server 是 Microsoft 公司集团的商标。 所有其他商标均为其各自所有者的财产。
 
- &copy;2012 Microsoft。 保留所有权利。
+ &copy; 2012 Microsoft。 保留所有权利。

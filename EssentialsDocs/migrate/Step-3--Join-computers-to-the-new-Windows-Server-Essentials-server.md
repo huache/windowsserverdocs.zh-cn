@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: a0e07d1a-8409-429b-87d7-0f4a7e14d668
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 46de5b182a162563a81772bf489d8d182514d9d6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 7495831c6f593b65261fda8f50d4ef9d1000d9b4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180463"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625485"
 ---
 # <a name="step-3-join-computers-to-the-new-windows-server-essentials-server"></a>步骤 3：将计算机加入新的 Windows Server Essentials 服务器
 
@@ -32,9 +32,9 @@ ms.locfileid: "87180463"
 2.  在程序列表中，右键单击在你的计算机上运行的连接器应用程序。
 
     > [!NOTE]
-    >  连接器应用程序可以是**Windows Small Business Server 2011 Essentials 连接器**或**Windows Server Essentials 连接器**，具体取决于客户端计算机连接到的 Windows Server essentials 的版本。
+    >  连接器应用程序可以是 **Windows Small Business Server 2011 Essentials 连接器**或 **Windows Server Essentials 连接器**，具体取决于客户端计算机连接到的 Windows Server essentials 的版本。
 
-3.  单击“卸载”****。
+3.  单击“卸载”  。
 
 ### <a name="to-reconnect-a-client-computer-to-the-server"></a>将客户端计算机重新连接到服务器
 
@@ -45,13 +45,13 @@ ms.locfileid: "87180463"
 
 2.  打开 Internet 浏览器，如 Internet Explorer。
 
-3.  在地址栏中，键入**http://<servername \> /Connect**，然后按 enter。
+3.  在地址栏中，键入 **http://<servername \> /Connect**，然后按 enter。
 
 4.  按照屏幕上的说明，将客户端计算机加入到新的 Windows Server Essentials 服务器。
 
 ## <a name="next-steps"></a>后续步骤
- 已将客户端计算机加入运行 Windows Server Essentials 的新服务器。 现在转到[步骤4：将设置和数据移动到目标服务器以进行 Windows Server Essentials 迁移](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。
+ 已将客户端计算机加入运行 Windows Server Essentials 的新服务器。 现在转到 [步骤4：将设置和数据移动到目标服务器以进行 Windows Server Essentials 迁移](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。
 
 
-若要查看所有步骤，请参阅[迁移到 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+若要查看所有步骤，请参阅 [迁移到 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 

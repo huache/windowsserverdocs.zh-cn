@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 341a7dd217045150e1f637d23378e49a86bb5fbf
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 25b3bf64672356027742858399d1e2cbc7037194
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409477"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624899"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>使用 Windows Server Essentials 中的远程 Web 访问
 
@@ -30,7 +30,7 @@ ms.locfileid: "87409477"
 
 -   [从移动设备上连接](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)
 
-##  <a name="connect-to-remote-web-access"></a><a name="BKMK_Connect"></a>连接到远程 Web 访问
+##  <a name="connect-to-remote-web-access"></a><a name="BKMK_Connect"></a> 连接到远程 Web 访问
 
 -   [登录到远程 Web 访问](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)
 
@@ -42,14 +42,14 @@ ms.locfileid: "87409477"
 
 -   [从移动设备上连接](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)
 
-##  <a name="connect-to-remote-web-access"></a><a name="BKMK_Connect"></a>连接到远程 Web 访问
+##  <a name="connect-to-remote-web-access"></a><a name="BKMK_Connect"></a> 连接到远程 Web 访问
 
 -   [登录到远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)
 
 -   [远程访问你的计算机](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)
 
 
-###  <a name="log-on-to-remote-web-access"></a><a name="BKMK_1"></a>登录到远程 Web 访问
+###  <a name="log-on-to-remote-web-access"></a><a name="BKMK_1"></a> 登录到远程 Web 访问
  当你从本地或远程计算机登录到远程 Web 访问时，你可以访问运行 Windows Server Essentials 的服务器上的资源以及网络上的计算机。
 
 ##### <a name="to-log-on-to-remote-web-access-from-a-network-computer"></a>若要从网络计算机登录到远程 Web 访问
@@ -70,7 +70,7 @@ ms.locfileid: "87409477"
 
 2.  在 "远程 Web 访问登录" 页上，在文本框中键入你的用户名和密码，然后单击箭头。
 
-###  <a name="remotely-access-your-computer"></a><a name="BKMK_1.5"></a>远程访问你的计算机
+###  <a name="remotely-access-your-computer"></a><a name="BKMK_1.5"></a> 远程访问你的计算机
  当你离开办公室时，你可以使用 Web 浏览器登录到远程 Web 访问站点以远程访问你的 Windows Server Essentials 仪表板、共享文件夹和网络上的计算机。
 
  当你连接到仪表板时，可以管理 Windows Server Essentials，就像你在办公室时一样。 可以执行所有常用的管理任务，例如添加用户帐户、添加共享文件夹、设置共享文件夹访问等。 当你在网络上连接到计算机时，可以访问这些计算机的桌面，就像在办公室中坐在它们的前面一样。
@@ -99,7 +99,7 @@ ms.locfileid: "87409477"
 #### <a name="to-connect-to-the-server-dashboard"></a>连接到服务器仪表板
  在 **“设备”** 选项卡上，单击你的服务器的名称。 可以只选择状态为 **“可用”** 的计算机。 必须能够在你的服务器上提供管理员用户帐户和密码以使用仪表板。
 
-##  <a name="share-files-and-folders"></a><a name="BKMK_SharedFolders"></a>共享文件和文件夹
+##  <a name="share-files-and-folders"></a><a name="BKMK_SharedFolders"></a> 共享文件和文件夹
 
 
 -   [上载和下载远程 Web 访问中的文件](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)
@@ -107,7 +107,7 @@ ms.locfileid: "87409477"
 -   [创建、重命名、移动、删除或复制远程 Web 访问中的文件和文件夹](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)
 
 
-###  <a name="upload-and-download-files-in-remote-web-access"></a><a name="BKMK_UploadRWA"></a>在远程 Web 访问上传和下载文件
+###  <a name="upload-and-download-files-in-remote-web-access"></a><a name="BKMK_UploadRWA"></a> 在远程 Web 访问上传和下载文件
  在远程 Web 访问的 **“共享文件夹”** 选项卡上，你可以执行以下操作：
 
 -   从你的计算机中将文件上载（发送）到 Windows Server Essentials。
@@ -120,9 +120,9 @@ ms.locfileid: "87409477"
 -   在 Windows Server Essentials 的共享文件夹中创建一个文件夹。
 
 
--   移动、删除和重命名 Windows Server Essentials 上的文件和文件夹。 有关详细信息，请参阅[在远程 Web 访问中创建、重命名、移动、删除或复制文件和文件夹](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)。
+-   移动、删除和重命名 Windows Server Essentials 上的文件和文件夹。 有关详细信息，请参阅 [在远程 Web 访问中创建、重命名、移动、删除或复制文件和文件夹](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)。
 
--   移动、删除和重命名 Windows Server Essentials 上的文件和文件夹。 有关详细信息，请参阅[在远程 Web 访问中创建、重命名、移动、删除或复制文件和文件夹](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)。
+-   移动、删除和重命名 Windows Server Essentials 上的文件和文件夹。 有关详细信息，请参阅 [在远程 Web 访问中创建、重命名、移动、删除或复制文件和文件夹](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)。
 
 
 #### <a name="upload-files"></a>上传文件
@@ -238,7 +238,7 @@ ms.locfileid: "87409477"
     > [!NOTE]
     >  如果使用第三方文件压缩程序，请按照该程序的过程从压缩文件中提取你的文件。
 
-###  <a name="create-rename-move-delete-or-copy-files-and-folders-in-remote-web-access"></a><a name="BKMK_2"></a>在远程 Web 访问中创建、重命名、移动、删除或复制文件和文件夹
+###  <a name="create-rename-move-delete-or-copy-files-and-folders-in-remote-web-access"></a><a name="BKMK_2"></a> 在远程 Web 访问中创建、重命名、移动、删除或复制文件和文件夹
  可以使用远程 Web 访问在现有的共享文件夹中创建新文件夹，用于对服务器上的文件和文件夹进行重命名、移动、复制以及删除。
 
 > [!NOTE]
@@ -284,7 +284,7 @@ ms.locfileid: "87409477"
 
 3.  右键单击要将文件或文件夹复制到的文件夹，然后单击 **“粘贴”**。
 
-##  <a name="connect-from-a-mobile-device"></a><a name="BKMK_ConnectMobile"></a>从移动设备连接
+##  <a name="connect-from-a-mobile-device"></a><a name="BKMK_ConnectMobile"></a> 从移动设备连接
 
 
 -   [从移动设备上使用远程 Web 访问](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)
@@ -296,7 +296,7 @@ ms.locfileid: "87409477"
 -   [受移动设备支持的 Web 浏览器](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)
 
 
-###  <a name="use-remote-web-access-from-a-mobile-device"></a><a name="BKMK_8"></a>从移动设备使用远程 Web 访问
+###  <a name="use-remote-web-access-from-a-mobile-device"></a><a name="BKMK_8"></a> 从移动设备使用远程 Web 访问
  你可以从你的智能手机登录到远程 Web 访问，以查看服务器上共享文件夹中的文件和文件夹。
 
 > [!NOTE]
@@ -312,7 +312,7 @@ ms.locfileid: "87409477"
 
 1.  打开 Web 浏览器，在地址栏中键入 " **https://** _<YourDomainName \> _**/remote** "。  请确保在 https 中包含 "s"。
 
-2.  在 "远程 Web 访问登录" 页上，在文本框中键入你的用户名和密码，单击 "**查看桌面版本**"，然后单击箭头。 你已登录到远程 Web 访问的桌面版本。
+2.  在 "远程 Web 访问登录" 页上，在文本框中键入你的用户名和密码，单击 " **查看桌面版本**"，然后单击箭头。 你已登录到远程 Web 访问的桌面版本。
 
 ##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>返回到远程 Web 访问的移动版本
 
@@ -324,7 +324,7 @@ ms.locfileid: "87409477"
 
    你可以搜索服务器上的共享文件夹中的文件和文件夹。
 
-###  <a name="supported-web-browsers-for-mobile-devices"></a><a name="BKMK_9"></a>支持移动设备的 Web 浏览器
+###  <a name="supported-web-browsers-for-mobile-devices"></a><a name="BKMK_9"></a> 支持移动设备的 Web 浏览器
  受移动设备支持的 Web 浏览器包括：
 
 -   Internet Explorer 移动 6.0 或更高版本

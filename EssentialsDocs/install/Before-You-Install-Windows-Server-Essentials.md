@@ -5,30 +5,30 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 8d0893bd-e2b7-4494-9537-02b1cbbcd57a
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d3dde053a47dbc45a05486ed89b0484c297a132e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: ceb5d81490b46513b540901413d8923d61d87e40
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181493"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623942"
 ---
 # <a name="before-you-install-windows-server-essentials"></a>安装 Windows Server Essentials 之前的准备事项
 
 >适用于： Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="before-you-begin-your-installation-of--windows-server-essentials-perform-the-following-tasks"></a><a name="BKMK_BeforeYouBegin"></a>在开始安装 Windows Server Essentials 之前，请执行以下任务：
+##  <a name="before-you-begin-your-installation-of--windows-server-essentials-perform-the-following-tasks"></a><a name="BKMK_BeforeYouBegin"></a> 在开始安装 Windows Server Essentials 之前，请执行以下任务：
 
--   **请确保你的计算机符合最低硬件要求**。 这包括确定是否需要额外的硬件并验证 Windows Server Essentials 是否支持硬件的驱动程序。 有关详细信息，请参阅[Windows Server Essentials 的系统要求](../get-started/system-requirements.md)。
+-   **请确保你的计算机符合最低硬件要求**。 这包括确定是否需要额外的硬件并验证 Windows Server Essentials 是否支持硬件的驱动程序。 有关详细信息，请参阅 [Windows Server Essentials 的系统要求](../get-started/system-requirements.md)。
 
 > [!IMPORTANT]
 > 在预先存在的计算机上安装 Windows Server Essentials 之前，我们建议您完全格式化现有计算机的硬盘，然后再对其进行重新分区。 通过对硬盘进行格式化和重新分区，你可以消除硬盘存在隐藏分区的可能性。
 
-- **准备网络**若要准备网络以安装 Windows Server Essentials，请执行以下操作：
+- **准备网络** 若要准备网络以安装 Windows Server Essentials，请执行以下操作：
 
 
-  - **升级客户端计算机上的操作系统** Windows Server Essentials 支持以下操作系统： Windows 8、Windows 7、Windows 10 和 Macintosh OS X Lion 或更高版本。 这些操作系统为本地网络提供了必要的安全功能、可靠性、性能和功能。
+  - **升级客户端计算机上的操作系统**  Windows Server Essentials 支持以下操作系统： Windows 8、Windows 7、Windows 10 和 Macintosh OS X Lion 或更高版本。 这些操作系统为本地网络提供了必要的安全功能、可靠性、性能和功能。
 
   - **配置路由器** 检查路由器的配置是否符合下述要求：
 
@@ -50,7 +50,7 @@ ms.locfileid: "87181493"
   |端口 443|HTTPS Web 流量|
 
 
-- **阅读 Windows Server Essentials 版本文档**。 版本文档包含可能对正确安装和配置 Windows Server Essentials 至关重要的最新信息。 若要查看或打印发行文档，请参阅[Windows Server Essentials 的发布文档](../get-started/release-notes.md)。
+- **阅读 Windows Server Essentials 版本文档**。 版本文档包含可能对正确安装和配置 Windows Server Essentials 至关重要的最新信息。 若要查看或打印发行文档，请参阅 [Windows Server Essentials 的发布文档](../get-started/release-notes.md)。
 
 ## <a name="additional-references"></a>其他参考
 

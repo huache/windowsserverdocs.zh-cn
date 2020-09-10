@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 73a2d714b80a414fbe6c3716d8e73393877a7aa4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 888ecc5c5ab8fd609264f0f184686a144e2f8ce8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180453"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625473"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>步骤 4：将设置和数据移到目标服务器以进行 Windows Server Essentials 迁移
 
@@ -26,7 +26,7 @@ ms.locfileid: "87180453"
 
 -   [将允许的计算机映射到用户帐户](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md#BKMK_MapPermittedComputers)
 
-##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a>将数据复制到目标服务器
+##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a> 将数据复制到目标服务器
  在将数据从源服务器复制到目标服务器之前，请执行以下任务：
 
 -   在源服务器上查看共享文件夹列表（包括每个文件夹的权限）。 在目标服务器上创建或自定义这些文件夹，使其与要从源服务器迁移的文件夹结构相匹配。
@@ -37,7 +37,7 @@ ms.locfileid: "87180453"
 
 -   “客户端计算机备份”**** 文件夹不能迁移到目标服务器。 在服务器迁移之前，确保所有客户端计算机正常运行。 完成服务器迁移后，建议配置和启动客户端计算机备份，以确保对所有重要客户端计算机的数据进行备份。
 
--   由于 Windows Server Essentials 中的文件夹结构和备份元数据更改，因此无法将 "**文件历史记录备份**" 文件夹直接迁移到目标服务器。 但是，可以为特定计算机上的特定用户迁移“文件历史记录备份”**** 文件夹。 若要执行此操作，应在用于该用户和计算机的“文件历史记录备份”**** 文件夹中找到“数据”**** 文件夹，然后将该“数据”**** 文件夹复制到目标服务器上的“文件历史记录备份”**** 文件夹中。
+-   由于 Windows Server Essentials 中的文件夹结构和备份元数据更改，因此无法将 " **文件历史记录备份** " 文件夹直接迁移到目标服务器。 但是，可以为特定计算机上的特定用户迁移“文件历史记录备份”**** 文件夹。 若要执行此操作，应在用于该用户和计算机的“文件历史记录备份”**** 文件夹中找到“数据”**** 文件夹，然后将该“数据”**** 文件夹复制到目标服务器上的“文件历史记录备份”**** 文件夹中。
 
 #### <a name="to-copy-data-from-the-source-server-to-the-destination-server"></a>将数据从源服务器复制到目标服务器
 
@@ -53,7 +53,7 @@ ms.locfileid: "87180453"
 
    - \<SharedSourceFolderName\> 是源服务器上的共享文件夹名称
 
-   - \<PathOfTheDestination\>要将文件夹移动到的绝对路径
+   - \<PathOfTheDestination\> 要将文件夹移动到的绝对路径
 
    - \<SharedDestinationFolderName\> 是目标服务器上的文件夹，数据将会复制到其中。
 
@@ -65,7 +65,7 @@ ms.locfileid: "87180453"
 
 4. 对每个要从源服务器迁移的共享文件夹重复此过程。
 
-##  <a name="configure-the-network"></a><a name="BKMK_Network"></a>配置网络
+##  <a name="configure-the-network"></a><a name="BKMK_Network"></a> 配置网络
 
 #### <a name="to-configure-the-network"></a>配置网络
 
@@ -84,7 +84,7 @@ ms.locfileid: "87180453"
 > [!NOTE]
 >  如果想要在目标服务器上配置公用域名，你必须从源服务器上释放该域名，以避免动态 DNS 更新的竞争。
 
-##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a>将允许的计算机映射到用户帐户
+##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a> 将允许的计算机映射到用户帐户
  从早期版本的 Windows Small Business Server 或 Windows Server Essentials 迁移的每个用户帐户都必须映射到一台或多台计算机。
 
 #### <a name="to-map-user-accounts-to-computers"></a>将用户帐户映射到计算机
@@ -110,8 +110,8 @@ ms.locfileid: "87180453"
 >  完成迁移后，如果你在目标服务器上创建第一个新的用户帐户时遇到问题，则请删除你已添加的用户帐户，然后再次创建它。
 
 ## <a name="next-steps"></a>后续步骤
- 已将设置和数据移动到目标服务器中。 现在，请跳到[步骤5：在目标服务器上启用文件夹重定向以进行 Windows Server Essentials 迁移](Step-5--Enable-folder-redirection-on-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。
+ 已将设置和数据移动到目标服务器中。 现在，请跳到 [步骤5：在目标服务器上启用文件夹重定向以进行 Windows Server Essentials 迁移](Step-5--Enable-folder-redirection-on-the-Destination-Server-for-Windows-Server-Essentials-migration.md)。
 
 
-若要查看所有步骤，请参阅[迁移到 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
+若要查看所有步骤，请参阅 [迁移到 Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)。
 

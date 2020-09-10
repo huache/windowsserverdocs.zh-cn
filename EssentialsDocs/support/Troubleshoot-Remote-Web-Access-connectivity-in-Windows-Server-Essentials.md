@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ebb256876114c9c3260311fa09eb30f3067905b8
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: fc51555f680126cbd1b6e9fe2c672cbcbc5da7e9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180313"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625147"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Windows Server Essentials 远程 Web 访问连接疑难解答
 
@@ -52,7 +52,7 @@ ms.locfileid: "87180313"
 
   - 在路由器上为以下端口配置端口转发：
 
-    |服务或协议|端口|
+    |服务或协议|Port|
     |-------------------------|----------|
     |HTTP|TCP 80|
     |HTTPS|TCP 443|
@@ -76,7 +76,7 @@ ms.locfileid: "87180313"
 > [!TIP]
 >  请确保你的路由器安装了最新的 BIOS 固件。 通常，你可以从路由器配置网页为路由器更新 BIOS 固件。 有关详细信息，请参阅你的路由器文档。 更新路由器后，请运行“设置随处访问”向导。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 -   [使用远程 Web 访问](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)
 

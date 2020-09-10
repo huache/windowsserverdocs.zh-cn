@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 67087ccb-d820-4642-8ca2-7d2d38714014
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 427f695b36f7a062bdc570ba816560a6a1721b90
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: f2fe4a1bb9277ae5b314aa02ee5c94896d1eefd9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180583"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625723"
 ---
 # <a name="move-windows-sbs-2003-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>将 Windows SBS 2003 设置和数据移到目标服务器以进行 Windows Server Essentials 迁移
 
@@ -22,7 +22,7 @@ ms.locfileid: "87180583"
 
 1. [将数据复制到目标服务器](#copy-data-to-the-destination-server)
 
-2. [将 Active Directory 用户帐户导入 Windows Server Essentials 仪表板（可选）](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [将 Active Directory 用户帐户导入到 Windows Server Essentials 仪表板 (可选) ](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
 3. [删除旧的登录脚本（可选）](#remove-old-logon-scripts)
 
@@ -54,8 +54,8 @@ ms.locfileid: "87180583"
 其中：
  - \<SourceServerName\> 是源服务器的名称
  - \<SharedSourceFolderName\> 是源服务器上的共享文件夹名称
- - \<DestinationServerName\>目标服务器的名称，
- - \<SharedDestinationFolderName\>是将数据复制到的目标服务器上的共享文件夹。
+ - \<DestinationServerName\> 目标服务器的名称，
+ - \<SharedDestinationFolderName\> 是将数据复制到的目标服务器上的共享文件夹。
 
 4. 对每个要从源服务器迁移的共享文件夹重复上一步。
 
@@ -93,7 +93,7 @@ Windows SBS 2003 将登录脚本用于安装软件和自定义桌面之类的任
 5. 为每个用户重复步骤 3 和 4。
 
 ## <a name="remove-legacy-active-directory-group-policy-objects"></a>删除旧 Active Directory 组策略对象
-为 Windows Server Essentials 更新组策略对象（Gpo）。 它们是 Windows SBS 2003 GPO 的一个超集。 对于 Windows Server Essentials，必须手动删除大量 Windows SBS 2003 Gpo 和 Windows Management Instrumentation （WMI）筛选器，以防止与 Windows Server Essentials Gpo 和 WMI 筛选器发生冲突。
+为 Windows Server Essentials 更新 (Gpo) 的组策略对象。 它们是 Windows SBS 2003 GPO 的一个超集。 对于 Windows Server Essentials，必须手动删除大量 Windows SBS 2003 Gpo 和 Windows Management Instrumentation (WMI) 筛选器，以防止与 Windows Server Essentials Gpo 和 WMI 筛选器发生冲突。
 
 > [!NOTE]
 > 如果已修改原始的 Windows SBS 2003 组策略对象，则应该将其副本保存到其他的位置，然后将其从 Windows SBS 2003 删除。

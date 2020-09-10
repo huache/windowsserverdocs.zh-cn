@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: a460bfa4f802160be4e4842c91793c8568ed0272
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: a60ffd7593da8e8275e36e9aec2cf6e25fbe23db
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180373"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625307"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>从 Windows Server Essentials 转换到 Windows Server 2012 R2 Standard
 
@@ -22,10 +22,10 @@ Windows Server 2016 是支持云的操作系统，它支持当前的工作负荷
 
  Windows Server Essentials 支持最多25个用户和50设备。 当你的业务需求超过限制时，你可以执行从 Windows Server Essentials 到 Windows Server 2012 R2 Standard 的就地许可转换，以保持许可证相容性。
 
- 转换到 Windows Server 2012 R2 Standard 后，用户帐户和设备限制将被删除，但 Windows Server Essentials 独有的功能（如仪表板、远程 Web 访问和客户端计算机备份）仍然可用。 但是，由于这些功能在技术上的限制，最多只能支持 100 个用户帐户和 200 台设备。 客户端计算机备份功能将支持最多 75 台设备的备份。
+ 转换到 Windows Server 2012 R2 Standard 后，用户帐户和设备限制将被删除，但 Windows Server Essentials (（例如仪表板、远程 Web 访问和客户端计算机) 备份）独有的功能仍保持可用。 但是，由于这些功能在技术上的限制，最多只能支持 100 个用户帐户和 200 台设备。 客户端计算机备份功能将支持最多 75 台设备的备份。
 
 > [!IMPORTANT]
->   Windows Server 2012 R2 标准版要求在您的环境中为每个用户或设备提供客户端访问许可证（CAL）。 这不同于 Windows Server Essentials，后者不使用 CAL 模式，也不包含任何 Cal。 从 Windows Server Essentials 转换到 Windows Server 2012 R2 Standard 时，需要为环境购买适当数量和类型的 Cal （大多数客户购买用户 Cal）。
+>   对于环境中的每个用户或设备，Windows Server 2012 R2 Standard 都需要 () CAL 的客户端访问许可证。 这不同于 Windows Server Essentials，后者不使用 CAL 模式，也不包含任何 Cal。 从 Windows Server Essentials 转换到 Windows Server 2012 R2 Standard 时，需要为环境购买适当数量和类型的 Cal， (大多数客户购买用户 Cal) 。
 
 ## <a name="before-the-transition"></a>转换前
 
@@ -34,7 +34,7 @@ Windows Server 2016 是支持云的操作系统，它支持当前的工作负荷
     > [!IMPORTANT]
     >  如果不完整备份服务器数据，则无法将服务器还原到转换前的状态。
 
--   此外，请确保阅读并了解适用于 Windows Server 2012 R2 Standard 的最终用户许可协议（EULA）。 查看 EULA 的步骤：
+-   此外，请确保阅读并了解 (EULA) Windows Server 2012 R2 Standard 的最终用户许可协议。 查看 EULA 的步骤：
 
     1.  以管理员身份打开命令窗口。
 
@@ -49,18 +49,18 @@ Windows Server 2016 是支持云的操作系统，它支持当前的工作负荷
 
 1. 购买适用于你的环境的 Windows Server 2012 R2 Standard 许可证以及适当数量的用户和/或设备客户端访问许可证。
 
-    你可以从零售输出口、分销商处购买 Windows Server 2012 R2 Standard 的许可证，也可以通过[Microsoft 合作伙伴](https://pinpoint.microsoft.com/SelectCulture.aspx)的帮助。
+    你可以从零售输出口、分销商处购买 Windows Server 2012 R2 Standard 的许可证，也可以通过 [Microsoft 合作伙伴](https://pinpoint.microsoft.com/SelectCulture.aspx)的帮助。
 
    > [!NOTE]
    >  如果最初购买 Windows Server 2012 R2 Standard 并执行降级权限，将两个虚拟实例之一安装为 Windows Server Essentials，则无需再购买任何其他产品。
    >
-   >  如果通过批量许可渠道购买 Windows Server 2012 R2 Standard，则可以从批量许可服务中心（VLSC）下载 ISO 映像和 Windows Server 2012 R2 Standard 的产品密钥。
+   >  如果通过批量许可渠道购买 Windows Server 2012 R2 Standard，则可以从批量许可服务中心 (VLSC) 下载 ISO 映像和产品2012密钥。
    >
-   >  如果从任何其他渠道购买 Windows Server 2012 R2 标准版，则可以从[TechNet 评估中心](https://technet.microsoft.com/evalcenter/jj659306.aspx)下载适用于 Windows server ESSENTIALS 的 ISO 映像和评估版产品密钥。 下一步中介绍的转换操作会将评估产品转换为完全授权和受支持的产品。
+   >  如果从任何其他渠道购买 Windows Server 2012 R2 标准版，则可以从 [TechNet 评估中心](https://technet.microsoft.com/evalcenter/jj659306.aspx)下载适用于 Windows server ESSENTIALS 的 ISO 映像和评估版产品密钥。 下一步中介绍的转换操作会将评估产品转换为完全授权和受支持的产品。
 
 2. 以管理员身份打开 Windows PowerShell，然后运行以下命令：
 
-    **dism/online/set-edition： ServerStandard/accepteula/productkey：** *产品密钥*（其中*产品密钥*是 Windows Server 2012 R2 Standard 副本的产品密钥）。
+    **dism/online/set-edition： ServerStandard/accepteula/productkey：** *产品* 密钥 (其中 *产品密钥* 是 Windows Server 2012 R2 Standard) 副本的产品密钥。
 
     服务器将重新启动，完成转换过程。
 

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 93a73556-22ef-402d-b8d4-582b74c22bcf
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d6294fd14c395be2b25f4b9bb46c93ecf7721928
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 597f6349d96d29f06f06034504d5800e7e207eae
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181373"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623785"
 ---
 # <a name="create-the-cfgini-file"></a>创建 cfg.ini 文件
 
@@ -22,7 +22,7 @@ ms.locfileid: "87181373"
 
 -   当在目标计算机上使用预安装映像测试最终用户的体验时，“初始配置”部分用于指导你完成有人参与模式或无人参与模式下的安装过程。 若要执行此操作，请参阅[创建“初始配置”部分](Create-the-Cfg.ini-File.md#BKMK_CreateInit2)。
 
-##  <a name="create-the-initial-configuration-section"></a><a name="BKMK_CreateInit2"></a>创建 "初始配置" 部分
+##  <a name="create-the-initial-configuration-section"></a><a name="BKMK_CreateInit2"></a> 创建 "初始配置" 部分
  使用 cfg.ini 文件中的“初始配置”部分完成有人参与模式或无人参与模式下的安装过程。
 
 #### <a name="to-define-the-initial-configuration-section"></a>定义“初始配置”部分
@@ -101,13 +101,13 @@ ms.locfileid: "87181373"
     |*AcceptOEMEula*|（可选）表示用户接受合作伙伴许可协议。 此值可以为 True 或 False。 仅当服务器是从单独提供许可协议的合作伙伴那里购买时，才需要填写此字段。|
     |*CompanyName*|（可选）公司名称。 公司名称用于将服务器与公司相关联，并自定义你的公司报告。 长度不得超过 254 个字符。|
     |*国家/地区*|（可选）字符串代表所需国家/地区。 示例：US 代表美国。|
-    |*ServerName*|服务器名称可在网络上唯一地标识服务器。 你的服务器名称必须满足以下条件：<br /><br /> -最多可包含15个字符。<br /><br /> -可以包含字母、数字和连字符（-）。<br /><br /> -不得以连字符开头。<br /><br /> -不能包含任何空格。<br /><br /> -不能仅包含数字。<br /><br /> 示例：ContosoServer。|
+    |*ServerName*|服务器名称可在网络上唯一地标识服务器。 你的服务器名称必须满足以下条件：<br /><br /> -最多可包含15个字符。<br /><br /> -可以包含字母、数字和连字符， ( ) 。<br /><br /> -不得以连字符开头。<br /><br /> -不能包含任何空格。<br /><br /> -不能仅包含数字。<br /><br /> 示例：ContosoServer。|
     |*DNSName*|内部域将服务器和客户端计算机组合在一起以共享通用的数据库（用户名、密码和其他通用信息）。 用户会在登录到计算机时看到此名称，但是此名称仅在内部使用，并且与 Internet 域名不同。 内部域名必须满足与为 *ServerName* 指定的相同的条件。<br /><br /> 示例：contoso.local。|
     |*NetbiosName*|NetBIOS 名称用于标识服务器上运行的资源。 长度不得超过 15 个字符。 示例：Contoso。|
     |*语言*|（可选）指定显示语言。 只能是已安装的语言之一。 示例：en-us 代表美国英语。|
     |*区域设置*|（可选）使用 *LocaleID* 格式指定时间和货币格式。 示例：en-us 代表用英语显示货币和时间并采用美国标准格式。|
-    |*键盘*|键盘可以采用以下两种格式：<br /><br /> - **输入语言：键盘布局。** 例如 0409:00000409，其中 **:** 之前的 0409 为输入语言，而 **00000409** 为键盘布局。 可以在注册表项 **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard Layouts** 下找到键盘布局的列表。<br /><br /> - **输入语言： IME 标识符。** 下面是 IME 标识符的完整列表。<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {8F96574E-C86C-4bd6-9666-3F7327D4CBE8} 阿姆哈拉语输入方法<br /><br /> -{81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e} {FA550B04-5AD7-411F-A5AC-CA038EC515D7} Microsoft 拼音-简单快速（简体中文）<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {B2F9C502-1742-11D4-9790-0080C882687E} 中文（繁体）-新注音<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {4BDF9F03-C7D3-11D4-B2AB-0080C882687E} 中文（繁体）-仓颉<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {6024B45F-5C54-11D4-B921-0080C882687E} 中文（繁体）-快速<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {D38EFF65-AA46-4FD5-91A7-67845FB02F5B} 繁体中文数组<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {037B2C25-480C-4D7F-B027-D6CA6B69788A} 繁体中文大易<br /><br /> -{03B5835F-F03C-411B-9CE2-AA23E1171E36} {A76C93D9-5523-4E90-AAFA-4DB112F9AC76} Microsoft IME （日语）<br /><br /> -{A028AE76-01B1-46C2-99C4-ACD9858AE02F} {B5FE1F02-D5F2-4445-9C03-C568F23C99A1} Microsoft IME （韩语）<br /><br /> -{A1E2B86B-924A-4D43-80F6-8A820DF7190F} {B60AF051-257A-46BC-B9D3-84DAD819BAFB} 古朝鲜语 IME （韩语）<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {409C8376-007b-4357-4357-AE8E-AE8E-26316EE3FB0D} 彝语 Input 方法<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {3CAB88B7-CC3E-46A6-9765-B772AD7761FF} 提格里尼亚语输入法|
-    |*设置*|设置用户的更新选择。 使用以下值之一：<br /><br /> **-All**等于使用推荐的设置。<br /><br /> **-更新**等于安装重要更新。 （仅限）<br /><br /> **-None**等于不检查更新。|
+    |*键盘*|键盘可以采用以下两种格式：<br /><br /> - **输入语言：键盘布局。** 例如 0409:00000409，其中 **:** 之前的 0409 为输入语言，而 **00000409** 为键盘布局。 可以在注册表项 **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard Layouts** 下找到键盘布局的列表。<br /><br /> - **输入语言： IME 标识符。** 下面是 IME 标识符的完整列表。<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {8F96574E-C86C-4bd6-9666-3F7327D4CBE8} 阿姆哈拉语输入方法<br /><br /> -{81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e} {FA550B04-5AD7-411F-A5AC-CA038EC515D7} Microsoft 拼音-简单的 Fast (简体中文) <br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {B2F9C502-1742-11D4-9790-0080C882687E} 中文 (传统) -新注音<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {4BDF9F03-C7D3-11D4-B2AB-0080C882687E} 中文 (传统) -仓颉<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {6024B45F-5C54-11D4-B921-0080C882687E} 中文 (传统) -快速<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {D38EFF65-AA46-4FD5-91A7-67845FB02F5B} 繁体中文数组<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {037B2C25-480C-4D7F-B027-D6CA6B69788A} 繁体中文大易<br /><br /> -{03B5835F-F03C-411B-9CE2-AA23E1171E36} {A76C93D9-5523-4E90-AAFA-4DB112F9AC76} Microsoft IME (日语) <br /><br /> -{A028AE76-01B1-46C2-99C4-ACD9858AE02F} {B5FE1F02-D5F2-4445-9C03-C568F23C99A1} Microsoft IME (韩文) <br /><br /> -{A1E2B86B-924A-4D43-80F6-8A820DF7190F} {B60AF051-257A-46BC-B9D3-84DAD819BAFB} 古朝鲜语 IME (韩文) <br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {409C8376-007b-4357-4357-AE8E-AE8E-26316EE3FB0D} 彝语 Input 方法<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {3CAB88B7-CC3E-46A6-9765-B772AD7761FF} 提格里尼亚语输入法|
+    |*设置*|设置用户的更新选择。 使用以下值之一：<br /><br /> **-All** 等于使用推荐的设置。<br /><br /> **-更新** 等于安装重要更新。 （仅限）<br /><br /> **-None** 等于不检查更新。|
     |*UserName*|-在安装过程中创建的新管理员帐户的名称。 你的管理员和标准用户帐户名必须满足以下条件：<br /><br /> -最长可以为19个字符。<br /><br /> -不能包含/\ []  &#124; < > + =;, ? *<br /><br /> -不能以句点开头或结尾。<br /><br /> -不能包含两个连续的句点。<br /><br /> -不得与服务器名称或内部域名相同。<br /><br /> -不得与预定义用户名（如管理员或来宾）相同。|
     |*PlainTextPassword*|这是安装过程中创建的新管理员帐户的密码。<br /><br /> -长度必须至少为八个字符。<br /><br /> -必须包含以下四个类别中的至少三个：<br /><br /> -大写字符。<br /><br /> -小写字符。<br /><br /> 小数.<br /><br /> 符号.|
     |*StdUserName*|安装过程中创建的新标准用户帐户的名称。 请参阅 *UserName* 参数以了解相关要求。|
@@ -129,12 +129,12 @@ ms.locfileid: "87181373"
     |StaticIPv6Gateway|（可选）如果要配置静态 IP 地址而不是动态地址，请指定默认网关地址。|
     |ClientBackupOn|（可选）在新客户端加入服务器时，默认情况下关闭客户端备份。|
     |FileHistoryOn|（可选）在运行 Windows 8 Consumer Preview 的新客户端加入服务器时，默认情况下关闭文件历史记录备份。|
-    |EnableRWA|安装 Windows Server Essentials 时，它将启用远程 Web 访问，但会跳过路由器配置。 仅在产品的干净安装中支持此功能。 默认值为 False。|
+    |EnableRWA|安装 Windows Server Essentials 时，它将启用远程 Web 访问，但会跳过路由器配置。 仅在产品的干净安装中支持此功能。 默认值是 False。|
     |IPv4DNSForwarder|设置 IPv4 DNS Forwarder。|
     |IPv6DNSForwarder|设置 IPv6 DNS Forwarder。|
-    |LaunchPadHiddenTasks|-（可选）可以在快速启动板上隐藏 "备份项" 或/和 "管理" 仪表板条目。<br /><br /> -若要禁用仪表板： LaunchPadHiddenTasks = Microsoft.launchpad.admindashboard<br /><br /> -若要禁用备份： LaunchPadHiddenTasks =<br /><br /> -若要禁用备份和仪表板，请执行以下操作： LaunchPadHiddenTasks = Microsoft.launchpad.admindashboard|
+    |LaunchPadHiddenTasks|- (可选) 可以在快速启动板上隐藏备份项或/和管理仪表板条目。<br /><br /> -若要禁用仪表板： LaunchPadHiddenTasks = Microsoft.launchpad.admindashboard<br /><br /> -若要禁用备份： LaunchPadHiddenTasks =<br /><br /> -若要禁用备份和仪表板，请执行以下操作： LaunchPadHiddenTasks = Microsoft.launchpad.admindashboard|
 
-3.  保存该文件。 请确保将文件保存为 cfg.ini，而不是 cfg.ini.txt。
+3.  保存文件。 请确保将文件保存为 cfg.ini，而不是 cfg.ini.txt。
 
     > [!NOTE]
     >  你可以将该文件保存到可用于特定安装阶段的 U 盘中，cfg.ini 文件也可位于目标服务器上任何硬盘的根目录中。 必须确保将文件的编码设置为 ANSI 或 Unicode，不支持 UTF-8 编码。

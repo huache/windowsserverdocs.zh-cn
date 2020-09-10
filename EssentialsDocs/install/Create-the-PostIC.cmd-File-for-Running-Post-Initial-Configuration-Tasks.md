@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 99e258bc-0695-48c9-b694-a7f3cbe2a2d0
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f23acf905e1c0b090076efd75d2e104a1cb0d186
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 5a3ae6711d54d1c1f2bebdae6db3065fce970312
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181353"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623710"
 ---
 # <a name="create-the-posticcmd-file-for-running-post-initial-configuration-tasks"></a>创建用于运行后初始配置任务的 PostIC.cmd 文件
 
@@ -38,7 +38,7 @@ ms.locfileid: "87181353"
 
 4.  （可选）创建 SetupFailure.cmd 文件，该文件在 PostIC.cmd 返回 0 以外的任何值时运行代码。
 
-###  <a name="setupfailurecmd"></a><a name="BKMK_SetupFailure"></a>Setupfailure.cmd
+###  <a name="setupfailurecmd"></a><a name="BKMK_SetupFailure"></a> Setupfailure.cmd
  可以使用 SetupFailure.cmd 提供有关初始配置问题的通知。 SetupFailure.cmd 文件包含出现问题时要运行的代码。 SetupFailure.cmd 文件位于 C:\Windows\Setup\Scripts，当执行安装任务过程中出现问题或当 PostIC.cmd 文件返回 0 以外的值时会运行该文件。
 
 ##### <a name="to-define-notifications"></a>定义通知

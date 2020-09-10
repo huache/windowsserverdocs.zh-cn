@@ -3,16 +3,16 @@ title: tscon
 description: Tscon 的参考文章，用于连接到远程桌面会话主机 (rd 会话主机) 服务器上的另一个会话。
 ms.topic: reference
 ms.assetid: 315a9793-cd10-4987-bb68-89a9d13f7fce
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d0acb75411cae8c4d844e8ff2b113c6a9c638a9b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2ba6df3a8878c42ac8ce8ac88671bb645bfedf86
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026875"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624607"
 ---
 # <a name="tscon"></a>tscon
 
@@ -41,7 +41,7 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 -   您必须具有 "完全控制" 访问权限或 "连接" 特殊访问权限才能连接到另一个会话。
 -   使用 **/dest：** < *SessionName*> 参数，可以将另一个用户的会话连接到不同的会话。
 -   如果未在 <*password*> 参数中指定密码，并且目标会话所属的用户不是当前用户，则 **tscon** 会失败。

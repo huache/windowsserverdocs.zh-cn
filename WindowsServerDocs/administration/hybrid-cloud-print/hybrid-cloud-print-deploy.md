@@ -4,15 +4,15 @@ description: 如何设置 Microsoft 混合云打印
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247c5e9
 ms.topic: how-to
 author: msjimwu
-ms.author: coreyp
-manager: dongill
+ms.author: jimwu
+manager: mtillman
 ms.date: 3/15/2018
-ms.openlocfilehash: 253cf78e39809473fc865de90915b6a9f870d098
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 769e9db9be5121b47c72b076bba3a78be841c5de
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992766"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625158"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>部署 Windows Server 混合云打印
 
@@ -26,27 +26,27 @@ ms.locfileid: "87992766"
 
 - Azure AD 高级订阅。
 
-  请参阅[azure 订阅入门](https://azure.microsoft.com/trial/get-started-active-directory/)，了解 azure 的试用订阅。
+  请参阅 [azure 订阅入门](https://azure.microsoft.com/trial/get-started-active-directory/) ，了解 azure 的试用订阅。
 
 - MDM 服务，例如 Intune。
 
-  请参阅[Microsoft Intune](https://www.microsoft.com/cloud-platform/microsoft-intune) ，了解 Intune 的试用订阅。
+  请参阅 [Microsoft Intune](https://www.microsoft.com/cloud-platform/microsoft-intune) ，了解 Intune 的试用订阅。
 
 - 运行 Active Directory 的 Windows Server 2016 或更高版本计算机。
 
-  有关设置 Active Directory 的帮助，请参阅[在 Windows Server 2016 中设置 Active Directory](/archive/blogs/canitpro/step-by-step-setting-up-active-directory-in-windows-server-2016) 。
+  有关设置 Active Directory 的帮助，请参阅 [在 Windows Server 2016 中设置 Active Directory](/archive/blogs/canitpro/step-by-step-setting-up-active-directory-in-windows-server-2016) 。
 
 - 一个专用的、已加入域的 Windows Server 2016 或更高版本的计算机，作为打印服务器运行。
 
 - 一个专用的、已加入域的 Windows Server 2016 或更高版本的计算机，作为连接器服务器运行。
 
-  有关详细信息，请参阅[了解 Azure AD 应用程序代理连接器](/azure/active-directory/manage-apps/application-proxy-connectors)。
+  有关详细信息，请参阅 [了解 Azure AD 应用程序代理连接器](/azure/active-directory/manage-apps/application-proxy-connectors) 。
 
 - Windows 10 秋季创建者更新或更高版本的计算机，用于发布打印机。
 
 - 面向公众的域名。
 
-  你可以使用 Azure (*domainname*) 创建的域名，或购买你自己的域名。 请参阅[使用 Azure Active Directory 门户添加自定义域名](/azure/active-directory/fundamentals/add-custom-domain)。
+  你可以使用 Azure (*domainname*) 创建的域名，或购买你自己的域名。 请参阅 [使用 Azure Active Directory 门户添加自定义域名](/azure/active-directory/fundamentals/add-custom-domain)。
 
 ## <a name="deployment-steps"></a>部署步骤
 
@@ -54,13 +54,13 @@ ms.locfileid: "87992766"
 
 ### <a name="step-1---install-azure-ad-connect"></a>步骤 1-安装 Azure AD Connect
 
-1. Azure AD connect Azure AD 同步到本地 AD。 在带有 Active Directory 的 Windows Server 计算机上，下载并安装具有快速设置的 Azure AD Connect 软件。 请参阅[使用快速设置开始使用 Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-express)。
+1. Azure AD connect Azure AD 同步到本地 AD。 在带有 Active Directory 的 Windows Server 计算机上，下载并安装具有快速设置的 Azure AD Connect 软件。 请参阅 [使用快速设置开始使用 Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-express)。
 
 ### <a name="step-2---install-application-proxy"></a>步骤 2-安装应用程序代理
 
 1. 应用程序代理允许组织中的用户访问云中的本地应用程序。 在连接器服务器上安装应用程序代理。
-    - 有关安装说明，请参阅[教程：在 Azure Active Directory 中通过应用程序代理添加用于远程访问的本地应用程序](/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)。
-    - 如果组织具有复杂的网络拓扑，则建议使用专用连接器组。 请参阅[使用连接器组在单独的网络和位置上发布应用程序](/azure/active-directory/manage-apps/application-proxy-connector-groups)。
+    - 有关安装说明，请参阅 [教程：在 Azure Active Directory 中通过应用程序代理添加用于远程访问的本地应用程序](/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)。
+    - 如果组织具有复杂的网络拓扑，则建议使用专用连接器组。 请参阅 [使用连接器组在单独的网络和位置上发布应用程序](/azure/active-directory/manage-apps/application-proxy-connector-groups)。
 
 ### <a name="step-3---register-and-configure-applications"></a>步骤 3-注册和配置应用程序
 
@@ -71,30 +71,30 @@ ms.locfileid: "87992766"
 
     ![AAD 应用注册1](../media/hybrid-cloud-print/AAD-AppRegistration.png)
 
-    - 输入 Mopria 发现服务的应用名称。 单击 "**注册**" 完成操作。
+    - 输入 Mopria 发现服务的应用名称。 单击 " **注册** " 完成操作。
 
     ![AAD 应用注册2](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria.png)
 
     - 针对企业云打印服务重复此操作。
     - 对于本机应用重复此操作。
-    - 这三个应用程序应显示在**应用注册**下。
+    - 这三个应用程序应显示在 **应用注册**下。
 
     ![AAD 应用注册3](../media/hybrid-cloud-print/AAD-AppRegistration-AllApps.png)
 
 2. 公开2个 Web 应用程序的 API。
-    - 在**应用注册**边栏选项卡中，单击 Mopria 发现服务应用，选择 "**公开 API**"，然后单击 "应用程序 ID URI" 旁的 "**设置**"。
+    - 在 **应用注册** 边栏选项卡中，单击 Mopria 发现服务应用，选择 " **公开 API**"，然后单击 "应用程序 ID URI" 旁的 " **设置** "。
 
     ![AAD 公开 API 1](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria-ExposeAPI.png)
 
-    - 单击 "**保存**" 而不更改应用程序 ID URI 的默认值。 只需设置此值，稍后将进行更改。
+    - 单击 " **保存** " 而不更改应用程序 ID URI 的默认值。 只需设置此值，稍后将进行更改。
 
     ![AAD 公开 API 2](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria-ExposeAPI-Save.png)
 
-    - 单击 "**添加作用域**"。
+    - 单击 " **添加作用域**"。
 
     ![AAD 公开 API 3](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria-ExposeAPI-AddScope.png)
 
-    - 提供一个作用域名称，允许管理员和用户同意，输入同意说明，然后单击 "**添加范围**" 完成操作。
+    - 提供一个作用域名称，允许管理员和用户同意，输入同意说明，然后单击 " **添加范围** " 完成操作。
 
     ![AAD 公开 API 4](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria-ExposeAPI-ScopeName.png)
 
@@ -107,11 +107,11 @@ ms.locfileid: "87992766"
 
     ![AAD API 权限1](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission.png)
 
-    - 切换到**我的组织使用的 api**，然后使用搜索框查找先前添加的 Mopria 发现服务。 从搜索结果中单击该服务。
+    - 切换到 **我的组织使用的 api**，然后使用搜索框查找先前添加的 Mopria 发现服务。 从搜索结果中单击该服务。
 
     ![AAD API 权限2](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-Mopria.png)
 
-    - 选择 "**委托的权限**"。 选中 "API" 作用域旁边的复选框。 单击 "**添加权限**"。
+    - 选择 " **委托的权限**"。 选中 "API" 作用域旁边的复选框。 单击 " **添加权限**"。
 
     ![AAD API 权限3](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-Mopria-Add.png)
 
@@ -119,7 +119,7 @@ ms.locfileid: "87992766"
 
     ![AAD API 权限4](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-ECP-Add.png)
 
-    - 返回到 "API 权限" 边栏选项卡后，请等待10秒钟，然后单击 "**总计管理员许可 ...**"。
+    - 返回到 "API 权限" 边栏选项卡后，请等待10秒钟，然后单击 " **总计管理员许可 ...**"。
 
     ![AAD API 权限5](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-GrantConsent.png)
 
@@ -136,7 +136,7 @@ ms.locfileid: "87992766"
 
     ![AAD 应用代理1](../media/hybrid-cloud-print/AAD-EnterpriseApp-AllApps.png)
 
-    - 单击 "**应用程序代理**"。 使用格式输入内部 Url `https://<fully qualified domain name of the Print Server>/mcs/` 。 单击 "**保存**" 完成操作。
+    - 单击 " **应用程序代理**"。 使用格式输入内部 Url `https://<fully qualified domain name of the Print Server>/mcs/` 。 单击 " **保存** " 完成操作。
 
     ![AAD 应用代理2](../media/hybrid-cloud-print/AAD-EnterpriseApp-Mopria-AppProxy.png)
 
@@ -144,7 +144,7 @@ ms.locfileid: "87992766"
 
     ![AAD 应用代理3](../media/hybrid-cloud-print/AAD-EnterpriseApp-ECP-AppProxy.png)
 
-    - 转到“Azure Active Directory” > “应用注册”。  单击 Mopria 发现服务。 请注意，在 "**概述**" 下，应用程序 ID URI 已从默认值更改为 "**应用程序代理**" 下的外部 URL。 此 URI 将在打印服务器安装过程中、客户端 MDM 策略和发布打印机中使用。
+    - 转到“Azure Active Directory” > “应用注册”。  单击 Mopria 发现服务。 请注意，在 " **概述**" 下，应用程序 ID URI 已从默认值更改为 " **应用程序代理**" 下的外部 URL。 此 URI 将在打印服务器安装过程中、客户端 MDM 策略和发布打印机中使用。
 
     ![AAD 应用代理4](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria-Overview.png)
 
@@ -154,11 +154,11 @@ ms.locfileid: "87992766"
     - 针对企业云打印服务重复此操作。
 
 6. 在本机应用程序中配置重定向 URI
-    - 转到“Azure Active Directory” > “应用注册”。  单击本机应用。 请参阅**概述**并将**应用程序复制 (客户端) ID**。
+    - 转到“Azure Active Directory” > “应用注册”。  单击本机应用。 请参阅 **概述** 并将 **应用程序复制 (客户端) ID**。
 
     ![AAD 重定向 URI 1](../media/hybrid-cloud-print/AAD-AppRegistration-Native-Overview.png)
 
-    - 请参阅**身份验证**。 将 "**类型**" 下拉框更改为 `Public...` ，并使用以下格式输入两个重定向 uri，其中 `<NativeClientAppID>` 是上一步：
+    - 请参阅 **身份验证**。 将 " **类型** " 下拉框更改为 `Public...` ，并使用以下格式输入两个重定向 uri，其中 `<NativeClientAppID>` 是上一步：
 
         `ms-appx-web://Microsoft.AAD.BrokerPlugin/<NativeClientAppID>`
 
@@ -166,7 +166,7 @@ ms.locfileid: "87992766"
 
     ![AAD 重定向 URI 2](../media/hybrid-cloud-print/AAD-AppRegistration-Native-Authentication.png)
 
-    - 单击 "**保存**" 完成操作。
+    - 单击 " **保存** " 完成操作。
 
 ### <a name="step-4---setup-the-print-server"></a>步骤 4-设置打印服务器
 
@@ -174,14 +174,14 @@ ms.locfileid: "87992766"
     - 安装以下服务器角色：
         - 打印服务器角色
         - Internet Information Service (IIS)
-    - 有关如何安装服务器角色的详细信息，请参阅[使用添加角色和功能向导安装角色、角色服务和功能](../server-manager/install-or-uninstall-roles-role-services-or-features.md#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard)。
+    - 有关如何安装服务器角色的详细信息，请参阅 [使用添加角色和功能向导安装角色、角色服务和功能](../server-manager/install-or-uninstall-roles-role-services-or-features.md#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard) 。
 
     ![打印服务器角色](../media/hybrid-cloud-print/PrintServer-Roles.png)
 
 2. 安装混合云打印 PowerShell 模块。
     - 在提升权限的 PowerShell 命令提示符下运行以下命令：
 
-        `find-module -Name PublishCloudPrinter`若要确认计算机可以访问 PowerShell 库 (PSGallery) 
+        `find-module -Name PublishCloudPrinter` 若要确认计算机可以访问 PowerShell 库 (PSGallery) 
 
         `install-module -Name PublishCloudPrinter`
 
@@ -210,9 +210,9 @@ ms.locfileid: "87992766"
 
     ![打印服务器云打印部署](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
 
-    - 检查日志文件以查看是否存在任何错误：`C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
+    - 检查日志文件以查看是否存在任何错误： `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
-4. 在提升的命令提示符下运行**RegitEdit** 。 中转到计算机 \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService。
+4. 在提升的命令提示符下运行 **RegitEdit** 。 中转到计算机 \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService。
     - 请确保将 AzureAudience 设置为企业云打印应用的应用程序 ID URI。
     - 请确保 AzureTenant 设置为 Azure AD 域名。
 
@@ -225,12 +225,12 @@ ms.locfileid: "87992766"
 
     ![打印服务器 Mopria 注册表项](../media/hybrid-cloud-print/PrintServer-RegEdit-Mopria.png)
 
-6. 在提升 Powershell 命令提示符下运行**iisreset** 。 这将确保在上一步中所做的任何注册表更改都生效。
+6. 在提升 Powershell 命令提示符下运行 **iisreset** 。 这将确保在上一步中所做的任何注册表更改都生效。
 
 7. 将 IIS 终结点配置为支持 SSL。
     - SSL 证书可以是自签名证书，也可以是从受信任的证书颁发机构颁发的证书 (CA) 。
-    - 如果使用自签名证书，请**确保将证书导入到客户端计算机 (s) **。
-    - 如果向第三方提供商注册您的域，则需要配置带 SSL 证书的 IIS 终结点。 有关详细信息，请参阅此[指南](https://www.sslsupportdesk.com/microsoft-server-2016-iis-10-10-5-ssl-installation/)。
+    - 如果使用自签名证书，请 **确保将证书导入到客户端计算机 (s) **。
+    - 如果向第三方提供商注册您的域，则需要配置带 SSL 证书的 IIS 终结点。 有关详细信息，请参阅此 [指南](https://www.sslsupportdesk.com/microsoft-server-2016-iis-10-10-5-ssl-installation/) 。
 
 8. 安装 SQLite 包。
    - 打开权限提升的 PowerShell 命令提示符。
@@ -303,11 +303,11 @@ ms.locfileid: "87992766"
 
 ### <a name="step-5-optional---configure-pre-authentication-with-azure-ad"></a>步骤 5 \[ \] （可选）-配置 Azure AD 的预身份验证
 
-1. 查看文档[Kerberos 约束委派，以便通过应用程序代理进行单一登录到你的应用程序](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd)。
+1. 查看文档 [Kerberos 约束委派，以便通过应用程序代理进行单一登录到你的应用程序](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd)。
 
 2. 配置本地 Active Directory。
     - 在 Active Directory 计算机上，打开 "服务器管理器并 **Tools**  >  **Active Directory" 用户和计算机**"中转到" 工具 "。
-    - 导航到 "**计算机**" 节点，然后选择连接器服务器。
+    - 导航到 " **计算机** " 节点，然后选择连接器服务器。
     - 右键单击并选择 " **属性**  ->  **委托**   选项卡"。
     - 选择 " **仅信任此计算机来委派指定的服务**"。
     - 选择 " **使用任何身份验证协议**"。
@@ -319,17 +319,17 @@ ms.locfileid: "87992766"
 3. 验证是否在 IIS 中启用了 Windows 身份验证。
     - 在打印服务器上，打开服务器管理器 > 工具 "> Internet 信息服务 (IIS) 管理器"。
     - 导航到此站点。
-    - 双击 "**身份验证**"。
+    - 双击 " **身份验证**"。
     - 单击 " **Windows 身份验证**" 并单击 "**操作**" 下的 "**启用**"。
     ![打印服务器 IIS 身份验证](../media/hybrid-cloud-print/PrintServer-IIS-Authentication.png)
 
 4. 配置单一登录。
     - 在 Azure 门户上，请参阅**Azure Active Directory**  >  **企业应用程序**""  >  **所有应用**程序 "。
     - 选择 MopriaDiscoveryService 应用。
-    - 中转到 "**应用程序代理**"。 将预身份验证方法更改为**Azure Active Directory**。
+    - 中转到 " **应用程序代理**"。 将预身份验证方法更改为 **Azure Active Directory**。
     - 转到“单一登录”****。 选择 "集成 Windows 身份验证" 作为 "单一登录方法"。
-    - 将 "**内部应用程序 spn** " 设置为打印服务器计算机的 spn。
-    - 将**委派的登录标识**设置为用户主体名称。
+    - 将 " **内部应用程序 spn** " 设置为打印服务器计算机的 spn。
+    - 将 **委派的登录标识** 设置为用户主体名称。
     - 对 EntperiseCloudPrint 应用重复此步骤。
     ![AAD 单一登录 IWA](../media/hybrid-cloud-print/AAD-SingleSignOn-IWA.png)
 
@@ -357,13 +357,13 @@ ms.locfileid: "87992766"
 |打印机发现服务资源 URI  |MopriaDiscoveryResourceId      |
 
 > [!NOTE]
-> 如果云打印策略组不可用，但 MDM 提供程序支持 OMA URI 设置，则可以设置相同的策略。  有关其他信息，请参阅[此](/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)信息。
+> 如果云打印策略组不可用，但 MDM 提供程序支持 OMA URI 设置，则可以设置相同的策略。  有关其他信息，请参阅 [此](/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority) 信息。
 
 - OMA-URI 的值
   - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
-    - 值 =`https://login.microsoftonline.com/<Azure AD Directory ID>`
+    - 值 = `https://login.microsoftonline.com/<Azure AD Directory ID>`
   - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
-    - 值 =`<Azure AD Native App's Application ID>`
+    - 值 = `<Azure AD Native App's Application ID>`
   - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
     - 值 = Mopria 发现服务应用 (的外部 URL 必须完全相同，但没有尾随 `/`) 
   - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
@@ -382,13 +382,13 @@ ms.locfileid: "87992766"
 5. 准备 Windows 10 秋季创建者更新或更高版本的计算机。 将计算机加入到 Azure AD，并以与本地 Active Directory 同步的用户身份登录，并向 MopriaDeviceDb 文件授予适当的权限。
 6. 在 Windows 10 计算机上，打开提升的 Windows PowerShell 命令提示符。
     - 运行以下命令。
-        - `find-module -Name PublishCloudPrinter`若要确认计算机可以访问 PowerShell 库 (PSGallery) 
+        - `find-module -Name PublishCloudPrinter` 若要确认计算机可以访问 PowerShell 库 (PSGallery) 
         - `install-module -Name PublishCloudPrinter`
 
             > 注意：你可能会看到一条消息，指出 "PSGallery" 是不受信任的存储库。  输入 "y" 以继续安装。
 
         - `Publish-CloudPrinter`
-        - Printer = 共享打印机名称。 此名称必须与在打印服务器上打开的打印机属性 "**共享**" 选项卡中显示的共享名称完全匹配。
+        - Printer = 共享打印机名称。 此名称必须与在打印服务器上打开的打印机属性 " **共享** " 选项卡中显示的共享名称完全匹配。
 
         ![打印服务器打印机属性](../media/hybrid-cloud-print/PrintServer-PrinterProperties.png)
 
@@ -400,7 +400,7 @@ ms.locfileid: "87992766"
 
         - Sddl = 用于表示打印机权限的 SDDL 字符串。
             - 以管理员身份登录到打印服务器，然后针对要发布的打印机运行以下 PowerShell 命令： `(Get-Printer PrinterName -full).PermissionSDDL` 。
-            - 将**O:BA**作为前缀添加到上述命令中的结果。 例如 如果上一个命令返回的字符串为 G:DUD： (; OICI; FA;;;WD) ，则 SDDL = O:BAG： DUD： (A; OICI; FA;;;WD) 。
+            - 将 **O:BA** 作为前缀添加到上述命令中的结果。 例如 如果上一个命令返回的字符串为 G:DUD： (; OICI; FA;;;WD) ，则 SDDL = O:BAG： DUD： (A; OICI; FA;;;WD) 。
         - DiscoveryEndpoint = 登录到 Azure 门户然后从企业应用程序 > Mopria Discovery 服务应用程序 > 应用程序代理 > 外部 URL 获取字符串。 省略结尾/。
         - PrintServerEndpoint = 登录到 Azure 门户然后从企业应用程序 > 企业云打印应用程序 > 应用程序代理 > 外部 URL 获取字符串。 省略结尾/。
         - AzureClientId = 已注册的本机应用程序的应用程序 ID。
@@ -429,13 +429,13 @@ ms.locfileid: "87992766"
 - 打开 web 浏览器并浏览到 https://mopriadiscoveryservice- *tenant-name*msappproxy.net/mcs/services。
 - 应该会看到描述此终结点功能集的 JSON 文本。
 - 请参阅**设置**  >  **设备**  >  **打印机 & 扫描仪**。
-    - 单击 "**添加打印机或扫描程序**"。
+    - 单击 " **添加打印机或扫描程序**"。
     - 你应该会在更新的 Windows 10 计算机上查看云打印机 (或搜索) 链接上的打印机。
     - 单击链接。
     - 单击 "请选择搜索位置" 链接。
         - 应会看到设备位置层次结构。
-    - 选择一个位置，然后单击 **"确定"** ，然后单击 "**搜索**" 按钮查找打印机。
-    - 选择 "打印机"，然后单击 "**添加设备**按钮"。
+    - 选择一个位置，然后单击 **"确定"** ，然后单击 " **搜索** " 按钮查找打印机。
+    - 选择 "打印机"，然后单击 " **添加设备** 按钮"。
     - 安装成功后，请从喜欢的应用打印到打印机。
 
 > 注意：如果使用 EcpPrintTest 打印机，则可以在 "C： ECPTestOutput EcpTestPrint" 位置下的打印服务器计算机中找到输出文件 \\ \\ 。
@@ -446,15 +446,15 @@ ms.locfileid: "87992766"
 
 |错误 |建议的步骤 |
 |------|------|
-|CloudPrintDeploy PowerShell 脚本失败 | <ul><li>确保 Windows Server 具有最新更新。</li><li>如果使用 Windows Server Update Services (WSUS) ，请参阅[如何在使用 wsus/SCCM 时提供按需功能和语言包](/windows/deployment/update/fod-and-lang-packs)。</li></ul> |
+|CloudPrintDeploy PowerShell 脚本失败 | <ul><li>确保 Windows Server 具有最新更新。</li><li>如果使用 Windows Server Update Services (WSUS) ，请参阅 [如何在使用 wsus/SCCM 时提供按需功能和语言包](/windows/deployment/update/fod-and-lang-packs)。</li></ul> |
 |SQLite 安装失败，出现以下消息：检测到包 "system.string" 的依赖关系循环 | 安装包 SkipDependencies-providername nuget-providername<br>安装包 EF6-providername nuget-SkipDependencies<br>安装包 system.object-providername-providername nuget-SkipDependencies<br><br>成功下载包后，请确保它们都是相同的版本。 如果没有，请将-requiredversion 参数添加到上述命令，并将其设置为相同版本。 |
-|发布打印机失败 | <ul><li>对于 "直通预身份验证"，请确保为发布打印机的用户提供对发布数据库的适当权限。</li><li>对于 Azure AD 预身份验证，请确保在 IIS 中启用 Windows 身份验证。 请参阅步骤5.3。 此外，先尝试先传递预身份验证。 如果直通预身份验证正常工作，则问题可能与应用程序代理有关。 请参阅[排查应用程序代理问题和错误消息](/azure/active-directory/manage-apps/application-proxy-troubleshoot)。 请注意，切换到 passthrough 会重置单一登录设置;重新访问步骤5，重新设置 Azure AD 预身份验证。</li></ul> |
+|发布打印机失败 | <ul><li>对于 "直通预身份验证"，请确保为发布打印机的用户提供对发布数据库的适当权限。</li><li>对于 Azure AD 预身份验证，请确保在 IIS 中启用 Windows 身份验证。 请参阅步骤5.3。 此外，先尝试先传递预身份验证。 如果直通预身份验证正常工作，则问题可能与应用程序代理有关。 请参阅 [排查应用程序代理问题和错误消息](/azure/active-directory/manage-apps/application-proxy-troubleshoot)。 请注意，切换到 passthrough 会重置单一登录设置;重新访问步骤5，重新设置 Azure AD 预身份验证。</li></ul> |
 |打印作业保持发送到打印机状态 | <ul><li>确保连接器服务器上启用了 TLS 1.2。 请参阅步骤2.1 中的链接项目。</li><li>确保连接器服务器上已禁用 HTTP2。 请参阅步骤2.1 中的链接项目。</li></ul> |
 
 下面是可以帮助进行故障排除的日志的位置
 
 |组件 |日志位置 |
 |------|------|
-|Windows 10 客户端 | <ul><li>使用事件查看器查看 Azure AD 操作的日志。 单击 "**开始**"，然后键入事件查看器。 导航到应用程序和服务日志 > Microsoft > Windows > AAD > 操作。</li><li>使用反馈中心收集日志。 请参阅[通过反馈中心应用将反馈发送到 Microsoft](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
-|连接器服务器 | 使用事件查看器查看应用程序代理的日志。 单击 "**开始**"，然后键入事件查看器。 导航到应用程序和服务日志 > Microsoft > AadApplicationProxy > 连接器 > Admin。 |
+|Windows 10 客户端 | <ul><li>使用事件查看器查看 Azure AD 操作的日志。 单击 " **开始** "，然后键入事件查看器。 导航到应用程序和服务日志 > Microsoft > Windows > AAD > 操作。</li><li>使用反馈中心收集日志。 请参阅 [通过反馈中心应用将反馈发送到 Microsoft](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
+|连接器服务器 | 使用事件查看器查看应用程序代理的日志。 单击 " **开始** "，然后键入事件查看器。 导航到应用程序和服务日志 > Microsoft > AadApplicationProxy > 连接器 > Admin。 |
 |打印服务器 | 可在 C:\inetpub\logs\LogFiles\W3SVC1. 中找到 Mopria 发现服务应用和企业云打印应用的日志 |

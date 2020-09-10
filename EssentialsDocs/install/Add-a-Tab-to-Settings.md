@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: aac6b7f3-9020-46c3-a83f-b81542300385
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d974f4dc53b9ce389254b162a3305b277181ceed
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 17f2d7c8a409ed49ea0f9bfa50952467e4694243
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181533"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623996"
 ---
 # <a name="add-a-tab-to-settings"></a>向“设置”添加选项卡
 
@@ -29,7 +29,7 @@ ms.locfileid: "87181533"
 
 -   [在引用计算机上安装程序集](Add-a-Tab-to-Settings.md#BKMK_InstallAssembly)。
 
-###  <a name="add-an-implementation-of-the-isettingsdata-interface-to-the-assembly"></a><a name="BKMK_ISettingsData"></a>向程序集添加 ISettingsData 接口的实现
+###  <a name="add-an-implementation-of-the-isettingsdata-interface-to-the-assembly"></a><a name="BKMK_ISettingsData"></a> 向程序集添加 ISettingsData 接口的实现
  ISettingsData 接口包含在 AdminCommon.dll 程序集的 Microsoft.WindowsServerSolutions.Settings 命名空间中，该程序集位于 \Program Files\Windows Server\Bin。
 
 ##### <a name="to-add-the-isettingsdata-code-to-the-assembly"></a>向程序集添加 ISettingsData 代码
@@ -144,10 +144,10 @@ ms.locfileid: "87181533"
 
 16. 保存并生成解决方案。
 
-###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>使用 Authenticode 签名为程序集签名
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a> 使用 Authenticode 签名为程序集签名
  你必须使用验证码签名进行程序集签名，因为该签名将在操作系统中使用。 有关对程序集签名的详细信息，请参阅 [Signing and Checking Code with Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)（使用验证码对代码进行签名和检查）。
 
-###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>在引用计算机上安装程序集
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a> 在引用计算机上安装程序集
  成功生成解决方案后，请在引用计算机上的以下文件夹中放入 DashboardSettingsPage.dll 文件的副本：
 
  **%Programfiles%\Windows Server\Bin\OEM**

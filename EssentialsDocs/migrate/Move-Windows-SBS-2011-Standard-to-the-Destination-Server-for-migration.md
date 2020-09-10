@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 16b24026-2fe3-4bd0-b82f-900e1564be99
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 1828eab791cb32a7af1aee62325a4270b1a2d983
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6a961f8bb201f9746b4e212801576ff287dc43b2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180545"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625677"
 ---
 # <a name="move-windows-sbs-2011-standard-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>将 Windows SBS 2011 Standard 设置和数据移到目标服务器进行 Windows Server Essentials 迁移
 
@@ -22,13 +22,13 @@ ms.locfileid: "87180545"
 
 1. [将数据复制到目标服务器](#copy-data-to-the-destination-server)
 
-2. [将 Active Directory 用户帐户导入 Windows Server Essentials 仪表板（可选）](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [将 Active Directory 用户帐户导入到 Windows Server Essentials 仪表板 (可选) ](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
 3. [将 DHCP 服务器角色从源服务器移到路由器](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
 
 4. [配置网络](#configure-the-network)
 
-5. [删除旧版 Active Directory 组策略对象（可选）](#remove-legacy-active-directory-group-policy-objects)
+5. [ (可选的组策略对象中删除旧 Active Directory) ](#remove-legacy-active-directory-group-policy-objects)
 
 6. [将允许的计算机映射到用户帐户](#map-permitted-computers-to-user-accounts)
 
@@ -52,8 +52,8 @@ ms.locfileid: "87180545"
  其中：
  - \<SourceServerName\> 是源服务器的名称
  - \<SharedSourceFolderName\> 是源服务器上的共享文件夹名称
- - \<DestinationServerName\>目标服务器的名称，
- - \<SharedDestinationFolderName\>是将数据复制到的目标服务器上的共享文件夹。
+ - \<DestinationServerName\> 目标服务器的名称，
+ - \<SharedDestinationFolderName\> 是将数据复制到的目标服务器上的共享文件夹。
 
 3. 对每个要从源服务器迁移的共享文件夹重复上一步。
 
@@ -115,7 +115,7 @@ ms.locfileid: "87180545"
 > 如果已在第二个服务器上设置了本地 Exchange 服务器，则必须确保端口 25（适用于 SMTP）也已打开，并且被重定向到本地 Exchange 服务器的 IP 地址。
 
 ## <a name="remove-legacy-active-directory-group-policy-objects"></a>删除旧 Active Directory 组策略对象
- 为 Windows Server Essentials 更新组策略对象（Gpo）。 它们是包含 Windows Small Business Server 2011 GPO 的一个超集。 对于 Windows Server Essentials，必须手动删除大量 Windows Small Business Server 2011 Gpo 和 Windows Management Instrumentation （WMI）筛选器，以防止与 Windows Server Essentials Gpo 和 WMI 筛选器发生冲突。
+ 为 Windows Server Essentials 更新 (Gpo) 的组策略对象。 它们是包含 Windows Small Business Server 2011 GPO 的一个超集。 对于 Windows Server Essentials，必须手动删除大量 Windows Small Business Server 2011 Gpo 和 Windows Management Instrumentation (WMI) 筛选器，以防止与 Windows Server Essentials Gpo 和 WMI 筛选器发生冲突。
 
 > [!NOTE]
 > 如果你修改了原始的 Windows Small Business Server 2011 组策略对象，则应该将其副本保存到其他的位置，然后将其从 Windows Small Business Server 2011 删除。
@@ -162,9 +162,9 @@ ms.locfileid: "87180545"
 
 5. 右键单击“Windows SBS 客户端”****、单击“删除”****，然后单击“是”****。
 
-6. 右键单击 " **WINDOWS SBS 客户端 windows 7 和 Windows Vista**"，单击 "**删除**"，然后单击 **"是"**。
+6. 右键单击 " **WINDOWS SBS 客户端 windows 7 和 Windows Vista**"，单击 " **删除**"，然后单击 **"是"**。
 
-7. 右键单击 " **WINDOWS SBS 客户端 WINDOWS XP**"，单击 "**删除**"，然后单击 **"是"**。
+7. 右键单击 " **WINDOWS SBS 客户端 WINDOWS XP**"，单击 " **删除**"，然后单击 **"是"**。
 
 8. 确认已删除这三个 WMI 过滤器。
 

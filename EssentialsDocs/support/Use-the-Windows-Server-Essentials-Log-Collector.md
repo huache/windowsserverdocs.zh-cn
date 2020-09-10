@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 2a3e4d55addc493beb4a7561f2db11a41dc49e30
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 07e849fa8db3cdc4204de402c6fc0cb823881480
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180003"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624995"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>使用 Windows Server Essentials 日志收集器
 
@@ -150,11 +150,11 @@ ms.locfileid: "87180003"
 
 -   Library/Logs/Windows Server.log
 
--   Library/Logs/CrashReporter/快速启动板 <nnn \> （复制所有快速启动板-<nnn \> . 崩溃文件）
+-   Library/Logs/CrashReporter/快速启动板 <nnn \> (复制所有快速启动板 <nnn \> . 崩溃文件) 
 
--   Library/Logs/DiagnosticReports/快速启动板 <nnn \> （复制所有快速启动板-<nnn \> . 崩溃文件）
+-   Library/Logs/DiagnosticReports/快速启动板 <nnn \> (复制所有快速启动板 <nnn \> . 崩溃文件) 
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 -   [日志收集器错误疑难解答](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 

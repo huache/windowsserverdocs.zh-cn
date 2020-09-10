@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: aef9b8ca8e96b9d5c7a6670301a70e35fc72dfb9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 3325799dc8fb81ab15f8cb03102b9c6248526b74
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181543"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624007"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>将 Windows Server Essentials 添加为成员服务器
 
@@ -52,7 +52,7 @@ ms.locfileid: "87181543"
 
 4. 在“计算机名称”**** 的“域”**** 部分中，单击“更改”****。
 
-5. 在 "**计算机名/域更改**" 的 "**成员**" 部分中，选择是否要将运行 Windows server Essentials 的服务器加入**工作组**或**域**。
+5. 在 " **计算机名/域更改**" 的 " **成员** " 部分中，选择是否要将运行 Windows server Essentials 的服务器加入 **工作组** 或 **域**。
 
    -   若要将服务器添加到工作组，请键入 **workgroup**，然后单击“确定”****。
 

@@ -3,16 +3,16 @@ title: ftp delete
 description: Ftp delete 命令的参考文章，用于删除远程计算机上的文件。
 ms.topic: reference
 ms.assetid: 067c45f3-e4e8-4450-b8b6-836994f6adfe
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ebf1a770144409dca91ddea0a18a85536e05b926
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7a09e9abbe23582a2b5f2ba197a1877ffc62c7cc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038055"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624791"
 ---
 # <a name="ftp-delete"></a>ftp delete
 

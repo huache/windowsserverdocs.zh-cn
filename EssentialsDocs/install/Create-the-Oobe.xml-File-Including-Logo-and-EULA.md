@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 8a7b3cc1-21bb-4344-8110-f5d5959b370d
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 498fa182c74a40f5a4b6b9c3b1dbc43df1a5d6a2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: d6c1a721107d96f8a2a5de89f95c97ab87bf740a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181363"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623761"
 ---
 # <a name="create-the-oobexml-file-including-logo-and-eula"></a>创建包含徽标和 EULA 的 Oobe.xml 文件
 
@@ -56,7 +56,7 @@ ms.locfileid: "87181363"
    |-----------------------|----------------------------------------|
    |%windir%\system32\oobe\info 在 \| 单个国家/地区和单语言系统中发送服务器。|
    |%windir%\system32\oobe\info\default \\<语言\>|服务器将在一个国家/地区并采用多种语言系统进行发布。|
-   |%windir%\system32\oobe\info \\<国家/地区> \ 和%windir%\system32\oobe\info \\<国家/地区>\\<语言， \> \| 则服务器将发送到多个国家/地区，并且这些设置需要基于每个国家/地区的自定义，每个都使用一种语言。 其中 <"国家/地区"> 是部署服务器所在国家或地区的地理位置标识符（GeoID）的十进制版本，而 <language \> 是区域设置标识符（LCID）的十进制版本。|
+   |%windir%\system32\oobe\info \\<国家/地区> \ 和%windir%\system32\oobe\info \\<国家/地区>\\<语言， \> \| 则服务器将发送到多个国家/地区，并且这些设置需要基于每个国家/地区的自定义，每个都使用一种语言。 其中 <"国家/地区"> 是要在其中部署服务器的国家/地区的十进制版本的地理位置标识符 (GeoID) ，<language \> 是区域设置标识符的十进制版本 (LCID) 。|
 
    如果你有包含白色文本的备用公司徽标，由于背景是蓝色的，所以在设置流程中的显示效果可能更佳。  你可以通过设置注册表项和值来选择性地指定此徽标。
 

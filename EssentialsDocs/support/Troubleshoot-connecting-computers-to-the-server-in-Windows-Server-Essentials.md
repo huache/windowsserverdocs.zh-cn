@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: e832957a5d44851131cb622e4c3bf9d99d4e4a7f
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6314ef0baa92f6e6fe0d6a4bb2b49c3fcee6f893
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838266"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625073"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>将计算机连接到 Windows Server Essentials 中的服务器疑难解答
 
@@ -21,35 +21,35 @@ ms.locfileid: "87838266"
  本主题包含在将计算机连接到运行 Windows Server Essentials 或 Windows Server Essentials 的服务器时可能遇到的问题的疑难解答指南。
 
 > [!NOTE]
->  有关 Windows Server Essentials 和 Windows Server Essentials 社区中的最新疑难解答信息，建议访问[Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
+>  有关 Windows Server Essentials 和 Windows Server Essentials 社区中的最新疑难解答信息，建议访问 [Windows Server Essentials 论坛](/answers/topics/windows-server-essentials.html)。 Windows Server Essentials 论坛是寻求帮助或提出问题的好地方。
 
  本主题提供以下问题的解决方案：
 
 
--   问题1：[问题 1](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BMRK_Package)
+-   问题1： [问题 1](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BMRK_Package)
 
--   问题2：[问题 2](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssue2)
+-   问题2： [问题 2](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssue2)
 
--   问题3：[问题 3](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssue2a)
+-   问题3： [问题 3](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssue2a)
 
--   问题4：[问题 4](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueNetFramework)
+-   问题4： [问题 4](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueNetFramework)
 
--   问题5：[问题 5](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_Time)
+-   问题5： [问题 5](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_Time)
 
--   问题6：[问题 6](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ServiceStopped)
+-   问题6： [问题 6](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ServiceStopped)
 
--   问题7：[问题 7](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueReconnect)
+-   问题7： [问题 7](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueReconnect)
 
--   问题8：[问题 8](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_JoinWin7)
+-   问题8： [问题 8](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_JoinWin7)
 
--   问题9：[问题 9](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueAutologon)
+-   问题9： [问题 9](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueAutologon)
 
--   问题10：[问题 10](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueOldLogs)
+-   问题10： [问题 10](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueOldLogs)
 
--   问题11：[问题 11](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_UpgradeClientOS)
+-   问题11： [问题 11](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_UpgradeClientOS)
 
 
-##  <a name="issue-1"></a><a name="BMRK_Package"></a>问题1
+##  <a name="issue-1"></a><a name="BMRK_Package"></a> 问题1
  **问题**
 
  未能成功安装包。 请重新尝试安装 Windows Server Essentials 连接器。 如果问题仍然存在，请在将计算机连接到服务器时联系网络管理员错误
@@ -62,7 +62,7 @@ ms.locfileid: "87838266"
 
  完成其他所有更新或应用程序的安装。 如果出现提示，则重新启动计算机。
 
-##  <a name="issue-2"></a><a name="BKMK_ConnectorIssue2"></a>问题2
+##  <a name="issue-2"></a><a name="BKMK_ConnectorIssue2"></a> 问题2
  **问题**
 
  无法将计算机加入到 Windows Server Essentials
@@ -75,7 +75,7 @@ ms.locfileid: "87838266"
 
  使用仅包含 ASCII 字符的名称重命名客户端计算机，然后再次尝试将计算机添加到 Windows Server Essentials。
 
-##  <a name="issue-3"></a><a name="BKMK_ConnectorIssue2a"></a>问题3
+##  <a name="issue-3"></a><a name="BKMK_ConnectorIssue2a"></a> 问题3
  **问题**
 
  将计算机连接到服务器时，连接器软件安装已取消
@@ -100,13 +100,13 @@ ms.locfileid: "87838266"
 
 5.  右键单击某个服务器文件夹，然后单击 **“属性”**。
 
-6.  单击 **“安全”** 选项卡。
+6.  单击“安全”选项卡。
 
 7.  如果系统帐户不允许进行**完全控制**，则单击“编辑”****，然后单击“系统”****。 在“系统权限”下****，选中“完全控制”**** 旁边的“允许”复选框****。
 
 8.  单击“确定”**** 两次，更新这些权限并关闭“属性”****。
 
-##  <a name="issue-4"></a><a name="BKMK_ConnectorIssueNetFramework"></a>问题4
+##  <a name="issue-4"></a><a name="BKMK_ConnectorIssueNetFramework"></a> 问题4
  **问题**
 
  若要运行此应用程序，必须在将计算机连接到服务器时安装 .NET Framework： V 4.5.50709 "错误的以下版本之一
@@ -129,7 +129,7 @@ ms.locfileid: "87838266"
 
 4.  成功卸载 .NET Framework 4.5 后，将计算机连接到服务器。 .NET Framework 4.5 的正确版本是随连接器软件一起安装的。
 
-##  <a name="issue-5"></a><a name="BKMK_Time"></a>问题5
+##  <a name="issue-5"></a><a name="BKMK_Time"></a> 问题5
  **问题**
 
  我获取的服务器不可用。 若要解决此问题，请联系网络的负责人。 错误
@@ -181,7 +181,7 @@ ms.locfileid: "87838266"
 
 6.  在客户端计算机上，再次尝试将客户端计算机连接到服务器。 有关说明，请参阅“将计算机连接到服务器”。
 
-##  <a name="issue-6"></a><a name="BKMK_ServiceStopped"></a>问题6
+##  <a name="issue-6"></a><a name="BKMK_ServiceStopped"></a> 问题6
  **问题**
 
  出现意外错误。 若要解决此问题，请联系网络的负责人。 错误
@@ -204,7 +204,7 @@ ms.locfileid: "87838266"
 
 3.  在 **“操作”** 窗格中，单击 **“启动”**。
 
-##  <a name="issue-7"></a><a name="BKMK_ConnectorIssueReconnect"></a>问题7
+##  <a name="issue-7"></a><a name="BKMK_ConnectorIssueReconnect"></a> 问题7
  **问题**
 
  如果尝试连接失败后再次尝试将计算机连接到服务器，会收到警告，此名称的计算机已连接到服务器
@@ -215,7 +215,7 @@ ms.locfileid: "87838266"
 
  **解决方案**如果你确定没有任何其他同名计算机已连接到服务器，请单击“下一步”****，然后按照说明完成“将我的计算机连接到服务器”**** 向导。
 
-##  <a name="issue-8"></a><a name="BKMK_JoinWin7"></a>问题8
+##  <a name="issue-8"></a><a name="BKMK_JoinWin7"></a> 问题8
  **问题**
 
  当我试图将运行 Windows 7 家庭版的客户端计算机连接到服务器时，运行连接器软件的网页打开了，但客户端计算机无法连接到服务器
@@ -228,7 +228,7 @@ ms.locfileid: "87838266"
 
  禁用路由器上的多播。 在某些路由器上，这可能包括禁用 RIP-2M 路由协议。 有关详细信息，请参考路由器制造商提供的文档。
 
-##  <a name="issue-9"></a><a name="BKMK_ConnectorIssueAutologon"></a>问题9
+##  <a name="issue-9"></a><a name="BKMK_ConnectorIssueAutologon"></a> 问题9
  **问题**
 
  将计算机连接到服务器后自动登录停止运行
@@ -242,7 +242,7 @@ ms.locfileid: "87838266"
 > [!NOTE]
 >  Windows Server Essentials 域帐户需要满足默认密码策略要求的密码。
 
-##  <a name="issue-10"></a><a name="BKMK_ConnectorIssueOldLogs"></a>问题10
+##  <a name="issue-10"></a><a name="BKMK_ConnectorIssueOldLogs"></a> 问题10
  **问题**
 
  卸载预发布版本的连接器软件不会删除现有日志
@@ -263,7 +263,7 @@ ms.locfileid: "87838266"
 
 3.  重新将计算机连接到服务器。 这将安装已发布的连接器软件版本，创建新的日志文件夹和日志文件。
 
-##  <a name="issue-11"></a><a name="BKMK_UpgradeClientOS"></a>问题11
+##  <a name="issue-11"></a><a name="BKMK_UpgradeClientOS"></a> 问题11
  **问题**
 
  我希望在客户端计算机上升级操作系统

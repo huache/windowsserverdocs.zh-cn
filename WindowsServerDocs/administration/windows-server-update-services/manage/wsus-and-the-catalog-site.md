@@ -3,16 +3,16 @@ title: WSUS 和目录站点
 description: Windows Server Update 服务 (WSUS) 主题-如何通过访问 Microsoft 更新目录站点将修补程序导入到 WSUS
 ms.topic: article
 ms.assetid: f19a8659-5a96-4fdd-a052-29e4547fe51a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 25a9852935c47e0c005d78ae7ea24d14c7c1a546
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7e0d3c76e66275fe052d5d337dd30c67d7980638
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896785"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624277"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS 和目录站点
 
@@ -25,13 +25,13 @@ ms.locfileid: "87896785"
 
 #### <a name="to-access-the-microsoft-update-catalog-site"></a>访问 Microsoft 更新目录站点
 
-1.  在 WSUS 管理控制台中，选择顶层服务器节点或**更新**，并在 "**操作**" 窗格中单击 "**导入更新**"。 此时会在 Microsoft 更新目录网站上打开一个浏览器窗口。
+1.  在 WSUS 管理控制台中，选择顶层服务器节点或  **更新**，并在 " **操作** " 窗格中单击 " **导入更新**"。 此时会在 Microsoft 更新目录网站上打开一个浏览器窗口。
 
 2.  若要访问此站点上的更新，必须安装 Microsoft 更新 Catalog activeX 控件。
 
 3.  可在此站点上浏览 Windows 修补程序和硬件驱动程序。 找到所需的文件后，将其添加到购物篮中。
 
-4.  完成浏览后，请转到购物篮，并单击 "导入" 以导入更新。 若要下载更新而不导入，请清除 "**直接导入 Windows Server Update Services** " 复选框。
+4.  完成浏览后，请转到购物篮，并单击 "导入" 以导入更新。 若要下载更新而不导入，请清除 " **直接导入 Windows Server Update Services** " 复选框。
 
 下次 WSUS 服务器同步时，将下载从 Microsoft 更新目录站点导入的已批准更新。 在从 Microsoft 更新目录站点导入时，它们不会下载。
 
@@ -53,13 +53,13 @@ WSUS 管理员可能会考虑将访问权限限制为从 Microsoft 更新目录�
 
     -   导航到 WSUS 管理网站下的内容节点。
 
-    -   在 "**内容" 主页**窗格中，双击 "**身份验证**" 选项。
+    -   在 " **内容" 主页** 窗格中，双击 " **身份验证** " 选项。
 
     -   选择 "**匿名身份验证**"，然后在右侧的 "**操作**" 窗格中单击 "**禁用**"。
 
     -   选择 " **Windows 身份验证**"，然后在右侧的 "**操作**" 窗格中单击 "**启用**"。
 
-2.  为需要修补程序的计算机创建 WSUS 目标组，并将其添加到组中。 有关计算机和组的详细信息，请参阅本指南中的[管理 Wsus 客户端计算机和 wsus 计算机组](managing-wsus-client-computers-and-wsus-computer-groups.md)和[3.3 部分。](../deploy/2-configure-wsus.md#23-configure-wsus-computer-groups)在 wsus 部署指南中配置步骤3：配置 wsus 的 wsus 计算机组。
+2.  为需要修补程序的计算机创建 WSUS 目标组，并将其添加到组中。 有关计算机和组的详细信息，请参阅本指南中的 [管理 Wsus 客户端计算机和 wsus 计算机组](managing-wsus-client-computers-and-wsus-computer-groups.md) 和 [3.3 部分。](../deploy/2-configure-wsus.md#23-configure-wsus-computer-groups) 在 wsus 部署指南中配置步骤3：配置 wsus 的 wsus 计算机组。
 
 3.  下载修补程序的文件。
 

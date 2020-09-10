@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 4cc616c0e23c58ab1298526784574f6bc8f65f23
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 3a73b744ca0b28802617881cbb64420f9f033dab
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180383"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625317"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>从 Windows Server Essentials 转换到 Windows Server 2012 Standard
 
@@ -21,10 +21,10 @@ ms.locfileid: "87180383"
  Windows Server &reg; 2012 Essentials 支持最多25个用户和50个设备。 当你的业务需求超过限制时，你可以执行从 Windows Server Essentials 到 Windows Server 2012 Standard 的就地许可转换，以保持许可证合规。
 
 ## <a name="how-the-transition-affects-user-and-device-limits"></a>转换如何影响用户和设备限制
- 过渡到 Windows Server 2012 Standard 后，用户帐户和设备限制将被删除，但 Windows Server Essentials 独有的功能（如仪表板、远程 Web 访问和客户端计算机备份）仍然可用。 但是，由于这些功能在技术上的限制，最多只能支持 75 个用户帐户和 75 台设备。 如果需要添加超过75个用户帐户或设备，则应关闭 Windows Server Essentials 功能并使用 Windows Server 2012 标准本机工具来管理用户帐户和设备。
+ 过渡到 Windows Server 2012 Standard 后，用户帐户和设备限制将被删除，但 Windows Server Essentials 独有的功能 (例如仪表板、远程 Web 访问和客户端计算机备份) ，仍保持可用。 但是，由于这些功能在技术上的限制，最多只能支持 75 个用户帐户和 75 台设备。 如果需要添加超过75个用户帐户或设备，则应关闭 Windows Server Essentials 功能并使用 Windows Server 2012 标准本机工具来管理用户帐户和设备。
 
 > [!IMPORTANT]
->   Windows Server 2012 Standard 需要为环境中的每个用户或设备提供客户端访问许可证（CAL）。 这不同于 Windows Server Essentials，后者不使用 CAL 模式，也不包含任何 Cal。  从 Windows Server Essentials 转换到 Windows Server 2012 Standard 时，需要为环境购买适当数量和类型的 Cal （大多数客户购买用户 Cal）。
+>   对于环境中的每个用户或设备，Windows Server 2012 Standard 都需要 () CAL 的客户端访问许可证。 这不同于 Windows Server Essentials，后者不使用 CAL 模式，也不包含任何 Cal。  从 Windows Server Essentials 转换到 Windows Server 2012 Standard 时，需要为环境购买适当数量和类型的 Cal， (大多数客户购买用户 Cal) 。
 
 ## <a name="before-the-transition"></a>转换前
 
@@ -33,7 +33,7 @@ ms.locfileid: "87180383"
     > [!IMPORTANT]
     >  如果不完整备份服务器数据，则无法将服务器还原到转换前的状态。
 
--   此外，请确保阅读并了解适用于 Windows Server 2012 Standard 的最终用户许可协议（EULA）。 查看 EULA 的步骤：
+-   此外，请确保阅读并了解有关 Windows Server 2012 Standard (EULA) 的最终用户许可协议。 查看 EULA 的步骤：
 
     1.  以管理员身份打开命令窗口。
 
@@ -50,20 +50,20 @@ ms.locfileid: "87180383"
 
 1. 购买适用于你的环境的 Windows Server 2012 Standard 许可证以及适当数量的用户和/或设备客户端访问许可证。
 
-    你可以从零售输出口、分销商处购买 Windows Server 2012 Standard 的许可证，也可以通过[Microsoft 合作伙伴](https://pinpoint.microsoft.com/SelectCulture.aspx)的帮助。
+    你可以从零售输出口、分销商处购买 Windows Server 2012 Standard 的许可证，也可以通过 [Microsoft 合作伙伴](https://pinpoint.microsoft.com/SelectCulture.aspx)的帮助。
 
    > [!NOTE]
    >  如果最初购买 Windows Server 2012 Standard 并执行降级权限，将两个虚拟实例之一安装为 Windows Server Essentials，则无需再购买任何其他产品。
    >
-   >  如果通过批量许可渠道购买 Windows Server 2012 Standard，则可以从批量许可服务中心（VLSC）下载 ISO 映像和 Windows Server 2012 Standard 的产品密钥。
+   >  如果通过批量许可渠道购买 Windows Server 2012 Standard，则可以从批量许可服务中心 (VLSC) 下载 ISO 映像和产品2012密钥。
    >
-   >  如果从所有其他渠道购买 Windows Server 2012 Standard，则可以从[TechNet 评估中心](https://technet.microsoft.com/evalcenter/jj659306.aspx)下载适用于 Windows server ESSENTIALS 的 ISO 映像和评估版产品密钥。 下一步中介绍的转换操作会将评估产品转换为完全授权和受支持的产品。
+   >  如果从所有其他渠道购买 Windows Server 2012 Standard，则可以从 [TechNet 评估中心](https://technet.microsoft.com/evalcenter/jj659306.aspx)下载适用于 Windows server ESSENTIALS 的 ISO 映像和评估版产品密钥。 下一步中介绍的转换操作会将评估产品转换为完全授权和受支持的产品。
 
 2. 以管理员身份打开 Windows PowerShell，然后运行如下命令。
 
     **dism /online /set-edition:ServerStandard /accepteula /productkey:** *产品密钥*
 
-    其中*产品密钥*是 Windows Server 2012 Standard 副本的产品密钥。
+    其中 *产品密钥* 是 Windows Server 2012 Standard 副本的产品密钥。
 
     服务器将重新启动，完成转换过程。
 
@@ -74,7 +74,7 @@ ms.locfileid: "87180383"
 ## <a name="turn-off--windows-server-essentials-features"></a>禁用 Windows Server Essentials 功能
  如果不再需要 Windows Server Essentials 仪表板或其他增值功能来管理服务器，则可以关闭这些功能并将其从服务器中删除。
 
- "**关闭 Windows Server Essentials 功能向导"：**
+ " **关闭 Windows Server Essentials 功能向导"：**
 
 - 帮助你卸载这些功能。 它还清除 Windows Server Essentials 服务器软件创建的文件服务器。  某些清除操作会立即执行，而某些操作则需要等到服务器重新启动之后才会启动。
 
@@ -82,7 +82,7 @@ ms.locfileid: "87180383"
 
 - 允许你选择是否在关闭 Windows Server Essentials 功能后保留客户端计算机的备份文件。
 
- 可以通过两种方法从仪表板运行 "关闭**Windows Server Essentials 功能向导**"：
+ 可以通过两种方法从仪表板运行 "关闭 **Windows Server Essentials 功能向导** "：
 
 #### <a name="from-the-alert"></a>通过警报运行
 
@@ -90,15 +90,15 @@ ms.locfileid: "87180383"
 
 2.  在 "组织" 列表中，选择在转换后报告有关关闭 Windows Server Essentials 功能的信息的警报。
 
-3.  在警报中，单击 "关闭**Windows Server Essentials 功能**"。
+3.  在警报中，单击 "关闭 **Windows Server Essentials 功能**"。
 
 #### <a name="from-the-get-help-and-support-pane"></a>通过“获取帮助和支持”窗格运行
 
 1. 在主页上单击“获取帮助和支持”。
 
-2. 单击 "关闭**Windows Server Essentials 功能向导**"。
+2. 单击 "关闭 **Windows Server Essentials 功能向导**"。
 
-   "关闭**Windows Server Essentials 功能向导**" 执行的某些任务可能不会成功完成。 某些情况下，这可能会阻止仪表板的运行。 如果发生此情况，你可以运行以下文件手动启动该向导：
+   "关闭 **Windows Server Essentials 功能向导** " 执行的某些任务可能不会成功完成。 某些情况下，这可能会阻止仪表板的运行。 如果发生此情况，你可以运行以下文件手动启动该向导：
 
    **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**
 

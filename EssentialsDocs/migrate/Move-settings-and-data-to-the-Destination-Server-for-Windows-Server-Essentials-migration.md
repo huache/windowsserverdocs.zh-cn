@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2b882e87-347a-4010-b7fd-9599d61198dd
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: a3e80eb391f913b4d62d8224afb7745eb2671289
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 4a37d8e39dde95a143c15a5573be0deb0291d827
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180533"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625652"
 ---
 # <a name="move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>将设置和数据移到目标服务器以进行 Windows Server Essentials 迁移
 
@@ -46,8 +46,8 @@ ms.locfileid: "87180533"
  其中：
  - \<SourceServerName\> 是源服务器的名称
  - \<SharedSourceFolderName\> 是源服务器上的共享文件夹名称
- - \<DestinationServerName\>目标服务器的名称，
- - \<SharedDestinationFolderName\>是将数据复制到的目标服务器上的共享文件夹。
+ - \<DestinationServerName\> 目标服务器的名称，
+ - \<SharedDestinationFolderName\> 是将数据复制到的目标服务器上的共享文件夹。
 
 3. 对每个要从源服务器迁移的共享文件夹重复上一步。
 

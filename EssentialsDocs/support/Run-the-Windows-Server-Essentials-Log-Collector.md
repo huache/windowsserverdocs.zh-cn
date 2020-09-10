@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 0d340223-fa24-4c75-ba8e-b654feb120ab
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 10871d4b0fef4e3d0271d0d94ef114cc5d882abf
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 34c853abb19424d94fa768c70fcb6c9d8d8feea8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180353"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625279"
 ---
 # <a name="run-the-windows-server-essentials-log-collector"></a>运行 Windows Server Essentials 日志收集器
 你可以从服务器或网络上的计算机运行 Windows Server Essentials 日志收集器。 如果你从服务器运行日志收集器，则仅可以从该服务器收集日志。 如果你从网络计算机运行日志收集器，则除了该计算机的日志之外，你还可以选择从该服务器收集日志。
@@ -21,10 +21,10 @@ ms.locfileid: "87180353"
 
 #### <a name="to-run-the-log-collector-on-the-server-by-using-the-wizard"></a>使用向导在服务器上运行日志收集器的步骤
 
-1. 在服务器的 "**开始**" 页上，单击 " **Windows Server Essentials 日志收集器**"。
+1. 在服务器的 " **开始** " 页上，单击 " **Windows Server Essentials 日志收集器**"。
 
    > [!NOTE]
-   > - 如果日志收集器程序未出现在 "**开始**" 页上，请浏览到 " **%system%\program files Files （X86） \Windows Server Essentials 日志收集器**"，然后双击 " **LogCollector**"。
+   > - 如果日志收集器程序未出现在 " **开始** " 页上，请浏览到 **%system%\program files Files (X86) \Windows Server Essentials 日志收集器**，然后双击 " **LogCollector**"。
    >   -   如果你未使用管理权限登录到该服务器，则日志收集器将提示你输入你的凭据。
 
 2. 当系统提示你提供保存所收集的日志文件的位置时，可以选择默认位置** \\ \\<ServerName \> \logs**，或指定其他位置。 若要接受默认位置，请单击 **“下一步”**。 若要更改位置，请单击 **“浏览”**，导航到要保存日志文件的文件夹，然后单击 **“保存”**。
@@ -38,7 +38,7 @@ ms.locfileid: "87180353"
 
 #### <a name="to-run-the-log-collector-on-a-network-computer-by-using-the-wizard"></a>使用向导在网络计算机上运行日志收集器的步骤
 
-1.  浏览到 **%System%\program files Files （x86） \Windows Server Essentials 日志收集器**，然后双击**LogCollector.exe**的文件。
+1.  浏览到 **%System%\program files 文件 (x86) \Windows Server Essentials 日志收集器**，然后双击该文件 **LogCollector.exe**。
 
     > [!NOTE]
     >  如果你未使用管理权限登录到网络计算机，请在收到提示时输入用户名和密码，然后单击 **“下一步”**。
@@ -49,7 +49,7 @@ ms.locfileid: "87180353"
 
     2.  默认选中 **“客户端计算机日志文件(此计算机)”** 复选框，指示日志收集器将从运行的网络计算机收集日志。 如果你只希望收集服务器日志，请清除 **“客户端计算机日志文件(此计算机)”** 复选框。
 
-    3.  单击“下一步”。
+    3.  单击“下一步”。 
 
 3.  当收到提示时，请键入服务器管理员的用户名和密码，然后单击 **“下一步”**。
 
