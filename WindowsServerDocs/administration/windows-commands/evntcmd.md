@@ -3,16 +3,16 @@ title: evntcmd
 description: Evntcmd 命令的参考文章，它基于配置文件中的信息配置将事件转换为陷阱、陷阱目标或两者。
 ms.topic: reference
 ms.assetid: c1aabb74-76e7-4304-95a6-50ad87e92fd9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 173cb9c2f1528748986daf753a9d213c5060e5d4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 50347e8ef8c007fa89b1b226f705d4dcd6935e60
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035865"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636029"
 ---
 # <a name="evntcmd"></a>evntcmd
 
@@ -36,7 +36,7 @@ evntcmd [/s <computername>] [/v <verbositylevel>] [/n] <filename>
 | `<filename>` | 按名称指定配置文件，该配置文件包含有关将事件转换为要配置的陷阱和陷阱目标的信息。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果要配置陷阱，而不是陷阱目标，则可以通过使用事件到陷阱转换器（一种图形实用程序）来创建有效的配置文件。 如果安装了 SNMP 服务，可以通过在命令提示符处键入 **evntwin** ，开始使用陷阱转换器事件。 定义所需的陷阱后，请单击 " **导出** " 以创建适用于 **evntcmd**的文件。 可以使用事件陷阱转换器轻松创建配置文件，然后在命令提示符下使用带有 **evntcmd** 的配置文件，在多台计算机上快速配置陷阱。
 

@@ -3,16 +3,16 @@ title: lpq
 description: Lpq 命令的参考文章，其中显示了运行 Line printer Daemon (LPD) 的计算机上打印队列的状态。
 ms.topic: reference
 ms.assetid: bb6abcc4-310a-4fa4-927b-4084b62ca02e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d495923b94884f0d4538839fcd3c1193e73ee938
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f112216f2692f1bef5156566c39431f4ecebc7a8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023701"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636573"
 ---
 # <a name="lpq"></a>lpq
 

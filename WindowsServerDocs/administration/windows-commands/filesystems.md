@@ -3,16 +3,16 @@ title: filesystems
 description: "\"文件系统\" 命令的参考文章，其中显示了具有焦点的卷的当前文件系统的相关信息，并列出了格式化卷时支持的文件系统。"
 ms.topic: reference
 ms.assetid: 3c4915a6-bd20-4af6-a94a-5fc7c20410bf
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e34edbf582ddfe366740bf08b6cb34082b06ec34
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c4c322e874e06fcb9b6d5d3e8ffc293821db8757
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036605"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636694"
 ---
 # <a name="filesystems"></a>filesystems
 

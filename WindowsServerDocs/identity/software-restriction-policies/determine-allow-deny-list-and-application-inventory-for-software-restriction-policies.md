@@ -3,16 +3,16 @@ title: 确定软件限制策略的“允许-拒绝”列表和应用程序清单
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 0abb73b6-b5d8-4505-8ab1-2f29e4bf0411
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 831508de2aae56aab53cbd1ff7820ea1af0da565
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9da7cc8490f5b660ed5ce327b4572dc968e10c48
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953034"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637863"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>确定软件限制策略的“允许-拒绝”列表和应用程序清单
 
@@ -21,7 +21,7 @@ ms.locfileid: "87953034"
 适用于 IT 专业人员的本主题提供了有关如何为应用程序创建的允许和拒绝列表， (SRP) 从 Windows Server 2008 和 Windows Vista 开始进行管理。
 
 ## <a name="introduction"></a>简介
-软件限制策略 (SRP) 是基于组策略的功能，用于标识在域中的计算机上运行的软件程序，以及控制这些程序的运行能力。 你可以使用软件限制策略创建计算机的高度受限配置，从而仅允许运行专门标识的应用程序。 它们与 Microsoft Active Directory 域服务和组策略集成在一起，但也可以在独立计算机上进行配置。 有关 SRP 的起点，请参阅[软件限制策略](software-restriction-policies.md)。
+软件限制策略 (SRP) 是基于组策略的功能，用于标识在域中的计算机上运行的软件程序，以及控制这些程序的运行能力。 你可以使用软件限制策略创建计算机的高度受限配置，从而仅允许运行专门标识的应用程序。 它们与 Microsoft Active Directory 域服务和组策略集成在一起，但也可以在独立计算机上进行配置。 有关 SRP 的起点，请参阅 [软件限制策略](software-restriction-policies.md)。
 
 从 Windows Server 2008 R2 和 Windows 7 开始，可以使用 Windows AppLocker，而不是与 SRP 一起使用，以获得部分应用程序控制策略。
 
@@ -50,7 +50,7 @@ ms.locfileid: "87953034"
 
     字符串值： *LogFileName 到 LogFileName 的路径*
 
-    由于 SRP 在运行时对所有应用程序进行评估，因此每次运行该应用程序时，都会将一个条目写入日志文件*NameLogFile* 。
+    由于 SRP 在运行时对所有应用程序进行评估，因此每次运行该应用程序时，都会将一个条目写入日志文件 *NameLogFile* 。
 
 3.  评估日志文件
 
@@ -66,5 +66,5 @@ ms.locfileid: "87953034"
 
     写入日志文件的输出示例：
 
-**explorer.exe (PID = 4728) identifiedC:\Windows\system32\onenote.exe 为不受限制的 usingpath 规则，Guid = {320bd852-aa7c-4674-82c5-9a80321670a3}**   SRP 检查并设置为 "阻止" 的所有应用程序和相关代码将记录在日志文件中，然后可以使用该日志文件来确定应将哪些可执行文件视为允许列表。
+**explorer.exe (PID = 4728) identifiedC:\Windows\system32\onenote.exe 为不受限制的 usingpath 规则，Guid = {320bd852-aa7c-4674-82c5-9a80321670a3}**    SRP 检查并设置为 "阻止" 的所有应用程序和相关代码将记录在日志文件中，然后可以使用该日志文件来确定应将哪些可执行文件视为允许列表。
 

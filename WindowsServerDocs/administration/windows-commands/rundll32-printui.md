@@ -3,16 +3,16 @@ title: rundll32.exe printui.dll，PrintUIEntry
 description: Rundll32.exe printui.dll，PrintUIEntry 命令的参考文章，可自动执行许多打印机配置任务。
 ms.topic: reference
 ms.assetid: 12fb48b6-5dd8-4cc0-8808-e6a681aceb84
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 05/25/2018
-ms.openlocfilehash: da714616783a66201a9b877d46e678d9c9d1f51e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7dc6e383c065e5400ef0d5c75dac6d6136fa3dec
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037585"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637211"
 ---
 # <a name="rundll32-printuidllprintuientry"></a>rundll32.exe printui.dll，PrintUIEntry
 
@@ -98,7 +98,7 @@ rundll32 printui,PrintUIEntry [BaseParameter] [ModificationParameter1] [Modifica
 |        /W [flags]        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  指定 "添加打印机向导"、"添加打印机驱动程序向导" 和 "网络打印机安装向导" 的任何参数或选项。<p>**r**：允许从最后一页重新启动向导。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |        /G [flags]        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              指定要使用的全局参数和选项。<p>**w**：取消向用户显示的安装驱动程序警告。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 - **PrintUIEntry**关键字区分大小写，并且必须以本主题中的示例中所示的大小写形式输入此命令的语法。
 - 有关更多示例，请在命令提示符下键入： **rundll32.exe printui.dll，PrintUIEntry/？**
   ## <a name="examples"></a>示例

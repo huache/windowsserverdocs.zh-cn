@@ -3,16 +3,16 @@ title: label
 description: "\"标签\" 命令的参考文章，其中创建、更改或删除卷标 (即磁盘的名称) 。"
 ms.topic: reference
 ms.assetid: bbae8bdd-97d4-4566-9118-7c95aa07645f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 486461059e90d0d1e1c6fa413e6db595f82924bb
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 70e26a89d679c499dbe0eaa7fcd04aa4b9994e98
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028195"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636591"
 ---
 # <a name="label"></a>label
 
@@ -33,7 +33,7 @@ label [/mp] [<volume>] [<label>]
 | `<label>` | 指定卷的标签。 |
 | /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - Windows 将显示卷标和序列号 (如果它有一个) 作为目录列表的一部分。
 

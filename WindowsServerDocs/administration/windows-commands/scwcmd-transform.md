@@ -3,16 +3,16 @@ title: Scwcmd 转换
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: 640dd892-0bb9-416d-8318-60a26605bcf4
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 069629c4025dadd6943659649025af57f019907c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0ac70c1d8f19c0824e1ea432fa719875a0d89fea
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037495"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636937"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: transform
 
@@ -41,7 +41,7 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 |/g\<GPODisplayName>|指定 GPO 的显示名称。 必须指定此参数。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 Scwcmd.exe 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
 

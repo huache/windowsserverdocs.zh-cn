@@ -3,16 +3,16 @@ title: 启用-服务器
 description: 启用-Server 的参考文章，启用所有服务 Windows 部署服务。
 ms.topic: reference
 ms.assetid: 939ffbfb-cf3c-4310-9627-6e7e0c0644d6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8fdf1863fbf3136b6326db0f391a969b78d74fa7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8da3985ba781b7dfbef586cf68f5f78c6f7cd17f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023341"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637632"
 ---
 # <a name="enable-server"></a>启用-服务器
 

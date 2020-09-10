@@ -3,16 +3,16 @@ title: Servermanagercmd
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: 507c4b87-8e13-4872-8b34-0c7508eecbc1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: d4edc737923b1e28f80a9d0f6861a358243dc77a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d033959075f8ff5dd6e70035a68ea6dc2bd0ef3b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037415"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637794"
 ---
 # <a name="servermanagercmd"></a>Servermanagercmd
 
@@ -44,7 +44,7 @@ servermanagercmd -version
 |                     -help                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            在命令提示符窗口中显示帮助。 还可以使用缩写形式 **-？**。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |                    -version                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            显示服务器管理器的版本号。 还可以使用缩写形式 **-v**。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 **Servermanagercmd.exe** 已被弃用，且在未来版本的 Windows 中不能保证受支持。 建议你在运行 Windows Server 2008 R2 的计算机上运行服务器管理器，并使用可用于服务器管理器的 Windows PowerShell cmdlet。 有关详细信息，请参阅 [服务器管理器 cmdlet](https://go.microsoft.com/fwlink/?LinkID=137653)。
 可以从服务器本地驱动器上的任何目录运行 servermanagercmd.exe。 您必须是要在其上安装或删除软件的服务器上的 "管理员" 组的成员。
 

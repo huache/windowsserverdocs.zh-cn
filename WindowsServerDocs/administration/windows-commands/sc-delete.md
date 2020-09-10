@@ -3,16 +3,16 @@ title: Sc.exe 删除
 description: 了解如何使用 sc.exe 实用程序注销服务
 ms.topic: reference
 ms.assetid: 2fe94fb3-e4d1-47b5-b999-39995ecbb644
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 09a3f43824c3e0c895331326341b92c7c6aa5727
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8ce9eb203fd9db68629ce5412836eb694eb67162
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037535"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637102"
 ---
 # <a name="scexe-delete"></a>Sc.exe 删除
 
@@ -34,7 +34,7 @@ sc.exe [<ServerName>] delete [<ServiceName>]
 |\<ServiceName>|指定 **getkeyname** 操作返回的服务名称。|
 |?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 建议不要使用 sc.exe 删除内置的操作系统服务，例如 DHCP、DNS 或 Internet Information Services。 若要安装、删除或重新配置操作系统角色、服务和组件，请参阅 [安装或卸载角色、角色服务或功能](/WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)
 

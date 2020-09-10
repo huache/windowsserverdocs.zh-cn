@@ -3,16 +3,16 @@ title: rcp
 description: 用于在计算机之间复制文件的 rcp 命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.topic: reference
 ms.assetid: 83ad713c-63c9-458c-8ad8-39a6ddeb1690
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 23f6aa776d480751af930f40b53f60fb742d1ae5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a2ad48f65777f342459974236b1b3e2c34a16626
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037215"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637364"
 ---
 # <a name="rcp"></a>rcp
 

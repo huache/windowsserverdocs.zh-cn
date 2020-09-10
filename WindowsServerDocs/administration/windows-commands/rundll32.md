@@ -3,16 +3,16 @@ title: rundll32
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: 46d9cd64-8186-4cd4-a500-44700340fe81
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f938edce72d29f7e316ae50733e8fe1062ec7365
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 10834c063db561f45b3920378188fca506841dcf
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037575"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637191"
 ---
 # <a name="rundll32"></a>rundll32
 
@@ -34,7 +34,7 @@ Rundll32 <DLLname>
 |---------|-----------|
 |[Rundll32.exe printui.dll，PrintUIEntry](rundll32-printui.md)|显示打印机用户界面|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 Rundll32.exe 只能从显式编写的 DLL 调用函数，以由 Rundll32.exe 调用。
 

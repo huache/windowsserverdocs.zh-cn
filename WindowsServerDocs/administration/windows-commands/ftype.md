@@ -3,16 +3,16 @@ title: ftype
 description: Ftype 命令的参考文章，其中显示或修改在文件扩展名关联中使用的文件类型。
 ms.topic: reference
 ms.assetid: 6fb53cee-9bed-44dd-af5d-bc7cec1dd114
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 76e85356d02c1b4b157608eaad6e05550adb3719
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: db5781eccb4fc54fea42586b5e7aab779509bffd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035545"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636657"
 ---
 # <a name="ftype"></a>ftype
 
@@ -36,7 +36,7 @@ ftype [<filetype>[=[<opencommandstring>]]]
 | `<opencommandstring>` | 指定打开指定文件类型的文件时要使用的 open 命令字符串。|
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 下表说明了 **ftype** 如何在打开的命令字符串内替换变量：
 

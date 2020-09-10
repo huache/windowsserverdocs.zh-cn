@@ -3,16 +3,16 @@ title: reg add
 description: Reg add 命令的参考文章，其中向注册表中添加了一个新的子项或条目。
 ms.topic: reference
 ms.assetid: d9ad143e-dc10-4e2e-a229-408393c40079
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b34ad768cdcd324ee2b0601785dbe12b7693d557
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bf1dcf7f37fd6c5852897d187f701f06189cb867
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037085"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637235"
 ---
 # <a name="reg-add"></a>reg add
 
@@ -37,7 +37,7 @@ reg add <keyname> [{/v Valuename | /ve}] [/t datatype] [/s Separator] [/d Data] 
 | /f | 在不提示确认的情况下添加注册表项。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 此操作无法添加子树。 此版本的 **reg** 在添加子项时不要求确认。
 

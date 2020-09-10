@@ -3,16 +3,16 @@ title: exec
 description: 用于在本地计算机上运行脚本文件的 exec 命令的参考文章。
 ms.topic: reference
 ms.assetid: 364e8baf-576f-401b-a431-7d3c06621614
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e0e4cd876fe5c6abcf909f20e330ff347db1113b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 668dc3cf3d93d11066d7dece4309f586b3a5b964
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023991"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635964"
 ---
 # <a name="exec"></a>exec
 

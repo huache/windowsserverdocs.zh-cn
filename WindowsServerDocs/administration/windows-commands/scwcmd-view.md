@@ -3,16 +3,16 @@ title: Scwcmd 视图
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: 7995959a-d93e-4865-a6a0-2ab18c2bb47f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b97a5a5203a1b96576a19a6ab1f6d4c4769c861
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 985b8edb2ef6a99abeb9545dfe62fa5255080b2c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037485"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636902"
 ---
 # <a name="scwcmd-view"></a>Scwcmd: view
 
@@ -34,7 +34,7 @@ scwcmd view /x:<Xmlfile.xml> [/s:<Xslfile.xsl>]
 |/s\<Xslfile.xsl>|指定作为呈现过程的一部分应用于 .xml 文件的 .xsl 转换。 对于 SCW .xml 文件，此参数是可选的。 当使用 **view** 命令呈现某个 SCW .xml 文件时，它会自动尝试为指定的 .xml 文件加载正确的默认转换。 如果指定了 .xsl 转换，则必须假定 .xml 文件位于与 .xsl 转换相同的目录中，以写入转换。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 Scwcmd.exe 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
 

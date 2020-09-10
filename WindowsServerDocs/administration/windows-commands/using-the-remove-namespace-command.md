@@ -3,16 +3,16 @@ title: 删除-命名空间
 description: 用于删除自定义命名空间的删除命名空间的参考文章。
 ms.topic: reference
 ms.assetid: 4eb758b6-8519-4e26-9fe0-2e19bb0e8702
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bef563a91ed4eb445cdf3c555025873078d2716
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f5ea11499bc2efe87fa89debadd9f7fa95ddb3e0
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023081"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636368"
 ---
 # <a name="using-the-remove-namespace-command"></a>使用移除命名空间命令
 

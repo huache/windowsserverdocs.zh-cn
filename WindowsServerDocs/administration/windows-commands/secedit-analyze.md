@@ -3,16 +3,16 @@ title: secedit：分析
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: 3430cf9d-1411-48b1-b5a9-2e47701dc87f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b24a2a60163d7a7a368b18119fe2db199525b372
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 272a05b36ce998aaed9a3ee8bd8b9c273296c030
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037465"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636866"
 ---
 # <a name="seceditanalyze"></a>secedit：分析
 
@@ -36,7 +36,7 @@ Secedit /analyze /db <database file name> [/cfg <configuration file name>] [/ove
 |log|可选。</br>指定要在进程中使用的日志文件的路径和文件名。|
 |quiet|可选。</br>禁止屏幕输出。 你仍可以通过使用 "安全配置和分析" 管理单元 (MMC) 来查看分析结果。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 分析结果存储在数据库的一个独立区域中，可以在 MMC 的 "安全配置和分析" 管理单元中查看。
 

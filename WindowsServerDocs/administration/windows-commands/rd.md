@@ -3,16 +3,16 @@ title: rd
 description: 用于删除目录的 rd 命令的参考文章。
 ms.topic: reference
 ms.assetid: 42e672f6-5bc2-4c16-af25-18e7ed2dd555
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 360283cbc71e2d9e78acddb4e529c66535f8aa7d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 41e5b22d089a07f5248bece208b04a123a3f3f17
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037185"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637353"
 ---
 # <a name="rd"></a>rd
 
@@ -38,7 +38,7 @@ rd [<drive>:]<path> [/s [/q]]
 | /q | 指定安静模式。 删除目录树时不提示进行确认。 **/Q**参数仅在指定 **/s**时才起作用。<p>**警告：** 在安静模式下运行时，将删除整个目录树而不进行确认。 请确保在使用 **/q** 命令行选项之前移动或备份重要文件。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 不能删除包含文件（包括隐藏文件或系统文件）的目录。 如果尝试这样做，将显示以下消息：
 

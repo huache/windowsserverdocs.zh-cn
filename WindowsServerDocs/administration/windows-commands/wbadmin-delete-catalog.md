@@ -3,16 +3,16 @@ title: wbadmin delete catalog
 description: 用于 wbadmin delete catalog 的参考文章，用于删除存储在本地计算机上的备份目录。
 ms.topic: reference
 ms.assetid: d3041407-4577-4716-a39f-2c8ab48818d1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b238e43eac784607a8f42175023eca88e13f2bfd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 64b5664ffeb676bf63ece83bd419f154cb96bb20
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022821"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637888"
 ---
 # <a name="wbadmin-delete-catalog"></a>wbadmin delete catalog
 
@@ -35,7 +35,7 @@ wbadmin delete catalog
 |---------|-----------|
 |-quiet|对用户运行无提示的子命令。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 如果删除计算机的备份目录，将无法使用 "Windows Server 备份" 管理单元访问该计算机创建的备份。 在这种情况下，如果可以访问其他备份位置，请使用 **wbadmin restore catalog** 从该位置还原备份目录。 删除备份目录后，应创建新的备份。
 

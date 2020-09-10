@@ -3,16 +3,16 @@ title: san
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: d57c2df1-eb82-4b81-b8cd-e30564c6a929
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c047dc99ac8c1584ce92ea5b8ab1367c298b0900
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d0104bad1cf93e4ec33db23ec088e41eb6348d07
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036195"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637161"
 ---
 # <a name="san"></a>san
 
@@ -33,7 +33,7 @@ san [policy={onlineAll | offlineAll | offlineShared}] [noerr]
 | policy = {onlineAll &#124; offlineAll &#124; offlineShared}] | 为当前启动的操作系统设置 san 策略。 San 策略确定新发现的磁盘是处于联机状态还是脱机状态，以及它是读写还是只读。 磁盘脱机时，可以读取磁盘布局，但不会通过即插即用来显示卷设备。 这意味着不能在磁盘上装载文件系统。 磁盘联机时，将为该磁盘安装一个或多个卷设备。 下面是每个参数的说明：<p>-   **onlineAll**。 指定所有新发现的磁盘都将联机并进行读/写。 **重要提示：**     在共享磁盘的服务器上指定 **onlineAll** 可能会导致数据损坏。 因此，如果磁盘在服务器之间共享，则不应设置此策略，除非该服务器是群集的一部分。<br />-   **offlineAll**。 指定除启动磁盘之外的所有新发现的磁盘在默认情况下都是脱机的 andread。<br />-   **offlineShared**。 指定所有未驻留在共享总线上的新发现磁盘 (如 SCSI 和 iSCSI) 会联机并进行读写。 默认情况下，处于脱机状态的磁盘将为只读。<p>有关详细信息，请参阅) [VDS_san_POLICY 枚举](https://go.microsoft.com/fwlink/?LinkId=203815) (<https://go.microsoft.com/fwlink/?LinkId=203815> 。 |
 |                            noerr                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            仅用于脚本编写。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 - 如果未提供任何参数的命令，则将显示当前的 san 策略。
   ## <a name="examples"></a>示例
   若要查看当前策略，请键入：

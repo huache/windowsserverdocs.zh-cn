@@ -3,16 +3,16 @@ title: echo
 description: 用于显示消息或打开或关闭命令回显功能的 echo 命令的参考文章。
 ms.topic: reference
 ms.assetid: fb9fcd0f-5e73-4504-aa95-78204e1a79d3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: aca758e2eec979fa4b90a4de4f0fbb6119a3d74a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6adafeeca8284aa240a59db0eb6c64553203ca12
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030755"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636227"
 ---
 # <a name="echo"></a>echo
 
@@ -33,7 +33,7 @@ echo [on | off]
 | `<message>` | 指定要在屏幕上显示的文本。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - `echo <message>`当**回响**关闭时，此命令特别有用。 若要在不显示任何命令的情况下显示长达几行的消息，可以 `echo <message>` 在批处理程序中的 " **echo off** " 命令后包含多个命令。
 

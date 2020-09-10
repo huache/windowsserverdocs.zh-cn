@@ -3,16 +3,16 @@ title: ktpass
 description: Ktpass 命令的参考文章，该命令为 AD DS 中的主机或服务配置服务器主体名称，并生成 keytab 文件，其中包含服务的共享密钥。
 ms.topic: reference
 ms.assetid: 47087676-311e-41f1-8414-199740d01444
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ef7e2ba1aa84faa44cf4bf77e842e8d3bcdc235
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 65ec74f1e89cd20973d4418659eb3c8de6a5bf93
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028235"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636604"
 ---
 # <a name="ktpass"></a>ktpass
 
@@ -47,7 +47,7 @@ ktpass
 | /out `<filename>` | 指定要生成的 Kerberos 版本 keytab 文件的名称。 **注意：** 这是传输到未运行 Windows 操作系统的计算机上的 keytab 文件，然后将其替换或合并为你的现有 keytab 文件 */Etc/Krb5.keytab*。 |
 | /princ `<principalname>` | 指定窗体中的主体名称 host/computer.contoso.com@CONTOSO.COM 。 **警告：** 此参数区分大小写。 |
 | /mapuser `<useraccount>` | 将由 **princ** 参数指定的 Kerberos 主体的名称映射到指定的域帐户。 |
-| /mapop `{add|set}` | 指定如何设置映射属性。<ul><li>**添加** -添加指定的本地用户名的值。 这是默认值。</li><li>**Set** -为指定的本地用户名设置数据加密标准 (DES 仅) 加密的值。</li></ul> |
+| /mapop `{add|set}` | 指定如何设置映射属性。<ul><li>**添加** -添加指定的本地用户名的值。 这是默认设置。</li><li>**Set** -为指定的本地用户名设置数据加密标准 (DES 仅) 加密的值。</li></ul> |
 | `{-|+}`desonly | 默认情况下，设置为仅 DES 加密。<ul><li>**+** 为仅 DES 加密设置帐户。</li><li>**-** 针对仅 DES 加密的帐户释放限制。 **重要提示：** 默认情况下，Windows 不支持 DES。</li></ul> |
 | /in `<filename>` | 指定要从运行 Windows 操作系统的主计算机读取的 keytab 文件。 |
 | /pass `{password|*|{-|+}rndpass}` | 指定由 **princ** 参数指定的主体用户名的密码。 使用 `*` 提示输入密码。 |
@@ -59,13 +59,13 @@ ktpass
 | /kvno `<keyversionnum>` | 指定密钥版本号。 默认值为 1。 |
 | /answer `{-|+}` | 设置背景应答模式：<ul><li>**-** 应答自动重置密码提示， **无**。</li><li>**+** 回答 **"是"** 时自动重置密码提示。</li></ul> |
 | /target | 设置要使用的域控制器。 默认情况下，将基于主体名称检测域控制器。 如果域控制器名称未解析，则会出现一个对话框，提示输入有效的域控制器。 |
-| /rawsalt | 强制 ktpass 在生成密钥时使用 rawsalt 算法。 此参数可选。 |
+| /rawsalt | 强制 ktpass 在生成密钥时使用 rawsalt 算法。 此参数是可选的。 |
 | `{-|+}dumpsalt` | 此参数的输出显示了用于生成密钥的 MIT 盐算法。 |
 | `{-|+}setupn` | 将用户主体名称 (UPN) 除 (SPN) 以外的其他服务主体名称。 默认情况下，在 keytab 文件中设置。 |
 | `{-|+}setpass <password>` | 在提供时设置用户的密码。 如果使用了 rndpass，则改为生成随机密码。 |
 | /? | 显示此命令的帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 在未运行 Windows 操作系统的系统上运行的服务可以在 AD DS 中配置服务实例帐户。 这允许任何 Kerberos 客户端使用 Windows Kdc 对未运行 Windows 操作系统的服务进行身份验证。
 

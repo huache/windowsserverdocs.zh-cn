@@ -3,16 +3,16 @@ title: 设置 ID
 description: 有关 Diskpart 集 ID 的参考文章，请参阅为具有焦点的分区更改分区类型字段。
 ms.topic: reference
 ms.assetid: 5793d7ad-827e-4285-b2c6-ae60eeb0e886
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e3b9ce5b885ca9c8277842b16c816274fff0ead8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 30ed8fc2c4c6e6bc3039be018a303ba7dea15492
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024951"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637705"
 ---
 # <a name="set-id"></a>设置 ID
 
@@ -40,7 +40,7 @@ set id={ <byte> | <GUID> } [override] [noerr]
 | override  |                                                                强制在更改分区类型前卸除卷上的文件系统。 当你运行 " **设置 id** " 命令时，DiskPart 尝试锁定并卸除卷上的文件系统。 如果未指定 **override** ，并且对锁定文件系统的调用失败， \( 例如，由于存在一个打开的句柄 \) ，则操作将失败。 指定 **替代** 后，即使对锁定文件系统的调用失败，也会强制卸载，并且卷的任何打开的句柄都将变为无效。<p>此命令仅适用于 Windows 7 和 Windows Server 2008 R2。                                                                 |
 |   noerr   |                                                                                                                                                                                                                                                                    仅用于脚本编写。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。                                                                                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   除了前面提到的限制之外，DiskPart 不会检查你指定的值的有效性， \( 但请确保它是十六进制格式的字节或 GUID \) 。
 

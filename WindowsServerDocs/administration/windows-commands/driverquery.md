@@ -3,16 +3,16 @@ title: driverquery
 description: Driverquery 命令的参考文章，它使管理员能够显示已安装设备驱动程序及其属性的列表。
 ms.topic: reference
 ms.assetid: 92ca4b84-e4e2-405b-9f31-bf6db9f66839
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: dbd8ca2de7f15a5b5fb8682dae3a3aa2e105d7cd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1b8c0926f1d16ec1bf08b98229c5a40e4c0c7baa
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030795"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636237"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -31,7 +31,7 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 | /s `<system>` | 指定远程计算机的名称或 IP 地址。 不要使用反斜杠。 默认为本地计算机。 |
 | /u `[<domain>]<username>` | 使用用户或*域 \**用户指定*的用户帐户的凭据运行该命令。 默认情况下， */s* 使用当前登录到发出命令的计算机的用户的凭据。 除非指定 **/s** ，否则不能使用 **/u** 。 |
 | /p `<password>` | 指定在 **/u** 参数中指定的用户帐户的密码。 除非指定 **/u** ，否则不能使用 **/p** 。 |
-| /fo 表 | 将输出的格式设置为一个表。 这是默认值。 |
+| /fo 表 | 将输出的格式设置为一个表。 这是默认设置。 |
 | /fo list | 将输出的格式设置为列表。 |
 | /fo csv | 将输出的格式设置为逗号分隔值。 |
 | /nh | 省略显示的驱动程序信息中的标题行。 如果 **/fo** 参数设置为 **list**，则无效。 |

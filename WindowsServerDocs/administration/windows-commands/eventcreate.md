@@ -3,16 +3,16 @@ title: eventcreate
 description: Eventcreate 命令的参考文章，它使管理员能够在指定的事件日志中创建自定义事件。
 ms.topic: reference
 ms.assetid: f2b1b26d-a70e-49a6-832b-91eb5a1a159a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 374dd015cdccbac308fa099854e46765a672ef9f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f23ecbec564a5b578f5f7814314803c95d81bf13
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035195"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636087"
 ---
 # <a name="eventcreate"></a>eventcreate
 

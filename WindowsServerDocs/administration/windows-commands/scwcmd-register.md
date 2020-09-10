@@ -3,16 +3,16 @@ title: Scwcmd 注册
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: fe4d126a-9f27-4076-b7b1-fbefa45f378a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fe54d69cde4607e2d99d4d1f0507fddd428bddd6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 644e4bff424b64b8e6a9a49b0b19320526b49a11
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037505"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636997"
 ---
 # <a name="scwcmd-register"></a>Scwcmd: register
 
@@ -36,7 +36,7 @@ scwcmd register /kbname:<MyApp> [/kbfile:<kb.xml>] [/kb:<path>] [/d]
 |/d|从安全配置数据库中注销安全配置数据库扩展。 要取消注册的扩展是由/kbname 参数指定的。  (不应指定 **/kbfile** 参数。 ) 安全配置数据库从中注销扩展，由 **/kb** 参数指定。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 Scwcmd.exe 仅适用于运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的计算机。
 

@@ -3,16 +3,16 @@ title: doskey
 description: 有关 doskey 命令和 Doskey.exe 的参考文章，它会回调先前输入的命令行命令、编辑命令行并创建宏。
 ms.topic: reference
 ms.assetid: 4874fd43-d5ea-45f3-ae24-388ae925ed76
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8cda337419253ebdb9a390e5d8ba3bfa07fd1a91
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ed732f7b90f66fa5c0df595480f34f028d912aa8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030785"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636246"
 ---
 # <a name="doskey"></a>doskey
 
@@ -41,7 +41,7 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 | `<macroname>`=[`<text>`] | 创建一个宏，该宏执行 *文本*指定的命令。 *MacroName* 指定要分配给宏的名称。 *Text* 指定要记录的命令。 如果 *文本* 保留为空白，则将清除任何已分配命令的 *MacroName* 。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 某些基于字符的交互式程序（如程序调试器或文件传输程序） (FTP) 自动使用 Doskey.exe。 若要使用 Doskey.exe，程序必须是控制台进程并使用缓冲输入。 程序密钥分配将覆盖 **doskey** 密钥分配。 例如，如果程序对某个函数使用了 F7 键，则不能在弹出窗口中获取 **doskey** 命令历史记录。
 
@@ -51,7 +51,7 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 
 - 若要重新调用命令，你可以在开始 Doskey.exe 后使用以下任何项：
 
-  | 键 | 说明 |
+  | 密钥 | 说明 |
   | --- | ----------- |
   | 向上键 | 撤回在显示的命令之前使用的命令。 |
   | 向下键 | 撤回在显示后使用的命令。 |
@@ -68,7 +68,7 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
   | Ctrl+向右键 | 将插入点向前移动一个单词。 |
   | Home | 将插入点移动到行首。 |
   | End | 将插入点移动到行的末尾。 |
-  | Esc | 清除显示的命令。 |
+  | ESC | 清除显示的命令。 |
   | F1 | 将模板中的列中的一个字符复制到命令提示符窗口中的相同列。  (模板是包含所键入的最后一个命令的内存缓冲区 )  |
   | F2 | 按下 F2 后，在模板中向前搜索你键入的下一个键。 Doskey.exe 插入模板中的文本（直到（但不包括）指定字符。 |
   | F3 | 将模板的其余部分复制到命令行。 Doskey.exe 从模板中的位置开始复制字符，该位置与命令行上的插入点所指示的位置相对应。 |

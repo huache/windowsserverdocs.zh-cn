@@ -3,16 +3,16 @@ title: Sc.exe 查询
 description: 了解如何使用 sc.exe 实用程序获取有关服务、驱动程序、服务类型或驱动程序类型的信息
 ms.topic: reference
 ms.assetid: ac365f89-4b20-4de6-a582-b204c5e7d0eb
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b3d7967597724dfae4ab5a12ecee9698a43236f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e961badf867237c0725441e138bf4f0ea948155f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037525"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637044"
 ---
 # <a name="scexe-query"></a>Sc.exe 查询
 
@@ -38,7 +38,7 @@ sc.exe [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [ty
 |  组 = \<GroupName>   |                                                                             指定要枚举的服务组。 默认情况下，将 ( * * group = * * ) 枚举所有组。                                                                              |
 |           /?           |                                                                                                             在命令提示符下显示帮助。                                                                                                              |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - 如果参数与其值之间没有空格 (即， **type = 自有**，not **type =**) ，则操作将失败。
 - **查询**操作显示有关服务的下列信息： SERVICE_NAME (服务的注册表子项名称) 、类型、状态 (以及不可用) 、WIN32_EXIT_B、SERVICE_EXIT_B、检查点和 WAIT_HINT 的状态。

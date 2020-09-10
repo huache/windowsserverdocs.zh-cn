@@ -3,16 +3,16 @@ title: 'TLS/SSL 概述 (Schannel SSP) '
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 05/16/2018
-ms.openlocfilehash: 512dd20e658f610ac9de7247380eed5d2aed54f6
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 21ad7977039eda311dd6f093fc53c09c08cf0317
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989469"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637842"
 ---
 # <a name="tlsssl-overview-schannel-ssp"></a>TLS/SSL 概述 (Schannel SSP) 
 
@@ -20,7 +20,7 @@ ms.locfileid: "87989469"
 
 适用于 IT 专业人员的本主题介绍了使用 Schannel 安全服务提供商 (SSP) 的 Windows 中的 TLS 和 SSL 实现，它介绍了实际应用程序、Microsoft 实现更改、软件要求以及 Windows Server 2012 和 Windows 8 的其他资源。
 
-## <a name="description"></a><a name="BKMK_OVER"></a>描述
+## <a name="description"></a><a name="BKMK_OVER"></a>说明
 Schannel 是安全支持提供程序 (SSP)，可实现安全套接字层 (SSL) 和传输层安全 (TLS) Internet 标准身份验证协议。
 
 安全支持提供程序接口 (SSPI) 是 Windows 系统用于执行安全相关功能（包括身份验证）的 API。 SSPI 充当多个 Ssp （包括 Schannel SSP）的通用接口。

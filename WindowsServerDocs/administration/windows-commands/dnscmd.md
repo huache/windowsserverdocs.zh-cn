@@ -3,16 +3,16 @@ title: dnscmd
 description: 用于管理 DNS 服务器的命令行接口的 dnscmd 命令的参考文章。
 ms.topic: reference
 ms.assetid: e7f31cb5-a426-4e25-b714-88712b8defd5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e79d2cc2d5d014db197ab4bbeb0b24ff70fd145
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6ec39f97be1998f45373ee12cdbb6e1814c7bdd1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030805"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636262"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -52,7 +52,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 | /tree | 指定所有子节点也接收时间戳。 |
 | /f | 运行命令而不要求确认。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - **Ageallrecords**命令用于实现 dns 的当前版本和以前版本的 dns 之间的向后兼容性，在这种情况下，不支持老化和清理。 它将包含当前时间的时间戳添加到没有时间戳的资源记录，并将当前时间设置为具有时间戳的资源记录。
 
@@ -110,12 +110,12 @@ dnscmd [<servername>] /config <parameter>
 | `<servername>` | 指定您计划管理的 DNS 服务器，由本地计算机语法、IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<parameter>` | 指定一个设置和一个值作为选项。 参数值使用以下语法： *参数* [*value*]。 |
 | /addressanswerlimit`[0|5-28]` | 指定 DNS 服务器为响应查询而可以发送的主机记录的最大数目。 该值可以为零 (0) ，也可以介于5到28个记录之间。 默认值为零 (0)。 |
-| /bindsecondaries`[0|1]` | 更改区域传送的格式，使其能够实现最大的压缩和效率。 接受以下值：<ul><li>**0** -使用最大压缩，并与 BIND 版本4.9.4 和更高版本兼容</li><li>**1** -仅将每条消息的一个资源记录发送到非 Microsoft DNS 服务器，并且与4.9.4 之前的绑定版本兼容。 这是默认设置。</li></ul> |
-| /bootmethod`[0|1|2|3]` | 确定 DNS 服务器从中获取其配置信息的源。 接受以下值：<ul><li>**0** -清除配置信息的源。</li><li>**1** -从位于 DNS 目录的绑定文件加载， `%systemroot%\System32\DNS` 默认情况下为。</li><li>**2** -从注册表加载。</li><li>**3** -从 AD DS 和注册表加载。 这是默认设置。</li></ul> |
-| /defaultagingstate`[0|1]` | 确定默认情况下是否对新创建的区域启用 DNS 清理功能。 接受以下值：<ul><li>**0** -禁用清理。 这是默认设置。</li><li>**1** -启用清理。</li></ul> |
+| /bindsecondaries`[0|1]` | 更改区域传送的格式，使其能够实现最大的压缩和效率。 接受以下值：<ul><li>**0** -使用最大压缩，并与 BIND 版本4.9.4 和更高版本兼容</li><li>**1** -仅将每条消息的一个资源记录发送到非 Microsoft DNS 服务器，并且与4.9.4 之前的绑定版本兼容。 此为默认设置。</li></ul> |
+| /bootmethod`[0|1|2|3]` | 确定 DNS 服务器从中获取其配置信息的源。 接受以下值：<ul><li>**0** -清除配置信息的源。</li><li>**1** -从位于 DNS 目录的绑定文件加载， `%systemroot%\System32\DNS` 默认情况下为。</li><li>**2** -从注册表加载。</li><li>**3** -从 AD DS 和注册表加载。 此为默认设置。</li></ul> |
+| /defaultagingstate`[0|1]` | 确定默认情况下是否对新创建的区域启用 DNS 清理功能。 接受以下值：<ul><li>**0** -禁用清理。 此为默认设置。</li><li>**1** -启用清理。</li></ul> |
 | /defaultnorefreshinterval`[0x1-0xFFFFFFFF|0xA8]` | 设置动态更新记录不接受刷新的时间段。 服务器上的区域会自动继承此值。<p>若要更改默认值，请键入 **0x1-0xffffffff**范围内的值。 服务器的默认值为 **0xA8**。 |
 | /defaultrefreshinterval `[0x1-0xFFFFFFFF|0xA8]` | 设置允许动态更新 DNS 记录的时间段。 服务器上的区域会自动继承此值。<p>若要更改默认值，请键入 **0x1-0xffffffff**范围内的值。 服务器的默认值为 **0xA8**。 |
-| /disableautoreversezones `[0|1]` | 启用或禁用反向查找区域的自动创建。 反向查找区域提供 Internet 协议 (IP) 地址到 DNS 域名的解析。 接受以下值：<ul><li>**0** -启用自动创建反向查找区域。 这是默认设置。</li><li>**1** -禁用自动创建反向查找区域。</li></ul> |
+| /disableautoreversezones `[0|1]` | 启用或禁用反向查找区域的自动创建。 反向查找区域提供 Internet 协议 (IP) 地址到 DNS 域名的解析。 接受以下值：<ul><li>**0** -启用自动创建反向查找区域。 此为默认设置。</li><li>**1** -禁用自动创建反向查找区域。</li></ul> |
 | /disablensrecordsautocreation `[0|1]` | 指定 DNS 服务器是否自动创建它所承载的区域的名称服务器 (NS) 资源记录。 接受以下值：<ul><li>**0** -自动为 DNS 服务器托管的区域创建名称服务器 (NS) 资源记录。</li><li>**1** -不会自动为 DNS 服务器托管的区域 (NS) 资源记录创建名称服务器。</li></ul> |
 | /dspollinginterval `[0-30]` | 指定 DNS 服务器轮询 AD DS active directory 集成区域中的更改的频率。 |
 | /dstombstoneinterval `[1-30]` |AD DS 中保留已删除记录的时间长度（以秒为单位）。 |
@@ -124,13 +124,13 @@ dnscmd [<servername>] /config <parameter>
 | /enablednssec `[0|1]` | 启用或禁用 (DNSSEC) 对 DNS 安全扩展插件的支持。 接受以下值：<ul><li>**0** -禁用 DNSSEC。</li><li>**1** -启用 DNSSEC。</li></ul> |
 | /enableglobalnamessupport `[0|1]` | 启用或禁用对 GlobalNames 区域的支持。 GlobalNames 区域支持跨林解析单标签 DNS 名称。 接受以下值：<ul><li>**0** -禁用对 GlobalNames 区域的支持。 将此命令的值设置为0时，DNS 服务器服务不解析 GlobalNames 区域中的单标签名称。</li><li>**1** -启用对 GlobalNames 区域的支持。 将此命令的值设置为1时，DNS 服务器服务将解析 GlobalNames 区域中的单标签名称。</li></ul> |
 | /enableglobalqueryblocklist `[0|1]` | 启用或禁用对列表中名称解析的全局查询阻止列表的支持。 默认情况下，当服务首次启动时，DNS 服务器服务将创建并启用全局查询阻止列表。 若要查看当前的全局查询块列表，请使用 dnscmd/info **/globalqueryblocklist** 命令。 接受以下值：<ul><li>**0** -禁用对全局查询块列表的支持。 将此命令的值设置为0时，DNS 服务器服务将对阻止列表中的名称的查询做出响应。</li><li>**1** -支持全局查询阻止列表。 将此命令的值设置为1时，DNS 服务器服务不会响应对阻止列表中的名称的查询。</li></ul> |
-| /eventloglevel `[0|1|2|4]` | 确定事件查看器的 DNS 服务器日志中记录的事件。 接受以下值：<ul><li>**0** -不记录任何事件。</li><li>**1** -仅记录错误。</li><li>**2** -仅记录错误和警告。</li><li>**4** -记录错误、警告和信息性事件。 这是默认设置。</li></ul> |
-| /forwarddelegations `[0|1]` | 确定 DNS 服务器如何处理委托的子的查询。 这些查询可以发送到查询中引用的子，也可以发送到为 DNS 服务器命名的转发器列表。 设置中的条目仅在启用转发时使用。 接受以下值：<ul><li>**0** -自动将引用委托的子区域的查询发送到相应的子。 这是默认设置。</li><li>**1** -将引用委托的子的查询转发到现有转发器。</li></ul> |
+| /eventloglevel `[0|1|2|4]` | 确定事件查看器的 DNS 服务器日志中记录的事件。 接受以下值：<ul><li>**0** -不记录任何事件。</li><li>**1** -仅记录错误。</li><li>**2** -仅记录错误和警告。</li><li>**4** -记录错误、警告和信息性事件。 此为默认设置。</li></ul> |
+| /forwarddelegations `[0|1]` | 确定 DNS 服务器如何处理委托的子的查询。 这些查询可以发送到查询中引用的子，也可以发送到为 DNS 服务器命名的转发器列表。 设置中的条目仅在启用转发时使用。 接受以下值：<ul><li>**0** -自动将引用委托的子区域的查询发送到相应的子。 此为默认设置。</li><li>**1** -将引用委托的子的查询转发到现有转发器。</li></ul> |
 | /forwardingtimeout `[<seconds>]` | 确定在尝试另一个转发器之前， (**0x1-0xffffffff**) DNS 服务器等待转发器响应多少秒。 默认值为 **0x5**，即5秒。 |
 | /globalneamesqueryorder `[0|1]` | 指定在解析名称时，DNS 服务器服务是否首先在 GlobalNames 区域或本地区域中查找。 接受以下值：<ul><li>**0** -DNS 服务器服务将尝试通过先查询 GlobalNames 区域来解析名称，然后再查询其具有权威的区域。</li><li>**1** -DNS 服务器服务将尝试通过先查询其权威的区域来解析名称，然后再查询 GlobalNames 区域。</li></ul> |
 | /globalqueryblocklist`[[<name> [<name>]...]` | 用指定名称的列表替换当前的全局查询块列表。 如果未指定任何名称，则此命令将清除阻止列表。 默认情况下，全局查询块列表包含以下项：<ul><li>isatap</li><li>wpad</li></ul>当首次启动时，DNS 服务器服务可以删除其中一个或两个这两个名称，前提是在现有区域中查找这些名称。 |
-| /isslave `[0|1]` | 确定当 DNS 服务器转发的查询未收到响应时，DNS 服务器的响应方式。 接受以下值：<ul><li>**0** -指定 DNS 服务器不是从属服务器。 如果转发器没有响应，则 DNS 服务器将尝试解析查询本身。 这是默认设置。</li><li>**1** -指定 DNS 服务器是从属服务器。 如果转发器没有响应，则 DNS 服务器将终止搜索，并向解析程序发送失败消息。</li></ul> |
-| /localnetpriority `[0|1]` | 确定当 DNS 服务器具有相同名称的多个主机记录时返回主机记录的顺序。 接受以下值：<ul><li>**0** -按照 DNS 数据库中列出的顺序返回记录。</li><li>**1** -返回具有相似 IP 网络地址的记录。 这是默认设置。</li></ul> |
+| /isslave `[0|1]` | 确定当 DNS 服务器转发的查询未收到响应时，DNS 服务器的响应方式。 接受以下值：<ul><li>**0** -指定 DNS 服务器不是从属服务器。 如果转发器没有响应，则 DNS 服务器将尝试解析查询本身。 此为默认设置。</li><li>**1** -指定 DNS 服务器是从属服务器。 如果转发器没有响应，则 DNS 服务器将终止搜索，并向解析程序发送失败消息。</li></ul> |
+| /localnetpriority `[0|1]` | 确定当 DNS 服务器具有相同名称的多个主机记录时返回主机记录的顺序。 接受以下值：<ul><li>**0** -按照 DNS 数据库中列出的顺序返回记录。</li><li>**1** -返回具有相似 IP 网络地址的记录。 此为默认设置。</li></ul> |
 | /logfilemaxsize `[<size>]` | 指定 Dns .log 文件 (**0x10000-0xffffffff**) 的最大大小（以字节为单位）。 当文件达到其最大大小时，DNS 会覆盖最旧的事件。 默认大小为 " **0x400000 处**"， (MB) 为 4 mb。 |
 | /logfilepath `[<path+logfilename>]` | 指定 Dns 日志文件的路径。 默认路径为 `%systemroot%\System32\Dns\Dns.log`。 您可以使用格式指定其他路径 `path+logfilename` 。 |
 | /logipfilterlist `<IPaddress> [,<IPaddress>...]` | 指定在调试日志文件中记录哪些数据包。 条目是 IP 地址的列表。 仅记录传入和传出列表中 IP 地址的数据包。 |
@@ -138,20 +138,20 @@ dnscmd [<servername>] /config <parameter>
 | /maxcachesize | 指定 DNS 服务器的内存缓存的最大大小（kb (KB) ）。 |
 | /maxcachettl `[<seconds>]` | 确定在缓存中保存记录 (**0x0-0xffffffff**) 的秒数。 如果使用了 **0x0** 设置，则 DNS 服务器不会缓存记录。 默认设置为 **0x15180** (86400 秒或1天) 。 |
 | /maxnegativecachettl `[<seconds>]` | 指定 (**0x1-0xffffffff**) 记录反向查询应答的条目保留在 DNS 缓存中的秒数。 默认设置为 **0x384** (900 秒) 。 |
-| /namecheckflag `[0|1|2|3]` | 指定检查 DNS 名称时使用的字符标准。 接受以下值：<ul><li>**0** -使用符合 Internet 工程任务组 (IETF) 征求意见 (rfc) 的 ANSI 字符。</li><li>**1** -使用不一定符合 IETF RFC 的 ANSI 字符。</li><li>**2** -使用多字节 UCS 转换格式 8 (utf-8) 字符。 这是默认设置。</li><li>**3** -使用所有字符。</li></ul> |
-| /norecursion `[0|1]` | 确定 DNS 服务器是否执行递归名称解析。 接受以下值：<ul><li>**0** -如果在查询中请求，则 DNS 服务器将执行递归名称解析。 这是默认设置。</li><li>**1** -DNS 服务器不执行递归名称解析。</li></ul> |
+| /namecheckflag `[0|1|2|3]` | 指定检查 DNS 名称时使用的字符标准。 接受以下值：<ul><li>**0** -使用符合 Internet 工程任务组 (IETF) 征求意见 (rfc) 的 ANSI 字符。</li><li>**1** -使用不一定符合 IETF RFC 的 ANSI 字符。</li><li>**2** -使用多字节 UCS 转换格式 8 (utf-8) 字符。 此为默认设置。</li><li>**3** -使用所有字符。</li></ul> |
+| /norecursion `[0|1]` | 确定 DNS 服务器是否执行递归名称解析。 接受以下值：<ul><li>**0** -如果在查询中请求，则 DNS 服务器将执行递归名称解析。 此为默认设置。</li><li>**1** -DNS 服务器不执行递归名称解析。</li></ul> |
 | /notcp | 此参数已过时，并且它在当前版本的 Windows Server 中不起作用。 |
 | /recursionretry `[<seconds>]` | 确定 DNS 服务器在尝试联系远程服务器之前等待的秒数 (**0x1-0xffffffff**) 。 默认设置为 **0x3** (三秒) 。 在慢速广域网上进行递归时，此值应增加 (WAN) 链接。 |
 | /recursiontimeout `[<seconds>]` | 确定 DNS 服务器在停止尝试联系远程服务器之前等待的秒数 (**0x1-0xffffffff**) 。 设置范围为 **0x1** 到 **0xffffffff**。 默认设置为 **0xF**)  (15 秒。 如果递归发生在慢速 WAN 链接上，则应增加此值。 |
-| /roundrobin `[0|1]` | 确定当服务器具有同一名称的多个主机记录时返回主机记录的顺序。 接受以下值：<ul><li>**0** -DNS 服务器不使用轮循机制。 而是返回每个查询的第一条记录。</li><li>**1** -DNS 服务器在其从顶部到匹配记录列表底部的记录之间进行旋转。 这是默认设置。</li></ul> |
-| /rpcprotocol `[0x0|0x1|0x2|0x4|0xFFFFFFFF]` | 指定远程过程调用 (RPC) 在与 DNS 服务器建立连接时使用的协议。 接受以下值：<ul><li>**0x0** -禁用 DNS 的 RPC。</li><li>**0x01** -使用 tcp/ip</li><li>**0x2** -使用命名管道。</li><li>**0x4** -使用本地过程调用 (LPC) 。</li><li>**0xffffffff** -所有协议。 这是默认设置。</li></ul> |
+| /roundrobin `[0|1]` | 确定当服务器具有同一名称的多个主机记录时返回主机记录的顺序。 接受以下值：<ul><li>**0** -DNS 服务器不使用轮循机制。 而是返回每个查询的第一条记录。</li><li>**1** -DNS 服务器在其从顶部到匹配记录列表底部的记录之间进行旋转。 此为默认设置。</li></ul> |
+| /rpcprotocol `[0x0|0x1|0x2|0x4|0xFFFFFFFF]` | 指定远程过程调用 (RPC) 在与 DNS 服务器建立连接时使用的协议。 接受以下值：<ul><li>**0x0** -禁用 DNS 的 RPC。</li><li>**0x01** -使用 tcp/ip</li><li>**0x2** -使用命名管道。</li><li>**0x4** -使用本地过程调用 (LPC) 。</li><li>**0xffffffff** -所有协议。 此为默认设置。</li></ul> |
 | /scavenginginterval `[<hours>]` | 确定是否已启用 DNS 服务器的清理功能，并设置清理周期之间 (**0x0-0xffffffff**) 的小时数。 默认设置为 **0x0**，这将禁用 DNS 服务器的清理。 设置大于 **0x0** 会启用对服务器的清理，并设置清理周期之间的小时数。 |
-| /secureresponses `[0|1]` | 确定 DNS 是否筛选保存在缓存中的记录。 接受以下值：<ul><li>**0** -将对名称查询的所有响应保存到缓存中。 这是默认设置。</li><li>**1** -仅将属于同一 DNS 子树的记录保存到缓存中。</li></ul> |
+| /secureresponses `[0|1]` | 确定 DNS 是否筛选保存在缓存中的记录。 接受以下值：<ul><li>**0** -将对名称查询的所有响应保存到缓存中。 此为默认设置。</li><li>**1** -仅将属于同一 DNS 子树的记录保存到缓存中。</li></ul> |
 | /sendport `[<port>]` | 指定 DNS 用于向其他 DNS 服务器发送递归查询 (**0x0-0xffffffff**) 的端口号。 默认设置为 **0x0**，这意味着端口号是随机选择的。 |
 | /serverlevelplugindll`[<dllpath>]` | 指定自定义插件的路径。 当 Dllpath 指定有效 DNS 服务器插件的完全限定路径名称时，DNS 服务器将在插件中调用函数，以解析超出所有本地托管区域的名称查询。 如果查询的名称超出了插件的作用域，则 DNS 服务器会根据配置使用转发或递归执行名称解析。 如果未指定 Dllpath，则在以前配置自定义插件时，DNS 服务器将停止使用自定义插件。 |
-| /strictfileparsing `[0|1]` | 确定加载区域时遇到错误记录时 DNS 服务器的行为。 接受以下值：<ul><li>**0** -即使服务器遇到错误记录，DNS 服务器仍将继续加载该区域。 错误记录在 DNS 日志中。 这是默认设置。</li><li>**1** -dns 服务器停止加载区域，并在 DNS 日志中记录该错误。</li></ul> |
+| /strictfileparsing `[0|1]` | 确定加载区域时遇到错误记录时 DNS 服务器的行为。 接受以下值：<ul><li>**0** -即使服务器遇到错误记录，DNS 服务器仍将继续加载该区域。 错误记录在 DNS 日志中。 此为默认设置。</li><li>**1** -dns 服务器停止加载区域，并在 DNS 日志中记录该错误。</li></ul> |
 | /updateoptions `<RecordValue>` | 禁止动态更新指定类型的记录。 如果要在日志中禁止多个记录类型，请使用十六进制加法添加值，然后输入和。 接受以下值：<ul><li>**0x0** -不限制任何记录类型。</li><li>**0x1** -不包括开始 (SOA) 资源记录的授权。</li><li>**0x2** -排除 name SERVER (NS) 资源记录。</li><li>**0x4** -排除 name SERVER (NS) 资源记录的委托。</li><li>**0x8** -排除服务器主机记录。</li><li>**0x100** -在安全动态更新期间，不包括 (SOA) 资源记录的启动颁发机构。</li><li>**0x200** -在安全动态更新期间，不包括根名称服务器 (NS) 资源记录。</li><li>**0x30F** -在标准动态更新期间，不包括 name SERVER (NS) 资源记录、授权开始 (SOA) 资源记录和服务器主机记录。 在安全动态更新期间，不包括根名称服务器 (NS) 资源记录和授权 (SOA) 资源记录。 允许委托和服务器主机更新。</li><li>**0x400** -在安全动态更新期间，不包括) 资源记录 (NS 的委派名称服务器。</li><li>**0x800** -在安全动态更新期间，不包括服务器主机记录。</li><li>**0x1000000** - (DS) 记录中排除委托签名程序。</li><li>**0x80000000** -禁用 DNS 动态更新。</li></ul> |
-| /writeauthorityns `[0|1]` | 确定 DNS 服务器何时在响应的 "授权" 部分中将名称服务器 (NS 写入) 资源记录。 接受以下值：<ul><li>**0** - (NS 写入名称服务器) 资源记录。 此设置符合 Rfc 1034、域名概念和设施以及 Rfc 2181，并向 DNS 规范进行说明。 这是默认设置。</li><li>**1** -在所有成功的权威响应的 "授权" 部分中写入名称服务器 (NS) 资源记录。</li></ul> |
+| /writeauthorityns `[0|1]` | 确定 DNS 服务器何时在响应的 "授权" 部分中将名称服务器 (NS 写入) 资源记录。 接受以下值：<ul><li>**0** - (NS 写入名称服务器) 资源记录。 此设置符合 Rfc 1034、域名概念和设施以及 Rfc 2181，并向 DNS 规范进行说明。 此为默认设置。</li><li>**1** -在所有成功的权威响应的 "授权" 部分中写入名称服务器 (NS) 资源记录。</li></ul> |
 | /xfrconnecttimeout `[<seconds>]` | 确定主 DNS 服务器等待其辅助服务器的传输响应 (**0x0-0xffffffff**) 的秒数。 默认值为 **0x1E** (30 秒) 。 超时值过期后，连接将终止。 |
 
 ### <a name="zone-level-syntax"></a>区域级别的语法
@@ -515,10 +515,10 @@ dnscmd [<servername>] /resetforwarders <IPaddress> [,<IPaddress>]...][/timeout <
 | `<IPaddress>` | 列出 DNS 服务器将未解析的查询转发到的 IP 地址。 |
 | /timeout `<timeout>` | 设置 DNS 服务器等待转发器响应的秒数。 默认情况下，此值为5秒。 |
 | /slave | 如果转发器未能解析查询，则阻止 DNS 服务器执行其自身的迭代查询。 |
-| /noslave | 如果转发器未能解析查询，则允许 DNS 服务器执行其自身的迭代查询。 这是默认设置。 |
+| /noslave | 如果转发器未能解析查询，则允许 DNS 服务器执行其自身的迭代查询。 此为默认设置。 |
 | /f | 执行命令而不要求确认。 由于节点可以有多个资源记录，因此此命令要求您非常具体地了解要删除的资源记录类型。 如果指定了数据类型，但未指定资源记录数据的类型，则会删除具有指定节点的特定数据类型的所有记录。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 默认情况下，DNS 服务器在无法解析查询时执行迭代查询。
 
@@ -574,7 +574,7 @@ dnscmd [<servername>] /startscavenging
 | ---------- | ----------- |
 | `<servername>` | 指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 此命令成功完成后会立即开始清除。 如果清除失败，则不会显示任何警告消息。
 
@@ -777,7 +777,7 @@ dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 | `<zonename>` | 指定区域的名称。 |
 | `<setting>` | 您可以单独指定 **zoneinfo** 命令返回的任何设置。 如果未指定设置，则返回所有设置。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 若要显示服务器级注册表设置，请使用 **/info** 命令。
 
@@ -806,7 +806,7 @@ dnscmd [<servername>] /zonepause <zonename>
 | `<servername>` | 指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<zonename>` | 指定要暂停的区域的名称。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 若要恢复区域并使其在暂停后可用，请使用 **/zoneresume** 命令。
 
@@ -856,7 +856,7 @@ dnscmd [<servername>] /zonerefresh <zonename>
 | `<servername>` | 指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<zonename>` | 指定要刷新的区域的名称。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - **Zonerefresh**命令强制检查主服务器启动颁发机构 (SOA) 资源记录中的版本号。 如果主服务器上的版本号高于辅助服务器的版本号，则会启动区域传送来更新辅助服务器。 如果版本号相同，则不会进行区域传输。
 
@@ -885,7 +885,7 @@ dnscmd [<servername>] /zonereload <zonename>
 | `<servername>` | 指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<zonename>` | 指定要重新加载的区域的名称。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 如果区域是 active directory 集成的，则会从 Active Directory 域服务 (AD DS) 重新加载该区域。
 
@@ -916,7 +916,7 @@ dnscmd [<servername>] /zoneresetmasters <zonename> [/local] [<IPaddress> [<IPadd
 | /local | 设置本地主列表。 此参数用于 active directory 集成区域。 |
 | `<IPaddress>` | 辅助区域的主服务器的 IP 地址。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 此值最初在创建辅助区域时设置。 在辅助服务器上使用 **zoneresetmasters** 命令。 如果在主 DNS 服务器上设置此值，则该值无效。
 
@@ -946,7 +946,7 @@ dnscmd [<servername>] /zoneresetscavengeservers <zonename> [/local] [<IPaddress>
 | /local | 设置本地主列表。 此参数用于 active directory 集成区域。 |
 | `<IPaddress>` | 列出可执行清理的服务器的 IP 地址。 如果省略此参数，则承载此区域的所有服务器都可以清理它。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 默认情况下，托管区域的所有服务器都可以清理该区域。
 
@@ -987,7 +987,7 @@ dnscmd [<servername>] /zoneresetsecondaries <zonename> {/noxfr | /nonsecure | /s
 | /notifylist | 指定仅将更改通知发送到服务器列表。 此命令后面必须跟有主服务器使用的一个或多个 IP 地址。 |
 | `<notifyIPaddresses>` | 指定将更改通知发送到的一个或多个辅助服务器的 IP 地址。 此列表仅与 **/notifylist** 参数一起使用。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 使用主服务器上的 **zoneresetsecondaries** 命令指定其如何响应辅助服务器中的区域复制请求。
 
@@ -1018,7 +1018,7 @@ dnscmd [<servername>] /zoneresettype <zonename> <zonetype> [/overwrite_mem | /ov
 | /overwrite_mem | 从 AD DS 中的数据覆盖 DNS 数据。 |
 | /overwrite_ds | 覆盖 AD DS 中的现有数据。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 如果将区域类型设置为 **/dsforwarder** ，则将创建执行条件性转发的区域。
 
@@ -1046,7 +1046,7 @@ dnscmd [<servername>] /zoneresume <zonename>
 | `<servername>` | 指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<zonename>` | 指定要恢复的区域的名称。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 可以使用此操作从 **/zonepause** 操作重新启动。
 
@@ -1073,7 +1073,7 @@ dnscmd [<servername>] /zoneupdatefromds <zonename>
 | `<servername>` | 指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<zonename>` | 指定要更新的区域的名称。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 默认情况下，Active directory 集成区域每五分钟执行一次此更新。 若要更改此参数，请使用 `dnscmd config dspollinginterval` 命令。
 
@@ -1100,7 +1100,7 @@ dnscmd [<servername>] /zonewriteback <zonename>
 | `<servername>` | 指定要管理的 DNS 服务器，由 IP 地址、FQDN 或主机名表示。 如果省略此参数，则使用本地服务器。 |
 | `<zonename>` | 指定要更新的区域的名称。 |
 
-##### <a name="remarks"></a>注解
+##### <a name="remarks"></a>备注
 
 - 这是一个区域级别的操作。 你可以使用 **/writebackfiles** 操作更新 DNS 服务器上的所有区域。
 

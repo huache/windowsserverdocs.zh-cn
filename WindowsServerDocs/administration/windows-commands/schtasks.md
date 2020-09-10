@@ -3,16 +3,16 @@ title: schtasks
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: 2e713203-3dd8-491b-b9e1-9423618dc7e8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d83211a0933e6dea38b099798ad5cb51db2868c5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9710e0b8156ae6a09302c3ffdeaea3e48e7953d1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037515"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637030"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -28,7 +28,7 @@ ms.locfileid: "89037515"
 -   [schtasks 删除](#BKMK_delete)
 -   [schtasks 查询](#BKMK_query)
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - **SchTasks.exe**与**控制面板**中的 "**计划任务**" 执行相同的操作。 可以将这些工具一起使用，并且可以互换使用。
 - **Schtasks** 替代了 Windows 以前版本中包含的 **At.exe**。 尽管 Windows Server 2003 家族仍包含 **At.exe** ，但建议使用 **schtasks** 命令行任务计划工具。
@@ -217,7 +217,7 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 
 /ed \<EndDate>
 
-指定计划的结束日期。 此参数可选。 它在一次、ONSTART、ONLOGON 或 ONIDLE 计划中无效。 默认情况下，计划无结束日期。
+指定计划的结束日期。 此参数是可选的。 它在一次、ONSTART、ONLOGON 或 ONIDLE 计划中无效。 默认情况下，计划无结束日期。
 
 *结束*日期的格式因 "**控制面板**" 的 "**区域和语言选项**" 中为本地计算机选择的区域设置而异。 每个区域设置只有一种格式有效。
 
@@ -260,7 +260,7 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc minute [/mo {1 - 1439}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [{/et <HH:MM> | /du <HHHH:MM>} [/k]] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 在一分钟的计划中，需要使用 **/sc minute** 参数。 **/Mo** (修饰符) 参数是可选的，它指定每次运行任务之间间隔的分钟数。 每分钟)  (， **/mo** 的默认值为1。 **/Et** (结束时间) 和 **/du** (duration) 参数是可选的，并且可与/不使用 **/k** (结束任务) 参数一起使用。
 
@@ -290,7 +290,7 @@ schtasks /create /tn Security Script /tr sec.vbs /sc minute /mo 100 /st 17:00 /e
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc hourly [/mo {1 - 23}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [{/et <HH:MM> | /du <HHHH:MM>} [/k]] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 按小时计划，需要 **/sc 每小时** 参数。 **/Mo** (修饰符) 参数是可选的，它指定每次运行任务之间的小时数。 默认情况下， **/mo** 的默认值为 1 () 。 **/K** (end task) 参数是可选的，可以在指定的时间间隔后) 或 **/du** (结束时，与 **/et** (end 一起使用。
 
@@ -330,7 +330,7 @@ schtasks /create /tn My App /tr myapp.exe /sc hourly /mo 3 /st 00:00 /du 0010:00
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc daily [/mo {1 - 365}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 在每日计划中， **/sc 每日** 参数是必需的。 **/Mo** (修饰符) 参数是可选的，它指定了每次运行任务之间间隔的天数。 默认情况下， **/mo** 的默认值为 1 () 。
 
@@ -372,7 +372,7 @@ schtasks /create /tn Security Script /tr sec.vbs /sc daily /mo 70 /it
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/mo {1 - 52}] [/d {<MON - SUN>[,MON - SUN...] | *}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 在每周计划中， **/sc 每周** 参数是必需的。 **/Mo** (修饰符) 参数是可选的，它指定每次运行任务之间间隔的周数。 默认情况下， **/mo** 的默认值为 1 () 。
 
@@ -443,7 +443,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 2 /d 21 /st 00
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/d {<MON - SUN>[,MON - SUN...] | *}] [/mo {1 - 52}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 周计划中的日期是每周计划的变体。 在每周计划中， **/sc 每周** 参数是必需的。 **/Mo** (修饰符) 参数是可选的，它指定每次运行任务之间间隔的周数。 默认情况下， **/mo** 的默认值为 1 () 。 **/D**参数是可选的，它将任务计划为在一周的指定日期运行，或在所有日期 (\*) 。 默认值为周一 (星期一) 。 每日选项 (**/d \* **) 等效于计划每日任务。
 
@@ -471,7 +471,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /mo 8 /d MON,FRI
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo {FIRST | SECOND | THIRD | FOURTH | LAST} /d MON - SUN [/m {JAN - DEC[,JAN - DEC...] | *}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 在此计划类型中， **/sc 月度** 参数、 **/mo** (修饰符) 参数以及 **/d** (day) 参数是必需的。 **/Mo** (修饰符) 参数指定运行任务的周。 **/D**参数指定一周中的第几天。  (只能为此计划类型指定一周中的某一天。 ) 此计划还具有一个可选的 **/m** (month) 参数，该参数可让你计划特定月份或每个月的任务 (\*) 。 **/M**参数的默认值每月 (\*) 。
 
@@ -499,7 +499,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo FIRST /d MON /
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /d {1 - 31} [/m {JAN - DEC[,JAN - DEC...] | *}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 在特定日期计划类型中， **/sc 月度** 参数和 **/d** (day) 参数是必需的。 **/D**参数指定月份日期 (1-31) ，而不是一周中的某一天。 您只能在计划中指定一天。 **/Mo** (修饰符) 参数对于此计划类型无效。
 
@@ -529,7 +529,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /d 15 /m MAY,JUN /
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo LASTDAY /m {JAN - DEC[,JAN - DEC...] | *} [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 在最后一天的计划类型中， **/sc 月度** 参数、 **/mo LASTDAY** (修饰符) 参数和 **/m** (month) 参数是必需的。 **/D** (day) 参数无效。
 
@@ -859,7 +859,7 @@ Idle Time: Disabled
 Power Management: Disabled
 ```
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 -   若要使用其他用户的权限运行 **/create** 命令，请使用 **/u** 参数。 **/U**参数仅对远程计算机上的任务计划有效。
 -   若要查看更多 **schtasks/create** 示例，请键入 **schtasks/create/？** 。
@@ -909,7 +909,7 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 |           /z            |                                                                                                                                                                                                                                                                                                          指定在其计划完成后删除任务。                                                                                                                                                                                                                                                                                                          |
 |           /?            |                                                                                                                                                                                                                                                                                                                        在命令提示符下显示帮助。                                                                                                                                                                                                                                                                                                                         |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 -   **/Tn**和 **/s**参数用于识别任务。 **/Tr**、 **/ru**和 **/rp**参数指定可以更改的任务的属性。
 -   **/Ru**和 **/rp**参数指定运行任务所用的权限。 **/U**和 **/p**参数指定用于更改任务的权限。
@@ -1014,7 +1014,7 @@ schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 |    /p \<Password>     |                          指定在 **/u** 参数中指定的用户帐户的密码。 如果使用 **/u** 参数，但省略 **/p** 参数或 password 参数，则 **schtasks** 会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                           |
 |          /?           |                                                                                                                                                    在命令提示符下显示帮助。                                                                                                                                                     |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 -   使用此操作来测试您的任务。 如果任务未运行，请检查任务计划程序服务事务日志 \<Systemroot>\SchedLgU.txt，以了解错误。
 -   运行任务不会影响任务计划，也不会更改为任务计划的下一个运行时间。
@@ -1082,7 +1082,7 @@ schtasks /end /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 |    /p \<Password>     |                        指定在 **/u** 参数中指定的用户帐户的密码。 如果使用 **/u** 参数，但省略 **/p** 参数或 password 参数，则 **schtasks** 会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                         |
 |          /?           |                                                                                                                                                             显示帮助。                                                                                                                                                              |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 **SchTasks.exe** 仅结束由计划任务启动的程序的实例。 若要停止其他进程，请使用 TaskKill。 有关详细信息，请参阅 [Taskkill](taskkill.md)。
 
@@ -1131,7 +1131,7 @@ schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> 
 |    /p \<Password>     |                          指定在 **/u** 参数中指定的用户帐户的密码。 如果使用 **/u** 参数，但省略 **/p** 参数或 password 参数，则 **schtasks** 会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                           |
 |          /?           |                                                                                                                                                    在命令提示符下显示帮助。                                                                                                                                                     |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 - **删除**操作从计划中删除任务。 它不会删除任务运行的程序，也不会中断正在运行的程序。
 - **Delete \\ *** 命令将删除所有为计算机计划的任务，而不只是由当前用户计划的任务。
@@ -1183,7 +1183,7 @@ schtasks [/query] [/fo {TABLE | LIST | CSV}] [/nh] [/v] [/s <Computer> [/u [<Dom
 |    /p \<Password>     |                                        指定在 **/u** 参数中指定的用户帐户的密码。 如果使用 **/u**，但省略 **/p** 或 password 参数，则 **schtasks** 会提示输入密码。</br>**/U**和 **/p**参数仅在使用 **/s**时有效。                                         |
 |          /?           |                                                                                                                                                    在命令提示符下显示帮助。                                                                                                                                                     |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 **SchTasks.exe** 仅结束由计划任务启动的程序的实例。 若要停止其他进程，请使用 TaskKill。 有关详细信息，请参阅 [Taskkill](taskkill.md)。
 

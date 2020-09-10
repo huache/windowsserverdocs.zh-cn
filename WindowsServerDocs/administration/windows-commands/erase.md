@@ -3,16 +3,16 @@ title: erase
 description: 用于删除一个或多个文件的 erase 命令的参考文章。
 ms.topic: reference
 ms.assetid: 024a4d0f-8679-4e06-b46f-61fdaf5464bc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ae0eafd5dad4b37ba710eee1b66f6e276353271b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5545e63efc87527506704ecd6ff956c8000b95a5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030624"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636097"
 ---
 # <a name="erase"></a>erase
 
@@ -41,7 +41,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 | /a [：]`<attributes>` | 基于以下文件属性删除文件：<ul><li>**r** 只读文件</li><li>**h** 隐藏文件</li><li>**我** 不是内容索引文件</li><li>**s** 系统文件</li><li>准备好存档**的文件**</li><li>**l** 重新分析点</li><li>**-** 用作前缀，即 "not"</li></ul>. |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果使用 `erase /p` 命令，你将看到以下消息：
 

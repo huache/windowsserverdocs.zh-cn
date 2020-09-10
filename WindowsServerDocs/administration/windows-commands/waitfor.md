@@ -3,16 +3,16 @@ title: waitfor
 description: Waitfor 的参考文章，用于发送或等待系统上的信号。 **Waitfor** 用于跨网络同步计算机。
 ms.topic: reference
 ms.assetid: a48ef70d-4d28-4035-b6b0-7d7b46ac2157
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a55629f6715e8b1d2e1aaede4153f74ac05ac98
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1dec723db998c26796f5f61929073e12903c045b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022908"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637896"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -41,7 +41,7 @@ waitfor [/t <Timeout>] <SignalName>
 |     \<SignalName>     |                                                指定 **waitfor** 等待或发送的信号。 *SignalName* 不区分大小写。                                                 |
 |          /?           |                                                                             在命令提示符下显示帮助。                                                                             |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   信号名称不能超过225个字符。 有效字符包括 a-z、a-z、0-9 和 ASCII 扩展字符集 (128-255) 。
 -   如果不使用 **/s**，则信号会广播到域中的所有系统。 如果使用 **/s**，则信号只发送到指定的系统。

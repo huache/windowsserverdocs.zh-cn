@@ -3,16 +3,16 @@ title: rdpsign
 description: Rdpsign 命令的参考文章，可用于对远程桌面协议 ( .rdp) 文件进行数字签名。
 ms.topic: reference
 ms.assetid: 4a6fa8ce-3d32-49a5-b056-bcc1a23391f5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: ecd80969f42a440bfd583223779fe67c27c5c310
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a98619c468ce26e7af3406512be54937c8aa799d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037145"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637342"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -41,7 +41,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 | `<file_name.rdp>` | .Rdp 文件的名称。 您必须指定 .rdp 文件 (或文件) 使用完整文件名进行签名。 不接受通配符。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - SHA1 或 SHA256 证书指纹应表示受信任的 .rdp 文件发布者。 若要获取证书指纹，请打开 " **证书** " 管理单元，在 "本地计算机的证书存储" 或 "个人证书存储" 中双击要使用 (证书) 中，单击 " **详细信息** " 选项卡，然后在 " **字段** " 列表中，单击 " **指纹**"。
 
