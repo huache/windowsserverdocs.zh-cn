@@ -3,16 +3,16 @@ title: 运行最佳做法分析器扫描和管理扫描 Results_1
 description: 服务器管理器
 ms.topic: article
 ms.assetid: 232f1c80-88ef-4a39-8014-14be788c2766
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f8c0440da49e6e78afece1af3ee8357ddf846e7e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8b8ef48e81daa9c673f42d43b2f95abadec619a8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895733"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627804"
 ---
 # <a name="run-best-practices-analyzer-scans-and-manage-scan-results"></a>运行最佳做法分析器扫描并管理扫描结果
 
@@ -51,11 +51,11 @@ BPA 的工作方式是在8个不同类别的有效性、可信赖性和可靠性
 
 |Category Name|描述|
 |---------|--------|
-|安全性|安全规则用于度量角色面临的威胁的相对风险，如未授权的用户或恶意用户，或者机密或专有数据丢失或被盗。|
+|安全|安全规则用于度量角色面临的威胁的相对风险，如未授权的用户或恶意用户，或者机密或专有数据丢失或被盗。|
 |性能|性能规则用于度量角色在给定角色工作负荷的预期时间段内处理请求并在企业中执行其预定职责的能力。|
 |配置|配置规则用于确定出可能需要修改以使角色实现最佳性能的角色设置。 配置规则可以帮助防止设置冲突，这些冲突可能导致错误消息或者阻止角色在企业中执行其预定职责。|
 |策略|策略规则用于标识可能需要修改角色才能以最佳方式安全地运行的组策略或 Windows 注册表设置。|
-|操作|操作规则用于确定角色在企业中执行预定任务上可能出现的失败。|
+|Operation|操作规则用于确定角色在企业中执行预定任务上可能出现的失败。|
 |部署前|部署前规则是已安装角色在企业中部署前应用的规则。 这些规则可让管理员在角色进入生产使用前评估是否满足最佳做法。|
 |部署后|部署后规则是在启动某个角色必需的所有服务并在企业中运行该角色后应用的规则。|
 |先决条件|在 BPA 应用其他类别的特定规则之前，先决条件规则说明角色所需的配置设置、策略设置和功能。 扫描结果中的先决条件表示不正确的设置、缺少的程序、不正确地启用或禁用的策略、注册表项设置或其他配置已经阻止 BPA 在扫描期间应用一个或多个规则。 先决条件结果并不意味着符合或不符合。 这意味着某个规则可能不会得到应用，因此不属于扫描结果的一部分。|
@@ -80,7 +80,7 @@ BPA 的工作方式是在8个不同类别的有效性、可信赖性和可靠性
 
     -   在 Windows 任务栏上，单击 "服务器管理器" 按钮。
 
-    -   在 "**开始**" 屏幕上，单击 "服务器管理器" 磁贴。
+    -   在 " **开始** " 屏幕上，单击 "服务器管理器" 磁贴。
 
 2.  在导航窗格中，打开角色或组页面。
 
@@ -94,7 +94,7 @@ BPA 的工作方式是在8个不同类别的有效性、可信赖性和可靠性
 使用以下过程通过使用 Windows PowerShell cmdlet 扫描一个或多个角色。
 
 > [!NOTE]
-> 此部分中的过程不显示所有 BPA cmdlet 和参数。 有关 Windows PowerShell 中的 BPA 操作的详细信息，请在 Windows PowerShell 会话中输入**Get-help***BPACmdlet***-full**，其中， *BPACmdlet*可以是下列值之一。 你还可以在[Windows Server 技术中心](https://go.microsoft.com/fwlink/p/?LinkId=240177)查找 BPA cmdlet 帮助主题。
+> 此部分中的过程不显示所有 BPA cmdlet 和参数。 有关 Windows PowerShell 中的 BPA 操作的详细信息，请在 Windows PowerShell 会话中输入 **Get-help***BPACmdlet***-full**，其中， *BPACmdlet* 可以是下列值之一。 你还可以在 [Windows Server 技术中心](https://go.microsoft.com/fwlink/p/?LinkId=240177)查找 BPA cmdlet 帮助主题。
 
 -   **Get-bpamodel**
 
@@ -110,11 +110,11 @@ BPA 的工作方式是在8个不同类别的有效性、可信赖性和可靠性
 
     -   若要从 "**开始**" 屏幕以管理员身份运行 windows powershell，请在 "**应用**" 结果中右键单击 " **windows powershell** " 磁贴，然后单击应用栏上的 "以**管理员身份运行**"。
 
-    -   若要从桌面以管理员身份运行 Windows PowerShell，请在任务栏中右键单击**Windows powershell**快捷方式，然后单击 "以**管理员身份运行**"。
+    -   若要从桌面以管理员身份运行 Windows PowerShell，请在任务栏中右键单击 **Windows powershell** 快捷方式，然后单击 "以 **管理员身份运行**"。
 
 2.  从 Windows PowerShell 3.0 开始，首次使用模块中的 cmdlet 时，cmdlet 模块将自动导入到 Windows PowerShell 会话中。 无须导入或加载 BPA cmdlet 模块。
 
-3.  通过输入**get-bpamodel** cmdlet 查找可执行 BPA 扫描的所有角色的模型 id，如以下示例中所示。
+3.  通过输入 **get-bpamodel** cmdlet 查找可执行 BPA 扫描的所有角色的模型 id，如以下示例中所示。
 
     `Get-Bpamodel`
 
@@ -167,7 +167,7 @@ GUI 中的 BPA 扫描完成后，你可以在 BPA 磁贴中查看扫描结果。
 如果不需要查看某些 BPA 结果，如 BPA 扫描中经常出现但无需解决的结果，可以使用 Windows PowerShell 中的 BPA GUI 或 BPA cmdlet 排除结果。 可以随时再次包括这些扫描结果。
 
 > [!NOTE]
-> 当你排除这些扫描结果时，它们也被从托管服务器的视图中排除。 其他管理员不会在托管服务器上看到排除的结果。 若要仅从本地服务器管理器控制台中的视图排除结果，请创建一个自定义查询，而不是使用 "**排除结果**" 命令。
+> 当你排除这些扫描结果时，它们也被从托管服务器的视图中排除。 其他管理员不会在托管服务器上看到排除的结果。 若要仅从本地服务器管理器控制台中的视图排除结果，请创建一个自定义查询，而不是使用 " **排除结果** " 命令。
 
 #### <a name="exclude-scan-results"></a><a name=BKMK_exclude></a>排除扫描结果
 “排除”**** 设置具有永久性；你排除的结果在同一计算机上的同一模型的未来扫描中仍将被排除，除非再次包括它们。
@@ -181,7 +181,7 @@ GUI 中的 BPA 扫描完成后，你可以在 BPA 磁贴中查看扫描结果。
 
 1.  在服务器管理器中打开角色或服务器组页面。
 
-2.  在角色或服务器组的 "最佳做法分析器" 磁贴中，右键单击列表中的结果，然后单击 "**排除结果**"。
+2.  在角色或服务器组的 "最佳做法分析器" 磁贴中，右键单击列表中的结果，然后单击 " **排除结果**"。
 
     该结果不再在结果列表中显示。
 
@@ -197,7 +197,7 @@ GUI 中的 BPA 扫描完成后，你可以在 BPA 磁贴中查看扫描结果。
 
     `Get-BPAResult -modelId <model ID> | Where { $_.<Field Name> -eq Value} | Set-BPAResult -Exclude $true`
 
-    前面的命令检索*模型*id 表示的模型 ID 的 BPA 扫描结果项。
+    前面的命令检索 *模型*id 表示的模型 ID 的 BPA 扫描结果项。
 
     此命令的第二个部分筛选 `Get-BPAResult` cmdlet 的结果，以仅检索结果字段（*字段名称*表示）的值与引号中的文本相匹配的扫描结果。
 
@@ -212,7 +212,7 @@ GUI 中的 BPA 扫描完成后，你可以在 BPA 磁贴中查看扫描结果。
 
 1.  在服务器管理器中打开角色或服务器组页面。
 
-2.  在角色或服务器组的 "最佳做法分析器" 磁贴中，右键单击 "**排除的结果**" 查询列表中的某个排除的结果，然后单击 "**包括结果**"。
+2.  在角色或服务器组的 "最佳做法分析器" 磁贴中，右键单击 " **排除的结果** " 查询列表中的某个排除的结果，然后单击 " **包括结果**"。
 
     该结果不再在已排除的结果列表中显示。 通过单击“全部清除”**** 来清除查询，以查看所有包括的结果列表中包括的结果。
 
@@ -224,9 +224,9 @@ GUI 中的 BPA 扫描完成后，你可以在 BPA 磁贴中查看扫描结果。
 
     `Get-BPAResult -modelId <model Id> | Where { $_.<Field Name> -eq Value } | Set-BPAResult -Exclude $false`
 
-    前面的命令检索*模型 Id*表示的模型的 BPA 扫描结果项。
+    前面的命令检索 *模型 Id*表示的模型的 BPA 扫描结果项。
 
-    命令的第二部分在第一个管道字符 ( 之后 **|** ) 筛选**get-bparesult** cmdlet 的结果，以仅检索结果字段（由*字段名称*表示）的值与引号中的文本相匹配的扫描结果。
+    命令的第二部分在第一个管道字符 ( 之后 **|** ) 筛选 **get-bparesult** cmdlet 的结果，以仅检索结果字段（由 *字段名称*表示）的值与引号中的文本相匹配的扫描结果。
 
     此命令的最后一个部分（即位于第二个管道字符后面的部分）包括该 cmdlet 的第二部分筛选的结果，方法是将 **-Exclude** 参数的值设置为 **false**。
 
@@ -239,7 +239,7 @@ GUI 中的 BPA 扫描完成后，你可以在 BPA 磁贴中查看扫描结果。
 
 1.  使用提升的用户权限打开 Windows PowerShell 会话。
 
-2.  获得指定的模型 ID 的最新扫描结果。 键入以下项，其中模型由*模型 ID*表示，再按**enter**。 可以获得多个模型 ID 的结果，并用逗号来分隔模型 ID。
+2.  获得指定的模型 ID 的最新扫描结果。 键入以下项，其中模型由 *模型 ID*表示，再按 **enter**。 可以获得多个模型 ID 的结果，并用逗号来分隔模型 ID。
 
     `Get-BPAResult <model ID>`
 
@@ -286,13 +286,13 @@ GUI 中的 BPA 扫描完成后，你可以在 BPA 磁贴中查看扫描结果。
 
         `Get-BPAResult <model ID> | OGV`
 
-    -   若要将 BPA 结果导出到可存档或发送给电子邮件收件人的 HTML 文件，请运行以下 cmdlet，其中*path*表示要将 HTML 结果保存到的路径和文件名。
+    -   若要将 BPA 结果导出到可存档或发送给电子邮件收件人的 HTML 文件，请运行以下 cmdlet，其中 *path* 表示要将 HTML 结果保存到的路径和文件名。
 
         `Get-BPAResult <model ID> | convertTo-Html | Set-Content <path>`
 
         **示例：** `Get-BPAResult Microsoft/Windows/FileServices | convertTo-Html | Set-Content C:\BPAResults\FileServices.htm`
 
-    -   若要将 BPA 结果导出为逗号分隔值 (CSV) 文本文件，请运行以下 cmdlet，其中*path*表示要将 CSV 结果保存到的路径和文件名。 CSV 结果可以导入到 Microsoft Excel 或其他以电子表格或网格显示数据的程序。
+    -   若要将 BPA 结果导出为逗号分隔值 (CSV) 文本文件，请运行以下 cmdlet，其中 *path* 表示要将 CSV 结果保存到的路径和文件名。 CSV 结果可以导入到 Microsoft Excel 或其他以电子表格或网格显示数据的程序。
 
         `Get-BPAResult <model ID> | Export-CSV <path>`
 

@@ -3,16 +3,16 @@ title: 拒绝-AutoaddDevices
 description: 拒绝-AutoaddDevices 的参考文章，拒绝等待管理审批的计算机。
 ms.topic: reference
 ms.assetid: ea25a4b2-5fad-4360-9c47-c2c9df7ea31f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 636e7db0338e77b4cbe041ea3b69fdfe6dfb5af7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 554f3da87ddd3f99284c79614fdde516d171d16d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038125"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627917"
 ---
 # <a name="reject-autoadddevices"></a>拒绝-AutoaddDevices
 

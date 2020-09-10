@@ -3,16 +3,16 @@ title: delete partition
 description: 删除分区命令的参考文章，该命令删除具有焦点的分区。
 ms.topic: reference
 ms.assetid: 65752312-cb16-46f6-870f-1b95c507b101
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a3b0f6b57f700201c05bd81c706d07de589e9f7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2833039c9237a271910c43ff8acb7b8fb94828f1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027735"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628830"
 ---
 # <a name="delete-partition"></a>delete partition
 
@@ -36,7 +36,7 @@ delete partition [noerr] [override]
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 | override | 允许 DiskPart 删除任何类型的分区。 通常，DiskPart 只允许删除已知的数据分区。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 若要删除动态卷，请始终改用 [delete volume](delete-volume.md) 命令。
 

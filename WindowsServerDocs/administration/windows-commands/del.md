@@ -3,16 +3,16 @@ title: del
 description: Del 命令的参考文章，用于删除一个或多个文件。
 ms.topic: reference
 ms.assetid: 346eede2-2085-44f5-9936-6877b5d5a833
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d7b5c3dd59da3bd15341b985476a88c8d828cfd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bb7c060dbcfe4d08018b5616e5227b64a0434e28
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024221"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628897"
 ---
 # <a name="del"></a>del
 
@@ -42,7 +42,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 | /a [：]`<attributes>` | 基于以下文件属性删除文件：<ul><li>**r** 只读文件</li><li>**h** 隐藏文件</li><li>**我** 不是内容索引文件</li><li>**s** 系统文件</li><li>准备好存档**的文件**</li><li>**l** 重新分析点</li><li>**-** 用作前缀，即 "not"</li></ul>. |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果使用 `del /p` 命令，你将看到以下消息：
 

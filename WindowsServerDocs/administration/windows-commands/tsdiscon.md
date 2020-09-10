@@ -3,16 +3,16 @@ title: tsdiscon
 description: Tsdiscon 的参考文章，用于断开会话与远程桌面会话主机服务器的连接。
 ms.topic: reference
 ms.assetid: 13139674-7dee-4965-8cac-32f4928e8b9a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9fd0292ab1bd53a424c0acaa4b6a2dc98cb1f0a0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b116dfe8dc5ac3a689cae23ebba17b202b509897
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026855"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628552"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -40,7 +40,7 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 -   您必须拥有 "完全控制" 权限或 "断开连接" 特殊访问权限才能断开其他用户与会话的连接。
 -   如果未指定会话 ID 或会话名称， **tsdiscon** 将断开当前会话的连接。
 -   断开会话时运行的任何应用程序都将在您重新连接到该会话时自动运行，而不会丢失数据。 使用 " **重置会话** " 结束已断开连接的会话的正在运行的应用程序，但请注意，这可能会导致会话中的数据丢失。

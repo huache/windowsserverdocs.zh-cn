@@ -4,35 +4,35 @@ description: 描述如何管理软件清单日志记录
 ms.topic: article
 ms.assetid: 812173d1-2904-42f4-a9e2-de19effec201
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 548158fd1df4ee4fbd8d6f1bcee28693961c8d79
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: dba46b75da685f5b2cb74e8e08c53db9aa643aba
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991855"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628264"
 ---
 # <a name="manage-software-inventory-logging"></a>管理软件清单日志记录
 
 >适用于： Windows Server (半年通道) ，Windows Server 2019，Windows Server 2016，Windows Server 2012 R2，Windows Server 2012，Windows Server 2008 R2
 
-本文档介绍如何管理软件清单日志记录，这是一项功能，可帮助数据中心管理员在一段时间内轻松记录其部署的 Microsoft 软件资产管理数据。 本文档介绍如何管理软件清单日志记录。 在 Windows Server 2012 R2 中使用软件清单日志记录之前，请确保在每个需要列出清单的系统上安装 Windows 更新[kb 3000850](https://support.microsoft.com/kb/3000850)和[kb 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 无需进行 Wndows 更新。 此功能在要记录清单的每台服务器上以本地方式运行。 它不会从远程服务器收集数据。
+本文档介绍如何管理软件清单日志记录，这是一项功能，可帮助数据中心管理员在一段时间内轻松记录其部署的 Microsoft 软件资产管理数据。 本文档介绍如何管理软件清单日志记录。 在 Windows Server 2012 R2 中使用软件清单日志记录之前，请确保在每个需要列出清单的系统上安装 Windows 更新 [kb 3000850](https://support.microsoft.com/kb/3000850) 和 [kb 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 无需进行 Wndows 更新。 此功能在要记录清单的每台服务器上以本地方式运行。 它不会从远程服务器收集数据。
 
 软件清单日志记录功能还可添加到 Windows Server 2012 R2 之前的两个 Windows Server 版本。 你可以安装以下更新以将软件清单日志记录功能添加到 Windows Server 2012 和 Windows Server 2008 R2 SP1：
 
 - **Windows Server 2012 (Standard 或 Datacenter Edition) **
 
 > [!NOTE]
-> 请确保在应用以下更新程序包之前安装了[WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855) 。
+> 请确保在应用以下更新程序包之前安装了 [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855) 。
 
 -  Windows Server 2012 的 WMF 4.0 更新包：[KB 3119938](https://support.microsoft.com/kb/3119938)
 
 - **Windows Server 2008 R2 SP1**
 
 > [!NOTE]
-> 请确保在应用以下更新程序包之前安装了[WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855) 。
+> 请确保在应用以下更新程序包之前安装了 [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855) 。
 
 
 - 需要 [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)
@@ -115,9 +115,9 @@ ms.locfileid: "87991855"
 ## <a name="configuring-software-inventory-logging"></a>配置软件清单日志记录
 配置软件清单日志记录以便将数据持续转发到聚合服务器有三个步骤：
 
-1.  使用**set-sillogging – TargetUri**指定聚合服务器的 web 地址， (必须以 "https://" ) 开头。
+1.  使用 **set-sillogging – TargetUri** 指定聚合服务器的 web 地址， (必须以 "https://" ) 开头。
 
-2.  使用**set-sillogging – CertificateThumbprint**指定有效 SSL 证书的指纹哈希，该哈希将用于对聚合服务器的数据传输进行身份验证 (需要将聚合服务器配置为接受哈希) 。
+2.  使用 **set-sillogging – CertificateThumbprint** 指定有效 SSL 证书的指纹哈希，该哈希将用于对聚合服务器的数据传输进行身份验证 (需要将聚合服务器配置为接受哈希) 。
 
 3.  在将从中转发数据的本地服务器的 **本地计算机/个人存储区**（或 **/LocalMachine/MY**）中（为网络）安装有效的 SSL 证书。
 
@@ -231,9 +231,9 @@ SystemManufacturer        : Microsoft Corporation
 
 -   使用 [Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay 设置 SIL 日志记录运行的时间时，必须指定日期和时间。会设置日历日期，在本地系统时间达到该日期之前，不会进行日志记录。
 
--   当使用[get-silsoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))或[get-silwindowsupdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630))时，"InstallDate" 将始终显示12：00： 00 (（无意义的值）。
+-   当使用 [get-silsoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))或 [get-silwindowsupdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630))时，"InstallDate" 将始终显示12：00： 00 (（无意义的值）。
 
--   当使用[get-silualaccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630))时，"SampleDate" 将始终显示11：59： 00 (，这是一个毫无意义的值。日期是这些 cmdlet 查询的相关数据。
+-   当使用 [get-silualaccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630))时，"SampleDate" 将始终显示11：59： 00 (，这是一个毫无意义的值。日期是这些 cmdlet 查询的相关数据。
 
 ## <a name="enabling-and-configuring-software-inventory-logging-in-a-mounted-virtual-hard-disk"></a><a name="BKMK_Step10"></a>在装载的虚拟硬盘中启用和配置软件清单日志记录
 软件清单日志记录还支持脱机虚拟机上的配置和启用。 这种情况的实际用途旨在涵盖跨数据中心的广泛部署的 "黄金映像" 设置，以及配置从本地到云部署的最终用户映像。

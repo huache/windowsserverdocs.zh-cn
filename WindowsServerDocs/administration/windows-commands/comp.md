@@ -3,16 +3,16 @@ title: comp
 description: 用于比较每个文件或一组文件的内容的复合命令参考文章。
 ms.topic: reference
 ms.assetid: 40319d23-704d-4da1-be93-8259547275d0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: bd796aef8ef5794e4d8c09a995cb39a9756fb444
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 15859b06ffb402feb05bf3dee3bad5462093a888
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027775"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629435"
 ---
 # <a name="comp"></a>comp
 
@@ -38,7 +38,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 | /off [line] | 处理具有脱机属性集的文件。 |
 | /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - 在比较过程中，" **复合** " 将显示用于标识文件之间不等信息位置的消息。 每条消息都表示不相等字节的偏移内存地址， (十六进制表示法内容，除非) 指定 **/a** 或 **/d** 命令行参数。 消息按以下格式显示：
 

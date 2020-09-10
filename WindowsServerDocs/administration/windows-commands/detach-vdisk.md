@@ -3,16 +3,16 @@ title: detach vdisk
 description: "\"分离 vdisk\" 命令的参考文章，用于停止所选虚拟硬盘 (VHD) 在主计算机上显示为本地硬盘驱动器。"
 ms.topic: reference
 ms.assetid: 5f01dcb8-9237-4564-ad94-8a8dd0fd0cca
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f1fd81b4d68d471e07c461fd11ecb9d910745bc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: af3608cfa3f92ecbda3c62401f5c5a85fa5a2ffe
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027695"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628762"
 ---
 # <a name="detach-vdisk"></a>detach vdisk
 

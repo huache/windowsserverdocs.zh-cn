@@ -4,21 +4,21 @@ description: 描述如何安装和开始使用软件清单日志记录
 ms.topic: article
 ms.assetid: ed51c13c-7cbf-4144-a675-011fd29379d4
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a8584b5e2cf1048e0bba5c217aa3e6031600839a
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 76a8f0c55a604fd3f17963ec18df31ed6faf340a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993052"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628275"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>软件清单日志记录入门
 
 >适用于：Windows Server（半年频道）、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
- 软件清单日志记录按服务器收集 Microsoft 软件清单数据。 在 Windows Server 2012 R2 中使用软件清单日志记录之前，请确保在要列出清单的每个系统上安装 Windows 更新[kb 3000850](https://support.microsoft.com/kb/3000850)和[kb 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 不需要 Windows 更新。 此外，如果想要使用 SIL 将数据转发到聚合服务器，请确保 SSL 证书对于网络有效。
+ 软件清单日志记录按服务器收集 Microsoft 软件清单数据。 在 Windows Server 2012 R2 中使用软件清单日志记录之前，请确保在要列出清单的每个系统上安装 Windows 更新 [kb 3000850](https://support.microsoft.com/kb/3000850) 和 [kb 3060681](https://support.microsoft.com/kb/3060681) 。 Windows Server 2016 不需要 Windows 更新。 此外，如果想要使用 SIL 将数据转发到聚合服务器，请确保 SSL 证书对于网络有效。
 
 ## <a name="feature-description"></a><a name="BKMK_OVER"></a>功能说明
 Windows Server 中软件清单日志记录功能包含一组简单的 PowerShell cmdlet，可帮助服务器管理员检索其服务器上安装的 Microsoft 软件的列表。 它还提供了使用 HTTPS 协议通过网络定期收集数据并将此数据转发到目标 Web 服务器进行聚合的功能。 对该功能（主要是按小时进行收集和转发）的管理也可以通过 PowerShell 命令完成。

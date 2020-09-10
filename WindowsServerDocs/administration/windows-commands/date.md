@@ -3,16 +3,16 @@ title: date
 description: 日期命令的参考文章，其中显示或设置系统日期。 如果不使用参数，则
 ms.topic: reference
 ms.assetid: ce6700fb-32f9-4350-a1af-5aee61d4448c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 78c8ca51882b2559e78cc457d1fd7fa5ec8e87b8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ca9e8b9305132e9af03308d2e0ca0cc20ed89469
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033035"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628969"
 ---
 # <a name="date"></a>date
 

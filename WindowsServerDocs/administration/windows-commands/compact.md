@@ -3,16 +3,16 @@ title: compact
 description: Compact 命令的参考文章，其中显示或更改 NTFS 分区上的文件或目录的压缩。
 ms.topic: reference
 ms.assetid: 429b3752-df0a-43a4-a210-df2f3ad03c3b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 210aaf8c20741659bb29d4855ae39099c964a400
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a0d43fce44b7de6ecc5b435b7ed5f2de88ed0b9f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025941"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629382"
 ---
 # <a name="compact"></a>compact
 
@@ -38,7 +38,7 @@ compact [/c | /u] [/s[:<dir>]] [/a] [/i] [/f] [/q] [<filename>[...]]
 | `<filename>` | 指定文件或目录。 可以使用多个文件名， **&#42;** 和 **？** 通配符。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 此命令是 NTFS 文件系统压缩功能的命令行版本。 目录的压缩状态指示将文件添加到目录时是否自动对文件进行压缩。 设置目录的压缩状态不一定会更改目录中已有文件的压缩状态。
 

@@ -3,16 +3,16 @@ title: create partition msr
 description: 创建分区 msr 的参考文章，它在 GUID 分区表 (gpt) 磁盘上创建 Microsoft 保留 (MSR) 分区。
 ms.topic: reference
 ms.assetid: 04fba033-23cb-4521-bd5d-db96131f2e73
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1df792001cf48d9d5fce69de6dc9bc6bdd09a1f8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 25187f6bfee63b7b7b39519db9eddd82900a19c3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033225"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629123"
 ---
 # <a name="create-partition-msr"></a>create partition msr
 
@@ -39,7 +39,7 @@ create partition msr [size=<n>] [offset=<n>] [noerr]
 | offset =`<n>` | 指定在其中创建分区 (KB) 的偏移量（kb）。 偏移量向上舍入，以完全填充所使用的任何扇区大小。 如果未给出偏移量，则将分区放置在能容纳它的第一个磁盘区域中。 |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 在用于启动 Windows 操作系统的 gpt 磁盘上，可扩展固件接口 (EFI) 系统分区是磁盘上的第一个分区，后跟 Microsoft 保留分区。 仅用于数据存储的 gpt 磁盘没有 EFI 系统分区，在这种情况下，Microsoft 保留分区为第一个分区。
 

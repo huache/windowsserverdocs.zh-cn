@@ -3,16 +3,16 @@ title: chcp
 description: 用于更改活动控制台代码页的 chcp 命令的参考文章。
 ms.topic: reference
 ms.assetid: dc7b1c71-7b80-443d-9cf1-9bcf305aa1fd
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e725bb3220546864642b2e6a39ddcc0163b1b98
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ef70d73253782528bcd54f7cfd6f98de9d941702
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031085"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629835"
 ---
 # <a name="chcp"></a>chcp
 
@@ -48,7 +48,7 @@ chcp [<nnn>]
 | 869 | 现代希腊语 |
 | 936 | 中文 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 仅与 Windows 一起安装的原始设备制造商 (OEM) 代码页正常显示在命令提示符窗口使用光栅字体。 在全屏幕模式下或使用 TrueType 字体的命令提示符窗口中，其他代码页正确显示。
 

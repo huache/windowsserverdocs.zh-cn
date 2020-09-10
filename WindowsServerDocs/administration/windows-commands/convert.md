@@ -3,16 +3,16 @@ title: convert
 description: 转换命令的参考文章，可将磁盘从一种磁盘类型转换为另一种类型。
 ms.topic: reference
 ms.assetid: ae151297-af21-4701-bd69-21d775518e03
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1da57e88027cedac0aad95891720dd3043de2a9d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 654d5266fff3a3fffadb9d176eb07a792f22fa01
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030905"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629274"
 ---
 # <a name="convert"></a>convert
 

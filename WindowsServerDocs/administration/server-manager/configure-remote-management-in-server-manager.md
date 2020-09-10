@@ -3,16 +3,16 @@ title: 在服务器管理器中配置远程管理
 description: 服务器管理器
 ms.topic: article
 ms.assetid: 509182ed-c37d-4b81-84bc-aee43d006873
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a39eaaff5497ee85cb823907cd8b57f1888dd08
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 6f709a30a571a43e6c299dabbfa006c12660fb92
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991881"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628353"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>在服务器管理器中配置远程管理
 
@@ -26,18 +26,18 @@ ms.locfileid: "87991881"
 
 |操作系统|软件要求|可管理性|
 |----------|-----------|---------|
-| Windows Server 2012 R2 或 Windows Server 2012 |-   [.NET Framework 4。6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)。 Windows Management Framework 5.0 (WMI) 提供程序在 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2 上下载包更新 Windows Management Instrumentation。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的服务器的可管理性状态为 "**无法访问**"。<br />-在运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器上不再需要与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)关联的性能更新。||
-| Windows Server 2008 R2 |-   [.NET Framework 4。5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)。 Windows Management Framework 4.0 (WMI) 提供程序在 Windows Server 2008 R2 上下载包更新 Windows Management Instrumentation。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 R2 的服务器的可管理性状态为 "**无法访问**"。<br />-与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相关的性能更新允许服务器管理器从 Windows Server 2008 R2 收集性能数据。||
-| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   [Windows Management Framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)Windows Management Framework 3.0 (WMI) 提供程序在 Windows Server 2008 上下载包更新 Windows Management Instrumentation。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 的服务器的可管理性状态为 "**无法访问"-验证早期版本是否运行 Windows Management Framework 3.0**。<br />-与[知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)相关的性能更新允许服务器管理器从 Windows Server 2008 收集性能数据。||
+| Windows Server 2012 R2 或 Windows Server 2012 |-   [.NET Framework 4。6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)。 Windows Management Framework 5.0 (WMI) 提供程序在 Windows Server 2012 R2、Windows Server 2012 和 Windows Server 2008 R2 上下载包更新 Windows Management Instrumentation。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 的服务器的可管理性状态为 " **无法访问**"。<br />-在运行 Windows Server 2012 R2 或 Windows Server 2012 的服务器上不再需要与 [知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487) 关联的性能更新。||
+| Windows Server 2008 R2 |-   [.NET Framework 4。5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)。 Windows Management Framework 4.0 (WMI) 提供程序在 Windows Server 2008 R2 上下载包更新 Windows Management Instrumentation。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 R2 的服务器的可管理性状态为 " **无法访问**"。<br />-与 [知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487) 相关的性能更新允许服务器管理器从 Windows Server 2008 R2 收集性能数据。||
+| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   [Windows Management Framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) Windows Management Framework 3.0 (WMI) 提供程序在 Windows Server 2008 上下载包更新 Windows Management Instrumentation。 更新的 WMI 提供程序让服务器管理器收集有关在托管服务器上安装的角色和功能的信息。 在应用更新之前，运行 Windows Server 2008 的服务器的可管理性状态为 " **无法访问"-验证早期版本是否运行 Windows Management Framework 3.0**。<br />-与 [知识库文章 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487) 相关的性能更新允许服务器管理器从 Windows Server 2008 收集性能数据。||
 
-有关如何添加工作组中要管理的服务器或从运行服务器管理器的工作组计算机管理远程服务器的详细信息，请参阅[将服务器添加到服务器管理器](add-servers-to-server-manager.md)。
+有关如何添加工作组中要管理的服务器或从运行服务器管理器的工作组计算机管理远程服务器的详细信息，请参阅 [将服务器添加到服务器管理器](add-servers-to-server-manager.md)。
 
 ## <a name="enabling-or-disabling-remote-management"></a>启用或禁用远程管理
 在 Windows Server 2016 中，远程管理在默认情况下处于启用状态。 必须先在目标计算机上启用服务器管理器远程管理（如果已禁用），然后才能使用服务器管理器远程连接到运行 Windows Server 2016 的计算机。 本部分中的过程将介绍如何禁用远程管理，以及如何重新启用远程管理（如果已禁用）。 在服务器管理器控制台中，本地服务器的远程管理状态会显示在 "**本地服务器**" 页的 "**属性**" 区域中。
 
-即使已启用远程管理，内置管理员帐户之外的本地管理员帐户也可能不具有远程管理服务器的权限。 必须将远程用户帐户控制 (UAC) **LocalAccountTokenFilterPolicy**注册表设置配置为允许除内置管理员帐户之外的管理员组的本地帐户远程管理服务器。
+即使已启用远程管理，内置管理员帐户之外的本地管理员帐户也可能不具有远程管理服务器的权限。 必须将远程用户帐户控制 (UAC) **LocalAccountTokenFilterPolicy** 注册表设置配置为允许除内置管理员帐户之外的管理员组的本地帐户远程管理服务器。
 
-在 Windows Server 2016 中，服务器管理器依赖于 Windows 远程管理 (WinRM) ，分布式组件对象模型 (DCOM) 用于远程通信。 "**配置远程管理**" 对话框所控制的设置只会影响使用 WinRM 进行远程通信的服务器管理器和 Windows PowerShell 部分。 它们不会影响使用 DCOM 进行远程通信的服务器管理器部分。 例如，服务器管理器使用 WinRM 与运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的远程服务器进行通信，但使用 DCOM 与运行 Windows Server 2008 和 Windows Server 2008 R2 的服务器进行通信，但未应用[Windows Management framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)或[windows management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)更新。 Microsoft 管理控制台 (mmc) 和其他旧管理工具使用 DCOM。 有关如何更改这些设置的详细信息，请参阅本主题中的[对通过 DCOM 的 mmc 或其他工具远程管理进行配置](#to-configure-mmc-or-other-tool-remote-management-over-dcom)。
+在 Windows Server 2016 中，服务器管理器依赖于 Windows 远程管理 (WinRM) ，分布式组件对象模型 (DCOM) 用于远程通信。 " **配置远程管理** " 对话框所控制的设置只会影响使用 WinRM 进行远程通信的服务器管理器和 Windows PowerShell 部分。 它们不会影响使用 DCOM 进行远程通信的服务器管理器部分。 例如，服务器管理器使用 WinRM 与运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的远程服务器进行通信，但使用 DCOM 与运行 Windows Server 2008 和 Windows Server 2008 R2 的服务器进行通信，但未应用 [Windows Management framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881) 或 [windows management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) 更新。 Microsoft 管理控制台 (mmc) 和其他旧管理工具使用 DCOM。 有关如何更改这些设置的详细信息，请参阅本主题中的 [对通过 DCOM 的 mmc 或其他工具远程管理进行配置](#to-configure-mmc-or-other-tool-remote-management-over-dcom) 。
 
 > [!NOTE]
 > 本部分中的过程只能在运行 Windows Server 的计算机上完成。 无法在运行 Windows 10 的计算机上启用或禁用远程管理，因为不能使用服务器管理器管理客户端操作系统。
@@ -63,17 +63,17 @@ ms.locfileid: "87991881"
 ### <a name="to-enable-server-manager-remote-management-by-using-the-windows-interface"></a>使用 Windows 界面启用服务器管理器远程管理
 
 1.  > [!NOTE]
-    > "**配置远程管理**" 对话框所控制的设置不会影响使用 DCOM 进行远程通信的服务器管理器部分。
+    > " **配置远程管理** " 对话框所控制的设置不会影响使用 DCOM 进行远程通信的服务器管理器部分。
 
-    在要进行远程管理的计算机上，打开服务器管理器，如果该计算机尚未打开。 在 Windows 任务栏上，单击****“服务器管理器”。 在 "**开始**" 屏幕上，单击 "**服务器管理器**" 磁贴。
+    在要进行远程管理的计算机上，打开服务器管理器，如果该计算机尚未打开。 在 Windows 任务栏上，单击****“服务器管理器”。 在 " **开始** " 屏幕上，单击 " **服务器管理器** " 磁贴。
 
 2.  在 "**本地服务器**" 页的 "**属性**" 区域中，单击 "**远程管理**" 属性的超链接值。
 
 3.  执行下列操作之一，然后单击“确认”****。
 
-    -   若要阻止通过使用服务器管理器 (或 Windows PowerShell 远程管理此计算机) ，请清除 "**从其他计算机启用此服务器的远程管理**" 复选框。
+    -   若要阻止通过使用服务器管理器 (或 Windows PowerShell 远程管理此计算机) ，请清除 " **从其他计算机启用此服务器的远程管理** " 复选框。
 
-    -   若要通过使用服务器管理器或 Windows PowerShell 来远程管理此计算机，请选择 "**从其他计算机启用此服务器的远程管理**"。
+    -   若要通过使用服务器管理器或 Windows PowerShell 来远程管理此计算机，请选择 " **从其他计算机启用此服务器的远程管理**"。
 
 ### <a name="to-enable-server-manager-remote-management-by-using-windows-powershell"></a>使用 Windows PowerShell 启用服务器管理器远程管理的步骤
 
@@ -81,9 +81,9 @@ ms.locfileid: "87991881"
 
     -   在 Windows 桌面上，右键单击任务栏上的 Windows PowerShell****，然后单击“以管理员身份运行”****。
 
-    -   在 Windows 的 "**开始**" 屏幕上，右键单击 " **windows PowerShell**"，然后单击应用栏上的 "以**管理员身份运行**"。
+    -   在 Windows 的 " **开始** " 屏幕上，右键单击 " **windows PowerShell**"，然后单击应用栏上的 "以 **管理员身份运行**"。
 
-2.  键入以下项，然后按**enter**启用所有必需的防火墙规则例外。
+2.  键入以下项，然后按 **enter** 启用所有必需的防火墙规则例外。
 
     **Configure-SMremoting.exe-启用**
 
@@ -97,21 +97,21 @@ ms.locfileid: "87991881"
 
 3.  执行下列操作之一：
 
-    -   若要禁用远程管理，请键入**Configure-SMremoting.exe-disable**，然后按**enter**。
+    -   若要禁用远程管理，请键入 **Configure-SMremoting.exe-disable**，然后按 **enter**。
 
-    -   若要启用远程管理，请键入**Configure-SMremoting.exe-enable**，然后按**enter**。
+    -   若要启用远程管理，请键入 **Configure-SMremoting.exe-enable**，然后按 **enter**。
 
-    -   若要查看当前的远程管理设置，请键入**Configure-SMremoting.exe get**，然后按 enter。
+    -   若要查看当前的远程管理设置，请键入 **Configure-SMremoting.exe get**，然后按 enter。
 
 ### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server"></a>在较早版本 Windows Server 上启用服务器管理器和 Windows PowerShell 远程管理的步骤
 
 -   执行下列操作之一：
 
-    -   若要在运行 Windows Server 2012 的服务器上启用远程管理，请参阅本主题中[的使用 Windows 界面启用服务器管理器远程管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)。
+    -   若要在运行 Windows Server 2012 的服务器上启用远程管理，请参阅本主题中 [的使用 Windows 界面启用服务器管理器远程管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface) 。
 
-    -   若要在运行 Windows Server 2008 R2 的服务器上启用远程管理，请参阅 Windows Server 2008 R2 帮助中的[使用服务器管理器进行远程管理](https://go.microsoft.com/fwlink/?LinkID=137378)。
+    -   若要在运行 Windows Server 2008 R2 的服务器上启用远程管理，请参阅 Windows Server 2008 R2 帮助中的 [使用服务器管理器进行远程管理](https://go.microsoft.com/fwlink/?LinkID=137378) 。
 
-    -   若要在运行 Windows Server 2008 的服务器上启用远程管理，请参阅[在 Windows PowerShell 中启用和使用远程命令](https://go.microsoft.com/fwlink/p/?LinkId=242565)。
+    -   若要在运行 Windows Server 2008 的服务器上启用远程管理，请参阅 [在 Windows PowerShell 中启用和使用远程命令](https://go.microsoft.com/fwlink/p/?LinkId=242565)。
 
 ### <a name="to-configure-mmc-or-other-tool-remote-management-over-dcom"></a>通过 DCOM 配置 mmc 或其他工具远程管理
 
@@ -119,7 +119,7 @@ ms.locfileid: "87991881"
 
     -   在服务器管理器中 "**本地服务器**" 页的 "**属性**" 区域中，单击 " **Windows 防火墙**" 属性的超文本值，然后单击 "**高级设置**"。
 
-    -   在 "**开始**" 屏幕上，键入 " **WF**"，然后在 "**应用**" 结果中显示该管理单元磁贴时单击该磁贴。
+    -   在 " **开始** " 屏幕上，键入 " **WF**"，然后在 " **应用** " 结果中显示该管理单元磁贴时单击该磁贴。
 
 2.  在树窗格中，选择“入站规则”****。
 
@@ -141,11 +141,11 @@ ms.locfileid: "87991881"
 
 1.  执行下列操作之一，打开本地组策略编辑器。
 
-    -   在运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的服务器上的 "**开始**" 屏幕上，键入 " **gpedit.msc**"，然后在显示 " **gpedit.msc** " 磁贴时单击该磁贴。
+    -   在运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 的服务器上的 " **开始** " 屏幕上，键入 " **gpedit.msc**"，然后在显示 " **gpedit.msc** " 磁贴时单击该磁贴。
 
-    -   在运行 Windows Server 2008 R2 或 Windows Server 2008 的服务器上，在 "**运行**" 对话框中键入 " **gpedit.msc**"，然后按**enter**。
+    -   在运行 Windows Server 2008 R2 或 Windows Server 2008 的服务器上，在 " **运行** " 对话框中键入 " **gpedit.msc**"，然后按 **enter**。
 
-2.  打开**计算机配置 \ 管理模板 \Windows 组件 \windows 远程管理 (WinRM) \Winrm Service**。
+2.  打开 **计算机配置 \ 管理模板 \Windows 组件 \windows 远程管理 (WinRM) \Winrm Service**。
 
 3.  在内容窗格中，双击“允许通过 WinRM 进行远程服务器管理”****。
 
@@ -157,10 +157,10 @@ ms.locfileid: "87991881"
 
 2.  在答案文件中，找到 " **Microsoft-Windows-Web-Services-for-Management-Core\EnableServerremoteManagement**" 设置。
 
-3.  若要在要将答案文件应用到的所有服务器上默认禁用服务器管理器远程管理，请将**enableserverremotemanagement**设置为**False**。
+3.  若要在要将答案文件应用到的所有服务器上默认禁用服务器管理器远程管理，请将 **enableserverremotemanagement** 设置为 **False**。
 
     > [!NOTE]
-    > 此设置将禁止远程管理作为操作系统设置过程的一部分。 配置此设置不会阻止管理员在操作系统设置完成后启用服务器上服务器管理器远程管理。 管理员可以通过使用[windows 界面配置服务器管理器远程管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface)或使用 windows PowerShell 在本主题中[启用服务器管理器远程](#to-enable-server-manager-remote-management-by-using-windows-powershell)管理，使用中的步骤来再次启用服务器管理器远程管理。
+    > 此设置将禁止远程管理作为操作系统设置过程的一部分。 配置此设置不会阻止管理员在操作系统设置完成后启用服务器上服务器管理器远程管理。 管理员可以通过使用 [windows 界面配置服务器管理器远程管理](#to-enable-server-manager-remote-management-by-using-the-windows-interface) 或使用 windows PowerShell 在本主题中 [启用服务器管理器远程](#to-enable-server-manager-remote-management-by-using-windows-powershell) 管理，使用中的步骤来再次启用服务器管理器远程管理。
     >
     > 如果默认情况下禁用远程管理作为无人参与安装的一部分，并且安装完成后不在该服务器上启用远程管理，则无法使用服务器管理器完全管理此应答文件应用到的服务器。 默认情况下，运行 Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012 (并且已禁用远程管理的服务器) 在将服务器管理器控制台添加到服务器管理器服务器池后，在该控制台中生成可管理性状态错误。
 
@@ -179,7 +179,7 @@ ms.locfileid: "87991881"
 
 默认端口号为 5985，以使 WinRM 与远程计算机进行通信。
 
-有关如何配置 WinRM 侦听器设置的详细信息，请在命令提示符下键入**WinRM help config**，然后按 enter。
+有关如何配置 WinRM 侦听器设置的详细信息，请在命令提示符下键入 **WinRM help config**，然后按 enter。
 
 ## <a name="see-also"></a>另请参阅
 [将服务器添加到服务器管理器](add-servers-to-server-manager.md) 

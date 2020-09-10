@@ -3,16 +3,16 @@ title: 服务器管理器的键盘快捷方式
 description: 服务器管理器
 ms.topic: article
 ms.assetid: 96a2a8be-cbeb-4799-9034-284ea057915c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 182a99ff3c20ff8a62b36714967b25603ff055b3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d2848398fa232d45f4229238d641db7b858f3032
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895761"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627842"
 ---
 # <a name="keyboard-shortcuts-for-server-manager"></a>服务器管理器的键盘快捷方式
 
@@ -65,8 +65,8 @@ ms.locfileid: "87895761"
 |角色、组或本地服务器页面“服务”磁贴|**Alt+R**|
 |角色、组或本地服务器页面最佳做法分析器 (BPA) 磁贴|**Alt + B**|
 |角色、组或本地服务器页面“性能”磁贴|**Alt + O**|
-|角色、组或本地服务器页面“角色和功能”磁贴|**Alt+A**|
-|“所有服务器”页面“服务器”磁贴|**Alt+A**|
+|角色、组或本地服务器页面“角色和功能”磁贴|**Alt + A**|
+|“所有服务器”页面“服务器”磁贴|**Alt + A**|
 
 **在“本地服务器属性”磁贴中导航**
 

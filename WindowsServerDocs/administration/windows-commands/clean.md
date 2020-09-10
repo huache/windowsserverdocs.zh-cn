@@ -3,16 +3,16 @@ title: clean
 description: Diskpart clean 命令的参考文章，可从具有焦点的磁盘中删除所有分区或卷格式。
 ms.topic: reference
 ms.assetid: 9bbe6fd3-e07e-487b-9035-910957a1d326
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a7fd0ccfef5a15e3289b8d9a3b2b1f0b62bfe76a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 82026520c456c76823993d34a4fb09bcd4b79808
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025971"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629657"
 ---
 # <a name="clean"></a>clean
 
@@ -33,9 +33,9 @@ clean [all]
 
 | 参数 | 说明 |
 | --------- | ----------- |
-| all | 指定磁盘上的每个扇区都设置为零，这会完全删除磁盘上包含的所有数据。 |
+| 全部 | 指定磁盘上的每个扇区都设置为零，这会完全删除磁盘上包含的所有数据。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 在主启动记录 (MBR) 磁盘上，仅覆盖 MBR 分区信息和隐藏扇区信息。
 

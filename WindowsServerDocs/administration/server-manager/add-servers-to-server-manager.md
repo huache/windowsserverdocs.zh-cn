@@ -3,17 +3,17 @@ title: Add Servers to Server Manager
 description: 服务器管理器
 ms.topic: article
 ms.assetid: aab895f2-fe4d-4408-b66b-cdeadbd8969e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: b1c3e2f1c521615ff365642566745411db8aa612
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f8c3a2088533924f38b49454ab6f810c7cc9aa2e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991941"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628478"
 ---
 # <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "87991941"
 本主题介绍如何向服务器管理器服务器池添加服务器。
 
 > [!NOTE]
-> 在我们的测试中，Windows Server 2012 以及更高版本的 Windows Server 中的服务器管理器可用于管理最多 100 台配置有典型工作负载的服务器。 可以使用单一服务器管理器控制台管理的服务器数量可能取决于从托管服务器请求的数据量，以及可用于运行服务器管理器的计算机的硬件和网络资源的量。 当你想要显示的数据量接近该计算机的资源容量时，服务器管理器的响应可能变慢，刷新可能延迟完成。 若要使用服务器管理器管理更多服务器，我们建议使用**配置事件数据**对话框中的设置，限制服务器管理器从你的托管服务器获取的事件数据。 “配置事件数据”可从“事件”**** 磁贴中的“任务”**** 菜单打开。 如果需要管理组织中企业级服务器的数量，我们建议在[Microsoft System Center suite](https://go.microsoft.com/fwlink/p/?LinkId=239437)中评估产品。
+> 在我们的测试中，Windows Server 2012 以及更高版本的 Windows Server 中的服务器管理器可用于管理最多 100 台配置有典型工作负载的服务器。 可以使用单一服务器管理器控制台管理的服务器数量可能取决于从托管服务器请求的数据量，以及可用于运行服务器管理器的计算机的硬件和网络资源的量。 当你想要显示的数据量接近该计算机的资源容量时，服务器管理器的响应可能变慢，刷新可能延迟完成。 若要使用服务器管理器管理更多服务器，我们建议使用**配置事件数据**对话框中的设置，限制服务器管理器从你的托管服务器获取的事件数据。 “配置事件数据”可从“事件”**** 磁贴中的“任务”**** 菜单打开。 如果需要管理组织中企业级服务器的数量，我们建议在 [Microsoft System Center suite](https://go.microsoft.com/fwlink/p/?LinkId=239437)中评估产品。
 >
 > 服务器管理器只能从运行 Windows Server 2003 的服务器接收联机或脱机状态。 虽然你可以使用服务器管理器在运行 Windows Server 2008 R2 或 Windows Server 2008 的服务器上执行任务管理，但无法将角色和功能添加到运行 Windows Server 2008 R2、Windows Server 2008 或 Windows Server 2003 的服务器.
 >
@@ -56,16 +56,16 @@ ms.locfileid: "87991941"
 -   联机 - 访问被拒绝
 
 > [!NOTE]
-> 不支持 "**管理方式**" 命令的角色和功能包括远程桌面服务 (RDS) 和 IP 地址管理 (IPAM) Server。 如果你无法通过使用在运行服务器管理器的计算机上使用的相同凭据管理远程 RDS 或 IPAM 服务器，请尝试将你通常用来管理这些远程服务器的帐户添加到运行服务器管理器的计算机上的管理员组。 然后，使用你用来管理运行 rdS 或 IPAM 的远程服务器的帐户登录到正在运行服务器管理器的计算机。
+> 不支持 " **管理方式** " 命令的角色和功能包括远程桌面服务 (RDS) 和 IP 地址管理 (IPAM) Server。 如果你无法通过使用在运行服务器管理器的计算机上使用的相同凭据管理远程 RDS 或 IPAM 服务器，请尝试将你通常用来管理这些远程服务器的帐户添加到运行服务器管理器的计算机上的管理员组。 然后，使用你用来管理运行 rdS 或 IPAM 的远程服务器的帐户登录到正在运行服务器管理器的计算机。
 
 ## <a name="add-servers-to-manage"></a><a name=BKMK_add></a>添加要管理的服务器
 你可以使用**添加服务器**对话框中三种方法的任何一种来将服务器添加到服务器管理器以进行管理。
 
--   **Active Directory 域服务**添加服务器以管理 Active Directory 在本地计算机所在的域中查找。
+-   **Active Directory 域服务** 添加服务器以管理 Active Directory 在本地计算机所在的域中查找。
 
 -   **域名系统 (DNS) 条目** 按计算机名或 IP 地址搜索要管理的服务器。
 
--   **导入多个服务器**指定要在包含按计算机名或 IP 地址列出的服务器的文件中导入的多个服务器。
+-   **导入多个服务器** 指定要在包含按计算机名或 IP 地址列出的服务器的文件中导入的多个服务器。
 
 #### <a name="to-add-servers-to-the-server-pool"></a>向服务器池中添加服务器
 
@@ -73,17 +73,17 @@ ms.locfileid: "87991941"
 
     -   在 Windows 桌面上，启动服务器管理器，方法是单击 Windows 任务栏中的“服务器管理器”  。
 
-    -   在 Windows 的 "**开始**" 屏幕上，单击 "服务器管理器" 磁贴。
+    -   在 Windows 的 " **开始** " 屏幕上，单击 "服务器管理器" 磁贴。
 
-2.  在 "**管理**" 菜单上，单击 "**添加服务器**"。
+2.  在 " **管理** " 菜单上，单击 " **添加服务器**"。
 
 3.  执行下列操作之一：
 
-    -   在 " **active directory** " 选项卡上，选择当前域中的服务器。 按 **Ctrl** 并选择以选择多台服务器。 单击右箭头按钮以将选定服务器移到 "**选定**" 列表。
+    -   在 " **active directory** " 选项卡上，选择当前域中的服务器。 按 **Ctrl** 并选择以选择多台服务器。 单击右箭头按钮以将选定服务器移到 " **选定** " 列表。
 
     -   在“DNS”**** 选项卡上，键入计算机名或 IP 地址的前几个字符，再按 **Enter** 或单击“搜索”****。 选择要添加的服务器，然后单击右箭头按钮。
 
-    -   在 "**导入**" 选项卡上，浏览到包含要添加的计算机的 DNS 名称或 ip 地址的文本文件，每行一个名称或 ip 地址。
+    -   在 " **导入** " 选项卡上，浏览到包含要添加的计算机的 DNS 名称或 ip 地址的文本文件，每行一个名称或 ip 地址。
 
 4.  添加完服务器时，单击“确定”。****
 
@@ -157,7 +157,7 @@ ms.locfileid: "87991941"
 
 5.  注销要在其上运行服务器管理器的计算机，再使用内置管理员帐户重新登录。 重复上一步，以确定服务器管理器能够连接到并从远程服务器收集数据。
 
-如果已按照本部分中的步骤操作，但在管理工作组计算机或从工作组计算机管理其他计算机时仍出现问题，请参阅 Microsoft 网站上的[about_remote_Troubleshooting](/previous-versions/dd347642(v=technet.10)) 。
+如果已按照本部分中的步骤操作，但在管理工作组计算机或从工作组计算机管理其他计算机时仍出现问题，请参阅 Microsoft 网站上的 [about_remote_Troubleshooting](/previous-versions/dd347642(v=technet.10)) 。
 
 ### <a name="add-and-manage-servers-in-clusters"></a>在群集中添加和管理服务器
 可以使用服务器管理器来管理故障转移群集（也称为服务器群集或 MSCS）中的服务器。 故障转移群集中的服务器（无论群集节点是物理节点还是虚拟节点）在服务器管理器中有一些特有的行为和管理限制。

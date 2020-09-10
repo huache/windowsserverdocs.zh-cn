@@ -3,16 +3,16 @@ title: tracerpt
 description: 用于分析事件跟踪日志、由性能监视器生成的日志文件和实时事件跟踪提供程序的 tracerpt 参考文章。
 ms.topic: reference
 ms.assetid: cb9eaf86-0ef6-4197-b6c8-9cca8a1d723c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 250c938963342ca46308f601b00d44773638a4ad
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 183f34b7287301c7cf5c58644150fc59dee1576d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026945"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628567"
 ---
 # <a name="tracerpt"></a>tracerpt
 

@@ -3,16 +3,16 @@ title: 新-捕获映像
 description: 捕获映像的参考文章，用于根据现有启动映像创建新的捕获映像。
 ms.topic: reference
 ms.assetid: 2dfd08f0-be59-4715-96e6-c498305873f4
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e98b0b52df39f20b9c84a55aa96c569943b556e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ab582e65ad3f1c9920071260541fefd0125bf428
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038165"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627995"
 ---
 # <a name="new-captureimage"></a>新-捕获映像
 

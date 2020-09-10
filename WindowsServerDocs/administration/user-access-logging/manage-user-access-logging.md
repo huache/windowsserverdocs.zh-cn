@@ -4,15 +4,15 @@ description: 描述如何管理用户访问日志记录
 ms.topic: article
 ms.assetid: 4f039017-4152-47eb-838e-bb6ef730b638
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 75f0395afbcbefcdc4ac3a9fc4dc4de3bf962428
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 0c2380c27d6d08e788658cf946f92322c3a1eabb
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991751"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628129"
 ---
 # <a name="manage-user-access-logging"></a>管理用户访问日志记录记录
 
@@ -24,7 +24,7 @@ UAL 是可以帮助服务器管理员量化本地服务器上的角色和服务�
 
 默认安装并启用 UAL，它以几乎实时的方式收集数据。 UAL 只有少量配置选项。 本文档描述了这些选项和它们的拟定用途。
 
-若要详细了解 UAL 的优点，请参阅[用户访问日志记录入门](get-started-with-user-access-logging.md)。
+若要详细了解 UAL 的优点，请参阅 [用户访问日志记录入门](get-started-with-user-access-logging.md)。
 
 **本文档内容**
 
@@ -56,7 +56,7 @@ UAL 是可以帮助服务器管理员量化本地服务器上的角色和服务�
 
 3.  向下滚动并选择**User Access Logging Service**。单击**停止服务**。
 
-4.  右键 \- 单击服务名称，然后选择 "**属性**"。 在 **“常规”** 选项卡中，将 **“启动类型”** 更改为 **“禁用”**，然后单击 **“确定”**。
+4.  右键 \- 单击服务名称，然后选择 " **属性**"。 在 **“常规”** 选项卡中，将 **“启动类型”** 更改为 **“禁用”**，然后单击 **“确定”**。
 
 #### <a name="to-stop-and-disable-ual-from-the-command-line"></a>从命令行停止并禁用 UAL 的步骤
 
@@ -176,9 +176,9 @@ PSComputerName
 
 ```
 
-UAL 最多可保留两年的历史记录。 为了允许管理员在服务运行时检索 UAL 数据，UAL 会将活动数据库文件的副本（当前 .mdb）复制到一个名为*guid.empty*的文件中，以便 WMI 提供程序的使用为每24小时一次。
+UAL 最多可保留两年的历史记录。 为了允许管理员在服务运行时检索 UAL 数据，UAL 会将活动数据库文件的副本（当前 .mdb）复制到一个名为 *guid.empty* 的文件中，以便 WMI 提供程序的使用为每24小时一次。
 
-在每年的头一天，UAL 会创建一个新的 *GUID.mdb*。 旧的*GUID*将保留为用于提供程序的存档。  两年后，原始的 *GUID.mdb* 将被覆盖。
+在每年的头一天，UAL 会创建一个新的 *GUID.mdb*。 旧的 *GUID* 将保留为用于提供程序的存档。  两年后，原始的 *GUID.mdb* 将被覆盖。
 
 > [!IMPORTANT]
 > 下面的步骤只能由高级用户执行，并且通常会由测试自己的 UAL 应用程序编程接口仪表的开发者使用……

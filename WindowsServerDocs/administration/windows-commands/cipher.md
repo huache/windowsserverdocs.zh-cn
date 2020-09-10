@@ -3,16 +3,16 @@ title: cipher
 description: 用于显示或更改 NTFS 卷上的目录和文件的加密的密码命令的参考文章。
 ms.topic: reference
 ms.assetid: 78ef795e-0f87-4acd-8d15-192c972c0f41
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 28d4342a43b3b66c2dd40f9041dbb72e97ec234b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ff3c98a3533b77f257c2f1bd4d7102ccd0eed1f7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026001"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629671"
 ---
 # <a name="cipher"></a>cipher
 
@@ -54,7 +54,7 @@ cipher /rekey [pathname [...]]
 | /removeuser /certhash:`<hash>` | 从) 的指定文件中删除用户 (。 为 **/certhash**提供的*哈希*必须是要删除的证书的 SHA1 哈希。 |
 | /? | 在命令提示符下显示帮助。 |
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 - 如果未加密父目录，则加密的文件在修改后可能会被解密。 因此，在对文件进行加密时，还应加密父目录。
 

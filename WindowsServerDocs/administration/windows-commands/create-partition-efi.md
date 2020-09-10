@@ -3,16 +3,16 @@ title: create partition efi
 description: Create partition efi 命令的参考文章，它在基于 Itanium 的计算机上 (EFI) 系统分区 (gpt) 磁盘上创建可扩展固件接口。
 ms.topic: reference
 ms.assetid: 3cfc1fca-6515-4a4d-bfae-615fa8045ea9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 931f70ed8fabe1dea3ef06c124a696488975d860
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a3eacad949a4a5c14c40da0469155e277cb274b6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030265"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629201"
 ---
 # <a name="create-partition-efi"></a>create partition efi
 
@@ -37,7 +37,7 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
 | offset =`<n>` | 在其中创建分区 (KB) 的偏移量（kb）。 如果未给出偏移量，则将分区放置在能容纳它的第一个磁盘区域中。 |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 必须至少添加一个包含 **add volume** 命令的卷，然后才能使用 **create** 命令。
 

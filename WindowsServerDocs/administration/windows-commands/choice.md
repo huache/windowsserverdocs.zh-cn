@@ -3,16 +3,16 @@ title: choice
 description: 选择命令的参考文章，该命令提示用户从批处理程序中的单字符选项列表中选择一项，然后返回选定选择的索引。
 ms.topic: reference
 ms.assetid: c65a9119-410b-4dcf-9fa7-4e07d2a7238b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 367f52ee41e72fe1c4c94c37a07e3a4227dec8a7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 382e3618e66f56e05ebd0a7d6b6034e6d7543d64
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026041"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629686"
 ---
 # <a name="choice"></a>choice
 
@@ -36,7 +36,7 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 | 一样 `<text>` | 指定要在选项列表之前显示的消息。 如果未指定 **/m** ，则只显示选择提示。 |
 | /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - **ERRORLEVEL**环境变量设置为用户从选项列表中选择的键的索引。 列表中的第一个选项返回值 `1` ，第二个值为 `2` ，依此类推。 如果用户按下不是有效选择的密钥，则 **choice** 会出现警告提示音。
 

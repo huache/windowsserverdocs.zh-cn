@@ -3,16 +3,16 @@ title: create partition logical
 description: Create partition 逻辑命令的参考文章，它在现有扩展分区中创建逻辑分区。
 ms.topic: reference
 ms.assetid: 1f59b79a-d690-4d0e-ad38-40df5a0ce38e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a9a95e735fcaed0e7f588a3d4ba643c1787782b5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a36cac4c74840e9f92ed5fc286988da72c69d488
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033235"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629178"
 ---
 # <a name="create-partition-logical"></a>create partition logical
 
@@ -40,7 +40,7 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
 | align =`<n>` | 将所有卷或分区区与最接近的对齐边界对齐。 通常与硬件 RAID 逻辑单元号一起使用 (LUN) 阵列以提高性能。 `<n>` 从磁盘开始到最接近的对齐边界 (KB) 的千字节数。 |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果未指定 **size** 和 **offset** 参数，则会在扩展分区中可用的最大磁盘区中创建逻辑分区。
 

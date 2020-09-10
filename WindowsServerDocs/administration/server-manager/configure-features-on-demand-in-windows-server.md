@@ -3,16 +3,16 @@ title: Configure Features on Demand in Windows Server
 description: 服务器管理器
 ms.topic: article
 ms.assetid: e663bbea-d025-41fa-b16c-c2bff00a88e8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ffe38a896e7913d03cc8f4ad62d1e520cec6a0c2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 3f35b9cab30dcccbdc364d0fc76ec56aa4326b71
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991927"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628372"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
@@ -20,13 +20,13 @@ ms.locfileid: "87991927"
 
 本主题描述了如何使用 Uninstall-WindowsFeature cmdlet 在“按需功能”配置中删除功能文件。
 
-"按需功能" 是 Windows 8 和 Windows Server 2012 中引入的一项功能，可用于从操作系统中删除角色和功能文件（有时称为功能*负载*)  (），以节省磁盘空间，并从远程位置或安装媒体而非本地计算机安装角色和功能。 你可以从运行中的物理或虚拟计算机删除功能文件。 你也可以对 Windows 映像 (WIM) 文件或脱机虚拟硬盘 (VHD) 进行添加或删除功能文件，为“按需功能”配置创建一个可复制的副本。
+"按需功能" 是 Windows 8 和 Windows Server 2012 中引入的一项功能，可用于从操作系统中删除角色和功能文件（有时称为功能 *负载*)  (），以节省磁盘空间，并从远程位置或安装媒体而非本地计算机安装角色和功能。 你可以从运行中的物理或虚拟计算机删除功能文件。 你也可以对 Windows 映像 (WIM) 文件或脱机虚拟硬盘 (VHD) 进行添加或删除功能文件，为“按需功能”配置创建一个可复制的副本。
 
 在 "按需功能" 配置中，当功能文件在计算机上不可用时，如果安装需要这些功能文件，则可以将 Windows Server 2012 R2 或 Windows Server 2012 定向到从并行功能存储区获取文件 (包含功能文件的共享文件夹，并可用于网络上的计算机) 、从 Windows 更新或从安装媒体中获取。 默认情况下，当功能文件不在目标服务器上时，“按需功能”就会按照所示顺序执行下列任务，来搜索丢失的功能文件。
 
 1.  在 "添加角色和功能向导" 或 DISM 安装命令的用户指定的位置搜索
 
-2.  评估组策略设置的配置、**用于可选组件安装和组件修复的计算机配置 \ \ 设置**
+2.  评估组策略设置的配置、 **用于可选组件安装和组件修复的计算机配置 \ \ 设置**
 
 3.  搜索 Windows 更新
 
@@ -34,7 +34,7 @@ ms.locfileid: "87991927"
 
 -   通过添加 `Install-WindowsFeature` 参数指定一个备用源路径，作为 `Source` cmdlet 的一部分
 
--   使用 "添加角色和功能向导" 安装功能时，在 "**确认安装选项**" 页上指定备用源路径
+-   使用 "添加角色和功能向导" 安装功能时，在 " **确认安装选项** " 页上指定备用源路径
 
 -   配置“组策略”设置，“指定可选组件安装和组件修复的设置”****
 
@@ -88,9 +88,9 @@ ms.locfileid: "87991927"
 
     -   在 Windows 桌面上，右键单击任务栏上的 Windows PowerShell****，然后单击“以管理员身份运行”****。
 
-    -   在 Windows 的 "**开始**" 屏幕上，右键单击 "windows PowerShell" 磁贴，然后单击应用栏上的 "以**管理员身份运行**"。
+    -   在 Windows 的 " **开始** " 屏幕上，右键单击 "windows PowerShell" 磁贴，然后单击应用栏上的 "以 **管理员身份运行**"。
 
-    -   在运行服务器核心安装选项的服务器上，在命令提示符下键入**PowerShell** ，然后按**enter**。
+    -   在运行服务器核心安装选项的服务器上，在命令提示符下键入 **PowerShell** ，然后按 **enter**。
 
 2.  键入以下命令，然后按 Enter****。
 
@@ -109,7 +109,7 @@ ms.locfileid: "87991927"
     > [!NOTE]
     > `computerName`如果正在运行 Windows 8.1 或 Windows 8 的计算机运行该 cmdlet，则必须添加该参数。
     >
-    > 如果从网络共享输入 VHD 文件的名称，则该共享必须向你选择用于装载 VHD 的服务器的计算机帐户授予 "**读取**" 和 "**写入**" 权限。 仅用户帐户访问权限是不够的。 该共享可向 **“所有人”** 组授予 **“读取”** 和 **“写入”** 权限，以允许访问 VHD，但出于安全原因，不建议这样做。
+    > 如果从网络共享输入 VHD 文件的名称，则该共享必须向你选择用于装载 VHD 的服务器的计算机帐户授予 " **读取** " 和 " **写入** " 权限。 仅用户帐户访问权限是不够的。 该共享可向 **“所有人”** 组授予 **“读取”** 和 **“写入”** 权限，以允许访问 VHD，但出于安全原因，不建议这样做。
 
     ```
     Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -VHD C:\WS2012VHDs\Contoso.vhd -computerName ContosoDC1

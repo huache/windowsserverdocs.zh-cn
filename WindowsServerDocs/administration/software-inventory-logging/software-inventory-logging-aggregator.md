@@ -4,15 +4,15 @@ description: 描述如何安装和管理软件清单日志记录聚合器-软件
 ms.topic: article
 ms.assetid: e4230a75-6bcd-47d9-ba92-a052a90a6abc
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f8e7743e51a5316df474ad97768cf01292db668
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: d533480c18919933d3581901dd8377556c6571c7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991917"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628222"
 ---
 # <a name="software-inventory-logging-aggregator"></a>软件清单日志记录聚合器
 
@@ -123,11 +123,11 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 9. 以“计算机名\组名”**** 格式添加“远程管理用户”**** 组
 
-10. 单击“确定”。
+10. 单击“确定”。 
 
 11. 返回“root\cimv2”**** 窗口的“安全”中，选择“远程管理用户”****。
 
-12. 在底部的 "权限" 部分中，确保选中 "**远程启用**"。
+12. 在底部的 "权限" 部分中，确保选中 " **远程启用** "。
 
 13. 单击“应用”****，然后单击“确定”****。
 
@@ -154,11 +154,11 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 -   **IIS 服务器**已随 .Net Framework 4.5、WCF Services 和 HTTP 激活一起添加，全部位于**添加角色和功能向导**的同一选择树中。
 
--   你使用在服务器上**具有管理权限的帐户登录到服务器**。
+-   你使用在服务器上 **具有管理权限的帐户登录到服务器** 。
 
 -   你**已使用在 SQL Server 上拥有 sysadmin 权限的帐户登录到服务器**（如果需要 Windows 身份验证）。
 
-    或者
+    或
 
     如果需要 SQL 身份验证，**则需要使用拥有 SQL 管理权限的帐户的密码**。
 
@@ -168,7 +168,7 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 2.  在欢迎窗口上单击“下一步”****。
 
-3.  如果接受 EULA，请选中 "接受协议" 框，然后单击 "**下一步**"。
+3.  如果接受 EULA，请选中 "接受协议" 框，然后单击 " **下一步**"。
 
 4.  在“选择功能”**** 中，选择“安装软件清单日志记录聚合器和报告模块”****，然后单击“下一步”****。
 
@@ -200,7 +200,7 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 #### <a name="to-uninstall-software-inventory-logging-aggregator"></a>卸载软件清单日志记录聚合器
 
-1.  以管理员身份打开**PowerShell** ，然后键入 `Stop-SilAggregator` 。 当提示符返回时，SIL 聚合器已停止。
+1.  以管理员身份打开 **PowerShell** ，然后键入 `Stop-SilAggregator` 。 当提示符返回时，SIL 聚合器已停止。
 
     按照设计，SIL 聚合器将在 20 分钟之后或接收 100 个文件之后处理文件。  在大规模环境中决不会发生这种情况，但在小规模环境中，可能仍需要处理某些文件才能停止聚合器。 如果不需要保留这些文件和数据，请使用 `–Force`。
 
@@ -233,11 +233,11 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 -   在 SIL 聚合器上：
 
-    -   运行 `Start-SilAggregator`
+    -   `Start-SilAggregator`运行 {2}
 
         这是必需的步骤，以便聚合器主动接收通过 HTTPS 从已（或将要）设置为要进行清点的服务器转发给它的数据。 请注意，即使你已首先将服务器设置为转发到此聚合器也没有问题，因为服务器将在本地缓存数据负载长达 30 天。 聚合器启动并运行后，所有缓存数据将一次转发到聚合器，并且所有数据都将进行处理。
 
-    -   运行 `Add-SilVMHost`
+    -   `Add-SilVMHost`运行 {2}
 
         示例： `add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
 
@@ -253,7 +253,7 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
 
 -   在要清点的 Windows Server 上，以管理员身份打开 PowerShell 并运行以下命令：
 
-    -   运行 `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`
+    -   `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`运行 {2}
 
         -   这将告知 Windows Server 中的 SIL 在何处发送清单数据以及使用哪个证书进行身份验证。
 
@@ -265,11 +265,11 @@ SIL 和 SIL 聚合器依靠 SSL 证书进行经过身份验证的通信。 此�
             > [!IMPORTANT]
             > 如果这些值不正确，或者如果证书未安装在正确的存储中（或无效），启动 SIL 日志记录时将无法转发到目标。 数据将在本地缓存长达 30 天。
 
-    -   运行 `Start-SilLogging`
+    -   `Start-SilLogging`运行 {2}
 
         这将启动 SIL 日志记录。 在每个小时内，SIL 会不定时地将其清单数据转发到使用 `–targeturi` 参数指定的聚合器。 首次转发的将是一个完整的数据集。 接下来，每次转发的都是 "检测信号"，只是标识未更改的数据。 如果对该数据集进行了任何更改，将转发另一个完整的数据集。
 
-    -   运行 `Publish-SilData`
+    -   `Publish-SilData`运行 {2}
 
         -   首次启用 SIL 日志记录时，此步骤为可选步骤。
 
@@ -319,7 +319,7 @@ SIL 同时适用于推送模式和拉取模式，而且由两个并行工作的�
 -   `Set-sillogging –targeturi "https://`**<machinename of your SIL Aggregator>** `–certificatethumbprint`
 
 > [!NOTE]
-> 使用客户端 pfx 文件中的证书指纹，并使用**Set-silaggregator AddCertificateThumbprint** cmdlet 将其添加到 SIL 聚合器。
+> 使用客户端 pfx 文件中的证书指纹，并使用 **Set-silaggregator AddCertificateThumbprint** cmdlet 将其添加到 SIL 聚合器。
 
 -   `Start-sillogging`
 
@@ -376,9 +376,9 @@ SIL 同时适用于推送模式和拉取模式，而且由两个并行工作的�
 -   在“仪表板”**** 选项卡的“Windows Server”**** 部分中，“其他虚拟机监控程序主机”**** 行和“总虚拟机监控程序主机”**** 行包括可能运行或未运行 Hyper-V 的物理 Windows Server 主机。
 
 ### <a name="column-descriptions"></a>列描述
-以下是有关每列的说明，这些列位于 SIL 聚合器基于 Excel 创建的报告的“Windows Server 详细信息”**** 选项卡上。 其他数据选项卡或是相同，或是这些列的子集。 "SQL Server" 选项卡上的 "安装计数" 是一个例外 (请参阅) 的**高水位**线部分。
+以下是有关每列的说明，这些列位于 SIL 聚合器基于 Excel 创建的报告的“Windows Server 详细信息”**** 选项卡上。 其他数据选项卡或是相同，或是这些列的子集。 "SQL Server" 选项卡上的 "安装计数" 是一个例外 (请参阅) 的 **高水位** 线部分。
 
-|列标题|描述|
+|列标题|说明|
 |-----------------|---------------|
 |日历月|报告中的数据按月份分组，首先列出最近的月份。 一个月内的数据没有特定的列出顺序。|
 |主机名|SIL 聚合器成功轮询的物理主机的网络名称或 FQDN。<p>使用 Get-SilVMHost cmdlet 来查找已添加但未成功轮询或不再轮询的主机。 将显示上次成功的轮询。|
@@ -392,7 +392,7 @@ SIL 同时适用于推送模式和拉取模式，而且由两个并行工作的�
 |物理处理器计数|安装在物理主机上的物理处理器数目。|
 |物理核心计数|安装在物理主机上的物理处理器核心数目。|
 |虚拟处理器计数|Windows 可在 VM 内部识别的虚拟处理器数目。 此值仅来自通过 HTTPS 在 Windows Server 中使用 SIL 转发的数据。|
-|轮询日期时间|在该物理主机上同时运行的 Windows Server VM 最新高水位线点的日期和时间。<p>请参阅本文档的**轮询日期时间**部分。|
+|轮询日期时间|在该物理主机上同时运行的 Windows Server VM 最新高水位线点的日期和时间。<p>请参阅本文档的 **轮询日期时间** 部分。|
 |上次发现 VM 的日期时间|聚合器上次通过 HTTPS 从此 Windows Server VM 中接收数据清单的日期和时间。|
 |上次发现主机的日期时间|聚合器上次通过 HTTPS 从此 Windows Server 物理主机中接收数据清单的日期和时间。<p>支持运行 Windows Server 和 HyperV 的物理主机启用 SIL 并通过 HTTPS 向 SIL 聚合器转发清单数据。|
 
@@ -500,9 +500,9 @@ Copyright (c) 2010, RENCI</pre>
 
 -   用于检查 `SilLogging` 或 `Publish-Sildata` cmdlet 是否失败或错误的事项：
 
-    -   请确保**targeturi**在条目中具有**https://** 。
+    -   请确保 **targeturi** 在条目中具有 **https://** 。
 
-    -   确保已安装 Windows Server 的所有必需更新（请参阅 SIL 的先决条件）。  一种快速的检查方法是使用以下 cmdlet 查找这些内容：`Get-SilWindowsUpdate *3060*, *3000*`
+    -   确保已安装 Windows Server 的所有必需更新（请参阅 SIL 的先决条件）。  一种快速的检查方法是使用以下 cmdlet 查找这些内容：   `Get-SilWindowsUpdate *3060*, *3000*`
 
     -   确保用于对聚合器进行身份验证的证书安装在要使用 SilLogging 进行清点的本地服务器的正确存储中（请参阅“快速入门”部分）。
 
@@ -530,7 +530,7 @@ Copyright (c) 2010, RENCI</pre>
 
     -   在 Active Directory 中将服务器加入启用了 gMSA 的计算机组后，不要忘记重新启动服务器。
 
-    -   在安装过程中，在输入 domain\user 时不要使用完全限定的域 例如，使用**mydomain\gmsaaccount**。 请勿输入**mydomain。 <i></i>com\gmsaaccount**。
+    -   在安装过程中，在输入 domain\user 时不要使用完全限定的域 例如，使用 **mydomain\gmsaaccount**。 请勿输入 **mydomain。 <i></i>com\gmsaaccount**。
 
 -   在您的环境中使用 Windows Management Framework 时：
 
@@ -575,7 +575,7 @@ Copyright (c) 2010, RENCI</pre>
 
     4.  右键单击 " **dbo"。Dbo.sqlserveredition**，然后选择 "**编辑前200行**"。
 
-    5.  将 "Standard Edition" 旁边的 PropertyNumValue 更改为**2760240536** (1534726760) 。
+    5.  将 "Standard Edition" 旁边的 PropertyNumValue 更改为 **2760240536** (1534726760) 。
 
     6.  关闭查询以保存更改。
 
@@ -583,7 +583,7 @@ Copyright (c) 2010, RENCI</pre>
 
 -   在 SIL 生成的报告中，如果在物理服务器上启用了超线程，所有处理器核心计数都将包含线程计数。  若要在已启用超线程的服务器上获取实际物理核心计数，需要将这些计数减半。
 
--   "**仪表板**" 选项卡上的 "行 (总计") 和 "**摘要" 和 "详细信息**" 选项卡上的 " (") 标记为 "**同时运行**..."，两个位置之间并不完全匹配。 在 "**仪表板**" 选项卡上，需要将 "**Windows Server 设备 (没有已知的 Vm**) " 值添加到 "**同时运行**..."在 "**摘要" 和 "详细信息**" 选项卡上等于此数字的值。
+-   " **仪表板** " 选项卡上的 "行 (总计") 和 " **摘要" 和 "详细信息** " 选项卡上的 " (") 标记为 "**同时运行**..."，两个位置之间并不完全匹配。 在 " **仪表板** " 选项卡上，需要将 "**Windows Server 设备 (没有已知的 Vm**) " 值添加到 "**同时运行**..."在 " **摘要" 和 "详细信息** " 选项卡上等于此数字的值。
 
 -   当更改或更新证书时，请参阅本文档**随着时间推移管理 SIL** 部分下的**避免数据丢失的重要步骤**。
 

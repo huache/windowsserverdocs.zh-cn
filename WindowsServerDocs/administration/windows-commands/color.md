@@ -3,16 +3,16 @@ title: color
 description: "\"Color\" 命令的参考文章，此项更改当前会话的命令提示符窗口中的前景色和背景色。"
 ms.topic: reference
 ms.assetid: f5b67131-d196-45ec-a3f9-b5d9f091fd86
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ce7aa8e927e3796917d2720495f394636d9c240
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: feb4d4a2de9491636a1c96b7a16c80e2e18f5865
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028455"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629508"
 ---
 # <a name="color"></a>color
 
@@ -55,7 +55,7 @@ color [[<b>]<f>]
 | e | 浅黄色 |
 | F | 亮白色 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 不要在和之间使用空格字符 `<b>` `<f>` 。
 

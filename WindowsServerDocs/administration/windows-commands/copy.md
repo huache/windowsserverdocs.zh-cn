@@ -3,16 +3,16 @@ title: copy
 description: "\"复制\" 命令的参考文章，可将一个或多个文件从一个位置复制到另一个位置。"
 ms.topic: reference
 ms.assetid: 9624d4a1-349a-4693-ad00-1d1d4e59e9ac
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 993fedf3b088ee5d06967c767c00aa9e11165cc3
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 129a6e4575be47ab876ef6943aeca803269ac529
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030275"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629231"
 ---
 # <a name="copy"></a>copy
 
@@ -43,7 +43,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 | `<destination>` | 必需。 指定您要将一个或一组文件复制到的位置。 *目标* 可以包含驱动器号和冒号、目录名称、文件名或它们的组合。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 您可以将使用文件尾字符的 ASCII 文本文件 (CTRL + Z) ，以指示文件的结尾。
 

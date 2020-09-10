@@ -3,16 +3,16 @@ title: defrag
 description: 用于在本地卷上查找并合并零碎文件以提高系统性能的 defrag 命令的参考文章。
 ms.topic: reference
 ms.assetid: aaf1d1ac-996a-4282-9b4d-1e8245ff162c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 45bf8f07a44432eac45f4a5ccaf43697c5de17fe
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 81f6aba6dce5bce28311a789f803ac2c7117fd0f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024231"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628906"
 ---
 # <a name="defrag"></a>defrag
 
@@ -53,7 +53,7 @@ defrag <volume> [<parameters>]
 | /x | 在指定卷上执行可用空间合并。 |
 | /? | 显示此帮助信息。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 不能对特定文件系统卷或驱动器进行碎片整理，包括：
 
@@ -77,7 +77,7 @@ defrag <volume> [<parameters>]
 
 - 默认情况下，如果未指定 **/a**或 **/v**参数，则**defrag**将显示分析和碎片整理报告的摘要。
 
-- 您可以通过键入 "FileName.txt" 将报告发送到文本文件 **>** <em> </em>，其中*FileName.txt*为指定的文件名。 例如：`defrag volume /v > FileName.txt`
+- 您可以通过键入 "FileName.txt" 将报告发送到文本文件 **>** <em> </em>，其中*FileName.txt*为指定的文件名。 例如： `defrag volume /v > FileName.txt`
 
 - 若要中断碎片整理进程，请在命令行上按 **CTRL + C**。
 
