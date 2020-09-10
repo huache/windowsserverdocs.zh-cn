@@ -3,16 +3,16 @@ title: reg unload
 description: Reg unload 命令的参考文章，该命令删除使用 reg load 操作加载的注册表部分。
 ms.topic: reference
 ms.assetid: 1d07791d-ca27-454e-9797-27d7e84c5048
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e4f0ba24fd2d6dead3ff4f224584b56adbfd8425
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5a94f4c3193a7096bd99d83a927ccb0b694d7faa
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024991"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640309"
 ---
 # <a name="reg-unload"></a>reg unload
 
@@ -31,7 +31,7 @@ reg unload <keyname>
 | `<keyname>` | 指定子项的完整路径。 若要指定远程计算机，请将计算机名称 (格式设置 `\\<computername>\` 为 *keyname*) 的格式。 如果省略，则 `\\<computername>\` 会使操作默认为本地计算机。 *Keyname*必须包含有效的根密钥。 本地计算机的有效根密钥为： **HKLM**、 **HKCU**、 **HKCR**、 **hku 开头**和 **HKCC**。 如果指定了远程计算机，则有效的根密钥为： **HKLM** 和 **hku 开头**。 如果注册表项名包含空格，则将该密钥名称括在引号中。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - **Reg 卸载**操作的返回值为：
 

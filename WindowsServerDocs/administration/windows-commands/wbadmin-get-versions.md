@@ -3,16 +3,16 @@ title: wbadmin get versions
 description: Wbadmin get 版本参考文章，其中列出了存储在本地计算机或另一台计算机上的可用备份的详细信息。
 ms.topic: reference
 ms.assetid: b986acc4-d083-4d32-9434-862314ed5e97
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 390d9152b53578ef26ff978d9cdcf43ac8f5f64e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f3b9f5ca967e3d125575809bc4bd882d37eef5ff
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031935"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640275"
 ---
 # <a name="wbadmin-get-versions"></a>wbadmin get versions
 
@@ -37,7 +37,7 @@ wbadmin get versions
 |-backupTarget|指定包含您要了解其详细信息的备份的存储位置。 用于列出存储在该目标位置的备份。 备份目标位置可以是本地附加的磁盘驱动器、卷、远程共享文件夹、可移动媒体（如 DVD 驱动器或其他光学媒体）。 如果在创建备份的同一台计算机上运行 **wbadmin get 版本** ，则不需要此参数。 但是，若要获取有关从另一台计算机创建的备份的信息，需要使用此参数。|
 |-计算机|指定您想要备份其详细信息的计算机。 当多台计算机的备份存储在同一位置时使用。 当指定 **-backupTarget** 时，应使用。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 若要列出可从特定备份中恢复的项，请使用 **wbadmin get items**。
 

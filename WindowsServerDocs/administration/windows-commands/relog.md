@@ -3,16 +3,16 @@ title: relog
 description: 重新记录命令的参考文章，可从性能计数器日志文件中提取性能计数器信息。
 ms.topic: reference
 ms.assetid: 7480f6c0-9953-4d70-9b1c-b27e09d8db13
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: 563bd7a460ee8809ca4020f9a83f28df435127b8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9ced8c1c4f0eb2cabaf65c98f5a9c4ecb0135c11
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027417"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640297"
 ---
 # <a name="relog"></a>relog
 
@@ -47,7 +47,7 @@ relog [<filename> [<filename> ...]] [/a] [/c <path> [<path> ...]] [/cf <filename
 | -y | 通过对所有问题回答 "是"，绕过提示。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 计数器路径的一般格式如下： `[\<computer>] \<object>[<parent>\<instance#index>] \<counter>]` 其中，格式的父对象、实例、索引和计数器组件可能包含有效的名称或通配符。 计算机、父对象、实例和索引组件对于所有计数器都不是必需的。
 

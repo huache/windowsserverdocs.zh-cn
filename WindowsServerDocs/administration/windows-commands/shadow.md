@@ -3,16 +3,16 @@ title: shadow
 description: 影子的参考文章，可用于远程控制远程桌面会话主机服务器上其他用户的活动会话。
 ms.topic: reference
 ms.assetid: f81d9717-6883-4e14-9508-4b2a87e48ea7 Lizap
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0db1150ac8e0b6382e07e032f780a9cab28bf870
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: de11fe6b6db44d21bd289f7158f7cdacc6bc9706
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024861"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640978"
 ---
 # <a name="shadow"></a>shadow
 
@@ -36,7 +36,7 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 |/v|显示要执行的操作的相关信息。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 -   可以查看或主动控制会话。 如果选择主动控制用户会话，则可以针对会话输入键盘操作和鼠标操作。
 -   你始终可以远程控制自己的会话 (除了当前会话) 之外，但必须具有 "完全控制" 权限或 "远程控制" 特殊访问权限才能远程控制另一个会话。
 -   你还可以使用远程桌面服务管理器启动远程控制。

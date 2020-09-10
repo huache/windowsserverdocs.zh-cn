@@ -3,16 +3,16 @@ title: prompt
 description: Prompt 命令的参考文章，可自定义 Cmd.exe 命令提示符。
 ms.topic: reference
 ms.assetid: 3d98e965-02eb-46ad-9d0a-5dc44830373e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: b674f219147471c872f5fa8db0d266e3f664c302
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8cf91a2a2e78191f035545bc897eceae4c897457
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032403"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640328"
 ---
 # <a name="prompt"></a>prompt
 
@@ -31,7 +31,7 @@ prompt [<text>]
 | `<text>` | 指定要包括在命令提示符中的文本和信息。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 可以包含的字符组合（而不是） *文本* 参数中有一个或多个字符串：
 

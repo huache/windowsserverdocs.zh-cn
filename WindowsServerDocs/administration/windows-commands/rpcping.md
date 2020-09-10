@@ -3,16 +3,16 @@ title: rpcping
 description: Rpcping 命令的参考文章，可确认运行 Microsoft Exchange Server 的计算机与网络上任何受支持的 Microsoft Exchange 客户端工作站之间的 RPC 连接。
 ms.topic: reference
 ms.assetid: 7382aa0d-90fc-47c0-84b3-15f52dd656d0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 380c52f9e567b5f185160e8b6ab068fc791d1029
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7351195d8206cb13b334ca3e06ffb794e4a13461
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030515"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641175"
 ---
 # <a name="rpcping"></a>rpcping
 
@@ -47,7 +47,7 @@ rpcping [/t <protseq>] [/s <server_addr>] [/e <endpoint>
 | /O `<object UUID>` | 如果接口已注册，则指定对象 UUID。 |
 | /i `<#_iterations>` | 指定要进行的调用数。 默认值为 1。 如果指定了多个迭代，则此选项对于测量连接延迟非常有用。 |
 | /u `<security_package_id>` | 指定 (安全提供程序) RPC 将用来进行调用的安全包。 安全包被标识为数字或名称。 如果使用数字，则该数字与 RpcBindingSetAuthInfoEx API 中的数字相同。 如果指定此选项，则必须指定除 " *无*" 之外的身份验证级别。 此选项没有默认值。 如果未指定，则 RPC 不会使用 ping 的安全性。 下面的列表显示了名称和数字。 名称不区分大小写：<ul><li>Negotiate/9 或 nego、snego 或 negotiate 之一</li><li>NTLM/10 或 NTLM</li><li>SChannel/14 或 SChannel</li><li>Kerberos/16 或 Kerberos</li><li>内核/20 或内核</li></ul> |
-| /a `<authn_level>` | 指定要使用的身份验证级别。 如果指定此选项，则还必须指定 (**/u**) 的安全程序包 ID。 如果未指定此选项，则 RPC 不会使用 ping 的安全性。 此选项没有默认值。 可能的值包括：<ul><li>连接</li><li>call</li><li>pkt</li><li>完整性 (integrity)</li><li>privacy</li></ul> |
+| /a `<authn_level>` | 指定要使用的身份验证级别。 如果指定此选项，则还必须指定 (**/u**) 的安全程序包 ID。 如果未指定此选项，则 RPC 不会使用 ping 的安全性。 此选项没有默认值。 可能的值为：<ul><li>连接</li><li>call</li><li>pkt</li><li>完整性 (integrity)</li><li>privacy</li></ul> |
 | /N `<server_princ_name>` | 指定服务器主体名称。<p>仅当选择了身份验证级别和安全包时，才能使用此字段。 |
 | /I `<auth_identity>` | 允许您指定替代标识以连接到服务器。 标识采用 "用户"、"域" 和 "密码" 格式。 如果 "用户名"、"域" 或 "密码" 具有可通过 shell 解释的特殊字符，请将该标识用双引号引起来。 你可以指定 `\*` 而不是密码，而 RPC 会提示你输入密码，而无需在屏幕上回显密码。 如果未指定此字段，将使用登录用户的标识。<p>仅当选择了身份验证级别和安全包时，才能使用此字段。 |
 | /C `<capabilities>` | 指定标志的十六进制位掩码。 仅当选择了身份验证级别和安全包时，才能使用此字段。 |

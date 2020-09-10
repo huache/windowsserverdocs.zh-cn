@@ -3,16 +3,16 @@ title: logman update counter
 description: 用于更新现有计数器数据收集器属性的 logman update counter 命令的参考文章。
 ms.topic: reference
 ms.assetid: 607df6d5-876c-428d-a0b3-f59cb244e2ce
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9bf7563e0f6dd225057fe0db909bbde99e951554
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c164fdaf8e9a22b6072555a893fb6c41c69f177b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035005"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640364"
 ---
 # <a name="logman-update-counter"></a>logman update counter
 
@@ -55,7 +55,7 @@ logman update counter <[-n] <name>> [options]
 | -sc `<value>` | 指定要使用性能计数器数据收集器收集的样本的最大数目。 |
 | /? | 显示区分上下文的帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 其中列出了 [-]，添加了额外的连字符 ( ) 对该选项求反。
 

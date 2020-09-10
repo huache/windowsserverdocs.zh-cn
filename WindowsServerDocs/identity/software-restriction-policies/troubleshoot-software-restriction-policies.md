@@ -3,16 +3,16 @@ title: 软件限制策略疑难解答
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 4fd53736-03e7-4bf9-ba90-d1212d93e19a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 6e4d31dd6e434c5a5b18491ea7f73b92c993e05a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 003a71ed8c6b7e8d9b788c4eb8aa5efcc4bd6286
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953004"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640212"
 ---
 # <a name="troubleshoot-software-restriction-policies"></a>软件限制策略疑难解答
 
@@ -21,16 +21,16 @@ ms.locfileid: "87953004"
 本主题介绍了解决软件限制策略 (SRP) 从 Windows Server 2008 和 Windows Vista 开始时遇到的常见问题及其解决方案。
 
 ## <a name="introduction"></a>简介
-软件限制策略 (SRP) 是基于组策略的功能，用于标识在域中的计算机上运行的软件程序，以及控制这些程序的运行能力。 你可以使用软件限制策略创建计算机的高度受限配置，从而仅允许运行专门标识的应用程序。 它们与 Microsoft Active Directory 域服务和组策略集成在一起，但也可以在独立计算机上进行配置。 有关 SRP 的详细信息，请参阅[软件限制策略](software-restriction-policies.md)。
+软件限制策略 (SRP) 是基于组策略的功能，用于标识在域中的计算机上运行的软件程序，以及控制这些程序的运行能力。 你可以使用软件限制策略创建计算机的高度受限配置，从而仅允许运行专门标识的应用程序。 它们与 Microsoft Active Directory 域服务和组策略集成在一起，但也可以在独立计算机上进行配置。 有关 SRP 的详细信息，请参阅 [软件限制策略](software-restriction-policies.md)。
 
 从 Windows Server 2008 R2 和 Windows 7 开始，可以使用 Windows AppLocker，而不是与 SRP 一起使用，以获得部分应用程序控制策略。
 
 ### <a name="windows-cannot-open-a-program"></a>Windows 无法打开程序
 用户会收到一条消息，显示 "Windows 无法打开此程序，因为它已被软件限制策略阻止。 有关详细信息，请打开事件查看器或与系统管理员联系。 " 或者，在命令行中，消息显示 "系统无法执行指定的程序。"
 
-**原因：** 默认安全级别 (或创建了规则) 以便将软件程序设置为不**允许**，因此不会启动。
+**原因：** 默认安全级别 (或创建了规则) 以便将软件程序设置为不 **允许**，因此不会启动。
 
-**解决方案：** 在事件日志中查看消息的详细说明。 事件日志消息指示将哪个软件程序设置为**禁止**，并将哪个规则应用于程序。
+**解决方案：** 在事件日志中查看消息的详细说明。 事件日志消息指示将哪个软件程序设置为 **禁止** ，并将哪个规则应用于程序。
 
 ### <a name="modified-software-restriction-policies-are-not-taking-effect"></a>修改的软件限制策略未生效
 **原因：** 通过组策略在域中指定的软件限制策略会替代在本地配置的任何策略设置。 这可能意味着域中有一个替代策略设置的策略设置。
@@ -45,14 +45,14 @@ ms.locfileid: "87953004"
 
 3.  您可以使用命令行实用工具 gpupdate 或从注销，然后重新登录到您的计算机，以刷新策略设置。 为获得最佳结果，请运行 gpupdate，然后注销并重新登录到您的计算机。 通常，工作站或服务器上的安全设置每90分钟刷新一次，在域控制器上每5分钟刷新一次。 还可将设置指定为每 16 个小时刷新一次，无论是否存在更改。 这些是可配置的设置，因此，每个域中的刷新间隔可能不同。
 
-4.  检查应用的策略。 检查 "**没有替代**设置的域级别策略"。
+4.  检查应用的策略。 检查 " **没有替代** 设置的域级别策略"。
 
 5.  通过组策略在域中指定的软件限制策略会替代在本地配置的任何策略。 使用 Gpresult 命令行工具来确定策略的最终效果。 这可能意味着域中有一个替代本地设置的策略。
 
 6.  如果 SRP 和 AppLocker 策略设置位于同一个 GPO 中，AppLocker 设置将优先于 Windows 7、Windows Server 2008 R2 和更高版本。 建议在不同的 Gpo 中放置 SRP 和 AppLocker 策略设置。
 
 ### <a name="after-adding-a-rule-through-srp-you-cannot-log-on-to-your-computer"></a>通过 SRP 添加规则后，不能登录到计算机
-**原因：** 计算机启动时，计算机会访问许多程序和文件。 可能无意中将其中一个程序或文件设置为 "不**允许**"。 由于计算机无法访问程序或文件，因此无法正常启动。
+**原因：** 计算机启动时，计算机会访问许多程序和文件。 可能无意中将其中一个程序或文件设置为 "不 **允许**"。 由于计算机无法访问程序或文件，因此无法正常启动。
 
 **解决方案：** 在安全模式下启动计算机，以本地管理员身份登录，然后更改软件限制策略以允许程序或文件运行。
 
@@ -85,6 +85,6 @@ ms.locfileid: "87953004"
 
 1.  调查系统事件日志，筛选 "软件限制策略" 的源。 这些项显式声明为每个应用程序实现了哪个规则。
 
-2.  启用高级日志记录。 有关详细信息，请参阅[确定软件限制策略的允许/拒绝列表和应用程序清单](software-restriction-policies.md)。
+2.  启用高级日志记录。 有关详细信息，请参阅 [确定软件限制策略的允许/拒绝列表和应用程序清单](software-restriction-policies.md) 。
 
 

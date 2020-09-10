@@ -3,16 +3,16 @@ title: logman create counter
 description: 用于创建计数器数据收集器的 logman create counter 命令的参考文章。
 ms.topic: reference
 ms.assetid: 1e214c32-b704-43c1-b548-e1cf43b583c3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 560b6d29fc3957e60fbdd5d569d10bbda4dc634a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 6e0d30cc175d2450a77a747985281cb8d9a8558f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032785"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640187"
 ---
 # <a name="logman-create-counter"></a>logman create counter
 
@@ -54,7 +54,7 @@ logman create counter <[-n] <name>> [options]
 | -sc `<value>` | 指定要使用性能计数器数据收集器收集的样本的最大数目。 |
 | /? | 显示区分上下文的帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 其中列出了 [-]，添加了额外的连字符 ( ) 对该选项求反。
 

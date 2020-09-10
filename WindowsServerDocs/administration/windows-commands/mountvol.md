@@ -3,16 +3,16 @@ title: mountvol
 description: 用于创建、删除或列出卷装入点的 mountvol 命令的参考文章。
 ms.topic: reference
 ms.assetid: fea8ad4d-f04a-4aaa-a3e5-75931e867b39
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e10ae1cdbeb3684f98611a67d451086d5bce34cd
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4da7562bd50072dc91538bd08b5462222857830d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038818"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640131"
 ---
 # <a name="mountvol"></a>mountvol
 
@@ -45,7 +45,7 @@ mountvol <drive>: /s
 | /s | 将 EFI 系统分区装载到指定驱动器上。 |
 | /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - 如果在使用 **/p** 参数时卸除卷，则卷列表将在创建卷装入点之前，将卷显示为 "未装入"。
 

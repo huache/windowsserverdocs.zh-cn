@@ -3,16 +3,16 @@ title: reg save
 description: Reg save 命令的参考文章，用于在指定的文件中保存指定子项、条目和注册表值的副本。
 ms.topic: reference
 ms.assetid: b326482b-c8af-467d-a20c-0481eeda3d5c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 17c1bd3439d98ee2e0aa64cb3000f94dfbab41f4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f75aedc391eec495a82fe2ea674164552ef66e80
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025001"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640319"
 ---
 # <a name="reg-save"></a>reg save
 
@@ -33,7 +33,7 @@ reg save <keyname> <filename> [/y]
 | /y | 使用名称 *文件名* 覆盖现有文件，而不提示确认。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 在编辑任何注册表项之前，必须使用 **reg save** 命令保存父子项。 如果编辑失败，则可以使用 **reg restore** 操作还原原始子项。
 

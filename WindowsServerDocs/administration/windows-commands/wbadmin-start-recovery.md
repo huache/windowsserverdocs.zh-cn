@@ -3,16 +3,16 @@ title: wbadmin start recovery
 description: 用于 wbadmin 开始恢复的参考文章，可根据你指定的参数运行恢复操作。
 ms.topic: reference
 ms.assetid: 52381316-a0fa-459f-b6a6-01e31fb21612
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: bf0afcd4999bb74efd2ce4e2ec3e146cbbe2141c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 96c38a74f0a7f10e761ce1478e207666741eecc9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031905"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640260"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
@@ -58,7 +58,7 @@ wbadmin start recovery
 | -noRollForward | 仅在恢复应用程序时有效。 如果选择了备份的最新版本，则允许对应用程序进行以前的时点恢复。 对于不是最新版本的应用程序的其他版本，之前的时点恢复将作为默认值进行。 |
 | -quiet | 对用户运行无提示的子命令。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   若要查看可从特定备份版本恢复的项的列表，请使用 **wbadmin get items**。 如果卷在备份时没有装入点或驱动器号，则此子命令将返回应该用于恢复卷的基于 GUID 的卷名。
 -   当 **-itemtype** 为 **应用**时，你可以使用值 **ADIFM** **来执行** "从媒体安装" 操作，以恢复 Active Directory 域服务所需的所有相关数据。 **ADIFM** 创建 Active Directory 数据库、注册表和 SYSVOL 状态的副本，然后将此信息保存在由 **-recoveryTarget**指定的位置。 仅当指定了 **-recoveryTarget** 时才使用此参数。

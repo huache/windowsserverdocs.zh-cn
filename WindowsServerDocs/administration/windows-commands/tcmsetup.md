@@ -3,16 +3,16 @@ title: tcmsetup
 description: 了解如何设置和禁用 TAPI 客户端。
 ms.topic: reference
 ms.assetid: 15e0c10f-996f-4301-92e5-943f7ee8212d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b2d148a273aaf6de917cec546f487fab5e8ebea0
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 52f9fe860fb34b110572f3b8b55585201f7a37af
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027085"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640110"
 ---
 # <a name="tcmsetup"></a>tcmsetup
 
@@ -39,7 +39,7 @@ tcmsetup  [/q] /c /d
 |/d|清除远程服务器列表。 通过阻止 TAPI 客户端使用远程服务器上的 TAPI 服务提供程序，可以禁用该 TAPI 客户端。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   若要执行该过程，你必须是本地计算机上 Administrators 组的成员，或你必须已被委派适当的权限。 如果计算机已加入域，则 Domain Admins 组的成员也许能够执行该过程。 作为安全方面的最佳做法，请考虑使用“运行方式”**** 来执行该过程。
 -   为了使 TAPI 正常运行，必须运行 **tcmsetup** 来指定 tapi 客户端将使用的远程服务器。

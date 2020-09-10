@@ -3,16 +3,16 @@ title: winsat mfmedia
 description: 对 winsat mfmedia 的引用，该引用使用媒体基础框架衡量视频解码 (播放) 的性能。
 ms.topic: reference
 ms.assetid: 09a3b3dd-f746-4e6e-b684-76a9bde0c78d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 889ef018e5803f9905100b5ae0b65f1bc0c4093e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fca6bbce2bca22f4fcb7907fff2a4818fd0a5fb9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038095"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641094"
 ---
 # <a name="winsat-mfmedia"></a>winsat mfmedia
 
@@ -53,7 +53,7 @@ winsat mfmedia <parameters>
   winsat mfmedia -input c:\windows\performance\winsat\winsat.wmv -nopmp
   ```
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   本地 Administrators 组中的成员身份或等效身份是使用 **winsat**的最低要求。 必须从提升的命令提示符窗口执行该命令。
 -   若要打开提升的命令提示符窗口，请单击 " **开始**"，单击 " **附件**"，右键单击 " **命令提示符**"，然后单击 "以 **管理员身份运行**"。

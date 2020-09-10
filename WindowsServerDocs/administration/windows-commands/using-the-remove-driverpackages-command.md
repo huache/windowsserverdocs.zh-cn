@@ -3,16 +3,16 @@ title: DriverPackages
 description: 4emove-DriverPackages 的参考文章，用于从服务器中删除驱动程序包。
 ms.topic: reference
 ms.assetid: a527084b-305e-4d3d-95c3-4f5a5ea0637b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d43222c5f8a6b08f79d134799f0096d328a6633
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a30f792b7e6e9ff4b6f39bda5624a70265759d95
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023191"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640695"
 ---
 # <a name="remove-driverpackages"></a>DriverPackages
 

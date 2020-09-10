@@ -3,16 +3,16 @@ title: 更多
 description: 更多命令的参考文章，其中每次显示一个输出屏幕。
 ms.topic: reference
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/26/2019
-ms.openlocfilehash: 2c8d7a21220701bf46685d4c87ca02a4810aff1b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 18e40ff1f3281967e05b47e41f3de405d7009691
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038838"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640155"
 ---
 # <a name="more"></a>更多
 
@@ -43,7 +43,7 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
 | `<files>` | 指定要显示的文件的列表。 必须使用空格分隔文件。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 在) 的 **更多** 提示 (接受以下子命令 `-- More --` ，其中包括：
 

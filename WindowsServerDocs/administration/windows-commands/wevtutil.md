@@ -3,16 +3,16 @@ title: wevtutil
 description: Wevtutil 的参考文章，可用于检索有关事件日志和发布者的信息。
 ms.topic: reference
 ms.assetid: d4c791e0-7e59-45c5-aa55-0223b77a4822
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b36619def02434a253f0e6e97ef47cb78190b8a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4679c8b8245b0db2e4dff7cf179e198201d4910d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031725"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641239"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -85,7 +85,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |     /a\<Auth>     |                                                                                                                                                                                             定义用于连接到远程计算机的身份验证类型。 \<Auth> 可以是默认值、协商、Kerberos 或 NTLM。 默认值为 "协商"。                                                                                                                                                                                              |
 |  单向\<Unicode>   |                                                                                                                                                                                                             以 Unicode 格式显示输出。 \<Unicode> 可以为 true 或 false。 如果 <Unicode> 为 true，则输出为 Unicode。                                                                                                                                                                                                             |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   使用带有 sl 参数的配置文件
 

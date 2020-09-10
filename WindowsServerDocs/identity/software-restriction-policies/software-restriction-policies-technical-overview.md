@@ -3,16 +3,16 @@ title: 软件限制策略技术概述
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: dc7013b0-0efd-40fd-bd6d-75128adbd0b8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: f98075cd8e662b3344f426bd8d69181994096a5f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 49d0f32d1634a37f5ddda71f8147017e9863b1e6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953046"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640249"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>软件限制策略技术概述
 
@@ -99,7 +99,7 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 |支持导出和导入策略|SRP 不支持策略导入/导出。|AppLocker 支持导入和导出策略。 这允许你在示例计算机上创建 AppLocker 策略，测试该策略，然后导出该策略并将其导入到所需的 GPO。|
 |规则强制|在内部，SRP 规则强制发生在不太安全的用户模式下。|在内部，Exe 和 Dll 的 AppLocker 规则在内核模式下强制实施，这比在用户模式下执行它们更安全。|
 
-## <a name="system-requirements"></a>系统要求
+## <a name="system-requirements"></a>系统需求
 只能在至少运行 Windows Server 2003 和 Windows XP 的计算机上配置和应用软件限制策略。 需要组策略才能分发包含软件限制策略组策略对象。
 
 ## <a name="software-restriction-policies-components-and-architecture"></a>软件限制策略组件和体系结构
@@ -121,9 +121,9 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 
 -   策略的结果集 (RSoP) ，这有助于诊断将应用于客户端的有效策略。
 
-有关 SRP 体系结构的详细信息，SRP 如何管理规则、进程和交互，请参阅 Windows Server 2003 技术库中的[软件限制策略的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))。
+有关 SRP 体系结构的详细信息，SRP 如何管理规则、进程和交互，请参阅 Windows Server 2003 技术库中的 [软件限制策略的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10)) 。
 
-## <a name="best-practices"></a><a name="BKMK_Best_Practices"></a>最佳实践
+## <a name="best-practices"></a><a name="BKMK_Best_Practices"></a>最佳做法
 
 ### <a name="do-not-modify-the-default-domain-policy"></a>不要修改默认域策略。
 
@@ -135,13 +135,13 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 
 ### <a name="if-you-experience-problems-with-applied-policy-settings-restart-windows-in-safe-mode"></a>如果在应用策略设置时遇到问题，请在安全模式下重新启动 Windows。
 
--   在安全模式下启动 Windows 时，软件限制策略不适用。 如果你意外地使用软件限制策略锁定工作站，请在安全模式下重新启动计算机，以本地管理员身份登录，修改策略，运行**gpupdate**，重新启动计算机，然后以正常方式登录。
+-   在安全模式下启动 Windows 时，软件限制策略不适用。 如果你意外地使用软件限制策略锁定工作站，请在安全模式下重新启动计算机，以本地管理员身份登录，修改策略，运行 **gpupdate**，重新启动计算机，然后以正常方式登录。
 
 ### <a name="use-caution-when-defining-a-default-setting-of-disallowed"></a>定义 "不允许" 的默认设置时请小心。
 
--   如果将默认设置定义为 "不**允许**"，则除已显式允许的软件之外，禁止所有软件。 要打开的任何文件都必须有一个允许它打开的软件限制策略规则。
+-   如果将默认设置定义为 "不 **允许**"，则除已显式允许的软件之外，禁止所有软件。 要打开的任何文件都必须有一个允许它打开的软件限制策略规则。
 
--   若要防止管理员将自己锁定在系统之外，当默认安全级别设置为 "不**允许**" 时，系统会自动创建四个注册表路径规则。 可以删除或修改这些注册表路径规则;但是，不建议这样做。
+-   若要防止管理员将自己锁定在系统之外，当默认安全级别设置为 "不 **允许**" 时，系统会自动创建四个注册表路径规则。 可以删除或修改这些注册表路径规则;但是，不建议这样做。
 
 ### <a name="for-best-security-use-access-control-lists-in-conjunction-with-software-restriction-policies"></a>为了获得最佳安全性，请将访问控制列表与软件限制策略结合使用。
 
@@ -153,7 +153,7 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 
 -   你可以设置一个与组织域分离的测试域，用于测试新策略设置。 你还可以通过创建测试 GPO 并将其链接到测试组织单位来测试策略设置。 使用测试用户对策略设置进行了全面测试后，可以将测试 GPO 链接到域。
 
--   不要在不测试的情况下将程序或文件设置为 "不**允许**"，以查看其效果。 对某些文件的限制可能会严重影响您的计算机或网络的运行。
+-   不要在不测试的情况下将程序或文件设置为 "不 **允许** "，以查看其效果。 对某些文件的限制可能会严重影响您的计算机或网络的运行。
 
 -   如果输入的信息不正确或键入错误，可能会导致策略设置不会按预期执行。 在应用新策略设置之前对其进行测试可能会导致意外的行为。
 
@@ -173,7 +173,7 @@ IT 组织和用户必须能够确定哪些软件可以安全运行，哪些软�
 |--------|-------|
 |规划|[软件限制策略技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10))|
 |**操作**|[管理软件限制策略](administer-software-restriction-policies.md)|
-|**故障排除**|[软件限制策略故障排除 (2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))|
+|**疑难解答**|[软件限制策略故障排除 (2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))|
 |**安全性**|[软件限制策略的威胁和对策 (2008) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10))<p>[软件限制策略的威胁和对策 (2008 R2) ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))|
 |**工具和设置**|[软件限制策略工具和设置 (2003) ](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))|
 |**社区资源**|[软件限制策略的应用程序锁定](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

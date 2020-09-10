@@ -3,16 +3,16 @@ title: winsat mem
 description: 有关 winsat mem 的参考文章，可通过将大内存反射到内存缓冲区副本的方式（在多媒体处理中使用）对系统内存带宽进行测试。
 winms.topic: reference
 ms.assetid: cda017bf-6193-43c1-b71f-e379c23e1152
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ba9896b6c07d412e00209e708b4b10e6421907e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 88a8ff7bf8cac5197532950d59d8c736d229f846
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035875"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641110"
 ---
 # <a name="winsat-mem"></a>winsat mem
 
@@ -54,7 +54,7 @@ winsat mem <parameters>
   winsat mem -mint 4.0 -maxt 12.0 -buffersize 32MB -xml memtest.xml
   ```
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   本地 Administrators 组中的成员身份或等效身份是使用 **winsat**的最低要求。 必须从提升的命令提示符窗口执行该命令。
 -   若要打开提升的命令提示符窗口，请单击 " **开始**"，单击 " **附件**"，右键单击 " **命令提示符**"，然后单击 "以 **管理员身份运行**"。

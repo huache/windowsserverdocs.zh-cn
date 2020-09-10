@@ -3,16 +3,16 @@ title: 更新-ServerFiles
 description: ServerFiles 的参考文章，它使用存储在服务器的%Windir%\System32\RemInst 文件夹中的最新文件更新 REMINST 共享文件夹中的文件。
 ms.topic: reference
 ms.assetid: 23aa79df-38c6-401e-91bd-cd23811b30b4
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4ba2ed4129f1575d5057d2fc88500c0c47e291fc
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1a984c789a309395dcee0d93a6ba0877c44aab22
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036105"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640469"
 ---
 # <a name="update-serverfiles"></a>更新-ServerFiles
 

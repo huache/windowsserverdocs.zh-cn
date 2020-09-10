@@ -3,16 +3,16 @@ title: 缩减
 description: 用于 DiskPart shrink 的参考文章，可按指定的量减小所选卷的大小。
 ms.topic: reference
 ms.assetid: ec87cc7c-9846-465e-a10d-4ee10db4f4e6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e0c995323e1f417e139be05d2ea662015c9e70c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2fdfc8ba34f4e91bfafa1f8bf5341f9e4186cb5d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036475"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640943"
 ---
 # <a name="shrink"></a>缩减
 
@@ -35,7 +35,7 @@ shrink querymax [noerr]
 |   nowait    |                                                       强制该命令在收缩进程仍在进行的同时立即返回。                                                        |
 |    noerr    | 仅用于脚本编写。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 - 只有在使用 NTFS 文件系统格式化该卷或该卷上没有文件系统时，才能减少卷的大小。
 - 此命令在基本卷以及简单或跨区动态卷上有效。
 - 如果未指定所需的量，则该卷将按) 指定的最小数量减小 (。

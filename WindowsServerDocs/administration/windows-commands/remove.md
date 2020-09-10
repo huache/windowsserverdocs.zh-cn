@@ -3,16 +3,16 @@ title: remove
 description: 删除命令的参考文章，用于从卷中删除驱动器号或装入点。
 ms.topic: reference
 ms.assetid: b0886140-da8b-4231-8cb2-f280874d99c0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b8e2fc967a4ebe22ba1f7932be9d14a00511ddb
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ba7d625c5908af4a209266293495e6d472cb730b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027315"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641039"
 ---
 # <a name="remove"></a>remove
 
@@ -35,7 +35,7 @@ remove [{letter=<drive> | mount=<path> [all]}] [noerr]
 | --------- | ----------- |
 | 字母 =`<drive>` | 要删除的驱动器号。 |
 | 装载 =`<path>` | 要删除的装入点路径。 |
-| all | 删除所有当前的驱动器号和装入点。 |
+| 全部 | 删除所有当前的驱动器号和装入点。 |
 | noerr | 仅用于脚本。 出现错误时，DiskPart 继续处理命令，就像未发生错误一样。 如果没有此参数，则错误会导致 DiskPart 退出并出现错误代码。 |
 
 ### <a name="examples"></a>示例

@@ -3,16 +3,16 @@ title: tlntadmn
 description: 用于管理本地或远程计算机（运行 telnet 服务器服务）的 tlntadmn.exe 参考文章。
 ms.topic: reference
 ms.assetid: 78b61e8d-b953-44bb-8d57-f3b42da9e7a8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 2293db2da93dfbac301cac516cd03a882e112a4a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d7cadac684b8cba2ea0120946f174d2cba0342f7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027015"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640418"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -48,7 +48,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 |     配置模式 = {控制台 &#124; 流}      |                                                                                                                                             指定操作模式。                                                                                                                                             |
 |                       -?                       |                                                                                                                                           在命令提示符下显示帮助。                                                                                                                                           |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 -   若要显示服务器设置，请键入不带任何参数的 **tlntadmn.exe** 。
 -   若要使用 **tlntadmn.exe** 命令，必须使用管理凭据登录到本地计算机。 若要管理远程计算机，还必须为远程计算机提供管理凭据。 为此，可以登录到本地计算机，该帐户具有本地计算机和远程计算机的管理凭据。 如果无法使用此方法，则可以使用 **-u** 和 **-p** 参数为远程计算机提供管理凭据。
 

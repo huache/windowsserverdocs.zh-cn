@@ -3,16 +3,16 @@ title: ren
 description: 用于重命名文件或目录的 ren 命令的参考文章。
 ms.topic: reference
 ms.assetid: 60398e12-a05d-4524-a73a-0a925943e21d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: 0254eca7d68f653f8f8a8ab9099f535c4635f8a4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 751fa94d760d5fe1f49ceedb3ddeeac2656e4487
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027295"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641027"
 ---
 # <a name="ren"></a>ren
 
@@ -37,7 +37,7 @@ ren [<drive>:][<path>]<filename1> <filename2>
 | `<filename2>` | 指定文件的新名称。 您可以使用通配符来指定多个文件的新名称。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 在重命名文件时，不能指定新的驱动器或路径。 还不能使用此命令在驱动器之间重命名文件，或将文件移动到不同的目录。
 

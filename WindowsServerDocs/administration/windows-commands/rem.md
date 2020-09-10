@@ -3,16 +3,16 @@ title: rem
 description: 用于在脚本、批处理或 config.sys 文件中记录注释的 rem 命令的参考文章。
 ms.topic: reference
 ms.assetid: 1a45b585-a83c-4ff6-badd-ff40f34cec23
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 741b3e8930188957fde0efc66b7d5584233f6877
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c56595a45eba3fd841f1f455c189164b240191e8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027405"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640649"
 ---
 # <a name="rem"></a>rem
 
@@ -31,7 +31,7 @@ rem [<comment>]
 | `<comment>` | 指定要包含为注释的字符串。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - **Rem**命令不在屏幕上显示注释。 若要在屏幕上显示注释，必须在文件中包括 **echo on** 命令。
 

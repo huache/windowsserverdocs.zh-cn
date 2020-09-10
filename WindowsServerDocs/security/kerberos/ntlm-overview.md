@@ -3,16 +3,16 @@ title: NTLM Overview
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 773909fd-c0bc-498a-95fc-bb452ec04d90
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: b81d59a350f5549cdb83af7299b8636fb917cc24
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b7597e5c7cea656bd1c1e4edf8ed9c8ef3f0436a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996083"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641082"
 ---
 # <a name="ntlm-overview"></a>NTLM Overview
 
@@ -50,5 +50,5 @@ NTLM 无法从服务器管理器进行配置。 你可以使用安全策略设�
 |规划|[IT 基础结构威胁建模指南](/previous-versions/tn-archive/dd941826(v=technet.10))<p>[威胁和对策：Windows Server 2003 和 Windows XP 中的安全设置](/previous-versions/tn-archive/dd162275(v=technet.10))<p>[威胁和对策指南：Windows Server 2008 和 Windows Vista 中的安全设置](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349791(v=ws.10))<p>[威胁和对策指南：Windows Server 2008 R2 和 Windows 7 中的安全设置](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125921(v=ws.10))|
 |**部署**|[身份验证的扩展保护](https://support.microsoft.com/kb/968389)<p>[审核和限制 NTLM 使用指南](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/jj865674(v=ws.10))<p>[询问目录服务团队：NTLM 阻止和你：Windows 7 中的应用程序分析和审核方法](https://blogs.technet.com/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx)<p>[Windows 身份验证博客](https://blogs.technet.com/authentication/)<p>[为 NTLM 传递身份验证配置 MaxConcurrentAPI](https://support.microsoft.com/help/2688798/how-to-do-performance-tuning-for-ntlm-authentication-by-using-the-maxc)|
 |**开发**|[Microsoft NTLM \( Windows\)](/windows/win32/secauthn/microsoft-ntlm)<p>[\[MS \- NLMP \] ： NT LAN 管理器 \( NTLM \) 身份验证协议规范](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<p>[\[MS \- NNTP \] ： NT LAN Manager \( NTLM \) 身份验证：网络新闻传输协议 \( NNTP \) 扩展](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<p>[\[MS \- NTHT \] ： NTLM Over HTTP 协议规范](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
-|**故障排除**|目前不可用|
+|**疑难解答**|目前不可用|
 |**社区资源**|[“NTLM 瓶颈和 RPC运行时”还有生命力吗？](https://blogs.technet.com/b/askds/archive/2011/09/15/is-this-horse-dead-yet-ntlm-bottlenecks-and-the-rpc-runtime.aspx)|

@@ -3,16 +3,16 @@ title: tpmvscmgr
 description: Tpmvscmgr 的参考文章，它是一个命令行工具，可让具有管理凭据的用户在计算机上创建和删除 TPM 虚拟智能卡。
 ms.topic: reference
 ms.assetid: 8b2c8ff4-5c5d-446d-99e7-4daa1b36a163
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 298962ba0796d80328f8ea4209f79b9149553940
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d5957ff63d7adca1c3800f806b838686cd8aa38f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026975"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640408"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
@@ -53,7 +53,7 @@ Create 命令在用户的系统上设置新的虚拟智能卡。 如果需要删
 |/instance|指定要删除的虚拟智能卡的实例 ID。 当创建卡时，instanceID 作为 Tpmvscmgr.exe 输出生成。 /Instance 参数是销毁命令的必填字段。|
 |/?|显示此命令的帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 在目标计算机上， **Administrators** 组中的成员身份 (或等效) 是运行此命令的所有参数所需的最低要求。
 

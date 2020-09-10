@@ -3,16 +3,16 @@ title: tasklist
 description: 了解如何显示在本地或远程计算机上运行的进程的列表。
 ms.topic: reference
 ms.assetid: 8dbe30ee-1484-46be-917b-5ca3ff4fdc9c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8250828310b42646a48a5dbf454a01643fbb8ef3
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a57fc47473be3d8d5eb3fabab6f613da283fa231
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027105"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640121"
 ---
 # <a name="tasklist"></a>tasklist
 
@@ -57,7 +57,7 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 | SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE |         eq、ne         |                                                                 窗口标题                                                                 |
 |   模块   |         eq、ne         |                                                                   DLL 名称                                                                   |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 指定远程系统时，不支持 SYSTEM.WINDOWS.CONTROLS.PAGE.WINDOWTITLE 和 STATUS 筛选器。
 

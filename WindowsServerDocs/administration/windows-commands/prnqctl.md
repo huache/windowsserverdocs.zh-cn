@@ -3,16 +3,16 @@ title: prnqctl
 description: Prnqctl 命令的参考文章，用于打印测试页面，暂停或恢复打印机。
 ms.topic: reference
 ms.assetid: 8df9dfa7-984c-4276-bb7d-e7675e7c399e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: fd5eb91f280df80685d07c0b809e16edeae3d893
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bf828a346a8cc4a8987f4171f087e6ee0f08d7c4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033855"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641061"
 ---
 # <a name="prnqctl"></a>prnqctl
 
@@ -39,7 +39,7 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <Servername>] [-p <Printername>] [-
 | -u `<Username>` -w `<password>` | 指定有权连接到承载要管理的打印机的计算机的帐户。 目标计算机的本地管理员组的所有成员都具有这些权限，但也可以向其他用户授予权限。 如果未指定帐户，则必须使用具有这些权限的帐户登录，才能使命令正常工作。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格，请使用引号将文本括起来 (例如，"Computer Name" ) 。
 

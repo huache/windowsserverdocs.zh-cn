@@ -3,16 +3,16 @@ title: nslookup set srchlist
 description: Nslookup set srchlist 命令的参考文章，此命令会将默认域名系统 (DNS) 域名和搜索列表更改。
 ms.topic: reference
 ms.assetid: 8486266d-22ac-4ce5-aad6-1cd0c08110a2
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 45f829337cca347b1503aca0fb02a1c77359914a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0d2798cd97b561ec5da7e515587978a4b19403c0
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037285"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640535"
 ---
 # <a name="nslookup-set-srchlist"></a>nslookup set srchlist
 
@@ -34,7 +34,7 @@ set srchlist=<domainname>[/...]
 | /? | 在命令提示符下显示帮助。 |
 | /help | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 使用 [nslookup "全部设置](nslookup-set-all.md) " 命令来显示列表。
 

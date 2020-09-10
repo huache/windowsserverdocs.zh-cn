@@ -3,16 +3,16 @@ title: shift
 description: 班次的参考文章，更改批处理文件中批处理参数的位置。
 ms.topic: reference
 ms.assetid: b56574e8-570a-4cc9-bbac-1b94fbf6a47a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 21e27db00b76945fa24b4e46e4f08c74d090d49f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0c4cff5e90542f44b4e2e163eacf2d3af6f8346a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024801"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640965"
 ---
 # <a name="shift"></a>shift
 
@@ -33,7 +33,7 @@ shift [/n <N>]
 |/n \<N>|指定从第 *n*个参数开始移位，其中 *n* 是从0到8的任何值。 需要命令扩展，默认情况下已启用。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - **移位**命令通过将每个参数复制到前一个参数来更改批参数 **%0**到 **%9**的值，将 **%1**的值复制到 **%0**，将 **%2**的值复制到 **%1**，依此类推。 这适用于写入对任意数量的参数执行相同操作的批处理文件。
 - 如果启用了命令扩展，则 **shift** 命令支持 **/n** 命令行选项。 **/N**选项指定在第 n 个参数处开始移位，其中**n**是从0到8的任何值。 例如， **shift/2** 会将 **%3** 移位到% **2**， **%4** 转换为 **%3**，依此类推，并不影响 **%0** 和 **%1** 。 默认情况下启用命令扩展。

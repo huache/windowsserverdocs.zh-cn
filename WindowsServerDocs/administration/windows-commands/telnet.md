@@ -3,16 +3,16 @@ title: telnet
 description: Telnet 的参考文章，它与运行 telnet 服务器服务的计算机通信。
 ms.topic: reference
 ms.assetid: b70a6156-9413-4300-84ce-a34c467e2b4e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fdf379a8d827ced295f1c36ac6c44ab5e167e66f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9110bd2f3d4c701e46c8a52af48773f7d5a1026b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038285"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640806"
 ---
 # <a name="telnet"></a>telnet
 
@@ -35,7 +35,7 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |\<Host> [\<Port>]|指定要连接到的远程计算机的主机名或 IP 地址，还可以选择要使用的 TCP 端口 (默认为 TCP 端口 23) 。|
 |/?|在命令提示符下显示帮助。 或者，可以键入/h。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 -   必须先安装 telnet 客户端软件，然后才能运行此命令。 有关详细信息，请参阅 [安装 telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))。
 -   您可以运行无参数的 telnet，以进入 telnet 上下文，由 telnet 提示符指示 (**Microsoft telnet>**) 。 在 telnet 提示符下，可以使用 telnet 命令来管理运行 telnet 客户端的计算机。
 

@@ -3,16 +3,16 @@ title: time
 description: 了解如何设置和显示系统时间。
 ms.topic: reference
 ms.assetid: 1276a257-7283-41da-ae80-fb4cfb311f9d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ca279bfacbc3fab3c1a4b56f33f5000fcab9d589
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4faa12cef8485be6b76b16ff2ab545d0eae06cb7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024531"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640450"
 ---
 # <a name="time"></a>time
 
@@ -36,7 +36,7 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 |/t |显示当前时间，而不提示您输入新时间。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   若要更改当前时间，则必须具有管理凭据。
 -   必须用冒号分隔 *HH*、 *MM*和 *SS* 的值 (： ) 。 *SS* 和 *NN* 必须用句点 ( 分隔。 ) 。

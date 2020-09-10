@@ -3,16 +3,16 @@ title: winrs
 description: Winrs 的参考文章，可用于远程管理和执行程序。
 ms.topic: reference
 ms.assetid: c370de31-5651-400a-872d-ef229aae2309
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 2cf659e06f43a26ae95e4ff218758c21d3cf78e9
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a2a92a20a924e36686fb555b90da4fa7d6ef67fd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022631"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641120"
 ---
 # <a name="winrs"></a>winrs
 
@@ -41,7 +41,7 @@ winrs [/<parameter>[:<value>]] <command>
 |            /usessl             |                                                                                                               使用远程终结点时使用 SSL 连接。  指定它而不是传输 **https：** 将使用默认的 **WinRM** 默认端口。                                                                                                                |
 |               /?               |                                                                                                                                                                        在命令提示符下显示帮助。                                                                                                                                                                        |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 -   所有命令行选项都接受短格式或长格式。 例如， **/r** 和 **/remote** 都是有效的。
 -   若要终止 **/remote** 命令，用户可以键入 **ctrl + C** 或 **ctrl + break**，这将发送到远程 shell。 第二个 **ctrl-c** 将强制终止 **winrs.exe**。
 -   若要管理活动远程 shell 或 winrs 配置，请使用 WinRM 工具。  用于管理活动 shell 的 URI 别名为 **shell/cmd**。  Winrs 配置的 URI 别名为 **winrm/config/winrs**。

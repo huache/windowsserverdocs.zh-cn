@@ -3,16 +3,16 @@ title: 使用软件限制策略来帮助保护计算机免受电子邮件病毒�
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 02f23979-f832-4e46-bdea-21fd77db35b2
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: de636bf4e1783d1d6aaf1b78a45442c80e0a6d27
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 502d9a097928c6a9b828ebc3b9d5b3544d456388
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952994"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640225"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>使用软件限制策略来帮助保护计算机免受电子邮件病毒攻击
 
@@ -21,7 +21,7 @@ ms.locfileid: "87952994"
 本主题提供有关如何使用软件限制策略设置应用程序控制策略的信息 (SRP) 来帮助保护计算机免受 Windows Server 2008 和 Windows Vista 中的电子邮件病毒的攻击。
 
 ## <a name="introduction"></a>简介
-软件限制策略 (SRP) 是基于组策略的功能，用于标识在域中的计算机上运行的软件程序，以及控制这些程序的运行能力。 你可以使用软件限制策略创建计算机的高度受限配置，从而仅允许运行专门标识的应用程序。 它们与 Microsoft Active Directory 域服务和组策略集成在一起，但也可以在独立计算机上进行配置。 有关 SRP 的起点，请参阅[软件限制策略](software-restriction-policies.md)。
+软件限制策略 (SRP) 是基于组策略的功能，用于标识在域中的计算机上运行的软件程序，以及控制这些程序的运行能力。 你可以使用软件限制策略创建计算机的高度受限配置，从而仅允许运行专门标识的应用程序。 它们与 Microsoft Active Directory 域服务和组策略集成在一起，但也可以在独立计算机上进行配置。 有关 SRP 的起点，请参阅 [软件限制策略](software-restriction-policies.md)。
 
 从 Windows Server 2008 R2 和 Windows 7 开始，可以使用 Windows AppLocker，而不是与 SRP 一起使用，以获得部分应用程序控制策略。
 
@@ -29,7 +29,7 @@ ms.locfileid: "87952994"
 
 1.  查看软件限制策略的最佳实践以了解 SRP 的工作方式。
 
-    -   [最佳做法](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
+    -   [最佳实践](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
 
     -   [软件限制策略的工作方式](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))
 
@@ -43,7 +43,7 @@ ms.locfileid: "87952994"
 
     -   [创建新的软件限制策略](administer-software-restriction-policies.md#BKMK_Create_SRP)
 
-4.  为电子邮件程序用来运行电子邮件附件的文件夹创建路径规则，然后将安全级别设置为 "不**允许**"。
+4.  为电子邮件程序用来运行电子邮件附件的文件夹创建路径规则，然后将安全级别设置为 "不 **允许**"。
 
     -   [使用路径规则](work-with-software-restriction-policies-rules.md#BKMK_Path_Rules)
 

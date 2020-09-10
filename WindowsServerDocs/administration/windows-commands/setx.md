@@ -3,16 +3,16 @@ title: setx
 description: 适用于 setx 的参考文章，用于在用户或系统环境中创建或修改环境变量，无需编程或编写脚本。
 ms.topic: reference
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 256f19453edd0c211215a0e161d7d60098ae9cc9
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 56d2e1deb629c262eb97939885e7e475dcec85be
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024891"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641009"
 ---
 # <a name="setx"></a>setx
 
@@ -46,7 +46,7 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 |      /d \<Delimiters>      |                    指定除 **、** **\\** 空格、制表符、回车和换行以外，还可以使用除四个内置分隔符以外的分隔符。 有效的分隔符包含任何 ASCII 字符。 最大分隔符数为15，其中包括内置分隔符。                    |
 |             /?             |                                                                                                                                 在命令提示符下显示帮助。                                                                                                                                  |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   **Setx**命令类似于 UNIX 实用工具 SETENV。
 -   **Setx** 提供唯一直接且永久地设置系统环境值的命令行或编程方式。 可以通过 **"控制面板"** 或通过注册表编辑器手动配置系统环境变量。 **Set**命令（在命令解释器内部 ( # A0) ）仅为当前控制台窗口设置用户环境变量。

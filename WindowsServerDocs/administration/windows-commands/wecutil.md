@@ -3,15 +3,15 @@ title: wecutil
 description: Wecutil 的参考文章，可用于创建和管理从远程计算机转发的事件的订阅。
 ms.topic: reference
 ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dansimps
-ms.openlocfilehash: e7cfa4a093277afece0722538ca33914d1609ec1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.author: lizross
+author: eross-msft
+manager: mtillman
+ms.openlocfilehash: fbf236082b710ef5f4319b1924856fe98784b1ce
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031735"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641243"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -83,7 +83,7 @@ wecutil  [{es | enum-subscription}]
 |杯\<Compassword>|设置共享用户凭据的用户密码。 如果 \<Compassword> 将设置为 * (星号) ，则从控制台读取密码。 仅当指定了 **/cun** 选项时，此选项才有效。|
 |/q： [ \<Quiet> ]|指定配置过程是否提示确认。 \<Quiet> 可以为 true 或 false。 如果 <Quiet> 为 true，则配置过程不会提示确认。 此选项的默认值为 false。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 > [!IMPORTANT]
 > 如果收到消息 "RPC 服务器不可用？尝试运行 wecutil 时，需要启动 Windows 事件收集器服务 (wecsvc) 。 若要启动 wecsvc，请在提升的命令提示符下键入 net start wecsvc。

@@ -3,16 +3,16 @@ title: Kerberos Constrained Delegation Overview
 description: Windows Server 安全
 ms.topic: article
 ms.assetid: 51923b0a-0c1a-47b2-93a0-d36f8e295589
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: fb0c35d51c0aa2a0f63f61c0be48099bb6aa5269
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2cc0a18b3b6de66f5992eb4584c95696e297e858
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996175"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641090"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -62,7 +62,7 @@ Kerberos 约束委派可以在前端服务与资源服务不在同一域中时�
 
 因为 KDC 不会限制协议转换，所以引入了两个新的已知 Sid，以将此控件授予资源管理员。  这些 Sid 确定是否发生了协议转换，并可与标准访问控制列表结合使用来根据需要授予或限制访问权限。
 
-|SID|描述|
+|SID|说明|
 |-------|--------|
 |AUTHENTICATION_AUTHORITY_ASSERTED_IDENTITY<br />S-1-18-1|一个 SID，表示根据客户端凭据所有权验证，身份验证颁发机构对客户端的标识进行断言。|
 |SERVICE_ASSERTED_IDENTITY<br />S-1-18-2|一个 SID，表示服务对客户端的标识进行断言。|
@@ -73,7 +73,7 @@ Kerberos 约束委派可以在前端服务与资源服务不在同一域中时�
 
 若要配置资源服务以允许代表用户的前端服务访问，则需要使用 Windows PowerShell cmdlet。
 
--   若要检索主体列表，请使用**get-adcomputer**、 **uninstall-adserviceaccount**和**new-aduser** cmdlet 以及**Properties PrincipalsAllowedToDelegateToAccount**参数。
+-   若要检索主体列表，请使用 **get-adcomputer**、 **uninstall-adserviceaccount**和 **new-aduser** cmdlet 以及 **Properties PrincipalsAllowedToDelegateToAccount** 参数。
 
 -   若要配置资源服务，请使用**get-adcomputer**、 **uninstall-adserviceaccount**、 **new-aduser**、 **get-adcomputer**、uninstall-adserviceaccount**和**new-aduser **cmdlet，其中**包含**PrincipalsAllowedToDelegateToAccount**参数。
 

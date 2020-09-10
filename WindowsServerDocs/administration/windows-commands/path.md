@@ -3,16 +3,16 @@ title: path
 description: 参考文章：在 PATH 环境变量中设置命令路径，指定用于搜索可执行文件 () 文件的目录集。
 ms.topic: reference
 ms.assetid: 1bfa1349-e79a-472b-a9e6-d7a91149ae8f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fe60518a70f4fdc9992f70b3b561b067404a31f1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a6eeeba05b69530091525c65c49606902ca8c165
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032504"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640669"
 ---
 # <a name="path"></a>path
 
@@ -34,7 +34,7 @@ path ;
 | `%PATH%` | 将命令路径追加到 PATH 环境变量中列出的现有目录集。 如果包含此参数，Cmd.exe 会将其替换为 PATH 环境变量中的命令路径值，从而无需在命令提示符下手动输入这些值。 |
 | /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 
 - Windows 操作系统使用默认文件扩展名按以下优先级顺序进行搜索： .exe、.com、.bat 和 .cmd。 这意味着，如果你要查找名为的批处理文件，acct.bat 但在同一目录中有一个名为 acct.exe 的应用，则必须在命令提示符下包含 .bat 扩展名。

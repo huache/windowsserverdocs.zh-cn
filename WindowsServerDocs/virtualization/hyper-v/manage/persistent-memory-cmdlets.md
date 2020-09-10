@@ -3,14 +3,15 @@ title: 用于为 Hyper-v Vm 配置永久性内存设备的 cmdlet
 description: 如何为 Hyper-v Vm 配置永久性内存设备
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc08039ba1d
-author: coreyp-at-msft
-ms.author: coreyp
-ms.openlocfilehash: 471dd9a7c3feb148b9ce27ec7ac4d714be0e86af
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.author: lizross
+author: eross-msft
+manager: mtillman
+ms.openlocfilehash: 68f4d4121513973e97a28ad26cea7856a842b302
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996701"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640195"
 ---
 # <a name="cmdlets-for-configuring-persistent-memory-devices-for-hyper-v-vms"></a>用于为 Hyper-v Vm 配置永久性内存设备的 cmdlet
 
@@ -20,13 +21,13 @@ ms.locfileid: "87996701"
 
 ## <a name="create-a-persistent-memory-device-for-a-vm"></a>为 VM 创建永久性内存设备
 
-使用**[新的 VHD](/powershell/module/hyper-v/new-vhd?view=win10-ps)** CMDLET 为 VM 创建永久性内存设备。 设备必须在现有 NTFS DAX 卷上创建。  新的文件扩展名 (. vhdpmem) 用于指定设备是永久性内存设备。 仅支持固定 VHD 文件格式。
+使用 **[新的 VHD](/powershell/module/hyper-v/new-vhd?view=win10-ps)** CMDLET 为 VM 创建永久性内存设备。 设备必须在现有 NTFS DAX 卷上创建。  新的文件扩展名 (. vhdpmem) 用于指定设备是永久性内存设备。 仅支持固定 VHD 文件格式。
 
 **示例：** `New-VHD d:\VMPMEMDevice1.vhdpmem -Fixed -SizeBytes 4GB`
 
 ## <a name="create-a-vm-with-a-persistent-memory-controller"></a>使用持久性内存控制器创建 VM
 
-使用**新的 VM cmdlet**创建具有指定内存大小和 VHDX 映像路径的第2代 VM。 然后，使用**VMPmemController**将永久性内存控制器添加到 VM。
+使用 **新的 VM cmdlet** 创建具有指定内存大小和 VHDX 映像路径的第2代 VM。 然后，使用 **VMPmemController** 将永久性内存控制器添加到 VM。
 
 **示例：**
 
@@ -38,7 +39,7 @@ Add-VMPmemController ProductionVM1x
 
 ## <a name="attach-a-persistent-memory-device-to-a-vm"></a>将永久性内存设备附加到 VM
 
-使用**[add-vmharddiskdrive](/powershell/module/hyper-v/add-vmharddiskdrive?view=win10-ps)** 将永久性内存设备附加到 VM
+使用 **[add-vmharddiskdrive](/powershell/module/hyper-v/add-vmharddiskdrive?view=win10-ps)** 将永久性内存设备附加到 VM
 
 **示例：** `Add-VMHardDiskDrive ProductionVM1 PMEM -ControllerLocation 1 -Path D:\VPMEMDevice1.vhdpmem`
 

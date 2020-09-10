@@ -3,16 +3,16 @@ title: mstsc
 description: Mstsc 命令的参考文章，该命令创建到远程桌面会话主机服务器或其他远程计算机的连接，编辑现有远程桌面连接 ( .rdp) 配置文件，并将使用客户端连接管理器创建的旧连接文件迁移到新的 .rdp 连接文件。
 ms.topic: reference
 ms.assetid: 59801227-1e7e-4dbd-96e6-f54102a3ce92
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a9c1eb46e2d6802c50dfc89e4a3085e6a6afca2
-ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
+ms.openlocfilehash: f47a8ad0db569c82d64e74b10c30bec9aca958ab
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89057559"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640547"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -28,7 +28,7 @@ mstsc.exe /edit <connectionfile>
 mstsc.exe /migrate
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | --------- | ------------|
@@ -59,7 +59,7 @@ mstsc.exe /migrate
 ```
 mstsc /f
 ```
-或
+or
 ```
 mstsc /v:computer1 /f
 ```

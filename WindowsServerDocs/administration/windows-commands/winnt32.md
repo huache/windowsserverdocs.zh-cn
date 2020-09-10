@@ -3,16 +3,16 @@ title: winnt32
 description: 用于在 Windows Server 2003 中执行或升级到产品的 winnt32.exe 的参考文章。
 ms.topic: reference
 ms.assetid: 5a0a6fb3-ba4e-4ace-8984-7f6d3875560e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c74f0645ccbe4745b155eb8b687d4c8ea5ff159
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e941dbbf1bc0a26092fa6616d58c4186bfbaf42a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022691"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641130"
 ---
 # <a name="winnt32"></a>winnt32
 
@@ -59,7 +59,7 @@ winnt32 [/checkupgradeonly] [/cmd: <CommandLine>] [/cmdcons] [/copydir:{i386|ia6
 |   \<AnswerFile>   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         为安装提供自定义规范                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |        /?         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              在命令提示符下显示帮助。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 如果要在客户端计算机上部署 Windows XP，则可以使用 Windows XP 附带的 winnt32.exe 版本。 部署 Windows XP 的另一种方法是使用 winnt32.msi，该方法可通过 Windows Installer 的一组智能技术来运行。 有关客户端部署的详细信息，请参阅 Windows Server 2003 部署工具包，这在 [使用 Windows 部署和资源工具包](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10))中进行了介绍。
 
 在基于 Itanium 的计算机上，可以从 (EFI) 或 Windows server 2003 Enterprise、Windows Server 2003 R2 Enterprise、Windows Server 2003 R2 Datacenter 或 Windows Server 2003 Datacenter 的可扩展固件接口运行 **winnt32.exe** 。 另外，在基于 Itanium 体系结构的计算机上， **/cmdcons** 和 **/syspart** 不可用，并且与升级相关的选项将不可用。

@@ -3,16 +3,16 @@ title: tftp
 description: 在远程计算机之间传输文件。
 ms.topic: reference
 ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 94884e2ae992441bb0031e25f9aeebe5984c207d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0d2d7c0c62cb0285347e1309f8dadf48a8ef27dc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038275"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640801"
 ---
 # <a name="tftp"></a>tftp
 
@@ -35,7 +35,7 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 |\<Source\>|指定要传输的文件。|
 |\<Destination\>|指定文件传输位置。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 -   您可以使用 "添加功能向导" 安装 tftp 客户端。
 -   Tftp 协议不支持任何身份验证或加密机制，因此在存在时可能会带来安全风险。 不建议在连接到 Internet 的系统上安装 tftp 客户端。
 -   Tftp 客户端是可选软件，在 Windows Vista 和更高版本的 Windows 操作系统上被标记为已弃用。 出于安全原因，Microsoft 不再提供 tftp 服务器服务。

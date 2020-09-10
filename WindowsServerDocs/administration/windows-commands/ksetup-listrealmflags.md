@@ -3,16 +3,16 @@ title: ksetup listrealmflags
 description: Ksetup listrealmflags 命令的参考文章，其中列出了可通过 ksetup 报告的可用领域标志。
 ms.topic: reference
 ms.assetid: aa96e4da-6b98-4c05-bccf-73cbf33258c2
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d7c522449053a18cdd1e2a9e533dbce5d6e9f17c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ddbc7f2421fc9c4acfcb38d0e83776f550908e28
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025471"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640023"
 ---
 # <a name="ksetup-listrealmflags"></a>ksetup listrealmflags
 
@@ -30,7 +30,7 @@ ksetup /listrealmflags
 
 | “值” | 领域标志 | 说明 |
 | ----- | ---------- | ----------- |
-| 0xF | 全部 | 设置所有领域标志。 |
+| 0xF | All | 设置所有领域标志。 |
 | 0x00 | 无 | 未设置领域标志，并且未启用任何其他功能。 |
 | 0x01 | sendaddress | 此 IP 地址将包含在票证授予票证中。 |
 | 0x02 | tcpsupported | 传输控制协议 (TCP) 和用户数据报协议 (UDP) 在此领域中受支持。 |

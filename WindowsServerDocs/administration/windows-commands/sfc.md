@@ -3,16 +3,16 @@ title: sfc
 description: 用于 sfc 的参考文章，用于扫描并验证所有受保护系统文件的完整性并将错误版本替换为正确的版本。
 ms.topic: reference
 ms.assetid: c58c25da-e028-42a6-9e10-973484a4b953
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6aa1fd38eaab1ffe3d6c3b9f2e4913d6a1e0ca4d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 18c7457b7f51449796374930d6232045be443c85
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024881"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640974"
 ---
 # <a name="sfc"></a>sfc
 
@@ -38,7 +38,7 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 |/offbootdir|指定脱机启动目录的脱机位置|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 -   您必须以 Administrators 组成员的身份登录才能运行 **sfc.exe**。
 -   如果 **sfc** 发现某个受保护的文件已被覆盖，则它将从 **systemroot\system32\dllcache** 文件夹中检索正确的文件版本，并替换错误的文件。
 -   Windows Server 2003、Windows Server 2008 和 Windows Server 2008 R2 上的 **sfc** 之间存在功能差异：
