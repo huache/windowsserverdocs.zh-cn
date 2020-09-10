@@ -1,20 +1,20 @@
 ---
-title: for
+title: 针对
 description: For 命令的参考文章，用于在一组文件中为每个文件运行指定的命令。
 ms.topic: reference
 ms.assetid: e275726c-035f-4a74-8062-013c37f5ded1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7120ed613595b5b90334e49b0865c3e598f3cabb
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a7cb7d2882a0af886ead2a74de5b56c00302e589
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027635"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634837"
 ---
-# <a name="for"></a>for
+# <a name="for"></a>针对
 
 为每个文件在一组文件中运行指定的命令。
 
@@ -34,7 +34,7 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 | `<commandlineoptions>` | 指定要与指定命令一起使用的任何命令行选项。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 可以在批处理文件中或直接从命令提示符中使用此命令。
 

@@ -3,16 +3,16 @@ title: ksetup setrealmflags
 description: Ksetup setrealmflags 命令的参考文章，用于设置指定领域的领域标志。
 ms.topic: reference
 ms.assetid: bcb2824e-fba7-4ebe-be62-e62b4fae5b17
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f716e1da0a5804df9fa42534d5d4aa0b63672b1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 08cb63da37f72cf0fd0e26f90ce7a9c2ec7839ac
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025321"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634300"
 ---
 # <a name="ksetup-setrealmflags"></a>ksetup setrealmflags
 
@@ -30,13 +30,13 @@ ksetup /setrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 | --------- | ----------- |
 | `<realmname>` | 指定大写的 DNS 名称，例如 CORP。CONTOSO.COM。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 领域标志指定了不基于 Windows Server 操作系统的 Kerberos 领域的其他功能。 运行 Windows Server 的计算机可以使用 Kerberos 服务器来管理 Kerberos 领域中的身份验证，而不是使用运行 Windows Server 操作系统的域。 此条目将建立领域的功能，如下所示：
 
 | “值” | 领域标志 | 说明 |
 | ----- | ---------- | ----------- |
-| 0xF | 全部 | 设置所有领域标志。 |
+| 0xF | All | 设置所有领域标志。 |
 | 0x00 | 无 | 未设置领域标志，并且未启用任何其他功能。 |
 | 0x01 | sendaddress | 此 IP 地址将包含在票证授予票证中。 |
 | 0x02 | tcpsupported | 传输控制协议 (TCP) 和用户数据报协议 (UDP) 在此领域中受支持。 |

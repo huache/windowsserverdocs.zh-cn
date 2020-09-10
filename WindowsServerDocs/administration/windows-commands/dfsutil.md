@@ -3,16 +3,16 @@ title: dfsutil
 description: 用于管理 DFS 命名空间、服务器和客户端的 dfsutil 命令的参考文章。
 ms.topic: reference
 ms.assetid: ef5093a4-0d24-4b21-9d04-59933ad98e2c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a622a9647b438ed2748ed42b28395bebe361f50b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9fb3883403dd0f4a88b612655247c4f4a2df7de7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028365"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635042"
 ---
 # <a name="dfsutil"></a>dfsutil
 
@@ -26,7 +26,7 @@ Dfsutil 命令管理 DFS 命名空间、服务器和客户端。
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| root | 显示、创建、删除、导入、导出命名空间根目录。 |
+| 根 | 显示、创建、删除、导入、导出命名空间根目录。 |
 | 链接 | 显示、创建、删除或移动文件夹 (链接) 。 |
 | 目标 | 显示、创建、删除文件夹目标或命名空间服务器。 |
 | property | 显示或修改文件夹目标或命名空间服务器。 |

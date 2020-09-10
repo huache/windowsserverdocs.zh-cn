@@ -3,16 +3,16 @@ title: fc
 description: Fc 命令的参考文章，它比较两个文件或文件集，并显示它们之间的差异。
 ms.topic: reference
 ms.assetid: 485fc3d8-b7c5-496d-87be-0011112f27d5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: eb4bd745ec9c1a9dfe066fd5eeefdc2d5517d7cb
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 54a148ae7e722d891c3d8912c50c904839ddbf67
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036625"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634934"
 ---
 # <a name="fc"></a>fc
 
@@ -44,7 +44,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 | `[<drive2>:][<path2>]<filename2>` | 指定要比较的第二个文件或文件集的位置和名称。 *filename2* 是必需的。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 此命令 implemeted c:\WINDOWS\fc.exe。 可以在 PowerShell 中使用此命令，但请务必将完整的可执行文件拼写 ( # A0) ，因为 "fc" 也是格式自定义的别名。
 

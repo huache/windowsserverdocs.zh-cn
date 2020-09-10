@@ -3,16 +3,16 @@ title: graftabl
 description: Graftabl 命令的参考文章，Windows 操作系统可在图形模式下显示扩展字符集。
 ms.topic: reference
 ms.assetid: b08351d4-3d24-490c-86f6-1252da11d923
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b92cc0501b69127bb8dd9e3faba5591a48542ea
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9f8759679865c87c11417c64ef130736de2a1e9e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035485"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634617"
 ---
 # <a name="graftabl"></a>graftabl
 
@@ -33,7 +33,7 @@ graftabl /status
 | /status | 显示此命令所使用的当前代码页。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - **Graftabl**命令仅影响指定的代码页的扩展字符的监视器显示。 它不会更改实际的控制台输入代码页。 若要更改控制台输入代码页，请使用 [模式](mode.md) 或 [chcp](chcp.md) 命令。
 

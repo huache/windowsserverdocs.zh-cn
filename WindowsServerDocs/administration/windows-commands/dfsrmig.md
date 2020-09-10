@@ -3,16 +3,16 @@ title: dfsrmig
 description: Dfsrmig 命令的参考文章，用于将 SYSvol 复制从 FRS 迁移到 DFS 复制，提供有关迁移进度的信息，并修改 AD DS 对象以支持迁移。
 ms.topic: reference
 ms.assetid: e1b6a464-6a93-4e66-9969-04f175226d8d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a619a4f94f9b0afb0a855017de0283c763948698
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5c97132a078f1459890062fa1f99a58b6718bd84
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030205"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635022"
 ---
 # <a name="dfsrmig"></a>dfsrmig
 
@@ -39,7 +39,7 @@ dfsrmig [/setglobalstate <state> | /getglobalstate | /getmigrationstate | /creat
 | `/deleterodfsrmember [<read_only_domain_controller_name>]` | 删除与指定的只读域控制器对应的 DFS 复制的全局 AD DS 设置，或者，如果没有为指定值，则删除所有只读域控制器的 DFS 复制的全局 AD DS 设置 `<read_only_domain_controller_name>` 。<p>使用此选项，仅当在只读域控制器上自动删除失败时，并且在将迁移从已准备状态回滚到启动状态时，会长时间停止只读域控制器时，才手动删除 AD DS 设置。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 使用 `/setglobalstate <state>` 命令在 PDC 模拟器上 AD DS 中设置全局迁移状态，以启动和控制迁移过程。 如果 PDC 模拟器不可用，则此命令将失败。
 

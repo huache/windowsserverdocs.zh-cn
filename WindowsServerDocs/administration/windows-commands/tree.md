@@ -3,16 +3,16 @@ title: tree
 description: 树形的参考文章，其中显示了路径的目录结构或驱动器中的磁盘的目录结构。
 ms.topic: reference
 ms.assetid: 345d3192-401e-4a3b-a8ac-36a85c7be79d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c164fe8999313ffd40ec12b29c7ad8cf2bd7c7a5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e75e0048855a5c30bc90e04433301d5df6d177ae
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026885"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634168"
 ---
 # <a name="tree"></a>tree
 
@@ -36,7 +36,7 @@ tree [<Drive>:][<Path>] [/f] [/a]
 |/a|指定 **树** 将使用文本字符而不是图形字符来显示链接子目录的行。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 **树**显示的结构取决于你在命令提示符处指定的参数。 如果未指定驱动器或路径， **树** 将显示从当前驱动器的当前目录开始的树状结构。
 

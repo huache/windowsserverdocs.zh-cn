@@ -3,16 +3,16 @@ title: forfiles
 description: Forfiles 命令的参考文章，用于在一组文件或一组文件上选择并运行命令。
 ms.topic: reference
 ms.assetid: 43f6b004-446d-4fdd-91c5-5653613524a4
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 05/20/2020
-ms.openlocfilehash: c79aeddec4a2ea74eb79c7d807428b6bc5955ce2
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b5b2511e49c379be20c7be5abf08581a17f0a463
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027625"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634796"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -35,7 +35,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 | /D `[{+\|-}][{<date> | <days>}]` | 选择在指定时间范围内具有最后修改日期的文件：<ul><li>选择上次修改日期晚于或等于 (**+**) 或 (早于 **-**) 指定日期的文件，其中 *date* 的格式为 MM/DD/YYYY。</li><li>选择上次修改日期晚于或等于 (的文件 **+**) 当前日期加上指定的天数，或者早于或等于 (**-**) 当前日期减去指定的天数。</li><li>*天数*的有效值包括0–32768范围内的任何数字。 如果未指定任何符号， **+** 则默认情况下使用。</li></ul> |
 | /? | 在 cmd 窗口中显示帮助文本。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - `forfiles /S`命令类似于 `dir /S` 。
 

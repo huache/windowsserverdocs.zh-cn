@@ -3,16 +3,16 @@ title: gpt
 description: Gpt 命令的参考文章，它将 gpt 属性 () 分配给具有焦点的分区。
 ms.topic: reference
 ms.assetid: 1d6f9029-807f-4420-a336-36669b5361bc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ce16138ec968451b68f7324cefd6097f2351a274
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 72260c00830d2d85fbe4324203dcfefe90154c7e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035515"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634721"
 ---
 # <a name="gpt"></a>gpt
 
@@ -37,7 +37,7 @@ gpt attributes=<n>
 | --------- | ----------- |
 | 属性 =`<n>` | 指定要应用于具有焦点的分区的属性的值。 "Gpt 属性" 字段是包含两个子字段的64位字段。 较大的字段只能在分区 ID 的上下文中解释, 而较小的字段常用于所有分区 ID。 接受的值包括：<ul><li>**0x0000000000000001** -指定计算机正确运行所需的分区。</li><li>**0x8000000000000000** -指定在将磁盘移到另一台计算机时，或在计算机首次看到磁盘时，分区不会接收驱动器号。</li><li>**0x4000000000000000** -隐藏分区的卷，使其不会被装载管理器检测到。</li><li>**0x2000000000000000** -指定分区为另一分区的卷影副本。</li><li>**0x1000000000000000** -指定分区为只读。 此属性可防止将卷写入到中。</li></ul><p>有关这些属性的详细信息，请参阅 "属性" 部分的 [Create_PARTITION_PARAMETERS 结构](/windows/win32/api/vds/ns-vds-create_partition_parameters)。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - EFI 系统分区只包含启动操作系统所需的二进制文件。 这使特定于操作系统的 OEM 二进制文件或二进制文件可以放在其他分区中。
 

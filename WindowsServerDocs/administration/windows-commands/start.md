@@ -3,16 +3,16 @@ title: start
 description: 参考文章，用于启动单独的命令提示符窗口以运行指定的程序或命令。
 ms.topic: reference
 ms.assetid: 0173f9b3-5cd7-4edb-b01e-d02193b4fadc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f17b4093bbe82d869ad561dce45437389dc347e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3276374d13854e865755a7a87b9d35af2f4e6f46
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036925"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634195"
 ---
 # <a name="start"></a>start
 
@@ -44,7 +44,7 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
 |\<Parameter>...|指定要传递给命令或程序的参数。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - 您可以通过将文件的名称键入为命令，通过文件关联来运行不可执行文件。
 - 当你在不带扩展名或路径限定符的情况下运行包含字符串 CMD 的命令时，CMD 将替换为 COMSPEC 变量的值。 这会阻止用户从当前目录中提取 **cmd** 。

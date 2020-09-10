@@ -3,16 +3,16 @@ title: netsh
 description: Netsh 命令的参考文章，这是一个命令行脚本实用工具，可让你以本地或远程方式显示或修改当前正在运行的计算机的网络配置。
 ms.topic: reference
 ms.assetid: 96fc069d-53c0-4d0a-9f7f-f9f3d49a02bd carmonmills
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: fc8f6aff94494422150643fed6ce6681dfe54036
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e848003ced9161f0ae07778a2a16d50b7e97d51c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037775"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635861"
 ---
 # <a name="netsh"></a>netsh
 
@@ -39,7 +39,7 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 | -f `<scriptfile>` | 运行指定的脚本文件后退出 netsh 命令。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果指定 **-r** 后跟另一个命令，则 netsh 会在远程计算机上运行该命令，然后返回到 Cmd.exe 命令提示符。 如果指定 **-r** 而不包含其他命令，则 netsh 将以远程模式打开。 此过程类似于在 Netsh 命令提示符下使用 set machine  。 使用 **-r**时，只会为当前 netsh 实例设置目标计算机。 退出并重新输入 netsh 后，目标计算机将重置为本地计算机  。 通过指定存储在 WINS 中的计算机名称、UNC 名称、DNS 服务器要解析的 Internet 名称或 IP 地址，可以在远程计算机上运行 netsh 命令  。
 

@@ -3,16 +3,16 @@ title: tapicfg
 description: 了解如何管理 TAPI 应用程序目录分区。
 ms.topic: reference
 ms.assetid: c0e642ce-5d98-4edb-9a65-1dff09aef4e1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: a6f340713e0510b2766124c7a0106f5f9ff9aa8c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fc44ebc15c130dab34a1aff60aba7926b4cbbcb4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027185"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635467"
 ---
 # <a name="tapicfg"></a>tapicfg
 
@@ -110,7 +110,7 @@ tapicfg makedefault /directory:<PartitionName> [/domain:<DomainName>]
 |makedefault/目录：\<PartitionName>|必需。 将 TAPI 应用程序目录分区的 DNS 名称指定为域的默认分区。 请注意，此名称必须是完全限定的域名。 指定为其设置了 TAPI 应用程序目录分区的域的 DNS 名称。 如果未指定域名，则使用本地域的名称。|
 |/?|在命令提示符下显示帮助。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 你必须是 active directory 中 Enterprise Admins 组的成员，才能运行 **tapicfg install** (来创建 tapi 应用程序目录分区) 或 **tapicfg 删除** (删除 tapi 应用程序目录分区) 。
 
 此命令行工具可在作为域成员的任何计算机上运行。

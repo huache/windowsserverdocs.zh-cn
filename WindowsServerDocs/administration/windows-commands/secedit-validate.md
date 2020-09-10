@@ -3,16 +3,16 @@ title: secedit：验证
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: 9fb06354-f55a-4ca4-9fbc-9a872eb9b9cf
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 47c0ec78cb49da3ce256e7a74ce8be003b0db85b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: be7ae316a189203aa70769d1d37291f532166735
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027975"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635531"
 ---
 # <a name="seceditvalidate"></a>secedit：验证
 
@@ -33,7 +33,7 @@ Secedit /validate <configuration file name>
 |---------|-----------|
 |配置文件名|必需。</br>指定将验证的安全模板的路径和文件名。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 如果安全模板已损坏或设置不当，则验证这些模板可以帮助你。
 

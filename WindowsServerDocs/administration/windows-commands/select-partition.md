@@ -3,16 +3,16 @@ title: select partition
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: 25f70083-b8f7-4a8e-9b34-4b3ffbe06670
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 816a235f7ba83320828a5dc72c9f2558c27b2ed8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ebed1eda02fa2f97516ccd81d89fcabfe21b430c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027905"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635482"
 ---
 # <a name="select-partition"></a>select partition
 
@@ -34,7 +34,7 @@ select partition=<n>
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 依据\=<n> | 要接收焦点的分区号。 通过使用 DiskPart 中的 " **列出分区** " 命令，你可以查看当前所选磁盘上的所有分区的编号。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 -   必须先使用 " **选择磁盘** " 命令选择一个磁盘，然后才能选择分区。
 

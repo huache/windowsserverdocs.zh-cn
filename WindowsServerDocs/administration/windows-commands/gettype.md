@@ -3,16 +3,16 @@ title: gettype
 description: 有关 gettype 命令的参考文章。 此命令已弃用，并且在将来的 Windows 版本中不保证其受支持。
 ms.topic: reference
 ms.assetid: a423030b-2bae-4e6f-8020-36163058fa3a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ad6fe788028afcb0072f4cf0657a9fd64e4f3607
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fda549063322ade4ff15fd75865c23293ece4e8e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025701"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634788"
 ---
 # <a name="gettype"></a>gettype
 

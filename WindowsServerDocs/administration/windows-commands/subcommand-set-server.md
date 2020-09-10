@@ -3,16 +3,16 @@ title: 子命令集-服务器
 description: 子命令集-服务器的参考文章，其中配置了 Windows 部署服务服务器的设置。
 ms.topic: reference
 ms.assetid: da55c29d-a94a-4d73-877b-af480f906ca0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9199fc06733724ba14415efd938488e7558ceb1c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 33ebdc4e411c7ff550b9686459e7440007d2ae63
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036735"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635472"
 ---
 # <a name="subcommand-set-server"></a>子命令：设置-服务器
 

@@ -3,16 +3,16 @@ title: secedit：导入
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: 1dd59d4c-9d48-444a-871b-b957eb682597
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ad13d04ac894bc11aa26790239370147ce9d140
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a45261e83593014d8c50ce78cb8420cd35d85eb4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037425"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635600"
 ---
 # <a name="seceditimport"></a>secedit：导入
 
@@ -38,7 +38,7 @@ Secedit /import /db <database file name> /cfg <configuration file name> [/overwr
 |log|可选。</br>指定进程的日志文件的路径和文件名。|
 |quiet|可选。</br>禁止显示屏幕和日志输出。 你仍可以通过使用 "安全配置和分析" 管理单元 (MMC) 来查看分析结果。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 在将 .inf 文件导入到另一台计算机之前，请在执行导入的数据库上运行命令 secedit/generaterollback，并在导入文件上对/validate 执行命令以验证其完整性。
 

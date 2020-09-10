@@ -3,16 +3,16 @@ title: flattemp
 description: Flattemp 命令的参考文章，用于启用或禁用平面临时文件夹。
 ms.topic: reference
 ms.assetid: 059a0960-1fd9-4382-87fe-a85d5dccdaea
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ac9a3ec390318d52d17f8e537eb10aad4bb1540c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 86fcad8a22c73aa8682059f657966c9ac20b8793
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030615"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634872"
 ---
 # <a name="flattemp"></a>flattemp
 
@@ -38,7 +38,7 @@ flattemp {/query | /enable | /disable}
 | /disable | 禁用平面临时文件夹。 每个用户的临时文件夹将位于单独的文件夹中 (由用户的会话 ID) 确定。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 每个用户都有一个唯一的临时文件夹后，使用 `flattemp /enable` 来启用单层临时文件夹。
 

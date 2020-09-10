@@ -3,16 +3,16 @@ title: mmc
 description: 用于打开特定 mmc 控制台、在作者模式下打开 mmc 或指定打开32位或64版 mmc 的 mmc 命令的参考文章。
 ms.topic: reference
 ms.assetid: 7bfa4030-ce42-40fb-922f-2f5145a80872
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8705cf2e2cd7eced344bcc412283dc88c829849a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a2a342e0a72835ac16130ddf54a16e2333ed73c1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037805"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634206"
 ---
 # <a name="mmc"></a>mmc
 
@@ -36,7 +36,7 @@ mmc <path>\<filename>.msc [/a] [/64] [/32]
 | /32 | 打开32位版本的 **mmc** (mmc32) 。 运行 Microsoft 64 位操作系统时，如果仅有32位的管理单元，则可以通过使用此命令行选项打开 mmc 来运行32位管理单元。 |
 | /? | 在命令提示符下显示帮助。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 - 您可以使用环境变量来创建不依赖于控制台文件的显式位置的命令行或快捷方式。 例如，如果控制台文件的路径位于系统文件夹中 (例如 **mmc c:\winnt\system32\ console_name**) ，则可以使用可扩展的数据字符串 **% systemroot%** 指定 (**mmc% systemroot% \ system32 \ console_name**) 的位置。 如果要将任务委派给组织中正在使用不同计算机的人员，这可能很有用。
 

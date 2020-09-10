@@ -3,16 +3,16 @@ title: if
 description: 用于在 batch 程序中执行条件处理的 if 命令的参考文章。
 ms.topic: reference
 ms.assetid: 698b3fb9-532b-4c2b-af7f-179f8dc57131
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ea7b823c0060b1fb9ff474ae0330eb789a1da0d1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9bb3c29b7d77b6b1e07e647735701be3171cfb85
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038005"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634574"
 ---
 # <a name="if"></a>if
 
@@ -50,7 +50,7 @@ if defined <variable> <command> [else <expression>]
 | `<expression>` | 指定要传递给 **else** 子句中的命令的命令行命令和任何参数。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果在 **if** 子句中指定的条件为 true，则执行条件下的命令。如果条件为 false，则忽略 **if** 子句中的命令，该命令将执行 **else** 子句中指定的任何命令。
 

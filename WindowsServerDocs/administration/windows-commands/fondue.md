@@ -3,16 +3,16 @@ title: 干酪
 description: Fondue 命令的参考文章，可通过从 Windows 更新或组策略指定的其他源下载所需文件来启用 Windows 可选功能。
 ms.topic: reference
 ms.assetid: fc4467f6-ddbb-4d6d-b51e-5a50a957b8c0
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 132441d48ce1f65b38955130fe19535775d02377
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: c80c6b1aef9ea37bdb4ff497ff7a7b5e54f8c468
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035065"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634846"
 ---
 # <a name="fondue"></a>干酪
 

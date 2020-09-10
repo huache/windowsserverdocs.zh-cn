@@ -3,16 +3,16 @@ title: diskpart 脚本和示例
 description: 有关的详细信息，请参阅有关如何自动执行磁盘相关任务（例如创建卷或将磁盘转换为动态磁盘）的示例。
 ms.topic: reference
 ms.assetid: 319c0795-11df-47c8-b203-eadb0577ee0d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 94dbcba1ff88cc265e8006511bb3831ac7d12831
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 820b83ab9c6c70c24c10c16678da9bf90892135f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028275"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635147"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart 脚本和示例
 
@@ -45,7 +45,7 @@ diskpart /s scriptname.txt
 diskpart /s scriptname.txt > logfile.txt
 ```
 
-### <a name="remarks"></a>注解
+### <a name="remarks"></a>备注
 
 - 将 **diskpart** 命令用作脚本的一部分时，建议你将所有 diskpart 操作一起作为一个 diskpart 脚本的一部分来完成。 您可以运行连续的 diskpart 脚本，但必须在每个脚本之间至少使用15秒，才能完全关闭以前的执行，然后在后续脚本中再次运行 **diskpart** 命令。 否则，连续脚本可能会运行失败。 可以通过将命令添加到批处理文件中，并将其添加 `timeout /t 15` 到你的 diskpart 脚本，在连续的 diskpart 脚本之间添加暂停。
 

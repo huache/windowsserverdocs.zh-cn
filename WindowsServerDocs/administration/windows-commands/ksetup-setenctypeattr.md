@@ -3,16 +3,16 @@ title: ksetup setenctypeattr
 description: 用于设置域的加密类型属性的 ksetup setenctypeattr 命令的参考文章。
 ms.topic: reference
 ms.assetid: 88fb913e-6b57-48d9-8c16-a035ab2977ac
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 99a05954a2682ff8cdc4f5bb66e49d68fdf132eb
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9027197817b2fa738726fd0d0feeeeadc5aac0b2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037915"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634127"
 ---
 # <a name="ksetup-setenctypeattr"></a>ksetup setenctypeattr
 
@@ -33,7 +33,7 @@ ksetup /setenctypeattr <domainname> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 | `<domainname>` | 要与之建立连接的域的名称。 使用完全限定的域名或名称的简单格式，如 corp.contoso.com 或 contoso。 |
 | 加密类型 | 必须是以下受支持的加密类型之一：<ul><li>DES-CBC</li><li>DES-CBC-MD5</li><li>RC4-HMAC-MD5</li><li>AES128--HMAC--SHA1-96</li><li>AES256--HMAC--SHA1-96</li></ul> |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 可以通过使用空格将命令中的加密类型隔开，来设置或添加多个加密类型。 不过，每次只能对一个域执行此操作。
 

@@ -3,16 +3,16 @@ title: gpresult
 description: Gpresult 命令的参考文章，其中显示了策略的结果集 (RSoP) 为远程用户和计算机提供的信息。
 ms.topic: reference
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ef5de0c8e4e4c4f75d8ccd680e20b8cf00385f5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a608f94a0239dd2e2d7eff2cc5aba5bfc7e918e8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025671"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634747"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -45,7 +45,7 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 | /z | 显示有关组策略的所有可用信息。 这包括应用优先级为1和更高的详细设置。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 组策略是为组织中的用户和计算机定义和控制程序、网络资源和操作系统运行方式的主要管理工具。 在 active directory 环境中，组策略基于其在站点、域或组织单位中的成员身份应用于用户或计算机。
 

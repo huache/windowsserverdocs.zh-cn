@@ -3,16 +3,16 @@ title: nfsshare
 description: 用于控制网络文件系统 (NFS) 共享的 nfsshare 命令的参考文章。
 ms.topic: reference
 ms.assetid: 437a2615-335a-442f-9713-d50d5f3983a3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7fb0531f571e204877f6f905a60a08ef35f6ea58
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f41c9e4dfd14219ceac9c42741d372beb8defb9b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023611"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635810"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -39,7 +39,7 @@ nfsshare {<sharename> | <drive>:<path> | * } /delete
 | /delete | 如果已指定共享 *名* 或 `<drive>:<path>` ，则此参数将删除指定的共享。 如果指定了通配符 ( * ) ，则此参数将删除所有 NFS 共享。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果 *共享名* 是唯一的参数，此命令将列出由 *共享名*标识的 NFS 共享的属性。
 

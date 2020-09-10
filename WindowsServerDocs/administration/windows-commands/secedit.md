@@ -3,16 +3,16 @@ title: secedit
 description: '* * * * 的参考文章'
 ms.topic: reference
 ms.assetid: 58ed57ed-08e3-403d-a363-0620b358637a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a1eed3e5e4c1673f8b10d633323da1d74e6a2722
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8a1e4e49c5fd9cef10f6b60d18511f3a38d0dea6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027955"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635499"
 ---
 # <a name="secedit"></a>secedit
 
@@ -43,7 +43,7 @@ secedit
 |[Secedit:import](secedit-import.md)|允许您将安全模板导入到数据库中，以便在模板中指定的设置可以应用于系统或针对系统进行分析。|
 |[Secedit:validate](secedit-validate.md)|允许您验证安全模板的语法。|
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 对于所有文件名，如果未指定路径，则使用当前目录。
 

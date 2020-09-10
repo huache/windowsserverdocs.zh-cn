@@ -3,16 +3,16 @@ title: finger
 description: Finger 命令的参考文章，其中显示了有关运行 finger 服务或后台程序的指定远程计算机上的用户的信息。
 ms.topic: reference
 ms.assetid: 907ea637-5c6c-4752-84c2-46bbf2a68a33
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 55b9fe07b45b669f2d669d388883e5a363eda54f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e2c631fe02b22ea0fc57a9e338f80ac15b00873f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035085"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634921"
 ---
 # <a name="finger"></a>finger
 
@@ -38,7 +38,7 @@ finger [-l] [<user>] [@<host>] [...]
 | `@<host>` | 指定运行 finger 服务的远程计算机，在该计算机上查找用户信息。 可以指定计算机名称或 IP 地址。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 必须使用连字符 (-) 而不是斜杠 (/) 为 **手指** 参数加前缀。
 

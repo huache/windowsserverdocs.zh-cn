@@ -3,16 +3,16 @@ title: netstat
 description: 用于显示活动 TCP 连接、计算机正在侦听的端口、以太网统计信息、IP 路由表、IPv4 统计信息和 IPv6 统计信息的 netstat 命令参考文章。
 ms.topic: reference
 ms.assetid: 60e2718f-93cc-4ceb-bf0e-58a6a6e4fc8b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d68ec2e21c4248769973b3409896ba9d5bd15e5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 17c2251fd493041b0b39665a785d6aad8010e1d9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038798"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635833"
 ---
 # <a name="netstat"></a>netstat
 
@@ -44,7 +44,7 @@ netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 | `<interval>` | 每隔 *间隔* 秒重新计算选定的信息。 按 CTRL + C 停止重新显示。 如果省略此参数，则此命令仅打印选定的信息一次。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - **Netstat**命令提供以下各项的统计信息：
 

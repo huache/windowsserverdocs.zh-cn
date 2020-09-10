@@ -3,16 +3,16 @@ title: prnport
 description: 用于创建、删除和列出标准 TCP/IP 打印机端口以及显示和更改端口配置的 prnport 命令的参考文章。
 ms.topic: reference
 ms.assetid: 6a0ec638-a21e-4a34-be5c-bd0f7ca89ffe
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4723d266ed70c7e9bf56fd65216dcce0bab1188c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8535290d84566b5241e7f3279ce38029180b8432
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033885"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635130"
 ---
 # <a name="prnport"></a>prnport
 
@@ -48,7 +48,7 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <portname>] [-s <Servername>] 
 | -2`{e|-d}` | 指定是否为 TCP lpr 端口启用双线轴 (也称为 respooling) 。 双重线轴是必需的，因为 TCP lpr 必须在发送到打印机的控制文件中包含准确的字节计数，但协议无法从本地打印提供程序获取计数。 因此，当文件在后台处理到 TCP lpr 打印队列时，该文件也会在 system32 目录中作为临时文件进行后台处理。 TCP lpr 确定临时文件的大小并将大小发送到运行 LPD 的服务器。 参数 **e** 启用双重线轴。 参数 **d** 禁用双重线轴。 |
 | /? | 在命令提示符下显示帮助。 |
 
-#### <a name="remarks"></a>注解
+#### <a name="remarks"></a>备注
 
 - 如果提供的信息包含空格，请使用引号将文本括起来 (例如，"Computer Name" ) 。
 

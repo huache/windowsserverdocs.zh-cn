@@ -3,16 +3,16 @@ title: manage-bde setidentifier
 description: Manage-bde setidentifier 命令的参考文章，可将驱动器上的驱动器标识符字段设置为在为组织提供唯一标识符组策略设置中指定的值。
 ms.topic: reference
 ms.assetid: 7092d18f-4ac9-4c73-a20f-1246ca60e75e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f790efb56ddb3c8785d89930069c5be42e7a5b0c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 861eca94cb15c70857138b6f9c76b5dcf59089a9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027485"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634340"
 ---
 # <a name="manage-bde-setidentifier"></a>manage-bde setidentifier
 
