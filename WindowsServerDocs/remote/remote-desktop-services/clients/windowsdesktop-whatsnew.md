@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/25/2020
+ms.date: 09/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ce718db142ac34a51642e1ed2128899a0e77dbf
-ms.sourcegitcommit: 47dc2671330c2ecc56cce39ef006cbfe108b4759
+ms.openlocfilehash: 8f0b5453265bc96cdeb7ba02795da8fa0f39ba1c
+ms.sourcegitcommit: 0407bd30eaf06358257cf88c3969a2cd8b77dca4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821330"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027162"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
@@ -25,19 +25,28 @@ ms.locfileid: "88821330"
 |用户组 |版本  |
 |-----------|---------|
 |公用     |1.2.1272 |
-|Insider    |1.2.1272 |
+|Insider    |1.2.1357 |
 
-## <a name="updates-for-version-121272"></a>针对版本 1.2.1272 的更新
+## <a name="updates-for-version-121357-insiders"></a>针对版本 1.2.1357（预览体验计划）的更新
+
+*发布日期：2020/09/09*
+
+下载：[Windows 64 位](https://go.microsoft.com/fwlink/?linkid=2139233)、[Windows 32 位](https://go.microsoft.com/fwlink/?linkid=2139144)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
+
+- 修复了 Windows 7 上安全登录 (SSO) 失效的问题。
+
+## <a name="updates-for-version-121275"></a>针对版本 1.2.1275 的更新
 
 *发布日期：2020/08/25*
 
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D7LK)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D5aF)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Dan3)
+下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYR)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYS)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Fg3H)
 
 - 添加了根据用户标识自动检测主权云的功能。
 - 添加了为所有用户启用自定义 URL 订阅的功能。
 - 修复了源任务栏上应用固定的相关问题。
 - 修复了使用 URL 进行订阅时出现的故障。
 - 改善了通过触控或笔拖动远程应用窗口时的体验。
+- 修复了本地化问题。
 
 ## <a name="updates-for-version-121186"></a>针对版本 1.2.1186 的更新
 
@@ -55,8 +64,6 @@ ms.locfileid: "88821330"
 
 *发布日期：2020/06/23*
 
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
-
 - 更新了“订阅”选项的自动发现逻辑，以支持 Windows 虚拟桌面的 Azure 资源管理器集成版本。 只具有 Windows 虚拟桌面资源的客户应该不再需要提供对 Windows 虚拟桌面（经典）的同意。
 - 提供最高 400% 的比例因子，从而优化了对高 DPI 设备的支持。
 - 解决了问题：“断开连接”对话框不显示。
@@ -67,8 +74,6 @@ ms.locfileid: "88821330"
 ## <a name="updates-for-version-121026"></a>针对版本 1.2.1026 的更新
 
 *发布日期：2020/05/27*
-
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
 - 进行订阅时，现可选择帐户而不是键入电子邮件地址。
 - 添加了新的“使用 URL 进行订阅”选项，你可用它来指定你要订阅的工作区的 URL，或在我们无法自动找到你的资源的情况下使用[电子邮件发现](../rds-email-discovery.md)（若可用）。 这与其他远程桌面客户端中的订阅流程很相似。 这可用于直接订阅 Windows 虚拟桌面工作区。
@@ -88,8 +93,6 @@ ms.locfileid: "88821330"
 ## <a name="updates-for-version-12945"></a>版本 1.2.945 的更新
 
 *发布日期：* 2020 年 4 月 28 日
-
-下载：[Windows 64 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNM)、[Windows 32 位](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNO)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vuSV)
 
 - 已为桌面连接添加了新的显示设置选项（右键单击“连接中心”上的桌面图标时提供）。
   - 现在有三个显示配置选项：“所有显示器”、“单个显示器”和“选择显示器”。

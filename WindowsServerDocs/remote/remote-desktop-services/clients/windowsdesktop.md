@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/20/2020
+ms.date: 09/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bd3e1d5f06e5c415b4f300d9a2c8a9b390e5051
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: cb1c519e6da55bb6ee8187db4b388870f1d4b42f
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702826"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554461"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows 桌面客户端入门
 
@@ -132,18 +132,17 @@ ms.locfileid: "88702826"
 - **分辨率**用于指定远程桌面的分辨率。 会话将在整个持续时间内保持此分辨率。 此设置只在“单个显示”模式下且“调整大小时更新分辨率”处于禁用状态时可用。
 - **更改文本和应用的大小**指定会话内容的大小。 仅当连接到 Windows 8.1 和更高版本或 Windows Server 2012 R2 及更高版本时，此设置才适用。 此设置只在“单个显示”模式下且“调整大小时更新分辨率”处于禁用状态时可用。
 
-## <a name="provide-feedback"></a>提供反馈
+## <a name="give-us-feedback"></a>给我们提供反馈
 
-想要提出功能建议还是想要报告问题？ 请通过[反馈中心](feedback-hub://?tabid=2&contextid=883)告诉我们。 还可以通过客户端访问反馈中心：
+想要提出功能建议还是想要报告问题？ 请通过[反馈中心](https://aka.ms/rddesktopfeedback)告诉我们。
 
-1. 在连接中心中，点击客户端顶部命令栏上的“发送反馈”选项以打开反馈中心应用。
-2. 在“摘要”和“详细信息”字段中输入必填信息 。 完成后，点击“下一步”。
-3. 选择提出的是“问题”还是“建议” 。
-4. 检查类别是否位于“应用” > “远程桌面”中 。 如果是，点击“下一步”。
-5. 查看现有反馈主题，了解其他人是否报告了相同的问题。 如果没有，请选择“提出新的 bug”，然后点击“下一步” 。
-6. 在下一页上，可以向我们提供详细信息，以便我们帮助你解决问题。 可以填写更详细的信息、提交屏幕截图，甚至可以将问题录制下来以向我们展示所发生的情况。 若要进行录制，选择“开始录制”，然后进行你之前的操作，直到问题出现为止。 完成后，返回到反馈中心，然后选择“停止录制”。
-7. 对信息感到满意后，点击“提交”。
-8. 在“感谢你的反馈!” 页上，点击“共享我的反馈”以生成指向反馈的链接，你可以根据需要与他人共享。
+还可以在客户端应用中选择看起来像笑脸表情符的按钮来向我们提供反馈，如下图所示：
+
+> [!div class="mx-imgBorder"]
+> ![笑脸图标的屏幕截图，点击该图标可转到反馈中心。](../media/smiley-face-icon.png)
+
+>[!NOTE]
+>请提供有关该问题的详细信息，让我们能够为你提供最有用的帮助。 例如，可以包括屏幕截图，或录制导致此问题的操作。 有关如何提供有帮助的反馈的更多提示，请参阅[反馈](/windows-insider/at-home/feedback#add-new-feedback)。
 
 ### <a name="access-client-logs"></a>访问客户端日志
 

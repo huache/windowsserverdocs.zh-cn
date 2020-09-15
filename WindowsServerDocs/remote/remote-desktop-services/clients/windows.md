@@ -6,14 +6,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 06/01/2020
+ms.date: 09/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c28ccbe0cfd49f1cf774031b002bf7b6142d0a00
-ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
+ms.openlocfilehash: 9bad174ad596ffc0262947464f2353b91a92872c
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89282109"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554521"
 ---
 # <a name="get-started-with-the-microsoft-store-client"></a>Microsoft Store 客户端入门
 
@@ -200,5 +200,14 @@ ms.locfileid: "89282109"
 | 鼠标指针 | 鼠标滚轮          | 双指点击并按住，然后向上或向下拖动                          |
 | 鼠标指针 | 缩放                 | 双指捏合可缩小，双指分开可放大 |
 
-> [!TIP]
-> 欢迎提出问题和意见。 但是，如果你在本文评论部分发布支持请求或产品反馈，我们将无法回复你的反馈。 如需帮助或想要排查客户端问题，强烈建议你转到[远程桌面客户论坛](/answers/topics/windows-remote-desktop-client.html)，启动新的会话。 如果有功能方面的建议，可通过[反馈中心](feedback-hub://?tabid=2&contextid=605)告诉我们。
+## <a name="give-us-feedback"></a>给我们提供反馈
+
+想要提出功能建议还是想要报告问题？ 请通过[反馈中心](https://aka.ms/rdstorefeedback)告诉我们。
+
+还可以在客户端应用程序中选择省略号按钮 (…)，然后选择“反馈”来提供反馈，如下图所示。 
+
+> [!div class="mx-imgBorder"]
+> ![屏幕截图显示了以红色突出显示的省略号按钮。 下拉菜单已在该按钮下打开，“反馈”选项也以红色突出显示。](../media/ellipsis-icon.png)
+
+>[!NOTE]
+>请提供有关该问题的详细信息，让我们能够为你提供最有用的帮助。 例如，可以包括屏幕截图，或录制导致此问题的操作。 有关如何提供有帮助的反馈的更多提示，请参阅[反馈](/windows-insider/at-home/feedback#add-new-feedback)。
