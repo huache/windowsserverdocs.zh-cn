@@ -2,15 +2,15 @@
 title: Windows Server 硬件电源注意事项
 description: 有关 Windows Server 硬件功能的注意事项。
 ms.topic: conceptual
-ms.author: qizha;tristanb
+ms.author: qizha
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ee380937e54faa77ec17f8ae47445089ba1eece8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fe316dd1f21d3f5e151cef60f63c3644ad1af06d
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896729"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077629"
 ---
 # <a name="server-hardware-power-considerations"></a>服务器硬件电源注意事项
 
@@ -22,7 +22,7 @@ ms.locfileid: "87896729"
 
 通常，可以选择符合性能目标的最低 TDP 处理器。 另外，较新版本的处理器通常会更有效地工作，并且它们可能会为 Windows 电源管理算法公开更多的电源状态，从而在所有性能级别上实现更好的电源管理。 或者，他们可以使用 Microsoft 与硬件制造商合作开发的一些新的 "协作" 电源管理技术。
 
-有关协作电源管理技术的详细信息，请参阅[高级配置和电源接口规范](http://www.uefi.org/sites/default/files/resources/ACPI_5_1release.pdf)中名为协作处理器性能控制的部分。
+有关协作电源管理技术的详细信息，请参阅 [高级配置和电源接口规范](http://www.uefi.org/sites/default/files/resources/ACPI_5_1release.pdf)中名为协作处理器性能控制的部分。
 
 ## <a name="memory-recommendations"></a>内存建议
 
@@ -62,7 +62,7 @@ RPM 越大，消耗的能耗就会增加。 SSD 驱动器比旋转驱动器更�
 
 - 处理器插座
 - NUMA 节点 (NUMA node)
-- 核心
+- 核心版
 - 逻辑处理器
 
 ![处理器术语](../media/perftune-guide-figure-1.png)

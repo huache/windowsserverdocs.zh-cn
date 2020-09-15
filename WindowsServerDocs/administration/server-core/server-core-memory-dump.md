@@ -3,15 +3,16 @@ title: 为服务器核心安装配置内存转储文件
 description: 了解如何为 Windows Server 的 Server Core 安装配置内存转储文件
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: d01757fcf1539e41db866b46cdf9eba60a59fc04
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e3ef6076465bc7d165b58f1205ff8d0cf25014b7
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993207"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077774"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>为服务器核心安装配置内存转储文件
 
@@ -31,23 +32,23 @@ wmic computersystem set AutomaticManagedPagefile=False
 
 ## <a name="step-2-configure-the-destination-path-for-a-memory-dump"></a>步骤2：为内存转储配置目标路径
 
-不需要在安装操作系统的分区上安装页面文件。 若要将页面文件放在另一个分区上，必须创建名为**DedicatedDumpFile**的新注册表项。 您可以使用**DumpFileSize**注册表项定义页面文件的大小。 若要创建 DedicatedDumpFile 和 DumpFileSize 注册表项，请执行以下步骤：
+不需要在安装操作系统的分区上安装页面文件。 若要将页面文件放在另一个分区上，必须创建名为 **DedicatedDumpFile**的新注册表项。 您可以使用 **DumpFileSize** 注册表项定义页面文件的大小。 若要创建 DedicatedDumpFile 和 DumpFileSize 注册表项，请执行以下步骤：
 
-1. 在命令提示符处，运行**regedit**命令以打开注册表编辑器。
+1. 在命令提示符处，运行 **regedit** 命令以打开注册表编辑器。
 2. 找到并单击以下注册表子项： HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\CrashControl
-3. 单击 "**编辑" > "新 > 字符串值**"。
-4. 将新值命名为**DedicatedDumpFile**，然后按 enter。
-5. 右键单击 " **DedicatedDumpFile**"，然后单击 "**修改**"。
+3. 单击 " **编辑" > "新 > 字符串值**"。
+4. 将新值命名为 **DedicatedDumpFile**，然后按 enter。
+5. 右键单击 " **DedicatedDumpFile**"，然后单击 " **修改**"。
 6. 在 "**值数据**类型** \<Drive\> ： \\ \<Dedicateddumpfile.sys\> **" 中，然后单击 **"确定"**。
 
    >[!NOTE]
    > 将替换为 \<Drive\> 具有足够的磁盘空间用于分页文件的驱动器，并将替换为 \<Dedicateddumpfile.dmp\> 专用文件的完整路径。
 
-7. 单击 "**编辑 > 新的 > DWORD 值**"。
-8. 键入**DumpFileSize**，然后按 enter。
-9. 右键单击 " **DumpFileSize**"，然后单击 "**修改**"。
-10. 在 "**编辑 DWORD 值**" 的 "**基本**" 下，单击 "**十进制**"。
-11. 在 "**值数据**" 中，键入适当的值，然后单击 **"确定"**。
+7. 单击 " **编辑 > 新的 > DWORD 值**"。
+8. 键入 **DumpFileSize**，然后按 enter。
+9. 右键单击 " **DumpFileSize**"，然后单击 " **修改**"。
+10. 在 " **编辑 DWORD 值**" 的 " **基本**" 下，单击 " **十进制**"。
+11. 在 " **值数据**" 中，键入适当的值，然后单击 **"确定"**。
     >[!NOTE]
     > 转储文件的大小为 mb (MB) 。
 12. 退出注册表编辑器。
@@ -84,7 +85,7 @@ wmic RECOVEROS get DebugInfoType
 wmic RECOVEROS set DebugInfoType = <Value>
 ```
 
-\<Value\>可以为0、1、2或3，如下所示。
+\<Value\> 可以为0、1、2或3，如下所示。
 
 - 0：禁用内存转储的删除。
 - 1：完全内存转储。 当计算机意外停止时，记录系统内存的所有内容。 完整内存转储可能包含收集内存转储时正在运行的进程的数据。
@@ -99,9 +100,9 @@ wmic RECOVEROS set DebugInfoType = <Value>
 wmic RECOVEROS get AutoReboot
 ```
 
-如果**AutoReboot**的值为 TRUE，则在生成内存转储后，服务器将自动重新启动。 不需要任何配置，你可以继续下一步。
+如果 **AutoReboot** 的值为 TRUE，则在生成内存转储后，服务器将自动重新启动。 不需要任何配置，你可以继续下一步。
 
-如果**AutoReboot**的值为 FALSE，则服务器不会自动重新启动。 运行以下命令以更改值：
+如果 **AutoReboot** 的值为 FALSE，则服务器不会自动重新启动。 运行以下命令以更改值：
 
 ```
 wmic RECOVEROS set AutoReboot = true
@@ -125,7 +126,7 @@ wmic RECOVEROS set OverwriteExistingDebugFile = 1
 
 ## <a name="step-6-set-an-administrative-alert"></a>步骤6：设置管理警报
 
-确定是否适合管理警报，并相应地设置**SendAdminAlert** 。 若要查看 SendAdminAlert 的当前值，请运行以下命令：
+确定是否适合管理警报，并相应地设置 **SendAdminAlert** 。 若要查看 SendAdminAlert 的当前值，请运行以下命令：
 
 ```
 wmic RECOVEROS get SendAdminAlert
@@ -193,6 +194,6 @@ Shutdown / r / t 0
 
 其他参考
 
-有关使用内存转储文件的常规信息，请参阅[Windows 的内存转储文件选项概述](https://support.microsoft.com/help/254649/overview-of-memory-dump-file-options-for-windows)。
+有关使用内存转储文件的常规信息，请参阅 [Windows 的内存转储文件选项概述](https://support.microsoft.com/help/254649/overview-of-memory-dump-file-options-for-windows)。
 
-有关专用转储文件的详细信息，请参阅[如何使用 DedicatedDeumpFile 注册表值克服系统驱动器上的空间限制，同时捕获系统内存转储](/archive/blogs/ntdebugging/how-to-use-the-dedicateddumpfile-registry-value-to-overcome-space-limitations-on-the-system-drive-when-capturing-a-system-memory-dump)。
+有关专用转储文件的详细信息，请参阅 [如何使用 DedicatedDeumpFile 注册表值克服系统驱动器上的空间限制，同时捕获系统内存转储](/archive/blogs/ntdebugging/how-to-use-the-dedicateddumpfile-registry-value-to-overcome-space-limitations-on-the-system-drive-when-capturing-a-system-memory-dump)。

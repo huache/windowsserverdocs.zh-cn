@@ -2,20 +2,20 @@
 title: AD 性能优化中的硬件注意事项
 description: AD 性能优化中的硬件注意事项
 ms.topic: article
-ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
+ms.author: timwi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ec22e4c85dab5e76e61cea8a68d88d7fd37b14e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b01df0d8bcef7dc49ca1a27833abb1022fcf0d90
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896246"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077345"
 ---
 # <a name="hardware-considerations-in-adds-performance-tuning"></a>中的硬件注意事项添加性能优化
 
 >[!Important]
-> 下面概述了优化 Active Directory 工作负荷的服务器硬件的关键建议和注意事项，详细介绍了 Active Directory 域服务文章的[容量规划](https://go.microsoft.com/fwlink/?LinkId=324566)。 为了更好地理解和影响这些建议，强烈建议读者查看[Active Directory 域服务的容量规划](https://go.microsoft.com/fwlink/?LinkId=324566)。
+> 下面概述了优化 Active Directory 工作负荷的服务器硬件的关键建议和注意事项，详细介绍了 Active Directory 域服务文章的 [容量规划](https://go.microsoft.com/fwlink/?LinkId=324566) 。 为了更好地理解和影响这些建议，强烈建议读者查看 [Active Directory 域服务的容量规划](https://go.microsoft.com/fwlink/?LinkId=324566) 。
 
 ## <a name="avoid-going-to-disk"></a>避免转到磁盘
 
@@ -23,7 +23,7 @@ Active Directory 将数据库缓存为内存允许的数量。 从内存中获�
 
 -   Active Directory 最佳实践，建议将足够的 RAM 加载到内存中，并容纳操作系统和其他已安装的应用程序，如防病毒、备份软件、监视等。
 
-    -   有关旧平台的限制，请参阅[运行 Windows Server 2003 或 windows 2000 服务器的域控制器上的 Lsass.exe 进程的内存使用](https://support.microsoft.com/kb/308356)情况。
+    -   有关旧平台的限制，请参阅 [运行 Windows Server 2003 或 windows 2000 服务器的域控制器上的 Lsass.exe 进程的内存使用](https://support.microsoft.com/kb/308356)情况。
 
     -   使用 "内存 \\ 长期平均备用缓存生存期" (s) &gt; 30 分钟性能计数器。
 
@@ -55,7 +55,7 @@ Active Directory 将数据库缓存为内存允许的数量。 从内存中获�
 
 如果处理器没有足够的可用循环，则可能会导致长时间等待，使线程进入处理器执行。 在许多环境中，这一理念旨在确保有足够的空间可适应电涌或负载峰值，从而最大程度地减少对客户端响应的影响。 简而言之，超过以下阈值在一天中的一) 整天 (5 到15分钟的时间，但使用这些统计信息运行持续时间的系统不会提供任何可容纳异常负载的空间，并且可以轻松地将其放入超过负载情况。 应调查比阈值更高的时间段的系统开销，以减少处理器负载。
 
--   有关如何选择处理器的详细信息，请参阅[服务器硬件性能优化](../../hardware/index.md)。
+-   有关如何选择处理器的详细信息，请参阅 [服务器硬件性能优化](../../hardware/index.md)。
 
 -   添加硬件、优化负载、将客户端定向到其他位置，或从环境中删除负载以减少 CPU 负载。
 
@@ -65,7 +65,7 @@ Active Directory 将数据库缓存为内存允许的数量。 从内存中获�
 
 与处理处理器一样，过多的网络适配器使用率会导致出站流量进入网络的长时间等待。 Active Directory 通常具有较小的入站请求和返回到客户端系统的数据量。 发送的数据远远超过了收到的数据。 在许多环境中，这一理念旨在确保有足够的空间来适应电涌或负载高峰。 此阈值为警告阈值，其中，用于适应负载突然或峰值的房间会受到限制，客户端响应会降低。 简而言之，超过这些阈值不会在一天中的一) 天 (5 到15分钟内发生错误，但是，使用这些统计信息运行持续时间的系统就会超出高峰期，应进行调查。
 
--   有关如何优化网络子系统的详细信息，请参阅对[网络子系统的性能优化](../../../../networking/technologies/network-subsystem/net-sub-performance-top.md)。
+-   有关如何优化网络子系统的详细信息，请参阅对 [网络子系统的性能优化](../../../../networking/technologies/network-subsystem/net-sub-performance-top.md)。
 
 -   使用 "比较 NetworkInterface (\*) \\ 发送的字节数/秒" 与 NetworkInterface (\*) " \\ 当前带宽" 性能计数器。 该比率应小于使用的60%。
 

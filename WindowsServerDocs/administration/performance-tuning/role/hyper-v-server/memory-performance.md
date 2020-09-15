@@ -2,15 +2,15 @@
 title: Hyper-v 内存性能
 description: 性能优化 Hyper-v 中的内存注意事项
 ms.topic: article
-ms.author: asmahi; sandysp; jopoulso
+ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 08ccc5c8a6b7300f1fa476c01838080b0b01f67a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f0358747002eb850283c63770885d38872b7b903
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896093"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078263"
 ---
 # <a name="hyper-v-memory-performance"></a>Hyper-v 内存性能
 
@@ -23,7 +23,7 @@ ms.locfileid: "87896093"
 
 可以启用动态内存允许 Windows 动态调整虚拟机内存的大小。 在动态内存中，如果虚拟机中的应用程序遇到导致大量内存分配的问题，则可以增加虚拟机的页面文件大小，以确保在动态内存响应内存压力时暂时获得支持。
 
-有关动态内存的详细信息，请参阅[hyper-v 动态内存概述]( https://go.microsoft.com/fwlink/?linkid=834434)和[Hyper-v 动态内存配置指南](https://go.microsoft.com/fwlink/?linkid=834435)。
+有关动态内存的详细信息，请参阅 [hyper-v 动态内存概述]( https://go.microsoft.com/fwlink/?linkid=834434) 和 [Hyper-v 动态内存配置指南](https://go.microsoft.com/fwlink/?linkid=834435)。
 
 在子分区中运行 Windows 时，可以使用子分区中的以下性能计数器来确定子分区是否遇到内存压力，并可能更好地提高虚拟机内存大小。
 

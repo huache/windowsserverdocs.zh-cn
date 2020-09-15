@@ -3,22 +3,22 @@ title: tpmtool
 description: Tpmtool 的参考文章，可获取有关受信任的平台模块的信息。
 ms.topic: reference
 author: ashleytqy
-ms.author: ashleytqy
-manager: ronaldai
+ms.author: asteoh
+manager: raigner
 ms.date: 05/07/2019
-ms.openlocfilehash: b0f234755eefdca15f214dad428f02631592e8c2
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f9d1a7c0bc1516feea3afaf00d750e54871ad818
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026995"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077584"
 ---
 # <a name="tpmtool"></a>tpmtool
 
 此实用程序可用于获取有关 [受信任的平台模块 (TPM) ](/windows/security/information-protection/tpm/trusted-platform-module-overview)的信息。
 
 >[!IMPORTANT]
->有些信息与预发布产品相关，这些产品在商业发行之前可能发生重大更改。 对于此处提供的信息，Microsoft 不作任何明示或暗示的担保。
+>有些信息与预发布产品相关，这些产品在商业发行之前可能发生重大更改。 Microsoft 对此处提供的信息不提供任何明示或暗示的保证。
 
 有关如何使用此命令的示例，请参阅[示例](#tpmtool_examples)。
 

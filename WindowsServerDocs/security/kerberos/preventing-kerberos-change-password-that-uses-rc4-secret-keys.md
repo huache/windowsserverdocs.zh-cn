@@ -2,15 +2,15 @@
 title: 阻止使用 RC4 机密密钥的 Kerberos 更改密码
 ms.topic: article
 ms.assetid: de207d55-aa3d-4c16-bd3b-496db43663a4
-manager: alanth
 author: justinha
+ms.author: Justinha
 ms.date: 11/09/2016
-ms.openlocfilehash: 4069d88c6c46415417cb3e0e03a539e5b7118f33
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a98e5e6ed62f4a43ca5e36af7051e9ece106c074
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968734"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078554"
 ---
 # <a name="preventing-kerberos-change-password-that-uses-rc4-secret-keys"></a>阻止使用 RC4 密钥的 Kerberos 更改密码
 
@@ -32,10 +32,10 @@ ms.locfileid: "87968734"
     - [Windows Server 2012](https://support.microsoft.com/kb/3086213)
     - 对于早期版本的 Windows Server，无修补程序可用
 
-- 部署设置为 Windows Server 2012 R2 域功能级别或更高版本的域，并将用户配置为受保护的用户安全组的成员。 由于此功能只会干扰 Kerberos 协议中的 RC4 使用，因此请参阅下面的 "[另请参见](#see-also)" 部分中的资源。
+- 部署设置为 Windows Server 2012 R2 域功能级别或更高版本的域，并将用户配置为受保护的用户安全组的成员。 由于此功能只会干扰 Kerberos 协议中的 RC4 使用，因此请参阅下面的 " [另请参见](#see-also) " 部分中的资源。
 
 ## <a name="see-also"></a>另请参阅
 
-- 有关如何防止在 Windows Server 2012 R2 域中使用 RC4 加密类型的信息，请参阅[受保护的用户安全组](/../credentials-protection-and-management/protected-users-security-group.md)和[如何配置受保护的帐户](/../credentials-protection-and-management/how-to-configure-protected-accounts.md)。
+- 有关如何防止在 Windows Server 2012 R2 域中使用 RC4 加密类型的信息，请参阅 [受保护的用户安全组](/../credentials-protection-and-management/protected-users-security-group.md)和 [如何配置受保护的帐户](/../credentials-protection-and-management/how-to-configure-protected-accounts.md)。
 
-- 有关 RFC 4120 和 RFC 4757 的说明，请参阅[IETF 文档](http://tools.ietf.org/html/)。
+- 有关 RFC 4120 和 RFC 4757 的说明，请参阅 [IETF 文档](http://tools.ietf.org/html/)。

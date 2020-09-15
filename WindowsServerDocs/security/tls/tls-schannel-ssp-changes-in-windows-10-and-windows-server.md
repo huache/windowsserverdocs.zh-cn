@@ -2,15 +2,15 @@
 title: 'TLS (Schannel SSP) '
 ms.topic: article
 ms.assetid: ebd3c40c-b4c0-4f6d-a00c-f90eda4691df
-manager: alanth
 author: justinha
+ms.author: Justinha
 ms.date: 05/16/2018
-ms.openlocfilehash: 92a61452d3c22c34bb3251ee2668679068f3a2ad
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 389a5a009320f7a19f5cbf942fe7c86f08f573ac
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989497"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078524"
 ---
 # <a name="tls-schannel-ssp-changes-in-windows-10-and-windows-server-2016"></a>TLS (Schannel SSP) Windows 10 和 Windows Server 2016 中的更改
 
@@ -20,7 +20,7 @@ ms.locfileid: "87989497"
 
 Windows 10 版本1511和 Windows Server 2016 添加了对使用移动设备管理 (MDM) 配置密码套件顺序的支持。
 
-有关密码套件优先级顺序的更改，请参阅[Schannel 中的密码套件](/windows/win32/secauthn/cipher-suites-in-schannel)。
+有关密码套件优先级顺序的更改，请参阅 [Schannel 中的密码套件](/windows/win32/secauthn/cipher-suites-in-schannel)。
 
 添加了对以下密码套件的支持：
 
@@ -43,17 +43,17 @@ Windows 10 版本1511和 Windows Server 2016 添加了对使用移动设备管�
 
 Windows 10 版本1507和 Windows Server 2016 添加了客户端 RSA 密钥大小的注册表配置选项。
 
-有关详细信息，请参阅[KeyExchangeAlgorithm-客户端 RSA 密钥大小](tls-registry-settings.md#keyexchangealgorithm---client-rsa-key-sizes)。
+有关详细信息，请参阅 [KeyExchangeAlgorithm-客户端 RSA 密钥大小](tls-registry-settings.md#keyexchangealgorithm---client-rsa-key-sizes)。
 
 ### <a name="diffie-hellman-key-changes"></a>Diffie-hellman 关键更改
 
 Windows 10 版本1507和 Windows Server 2016 添加了 Diffie-hellman 密钥大小的注册表配置选项。
 
-有关详细信息，请参阅[KeyExchangeAlgorithm-diffie-hellman 密钥大小](tls-registry-settings.md#keyexchangealgorithm---diffie-hellman-key-sizes)。
+有关详细信息，请参阅 [KeyExchangeAlgorithm-diffie-hellman 密钥大小](tls-registry-settings.md#keyexchangealgorithm---diffie-hellman-key-sizes)。
 
 ### <a name="sch_use_strong_crypto-option-changes"></a>SCH_USE_STRONG_CRYPTO 选项更改
 
-通过 Windows 10 版本1507和 Windows Server 2016， [SCH_USE_STRONG_CRYPTO](/windows/win32/api/schannel/ns-schannel-schannel_cred)选项现在禁用 NULL、MD5、DES 和导出密码。
+通过 Windows 10 版本1507和 Windows Server 2016， [SCH_USE_STRONG_CRYPTO](/windows/win32/api/schannel/ns-schannel-schannel_cred) 选项现在禁用 NULL、MD5、DES 和导出密码。
 
 ## <a name="elliptical-curve-changes"></a>椭圆曲线更改
 
@@ -83,7 +83,7 @@ Windows 10 版本1607和 Windows Server 2016 添加用于处理 HTTP.SYS 的 TLS
 
 HKLM\SYSTEM\CurrentControlSet\Control\LSA
 
-若要指定每个 CPU 核心的最大线程池大小，请创建一个**MaxAsyncWorkerThreadsPerCpu**条目。
+若要指定每个 CPU 核心的最大线程池大小，请创建一个 **MaxAsyncWorkerThreadsPerCpu** 条目。
 默认情况下，注册表中不存在此项。
 创建项后，将 DWORD 值更改为所需的大小。
 如果未配置，则每个 CPU 核心的最大线程数为2个。
@@ -113,7 +113,7 @@ Windows 10 版本1607和 Windows Server 2016 添加了对 PSK 密钥交换算法
 
 Windows 10 版本1507和 Windows Server 2016 添加了 RFC 7627：传输层安全性 (TLS) 会话哈希和扩展的主密钥扩展。
 
-由于此更改，Windows 10 和 Windows Server 2016 需要第三方[CNG SSL 提供程序](/windows/win32/seccng/cng-ssl-provider-functions)更新来支持 NCRYPT_SSL_INTERFACE_VERSION_3，并描述此新接口。
+由于此更改，Windows 10 和 Windows Server 2016 需要第三方 [CNG SSL 提供程序](/windows/win32/seccng/cng-ssl-provider-functions) 更新来支持 NCRYPT_SSL_INTERFACE_VERSION_3，并描述此新接口。
 
 
 ## <a name="ssl-support"></a>SSL 支持
@@ -125,7 +125,7 @@ Windows 10 版本1507和 Windows Server 2016 添加了 RFC 7627：传输层安�
 
 ## <a name="changes-to-windows-tls-adherence-to-tls-12-requirements-for-connections-with-non-compliant-tls-clients"></a>对 Windows TLS 的更改遵循与不符合 TLS 客户端的连接的 TLS 1.2 要求
 
-在 TLS 1.2 中，客户端使用["signature_algorithms" 扩展](https://tools.ietf.org/html/rfc5246#section-7.4.1.4.1)向服务器指示可以在数字签名中使用的签名/哈希算法对 (例如，服务器证书和服务器密钥交换) 。
+在 TLS 1.2 中，客户端使用 ["signature_algorithms" 扩展](https://tools.ietf.org/html/rfc5246#section-7.4.1.4.1) 向服务器指示可以在数字签名中使用的签名/哈希算法对 (例如，服务器证书和服务器密钥交换) 。
 TLS 1.2 RFC 还要求服务器证书消息服从 "signature_algorithms" 扩展：
 
 "如果客户端提供了" signature_algorithms "扩展，则服务器提供的所有证书必须由该扩展中显示的哈希/签名算法对签名。"

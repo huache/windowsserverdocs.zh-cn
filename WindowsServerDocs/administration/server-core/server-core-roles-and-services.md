@@ -3,21 +3,22 @@ title: Windows Server-Server Core 中包含的角色、角色服务和功能
 description: Windows Server 的服务器核心安装选项中包括哪些角色和功能？
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: 1569feb27a75815771cf84317bebb2fde9d83dfa
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ded40a119d0d1ae759ec0b29ce9ee4808653ea50
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895865"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077754"
 ---
 # <a name="roles-role-services-and-features-included-in-windows-server---server-core"></a>Windows Server-Server Core 中包含的角色、角色服务和功能
 
 > 适用于： Windows Server 2019、Windows Server 2016 和 Windows Server (半年通道) 
 
-我们通常会探讨[*不*在服务器核心中的内容](server-core-removed-roles.md)，现在我们将尝试一种不同的方法，并告诉您*包含*哪些内容以及*默认情况下是否安装*了某些内容。 以下角色、角色服务和功能在 Windows Server 的服务器核心安装选项*中*。 使用此信息来帮助确定服务器核心选项是否适用于您的环境。 由于这是一个大型列表，因此请考虑搜索你感兴趣的特定角色或功能-如果该搜索不返回你要查找的内容，则它不会包含在服务器核心中。
+我们通常会探讨[*不*在服务器核心中的内容](server-core-removed-roles.md)，现在我们将尝试一种不同的方法，并告诉您*包含*哪些内容以及*默认情况下是否安装*了某些内容。 以下角色、角色服务和功能在 Windows Server 的服务器核心安装选项 *中* 。 使用此信息来帮助确定服务器核心选项是否适用于您的环境。 由于这是一个大型列表，因此请考虑搜索你感兴趣的特定角色或功能-如果该搜索不返回你要查找的内容，则它不会包含在服务器核心中。
 
 例如，如果搜索 "远程桌面会话主机"，则在此页上找不到它。 这是因为服务器核心映像中不包含 RD 会话主机。
 
@@ -26,7 +27,7 @@ ms.locfileid: "87895865"
 ## <a name="roles-included-in-server-core"></a>服务器核心中包含的角色
 服务器核心安装选项包括以下服务器角色。
 
-| 角色                                            | 名称                           | 是否默认安装？ |
+| 角色                                            | “属性”                           | 是否默认安装？ |
 |-------------------------------------------------|--------------------------------|-----------------------|
 | Active Directory 证书服务           | AD-证书                 | N                     |
 | Active Directory 域服务                | AD-域服务             | N                     |
@@ -36,7 +37,7 @@ ms.locfileid: "87895865"
 | 设备运行状况证明                       | DeviceHealthAttestationService | N                     |
 | DHCP 服务器                                     | DHCP                           | N                     |
 | DNS 服务器                                      | DNS                            | N                     |
-| 文件和存储服务                       | FileAndStorage-服务        | 是                     |
+| 文件和存储服务                       | FileAndStorage-服务        | Y                     |
 | 主机保护者服务                           | HostGuardianServiceRole        | N                     |
 | Hyper-V                                         | Hyper-V                        | N                     |
 | 打印和文档服务                     | 打印-服务                 | N                     |
@@ -45,12 +46,12 @@ ms.locfileid: "87895865"
 | 批量激活服务                      | VolumeActivation               | N                     |
 | Web 服务器 IIS                                  | Web 服务器                     | N                     |
 | Windows Server Essentials 体验            | ServerEssentialsRole           | N                     |
-| Windows Server 更新服务                  | Updateservices-api                 | N                     |
+| Windows Server Update Services                  | Updateservices-api                 | N                     |
 
 ## <a name="role-services-included-in-server-core"></a>服务器核心中包含的角色服务
 服务器核心安装选项包括以下角色服务。
 
-| 角色                                  | 角色服务                                                   | 名称                    | 是否默认安装？ |
+| 角色                                  | 角色服务                                                   | “属性”                    | 是否默认安装？ |
 |---------------------------------------|----------------------------------------------------------------|-------------------------|-----------------------|
 | Active Directory 证书服务 | 证书颁发机构                                        | ADCS 证书颁发机构     | N                     |
 |                                       | 证书注册策略 Web 服务                      | ADCS-Registry.pol     | N                     |
@@ -72,7 +73,7 @@ ms.locfileid: "87895865"
 |                                       | iSCSI 目标存储提供程序 (VDS 和 VSS 硬件提供程序)  | iSCSITarget-VSS-VDS     | N                     |
 |                                       | NFS 服务器                                                 | FS-NFS-服务          | N                     |
 |                                       | 工作文件夹                                                   | FS-SyncShareService     | N                     |
-|                                       | 存储服务                                               | 存储服务        | 是                     |
+|                                       | 存储服务                                               | 存储服务        | Y                     |
 | 打印和文档服务           | 打印服务器                                                   | 打印-服务器            | N                     |
 |                                       | LPD 服务                                                    | Print-LPD-服务       | N                     |
 | 远程访问                         |  (RAS) 的 DirectAccess 和 VPN                                     | DirectAccess-VPN        | N                     |
@@ -131,29 +132,29 @@ ms.locfileid: "87895865"
 |                                       | IIS 6 WMI 兼容性                                        | Web WMI                 | N                     |
 |                                       | IIS 管理脚本和工具                               | Web 脚本-工具     | N                     |
 |                                       | 管理服务                                             | Web 管理-服务        | N                     |
-| Windows Server 更新服务        | WID 连接                                               | Updateservices-api-WidDB    | N                     |
+| Windows Server Update Services        | WID 连接                                               | Updateservices-api-WidDB    | N                     |
 |                                       | WSUS 服务                                                  | Updateservices-api-服务 | N                     |
 |                                       | SQL Server 连接                                        | Updateservices-api-DB       | N                     |
 
 ## <a name="features-included-in-server-core"></a>服务器核心中包含的功能
 服务器核心安装选项包括以下功能。
 
-| 功能                                                | 名称                               | 是否默认安装？ |
+| 功能                                                | “属性”                               | 是否默认安装？ |
 |--------------------------------------------------------|------------------------------------|-----------------------|
 | .NET Framework 3.5 功能                            | 网络框架-功能             | N                     |
 | .NET Framework 3.5 (包括 .NET 2.0 和 3.0)        | NET-核心                 | 删除 ()              |
 | HTTP 激活                                        | NET-HTTP-激活                | N                     |
 | 非 HTTP 激活                                    | NET-非 HTTP Activ                 | N                     |
-| .NET Framework 4.6 功能                            | NET-45-功能          | 是                     |
-| .NET Framework 4.6                                     | NET-45-核心              | 是                     |
+| .NET Framework 4.6 功能                            | NET-45-功能          | Y                     |
+| .NET Framework 4.6                                     | NET-45-核心              | Y                     |
 | ASP.NET 4。6                                            | NET Framework-45-ASPNET            | N                     |
-| WCF Services                                           | NET-WCF-Services45                 | 是                     |
+| WCF Services                                           | NET-WCF-Services45                 | Y                     |
 | HTTP 激活                                        | NET-WCF-HTTP-Activation45          | N                     |
 | 消息队列 (MSMQ) 激活                      | NET-WCF-Activation45          | N                     |
 | 命名管道激活                                  | NET-Activation45          | N                     |
 | TCP 激活                                         | NET-Activation45           | N                     |
-| TCP 端口共享                                       | NET-PortSharing45          | 是                     |
-| 后台智能传输服务(BITS)         | BITS                               | N                     |
+| TCP 端口共享                                       | NET-PortSharing45          | Y                     |
+| 后台智能传送服务 (BITS)         | BITS                               | N                     |
 | Compact 服务器                                         | BITS-压缩服务器                | N                     |
 | BitLocker 驱动器加密                             | BitLocker                          | N                     |
 | BranchCache                                            | BranchCache                        | N                     |
@@ -214,17 +215,17 @@ ms.locfileid: "87895865"
 | HTTP 代理上的 RPC                                    | RPC over HTTP 代理                | N                     |
 | 安装和启动事件收集                        | 设置并引导-事件收集    | N                     |
 | 简单 TCP/IP 服务                                 | 简单-TCPIP                       | N                     |
-| SMB 1.0/CIFS 文件共享支持                      | FS-SMB1                            | 是                     |
+| SMB 1.0/CIFS 文件共享支持                      | FS-SMB1                            | Y                     |
 | SMB 带宽限制                                    | FS-SMBBW                           | N                     |
 | SNMP 服务                                           | SNMP 服务                       | N                     |
 | SNMP WMI 提供程序                                      | SNMP-WMI 提供程序                  | N                     |
 | Telnet 客户端                                          | Telnet 客户端                      | N                     |
 | 用于结构管理的 VM 防护工具               | FabricShieldedTools                | N                     |
-| Windows Defender 功能                              | Windows Defender-功能          | 是                     |
-| Windows Defender                                       | Windows-Defender                   | 是                     |
+| Windows Defender 功能                              | Windows Defender-功能          | Y                     |
+| Windows Defender                                       | Windows-Defender                   | Y                     |
 | Windows 内部数据库                              | Windows-内部-数据库          | N                     |
-| Windows PowerShell                                     | PowerShellRoot                     | 是                     |
-| Windows PowerShell 5.1                                 | PowerShell                         | 是                     |
+| Windows PowerShell                                     | PowerShellRoot                     | Y                     |
+| Windows PowerShell 5.1                                 | PowerShell                         | Y                     |
 | Windows PowerShell 2.0 引擎                          | PowerShell-V2                      | 删除 ()              |
 | Windows PowerShell Desired State Configuration 服务 | DSC-服务                        | N                     |
 | Windows PowerShell Web 访问                          | WindowsPowerShellWebAccess         | N                     |
@@ -237,5 +238,5 @@ ms.locfileid: "87895865"
 | 基于 Windows 标准的存储管理             | WindowsStorageManagementService    | N                     |
 | WinRM IIS 扩展                                    | WinRM-IIS-Ext                      | N                     |
 | WINS 服务器                                            | WINS                               | N                     |
-| WoW64 支持                                          | WoW64-支持                      | 是                     |
+| WoW64 支持                                          | WoW64-支持                      | Y                     |
 |                                                        |                                    |                       |

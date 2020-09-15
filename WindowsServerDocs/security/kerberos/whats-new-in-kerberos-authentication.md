@@ -2,15 +2,15 @@
 title: What's New in Kerberos Authentication
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
-manager: alanth
 author: justinha
+ms.author: Justinha
 ms.date: 11/09/2016
-ms.openlocfilehash: 514b19689c73c1c5c61184a1ff8c13636b57864e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: eac9e1abd2891b21e818eac1d69b0eac231a02b4
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948660"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078534"
 ---
 # <a name="whats-new-in-kerberos-authentication"></a>What's New in Kerberos Authentication
 
@@ -26,7 +26,7 @@ ms.locfileid: "87948660"
 
 ## <a name="kerberos-client-and-kdc-support-for-rfc-8070-pkinit-freshness-extension"></a>适用于 RFC 8070 PKInit 新鲜度 Extension 的 Kerberos 客户端和 KDC 支持
 
-从 Windows 10 版本1607和 Windows Server 2016 开始，Kerberos 客户端尝试将[RFC 8070 PKInit freshness extension](https://datatracker.ietf.org/doc/draft-ietf-kitten-pkinit-freshness/)用于公钥的登录。
+从 Windows 10 版本1607和 Windows Server 2016 开始，Kerberos 客户端尝试将 [RFC 8070 PKInit freshness extension](https://datatracker.ietf.org/doc/draft-ietf-kitten-pkinit-freshness/) 用于公钥的登录。
 
 从 Windows Server 2016 开始，Kdc 可以支持 PKInit 新鲜度扩展。
 默认情况下，Kdc 不提供 PKInit 新鲜度扩展。 若要启用它，请对域中的所有 Dc 使用 "新 KDC 支持 PKInit 新鲜度 Extension KDC" 管理模板策略设置。
@@ -38,7 +38,7 @@ ms.locfileid: "87948660"
 
 ## <a name="domain-joined-device-support-for-authentication-using-public-key"></a>已加入域的设备支持使用公钥进行身份验证
 
-从 Windows 10 版本1507和 Windows Server 2016 开始，如果已加入域的设备能够向 Windows Server 2016 域控制器 (DC) 注册其绑定的公钥，则设备可以使用对 Windows Server 2016 DC 使用 Kerberos 身份验证的公钥进行身份验证。 有关详细信息，请参阅已[加入域的设备公钥身份验证](Domain-joined-Device-Public-Key-Authentication.md)
+从 Windows 10 版本1507和 Windows Server 2016 开始，如果已加入域的设备能够向 Windows Server 2016 域控制器 (DC) 注册其绑定的公钥，则设备可以使用对 Windows Server 2016 DC 使用 Kerberos 身份验证的公钥进行身份验证。 有关详细信息，请参阅已 [加入域的设备公钥身份验证](Domain-joined-Device-Public-Key-Authentication.md)
 
 ## <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Kerberos 客户端允许 IPv4 和 IPv6 地址主机名位于服务主体名称中 (Spn) 
 
@@ -55,7 +55,7 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Paramete
 
 如果在 Active Directory 中注册了 SPN，则身份验证将成功并带有 Kerberos。
 
-有关详细信息，请参阅[配置 IP 地址 Kerberos 的](configuring-kerberos-over-ip.md)文档。
+有关详细信息，请参阅 [配置 IP 地址 Kerberos 的](configuring-kerberos-over-ip.md)文档。
 
 ## <a name="kdc-support-for-key-trust-account-mapping"></a>KDC 支持密钥信任帐户映射
 

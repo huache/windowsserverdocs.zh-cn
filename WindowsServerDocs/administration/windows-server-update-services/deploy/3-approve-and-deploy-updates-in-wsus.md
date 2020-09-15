@@ -3,16 +3,16 @@ title: 步骤 3 - 在 WSUS 中批准和部署更新
 description: Windows Server Update Service (WSUS) 主题 - 在 WSUS 中批准和部署更新是部署 WSUS 的四步流程中的第三步
 ms.topic: article
 ms.assetid: 8d728ff9-170f-47e6-aefe-52be93315a75
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: aaba7c7b6931edbb36cec5fd06a356ab599e52c6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9dbeebf6add9bcd81d8aa6066fb166a35937a692
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896294"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637568"
 ---
 # <a name="step-3-approve-and-deploy-updates-in-wsus"></a>步骤 3:在 WSUS 中批准和部署更新
 

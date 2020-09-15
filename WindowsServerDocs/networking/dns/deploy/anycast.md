@@ -2,18 +2,16 @@
 title: 任意广播 DNS 概述
 description: 本主题简要概述了可广播 DNS
 manager: laurawi
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: greglin
 author: greg-lindsay
-ms.openlocfilehash: 2f91ace398cf236967fadde21db7ea0957640995
-ms.sourcegitcommit: c4f30b1617571fe434c7fe054695d163e73506b8
+ms.openlocfilehash: 2a891d2e74ec00c923808f7dde347bfd17a2b5b5
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88048886"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078574"
 ---
 # <a name="anycast-dns-overview"></a>任意广播 DNS 概述
 
@@ -25,11 +23,11 @@ ms.locfileid: "88048886"
 
 任意广播是一种技术，该技术提供指向一组终结点的多个路由路径，每个终结点都分配有相同的 IP 地址。 组中的每个设备在网络上公布相同的地址，并且使用路由协议选择哪个是最佳目标。
 
-使用任意播，可以通过将多个节点放在同一 IP 地址后面并使用相等成本多路径 (ECMP) 路由来定向这些节点之间的流量，来缩放无状态服务（如 DNS 或 HTTP）。 任意播不同于单播，其中每个终结点都有自己的单独的 IP 地址。 
+使用任意播，可以通过将多个节点放在同一 IP 地址后面并使用相等成本多路径 (ECMP) 路由来定向这些节点之间的流量，来缩放无状态服务（如 DNS 或 HTTP）。 任意播不同于单播，其中每个终结点都有自己的单独的 IP 地址。
 
 ## <a name="why-use-anycast-with-dns"></a>为什么对 DNS 使用任意广播？
 
-使用任意播 DNS，你可以启用 DNS 服务器或一组服务器，以根据 DNS 客户端的地理位置来响应 DNS 查询。 这可以提高 DNS 响应时间并简化 DNS 客户端设置。 任意广播 DNS 还提供额外的冗余层，有助于防范 DNS 拒绝服务攻击。 
+使用任意播 DNS，你可以启用 DNS 服务器或一组服务器，以根据 DNS 客户端的地理位置来响应 DNS 查询。 这可以提高 DNS 响应时间并简化 DNS 客户端设置。 任意广播 DNS 还提供额外的冗余层，有助于防范 DNS 拒绝服务攻击。
 
 ### <a name="how-anycast-dns-works"></a>任意播 DNS 的工作方式
 
@@ -37,15 +35,15 @@ ms.locfileid: "88048886"
 
 使用任意广播时，位于多个地理位置的服务器每个都将一个相同的 IP 地址播发到本地网关 (路由器) 。 当 DNS 客户端启动对任意播地址的查询时，将评估可用路由，并将 DNS 查询发送到首选位置。 通常，这是基于网络拓扑的最接近的位置。 请参阅以下示例。
 
-![任意广播 DNS](../../media/Anycast/anycast.png)
+![任播 DNS](../../media/Anycast/anycast.png)
 
-**图 1**：位于网络中不同站点上的四个 DNS 服务器，每个服务器都公布相同的任意广播 IP 地址 (黑色箭头) 网络。 DNS 客户端设备将请求发送到任意广播 IP 地址。 网络设备分析可用路由，并将客户端的 DNS 查询发送到最近的位置 (蓝色箭头) 。 
+**图 1**：位于网络中不同站点上的四个 DNS 服务器，每个服务器都公布相同的任意广播 IP 地址 (黑色箭头) 网络。 DNS 客户端设备将请求发送到任意广播 IP 地址。 网络设备分析可用路由，并将客户端的 DNS 查询发送到最近的位置 (蓝色箭头) 。
 
 现在，可以使用任意播 DNS 来路由多个全局 DNS 服务的 DNS 流量。 例如，根 DNS 服务器系统很大程度上取决于任意播 DNS。 任意广播还适用于各种路由协议，可在 intranet 上专门使用。
 
 ## <a name="windows-server-native-bgp-anycast-demo"></a>Windows Server 本机 BGP 任意播演示
 
-下面的过程演示如何将 Windows Server 上的本机 BGP 与任意播 DNS 一起使用。  
+下面的过程演示如何将 Windows Server 上的本机 BGP 与任意播 DNS 一起使用。
 
 ### <a name="requirements"></a>要求
 
@@ -105,7 +103,7 @@ ms.locfileid: "88048886"
 
 ### <a name="configure-loopback-adapters"></a>配置环回适配器
 
-在 DC001 和 DC002 上提升的 Windows PowerShell 提示符下输入以下命令以配置环回适配器。 
+在 DC001 和 DC002 上提升的 Windows PowerShell 提示符下输入以下命令以配置环回适配器。
 
 > [!NOTE]
 > **安装模块**命令要求访问 Internet。 这可以通过将 VM 临时分配到 Hyper-v 中的外部网络来完成。
@@ -160,7 +158,7 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
 
 ### <a name="summary-diagram"></a>摘要图表
 
-![任意广播 DNS](../../media/Anycast/anycast-lab.png)
+![任播 DNS](../../media/Anycast/anycast-lab.png)
 
 **图 2**：本机 BGP 任意播 DNS 演示的实验室设置
 
@@ -233,21 +231,21 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
 7.  再次启用 DC001 上的以太网适配器，并确认已还原 BGP 会话，并且客户端将再次从 DC001 接收 DNS 响应。
 
 > [!NOTE]
-> 如果未使用负载均衡器，则单个客户端将使用相同的后端 DNS 服务器（如果可用）。 这会为客户端创建一致的 BGP 路径。 有关详细信息，请参阅 4.4.3 of RFC4786：[平等-Cost Paths](https://tools.ietf.org/html/rfc4786#page-10)部分。
+> 如果未使用负载均衡器，则单个客户端将使用相同的后端 DNS 服务器（如果可用）。 这会为客户端创建一致的 BGP 路径。 有关详细信息，请参阅 4.4.3 of RFC4786： [平等-Cost Paths](https://tools.ietf.org/html/rfc4786#page-10)部分。
 
-## <a name="frequently-asked-questions"></a>常见问题
+## <a name="frequently-asked-questions"></a>常见问题解答
 
 问：是否有可在本地 DNS 环境中使用的可广播 DNS 好解决方案？<br>
-答：可广播 DNS 与本地 DNS 服务无缝协作。 但是，DNS 服务无*需*进行扩展即可进行扩展。
- 
+答：可广播 DNS 与本地 DNS 服务无缝协作。 但是，DNS 服务无 *需* 进行扩展即可进行扩展。
+
 问：在具有大量 (ex： >50) 域控制器的环境中实现任意播 DNS 的影响是什么？ <br>
 答：对功能没有直接的影响。 如果使用负载均衡器，则不需要域控制器上的其他配置。
- 
+
 问： Microsoft 客户服务是否支持任意播 DNS 配置？<br>
-答：如果使用非 Microsoft 负载均衡器来转发 DNS 查询，Microsoft 将支持与 DNS 服务器服务相关的问题。 请咨询负载平衡器供应商以了解与 DNS 转发相关的问题。 
- 
+答：如果使用非 Microsoft 负载均衡器来转发 DNS 查询，Microsoft 将支持与 DNS 服务器服务相关的问题。 请咨询负载平衡器供应商以了解与 DNS 转发相关的问题。
+
 问：对于具有大量 (（例如： >50) 域控制器）的可广播 DNS，最佳做法是什么？<br>
-答：最佳实践是在每个地理位置使用负载均衡器。 负载均衡器通常由外部供应商提供。 
+答：最佳实践是在每个地理位置使用负载均衡器。 负载均衡器通常由外部供应商提供。
 
 问：任意播 DNS 和 Azure DNS 是否具有类似的功能？<br>
-答： Azure DNS 使用任意播。 若要对 Azure DNS 使用任意播，请将负载均衡器配置为将请求转发到 Azure DNS 服务器。 
+答： Azure DNS 使用任意播。 若要对 Azure DNS 使用任意播，请将负载均衡器配置为将请求转发到 Azure DNS 服务器。

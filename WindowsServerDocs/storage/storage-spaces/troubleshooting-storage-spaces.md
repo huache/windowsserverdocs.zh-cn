@@ -1,17 +1,17 @@
 ---
 title: 存储空间直通疑难解答
 description: 了解如何排查存储空间直通部署问题。
-ms.author: ''
+ms.author: kaushika
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 719a44a6c442f64b83a804c9ca20eb6ceaa791e9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 525db4b22e0408847e4a52659d06ecddf5b1df8f
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954604"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078664"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>排查存储空间直通
 
@@ -24,7 +24,7 @@ ms.locfileid: "87954604"
 1. 确认使用 Windows Server 目录为 Windows Server 2016 和 Windows Server 2019 认证了 SSD 的品牌/型号。 与供应商确认存储空间直通支持驱动器。
 2. 检查存储中是否有任何出现故障的驱动器。 使用存储管理软件检查驱动器的状态。 如果有任何驱动器出现故障，请与供应商合作。
 3. 如有必要，请更新存储和驱动器固件。
-   确保所有节点上都安装了最新的 Windows 更新。 可以从 windows [10 和 Windows server 2016 更新历史记录](https://aka.ms/update2016)以及 windows [10 和 windows server 2019 更新历史记录](https://support.microsoft.com/help/4464619)中的 Windows Server 2019 获取 windows server 2016 的最新更新。
+   确保所有节点上都安装了最新的 Windows 更新。 可以从 windows [10 和 Windows server 2016 更新历史记录](https://aka.ms/update2016) 以及 windows [10 和 windows server 2019 更新历史记录](https://support.microsoft.com/help/4464619)中的 Windows Server 2019 获取 windows server 2016 的最新更新。
 4. 更新网络适配器驱动程序和固件。
 5. 运行群集验证并查看存储空间直通部分，确保缓存用于缓存的驱动器正确且没有错误。
 
@@ -35,10 +35,10 @@ ms.locfileid: "87954604"
 
 |FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|大小| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
-|Disk4| 镜像| OK|  正常| True|  10 TB|  Node-01. conto|
-|Disk3         |镜像                 |OK                          |正常       |True            |10 TB | Node-01. conto|
-|Disk2         |镜像                 |无冗余               |不正常     |True            |10 TB | Node-01. conto|
-|Disk1         |镜像                 |{无冗余，InService}  |不正常     |True            |10 TB | Node-01. conto|
+|Disk4| 镜像| OK|  Healthy| 正确|  10 TB|  Node-01. conto|
+|Disk3         |镜像                 |OK                          |Healthy       |正确            |10 TB | Node-01. conto|
+|Disk2         |镜像                 |无冗余               |Unhealthy     |正确            |10 TB | Node-01. conto|
+|Disk1         |镜像                 |{无冗余，InService}  |Unhealthy     |正确            |10 TB | Node-01. conto|
 
 此外，在尝试使虚拟磁盘联机后，会在群集日志中记录以下信息 (DiskRecoveryAction) 。
 
@@ -48,7 +48,7 @@ ms.locfileid: "87954604"
 [Verbose] 00002904.00001040:: YYYY/MM/DD -12:03:44.891 ERR [RES] Physical Disk <DiskName>: Failing online due to virtual disk in 'no redundancy' state. If you would like to attempt to online the disk anyway, first set this resource's private property 'DiskRecoveryAction' to 1. We will try to bring the disk online for recovery, but even if successful, its volume(s) or CSV may be unavailable.
 ```
 
-如果磁盘出现故障或系统无法访问虚拟磁盘上的数据，则不会出现**冗余操作状态**。 如果节点上的维护期间节点发生重新启动，则可能出现此问题。
+如果磁盘出现故障或系统无法访问虚拟磁盘上的数据，则不会出现 **冗余操作状态** 。 如果节点上的维护期间节点发生重新启动，则可能出现此问题。
 
 若要解决此问题，请执行以下步骤：
 
@@ -68,8 +68,8 @@ ms.locfileid: "87954604"
    Start-ClusterResource -Name "VdiskName"
    ```
 4. 修复应该会自动启动。 等待修复完成。 它可能进入挂起状态并再次开始。 监视进度：
-    - 运行**get-storagejob**以监视修复的状态，并查看其完成时间。
-    - 运行**VirtualDisk**并验证空间是否返回 "正常" 的 HealthStatus。
+    - 运行 **get-storagejob** 以监视修复的状态，并查看其完成时间。
+    - 运行 **VirtualDisk** 并验证空间是否返回 "正常" 的 HealthStatus。
 5. 修复完成并且虚拟磁盘运行正常后，将虚拟磁盘参数更改回。
 
    ```powershell
@@ -87,21 +87,21 @@ ms.locfileid: "87954604"
    Add-ClusterSharedVolume -name "VdiskName"
    ```
 
-**DiskRecoveryAction**是允许在读写模式下附加空间卷的替代开关，无需进行任何检查。 属性使您可以进行诊断，使卷无法联机的原因。 这与维护模式非常相似，但你可以对处于失败状态的资源调用它。 它还使您可以访问数据，这在某些情况下非常有用，例如 "无冗余"，您可以在其中访问可以复制的任何数据。 DiskRecoveryAction 属性是在2018年2月22日，update，KB 4077525 中添加的。
+**DiskRecoveryAction** 是允许在读写模式下附加空间卷的替代开关，无需进行任何检查。 属性使您可以进行诊断，使卷无法联机的原因。 这与维护模式非常相似，但你可以对处于失败状态的资源调用它。 它还使您可以访问数据，这在某些情况下非常有用，例如 "无冗余"，您可以在其中访问可以复制的任何数据。 DiskRecoveryAction 属性是在2018年2月22日，update，KB 4077525 中添加的。
 
 
 ## <a name="detached-status-in-a-cluster"></a>群集中的已分离状态
 
-当你运行**VirtualDisk** cmdlet 时，一个或多个存储空间直通虚拟磁盘的 OperationalStatus 将被分离。 但是， **PhysicalDisk** cmdlet 报告的 HealthStatus 指示所有物理磁盘都处于正常状态。
+当你运行 **VirtualDisk** cmdlet 时，一个或多个存储空间直通虚拟磁盘的 OperationalStatus 将被分离。 但是， **PhysicalDisk** cmdlet 报告的 HealthStatus 指示所有物理磁盘都处于正常状态。
 
-下面是**VirtualDisk** cmdlet 的输出示例。
+下面是 **VirtualDisk** cmdlet 的输出示例。
 
 |FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  大小|   PSComputerName|
 |-|-|-|-|-|-|-|
-|Disk4|         镜像|                 OK|                  正常|       True|            10 TB|  Node-01. conto|
-|Disk3|         镜像|                 OK|                  正常|       True|            10 TB|  Node-01. conto|
-|Disk2|         镜像|                 分离|            未知|       True|            10 TB|  Node-01. conto|
-|Disk1|         镜像|                 分离|            未知|       True|            10 TB|  Node-01. conto|
+|Disk4|         镜像|                 OK|                  Healthy|       正确|            10 TB|  Node-01. conto|
+|Disk3|         镜像|                 OK|                  Healthy|       正确|            10 TB|  Node-01. conto|
+|Disk2|         镜像|                 分离|            Unknown|       正确|            10 TB|  Node-01. conto|
+|Disk1|         镜像|                 分离|            Unknown|       正确|            10 TB|  Node-01. conto|
 
 
 此外，还可以在节点上记录以下事件：
@@ -148,7 +148,7 @@ DeviceName:
 Volume Name:
 ```
 
-如果 (DRT) 日志已满，则可能会发生已**分离的操作状态**。 存储空间使用脏区域跟踪 (DRT) 用于镜像空间，以确保在发生电源故障时，对元数据进行的任何正在进行的更新都将记录下来，以确保在恢复电源并且系统恢复正常时，存储空间可以重做或撤消操作，使存储空间恢复为灵活且一致的状态。 如果 DRT 日志已满，则在同步和刷新 DRT 元数据之前，不能使虚拟磁盘处于联机状态。 此过程需要运行完全扫描，这可能需要几个小时才能完成。
+如果 (DRT) 日志已满，则可能会发生已 **分离的操作状态** 。 存储空间使用脏区域跟踪 (DRT) 用于镜像空间，以确保在发生电源故障时，对元数据进行的任何正在进行的更新都将记录下来，以确保在恢复电源并且系统恢复正常时，存储空间可以重做或撤消操作，使存储空间恢复为灵活且一致的状态。 如果 DRT 日志已满，则在同步和刷新 DRT 元数据之前，不能使虚拟磁盘处于联机状态。 此过程需要运行完全扫描，这可能需要几个小时才能完成。
 
 若要解决此问题，请执行以下步骤：
 1. 从 CSV 中删除受影响的虚拟磁盘。
@@ -168,8 +168,8 @@ Volume Name:
    Get-ScheduledTask -TaskName "Data Integrity Scan for Crash Recovery" | Start-ScheduledTask
    ```
    应在已分离卷处于联机状态的所有节点上启动此任务。 修复应该会自动启动。 等待修复完成。 它可能进入挂起状态并再次开始。 监视进度：
-   - 运行**get-storagejob**以监视修复的状态，并查看其完成时间。
-   - 运行**VirtualDisk**并验证空间是否返回 "正常" 的 HealthStatus。
+   - 运行 **get-storagejob** 以监视修复的状态，并查看其完成时间。
+   - 运行 **VirtualDisk** 并验证空间是否返回 "正常" 的 HealthStatus。
      - "针对崩溃恢复的数据完整性扫描" 是不显示为存储作业的任务，且没有进度指示器。 如果任务显示为 "正在运行"，则它正在运行。 完成后，它将显示 "已完成"。
 
        此外，你可以使用以下 cmdlet 查看正在运行的计划任务的状态：
@@ -194,18 +194,18 @@ Volume Name:
    ```powershell
    Add-ClusterSharedVolume -name "VdiskName"
    ```
-   **DiskRunChkdsk 值 7**用于附加空间量，并使分区处于只读模式。 这样，便可以通过触发修复来自动发现和自行修复空间。 安装后将自动运行修复。 它还允许您访问数据，这对于访问可以复制的任何数据都很有帮助。 对于某些故障情况，如完整的 DRT 日志，需要运行针对崩溃恢复计划任务的数据完整性扫描。
+   **DiskRunChkdsk 值 7** 用于附加空间量，并使分区处于只读模式。 这样，便可以通过触发修复来自动发现和自行修复空间。 安装后将自动运行修复。 它还允许您访问数据，这对于访问可以复制的任何数据都很有帮助。 对于某些故障情况，如完整的 DRT 日志，需要运行针对崩溃恢复计划任务的数据完整性扫描。
 
-**崩溃恢复任务的数据完整性扫描**用于在 (DRT) 日志中同步和清除完全更新区域跟踪。 此任务可能需要几个小时才能完成。 "针对崩溃恢复的数据完整性扫描" 是不显示为存储作业的任务，且没有进度指示器。 如果任务显示为 "正在运行"，则它正在运行。 完成后，它将显示为 "已完成"。 如果在运行此任务时取消任务或重新启动节点，任务将需要从头开始。
+**崩溃恢复任务的数据完整性扫描** 用于在 (DRT) 日志中同步和清除完全更新区域跟踪。 此任务可能需要几个小时才能完成。 "针对崩溃恢复的数据完整性扫描" 是不显示为存储作业的任务，且没有进度指示器。 如果任务显示为 "正在运行"，则它正在运行。 完成后，它将显示为 "已完成"。 如果在运行此任务时取消任务或重新启动节点，任务将需要从头开始。
 
-有关详细信息，请参阅[存储空间直通运行状况和运行状态疑难解答](storage-spaces-states.md)。
+有关详细信息，请参阅 [存储空间直通运行状况和运行状态疑难解答](storage-spaces-states.md)。
 
 ## <a name="event-5120-with-status_io_timeout-c00000b5"></a>事件 5120 STATUS_IO_TIMEOUT c00000b5
 
 > [!Important]
-> **对于 Windows Server 2016：** 若要在将更新与修补程序结合使用时减少遇到这些问题的可能性，建议使用下面的存储维护模式过程安装[10 月18日2018、Windows server 2016 的累积更新](https://support.microsoft.com/help/4462928)或更高版本（如果节点当前已安装了从[5 月 8 2018 日](https://support.microsoft.com/help/4103723)到[年10月 9 2018 日](https://support.microsoft.com/help/KB4462917)发布的 windows server 2016 累积更新）。
+> **对于 Windows Server 2016：** 若要在将更新与修补程序结合使用时减少遇到这些问题的可能性，建议使用下面的存储维护模式过程安装 [10 月18日2018、Windows server 2016 的累积更新](https://support.microsoft.com/help/4462928) 或更高版本（如果节点当前已安装了从 [5 月 8 2018 日](https://support.microsoft.com/help/4103723) 到 [年10月 9 2018 日](https://support.microsoft.com/help/KB4462917)发布的 windows server 2016 累积更新）。
 
-使用从5月8日发布的累积更新（从[5 月8日到 2018 kb 4103723](https://support.microsoft.com/help/4103723)到[10 月9日，已安装 2018 kb 4462917](https://support.microsoft.com/help/4462917) ）重新启动 Windows Server 2016 上的节点时，可能会收到 STATUS_IO_TIMEOUT c00000b5 的事件5120。
+使用从5月8日发布的累积更新（从 [5 月8日到 2018 kb 4103723](https://support.microsoft.com/help/4103723) 到 [10 月9日，已安装 2018 kb 4462917](https://support.microsoft.com/help/4462917) ）重新启动 Windows Server 2016 上的节点时，可能会收到 STATUS_IO_TIMEOUT c00000b5 的事件5120。
 
 重新启动节点时，事件5120将记录在系统事件日志中，并包含以下错误代码之一：
 
@@ -225,9 +225,9 @@ Event ID: 1135
 Description: Cluster node 'NODENAME'was removed from the active failover cluster membership. The Cluster service on this node may have stopped. This could also be due to the node having lost communication with other active nodes in the failover cluster. Run the Validate a Configuration wizard to check your network configuration. If the condition persists, check for hardware or software errors related to the network adapters on this node. Also check for failures in any other network components to which the node is connected such as hubs, switches, or bridges.
 ```
 
-在5月8日2018到 Windows Server 2016 中引入的更改，这是为存储空间直通群集内 SMB 网络会话添加 SMB 复原句柄的累积更新。 这样做是为了提高暂时性网络故障的复原能力，并改进 RoCE 处理网络拥塞的方式。 当 SMB 连接尝试重新连接并在节点重新启动时等待超时时，这些改进也会无意中增加。 这些问题可能会影响系统的压力。 在计划外停机期间，系统等待连接超时时，还会出现 IO 暂停长达60秒的情况。若要解决此问题，请安装 Windows Server 2016 或更高版本的[2018 年10月18日累积更新](https://support.microsoft.com/help/4462928)。
+在5月8日2018到 Windows Server 2016 中引入的更改，这是为存储空间直通群集内 SMB 网络会话添加 SMB 复原句柄的累积更新。 这样做是为了提高暂时性网络故障的复原能力，并改进 RoCE 处理网络拥塞的方式。 当 SMB 连接尝试重新连接并在节点重新启动时等待超时时，这些改进也会无意中增加。 这些问题可能会影响系统的压力。 在计划外停机期间，系统等待连接超时时，还会出现 IO 暂停长达60秒的情况。若要解决此问题，请安装 Windows Server 2016 或更高版本的 [2018 年10月18日累积更新](https://support.microsoft.com/help/4462928) 。
 
-*注意*此更新将 CSV 超时与 SMB 连接超时保持一致，以解决此问题。 它不会实现 "解决方法" 一节中提到的禁用实时转储生成的更改。
+*注意* 此更新将 CSV 超时与 SMB 连接超时保持一致，以解决此问题。 它不会实现 "解决方法" 一节中提到的禁用实时转储生成的更改。
 
 ### <a name="shutdown-process-flow"></a>关闭进程流：
 
@@ -242,8 +242,8 @@ Description: Cluster node 'NODENAME'was removed from the active failover cluster
    ```powershell
    Get-StorageFaultDomain -type StorageScaleUnit | Where-Object {$_.FriendlyName -eq "<NodeName>"} | Enable-StorageMaintenanceMode
    ```
-4. 运行**PhysicalDisk** cmdlet，并确保 OperationalStatus 值处于维护模式。
-5. 运行**重新启动计算机**cmdlet 以重启节点。
+4. 运行 **PhysicalDisk** cmdlet，并确保 OperationalStatus 值处于维护模式。
+5. 运行 **重新启动计算机** cmdlet 以重启节点。
 6. 节点重启后，通过运行以下 cmdlet，从存储维护模式中删除该节点上的磁盘：
 
    ```powershell
@@ -272,7 +272,7 @@ Description: Cluster node 'NODENAME'was removed from the active failover cluster
 若要完全禁用所有转储，包括实时转储系统，请执行以下步骤：
 
 1. 创建以下注册表项： HKLM\System\CurrentControlSet\Control\CrashControl\ForceDumpsDisabled
-2. 在新的**ForceDumpsDisabled**项下，创建一个 REG_DWORD 属性作为 GuardedHost，然后将其值设置为0x10000000。
+2. 在新的 **ForceDumpsDisabled** 项下，创建一个 REG_DWORD 属性作为 GuardedHost，然后将其值设置为0x10000000。
 3. 将新的注册表项应用于每个群集节点。
 
 >[!NOTE]
@@ -289,7 +289,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelReports" /v ComponentThrottleThreshold /t REG_DWORD /d 0xFFFFFFFF /f
 ```
 
-*注意*要使更改生效，必须重新启动计算机。
+*注意* 要使更改生效，必须重新启动计算机。
 
 ### <a name="method-3"></a>方法3
 若要禁用实时转储的群集生成 (例如记录事件5120时) ，请运行以下 cmdlet：
@@ -332,52 +332,52 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
    |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| 使用情况| 大小|
    |-----------|------------|---------| -------| -----------------| ------------| -----| ----|
-   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| 错误|   OK|                正常|      自动选择 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  错误|    OK|                正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  错误|  OK|                正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| 错误| OK|    正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| 错误|OK|       正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| 错误| OK|      正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| 错误| OK|      正常|自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| 错误| OK|  正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| 错误| OK| 正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| 错误| OK|正常| 自动选择| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| 错误| OK| 正常| 自动选择 |1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| 错误|   OK|                Healthy|      自动选择 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  错误|    OK|                Healthy| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  错误|  OK|                Healthy| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| 错误| OK|    Healthy| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| 错误|OK|       Healthy| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| 错误| OK|      Healthy| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| 错误| OK|      Healthy|自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| 错误| OK|  Healthy| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| 错误| OK| Healthy| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| 错误| OK|Healthy| 自动选择| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| 错误| OK| Healthy| 自动选择 |1.82 TB|
 
 ## <a name="how-to-destroy-an-existing-cluster-so-you-can-use-the-same-disks-again"></a>如何销毁现有群集以便可以再次使用相同的磁盘
 
-在存储空间直通群集中，禁用存储空间直通并使用[清理驱动器](deploy-storage-spaces-direct.md#step-31-clean-drives)中所述的清理过程后，群集存储池仍会保持脱机状态，并从群集中删除运行状况服务。
+在存储空间直通群集中，禁用存储空间直通并使用 [清理驱动器](deploy-storage-spaces-direct.md#step-31-clean-drives)中所述的清理过程后，群集存储池仍会保持脱机状态，并从群集中删除运行状况服务。
 
 下一步是删除虚拟存储池：
    ```powershell
    Get-ClusterResource -Name "Cluster Pool 1" | Remove-ClusterResource
    ```
 
-现在，如果在任何节点上运行**PhysicalDisk** ，将看到池中的所有磁盘。 例如，在具有4个 SAS 磁盘的4节点群集的实验室中，每个节点有100GB。 在这种情况下，禁用存储空间直通后，会删除 SBL (存储总线层) 但会离开筛选器，如果你运行**PhysicalDisk**，它应报告4个磁盘，不包括本地操作系统磁盘。 相反，它报告了16。 这对于群集中的所有节点都是相同的。 当你运行**磁盘**上的命令时，你将看到按以下示例输出中所示，将本地附加的磁盘编号为0、1、2等等。
+现在，如果在任何节点上运行 **PhysicalDisk** ，将看到池中的所有磁盘。 例如，在具有4个 SAS 磁盘的4节点群集的实验室中，每个节点有100GB。 在这种情况下，禁用存储空间直通后，会删除 SBL (存储总线层) 但会离开筛选器，如果你运行 **PhysicalDisk**，它应报告4个磁盘，不包括本地操作系统磁盘。 相反，它报告了16。 这对于群集中的所有节点都是相同的。 当你运行 **磁盘** 上的命令时，你将看到按以下示例输出中所示，将本地附加的磁盘编号为0、1、2等等。
 
 |Number| 友好名称| 序列号|HealthStatus|OperationalStatus|总大小| 分区形式|
 |-|-|-|-|-|-|-|-|
-|0|Msft Virtu  ||正常 | 联机|  127 GB| GPT|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
-|1|Msft Virtu||正常| Offline| 100 GB| RAW|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
-|2|Msft Virtu||正常| Offline| 100 GB| RAW|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
-|4|Msft Virtu||正常| Offline| 100 GB| RAW|
-|3|Msft Virtu||正常| Offline| 100 GB| RAW|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
-||Msft Virtu ||正常| Offline| 100 GB| RAW|
+|0|Msft Virtu  ||Healthy | 联机|  127 GB| GPT|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
+|1|Msft Virtu||Healthy| Offline| 100 GB| RAW|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
+|2|Msft Virtu||Healthy| Offline| 100 GB| RAW|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
+|4|Msft Virtu||Healthy| Offline| 100 GB| RAW|
+|3|Msft Virtu||Healthy| Offline| 100 GB| RAW|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
+||Msft Virtu ||Healthy| Offline| 100 GB| RAW|
 
 ## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>使用 Enable-clusters2d 创建存储空间直通群集时出现的有关 "不支持的媒体类型" 的错误消息
 
-运行**enable-clusters2d** cmdlet 时，可能会看到类似于下面的错误：
+运行 **enable-clusters2d** cmdlet 时，可能会看到类似于下面的错误：
 
 ![方案6错误消息](media/troubleshooting/scenario-error-message.png)
 
@@ -389,7 +389,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 `<identifier>`连接到节点 `<nodename>` 的磁盘返回了 SCSI 端口关联，但找不到相应的机箱设备。 硬件与 (S2D) 存储空间直通不兼容，请联系硬件供应商以验证对 SCSI 机箱服务 (SE) 的支持。
 
-此问题的原因在于磁盘和 HBA 卡之间的 HPE SAS 扩展器卡。 SAS 扩展器在连接到扩展器的第一个驱动器与扩展器本身之间创建重复的 ID。  此操作已在[HPE 智能阵列控制器 SAS 扩展器固件： 4.02](https://support.hpe.com/hpsc/swd/public/detail?sp4ts.oid=7304566&swItemId=MTX_ef8d0bf4006542e194854eea6a&swEnvOid=4184#tab3)中得到解决。
+此问题的原因在于磁盘和 HBA 卡之间的 HPE SAS 扩展器卡。 SAS 扩展器在连接到扩展器的第一个驱动器与扩展器本身之间创建重复的 ID。  此操作已在 [HPE 智能阵列控制器 SAS 扩展器固件： 4.02](https://support.hpe.com/hpsc/swd/public/detail?sp4ts.oid=7304566&swItemId=MTX_ef8d0bf4006542e194854eea6a&swEnvOid=4184#tab3)中得到解决。
 
 ## <a name="intel-ssd-dc-p4600-series-has-a-non-unique-nguid"></a>Intel SSD DC P4600 系列具有非唯一的 n
 在下面的示例中，可能会出现一个问题，即 Intel SSD DC P4600 系列设备似乎为多个命名空间（如0100000001000000E4D25C000014E214 或0100000001000000E4D25C0000EEE214）报告类似的16字节 n。
@@ -398,10 +398,10 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 |               uniqueid               | deviceid | MediaType | BusType |               serialnumber               |      大小      | canpool | 友好 | OperationalStatus |
 |--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
 |           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  错误  |     HGST     |  HUH721010AL4200  |
-| eui. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
-| eui. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  True   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  正确   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  正确   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  正确   |    媒体     |   SSDPE2KE016T7   |
+| eui. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  正确   |    媒体     |   SSDPE2KE016T7   |
 
 若要解决此问题，请将 Intel 驱动器上的固件更新到最新版本。  已知固件版本 QDV101B1 可能是2018。
 
@@ -412,20 +412,20 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 
 在 Windows Server 2016 存储空间直通群集中，你可能会看到一个或多个物理磁盘的 HealthStatus 显示为 "正常"，而 OperationalStatus 为 " (从池中删除，确定) "。
 
-当调用**PhysicalDisk**时，"从池中删除" 是一个意向集，但是在运行时将其存储为维护状态，并在删除操作失败时允许恢复。 可以通过以下方法之一，手动将 OperationalStatus 更改为 "正常"：
+当调用 **PhysicalDisk** 时，"从池中删除" 是一个意向集，但是在运行时将其存储为维护状态，并在删除操作失败时允许恢复。 可以通过以下方法之一，手动将 OperationalStatus 更改为 "正常"：
 
 - 从池中删除物理磁盘，然后将其重新添加。
-- 运行[Clear-PhysicalDiskHealthData.ps1 脚本](https://go.microsoft.com/fwlink/?linkid=2034205)以清除意向。  (可作为下载。TXT 文件。 需要将其另存为。PS1 文件，然后才能运行。 ) 
+- 运行 [Clear-PhysicalDiskHealthData.ps1 脚本](https://go.microsoft.com/fwlink/?linkid=2034205) 以清除意向。  (可作为下载。TXT 文件。 需要将其另存为。PS1 文件，然后才能运行。 ) 
 
 下面是一些演示如何运行脚本的示例：
 
-- 使用**SerialNumber**参数指定需要设置为 "正常" 的磁盘。 可以从**WMI MSFT_PhysicalDisk**或**PhysicalDisk**获取序列号。  (，只需将0用于以下序列号。 ) 
+- 使用 **SerialNumber** 参数指定需要设置为 "正常" 的磁盘。 可以从 **WMI MSFT_PhysicalDisk** 或 **PhysicalDisk**获取序列号。  (，只需将0用于以下序列号。 ) 
 
    ```powershell
    Clear-PhysicalDiskHealthData -Intent -Policy -SerialNumber 000000000000000 -Verbose -Force
     ```
 
-- 使用**UniqueId**参数从**WMI MSFT_PhysicalDisk**或**PhysicalDisk**) 中再次指定磁盘 (。
+- 使用 **UniqueId** 参数从 **WMI MSFT_PhysicalDisk** 或 **PhysicalDisk**) 中再次指定磁盘 (。
 
    ```powershell
    Clear-PhysicalDiskHealthData -Intent -Policy -UniqueId 00000000000000000 -Verbose -Force
@@ -449,7 +449,7 @@ Event ID 205: Windows lost communication with physical disk {XXXXXXXXXXXXXXXXXXX
 Event ID 203: Windows lost communication with physical disk {xxxxxxxxxxxxxxxxxxxxxxxx }. This can occur if a cable failed or was disconnected, or if the disk itself failed.
 ```
 
-如果正在运行 Azure Vm，则可以忽略此事件：`Event ID 32: The driver detected that the device \Device\Harddisk5\DR5 has its write cache enabled. Data corruption may occur.`
+如果正在运行 Azure Vm，则可以忽略此事件： `Event ID 32: The driver detected that the device \Device\Harddisk5\DR5 has its write cache enabled. Data corruption may occur.`
 
 ## <a name="slow-performance-or-lost-communication-io-error-detached-or-no-redundancy-errors-for-deployments-that-use-intel-p3x00-nvme-devices"></a>使用 Intel P3x00 NVMe 设备的部署的性能或 "丢失的通信"、"IO 错误"、"已分离" 或 "无冗余" 错误
 
@@ -458,4 +458,4 @@ Event ID 203: Windows lost communication with physical disk {xxxxxxxxxxxxxxxxxxx
 >[!NOTE]
 > 单个 Oem 可能有基于 Intel P3x00 家族 NVMe 设备的设备，这些设备具有唯一的固件版本字符串。 有关最新固件版本的详细信息，请与你的 OEM 联系。
 
-如果基于 NVMe 设备的 Intel P3x00 系列使用部署中的硬件，则建议立即应用最新的可用固件 (至少维护版本 8) 。 本[Microsoft 支持部门文章](https://support.microsoft.com/help/4052341/slow-performance-or-lost-communication-io-error-detached-or-no-redunda)提供了有关此问题的其他信息。
+如果基于 NVMe 设备的 Intel P3x00 系列使用部署中的硬件，则建议立即应用最新的可用固件 (至少维护版本 8) 。 本 [Microsoft 支持部门文章](https://support.microsoft.com/help/4052341/slow-performance-or-lost-communication-io-error-detached-or-no-redunda) 提供了有关此问题的其他信息。

@@ -2,15 +2,15 @@
 title: 软件定义的网络中的 HNV 网关性能优化
 description: 有关软件定义的网络的 HNV 网关性能优化指南
 ms.topic: article
-ms.author: grcusanz; anpaul
+ms.author: grcusanz
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b367a8e35e6393a9560657fbd752859a6ddde7d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: de6a83d883efbdf592c7a21524c36b9d9086b7cc
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895955"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077964"
 ---
 # <a name="hnv-gateway-performance-tuning-in-software-defined-networks"></a>软件定义的网络中的 HNV 网关性能优化
 
@@ -60,8 +60,8 @@ Write-Host ("Total Number of Logical Processors: ", $lps)
 | 配置项                          | Windows Powershell 配置                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 交换机嵌入式组合                     | 创建具有多个网络适配器的 vswitch 时，它会自动为这些适配器启用交换机嵌入组合。 <br> ```New-VMSwitch -Name TeamedvSwitch -NetAdapterName "NIC 1","NIC 2"``` <br> Windows Server 2016 中的 SDN 不支持通过 LBFO 的传统组合。 交换机嵌入组合允许你将同一组 Nic 用于虚拟流量和 RDMA 流量。 基于 LBFO 的 NIC 组合不支持此操作。                                                        |
-| 物理 NIC 上的中断裁决       | 使用默认设置。 若要检查配置，可以使用以下 Windows PowerShell 命令：```Get-NetAdapterAdvancedProperty```                                                                                                                                                                                                                                                                                                                                                                    |
-| 物理 NIC 上的接收缓冲区大小       | 可以通过运行命令来验证物理 Nic 是否支持此参数的配置 ```Get-NetAdapterAdvancedProperty``` 。 如果它们不支持此参数，则该命令的输出将不包含属性 "接收缓冲区"。 如果 NIC 确实支持此参数，你可以使用以下 Windows PowerShell 命令设置接收缓冲区大小： <br>```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Receive Buffers" –DisplayValue 3000``` <br>                          |
+| 物理 NIC 上的中断裁决       | 使用默认设置。 若要检查配置，可以使用以下 Windows PowerShell 命令： ```Get-NetAdapterAdvancedProperty```                                                                                                                                                                                                                                                                                                                                                                    |
+| 物理 NIC 上的接收缓冲区大小       | 可以通过运行命令来验证物理 Nic 是否支持此参数的配置  ```Get-NetAdapterAdvancedProperty``` 。 如果它们不支持此参数，则该命令的输出将不包含属性 "接收缓冲区"。 如果 NIC 确实支持此参数，你可以使用以下 Windows PowerShell 命令设置接收缓冲区大小： <br>```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Receive Buffers" –DisplayValue 3000``` <br>                          |
 | 物理 NIC 上的发送缓冲区大小          | 可以通过运行命令来验证物理 Nic 是否支持此参数的配置 ```Get-NetAdapterAdvancedProperty``` 。 如果 Nic 不支持此参数，该命令的输出将不包含属性 "发送缓冲区"。 如果 NIC 确实支持此参数，你可以使用以下 Windows PowerShell 命令设置发送缓冲区大小： <br> ```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Transmit Buffers" –DisplayValue 3000``` <br>                           |
 | 物理 NIC 上的接收方缩放 (RSS) | 可以通过运行 Windows PowerShell 命令 Get-NetAdapterRss，来验证物理 NIC 是否已启用 RSS。 你可以使用以下 Windows PowerShell 命令来启用和配置网络适配器上的 RSS： <br> ```Enable-NetAdapterRss "NIC1","NIC2"```<br> ```Set-NetAdapterRss "NIC1","NIC2" –NumberOfReceiveQueues 16 -MaxProcessors``` <br> 注意：如果启用了 VMMQ 或 VMQ，则不需要在物理网络适配器上启用 RSS。 你可以在主机虚拟网络适配器上启用它。 |
 | VMMQ                                        | 若要为 VM 启用 VMMQ，请运行以下命令： <br> ```Set-VmNetworkAdapter -VMName <gateway vm name>,-VrssEnabled $true -VmmqEnabled $true``` <br> 注意：并非所有网络适配器都支持 VMMQ。 目前，它在 Chelsio T5 和 T6、Mellanox CX-3 和 CX-4 以及 QLogic 45xxx 系列上受支持                                                                                                                                                                                                                                      |

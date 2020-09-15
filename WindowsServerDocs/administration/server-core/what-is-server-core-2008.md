@@ -1,30 +1,30 @@
 ---
 title: 什么是 Server Core 2008？
 description: 了解 Windows Server 2008 中的服务器核心安装选项
-ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
-author: heidilohr
-ms.openlocfilehash: fb3e0b60787cb12c3401a14a54aebf4809c61b45
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+author: pronichkin
+ms.author: artemp
+ms.openlocfilehash: 443c0307529a21a6a23da996486a2e6c40894af1
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993226"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077784"
 ---
 # <a name="what-is-server-core-2008"></a>什么是 Server Core 2008？
 >适用于： Windows Server 2008
 
 >[!NOTE]
->此信息适用于 Windows Server 2008。 有关 Windows Server 中的服务器核心的信息，请参阅[什么是 Windows server 中的服务器核心安装](./what-is-server-core.md)。
+>此信息适用于 Windows Server 2008。 有关 Windows Server 中的服务器核心的信息，请参阅 [什么是 Windows server 中的服务器核心安装](./what-is-server-core.md)。
 
 "服务器核心" 选项是在部署 Windows Server 2008 的 Standard edition、Enterprise edition 或 Datacenter edition 时可用的新的最小安装选项。 服务器核心提供仅支持安装特定服务器角色的 Windows Server 2008 的最小安装，如本章稍后部分所述。 与 Windows Server 2008 的完全安装选项相比，此选项支持安装所有可用的服务器角色以及其他 Microsoft 或第三方服务器应用程序，如 Microsoft Exchange Server 或 SAP。
 
 在继续之前，需要解释短语 "安装选项"。 通常情况下，当你购买 Windows Server 2008 的副本时，你购买了使用特定版本或库存 (Sku) 的许可证。 表1-1 列出了可用的各种版本的 Windows Server 2008。 此表还指明了每个版本都有 (Full、Server Core 或 both) 的安装选项。
 
-**表 1-1**Windows Server 2008 版本及其对安装选项的支持
+**表 1-1** Windows Server 2008 版本及其对安装选项的支持
 
-| 版本       | 完全          | 服务器核心  |
+| 版本       | 完全          | Server Core  |
 | ------------- | :-------------: | :------------: |
 | Windows Server 2008 Standard (x86 和 x64)        | X | X        |
 | Windows Server 2008 Enterprise (x86 和 x64)        | X | X        |
@@ -40,7 +40,7 @@ ms.locfileid: "87993226"
 
 ![选择要安装的服务器核心安装选项](../media/what-is-server-core-2008/FIg1-1.png)
 
-**图 1-1**选择要安装的服务器核心安装选项
+**图 1-1** 选择要安装的服务器核心安装选项
 
 在图1-1 中，零售媒体) 的批量许可证 (或产品密钥提供了两个安装选项，你可以在这两个选项之间进行选择：第二个选项 (完整安装的 Windows Server 2008 Enterprise) ，第五个选项 (Windows Server 2008 Enterprise) 的服务器核心安装，并在此示例中选择后者。
 
@@ -56,7 +56,7 @@ ms.locfileid: "87993226"
 
 ![服务器核心用户界面](../media/what-is-server-core-2008/Fig1-2.png)
 
-**图 1-2**服务器核心用户界面
+**图 1-2** 服务器核心用户界面
 
 没有桌面！ 也就是说，没有 Windows 资源管理器 shell，其 "开始" 菜单、任务栏以及您可能会看到的其他功能。 你只是命令提示符，这意味着，你必须执行以下操作：通过一次键入一个命令（速度较慢，或使用脚本和批处理文件）来配置服务器核心安装，这可以帮助你通过自动执行配置任务来加速和简化配置任务。 你还可以在执行服务器核心的无人参与安装时使用应答文件来执行某些初始配置任务。
 
@@ -64,11 +64,11 @@ ms.locfileid: "87993226"
 
 你将在本书的第3章到第6章中了解有关配置和管理服务器核心安装的详细信息，但后面的章节介绍如何管理特定服务器角色和其他组件。 若要了解有关各种 Windows 命令行工具以及如何使用它们的详细信息，请参阅以下两个有用资源：
 * Windows Server 2008 技术库的 "命令参考" 部分 ( # A1
-* *Windows 命令行管理员的 Pocket 顾问*By William Stanek (Microsoft 新闻，2008) 
+* *Windows 命令行管理员的 Pocket 顾问* By William Stanek (Microsoft 新闻，2008) 
 
 表1-2 列出了主要的 GUI 应用程序及其可执行文件，它们在服务器核心安装中提供。
 
-**表 1-2**服务器核心安装中提供的 GUI 应用程序
+**表 1-2** 服务器核心安装中提供的 GUI 应用程序
 
 | GUI 应用程序 | 路径为的可执行文件 |
 | -------------   | -------------       |
@@ -97,7 +97,7 @@ ms.locfileid: "87993226"
 ## <a name="supported-server-roles"></a>支持的服务器角色
 与完全安装的 Windows Server 2008 相比，服务器核心安装仅包含有限数量的服务器角色。 表1-3 比较了可用于 Windows Server 2008 Enterprise Edition 的完全安装和服务器核心安装的角色。
 
-**表 1-3**服务器角色与 Windows Server 2008 企业版完全安装和服务器核心安装的比较
+**表 1-3** 服务器角色与 Windows Server 2008 企业版完全安装和服务器核心安装的比较
 
 | 服务器角色  | 完全安装中提供  | 在服务器核心中提供  |
 | ------------- | :-------------: | :------------: |
@@ -129,7 +129,7 @@ ms.locfileid: "87993226"
 ## <a name="supported-optional-features"></a>支持的可选功能
 在完整安装的 Windows Server 2008 上，服务器核心安装还仅支持有限的功能子集。 表1-4 对 Windows Server 2008 Enterprise Edition 的完全安装和服务器核心安装的可用功能进行了比较。
 
-**表 1-4**Windows Server 2008 企业版完全安装和服务器核心安装的功能比较
+**表 1-4** Windows Server 2008 企业版完全安装和服务器核心安装的功能比较
 
 | 功能  | 完全安装中提供  | 在服务器核心中提供  |
 | ------------- | :-------------: | :------------: |
@@ -185,7 +185,7 @@ ms.locfileid: "87993226"
 
 ![服务器核心和完整安装的体系结构](../media/what-is-server-core-2008/Fig1-3.png)
 
-**图 1-3**服务器核心和完整安装的体系结构
+**图 1-3** 服务器核心和完整安装的体系结构
 
 ## <a name="driver-support"></a>驱动程序支持
 图1-3 中所示的服务器核心的体系结构示意图明显简化;它不显示的一个问题就是服务器核心和完全安装之间设备驱动程序支持之间的差异。 Windows Server 2008 的完整安装包含适用于不同类型设备的数千个内置驱动程序，使你能够在各种不同的硬件配置上安装产品。  (的客户端操作系统（如 Windows Vista）包含更多驱动程序来支持设备，如通常不用于服务器的数字照相机和扫描仪。 ) 
@@ -208,7 +208,7 @@ ms.locfileid: "87993226"
 
 表1-5 列出了在服务器核心安装上默认安装的服务，以及每个服务使用的和帐户的启动模式。
 
-**表 1-5**默认情况下，在 Server Core 上安装的系统服务
+**表 1-5** 默认情况下，在 Server Core 上安装的系统服务
 
 | Service name  | 显示名称  | 启动模式  | 帐户  |
 | ------------- | ------------- | ------------ | ------------ |

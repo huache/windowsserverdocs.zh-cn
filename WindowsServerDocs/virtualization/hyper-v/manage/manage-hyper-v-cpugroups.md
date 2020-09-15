@@ -2,16 +2,16 @@
 title: 虚拟机资源控制
 description: 使用虚拟机 CPU 组
 author: allenma
+ms.prod: windows-server
 ms.date: 06/18/2018
 ms.topic: article
-ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: 215521886418167fe6504c5f08b59dbfa7375432
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: dc26dbe6bda9dc4f4f9b2bd99b3b8400555651ac
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994046"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077184"
 ---
 # <a name="virtual-machine-resource-controls"></a>虚拟机资源控制
 
@@ -27,12 +27,12 @@ ms.locfileid: "87994046"
 
 ## <a name="managing-cpu-groups"></a>管理 CPU 组
 
-CPU 组通过 Hyper-v 主机计算服务或 HCS 进行管理。 Microsoft 虚拟化团队的博客提供了有关 HCS 的详细说明，其中 genesis、HCS Api 的链接以及更多内容，请访问 Microsoft 虚拟化团队的博客，其中[介绍了主机计算服务 (HCS) ](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/)。
+CPU 组通过 Hyper-v 主机计算服务或 HCS 进行管理。 Microsoft 虚拟化团队的博客提供了有关 HCS 的详细说明，其中 genesis、HCS Api 的链接以及更多内容，请访问 Microsoft 虚拟化团队的博客，其中 [介绍了主机计算服务 (HCS) ](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/)。
 
 >[!NOTE]
 >只有 HCS 可以用于创建和管理 CPU 组;Hyper-v 管理器 applet、WMI 和 PowerShell 管理接口不支持 CPU 组。
 
-Microsoft 在[Microsoft 下载中心](https://go.microsoft.com/fwlink/?linkid=865968)提供了一个命令行实用程序 cpugroups.exe，该程序使用 HCS 界面来管理 CPU 组。  此实用程序还可以显示主机的 CPU 拓扑。
+Microsoft 在 [Microsoft 下载中心](https://go.microsoft.com/fwlink/?linkid=865968) 提供了一个命令行实用程序 cpugroups.exe，该程序使用 HCS 界面来管理 CPU 组。  此实用程序还可以显示主机的 CPU 拓扑。
 
 ## <a name="how-cpu-groups-work"></a>CPU 组的工作方式
 
@@ -40,9 +40,9 @@ Hyper-v 虚拟机监控程序使用计算的 CPU 组上限来强制对 CPU 组�
 
 CPU 组上限计算为 G = *n* x *C*，其中：
 
-- *G*是要分配给组的主机 LP 数量
-- *n*是组中 (LPs) 的逻辑处理器总数
-- *C*是最大 CPU 分配量，即组所需的服务类别，以系统总计算容量的百分比表示
+- *G* 是要分配给组的主机 LP 数量
+- *n* 是组中 (LPs) 的逻辑处理器总数
+- *C* 是最大 CPU 分配量，即组所需的服务类别，以系统总计算容量的百分比表示
 
 例如，假设有4个逻辑处理器的 CPU 组 (LPs) ，上限为50%。
 
@@ -113,7 +113,7 @@ Hyper-v 主机管理员可能还希望能够将计算资源专用于 VM。
 可将虚拟化主机配置为将主机分区限制为特定的 LPs，并将一个或多个 CPU 组关联到剩余的 LPs。
 通过这种方式，可以在专用 CPU 资源上运行根和来宾分区，并完全隔离，无 CPU 共享。
 
-有关 "minroot" 配置的详细信息，请参阅[Hyper-v 主机 CPU 资源管理](./manage-hyper-v-minroot-2016.md)。
+有关 "minroot" 配置的详细信息，请参阅 [Hyper-v 主机 CPU 资源管理](./manage-hyper-v-minroot-2016.md)。
 
 ## <a name="using-the-cpugroups-tool"></a>使用 CpuGroups 工具
 

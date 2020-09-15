@@ -1,18 +1,17 @@
 ---
 title: 排查 DHCP 客户端上的问题
 description: 此 artilce 介绍了如何排查 DHCP 客户端上的问题并收集数据。
-ms.service: na
 manager: dcscontentpm
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 650b3f83ebd0467df2a747d865db2d0a346bcddc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d7cfe92272ad65ca4b413eb91039a9ab21de6c17
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954574"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078624"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-client"></a>排查 DHCP 客户端上的问题
 
@@ -30,14 +29,14 @@ ms.locfileid: "87954574"
 
   - 安装并更新了正确的网络适配器驱动程序。
 
-  - DHCP 客户端服务已启动并正在运行。 若要进行检查，请运行**net start**命令，然后查找**DHCP 客户端**。
+  - DHCP 客户端服务已启动并正在运行。 若要进行检查，请运行 **net start** 命令，然后查找 **DHCP 客户端**。
 
   - 客户端计算机上没有防火墙阻止端口67和 68 UDP。
 
 ## <a name="event-logs"></a>事件日志
 
 检查 Microsoft Windows DHCP 客户端事件/操作和 Microsoft Windows DHCP 客户端事件/管理事件日志。 与 DHCP 客户端服务相关的所有事件都会发送到这些事件日志。
-Microsoft Windows DHCP 客户端事件位于 "**应用程序和服务日志**" 下的 "事件查看器中。
+Microsoft Windows DHCP 客户端事件位于 " **应用程序和服务日志**" 下的 "事件查看器中。
 
 "Get-netadapter-IncludeHidden" PowerShell 命令提供了解释日志中列出的事件所需的信息。 例如，接口 ID、MAC 地址等。
 
@@ -45,7 +44,7 @@ Microsoft Windows DHCP 客户端事件位于 "**应用程序和服务日志**" �
 
 建议在出现问题时同时在 DHCP 客户端和服务器端同时收集数据。 但是，根据实际问题，还可以通过在 DHCP 客户端或 DHCP 服务器上使用单个数据集来开始调查。
 
-若要从服务器和受影响的客户端收集数据，请使用[Wireshark](https://www.wireshark.org/download.html)。 在 DHCP 客户端和 DHCP 服务器计算机上同时开始收集。
+若要从服务器和受影响的客户端收集数据，请使用 [Wireshark](https://www.wireshark.org/download.html)。 在 DHCP 客户端和 DHCP 服务器计算机上同时开始收集。
 
 在出现问题的客户端上运行以下命令：
 

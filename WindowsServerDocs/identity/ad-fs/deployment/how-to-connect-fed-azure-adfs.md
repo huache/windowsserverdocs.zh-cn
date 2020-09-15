@@ -6,14 +6,13 @@ manager: mtillman
 ms.assetid: 692a188c-badc-44aa-ba86-71c0e8074510
 ms.topic: get-started-article
 ms.date: 10/28/2018
-ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 5db03a2d275dc4a02295c588bd0789fa757b8503
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3a53e8bb9e06e51627d14f6e5e3b918f58102478
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956210"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078674"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>在 Azure 中部署 Active Directory 联合身份验证服务
 AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 与 Azure AD 或 O365 联合可让用户使用本地凭据进行身份验证，并访问云中的所有资源。 这样，就必须建立高可用性的 AD FS 基础结构来确保能够访问本地和云中的资源。 在 Azure 中部署 AD FS 有助于以最少量的工作实现所需的高可用性。
@@ -22,7 +21,7 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 * **高可用性** – 借助 Azure 可用性集的强大功能可以确保建立高可用性的基础结构。
 * **易于缩放** – 需要更高的性能？ 只需在 Azure 中按几下鼠标就能轻松迁移到更强大的计算机
 * **异地冗余** – 使用 Azure 异地冗余可以确保基础结构在全球各地均具有高可用性
-* **易于管理** – 通过 Azure 门户中高度简化的管理选项可以轻松省心地管理基础结构 
+* **易于管理** – 通过 Azure 门户中高度简化的管理选项可以轻松省心地管理基础结构
 
 ## <a name="design-principles"></a>设计原理
 ![部署设计](./media/how-to-connect-fed-azure-adfs/deployment.png)
@@ -75,7 +74,7 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 ![NSG 配置](./media/how-to-connect-fed-azure-adfs/nsgconfigure1.png)
 
 * 单击“子网”打开子网面板
-* 选择要与 NSG 关联的子网 
+* 选择要与 NSG 关联的子网
 
 完成配置后，“子网”面板应如下所示：
 
@@ -98,7 +97,8 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 ![创建存储帐户](./media/how-to-connect-fed-azure-adfs/storageaccount1.png)
 
 ### <a name="3-create-availability-sets"></a>3. 创建可用性集
-针对每个角色（DC/AD FS 和 WAP）创建可用性集，使每个可用性集至少包含 2 个计算机。 这有助于使每个角色实现更高的可用性。 在创建可用性集时，必须针对以下项目做出决定：
+针对每个角色（DC/AD FS 和 WAP）创建可用性集，使每个可用性集至少包含 2 个计算机。 这有助于使每个角色实现更高的可用性。
+在创建可用性集时，必须针对以下项目做出决定：
 
 * **容错域**：同一容错域中的虚拟机共享同一个电源和物体网络交换机。 建议至少创建 2 个容错域。 默认值为 3，在进行本文所述的部署时，可以保留此默认值。
 * **更新域**：在更新期间，属于同一更新域的计算机将一起重新启动。 至少需要 2 个更新域。 默认值为 5，在进行本文所述的部署时，可以保留此默认值。
@@ -139,15 +139,15 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 * 将两个服务器提升为使用 DNS 的副本域控制器
 * 使用服务器管理器安装 AD FS 角色，以配置 AD FS 服务器。
 
-### <a name="6-deploying-internal-load-balancer-ilb"></a>6. 部署内部负载均衡器（ILB）
+### <a name="6-deploying-internal-load-balancer-ilb"></a>6. 部署内部负载均衡器 (ILB) 
 **6.1.创建 ILB**
 
 要部署 ILB，请在 Azure 门户选择“负载均衡器”，并单击“添加”(+)。
 
 > [!NOTE]
 > 如果菜单中未显示“负载均衡器”，请单击门户左下角的“浏览”并向下滚动，直到看到“负载均衡器”。************  然后，单击黄色星号将它添加到菜单中。 现在，请选择新负载均衡器的图标打开面板，并开始配置负载均衡器。
-> 
-> 
+>
+>
 
 ![浏览负载均衡器](./media/how-to-connect-fed-azure-adfs/browseloadbalancer.png)
 
@@ -167,7 +167,7 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 
 **6.2.配置 ILB 后端池**
 
-在“负载均衡器”面板中选择新建的 ILB。 此时会打开设置面板。 
+在“负载均衡器”面板中选择新建的 ILB。 此时会打开设置面板。
 
 1. 从设置面板中选择后端池
 2. 在“添加后端池”面板中，单击“添加虚拟机”
@@ -181,40 +181,28 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 在“ILB 设置”面板中，选择“运行状况探测”。
 
 1. 单击“添加”
-2. 提供探测的详细信息  
-   a. **名称**：探测名称  
-   b. **协议**：HTTP  
-   c. **端口**：80（HTTP）  
-   d. **路径**：/adfs/probe   
-   e. **间隔**：5（默认值）–这是 ILB 将在后端池中探测计算机的时间间隔  
-   f. **不正常阈值限制**：2（默认值）– 这是连续探测失败次数阈值，达到此阈值后，ILB 会将后端池中的计算机声明为无响应，并停止向它发送流量。
+2. 提供探测详细信息 a. **名称**：探测名称 b. **协议**：HTTP c. **端口**：80 (HTTP) d. **路径**：/adfs/probe e. **间隔**：5（默认值）– 这是 ILB 在后端池中探测计算机的间隔 f. **不正常阈值限制**：2（默认值）– 这是连续探测失败次数阈值，达到此阈值后，ILB 会将后端池中的计算机声明为无响应，并停止向它发送流量。
 
 
 我们使用为在 AD FS 环境中进行运行状况检查而显式创建的 /adfs/probe 终结点，在该环境中无法进行完整的 HTTPS 路径检查。  这比基本的端口 443 检查好很多，端口 443 检查不能准确反映现代 AD FS 部署的状态。  可以在 https://blogs.technet.microsoft.com/applicationproxyblog/2014/10/17/hardware-load-balancer-health-checks-and-web-application-proxy-ad-fs-2012-r2/ 找到这方面的更多信息。
 
 **6.4.创建负载均衡规则**
 
-为了有效地平衡流量，应该为 ILB 设置负载均衡规则。 若要创建负载均衡规则，请执行以下操作： 
+为了有效地平衡流量，应该为 ILB 设置负载均衡规则。 若要创建负载均衡规则，请执行以下操作：
 
 1. 在 ILB 的设置面板中选择“负载均衡规则”
 2. 在“负载均衡规则”面板中单击“添加”
-3. 在 "添加负载均衡规则" 面板中  
-   a. **名称**：提供规则的名称  
-   b. **协议**：选择 TCP  
-   c. **端口**：443  
-   d. **后端端口**：443  
-   e. **后端池**：选择前面为 AD FS 群集创建的池  
-   f. **探测**：选择前面为 AD FS 服务器创建的探测
+3. 在“添加负载均衡规则”面板中，指定以下值： **名称**：提供规则的名称 b. **协议**：选择“TCP”c. **端口**：443 d. **后端端口**：443 e. **后端池**：选择前面为 AD FS 群集创建的池 f. **探测**：选择前面为 AD FS 服务器创建的探测
 
 ![配置 ILB 平衡规则](./media/how-to-connect-fed-azure-adfs/ilbdeployment5.png)
 
 **6.5.更新 ILB 的 DNS**
 
 使用内部 DNS 服务器，为 ILB 创建 A 记录。 A 记录适用于联合身份验证服务，该服务的 IP 地址指向 ILB 的 IP 地址。 例如，如果 ILB IP 地址为10.3.0.8，而安装的联合身份验证服务为 fs.contoso.com，则为指向10.3.0.8 的 fs.contoso.com 创建 A 记录。
-这将确保 trasmitted 到 fs.contoso.com 的所有数据在 ILB 结束并经过适当的路由。 
+这将确保 trasmitted 到 fs.contoso.com 的所有数据在 ILB 结束并经过适当的路由。
 
 > [!WARNING]
-> 如果对 AD FS 数据库使用 WID （Windows Internal Database），则应将此值暂时设置为指向主 AD FS 服务器，否则 Web 应用程序代理注册将失败。 成功注册所有 Web 应用程序网代理服务器后，请将此 DNS 条目更改为指向负载均衡器。
+> 如果对 AD FS 数据库使用 WID (Windows 内部数据库) ，则应将此值暂时设置为指向主 AD FS 服务器，否则 Web 应用程序代理注册将失败。 成功注册所有 Web 应用程序网代理服务器后，请将此 DNS 条目更改为指向负载均衡器。
 
 > [!NOTE]
 > 如果你的部署也使用 IPv6，请确保创建相应的 AAAA 记录。
@@ -223,19 +211,20 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 ### <a name="7-configuring-the-web-application-proxy-server"></a>7. 配置 Web 应用程序代理服务器
 **7.1.配置 Web 应用程序代理服务器以访问 AD FS 服务器**
 
-为了确保 Web 应用程序代理服务器能够访问 ILB 后面的 AD FS 服务器，请在 %systemroot%\system32\drivers\etc\hosts 中为 ILB 创建一条记录。 请注意，可分辨名称 (DN) 应是联合身份验证服务的名称，例如 fs.contoso.com。 IP 条目应为 ILB 的 IP 地址（如示例中的10.3.0.8）。
+为了确保 Web 应用程序代理服务器能够访问 ILB 后面的 AD FS 服务器，请在 %systemroot%\system32\drivers\etc\hosts 中为 ILB 创建一条记录。 请注意，可分辨名称 (DN) 应是联合身份验证服务的名称，例如 fs.contoso.com。 IP 条目应为 ILB 的 IP 地址的 ip 地址， (10.3.0.8，如示例) 中所示。
 
 > [!WARNING]
-> 如果对 AD FS 数据库使用 WID （Windows Internal Database），则应将此值暂时设置为指向主 AD FS 服务器，否则 Web 应用程序代理注册将失败。 成功注册所有 Web 应用程序网代理服务器后，请将此 DNS 条目更改为指向负载均衡器。
+> 如果对 AD FS 数据库使用 WID (Windows 内部数据库) ，则应将此值暂时设置为指向主 AD FS 服务器，否则 Web 应用程序代理注册将失败。 成功注册所有 Web 应用程序网代理服务器后，请将此 DNS 条目更改为指向负载均衡器。
 
 
 **7.2.安装 Web 应用程序代理角色**
 
-在确保 Web 应用程序代理服务器能够访问 ILB 后面的 AD FS 服务器之后，接下来可以安装 Web 应用程序代理服务器。 不需要将 Web 应用程序代理服务器加入域。 通过选择“远程访问”角色，将 Web 应用程序代理角色安装在两个 Web 应用程序代理服务器上。 服务器管理器将引导完成 WAP 安装。
+在确保 Web 应用程序代理服务器能够访问 ILB 后面的 AD FS 服务器之后，接下来可以安装 Web 应用程序代理服务器。
+不需要将 Web 应用程序代理服务器加入域。 通过选择“远程访问”角色，将 Web 应用程序代理角色安装在两个 Web 应用程序代理服务器上。 服务器管理器将引导完成 WAP 安装。
 有关如何部署 WAP 的详细信息，请阅读 [Install and Configure the Web Application Proxy Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383662(v=ws.11))（安装和配置 Web 应用程序代理服务器）。
 
-### <a name="8--deploying-the-internet-facing-public-load-balancer"></a>8. 部署面向 Internet 的（公共）负载均衡器
-**8.1。创建面向 Internet 的（公共）负载均衡器**
+### <a name="8--deploying-the-internet-facing-public-load-balancer"></a>8. 部署面向 Internet 的 (公共) 负载均衡器
+**8.1：创建面向 Internet 的 (公共) 负载均衡器**
 
 在 Azure 门户中选择“负载均衡器”，并单击“添加”。 在“创建负载均衡器”面板中输入以下信息
 
@@ -257,11 +246,11 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 2. 单击“配置”
 3. 提供 DNS 标签。 此标签将成为可从任意位置访问的公共 DNS 标签，例如 contosofs.westus.cloudapp.azure.com。 可以在外部 DNS 中添加用于联合身份验证服务的条目（例如 fs.contoso.com），该条目将解析为外部负载均衡器的 DNS 标签 (contosofs.westus.cloudapp.azure.com)。
 
-![配置面向 Internet 的负载均衡器](./media/how-to-connect-fed-azure-adfs/elbdeployment3.png) 
+![配置面向 Internet 的负载均衡器](./media/how-to-connect-fed-azure-adfs/elbdeployment3.png)
 
 ![配置面向 Internet 的负载均衡器 (DNS)](./media/how-to-connect-fed-azure-adfs/elbdeployment4.png)
 
-**8.3.为面向 Internet 的（公共）负载均衡器配置后端池** 
+**8.3.为面向 Internet 的（公共）负载均衡器配置后端池**
 
 遵循创建内部负载均衡器所用的相同步骤，将面向 Internet 的（公共）负载均衡器的后端池配置为 WAP 服务器的可用性集。 例如，contosowapset。
 
@@ -301,16 +290,16 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 ![EXT 访问规则（入站）](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)
 
 > [!NOTE]
-> 如果需要客户端用户证书身份验证（使用 x.509 用户证书的 clientTLS authentication），则 AD FS 需要启用 TCP 端口49443才能进行入站访问。
-> 
-> 
+> 如果客户端用户证书身份验证 (使用 x.509 用户) 证书的 clientTLS authentication，则 AD FS 需要启用 TCP 端口49443才能进行入站访问。
+>
+>
 
 ### <a name="10-test-the-ad-fs-sign-in"></a>10. 测试 AD FS 登录
 测试 AD FS 的最简单方法是使用 IdpInitiatedSignon.aspx 页。 若要执行此操作，必须在 AD FS 属性中启用 IdpInitiatedSignOn。 请遵循以下步骤来验证 AD FS 设置
 
 1. 使用 PowerShell 在 AD FS 服务器上运行以下 cmdlet，以将它设置为启用。
-   Set-AdfsProperties -EnableIdPInitiatedSignonPage $true 
-2. 从任何外部计算机访问 https:\//adfs-server.contoso.com/adfs/ls/IdpInitiatedSignon.aspx。  
+   Set-AdfsProperties -EnableIdPInitiatedSignonPage $true
+2. 从任何外部计算机访问 https:\//adfs-server.contoso.com/adfs/ls/IdpInitiatedSignon.aspx。
 3. 应会看到如下所示的 AD FS 页：
 
 ![测试登录页](./media/how-to-connect-fed-azure-adfs/test1.png)
@@ -324,7 +313,7 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 
 [Azure 部署模板中的 AD FS](https://github.com/paulomarquesc/adfs-6vms-regular-template-based)
 
-部署此模板时，可以使用现有的虚拟网络或者新建一个 VNET。 下面列出了可用于自定义部署的各种参数，以及部署过程中的参数用法说明。 
+部署此模板时，可以使用现有的虚拟网络或者新建一个 VNET。 下面列出了可用于自定义部署的各种参数，以及部署过程中的参数用法说明。
 
 | 参数 | 说明 |
 |:--- |:--- |
@@ -355,13 +344,13 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 | AdminPassword |虚拟机的本地管理员帐户密码 |
 
 ## <a name="additional-resources"></a>其他资源
-* [可用性集](https://aka.ms/Azure/Availability) 
+* [可用性集](https://aka.ms/Azure/Availability)
 * [Azure 负载均衡器](https://aka.ms/Azure/ILB)
-* [内部负载均衡器](https://aka.ms/Azure/ILB/Internal)
+* [Internal 负载均衡器（内部负载均衡器）](https://aka.ms/Azure/ILB/Internal)
 * [Internet Facing 负载均衡器](https://aka.ms/Azure/ILB/Internet)
 * [存储帐户](https://aka.ms/Azure/Storage)
 * [Azure 虚拟网络](https://aka.ms/Azure/VNet)
-* [AD FS and Web Application Proxy Links](https://aka.ms/ADFSLinks) 
+* [AD FS and Web Application Proxy Links](https://aka.ms/ADFSLinks)
 
 ## <a name="next-steps"></a>后续步骤
 * [将本地标识与 Azure Active Directory 集成](/azure/active-directory/hybrid/whatis-hybrid-identity)

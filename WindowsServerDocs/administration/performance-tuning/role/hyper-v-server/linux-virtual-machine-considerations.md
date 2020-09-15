@@ -2,15 +2,15 @@
 title: Linux 虚拟机注意事项
 description: Linux 和 BSD 虚拟机
 ms.topic: article
-ms.author: asmahi; sandysp; jopoulso
+ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: b1616af3cfc1f14c534392c7f083b333b4744ef3
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: be9d2f0d758f6f59282c770ef1a48d71a947ba00
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993349"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078284"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Linux 虚拟机注意事项
 
@@ -47,11 +47,11 @@ net.ipv4.ip_local_port_range = 10240 65535
 net.ipv4.tcp_abort_on_overflow = 1
 ```
 
-用于网络 microbenchmarks 的有用工具是 ntttcp，可在 Linux 和 Windows 上使用。 Linux 版本是开放源代码，可[在 github.com 上的 ntttcp](https://github.com/Microsoft/ntttcp-for-linux)中使用。 可以在[下载中心](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769)找到 Windows 版本。 优化工作负荷时，最好使用尽可能多的流来获得最佳吞吐量。 使用 ntttcp 来为流量建模， `-P` 参数设置使用的并行连接数。
+用于网络 microbenchmarks 的有用工具是 ntttcp，可在 Linux 和 Windows 上使用。 Linux 版本是开放源代码，可 [在 github.com 上的 ntttcp](https://github.com/Microsoft/ntttcp-for-linux)中使用。 可以在 [下载中心](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769)找到 Windows 版本。 优化工作负荷时，最好使用尽可能多的流来获得最佳吞吐量。 使用 ntttcp 来为流量建模， `-P` 参数设置使用的并行连接数。
 
 ## <a name="linux-storage-performance"></a>Linux 存储性能
 
-以下是一些最佳实践，如在[hyper-v 上运行 Linux 的最佳实践](../../../../virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v.md)。 Linux 内核具有不同的 i/o 计划程序，用不同的算法对请求重新排序。 NOOP 是一个先进先出队列，该队列通过虚拟机监控程序做出的计划决策。 在 Hyper-v 上运行 Linux 虚拟机时，建议使用 NOOP 作为计划程序。 若要更改特定设备的计划程序，请在启动加载器的配置中 (/etc/grub.conf，例如) ，将添加 `elevator=noop` 到内核参数，然后重新启动。
+以下是一些最佳实践，如在 [hyper-v 上运行 Linux 的最佳实践](../../../../virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v.md)。 Linux 内核具有不同的 i/o 计划程序，用不同的算法对请求重新排序。 NOOP 是一个先进先出队列，该队列通过虚拟机监控程序做出的计划决策。 在 Hyper-v 上运行 Linux 虚拟机时，建议使用 NOOP 作为计划程序。 若要更改特定设备的计划程序，请在启动加载器的配置中 (/etc/grub.conf，例如) ，将添加 `elevator=noop` 到内核参数，然后重新启动。
 
 与网络类似，Linux 来宾的存储性能从具有足够深度的多个队列中获益最大，使主机保持繁忙状态。 Microbenchmarking 存储性能可能适用于 fio 基准工具与 libaio 引擎。
 

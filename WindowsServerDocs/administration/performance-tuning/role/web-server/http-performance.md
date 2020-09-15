@@ -2,15 +2,15 @@
 title: HTTP 1.1/2 性能优化
 description: 针对 HTTP 1.1/2 的性能优化建议
 ms.topic: article
-ms.author: ivanpash; gmonte
+ms.author: ivanpash
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 362ceea398e13c5e537d1d828b86eec8b5d66a8f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 853c71aea99d296c89f772b0ddba03ed024e385a
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896024"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078074"
 ---
 # <a name="performance-tuning-http-112"></a>性能优化 HTTP 1.1/2
 

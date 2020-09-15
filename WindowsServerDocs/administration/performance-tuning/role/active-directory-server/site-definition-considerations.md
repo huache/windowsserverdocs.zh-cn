@@ -2,21 +2,21 @@
 title: 中的站点定义和域控制器放置增加了性能优化
 description: Active Directory 性能优化中的站点定义和域控制器布局注意事项。
 ms.topic: article
-ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
+ms.author: timwi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: bb0850923dca2f0749c1f2cb5e787d998e8f03ca
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: fa051bd6637eff9f5a25cd8784d33a60095ccd54
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992248"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077194"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>域控制器的正确放置和站点注意事项
 
 正确的站点定义对性能至关重要。 失去站点的客户端可能会遇到身份验证和查询性能不佳的情况。 此外，通过在客户端上引入 IPv6，请求可以来自 IPv4 或 IPv6 地址，Active Directory 需要为 IPv6 正确定义站点。 如果配置了这两个，则操作系统首选 IPv6。
 
-从 Windows Server 2008 开始，域控制器会尝试使用名称解析来执行反向查找，以确定客户端应处于的站点。 这可能会导致 ATQ 线程池耗尽，并导致域控制器停止响应。 为此，合适的解决方法是正确定义 IPv6 的站点拓扑。 作为一种解决方法，可以对名称解析基础结构进行优化，以便快速响应域控制器请求。 有关详细信息，请参阅[Windows server 2008 或 Windows server 2008 R2 域控制器延迟响应 LDAP 或 Kerberos 请求](https://support.microsoft.com/kb/2668820)。
+从 Windows Server 2008 开始，域控制器会尝试使用名称解析来执行反向查找，以确定客户端应处于的站点。 这可能会导致 ATQ 线程池耗尽，并导致域控制器停止响应。 为此，合适的解决方法是正确定义 IPv6 的站点拓扑。 作为一种解决方法，可以对名称解析基础结构进行优化，以便快速响应域控制器请求。 有关详细信息，请参阅 [Windows server 2008 或 Windows server 2008 R2 域控制器延迟响应 LDAP 或 Kerberos 请求](https://support.microsoft.com/kb/2668820)。
 
 还有一个需要考虑的其他方面，就是在使用 Rodc 的情况下查找读/写 Dc。  当只读域控制器足以满足特定操作时，某些操作需要访问可写域控制器或针对可写域控制器。  优化这些方案需要两个路径：
 -   当只读域控制器足以满足时，请与可写域控制器联系。  这需要更改应用程序代码。
@@ -34,7 +34,7 @@ ms.locfileid: "87992248"
 
 在林内的方案中，将根据以下域层次结构处理信任：总计子域-子域- &gt; &gt; 林根域-子域-子域 &gt; &gt; 。 这意味着，林根和每个父项的安全通道可能会因为对信任层次结构中的 Dc 传输的身份验证请求进行聚合而过载。 当身份验证还必须传输高度潜在的链接来影响上述流时，这也可能会导致大型地理分散的 Active Directory 延迟。 在林间和下级信任方案中可能会发生重载。 以下建议适用于所有方案：
 
--   正确调整 MaxConcurrentAPI 以支持安全通道上的负载。 有关详细信息，请参阅[如何使用 MaxConcurrentApi 设置对 NTLM 身份验证执行性能优化](https://support.microsoft.com/kb/2688798/EN-US)。
+-   正确调整 MaxConcurrentAPI 以支持安全通道上的负载。 有关详细信息，请参阅 [如何使用 MaxConcurrentApi 设置对 NTLM 身份验证执行性能优化](https://support.microsoft.com/kb/2688798/EN-US)。
 
 -   根据负载的需要创建快捷方式信任。
 
@@ -54,13 +54,13 @@ ms.locfileid: "87992248"
 
 -   信任域中的域控制器将首先尝试查找位于同一站点中的受信任域中的域控制器，然后故障回复到一般定位符。
 
-    -   有关 Dc 定位程序工作原理的详细信息，请参阅[在最近的站点中查找域控制器](/previous-versions/windows/it-pro/windows-2000-server/cc978016(v=technet.10))。
+    -   有关 Dc 定位程序工作原理的详细信息，请参阅 [在最近的站点中查找域控制器](/previous-versions/windows/it-pro/windows-2000-server/cc978016(v=technet.10))。
 
-    -   聚合可信域和信任域之间的站点名称，以反映同一位置中的域控制器。 确保子网和 IP 地址映射正确地链接到两个林中的站点。 有关详细信息，请参阅[跨林信任的域定位器](/archive/blogs/askds/domain-locator-across-a-forest-trust)。
+    -   聚合可信域和信任域之间的站点名称，以反映同一位置中的域控制器。 确保子网和 IP 地址映射正确地链接到两个林中的站点。 有关详细信息，请参阅 [跨林信任的域定位器](/archive/blogs/askds/domain-locator-across-a-forest-trust)。
 
-    -   确保根据 Dc 定位程序的需要，为域控制器位置打开端口。 如果域之间存在防火墙，请确保为所有信任正确配置防火墙。 如果防火墙未打开，则信任域控制器仍将尝试访问受信任的域。 如果通信由于任何原因而失败，则信任域控制器最终会将请求超时到受信任的域控制器。 但是，对于每个请求，这些超时可能需要几秒钟，并且如果传入请求的数量很高，则可能会耗尽信任域控制器上的网络端口。 当应用程序在前台线程) 中运行请求时，客户端可能会体验到域控制器上的等待超时作为挂起线程，该线程可能会转换为挂起的应用程序 (。 有关详细信息，请参阅[如何为域和信任关系配置防火墙](https://support.microsoft.com/kb/179442)。
+    -   确保根据 Dc 定位程序的需要，为域控制器位置打开端口。 如果域之间存在防火墙，请确保为所有信任正确配置防火墙。 如果防火墙未打开，则信任域控制器仍将尝试访问受信任的域。 如果通信由于任何原因而失败，则信任域控制器最终会将请求超时到受信任的域控制器。 但是，对于每个请求，这些超时可能需要几秒钟，并且如果传入请求的数量很高，则可能会耗尽信任域控制器上的网络端口。 当应用程序在前台线程) 中运行请求时，客户端可能会体验到域控制器上的等待超时作为挂起线程，该线程可能会转换为挂起的应用程序 (。 有关详细信息，请参阅 [如何为域和信任关系配置防火墙](https://support.microsoft.com/kb/179442)。
 
-    -   使用 DnsAvoidRegisterRecords 从广告到一般定位符，以消除工作不良或延迟的域控制器（如卫星站点中的控制器）。 有关详细信息，请参阅[如何优化位于客户端站点之外的域控制器或全局编录的位置](https://support.microsoft.com/kb/306602)。
+    -   使用 DnsAvoidRegisterRecords 从广告到一般定位符，以消除工作不良或延迟的域控制器（如卫星站点中的控制器）。 有关详细信息，请参阅 [如何优化位于客户端站点之外的域控制器或全局编录的位置](https://support.microsoft.com/kb/306602)。
 
         > [!NOTE]
         > 对于客户端可以使用的域控制器数量，实际限制为大约50。 它们应该是最适合站点的和最大容量的域控制器。

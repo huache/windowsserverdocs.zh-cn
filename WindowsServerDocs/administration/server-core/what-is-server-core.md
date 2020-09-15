@@ -3,15 +3,16 @@ title: 什么是服务器核心？
 description: 了解 Windows Server 中的服务器核心安装选项
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 02/20/2018
-ms.openlocfilehash: 01cf2568df3651e5f52649b04aa9d10b9690d597
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 42a016a95d24f6ec0abc560a54f8589ab4c65ab1
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895837"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077544"
 ---
 # <a name="what-is-the-server-core-installation-option-in-windows-server"></a>Windows Server 中的服务器核心安装选项是什么？
 
@@ -34,7 +35,7 @@ ms.locfileid: "87895837"
 - Microsoft-Windows-服务器-Gui-包
 - "Windows-Cortana-PAL-桌面包"
 
-换句话说，在设计上，服务器核心中**没有桌面**。 虽然维护支持传统的业务应用程序和基于角色的工作负荷所需的功能，但服务器核心没有传统的桌面界面。 相反，服务器核心旨在通过命令行、PowerShell 或 GUI 工具进行远程管理 (如[RSAT](../../remote/remote-server-administration-tools.md)或[Windows 管理中心](../../manage/windows-admin-center/overview.md)) 。
+换句话说，在设计上，服务器核心中 **没有桌面** 。 虽然维护支持传统的业务应用程序和基于角色的工作负荷所需的功能，但服务器核心没有传统的桌面界面。 相反，服务器核心旨在通过命令行、PowerShell 或 GUI 工具进行远程管理 (如 [RSAT](../../remote/remote-server-administration-tools.md) 或 [Windows 管理中心](../../manage/windows-admin-center/overview.md)) 。
 
 除了无 UI，服务器核心还不同于具有桌面体验的服务器：
 
@@ -42,13 +43,13 @@ ms.locfileid: "87895837"
 - 没有用于设置服务器核心的 OOBE (全新体验) 
 - 无音频支持
 
-下表显示了在具有桌面体验的服务器核心与服务器上*本地*可用的应用程序。 **重要提示**：在大多数情况下，在下面列出为 "不可用" 的应用程序可以从 Windows 客户端计算机远程运行，并用于管理服务器核心安装。
+下表显示了在具有桌面体验的服务器核心与服务器上 *本地* 可用的应用程序。 **重要提示**：在大多数情况下，在下面列出为 "不可用" 的应用程序可以从 Windows 客户端计算机远程运行，并用于管理服务器核心安装。
 
 > [!NOTE]
 > 此列表用于快速参考-它不是完整的列表。
 
 
-| 应用                        | 服务器核心     | 服务器（提供桌面体验） |
+| 应用程序                        | Server Core     | 服务器（提供桌面体验） |
 |------------------------------------|-----------------|--------------------------------|
 | 命令提示符                     | 可用       | 可用                      |
 | Windows PowerShell/Microsoft .NET | 可用       | 可用                      |
@@ -85,9 +86,9 @@ ms.locfileid: "87895837"
 | 记事本\*                          | 不可用   | 可用                      |
 
 
-有关服务器核心中包含*的内容的*详细信息，请参阅[Windows Server-server core 中包含的角色、角色服务和功能](server-core-roles-and-services.md)。 有关服务器核心中*未*包含的内容的信息，请参阅[不包含在服务器核心中的角色、角色服务和功能](server-core-removed-roles.md)
+有关服务器核心中包含 *的内容的* 详细信息，请参阅 [Windows Server-server core 中包含的角色、角色服务和功能](server-core-roles-and-services.md)。 有关服务器核心中 *未* 包含的内容的信息，请参阅 [不包含在服务器核心中的角色、角色服务和功能](server-core-removed-roles.md)
 
-\*要读取的。RTF 文件本地存储在服务器核心 SKU 上，用户可以将)  (文件复制到存在 WordPad 的其他 Windows 计算机上。
+\* 要读取的。RTF 文件本地存储在服务器核心 SKU 上，用户可以将)  (文件复制到存在 WordPad 的其他 Windows 计算机上。
 
 ## <a name="get-started-using-server-core"></a>开始使用服务器核心
 

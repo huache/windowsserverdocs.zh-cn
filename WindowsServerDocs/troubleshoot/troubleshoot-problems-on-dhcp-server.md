@@ -1,18 +1,17 @@
 ---
 title: 排查 DHCP 服务器上的问题
 description: 此 artilce 介绍了如何排查 DHCP 服务器上的问题并收集数据。
-ms.service: na
 manager: dcscontentpm
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: d6fc69c15c3465769232d89f70a65ca915d0584e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: a6b5e4128c2e07e51ab8a9c07155a8c0212fcad8
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989029"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078584"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-server"></a>排查 DHCP 服务器上的问题
 
@@ -22,9 +21,9 @@ ms.locfileid: "87989029"
 
 检查以下设置：
 
-  - DHCP 服务器服务已启动并正在运行。 若要检查此设置，请运行**net start**命令，然后查找**DHCP 服务器**。
+  - DHCP 服务器服务已启动并正在运行。 若要检查此设置，请运行 **net start** 命令，然后查找 **DHCP 服务器**。
 
-  - DHCP 服务器已获得授权。 请参阅[在加入域的方案中的 WINDOWS DHCP 服务器授权](/openspecs/windows_protocols/ms-dhcpe/56f8870b-a7c1-4db1-8a86-f69079fe5077)。
+  - DHCP 服务器已获得授权。 请参阅 [在加入域的方案中的 WINDOWS DHCP 服务器授权](/openspecs/windows_protocols/ms-dhcpe/56f8870b-a7c1-4db1-8a86-f69079fe5077)。
 
   - 验证 DHCP 客户端所在的子网的 DHCP 服务器作用域中是否存在 IP 地址租约。 为此，请在 DHCP 服务器管理控制台中查看适当范围的统计信息。
 
@@ -32,7 +31,7 @@ ms.locfileid: "87989029"
 
   - 检查网络上的任何设备是否有未从 DHCP 作用域中排除的静态 IP 地址。
 
-  - 验证 DHCP 服务器绑定到的 IP 地址是否在必须从中租用 IP 地址的作用域的子网内。这是因为没有中继代理可用。 为此，请运行**DhcpServerv4Binding**或**DhcpServerv6Binding** cmdlet。
+  - 验证 DHCP 服务器绑定到的 IP 地址是否在必须从中租用 IP 地址的作用域的子网内。这是因为没有中继代理可用。 为此，请运行 **DhcpServerv4Binding** 或 **DhcpServerv6Binding** cmdlet。
 
   - 验证是否只有 DHCP 服务器在 UDP 端口67和68上进行侦听。 其他进程或其他服务 (例如，WDS 或 PXE) 应占用这些端口。 为此，请运行 `netstat -anb` 命令。
 
@@ -56,13 +55,13 @@ ms.locfileid: "87989029"
 ### <a name="dhcp-server-log"></a>DHCP 服务器日志
 
 DHCP 服务器服务调试日志提供了有关 IP 地址租约分配以及 DHCP 服务器执行的 DNS 动态更新的详细信息。 默认情况下，这些日志位于% windir% \\ System32 \\ Dhcp 中。
-有关详细信息，请参阅[分析 DHCP 服务器日志文件](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd183591\(v=ws.10\))。
+有关详细信息，请参阅 [分析 DHCP 服务器日志文件](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd183591\(v=ws.10\))。
 
 ### <a name="network-trace"></a>网络跟踪
 
 关联网络跟踪可能指示在记录事件时 DHCP 服务器正在执行的操作。 若要创建此类跟踪，请执行以下步骤：
 
-1.  请参阅[GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)，并下载[tss \_tools.zip](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip)文件。
+1.  请参阅 [GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)，并下载 [tss \_tools.zip](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip) 文件。
 
 2.  复制 Tss \_tools.zip 文件，并将其扩展到本地磁盘上的某个位置，如 C： \\ tools 文件夹。
 
@@ -77,4 +76,4 @@ DHCP 服务器服务调试日志提供了有关 IP 地址租约分配以及 DHCP
 
 4.  触发事件后，该工具会创建一个名为 C： \\ MS 数据的文件夹 \_ 。 此文件夹将包含一些有用的输出文件，这些文件提供有关计算机的网络和域配置的一般信息。
     此文件夹中最关注的文件是% Computername% \_ date \_ time \_ packetcapture \_ InternetClient \_ dbg。
-    通过使用[网络监视器](https://www.microsoft.com/download/4865)应用程序，可以加载文件，并在 "DHCP 或 DNS" 协议上设置显示筛选器，以检查后台发生的情况。
+    通过使用 [网络监视器](https://www.microsoft.com/download/4865) 应用程序，可以加载文件，并在 "DHCP 或 DNS" 协议上设置显示筛选器，以检查后台发生的情况。

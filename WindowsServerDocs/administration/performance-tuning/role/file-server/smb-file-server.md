@@ -3,14 +3,14 @@ title: SMB 文件服务器的性能优化
 description: SMB 文件服务器的性能优化
 ms.topic: article
 author: phstee
-ms.author: nedpyle; danlo; dkruse
+ms.author: nedpyle
 ms.date: 4/14/2017
-ms.openlocfilehash: 4a1fd4036e20e4cbb5b137832297daca99e9f5cc
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2515f400f746c5e256a168d191efa842d4ba50fd
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992172"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077204"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB 文件服务器的性能优化
 
@@ -19,7 +19,7 @@ ms.locfileid: "87992172"
 
 确保 BIOS 和操作系统电源管理模式按需要设置，这可能包括高性能模式或更改的 C 状态。 确保安装了最新、最灵活、最快的存储和网络设备驱动程序。
 
-复制文件是在文件服务器上执行的常见操作。 Windows Server 具有多个可使用命令提示符运行的内置文件复制实用工具。 建议使用 Robocopy。 在 Windows Server 2008 R2 中引入， **Robocopy 选项 Robocopy 可以在复制**多个小文件时使用多个线程显著提高远程文件传输速度。 我们还建议使用 **/log**选项，通过将日志重定向到 NUL 设备或文件来减少控制台输出。 使用 Xcopy 时，建议将 **/q**和 **/k**选项添加到现有参数中。 前者通过减少控制台输出降低了 CPU 开销，后者可减少网络流量。
+复制文件是在文件服务器上执行的常见操作。 Windows Server 具有多个可使用命令提示符运行的内置文件复制实用工具。 建议使用 Robocopy。 在 Windows Server 2008 R2 中引入， **Robocopy 选项 Robocopy 可以在复制** 多个小文件时使用多个线程显著提高远程文件传输速度。 我们还建议使用 **/log** 选项，通过将日志重定向到 NUL 设备或文件来减少控制台输出。 使用 Xcopy 时，建议将 **/q** 和 **/k** 选项添加到现有参数中。 前者通过减少控制台输出降低了 CPU 开销，后者可减少网络流量。
 
 ## <a name="smb-performance-tuning"></a>SMB 性能优化
 
@@ -28,7 +28,7 @@ ms.locfileid: "87992172"
 
 ### <a name="smb-30-protocol-family"></a>SMB 3.0 协议系列
 
-SMB 3.0 在 Windows Server 2012 中引入，在 Windows Server 2012 R2 中进一步增强 (SMB 3.02) 和 Windows Server 2016 (SMB 3.1.1) 。 此版本引入了可显著提高文件服务器性能和可用性的技术。 有关详细信息，请参阅[Windows Server 2012 中的 SMB 和 2012 R2 2012](https://aka.ms/smb3plus)以及[smb 3.1.1 中的新增功能](https://aka.ms/smb311)。
+SMB 3.0 在 Windows Server 2012 中引入，在 Windows Server 2012 R2 中进一步增强 (SMB 3.02) 和 Windows Server 2016 (SMB 3.1.1) 。 此版本引入了可显著提高文件服务器性能和可用性的技术。 有关详细信息，请参阅 [Windows Server 2012 中的 SMB 和 2012 R2 2012](https://aka.ms/smb3plus) 以及 [smb 3.1.1 中的新增功能](https://aka.ms/smb311)。
 
 
 
@@ -40,19 +40,19 @@ SMB Direct 引入了将 RDMA 网络接口用于高吞吐量、低延迟和低 CP
 
 Smb Direct 在任何 SMB 配置中都不是必需的，但对于那些希望降低延迟和 CPU 使用率较低的用户，始终建议使用 SMB 直通。
 
-有关 SMB 直通的详细信息，请参阅[使用 Smb Direct 提高文件服务器的性能](https://aka.ms/smbdirect)。
+有关 SMB 直通的详细信息，请参阅 [使用 Smb Direct 提高文件服务器的性能](https://aka.ms/smbdirect)。
 
 ### <a name="smb-multichannel"></a>SMB 多通道
 
 SMB 多通道允许文件服务器同时使用多个网络连接并提供更高的吞吐量。
 
-有关 SMB 多通道的详细信息，请参阅[部署 smb 多通道](https://aka.ms/smbmulti)。
+有关 SMB 多通道的详细信息，请参阅 [部署 smb 多通道](https://aka.ms/smbmulti)。
 
 ### <a name="smb-scale-out"></a>SMB 横向扩展
 
 SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共享。 利用此主动/主动配置，可以进一步缩放文件服务器群集，而无需使用多个卷、共享和群集资源的复杂配置。 最大共享带宽是所有文件服务器群集节点的总带宽。 总带宽不再受限于单个群集节点的带宽，而是取决于后备存储系统的容量。 你可以通过添加节点来增加总带宽。
 
-有关 SMB 横向扩展的详细信息，请参阅[应用程序数据概述横向扩展文件服务器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831349(v=ws.11))，以及[要横向扩展或不横向](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)扩展的博客文章。
+有关 SMB 横向扩展的详细信息，请参阅 [应用程序数据概述横向扩展文件服务器](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831349(v=ws.11)) ，以及 [要横向扩展或不横向](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)扩展的博客文章。
 
 ### <a name="performance-counters-for-smb-30"></a>SMB 3.0 的性能计数器
 
@@ -62,7 +62,7 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
 
     这些计数器显示有关正在使用 SMB 2.0 或更高版本的客户端访问的服务器上的文件共享的信息。
 
-    如果你已熟悉 Windows 中的常规磁盘计数器，则可能会注意到某个相似性。 这不是意外情况。 SMB 客户端共享性能计数器的设计与磁盘计数器完全匹配。 这样一来，您就可以轻松地重复使用目前所用的应用程序磁盘性能优化指南。 有关计数器映射的详细信息，请参阅[按共享客户端性能计数器博客](/archive/blogs/josebda/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight)。
+    如果你已熟悉 Windows 中的常规磁盘计数器，则可能会注意到某个相似性。 这不是意外情况。 SMB 客户端共享性能计数器的设计与磁盘计数器完全匹配。 这样一来，您就可以轻松地重复使用目前所用的应用程序磁盘性能优化指南。 有关计数器映射的详细信息，请参阅 [按共享客户端性能计数器博客](/archive/blogs/josebda/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight)。
 
 -   **SMB 服务器共享**
 
@@ -84,14 +84,14 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
 
 -   **物理磁盘、SMB、CSV FS 性能计数器关系**
 
-    有关物理磁盘、SMB 和 CSV FS (文件系统) 计数器如何相关的详细信息，请参阅以下博客文章：[群集共享卷性能计数器](https://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx)。
+    有关物理磁盘、SMB 和 CSV FS (文件系统) 计数器如何相关的详细信息，请参阅以下博客文章： [群集共享卷性能计数器](https://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx)。
 
 ## <a name="tuning-parameters-for-smb-file-servers"></a>SMB 文件服务器的优化参数
 
 
 以下 REG \_ DWORD 注册表设置可能会影响 SMB 文件服务器的性能：
 
-- **Smb2CreditsMin**和**smb2creditsmax 为**
+- **Smb2CreditsMin** 和 **smb2creditsmax 为**
 
   ```
   HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMin
@@ -146,7 +146,7 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
 
 在许多情况下，以下设置可以优化计算机的文件服务器性能。 所有计算机上的这些设置都不是最佳或最合适的。 应在应用各个设置之前评估其影响。
 
-| 参数                       | 值 | 默认值 |
+| 参数                       | 值 | 默认 |
 |---------------------------------|-------|---------|
 | AdditionalCriticalWorkerThreads | 64    | 0       |
 | MaxThreadsPerQueue              | 64    | 20      |
@@ -154,4 +154,4 @@ SMB 扩展允许群集配置中的 SMB 3.0 在群集的所有节点中显示共�
 
 ### <a name="smb-client-performance-monitor-counters"></a>SMB 客户端性能监视器计数器
 
-有关 SMB 客户端计数器的详细信息，请参阅[Windows Server 2012 文件服务器提示：新的基于共享的 SMB 客户端性能计数器可提供强大的见解](/archive/blogs/josebda/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight)。
+有关 SMB 客户端计数器的详细信息，请参阅 [Windows Server 2012 文件服务器提示：新的基于共享的 SMB 客户端性能计数器可提供强大的见解](/archive/blogs/josebda/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight)。

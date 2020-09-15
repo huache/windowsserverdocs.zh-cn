@@ -3,16 +3,16 @@ title: 规划 WSUS 部署
 description: Windows Server Update Service (WSUS) 主题 - 概述了部署规划流程，并提供了相关主题的链接
 ms.topic: article
 ms.assetid: 35865398-b011-447a-b781-1c52bc0c9e3a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 05/24/2018
-ms.openlocfilehash: 8e6aaaef666577db134d5d5bb42feffb38cb5a36
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 45d2dbc330c4277de961943cdd7a97fb50215de1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990940"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628541"
 ---
 # <a name="plan-your-wsus-deployment"></a>规划 WSUS 部署
 

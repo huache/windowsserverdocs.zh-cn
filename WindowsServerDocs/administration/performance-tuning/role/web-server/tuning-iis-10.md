@@ -2,15 +2,15 @@
 title: 优化 IIS 10.0
 description: Windows Server 16 上的 IIS 10.0 web 服务器的性能优化 recommmendations
 ms.topic: landing-page
-ms.author: davso; ericam; yashi
+ms.author: ericam
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 74badc4bd2c001a524a290b74054fffb1a08cd36
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5ee33ad0c5246efa40263bcdba8c4380efb2e2bf
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896018"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078084"
 ---
 # <a name="tuning-iis-100"></a>优化 IIS 10.0
 
@@ -50,23 +50,23 @@ HTTP.sys 提供的一个优点是内核模式缓存。 如果响应在内核模�
 
 下面是 HTTP.sys 内核模式缓存的一些有用设置：
 
--   **UriEnableCache**默认值：1
+-   **UriEnableCache** 默认值：1
 
     如果值为非零值，则启用内核模式响应和片段缓存。 对于大多数工作负荷，缓存应保持启用状态。 如果需要很低的响应和碎片缓存，请考虑禁用缓存。
 
--   **UriMaxCacheMegabyteCount**默认值：0
+-   **UriMaxCacheMegabyteCount** 默认值：0
 
     一个非零值，该值指定可用于内核模式缓存的最大内存。 默认值为0，使系统能够自动调整可用于缓存的内存量。
 
-    **注意**指定大小仅设置最大值，系统可能不允许缓存大小增长到最大集大小。
+    **注意** 指定大小仅设置最大值，系统可能不允许缓存大小增长到最大集大小。
 
     首要 
 
--   **UriMaxUriBytes**默认值：262144字节 (256 KB) 
+-   **UriMaxUriBytes** 默认值：262144字节 (256 KB) 
 
     内核模式缓存中条目的最大大小。 不会缓存大于此的响应或碎片。 如果有足够的内存，请考虑增加限制。 如果内存有限，且大项 crowding 较小的项，则可能会降低限制。
 
--   **UriScavengerPeriod**默认值：120秒
+-   **UriScavengerPeriod** 默认值：120秒
 
     清理程序会定期扫描 HTTP.sys 缓存，并删除清除程序扫描之间未访问的条目。 将清除周期设置为较高的值将减少清除清理的次数。 但是，缓存内存使用量可能会增加，因为在缓存中可以保留较旧、不经常访问的条目。 将该时间段设置得过低会导致清除清理次数过多，并可能导致刷新和缓存改动过多。
 
@@ -117,7 +117,7 @@ HTTP.sys 提供的一个优点是内核模式缓存。 如果响应在内核模�
 
 % SystemRoot% \\ system32 \\ inetsrv \\ config \\applicationHost.config
 
-使用 Appcmd.exe、IIS 10.0 管理控制台、WebAdministration 或 IISAdministration PowerShell Cmdlet 来更改它们。 大多数设置是自动检测的，它们不需要重启 IIS 10.0 工作进程或 web 应用程序服务器。 有关 applicationHost.config 文件的详细信息，请参阅[ApplicationHost.config简介](https://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig)。
+使用 Appcmd.exe、IIS 10.0 管理控制台、WebAdministration 或 IISAdministration PowerShell Cmdlet 来更改它们。 大多数设置是自动检测的，它们不需要重启 IIS 10.0 工作进程或 web 应用程序服务器。 有关 applicationHost.config 文件的详细信息，请参阅 [ApplicationHost.config简介 ](https://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig)。
 
 
 ## <a name="ideal-cpu-setting-for-numa-hardware"></a>NUMA 硬件的理想 CPU 设置
@@ -138,10 +138,10 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.webserver/缓存**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
-| 已启用 | 当设置为**False**时，禁用用户模式的 IIS 缓存。 如果缓存命中率非常小，则可以完全禁用缓存，以避免与缓存代码路径相关联的开销。 禁用用户模式缓存不会禁用内核模式缓存。 | True |
-| enableKernelCache | 当设置为**False**时禁用内核模式缓存。 | True |
+| 已启用 | 当设置为 **False**时，禁用用户模式的 IIS 缓存。 如果缓存命中率非常小，则可以完全禁用缓存，以避免与缓存代码路径相关联的开销。 禁用用户模式缓存不会禁用内核模式缓存。 | 正确 |
+| enableKernelCache | 当设置为 **False**时禁用内核模式缓存。 | 正确 |
 | maxCacheSize | 将 IIS 用户模式缓存大小限制为指定的大小（以 Mb 为单位）。 IIS 根据可用内存调整默认值。 根据经常访问的文件集的大小以及 RAM 或 IIS 进程地址空间的大小，仔细选择值。 | 0 |
 | maxResponseSize | 将文件缓存到指定大小。 实际值取决于数据集中最大文件的数量和大小，以及可用 RAM。 缓存大型、频繁请求的文件可以降低 CPU 使用量、磁盘访问和相关的延迟。 | 262144 |
 
@@ -153,19 +153,19 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.webserver/httpCompression**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
 | staticCompression-EnableCpuUsage<br><br>staticCompression-DisableCpuUsage<br><br>dynamicCompression-EnableCpuUsage<br><br>dynamicCompression-DisableCpuUsage | 如果当前百分比 CPU 使用率高于或低于指定的限制，则启用或禁用压缩。<br><br>从 IIS 7.0 开始，如果稳定状态的 CPU 高于禁用阈值，则会自动禁用压缩。 如果 CPU 低于启用阈值，则启用压缩。 | 分别为50、100、50和90 |
 | 目录 | 指定临时存储和缓存压缩版本的静态文件的目录。 如果经常访问此目录，请考虑将其移出系统驱动器。 | %SystemDrive%\inetpub\temp\IIS Temporary Compressed Files |
-| doDiskSpaceLimiting | 指定是否对所有压缩文件所占用的磁盘空间量有限制。 压缩的文件存储在**目录**属性指定的压缩目录中。 | True |
+| doDiskSpaceLimiting | 指定是否对所有压缩文件所占用的磁盘空间量有限制。 压缩的文件存储在 **目录** 属性指定的压缩目录中。 | 正确 |
 | maxDiskSpaceUsage | 指定压缩目录中压缩文件可以占用的磁盘空间字节数。<br><br>如果所有压缩内容的总大小太大，则可能需要增加此设置。 | 100 MB |
 
 **system.webserver/Urlcompression>**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
-| doStaticCompression | 指定是否压缩静态内容。 | True |
-| doDynamicCompression | 指定是否压缩动态内容。 | True |
+| doStaticCompression | 指定是否压缩静态内容。 | 正确 |
+| doDynamicCompression | 指定是否压缩动态内容。 | 正确 |
 
 > [!NOTE]
 > 对于运行 IIS 10.0 且 CPU 使用率较低的服务器，请考虑为动态内容启用压缩功能，尤其是在响应很大的情况下。 应该首先在测试环境中完成此操作，以评估基准的 CPU 使用情况。
@@ -182,28 +182,28 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.webserver/defaultDocument**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
-| 已启用 | 指定启用默认文档。 | True |
+| enabled | 指定启用默认文档。 | 正确 |
 | `<files>` 元素 | 指定配置为默认文档的文件名。 | 默认列表为 Default.htm、默认 .asp、Index.htm、Index.html、Iisstart.htm 和 default.aspx。 |
 
 ## <a name="central-binary-logging"></a>中央二进制日志记录
 
 当服务器会话在其下有许多 URL 组时，为单独的 URL 组创建数百个格式化日志文件并将日志数据写入到磁盘的过程可以快速消耗宝贵的 CPU 和内存资源，从而带来性能和可扩展性方面的问题。 集中式二进制日志记录可将用于日志记录的系统资源的数量降至最低，同时为需要它的组织提供详细的日志数据。 分析二进制格式的日志需要后处理工具。
 
-可以通过将 centralLogFileMode 属性设置为 CentralBinary 并将**enabled**属性设置为**True**来启用中心二进制日志记录。 请考虑将中心日志文件的位置移出系统分区并拖到专用日志记录驱动器上，以避免系统活动和日志记录活动之间的争用。
+可以通过将 centralLogFileMode 属性设置为 CentralBinary 并将 **enabled** 属性设置为 **True**来启用中心二进制日志记录。 请考虑将中心日志文件的位置移出系统分区并拖到专用日志记录驱动器上，以避免系统活动和日志记录活动之间的争用。
 
 **system.web/log**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
 | centralLogFileMode | 指定服务器的日志记录模式。 将此值更改为 CentralBinary 以启用中心二进制日志记录。 | 站点 |
 
 **system.web/log/centralBinaryLogFile**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
-| 已启用 | 指定是否启用中心二进制日志记录。 | 错误 |
+| enabled | 指定是否启用中心二进制日志记录。 | 错误 |
 | 目录 | 指定写入日志项的目录。 | %SystemDrive%\inetpub\logs\LogFiles |
 
 ## <a name="application-and-site-tunings"></a>应用程序和站点 tunings
@@ -212,16 +212,16 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **system.web/applicationPools/applicationPoolDefaults**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
 | queueLength | 指示 HTTP.sys 在拒绝未来请求之前，为应用程序池排队的请求数。 超出此属性的值时，IIS 将拒绝后续请求，并出现503错误。<br><br>如果观察到503错误，请考虑为与高延迟后端数据存储通信的应用程序增加此项。 | 1000 |
 | enable32BitAppOnWin64 | 如果为 True，则使32位应用程序能够在具有64位处理器的计算机上运行。<br><br>如果需要考虑内存消耗，请考虑启用32位模式。 由于指针大小和指令大小较小，32位应用程序使用的内存少于64位应用程序。 在64位计算机上运行32位应用程序的缺点是，用户模式地址空间限制为 4 GB。 | 错误 |
 
 **system.web/sites/VirtualDirectoryDefault**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
-| 了 allowsubdirconfig | 指定 IIS 是否在内容目录中查找低于当前级别的 web.config 文件 (True) ，或者不查找低于当前级别的内容目录中的 web.config 文件 (False) 。 通过施加简单的限制（仅允许在虚拟目录中进行配置），IISÂ10.0 可以知道，除非** / &lt; 名称 &gt; .htm**是一个虚拟目录，否则它不应查找配置文件。 跳过其他文件操作可以显著提高包含大量随机访问的静态内容的网站的性能。 | True |
+| 了 allowsubdirconfig | 指定 IIS 是否在内容目录中查找低于当前级别的 web.config 文件 (True) ，或者不查找低于当前级别的内容目录中的 web.config 文件 (False) 。 通过施加简单的限制（仅允许在虚拟目录中进行配置），IISÂ10.0 可以知道，除非** / &lt; 名称 &gt; .htm**是一个虚拟目录，否则它不应查找配置文件。 跳过其他文件操作可以显著提高包含大量随机访问的静态内容的网站的性能。 | 正确 |
 
 ## <a name="managing-iis-100-modules"></a>管理 IIS 10.0 模块
 
@@ -239,7 +239,7 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 **system.webserver/asp/cache**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
 | diskTemplateCacheDirectory | 当内存中缓存溢出时，ASP 用于存储已编译模板的目录的名称。<br><br>建议：设置为一个不会频繁使用的目录，例如，未与操作系统、IIS 日志或其他经常访问的内容共享的驱动器。 | %SystemDrive%\inetpub\temp\ASP Compiled Templates |
 | maxDiskTemplateCacheFiles | 指定可在磁盘上缓存的已编译 ASP 模板的最大数目。<br><br>建议：设置为0x7FFFFFFF 的最大值。 | 2000 |
@@ -248,15 +248,15 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 **system.webserver/asp/限制**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
 | processorThreadMax | 指定 ASP 可以为每个处理器创建的最大工作线程数。 如果当前设置不足以处理负载，则增加，这可能会导致在处理请求时出现错误，或者导致 CPU 资源使用不足。 | 25 |
 
 **system.webserver/asp/comPlus**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
-| executeInMta | 如果在 IIS 为 ASP 内容提供服务时检测到错误或失败，则设置为**True** 。 例如，在托管多个独立的站点时，每个站点都在其自己的工作进程中运行。 错误通常从事件查看器中的 COM + 中报告。 此设置在 ASP 中启用多线程单元模型。 | 错误 |
+| executeInMta | 如果在 IIS 为 ASP 内容提供服务时检测到错误或失败，则设置为 **True** 。 例如，在托管多个独立的站点时，每个站点都在其自己的工作进程中运行。 错误通常从事件查看器中的 COM + 中报告。 此设置在 ASP 中启用多线程单元模型。 | 错误 |
 
 ## <a name="aspnet-concurrency-setting"></a>ASP.NET 并发设置
 
@@ -271,7 +271,7 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 以下设置对于完全使用系统资源非常有用：
 
--   **maxConcurrentRequestPerCpu**默认值：5000
+-   **maxConcurrentRequestPerCpu** 默认值：5000
 
     此设置限制系统上同时执行的 ASP.NET 请求的最大数量。 默认值为保守以减少 ASP.NET 应用程序的内存占用。 考虑在运行执行长时间同步 i/o 操作的应用程序的系统上增加此限制。 否则，用户可能会遇到高延迟，因为在使用默认设置时，由于队列限制超出了队列限制，导致队列或请求失败。
 
@@ -284,18 +284,18 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 </system.web>
 ```
 
--   **percentCpuLimit**默认值：90将大量负载 (超出硬件) 功能时，此类情况下会出现一些可伸缩性问题。 此问题是由对异步方案进行分配的性质导致的。 在这些情况下，将在异步操作启动时进行分配，并且在完成时将使用它。 在这段时间，itâs 非常可能将对象移动到第1代或第2代垃圾回收器。 发生这种情况时，增加负载会显示每秒请求数增加 (rps) ，直到达到某个点。 传递该点后，GC 中花费的时间会开始成为一个问题，rps 将开始进行 dip，这会造成负面影响。 若要解决此问题，当 cpu 使用率超出 percentCpuLimit 设置时，请求将发送到 ASP.NET 本机队列。
--   **percentCpuLimitMinActiveRequestPerCpu**默认值： 100 CPU 限制 (percentCpuLimit 设置) 不是基于请求数，而是取决于请求的费用。 因此，可能只需要几个占用 CPU 的请求，这会导致在本机队列中进行备份，使其不会从传入请求中清空。 若要解决此 problme，可以使用 percentCpuLimitMinActiveRequestPerCpu 来确保在限制开始之前提供最少数量的请求。
+-   **percentCpuLimit** 默认值：90将大量负载 (超出硬件) 功能时，此类情况下会出现一些可伸缩性问题。 此问题是由对异步方案进行分配的性质导致的。 在这些情况下，将在异步操作启动时进行分配，并且在完成时将使用它。 在这段时间，itâs 非常可能将对象移动到第1代或第2代垃圾回收器。 发生这种情况时，增加负载会显示每秒请求数增加 (rps) ，直到达到某个点。 传递该点后，GC 中花费的时间会开始成为一个问题，rps 将开始进行 dip，这会造成负面影响。 若要解决此问题，当 cpu 使用率超出 percentCpuLimit 设置时，请求将发送到 ASP.NET 本机队列。
+-   **percentCpuLimitMinActiveRequestPerCpu** 默认值： 100 CPU 限制 (percentCpuLimit 设置) 不是基于请求数，而是取决于请求的费用。 因此，可能只需要几个占用 CPU 的请求，这会导致在本机队列中进行备份，使其不会从传入请求中清空。 若要解决此 problme，可以使用 percentCpuLimitMinActiveRequestPerCpu 来确保在限制开始之前提供最少数量的请求。
 
 ## <a name="worker-process-and-recycling-options"></a>工作进程和回收选项
 
 你可以配置用于回收 IIS 工作进程的选项，并向锐音符的情况或事件提供切实可行的解决方案，而无需干预或重置服务或计算机。 此类情况和事件包括内存泄漏、增加内存负载或无响应或空闲工作进程。 在普通条件下，可能不需要回收选项，并且可以关闭回收，或者可以将系统配置为很少回收。
 
-您可以通过将属性添加到**回收/periodicRestart**元素来为特定应用程序启用进程回收。 回收事件可以由多个事件触发，其中包括内存使用情况、固定的请求数和固定时间段。 回收工作进程后，排队和正在执行的请求将耗尽，并同时启动一个新进程来处理新请求。 **回收/periodicRestart**元素为每个应用程序，这意味着下表中的每个属性都按应用程序进行分区。
+您可以通过将属性添加到 **回收/periodicRestart** 元素来为特定应用程序启用进程回收。 回收事件可以由多个事件触发，其中包括内存使用情况、固定的请求数和固定时间段。 回收工作进程后，排队和正在执行的请求将耗尽，并同时启动一个新进程来处理新请求。 **回收/periodicRestart**元素为每个应用程序，这意味着下表中的每个属性都按应用程序进行分区。
 
 **system.web/applicationPools/ApplicationPoolDefaults/回收/periodicRestart**
 
-| Attribute | 描述 | 默认 |
+| Attribute | 说明 | 默认 |
 |--|--|--|
 | 内存 | 如果虚拟内存消耗超过指定的限制（以 kb 为单位），则启用进程回收。 对于具有小型 2 GB 地址空间的32位计算机，这是一项有用的设置。 由于内存不足错误，此方法可帮助避免失败的请求。 | 0 |
 | privateMemory | 如果专用内存分配超过指定的限制（以 kb 为单位），则启用进程回收。 | 0 |
@@ -321,7 +321,7 @@ IIS 10.0 已分解成多个用户可扩展模块，以支持模块化结构。 �
 
 请记住，一旦特定用户连接到该站点，这些用户通常会保留一段时间，发出附加请求，因此只计算每日请求可能无法准确反映实际的流量模式。 若要获得更准确的阅读，还可以使用工具（如 Microsoft Excel）来计算请求之间的平均时间。 例如：
 
-| 数字 | 请求 URL | 请求时间 | 增量 |
+| Number | 请求 URL | 请求时间 | 增量 |
 |--|--|--|--|
 | 1 | /SourceSilverLight/Geosource.web/grosource.html | 10:01 |  |
 | 2 | /SourceSilverLight/Geosource.web/sliverlight.js | 10:10 | 0:09 |

@@ -2,15 +2,15 @@
 title: 已加入域的设备公钥身份验证
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
-manager: alanth
-author: michikos
+author: justinha
+ms.author: Justinha
 ms.date: 08/18/2017
-ms.openlocfilehash: 37710710bc301173503450a46fc1ccc2b0614cf4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d9603cde90ca4a689d6d5993c8e131ba5a2e7d40
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943947"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077594"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>已加入域的设备公钥身份验证
 
@@ -33,10 +33,10 @@ Kerberos 添加了对加入域的设备的支持，以便使用从 Windows Serve
 当 Windows 启动时，它会检查是否为其计算机帐户设置了公钥。 如果不是，则它将生成绑定的公钥，并使用 Windows Server 2016 或更高版本的 DC 为 AD 中的帐户配置该公钥。 如果所有 Dc 都已关闭，则不会设置任何密钥。
 
 ### <a name="configuring-device-to-only-use-public-key"></a>将设备配置为仅使用公钥
-如果将 "**使用证书进行设备身份验证**" 的 "组策略设置" 设置为 "**强制**"，则设备需要查找运行 Windows Server 2016 或更高版本的 DC 进行身份验证。 该设置位于 "管理模板 > System > Kerberos" 下。
+如果将 " **使用证书进行设备身份验证** " 的 "组策略设置" 设置为 " **强制**"，则设备需要查找运行 Windows Server 2016 或更高版本的 DC 进行身份验证。 该设置位于 "管理模板 > System > Kerberos" 下。
 
 ### <a name="configuring-device-to-only-use-password"></a>将设备配置为仅使用密码
-如果禁用**使用证书对设备身份验证**的组策略设置，则始终使用 password。 该设置位于 "管理模板 > System > Kerberos" 下。
+如果禁用 **使用证书对设备身份验证** 的组策略设置，则始终使用 password。 该设置位于 "管理模板 > System > Kerberos" 下。
 
 ## <a name="domain-joined-device-authentication-using-public-key"></a>使用公钥加入域的设备身份验证
 当 Windows 具有已加入域的设备的证书时，Kerberos 首先使用证书进行身份验证，并在发生故障后使用密码进行身份验证。 这允许设备向下级 Dc 进行身份验证。

@@ -2,15 +2,15 @@
 title: Hyper-V 体系结构
 description: 用于性能优化的 hyper-v 体系结构 condsiderations
 ms.topic: article
-ms.author: asmahi; sandysp; jopoulso
+ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 62b7d0a235285e0e85d38860f629dfe046eee0c6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c51577400b449864f45679423718387598348a71
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896165"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077264"
 ---
 # <a name="hyper-v-architecture"></a>Hyper-V 体系结构
 

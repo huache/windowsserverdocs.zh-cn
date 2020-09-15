@@ -2,15 +2,15 @@
 title: Hyper-v 存储 i/o 性能
 description: Hyper-v 性能优化中的存储 i/o 性能注意事项
 ms.topic: article
-ms.author: asmahi; sandysp; jopoulso
+ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d19790a6a86c7538ee3a062b3f08bbbdbc8b9d92
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 762ff719eb60a2fbcec61c0b9b6cb2e14f9ba677
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992084"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078215"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Hyper-v 存储 i/o 性能
 
@@ -60,7 +60,7 @@ VHD 格式是过去版本中 Hyper-v 支持的唯一虚拟硬盘格式。 Window
 Convert-VHD –Path E:\vms\testvhd\test.vhd –DestinationPath E:\vms\testvhd\test-converted.vhd
 ```
 
-您可以检查系统上所有 Vhd 的 "对齐" 属性，并且应将其转换为最佳的 4 KB 对齐方式。 使用原始 VHD 中的数据通过 "**从源创建**" 选项创建新的 vhd。
+您可以检查系统上所有 Vhd 的 "对齐" 属性，并且应将其转换为最佳的 4 KB 对齐方式。 使用原始 VHD 中的数据通过 " **从源创建** " 选项创建新的 vhd。
 
 若要使用 Windows Powershell 检查对齐方式，请检查对齐线，如下所示：
 
@@ -186,7 +186,7 @@ VHD 指向父 VHD 文件。 不写入的任何块写入会导致 VHD 文件中�
 
 由当前分析器发出的用于更新有效负载数据的每个 4 KB 写入命令都将对磁盘上的两个块执行两次读取，然后将更新这些块并随后写回到这两个磁盘块。 Windows Server 2016 中的 hyper-v 通过准备前面提到的结构来对齐 VHD 格式的 4 KB 边界，降低了 VHD 堆栈上的512e 磁盘的某些性能影响。 这可以避免在访问虚拟硬盘文件中的数据以及更新虚拟硬盘元数据结构时 RMW 的效果。
 
-如前文所述，从以前版本的 Windows Server 复制的 Vhd 不会自动对齐到 4 KB。 可以使用 VHD 接口中提供的 "从源磁盘**复制**" 选项，手动将其转换为最佳对齐方式。
+如前文所述，从以前版本的 Windows Server 复制的 Vhd 不会自动对齐到 4 KB。 可以使用 VHD 接口中提供的 "从源磁盘 **复制** " 选项，手动将其转换为最佳对齐方式。
 
 默认情况下，Vhd 的物理扇区大小为512字节。 这样做是为了确保在应用程序和 Vhd 从以前版本的 Windows Server 移动时不影响物理扇区大小的从属应用程序。
 
@@ -230,7 +230,7 @@ Windows Server 2012 R2 和更高版本中的 hyper-v 支持 4 KB 本机磁盘。
 
 -   不支持共享 VHDX
 
-有关存储服务质量的详细信息，请参阅[hyper-v 的存储服务质量](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282281(v=ws.11))。
+有关存储服务质量的详细信息，请参阅 [hyper-v 的存储服务质量](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282281(v=ws.11))。
 
 ### <a name="numa-io"></a>NUMA I/O
 
@@ -244,9 +244,9 @@ Windows Server 2012 和更高版本支持大型虚拟机和任何大型虚拟机
 
 Windows Server 2012 中引入了几个注册表项，它们位于 HKLM \\ 系统 \\ CurrentControlSet \\ Enum \\ VMBUS \\ {device id} \\ {instance id} \\ StorChannel，这允许调整通道数。 它们还将处理 i/o 完成的虚拟处理器与应用程序分配给 i/o 处理器的虚拟 Cpu 对齐。 注册表设置在设备硬件密钥上基于每个适配器进行配置。
 
--   **ChannelCount (DWORD) **要使用的通道总数，最大值为16。 它的默认值为上限，即虚拟处理器/16 的数目。
+-   **ChannelCount (DWORD) ** 要使用的通道总数，最大值为16。 它的默认值为上限，即虚拟处理器/16 的数目。
 
--   **ChannelMask (QWORD) **通道的处理器关联。 如果未设置或设置为0，则默认为用于普通存储或网络通道的现有通道分发算法。 这可确保存储通道不会与网络通道发生冲突。
+-   **ChannelMask (QWORD) ** 通道的处理器关联。 如果未设置或设置为0，则默认为用于普通存储或网络通道的现有通道分发算法。 这可确保存储通道不会与网络通道发生冲突。
 
 ### <a name="offloaded-data-transfer-integration"></a>卸载数据传输集成
 

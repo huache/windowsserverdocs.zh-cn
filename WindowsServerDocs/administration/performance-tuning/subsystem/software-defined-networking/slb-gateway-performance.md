@@ -2,21 +2,21 @@
 title: 软件定义的网络中的 SLB 网关性能优化
 description: 有关 SDN 网络的 SLB 网关性能优化指南
 ms.topic: article
-ms.author: grcusanz; anpaul
+ms.author: grcusanz
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 64d045a270b8762d0d269055c8c65d1e40a71d63
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d45a5f585c7da30e4d9bdd4c8ec3c2e2003b7ea0
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895939"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077914"
 ---
 # <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>软件定义的网络中的 SLB 网关性能优化
 
 软件负载平衡由网络控制器 Vm、Hyper-v 虚拟交换机中的负载均衡器管理器和一组负载均衡器 Multixplexor (Mux) Vm 一起提供。
 
-除了在 "[软件定义的网络](index.md)" 部分中描述的那样，无需任何其他性能优化即可将网络控制器或 hyper-v 主机配置为用于负载平衡，除非你将使用 Sr-iov 作为 mux （如下所述）。
+除了在 " [软件定义的网络](index.md) " 部分中描述的那样，无需任何其他性能优化即可将网络控制器或 hyper-v 主机配置为用于负载平衡，除非你将使用 Sr-iov 作为 mux （如下所述）。
 
 ## <a name="slb-mux-vm-configuration"></a>SLB Mux VM 配置
 
@@ -26,7 +26,7 @@ SLB Mux 虚拟机部署为主动-主动配置。  这意味着，部署并添加
 
 在某些情况下，当请求源源自添加到管理 VIP 的同一网络控制器的 SDN 主机时，还会执行该请求的入站路径进一步优化，从而使大多数数据包直接从客户端传输到服务器，同时绕过 Mux VM。  此优化不需要其他配置即可进行。
 
-每个 SLB Mux VM 必须根据 "[规划软件定义的网络基础结构](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)" 主题的 "SDN 基础结构虚拟机角色要求" 部分中提供的指导原则调整大小。
+每个 SLB Mux VM 必须根据 "  [规划软件定义的网络基础结构](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md) " 主题的 "SDN 基础结构虚拟机角色要求" 部分中提供的指导原则调整大小。
 
 ## <a name="single-root-io-virtualization-sr-iov"></a>单个根 IO 虚拟化 (SR-IOV) 
 

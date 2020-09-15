@@ -2,15 +2,15 @@
 title: 缓存和内存管理器改进
 description: Windows Server 2016 中的缓存和内存管理器改进
 ms.topic: article
-ms.author: pavel; atales
+ms.author: pavel
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c2fdceb7ff3743890c73ee4108ffcf8e00fe437f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 799598223812f5992db0354780424f7da13033ea
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992059"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078004"
 ---
 # <a name="cache-and-memory-manager-improvements"></a>缓存和内存管理器改进
 
@@ -33,4 +33,4 @@ ms.locfileid: "87992059"
 
 -   配置为使用 AWE 或大型页面 (大多数内存的 Microsoft SQL Server 是专用的但不可分页的) 
 
-默认情况下，页面组合处于禁用状态，但可以使用[Mmagent.ps1](/powershell/module/mmagent/enable-mmagent?view=win10-ps) Windows PowerShell cmdlet 启用。 Windows Server 2012 中添加了页面组合。
+默认情况下，页面组合处于禁用状态，但可以使用 [Mmagent.ps1](/powershell/module/mmagent/enable-mmagent?view=win10-ps) Windows PowerShell cmdlet 启用。 Windows Server 2012 中添加了页面组合。

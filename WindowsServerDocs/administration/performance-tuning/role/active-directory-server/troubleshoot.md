@@ -2,19 +2,19 @@
 title: Active Directory 域服务性能疑难解答
 description: Active Directory 性能优化的疑难解答指南。
 ms.topic: article
-ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
+ms.author: timwi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e9be93989f0d8368a1994bfe9c7cceaad52ce39d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: d702dc8b325e4820c896d37c8d99a8f90eafd418
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993356"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077234"
 ---
 # <a name="troubleshooting-active-directory-domain-services-performance"></a>Active Directory 域服务性能疑难解答
 
-有关添加性能故障排除的其他信息，请参阅[监视分支机构环境](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd736504(v=ws.10))。
+有关添加性能故障排除的其他信息，请参阅 [监视分支机构环境](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd736504(v=ws.10))。
 
 ## <a name="additional-references"></a>其他参考
 - [Active Directory 服务器的性能优化](index.md)

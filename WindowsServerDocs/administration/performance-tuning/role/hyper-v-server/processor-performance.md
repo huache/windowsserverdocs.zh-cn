@@ -2,22 +2,22 @@
 title: Hyper-v 处理器性能
 description: Hyper-v 性能优化中的处理器性能注意事项
 ms.topic: article
-ms.author: asmahi; sandysp; jopoulso
+ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ba426a2a4db853dbd91180fcceed6807726efbf8
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4691f71b98cbbe0993a6e837f5d13b4b5c5a21b6
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992095"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078225"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper-v 处理器性能
 
 
 ## <a name="virtual-machine-integration-services"></a>虚拟机 integration services
 
-虚拟机 Integration Services 包括特定于 Hyper-v 的 i/o 设备的启用驱动程序，这大大减少了 i/o 相比模拟设备的 CPU 开销。 你应在每个受支持的虚拟机中安装最新版本的虚拟机 Integration Services。 服务会降低来宾的 CPU 使用情况，从空闲来宾到过度使用的来宾，并提高 i/o 吞吐量。 这是在运行 Hyper-v 的服务器中优化性能的第一步。 有关支持的来宾操作系统的列表，请参阅[Hyper-v 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))。
+虚拟机 Integration Services 包括特定于 Hyper-v 的 i/o 设备的启用驱动程序，这大大减少了 i/o 相比模拟设备的 CPU 开销。 你应在每个受支持的虚拟机中安装最新版本的虚拟机 Integration Services。 服务会降低来宾的 CPU 使用情况，从空闲来宾到过度使用的来宾，并提高 i/o 吞吐量。 这是在运行 Hyper-v 的服务器中优化性能的第一步。 有关支持的来宾操作系统的列表，请参阅 [Hyper-v 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))。
 
 ## <a name="virtual-processors"></a>虚拟处理器
 
@@ -47,7 +47,7 @@ Windows Server 2016 中的 hyper-v 支持每个虚拟机最多支持240个虚拟
 
 -   请勿让 Hyper-v 管理器运行，因为它会持续刷新虚拟机的缩略图。
 
-下面是在虚拟机中配置 Windows 的*客户端版本*以降低总体 CPU 使用率的其他最佳方案：
+下面是在虚拟机中配置 Windows 的 *客户端版本* 以降低总体 CPU 使用率的其他最佳方案：
 
 -   禁用诸如 SuperFetch 和 Windows Search 等后台服务。
 
@@ -61,11 +61,11 @@ Windows Server 2016 中的 hyper-v 支持每个虚拟机最多支持240个虚拟
 
 从工作负载的角度来看，虚拟和物理 NUMA 之间没有区别。 在虚拟机中，当工作负载为数据分配本地内存并在同一个 NUMA 节点中访问该数据时，将在基础物理系统上快速访问本地内存结果。 可成功避免由于远程内存访问而引起的性能损失。 只有 NUMA 感知应用程序才能受益于 vNUMA。
 
-Microsoft SQL Server 是 NUMA 感知应用程序的一个示例。 有关详细信息，请参阅[了解非一致性内存访问](/previous-versions/sql/sql-server-2008-r2/ms178144(v=sql.105))。
+Microsoft SQL Server 是 NUMA 感知应用程序的一个示例。 有关详细信息，请参阅 [了解非一致性内存访问](/previous-versions/sql/sql-server-2008-r2/ms178144(v=sql.105))。
 
 无法同时使用虚拟 NUMA 和动态内存功能。 有效启用了动态内存的虚拟机只有一个虚拟 NUMA 节点，并且不会向虚拟机提供任何 NUMA 拓扑，无论虚拟 NUMA 设置如何。
 
-有关虚拟 NUMA 的详细信息，请参阅[Hyper-v 虚拟 Numa 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282282(v=ws.11))。
+有关虚拟 NUMA 的详细信息，请参阅 [Hyper-v 虚拟 Numa 概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282282(v=ws.11))。
 
 ## <a name="additional-references"></a>其他参考
 

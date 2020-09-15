@@ -7,13 +7,13 @@ manager: mtillman
 ms.assetid: a14bc870-9fad-45ed-acd5-a90ccd432e54
 ms.topic: get-started-article
 ms.date: 09/01/2016
-ms.author: anandy;billmath
-ms.openlocfilehash: 1beb08cc3a135f034ce5493d7e7360680dbeef9a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.author: billmath
+ms.openlocfilehash: 9ce16db4a50fbb31c8454b085a6d0471ebbdf32c
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940924"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078654"
 ---
 # <a name="high-availability-cross-geographic-ad-fs-deployment-in-azure-with-azure-traffic-manager"></a>使用 Azure 流量管理器在 Azure 中部署高可用性跨地理区域 AD FS
 [AD FS deployment in Azure](how-to-connect-fed-azure-adfs.md) （Azure 中的 AD FS 部署）提供了有关如何在 Azure 中为组织部署简单 AD FS 基础结构的分步指导。 本文提供后续步骤，使用 [Azure 流量管理器](/azure/traffic-manager/)在 Azure 中创建跨地理区域的 AD FS 部署。 Azure 流量管理器使用各种可用的路由方法来应对基础结构的不同需求，有助于为组织创建分布各地的高可用性和高性能 AD FS 基础结构。
@@ -53,7 +53,7 @@ ms.locfileid: "87940924"
     ![创建流量管理器配置文件](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/trafficmanager01.png)
 2. **流量路由方法：** 流量管理器中有三个可用的路由选项：
 
-   * 优先度
+   * 优先级
    * 性能
    * 加权
 
