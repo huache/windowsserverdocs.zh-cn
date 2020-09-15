@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 02158cc005cc46bd42e88569b14c17c59ef377ee
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8ff6b6cfa6f8af87310970d9adab10d5df14c90d
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990773"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083688"
 ---
 # <a name="configure-and-manage-quorum"></a>配置和管理仲裁
 
@@ -22,15 +22,15 @@ ms.locfileid: "87990773"
 
 ## <a name="understanding-quorum"></a>了解仲裁
 
-群集的仲裁由投票元素的数量确定，这些投票元素必须是活动群集成员身份的一部分以供该群集正确启动或继续运行。 有关更详细的说明，请参阅[了解群集和池仲裁文档](../storage/storage-spaces/understand-quorum.md)。
+群集的仲裁由投票元素的数量确定，这些投票元素必须是活动群集成员身份的一部分以供该群集正确启动或继续运行。 有关更详细的说明，请参阅 [了解群集和池仲裁文档](../storage/storage-spaces/understand-quorum.md)。
 
 ## <a name="quorum-configuration-options"></a>仲裁配置选项
 
-Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲裁配置，可以使用配置群集仲裁向导或故障转移群集 Windows PowerShell cmdlet。 有关配置仲裁的步骤和注意事项，请参阅本主题后面的[配置群集仲裁](#configure-the-cluster-quorum)。
+Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲裁配置，可以使用配置群集仲裁向导或 FailoverClusters Windows PowerShell cmdlet。 有关配置仲裁的步骤和注意事项，请参阅本主题后面的[配置群集仲裁](#configure-the-cluster-quorum)。
 
 下表列出了配置群集仲裁向导中提供的三个仲裁配置选项。
 
-| 选项  |描述  |
+| 选项  |说明  |
 | --------- | ---------|
 | “使用典型设置”     |  该群集自动将投票分配到每个节点并且动态管理节点投票。 如果它适用于你的群集，并且有可用的群集共享存储，该群集将选择磁盘见证。 建议在大多数情况下使用此选项，因为群集软件会自动选择可为群集提供最高可用性的仲裁和见证配置。       |
 | “添加或更改仲裁见证”     |   你可以添加、更改或删除见证资源。 可以配置文件共享或磁盘见证。 该群集自动将投票分配到每个节点并且动态管理节点投票。      |
@@ -54,11 +54,11 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 
 下表提供了有关仲裁见证类型的其他信息和注意事项。
 
-| 见证类型  | 描述  | 要求和建议  |
+| 见证类型  | 说明  | 要求和建议  |
 | ---------    |---------        |---------                        |
 | 磁盘见证     |  <ul><li> 存储群集数据库副本的专用 LUN</li><li> 对具有共享（非复制）存储的群集最有用</li>       |  <ul><li>LUN 的大小必须至少有 512 MB</li><li> 必须专用于群集而且不分配给群集角色</li><li> 必须包括在群集存储中并且通过存储验证测试</li><li> 不可以是群集共享卷 (CSV) 磁盘</li><li> 具有单个卷的基本磁盘</li><li> 不需要有驱动器号</li><li> 可以使用 NTFS 或 ReFS 格式化</li><li> 可以使用容错功能的硬件 RAID 有选择性地进行配置</li><li> 应从备份和防病毒扫描中排除</li><li> 存储空间直通不支持磁盘见证</li>|
 | 文件共享见证     | <ul><li>在运行 Windows Server 的文件服务器上配置的 SMB 文件共享</li><li> 不存储群集数据库的副本</li><li> 仅维护 witness.log 文件中的群集信息</li><li> 对具有复制存储的多站点群集最有用 </li>       |  <ul><li>必须至少具有 5 MB 的可用空间</li><li> 必须专用于单个群集而不用于存储用户或应用程序数据</li><li> 必须对群集名称的计算机对象启用写入权限</li></ul><br>以下是有关托管文件共享见证的文件服务器的其他注意事项：<ul><li>可以使用多个群集的文件共享见证配置单个文件服务器。</li><li> 文件服务器必须位于与群集工作负载分开的站点上。 如果站点到站点网络通信丢失，则允许向任何群集站点提供均等的生存机会。 如果文件服务器位于同一站点上，则该站点成为主站点，并且它是可以访问文件共享的唯一站点。</li><li> 如果虚拟机未托管在使用文件共享见证的同一群集上，则文件服务器可以在虚拟机上运行。</li><li> 为了获得高可用性，可在单独的故障转移群集上配置文件服务器。 </li>      |
-| 云见证     |  <ul><li>存储在 Azure blob 存储中的见证文件</li><li> 当群集中的所有服务器都具有可靠的 Internet 连接时，建议使用此设置。</li>      |  请参阅[部署云见证](./deploy-cloud-witness.md)。       |
+| 云见证     |  <ul><li>存储在 Azure blob 存储中的见证文件</li><li> 当群集中的所有服务器都具有可靠的 Internet 连接时，建议使用此设置。</li>      |  请参阅 [部署云见证](./deploy-cloud-witness.md)。       |
 
 ### <a name="node-vote-assignment"></a>节点投票分配
 
@@ -66,18 +66,18 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 
 你可能希望从某些灾难恢复配置中的节点删除投票。 例如，在多站点群集中，你可以从备份站点中的节点删除投票，以便这些节点不会影响仲裁计算。 对于跨站点的手动故障转移，仅建议使用此配置。 有关详细信息，请参阅本主题后面的[灾难恢复配置的仲裁注意事项](#quorum-considerations-for-disaster-recovery-configurations)。
 
-可以通过使用[Start-clusternode](https://technet.microsoft.com/library/hh847268.aspx)Windows PowerShell cmdlet 查找群集节点的**NodeWeight** common 属性来验证节点的已配置投票。 值为 0 指示该节点没有配置仲裁投票。 值为 1 指示已分配该节点的仲裁投票，并且它由该群集管理。 有关节点投票的管理的详细信息，请参阅本主题后面的[动态仲裁管理](#dynamic-quorum-management)。
+可以通过使用[Start-clusternode](https://technet.microsoft.com/library/hh847268.aspx) Windows PowerShell cmdlet 查找群集节点的**NodeWeight** common 属性来验证节点的已配置投票。 值为 0 指示该节点没有配置仲裁投票。 值为 1 指示已分配该节点的仲裁投票，并且它由该群集管理。 有关节点投票的管理的详细信息，请参阅本主题后面的[动态仲裁管理](#dynamic-quorum-management)。
 
 通过使用“验证群集仲裁”**** 验证测试，可以验证所有群集节点的投票分配。
 
 #### <a name="additional-considerations-for-node-vote-assignment"></a>节点投票分配的其他注意事项
 
-  - 不建议用节点投票分配来强制执行奇数个投票节点。 相反，你应该配置磁盘见证或文件共享见证。 有关详细信息，请参阅本主题后面的[见证配置](#witness-configuration)。
+  - 不建议用节点投票分配来强制执行奇数个投票节点。 相反，你应该配置磁盘见证或文件共享见证。 有关详细信息，请参阅本主题后面的 [见证配置](#witness-configuration) 。
   - 如果启用动态仲裁管理，则只有配置为分配了节点投票的节点才可以动态分配或删除其投票。 有关详细信息，请参阅本主题后面的[动态仲裁管理](#dynamic-quorum-management)。
 
 ### <a name="dynamic-quorum-management"></a>动态仲裁管理
 
-在 Windows Server 2012 中，作为高级仲裁配置选项，你可以选择启用群集的动态仲裁管理。 有关动态仲裁工作原理的更多详细信息，请参阅[此说明](../storage/storage-spaces/understand-quorum.md#dynamic-quorum-behavior)。
+在 Windows Server 2012 中，作为高级仲裁配置选项，你可以选择启用群集的动态仲裁管理。 有关动态仲裁工作原理的更多详细信息，请参阅 [此说明](../storage/storage-spaces/understand-quorum.md#dynamic-quorum-behavior)。
 
 借助动态仲裁管理，群集还有可能在最后一个未出现故障的群集节点上运行。 通过动态调整多数仲裁要求，该群集可以针对单个节点维持相继节点关闭。
 
@@ -94,7 +94,7 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 
 ## <a name="general-recommendations-for-quorum-configuration"></a>仲裁配置的常规建议
 
-群集软件基于配置的节点数和共享存储的可用性自动为新群集配置仲裁。 通常这是最适合该群集的仲裁配置。 但是，在将群集投入生产之前，最好是在创建该群集后查看仲裁配置。 若要查看详细的群集仲裁配置，你可以使用验证配置向导或[测试群集](/powershell/module/failoverclusters/test-cluster?view=win10-ps)Windows PowerShell cmdlet 来运行 "**验证仲裁配置**" 测试。 在故障转移群集管理器中，基本仲裁配置显示在所选群集的摘要信息中，或者你可以查看有关运行[Set-clusterquorum](/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell cmdlet 时返回的仲裁资源的信息。
+群集软件基于配置的节点数和共享存储的可用性自动为新群集配置仲裁。 通常这是最适合该群集的仲裁配置。 但是，在将群集投入生产之前，最好是在创建该群集后查看仲裁配置。 若要查看详细的群集仲裁配置，你可以使用验证配置向导或 [测试群集](/powershell/module/failoverclusters/test-cluster?view=win10-ps) Windows PowerShell cmdlet 来运行 " **验证仲裁配置** " 测试。 在故障转移群集管理器中，基本仲裁配置显示在所选群集的摘要信息中，或者你可以查看有关运行 [Set-clusterquorum](/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell cmdlet 时返回的仲裁资源的信息。
 
 你可以随时运行“验证仲裁配置”**** 测试，以验证该仲裁配置是否最适合你的群集。 测试输出指示是否建议对仲裁配置进行更改以及最适合的设置。 如果建议进行更改，你可以使用配置群集仲裁向导来应用建议的设置。
 
@@ -109,7 +109,7 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 
 ## <a name="configure-the-cluster-quorum"></a>配置群集仲裁
 
-你可以通过使用故障转移群集管理器或故障转移群集 Windows PowerShell cmdlet 来配置群集仲裁设置。
+你可以使用故障转移群集管理器或 FailoverClusters Windows PowerShell cmdlet 来配置群集仲裁设置。
 
 > [!IMPORTANT]
 > 通常，最好使用由配置群集仲裁向导推荐的仲裁配置。 仅在你确定该更改适合你的群集时，我们才建议自定义仲裁配置。 有关详细信息，请参阅本主题中的[仲裁配置的常规建议](#general-recommendations-for-quorum-configuration)。
@@ -124,11 +124,11 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 ### <a name="change-the-quorum-configuration-in-a-failover-cluster-by-using-failover-cluster-manager"></a>使用故障转移群集管理器更改故障转移群集中的仲裁配置
 
 1. 在故障转移群集管理器中，选择或指定你想要更改的群集。
-2. 选择群集后，在 "**操作**" 下，选择 "**更多操作**"，然后选择 "**配置群集仲裁设置**"。 将出现配置群集仲裁向导。 选择“下一步”  。
-3. 在“选择仲裁配置选项”**** 页面上，选择三个配置选项之一，并且完成该选项的步骤。 配置仲裁设置之前，你可以查看你的选择。 有关选项的详细信息，请参阅本主题前面的[了解仲裁](#understanding-quorum)。
+2. 选择群集后，在 " **操作**" 下，选择 " **更多操作**"，然后选择 " **配置群集仲裁设置**"。 将出现配置群集仲裁向导。 选择“下一步”  。
+3. 在“选择仲裁配置选项”**** 页面上，选择三个配置选项之一，并且完成该选项的步骤。 配置仲裁设置之前，你可以查看你的选择。 有关选项的详细信息，请参阅本主题前面的 [了解仲裁](#understanding-quorum)。
 
-    - 若要允许群集自动重置最适合当前群集配置的仲裁设置，请选择 "**使用典型设置**"，然后完成该向导。
-    - 若要添加或更改仲裁见证，请选择 **"添加或更改仲裁见证**"，然后完成以下步骤。 有关配置仲裁见证的信息和注意事项，请参阅本主题前面的[见证配置](#witness-configuration)。
+    - 若要允许群集自动重置最适合当前群集配置的仲裁设置，请选择 " **使用默认仲裁配置** "，然后完成向导。
+    - 若要添加或更改仲裁见证，请选择 **"选择仲裁见证**"，然后完成以下步骤。 有关配置仲裁见证的信息和注意事项，请参阅本主题前面的[见证配置](#witness-configuration)。
 
       1. 在“选择仲裁见证”**** 页面上，选中一个选项以配置磁盘见证或文件共享见证。 该向导指示建议你的群集使用的见证选择选项。
 
@@ -137,8 +137,11 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
 
       2. 如果你选择该选项来配置磁盘见证，则在“配置存储见证”**** 页面上，选择你想要分配为磁盘见证的存储卷，然后完成该向导。
       3. 如果你选择该选项来配置文件共享见证，则在“配置文件共享见证”**** 页面上，键入或浏览到将用作见证资源的文件共享，然后完成该向导。
+      4. 如果选择配置云见证的选项，请在 " **配置云见证** " 页上，输入 azure 存储帐户名称、azure 存储帐户密钥和 azure 服务终结点，然后完成该向导。
+          > [!NOTE]
+          > 此选项在 Windows Server 2016 及更高版本中可用。
 
-    - 若要配置仲裁管理设置和添加或更改仲裁见证，请选择 "**高级仲裁配置和见证选择**"，然后完成以下步骤。 有关高级仲裁配置设置的信息和注意事项，请参阅本主题前面的[节点投票分配](#node-vote-assignment)和[动态仲裁管理](#dynamic-quorum-management)。
+    - 若要配置仲裁管理设置和添加或更改仲裁见证，请选择 "高级" " **仲裁配置**"，然后完成以下步骤。 有关高级仲裁配置设置的信息和注意事项，请参阅本主题前面的[节点投票分配](#node-vote-assignment)和[动态仲裁管理](#dynamic-quorum-management)。
 
       1. 在“选择投票配置”**** 页面上，选择一个选项以将投票权分配给节点。 默认情况下，所有节点都分配了投票。 但是，对于某些方案，你可以仅将投票分配给节点的子集。
 
@@ -146,24 +149,30 @@ Windows Server 中的仲裁模型非常灵活。 如果需要修改群集的仲�
           > 你还可以选择“无节点”****。 通常不建议使用此选项，因为它不允许节点参与仲裁投票，并且它需要配置见证磁盘。 此磁盘见证将成为群集的单点故障。
 
       2. 在“配置仲裁管理”**** 页面上，可以启用或禁用“允许群集动态管理节点投票的分配情况”**** 选项。 选择此选项通常会增加群集的可用性。 默认情况下，该选项处于启用状态，并且强烈建议不要禁用此选项。 此选项允许群集在出现故障的情况（在此选项处于禁用状态时不会出现此情况）下继续运行。
-      3. 在“选择仲裁见证”**** 页面上，选中一个选项以配置磁盘见证或文件共享见证。 该向导指示建议你的群集使用的见证选择选项。
+          > [!NOTE]
+          > 此选项在 Windows Server 2016 及更高版本中不存在。
+          
+      3. 在 " **选择仲裁见证** " 页上，选择一个选项以配置磁盘见证、文件共享见证或云见证。 该向导指示建议你的群集使用的见证选择选项。
 
           > [!NOTE]
           > 你还可以选择“不配置仲裁见证”****，然后完成该向导。 如果你在群集中的投票节点为偶数，则这可能不是推荐的配置。
 
       4. 如果你选择该选项来配置磁盘见证，则在“配置存储见证”**** 页面上，选择你想要分配为磁盘见证的存储卷，然后完成该向导。
       5. 如果你选择该选项来配置文件共享见证，则在“配置文件共享见证”**** 页面上，键入或浏览到将用作见证资源的文件共享，然后完成该向导。
+      6. 如果选择配置云见证的选项，请在 " **配置云见证** " 页上，输入 azure 存储帐户名称、azure 存储帐户密钥和 azure 服务终结点，然后完成该向导。
+          > [!NOTE]
+          > 此选项在 Windows Server 2016 及更高版本中可用。
 
-4. 选择“下一步”  。 在出现的确认页面上确认你的选择，然后选择 "**下一步**"。
+4. 选择“下一步”  。 在出现的确认页面上确认你的选择，然后选择 " **下一步**"。
 
-运行向导并出现 "**摘要**" 页面后，如果要查看向导执行的任务的报告，请选择 "**查看报告**"。 最新报表将保留在**为 quorumconfiguration.mht**名称为的<em>systemroot</em>** \\ 群集 \\ 报表**文件夹中。
+运行向导并出现 " **摘要** " 页面后，如果要查看向导执行的任务的报告，请选择 " **查看报告**"。 最新报表将保留在**为 quorumconfiguration.mht**名称为的<em>systemroot</em>** \\ 群集 \\ 报表**文件夹中。
 
 > [!NOTE]
 > 配置群集仲裁之后，我们建议你运行“验证仲裁配置”**** 测试以验证更新的仲裁设置。
 
 ### <a name="windows-powershell-equivalent-commands"></a>Windows PowerShell 等效命令
 
-下面的示例演示如何使用[set-clusterquorum](/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps) cmdlet 和其他 Windows PowerShell cmdlet 来配置群集仲裁。
+下面的示例演示如何使用 [set-clusterquorum](/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps) cmdlet 和其他 Windows PowerShell cmdlet 来配置群集仲裁。
 
 以下示例将群集 *CONTOSO-FC1* 上的仲裁配置更改为没有仲裁见证的简单多数节点配置。
 
@@ -235,7 +244,7 @@ Set-ClusterQuorum -NodeAndFileShareMajority "\\fileserver\fsw"
 下面介绍了如何通过故障转移群集管理器恢复群集：
 
 1. 在故障转移群集管理器中，选择或指定你想要恢复的群集。
-2. 选择群集后，在 "**操作**" 下选择 "**强制群集启动**"。
+2. 选择群集后，在 " **操作**" 下选择 " **强制群集启动**"。
 
     故障转移群集管理器在可访问的所有节点上强制启动群集。 启动时，该群集使用当前的群集配置。
 
@@ -279,7 +288,7 @@ Net Start ClusSvc /PQ
 
 下表总结了有关此配置的注意事项和建议。
 
-| Item  | 描述  |
+| Item  | 说明  |
 | ---------| ---------|
 | 每个站点的节点投票数     | 应该相等       |
 | 节点投票分配     |  因为所有节点都同等重要，所以不应删除节点投票       |
@@ -297,7 +306,7 @@ Net Start ClusSvc /PQ
 
 下表总结了有关此配置的注意事项和建议。
 
-| Item   |描述  |
+| Item   |说明  |
 | ---------| ---------|
 | 每个站点的节点投票数     |  <ul><li> 不应从主站点 **SiteA** 的节点中删除节点投票</li><li>应从备份站点 **SiteB** 的节点中删除节点投票</li><li>如果长期中断发生在 **SiteA** 上，必须将投票分配给 **SiteB** 上的节点，以便在该站点上启用多数仲裁作为恢复的一部分</li>       |
 | 动态仲裁管理     |  应该启用       |

@@ -1,26 +1,26 @@
 ---
 title: 如何在 Windows 中检测、启用和禁用 SMBv1、SMBv2 和 SMBv3
-description: 介绍如何启用和禁用 Windows 客户端和服务器环境中的服务器消息块协议（SMBv1、SMBv2 和 SMBv3）。
+description: 介绍如何启用和禁用 Windows 客户端和服务器环境中的服务器消息块协议 (SMBv1、SMBv2 和 SMBv3) 。
 author: Deland-Han
 manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 40ab29a115735e6c37bb7c7449980b94090565f3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f96302242eca58d589586fa44e6e7cd04ef98cc1
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961069"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083638"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>如何在 Windows 中检测、启用和禁用 SMBv1、SMBv2 和 SMBv3
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文介绍如何在 SMB 客户端和服务器组件上启用和禁用服务器消息块（SMB）版本1（SMBv1）、SMB 版本2（SMBv2）和 SMB 版本3（SMBv3）。 
+本文介绍如何在 SMB 客户端和服务器组件上启用和禁用 (SMB) 版本 1 (SMBv1) 、SMB 版本 2 (SMBv2) 和 SMB 版本 3 (SMBv3) 的服务器消息块。 
 
 > [!IMPORTANT]
-> 建议**你不要禁用 SMBv2**或 SMBv3。 仅将 SMBv2 或 SMBv3 作为临时故障排除度量值禁用。 不要让 SMBv2 或 SMBv3 处于禁用状态。  
+> 建议 **你不要禁用 SMBv2** 或 SMBv3。 仅将 SMBv2 或 SMBv3 作为临时故障排除度量值禁用。 不要让 SMBv2 或 SMBv3 处于禁用状态。  
 
 在 Windows 7 和 Windows Server 2008 R2 中，禁用 SMBv2 将停用以下功能： 
  
@@ -32,10 +32,10 @@ ms.locfileid: "86961069"
 - 文件共享的可伸缩性改进-每个服务器的用户、共享和打开文件的数量大大增加    
 - 支持符号链接    
 - 客户端 oplock 租赁模式-限制在客户端与服务器之间传输的数据，提高高延迟网络的性能并提高 SMB 服务器的可伸缩性    
-- 大 MTU 支持-完全使用 10-gigabye （GB）以太网    
+- 大 MTU 支持-完全使用 10-gigabye (GB) 以太网    
 - 提高了能效-已向服务器打开文件的客户端可以进入睡眠状态    
 
-在 Windows 8、Windows 8.1、Windows 10、Windows Server 2012、Windows Server 2012 R2、Windows Server 2016 和 Windows Server 2019 中，禁用 SMBv3 将停用以下功能（以及前面的列表中所述的 SMBv2 功能）： 
+在 Windows 8、Windows 8.1、Windows 10、Windows Server 2012、Windows Server 2012 R2、Windows Server 2016 和 Windows Server 2019 中，禁用 SMBv3 将停用以下功能 (以及) 前面的列表中所述的 SMBv2 功能： 
  
 - 透明故障转移-客户端在维护或故障转移过程中重新连接而不中断群集节点    
 - Scale Out –对所有文件群集节点上的共享数据进行并发访问     
@@ -61,12 +61,12 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
 
 #### <a name="powershell-methods"></a>PowerShell 方法
 
-##### <a name="smb-v1-client-and-server"></a>SMB v1 （客户端和服务器）
+##### <a name="smb-v1-client-and-server"></a>SMB v1 (客户端和服务器) 
 
 - 察觉 
 
   ```PowerShell
-  Get-WindowsFeature FS-SMB1
+  Get-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
 - 禁用 
@@ -109,7 +109,7 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
   Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-##### <a name="smb-v2v3protocol-only-disables-smb-v2v3-server"></a>SMB v2/v3 协议（仅禁用 SMB v2/v3 服务器）
+##### <a name="smb-v2v3protocol-only-disables-smb-v2v3-server"></a>SMB v2/v3 协议 (仅禁用 SMB v2/v3 服务器) 
 
 - 察觉 
   
@@ -137,12 +137,12 @@ Windows 8 和 Windows Server 2012 中引入了 SMBv3 协议。
 
 ### <a name="for-windows-8-and-windows-server-2012"></a>适用于 Windows 8 和 Windows Server 2012
 
-Windows 8 和 Windows Server 2012 引入了新的**SMBServerConfiguration** Windows PowerShell cmdlet。 Cmdlet 可用于启用或禁用服务器组件上的 SMBv1、SMBv2 和 SMBv3 协议。  
+Windows 8 和 Windows Server 2012 引入了新的 **SMBServerConfiguration** Windows PowerShell cmdlet。 Cmdlet 可用于启用或禁用服务器组件上的 SMBv1、SMBv2 和 SMBv3 协议。  
 
 > [!NOTE]   
 > 启用或禁用 Windows 8 或 Windows Server 2012 中的 SMBv2 时，也会启用或禁用 SMBv3。 之所以发生此行为，是因为这些协议共享同一堆栈。     
 
-运行**SMBServerConfiguration** cmdlet 后，无需重新启动计算机。 
+运行 **SMBServerConfiguration** cmdlet 后，无需重新启动计算机。 
 
 ##### <a name="smb-v1-on-smb-server"></a>SMB 服务器上的 SMB v1
 
@@ -163,7 +163,7 @@ Windows 8 和 Windows Server 2012 引入了新的**SMBServerConfiguration** Wind
   Set-SmbServerConfiguration -EnableSMB1Protocol $true
   ```
 
-有关详细信息，请参阅[Microsoft 服务器存储](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Stop-using-SMB1/ba-p/425858)。 
+有关详细信息，请参阅 [Microsoft 服务器存储](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Stop-using-SMB1/ba-p/425858)。 
 ##### <a name="smb-v2v3-on-smb-server"></a>Smb 服务器上的 SMB v2/v3
 
 - 察觉
@@ -201,7 +201,7 @@ Windows 8 和 Windows Server 2012 引入了新的**SMBServerConfiguration** Wind
 Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters | ForEach-Object {Get-ItemProperty $_.pspath}
 ```
 
-默认配置 = Enabled （未创建注册表项），因此将不返回 SMB1 值
+默认配置 = Enabled (未) 创建注册表项，因此不会返回 SMB1 值
 
 禁用
 
@@ -215,7 +215,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
 ```  
 
-**注意**进行这些更改之后，必须重新启动计算机。 有关详细信息，请参阅[Microsoft 服务器存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858)。 
+**注意** 进行这些更改之后，必须重新启动计算机。 有关详细信息，请参阅 [Microsoft 服务器存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858)。 
 ##### <a name="smb-v2v3-on-smb-server"></a>Smb 服务器上的 SMB v2/v3
 
 察觉  
@@ -298,7 +298,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb10 start= auto
   ```
 
-有关详细信息，请参阅[Microsoft 的服务器存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858) 
+有关详细信息，请参阅 [Microsoft 的服务器存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858) 
 ##### <a name="smb-v2v3-on-smb-client"></a>Smb v2/在 SMB 客户端上
 
 - 察觉
@@ -339,13 +339,13 @@ Default: 1 = Enabled (No registry key is created)
  
 1. 打开“组策略管理控制台”****。 右键单击应该包含新首选项的组策略对象 (GPO)，然后单击 **“编辑”**。
 
-2. 在控制台树中的 "**计算机配置**" 下，展开 "**首选项**" 文件夹，然后展开 " **Windows 设置**" 文件夹。
+2. 在控制台树中的 " **计算机配置**" 下，展开 " **首选项** " 文件夹，然后展开 " **Windows 设置** " 文件夹。
 
-3. 右键单击 "**注册表**" 节点，指向 "**新建**"，然后选择 "**注册表项**"。
+3. 右键单击 " **注册表** " 节点，指向 " **新建**"，然后选择 " **注册表项**"。
 
    ![注册表-New-Registry 项](media/detect-enable-and-disable-smbv1-v2-v3-3.png)    
  
-在 "**新建注册表属性**" 对话框中，选择以下项： 
+在 " **新建注册表属性**" 对话框中，选择以下项： 
  
 - **操作**：创建    
 - **Hive**： HKEY_LOCAL_MACHINE    
@@ -359,10 +359,10 @@ Default: 1 = Enabled (No registry key is created)
 这将禁用 SMBv1 服务器组件。 此组策略必须应用于域中的所有必要工作站、服务器和域控制器。
 
 > [!NOTE]
-> [WMI 筛选器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc947846(v=ws.10))还可以设置为排除不受支持的操作系统或所选的排除项，例如 Windows XP。
+> [WMI 筛选器](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc947846(v=ws.10)) 还可以设置为排除不受支持的操作系统或所选的排除项，例如 Windows XP。
 
 > [!IMPORTANT]
-> 当你在旧的 Windows XP 或更早版本的 Linux 和第三方系统（不支持 SMBv2 或 SMBv3）的域控制器上进行这些更改时，请小心，要求访问 SYSVOL 或正在禁用 SMB v1 的其他文件共享。     
+> 如果在不支持 SMBv2 或 SMBv3 的旧版 Windows XP 或更低版本的 Linux 和第三方系统 (不支持或) 的域控制器上进行这些更改，请务必小心。     
 
 ## <a name="disable-smbv1-client-with-group-policy"></a>通过组策略禁用 SMBv1 客户端
 
@@ -372,7 +372,7 @@ Default: 1 = Enabled (No registry key is created)
 
 **HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\mrxsmb10** 
 
-注册表项：**开始**REG_DWORD： **4**= 已禁用
+注册表项： **开始** REG_DWORD： **4**= 已禁用
 
 **HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanWorkstation** 
 
@@ -385,11 +385,11 @@ Default: 1 = Enabled (No registry key is created)
  
 1. 打开“组策略管理控制台”****。 右键单击应该包含新首选项的组策略对象 (GPO)，然后单击 **“编辑”**。
 
-2. 在控制台树中的 "**计算机配置**" 下，展开 "**首选项**" 文件夹，然后展开 " **Windows 设置**" 文件夹。
+2. 在控制台树中的 " **计算机配置**" 下，展开 " **首选项** " 文件夹，然后展开 " **Windows 设置** " 文件夹。
 
-3. 右键单击 "**注册表**" 节点，指向 "**新建**"，然后选择 "**注册表项**"。    
+3. 右键单击 " **注册表** " 节点，指向 " **新建**"，然后选择 " **注册表项**"。    
 
-4. 在 "**新建注册表属性**" 对话框中，选择以下项： 
+4. 在 " **新建注册表属性** " 对话框中，选择以下项： 
  
    - **操作**：更新
    - **Hive**： HKEY_LOCAL_MACHINE
@@ -400,9 +400,9 @@ Default: 1 = Enabled (No registry key is created)
  
    ![启动属性-常规](media/detect-enable-and-disable-smbv1-v2-v3-5.png)
 
-5. 然后删除刚刚禁用的**MRxSMB10**的依赖项。
+5. 然后删除刚刚禁用的 **MRxSMB10** 的依赖项。
 
-   在 "**新建注册表属性**" 对话框中，选择以下项： 
+   在 " **新建注册表属性** " 对话框中，选择以下项： 
  
    - **操作**：替换
    - **Hive**： HKEY_LOCAL_MACHINE
@@ -415,26 +415,26 @@ Default: 1 = Enabled (No registry key is created)
       - NSI
  
    > [!NOTE]
-   > 这三个字符串不包含项目符号（请参阅下面的屏幕截图）。
+   > 这三个字符串不会有项目符号 (请参阅以下屏幕截图) 。
 
    ![DependOnService 属性](media/detect-enable-and-disable-smbv1-v2-v3-6.png) 
 
-   在许多版本的 Windows 中，默认值都包含**MRxSMB10** ，因此通过使用此多值字符串替换它们，这实际上是将**MRxSMB10**删除为**LanmanServer**的依赖项，并从四个默认值向下转到上述三个值。
+   在许多版本的 Windows 中，默认值都包含 **MRxSMB10** ，因此通过使用此多值字符串替换它们，这实际上是将 **MRxSMB10** 删除为 **LanmanServer** 的依赖项，并从四个默认值向下转到上述三个值。
 
    > [!NOTE]
    > 使用组策略管理控制台时，不必使用引号或逗号。 只需在单独的行中键入每个条目。
 
 6. 重新启动目标系统以完成 SMB v1 的禁用。
 
-### <a name="summary"></a>摘要
+### <a name="summary"></a>总结
 
-如果所有设置都在相同的组策略对象（GPO）中，组策略管理将显示以下设置。
+如果所有设置都在 (GPO) 相同的组策略对象中，组策略管理将显示以下设置。
 
 ![组策略管理编辑器注册表](media/detect-enable-and-disable-smbv1-v2-v3-7.png) 
 
 ### <a name="testing-and-validation"></a>测试和验证
 
-配置这些配置后，允许对策略进行复制和更新。 如有必要，请在命令提示符下运行**gpupdate/force** ，然后查看目标计算机以确保正确应用注册表设置。 请确保 SMB v2 和 SMB v3 在环境中的所有其他系统上正常工作。
+配置这些配置后，允许对策略进行复制和更新。 如有必要，请在命令提示符下运行 **gpupdate/force** ，然后查看目标计算机以确保正确应用注册表设置。 请确保 SMB v2 和 SMB v3 在环境中的所有其他系统上正常工作。
 
 > [!NOTE]
 > 请勿忘记重新启动目标系统。
