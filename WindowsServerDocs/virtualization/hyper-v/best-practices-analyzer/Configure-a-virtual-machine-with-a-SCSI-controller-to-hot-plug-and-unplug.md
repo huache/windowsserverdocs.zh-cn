@@ -1,18 +1,17 @@
 ---
 title: 配置具有 SCSI 控制器的虚拟机，使其能够热插拔存储
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 511e1172-aeef-463d-b5dd-2bffae411ff1
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0b914b2d250bbcb4c5e795ec778dde8db91613ec
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9f0cdb47206c89c4da66786e8dfd118e6a05be81
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948458"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746972"
 ---
 # <a name="configure-a-virtual-machine-with-a-scsi-controller-to-be-able-to-hot-plug-and-hot-unplug-storage"></a>配置具有 SCSI 控制器的虚拟机，使其能够热插拔存储
 
@@ -27,7 +26,7 @@ ms.locfileid: "87948458"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 

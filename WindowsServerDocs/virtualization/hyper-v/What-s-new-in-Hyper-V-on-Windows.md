@@ -1,24 +1,23 @@
 ---
 title: Windows Server 2016 上的 Hyper-v 中的新增功能
 description: 概述 Hyper-v 中的新功能
-manager: dongill
 ms.topic: article
 ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 09/21/2017
-ms.openlocfilehash: aa61fd14418efe2cb5ee68c1b86e300db24c4fe4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 49ea6e324a11d2261dae8133e29d86d2c5bacae7
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996621"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746702"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 中的新增功能
 
 >适用于： Windows Server 2019，Microsoft Hyper-V Server 2016，Windows Server 2016
 
-本文介绍 Windows Server 2019、Windows Server 2016 和 Microsoft Hyper-V Server 2016 上的 Hyper-v 的新功能和更改的功能。 若要在使用 Windows Server 2012 R2 创建的虚拟机上使用新功能，并将其移动或导入到在 Windows Server 2019 或 Windows Server 2016 上运行 Hyper-v 的服务器，你将需要手动升级虚拟机配置版本。 有关说明，请参阅[升级虚拟机版本](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。
+本文介绍 Windows Server 2019、Windows Server 2016 和 Microsoft Hyper-V Server 2016 上的 Hyper-v 的新功能和更改的功能。 若要在使用 Windows Server 2012 R2 创建的虚拟机上使用新功能，并将其移动或导入到在 Windows Server 2019 或 Windows Server 2016 上运行 Hyper-v 的服务器，你将需要手动升级虚拟机配置版本。 有关说明，请参阅 [升级虚拟机版本](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。
 
 本文包含此是，以及该功能是新增功能还是更新功能。
 
@@ -56,15 +55,15 @@ ms.locfileid: "87996621"
 
 ### <a name="compatible-with-connected-standby-new"></a>与连接备用新设备兼容 \(\)
 
-在使用始终可用/始终连接 (AOAC) 电源模式的计算机上安装 Hyper-v 角色后，现在可以使用**连接待机**电源状态。
+在使用始终可用/始终连接 (AOAC) 电源模式的计算机上安装 Hyper-v 角色后，现在可以使用 **连接待机** 电源状态。
 
 ### <a name="discrete-device-assignment-new"></a>离散设备分配 \( 新\)
 
-此功能允许你授予虚拟机对某些 PCIe 硬件设备的直接和独占访问权限。 以这种方式使用设备将绕过 Hyper-V 虚拟化堆栈，使访问更迅速。 有关支持的硬件的详细信息，请参阅[Windows Server 2016 上的 Hyper-v 系统要求](System-requirements-for-Hyper-V-on-Windows.md)中的 "离散设备分配"。 有关详细信息，包括如何使用此功能和注意事项，请参阅虚拟化博客中的发布 "[离散设备分配—说明和背景](https://blogs.technet.microsoft.com/virtualization/2015/11/19/discrete-device-assignment-description-and-background/)"。
+此功能允许你授予虚拟机对某些 PCIe 硬件设备的直接和独占访问权限。 以这种方式使用设备将绕过 Hyper-V 虚拟化堆栈，使访问更迅速。 有关支持的硬件的详细信息，请参阅 [Windows Server 2016 上的 Hyper-v 系统要求](System-requirements-for-Hyper-V-on-Windows.md)中的 "离散设备分配"。 有关详细信息，包括如何使用此功能和注意事项，请参阅虚拟化博客中的发布 "[离散设备分配—说明和背景](https://blogs.technet.microsoft.com/virtualization/2015/11/19/discrete-device-assignment-description-and-background/)"。
 
 ### <a name="encryption-support-for-the-operating-system-disk-in-generation-1-virtual-machines-new"></a>第1代虚拟机中的操作系统磁盘的加密支持 \( new) 
 
-你现在可以使用第1代虚拟机中的 BitLocker 驱动器加密来保护操作系统磁盘。 新功能密钥存储创建一个小型专用驱动器来存储系统驱动器的 BitLocker 密钥。 这是为了实现此目的，而不是使用虚拟的受信任的平台模块 (TPM) ，该模块仅在第2代虚拟机中可用。 若要解密磁盘并启动虚拟机，Hyper-v 主机必须是已获授权的受保护构造的一部分，或者是虚拟机的一个保护者的私钥。 密钥存储需要版本8虚拟机。 有关虚拟机版本的信息，请参阅在[windows 10 或 Windows Server 2016 上的 hyper-v 中升级虚拟机版本](./deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server.md)。
+你现在可以使用第1代虚拟机中的 BitLocker 驱动器加密来保护操作系统磁盘。 新功能密钥存储创建一个小型专用驱动器来存储系统驱动器的 BitLocker 密钥。 这是为了实现此目的，而不是使用虚拟的受信任的平台模块 (TPM) ，该模块仅在第2代虚拟机中可用。 若要解密磁盘并启动虚拟机，Hyper-v 主机必须是已获授权的受保护构造的一部分，或者是虚拟机的一个保护者的私钥。 密钥存储需要版本8虚拟机。 有关虚拟机版本的信息，请参阅在 [windows 10 或 Windows Server 2016 上的 hyper-v 中升级虚拟机版本](./deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server.md)。
 
 ### <a name="host-resource-protection-new"></a>主机资源保护 \( 新建\)
 
@@ -74,7 +73,7 @@ ms.locfileid: "87996621"
 Set-VMProcessor TestVM -EnableHostResourceProtection $true
 ```
 
-有关此 cmdlet 的详细信息，请参阅[VMProcessor](/powershell/module/hyper-v/set-vmprocessor)。
+有关此 cmdlet 的详细信息，请参阅 [VMProcessor](/powershell/module/hyper-v/set-vmprocessor)。
 
 ### <a name="hot-add-and-remove-for-network-adapters-and-memory-new"></a>网络适配器和内存的热添加和删除 \(\)
 
@@ -84,15 +83,15 @@ Set-VMProcessor TestVM -EnableHostResourceProtection $true
 
 ### <a name="hyper-v-manager-improvements-updated"></a>Hyper-v 管理器改进 \( 已更新\)
 
--   **备用凭据支持**-当你连接到另一台 Windows Server 2016 或 windows 10 远程主机时，你现在可以在 Hyper-v 管理器中使用一组不同的凭据。 你还可以保存这些凭据，以便更轻松地登录。
+-   **备用凭据支持** -当你连接到另一台 Windows Server 2016 或 windows 10 远程主机时，你现在可以在 Hyper-v 管理器中使用一组不同的凭据。 你还可以保存这些凭据，以便更轻松地登录。
 
--   **管理早期版本**-在 windows server 2019、windows server 2016 和 windows 10 中，可以在 windows server 2012、windows 8、windows Server 2012 R2 和 Windows 8.1 上管理运行 hyper-v 的计算机。
+-   **管理早期版本** -在 windows server 2019、windows server 2016 和 windows 10 中，可以在 windows server 2012、windows 8、windows Server 2012 R2 和 Windows 8.1 上管理运行 hyper-v 的计算机。
 
--   **更新的管理协议**-Hyper-v 管理器现在使用 ws-management 协议与远程 hyper-v 主机进行通信，该协议允许 CredSSP、KERBEROS 或 NTLM 身份验证。 使用 CredSSP 连接到远程 Hyper-v 主机时，可以执行实时迁移，而无需在 Active Directory 中启用约束委派。 基于 WS-I 的基础结构还可以更轻松地启用用于远程管理的主机。 WS-MAN 通过端口 80（该端口默认处于打开状态）进行连接。
+-   **更新的管理协议** -Hyper-v 管理器现在使用 ws-management 协议与远程 hyper-v 主机进行通信，该协议允许 CredSSP、KERBEROS 或 NTLM 身份验证。 使用 CredSSP 连接到远程 Hyper-v 主机时，可以执行实时迁移，而无需在 Active Directory 中启用约束委派。 基于 WS-I 的基础结构还可以更轻松地启用用于远程管理的主机。 WS-MAN 通过端口 80（该端口默认处于打开状态）进行连接。
 
 ### <a name="integration-services-delivered-through-windows-update-updated"></a>通过 Windows 更新提供的集成服务 \( 已更新\)
 
-针对 Windows 来宾的集成服务更新通过 Windows 更新分配。 对于服务提供商和私有云托管商，这会将应用更新的控制权置于拥有虚拟机的租户手中。 租户现在可以通过单个方法为其 Windows 虚拟机更新所有更新（包括集成服务）。 有关适用于 Linux 来宾的 integration services 的详细信息，请参阅[hyper-v 上的 linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)。
+针对 Windows 来宾的集成服务更新通过 Windows 更新分配。 对于服务提供商和私有云托管商，这会将应用更新的控制权置于拥有虚拟机的租户手中。 租户现在可以通过单个方法为其 Windows 虚拟机更新所有更新（包括集成服务）。 有关适用于 Linux 来宾的 integration services 的详细信息，请参阅 [hyper-v 上的 linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)。
 
 > [!IMPORTANT]
 > 不再需要 vmguest.iso 映像文件，因此它不会包含在 Windows Server 2016 上的 Hyper-v 中。
@@ -105,11 +104,11 @@ Set-VMProcessor TestVM -EnableHostResourceProtection $true
 Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ```
 
-有关 Hyper-v 上的 Linux 虚拟机的详细信息，请参阅[hyper-v 上的 linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)。 有关 cmdlet 的详细信息，请参阅[set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware)。
+有关 Hyper-v 上的 Linux 虚拟机的详细信息，请参阅 [hyper-v 上的 linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)。 有关 cmdlet 的详细信息，请参阅 [set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware)。
 
 ### <a name="more-memory-and-processors-for-generation-2-virtual-machines-and-hyper-v-hosts-updated"></a>第2代虚拟机和 Hyper-v 主机的内存和处理器 \( 更新\)
 
-从版本8开始，第2代虚拟机可以使用更多的内存和虚拟处理器。 与以前支持的内存和虚拟处理器相比，还可以配置主机。 这些更改支持新方案，例如运行电子商务大型内存中数据库，以便 (OLTP) 和数据仓库 (DW) 进行联机事务处理。 Windows Server 博客最近发布了一个虚拟机的性能结果，其中包含 5.5 tb 的内存和128个运行 4 TB 内存中数据库的虚拟处理器。 性能大于物理服务器的95%。 有关详细信息，请参阅[Windows Server 2016 hyper-v 大规模 VM 性能，用于内存中事务处理](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/)。 有关虚拟机版本的详细信息，请参阅在[windows 10 或 Windows Server 2016 上的 hyper-v 中升级虚拟机版本](./deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。 有关受支持的最大配置的完整列表，请参阅[规划 Windows Server 2016 中的 hyper-v 可伸缩性](./plan/plan-hyper-v-scalability-in-windows-server.md)。
+从版本8开始，第2代虚拟机可以使用更多的内存和虚拟处理器。 与以前支持的内存和虚拟处理器相比，还可以配置主机。 这些更改支持新方案，例如运行电子商务大型内存中数据库，以便 (OLTP) 和数据仓库 (DW) 进行联机事务处理。 Windows Server 博客最近发布了一个虚拟机的性能结果，其中包含 5.5 tb 的内存和128个运行 4 TB 内存中数据库的虚拟处理器。 性能大于物理服务器的95%。 有关详细信息，请参阅 [Windows Server 2016 hyper-v 大规模 VM 性能，用于内存中事务处理](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/)。 有关虚拟机版本的详细信息，请参阅在 [windows 10 或 Windows Server 2016 上的 hyper-v 中升级虚拟机版本](./deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。 有关受支持的最大配置的完整列表，请参阅 [规划 Windows Server 2016 中的 hyper-v 可伸缩性](./plan/plan-hyper-v-scalability-in-windows-server.md)。
 
 ### <a name="nested-virtualization-new"></a>嵌套虚拟化 \( 新\)
 
@@ -119,23 +118,23 @@ Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 
 -   具有 Intel VT-x 的处理器（嵌套虚拟化目前仅适用于 Intel 处理器）。
 
-有关详细信息和说明，请参阅[使用嵌套虚拟化在虚拟机中运行 hyper-v](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)。
+有关详细信息和说明，请参阅 [使用嵌套虚拟化在虚拟机中运行 hyper-v](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)。
 
 ### <a name="networking-features-new"></a>新增网络功能 \(\)
 
 新网络功能包括：
 
--   **远程直接内存访问 (RDMA) 和交换机嵌入式组合 (SET)**。 无论是否同时使用 SET，都可以在绑定到 Hyper-V 虚拟交换机的网络适配器上设置 RDMA。 SET 提供与 NIC 组合具有某些相同功能的虚拟交换机。 有关详细信息，请参阅[ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (设置) ](../hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)。
+-   **远程直接内存访问 (RDMA) 和交换机嵌入式组合 (SET)**。 无论是否同时使用 SET，都可以在绑定到 Hyper-V 虚拟交换机的网络适配器上设置 RDMA。 SET 提供与 NIC 组合具有某些相同功能的虚拟交换机。 有关详细信息，请参阅 [ (RDMA 的远程直接内存访问) 和交换机嵌入组合 (设置) ](../hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)。
 
 -   **虚拟机多队列 (VMMQ)**。 通过为每台虚拟机分配多个硬件队列提升 VMQ 吞吐量。  对于一台虚拟机，默认的一个队列变为一组队列，而流量在队列之间传播。
 
 -   **软件定义网络的服务质量 (QoS)**。 通过默认类带宽内的虚拟交换机管理流量的默认类。
 
-有关新网络功能的详细信息，请参阅[网络中的新增](../../networking/What-s-New-in-Networking.md)功能。
+有关新网络功能的详细信息，请参阅 [网络中的新增](../../networking/What-s-New-in-Networking.md)功能。
 
 ### <a name="production-checkpoints-new"></a>生产检查点 \( 新\)
 
-生产检查点是虚拟机的 "时间点" 映像。 当虚拟机运行生产工作负荷时，这些应用程序会提供一种方法来应用符合支持策略的检查点。 生产检查点基于来宾内的备份技术，而不是已保存状态。 对于 Windows 虚拟机，使用卷快照服务 (VSS)。 对于 Linux 虚拟机，会刷新文件系统缓冲区，以创建与文件系统一致的检查点。 如果要使用基于已保存状态的检查点，请改为选择标准检查点。 有关详细信息，请参阅[在 hyper-v 中选择标准或生产检查点](manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)。
+生产检查点是虚拟机的 "时间点" 映像。 当虚拟机运行生产工作负荷时，这些应用程序会提供一种方法来应用符合支持策略的检查点。 生产检查点基于来宾内的备份技术，而不是已保存状态。 对于 Windows 虚拟机，使用卷快照服务 (VSS)。 对于 Linux 虚拟机，会刷新文件系统缓冲区，以创建与文件系统一致的检查点。 如果要使用基于已保存状态的检查点，请改为选择标准检查点。 有关详细信息，请参阅 [在 hyper-v 中选择标准或生产检查点](manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)。
 
 > [!IMPORTANT]
 > 新的虚拟机将默认使用生产检查点。
@@ -163,41 +162,41 @@ Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 
 -   可以启用新的 Hyper-v 功能。
 
--   若要使新的虚拟机功能可用，请使用 VmConfigurationVersion cmdlet 手动更新虚拟机配置级别。 有关说明，请参阅[升级虚拟机版本](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。
+-   若要使新的虚拟机功能可用，请使用 VmConfigurationVersion cmdlet 手动更新虚拟机配置级别。 有关说明，请参阅 [升级虚拟机版本](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。
 -   不能将节点添加到运行 Windows Server 2012 R2 的 Hyper-V 群集。
 
 > [!NOTE]
 > Windows 10 上的 hyper-v 不支持故障转移群集。
 
-有关详细信息和说明，请参阅[群集操作系统滚动升级](https://technet.microsoft.com/library/dn850430.aspx)。
+有关详细信息和说明，请参阅 [群集操作系统滚动升级](https://technet.microsoft.com/library/dn850430.aspx)。
 
 ### <a name="shared-virtual-hard-disks-updated"></a>已更新共享的虚拟硬盘 \(\)
 你现在可以将共享的虚拟硬盘大小 ( .vhdx 文件) 用于来宾群集，而无需停机。 当虚拟机处于联机状态时，可以扩大或收缩共享的虚拟硬盘。 来宾群集现在还可以通过使用 Hyper-v 副本进行灾难恢复来保护共享的虚拟硬盘。
 
-启用集合上的复制。 对集合启用复制**仅通过 WMI 接口公开**。 有关更多详细信息，请参阅[Msvm_CollectionReplicationService 类](/previous-versions/windows/desktop/clushyperv/msvm-collectionreplicationservice)的文档。 **不能通过 PowerShell cmdlet 或 UI 管理集合的复制。** Vm 应位于作为 Hyper-v 群集一部分的主机上，以访问特定于集合的功能。 这包括在独立主机上共享 VHD 共享 vhd 不受 Hyper-v 副本支持。
+启用集合上的复制。 对集合启用复制 **仅通过 WMI 接口公开**。 有关更多详细信息，请参阅 [Msvm_CollectionReplicationService 类](/previous-versions/windows/desktop/clushyperv/msvm-collectionreplicationservice) 的文档。 **不能通过 PowerShell cmdlet 或 UI 管理集合的复制。** Vm 应位于作为 Hyper-v 群集一部分的主机上，以访问特定于集合的功能。 这包括在独立主机上共享 VHD 共享 vhd 不受 Hyper-v 副本支持。
 
-遵循[虚拟硬盘共享](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281956(v=ws.11))中共享的 Vhd 指南概述，并确保共享 vhd 是来宾群集的一部分。
+遵循 [虚拟硬盘共享](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281956(v=ws.11))中共享的 Vhd 指南概述，并确保共享 vhd 是来宾群集的一部分。
 
 具有共享 VHD 但没有关联来宾群集的集合不能为集合 (创建参考点，不管共享 VHD 是包含在引用点创建中还是不) 。
 
 ### <a name="virtual-machine-backupnew"></a>新虚拟机备份 \(\)
 
-如果要备份单个虚拟机 (不管主机是否已群集或未) ，都不应使用 VM 组。  也不应使用快照集合。 VM 组和快照集合仅用于备份使用共享 vhdx 的来宾群集。 相反，你应该使用[HYPER-V WMI v2 提供程序](/windows/win32/hyperv_v2/windows-virtualization-portal)拍摄快照。 同样，不要使用[故障转移群集 WMI 提供程序](/previous-versions/windows/desktop/clushyperv/failover-clustering-hyper-v-wmi-provider-portal)。
+如果要备份单个虚拟机 (不管主机是否已群集或未) ，都不应使用 VM 组。  也不应使用快照集合。 VM 组和快照集合仅用于备份使用共享 vhdx 的来宾群集。 相反，你应该使用 [HYPER-V WMI v2 提供程序](/windows/win32/hyperv_v2/windows-virtualization-portal)拍摄快照。 同样，不要使用 [故障转移群集 WMI 提供程序](/previous-versions/windows/desktop/clushyperv/failover-clustering-hyper-v-wmi-provider-portal)。
 
 ### <a name="shielded-virtual-machines-new"></a>新的防护虚拟机 \(\)
 
-受防护的虚拟机使用多种功能，使主机上的 Hyper-v 管理员和恶意软件难以检查、篡改或从受防护的虚拟机的状态中盗取数据。 数据和状态是加密的，Hyper-v 管理员看不到视频输出和磁盘，只能在主机保护者服务器确定的已知的正常主机上运行虚拟机限制。 有关详细信息，请参阅[受保护的构造和受防护的 vm](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)。
+受防护的虚拟机使用多种功能，使主机上的 Hyper-v 管理员和恶意软件难以检查、篡改或从受防护的虚拟机的状态中盗取数据。 数据和状态是加密的，Hyper-v 管理员看不到视频输出和磁盘，只能在主机保护者服务器确定的已知的正常主机上运行虚拟机限制。 有关详细信息，请参阅 [受保护的构造和受防护的 vm](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)。
 
 > [!NOTE]
 > 受防护的虚拟机与 Hyper-v 副本兼容。 若要复制受防护的虚拟机，您要复制到的主机必须有权运行受防护的虚拟机。
 
 ### <a name="start-order-priority-for-clustered-virtual-machines-new"></a>群集虚拟机的启动顺序优先级 \( 新建\)
 
-此功能使你可以更好地控制首先启动或重新启动哪些群集虚拟机。 这样就可以更轻松地启动虚拟机，这些虚拟机在使用这些服务的虚拟机之前提供服务。 定义集，将虚拟机放置在集中，并指定依赖项。 使用 Windows PowerShell cmdlet 管理这些集，如[ClusterGroupSet](/powershell/module/failoverclusters/new-clustergroupset)、 [ClusterGroupSet](/powershell/module/failoverclusters/get-clustergroupset)和[ClusterGroupSetDependency](/powershell/module/failoverclusters/add-clustergroupsetdependency)。
+此功能使你可以更好地控制首先启动或重新启动哪些群集虚拟机。 这样就可以更轻松地启动虚拟机，这些虚拟机在使用这些服务的虚拟机之前提供服务。 定义集，将虚拟机放置在集中，并指定依赖项。 使用 Windows PowerShell cmdlet 管理这些集，如 [ClusterGroupSet](/powershell/module/failoverclusters/new-clustergroupset)、 [ClusterGroupSet](/powershell/module/failoverclusters/get-clustergroupset)和 [ClusterGroupSetDependency](/powershell/module/failoverclusters/add-clustergroupsetdependency)。
 .
 ### <a name="storage-quality-of-service-qos-updated"></a>服务的存储质量 (QoS) \( 更新\)
 
-你现在可以在横向扩展文件服务器上创建存储 QoS 策略，并将它们分配给 Hyper-V 虚拟机上的一个或多个虚拟磁盘。 存储性能将随存储负载波动自动重新调整以符合策略。 有关详细信息，请参阅[存储服务质量](../../storage/storage-qos/storage-qos-overview.md)。
+你现在可以在横向扩展文件服务器上创建存储 QoS 策略，并将它们分配给 Hyper-V 虚拟机上的一个或多个虚拟磁盘。 存储性能将随存储负载波动自动重新调整以符合策略。 有关详细信息，请参阅 [存储服务质量](../../storage/storage-qos/storage-qos-overview.md)。
 
 ### <a name="virtual-machine-configuration-file-format-updated"></a>已更新虚拟机配置文件格式 \(\)
 
@@ -212,16 +211,16 @@ Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 
 如果将虚拟机移动或导入到在 Windows server 2016 上运行 Hyper-v 的服务器或 windows server 2012 R2 上的 Windows Server 2019，则不会自动更新虚拟机的配置。 这意味着可以将虚拟机移动回运行 Windows Server 2012 R2 的服务器。 但这也意味着在你手动更新虚拟机配置的版本前，不能使用新的虚拟机功能。
 
-有关检查和升级版本的说明，请参阅[升级虚拟机版本](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。 本文还列出了其中引入了一些功能的版本。
+有关检查和升级版本的说明，请参阅 [升级虚拟机版本](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。 本文还列出了其中引入了一些功能的版本。
 
 > [!IMPORTANT]
 > -   更新版本后，不能将虚拟机移动到运行 Windows Server 2012 R2 的服务器。
 > -   不能将配置降级到以前的版本。
-> -   当群集功能级别为 Windows Server 2012 R2 时，Hyper-v 群集上的[VMVersion](/powershell/module/hyper-v/update-vmversion) cmdlet 将被阻止。
+> -   当群集功能级别为 Windows Server 2012 R2 时，Hyper-v 群集上的 [VMVersion](/powershell/module/hyper-v/update-vmversion) cmdlet 将被阻止。
 
 ### <a name="virtualization-based-security-for-generation-2-virtual-machines-new"></a>第2代虚拟机的基于虚拟化的安全性 \( new) 
 
-基于虚拟化的安全功能（如 Device Guard 和 Credential Guard）提供对操作系统的增强保护，防止恶意软件攻击。 基于虚拟化的安全在第2代来宾虚拟机中提供，从版本8开始。 有关虚拟机版本的信息，请参阅在[windows 10 或 Windows Server 2016 上的 hyper-v 中升级虚拟机版本](./deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server.md)。
+基于虚拟化的安全功能（如 Device Guard 和 Credential Guard）提供对操作系统的增强保护，防止恶意软件攻击。 基于虚拟化的安全在第2代来宾虚拟机中提供，从版本8开始。 有关虚拟机版本的信息，请参阅在 [windows 10 或 Windows Server 2016 上的 hyper-v 中升级虚拟机版本](./deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server.md)。
 
 ### <a name="windows-containers-new"></a>Windows 容器 \( 新增\)
 
@@ -237,7 +236,7 @@ Windows 容器允许许多独立的应用程序在一台计算机系统上运行
 
 -   能够限制容器资源
 
-有关详细信息，包括快速入门指南，请参阅[Windows 容器文档](/virtualization/windowscontainers/index)。
+有关详细信息，包括快速入门指南，请参阅 [Windows 容器文档](/virtualization/windowscontainers/index)。
 
 ### <a name="windows-powershell-direct-new"></a>Windows PowerShell 直接 \( 新建\)
 
@@ -251,4 +250,4 @@ Windows PowerShell Direct 是使用 Hyper-v 管理员连接到 Hyper-v 主机上
 
 这些工具工作良好，但具有折衷： VMConnect 可靠，但可能难以实现自动化。 远程 PowerShell 功能强大，但可能难以设置和维护。 随着 Hyper-v 部署的增长，这些折衷可能会变得更加重要。 Windows PowerShell Direct 通过提供功能强大的脚本和自动化体验来解决这种情况，这与使用 VMConnect 一样简单。
 
-有关要求和说明，请参阅[通过 PowerShell Direct 管理 Windows 虚拟机](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)。
+有关要求和说明，请参阅 [通过 PowerShell Direct 管理 Windows 虚拟机](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)。

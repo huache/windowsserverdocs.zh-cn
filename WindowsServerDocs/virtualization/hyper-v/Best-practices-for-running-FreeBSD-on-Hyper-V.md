@@ -1,18 +1,17 @@
 ---
 title: 在 Hyper-v 上运行 FreeBSD 的最佳做法
 description: 提供有关在虚拟机上运行 FreeBSD 的建议
-manager: dongill
 ms.topic: article
 ms.assetid: 0c66f1c8-2606-43a3-b4cc-166acaaf2d2a
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 01/09/2017
-ms.openlocfilehash: f0903fa53e5a9384e3940c53fb880090108aa492
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 09b6f532bac2b57fd8334556501c6197fa3036cc
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968604"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747152"
 ---
 # <a name="best-practices-for-running-freebsd-on-hyper-v"></a>在 Hyper-v 上运行 FreeBSD 的最佳做法
 
@@ -22,7 +21,7 @@ ms.locfileid: "87968604"
 
 ## <a name="enable-carp-in-freebsd-102-on-hyper-v"></a>在 Hyper-v 上的 FreeBSD 10.2 中启用 CARP
 
- (CARP) 的常见地址冗余协议允许多台主机共享相同的 IP 地址和虚拟主机 ID (VHID) ，以帮助提供一个或多个服务的高可用性。 如果一个或多个主机出现故障，其他主机会以透明方式接管，因此用户不会注意到服务失败。若要在 FreeBSD 10.2 中使用 CARP，请按照[FreeBSD 手册](https://www.freebsd.org/doc/en/books/handbook/carp.html)中的说明进行操作，然后在 Hyper-v 管理器中执行以下操作。
+ (CARP) 的常见地址冗余协议允许多台主机共享相同的 IP 地址和虚拟主机 ID (VHID) ，以帮助提供一个或多个服务的高可用性。 如果一个或多个主机出现故障，其他主机会以透明方式接管，因此用户不会注意到服务失败。若要在 FreeBSD 10.2 中使用 CARP，请按照 [FreeBSD 手册](https://www.freebsd.org/doc/en/books/handbook/carp.html) 中的说明进行操作，然后在 Hyper-v 管理器中执行以下操作。
 
 * 验证虚拟机是否具有网络适配器，并为其分配一个虚拟交换机。 选择虚拟机并选择 "**操作**  >  **设置**"。
 
@@ -32,13 +31,13 @@ ms.locfileid: "87968604"
 
    1. 选择虚拟机并选择 "**操作**  >  **设置**"。
 
-   2. 展开 "**网络适配器**"，然后选择 "**高级功能**"。
+   2. 展开 " **网络适配器** "，然后选择 " **高级功能**"。
 
-   3. 选择 "**启用 MAC 地址欺骗**"。
+   3. 选择 " **启用 MAC 地址欺骗**"。
 
 ## <a name="create-labels-for-disk-devices"></a>为磁盘设备创建标签
 
-在启动过程中，将在发现新设备时创建设备节点。 这可能意味着在添加新设备时，设备名称可能会改变。 如果在启动过程中出现根装入错误，则应为每个 IDE 分区创建标签，以避免冲突和更改。 若要了解如何操作，请参阅为[磁盘设备添加标签](https://www.freebsd.org/doc/handbook/geom-glabel.html)。 下面是示例。
+在启动过程中，将在发现新设备时创建设备节点。 这可能意味着在添加新设备时，设备名称可能会改变。 如果在启动过程中出现根装入错误，则应为每个 IDE 分区创建标签，以避免冲突和更改。 若要了解如何操作，请参阅为 [磁盘设备添加标签](https://www.freebsd.org/doc/handbook/geom-glabel.html)。 下面是示例。
 
 > [!IMPORTANT]
 > 在进行任何更改之前，请创建 fstab 的备份副本。
@@ -58,7 +57,7 @@ ms.locfileid: "87968604"
    # exit
    ```
 
-   有关几何标签的其他信息，请参阅：[标记磁盘设备](https://www.freebsd.org/doc/handbook/geom-glabel.html)。
+   有关几何标签的其他信息，请参阅： [标记磁盘设备](https://www.freebsd.org/doc/handbook/geom-glabel.html)。
 
 3. 系统将继续执行多用户启动。 启动完成后，编辑/etc/fstab 并将常规设备名称替换为各自的标签。 最终的/etc/fstab 将如下所示：
 

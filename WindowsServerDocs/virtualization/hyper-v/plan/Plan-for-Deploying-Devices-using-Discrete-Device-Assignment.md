@@ -2,15 +2,15 @@
 title: Plan for deploying devices using Discrete Device Assignment（使用离散设备分配计划部署设备）
 description: 了解如何在 Windows Server 中使用 DDA
 ms.topic: article
-author: chrishuybregts
-ms.author: chrihu
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 08/21/2019
-ms.openlocfilehash: 189a4f399ac76f1b7f30c5b45725c3a4fb6a8215
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f53cef755d52fe1fc1e1bc540f89e7c243007eb3
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989858"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745952"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>使用离散设备分配计划部署设备
 >适用于： Microsoft Hyper-V Server 2016、Windows Server 2016、Microsoft Hyper-V Server 2019、Windows Server 2019
@@ -19,25 +19,25 @@ ms.locfileid: "87989858"
 
 对于离散设备分配的初始版本，我们将重点放在 Microsoft 正式支持的两个设备类：图形适配器和 NVMe 存储设备。  其他设备可能工作，硬件供应商能够为这些设备提供支持声明。  对于这些其他设备，请与这些硬件供应商联系以获得支持。
 
-若要了解有关 GPU 虚拟化的其他方法，请参阅[在 Windows Server 中规划 GPU 加速](plan-for-gpu-acceleration-in-windows-server.md)。 如果你已准备好尝试使用离散设备分配，则可以跳转到[使用离散设备分配部署图形设备](../deploy/Deploying-graphics-devices-using-dda.md)，或[使用离散设备分配部署存储设备](../deploy/Deploying-storage-devices-using-dda.md)开始使用。
+若要了解有关 GPU 虚拟化的其他方法，请参阅 [在 Windows Server 中规划 GPU 加速](plan-for-gpu-acceleration-in-windows-server.md)。 如果你已准备好尝试使用离散设备分配，则可以跳转到 [使用离散设备分配部署图形设备](../deploy/Deploying-graphics-devices-using-dda.md) ，或 [使用离散设备分配部署存储设备](../deploy/Deploying-storage-devices-using-dda.md) 开始使用。
 
 ## <a name="supported-virtual-machines-and-guest-operating-systems"></a>支持的虚拟机和来宾操作系统
 第1代或第2代 Vm 支持离散设备分配。  此外，支持的来宾包括 Windows 10、Windows Server 2019、Windows Server 2016、应用了[KB 3133690](https://support.microsoft.com/kb/3133690)的 windows server 2012R2 和[Linux 操作系统](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)的各种分发。
 
 ## <a name="system-requirements"></a>系统要求
-除了[适用于 Windows Server 的系统要求](../../../get-started/system-requirements.md)以及 Hyper-v 的[系统要求](../System-requirements-for-Hyper-V-on-Windows.md)外，离散设备分配还需要服务器类硬件，该硬件能够向操作系统控制配置 PCIE 构造 (本机 PCI Express 控制) 。 此外，PCIe 根复杂必须支持 "访问控制服务" (ACS) ，这使 Hyper-v 可以通过 i/o MMU 强制所有 PCIe 流量。
+除了 [适用于 Windows Server 的系统要求](../../../get-started/system-requirements.md) 以及 Hyper-v 的 [系统要求](../System-requirements-for-Hyper-V-on-Windows.md)外，离散设备分配还需要服务器类硬件，该硬件能够向操作系统控制配置 PCIE 构造 (本机 PCI Express 控制) 。 此外，PCIe 根复杂必须支持 "访问控制服务" (ACS) ，这使 Hyper-v 可以通过 i/o MMU 强制所有 PCIe 流量。
 
 通常不会在服务器的 BIOS 中直接公开这些功能，这些功能通常隐藏在其他设置后面。  例如，SR-IOV 支持需要相同的功能，在 BIOS 中，你可能需要设置 "Enable SR-IOV"。  如果无法识别 BIOS 中的正确设置，请联系你的系统供应商。
 
-为了帮助确保硬件硬件能够分配不同的设备，我们的工程师将[计算机配置文件脚本](#machine-profile-script)组合在一起，你可以在已启用 hyper-v 的主机上运行该脚本，以测试你的服务器是否安装正确以及哪些设备能够进行离散设备分配。
+为了帮助确保硬件硬件能够分配不同的设备，我们的工程师将 [计算机配置文件脚本](#machine-profile-script) 组合在一起，你可以在已启用 hyper-v 的主机上运行该脚本，以测试你的服务器是否安装正确以及哪些设备能够进行离散设备分配。
 
 ## <a name="device-requirements"></a>设备要求
-并非每个 PCIe 设备都可用于离散设备分配。  例如，不支持使用旧 (INTx 的旧设备) PCI 中断。 Jake Oshin 的[博客文章](https://blogs.technet.microsoft.com/virtualization/2015/11/20/discrete-device-assignment-machines-and-devices/)更详细-但是，对于使用者，运行[计算机配置文件脚本](#machine-profile-script)将显示哪些设备能够用于离散设备分配。
+并非每个 PCIe 设备都可用于离散设备分配。  例如，不支持使用旧 (INTx 的旧设备) PCI 中断。 Jake Oshin 的 [博客文章](https://blogs.technet.microsoft.com/virtualization/2015/11/20/discrete-device-assignment-machines-and-devices/) 更详细-但是，对于使用者，运行 [计算机配置文件脚本](#machine-profile-script) 将显示哪些设备能够用于离散设备分配。
 
 有关更多详细信息，设备制造商可以联系 Microsoft 代表。
 
 ## <a name="device-driver"></a>设备驱动程序
-由于离散设备分配将整个 PCIe 设备传递到来宾 VM，因此在 VM 内装入设备之前无需安装主机驱动程序。  主机上的唯一要求是可以确定设备的[PCIe 位置路径](#pcie-location-path)。  如果这有助于识别设备，则可以选择安装设备的驱动程序。  例如，主机上未安装设备驱动程序的 GPU 可能会显示为 Microsoft 基本渲染设备。  如果安装了设备驱动程序，则可能会显示其制造商和型号。
+由于离散设备分配将整个 PCIe 设备传递到来宾 VM，因此在 VM 内装入设备之前无需安装主机驱动程序。  主机上的唯一要求是可以确定设备的 [PCIe 位置路径](#pcie-location-path) 。  如果这有助于识别设备，则可以选择安装设备的驱动程序。  例如，主机上未安装设备驱动程序的 GPU 可能会显示为 Microsoft 基本渲染设备。  如果安装了设备驱动程序，则可能会显示其制造商和型号。
 
 在来宾内装入设备后，现在可以在来宾虚拟机内像平时一样安装制造商的设备驱动程序。
 
@@ -73,7 +73,7 @@ Set-VM -LowMemoryMappedIoSpace 3Gb -VMName $vm
 Set-VM -HighMemoryMappedIoSpace 33280Mb -VMName $vm
 ```
 
-确定要分配的 MMIO 空间的最简单方法是使用[计算机配置文件脚本](#machine-profile-script)。 若要下载并运行计算机配置文件脚本，请在 PowerShell 控制台中运行以下命令：
+确定要分配的 MMIO 空间的最简单方法是使用 [计算机配置文件脚本](#machine-profile-script)。 若要下载并运行计算机配置文件脚本，请在 PowerShell 控制台中运行以下命令：
 
 ```PowerShell
 curl -o SurveyDDA.ps1 https://raw.githubusercontent.com/MicrosoftDocs/Virtualization-Documentation/live/hyperv-tools/DiscreteDeviceAssignment/SurveyDDA.ps1
@@ -97,7 +97,7 @@ Express Endpoint -- more secure.
 
 如果用户要分配单个 K520 GPU （如上面的示例所示），则必须将 VM 的 MMIO 空间设置为计算机配置文件脚本输出的值，并将缓冲区设置为-176 MB + 512 MB。 如果用户要分配三个 K520 Gpu，则必须将 MMIO 空间设置为 176 MB 加上一个缓冲区，或 528 MB + 512 MB。
 
-若要深入了解 MMIO 空间，请参阅 TechCommunity 博客上的[离散设备分配-gpu](https://techcommunity.microsoft.com/t5/Virtualization/Discrete-Device-Assignment-GPUs/ba-p/382266) 。
+若要深入了解 MMIO 空间，请参阅 TechCommunity 博客上的 [离散设备分配-gpu](https://techcommunity.microsoft.com/t5/Virtualization/Discrete-Device-Assignment-GPUs/ba-p/382266) 。
 
 ## <a name="machine-profile-script"></a>计算机配置文件脚本
 为了简化确定服务器的配置是否正确以及哪些设备可通过使用离散设备分配进行传递，我们的一位工程师将以下 PowerShell 脚本组合在一起： [SurveyDDA.ps1。](https://github.com/Microsoft/Virtualization-Documentation/blob/live/hyperv-tools/DiscreteDeviceAssignment/SurveyDDA.ps1)
@@ -106,6 +106,6 @@ Express Endpoint -- more secure.
 
 如果系统未正确配置为支持离散设备分配，则该工具将显示错误消息，显示错误消息。 如果该工具发现系统配置正确，则它将枚举它可以在 PCIe 总线上找到的所有设备。
 
-对于它找到的每个设备，该工具都将显示它是否能够与离散设备分配一起使用。 如果将设备标识为与离散设备分配兼容，则该脚本将提供原因。  如果设备成功标识为兼容，则会显示设备的位置路径。  此外，如果该设备需要[MMIO 空间](#mmio-space)，则也会显示它。
+对于它找到的每个设备，该工具都将显示它是否能够与离散设备分配一起使用。 如果将设备标识为与离散设备分配兼容，则该脚本将提供原因。  如果设备成功标识为兼容，则会显示设备的位置路径。  此外，如果该设备需要 [MMIO 空间](#mmio-space)，则也会显示它。
 
 ![SurveyDDA.ps1](./images/hyper-v-surveydda-ps1.png)

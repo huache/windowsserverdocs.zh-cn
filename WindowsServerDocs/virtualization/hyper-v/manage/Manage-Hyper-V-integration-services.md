@@ -1,18 +1,17 @@
 ---
 title: 管理 Hyper-v Integration Services
 description: 描述如何打开和关闭 integration services 并在需要时进行安装
-author: kbdazure
-ms.author: kathydav
-manager: dongill
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 12/20/2016
 ms.topic: article
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 5d5f69e1c71df9746421329d8fdf11a9786a948b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9056beec7d07d1657ece3703f461ecfe5d9cd0fc
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996753"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746442"
 ---
 # <a name="manage-hyper-v-integration-services"></a>管理 Hyper-v Integration Services
 
@@ -20,22 +19,22 @@ ms.locfileid: "87996753"
 
 Hyper-v Integration Services 通过与 Hyper-v 主机进行双向通信来增强虚拟机性能并提供便利功能。 其中许多服务都是很便利（如来宾文件复制），而其他服务则对虚拟机的功能很重要，例如合成设备驱动程序。 这组服务和驱动程序有时称为 "集成组件"。 可以控制每个给定虚拟机的个别便利服务是否正常运行。 驱动程序组件不应被手动提供服务。
 
-有关每个 integration services 的详细信息，请参阅[hyper-v Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services)。
+有关每个 integration services 的详细信息，请参阅 [hyper-v Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services)。
 
 > [!IMPORTANT]
 > 必须在主机和来宾中同时启用每个要使用的服务，才能正常运行。 默认情况下，所有集成 Hyper-V 来宾服务接口服务在 Windows 来宾操作系统上都处于启用状态。 可以单独打开和关闭服务。 下一部分介绍了如何操作。
 
 ## <a name="turn-an-integration-service-on-or-off-using-hyper-v-manager"></a>使用 Hyper-v 管理器打开或关闭集成服务
 
-1. 在中心窗格中，右键单击虚拟机，然后单击 "**设置**"。
+1. 在中心窗格中，右键单击虚拟机，然后单击 " **设置**"。
 
-2. 从 "**设置**" 窗口的左窗格中的 "**管理**" 下，单击 " **Integration Services**"。
+2. 从 " **设置** " 窗口的左窗格中的 " **管理**" 下，单击 " **Integration Services**"。
 
 "Integration Services" 窗格列出了 Hyper-v 主机上可用的所有集成服务，以及该主机是否已启用虚拟机以使用它们。
 
 ### <a name="turn-an-integration-service-on-or-off-using-powershell"></a>使用 PowerShell 启用或禁用集成服务
 
-若要在 PowerShell 中执行此操作，请使用[enable-vmintegrationservice](/powershell/module/hyper-v/enable-vmintegrationservice?view=win10-ps)和[enable-vmintegrationservice](/powershell/module/hyper-v/disable-vmintegrationservice?view=win10-ps)。
+若要在 PowerShell 中执行此操作，请使用 [enable-vmintegrationservice](/powershell/module/hyper-v/enable-vmintegrationservice?view=win10-ps) 和 [enable-vmintegrationservice](/powershell/module/hyper-v/disable-vmintegrationservice?view=win10-ps)。
 
 下面的示例演示如何为名为 "demovm" 的虚拟机启用和禁用来宾文件复制集成服务。
 
@@ -126,7 +125,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     Running  vmicvss            Hyper-V Volume Shadow Copy Requestor
     ```
 
-1. 运行 "[启动服务](/powershell/module/microsoft.powershell.management/start-service?view=powershell-7)" 或 "[停止服务](/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7)"。 例如，若要关闭 Windows PowerShell Direct，请运行：
+1. 运行 " [启动服务](/powershell/module/microsoft.powershell.management/start-service?view=powershell-7) " 或 " [停止服务](/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7)"。 例如，若要关闭 Windows PowerShell Direct，请运行：
 
     ```
     Stop-Service -Name vmicvmsession
@@ -134,9 +133,9 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 
 ## <a name="start-and-stop-an-integration-service-from-a-linux-guest"></a>从 Linux 来宾启动和停止集成服务
 
-Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 驱动程序名为**hv_utils**。
+Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 驱动程序名为 **hv_utils**。
 
-1. 若要确定是否已加载**hv_utils** ，请使用以下命令：
+1. 若要确定是否已加载 **hv_utils** ，请使用以下命令：
 
    ``` BASH
    lsmod | grep hv_utils
@@ -186,7 +185,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
     hv_fcopy_daemon
     ```
 
-   可能列出的 Integration services 守护程序包括以下各项。 如果缺少任何这些程序，可能不会在您的系统上受支持，或者它们可能未安装。 查找详细信息，请参阅[Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)。
+   可能列出的 Integration services 守护程序包括以下各项。 如果缺少任何这些程序，可能不会在您的系统上受支持，或者它们可能未安装。 查找详细信息，请参阅 [Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)。
    - **hv_vss_daemon**：创建实时 Linux 虚拟机备份需要此守护程序。
    - **hv_kvp_daemon**：此守护程序允许设置和查询内部和外部密钥值对。
    - **hv_fcopy_daemon**：此后台程序在主机和来宾之间实现文件复制服务。
@@ -228,7 +227,7 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 > [!NOTE]
 > Windows 10/Windows Server 2016/2019 上的 Hyper-v 不附带 vmguest.iso 映像文件，因为不再需要此文件。
 
-| 来宾  | 更新机制 | 说明 |
+| 来宾  | 更新机制 | 备注 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows 更新 | |
 | Windows 8.1 | Windows 更新 | |
@@ -247,66 +246,66 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 | - | | |
 | Linux 来宾 | 程序包管理器 | Linux 集成服务内置于发行版中，但可能有可选的更新可用。 ******** |
 
-\*如果无法启用数据交换集成服务，这些来宾的集成服务将从[下载中心](https://support.microsoft.com/kb/3071740)作为 cabinet (cab) 文件提供。 此[博客文章](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247)提供了应用 cab 的说明。
+\* 如果无法启用数据交换集成服务，这些来宾的集成服务将从 [下载中心](https://support.microsoft.com/kb/3071740) 作为 cabinet (cab) 文件提供。 此 [博客文章](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247)提供了应用 cab 的说明。
 
 **对于在 Windows 8.1/Windows Server 2012R2 主机上运行的虚拟机：**
 
-| 来宾  | 更新机制 | 说明 |
+| 来宾  | 更新机制 | 备注 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows 更新 | |
-| Windows 8.1 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows 8 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows 7 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Vista (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows XP（SP 2、SP 3） | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
+| Windows 8.1 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows 8 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows 7 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Vista (SP 2) | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows XP（SP 2、SP 3） | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
 | - | | |
 | Windows Server 2016 | Windows 更新 | |
 | Windows Server 半年频道 | Windows 更新 | |
-| Windows Server 2012 R2 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Server 2012 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Server 2008 R2 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Server 2008 (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Home Server 2011 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Small Business Server 2011 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Server 2003 R2 (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Server 2003 (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
+| Windows Server 2012 R2 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Server 2012 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Server 2008 R2 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Server 2008 (SP 2) | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Home Server 2011 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Small Business Server 2011 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Server 2003 R2 (SP 2) | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Server 2003 (SP 2) | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
 | - | | |
 | Linux 来宾 | 程序包管理器 | Linux 集成服务内置于发行版中，但可能有可选的更新可用。 ** |
 
 
 **对于在 Windows 8/Windows Server 2012 主机上运行的虚拟机：**
 
-| 来宾  | 更新机制 | 说明 |
+| 来宾  | 更新机制 | 备注 |
 |:---------|:---------|:---------|
-| Windows 8.1 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows 8 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows 7 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Vista (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows XP（SP 2、SP 3） | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
+| Windows 8.1 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows 8 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows 7 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Vista (SP 2) | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows XP（SP 2、SP 3） | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
 | - | | |
-| Windows Server 2012 R2 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Server 2012 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Server 2008 R2 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。|
-| Windows Server 2008 (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Home Server 2011 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Small Business Server 2011 | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Server 2003 R2 (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
-| Windows Server 2003 (SP 2) | 集成服务磁盘 | 请参阅下面的[说明](#install-or-update-integration-services)。 |
+| Windows Server 2012 R2 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Server 2012 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Server 2008 R2 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。|
+| Windows Server 2008 (SP 2) | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Home Server 2011 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Small Business Server 2011 | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Server 2003 R2 (SP 2) | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
+| Windows Server 2003 (SP 2) | 集成服务磁盘 | 请参阅下面的 [说明](#install-or-update-integration-services)。 |
 | - | | |
 | Linux 来宾 | 程序包管理器 | Linux 集成服务内置于发行版中，但可能有可选的更新可用。 ** |
 
-有关 Linux 来宾的详细信息，请参阅[Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)。
+有关 Linux 来宾的详细信息，请参阅 [Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)。
 
 ## <a name="install-or-update-integration-services"></a>安装或更新 integration services
 
 > [!NOTE]
-> 对于早于 Windows Server 2016 和 Windows 10 的主机，你将需要在来宾操作系统中**手动安装或更新**integration services。
+> 对于早于 Windows Server 2016 和 Windows 10 的主机，你将需要在来宾操作系统中 **手动安装或更新** integration services。
 
 手动安装或更新 integration services 的过程：
 
 1.  打开 Hyper-V 管理器。 在服务器管理器的 "工具" 菜单中，单击 " **Hyper-v 管理器**"。
 
-2.  连接到虚拟机。 右键单击该虚拟机，然后单击 "**连接**"。
+2.  连接到虚拟机。 右键单击该虚拟机，然后单击 " **连接**"。
 
 3.  在“虚拟机连接”的“操作”菜单中，单击“插入集成服务安装盘”****。 该操作将在虚拟 DVD 驱动器中加载安装盘。 根据来宾操作系统的不同，您可能需要手动启动安装。
 
@@ -314,5 +313,5 @@ Linux 集成服务通常通过 Linux 内核提供。 Linux integration services 
 
 > [!NOTE]
 > 对于**联机**虚拟机，无法在 Windows PowerShell 会话中**自动**执行或执行这些步骤。
-> 可以将其应用于**脱机**VHDX 映像;请参阅[如何在虚拟机未运行时安装 integration services](/virtualization/community/team-blog/2013/20130418-how-to-install-integration-services-when-the-virtual-machine-is-not-running)。
-> 你还可以通过将**Configuration Manager**与 vm**联机**来自动部署 integration services，但需要在安装结束时重新启动 vm;请参阅[使用配置管理器和 DISM 将 hyper-v Integration Services 部署到 vm](/archive/blogs/manageabilityguys/deploying-hyper-v-integration-services-to-vms-using-config-manager-and-dism)
+> 可以将其应用于 **脱机** VHDX 映像;请参阅 [如何在虚拟机未运行时安装 integration services](/virtualization/community/team-blog/2013/20130418-how-to-install-integration-services-when-the-virtual-machine-is-not-running)。
+> 你还可以通过将 **Configuration Manager** 与 vm **联机**来自动部署 integration services，但需要在安装结束时重新启动 vm;请参阅 [使用配置管理器和 DISM 将 hyper-v Integration Services 部署到 vm](/archive/blogs/manageabilityguys/deploying-hyper-v-integration-services-to-vms-using-config-manager-and-dism)

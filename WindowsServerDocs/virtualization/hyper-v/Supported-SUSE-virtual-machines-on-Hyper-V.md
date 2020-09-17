@@ -1,18 +1,17 @@
 ---
 title: Hyper-v 上支持的 SUSE 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
-manager: dongill
 ms.topic: article
 ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: 4e2948bdb07ecefc0cbb46553aeaece3efd914c2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 92dd65669a537d619d9104378adae26c91878dca
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989291"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746732"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 SUSE 虚拟机
 
@@ -24,7 +23,7 @@ ms.locfileid: "87989291"
 
 ## <a name="table-legend"></a>表图例
 
-* **内置**的-.lis 作为此 Linux 分发的一部分包含在内。Microsoft 提供的 IIS 下载包不适用于此分发，因此不安装它。**Lsmod**所示的内置 .lis (内核模块版本号，例如) 不同于 Microsoft 提供的 .lis 下载包上的版本号。 不匹配并不表明内置的 .LIS 版本已过期。
+* **内置** 的-.lis 作为此 Linux 分发的一部分包含在内。Microsoft 提供的 IIS 下载包不适用于此分发，因此不安装它。 **Lsmod**所示的内置 .lis (内核模块版本号，例如) 不同于 Microsoft 提供的 .lis 下载包上的版本号。 不匹配并不表明内置的 .LIS 版本已过期。
 
 * &#10004; 功能可用
 
@@ -45,7 +44,7 @@ SLES12 + 仅限64位。
 |vRSS|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
 |TCP 分段和校验和卸载|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |SR-IOV|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;||||
-|**[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||||||
+|**[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||||||
 |VHDX 调整大小|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |虚拟光纤通道|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |实时虚拟机备份|2019、2016、2012 R2|&#10004; 备注2、3、8|&#10004;备注2、3、8|&#10004; 备注2、3、8|&#10004; 备注2、3、8|&#10004; 备注2、3、8|&#10004; 备注2、3、8|&#10004; 备注2、3、8|
@@ -57,7 +56,7 @@ SLES12 + 仅限64位。
 |动态内存-热添加|2019、2016、2012 R2|&#10004; 备注6|&#10004;备注6|&#10004; 备注6|&#10004; 备注6|&#10004; 备注6|&#10004; 注释4、5、6|&#10004; 注释4、5、6|
 |动态内存-膨胀|2019、2016、2012 R2|&#10004; 备注6|&#10004; 备注6|&#10004; 备注6|&#10004; 备注6|&#10004; 备注6|&#10004; 注释4、5、6|&#10004; 注释4、5、6|
 |运行时内存大小调整|2019、2016|&#10004; 备注6|&#10004; 备注6|&#10004; 备注6|&#10004; 备注6||||
-|**[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
+|**[显示](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
 |Hyper-v 特定视频设备|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[杂项](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
 |键/值对|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004; 说明7|&#10004; 说明7|
@@ -72,7 +71,7 @@ SLES12 + 仅限64位。
 
 ## <a name="notes"></a><a name="BKMK_notes"></a>说明
 
-1. 如果为虚拟机上的特定 Hyper-v 特定网络适配器配置了**网络管理器**，则静态 IP 注入可能不起作用。 若要确保静态 IP 注入正常运行，请确保网络管理器已完全关闭，或已通过其**ifcfg-eth0-ethX**文件在特定网络适配器上关闭网络管理器。
+1. 如果为虚拟机上的特定 Hyper-v 特定网络适配器配置了 **网络管理器** ，则静态 IP 注入可能不起作用。 若要确保静态 IP 注入正常运行，请确保网络管理器已完全关闭，或已通过其 **ifcfg-eth0-ethX** 文件在特定网络适配器上关闭网络管理器。
 
 2. 如果在执行实时虚拟机备份操作的过程中有打开的文件句柄，则在某些角落情况下，在还原时，已备份的 Vhd 可能需要执行文件系统一致性检查 (fsck) 。
 
@@ -86,7 +85,7 @@ SLES12 + 仅限64位。
 
 5. 动态内存支持仅适用于64位虚拟机。
 
-6. 如果在 Windows Server 2016 或 Windows Server 2012 操作系统上使用动态内存，请以128兆字节 (MB) 的倍数指定 "**启动内存**"、"**最小内存**" 和 "**最大内存**" 参数。 如果不这样做，可能会导致热添加失败，并且在来宾操作系统中可能看不到任何内存增长。
+6. 如果在 Windows Server 2016 或 Windows Server 2012 操作系统上使用动态内存，请以128兆字节 (MB) 的倍数指定 " **启动内存**"、" **最小内存**" 和 " **最大内存** " 参数。 如果不这样做，可能会导致热添加失败，并且在来宾操作系统中可能看不到任何内存增长。
 
 7. 在 Windows Server 2016 或 Windows Server 2012 R2 中，如果没有 Linux 软件更新，键/值对基础结构可能无法正常运行。 请与您的分销商联系以获取软件更新，以防您看到此功能的问题。
 

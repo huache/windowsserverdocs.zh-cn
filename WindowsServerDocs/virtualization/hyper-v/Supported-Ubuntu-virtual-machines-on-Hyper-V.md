@@ -1,18 +1,17 @@
 ---
 title: Hyper-v 上支持的 Ubuntu 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
-manager: dongill
 ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
-author: shirgall
-ms.author: shirgall
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 08/29/2020
-ms.openlocfilehash: 5bd5f7a129cbc5c69bc6b909e292c096a3812af1
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.openlocfilehash: cc59a9c45a1dee797196c8a12550945d3d834cd7
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554550"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746572"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 Ubuntu 虚拟机
 
@@ -47,15 +46,15 @@ ms.locfileid: "89554550"
 |实时虚拟机备份|2019、2016、2012 R2|&#10004; 备注3、4、5|&#10004; 备注3、4、5|&#10004; 备注3、4、5|&#10004; 备注3、4、5|
 |剪裁支持|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |SCSI WWN|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[内存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
+|**[记忆](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
 |PAE 内核支持|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |MMIO 间隙的配置|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |动态内存-热添加|2019、2016、2012 R2|&#10004; 备注6、7、8|&#10004; 备注6、7、8|&#10004; 备注6、7、8|&#10004; 备注6、7、8|
 |动态内存-膨胀|2019、2016、2012 R2|&#10004; 备注6、7、8|&#10004; 备注6、7、8|&#10004; 备注6、7、8|&#10004; 备注6、7、8|
 |运行时内存大小调整|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
+|**[显示](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
 |Hyper-v 特定视频设备|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[其他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||
+|**[杂项](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||
 |键/值对|2019、2016、2012 R2|&#10004; 备注5、9|&#10004; 备注5、9|&#10004; 备注5、9|&#10004; 备注5、9|
 |不可屏蔽中断|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |从主机到来宾的文件复制|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -66,7 +65,7 @@ ms.locfileid: "89554550"
 |使用 UEFI 启动|2019、2016、2012 R2|&#10004; 说明10，11|&#10004; 说明10，11|&#10004; 说明10，11|&#10004; 说明10，11|
 |安全启动|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|
 
-## <a name="notes"></a>说明
+## <a name="notes"></a>备注
 
 1. 如果为虚拟机上的特定 Hyper-v 特定网络适配器配置了 **网络管理器** ，则静态 IP 注入可能不起作用。 若要确保静态 IP 注入正常运行，请确保网络管理器已完全关闭，或已通过其 **ifcfg-eth0-ethX** 文件在特定网络适配器上关闭网络管理器。
 

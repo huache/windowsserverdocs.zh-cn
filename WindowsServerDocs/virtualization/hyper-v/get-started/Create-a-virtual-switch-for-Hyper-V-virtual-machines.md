@@ -1,18 +1,17 @@
 ---
 title: 为 Hyper-V 虚拟机创建虚拟交换机
 description: 提供有关使用 Hyper-v 管理器或 Windows PowerShell 创建虚拟交换机的说明
-manager: dongill
 ms.topic: get-started-article
 ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: b9de14f9c3f66f6d8c8b532e8f4a83192b3e824b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: a0c89dc706e0403816317d7664325bf82f261705
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996627"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746032"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>为 Hyper-V 虚拟机创建虚拟交换机
 
@@ -20,7 +19,7 @@ ms.locfileid: "87996627"
 
 虚拟交换机允许在 Hyper-v 主机上创建的虚拟机与其他计算机进行通信。 在 Windows Server 上首次安装 Hyper-v 角色时，可以创建虚拟交换机。 若要创建其他虚拟交换机，请使用 Hyper-v 管理器或 Windows PowerShell。 若要详细了解虚拟交换机，请参阅 [Hyper-V 虚拟交换机](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md)。
 
-虚拟机网络可能是一个复杂的主题。 你可能想要使用多个新的虚拟交换机功能，例如[交换机嵌入组合 (设置) ](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#switch-embedded-teaming-set)。 但基本网络比较简单。 本主题介绍了足够的空间，以便可以在 Hyper-v 中创建联网的虚拟机。 若要详细了解如何设置网络基础结构，请查看[网络](../../../networking/index.yml)文档。
+虚拟机网络可能是一个复杂的主题。 你可能想要使用多个新的虚拟交换机功能，例如 [交换机嵌入组合 (设置) ](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#switch-embedded-teaming-set)。 但基本网络比较简单。 本主题介绍了足够的空间，以便可以在 Hyper-v 中创建联网的虚拟机。 若要详细了解如何设置网络基础结构，请查看 [网络](../../../networking/index.yml) 文档。
 
 ## <a name="create-a-virtual-switch-by-using-hyper-v-manager"></a>使用 Hyper-v 管理器创建虚拟交换机
 
@@ -38,7 +37,7 @@ ms.locfileid: "87996627"
     |内部|允许相同 Hyper-v 服务器上的虚拟机之间的通信，以及虚拟机与管理主机操作系统之间的通信。|
     |Private|仅允许同一 Hyper-v 服务器上的虚拟机之间的通信。 专用网络与 Hyper-v 服务器上的所有外部网络流量隔离。 当必须创建独立的网络环境（如隔离的测试域）时，此类型的网络很有用。|
 
-4.  选择 "**创建虚拟交换机**"。
+4.  选择 " **创建虚拟交换机**"。
 
 5.  添加虚拟交换机的名称。
 
@@ -49,9 +48,9 @@ ms.locfileid: "87996627"
     |设置名|说明|
     |----------------|---------------|
     |允许管理操作系统共享此网络适配器|如果要允许 Hyper-v 主机与虚拟机共享虚拟交换机和 NIC 或 NIC 组的使用情况，请选择此选项。 启用此功能后，主机可以使用你为虚拟交换机配置的任何设置（如服务质量 (QoS) 设置、安全设置或 Hyper-v 虚拟交换机的其他功能）。|
-    |启用单根 I/O 虚拟化 (SR-IOV)|仅当你想要允许虚拟机通信绕过虚拟机交换机，并直接转到物理 NIC 时，才选择此选项。 有关详细信息，请参阅海报附属参考中的[单根 I/o 虚拟化](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn641211(v=ws.11)#Sec4)： hyper-v 网络。|
+    |启用单根 I/O 虚拟化 (SR-IOV)|仅当你想要允许虚拟机通信绕过虚拟机交换机，并直接转到物理 NIC 时，才选择此选项。 有关详细信息，请参阅海报附属参考中的 [单根 I/o 虚拟化](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn641211(v=ws.11)#Sec4) ： hyper-v 网络。|
 
-7.  如果要将管理 Hyper-v 主机操作系统或其他共享同一虚拟交换机的虚拟机中的网络流量隔离开来，请选择 "**为管理操作系统启用虚拟 LAN 标识**"。 可以将 VLAN ID 更改为任意数字，或保留默认值。 这是管理操作系统将用于通过此虚拟交换机进行的所有网络通信的虚拟 LAN 标识号。
+7.  如果要将管理 Hyper-v 主机操作系统或其他共享同一虚拟交换机的虚拟机中的网络流量隔离开来，请选择 " **为管理操作系统启用虚拟 LAN 标识**"。 可以将 VLAN ID 更改为任意数字，或保留默认值。 这是管理操作系统将用于通过此虚拟交换机进行的所有网络通信的虚拟 LAN 标识号。
 
     ![显示 VLAN ID 选项的屏幕截图](../media/Hyper-V-NewSwitch-VLAN.png)
 
@@ -65,15 +64,15 @@ ms.locfileid: "87996627"
 
 1.  在 Windows 桌面上，单击“开始”按钮并键入名称 **Windows PowerShell** 的任一部分。
 
-2.  右键单击 "Windows PowerShell" 并选择 "以**管理员身份运行**"。
+2.  右键单击 "Windows PowerShell" 并选择 "以 **管理员身份运行**"。
 
-3.  通过运行[get-netadapter](https://technet.microsoft.com/library/jj130867.aspx) cmdlet 查找现有的网络适配器。 记下要用于虚拟交换机的网络适配器名称。
+3.  通过运行 [get-netadapter](https://technet.microsoft.com/library/jj130867.aspx) cmdlet 查找现有的网络适配器。 记下要用于虚拟交换机的网络适配器名称。
 
     ```
     Get-NetAdapter
     ```
 
-4.  使用[纽约](/powershell/module/hyper-v/new-vmswitch?view=win10-ps)cmdlet 创建虚拟交换机。 例如，若要创建名为 ExternalSwitch 的外部虚拟交换机，使用以太网网络适配器，并启用了 "**允许管理操作系统共享此网络适配器**"，请运行以下命令。
+4.  使用 [纽约](/powershell/module/hyper-v/new-vmswitch?view=win10-ps) cmdlet 创建虚拟交换机。 例如，若要创建名为 ExternalSwitch 的外部虚拟交换机，使用以太网网络适配器，并启用了 " **允许管理操作系统共享此网络适配器** "，请运行以下命令。
 
     ```
     New-VMSwitch -name ExternalSwitch  -NetAdapterName Ethernet -AllowManagementOS $true
@@ -91,8 +90,8 @@ ms.locfileid: "87996627"
     New-VMSwitch -name PrivateSwitch -SwitchType Private
     ```
 
-若要深入了解 Windows Server 2016 中的改进或全新虚拟交换机功能的更高级 Windows PowerShell 脚本，请参阅[远程直接内存访问和交换机嵌入式组合](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。
+若要深入了解 Windows Server 2016 中的改进或全新虚拟交换机功能的更高级 Windows PowerShell 脚本，请参阅 [远程直接内存访问和交换机嵌入式组合](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)。
 
 
-## <a name="next-step"></a>后续步骤
+## <a name="next-step"></a>下一步
 [在 Hyper-V 中创建虚拟机](Create-a-virtual-machine-in-Hyper-V.md)

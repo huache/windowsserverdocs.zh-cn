@@ -1,18 +1,17 @@
 ---
 title: 应该提供多个网络适配器
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 59940e56-e06a-490f-90ea-cf30d9f80b09
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 57abcbbc796ab2664d30ca9ff63c1e41f47c17a4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 05dc0583424ed155c4780f9f0b4c016be850a71c
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950241"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746262"
 ---
 # <a name="more-than-one-network-adapter-should-be-available"></a>应该提供多个网络适配器
 
@@ -25,7 +24,7 @@ ms.locfileid: "87950241"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|错误|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 

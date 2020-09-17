@@ -1,18 +1,17 @@
 ---
 title: 避免暂停虚拟机
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 930f927c-e414-4a36-9786-028941e886e4
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 6799795ae383fd0522ce0b35eba0443ae536b0dd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 956ada130cea2d489545c8206ae8283041e6868f
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969994"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747032"
 ---
 # <a name="avoid-pausing-a-virtual-machine"></a>避免暂停虚拟机
 
@@ -25,7 +24,7 @@ ms.locfileid: "87969994"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 
@@ -45,14 +44,14 @@ ms.locfileid: "87969994"
 
 #### <a name="use-hyper-v-manager-to-resume-the-virtual-machine"></a>使用 Hyper-v 管理器恢复虚拟机
 
-1.  打开 Hyper-V 管理器。  (从服务器管理器的 "**工具**" 菜单中，单击 " **hyper-v 管理器**"。 ) 
+1.  打开 Hyper-V 管理器。  (从服务器管理器的 " **工具** " 菜单中，单击 " **hyper-v 管理器**"。 ) 
 
-2.  从 "**虚拟机**" 列表中，找到状态为 "已**暂停**" 的虚拟机。
+2.  从 " **虚拟机** " 列表中，找到状态为 "已 **暂停**" 的虚拟机。
 
     > [!IMPORTANT]
-    > 如果该虚拟机的物理存储上没有剩余的可用空间，则会发生 "**暂停-严重**" 状态。 在尝试恢复处于此状态的虚拟机之前，请释放物理存储上的可用空间。
+    > 如果该虚拟机的物理存储上没有剩余的可用空间，则会发生 " **暂停-严重** " 状态。 在尝试恢复处于此状态的虚拟机之前，请释放物理存储上的可用空间。
 
-3.  右键单击每个虚拟机名称，然后单击 "**继续**"。 这会将虚拟机返回到运行状态。 然后，如果要关闭虚拟机，请再次右键单击该虚拟机，然后选择 "**关闭**"。
+3.  右键单击每个虚拟机名称，然后单击 " **继续**"。 这会将虚拟机返回到运行状态。 然后，如果要关闭虚拟机，请再次右键单击该虚拟机，然后选择 " **关闭**"。
 
 #### <a name="use-windows-powershell-to-resume-the-virtual-machine"></a>使用 Windows PowerShell 恢复虚拟机
 

@@ -1,18 +1,17 @@
 ---
 title: 在 Windows Server 中规划 GPU 加速
 description: 了解 GPU 加速的不同 Hyper-v 技术，包括 DDA 和 RemoteFX vGPU
-ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: 8cba3ac4d2e4680f480ff76db12c10553c1857d3
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 0646290c2dcd6bbffe1012aee6981820d7c7b51f
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996957"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745942"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>在 Windows Server 中规划 GPU 加速
 
@@ -37,7 +36,7 @@ Windows Server 中的 Hyper-v Vm 可使用以下图形虚拟化技术：
 - [离散设备分配 (DDA) ](#discrete-device-assignment-dda)
 - [RemoteFX vGPU](#remotefx-vgpu)
 
-除了 VM 工作负载，Windows Server 还支持 Windows 容器中容器化工作负荷的 GPU 加速。 有关详细信息，请参阅[Windows 容器中的 GPU 加速](/virtualization/windowscontainers/deploy-containers/gpu-acceleration)。
+除了 VM 工作负载，Windows Server 还支持 Windows 容器中容器化工作负荷的 GPU 加速。 有关详细信息，请参阅 [Windows 容器中的 GPU 加速](/virtualization/windowscontainers/deploy-containers/gpu-acceleration)。
 
 ## <a name="discrete-device-assignment-dda"></a>离散设备分配 (DDA) 
 

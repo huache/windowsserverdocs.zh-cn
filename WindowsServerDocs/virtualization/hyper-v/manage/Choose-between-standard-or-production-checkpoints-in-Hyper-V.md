@@ -1,18 +1,17 @@
 ---
 title: 在 Hyper-v 中的标准或生产检查点之间进行选择
 description: 提供有关将虚拟机配置为使用标准或生产检查点的说明
-manager: dongill
 ms.topic: article
 ms.assetid: 92bb573b-03b7-470e-b72e-e35edf52b349
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: 9aeff8371b357d9e4b063d48c310b32843dc00af
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 00a3c8d94fc18d180faa8927b33b90dc98854da0
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968154"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746472"
 ---
 # <a name="choose-between-standard-or-production-checkpoints-in-hyper-v"></a>在 Hyper-v 中的标准或生产检查点之间进行选择
 
@@ -27,20 +26,20 @@ ms.locfileid: "87968154"
 
   ## <a name="change-checkpoints-to-production-or-standard-checkpoints"></a>更改生产检查点或标准检查点
 
-1.  在 " **Hyper-v 管理器**" 中，右键单击虚拟机，然后单击 "**设置**"。
+1.  在 " **Hyper-v 管理器**" 中，右键单击虚拟机，然后单击 " **设置**"。
 
-2.  在 "**管理**" 部分下，选择 "**检查点**"。
+2.  在 " **管理** " 部分下，选择 " **检查点**"。
 
 3.  选择生产检查点或标准检查点。
 
     如果选择 "生产检查点"，则还可以指定在无法创建生产检查点时，主机是否应采用标准检查点。 如果清除此复选框且无法创建生产检查点，则不会执行任何检查点。
 
-4.  如果要将检查点配置文件存储在不同的位置，请在 "**检查点文件位置**" 部分中将其更改。
+4.  如果要将检查点配置文件存储在不同的位置，请在 " **检查点文件位置** " 部分中将其更改。
 
-5.  单击 "**应用**" 以保存所做的更改。 如果已完成，请单击 **"确定"** 以关闭对话框。
+5.  单击 " **应用** " 以保存所做的更改。 如果已完成，请单击 **"确定"** 以关闭对话框。
 
 > [!NOTE]
-> 在 Active Directory 域服务 role (域控制器) 或 Active Directory 轻型目录服务角色中运行的来宾仅支持**生产检查点**。
+> 在 Active Directory 域服务 role (域控制器) 或 Active Directory 轻型目录服务角色中运行的来宾仅支持 **生产检查点** 。
 
 ## <a name="additional-references"></a>其他参考
 

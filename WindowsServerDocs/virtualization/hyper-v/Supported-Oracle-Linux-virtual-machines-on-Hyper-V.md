@@ -1,18 +1,17 @@
 ---
 title: Hyper-v 上支持的 Oracle Linux 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
-manager: dongill
 ms.topic: article
 ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 06/05/2020
-ms.openlocfilehash: 0e9a11fbff5015037bffa1cad14e70d629fef94b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7c1029f31abe70b09bddc83f928ee492be18ef2b
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989304"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746392"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 Oracle Linux 虚拟机
 
@@ -29,7 +28,7 @@ ms.locfileid: "87989304"
 
 ## <a name="table-legend"></a>表图例
 
-* **内置**的-.lis 作为此 Linux 分发的一部分包含在内。 **Lsmod**所示的内置 .lis (内核模块版本号，例如) 不同于 Microsoft 提供的 .lis 下载包上的版本号。 不匹配并不表明内置的 .LIS 版本已过期。
+* **内置** 的-.lis 作为此 Linux 分发的一部分包含在内。 **Lsmod**所示的内置 .lis (内核模块版本号，例如) 不同于 Microsoft 提供的 .lis 下载包上的版本号。 不匹配并不表明内置的 .LIS 版本已过期。
 
 * &#10004; 功能可用
 *  (*空白*) -功能不可用
@@ -54,7 +53,7 @@ ms.locfileid: "87989304"
 |       vRSS     | 2019、2016、2012 R2 | &#10004; |
 |       TCP 分段和校验和卸载 | 2019、2016、2012 R2 | &#10004;|
 |       SR-IOV  | 2019、2016 |  &#10004;   |
-|       **[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |
+|       **[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |
 |       VHDX 调整大小  | 2019、2016、2012 R2 | &#10004; |
 |       虚拟光纤通道 | 2019、2016、2012 R2 | &#10004; 备注3  |
 |       实时虚拟机备份  | 2019、2016、2012 R2 | &#10004; 备注5 |
@@ -66,7 +65,7 @@ ms.locfileid: "87989304"
 |       动态内存-热添加 | 2019、2016、2012 R2  | &#10004; 注释7、8、9 |
 |       动态内存-膨胀 | 2019、2016、2012 R2 | &#10004; 注释7、8、9 |
 |       运行时内存大小调整 | 2019、2016  | &#10004;  |
-|       **[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | |
+|       **[显示](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | |
 |       Hyper-v 特定视频设备 | 2019、2016、2012 R2 | &#10004;   |
 |       **[杂项](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | |
 |       键值对  | 2019、2016、2012 R2 | &#10004;   |
@@ -87,7 +86,7 @@ ms.locfileid: "87989304"
 <tr height="50px">
 <td width="20%" rowspan="2">
 
-功能
+Feature
 </td>
 <td width="20%" rowspan="2">
 
@@ -484,7 +483,7 @@ SR-IOV
 <tr height="50px">
 <td width="20%">
 
-**[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**
+**[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**
 </td>
 <td width="20%">
 
@@ -877,7 +876,7 @@ MMIO 间隙的配置
 <tr height="50px">
 <td width="20%">
 
-**[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**
+**[显示](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**
 </td>
 <td width="20%">
 
@@ -1281,7 +1280,7 @@ PCI 传递/DDA
 |       vRSS     | 2019、2016、2012 R2 | &#10004; | &#10004;|
 |       TCP 分段和校验和卸载 | 2019、2016、2012 R2 | &#10004;|  &#10004; |
 |       SR-IOV  | 2019、2016 |    |  |
-|       **[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |  |
+|       **[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |  |
 |       VHDX 调整大小  | 2019、2016、2012 R2 | &#10004; | &#10004; |
 |       虚拟光纤通道 | 2019、2016、2012 R2 | &#10004; 备注3  | &#10004; 备注3 |
 |       实时虚拟机备份  | 2019、2016、2012 R2 | &#10004; 备注5 | &#10004; 备注5|
@@ -1293,7 +1292,7 @@ PCI 传递/DDA
 |       动态内存-热添加 | 2019、2016、2012 R2  | &#10004; 备注6、8、9 | &#10004; 备注6、8、9 |
 |       动态内存-膨胀 | 2019、2016、2012 R2 | &#10004; 备注6、8、9 | &#10004; 备注6、8、9 |
 |       运行时内存大小调整 | 2019、2016  |  | |
-|       **[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | | |
+|       **[显示](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | | |
 |       Hyper-v 特定视频设备 | 2019、2016、2012 R2 | &#10004;   | &#10004; |
 |       **[杂项](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | | |
 |       键值对  | 2019、2016、2012 R2 | &#10004; 说明10，11   | &#10004; 说明10，11  |
@@ -1326,7 +1325,7 @@ PCI 传递/DDA
 
    1. 创建文件 **/etc/udev/rules.d/100-balloon.rules**。 您可以为该文件使用任何其他所需的名称。
 
-   2. 将以下内容添加到文件：`SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
+   2. 将以下内容添加到文件： `SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
 
    3. 重新启动系统以启用热添加支持。
 
@@ -1338,7 +1337,7 @@ PCI 传递/DDA
 
    * 通常会消耗系统中的全部可用内存的应用程序，仅消耗最多80% 的可用 RAM。
 
-9. 如果在 Windows Server 2016 或 Windows Server 2012 R2 操作系统上使用动态内存，请以128兆字节 (MB) 的倍数指定 "**启动内存**"、"**最小内存**" 和 "**最大内存**" 参数。 如果不这样做，可能会导致热添加失败，并且在来宾操作系统中可能看不到任何内存增长。
+9. 如果在 Windows Server 2016 或 Windows Server 2012 R2 操作系统上使用动态内存，请以128兆字节 (MB) 的倍数指定 " **启动内存**"、" **最小内存**" 和 " **最大内存** " 参数。 如果不这样做，可能会导致热添加失败，并且在来宾操作系统中可能看不到任何内存增长。
 
 10. 若要启用) 基础结构 (KVP 的键/值对，请从 Oracle Linux ISO 安装 hypervkvpd 或 hyperv-守护程序 rpm 包。 或者，可以直接从 Oracle Linux Yum 存储库安装包。
 

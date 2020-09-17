@@ -1,33 +1,32 @@
 ---
 title: 是否应在 Hyper-V 中创建第 1 代或第 2 代虚拟机？
 description: 提供有关支持的引导方法和其他功能差异的注意事项，以帮助你选择哪一代能满足你的需求。
-manager: dongill
 ms.topic: article
 ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 12/05/2016
-ms.openlocfilehash: b41cefc34bce2a9d1e2e29e9d31353d4f9b8a669
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f9cdb144e7edacf8a1be0f2d98509517adf5c87e
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996976"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746592"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>是否应在 Hyper-V 中创建第 1 代或第 2 代虚拟机？
 
 >适用于： Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 > [!NOTE]
-> 如果你计划) 从本地到 Microsoft Azure、第1代和第2代 Vm （VHD 文件格式）上传 (的 Windows 虚拟机，并支持固定大小的磁盘。 请参阅[azure 上的第2代 vm](/azure/virtual-machines/windows/generation-2) ，了解有关 Azure 支持的第2代功能的详细信息。 有关上传 Windows VHD 或 VHDX 的详细信息，请参阅[准备要上传到 Azure 的 WINDOWS vhd 或 vhdx](/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。
+> 如果你计划) 从本地到 Microsoft Azure、第1代和第2代 Vm （VHD 文件格式）上传 (的 Windows 虚拟机，并支持固定大小的磁盘。 请参阅 [azure 上的第2代 vm](/azure/virtual-machines/windows/generation-2) ，了解有关 Azure 支持的第2代功能的详细信息。 有关上传 Windows VHD 或 VHDX 的详细信息，请参阅 [准备要上传到 Azure 的 WINDOWS vhd 或 vhdx](/azure/virtual-machines/windows/prepare-for-upload-vhd-image)。
 
 创建第1代或第2代虚拟机的选择取决于要安装的来宾操作系统以及要用于部署虚拟机的启动方法。 建议创建第2代虚拟机，以便充分利用安全启动等功能，除非满足以下任一陈述：
 
-- 要从其启动的 VHD 不是[UEFI 兼容](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824898(v=win.10))的。
+- 要从其启动的 VHD 不是 [UEFI 兼容](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824898(v=win.10))的。
 - 第2代不支持要在虚拟机上运行的操作系统。
 - 第2代不支持您要使用的启动方法。
 
-有关第2代虚拟机可用功能的详细信息，请参阅[hyper-v 功能按代和来宾提供兼容性](../Hyper-V-feature-compatibility-by-generation-and-guest.md)。
+有关第2代虚拟机可用功能的详细信息，请参阅 [hyper-v 功能按代和来宾提供兼容性](../Hyper-V-feature-compatibility-by-generation-and-guest.md)。
 
 创建虚拟机后，无法对其进行更改。 因此，我们建议你在选择代之前查看此处的注意事项，并选择要使用的操作系统、启动方法和功能。
 
@@ -85,7 +84,7 @@ ms.locfileid: "87996976"
 |RHEL/CentOS 1.x 系列|&#10004;|&#10004;<br />**注意：** 仅在 Windows Server 2016 及更高版本上受支持。|
 |RHEL/CentOS 5. x 系列|&#10004;| &#10006;|
 
-有关详细信息，请参阅[CentOS 和 Red Hat Enterprise Linux hyper-v 上的虚拟机](../Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)。
+有关详细信息，请参阅 [CentOS 和 Red Hat Enterprise Linux hyper-v 上的虚拟机](../Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)。
 
 ### <a name="debian-guest-operating-system-support"></a>Debian 来宾操作系统支持
 
@@ -96,7 +95,7 @@ ms.locfileid: "87996976"
 |Debian 7、windows 系列|&#10004;| &#10006;|
 |Debian 3.x 系列|&#10004;|&#10004;|
 
-有关详细信息，请参阅[hyper-v 上的 Debian 虚拟机](../Supported-Debian-virtual-machines-on-Hyper-V.md)。
+有关详细信息，请参阅 [hyper-v 上的 Debian 虚拟机](../Supported-Debian-virtual-machines-on-Hyper-V.md)。
 
 ### <a name="freebsd-guest-operating-system-support"></a>FreeBSD 来宾操作系统支持
 
@@ -108,7 +107,7 @@ ms.locfileid: "87996976"
 |FreeBSD 9.1 和9。3|&#10004;| &#10006;|
 |FreeBSD 8。4|&#10004;| &#10006;|
 
-有关详细信息，请参阅[hyper-v 上的 FreeBSD 虚拟机](../Supported-FreeBSD-virtual-machines-on-Hyper-V.md)。
+有关详细信息，请参阅 [hyper-v 上的 FreeBSD 虚拟机](../Supported-FreeBSD-virtual-machines-on-Hyper-V.md)。
 
 ### <a name="oracle-linux-guest-operating-system-support"></a>Oracle Linux 来宾操作系统支持
 
@@ -127,7 +126,7 @@ ms.locfileid: "87996976"
 |Oracle Linux UEK R3 QU2|&#10004;| &#10006;|
 |Oracle Linux UEK R3 QU1|&#10004;| &#10006;|
 
-有关详细信息，请参阅[Oracle Linux hyper-v 上的虚拟机](../Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)。
+有关详细信息，请参阅 [Oracle Linux hyper-v 上的虚拟机](../Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)。
 
 ### <a name="suse-guest-operating-system-support"></a>SUSE 来宾操作系统支持
 
@@ -139,7 +138,7 @@ ms.locfileid: "87996976"
 |SUSE Linux Enterprise Server 11 系列|&#10004;| &#10006;|
 |打开 SUSE 12。3|&#10004;| &#10006;|
 
-有关详细信息，请参阅[SUSE 虚拟机上的 hyper-v](../Supported-SUSE-virtual-machines-on-Hyper-V.md)。
+有关详细信息，请参阅 [SUSE 虚拟机上的 hyper-v](../Supported-SUSE-virtual-machines-on-Hyper-V.md)。
 
 ### <a name="ubuntu-guest-operating-system-support"></a>Ubuntu 来宾操作系统支持
 
@@ -150,7 +149,7 @@ ms.locfileid: "87996976"
 |Ubuntu 14.04 及更高版本|&#10004;|&#10004;|
 |Ubuntu 12.04|&#10004;| &#10006;|
 
-有关详细信息，请参阅[hyper-v 上的 Ubuntu 虚拟机](../Supported-Ubuntu-virtual-machines-on-Hyper-V.md)。
+有关详细信息，请参阅 [hyper-v 上的 Ubuntu 虚拟机](../Supported-Ubuntu-virtual-machines-on-Hyper-V.md)。
 
 ## <a name="how-can-i-boot-the-virtual-machine"></a>如何启动虚拟机？
 
@@ -167,11 +166,11 @@ ms.locfileid: "87996976"
 ## <a name="what-are-the-advantages-of-using-generation-2-virtual-machines"></a>使用第2代虚拟机的好处是什么？
 
 下面是使用第2代虚拟机时获得的一些优势：
-- **安全启动**这是一项功能，用于验证启动加载程序是否由 UEFI 数据库中的受信任的颁发机构签名，以帮助防止未经授权的固件、操作系统或 UEFI 驱动程序在启动时运行。 默认情况下，针对第 2 代虚拟机启用安全启动。 如果需要运行安全启动不支持的来宾操作系统，则可以在创建虚拟机后将其禁用。  有关详细信息，请参阅[安全启动](/previous-versions/windows/it-pro/windows-8.1-and-8/dn486875(v=ws.11))。
+- **安全启动** 这是一项功能，用于验证启动加载程序是否由 UEFI 数据库中的受信任的颁发机构签名，以帮助防止未经授权的固件、操作系统或 UEFI 驱动程序在启动时运行。 默认情况下，针对第 2 代虚拟机启用安全启动。 如果需要运行安全启动不支持的来宾操作系统，则可以在创建虚拟机后将其禁用。  有关详细信息，请参阅[安全启动](/previous-versions/windows/it-pro/windows-8.1-and-8/dn486875(v=ws.11))。
 
     若要保护 Boot 第2版 Linux 虚拟机的安全，需要在创建虚拟机时选择 UEFI CA 安全启动模板。
 
-- **更大的启动卷**第2代虚拟机的最大启动卷为 64 TB。 这是所支持的最大磁盘大小。VHDX. 对于第1代虚拟机，最大启动卷为2TB。的 VHDX 和2040GB。硬盘. 有关详细信息，请参阅[Hyper-v 虚拟硬盘格式概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831446(v=ws.11))。
+- **更大的启动卷** 第2代虚拟机的最大启动卷为 64 TB。 这是所支持的最大磁盘大小。VHDX. 对于第1代虚拟机，最大启动卷为2TB。的 VHDX 和2040GB。硬盘. 有关详细信息，请参阅 [Hyper-v 虚拟硬盘格式概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831446(v=ws.11))。
 
   对于第2代虚拟机，你可能还会看到虚拟机启动和安装时间方面的一些改进。
 
@@ -220,7 +219,7 @@ ms.locfileid: "87996976"
 
 ### <a name="use-ipv6-instead-of-ipv4"></a>使用 IPv6 而不是 IPv4
 
-默认情况下，第 2 代虚拟机使用 IPv4。 若要改为使用 IPv6，请运行[Set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) Windows PowerShell cmdlet。 例如，下面的命令将名为 TestVM 的虚拟机的首选协议设置为 IPv6：
+默认情况下，第 2 代虚拟机使用 IPv4。 若要改为使用 IPv6，请运行 [Set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) Windows PowerShell cmdlet。 例如，下面的命令将名为 TestVM 的虚拟机的首选协议设置为 IPv6：
 
 ```powershell
 Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
@@ -232,13 +231,13 @@ Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
 
 添加 COM 端口：
 
-1. 禁用安全启动。 内核调试与安全启动不兼容。 请确保虚拟机处于关闭状态，然后使用[set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) cmdlet。 例如，以下命令将在虚拟机 TestVM 上禁用安全启动：
+1. 禁用安全启动。 内核调试与安全启动不兼容。 请确保虚拟机处于关闭状态，然后使用 [set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) cmdlet。 例如，以下命令将在虚拟机 TestVM 上禁用安全启动：
 
     ```powershell
     Set-VMFirmware -Vmname TestVM -EnableSecureBoot Off
     ```
 
-2. 添加 COM 端口。 使用[set-vmcomport](/powershell/module/hyper-v/set-vmcomport?view=win10-ps) cmdlet 执行此操作。 例如，以下命令将虚拟机 TestVM 上的第一个 COM 端口配置为连接到本地计算机上的命名管道 TestPipe：
+2. 添加 COM 端口。 使用 [set-vmcomport](/powershell/module/hyper-v/set-vmcomport?view=win10-ps) cmdlet 执行此操作。 例如，以下命令将虚拟机 TestVM 上的第一个 COM 端口配置为连接到本地计算机上的命名管道 TestPipe：
 
     ```powershell
     Set-VMComPort -VMName TestVM 1 \\.\pipe\TestPipe

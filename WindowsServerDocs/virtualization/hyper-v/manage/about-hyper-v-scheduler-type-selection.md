@@ -1,18 +1,18 @@
 ---
 title: 关于 Hyper-v 虚拟机监控程序计划程序类型选择
 description: 提供有关 hyper-v 主机管理员使用 Hyper-v 计划程序模式的信息
-author: allenma
-ms.author: allenma
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 5fe163d4-2595-43b0-ba2f-7fad6e4ae069
-ms.openlocfilehash: 332ec3a31d8a442fada7f01d30c5cb7d44965238
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9c41dfb5bad28122f8c2a6b06ff6574acd89a9ec
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994093"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746622"
 ---
 # <a name="about-hyper-v-hypervisor-scheduler-type-selection"></a>关于 Hyper-v 虚拟机监控程序计划程序类型选择
 
@@ -30,7 +30,7 @@ ms.locfileid: "87994093"
 
 ## <a name="background"></a>背景
 
-从 Windows Server 2016 开始，Hyper-v 支持多种计划和管理虚拟处理器的方法，称为虚拟机监控程序计划程序类型。  有关所有虚拟机监控程序计划程序类型的详细说明，请参阅[了解和使用 hyper-v 虚拟机监控程序计划程序类型](./manage-hyper-v-scheduler-types.md)。
+从 Windows Server 2016 开始，Hyper-v 支持多种计划和管理虚拟处理器的方法，称为虚拟机监控程序计划程序类型。  有关所有虚拟机监控程序计划程序类型的详细说明，请参阅 [了解和使用 hyper-v 虚拟机监控程序计划程序类型](./manage-hyper-v-scheduler-types.md)。
 
 >[!NOTE]
 >新的虚拟机监控程序计划程序类型最初随 Windows Server 2016 一起引入，在以前的版本中不可用。 Windows Server 2016 之前的所有 Hyper-v 版本仅支持经典计划程序。 仅最近发布了对核心计划程序的支持。
@@ -76,7 +76,7 @@ ms.locfileid: "87994093"
 部署具有最大安全状况的 Hyper-v 主机要求使用虚拟机监控程序核心计划程序类型。 为了确保客户在默认情况下是安全的，Microsoft 更改了以下默认设置和推荐设置。
 
 >[!NOTE]
->尽管 Windows Server 2016、Windows Server 1709 和 Windows Server 1803 的初始版本中包含了虚拟机监控程序对计划程序类型的内部支持，但需要进行更新才能访问允许选择虚拟机监控程序计划程序类型的配置控件。  有关这些更新的详细信息，请参阅[了解和使用 hyper-v 虚拟机监控程序计划程序类型](./manage-hyper-v-scheduler-types.md)。
+>尽管 Windows Server 2016、Windows Server 1709 和 Windows Server 1803 的初始版本中包含了虚拟机监控程序对计划程序类型的内部支持，但需要进行更新才能访问允许选择虚拟机监控程序计划程序类型的配置控件。  有关这些更新的详细信息，请参阅 [了解和使用 hyper-v 虚拟机监控程序计划程序类型](./manage-hyper-v-scheduler-types.md) 。
 
 ### <a name="virtualization-host-changes"></a>虚拟化主机更改
 
@@ -166,7 +166,7 @@ Microsoft 虚拟机管理程序提供了多个自旋或提示，在来宾 VM 中
 
 ### <a name="nononarchitecturalcoresharing-enlightenment-details"></a>NoNonArchitecturalCoreSharing 悟道详细信息
 
-从 Windows Server 2016 开始，虚拟机监控程序定义了一个新的悟道，用于描述如何处理来宾操作系统的副总裁计划和位置。 此悟道在[虚拟机监控程序顶级功能规范 v 5.0 c](/virtualization/hyper-v-on-windows/reference/tlfs)中定义。
+从 Windows Server 2016 开始，虚拟机监控程序定义了一个新的悟道，用于描述如何处理来宾操作系统的副总裁计划和位置。 此悟道在 [虚拟机监控程序顶级功能规范 v 5.0 c](/virtualization/hyper-v-on-windows/reference/tlfs)中定义。
 
 虚拟机监控程序合成 CPUID 叶0x40000004： 18 [NoNonArchitecturalCoreSharing = 1] 表示虚拟处理器将永远不会与另一个虚拟处理器共享物理内核，但虚拟处理器将报告为同级 SMT 线程。 例如，来宾副总裁决不会在 SMT 线程上运行，同时在同一处理器核心上的同级 SMT 线程上同时运行根副总裁。 仅当运行虚拟化时，这种情况才是可能的，因此表示一个也有严重安全隐患的非体系结构 SMT 行为。 来宾操作系统可以使用 NoNonArchitecturalCoreSharing = 1 作为安全启用优化的指示，这可能有助于避免设置 STIBP 的性能开销。
 

@@ -1,18 +1,17 @@
 ---
 title: 当虚拟机使用动态扩展虚拟硬盘时，请确保有足够的物理磁盘空间可用
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 9e3e3e64-4b3a-4b9d-acf1-e4df61a04f1e
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 089cc19190d3da9280062d3f1019645fd3cd81de
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1e67b51aa3c41c9642a8972d25e0501b26e91cd5
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950271"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746862"
 ---
 # <a name="ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-dynamically-expanding-virtual-hard-disks"></a>当虚拟机使用动态扩展虚拟硬盘时，请确保有足够的物理磁盘空间可用
 
@@ -25,7 +24,7 @@ ms.locfileid: "87950271"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 

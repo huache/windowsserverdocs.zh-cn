@@ -1,18 +1,17 @@
 ---
 title: 使用中的逻辑处理器数不得超过支持的最大值
 description: 提供有关如何解决此最佳做法分析器规则报告的问题的说明。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 66df8b02-91d1-424b-8934-a39c214d530e
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 4a78f81fa90bc25d9ca1888d2c74d90a417f1071
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 580d04af45416e08e536d815390be0e45b760312
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993423"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746142"
 ---
 # <a name="the-number-of-logical-processors-in-use-must-not-exceed-the-supported-maximum"></a>使用中的逻辑处理器数不得超过支持的最大值
 
@@ -41,14 +40,14 @@ ms.locfileid: "87993423"
 
 *从此计算机中删除一些处理器，或使用 msconfig 限制可用处理器的数量。*
 
-请参阅以下说明以使用 Msconfig。 有关删除处理器的详细信息，请参阅计算机附带的说明或联系硬件制造商。 有关 Hyper-v 支持的最高配置的详细信息，请参阅[在 Windows Server 2016 中规划 hyper-v 可伸缩性](../plan/plan-hyper-v-scalability-in-windows-server.md)。
+请参阅以下说明以使用 Msconfig。 有关删除处理器的详细信息，请参阅计算机附带的说明或联系硬件制造商。 有关 Hyper-v 支持的最高配置的详细信息，请参阅 [在 Windows Server 2016 中规划 hyper-v 可伸缩性](../plan/plan-hyper-v-scalability-in-windows-server.md)。
 
 ### <a name="to-limit-the-number-of-available-processors"></a>限制可用处理器的数量
 
-1.   ( # A0) 打开 "系统配置" 应用。 为此，请单击 "**开始**"，键入**msconfig**，右键单击 "**系统配置**" 桌面应用程序，然后单击 "以**管理员身份运行**"。
+1.   ( # A0) 打开 "系统配置" 应用。 为此，请单击 " **开始**"，键入 **msconfig**，右键单击 " **系统配置** " 桌面应用程序，然后单击 "以 **管理员身份运行**"。
 
-2.  从 "**启动**" 选项卡中，单击 "**高级选项**"。
+2.  从 " **启动** " 选项卡中，单击 " **高级选项**"。
 
-3.  选择 "**处理器数量**"，然后在列表中选择一个编号。 单击“确定”。
+3.  选择 " **处理器数量** "，然后在列表中选择一个编号。 单击“确定”。
 
 4.  重新启动计算机以使用新数目的处理器运行它。

@@ -1,18 +1,17 @@
 ---
 title: 用于实时迁移通信的至少一个网络的链接速度至少为 1 Gbps
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 5714df3f-f810-4618-8c93-e24881651100
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 763b3ad598d91ee1ae63e6e53086a8ff06348f98
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cf1f09a635d6f6a46ee2a0bab2de53c898af9084
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960680"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746292"
 ---
 # <a name="at-least-one-network-for-live-migration-traffic-should-have-a-link-speed-of-at-least-1-gbps"></a>用于实时迁移通信的至少一个网络的链接速度至少为 1 Gbps
 
@@ -25,7 +24,7 @@ ms.locfileid: "87960680"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|错误|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 

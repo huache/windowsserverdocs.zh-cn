@@ -1,18 +1,17 @@
 ---
 title: 至少为运行 Windows 7 并为动态内存启用的虚拟机配置所需的内存量
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 119965bf-6154-414d-b3a1-aa5b30eac5f6
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: d5d88fd149cd2d8a361e11edb09cb467a422bd5f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cf6ab68e0c8d7339b8ba6574a7b0a4c02fa59e6e
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968464"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746962"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-7-and-enabled-for-dynamic-memory"></a>至少为运行 Windows 7 并为动态内存启用的虚拟机配置所需的内存量
 
@@ -25,7 +24,7 @@ ms.locfileid: "87968464"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|错误|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 
@@ -44,21 +43,21 @@ ms.locfileid: "87968464"
 
 1.  打开 Hyper-V 管理器。  (服务器管理器中，单击 "**工具**" "  >  **hyper-v 管理器**"。 ) 
 
-2.  在虚拟机列表中，右键单击所需的虚拟机，然后单击 "**设置**"。
+2.  在虚拟机列表中，右键单击所需的虚拟机，然后单击 " **设置**"。
 
-3.  在导航窗格中，单击 "**内存**"。
+3.  在导航窗格中，单击 " **内存**"。
 
-4.  将**RAM**改为至少 512 MB。
+4.  将 **RAM** 改为至少 512 MB。
 
-5.  在 "**动态内存**" 下，将**最小 ram**至少更改为 256 Mb，将**最大 ram**更改为 512 mb。
+5.  在 " **动态内存**" 下，将 **最小 ram** 至少更改为 256 Mb，将 **最大 ram** 更改为 512 mb。
 
 6.  单击“确定”。
 
 ### <a name="increase-memory-using-windows-powershell"></a>使用 Windows PowerShell 增加内存
 
-1.  打开 Windows PowerShell。 从桌面 (，单击 "**开始**"，然后开始键入**Windows PowerShell**。 ) 
+1.  打开 Windows PowerShell。 从桌面 (，单击 " **开始** "，然后开始键入 **Windows PowerShell**。 ) 
 
-2.  右键单击 " **Windows PowerShell** "，然后单击 "**以管理员身份运行**"。
+2.  右键单击 " **Windows PowerShell** "，然后单击 " **以管理员身份运行**"。
 
 3.  运行与下面类似的命令，将 MyVM 替换为虚拟机的名称，将替换为至少包含下面所示值的内存值。
 

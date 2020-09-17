@@ -1,32 +1,31 @@
 ---
 title: Windows Server 上的 Hyper-v 支持的 Windows 来宾操作系统
 description: 列出了在虚拟机中用作来宾的支持的 Windows 操作系统。 还提供指向以前版本的 Hyper-v 的类似文章的链接。
-manager: dongill
 ms.topic: article
 ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
-author: lizap
-ms.author: elizapo
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 01/08/2019
-ms.openlocfilehash: 53036a353fa08b7be06aae6b4b70353a8a99ea0e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2e5cf6c94d0127a283c640a48aaa2fced5472e9d
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997626"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746722"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Windows Server 上的 Hyper-v 支持的 Windows 来宾操作系统
 
 >适用于：Windows Server 2016、Windows Server 2019
 
-Hyper-v 支持将多个版本的 Windows Server、Windows 和 Linux 分发版作为来宾操作系统在虚拟机中运行。 本文介绍了支持的 Windows Server 和 Windows 来宾操作系统。 对于 Linux 和 FreeBSD 分发版，请参阅[Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)。
+Hyper-v 支持将多个版本的 Windows Server、Windows 和 Linux 分发版作为来宾操作系统在虚拟机中运行。 本文介绍了支持的 Windows Server 和 Windows 来宾操作系统。 对于 Linux 和 FreeBSD 分发版，请参阅 [Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)。
 
-某些操作系统内置了 integration services。 其他一些要求在虚拟机中设置操作系统后，将 integration services 作为一个单独的步骤安装或升级。 有关详细信息，请参阅以下部分和[Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services)。
+某些操作系统内置了 integration services。 其他一些要求在虚拟机中设置操作系统后，将 integration services 作为一个单独的步骤安装或升级。 有关详细信息，请参阅以下部分和  [Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services)。
 
 ## <a name="supported-windows-server-guest-operating-systems"></a>受支持的 Windows Server 来宾操作系统
 
 以下是 Windows server 2016 和 Windows Server 2019 中支持作为 Hyper-v 的来宾操作系统的 Windows Server 版本。
 
-|来宾操作系统（服务器）|虚拟处理器的最大数量|Integration Services|说明|
+|来宾操作系统（服务器）|虚拟处理器的最大数量|Integration Services|备注|
 |-------------------------------------|----------------------------------------|------------------------|---------|
 |Windows Server 版本 1909 |第2代为 240;<br>第1代64|内置|超过240个虚拟处理器支持需要 Windows Server、版本1903或更高版本的来宾操作系统。|
 |Windows Server 版本 1903 |第2代为 240;<br>第1代64|内置||
@@ -43,7 +42,7 @@ Hyper-v 支持将多个版本的 Windows Server、Windows 和 Linux 分发版作
 
 以下是在 Windows Server 2016 和 Windows Server 2019 中作为 Hyper-v 的来宾操作系统支持的 Windows 客户端版本。
 
-|来宾操作系统（客户端）|虚拟处理器的最大数量|Integration Services|说明|
+|来宾操作系统（客户端）|虚拟处理器的最大数量|Integration Services|备注|
 |-------------------------------------|----------------------------------------|------------------------|---------|
 |Windows 10|32|内置||
 |Windows 8.1|32|内置||

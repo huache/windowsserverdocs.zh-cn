@@ -1,18 +1,17 @@
 ---
 title: 应启用所有虚拟网络适配器
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b17d647d-a34a-44de-ada6-01a2bf5eeb48
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 286a0dc099eb6350fe7f5adef925a2d38d99a3ca
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 48417108f780c8b145613b110bb51681bd69bdc6
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946093"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746302"
 ---
 # <a name="all-virtual-network-adapters-should-be-enabled"></a>应启用所有虚拟网络适配器
 
@@ -25,7 +24,7 @@ ms.locfileid: "87946093"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 

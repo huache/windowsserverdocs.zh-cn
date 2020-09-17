@@ -1,18 +1,17 @@
 ---
 title: 为基于 VSS 的备份配置来宾操作系统，以便为 Hyper-v 副本启用应用程序一致性快照
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 7638e996-d42d-47b8-a670-1e09e7183850
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 5270584b6213ad59ef43c378e5aa7a5dbcc30a4e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b6a7eec504282e63e0cb24efbd2cdc5f66849005
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939101"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746882"
 ---
 # <a name="configure-guest-operating-systems-for-vss-based-backups-to-enable-application-consistent-snapshots-for-hyper-v-replica"></a>为基于 VSS 的备份配置来宾操作系统，以便为 Hyper-v 副本启用应用程序一致性快照
 
@@ -25,7 +24,7 @@ ms.locfileid: "87939101"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|错误|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 

@@ -1,18 +1,17 @@
 ---
 title: 如果第三方扩展需要，应启用 WFP 虚拟交换机扩展
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 8aa8a9a5-e3fa-4c9b-8331-ba5a3de22429
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 628f58ef57e6a461791cd9641d043acfbfd79129
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b6099410d4d5e043387594022e8bb376d5fb52f7
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993451"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746672"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>如果第三方扩展需要，应启用 WFP 虚拟交换机扩展
 
@@ -25,7 +24,7 @@ ms.locfileid: "87993451"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 
@@ -42,9 +41,9 @@ ms.locfileid: "87993451"
 
 ### <a name="enable-the-windows-filtering-platform-using-windows-powershell"></a>使用 Windows PowerShell 启用 Windows 筛选平台
 
-1.  打开 Windows PowerShell。 从桌面 (，单击 "**开始**"，然后开始键入**Windows PowerShell**。 ) 
+1.  打开 Windows PowerShell。 从桌面 (，单击 " **开始** "，然后开始键入 **Windows PowerShell**。 ) 
 
-2.  右键单击 " **Windows PowerShell** "，然后单击 "**以管理员身份运行**"。
+2.  右键单击 " **Windows PowerShell** "，然后单击 " **以管理员身份运行**"。
 
 3.  将 External 替换为外部交换机的名称后，运行此命令：
 

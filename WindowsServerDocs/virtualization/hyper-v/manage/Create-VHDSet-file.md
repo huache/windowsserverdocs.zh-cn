@@ -3,18 +3,15 @@ title: 创建 Hyper-v VHD 集文件
 description: 在 Hyper-v 2016 上创建 VHDset 文件的步骤
 author: jiwool
 ms.author: jiwool
-manager: senthilr
 ms.date: 01/26/2017
 ms.topic: article
 ms.assetid: 444e1496-9e5a-41cf-bfbc-306e2ed8e00a
-audience: IT Pros
-ms.reviewer: kathydav
-ms.openlocfilehash: a2c4b2ff3ca4dda2cb2989c629c5dac5f529cac0
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7e2c287666115b9a81c6ab5585187f26dad7a5e3
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991445"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746462"
 ---
 # <a name="create-hyper-v-vhd-set-files"></a>创建 Hyper-v VHD 集文件
 VHD 集文件是 Windows Server 2016 中来宾群集的新共享虚拟磁盘模型。 VHD 集文件支持联机调整共享虚拟磁盘大小、支持 Hyper-v 副本，并可包括在应用程序一致性检查点中。
@@ -29,14 +26,14 @@ Hyper-v 处理管理检查点链和合并共享 VHD 集的各个方面。 管理
 ## <a name="create-a-vhd-set-file-from-hyper-v-manager"></a>从 Hyper-v 管理器创建 VHD 集文件
 
 1.  打开 Hyper-V 管理器。 单击 **“开始”**，指向 **“管理工具”**，然后单击 **“Hyper-V 管理器”**。
-2.  在 "操作" 窗格中，单击 "**新建**"，然后单击 "**硬盘**"。
-3.  在 "**选择磁盘格式**" 页上，选择 " **VHD 集**" 作为虚拟硬盘的格式。
-4.  继续浏览向导页面，以自定义虚拟硬盘。 您可以单击 "**下一步**" 以在向导的每一页上移动，或者单击左侧窗格中的某一页的名称，直接转到该页。
-5.  完成虚拟硬盘的配置后，单击 "**完成**"。
+2.  在 "操作" 窗格中，单击 " **新建**"，然后单击 " **硬盘**"。
+3.  在 " **选择磁盘格式** " 页上，选择 " **VHD 集** " 作为虚拟硬盘的格式。
+4.  继续浏览向导页面，以自定义虚拟硬盘。 您可以单击 " **下一步** " 以在向导的每一页上移动，或者单击左侧窗格中的某一页的名称，直接转到该页。
+5.  完成虚拟硬盘的配置后，单击 " **完成**"。
 
 ## <a name="create-a-vhd-set-file-from-windows-powershell"></a>从 Windows PowerShell 创建 VHD 集文件
 
-使用带有文件类型的[新 VHD](/powershell/module/hyper-v/new-vhd?view=win10-ps) cmdlet。文件路径中的 VHD。 此示例创建一个名为的 VHD 集文件，其大小为 10 Gb。
+使用带有文件类型的 [新 VHD](/powershell/module/hyper-v/new-vhd?view=win10-ps) cmdlet。文件路径中的 VHD。 此示例创建一个名为的 VHD 集文件，其大小为 10 Gb。
 
 ``` PowerShell
 PS c:\>New-VHD -Path c:\base.vhds -SizeBytes 10GB

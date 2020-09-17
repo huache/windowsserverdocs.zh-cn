@@ -1,18 +1,17 @@
 ---
 title: 避免在生产环境中运行服务器工作负荷的虚拟机上使用检查点
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 1be75890-d316-495a-b9b7-be75fc1aac10
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: dadff29461786a454dc8d7ee6b46f3b567ef6bd8
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: da0315ab06d4678d3cedc51092be7160d301ac4d
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994996"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747002"
 ---
 # <a name="avoid-using-checkpoints-on-a-virtual-machine-that-runs-a-server-workload-in-a-production-environment"></a>避免在生产环境中运行服务器工作负荷的虚拟机上使用检查点
 
@@ -27,12 +26,12 @@ ms.locfileid: "87994996"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|操作|
+|**类别**|Operations|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 
 > [!NOTE]
-> 在 Windows Server 2012 R2 中，虚拟机快照已重命名为 Hyper-v 管理器中的虚拟机检查点，以匹配 System Center 虚拟机管理中使用的术语。 有关详细信息，请参阅[检查点和快照概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn818483(v=ws.11))。
+> 在 Windows Server 2012 R2 中，虚拟机快照已重命名为 Hyper-v 管理器中的虚拟机检查点，以匹配 System Center 虚拟机管理中使用的术语。 有关详细信息，请参阅 [检查点和快照概述](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn818483(v=ws.11))。
 
 ## <a name="issue"></a>问题
 
@@ -49,4 +48,4 @@ ms.locfileid: "87994996"
 *如果虚拟机在生产环境中运行服务器工作负荷，则使虚拟机脱机，并使用 Hyper-v 管理器应用或删除检查点。若要删除检查点，你必须关闭虚拟机以完成该过程。*
 
 > [!NOTE]
-> 现在，可以使用生产检查点作为标准检查点的替代方案。 有关详细信息，请参阅[在标准或生产检查点之间选择](../manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)。
+> 现在，可以使用生产检查点作为标准检查点的替代方案。 有关详细信息，请参阅 [在标准或生产检查点之间选择](../manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)。

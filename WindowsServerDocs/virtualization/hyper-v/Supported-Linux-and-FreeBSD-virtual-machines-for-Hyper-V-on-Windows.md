@@ -1,18 +1,17 @@
 ---
 title: Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
-manager: dongill
 ms.topic: article
 ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/03/2016
-ms.openlocfilehash: 3c971b3b802f1059454bc8935b638ddcc10c825c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 891ad97d8ae5ef01c6dbfd0d59f7be6316c6e687
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965624"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746742"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Windows 上的 Hyper-v 支持的 Linux 和 FreeBSD 虚拟机
 
@@ -27,7 +26,7 @@ Hyper-v 支持适用于 Linux 和 FreeBSD 虚拟机的模拟和 Hyper-v 特定�
 对于较旧的 FreeBSD 版本 (在 10.0) 之前，Microsoft 提供的端口包含可安装的 BIS 驱动程序和 FreeBSD 虚拟机的相应守护程序。 对于更高版本的 FreeBSD 版本，BIS 内置于 FreeBSD 操作系统中，无需单独下载或安装，因为 FreeBSD 10.0 需要下载 KVP 端口。
 
 > [!TIP]
-> - 从评估中心下载[Windows Server 2019](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019) 。
+> - 从评估中心下载 [Windows Server 2019](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019) 。
 
 此内容的目标是提供信息，有助于简化 Hyper-v 上的 Linux 或 FreeBSD 部署。 具体的详细信息包括：
 
@@ -41,9 +40,9 @@ Hyper-v 支持适用于 Linux 和 FreeBSD 虚拟机的模拟和 Hyper-v 特定�
 
 * 每个 .LIS 或 BIS 功能的功能说明。
 
-**想要对特性和功能提出建议？** 是否有一些更好的做法？ 你可以使用[Windows Server User Voice](https://windowsserver.uservoice.com/forums/295062-linux-support)网站为 hyper-v 上的 Linux 和 FreeBSD 虚拟机建议新特性和功能，以及查看其他人的看法。
+**想要对特性和功能提出建议？** 是否有一些更好的做法？ 你可以使用 [Windows Server User Voice](https://windowsserver.uservoice.com/forums/295062-linux-support) 网站为 hyper-v 上的 Linux 和 FreeBSD 虚拟机建议新特性和功能，以及查看其他人的看法。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 * [Hyper-v 上支持的 CentOS 和 Red Hat Enterprise Linux 虚拟机](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

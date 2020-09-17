@@ -2,21 +2,21 @@
 title: 使用离散设备分配部署 NVMe 存储设备
 description: 了解如何使用 DDA 部署存储设备
 ms.topic: article
-author: chrishuybregts
-ms.author: chrihu
+ms.author: benarm
+author: BenjaminArmstrong
 ms.assetid: 1c36107e-78c9-4ec0-a313-6ed557ac0ffc
-ms.openlocfilehash: fdf6372d642a2e1413a2ed5029d9e9f25af4ce3f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 66da2888a5d7ce0777cb1976cdd484287362f691
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945940"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746082"
 ---
 # <a name="deploy-nvme-storage-devices-using-discrete-device-assignment"></a>使用离散设备分配部署 NVMe 存储设备
 
 >适用于： Microsoft Hyper-V Server 2016、Windows Server 2016
 
-从 Windows Server 2016 开始，可以使用离散设备分配或 DDA 将整个 PCIe 设备传递到 VM。  这样，便可以对设备进行高性能的访问，例如从 VM 内 NVMe 存储或图形卡，同时能够利用设备本机驱动程序。  请访问[使用离散设备分配部署设备的计划](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)，以了解有关设备工作的详细信息、可能的安全含义，等等。使用带有 DDA 的设备有三个步骤：
+从 Windows Server 2016 开始，可以使用离散设备分配或 DDA 将整个 PCIe 设备传递到 VM。  这样，便可以对设备进行高性能的访问，例如从 VM 内 NVMe 存储或图形卡，同时能够利用设备本机驱动程序。  请访问 [使用离散设备分配部署设备的计划](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md) ，以了解有关设备工作的详细信息、可能的安全含义，等等。使用带有 DDA 的设备有三个步骤：
 -   将 VM 配置为 DDA
 -   从主机分区卸载设备
 -   将设备分配给来宾 VM
@@ -35,7 +35,7 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 ## <a name="dismount-the-device-from-the-host-partition"></a>从主机分区卸载设备
 
 ### <a name="locating-the-devices-location-path"></a>查找设备的位置路径
-需要 PCI 位置路径才能从主机卸载和安装设备。  示例位置路径如下所示： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"` 。   可在此处找到有关位置路径的更多详细信息：[计划使用离散设备分配部署设备](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
+需要 PCI 位置路径才能从主机卸载和安装设备。  示例位置路径如下所示： `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"` 。   可在此处找到有关位置路径的更多详细信息： [计划使用离散设备分配部署设备](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)。
 
 ### <a name="disable-the-device"></a>禁用设备
 使用设备管理器或 PowerShell，确保设备处于 "已禁用" 状态。

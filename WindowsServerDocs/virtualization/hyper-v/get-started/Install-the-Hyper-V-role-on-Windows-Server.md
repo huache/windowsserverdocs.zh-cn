@@ -1,33 +1,32 @@
 ---
 title: 在 Windows Server 上安装 Hyper-V 角色
 description: 提供有关使用服务器管理器或 Windows PowerShell 安装 Hyper-v 的说明
-manager: dongill
 ms.topic: get-started-article
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 12/02/2016
-ms.openlocfilehash: 32632e7af3db0c3b390606bc784b929e76b2892f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e8b95d744954d477e33322cad8d20ff3ff8d7258
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997601"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746002"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>在 Windows Server 上安装 Hyper-V 角色
 
 >适用于：Windows Server 2016、Windows Server 2019
 
-若要创建和运行虚拟机，请在 Windows Server 上安装 Hyper-v 角色，方法是使用服务器管理器或在 Windows PowerShell 中使用**add-windowsfeature** cmdlet。
-对于 Windows 10，请参阅[在 windows 10 上安装 hyper-v](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
+若要创建和运行虚拟机，请在 Windows Server 上安装 Hyper-v 角色，方法是使用服务器管理器或在 Windows PowerShell 中使用 **add-windowsfeature** cmdlet。
+对于 Windows 10，请参阅 [在 windows 10 上安装 hyper-v](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
 
-若要了解有关 Hyper-v 的详细信息，请参阅[Hyper-v 技术概述](../Hyper-V-Technology-Overview.md)。 若要试用 Windows Server 2019，你可以下载并安装评估副本。 请参阅[评估中心](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019)。
+若要了解有关 Hyper-v 的详细信息，请参阅 [Hyper-v 技术概述](../Hyper-V-Technology-Overview.md)。 若要试用 Windows Server 2019，你可以下载并安装评估副本。 请参阅 [评估中心](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019)。
 
 在安装 Windows Server 或添加 Hyper-v 角色之前，请确保：
-- 计算机硬件兼容。 有关详细信息，请参阅 windows server 上的[系统要求](../../../get-started/System-Requirements.md)和 windows [Server 上的 hyper-v 系统要求](../System-requirements-for-Hyper-V-on-Windows.md)。
-- 不打算使用依赖于 Hyper-v 所需的相同处理器功能的第三方虚拟化应用程序。 示例包括 VMWare Workstation 和 VirtualBox。 你可以在不卸载这些其他应用的情况下安装 Hyper-v。 但是，如果你在运行 Hyper-v 虚拟机监控程序时尝试使用它们来管理虚拟机，则虚拟机可能无法启动或运行 unreliably。 有关关闭 Hyper-v 虚拟机监控程序的详细信息和说明，请参阅[虚拟化应用程序不能与 hyper-v、Device Guard 和 Credential guard 一起](https://support.microsoft.com/help/3204980/virtualization-applications-do-not-work-together-with-hyper-v-device-g)使用。
+- 计算机硬件兼容。 有关详细信息，请参阅 windows server 上的 [系统要求](../../../get-started/System-Requirements.md) 和 windows [Server 上的 hyper-v 系统要求](../System-requirements-for-Hyper-V-on-Windows.md)。
+- 不打算使用依赖于 Hyper-v 所需的相同处理器功能的第三方虚拟化应用程序。 示例包括 VMWare Workstation 和 VirtualBox。 你可以在不卸载这些其他应用的情况下安装 Hyper-v。 但是，如果你在运行 Hyper-v 虚拟机监控程序时尝试使用它们来管理虚拟机，则虚拟机可能无法启动或运行 unreliably。 有关关闭 Hyper-v 虚拟机监控程序的详细信息和说明，请参阅 [虚拟化应用程序不能与 hyper-v、Device Guard 和 Credential guard 一起](https://support.microsoft.com/help/3204980/virtualization-applications-do-not-work-together-with-hyper-v-device-g)使用。
 
-如果要仅安装管理工具（如 Hyper-v 管理器），请参阅[通过 Hyper-v 管理器远程管理 hyper-v 主机](../Manage/Remotely-manage-Hyper-V-hosts.md)。
+如果要仅安装管理工具（如 Hyper-v 管理器），请参阅 [通过 Hyper-v 管理器远程管理 hyper-v 主机](../Manage/Remotely-manage-Hyper-V-hosts.md)。
 
 ## <a name="install-hyper-v-by-using-server-manager"></a>使用服务器管理器安装 Hyper-v
 
@@ -47,13 +46,13 @@ ms.locfileid: "87997601"
 
 8. 在“确认安装选择”**** 页上，选择“如果需要，自动重新启动目标服务器”****，然后单击“安装”****。
 
-9. 安装完成后，请验证是否正确安装了 Hyper-v。 在服务器管理器中打开 "**所有服务器**" 页，然后选择安装了 hyper-v 的服务器。 在选定服务器的页面上检查 "**角色和功能**" 磁贴。
+9. 安装完成后，请验证是否正确安装了 Hyper-v。 在服务器管理器中打开 " **所有服务器** " 页，然后选择安装了 hyper-v 的服务器。 在选定服务器的页面上检查 " **角色和功能** " 磁贴。
 
 ## <a name="install-hyper-v-by-using-the-install-windowsfeature-cmdlet"></a>使用 Add-windowsfeature cmdlet 安装 Hyper-v
 
 1. 在 Windows 桌面上，单击“开始”按钮并键入名称 **Windows PowerShell** 的任一部分。
 
-2. 右键单击 "Windows PowerShell" 并选择 "以**管理员身份运行**"。
+2. 右键单击 "Windows PowerShell" 并选择 "以 **管理员身份运行**"。
 
 3. 若要在连接到远程的服务器上安装 Hyper-v，请运行以下命令，并将替换为 `<computer_name>` 服务器的名称。
 
@@ -72,7 +71,7 @@ ms.locfileid: "87997601"
     如果以本地方式连接到服务器，请不运行命令 `-ComputerName <computer_name>` 。
 
 > [!NOTE]
-> 如果在运行 Windows Server 2016 的服务器核心安装选项的服务器上安装此角色并使用参数 `-IncludeManagementTools` ，则只会安装 Windows PowerShell 的 Hyper-v 模块。 你可以在另一台计算机上使用 GUI 管理工具 Hyper-v 管理器来远程管理在服务器核心安装上运行的 Hyper-v 主机。 有关远程连接的说明，请参阅[通过 Hyper-v 管理器远程管理 hyper-v 主机](../Manage/Remotely-manage-Hyper-V-hosts.md)。
+> 如果在运行 Windows Server 2016 的服务器核心安装选项的服务器上安装此角色并使用参数 `-IncludeManagementTools` ，则只会安装 Windows PowerShell 的 Hyper-v 模块。 你可以在另一台计算机上使用 GUI 管理工具 Hyper-v 管理器来远程管理在服务器核心安装上运行的 Hyper-v 主机。 有关远程连接的说明，请参阅 [通过 Hyper-v 管理器远程管理 hyper-v 主机](../Manage/Remotely-manage-Hyper-V-hosts.md)。
 
 ## <a name="additional-references"></a>其他参考
 

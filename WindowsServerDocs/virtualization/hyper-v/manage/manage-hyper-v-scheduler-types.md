@@ -1,18 +1,18 @@
 ---
 title: 了解和使用 Hyper-v 虚拟机监控程序计划程序类型
 description: 提供有关 hyper-v 主机管理员使用 Hyper-v 计划程序模式的信息
-author: allenma
-ms.author: allenma
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: a1f53dba659af7d5ac0efff2e72bd168523bde0c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 1aa270adc30f72f8efcdbbea2162e3c6b925dade
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995631"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746422"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>管理 Hyper-v 虚拟机监控程序计划程序类型
 
@@ -21,7 +21,7 @@ ms.locfileid: "87995631"
 本文介绍了在 Windows Server 2016 中首次引入的虚拟处理器计划逻辑的新模式。 这些模式或计划程序类型确定 Hyper-v 虚拟机监控程序如何分配并管理来宾虚拟处理器上的工作。 Hyper-v 主机管理员可以选择最适合 (Vm 的来宾虚拟机的虚拟机监控程序计划程序类型) 并将 Vm 配置为利用计划逻辑。
 
 > [!NOTE]
-> 若要使用本文档中所述的虚拟机监控程序计划程序功能，需要进行更新。 有关详细信息，请参阅[所需更新](#required-updates)。
+> 若要使用本文档中所述的虚拟机监控程序计划程序功能，需要进行更新。 有关详细信息，请参阅 [所需更新](#required-updates)。
 
 ## <a name="background"></a>背景
 
@@ -34,13 +34,13 @@ Intel 和 AMD 均提供支持 SMT 的处理器。 Intel 将其 SMT 的产品/服
 
 在本文中，Hyper-v 的 SMT 说明及其使用方式同样适用于 Intel 和 AMD 系统。
 
-* 有关 Intel HT 技术的详细信息，请参阅[Intel 超线程技术](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html)
+* 有关 Intel HT 技术的详细信息，请参阅 [Intel 超线程技术](https://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html)
 
-* 有关 AMD SMT 的详细信息，请参阅["Zen" 核心体系结构](https://www.amd.com/en/technologies/zen-core)
+* 有关 AMD SMT 的详细信息，请参阅 ["Zen" 核心体系结构](https://www.amd.com/en/technologies/zen-core)
 
 ## <a name="understanding-how-hyper-v-virtualizes-processors"></a>了解 Hyper-v 虚拟化处理器的方式
 
-在考虑虚拟机监控程序计划程序类型之前，了解 Hyper-v 体系结构也很有帮助。 可在[Hyper-v 技术概述](../hyper-v-technology-overview.md)中找到一般摘要。 下面是本文的重要概念：
+在考虑虚拟机监控程序计划程序类型之前，了解 Hyper-v 体系结构也很有帮助。 可在 [Hyper-v 技术概述](../hyper-v-technology-overview.md)中找到一般摘要。 下面是本文的重要概念：
 
 * Hyper-v 创建和管理虚拟机分区，在这些分区中分配和共享计算资源，以控制虚拟机监控程序。 分区在所有来宾虚拟机之间以及来宾 Vm 与根分区之间提供强大的隔离边界。
 
@@ -135,7 +135,7 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 
 ## <a name="windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler"></a>Windows Server 2019 Hyper-v 默认使用核心计划程序
 
-为了帮助确保以最佳安全配置部署 Hyper-v 主机，Windows Server 2019 Hyper-v 现在默认使用核心虚拟机监控程序计划程序模型。 主机管理员可以选择将主机配置为使用旧的经典计划程序。 在重写计划程序类型默认设置之前，管理员应仔细阅读、了解并考虑每个计划程序类型对虚拟化主机的安全性和性能的影响。  有关详细信息，请参阅[了解 hyper-v 计划程序类型选择](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection)。
+为了帮助确保以最佳安全配置部署 Hyper-v 主机，Windows Server 2019 Hyper-v 现在默认使用核心虚拟机监控程序计划程序模型。 主机管理员可以选择将主机配置为使用旧的经典计划程序。 在重写计划程序类型默认设置之前，管理员应仔细阅读、了解并考虑每个计划程序类型对虚拟化主机的安全性和性能的影响。  有关详细信息，请参阅 [了解 hyper-v 计划程序类型选择](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection) 。
 
 ### <a name="required-updates"></a>所需的更新
 
@@ -147,7 +147,7 @@ Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 |Windows Server 2016 | 1607 | 2018.07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018.07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
 |Windows Server 2016 | 1709 | 2018.07 C | [KB4338817](https://support.microsoft.com/help/4338817/windows-10-update-kb4338817) |
-|Windows Server 2019 | 1804 | None | None |
+|Windows Server 2019 | 1804 | 无 | 无 |
 
 ## <a name="selecting-the-hypervisor-scheduler-type-on-windows-server"></a>选择 Windows Server 上的虚拟机监控程序计划程序类型
 

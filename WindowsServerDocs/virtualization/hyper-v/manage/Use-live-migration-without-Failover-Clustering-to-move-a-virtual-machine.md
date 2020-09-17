@@ -1,18 +1,17 @@
 ---
 title: 使用没有故障转移群集的实时迁移来移动虚拟机
 description: 提供在独立环境中进行实时迁移的先决条件和说明。
-manager: dongill
 ms.topic: article
 ms.assetid: 75c32e42-97f7-48df-aac9-1d82d34825e1
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 01/17/2017
-ms.openlocfilehash: e28ddefb5c1718fa251aa3de6d4323a3bc14c633
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b02c30a612ef6aa1ed56e1c26e86c21a48b5b138
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990227"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746632"
 ---
 # <a name="use-live-migration-without-failover-clustering-to-move-a-virtual-machine"></a>使用没有故障转移群集的实时迁移来移动虚拟机
 
@@ -26,7 +25,7 @@ ms.locfileid: "87990227"
 
 - 在源服务器和目标服务器上安装的 Windows Server 2016 或 Windows Server 2012 R2 中的 Hyper-v 角色，并为实时迁移设置。 如果虚拟机至少为版本5，则可以在运行 Windows Server 2016 和 Windows Server 2012 R2 的主机之间执行实时迁移。
 
-    有关版本升级说明，请参阅在[windows 10 或 Windows Server 2016 上的 hyper-v 中升级虚拟机版本](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。 有关安装说明，请参阅[设置用于实时迁移的主机](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md)。
+    有关版本升级说明，请参阅在 [windows 10 或 Windows Server 2016 上的 hyper-v 中升级虚拟机版本](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)。 有关安装说明，请参阅 [设置用于实时迁移的主机](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md)。
 
 - Hyper-v 管理工具安装在运行 Windows Server 2016 或 Windows 10 的计算机上，除非在源服务器或目标服务器上安装了这些工具，并且你将在其中运行这些工具。
 
@@ -34,9 +33,9 @@ ms.locfileid: "87990227"
 
 1.  打开 Hyper-V 管理器。  (服务器管理器中，单击 "**工具**" "  >> **hyper-v 管理器**"。 ) 
 
-2.  在导航窗格中，选择其中一个服务器。  (如果未列出，请右键单击 " **Hyper-v 管理器**"，单击 "**连接到服务器**"，键入服务器名称，然后单击 **"确定"**。 重复此步骤以添加更多服务器。 ) 
+2.  在导航窗格中，选择其中一个服务器。  (如果未列出，请右键单击 " **Hyper-v 管理器**"，单击 " **连接到服务器**"，键入服务器名称，然后单击 **"确定"**。 重复此步骤以添加更多服务器。 ) 
 
-3.  在 "**虚拟机**" 窗格中，右键单击虚拟机，然后单击 "**移动**"。 这将打开 "移动向导"。
+3.  在 " **虚拟机** " 窗格中，右键单击虚拟机，然后单击 " **移动**"。 这将打开 "移动向导"。
 
 4.  使用向导页可以选择移动的类型、目标服务器和选项。
 
@@ -57,9 +56,9 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 如果尚未设置约束委派，则必须先登录到源服务器，然后才能移动虚拟机。 如果不这样做，身份验证尝试将失败，出现错误，并显示以下消息：
 
 "迁移源的虚拟机迁移操作失败。
-未能建立与主机*计算机名称*的连接：安全包0x8009030E 中没有可用的凭据。 "
+未能建立与主机 *计算机名称*的连接：安全包0x8009030E 中没有可用的凭据。 "
 
- 若要解决此问题，请登录到源服务器，然后重试移动。 若要避免在执行实时迁移之前登录到源服务器，请设置约束委派。 你将需要域管理员凭据来设置约束委派。 有关说明，请参阅[设置用于实时迁移的主机](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md)。
+ 若要解决此问题，请登录到源服务器，然后重试移动。 若要避免在执行实时迁移之前登录到源服务器，请设置约束委派。 你将需要域管理员凭据来设置约束委派。 有关说明，请参阅 [设置用于实时迁移的主机](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md)。
 
  ### <a name="failed-because-the-host-hardware-isnt-compatible"></a>失败，因为主机硬件不兼容
 
@@ -69,12 +68,12 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 
  若要解决此问题，请关闭虚拟机并打开 "处理器兼容性" 设置。
 
-1. 从 Hyper-v 管理器的 "**虚拟机**" 窗格中，右键单击虚拟机，然后单击 "设置"。
-2. 在导航窗格中，展开 "**处理器**" 并单击 "**兼容性**"。
-3. 选中 "**迁移到具有不同处理器版本的计算机**"。
+1. 从 Hyper-v 管理器的 " **虚拟机** " 窗格中，右键单击虚拟机，然后单击 "设置"。
+2. 在导航窗格中，展开 " **处理器** " 并单击 " **兼容性**"。
+3. 选中 " **迁移到具有不同处理器版本的计算机**"。
 4. 单击“确定”。
 
-   若要使用 Windows PowerShell，请使用[VMProcessor](/powershell/module/hyper-v/set-vmprocessor?view=win10-ps) cmdlet：
+   若要使用 Windows PowerShell，请使用 [VMProcessor](/powershell/module/hyper-v/set-vmprocessor?view=win10-ps) cmdlet：
 
    ```
    PS C:\> Set-VMProcessor TestVM -CompatibilityForMigrationEnabled $true

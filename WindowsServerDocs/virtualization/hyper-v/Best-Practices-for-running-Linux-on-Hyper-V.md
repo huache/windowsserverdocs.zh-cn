@@ -1,18 +1,17 @@
 ---
 title: 在 Hyper-v 上运行 Linux 的最佳实践
 description: 提供在虚拟机上运行 Linux 的建议
-manager: dongill
 ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 04/15/2020
-ms.openlocfilehash: b9a03ec24adf0b77ff4a6e477f550c63760c9d85
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 216bd83eb06cd14b2b2290e3294041b097cfdbd9
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989103"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747162"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>在 Hyper-v 上运行 Linux 的最佳实践
 
@@ -47,13 +46,13 @@ PS > New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes 127GB -Dynamic -BlockSizeBytes
 
 由于第2代虚拟机中不存在 PIT 计时器，因此到 PxE TFTP 服务器的网络连接可能会提前终止，并阻止加载服务器从服务器读取 Grub 配置和加载内核。
 
-在 RHEL 1.x 上，可以使用旧版 grub v 0.97 EFI 引导加载，而不是 grub2，如下所述：[https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
+在 RHEL 1.x 上，可以使用旧版 grub v 0.97 EFI 引导加载，而不是 grub2，如下所述： [https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
 
 在 RHEL 1.x 以外的 Linux 分发版上，可以遵循类似的步骤配置 grub v 0.97，以便从 PxE 服务器加载 Linux 内核。
 
 此外，在 RHEL/CentOS 6.6 键盘和鼠标输入无法与预安装内核一起使用，这会阻止在菜单中指定安装选项。 必须将串行控制台配置为允许选择安装选项。
 
-* 在 PxE 服务器上的**efidefault**文件中，添加以下内核参数 **"console = ttyS1"**
+* 在 PxE 服务器上的 **efidefault** 文件中，添加以下内核参数 **"console = ttyS1"**
 
 * 在 Hyper-v 中的 VM 上，使用以下 PowerShell cmdlet 设置 COM 端口：
 
@@ -70,7 +69,7 @@ Set-VMComPort -VMName <Name> -Number 2 -Path \\.\pipe\dbg1
 
 ## <a name="use-hyper-v-specific-network-adapters-not-the-legacy-network-adapter"></a>使用 Hyper-v 特定的网络适配器，而不是旧的网络适配器
 
-配置并使用虚拟以太网适配器，该适配器是一种具有增强性能的 Hyper-v 特定网卡。 如果旧网络适配器和 Hyper-v 特定网络适配器均连接到虚拟机，则**ifconfig**的输出中的网络名称可能会显示随机值，例如 **_tmp12000801310**。 若要避免此问题，请在 Linux 虚拟机中使用 Hyper-v 特定的网络适配器时，删除所有旧版网络适配器。
+配置并使用虚拟以太网适配器，该适配器是一种具有增强性能的 Hyper-v 特定网卡。 如果旧网络适配器和 Hyper-v 特定网络适配器均连接到虚拟机，则 **ifconfig** 的输出中的网络名称可能会显示随机值，例如 **_tmp12000801310**。 若要避免此问题，请在 Linux 虚拟机中使用 Hyper-v 特定的网络适配器时，删除所有旧版网络适配器。
 
 ## <a name="use-io-scheduler-noopnone-for-better-disk-io-performance"></a>使用 i/o 计划程序 noop/none 提高磁盘 i/o 性能
 
@@ -84,7 +83,7 @@ Linux 内核提供两组磁盘 i/o 计划程序来重新排序请求。  一个�
 
 ## <a name="reserve-more-memory-for-kdump"></a>为 kdump 保留更多内存
 
-如果转储捕获内核在启动时出现死机，请为内核保留更多内存。 例如，在 Ubuntu grub 配置文件中将参数**crashkernel = 384M-： 128M**更改为**crashkernel = 384M-： 256M** 。
+如果转储捕获内核在启动时出现死机，请为内核保留更多内存。 例如，在 Ubuntu grub 配置文件中将参数 **crashkernel = 384M-： 128M** 更改为 **crashkernel = 384M-： 256M** 。
 
 ## <a name="shrinking-vhdx-or-expanding-vhd-and-vhdx-files-can-result-in-erroneous-gpt-partition-tables"></a>缩小 VHDX 或扩展 VHD 和 VHDX 文件可能导致 GPT 分区表错误
 

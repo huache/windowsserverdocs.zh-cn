@@ -1,18 +1,17 @@
 ---
 title: 应将一个或多个网络适配器配置为端口镜像的源
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 147fd00f-1440-44d1-94e3-3a8af63aa7ed
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 1d5f355e4553d5d775152ed405729fa32c829acf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c8a04001986ab4d3722c9e51a5d5ceb7cbd0bf02
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954454"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746242"
 ---
 # <a name="one-or-more-network-adapters-should-be-configured-as-the-source-for-port-mirroring"></a>应将一个或多个网络适配器配置为端口镜像的源
 
@@ -25,7 +24,7 @@ ms.locfileid: "87954454"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 

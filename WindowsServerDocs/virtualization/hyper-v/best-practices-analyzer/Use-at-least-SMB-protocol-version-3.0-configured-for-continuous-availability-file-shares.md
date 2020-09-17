@@ -1,18 +1,17 @@
 ---
 title: 至少使用 SMB 协议版本3.0，配置为用于存储虚拟机文件的文件共享上的连续可用性
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: a1fa5cf9-8a48-4f63-bb57-d81e63e77b30
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 7fd84ecf7876638d421f9a8f7042e81c131f2ab2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9e913ac96075d7ad15d4e50872e52aa3c863ac5a
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960270"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746792"
 ---
 # <a name="use-at-least-smb-protocol-version-30-configured-for-continuous-availability-on-file-shares-that-store-files-for-virtual-machines"></a>至少使用 SMB 协议版本3.0，配置为用于存储虚拟机文件的文件共享上的连续可用性
 
@@ -25,7 +24,7 @@ ms.locfileid: "87960270"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 

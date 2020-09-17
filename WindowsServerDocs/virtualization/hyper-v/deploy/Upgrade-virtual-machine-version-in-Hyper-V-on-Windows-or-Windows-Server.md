@@ -1,18 +1,17 @@
 ---
 title: 在 Windows 10 或 Windows Server 上的 Hyper-v 中升级虚拟机版本
 description: 提供有关升级虚拟机版本的说明和注意事项
-manager: dongill
 ms.topic: article
 ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: 24e67bd88a644c44b65d5eb8ccd3d6190737b5db
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 236e0230c30e1d0260f4a72d1735b3ba687c3fd8
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995636"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746042"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>在 Windows 10 或 Windows Server 上的 Hyper-v 中升级虚拟机版本
 
@@ -24,26 +23,26 @@ ms.locfileid: "87995636"
 - 升级群集功能级别。
 - 你确定不需要将虚拟机移回运行 Windows 或 Windows Server 以前版本的 Hyper-v 主机。
 
-有关详细信息，请参阅[群集操作系统滚动升级](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)和[在 VMM 中执行 hyper-v 主机群集的滚动升级](/system-center/vmm/hyper-v-rolling-upgrade)。
+有关详细信息，请参阅 [群集操作系统滚动升级](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md) 和 [在 VMM 中执行 hyper-v 主机群集的滚动升级](/system-center/vmm/hyper-v-rolling-upgrade)。
 
 ## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>步骤1：检查虚拟机配置版本
 
 1. 在 Windows 桌面上，单击“开始”按钮并键入名称 **Windows PowerShell** 的任一部分。
-2. 右键单击 "Windows PowerShell" 并选择 "以**管理员身份运行**"。
-3. 使用[GET VM](/powershell/module/hyper-v/get-vm)cmdlet。 运行以下命令，获取虚拟机的版本。
+2. 右键单击 "Windows PowerShell" 并选择 "以 **管理员身份运行**"。
+3. 使用 [GET VM](/powershell/module/hyper-v/get-vm)cmdlet。 运行以下命令，获取虚拟机的版本。
 
 ```PowerShell
 Get-VM * | Format-Table Name, Version
 ```
 
-还可以通过选择虚拟机并查看 "**摘要**" 选项卡来查看 Hyper-v 管理器中的配置版本。
+还可以通过选择虚拟机并查看 " **摘要** " 选项卡来查看 Hyper-v 管理器中的配置版本。
 
 ## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>步骤2：升级虚拟机配置版本
 
 1. 关闭 Hyper-v 管理器中的虚拟机。
 2. 选择操作 > 升级配置版本。 如果此选项不适用于虚拟机，则它已是 Hyper-V 主机支持的最高配置版本。
 
-若要使用 Windows PowerShell 升级虚拟机配置版本，请使用[VMVersion](/powershell/module/hyper-v/update-vmversion) cmdlet。 运行以下命令，其中 vmname 是虚拟机的名称。
+若要使用 Windows PowerShell 升级虚拟机配置版本，请使用 [VMVersion](/powershell/module/hyper-v/update-vmversion) cmdlet。 运行以下命令，其中 vmname 是虚拟机的名称。
 
 ```PowerShell
 Update-VMVersion <vmname>
@@ -57,7 +56,7 @@ Update-VMVersion <vmname>
 Get-VMHostSupportedVersion -Default
 ```
 
-如果需要创建可移至运行旧版 Windows 的 Hyper-v 主机的虚拟机，请使用带有-version 参数的[新 VM](/powershell/module/hyper-v/new-vm) cmdlet。 例如，若要创建可以移动到运行 Windows Server 2012 R2 的 Hyper-v 主机的虚拟机，请运行以下命令。 此命令将创建一个名为 "WindowsCV5" 的虚拟机，其配置版本为5.0。
+如果需要创建可移至运行旧版 Windows 的 Hyper-v 主机的虚拟机，请使用带有-version 参数的 [新 VM](/powershell/module/hyper-v/new-vm) cmdlet。 例如，若要创建可以移动到运行 Windows Server 2012 R2 的 Hyper-v 主机的虚拟机，请运行以下命令。 此命令将创建一个名为 "WindowsCV5" 的虚拟机，其配置版本为5.0。
 
 ```PowerShell
 New-VM -Name "WindowsCV5" -Version 5.0
@@ -106,7 +105,7 @@ New-VM -Name "WindowsCV5" -Version 5.0
 
  |虚拟机文件类型 | 描述|
  |---|---|
-|配置 |以二进制文件格式存储的虚拟机配置信息。 <br /> 文件扩展名：. .vmcx <br /> 默认位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 计算机|
+|Configuration |以二进制文件格式存储的虚拟机配置信息。 <br /> 文件扩展名：. .vmcx <br /> 默认位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 计算机|
  |运行时状态|以二进制文件格式存储的虚拟机运行时状态信息。 <br />文件扩展名：. .vmrs 和. vmgs <br />默认位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 计算机|
 |虚拟硬盘|存储虚拟机的虚拟硬盘。 <br /> 文件扩展名： .vhd 或 .vhdx <br />默认位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 硬盘|
  |自动虚拟硬盘 |用于虚拟机检查点的差异磁盘文件。 <br /> 文件扩展名：. .avhdx <br /> 默认位置： C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual 硬盘|
@@ -116,14 +115,14 @@ New-VM -Name "WindowsCV5" -Version 5.0
 
 如果你有使用早期版本的 Hyper-v 创建的虚拟机，则在更新配置版本之前，更高版本的主机操作系统上可用的某些功能可能无法使用这些虚拟机。
 
-通常，我们建议在将虚拟化主机成功升级到较新版本的 Windows 后更新配置版本，并确信不需要回滚。 使用[群集操作系统滚动升级](../../../failover-clustering/cluster-operating-system-rolling-upgrade.md)功能时，通常会在更新群集功能级别后进行。 这样一来，你将从新功能和内部更改和优化中获益。
+通常，我们建议在将虚拟化主机成功升级到较新版本的 Windows 后更新配置版本，并确信不需要回滚。 使用 [群集操作系统滚动升级](../../../failover-clustering/cluster-operating-system-rolling-upgrade.md) 功能时，通常会在更新群集功能级别后进行。 这样一来，你将从新功能和内部更改和优化中获益。
 
 >[!NOTE]
 >VM 配置版本更新后，VM 将无法在不支持更新的配置版本的主机上启动。
 
 下表显示了使用一些 Hyper-v 功能所需的最低虚拟机配置版本。
 
-|功能|最低 VM 配置版本|
+|Feature|最低 VM 配置版本|
 |---|---|
 |热添加/删除内存|6.2|
 |Linux VM 的安全启动|6.2|
@@ -143,4 +142,4 @@ New-VM -Name "WindowsCV5" -Version 5.0
 |使用[核心计划程序](../manage/manage-hyper-v-scheduler-types.md#windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler)自动为在主机上运行的 vm 公开[同步多线程](../manage/manage-hyper-v-scheduler-types.md#background)配置|9.0|
 |休眠支持|9.0|
 
-有关这些功能的详细信息，请参阅[Windows Server 上的 hyper-v 中的新增](../What-s-new-in-Hyper-V-on-Windows.md)功能。
+有关这些功能的详细信息，请参阅 [Windows Server 上的 hyper-v 中的新增](../What-s-new-in-Hyper-V-on-Windows.md)功能。

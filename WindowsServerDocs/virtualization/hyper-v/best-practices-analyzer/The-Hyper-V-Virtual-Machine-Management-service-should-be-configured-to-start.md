@@ -1,18 +1,17 @@
 ---
 title: 应将 Hyper-v 虚拟机管理服务配置为自动启动
 description: 提供有关如何解决此最佳做法分析器规则报告的问题的说明。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 222bbe76-c514-4a3f-b61b-860a4dc2826a
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 73ef8f7de89da5a05fedd53b9b23a32fed683dbf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8245e425adb1b1187918e9ee213135c16a190cde
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960480"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746492"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-should-be-configured-to-start-automatically"></a>应将 Hyper-v 虚拟机管理服务配置为自动启动
 
@@ -25,7 +24,7 @@ ms.locfileid: "87960480"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 
@@ -46,16 +45,16 @@ ms.locfileid: "87960480"
 > [!TIP]
 > 如果在桌面应用中找不到该服务，或命令行工具报告该服务不存在，则可能未安装 Hyper-v 管理工具。 若要安装它们：
 >
-> - 在 Windows Server 上，打开服务器管理器，并使用 "添加角色和功能向导"。 有关更多详细信息，请参阅[在 Windows Server 2016 上安装 hyper-v 角色](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)。
+> - 在 Windows Server 上，打开服务器管理器，并使用 "添加角色和功能向导"。 有关更多详细信息，请参阅 [在 Windows Server 2016 上安装 hyper-v 角色](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)。
 > - 在 Windows 上的桌面中，开始键入**程序**，单击 "**程序和功能**" (控制面板 ") > **" 打开或关闭 Windows 功能 "**" hyper-v  >  **Hyper-V**  >  **管理工具**"。 然后，单击 **“确定”**。
 
 #### <a name="to-reconfigure-the-service-to-start-automatically-using-the-services-desktop-app"></a>将服务重新配置为使用 "服务" 桌面应用程序自动启动
 
-1.  打开 "服务" 桌面应用。  (单击 "**开始**"，在搜索框中单击，开始键入 "**服务**"，然后在结果列表中单击 "服务"。
+1.  打开 "服务" 桌面应用。  (单击 " **开始**"，在搜索框中单击，开始键入 " **服务**"，然后在结果列表中单击 "服务"。
 
-2.  在详细信息窗格中，右键单击 " **Hyper-v 虚拟机管理**"，然后单击 "**属性**"。
+2.  在详细信息窗格中，右键单击 " **Hyper-v 虚拟机管理**"，然后单击 " **属性**"。
 
-3.  在 "**常规**" 选项卡上，在 "**启动**类型" 中单击 "**自动**"。
+3.  在 " **常规** " 选项卡上，在 " **启动** 类型" 中单击 " **自动**"。
 
 #### <a name="to-reconfigure-the-service-to-start-automatically-using-the-sc-config-command"></a>将服务重新配置为使用 SC Config 命令自动启动
 

@@ -1,18 +1,17 @@
 ---
 title: Hyper-V 上支持的 Debian 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
-manager: dongill
 ms.topic: article
 ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: da96f78c9886ea392ccb2834f4b245a2422dc17e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c0ea0a8e9a030c8d35bf3042b16108523753b36b
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965744"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746542"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Hyper-V 上支持的 Debian 虚拟机
 
@@ -22,7 +21,7 @@ ms.locfileid: "87965744"
 
 ## <a name="table-legend"></a>表图例
 
-* **内置**的-.lis 作为此 Linux 分发的一部分包含在内。 Microsoft 提供的 .LIS 下载包不适用于此分发版，因此不安装它。 **Lsmod**所示的内置 .lis (内核模块版本号，例如) 不同于 Microsoft 提供的 .lis 下载包上的版本号。 不匹配不会指示内置的 .LIS 版本已过期。
+* **内置** 的-.lis 作为此 Linux 分发的一部分包含在内。 Microsoft 提供的 .LIS 下载包不适用于此分发版，因此不安装它。 **Lsmod**所示的内置 .lis (内核模块版本号，例如) 不同于 Microsoft 提供的 .lis 下载包上的版本号。 不匹配不会指示内置的 .LIS 版本已过期。
 
 * &#10004; 功能可用
 
@@ -41,7 +40,7 @@ ms.locfileid: "87965744"
 | vRSS                                                                                                                                         | 2019、2016、2012 R2                         | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
 | TCP 分段和校验和卸载                                                                                                       | 2019、2016、2012 R2          | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
 | SR-IOV                                                                                                                                       | 2019、2016                                  | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
-| **[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                             |                       |                       |                       |                       |
+| **[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                             |                       |                       |                       |                       |
 | VHDX 调整大小                                                                                                                                  | 2019、2016、2012 R2                         | &#10004; 注释1       | &#10004; 注释1       | &#10004; 注释1       | &#10004; 注释1       |
 | 虚拟光纤通道                                                                                                                        | 2019、2016、2012 R2                         |                       |                       |                       |                       |
 | 实时虚拟机备份                                                                                                                  | 2019、2016、2012 R2                         | &#10004; Note2 | &#10004; Note2 | &#10004; Note2 | &#10004; Note2 |
@@ -53,7 +52,7 @@ ms.locfileid: "87965744"
 | 动态内存-热添加                                                                                                                     | 2019、2016、2012 R2                   | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
 | 动态内存-膨胀                                                                                                                  | 2019、2016、2012 R2                   | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
 | 运行时内存大小调整                                                                                                                        | 2019、2016                                  | &#10004; 备注4       | &#10004; 备注4       |                       |                       |
-| **[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
+| **[显示](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
 | Hyper-v 特定视频设备                                                                                                                | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              |                       |
 | **[杂项](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                             |                       |                       |                       |                       |
 | 键值对                                                                                                                               | 2019、2016、2012 R2          | &#10004; 备注2       | &#10004; 备注2       | &#10004; 备注2       |                       |
@@ -67,18 +66,18 @@ ms.locfileid: "87965744"
 | 安全启动                                                                                                                                  | 2019、2016                                  | &#10004;              |                       |                       |                       |
 
 
-## <a name="notes"></a>说明
+## <a name="notes"></a>备注
 
 1. 不支持在大于2TB 的 Vhd 上创建文件系统。
 
-2. 从 Debian 8.3 开始，手动安装的 Debian 包 "hyperv-守护程序" 包含键/值对、fcopy 和 VSS 守护程序。 在 Debian 1.x 和 8.0-8.2 上，hyperv 守护程序包必须来自[Debian precise-backports](https://wiki.debian.org/Backports)。
+2. 从 Debian 8.3 开始，手动安装的 Debian 包 "hyperv-守护程序" 包含键/值对、fcopy 和 VSS 守护程序。 在 Debian 1.x 和 8.0-8.2 上，hyperv 守护程序包必须来自 [Debian precise-backports](https://wiki.debian.org/Backports)。
 
 3. 在 Windows Server 2012 R2 第2代虚拟机上，默认情况下已启用安全启动，某些 Linux 虚拟机将无法启动，除非禁用了安全启动选项。 你可以在**Hyper-v 管理器**中虚拟机设置的 "**固件**" 部分禁用安全启动，也可以使用 Powershell 禁用它：
 
    ```Powershell
    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
    ```
-4. 最新的上游内核功能只能通过使用内核包含的[Debian precise-backports](https://wiki.debian.org/Backports)提供。
+4. 最新的上游内核功能只能通过使用内核包含的 [Debian precise-backports](https://wiki.debian.org/Backports)提供。
 
 5. 尽管 Debian 7、windows 不支持并使用较旧的内核，但 Debian precise-backports for Debian 7、windows 中包含的内核已改进了 Hyper-v 功能。
 

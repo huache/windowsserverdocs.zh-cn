@@ -1,17 +1,16 @@
 ---
 title: 避免在目标上与源上的逻辑单元 (Lun) 的光纤通道路径更少时，启用通过虚拟光纤通道适配器配置的虚拟机以允许实时迁移
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 2b85793cd5a680b0fd13fca3da5881b8622710fb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 71617bbf6718e77f004b57e38035f5277c45c3bc
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963673"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747062"
 ---
 # <a name="avoid-enabling-virtual-machines-configured-with-virtual-fibre-channel-adapters-to-allow-live-migrations-when-there-are-fewer-paths-to-fibre-channel-logical-units-luns-on-the-destination-than-on-the-source"></a>避免在目标上与源上的逻辑单元 (Lun) 的光纤通道路径更少时，启用通过虚拟光纤通道适配器配置的虚拟机以允许实时迁移
 
@@ -24,7 +23,7 @@ ms.locfileid: "87963673"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 

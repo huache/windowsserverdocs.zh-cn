@@ -1,18 +1,17 @@
 ---
 title: 应将复制的重新同步安排在非高峰时段
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 093a7bb7-8e0a-486b-b42b-04edd8809710
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: dad983e19df328946f3bd7ec59f68ee3e9f8bfcc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 97df7945988f117ed16d59685cc60841775737da
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939003"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746152"
 ---
 # <a name="resynchronization-of-replication-should-be-scheduled-for-off-peak-hours"></a>应将复制的重新同步安排在非高峰时段
 
@@ -25,7 +24,7 @@ ms.locfileid: "87939003"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|操作|
+|**类别**|Operations|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 

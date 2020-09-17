@@ -1,18 +1,17 @@
 ---
 title: Hyper-v 上支持的 FreeBSD 虚拟机
 description: 列出每个版本中包含的 Linux integration services 和功能
-manager: dongill
 ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: 3767c56640dd4e4e07e2cdd4a578ec0c3db2f470
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bf4b1aeb701741a7f58f3d186ffe7861cdd1e8e0
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965634"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746402"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Hyper-v 上支持的 FreeBSD 虚拟机
 
@@ -22,7 +21,7 @@ ms.locfileid: "87965634"
 
 ## <a name="table-legend"></a>表图例
 
-* **内置**的 BIS (FreeBSD Integration Service) 作为此 FreeBSD 版本的一部分包含在内。
+* **内置** 的 BIS (FreeBSD Integration Service) 作为此 FreeBSD 版本的一部分包含在内。
 
 * &#10004; 功能可用
 
@@ -42,7 +41,7 @@ ms.locfileid: "87965634"
 |TCP 分段和校验和卸载|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
 |大型接收卸载 (LRO) |2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
 |SR-IOV|2019、2016|&#10004;|&#10004;|&#10004;|||||
-|**[储存](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||Note1|注释 1|注释 1|注释 1|注释 1|备注1、2|备注1、2|
+|**[存储](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||Note1|注释 1|注释 1|注释 1|注释 1|备注1、2|备注1、2|
 |VHDX 调整大小|2019、2016、2012 R2|&#10004; 备注6|&#10004; 备注6|&#10004; 备注6|||||
 |虚拟光纤通道|2019、2016、2012 R2||||||||
 |实时虚拟机备份|2019、2016、2012 R2|&#10004;|&#10004;||||||
@@ -54,7 +53,7 @@ ms.locfileid: "87965634"
 |动态内存-热添加|2019、2016、2012 R2||||||||
 |动态内存-膨胀|2019、2016、2012 R2||||||||
 |运行时内存大小调整|2019、2016||||||||
-|**[视频](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
+|**[显示](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
 |Hyper-v 特定视频设备|2019、2016、2012 R2||||||||
 |**[杂项](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
 |键/值对|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004; 备注5|&#10004;|
@@ -69,7 +68,7 @@ ms.locfileid: "87965634"
 
 ## <a name="notes"></a><a name="BKMK_notes"></a>说明
 
-1. 建议在启动过程中为[磁盘设备添加标签]( https://www.freebsd.org/doc/handbook/geom-glabel.html)以避免出现根本装入错误。
+1. 建议在启动过程中为 [磁盘设备添加标签]( https://www.freebsd.org/doc/handbook/geom-glabel.html) 以避免出现根本装入错误。
 
 2. 在 FreeBSD 1.x 和2.x 上加载 BIS 驱动程序时，可能无法识别虚拟 DVD 驱动器，除非通过以下命令启用旧版 ATA 驱动程序。
     ```sh
@@ -81,7 +80,7 @@ ms.locfileid: "87965634"
 
 4. 在故障转移方案中，你不能在副本服务器中设置静态 IPv6 地址。 请改用 IPv4 地址。
 
-5. KVP 由 FreeBSD 10.0 上的端口提供。 有关详细信息，请参阅 FreeBSD.org 上的[FreeBSD 10.0 端口](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/)。
+5. KVP 由 FreeBSD 10.0 上的端口提供。 有关详细信息，请参阅 FreeBSD.org 上的 [FreeBSD 10.0 端口](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) 。
 
 6. 若要使 VHDX 联机大小调整在 FreeBSD 11.0 中正常工作，需要一个特殊的手动步骤来解决在 11.0 + 中修复的几何 bug，主机调整 VHDX 磁盘的大小后，打开要写入的磁盘，然后运行 "gpart 恢复"，如下所示。
     ```sh
@@ -89,7 +88,7 @@ ms.locfileid: "87965634"
     # gpart recover da1
     ```
 
-**其他说明**：10稳定和11稳定的功能矩阵与 FreeBSD 11.1 版本相同。 此外，FreeBSD 10.2 和早期版本 (10.1、10.0、1.x、) 的生存期结束。 有关支持的版本和最新安全建议的最新列表，请参阅[此处](https://security.freebsd.org/)。
+**其他说明**：10稳定和11稳定的功能矩阵与 FreeBSD 11.1 版本相同。 此外，FreeBSD 10.2 和早期版本 (10.1、10.0、1.x、) 的生存期结束。 有关支持的版本和最新安全建议的最新列表，请参阅 [此处](https://security.freebsd.org/) 。
 
 ## <a name="see-also"></a>另请参阅
 
