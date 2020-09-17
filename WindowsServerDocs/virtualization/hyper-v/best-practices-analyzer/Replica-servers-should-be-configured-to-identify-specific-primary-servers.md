@@ -1,18 +1,17 @@
 ---
 title: 应将副本服务器配置为标识有权发送复制流量的特定主服务器
 description: 提供有关如何解决此最佳做法分析器规则报告的问题的说明。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0aeb1f4b-2e75-430b-9557-fe64738c4992
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 3ad031c548d4c8b945e47b06bf66e710d4c3c22e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 68953fe3efaba64c853e4da83d4ca47ff13ca00a
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995769"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745812"
 ---
 # <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>应将副本服务器配置为标识有权发送复制流量的特定主服务器
 
@@ -25,7 +24,7 @@ ms.locfileid: "87995769"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 
@@ -44,13 +43,13 @@ ms.locfileid: "87995769"
 
 2.  在主机列表中，右键单击所需的主机，然后单击 " **Hyper-v 设置**"。
 
-3.  在导航窗格中，单击 "**复制配置**"。
+3.  在导航窗格中，单击 " **复制配置**"。
 
-4.  在 "**授权和存储**" 下，单击 **"允许从指定的服务器复制"**。
+4.  在 " **授权和存储**" 下，单击 **"允许从指定的服务器复制"**。
 
-5.  在服务器列表下方，单击 "**添加**"。
+5.  在服务器列表下方，单击 " **添加**"。
 
-6.  在 "**添加授权条目**：
+6.  在 " **添加授权条目**：
 
     -   键入第一个服务器的完全限定名称。
 
@@ -64,9 +63,9 @@ ms.locfileid: "87995769"
 
 ### <a name="create-authorization-entries-using-windows-powershell"></a>使用 Windows PowerShell 创建授权条目
 
-1.  打开 Windows PowerShell。 从桌面 (，单击 "开始"，然后开始键入**Windows PowerShell**。 ) 
+1.  打开 Windows PowerShell。 从桌面 (，单击 "开始"，然后开始键入 **Windows PowerShell**。 ) 
 
-2.  右键单击 " **Windows PowerShell** "，然后单击 "**以管理员身份运行**"。
+2.  右键单击 " **Windows PowerShell** "，然后单击 " **以管理员身份运行**"。
 
 3.  运行与下面类似的命令，替换：
 

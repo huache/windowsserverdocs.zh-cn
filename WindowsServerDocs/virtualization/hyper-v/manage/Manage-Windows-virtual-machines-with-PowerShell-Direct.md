@@ -1,18 +1,17 @@
 ---
 title: 通过 PowerShell Direct 管理 Windows 虚拟机
 description: 说明如何使用 PowerShell Direct 来管理虚拟机，而无需依赖于网络或与之建立远程连接。
-manager: dongill
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc09093ba2d
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: 654767901607207ff1dea74201e1b7ede3c38ae0
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: fcf9863a90b9d42d1495c0da0267feba18d119a1
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997463"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90744732"
 ---
 # <a name="manage-windows-virtual-machines-with-powershell-direct"></a>通过 PowerShell Direct 管理 Windows 虚拟机
 
@@ -32,7 +31,7 @@ ms.locfileid: "87997463"
 
 1. 在 Hyper-V 主机上，以管理员身份打开 Windows PowerShell。
 
-2. 使用[Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7) cmdlet 连接到虚拟机。 通过使用虚拟机名称或 GUID 运行以下命令之一来创建会话：
+2. 使用 [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7) cmdlet 连接到虚拟机。 通过使用虚拟机名称或 GUID 运行以下命令之一来创建会话：
 
     ```
     Enter-PSSession -VMName <VMName>
@@ -45,7 +44,7 @@ ms.locfileid: "87997463"
 3. 键入虚拟机的凭据。
 4. 运行所需的任意命令。 这些命令在与其创建了会话的虚拟机上运行。
 
-5.  完成后，使用[Exit-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7)关闭会话。
+5.  完成后，使用 [Exit-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7) 关闭会话。
 
     ```
     Exit-PSSession
@@ -77,7 +76,7 @@ Invoke-Command -VMName PSTest  -ScriptBlock { cmdlet }
 
 -   虚拟机必须至少运行 Windows 10 或 Windows Server 2016。
 
-你可以使用[GET VM](/powershell/module/hyper-v/get-vm) cmdlet 来检查你使用的凭据是否具有 hyper-v 管理员角色，以及如何获取在主机上本地运行并已启动的虚拟机的列表。
+你可以使用 [GET VM](/powershell/module/hyper-v/get-vm) cmdlet 来检查你使用的凭据是否具有 hyper-v 管理员角色，以及如何获取在主机上本地运行并已启动的虚拟机的列表。
 
 ## <a name="see-also"></a>另请参阅
 [Enter-PSSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) 

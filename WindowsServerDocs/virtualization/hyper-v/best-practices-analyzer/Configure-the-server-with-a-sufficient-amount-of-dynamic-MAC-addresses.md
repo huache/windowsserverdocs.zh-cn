@@ -1,18 +1,17 @@
 ---
 title: 将服务器配置为具有足够数量的动态 MAC 地址
 description: 此最佳做法分析器规则文本的联机版本。
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: a2804519-9790-4006-80b6-e990a8f505fe
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: b0416bb38e78f62bddf8a7937eb821ee0988286d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0631954ccb89c41637e92d1170bed99d82a085b5
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968374"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90744122"
 ---
 # <a name="configure-the-server-with-a-sufficient-amount-of-dynamic-mac-addresses"></a>将服务器配置为具有足够数量的动态 MAC 地址
 
@@ -25,7 +24,7 @@ ms.locfileid: "87968374"
 |**操作系统**|Windows Server 2016|
 |**产品/功能**|Hyper-V|
 |**严重性**|警告|
-|**类别**|配置|
+|**类别**|Configuration|
 
 在以下部分中，"斜体" 指示在此问题的最佳做法分析器工具中出现的 UI 文本。
 
