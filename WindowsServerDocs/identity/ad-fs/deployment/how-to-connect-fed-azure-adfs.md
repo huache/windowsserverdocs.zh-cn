@@ -7,12 +7,12 @@ ms.assetid: 692a188c-badc-44aa-ba86-71c0e8074510
 ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.author: billmath
-ms.openlocfilehash: 3a53e8bb9e06e51627d14f6e5e3b918f58102478
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: a077a76814cc5ed99d4a1c0eb6c23584b22363e1
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078674"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766750"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>在 Azure 中部署 Active Directory 联合身份验证服务
 AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 与 Azure AD 或 O365 联合可让用户使用本地凭据进行身份验证，并访问云中的所有资源。 这样，就必须建立高可用性的 AD FS 基础结构来确保能够访问本地和云中的资源。 在 Azure 中部署 AD FS 有助于以最少量的工作实现所需的高可用性。
@@ -89,7 +89,7 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 * ExpressRoute
 
 建议使用 ExpressRoute。 ExpressRoute 使你能够在 Azure 数据中心与你的本地环境或共同位置环境中的基础结构之间创建专用连接。 ExpressRoute 连接不通过公共 Internet 。 它们能够提供可靠性、速度、延迟和安全性这几个方面均比基于 Internet 的典型连接更胜一筹的专用连接。
-尽管建议使用 ExpressRoute，但你也可以选择最适合组织的任何连接方法。 有关详细了解 ExpressRoute 以及如何使用 ExpressRoute 的各种连接选项，请阅读 [ExpressRoute technical overview](https://aka.ms/Azure/ExpressRoute)（ExpressRoute 技术概述）。
+尽管建议使用 ExpressRoute，但你也可以选择最适合组织的任何连接方法。 有关详细了解 ExpressRoute 以及如何使用 ExpressRoute 的各种连接选项，请阅读 [ExpressRoute technical overview](/azure/expressroute/expressroute-introduction)（ExpressRoute 技术概述）。
 
 ### <a name="2-create-storage-accounts"></a>2. 创建存储帐户
 为了保持高可用性并避免依赖单个存储帐户，可以创建两个存储帐户。 将每个可用性集中的计算机划分为两组，然后为每个组分配不同的存储帐户。
@@ -122,7 +122,7 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 | contosowap1 |WAP |外围网络 |contosowapset |contososac1 |静态 |
 | contosowap2 |WAP |外围网络 |contosowapset |contososac2 |静态 |
 
-可能已注意到尚未指定 NSG。 这是因为 Azure 允许在子网级别使用 NSG。 然后，可以使用与子网或 NIC 对象关联的单个 NSG 来控制计算机的网络流量。 有关详细信息，请阅读 [What is a Network Security Group (NSG)](https://aka.ms/Azure/NSG)（什么是网络安全组 (NSG)）。
+可能已注意到尚未指定 NSG。 这是因为 Azure 允许在子网级别使用 NSG。 然后，可以使用与子网或 NIC 对象关联的单个 NSG 来控制计算机的网络流量。 有关详细信息，请阅读 [What is a Network Security Group (NSG)](/azure/virtual-network/tutorial-filter-network-traffic)（什么是网络安全组 (NSG)）。
 如果要管理 DNS，建议使用静态 IP 地址。 可以使用 Azure DNS，并改为在域的 DNS 记录中按计算机的 Azure FQDN 引用新计算机。
 完成部署后，虚拟机窗格应如下所示：
 
@@ -315,7 +315,7 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 
 部署此模板时，可以使用现有的虚拟网络或者新建一个 VNET。 下面列出了可用于自定义部署的各种参数，以及部署过程中的参数用法说明。
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |:--- |:--- |
 | 位置 |要将资源部署到的区域，例如“美国东部”。 |
 | StorageAccountType |创建的存储帐户的类型 |
@@ -345,12 +345,12 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。 �
 
 ## <a name="additional-resources"></a>其他资源
 * [可用性集](https://aka.ms/Azure/Availability)
-* [Azure 负载均衡器](https://aka.ms/Azure/ILB)
-* [Internal 负载均衡器（内部负载均衡器）](https://aka.ms/Azure/ILB/Internal)
-* [Internet Facing 负载均衡器](https://aka.ms/Azure/ILB/Internet)
+* [Azure 负载均衡器](/azure/load-balancer/load-balancer-overview)
+* [Internal 负载均衡器（内部负载均衡器）](/azure/load-balancer/quickstart-load-balancer-standard-internal-powershell)
+* [Internet Facing 负载均衡器](/azure/load-balancer/quickstart-load-balancer-standard-public-powershell)
 * [存储帐户](https://aka.ms/Azure/Storage)
-* [Azure 虚拟网络](https://aka.ms/Azure/VNet)
-* [AD FS and Web Application Proxy Links](https://aka.ms/ADFSLinks)
+* [Azure 虚拟网络](/azure/virtual-network/virtual-networks-overview)
+* [AD FS and Web Application Proxy Links](/archive/blogs/tangent_thoughts/qrg-quick-reference-guide-active-directory-federation-services)
 
 ## <a name="next-steps"></a>后续步骤
 * [将本地标识与 Azure Active Directory 集成](/azure/active-directory/hybrid/whatis-hybrid-identity)

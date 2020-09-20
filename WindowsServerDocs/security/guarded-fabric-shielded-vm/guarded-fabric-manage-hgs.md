@@ -5,12 +5,12 @@ ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.openlocfilehash: 851ea4a57068c1544f290c48f370e04b96857cf6
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4c6fe87cd407a41b3686d86a37308bb08ddd6793
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989168"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766740"
 ---
 # <a name="managing-the-host-guardian-service"></a>管理主机保护者服务
 
@@ -33,13 +33,13 @@ ms.locfileid: "87989168"
 HGS 管理员选择有权运行受防护的 Vm 的 Hyper-v 主机，并管理启动受防护的 Vm 所需的证书。
 有权访问 HGS 的攻击者或恶意管理员可以利用此功能来授权受攻击的主机运行受防护的 Vm，通过删除密钥材料等来发起拒绝服务攻击。
 
-为避免这种风险，*强烈*建议您限制 hgs (的管理员的重叠，其中包括 hgs 加入的域) 和 hyper-v 环境。
+为避免这种风险， *强烈* 建议您限制 hgs (的管理员的重叠，其中包括 hgs 加入的域) 和 hyper-v 环境。
 通过确保没有一个管理员可以访问这两个系统，攻击者需要从两个人中泄露2个不同的帐户，以完成其任务来更改 HGS 策略。
 这也意味着，两个 Active Directory 环境的域和企业管理员不应为同一人，并且 HGS 使用与 Hyper-v 主机相同的 Active Directory 林。
 任何可以授予自身访问权限的人都面临安全风险。
 
 ### <a name="using-just-enough-administration"></a>使用足够的管理
-HGS 附带了[足够的管理](https://aka.ms/JEAdocs) (JEA 的内置) 角色，有助于更安全地管理它。
+HGS 附带了 [足够的管理](/powershell/scripting/learn/remoting/jea/overview) (JEA 的内置) 角色，有助于更安全地管理它。
 JEA 可帮助用户将管理员任务委派给非管理员用户，这意味着管理 HGS 策略的人员实际上不需要是整个计算机或域的管理员。
 JEA 的工作原理是限制用户可在 PowerShell 会话中运行的命令，并在后台使用临时本地帐户 (每个用户会话都是唯一的，) 运行通常需要提升的命令。
 
@@ -48,7 +48,7 @@ HGS 附带2个预配置的 JEA 角色：
 - 仅允许用户审核现有策略的**HGS 审阅者**。 它们不能对 HGS 配置进行任何更改。
 
 若要使用 JEA，首先需要创建一个新的标准用户，并使其成为 HGS 管理员或 HGS 审阅者组的成员。
-如果你使用 `Install-HgsServer` 为 hgs 设置新的林，则这些组将分别命名为 "*servicename*Administrators" 和 "*servicename*审校"，其中*servicename*是 HGS 群集的网络名称。
+如果你使用 `Install-HgsServer` 为 hgs 设置新的林，则这些组将分别命名为 "*servicename*Administrators" 和 "*servicename*审校"，其中 *servicename* 是 HGS 群集的网络名称。
 如果已将 HGS 加入现有域，则应该引用在中指定的组名称 `Initialize-HgsServer` 。
 
 **为 HGS 管理员和审阅者角色创建标准用户**
@@ -118,13 +118,13 @@ Remove-PSSession -Session $session
 若要查看这些事件，可打开事件查看器并导航到 HostGuardianService-HostGuardianService-KeyProtection。
 
 在大型环境中，通常最好将事件转发到中央 Windows 事件收集器，使事件的分析变得更简单。
-有关详细信息，请查看[Windows 事件转发文档](/windows/win32/wec/windows-event-collector)。
+有关详细信息，请查看 [Windows 事件转发文档](/windows/win32/wec/windows-event-collector)。
 
 ### <a name="using-system-center-operations-manager"></a>使用 System Center Operations Manager
 你还可以使用 System Center 2016-Operations Manager 来监视 HGS 和受保护的主机。
 受保护的结构管理包具有事件监视器，用于检查可能导致数据中心停机的常见错误配置，包括未通过证明的主机和用于报告错误的 HGS 服务器。
 
-若要开始，请[安装并配置 SCOM 2016](https://technet.microsoft.com/system-center-docs/om/welcome-to-operations-manager)并[下载受保护的结构管理包](https://www.microsoft.com/download/details.aspx?id=52764)。
+若要开始，请 [安装并配置 SCOM 2016](https://technet.microsoft.com/system-center-docs/om/welcome-to-operations-manager) 并 [下载受保护的结构管理包](https://www.microsoft.com/download/details.aspx?id=52764)。
 随附的管理包指南介绍了如何配置管理包并了解其监视器的作用域。
 
 ## <a name="backing-up-and-restoring-hgs"></a>备份和还原 HGS
@@ -164,27 +164,27 @@ HGS 保留了几条信息，这些信息可帮助 it 确定哪些主机有权运
 如果你丢失了整个群集，最佳做法是设置全新的 HGS 节点并仅还原 HGS 状态，而不是整个服务器操作系统。
 
 #### <a name="recovering-from-the-loss-of-one-node"></a>从一个节点丢失恢复
-如果丢失了一个或多个节点 (而不是 HGS 群集中的每个节点) ，只需遵循部署指南中的指南[将节点添加到群集](guarded-fabric-configure-additional-hgs-nodes.md)。
+如果丢失了一个或多个节点 (而不是 HGS 群集中的每个节点) ，只需遵循部署指南中的指南 [将节点添加到群集](guarded-fabric-configure-additional-hgs-nodes.md) 。
 认证策略将自动同步，作为具有随附密码的 PFX 文件提供给 HGS 的任何证书都将自动同步。
 对于使用指纹添加到 HGS (不可导出和硬件支持的证书，通常) ，你将需要确保每个新节点都有权访问每个证书的私钥。
 
 #### <a name="recovering-from-the-loss-of-the-entire-cluster"></a>恢复整个群集损失
 如果你的整个 HGS 群集出现故障，并且你无法将其恢复为联机状态，则你将需要从备份还原 HGS。
-从备份还原 HGS 需要首先按照[部署指南中的指南](guarded-fabric-setting-up-the-host-guardian-service-hgs.md)设置新的 hgs 群集。
+从备份还原 HGS 需要首先按照 [部署指南中的指南](guarded-fabric-setting-up-the-host-guardian-service-hgs.md)设置新的 hgs 群集。
 在设置恢复 HGS 环境时，强烈建议（但不要求）使用相同的群集名称，以协助主机中的名称解析。
 使用相同的名称可以避免使用新的证明和密钥保护 Url 重新配置主机。
 如果已将对象还原到 Active Directory 域后备 HGS，则建议你在初始化 HGS 服务器之前删除代表 HGS 群集、计算机、服务帐户和 JEA 组的对象。
 
-设置第一个 HGS 节点 (例如，它已安装并初始化) 后，将按照[从备份还原 HGS 中](#restoring-hgs-from-a-backup)的过程进行操作，以还原证明策略和密钥保护证书的公共部分。
+设置第一个 HGS 节点 (例如，它已安装并初始化) 后，将按照 [从备份还原 HGS 中](#restoring-hgs-from-a-backup) 的过程进行操作，以还原证明策略和密钥保护证书的公共部分。
 你将需要根据证书提供程序的指导手动还原证书的私钥 (例如，在 Windows 中导入证书，或配置对支持 HSM 的证书的访问) 。
-设置第一个节点后，可以继续在[群集中安装其他节点](guarded-fabric-configure-additional-hgs-nodes.md)，直到达到所需的容量和复原能力。
+设置第一个节点后，可以继续在 [群集中安装其他节点](guarded-fabric-configure-additional-hgs-nodes.md) ，直到达到所需的容量和复原能力。
 
 ### <a name="backing-up-hgs"></a>备份 HGS
 HGS 管理员应负责定期备份 HGS。
 完整备份将包含必须适当保护的敏感密钥材料。
 如果不受信任的实体能够访问这些密钥，则他们可以使用该材料来设置恶意的 HGS 环境，以损害受防护的 Vm。
 
-**备份证明策略**若要备份 HGS 证明策略，请在任何工作的 HGS 服务器节点上运行以下命令。
+**备份证明策略** 若要备份 HGS 证明策略，请在任何工作的 HGS 服务器节点上运行以下命令。
 系统将提示您提供密码。
 此密码用于使用 PFX 文件加密添加到 HGS 的任何证书， (而不是) 证书指纹。
 
@@ -239,11 +239,11 @@ Get-WebBinding -Protocol https | Select-Object certificateHash
 #### <a name="set-up-a-replacement-hgs-cluster"></a>设置替换 HGS 群集
 在还原 HGS 之前，你需要有一个已初始化的 HGS 群集，你可以将配置还原到该群集。
 如果只是导入意外删除到运行) 群集的现有 (的设置，则可以跳过此步骤。
-如果要从完全丢失的 HGS 恢复，则需按照[部署指南中的指南](guarded-fabric-setting-up-the-host-guardian-service-hgs.md)安装并初始化至少一个 hgs 节点。
+如果要从完全丢失的 HGS 恢复，则需按照 [部署指南中的指南](guarded-fabric-setting-up-the-host-guardian-service-hgs.md)安装并初始化至少一个 hgs 节点。
 
 具体而言，需要：
-1. [设置 hgs 域或将](guarded-fabric-choose-where-to-install-hgs.md)hgs 加入现有域
-2. 使用现有密钥*或*一组临时密钥[初始化 HGS 服务器](guarded-fabric-initialize-hgs.md)。 从 HGS 备份文件导入实际密钥后，可以[删除临时密钥](#renewing-or-replacing-keys)。
+1. [设置 hgs 域或将](guarded-fabric-choose-where-to-install-hgs.md) hgs 加入现有域
+2. 使用现有密钥*或*一组临时密钥[初始化 HGS 服务器](guarded-fabric-initialize-hgs.md)。 从 HGS 备份文件导入实际密钥后，可以 [删除临时密钥](#renewing-or-replacing-keys) 。
 3. 从备份[导入 HGS 设置](#import-settings-from-a-backup)以还原受信任的主机组、代码完整性策略、tpm 基线和 tpm 标识符
 
 > [!TIP]
@@ -258,7 +258,7 @@ Get-WebBinding -Protocol https | Select-Object certificateHash
 Import-HgsServerState -Path C:\Temp\HGSBackup.xml
 ```
 
-如果只想导入管理受信任的证明策略或受 TPM 信任的证明策略，则可以通过将 `-ImportActiveDirectoryModeState` 或标志指定 `-ImportTpmModeState` 为[HgsServerState](https://technet.microsoft.com/library/mt652168.aspx)来实现此目的。
+如果只想导入管理受信任的证明策略或受 TPM 信任的证明策略，则可以通过将 `-ImportActiveDirectoryModeState` 或标志指定 `-ImportTpmModeState` 为 [HgsServerState](https://technet.microsoft.com/library/mt652168.aspx)来实现此目的。
 
 确保在运行之前已安装 Windows Server 2016 的最新累积更新 `Import-HgsServerState` 。
 否则，可能会导致导入错误。
@@ -271,7 +271,7 @@ Import-HgsServerState -Path C:\Temp\HGSBackup.xml
 如果使用指纹添加了用于创建备份的 HGS 上的任何证书，则备份文件中仅包含这些证书的公钥。
 这意味着，你将需要为这些证书中的每个证书手动安装和/或授予访问权限，然后才能通过 Hyper-v 主机处理请求。
 完成该步骤所需的操作因证书最初颁发方式的不同而异。
-对于证书颁发机构颁发的软件支持的证书，你将需要联系你的 CA 以获取私钥，并按照它们的说明在**每个**HGS 节点上安装它。
+对于证书颁发机构颁发的软件支持的证书，你将需要联系你的 CA 以获取私钥，并按照它们的说明在 **每个** HGS 节点上安装它。
 同样，如果你的证书支持硬件，你将需要咨询你的硬件安全模块供应商的文档，以在每个 HGS 节点上安装所需的驱动)  (程序，以连接到 HSM 并授予每台计算机访问私钥的权限。
 
 提醒使用指纹添加到 HGS 的证书需要手动将私钥复制到每个节点。
@@ -279,7 +279,7 @@ Import-HgsServerState -Path C:\Temp\HGSBackup.xml
 
 #### <a name="review-imported-attestation-policies"></a>查看导入的证明策略
 从备份导入设置后，建议你使用仔细检查所有导入的策略，以 `Get-HgsAttestationPolicy` 确保仅你信任的主机运行受防护的 vm 才能成功证明。
-如果找到不再符合安全状况的任何策略，则可以[禁用或删除它们](#review-attestation-policies)。
+如果找到不再符合安全状况的任何策略，则可以 [禁用或删除它们](#review-attestation-policies)。
 
 #### <a name="run-diagnostics-to-check-system-state"></a>运行诊断以检查系统状态
 完成设置并还原 HGS 节点的状态之后，您应该运行 HGS 诊断工具来检查系统的状态。
@@ -296,8 +296,8 @@ Get-HgsTrace -RunDiagnostics
 务必要使主机保护者服务节点保持最新状态，方法是在最新的累积更新推出时进行安装。如果要设置全新的 HGS 节点，强烈建议您在安装 HGS 角色之前安装任何可用的更新，或者对其进行配置。
 这将确保任何新功能或更改的功能将立即生效。
 
-修补受保护的构造时，强烈建议先升级*所有*hyper-v 主机，**然后再升级 HGS**。
-这是为了确保在 Hyper-v 主机经过更新*后*对 HGS 上的证明策略进行的任何更改，以提供它们所需的信息。
+修补受保护的构造时，强烈建议先升级 *所有* hyper-v 主机， **然后再升级 HGS**。
+这是为了确保在 Hyper-v 主机经过更新 *后* 对 HGS 上的证明策略进行的任何更改，以提供它们所需的信息。
 如果更新将更改策略的行为，则不会自动启用这些策略，以免中断构造。
 此类更新要求你遵循以下部分中的指导来激活新的或更改的证明策略。
 建议你阅读 Windows Server 的发行说明和你安装的所有累积更新，以检查是否需要策略更新。
@@ -353,8 +353,8 @@ Hgs_BitLockerEnabled           | 需要在 Hyper-v 主机上启用 BitLocker。 
 Hgs_IommuEnabled               | 要求主机使用 IOMMU 设备来防止直接内存访问攻击。 禁用此策略并使用未启用 IOMMU 的主机可能会公开租户 VM 机密，以直接进行内存攻击。
 Hgs_NoHibernation              | 需要在 Hyper-v 主机上禁用休眠。 禁用此策略可能允许主机将受防护的 VM 内存保存到未加密的休眠文件。
 Hgs_NoDumps                    | 需要在 Hyper-v 主机上禁用内存转储。 如果禁用此策略，则建议你配置转储加密以防止将受防护的 VM 内存保存到未加密的故障转储文件。
-Hgs_DumpEncryption             | 如果在 Hyper-v 主机上启用了内存转储，则需要使用 HGS 信任的加密密钥对其进行加密。 如果主机上未启用转储，则不会应用此策略。 如果这两个策略和*Hgs \_ NoDumps*都处于禁用状态，则可以将受防护的 VM 内存保存到未加密的转储文件。
-Hgs_DumpEncryptionKey          | 否定策略：确保配置为允许内存转储的主机使用的是管理员定义的转储文件加密密钥。 禁用*Hgs \_ DumpEncryption*后，此策略不适用。
+Hgs_DumpEncryption             | 如果在 Hyper-v 主机上启用了内存转储，则需要使用 HGS 信任的加密密钥对其进行加密。 如果主机上未启用转储，则不会应用此策略。 如果这两个策略和 *Hgs \_ NoDumps* 都处于禁用状态，则可以将受防护的 VM 内存保存到未加密的转储文件。
+Hgs_DumpEncryptionKey          | 否定策略：确保配置为允许内存转储的主机使用的是管理员定义的转储文件加密密钥。 禁用 *Hgs \_ DumpEncryption* 后，此策略不适用。
 
 ### <a name="authorizing-new-guarded-hosts"></a>授权新的受保护主机
 若要授权新主机成为受保护的主机 (例如，证明已成功) ，则在配置为使用该主机上运行的软件) 时，HGS 必须信任该主机并 (。
@@ -396,7 +396,7 @@ Add-HgsAttestationHostGroup -Name "Contoso Guarded Hosts" -Identifier "S-1-5-21-
 每次添加新主机时，都需要向 HGS 注册新的 TPM 标识符。
 只要该主机运行 (相同的软件，并将与你的环境中的另一台主机相同的代码完整性策略应用) 和 TPM 基准，就无需添加新的 CI 策略或基线。
 
-**为新主机添加 TPM 标识符**在新主机上运行以下命令来捕获 TPM 标识符。
+**为新主机添加 TPM 标识符** 在新主机上运行以下命令来捕获 TPM 标识符。
 请确保为主机指定一个唯一的名称，以帮助你在 HGS 上查找该主机。
 如果停止主机，或想要阻止它在 HGS 中运行受防护的 Vm，将需要此信息。
 
@@ -410,7 +410,7 @@ Add-HgsAttestationHostGroup -Name "Contoso Guarded Hosts" -Identifier "S-1-5-21-
 Add-HgsAttestationTpmHost -Name 'Host01' -Path C:\temp\host01.xml
 ```
 
-**添加新的 TPM 基线**如果新主机正在为你的环境运行新的硬件或固件配置，则可能需要采用新的 TPM 基线。
+**添加新的 TPM 基线** 如果新主机正在为你的环境运行新的硬件或固件配置，则可能需要采用新的 TPM 基线。
 为此，请在主机上运行以下命令。
 
 ```powershell
@@ -430,12 +430,12 @@ Get-HgsAttestationBaselinePolicy -Path 'C:\temp\hardwareConfig01.tcglog'
 Add-HgsAttestationTpmPolicy -Name 'HardwareConfig01' -Path 'C:\temp\hardwareConfig01.tcglog'
 ```
 
-**添加新的代码完整性策略**如果更改了在 Hyper-v 主机上运行的代码完整性策略，则需要先向 HGS 注册新策略，然后这些主机才能成功证明。
+**添加新的代码完整性策略** 如果更改了在 Hyper-v 主机上运行的代码完整性策略，则需要先向 HGS 注册新策略，然后这些主机才能成功证明。
 在用作环境中受信任 Hyper-v 计算机的主映像的引用主机上，使用命令捕获新的 CI 策略 `New-CIPolicy` 。
-建议使用 Hyper-v 主机 CI 策略的**FilePublisher**级别和**哈希**回退。
+建议使用 Hyper-v 主机 CI 策略的 **FilePublisher** 级别和 **哈希** 回退。
 应该首先在审核模式下创建 CI 策略，以确保一切按预期运行。
 验证系统上的示例工作负荷后，可以强制实施该策略，并将强制版本复制到 HGS。
-有关代码完整性策略配置选项的完整列表，请参阅[Device Guard 文档](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-deploy-code-integrity-policies)。
+有关代码完整性策略配置选项的完整列表，请参阅 [Device Guard 文档](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-deploy-code-integrity-policies)。
 
 ```powershell
 # Capture a new CI policy with the FilePublisher primary level and Hash fallback and enable user mode code integrity protections
@@ -466,7 +466,7 @@ Add-HgsAttestationCiPolicy -Name 'WS2016-Hardware01' -Path 'C:\temp\ws2016-hardw
 
 **添加内存转储加密密钥**
 
-禁用了*hgs \_ NoDumps*策略并启用了*hgs \_ DumpEncryption*策略后，受保护的主机可以有内存转储 (包括故障转储) 要在这些转储已加密的情况下启用。 受保护的主机只有在禁用了内存转储或使用 HGS 知道的密钥对其进行加密的情况才会通过证明。 默认情况下，不在 HGS 上配置转储加密密钥。
+禁用了 *hgs \_ NoDumps* 策略并启用了 *hgs \_ DumpEncryption* 策略后，受保护的主机可以有内存转储 (包括故障转储) 要在这些转储已加密的情况下启用。 受保护的主机只有在禁用了内存转储或使用 HGS 知道的密钥对其进行加密的情况才会通过证明。 默认情况下，不在 HGS 上配置转储加密密钥。
 
 若要将转储加密密钥添加到 HGS，请使用 `Add-HgsAttestationDumpPolicy` cmdlet 向 hgs 提供转储加密密钥的哈希。
 如果在配置了转储加密的 Hyper-v 主机上捕获 TPM 基线，则哈希将包含在 tcglog 中，并可提供给 `Add-HgsAttestationDumpPolicy` cmdlet。
@@ -484,7 +484,7 @@ Add-HgsAttestationDumpPolicy -Name 'DumpEncryptionKey02' -PublicKeyHash '<paste 
 如果选择在受保护的构造中使用不同的密钥，请确保将每个唯一的转储加密密钥添加到 HGS。
 使用 HGS 无法识别的密钥加密内存转储的主机将不会通过证明。
 
-有关[在主机上配置转储加密](../../virtualization/hyper-v/manage/about-dump-encryption.md)的详细信息，请参阅 hyper-v 文档。
+有关 [在主机上配置转储加密](../../virtualization/hyper-v/manage/about-dump-encryption.md)的详细信息，请参阅 hyper-v 文档。
 
 #### <a name="check-if-the-system-passed-attestation"></a>检查系统是否通过了证明
 向 HGS 注册必要的信息后，应检查主机是否通过证明。
@@ -503,7 +503,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 ```
 
 > [!IMPORTANT]
-> 如果使用的是 Windows Server 2019 或 Windows 10，版本1809，并且使用代码完整性策略， `Get-HgsTrace` 则可能会返回 "**代码完整性" 策略活动**诊断的失败。
+> 如果使用的是 Windows Server 2019 或 Windows 10，版本1809，并且使用代码完整性策略， `Get-HgsTrace` 则可能会返回 " **代码完整性" 策略活动** 诊断的失败。
 > 如果这是唯一失败的诊断，则可以安全地忽略此结果。
 
 ### <a name="review-attestation-policies"></a>查看证明策略
@@ -530,7 +530,7 @@ Disable-HgsAttestationPolicy -Name 'PolicyName'
 ## <a name="changing-attestation-modes"></a>更改证明模式
 如果你使用管理员信任的证明启动了受保护的构造，则你可能希望在你的环境中有足够的与 TPM 2.0 兼容的主机之后升级到更强大的 TPM 证明模式。
 当你准备好进行切换时，你可以在 HGS 中预加载所有证明项目 (CI 策略、TPM 基线和 TPM 标识符) ，同时继续运行具有管理员信任的证明的 HGS。
-为此，只需遵循[授权新的受保护主机](#authorizing-new-guarded-hosts)部分中的说明。
+为此，只需遵循 [授权新的受保护主机](#authorizing-new-guarded-hosts) 部分中的说明。
 
 将所有策略添加到 HGS 后，下一步就是在主机上运行综合证明尝试，以查看它们是否会在 TPM 模式下传递证明。
 这不会影响 HGS 的当前操作状态。
@@ -555,7 +555,7 @@ Get-HgsTrace -RunDiagnostics -Target $targets -Diagnostic GuardedFabricTpmMode
 诊断完成后，请查看输出的信息，以确定是否有任何主机在 TPM 模式下出现失败的证明。
 重新运行诊断，直到从每个主机获得 "pass"，然后继续将 HGS 更改为 TPM 模式。
 
-**更改为 TPM 模式**只需一秒钟即可完成。
+**更改为 TPM 模式** 只需一秒钟即可完成。
 在任何 HGS 节点上运行以下命令以更新证明模式。
 
 ```powershell
@@ -594,10 +594,10 @@ Hsm 确保密钥的使用与数据中心内对安全敏感设备的物理访问�
 
 1. 在群集中的每个 HGS 节点上安装 HSM 软件。 根据你是使用网络还是本地 HSM 设备，你可能需要配置 HSM 以授予计算机对其密钥存储的访问权限。
 2. 在 HSM 中创建2个证书，其中包含2048位用于加密和签名的**RSA 密钥**
-    1. 使用 HSM 中的**数据加密**密钥用法属性创建加密证书
-    2. 使用 HSM 中的 "**数字签名**密钥用法" 属性创建签名证书
+    1. 使用 HSM 中的 **数据加密** 密钥用法属性创建加密证书
+    2. 使用 HSM 中的 " **数字签名** 密钥用法" 属性创建签名证书
 3. 按照 HSM 供应商的指南，在每个 HGS 节点的本地证书存储中安装证书。
-4. 如果 HSM 使用粒度权限向特定应用程序或用户授予使用私钥的权限，则需要向 HGS 组托管服务帐户授予对证书的访问权限。 可以通过运行来查找 HGS gMSA 帐户的名称。`(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
+4. 如果 HSM 使用粒度权限向特定应用程序或用户授予使用私钥的权限，则需要向 HGS 组托管服务帐户授予对证书的访问权限。 可以通过运行来查找 HGS gMSA 帐户的名称。 `(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
 5. 在以下命令中，将指纹替换为证书的指纹，以将签名和加密证书添加到 HGS：
 
     ```powershell
@@ -609,8 +609,8 @@ Hsm 确保密钥的使用与数据中心内对安全敏感设备的物理访问�
 
 如果你的公司或公共证书颁发机构颁发的软件支持的证书具有不可导出的私钥，则需要使用证书的指纹将证书添加到 HGS。
 1. 根据证书颁发机构的说明在计算机上安装证书。
-2. 向 HGS 组托管服务帐户授予对证书私钥的读取访问权限。 可以通过运行来查找 HGS gMSA 帐户的名称。`(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
-3. 使用以下命令将证书注册到 HGS，并将证书的指纹替换 (更改*加密*以*签名*证书) ：
+2. 向 HGS 组托管服务帐户授予对证书私钥的读取访问权限。 可以通过运行来查找 HGS gMSA 帐户的名称。 `(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
+3. 使用以下命令将证书注册到 HGS，并将证书的指纹替换 (更改 *加密* 以 *签名* 证书) ：
 
     ```powershell
     Add-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint "AABBCCDDEEFF00112233445566778899"
@@ -618,20 +618,20 @@ Hsm 确保密钥的使用与数据中心内对安全敏感设备的物理访问�
 
 > [!IMPORTANT]
 > 你将需要手动安装私钥，并授予对每个 HGS 节点上的 gMSA 帐户的读取访问权限。
-> HGS 无法自动复制其指纹注册的*任何*证书的私钥。
+> HGS 无法自动复制其指纹注册的 *任何* 证书的私钥。
 
 **选项3：添加存储在 PFX 文件中的证书**
 
 如果你有一个软件支持的证书，其中包含可使用 PFX 文件格式存储并使用密码保护的可导出私钥，则 HGS 可以自动管理你的证书。
 使用 PFX 文件添加的证书会自动复制到 HGS 群集的每个节点，并且 HGS 保护对私钥的访问。
-若要使用 PFX 文件添加新证书，请在任何 HGS 节点上运行以下命令 (更改*加密*以*签名*证书) ：
+若要使用 PFX 文件添加新证书，请在任何 HGS 节点上运行以下命令 (更改 *加密* 以 *签名* 证书) ：
 
 ```powershell
 $certPassword = Read-Host -AsSecureString -Prompt "Provide the PFX file password"
 Add-HgsKeyProtectionCertificate -CertificateType Encryption -CertificatePath "C:\temp\encryptionCert.pfx" -CertificatePassword $certPassword
 ```
 
-**标识和更改主证书**尽管 HGS 可以支持多个签名证书和加密证书，但它使用一个对作为其 "主要" 证书。
+**标识和更改主证书** 尽管 HGS 可以支持多个签名证书和加密证书，但它使用一个对作为其 "主要" 证书。
 如果有人下载该 HGS 群集的监护人元数据，则将使用这些证书。
 若要检查当前标记为主要证书的证书，请运行以下命令：
 
@@ -664,7 +664,7 @@ HGS 上的过期加密或签名证书不表示受防护的 Vm 的保护不受保
 若要最大程度地减少服务中断和确保租户 Vm 的安全性，需要对更改 HGS 密钥进行适当规划。
 
 在 HGS 节点上，执行以下步骤以注册一对加密证书和签名证书。
-若要详细了解如何添加新密钥，请参阅添加[新密钥](#adding-new-keys)部分。
+若要详细了解如何添加新密钥，请参阅添加 [新密钥](#adding-new-keys) 部分。
 
 1. 为 HGS 服务器创建一对新的加密证书和签名证书。 理想情况下，将在硬件安全模块中创建这些。
 
@@ -692,7 +692,7 @@ HGS 上的过期加密或签名证书不表示受防护的 Vm 的保护不受保
 
 1. 关闭 VM。 在剩余步骤完成之后，无法重新打开 VM，否则你将需要再次开始该过程。
 
-2. 将当前密钥保护程序保存到文件中：`Get-VMKeyProtector -VMName 'VM001' | Out-File '.\VM001.kp'`
+2. 将当前密钥保护程序保存到文件中： `Get-VMKeyProtector -VMName 'VM001' | Out-File '.\VM001.kp'`
 
 3. 将 KP 传输到 VM 所有者
 
@@ -721,11 +721,11 @@ HGS 上的过期加密或签名证书不表示受防护的 Vm 的保护不受保
 
     > [!NOTE]
     > 如果 VM 所有者在 VM 上设置了不正确的密钥保护程序，并且未授权构造运行 VM，则无法启动受防护的 VM。
-    > 若要返回到上一个已知良好的密钥保护程序，请运行`Set-VMKeyProtector -RestoreLastKnownGoodKeyProtector`
+    > 若要返回到上一个已知良好的密钥保护程序，请运行 `Set-VMKeyProtector -RestoreLastKnownGoodKeyProtector`
 
     所有 Vm 都已更新为授权新的监护人密钥后，你可以禁用并删除旧密钥。
 
-9.  从获取旧证书的指纹`Get-HgsKeyProtectionCertificate -IsPrimary $false`
+9.  从获取旧证书的指纹 `Get-HgsKeyProtectionCertificate -IsPrimary $false`
 
 10. 通过运行以下命令来禁用每个证书：
 
@@ -750,26 +750,26 @@ HGS 上的过期加密或签名证书不表示受防护的 Vm 的保护不受保
 HGS 群集中的每个节点都必须在配置) SSL 证书时配置为具有相同的加密、签名和 (。
 这是为了确保与群集中的任何节点联系的 Hyper-v 主机可以成功地处理其请求。
 
-**如果通过基于 PFX 的证书初始化了 hgs 服务器**，则 hgs 会自动在群集中的每个节点之间复制这些证书的公钥和私钥。
+**如果通过基于 PFX 的证书初始化了 hgs 服务器** ，则 hgs 会自动在群集中的每个节点之间复制这些证书的公钥和私钥。
 只需在一个节点上添加密钥。
 
-**如果用证书引用或指纹初始化了 hgs 服务器**，则 hgs 只会将证书中的*公钥*复制到每个节点。
+**如果用证书引用或指纹初始化了 hgs 服务器** ，则 hgs 只会将证书中的 *公钥* 复制到每个节点。
 此外，在这种情况下，HGS 无法在任何节点上自行授予对私钥的访问权限。
 因此，您需要负责执行以下操作：
 1. 在每个 HGS 节点上安装私钥
 2. 向 HGS 组托管服务帐户授予 (gMSA) 对每个节点上的私钥的访问权限，这些任务增加了额外的操作负担，不过，它们对于支持 HSM 的密钥和包含不可导出的私钥的证书是必需的。
 
-**SSL 证书**永远不会以任何形式复制。
+**SSL 证书** 永远不会以任何形式复制。
 您需要在每次选择续订或替换 SSL 证书时，用同一 SSL 证书初始化每个 HGS 服务器并更新每个服务器。
-替换 SSL 证书时，建议使用[HgsServer](https://technet.microsoft.com/library/mt652180.aspx) cmdlet 来执行此操作。
+替换 SSL 证书时，建议使用 [HgsServer](https://technet.microsoft.com/library/mt652180.aspx) cmdlet 来执行此操作。
 
 ## <a name="unconfiguring-hgs"></a>取消对 HGS 的
 
-如果需要停止或重新配置 HGS 服务器，可以使用[HgsServer](https://technet.microsoft.com/library/mt652176.aspx)或[HgsServer](https://technet.microsoft.com/library/mt652182.aspx) cmdlet 执行此操作。
+如果需要停止或重新配置 HGS 服务器，可以使用 [HgsServer](https://technet.microsoft.com/library/mt652176.aspx) 或 [HgsServer](https://technet.microsoft.com/library/mt652182.aspx) cmdlet 执行此操作。
 
 ### <a name="clearing-the-hgs-configuration"></a>清除 HGS 配置
 
-若要从 HGS 群集中删除节点，请使用[HgsServer](https://technet.microsoft.com/library/mt652176.aspx) cmdlet。
+若要从 HGS 群集中删除节点，请使用 [HgsServer](https://technet.microsoft.com/library/mt652176.aspx) cmdlet。
 此 cmdlet 将在运行它的服务器上进行以下更改：
 
 - 注销证明和密钥保护服务
@@ -783,12 +783,12 @@ HGS 群集中的每个节点都必须在配置) SSL 证书时配置为具有相�
 Clear-HgsServer
 ```
 
-清除操作完成后，可以将 HGS 服务器重新初始化为[HgsServer](https://technet.microsoft.com/library/mt652185.aspx)。
-如果使用[HgsServer](https://technet.microsoft.com/library/mt652169.aspx)来设置 Active Directory 域服务域，则在清除操作后，该域将保持配置并可操作。
+清除操作完成后，可以将 HGS 服务器重新初始化为 [HgsServer](https://technet.microsoft.com/library/mt652185.aspx)。
+如果使用 [HgsServer](https://technet.microsoft.com/library/mt652169.aspx) 来设置 Active Directory 域服务域，则在清除操作后，该域将保持配置并可操作。
 
 ### <a name="uninstalling-hgs"></a>卸载 HGS
 
-如果要从 HGS 群集中删除节点**并**将其上运行的 Active Directory 域控制器降级，请使用[HgsServer](https://technet.microsoft.com/library/mt652182.aspx) cmdlet。
+如果要从 HGS 群集中删除节点 **并** 将其上运行的 Active Directory 域控制器降级，请使用 [HgsServer](https://technet.microsoft.com/library/mt652182.aspx) cmdlet。
 此 cmdlet 将在运行它的服务器上进行以下更改：
 
 - 注销证明和密钥保护服务
@@ -804,7 +804,7 @@ $newLocalAdminPassword = Read-Host -AsSecureString -Prompt "Enter a new password
 Uninstall-HgsServer -LocalAdministratorPassword $newLocalAdminPassword -Restart
 ```
 
-完成卸载操作并重新启动计算机后，可以使用[HgsServer](https://technet.microsoft.com/library/mt652169.aspx)重新安装 ADDC 和 HGS，或将计算机加入域，并使用[HgsServer](https://technet.microsoft.com/library/mt652185.aspx)初始化该域中的 HGS 服务器。
+完成卸载操作并重新启动计算机后，可以使用 [HgsServer](https://technet.microsoft.com/library/mt652169.aspx) 重新安装 ADDC 和 HGS，或将计算机加入域，并使用 [HgsServer](https://technet.microsoft.com/library/mt652185.aspx)初始化该域中的 HGS 服务器。
 
 如果不再想要使用该计算机作为 HGS 节点，可以从 Windows 中删除该角色。
 

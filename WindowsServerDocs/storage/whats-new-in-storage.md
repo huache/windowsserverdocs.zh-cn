@@ -6,12 +6,12 @@ manager: dongill
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: 3b1a3fa120e27439c1ec55f68521b813588d330b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b186f664411bde60351c949c0ca16e7b4d3bb40c
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965944"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766990"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server 中存储的新增功能
 
@@ -55,7 +55,7 @@ ms.locfileid: "87965944"
 
 ### <a name="manage-storage-with-windows-admin-center"></a>通过 Windows 管理中心管理存储
 
-[Windows 管理中心](../manage/windows-admin-center/overview.md)是一个本地部署的新的基于浏览器的应用，用于管理使用存储空间直通和 Windows 10 电脑的服务器、群集、超聚合基础结构。 它在 Windows 外无需额外付费，并且可供生产使用。
+[Windows 管理中心](../manage/windows-admin-center/overview.md) 是一个本地部署的新的基于浏览器的应用，用于管理使用存储空间直通和 Windows 10 电脑的服务器、群集、超聚合基础结构。 它在 Windows 外无需额外付费，并且可供生产使用。
 
 当然，Windows 管理中心是在 Windows Server 2019 和其他版本的 Windows 上运行的单独的下载，但它是新的，我们不希望你错过它 .。。
 
@@ -69,7 +69,7 @@ ms.locfileid: "87965944"
 
 - **用于 ReFS 卷的重复数据删除和压缩**
 
-    对 ReFS 文件系统的重复数据删除和压缩，最多可存储同一个卷上的10倍多的数据。  ([只需一次单击](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)即可启用 Windows 管理中心。 ) 可变大小的区块存储区（可选压缩）可以最大程度地提高节省率，而多线程后处理体系结构会使性能的影响降至最低。 支持最大为 64 TB 的卷，并将删除重复每个文件的前 4 TB。
+    对 ReFS 文件系统的重复数据删除和压缩，最多可存储同一个卷上的10倍多的数据。  ([只需一次单击](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be) 即可启用 Windows 管理中心。 ) 可变大小的区块存储区（可选压缩）可以最大程度地提高节省率，而多线程后处理体系结构会使性能的影响降至最低。 支持最大为 64 TB 的卷，并将删除重复每个文件的前 4 TB。
 
 - **持久性内存的本机支持**
 
@@ -81,7 +81,7 @@ ms.locfileid: "87965944"
 
 - **使用 U 盘作为见证的双服务器群集**
 
-    使用连接到路由器的低成本 USB 闪存驱动器在两个服务器群集中充当见证服务器。 如果服务器关闭然后备份，则 USB 驱动器群集将知道哪个服务器具有最新的数据。 有关详细信息，请参阅[Microsoft 博客上的存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
+    使用连接到路由器的低成本 USB 闪存驱动器在两个服务器群集中充当见证服务器。 如果服务器关闭然后备份，则 USB 驱动器群集将知道哪个服务器具有最新的数据。 有关详细信息，请参阅 [Microsoft 博客上的存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 - **Windows 管理中心**
 
@@ -93,11 +93,11 @@ ms.locfileid: "87965944"
 
 - **纵向扩展到每个群集 4 PB**
 
-    实现多 PB 的扩展 – 非常适合介质、备份和存档用例。 在 Windows Server 2019 中，存储空间直通支持每个存储池多达 4 拍字节 (PB) = 4,000 太字节的原始容量。 还增加了相关容量指南：例如，你可以创建两倍多的卷（64 而不是 32），每个都是之前的两倍大（64TB 而不是 32TB）。 将多个群集汇聚到一个[群集集中](storage-spaces/cluster-sets.md)，甚至能在一个存储命名空间内扩大规模。 有关详细信息，请参阅[Microsoft 博客上的存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
+    实现多 PB 的扩展 – 非常适合介质、备份和存档用例。 在 Windows Server 2019 中，存储空间直通支持每个存储池多达 4 拍字节 (PB) = 4,000 太字节的原始容量。 还增加了相关容量指南：例如，你可以创建两倍多的卷（64 而不是 32），每个都是之前的两倍大（64TB 而不是 32TB）。 将多个群集汇聚到一个 [群集集中](storage-spaces/cluster-sets.md) ，甚至能在一个存储命名空间内扩大规模。 有关详细信息，请参阅 [Microsoft 博客上的存储](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 - **镜像加速奇偶校验速度是原来的 2 倍**
 
-    使用镜像加速奇偶校验，你可以创建存储空间直通卷，这些卷一部分是镜像，另一部分是奇偶校验（如混合使用 RAID 1 和 RAID 5/6），从而充分利用两者的优势。  (比你在 Windows 管理中心中[想像的更容易](https://www.youtube.com/watch?v=R72QHudqWpE)。 ) 在 windows Server 2019 中，镜像加速奇偶校验的性能比 windows server 2016 的性能要多两倍，因为进行了优化。
+    使用镜像加速奇偶校验，你可以创建存储空间直通卷，这些卷一部分是镜像，另一部分是奇偶校验（如混合使用 RAID 1 和 RAID 5/6），从而充分利用两者的优势。  (比你在 Windows 管理中心中 [想像的更容易](https://www.youtube.com/watch?v=R72QHudqWpE) 。 ) 在 windows Server 2019 中，镜像加速奇偶校验的性能比 windows server 2016 的性能要多两倍，因为进行了优化。
 
 - **驱动器延迟异常检测**
 
@@ -105,11 +105,11 @@ ms.locfileid: "87965944"
 
 - **手动分隔卷的分配以提高容错能力**
 
-    这使管理员能够在存储空间直通中手动分隔卷的分配。 这样做可能会在某些情况下显著增加容错能力，但会带来一些额外的管理注意事项和复杂性。 有关详细信息，请参阅[分隔卷的分配](storage-spaces/delimit-volume-allocation.md)。
+    这使管理员能够在存储空间直通中手动分隔卷的分配。 这样做可能会在某些情况下显著增加容错能力，但会带来一些额外的管理注意事项和复杂性。 有关详细信息，请参阅 [分隔卷的分配](storage-spaces/delimit-volume-allocation.md)。
 
 ### <a name="storage-replica"></a><a name="storage-replica2019"></a>存储副本
 
-在此版本中，对[存储副本](storage-replica/storage-replica-overview.md)进行了很多改进：
+在此版本中，对 [存储副本](storage-replica/storage-replica-overview.md) 进行了很多改进：
 
 #### <a name="storage-replica-in-windows-server-standard-edition"></a>Windows Server Standard Edition 中的存储副本
 
@@ -126,7 +126,7 @@ ms.locfileid: "87965944"
 
 #### <a name="test-failover"></a>测试故障转移
 
-你现在可以在目标服务器上暂时装载复制存储的快照，以便进行测试或备份。 有关详细信息，请参阅[有关存储副本的常见问题](https://aka.ms/srfaq)。
+你现在可以在目标服务器上暂时装载复制存储的快照，以便进行测试或备份。 有关详细信息，请参阅[有关存储副本的常见问题](./storage-replica/storage-replica-frequently-asked-questions.md)。
 
 #### <a name="windows-admin-center-support"></a>Windows Admin Center 支持
 
@@ -170,7 +170,7 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 
 存储副本添加的灾难恢复保护现在已扩展为包括：
 
-- **测试故障转移**：现在可以通过测试故障转移功能来选择安装目标存储。 可以在目标节点上临时安装复制的存储的快照以便进行测试或备份。 有关详细信息，请参阅[有关存储副本的常见问题](https://aka.ms/srfaq)。
+- **测试故障转移**：现在可以通过测试故障转移功能来选择安装目标存储。 可以在目标节点上临时安装复制的存储的快照以便进行测试或备份。 有关详细信息，请参阅[有关存储副本的常见问题](./storage-replica/storage-replica-frequently-asked-questions.md)。
 - **Windows 管理中心支持**：现在，通过服务器管理器工具在 windows 管理中心中提供对复制的图形管理的支持。 这包括服务器到服务器复制、群集到群集以及 stretch 群集复制。
 
 存储副本还包含以下改进：
@@ -197,7 +197,7 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 **这一更改增添了什么价值？**
 空间存储直通使服务提供商和企业可使用带本地存储的行业标准服务器来构建高可用性和高扩展性的软件定义的存储。 使用带本地存储的服务器可降低复杂性、增强可伸缩性，并允许使用之前不可能使用的存储设备，如使用 SATA 固态磁盘降低闪存存储成本或使用 NVMe 固态磁盘实现更加性能。
 
-空间存储直通不再需要共享 SAS 结构，从而简化了部署和配置。 它改为使用网络作为存储结构，利用 SMB3 和 SMB 直通 (RDMA) 实现高速、低延迟的 CPU 高效存储。 若要横向扩展，只需添加更多服务器以增加存储容量和 i/o 性能。有关详细信息，请参阅[Windows Server 2016 中的存储空间直通](storage-spaces/storage-spaces-direct-overview.md)。
+空间存储直通不再需要共享 SAS 结构，从而简化了部署和配置。 它改为使用网络作为存储结构，利用 SMB3 和 SMB 直通 (RDMA) 实现高速、低延迟的 CPU 高效存储。 若要横向扩展，只需添加更多服务器以增加存储容量和 i/o 性能。有关详细信息，请参阅 [Windows Server 2016 中的存储空间直通](storage-spaces/storage-spaces-direct-overview.md)。
 
 **工作原理的不同之处是什么？**
 此功能是 Windows Server 2016 的新增功能。
@@ -243,13 +243,13 @@ Windows Server 版本1709是半年通道中的第一台 Windows Server 版本。
 **工作原理的不同之处是什么？**
 此功能是 Windows Server 2016 的新增功能。 管理最小预留，通过单个命令监视跨群集的所有虚拟磁盘流，在早期版本的 Windows Server 中无法实现基于策略的集中式管理。
 
-有关详细信息，请参阅[存储服务质量](storage-qos/storage-qos-overview.md)
+有关详细信息，请参阅 [存储服务质量](storage-qos/storage-qos-overview.md)
 
 ### <a name="data-deduplication"></a><a name="dedup"></a>重复数据删除
 | 功能 | 新功能或更新功能 | 描述 |
 |---------------|----------------|-------------|
-| [支持大型卷](data-deduplication/whats-new.md#large-volume-support) | Updated | 在 Windows Server 2016 之前，必须专门调整卷的大小实现预期改动，大小超过 10 TB 的卷不适合进行重复数据删除。 在 Windows Server 2016 中，重复数据删除支持的卷大小**高达 64 TB**。 |
-| [支持大型文件](data-deduplication/whats-new.md#large-file-support) | Updated | 在 Windows Server 2016 之前，大小接近 1 TB 的文件不适合进行重复数据删除。 在 Windows Server 2016 中，完全支持**高达 1 TB**的文件。 |
+| [支持大型卷](data-deduplication/whats-new.md#large-volume-support) | Updated | 在 Windows Server 2016 之前，必须专门调整卷的大小实现预期改动，大小超过 10 TB 的卷不适合进行重复数据删除。 在 Windows Server 2016 中，重复数据删除支持的卷大小 **高达 64 TB**。 |
+| [支持大型文件](data-deduplication/whats-new.md#large-file-support) | Updated | 在 Windows Server 2016 之前，大小接近 1 TB 的文件不适合进行重复数据删除。 在 Windows Server 2016 中，完全支持 **高达 1 TB** 的文件。 |
 | [支持 Nano Server](data-deduplication/whats-new.md#nano-server-support) | 新建 | 重复数据删除在 Windows Server 2016 的新 Nano Server 部署选项中可用且完全受支持。 |
 | [简化的备份支持](data-deduplication/whats-new.md#simple-backup-support) | 新建 | 在 Windows Server 2012 R2 中，通过一系列手动配置步骤支持虚拟化备份应用程序，如 Microsoft 的 [Data Protection Manager](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) 在 Windows Server 2016 中，已针对虚拟化备份应用程序的重复数据删除的无缝部署添加了新的默认使用类型“备份”。 |
 | [支持群集操作系统滚动升级](data-deduplication/whats-new.md#cluster-upgrade-support) | 新建 | 重复数据删除完全支持 Windows Server 2016 的新功能[群集操作系统滚动升级](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)。 |

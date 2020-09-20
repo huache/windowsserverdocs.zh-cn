@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9147d88b2d31def46e7a755abf17a2cdf767f8a2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 71c719bb4c148a0ff1b287011086ba75e5a3fc69
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990686"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766570"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>应用程序数据的横向扩展文件服务器概述
 
@@ -22,8 +22,8 @@ ms.locfileid: "87990686"
 
 可以通过使用以下方法之一来部署和配置群集文件服务器：
 
-- **应用程序数据的横向扩展文件服务器**此群集文件服务器功能是在 Windows Server 2012 中引入的，它允许您将服务器应用程序数据（例如 Hyper-v 虚拟机文件）存储在文件共享上，并获得与存储区域网络类似的可靠性、可用性、可管理性和高性能级别。 所有文件共享均为在线状态，且同时位于全部节点上。 与此类群集文件服务器相关的文件共享被称为横向扩展文件共享。 这有时也称为活动/活动。 部署 Hyper-V over Server Message Block (SMB) 或 Microsoft SQL Server over SMB 时，建议采用该类文件服务器。
-- **一般用途的文件服务器**这是自故障转移群集引入以来 Windows Server 支持的群集文件服务器的延续。 该类服务器属于群集文件服务器，因此与群集文件服务器相关的所有共享均为在线状态，且在同一时间位于某一个节点上。 这有时也称为活动/被动或双活动。 与此类型群集文件服务器相关的文件共享被称为群集文件共享。 部署信息工作者方案时，建议采用该类文件服务器。
+- **应用程序数据的横向扩展文件服务器** 此群集文件服务器功能是在 Windows Server 2012 中引入的，它允许您将服务器应用程序数据（例如 Hyper-v 虚拟机文件）存储在文件共享上，并获得与存储区域网络类似的可靠性、可用性、可管理性和高性能级别。 所有文件共享均为在线状态，且同时位于全部节点上。 与此类群集文件服务器相关的文件共享被称为横向扩展文件共享。 这有时也称为活动/活动。 部署 Hyper-V over Server Message Block (SMB) 或 Microsoft SQL Server over SMB 时，建议采用该类文件服务器。
+- **一般用途的文件服务器** 这是自故障转移群集引入以来 Windows Server 支持的群集文件服务器的延续。 该类服务器属于群集文件服务器，因此与群集文件服务器相关的所有共享均为在线状态，且在同一时间位于某一个节点上。 这有时也称为活动/被动或双活动。 与此类型群集文件服务器相关的文件共享被称为群集文件共享。 部署信息工作者方案时，建议采用该类文件服务器。
 
 ## <a name="scenario-description"></a>方案描述
 
@@ -64,7 +64,7 @@ ms.locfileid: "87990686"
 <thead>
 <tr class="header">
 <th>技术范围</th>
-<th>功能</th>
+<th>Feature</th>
 <th>一般用途文件服务器群集</th>
 <th>横向扩展文件服务器</th>
 </tr>
@@ -108,14 +108,14 @@ ms.locfileid: "87990686"
 </tr>
 <tr class="odd">
 <td>文件系统</td>
-<td>复原文件系统 (<a href="https://docs.microsoft.com/windows-server/storage/refs/refs-overview">ReFS</a>) </td>
+<td>复原文件系统 (<a href="/windows-server/storage/refs/refs-overview">ReFS</a>) </td>
 <td>建议用于存储空间直通</td>
 <td>建议用于存储空间直通</td>
 </tr>
 <tr class="even">
 <td>文件系统</td>
 <td>群集共享卷文件系统 (CSV)</td>
-<td>不可用</td>
+<td>NA</td>
 <td>是</td>
 </tr>
 <tr class="odd">
@@ -223,7 +223,7 @@ ms.locfileid: "87990686"
 </tbody>
 </table>
 
-\*使用连续可用的文件共享时，文件夹重定向、脱机文件、漫游用户配置文件或主目录会生成大量必须立即写入磁盘)  (的写入操作，从而降低性能，与常规用途文件共享相比。 连续可用的文件共享与文件服务器资源管理器和运行 Windows XP 的电脑也不兼容。 此外，在用户失去对共享的访问权限后，脱机文件可能不会转换为脱机模式3-6 分钟，这可能会让尚未使用 "始终脱机" 模式脱机文件的用户不快。
+\* 使用连续可用的文件共享时，文件夹重定向、脱机文件、漫游用户配置文件或主目录会生成大量必须立即写入磁盘)  (的写入操作，从而降低性能，与常规用途文件共享相比。 连续可用的文件共享与文件服务器资源管理器和运行 Windows XP 的电脑也不兼容。 此外，在用户失去对共享的访问权限后，脱机文件可能不会转换为脱机模式3-6 分钟，这可能会让尚未使用 "始终脱机" 模式脱机文件的用户不快。
 
 ## <a name="practical-applications"></a>实际的应用程序
 
@@ -236,7 +236,7 @@ ms.locfileid: "87990686"
 
 如果将横向扩展文件共享用作库共享，则只能使用与横向扩展文件服务器兼容的技术。 例如，不能使用 DFS 复制来复制横向扩展文件共享上托管的库共享。 还有一点很重要，那就是横向扩展文件服务器安装了最新的软件更新。
 
-若要将横向扩展文件共享用作库共享，首先添加一个具有本地共享或根本没有共享的库服务器（比如虚拟机）。 然后在添加库共享时，选择在横向扩展文件服务器上托管的文件共享。 此共享应由 VMM 管理，并且专门创建用于库服务器。 此外，请确保在横向扩展文件服务器上安装最新的更新。 有关添加 VMM 库服务器和库共享的详细信息，请参阅[将配置文件添加到 VMM 库](/system-center/vmm/library-profiles?view=sc-vmm-1801)。 有关文件和存储服务当前可用的修补程序的列表，请参阅 [Microsoft 知识库文章 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie)。
+若要将横向扩展文件共享用作库共享，首先添加一个具有本地共享或根本没有共享的库服务器（比如虚拟机）。 然后在添加库共享时，选择在横向扩展文件服务器上托管的文件共享。 此共享应由 VMM 管理，并且专门创建用于库服务器。 此外，请确保在横向扩展文件服务器上安装最新的更新。 有关添加 VMM 库服务器和库共享的详细信息，请参阅 [将配置文件添加到 VMM 库](/system-center/vmm/library-profiles?view=sc-vmm-1801)。 有关文件和存储服务当前可用的修补程序的列表，请参阅 [Microsoft 知识库文章 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie)。
 
 >[!NOTE]
 >某些用户（比如信息工作者）的工作负荷对性能的影响较大。 例如，当多个用户执行诸如打开和关闭文件、创建新文件和重命名现有文件之类的操作时，将对性能产生影响。 如果文件共享启用连续可用性，它将提供数据完整性，但同时也会影响整体性能。 连续可用性要求将数据直接写入磁盘，以便在横向扩展文件服务器中的群集节点出现故障时确保数据的完整性。 因此，将多个大型文件复制到文件服务器的用户可能会发现连续可用的文件共享上的性能明显变慢。
@@ -248,20 +248,20 @@ ms.locfileid: "87990686"
 <table>
 <thead>
 <tr class="header">
-<th>功能</th>
+<th>Feature</th>
 <th>如何支持本方案</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="failover-clustering.md">故障转移群集</a></td>
-<td>故障转移群集在 Windows Server 2012 中添加了以下功能，以支持横向扩展文件服务器：分布式网络名称、横向扩展文件服务器资源类型、群集共享卷 (CSV) 2 和横向扩展文件服务器高可用性角色。 有关这些功能的详细信息，&#39;请参阅<a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Windows Server 2012 中的故障转移群集中的新增功能 [重定向]</a>。</td>
+<td><a href="/windows-server/failover-clustering/failover-clustering-overview">故障转移群集</a></td>
+<td>故障转移群集在 Windows Server 2012 中添加了以下功能，以支持横向扩展文件服务器：分布式网络名称、横向扩展文件服务器资源类型、群集共享卷 (CSV) 2 和横向扩展文件服务器高可用性角色。 有关这些功能的详细信息，&#39;请参阅 <a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Windows Server 2012 中的故障转移群集中的新增功能 [重定向]</a>。</td>
 </tr>
 <tr class="even">
 <td><a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">服务器消息块</a></td>
 <td>SMB 3.0 在 Windows Server 2012 中添加了以下功能，以支持横向扩展文件服务器： SMB 透明故障转移、SMB 多通道和 SMB 直通。<br />
 <br />
-有关 Windows Server 2012 R2 中 SMB 的新功能和更改的功能的详细信息，请参阅<a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">Windows server 中 smb 的</a>新增功能&#39;。</td>
+有关 Windows Server 2012 R2 中 SMB 的新功能和更改的功能的详细信息，请参阅 <a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">Windows server 中 smb 的</a>新增功能&#39;。</td>
 </tr>
 </tbody>
 </table>

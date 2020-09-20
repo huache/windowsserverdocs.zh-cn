@@ -5,12 +5,12 @@ ms.topic: article
 author: phstee
 ms.author: nedpyle
 ms.date: 4/14/2017
-ms.openlocfilehash: 2515f400f746c5e256a168d191efa842d4ba50fd
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: f4cd1c68cd4d9ac6ba873f297c54818560d50176
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077204"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765928"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB 文件服务器的性能优化
 
@@ -28,7 +28,7 @@ ms.locfileid: "90077204"
 
 ### <a name="smb-30-protocol-family"></a>SMB 3.0 协议系列
 
-SMB 3.0 在 Windows Server 2012 中引入，在 Windows Server 2012 R2 中进一步增强 (SMB 3.02) 和 Windows Server 2016 (SMB 3.1.1) 。 此版本引入了可显著提高文件服务器性能和可用性的技术。 有关详细信息，请参阅 [Windows Server 2012 中的 SMB 和 2012 R2 2012](https://aka.ms/smb3plus) 以及 [smb 3.1.1 中的新增功能](https://aka.ms/smb311)。
+SMB 3.0 在 Windows Server 2012 中引入，在 Windows Server 2012 R2 中进一步增强 (SMB 3.02) 和 Windows Server 2016 (SMB 3.1.1) 。 此版本引入了可显著提高文件服务器性能和可用性的技术。 有关详细信息，请参阅 [Windows Server 2012 中的 SMB 和 2012 R2 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) 以及 [smb 3.1.1 中的新增功能](https://aka.ms/smb311)。
 
 
 
@@ -40,13 +40,13 @@ SMB Direct 引入了将 RDMA 网络接口用于高吞吐量、低延迟和低 CP
 
 Smb Direct 在任何 SMB 配置中都不是必需的，但对于那些希望降低延迟和 CPU 使用率较低的用户，始终建议使用 SMB 直通。
 
-有关 SMB 直通的详细信息，请参阅 [使用 Smb Direct 提高文件服务器的性能](https://aka.ms/smbdirect)。
+有关 SMB 直通的详细信息，请参阅 [使用 Smb Direct 提高文件服务器的性能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134210(v=ws.11))。
 
 ### <a name="smb-multichannel"></a>SMB 多通道
 
 SMB 多通道允许文件服务器同时使用多个网络连接并提供更高的吞吐量。
 
-有关 SMB 多通道的详细信息，请参阅 [部署 smb 多通道](https://aka.ms/smbmulti)。
+有关 SMB 多通道的详细信息，请参阅 [部署 smb 多通道](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn610980(v=ws.11))。
 
 ### <a name="smb-scale-out"></a>SMB 横向扩展
 

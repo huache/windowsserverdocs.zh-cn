@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 4e4bdf9c33d4511c470da50462469fadbd0641ce
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 358fae9a9ee477537d3ee929ff81920175d58298
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996234"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766410"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>在现有堡垒林中安装 HGS
 
@@ -19,7 +19,7 @@ ms.locfileid: "87996234"
 
 ## <a name="join-the-hgs-server-to-the-existing-domain"></a>将 HGS 服务器加入到现有域中
 
-在现有的堡垒林中，必须将 HGS 添加到根域。 使用服务器管理器或[添加计算机](https://go.microsoft.com/fwlink/?LinkId=821564)将 HGS 服务器加入到根域。
+在现有的堡垒林中，必须将 HGS 添加到根域。 使用服务器管理器或 [添加计算机](https://go.microsoft.com/fwlink/?LinkId=821564) 将 HGS 服务器加入到根域。
 
 ## <a name="add-the-hgs-server-role"></a>添加 HGS 服务器角色
 
@@ -32,7 +32,7 @@ ms.locfileid: "87996234"
 
 ## <a name="join-the-hgs-server-to-the-existing-domain"></a>将 HGS 服务器加入到现有域中
 
-使用服务器管理器或[添加计算机](https://go.microsoft.com/fwlink/?LinkId=821564)将 HGS 服务器联接到所需的域。
+使用服务器管理器或 [添加计算机](https://go.microsoft.com/fwlink/?LinkId=821564) 将 HGS 服务器联接到所需的域。
 
 ## <a name="prepare-active-directory-objects"></a>准备 Active Directory 对象
 
@@ -41,7 +41,7 @@ ms.locfileid: "87996234"
 
 ## <a name="group-managed-service-account"></a>组托管服务帐户
 
-组托管服务帐户 (gMSA) 是 HGS 用来检索和使用其证书的标识。 使用[uninstall-adserviceaccount](/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps)创建 gMSA。
+组托管服务帐户 (gMSA) 是 HGS 用来检索和使用其证书的标识。 使用 [uninstall-adserviceaccount](/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps) 创建 gMSA。
 如果这是域中的第一个 gMSA，则需要添加密钥分发服务根密钥。
 
 需要允许每个 HGS 节点访问 gMSA 密码。
@@ -68,20 +68,20 @@ New-ADServiceAccount -Name 'HGSgMSA' -DnsHostName 'HGSgMSA.yourdomain.com' -Prin
 ```
 
 GMSA 将需要在每个 HGS 服务器上的安全日志中生成事件的权限。
-如果使用组策略来配置用户权限分配，请确保在你的 HGS 服务器上为 gMSA 帐户授予 "[生成审核事件" 特权](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29)。
+如果使用组策略来配置用户权限分配，请确保在你的 HGS 服务器上为 gMSA 帐户授予 " [生成审核事件" 特权](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29) 。
 
 > [!NOTE]
 > 组托管服务帐户从 Windows Server 2012 Active Directory 架构开始可用。
-> 有关详细信息，请参阅[组托管服务帐户要求](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431(v=ws.11))。
+> 有关详细信息，请参阅 [组托管服务帐户要求](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431(v=ws.11))。
 
 ## <a name="jea-security-groups"></a>JEA 安全组
 
-设置 HGS 时，可以将[足够的管理 (JEA) ](https://aka.ms/JEAdocs) PowerShell 终结点配置为允许管理员管理 HGS，无需具有完全的本地管理员权限。
+设置 HGS 时，可以将 [足够的管理 (JEA) ](/powershell/scripting/learn/remoting/jea/overview) PowerShell 终结点配置为允许管理员管理 HGS，无需具有完全的本地管理员权限。
 不需要使用 JEA 来管理 HGS，但必须在运行 HgsServer 时进行配置。
 JEA 终结点的配置包括指定包含 HGS 管理员和 HGS 审阅者的2个安全组。
 属于管理员组的用户可以在 HGS 上添加、更改或删除策略;审阅者只能查看当前配置。
 
-使用 Active Directory 管理工具或[new-adgroup](/powershell/module/addsadministration/new-adgroup?view=win10-ps)为这些 JEA 组创建2个安全组。
+使用 Active Directory 管理工具或 [new-adgroup](/powershell/module/addsadministration/new-adgroup?view=win10-ps)为这些 JEA 组创建2个安全组。
 
 ```powershell
 New-ADGroup -Name 'HgsJeaReviewers' -GroupScope DomainLocal
@@ -98,7 +98,7 @@ CNO 表示群集的名称，主要由故障转移群集内部使用。
 VCO 表示位于群集顶层的 HGS 服务，它将是注册到 DNS 服务器的名称。
 
 > [!IMPORTANT]
-> 要运行的用户 `Initialize-HgsServer` 需要**完全控制**ACTIVE DIRECTORY 中的 CNO 和 VCO 对象。
+> 要运行的用户 `Initialize-HgsServer` 需要 **完全控制** ACTIVE DIRECTORY 中的 CNO 和 VCO 对象。
 
 若要快速预留 CNO 和 VCO，请 Active Directory 管理员运行以下 PowerShell 命令：
 
@@ -140,12 +140,12 @@ Set-Acl -Path $vcoPath -AclObject $acl
 
 **策略名称：** 网络安全：配置 Kerberos 允许的加密类型
 
-**操作**：如果配置了此策略，则必须使用[uninstall-adserviceaccount](/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)将 gMSA 帐户更新为仅在此策略中使用受支持的加密类型。 例如，如果你的策略仅允许 AES128 \_ hmac \_ SHA1 和 AES256 \_ hmac \_ sha1，则应该运行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` 。
+**操作**：如果配置了此策略，则必须使用 [uninstall-adserviceaccount](/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) 将 gMSA 帐户更新为仅在此策略中使用受支持的加密类型。 例如，如果你的策略仅允许 AES128 \_ hmac \_ SHA1 和 AES256 \_ hmac \_ sha1，则应该运行 `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` 。
 
 
 
 ## <a name="next-steps"></a>后续步骤
 
-- 有关设置基于 TPM 的证明的后续步骤，请参阅[在现有堡垒林中使用 TPM 模式初始化 HGS 群集](guarded-fabric-initialize-hgs-tpm-mode-bastion.md)。
-- 有关设置主机密钥证明的后续步骤，请参阅[使用现有堡垒林中的密钥模式初始化 HGS 群集](guarded-fabric-initialize-hgs-key-mode-bastion.md)。
-- 若要在 Windows Server 2019) 中 (弃用的后续步骤设置基于管理员的证明，请参阅[在现有堡垒林中使用 AD 模式初始化 HGS 群集](guarded-fabric-initialize-hgs-ad-mode-bastion.md)。
+- 有关设置基于 TPM 的证明的后续步骤，请参阅 [在现有堡垒林中使用 TPM 模式初始化 HGS 群集](guarded-fabric-initialize-hgs-tpm-mode-bastion.md)。
+- 有关设置主机密钥证明的后续步骤，请参阅 [使用现有堡垒林中的密钥模式初始化 HGS 群集](guarded-fabric-initialize-hgs-key-mode-bastion.md)。
+- 若要在 Windows Server 2019) 中 (弃用的后续步骤设置基于管理员的证明，请参阅 [在现有堡垒林中使用 AD 模式初始化 HGS 群集](guarded-fabric-initialize-hgs-ad-mode-bastion.md)。

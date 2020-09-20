@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 08/11/2017
 ms.topic: article
-ms.openlocfilehash: 8a967718adc40d42c5798870b05cde6e228a0b18
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2306c5ad57b7714c10076a5bb11f6cae5bb7f92d
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956554"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766880"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>使用已注册的设备配置本地条件性访问
 
@@ -25,12 +25,12 @@ ms.locfileid: "87956554"
 
 |要求|说明
 |-----|-----
-|使用 Azure AD Premium 的 Azure AD 订阅 | 启用设备回写以实现本地条件访问-[免费试用版](https://azure.microsoft.com/trial/get-started-active-directory/)
+|使用 Azure AD Premium 的 Azure AD 订阅 | 启用设备回写以实现本地条件访问- [免费试用版](https://azure.microsoft.com/trial/get-started-active-directory/)
 |Intune 订阅|仅适用于设备符合性方案的 MDM 集成的要求-[免费试用版](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0)
 |Azure AD Connect|2015年11月版或更高版本。  [在此处](https://www.microsoft.com/download/details.aspx?id=47594)获取最新版本。
 |Windows Server 2016|AD FS 的版本10586或更高版本
 |Windows Server 2016 Active Directory 架构|需要架构级别85或更高版本。
-|Windows Server 2016 域控制器|仅适用于企业密钥信任部署，这是必需的。  可在[此处](https://aka.ms/whfbdocs)找到其他信息。
+|Windows Server 2016 域控制器|仅适用于企业密钥信任部署，这是必需的。  可在 [此处](/windows/security/identity-protection/hello-for-business/hello-identity-verification)找到其他信息。
 |Windows 10 客户端|仅 Windows 10 域加入和 Microsoft Passport for Work 方案需要将生成10586或更高版本加入以上域
 |Azure AD 分配了 Azure AD Premium 许可证的用户帐户|注册设备
 
@@ -62,7 +62,7 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 ![PowerShell](media/Configure-Device-Based-Conditional-Access-on-Premises/pshell1.png)
 
-有关升级的其他信息，请参阅[将域控制器升级到 Windows Server 2016](../../ad-ds/deploy/upgrade-domain-controllers.md)。
+有关升级的其他信息，请参阅 [将域控制器升级到 Windows Server 2016](../../ad-ds/deploy/upgrade-domain-controllers.md)。
 
 ## <a name="enable-azure-ad-device-registration"></a>启用 Azure AD 设备注册
 若要配置此方案，你必须在 Azure AD 中配置设备注册功能。
@@ -70,9 +70,9 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 为此，请按照[在你的组织中设置 Azure AD Join 中](/azure/active-directory/devices/device-management-azure-portal)的步骤操作
 
 ## <a name="setup-ad-fs"></a>设置 AD FS
-1. 创建新的[AD FS 2016 场](../deployment/deploying-a-federation-server-farm.md)。
-2.  或从 AD FS 2012 R2 将场[迁移](../deployment/upgrading-to-ad-fs-in-windows-server.md)到 AD FS 2016
-4. 使用自定义路径部署[Azure AD Connect](../deployment/upgrading-to-ad-fs-in-windows-server.md) ，将 AD FS 连接到 Azure AD。
+1. 创建新的 [AD FS 2016 场](../deployment/deploying-a-federation-server-farm.md)。
+2.  或从 AD FS 2012 R2 将场 [迁移](../deployment/upgrading-to-ad-fs-in-windows-server.md) 到 AD FS 2016
+4. 使用自定义路径部署 [Azure AD Connect](../deployment/upgrading-to-ad-fs-in-windows-server.md) ，将 AD FS 连接到 Azure AD。
 
 ## <a name="configure-device-write-back-and-device-authentication"></a>配置设备写回和设备身份验证
 > [!NOTE]
@@ -186,14 +186,14 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 - 上方容器中类型 msDS-DeviceRegistrationService 的对象
 
 ### <a name="see-it-work"></a>查看工作
-若要评估新的声明和策略，请首先注册设备。  例如，你可以使用 "系统->" 下的 "设置" 应用 Azure AD 加入 Windows 10 计算机，也可以在[此处](/azure/active-directory/devices/hybrid-azuread-join-plan)执行附加步骤后使用自动设备注册来设置 windows 10 域加入。  有关加入 Windows 10 移动版设备的信息，请参阅[此处](/windows/client-management/join-windows-10-mobile-to-azure-active-directory)的文档。
+若要评估新的声明和策略，请首先注册设备。  例如，你可以使用 "系统->" 下的 "设置" 应用 Azure AD 加入 Windows 10 计算机，也可以在 [此处](/azure/active-directory/devices/hybrid-azuread-join-plan)执行附加步骤后使用自动设备注册来设置 windows 10 域加入。  有关加入 Windows 10 移动版设备的信息，请参阅 [此处](/windows/client-management/join-windows-10-mobile-to-azure-active-directory)的文档。
 
 对于最简单的评估，使用显示声明列表的测试应用程序登录到 AD FS。 你将可以看到新的声明，包括 isManaged、isCompliant 和 trusttype。  如果启用 Microsoft Passport for work，还会看到 prt 声明。
 
 
 ## <a name="configure-additional-scenarios"></a>配置其他方案
 ### <a name="automatic-registration-for-windows-10-domain-joined-computers"></a>自动注册已加入域的 Windows 10 计算机
-若要为已加入 Windows 10 域的计算机启用自动设备注册，请执行[此处](/azure/active-directory/devices/hybrid-azuread-join-plan)的步骤1和2。
+若要为已加入 Windows 10 域的计算机启用自动设备注册，请执行 [此处](/azure/active-directory/devices/hybrid-azuread-join-plan)的步骤1和2。
 这将帮助你实现以下目的：
 
 1. 请确保 AD DS 中的服务连接点存在，并且具有在上面创建此对象 (的适当权限，但这并不会损害双检查) 。
@@ -202,10 +202,10 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 4. 为加入域的计算机配置自动设备注册所需的组策略设置
 
 ### <a name="microsoft-passport-for-work"></a>Microsoft Passport for Work
-有关使用 Microsoft Passport for Work 启用 Windows 10 的信息，请参阅[在组织中启用 Microsoft Passport for Work。](/windows/security/identity-protection/hello-for-business/hello-identity-verification)
+有关使用 Microsoft Passport for Work 启用 Windows 10 的信息，请参阅 [在组织中启用 Microsoft Passport for Work。](/windows/security/identity-protection/hello-for-business/hello-identity-verification)
 
 ### <a name="automatic-mdm-enrollment"></a>自动 MDM 注册
-若要启用已注册设备的自动 MDM 注册，以便可以在访问控制策略中使用 isCompliant 声明，请按照此处的步骤操作[。](/windows/client-management/join-windows-10-mobile-to-azure-active-directory)
+若要启用已注册设备的自动 MDM 注册，以便可以在访问控制策略中使用 isCompliant 声明，请按照此处的步骤操作 [。](/windows/client-management/join-windows-10-mobile-to-azure-active-directory)
 
 ## <a name="troubleshooting"></a>疑难解答
 1.  如果在该投诉原因上收到一个错误 `Initialize-ADDeviceRegistration` ，指出某个对象已存在于错误状态，例如 "未找到 drs 服务对象，但未提供所有必需的属性"，则可能已在 AD DS 中执行了 Azure AD Connect powershell 命令并具有部分配置。  请尝试手动删除 " **CN = Device Registration Configuration，CN = Services，cn = Configuration，DC = &lt; 域 &gt; ** " 下的对象，然后重试。
@@ -213,9 +213,9 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
     1. 若要验证设备身份验证是否正常工作，请以测试用户帐户的身份登录到加入域的客户端。 若要快速触发预配，请至少锁定并解锁桌面。
     2. 在 AD DS 对象上检查 stk 密钥凭据链接 (是否仍需要运行同步的说明 ) 
 3.  如果你在尝试注册 Windows 计算机时遇到错误，但设备已注册，但你无法或取消注册设备，则可以在注册表中创建设备注册配置片段。  若要调查并删除此项，请使用以下步骤：
-    1. 在 Windows 计算机上，打开 Regedit 并导航到**HKLM\Software\Microsoft\Enrollments**
+    1. 在 Windows 计算机上，打开 Regedit 并导航到 **HKLM\Software\Microsoft\Enrollments**
     2. 在此项下，GUID 窗体中将有很多子项。  导航到其中包含大约17个值的子项，并将 "EnrollmentType" "6" [MDM 联接] 或 "13" (Azure AD 联接) 
-    3. 将**EnrollmentType**修改为**0**
+    3. 将 **EnrollmentType** 修改为 **0**
     4. 请重试设备注册或注册
 
 ### <a name="related-articles"></a>相关文章

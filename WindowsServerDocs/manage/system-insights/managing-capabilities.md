@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: e78afb47877bb908df81876afe01d2f60b853c70
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 3f4e80136b3c70b7a121663a6defa048d2b0e852
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996706"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766220"
 ---
 # <a name="managing-capabilities"></a>管理功能
 
@@ -20,13 +20,13 @@ ms.locfileid: "87996706"
 在 Windows Server 2019 中，系统见解公开了可以为每个功能配置的各种设置，并且这些设置可以进行调整以满足你的部署的特定需要。 本主题介绍如何通过 Windows 管理中心或 PowerShell 管理每项功能的各种设置，提供基本 PowerShell 示例和 Windows 管理中心屏幕截图，演示如何调整这些设置。
 
 >[!TIP]
->你还可以使用这些简短视频来帮助你开始使用并自信地管理系统见解：[在10分钟内开始使用系统见解](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
+>你还可以使用这些简短视频来帮助你开始使用并自信地管理系统见解： [在10分钟内开始使用系统见解](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
 
-虽然本部分提供了 PowerShell 示例，但你可以使用[系统见解 PowerShell 文档](https://aka.ms/systeminsightspowershell)来查看系统见解中的所有 cmdlet、参数和参数集。
+虽然本部分提供了 PowerShell 示例，但你可以使用 [系统见解 PowerShell 文档](/powershell/module/systeminsights/) 来查看系统见解中的所有 cmdlet、参数和参数集。
 
 ## <a name="viewing-capabilities"></a>查看功能
 
-若要开始，可以使用**InsightsCapability** cmdlet 列出所有可用的功能：
+若要开始，可以使用 **InsightsCapability** cmdlet 列出所有可用的功能：
 
 ```PowerShell
 Get-InsightsCapability
@@ -36,18 +36,18 @@ Get-InsightsCapability
 ![列出可用功能的系统见解概述页](media/overview-page-contoso.png)
 
 ## <a name="enabling-and-disabling-a-capability"></a>启用和禁用功能
-每个功能都可以启用或禁用。 禁用某项功能可防止调用此功能; 对于非默认功能，禁用该功能将停止对该功能的所有数据收集。 默认情况下，所有功能均已启用，你可以使用**InsightsCapability** cmdlet 检查功能的状态。
+每个功能都可以启用或禁用。 禁用某项功能可防止调用此功能; 对于非默认功能，禁用该功能将停止对该功能的所有数据收集。 默认情况下，所有功能均已启用，你可以使用 **InsightsCapability** cmdlet 检查功能的状态。
 
-若要启用或禁用功能，请使用**InsightsCapability**和**InsightsCapability** cmdlet：
+若要启用或禁用功能，请使用 **InsightsCapability** 和 **InsightsCapability** cmdlet：
 
 ```PowerShell
 Enable-InsightsCapability -Name "CPU capacity forecasting"
 Disable-InsightsCapability -Name "Networking capacity forecasting"
 ```
-还可以通过在 Windows 管理中心中选择一项功能，单击 "**启用**" 或 "**禁用**" 按钮来切换这些设置。
+还可以通过在 Windows 管理中心中选择一项功能，单击 " **启用** " 或 " **禁用** " 按钮来切换这些设置。
 
 ### <a name="invoking-a-capability"></a>调用功能
-调用功能可立即运行检索预测的功能，管理员可以随时通过单击 Windows 管理中心中的 "**调用**" 按钮或使用**InsightsCapability** cmdlet 来调用功能：
+调用功能可立即运行检索预测的功能，管理员可以随时通过单击 Windows 管理中心中的 " **调用** " 按钮或使用 **InsightsCapability** cmdlet 来调用功能：
 
 ```PowerShell
 Invoke-InsightsCapability -Name "CPU capacity forecasting"
@@ -57,9 +57,9 @@ Invoke-InsightsCapability -Name "CPU capacity forecasting"
 >若要确保调用某个功能不与计算机上的关键操作冲突，请考虑在非工作时间计划预测。
 
 ## <a name="retrieving-capability-results"></a>检索功能结果
-一旦调用功能，最新结果就会使用**InsightsCapability**或**InsightsCapabilityResult**。 这些 cmdlet 输出每个功能的最新**状态**和**状态说明**，这些说明描述每个预测的结果。 "**状态**" 和 "**状态说明**" 字段将在 "[了解功能" 文档](understanding-capabilities.md)中进一步说明。
+一旦调用功能，最新结果就会使用 **InsightsCapability** 或 **InsightsCapabilityResult**。 这些 cmdlet 输出每个功能的最新 **状态** 和 **状态说明** ，这些说明描述每个预测的结果。 " **状态** " 和 " **状态说明** " 字段将在 " [了解功能" 文档](understanding-capabilities.md)中进一步说明。
 
-此外，还可以使用**InsightsCapabilityResult** cmdlet 查看最后30个预测结果，并检索与预测关联的数据：
+此外，还可以使用 **InsightsCapabilityResult** cmdlet 查看最后30个预测结果，并检索与预测关联的数据：
 
 ```PowerShell
 # Specify the History parameter to see the last 30 prediction results.
@@ -75,7 +75,7 @@ $Output.ForecastingResults
 ![显示预测关系图和预测历史记录的单一功能页](media/cpu-forecast-2.png)
 
 ### <a name="using-the-event-log-to-retrieve-capability-results"></a>使用事件日志检索功能结果
-每次功能完成预测时，系统见解都会记录一个事件。 这些事件显示在**Microsoft-Windows 系统-Insights/管理**通道中，而 System Insights 针对每种状态发布了不同的事件 ID：
+每次功能完成预测时，系统见解都会记录一个事件。 这些事件显示在 **Microsoft-Windows 系统-Insights/管理** 通道中，而 System Insights 针对每种状态发布了不同的事件 ID：
 
 | 预测状态 | 事件 ID |
 | --------------- | --------------- |
@@ -86,27 +86,27 @@ $Output.ForecastingResults
 | None | 132 |
 
 >[!TIP]
->使用[Azure Monitor](https://azure.microsoft.com/services/monitor/)或[System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807)来聚合这些事件，并查看一组计算机中的预测结果。
+>使用 [Azure Monitor](https://azure.microsoft.com/services/monitor/) 或 [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807) 来聚合这些事件，并查看一组计算机中的预测结果。
 
 
 ## <a name="setting-a-capability-schedule"></a>设置功能计划
-除了按需预测外，还可以为每个功能配置定期预测，以便按照预定义的计划自动调用指定的功能。 使用**InsightsCapabilitySchedule** cmdlet 查看功能计划：
+除了按需预测外，还可以为每个功能配置定期预测，以便按照预定义的计划自动调用指定的功能。 使用 **InsightsCapabilitySchedule** cmdlet 查看功能计划：
 
 >[!TIP]
->使用 PowerShell 中的管道运算符查看**InsightsCapability** cmdlet 返回的所有功能的信息。
+>使用 PowerShell 中的管道运算符查看 **InsightsCapability** cmdlet 返回的所有功能的信息。
 
 ```PowerShell
 Get-InsightsCapability | Get-InsightsCapabilitySchedule
 ```
 
-默认情况下会启用定期预测，不过，使用**InsightsCapabilitySchedule**和**InsightsCapabilitySchedule** cmdlet 可随时禁用定期预测：
+默认情况下会启用定期预测，不过，使用 **InsightsCapabilitySchedule** 和 **InsightsCapabilitySchedule** cmdlet 可随时禁用定期预测：
 
 ```PowerShell
 Enable-InsightsCapabilitySchedule -Name "Total storage consumption forecasting"
 Disable-InsightsCapabilitySchedule -Name "Volume consumption forecasting"
 ```
 
-每个默认功能都计划在每天的3am 运行。 但是，你可以为每个功能创建自定义计划，而系统见解支持多种计划类型，可以使用**InsightsCapabilitySchedule** cmdlet 进行配置：
+每个默认功能都计划在每天的3am 运行。 但是，你可以为每个功能创建自定义计划，而系统见解支持多种计划类型，可以使用 **InsightsCapabilitySchedule** cmdlet 进行配置：
 
 ```PowerShell
 Set-InsightsCapabilitySchedule -Name "CPU capacity forecasting" -Daily -DaysInterval 2 -At 4:00PM
@@ -115,9 +115,9 @@ Set-InsightsCapabilitySchedule -Name "Total storage consumption forecasting" -Ho
 Set-InsightsCapabilitySchedule -Name "Volume consumption forecasting" -Minute -MinutesInterval 30
 ```
 >[!NOTE]
->因为默认功能分析每日数据，所以建议将每日计划用于这些功能。 在[此处](understanding-capabilities.md)了解有关默认功能的详细信息。
+>因为默认功能分析每日数据，所以建议将每日计划用于这些功能。 在 [此处](understanding-capabilities.md)了解有关默认功能的详细信息。
 
-通过单击 "**设置**"，还可以使用 Windows 管理中心来查看和设置每项功能的计划。 当前计划显示在 "**计划**" 选项卡上，你可以使用 GUI 工具创建新计划：
+通过单击 " **设置**"，还可以使用 Windows 管理中心来查看和设置每项功能的计划。 当前计划显示在 " **计划** " 选项卡上，你可以使用 GUI 工具创建新计划：
 
 ![显示当前计划的 "设置" 页](media/schedule-page-contoso.png)
 
@@ -126,13 +126,13 @@ Set-InsightsCapabilitySchedule -Name "Volume consumption forecasting" -Minute -M
 
 示例更正操作包括运行磁盘清理、扩展卷、运行重复数据删除、实时迁移 Vm 以及设置 Azure 文件同步。
 
-可以使用**InsightsCapabilityAction** cmdlet 查看每个功能的操作：
+可以使用 **InsightsCapabilityAction** cmdlet 查看每个功能的操作：
 
 ```PowerShell
 Get-InsightsCapability | Get-InsightsCapabilityAction
 ```
 
-你可以使用**InsightsCapabilityAction**和 InsightsCapabilityAction cmdlet 创建新操作或删除现有**的**操作。 每个操作都使用**ActionCredential**参数中指定的凭据运行。
+你可以使用 **InsightsCapabilityAction** 和 InsightsCapabilityAction cmdlet 创建新操作或删除现有 **的** 操作。 每个操作都使用 **ActionCredential** 参数中指定的凭据运行。
 
 >[!NOTE]
 >在初始系统 Insights 版本中，你必须在用户目录之外指定修正脚本。 将在即将发布的版本中修复此问题。

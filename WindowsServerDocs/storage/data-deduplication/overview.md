@@ -6,12 +6,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
-ms.openlocfilehash: 5510e5459c30e51bed3f4f724fe02c6a96f9fc31
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8959cde3254db31f077ae276ad72899a12f09feb
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936326"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766840"
 ---
 # <a name="data-deduplication-overview"></a>数据重复删除概述
 
@@ -22,11 +22,11 @@ ms.locfileid: "87936326"
 重复数据删除（通常称为重复数据删除）是一项功能，可帮助降低冗余数据对存储成本的影响。 启用后，重复数据删除会检查卷上的数据（检查是否存在重复分区），优化卷上的可用空间。 卷数据集的重复分区只存储一次，并可以压缩，节省更多空间。 重复数据删除可优化冗余，而不会损坏数据保真度或完整性。 若要详细了解重复数据删除的工作原理，请参阅“[重复数据删除是如何工作的？](understand.md#how-does-dedup-work)”部分， 位于[了解重复数据删除](understand.md)页面。
 
 > [!Important]
-> [KB4025334](https://support.microsoft.com/kb/4025334)包含用于重复数据删除的修补程序的汇总，包括重要的可靠性修补程序，我们强烈建议在将重复数据删除与 windows server 2016 和 windows server 2019 一起使用时安装。
+> [KB4025334](https://support.microsoft.com/kb/4025334) 包含用于重复数据删除的修补程序的汇总，包括重要的可靠性修补程序，我们强烈建议在将重复数据删除与 windows server 2016 和 windows server 2019 一起使用时安装。
 
 ## <a name="why-is-data-deduplication-useful"></a><a name="why-is-dedup-useful"></a>重复数据删除为什么有用？
 
-重复数据删除可帮助存储管理员降低重复数据的相关成本。 大型数据集通常具有**<u>大量</u>** 重复数据，从而增加了存储数据的成本。 例如：
+重复数据删除可帮助存储管理员降低重复数据的相关成本。 大型数据集通常具有 **<u>大量</u>** 重复数据，从而增加了存储数据的成本。 例如：
 
 - 用户文件共享可能会有相同或类似文件的多个副本。
 - 不同 VM 的虚拟化来宾可能几乎完全相同。
@@ -34,7 +34,7 @@ ms.locfileid: "87936326"
 
 通过重复数据删除可以节省的空间取决于卷上的数据集或工作负荷。 重复率很高的数据集的优化率最高可达 95%，存储使用率最高降低 20 倍。 下表主要显示了各种内容类型的典型的重复数据删除节省情况：
 
-| 方案       | 内容                                        | 典型的空间节省率 |
+| 方案       | Content                                        | 典型的空间节省率 |
 |----------------|------------------------------------------------|-----------------------|
 | 用户文档 | Office 文档、照片、音乐、视频等  | 30-50%                |
 | 部署共享 | 软件二进制文件、cab 文件、符号等 | 70-80%                |
@@ -51,7 +51,7 @@ ms.locfileid: "87936326"
 常规用途文件服务器是常规使用的文件服务器，可能包含以下任意共享类型： <ul>
                     <li>团队共享</li>
                     <li>用户主页文件夹</li>
-                    <li><a href="https://technet.microsoft.com/library/dn265974.aspx">工作文件夹</a></li>
+                    <li><a href="/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265974(v=ws.11)">工作文件夹</a></li>
                     <li>软件开发共享</li>
                 </ul>
 常规用途文件服务器非常适合进行重复数据删除，因为多个用户可能有同一个文件的许多副本或版本。 软件开发共享也适合进行重复数据删除，因为不同内部版本的许多二进制文件基本保持不变。
@@ -61,7 +61,7 @@ ms.locfileid: "87936326"
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-vdi.png" alt="Illustration of VDI servers" /></td>
             <td style="vertical-align:top">
                 <b>虚拟化桌面基础结构 (VDI) 部署</b><br />
-VDI 服务器（如<a href="https://technet.microsoft.com/library/cc725560.aspx">远程桌面服务</a>为组织提供了一种向用户设置桌面的轻型选项。 对于一个组织而言，有很多原因要依赖于此类技术： <ul>
+VDI 服务器（如<a href="/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725560(v=ws.11)">远程桌面服务</a>为组织提供了一种向用户设置桌面的轻型选项。 对于一个组织而言，有很多原因要依赖于此类技术： <ul>
                     <li><b>应用程序部署</b>：可在整个企业中快速部署应用程序。 如果你具有的应用程序经常更新、很少使用或难以管理，这项技术特别有用。</li>
                     <li><b>应用程序整合</b>：从一组集中管理的虚拟机中安装和运行应用程序时，无需在客户端计算机上更新应用程序。 还可以减少访问应用程序所需的网络带宽量。</li>
                     <li><b>远程访问</b>：用户可以从家庭计算机、展台、低功耗硬件和 Windows 以外的操作系统等设备访问企业应用程序。</li>
@@ -74,7 +74,7 @@ VDI 部署非常适合进行重复数据删除，因为驱动用户远程桌面�
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-backup.png" alt="Illustration of backup applications" /></td>
             <td style="vertical-align:top">
                 <b>备份目标，如虚拟化备份应用程序</b><br />
-备份应用程序（如<a href="https://technet.microsoft.com/library/hh758173.aspx">Microsoft Data Protection Manager (DPM) </a>）是重复数据删除的绝佳候选项，因为备份快照之间存在显著的重复。
+备份应用程序（如 <a href="/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)">Microsoft Data Protection Manager (DPM) </a>）是重复数据删除的绝佳候选项，因为备份快照之间存在显著的重复。
             </td>
         </tr>
         <tr>

@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: aec55bca0be096a3866cc49e718743a9c32d8f6b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: da7c390427a3f0f2348d91e14d0affef905db390
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638743"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766950"
 ---
 # <a name="security-support-provider-interface-architecture"></a>安全支持提供程序接口体系结构
 
@@ -83,9 +83,9 @@ SSPI 是通用安全服务 API 在 Windows Server 操作系统中 (GSSAPI) 的�
 
 -   [Microsoft Kerberos (Windows) ](/windows/win32/secauthn/microsoft-kerberos)
 
--   [\[KILE \] ： Kerberos 协议扩展](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
+-   [\[KILE \] ： Kerberos 协议扩展](/openspecs/windows_protocols/ms-kile/2a32282e-dd48-4ad9-a542-609804b02cc9)
 
--   [\[MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
+-   [\[MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94)
 
 -   [Kerberos SSP/AP (Windows) ](/windows/win32/secauthn/kerberos-ssp-ap)
 
@@ -139,7 +139,7 @@ Ntlm 安全支持提供程序 (NTLM SSP) 是安全支持提供程序接口使用
 
 -   [ (Windows) Microsoft Digest 身份验证 ](/windows/win32/secauthn/microsoft-digest-ssp)
 
--   [\[DPSP \] ：摘要式协议扩展](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
+-   [\[DPSP \] ：摘要式协议扩展](/openspecs/windows_protocols/ms-dpsp/3e44be62-2067-472a-9ef0-e937298b68fb)
 
 ### <a name="schannel-security-support-provider"></a><a name="BKMK_SchannelSSP"></a>Schannel 安全支持提供程序
 安全通道 (Schannel) 用于基于 web 的服务器身份验证，例如，当用户尝试访问安全 web 服务器时。
@@ -177,7 +177,7 @@ TLS 协议、SSL 协议、专用通信技术 (PCT) 协议、数据报传输层 (
 
 -   [TLS/SSL 技术参考](/previous-versions/windows/it-pro/windows-server-2003/cc784149(v=ws.10))
 
--   [\[TLSP \] ： (TLS) 配置文件的传输层安全性](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
+-   [\[TLSP \] ： (TLS) 配置文件的传输层安全性](/openspecs/windows_protocols/ms-tlsp/58aba05b-62b0-4cd1-b88b-dc8a24920346)
 
 ### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>协商安全支持提供程序
 简单且受保护的 GSS-API 协商机制 (SPNEGO) 构成协商 SSP 的基础，whichcan 用于协商特定身份验证协议。 当某个应用程序调入 SSPI 以登录到网络时，该应用程序可以指定一个 SSP 来处理请求。 如果应用程序指定 Negotiate SSP，则它会分析请求，并根据客户配置的安全策略选择相应的提供程序来处理请求。
@@ -194,9 +194,9 @@ RFC 2478 中指定了 SPNEGO。
 
 -   [Microsoft 协商 (Windows) ](/windows/win32/secauthn/microsoft-negotiate)
 
--   [\[SPNG \] ：简单且受保护的 GSS-API 协商机制 (SPNEGO) 扩展](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
+-   [\[SPNG \] ：简单且受保护的 GSS-API 协商机制 (SPNEGO) 扩展](/openspecs/windows_protocols/ms-spng/f377a379-c24f-4a0f-a3eb-0d835389e28a)
 
--   [\[N2HT \] ：协商和 NEGO2 HTTP 身份验证协议规范](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
+-   [\[N2HT \] ：协商和 NEGO2 HTTP 身份验证协议规范](/openspecs/windows_protocols/ms-n2ht/4b88aa77-4b12-4933-8740-0f32d8f4eacf)
 
 ### <a name="credential-security-support-provider"></a><a name="BKMK_CredSSP"></a>凭据安全支持提供程序
 凭据安全服务提供程序 (CredSSP) 提供单一登录 (SSO) 用户在启动新终端服务和远程桌面服务会话时的体验。 CredSSP 使应用程序可以使用客户端 SSP) 通过服务器端 SSP)  (基于客户端策略的目标服务器，将用户的凭据从客户端计算机委托 (。 CredSSP 策略通过使用组策略进行配置，并且默认情况下禁用凭据的委派。
@@ -207,7 +207,7 @@ RFC 2478 中指定了 SPNEGO。
 
 **凭据 SSP 的其他资源**
 
--   [\[CSSP \] ：凭据安全支持提供程序 (CredSSP) 协议规范](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
+-   [\[CSSP \] ：凭据安全支持提供程序 (CredSSP) 协议规范](/openspecs/windows_protocols/ms-cssp/85f57821-40bb-46aa-bfcb-ba9590b8fc30)
 
 -   [用于终端服务登录的凭据安全服务提供程序和 SSO](/previous-versions/windows/it-pro/windows-vista/cc749211(v=ws.10))
 

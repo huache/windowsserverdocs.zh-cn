@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/31/2019
-ms.openlocfilehash: 5dcba9b92d9c0d85f99a1d54d50bef187fd51f10
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 04776c46d321a7a5aef19edd2866637c26d79125
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997480"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766320"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>将 Windows Server 连接到 Azure 混合服务
 
@@ -64,7 +64,7 @@ ms.locfileid: "87997480"
 
 ### <a name="extend-storage-capacity"></a>扩展存储容量
 
-- **使用 [Azure 文件同步](https://aka.ms/afs)让文件服务器与云同步** 让此服务器上的文件与 Azure 文件共享进行同步。 将所有文件都保留在本地，或者使用云分层来释放空间，并且仅缓存服务器上最常用的文件，将冷数据分层到云中。 云中的数据可以备份，这样就无需担心本地服务器备份。 此外，多站点同步可让一组文件在多个服务器上保持同步。
+- **使用 [Azure 文件同步](/azure/storage/files/storage-sync-files-planning)让文件服务器与云同步** 让此服务器上的文件与 Azure 文件共享进行同步。 将所有文件都保留在本地，或者使用云分层来释放空间，并且仅缓存服务器上最常用的文件，将冷数据分层到云中。 云中的数据可以备份，这样就无需担心本地服务器备份。 此外，多站点同步可让一组文件在多个服务器上保持同步。
 有关详细信息，请参阅[使用 Azure 文件同步将文件服务器与云同步](azure-file-sync.md)。
 
 - **使用[存储迁移服务](../../../storage/storage-migration-service/overview.md)将存储迁移到 Azure 中的 VM** 使用分步工具清点 Windows 和 Linux 服务器上的数据，然后将数据传输到新的 Azure VM。 Windows Admin Center 可以为作业创建一个新的 Azure VM，该 VM 的大小进行了调整，并正确配置为接收来自源服务器的数据。

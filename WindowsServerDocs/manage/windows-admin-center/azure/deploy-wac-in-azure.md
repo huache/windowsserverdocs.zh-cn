@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 381073ad383913684b1b861883b981a19583767f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4fd03195feb275bd56c6958f8436c607829c8392
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997525"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766660"
 ---
 # <a name="deploy-windows-admin-center-in-azure"></a>在 Azure 中部署 Windows Admin Center
 
@@ -21,15 +21,15 @@ ms.locfileid: "87997525"
 
 [跳转到手动部署步骤](#deploy-manually-on-an-existing-azure-virtual-machine)
 
-### <a name="prerequisites"></a>先决条件
+### <a name="prerequisites"></a>必备知识
 
-* 在[Azure Cloud Shell](https://shell.azure.com)中设置帐户。 如果这是你第一次使用 Cloud Shell，则会要求你将 Azure 存储帐户与 Cloud Shell 相关联或创建。
-* 在**PowerShell** Cloud Shell 中，导航到主目录：```PS Azure:\> cd ~```
+* 在 [Azure Cloud Shell](https://shell.azure.com)中设置帐户。 如果这是你第一次使用 Cloud Shell，则会要求你将 Azure 存储帐户与 Cloud Shell 相关联或创建。
+* 在 **PowerShell** Cloud Shell 中，导航到主目录： ```PS Azure:\> cd ~```
 * 若要上传 ```Deploy-WACAzVM.ps1``` 文件，请将其从本地计算机拖放到 Cloud Shell 窗口中的任意位置。
 
 如果指定自己的证书：
 
-* 将证书上传到[Azure Key Vault](/azure/key-vault/key-vault-whatis)。 首先，在 Azure 门户中创建密钥保管库，并将该证书上传到密钥保管库。 或者，可以使用 Azure 门户为你生成证书。
+* 将证书上传到 [Azure Key Vault](/azure/key-vault/key-vault-whatis)。 首先，在 Azure 门户中创建密钥保管库，并将该证书上传到密钥保管库。 或者，可以使用 Azure 门户为你生成证书。
 
 ### <a name="script-parameters"></a>脚本参数
 
@@ -37,7 +37,7 @@ ms.locfileid: "87997525"
 
 * **Name** -[String] 指定 VM 的名称。
 
-* **凭据**-[PSCredential] 指定 VM 的凭据。
+* **凭据** -[PSCredential] 指定 VM 的凭据。
 
 * **MsiPath** -[String] 在现有 VM 上部署 windows 管理中心时，指定 WINDOWS 管理中心 MSI 的本地路径。 如果省略，则默认为中的版本 https://aka.ms/WACDownload 。
 
@@ -145,7 +145,7 @@ Set-AzNetworkSecurityGroup -NetworkSecurityGroup $newNSG
 ### <a name="requirements-for-managed-azure-vms"></a>托管 Azure VM 的要求
 
 端口 5985 (WinRM over HTTP) 必须为打开状态，并且具有活动侦听器。
-可以在 Azure Cloud Shell 中使用下面的代码来更新托管节点。 ```$ResourceGroupName```与 ```$Name``` 部署脚本使用相同的变量，但你需要使用 ```$Credential``` 特定于你所管理的 VM。
+可以在 Azure Cloud Shell 中使用下面的代码来更新托管节点。 ```$ResourceGroupName``` 与 ```$Name``` 部署脚本使用相同的变量，但你需要使用 ```$Credential``` 特定于你所管理的 VM。
 
 ```powershell
 Enable-AzVMPSRemoting -ResourceGroupName $ResourceGroupName -Name $Name
@@ -155,12 +155,12 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 
 ## <a name="deploy-manually-on-an-existing-azure-virtual-machine"></a>在现有 Azure 虚拟机上手动部署
 
-在所需的网关 VM 上安装 Windows 管理中心之前，请安装用于 HTTPS 通信的 SSL 证书，也可以选择使用 Windows 管理中心生成的自签名证书。 但是，如果选择后一项选项，则当尝试从浏览器进行连接时，会收到警告。 单击 **"详细信息" > 转到网页上**，或在 Chrome 中，通过选择 "**高级" > 前进到 "[网页]**"，可以绕过此警告。 建议仅将自签名证书用于测试环境。
+在所需的网关 VM 上安装 Windows 管理中心之前，请安装用于 HTTPS 通信的 SSL 证书，也可以选择使用 Windows 管理中心生成的自签名证书。 但是，如果选择后一项选项，则当尝试从浏览器进行连接时，会收到警告。 单击 **"详细信息" > 转到网页上** ，或在 Chrome 中，通过选择 " **高级" > 前进到 "[网页]**"，可以绕过此警告。 建议仅将自签名证书用于测试环境。
 
 > [!NOTE]
 > 这些说明适用于在 Windows Server 上安装桌面体验，而不是在服务器核心安装上安装。
 
-1. 将[Windows 管理中心下载](https://aka.ms/windowsadmincenter)到你的本地计算机。
+1. 将[Windows 管理中心下载](../overview.md)到你的本地计算机。
 
 2. 与 VM 建立远程桌面连接，然后从本地计算机复制 MSI，并将其粘贴到 VM 中。
 
@@ -176,12 +176,12 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 
 ### <a name="configure-the-gateway-vm-to-enable-https-port-access"></a>配置网关 VM 以启用 HTTPS 端口访问：
 
-1. 在 Azure 门户中导航到 VM，然后选择 "**网络**"。
+1. 在 Azure 门户中导航到 VM，然后选择 " **网络**"。
 
 2. 选择 "**添加入站端口规则**"，然后在 "**服务**" 下选择**HTTPS** 。
 
 > [!NOTE]
-> 如果选择默认值443以外的端口，请选择 "服务" 下的 "**自定义**"，然后在 "**端口范围**" 下输入在步骤3中选择的端口。
+> 如果选择默认值443以外的端口，请选择 "服务" 下的 " **自定义** "，然后在 " **端口范围**" 下输入在步骤3中选择的端口。
 
 ### <a name="accessing-a-windows-admin-center-gateway-installed-on-an-azure-vm"></a>访问安装在 Azure VM 上的 Windows 管理中心网关
 
@@ -192,6 +192,6 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 
 当你尝试访问 Windows 管理中心时，浏览器将提示你提供凭据，以便访问安装了 Windows 管理中心的虚拟机。 此处需要输入虚拟机的 "本地用户" 或 "本地管理员" 组中的凭据。
 
-若要在 VNet 中添加其他 Vm，请通过在 PowerShell 中运行以下命令，或在目标 VM 上的命令提示符下运行 WinRM，确保 WinRM 在目标 Vm 上运行：`winrm quickconfig`
+若要在 VNet 中添加其他 Vm，请通过在 PowerShell 中运行以下命令，或在目标 VM 上的命令提示符下运行 WinRM，确保 WinRM 在目标 Vm 上运行： `winrm quickconfig`
 
-如果尚未将 Azure VM 加入域，则 VM 的行为类似于工作组中的服务器，因此需要确保考虑[在工作组中使用 Windows 管理中心](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup)。
+如果尚未将 Azure VM 加入域，则 VM 的行为类似于工作组中的服务器，因此需要确保考虑 [在工作组中使用 Windows 管理中心](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup)。

@@ -7,12 +7,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 29ecf10ba0591f25cc4b24a11bb614e53cdcca22
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c5619baa5123d0cd611cb9371cd3944fdd91fb3c
+ms.sourcegitcommit: 877d6db73d9520e3a23738d6528016235493cff3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946600"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90779261"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>步骤 7.5： 创建基于 OMA 的 VPNv2 配置文件到 Windows 10 设备
 
@@ -21,11 +21,11 @@ ms.locfileid: "87946600"
 - [**上一个：** 步骤7.4。将条件性访问根证书部署到本地 AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
 - [**下一步：** 了解 VPN 的条件性访问的工作原理](/windows/access-protection/vpn/vpn-conditional-access)
 
-在此步骤中，你可以使用 Intune 创建基于 OMA 的 VPNv2 配置文件来部署 VPN 设备配置策略。 如果要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 脚本创建 VPNv2 配置文件，请参阅[VPNV2 CSP 设置](/windows/client-management/mdm/vpnv2-csp)了解更多详细信息。
+在此步骤中，你可以使用 Intune 创建基于 OMA 的 VPNv2 配置文件来部署 VPN 设备配置策略。 如果要使用 Microsoft Endpoint Configuration Manager 或 PowerShell 脚本创建 VPNv2 配置文件，请参阅 [VPNV2 CSP 设置](/windows/client-management/mdm/vpnv2-csp) 了解更多详细信息。
 
 ## <a name="managed-deployment-using-intune"></a>使用 Intune 的托管部署
 
-本部分所述的所有内容都是使用条件性访问进行 VPN 工作所需的最低要求。 它不涵盖拆分隧道，使用 WIP，创建自定义 Intune 设备配置配置文件以获取 AutoVPN 的工作或 SSO。 将下面的设置集成到你之前在步骤5中创建的 VPN 配置文件[。配置 Windows 10 客户端 Always On VPN 连接](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)。在此示例中，我们将它们集成到[使用 Intune 策略配置 VPN 客户端](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)。
+本部分所述的所有内容都是使用条件性访问进行 VPN 工作所需的最低要求。 它不涵盖拆分隧道，使用 WIP，创建自定义 Intune 设备配置配置文件以获取 AutoVPN 的工作或 SSO。 将下面的设置集成到你之前在步骤5中创建的 VPN 配置文件 [。配置 Windows 10 客户端 Always On VPN 连接](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)。在此示例中，我们将它们集成到 [使用 Intune 策略配置 VPN 客户端](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune) 。
 
 **先决条件**
 
@@ -36,7 +36,7 @@ ms.locfileid: "87946600"
 
 1. 在 Azure 门户中，选择 " **intune**  >  **设备配置**" "配置  >  **文件**"，然后选择前面在[使用 Intune 配置 VPN 客户端](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)中创建的 vpn 配置文件。
 
-2. 在策略编辑器中，选择 "**属性**" "设置" "  >  **Settings**  >  **基本 VPN**"。 扩展现有的**EAP Xml**以包含一个筛选器，该筛选器为 VPN 客户端提供从用户的证书存储中检索 AAD 条件访问证书所需的逻辑，而不是让该客户端使用发现的第一个证书。
+2. 在策略编辑器中，选择 "**属性**" "设置" "  >  **Settings**  >  **基本 VPN**"。 扩展现有的 **EAP Xml** 以包含一个筛选器，该筛选器为 VPN 客户端提供从用户的证书存储中检索 AAD 条件访问证书所需的逻辑，而不是让该客户端使用发现的第一个证书。
 
     >[!NOTE]
     >如果不这样做，VPN 客户端可以检索从本地证书颁发机构颁发的用户证书，导致 VPN 连接失败。
@@ -49,7 +49,7 @@ ms.locfileid: "87946600"
     <TLSExtensions xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"><FilteringInfo xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUList Enabled="true"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions>
     ```
 
-4. 选择 "**条件性访问**" 边栏选项卡，并将**此 VPN 连接的切换条件性访问****启用**。
+4. 选择 " **条件性访问** " 边栏选项卡，并将 **此 VPN 连接的条件性访问** 切换为 " **启用**"。
 
    启用此设置将更改 VPNv2 配置文件 XML 中的** \<DeviceCompliance> \<Enabled> true \</Enabled> **设置。
 
@@ -57,9 +57,9 @@ ms.locfileid: "87946600"
 
 5. 选择“确定”。
 
-6. 选择 "**分配**"，在 "包含" 下选择 "**选择要包括的组**"。
+6. 选择 " **分配**"，在 "包含" 下选择 " **选择要包括的组**"。
 
-7. 选择接收此策略的**VPN 用户**组，然后选择 "**保存**"。
+7. 选择接收此策略的 **VPN 用户** 组，然后选择 " **保存**"。
 
     ![自动 VPN 用户的 CAP-分配](../../media/Always-On-Vpn/cap-for-auto-vpn-users-assignments.png)
 
@@ -67,15 +67,15 @@ ms.locfileid: "87946600"
 
 如果未在客户端设备上显示 VPN 配置文件，则在 "设置 \\ 网络 & Internet VPN" 下， \\ 你可以强制 MDM 策略进行同步。
 
-1. 以**VPN 用户**组成员的身份登录到已加入域的客户端计算机。
+1. 以 **VPN 用户** 组成员的身份登录到已加入域的客户端计算机。
 
-2. 在 "开始" 菜单上输入 "**帐户**"，然后按 enter。
+2. 在 "开始" 菜单上输入 " **帐户**"，然后按 enter。
 
-3. 在左侧导航窗格中，选择 "**访问工作单位或学校**"。
+3. 在左侧导航窗格中，选择 " **访问工作单位或学校**"。
 
-4. 在 "访问工作单位或学校" 下，选择 "**已连接到 < \domain"> MDM**，然后选择 "**信息**"。
+4. 在 "访问工作单位或学校" 下，选择 " **已连接到 < \domain"> MDM**，然后选择 " **信息**"。
 
-5. 选择 "**同步**"，并验证 vpn 配置文件显示在 "设置 \\ 网络 & Internet VPN" 下 \\ 。
+5. 选择 " **同步** "，并验证 vpn 配置文件显示在 "设置 \\ 网络 & Internet VPN" 下 \\ 。
 
 
 ## <a name="next-steps"></a>后续步骤

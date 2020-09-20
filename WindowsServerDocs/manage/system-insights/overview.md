@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: 9bedd593cdd26b67e6e16ddea73955bb926a87a5
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 0fe40bd568a043f4eec9bfc86f9e1a537c07f038
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996679"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766850"
 ---
 # <a name="system-insights-overview"></a>系统见解概述
 
@@ -19,9 +19,9 @@ ms.locfileid: "87996679"
 
 系统见解是 Windows Server 2019 中的一种新的预测分析功能。 System Insights 预测功能-每个由机器学习模型提供支持的功能-在本地分析 Windows Server 系统数据（如性能计数器和事件），提供对服务器功能的见解，帮助你减少与被动相关的运营费用，从而管理部署中的问题。
 
-在 Windows Server 2019 中，系统见解附带了四项默认功能，重点介绍容量预测，根据以前的使用模式预测计算、网络和存储的未来资源。 系统见解还附带了一个[可扩展的基础结构](adding-and-developing-capabilities.md)，因此，Microsoft 和第三方可以向系统见解添加新的预测功能，而无需更新操作系统。
+在 Windows Server 2019 中，系统见解附带了四项默认功能，重点介绍容量预测，根据以前的使用模式预测计算、网络和存储的未来资源。 系统见解还附带了一个 [可扩展的基础结构](adding-and-developing-capabilities.md)，因此，Microsoft 和第三方可以向系统见解添加新的预测功能，而无需更新操作系统。
 
-你可以通过直观的[Windows 管理中心](../windows-admin-center/overview.md)扩展或[直接通过 PowerShell](https://aka.ms/SystemInsightsPowerShell)管理系统见解，使用 System Insights 可以根据部署的需求，单独配置每个预测功能。 所有预测结果都将发布到事件日志，这样您就可以使用[Azure Monitor](https://azure.microsoft.com/services/monitor/)或[System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807)轻松地聚合和查看一组计算机的预测。
+你可以通过直观的 [Windows 管理中心](../windows-admin-center/overview.md) 扩展或 [直接通过 PowerShell](/powershell/module/systeminsights/)管理系统见解，使用 System Insights 可以根据部署的需求，单独配置每个预测功能。 所有预测结果都将发布到事件日志，这样您就可以使用 [Azure Monitor](https://azure.microsoft.com/services/monitor/) 或 [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807) 轻松地聚合和查看一组计算机的预测。
 
 ![Windows 管理中心中的系统见解扩展，显示 CPU 容量预测功能，图形绘制了预测](media/cpu-forecast-2.png)
 
@@ -42,14 +42,14 @@ ms.locfileid: "87996679"
 
 ### <a name="install-system-insights"></a>安装系统见解
 >[!IMPORTANT]
->系统见解在本地收集并存储一年的数据。 如果要在升级操作系统时保留数据，请**确保使用就地升级**。
+>系统见解在本地收集并存储一年的数据。 如果要在升级操作系统时保留数据，请 **确保使用就地升级**。
 
 #### <a name="install-the-feature"></a>安装此功能
 可以使用 Windows 管理中心中的扩展安装系统见解：
 
 ![System Insights 扩展的第0天体验。](media/day-0-2.png)
 
-还可以通过添加**System insights**功能，或使用 PowerShell 直接通过服务器管理器安装系统见解：
+还可以通过添加 **System insights** 功能，或使用 PowerShell 直接通过服务器管理器安装系统见解：
 
 ```PowerShell
 Add-WindowsFeature System-Insights -IncludeManagementTools
@@ -60,7 +60,7 @@ Add-WindowsFeature System-Insights -IncludeManagementTools
 - **反馈中心**：在 Windows 10 中使用反馈中心工具来提交 bug 或反馈。 执行此操作时，请指定：
     - **类别**：服务器
     - **子类别**：系统见解
-- **Uservoice**：通过我们的[UserVoice 页面](https://windowsserver.uservoice.com/forums/295071-management-tools)提交功能请求。 与你的同事共享，投票赞成你对你很重要的项目。
+- **Uservoice**：通过我们的 [UserVoice 页面](https://windowsserver.uservoice.com/forums/295071-management-tools)提交功能请求。 与你的同事共享，投票赞成你对你很重要的项目。
 - **电子邮件**：如果你想要私下向功能团队提交反馈，请向发送电子邮件 system-insights-feed@microsoft.com 。 请记住，我们仍可能会请求你使用反馈中心或 UserVoice。
 
 ## <a name="additional-references"></a>其他参考

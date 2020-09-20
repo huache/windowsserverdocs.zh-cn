@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 07/26/2019
 ms.topic: article
-ms.openlocfilehash: 66ef77b46065b87e6df08c63b0fb40ca4453c45b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dd773ce7198ffd30d8269ab47ae3d3dcfa7ef7cb
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954253"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766770"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>为 AD FS 配置额外的身份验证方法
 
@@ -20,7 +20,7 @@ ms.locfileid: "87954253"
 > [!NOTE]
 > 如果选择证书身份验证，请确保智能卡证书已安全地进行设置并且指定了 PIN 码要求。
 
-你是否知道 Microsoft Azure 在云中提供了类似的功能？ 了解有关 [Microsoft Azure 标识解决方案](https://aka.ms/m2w274)的详细信息。<p>在 Microsoft Azure 中创建混合身份解决方案：<br /> - [了解 Azure 多重身份验证。](https://aka.ms/ey6o9r)<br /> - [使用云身份验证管理单个林混合环境的标识。](https://aka.ms/g1jat8)<br /> - [利用适用于敏感应用程序的附加多重身份验证管理风险。](https://aka.ms/kt1bbm)
+你是否知道 Microsoft Azure 在云中提供了类似的功能？ 了解有关 [Microsoft Azure 标识解决方案](https://aka.ms/m2w274)的详细信息。<p>在 Microsoft Azure 中创建混合身份解决方案：<br /> - [了解 Azure 多重身份验证。](/azure/active-directory/authentication/concept-mfa-howitworks)<br /> - [使用云身份验证管理单个林混合环境的标识。](/previous-versions/windows/it-pro/solutions-guidance/dn550986(v=ws.11))<br /> - [利用适用于敏感应用程序的附加多重身份验证管理风险。](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280946(v=ws.11))
 
 ## <a name="microsoft-and-third-party-additional-authentication-methods"></a>Microsoft 和第三方附加身份验证方法
 你还可以在 Windows Server 2012 R2 的 AD FS 中配置和启用 Microsoft 和第三方身份验证方法。 在 AD FS 中安装并注册后，可以强制执行 MFA 作为全局或按信赖方身份验证策略的一部分。

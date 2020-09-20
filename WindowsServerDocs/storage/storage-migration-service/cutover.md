@@ -6,18 +6,18 @@ ms.author: t-chrche
 manager: nedpyle
 ms.date: 08/31/2020
 ms.topic: article
-ms.openlocfilehash: 985fd14b7791d28246b8e9186ca83216df734875
-ms.sourcegitcommit: a640c2d7f2d21d7cd10a9be4496e1574e5e955f0
+ms.openlocfilehash: 1e886c505435976b6495e0460705821086781a62
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89448915"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766900"
 ---
 # <a name="how-cutover-works-in-storage-migration-service"></a>在存储迁移服务中切换的工作方式
 
 转换是将源计算机的网络标识移动到目标计算机的迁移阶段。 切换后，源计算机仍将包含与以前相同的文件，但不会提供给用户和应用程序使用。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 ![转换配置屏幕快照 ](media/cutover/cutover_configuration.png)
  __图1：存储迁移服务转换配置__
@@ -66,7 +66,7 @@ ms.locfileid: "89448915"
 |  进度 | 说明                                                                                               |  说明 |
 |:-----|:--------------------------------------------------------------------------------------------------------------------|:---|
 |  0% | 切换处于空闲状态。 |   |
-| 2%  | 正在连接源计算机 .。。 |   请确保满足 [源计算机和目标计算机的要求](https://docs.microsoft.com/windows-server/storage/storage-migration-service/overview#security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports) 。|
+| 2%  | 正在连接源计算机 .。。 |   请确保满足 [源计算机和目标计算机的要求](./overview.md#security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports) 。|
 | 5%  | 正在连接到目标计算机 .。。 |   |
 | 6%  | 正在为 Active Directory 中的计算机对象设置安全权限 .。。 |   在目标计算机上复制源计算机的 Active Directory 对象安全权限。|
 | 8%  | 确保已成功在源计算机上删除创建的临时帐户 .。。 |   确保可以创建同名的临时帐户。|
@@ -95,7 +95,7 @@ ms.locfileid: "89448915"
 | 52% | 正在等待源计算机在第一次重新启动之后响应 .。。 |   |
 | 55% | 在第二次重启后等待源计算机响应 .。。 |   |
 | 56% | 正在等待源计算机响应第三次重启 .。。 |   |
-| 57% | 正在删除源上的备用计算机名称 .。。 |   确保源无法与其他用户和应用程序访问。 有关详细信息，请参阅 [Netdom computername](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11))。 |
+| 57% | 正在删除源上的备用计算机名称 .。。 |   确保源无法与其他用户和应用程序访问。 有关详细信息，请参阅 [Netdom computername](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11))。 |
 | 58% | 正在删除在源计算机上创建的临时本地帐户 .。。 |   |
 | 61% | 正在重置源计算机上的本地帐户令牌筛选器策略 .。。 |   启用策略。|
 | 63% | 正在从域中删除目标计算机 .。。 |   |
@@ -119,20 +119,20 @@ ms.locfileid: "89448915"
 
 ### <a name="__is-domain-controller-migration-supported__"></a>__是否支持域控制器迁移？__
 
-目前不是，但请参阅 [FAQ 页面](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#is-domain-controller-migration-supported) 了解解决方法。
+目前不是，但请参阅 [FAQ 页面](./faq.md#is-domain-controller-migration-supported) 了解解决方法。
 
 
 ## <a name="known-issues"></a>已知问题
 >确保已满足 [存储迁移服务概述](overview.md) 中的要求，并在运行存储迁移服务的计算机上安装了最新的 Windows 更新。
 
-有关以下问题的详细信息，请参阅 [已知问题页](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues) 。
-* [__存储迁移服务转换验证失败，出现错误 "对目标计算机上的令牌筛选器策略的访问被拒绝"__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer)
+有关以下问题的详细信息，请参阅 [已知问题页](./known-issues.md) 。
+* [__存储迁移服务转换验证失败，出现错误 "对目标计算机上的令牌筛选器策略的访问被拒绝"__](./known-issues.md#storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer)
 
-* [__错误 "针对网络名称资源 CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 失败"，Windows Server 2008 R2 群集切换失败__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails)
+* [__错误 "针对网络名称资源 CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO 失败"，Windows Server 2008 R2 群集切换失败__](./known-issues.md#error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails)
 
-* [__在源计算机上的 "38% 映射网络接口" 上切换挂起使用静态 Ip 时__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips)
+* [__在源计算机上的 "38% 映射网络接口" 上切换挂起使用静态 Ip 时__](./known-issues.md#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips)
 
-* [__在源计算机上的 "38% 映射网络接口" 上切换挂起__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer)
+* [__在源计算机上的 "38% 映射网络接口" 上切换挂起__](./known-issues.md#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer)
 
 ## <a name="additional-references"></a>其他参考
 

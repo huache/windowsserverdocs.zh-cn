@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bc1e63ff865a7eb6d4d83c75d6c2680dcf8ddb49
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e8b19df2313bd0f3f6599aae8a23a18233f469e7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996871"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766920"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>使用用于裂 \- 脑 Dns 部署的 DNS 策略
 
@@ -20,7 +20,7 @@ ms.locfileid: "87996871"
 你可以使用本主题来了解如何在 Windows Server &reg; 2016 中为拆分的 dns 部署配置 DNS 策略，其中有两个版本的单个区域-一种用于组织 intranet 上的内部用户，另一种是 Internet 上的用户。
 
 >[!NOTE]
->有关如何将 DNS 策略用于使用 \- Active Directory 集成 DNS 区域的 split 大脑 dns 部署的信息，请参阅[在 Active Directory 中将 dns 策略用于裂脑](dns-sb-with-ad.md)dns。
+>有关如何将 DNS 策略用于使用 \- Active Directory 集成 DNS 区域的 split 大脑 dns 部署的信息，请参阅 [在 Active Directory 中将 dns 策略用于裂脑](dns-sb-with-ad.md)dns。
 
 以前，此方案要求 DNS 管理员维护两个不同的 DNS 服务器，每个服务器为内部和外部用户提供服务。 如果区域中只拆分了几条记录 \- brained，或者 (内部和外部) 将区域的两个实例委托给相同的父域，这就成为了管理难题。
 
@@ -86,15 +86,15 @@ ms.locfileid: "87996871"
 
 `Add-DnsServerZoneScope -ZoneName "contoso.com" -Name "internal"`
 
-有关详细信息，请参阅[DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+有关详细信息，请参阅 [DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>将记录添加到区域作用域
 
 下一步是将代表 Web 服务器主机的记录添加到这两个区域作用域中-) 的外部客户端的内部和默认 (。
 
-在内部区域作用域中，将使用 IP 地址10.0.0.39 （这是一个专用 IP）添加记录<strong>www.career.contoso.com</strong> 。在默认区域范围内，同一记录<strong>www.career.contoso.com</strong>与 IP 地址65.55.39.10 一起添加。
+在内部区域作用域中，将使用 IP 地址10.0.0.39 （这是一个专用 IP）添加记录 <strong>www.career.contoso.com</strong> 。在默认区域范围内，同一记录 <strong>www.career.contoso.com</strong>与 IP 地址65.55.39.10 一起添加。
 
-在将记录添加到默认区域作用域时，以下示例命令中未提供 **-ZoneScope**参数。 这类似于将记录添加到 vanilla 区域。
+在将记录添加到默认区域作用域时，以下示例命令中未提供 **-ZoneScope** 参数。 这类似于将记录添加到 vanilla 区域。
 
 `
 Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4Address "65.55.39.10"
@@ -103,14 +103,14 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4Address "10.0.0.39” -ZoneScope "internal"
 `
 
-有关详细信息，请参阅[DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
+有关详细信息，请参阅 [DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)。
 
 ### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>创建 DNS 策略
 
 确定外部网络和内部网络的服务器接口并创建了区域作用域后，必须创建连接内部和外部区域作用域的 DNS 策略。
 
 >[!NOTE]
->此示例使用服务器界面作为条件来区分内部和外部客户端。 区分外部和内部客户端的另一种方法是使用客户端子网作为条件。 如果可以识别内部客户端所属的子网，则可以将 DNS 策略配置为基于客户端子网来区分。 有关如何使用客户端子网标准配置流量管理的信息，请参阅[将 DNS 策略用于基于地理位置的流量管理和主服务器](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/scenario--use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers)。
+>此示例使用服务器界面作为条件来区分内部和外部客户端。 区分外部和内部客户端的另一种方法是使用客户端子网作为条件。 如果可以识别内部客户端所属的子网，则可以将 DNS 策略配置为基于客户端子网来区分。 有关如何使用客户端子网标准配置流量管理的信息，请参阅 [将 DNS 策略用于基于地理位置的流量管理和主服务器](./primary-geo-location.md)。
 
 当 DNS 服务器在专用接口上收到查询时，将从内部区域作用域返回 DNS 查询响应。
 
@@ -121,7 +121,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 `Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -ServerInterface "eq,10.0.0.56" -ZoneScope "internal,1" -ZoneName contoso.com`
 
-有关详细信息，请参阅[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+有关详细信息，请参阅 [DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 ## <a name="example-of-dns-selective-recursion-control"></a><a name="bkmk_recursion"></a>DNS 选择性递归控制的示例
 
@@ -155,11 +155,11 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 由于这些查询不在任何区域中，因此不会对在 \( split 示例中定义的区域级别策略 \) 进行评估。
 
-DNS 服务器评估递归策略，专用接口上收到的查询与**SplitBrainRecursionPolicy**匹配。 此策略指向启用了递归的递归作用域。
+DNS 服务器评估递归策略，专用接口上收到的查询与 **SplitBrainRecursionPolicy**匹配。 此策略指向启用了递归的递归作用域。
 
 然后，DNS 服务器将执行递归以 https://www.microsoft.com 从 Internet 获取答案，并将响应缓存在本地。
 
-如果在外部接口上收到查询，则不匹配任何 DNS 策略，并且默认递归设置（在此情况下为**禁用状态**）会应用。
+如果在外部接口上收到查询，则不匹配任何 DNS 策略，并且默认递归设置（在此情况下为 **禁用状态** ）会应用。
 
 这会阻止服务器作为外部客户端的开放解析程序，同时充当内部客户端的缓存解析程序。
 
@@ -183,7 +183,7 @@ Set-DnsServerRecursionScope -Name . -EnableRecursion $False
 Add-DnsServerRecursionScope -Name "InternalClients" -EnableRecursion $True
 ```
 
-有关详细信息，请参阅[DnsServerRecursionScope](/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
+有关详细信息，请参阅 [DnsServerRecursionScope](/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
 
 #### <a name="create-dns-recursion-policies"></a><a name="bkmk_recpolicy"></a>创建 DNS 递归策略
 
@@ -199,10 +199,10 @@ Add-DnsServerRecursionScope -Name "InternalClients" -EnableRecursion $True
 Add-DnsServerQueryResolutionPolicy -Name "SplitBrainRecursionPolicy" -Action ALLOW -ApplyOnRecursion -RecursionScope "InternalClients" -ServerInterfaceIP "EQ,10.0.0.39"
 ```
 
-有关详细信息，请参阅[DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
+有关详细信息，请参阅 [DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)。
 
 现在，使用为内部客户端启用了选择性递归控制的拆分的名称服务器或 DNS 服务器来配置 DNS 服务器。
 
 你可以根据流量管理要求创建数千个 DNS 策略，并动态应用所有新策略，而无需重新启动 DNS 服务器的传入查询。
 
-有关详细信息，请参阅[DNS 策略方案指南](DNS-Policy-Scenario-Guide.md)。
+有关详细信息，请参阅 [DNS 策略方案指南](DNS-Policy-Scenario-Guide.md)。

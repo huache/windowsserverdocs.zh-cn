@@ -7,19 +7,19 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e7ebf0f2923e565e16e546a7804ee42771eec83d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4caa619c248a30c48cdfc291f2fde25ba51d85f7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640639"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766280"
 ---
 # <a name="repair-bde"></a>repair-bde
 
 如果驱动器已使用 BitLocker 加密，并且它具有有效的恢复密码或恢复密钥用于解密，则会尝试重建严重损坏的驱动器的关键部分，并抢救可恢复数据。
 
 > [!IMPORTANT]
-> 如果驱动器上的 BitLocker 元数据数据已损坏，则除了恢复密码或恢复密钥以外，还必须能够提供备份密钥包。 如果使用 Active Directory 域服务的默认密钥备份设置，则会在此处备份密钥包。 你可以使用 [bitlocker：使用 Bitlocker 恢复密码查看器](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-recovery-password-viewer) 从 AD DS 获取密钥包。
+> 如果驱动器上的 BitLocker 元数据数据已损坏，则除了恢复密码或恢复密钥以外，还必须能够提供备份密钥包。 如果使用 Active Directory 域服务的默认密钥备份设置，则会在此处备份密钥包。 你可以使用 [bitlocker：使用 Bitlocker 恢复密码查看器](/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-recovery-password-viewer) 从 AD DS 获取密钥包。
 >
 > 使用密钥包以及恢复密码或恢复密钥，可以解密受 BitLocker 保护的驱动器的部分，即使磁盘已损坏。 每个密钥包仅适用于具有相应驱动器标识符的驱动器。
 
@@ -31,7 +31,7 @@ repair-bde <inputvolume> <outputvolumeorimage> [-rk] [–rp] [-pw] [–kp] [–l
 
 ### <a name="parameters"></a>参数
 
-| 参数 | 说明 |
+| 参数 | 描述 |
 |--|--|
 | `<inputvolume>` | 标识要修复的 BitLocker 加密驱动器的驱动器号。 驱动器号必须包含冒号;例如： **C：**。 如果未指定密钥包的路径，此命令将在驱动器中搜索密钥包。 如果硬盘驱动器损坏，此命令可能找不到包，并会提示你提供路径。 |
 | `<outputvolumeorimage>` | 标识要在其上存储已修复驱动器的内容的驱动器。 输出驱动器上的所有信息都将被覆盖。 |

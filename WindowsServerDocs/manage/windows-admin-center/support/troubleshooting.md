@@ -6,23 +6,23 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 76b171b81ff01a7a16b700d720bf289fefddf0f7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 1775149495871353ef250eff3cb8f6f8cc5c22d6
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990210"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766200"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center 疑难解答
 
 > 适用于：Windows Admin Center、Windows Admin Center 预览版
 
 > [!Important]
-> 本指南将帮助你诊断和解决与 Windows Admin Center 相关的问题。 如果你的特定工具存在问题，请查看以了解你遇到的是否是[已知问题。](https://aka.ms/wacknownissues)
+> 本指南将帮助你诊断和解决与 Windows Admin Center 相关的问题。 如果你的特定工具存在问题，请查看以了解你遇到的是否是[已知问题。](./known-issues.md)
 
 ## <a name="installer-fails-with-message-_the-module-microsoftpowershelllocalaccounts-could-not-be-loaded_"></a>安装程序失败，并出现消息： **_无法加载模块 "LocalAccounts"。_**
 
-如果已修改或删除默认的 PowerShell 模块路径，则可能会发生这种情况。 若要解决此问题，请确保 ```%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules``` 是 PSModulePath 环境变量中的**第一**项。 可以通过以下 PowerShell 行实现此目的：
+如果已修改或删除默认的 PowerShell 模块路径，则可能会发生这种情况。 若要解决此问题，请确保 ```%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules``` 是 PSModulePath 环境变量中的 **第一** 项。 可以通过以下 PowerShell 行实现此目的：
 
 ```powershell
 [Environment]::SetEnvironmentVariable("PSModulePath","%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules;" + ([Environment]::GetEnvironmentVariable("PSModulePath","User")),"User")
@@ -32,7 +32,7 @@ ms.locfileid: "87990210"
 
 ### <a name="if-youve-installed-windows-admin-center-as-an-app-on-windows-10"></a>如果你安装了 Windows Admin Center 作为 **Windows 10 上的应用**
 
-* 请检查 Windows Admin Center 是否正在运行。 在 ![ ](../media/trayIcon.PNG) 任务管理器中的系统托盘或**windows 管理中心桌面/SmeDesktop.exe**中，查找 Windows 管理中心图标 windows 管理中心图标。 如果没有安装，请从“开始”菜单启动 **Windows Admin Center**。
+* 请检查 Windows Admin Center 是否正在运行。 在 ![ ](../media/trayIcon.PNG) 任务管理器中的系统托盘或 **windows 管理中心桌面/SmeDesktop.exe** 中，查找 Windows 管理中心图标 windows 管理中心图标。 如果没有安装，请从“开始”菜单启动 **Windows Admin Center**。
 
 > [!NOTE]
 > 重新启动后，你必须从“开始”菜单启动 Windows Admin Center。
@@ -55,7 +55,7 @@ ms.locfileid: "87990210"
 
 * 请确保使用 Microsoft Edge 或 Google Chrome 作为 Web 浏览器。
 
-* 在服务器上，打开 "任务管理器" > 服务 "，并确保**ServerManagementGateway/Windows 管理中心**正在运行。
+* 在服务器上，打开 "任务管理器" > 服务 "，并确保 **ServerManagementGateway/Windows 管理中心** 正在运行。
 
     ![任务管理器-"服务" 选项卡](../media/Service-TaskMan.PNG)
 
@@ -91,7 +91,7 @@ ms.locfileid: "87990210"
 
 ## <a name="i-get-the-message-cant-connect-securely-to-this-page-this-might-be-because-the-site-uses-outdated-or-unsafe-tls-security-settings"></a>收到以下消息： "无法安全地连接到此页。 这可能是因为该站点使用过时或不安全的 TLS 安全设置。
 
-你的计算机仅限 HTTP/2 连接。 Windows 管理中心使用 HTTP/2 不支持的集成 Windows 身份验证。 在 ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters``` **运行浏览器的计算机**上的项下添加以下两个注册表值，以删除 HTTP/2 限制：
+你的计算机仅限 HTTP/2 连接。 Windows 管理中心使用 HTTP/2 不支持的集成 Windows 身份验证。 在 ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters``` **运行浏览器的计算机** 上的项下添加以下两个注册表值，以删除 HTTP/2 限制：
 
 ```
 EnableHttp2Cleartext=dword:00000000
@@ -100,7 +100,7 @@ EnableHttp2Tls=dword:00000000
 
 ## <a name="im-having-trouble-with-the-remote-desktop-events-and-powershell-tools"></a>远程桌面、事件和 PowerShell 工具遇到问题。
 
-这三个工具需要 websocket 协议，后者通常由代理服务器和防火墙阻止。 如果你使用的是 Google Chrome，则存在与 websocket 和 NTLM 身份验证有关的[已知问题](known-issues.md#google-chrome)。
+这三个工具需要 websocket 协议，后者通常由代理服务器和防火墙阻止。 如果你使用的是 Google Chrome，则存在与 websocket 和 NTLM 身份验证有关的 [已知问题](known-issues.md#google-chrome) 。
 
 ## <a name="i-can-connect-to-some-servers-but-not-others"></a>我只能连接到部分服务器
 
@@ -192,14 +192,14 @@ netsh http delete urlacl url=https://+:443/
 
 ## <a name="azure-features-dont-work-properly-in-edge"></a>Azure 功能在边缘中无法正常工作
 
-边缘具有与安全区域相关的[已知问题](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)，这些问题会影响 Windows 管理中心中的 Azure 登录。 如果使用边缘时使用 Azure 功能时遇到问题，请尝试将 https://login.microsoftonline.com https://login.live.com 网关的 URL 添加为受信任的站点，并将其 URL 添加到客户端浏览器上的允许的边缘弹出窗口阻止程序设置。
+边缘具有与安全区域相关的 [已知问题](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge) ，这些问题会影响 Windows 管理中心中的 Azure 登录。 如果使用边缘时使用 Azure 功能时遇到问题，请尝试将 https://login.microsoftonline.com https://login.live.com 网关的 URL 添加为受信任的站点，并将其 URL 添加到客户端浏览器上的允许的边缘弹出窗口阻止程序设置。
 
-若要实现此目的，请执行以下操作：
+要执行此操作：
 1. 在 Windows "开始" 菜单中搜索**Internet 选项**
-2. 中转到 "**安全**" 选项卡
+2. 中转到 " **安全** " 选项卡
 3. 在“受信任的站点”选项下，单击“站点”按钮，然后在打开的对话框中添加 URL。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。
-4. 中转到 "**隐私**" 选项卡
-5. 在 "**弹出窗口阻止**程序" 部分下，单击 "**设置**" 按钮，然后在打开的对话框中添加 url。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。
+4. 中转到 " **隐私** " 选项卡
+5. 在 " **弹出窗口阻止** 程序" 部分下，单击 " **设置** " 按钮，然后在打开的对话框中添加 url。 需要添加网关 URL 以及 https://login.microsoftonline.com 和 https://login.live.com 。
 
 ## <a name="having-an-issue-with-an-azure-related-feature"></a>Azure 相关功能有问题？
 

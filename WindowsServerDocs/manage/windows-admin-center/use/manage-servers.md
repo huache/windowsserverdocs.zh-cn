@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 25edd2851638fec99b6afda0415fdf8e8c8f1699
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7be02bd7c513d0e7680ed70f107a34c6a9af6ed2
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997186"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765958"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>通过 Windows 管理中心管理服务器
 
@@ -31,15 +31,15 @@ ms.locfileid: "87997186"
 
 若要将服务器添加到 Windows 管理中心：
 
-1. 单击 "所有连接" 下的 " **+ 添加**"。
-2. 选择添加**服务器连接**。
+1. 单击 "所有连接" 下的 " **+ 添加** "。
+2. 选择添加 **服务器连接**。
 3. 键入服务器的名称，并在出现提示时键入要使用的凭据。
-4. 单击 "**提交**" 完成操作。
+4. 单击 " **提交** " 完成操作。
 
 服务器将添加到 "概述" 页上的 "连接" 列表中。 单击它以连接到服务器。
 
 > [!NOTE]
-> 你还可以在 Windows 管理中心中将[故障转移群集](manage-failover-clusters.md)或[超聚合群集](manage-hyper-converged.md)添加为单独的连接。
+> 你还可以在 Windows 管理中心中将 [故障转移群集](manage-failover-clusters.md) 或 [超聚合群集](manage-hyper-converged.md) 添加为单独的连接。
 
 ## <a name="tools"></a>工具
 
@@ -81,7 +81,7 @@ ms.locfileid: "87997186"
 
 ## <a name="overview"></a>概述
 
-**概述**允许你查看当前的 CPU、内存和网络性能状态，以及执行操作和修改目标计算机或服务器上的设置。
+**概述** 允许你查看当前的 CPU、内存和网络性能状态，以及执行操作和修改目标计算机或服务器上的设置。
 
 ### <a name="features"></a>功能
 
@@ -101,7 +101,7 @@ ms.locfileid: "87997186"
 
 ## <a name="active-directory-preview"></a>Active Directory (预览版) 
 
-**Active Directory**是在[扩展源](../configure/using-extensions.md)上提供的早期预览版。
+**Active Directory** 是在 [扩展源](../configure/using-extensions.md)上提供的早期预览版。
 
 ### <a name="features"></a>功能
 
@@ -119,7 +119,7 @@ ms.locfileid: "87997186"
 
 [**查看 Active Directory 的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D)。
 
-## <a name="backup"></a>Backup
+## <a name="backup"></a>备份
 
 利用**备份**，你可以通过将服务器直接备份到 Microsoft Azure 来保护 Windows server 免受损坏、攻击或灾难的影响。
 [了解有关 Azure 备份的详细信息。](https://aka.ms/windows-admin-center-backup)
@@ -139,7 +139,7 @@ ms.locfileid: "87997186"
 
 ## <a name="certificates"></a>证书
 
-**证书**允许管理计算机或服务器上的证书存储。
+**证书** 允许管理计算机或服务器上的证书存储。
 
 ### <a name="features"></a>功能
 
@@ -177,7 +177,7 @@ ms.locfileid: "87997186"
 
 ## <a name="dhcp"></a>DHCP
 
-**DHCP**允许您管理计算机或服务器上的连接设备。
+**DHCP** 允许您管理计算机或服务器上的连接设备。
 
 ### <a name="features"></a>功能
 
@@ -189,7 +189,7 @@ ms.locfileid: "87997186"
 
 ## <a name="dns"></a>DNS
 
-**DNS**允许管理计算机或服务器上的连接设备。
+**DNS** 允许管理计算机或服务器上的连接设备。
 
 ### <a name="features"></a>功能
 
@@ -204,7 +204,7 @@ ms.locfileid: "87997186"
 
 ## <a name="events"></a>事件
 
-**事件**可用于管理计算机或服务器上的事件日志。
+**事件** 可用于管理计算机或服务器上的事件日志。
 
 ### <a name="features"></a>功能
 
@@ -219,7 +219,7 @@ ms.locfileid: "87997186"
 
 ## <a name="files"></a>文件
 
-**文件**可用于管理计算机或服务器上的文件和文件夹。
+**文件** 可用于管理计算机或服务器上的文件和文件夹。
 
 ### <a name="features"></a>功能
 
@@ -242,7 +242,7 @@ ms.locfileid: "87997186"
 
 ## <a name="firewall"></a>防火墙
 
-**防火墙**允许您管理计算机或服务器上的防火墙设置和规则。
+**防火墙** 允许您管理计算机或服务器上的防火墙设置和规则。
 
 ### <a name="features"></a>功能
 
@@ -262,13 +262,13 @@ ms.locfileid: "87997186"
 
 ## <a name="installed-apps"></a>安装的应用
 
-**已安装的应用**允许列出和卸载已安装的应用程序。
+**已安装的应用** 允许列出和卸载已安装的应用程序。
 
 [**查看已安装应用的反馈和建议功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BInstalled%20Apps%5D)。
 
 ## <a name="local-users-and-groups"></a>本地用户和组
 
-**本地用户和组**允许您管理计算机或服务器上本地存在的安全组和用户。
+**本地用户和组** 允许您管理计算机或服务器上本地存在的安全组和用户。
 
 ### <a name="features"></a>功能
 
@@ -285,7 +285,7 @@ ms.locfileid: "87997186"
 
 ## <a name="network"></a>网络
 
-**网络**允许您管理计算机或服务器上的网络设备和设置。
+**网络** 允许您管理计算机或服务器上的网络设备和设置。
 
 ### <a name="features"></a>功能
 
@@ -300,7 +300,7 @@ ms.locfileid: "87997186"
 
 ## <a name="powershell"></a>PowerShell
 
-**Powershell**允许您通过 powershell 会话与计算机或服务器进行交互。
+**Powershell** 允许您通过 powershell 会话与计算机或服务器进行交互。
 
 ### <a name="features"></a>功能
 
@@ -330,7 +330,7 @@ PowerShell 支持以下功能：
 
 ## <a name="registry"></a>注册表
 
-**注册表**允许您管理计算机或服务器上的注册表项和值。
+**注册表** 允许您管理计算机或服务器上的注册表项和值。
 
 ### <a name="features"></a>功能
 
@@ -373,7 +373,7 @@ PowerShell 支持以下功能：
 
 ## <a name="scheduled-tasks"></a>计划任务
 
-**计划任务**可用于管理计算机或服务器上的计划任务。
+**计划任务** 可用于管理计算机或服务器上的计划任务。
 
 ### <a name="features"></a>功能
 
@@ -389,7 +389,7 @@ PowerShell 支持以下功能：
 
 ## <a name="services"></a>服务
 
-**服务**允许你在计算机或服务器上管理服务。
+**服务** 允许你在计算机或服务器上管理服务。
 
 ### <a name="features"></a>功能
 
@@ -406,12 +406,12 @@ PowerShell 支持以下功能：
 
 ## <a name="settings"></a>设置
 
-**设置**是用于管理计算机或服务器上的设置的中心位置。
+**设置** 是用于管理计算机或服务器上的设置的中心位置。
 
 ### <a name="features"></a>功能
 
 - 查看和修改用户和系统环境变量
-- 查看用于监视警报的配置[Azure Monitor](../azure/azure-monitor.md)
+- 查看用于监视警报的配置 [Azure Monitor](../azure/azure-monitor.md)
 - 查看和修改电源配置
 - 查看和修改远程桌面设置
 - 查看和修改基于角色的访问控制设置
@@ -419,7 +419,7 @@ PowerShell 支持以下功能：
 
 ## <a name="storage"></a>存储
 
-**存储**允许您管理计算机或服务器上的存储设备。
+**存储** 允许您管理计算机或服务器上的存储设备。
 
 ### <a name="features"></a>功能
 
@@ -436,13 +436,13 @@ PowerShell 支持以下功能：
 - 编辑卷属性
 - 删除卷
 - 安装配额管理
-- 管理文件服务器资源管理器配额[存储->创建/更新配额](../../../storage/fsrm/quota-management.md)
+- 管理文件服务器资源管理器配额 [存储->创建/更新配额](../../../storage/fsrm/quota-management.md)
 
 [**查看有关存储的反馈和建议的功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BStorage%5D)
 
 ## <a name="storage-migration-service"></a>存储迁移服务
 
-**存储迁移服务**允许你将服务器和文件共享迁移到 Azure 或 Windows Server 2019，无需应用或用户更改任何内容。
+**存储迁移服务** 允许你将服务器和文件共享迁移到 Azure 或 Windows Server 2019，无需应用或用户更改任何内容。
 [大致了解存储迁移服务](https://go.microsoft.com/fwlink/?linkid=2016155)
 
 >[!NOTE]
@@ -450,13 +450,13 @@ PowerShell 支持以下功能：
 
 ## <a name="storage-replica"></a>存储副本
 
-使用**存储副本**来管理服务器到服务器的存储复制。
+使用 **存储副本** 来管理服务器到服务器的存储复制。
 [了解有关存储副本的详细信息](../../../storage/storage-replica/server-to-server-storage-replication.md)
 
 ## <a name="system-insights"></a>系统见解
 
-**System Insights**在 Windows Server 中以本机方式引入了预测分析，以帮助你更深入地了解服务器的功能。
-[获取系统见解的概述](https://aka.ms/systeminsights)
+**System Insights** 在 Windows Server 中以本机方式引入了预测分析，以帮助你更深入地了解服务器的功能。
+[获取系统见解的概述](../../system-insights/overview.md)
 
 >[!NOTE]
 >系统见解需要 Windows Server 2019。
@@ -473,17 +473,17 @@ PowerShell 支持以下功能：
 - 查看更新历史记录的列表
 - 安装更新
 - 联机查看 Microsoft 更新中的更新
-- 管理[Azure 更新管理](/azure/automation/automation-update-management)集成
+- 管理 [Azure 更新管理](/azure/automation/automation-update-management) 集成
 
 [**查看反馈和建议的更新功能**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BUpdates%5D)
 
 ## <a name="virtual-machines"></a>虚拟机
 
-请参阅[通过 Windows 管理中心管理虚拟机](manage-virtual-machines.md)
+请参阅 [通过 Windows 管理中心管理虚拟机](manage-virtual-machines.md)
 
 ## <a name="virtual-switches"></a>虚拟交换机
 
-**虚拟交换机**可用于管理计算机或服务器上的 hyper-v 虚拟交换机。
+**虚拟交换机** 可用于管理计算机或服务器上的 hyper-v 虚拟交换机。
 
 ### <a name="features"></a>功能
 

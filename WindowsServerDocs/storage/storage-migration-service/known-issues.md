@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.openlocfilehash: ea138d8bb0b804ae4d08ed6ffe330e9714af43f3
-ms.sourcegitcommit: 2b1a12c85acff137e5ac84cd0e62d8353fcdde31
+ms.openlocfilehash: 0c3e52c11f7771856608b86ddd778ef51c4c8516
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89087480"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766910"
 ---
 # <a name="storage-migration-service-known-issues"></a>存储迁移服务的已知问题
 
@@ -424,7 +424,7 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 完成传输后，运行相同数据的后续重新传输后，即使源服务器上存在很少的数据发生更改，传输时间也不会显著提高。
 
-当传输大量文件和嵌套文件夹时，这是预期的行为。 数据的大小不相关。 首先，我们在 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 中改进了此行为，并继续优化传输性能。 若要进一步调整性能，请查看 [优化清单和传输性能](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)。
+当传输大量文件和嵌套文件夹时，这是预期的行为。 数据的大小不相关。 首先，我们在 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) 中改进了此行为，并继续优化传输性能。 若要进一步调整性能，请查看 [优化清单和传输性能](./faq.md#optimizing-inventory-and-transfer-performance)。
 
 ## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>数据不会传输，用户在迁移到域控制器或从域控制器中进行重命名
 
@@ -637,6 +637,6 @@ Guidance: Check the detailed error and make sure the inventory requirements are 
 
 此问题是由存储迁移服务中的代码缺陷导致的。 唯一的解决方法是将计算机重命名为具有与 NetBIOS 名称相同的名称，然后使用 [NETDOM COMPUTERNAME/add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)) 来添加一个备用计算机名称，其中包含在开始清点之前使用的较长名称。 存储迁移服务支持迁移备用计算机名称。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [存储迁移服务概述](overview.md)

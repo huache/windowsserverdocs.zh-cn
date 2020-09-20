@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 9623ce4e5e31b905c1c18e9359811389d8d75f23
-ms.sourcegitcommit: 1eaad076ea74e72b36e8893aaa15f3e5f4237bd6
+ms.openlocfilehash: 27ceace93c42ccabdb2db0208c6e3dabce41e1b0
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88659382"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766810"
 ---
 # <a name="network-controller"></a>网络控制器
 
@@ -28,7 +28,7 @@ Windows Server 2016 中的新增功能，网络控制器提供集中的可编程
 > - [使用 Windows PowerShell 部署网络控制器](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
 > - [使用服务器管理器安装网络控制器服务器角色](Install-the-Network-Controller-server-role-using-Server-Manager.md)
 > - [网络控制器的部署后步骤](post-deploy-steps-nc.md)
-> - [网络控制器 Cmdlet](https://docs.microsoft.com/powershell/module/networkcontroller/?view=win10-ps)
+> - [网络控制器 Cmdlet](/powershell/module/networkcontroller/?view=win10-ps)
 
 ## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>网络控制器概述
 

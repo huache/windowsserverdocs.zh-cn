@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 02/15/2019
-ms.openlocfilehash: c824b2ae8c43be4b5b33b79ce9ddb75dd03c9a9e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e5ea882347a0605d814682b50c2ec71e24047472
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990529"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766970"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows 管理中心入门
 
@@ -19,7 +19,7 @@ ms.locfileid: "87990529"
 
 > [!Tip]
 > 不熟悉 Windows Admin Center？
-> [了解有关 Windows Admin Center 的更多信息](../overview.md)或[立即下载](https://aka.ms/windowsadmincenter)。
+> [了解有关 Windows Admin Center 的更多信息](../overview.md)或[立即下载](../overview.md)。
 
 ## <a name="windows-admin-center-installed-on-windows-10"></a>Windows 10 上安装的 windows 管理中心
 
@@ -28,7 +28,7 @@ ms.locfileid: "87990529"
 
 ### <a name="selecting-a-client-certificate"></a>选择客户端证书
 
-首次在 Windows 10 上打开 Windows 管理中心时，请确保选择*Windows 管理中心客户端*证书 (否则，会收到 HTTP 403 错误，指出 "无法访问此页" ) 。
+首次在 Windows 10 上打开 Windows 管理中心时，请确保选择 *Windows 管理中心客户端* 证书 (否则，会收到 HTTP 403 错误，指出 "无法访问此页" ) 。
 
 在 Microsoft Edge 中，当系统提示此对话框时：
 
@@ -36,7 +36,7 @@ ms.locfileid: "87990529"
 
     ![选择突出显示更多选项的证书框](../media/launch-cert-1.png)
 
-2. 选择标记为**Windows 管理中心客户端**的证书，然后单击 **"确定"**
+2. 选择标记为 **Windows 管理中心客户端** 的证书，然后单击 **"确定"**
 
     ![选择显示可用证书的证书框](../media/launch-cert-2.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "87990529"
 
    ![Windows 管理中心-"添加资源" 页](../media/launch/ChooseConnectionType.png)
 
-3. 键入要管理的服务器或群集的名称，然后单击 "**提交**"。 服务器或群集将添加到 "概述" 页上的 "连接" 列表中。
+3. 键入要管理的服务器或群集的名称，然后单击 " **提交**"。 服务器或群集将添加到 "概述" 页上的 "连接" 列表中。
 
    ![Windows 管理中心-"服务器" 页](../media/launch/addserver2.png)
 
@@ -66,26 +66,26 @@ ms.locfileid: "87990529"
 
 **大容量导入多台服务器**
 
- 1. 在 "**添加服务器连接**" 页上，选择 "**导入服务器**" 选项卡。
+ 1. 在 " **添加服务器连接** " 页上，选择 " **导入服务器** " 选项卡。
 
     ![Windows 管理中心-"导入服务器" 选项卡](../media/launch/import-servers.png)
 
- 2. 单击 "**浏览**" 并选择一个文本文件，其中包含要添加的服务器的逗号或换行符的列表。
+ 2. 单击 " **浏览** " 并选择一个文本文件，其中包含要添加的服务器的逗号或换行符的列表。
 
 > [!Note]
-> 通过[使用 PowerShell 导出连接](#use-powershell-to-import-or-export-your-connections-with-tags)创建的 .csv 文件包含除服务器名称之外的其他信息，与此导入方法不兼容。
+> 通过 [使用 PowerShell 导出连接](#use-powershell-to-import-or-export-your-connections-with-tags) 创建的 .csv 文件包含除服务器名称之外的其他信息，与此导入方法不兼容。
 
   **--或--**
 
 **通过搜索来添加服务器 Active Directory**
 
- 1. 在 "**添加服务器连接**" 页上，选择 "**搜索 Active Directory** " 选项卡。
+ 1. 在 " **添加服务器连接** " 页上，选择 " **搜索 Active Directory** " 选项卡。
 
     ![Windows 管理中心-搜索 Active Directory 选项卡](../media/launch/search-ad.png)
 
- 2. 输入搜索条件，然后单击 "**搜索**"。 支持 ( * ) 的通配符。
+ 2. 输入搜索条件，然后单击 " **搜索**"。 支持 ( * ) 的通配符。
 
- 3. 搜索完成后-选择一个或多个结果，可以选择添加标记，然后单击 "**添加**"。
+ 3. 搜索完成后-选择一个或多个结果，可以选择添加标记，然后单击 " **添加**"。
 
 ## <a name="authenticate-with-the-managed-node"></a>通过托管节点进行身份验证 ##
 
@@ -101,9 +101,9 @@ Windows 管理中心支持通过多种机制对托管节点进行身份验证。
 
 **--或--**
 
-**使用 "*管理身份*" 指定凭据**
+**使用 " *管理身份* " 指定凭据**
 
-在 "**所有连接**" 下，从列表中选择服务器，然后选择 "**管理**身份" 以指定将用于向托管节点进行身份验证的凭据：
+在 " **所有连接**" 下，从列表中选择服务器，然后选择 " **管理** 身份" 以指定将用于向托管节点进行身份验证的凭据：
 
 ![所有连接，"管理方式" 选项](../media/launch-use-6.png)
 
@@ -111,11 +111,11 @@ Windows 管理中心支持通过多种机制对托管节点进行身份验证。
 
 !["指定凭据" 页面](../media/launch-use-7.png)
 
-你可以将凭据应用于所有连接，这将为该特定浏览器会话缓存这些凭据。 如果重新加载浏览器，则必须重新输入作为凭据的**管理**。
+你可以将凭据应用于所有连接，这将为该特定浏览器会话缓存这些凭据。 如果重新加载浏览器，则必须重新输入作为凭据的 **管理** 。
 
 **本地管理员密码解决方案 (LAPS) **
 
-如果你的环境使用[LAPS](/previous-versions/mt227395(v=msdn.10))，并且在 WINDOWS 10 电脑上安装了 windows 管理中心，则可以使用 LAPS 凭据通过托管节点进行身份验证。 **如果使用此方案，请**[提供反馈](https://aka.ms/WACFeedback)。
+如果你的环境使用 [LAPS](/previous-versions/mt227395(v=msdn.10))，并且在 WINDOWS 10 电脑上安装了 windows 管理中心，则可以使用 LAPS 凭据通过托管节点进行身份验证。 **如果使用此方案，请**[提供反馈](https://aka.ms/WACFeedback)。
 
 ## <a name="using-tags-to-organize-your-connections"></a>使用标记来组织连接
 
@@ -128,9 +128,9 @@ Windows 管理中心支持通过多种机制对托管节点进行身份验证。
 
 ![Windows 管理中心-编辑标记选项](../media/launch/tags-5.png)
 
-"**编辑连接标记**" 窗格允许您从所选连接中修改、添加或删除标记， () ：
+" **编辑连接标记** " 窗格允许您从所选连接中修改、添加或删除标记， () ：
 
-* 若要将新标记添加到所选连接 (s) ，请选择 "**添加标记**"，然后输入要使用的标记名称。
+* 若要将新标记添加到所选连接 (s) ，请选择 " **添加标记** "，然后输入要使用的标记名称。
 
 * 若要使用现有标记名称标记所选连接，请选中要应用的标记名称旁的复选框。
 

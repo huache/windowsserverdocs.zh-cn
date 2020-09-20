@@ -6,27 +6,27 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 96e17326bc289b4ad018da59b01344956586a198
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3d6b08e69d69a37b31b616994b3bdb67666cb2bb
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964553"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766930"
 ---
 # <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>面向不同版本的 Windows 管理中心 SDK
 
 >适用于：Windows Admin Center、Windows Admin Center 预览版
 
-通过 SDK 更改和平台更改，使扩展保持最新状态非常简单。  我们使用[NPM 标记](https://www.npmjs.com/package/@microsoft/windows-admin-center-sdk)将新功能的发布组织到 SDK 版本中。
+通过 SDK 更改和平台更改，使扩展保持最新状态非常简单。  我们使用 [NPM 标记](https://www.npmjs.com/package/@microsoft/windows-admin-center-sdk) 将新功能的发布组织到 SDK 版本中。
 
 有三个可供选择的 SDK 版本：
 
-* ```latest```–此 SDK 包与当前的 Windows 管理中心版本
-* ```insider```–此 SDK 包与当前在 Windows Server 有问必答 Preview 中提供的 Windows 管理中心 (预览版本一致) 
-* ```next```–此 SDK 包包含最新功能
+* ```latest``` –此 SDK 包与当前的 Windows 管理中心版本
+* ```insider``` –此 SDK 包与当前在 Windows Server 有问必答 Preview 中提供的 Windows 管理中心 (预览版本一致) 
+* ```next``` –此 SDK 包包含最新功能
 
 > [!NOTE]
-> 详细了解可供下载的 Windows 管理中心的不同[版本](https://aka.ms/WACDownloadPage)。
+> 详细了解可供下载的 Windows 管理中心的不同 [版本](../overview.md) 。
 
 ## <a name="targeting-sdk-version-on-a-new-project"></a>面向新项目的 SDK 版本
 

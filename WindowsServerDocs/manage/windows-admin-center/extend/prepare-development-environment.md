@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 09/18/2018
-ms.openlocfilehash: 09d39aa027adf360c339da434b16038a3b8e5c90
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fe519498e8021bde67b87ec7f78b3e1b9a64160b
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964593"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766940"
 ---
 # <a name="prepare-your-development-environment"></a>准备开发环境
 
@@ -28,7 +28,7 @@ ms.locfileid: "87964593"
 
 要开始使用 SDK 进行开发，请下载并安装以下必备组件：
 
-* [Windows 管理中心](https://aka.ms/WACDownloadPage) (GA 或预览版本) 
+* [Windows 管理中心](../overview.md) (GA 或预览版本) 
 * Visual Studio 或 [Visual Studio Code](https://code.visualstudio.com)
 * [Node.js](https://nodejs.org/en/download/releases/) (10.3.0 版本) 
 * [节点包管理器](https://npmjs.com/get-npm) (8.12.0 或更高版本) 
@@ -70,5 +70,4 @@ npm install -g windows-admin-center-cli
 
 ## <a name="sdk-design-toolkit"></a>SDK 设计工具包
 
-查看 Windows 管理中心[SDK 设计工具包](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip)！ 此工具包旨在帮助您使用 Windows 管理中心样式、控件和页面模板快速模拟 PowerPoint 中的扩展。 开始编码之前，请查看你的扩展在 Windows 管理中心中的外观。
-
+查看 Windows 管理中心 [SDK 设计工具包](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip)！ 此工具包旨在帮助您使用 Windows 管理中心样式、控件和页面模板快速模拟 PowerPoint 中的扩展。 开始编码之前，请查看你的扩展在 Windows 管理中心中的外观。

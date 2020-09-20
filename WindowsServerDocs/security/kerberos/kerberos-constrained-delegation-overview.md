@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 2cc0a18b3b6de66f5992eb4584c95696e297e858
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: cdee2aaecf8710b9801b689b141b16d0dbacc691
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89641090"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766790"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -30,7 +30,7 @@ ms.locfileid: "89641090"
 
 有关 Windows Server 2003 中引入的约束委派的详细信息，请参阅 [Kerberos 协议转换和约束委派](/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10))。
 
-Kerberos 协议的 Windows Server 2012 R2 和 Windows Server 2012 实现包括专门针对约束委派的扩展。  Service for User to Proxy (S4U2Proxy) 允许服务使用其用户 Kerberos 服务票证从密钥发行中心 (KDC) 获得服务票证，以用于后端服务。 这些扩展允许在可位于另一个域中的后端服务帐户上配置约束委派。 有关这些扩展的详细信息，请参阅 MSDN Library 中的[ \[ MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)。
+Kerberos 协议的 Windows Server 2012 R2 和 Windows Server 2012 实现包括专门针对约束委派的扩展。  Service for User to Proxy (S4U2Proxy) 允许服务使用其用户 Kerberos 服务票证从密钥发行中心 (KDC) 获得服务票证，以用于后端服务。 这些扩展允许在可位于另一个域中的后端服务帐户上配置约束委派。 有关这些扩展的详细信息，请参阅 MSDN Library 中的[ \[ MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94)。
 
 **实际的应用程序**
 
@@ -52,7 +52,7 @@ Kerberos 约束委派可以在前端服务与资源服务不在同一域中时�
 
 基础协议中的更改允许跨域约束委派。 Kerberos 协议的 Windows Server 2012 R2 和 Windows Server 2012 实现包括为用户提供服务的扩展，以便 (S4U2Proxy) 协议。 这组 Kerberos 协议扩展允许服务使用其用户 Kerberos 服务票证从密钥发行中心 (KDC) 获得服务票证，以用于后端服务。
 
-有关这些扩展的实现信息，请参阅 MSDN 中的[ \[ MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)。
+有关这些扩展的实现信息，请参阅 MSDN 中的[ \[ MS-SFU \] ： Kerberos 协议扩展：用户服务和约束委派协议规范](/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94)。
 
 有关使用与 Service for User (S4U) 扩展相比提早的票证授予票证 (TGT) 的 Kerberos 委派的基础消息队列的详细信息，请参阅 [1.3.3 协议概述](/openspecs/windows_protocols/ms-sfu/1fb9caca-449f-4183-8f7a-1a5fc7e7290a) 部分（“[MS-SFU]：Kerberos 协议扩展：用户服务和约束委派协议规范”）。
 
@@ -62,7 +62,7 @@ Kerberos 约束委派可以在前端服务与资源服务不在同一域中时�
 
 因为 KDC 不会限制协议转换，所以引入了两个新的已知 Sid，以将此控件授予资源管理员。  这些 Sid 确定是否发生了协议转换，并可与标准访问控制列表结合使用来根据需要授予或限制访问权限。
 
-|SID|说明|
+|SID|描述|
 |-------|--------|
 |AUTHENTICATION_AUTHORITY_ASSERTED_IDENTITY<br />S-1-18-1|一个 SID，表示根据客户端凭据所有权验证，身份验证颁发机构对客户端的标识进行断言。|
 |SERVICE_ASSERTED_IDENTITY<br />S-1-18-2|一个 SID，表示服务对客户端的标识进行断言。|

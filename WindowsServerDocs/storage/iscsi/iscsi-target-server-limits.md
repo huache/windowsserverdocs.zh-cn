@@ -6,12 +6,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 3867df04c83fe536473c227e43700a4758c1294e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3be878629d19542629cc3cbb849ac46fe14de0bd
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935854"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766830"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI 目标服务器的可伸缩性限制
 
@@ -30,7 +30,7 @@ ms.locfileid: "87935854"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>项</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>评论</p></th>
@@ -71,7 +71,7 @@ ms.locfileid: "87935854"
 <td><p>本地装入的虚拟磁盘或每个存储设备的快照</p></td>
 <td><p>32</p></td>
 <td><p>是</p></td>
-<td><p>本地装入的虚拟磁盘无&#39;提供任何特定于 iSCSI 的功能，已弃用-有关详细信息，请参阅<a href="https://technet.microsoft.com/library/dn303411.aspx">Windows Server 2012 R2 中删除或弃用的功能</a>。</p></td>
+<td><p>本地装入的虚拟磁盘无&#39;提供任何特定于 iSCSI 的功能，已弃用-有关详细信息，请参阅 <a href="/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)">Windows Server 2012 R2 中删除或弃用的功能</a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -87,7 +87,7 @@ ms.locfileid: "87935854"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>项</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>评论</p></th>
@@ -157,7 +157,7 @@ ms.locfileid: "87935854"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>项</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>评论</p></th>
@@ -238,7 +238,7 @@ ms.locfileid: "87935854"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>项</p></th>
 <th><p>支持限制</p></th>
 <th><p>施加?</p></th>
 <th><p>评论</p></th>
@@ -351,7 +351,7 @@ ms.locfileid: "87935854"
 <td><p>逻辑单元收缩</p></td>
 <td><p>是 (仅) Windows Server 2012 R2 和更高版本</p></td>
 <td><p>空值</p></td>
-<td><p>使用<a href="https://docs.microsoft.com/powershell/module/iscsitarget/resize-iscsivirtualdisk">convert-iscsivirtualdisk</a>可收缩 LUN。</p></td>
+<td><p>使用 <a href="/powershell/module/iscsitarget/resize-iscsivirtualdisk">convert-iscsivirtualdisk</a> 可收缩 LUN。</p></td>
 </tr>
 <tr class="even">
 <td><p>逻辑单元克隆</p></td>
@@ -372,7 +372,7 @@ ms.locfileid: "87935854"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>项</p></th>
 <th><p>支持限制</p></th>
 <th><p>评论</p></th>
 </tr>
@@ -421,7 +421,7 @@ ms.locfileid: "87935854"
 <tr class="odd">
 <td><p>本地装载</p></td>
 <td><p>支持</p></td>
-<td><p>已弃用本地装载的 iSCSI 虚拟磁盘-有关详细信息，请参阅<a href="https://technet.microsoft.com/library/dn303411.aspx">Windows Server 2012 R2 中删除或弃用的功能</a>。 动态磁盘快照不能在本地装载。</p></td>
+<td><p>已弃用本地装载的 iSCSI 虚拟磁盘-有关详细信息，请参阅 <a href="/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)">Windows Server 2012 R2 中删除或弃用的功能</a>。 动态磁盘快照不能在本地装载。</p></td>
 </tr>
 </tbody>
 </table>
@@ -430,7 +430,7 @@ ms.locfileid: "87935854"
 
 若要创建卷影副本 (VSS 打开文件快照从应用程序服务器中的 iSCSI 虚拟磁盘上的数据) 或者想要使用较旧的应用来管理 iSCSI 虚拟磁盘 (例如 Diskraid 命令) 需要虚拟磁盘服务 (VDS) 硬件提供程序，请将 iSCSI 目标存储提供程序安装在要从中拍摄快照的服务器上或使用 VDS 管理应用。
 
-ISCSI 目标存储提供程序是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中的角色服务。你还可以下载和安装[Iscsi 目标存储提供程序 (适用于以下操作系统上的下层应用程序服务器的 VDS/VSS) ](https://www.microsoft.com/download/details.aspx?id=34759) ，前提是 ISCSI 目标服务器在 Windows Server 2012 上运行：
+ISCSI 目标存储提供程序是 Windows Server 2016、Windows Server 2012 R2 和 Windows Server 2012 中的角色服务。你还可以下载和安装 [Iscsi 目标存储提供程序 (适用于以下操作系统上的下层应用程序服务器的 VDS/VSS) ](https://www.microsoft.com/download/details.aspx?id=34759) ，前提是 ISCSI 目标服务器在 Windows Server 2012 上运行：
 
   - Windows Storage Server 2008 R2
 
@@ -442,7 +442,7 @@ ISCSI 目标存储提供程序是 Windows Server 2016、Windows Server 2012 R2 �
 
 请注意，如果 iSCSI 目标服务器由运行 Windows Server 2012 R2 或更高版本的服务器托管，并且你想要从远程服务器使用 VSS 或 VDS，则远程服务器还必须运行同一版本的 Windows Server 并安装 iSCSI 目标存储提供程序角色服务。 另请注意，在所有版本的 Windows 上，只应安装 iSCSI 目标存储提供程序角色服务的一个版本。
 
-有关 iSCSI 目标存储提供程序的详细信息，请参阅[Iscsi 目标存储 (VDS/VSS) 提供程序](/powershell/module/iscsi/?view=win10-ps)。
+有关 iSCSI 目标存储提供程序的详细信息，请参阅 [Iscsi 目标存储 (VDS/VSS) 提供程序](/powershell/module/iscsi/?view=win10-ps)。
 
 ## <a name="tested-compatibility-with-iscsi-initiators"></a>已测试与 iSCSI 发起程序的兼容性
 
