@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
-ms.openlocfilehash: 2b1b6c8665e289647fe793125e7cc4c5024b4135
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f33707050f6686ad285fc8ecb786456f0157fef7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993540"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90767010"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center 常见问题解答
 
@@ -154,7 +154,7 @@ Windows Admin Center 是“Project Honolulu”的官方产品名称，强调了�
 
 ## <a name="where-can-i-learn-more-about-windows-admin-center-or-get-more-details-on-the-topics-above"></a>在哪里可以了解有关 Windows Admin Center 的更多信息或获取有关上述主题的更多详细信息？
 
-我们的[启动页面](https://aka.ms/WindowsAdminCenter)是最好的出发点，上面提供了访问我们新分类的文档内容、下载位置、如何提供反馈、参考信息和其他资源的链接。
+我们的[启动页面](../overview.md)是最好的出发点，上面提供了访问我们新分类的文档内容、下载位置、如何提供反馈、参考信息和其他资源的链接。
 
 ## <a name="what-is-the-version-history-of-windows-admin-center"></a>什么是 Windows Admin Center 版本历史记录？
 

@@ -4,12 +4,12 @@ description: 建议的设置和配置，可最大程度减少用作 VDI 映像�
 ms.author: robsmi
 ms.topic: article
 author: jaimeo
-ms.openlocfilehash: 4ba432e13785694844229a41f2966eb7cf65fa7e
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 38ddd48b6bf5502851615adeb75446f07bc860c1
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078634"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90767000"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>针对虚拟桌面基础结构 (VDI) 角色优化 Windows 10 版本 1803
 
@@ -580,7 +580,7 @@ Microsoft 最近发布了有关 VDI 环境中的 Windows Defender 的文档。 �
 
 请注意，本部分中的某些设置仅基于注册表，应该先将其整合到基本映像，然后再将映像部署到生产用途。
 
-Windows 产品小组在 Microsoft.com 上发布的 [Windows Server 2016 性能优化准则](/windows-server/administration/performance-tuning/)中阐述了以下设置。
+Windows 产品小组在 Microsoft.com 上发布的 [Windows Server 2016 性能优化准则](../../administration/performance-tuning/index.md)中阐述了以下设置。
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 

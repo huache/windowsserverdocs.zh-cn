@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8645373f4f8e933e0eaad8e62672ecc16518ed4d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 488a82d7ea4081acbca07f2f699e001f0945d6ce
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957605"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766650"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>为文件夹重定向以及漫游用户策略文件部署主计算机
 
@@ -39,7 +39,7 @@ ms.locfileid: "87957605"
 部署主计算机支持的第一步是为每个用户指定主计算机。 为此，请使用 Active Directory 管理中心获取相关计算机的可分辨名称，然后设置 msDs-PrimaryComputer 属性  。
 
 > [!TIP]
-> 若要使用 Windows PowerShell 来处理主计算机，请参阅博客文章[深入了解 Windows 8 主计算机](<https://blogs.technet.microsoft.com/askds/2012/10/23/digging-a-little-deeper-into-windows-8-primary-computer/>)。
+> 若要使用 Windows PowerShell 来处理主计算机，请参阅博客文章[深入了解 Windows 8 主计算机](/archive/blogs/askds/digging-a-little-deeper-into-windows-8-primary-computer)。
 
 下面介绍了如何为用户指定主计算机：
 

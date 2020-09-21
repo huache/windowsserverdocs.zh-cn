@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 8a1cd07167fd0a73d72dc57708a5f9bd23d2252c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d6fa3e4535748b6c4d5b45755b0336dc26815bee
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958675"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766730"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -149,7 +149,7 @@ Windows Admin Center 是本地部署的基于浏览器的应用，用于管理 W
 - [如何将 Microsoft Azure 混合服务与 Windows Admin Center 和 Windows Server 一起使用](https://aka.ms/WAC-THR2073)
 - [现场问答：通过 Windows Admin Center 管理混合服务器环境](https://aka.ms/WAC-MLS1055)
 - [学习路径：混合管理技术](https://aka.ms/WAC-HybridMgmtTech)
-- [练习实验室：Windows Admin Center 和混合](https://aka.ms/WAC-HOL2019)
+- [练习实验室：Windows Admin Center 和混合](/learn/?WT.mc_id=sitertzn_homepage_learn-redirect-handsonlabs)
 
 下面是来自 Windows Server Summit 2019 研讨会的一些视频：
 

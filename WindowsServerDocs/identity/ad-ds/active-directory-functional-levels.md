@@ -8,12 +8,12 @@ ms.date: 08/25/2020
 ms.topic: article
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.openlocfilehash: e82dccb79a4fc3452d528581beb43ef32d52ecfc
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 8a990e5ab19a5f5cd30d23d0d31e28249801040b
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88940937"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765938"
 ---
 # <a name="forest-and-domain-functional-levels"></a>林和域功能级别
 
@@ -25,7 +25,7 @@ ms.locfileid: "88940937"
 
 随着 Windows Server 2003、2008 和 2008 R2 生存期的结束，这些域控制器 (DC) 需要更新到 Windows Server 2012、2012 R2、2016 或 2019。 因此，应从域中删除任何运行 Windows Server 2008 R2 及更低版本的域控制器。
 
-在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 有关迁移步骤，可以参阅 [TechNet 上的过程](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)，也可参阅[存储团队文件柜博客上的简化步骤集](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。 Windows Server 2016 RS1 是最后一个包含 FRS 的 Windows Server 版本。
+在 Windows Server 2008 及更高的域功能级别，分布式文件服务 (DFS) 复制用于在域控制器之间复制 SYSVOL 文件夹内容。 如果在 Windows Server 2008 或更高的域功能级别创建新的域，系统会自动使用 DFS 复制来复制 SYSVOL。 如果在较低的功能级别创建域，则在复制 SYSVOL 时，需从使用 FRS 复制迁移到使用 DFS 复制。 有关迁移步骤，可以参阅 [TechNet 上的过程](../../storage/dfs-replication/migrate-sysvol-to-dfsr.md)，也可参阅[存储团队文件柜博客上的简化步骤集](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)。 Windows Server 2016 RS1 是最后一个包含 FRS 的 Windows Server 版本。
 
 ## <a name="windows-server-2019"></a>Windows Server Standard 2012 R2
 

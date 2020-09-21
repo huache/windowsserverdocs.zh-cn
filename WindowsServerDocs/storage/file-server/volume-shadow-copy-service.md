@@ -4,12 +4,12 @@ ms.date: 01/30/2019
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 44f0db935e50bf7976612edc4317b4212818f84d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7bdcb67c5bcb36d2ebe5ee02d765f3cab63c7bed
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950741"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766820"
 ---
 # <a name="volume-shadow-copy-service"></a>卷影复制服务
 
@@ -372,7 +372,7 @@ VSS 可用于创建整个卷的卷影副本。 临时文件（如页面文件）
 > <UL>
 > <LI>它无法删除在 Windows Server 上使用以前版本功能创建的卷影副本中的文件。<BR><BR>
 > <LI>它无法删除共享文件夹的卷影副本中的文件。<BR><BR>
-> <LI>它可以删除使用 <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](../../administration/windows-commands/diskshadow.md)">Diskshadow</a> 实用程序创建的卷影副本中的文件，但不能删除使用 <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](../../administration/windows-commands/vssadmin.md)">Vssadmin</a> 实用程序创建的卷影副本中的文件。<BR><BR>
+> <LI>它可以删除使用 <a href="/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](../../administration/windows-commands/diskshadow.md)">Diskshadow</a> 实用程序创建的卷影副本中的文件，但不能删除使用 <a href="/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](../../administration/windows-commands/vssadmin.md)">Vssadmin</a> 实用程序创建的卷影副本中的文件。<BR><BR>
 > <LI>系统会尽力从卷影副本中删除文件。 这意味着不能保证它们被删除。<BR><BR></LI></UL>
 
 

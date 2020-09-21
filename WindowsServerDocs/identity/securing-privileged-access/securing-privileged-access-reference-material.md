@@ -8,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: a7eda2d06a91891529ebbe5c7e448c17fdb070f3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d2e7d7a064806646ccc075c96fff2ba20acfe005
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953131"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766210"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 管理层模型
 
@@ -138,7 +138,7 @@ ms.locfileid: "87953131"
 
 ![应尽量减少 Active Directory 和域控制器依赖的系统数量图示](../media/securing-privileged-access-reference-material/PAW_RM_Fig010.JPG)
 
-有关强化 Active Directory 前几大风险的详细信息，请参阅[此页面](https://aka.ms/hardenAD)。
+有关强化 Active Directory 前几大风险的详细信息，请参阅[此页面](../ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface.md)。
 
 ## <a name="operational-standards-based-on-clean-source-principle"></a>基于清洁源原则的操作标准
 
@@ -313,7 +313,7 @@ ms.locfileid: "87953131"
 > [!NOTE]
 > 这是必需的，因为以交互方式登录到主机将授予对该主机凭据的控制权限。
 >
-> 有关登录类型、常见管理工具和凭据公开的详细信息，请参阅[管理工具和登录类型](https://aka.ms/admintoolsecurity)。
+> 有关登录类型、常见管理工具和凭据公开的详细信息，请参阅[管理工具和登录类型]()。
 
 ##### <a name="use-of-approved-support-technology-and-methods"></a>使用已批准的支持技术和方法
 
@@ -329,7 +329,7 @@ ms.locfileid: "87953131"
 确保将以下做法应用于此情形：
 
 - **远程服务器支持** - 远程访问服务器时，第 0 层管理员必须遵守以下原则：
-  - **主要（工具）** - 使用网络登录的远程工具（类型 3）。 有关详细信息，请参阅[管理工具和登录类型](https://aka.ms/admintoolsecurity)。
+  - **主要（工具）** - 使用网络登录的远程工具（类型 3）。 有关详细信息，请参阅[管理工具和登录类型]()。
   - **主要（交互式）** - 通过域帐户从管理工作站使用 RDP RestrictedAdmin 或标准 RDP 会话
 
     > [!NOTE]
@@ -488,7 +488,7 @@ ms.locfileid: "87953131"
 
 - **工作站强化** - 使用“[特权访问工作站](../securing-privileged-access/privileged-access-workstations.md)”构建管理工作站（通过第 3 阶段），但域成员身份将更改为管理林（而不是生产环境）。
 - **服务器和 DC 强化** - 对于管理林中的所有域控制器和服务器：
-   - 确保已使用[安装介质的清洁源](https://aka.ms/cleansource)中的指南验证所有介质
+   - 确保已使用[安装介质的清洁源]()中的指南验证所有介质
    - 确保管理林服务器已安装最新的操作系统，即使这在生产中并不可行。
    - 管理林主机应使用安全更新自动更新。
 

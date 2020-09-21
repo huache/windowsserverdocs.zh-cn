@@ -10,12 +10,12 @@ ms.custom:
 - CI ID 116803
 - CSSTroubleshoot
 manager: dcscontentpm
-ms.openlocfilehash: 40de898aa7627f092c179d7dc9e88e366e01ebab
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: dbb660ad1ccf3b15efe8cf656ebc98a2f7f41472
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078544"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766670"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>根据 Windows 激活错误代码解决问题
 
@@ -26,7 +26,7 @@ ms.locfileid: "90078544"
 
 有关批量激活的详细信息，请参阅[规划批量激活](/windows/deployment/volume-activation/plan-for-volume-activation-client)。
 
-有关 Windows 当前版本和最新版本的批量激活的详细信息，请参阅[批量激活 [客户端]](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-windows-10)。
+有关 Windows 当前版本和最新版本的批量激活的详细信息，请参阅[批量激活 [客户端]](/windows/deployment/volume-activation/volume-activation-windows-10)。
 
 若要详细了解旧版 Windows 的批量激活，请参阅 KB 929712： [Volume Activation information for Windows Vista, Windows Server 2008, Windows Server 2008 R2 and Windows 7](https://support.microsoft.com/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi)（Windows Vista、Windows Server 2008、Windows Server 2008 R2 和 Windows 7 的批量激活信息）。
 

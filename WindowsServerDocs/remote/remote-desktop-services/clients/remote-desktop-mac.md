@@ -8,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e0ce10cbdc1dfe70156d36a96978222395afaa94
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: c7d05731997aeb9fcdb1fadb73ba80f2ff6655e5
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702816"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766690"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS 客户端入门
 
@@ -159,7 +159,7 @@ Windows Server 2012 R2 引入了对新身份验证方法（即远程桌面网关
 > [!IMPORTANT]
 > 不支持 Windows 8.1 之前的自定义身份验证和授权模型，尽管上面的文章讨论了它们。
 
-若要了解有关此功能的更多信息，请查看 [https://aka.ms/paa-sample](https://aka.ms/paa-sample)。
+若要了解有关此功能的更多信息，请查看 [https://aka.ms/paa-sample](/samples/browse/?redirectedfrom=MSDN-samples)。
 
 > [!TIP]
 > 欢迎提出问题和意见。 但是，请不要使用本文末尾的评论功能来请求获取故障排除帮助。 而是转到[远程桌面客户端论坛](/answers/topics/windows-remote-desktop-client.html)并启动一个新线程。 有功能建议？ 请在[客户端用户心声论坛](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)告诉我们。

@@ -8,12 +8,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: afadca07931284e975aaf18192664fa1ed81e184
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f707dbbe22624489f9c5939987ea9831cc467214
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033735"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766700"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1709"></a>发行说明：Windows Server 版本 1709 中的重要问题
 
@@ -29,7 +29,7 @@ Windows Server 版本 1709 中不包含存储空间直通。 如果你在运行 
 
 另外，它也不受支持，因此无法将运行 Windows Server 版本 1709 的服务器引入到 Windows Server 2016 存储空间直通部署中。
 
-Windows Server 版本模型将提供新的选项，从而与类似版本保持一致，并将为用于 [Windows 10](/windows/deployment/update/waas-overview) 和 [Microsoft 365 应用版](https://docs.microsoft.com/DeployOffice/overview-update-channels)的模型提供维护。 半年频道版本为希望进行快节奏转变的客户提供了新功能，并且每年发布两次新版本，分别在春季和秋季。
+Windows Server 版本模型将提供新的选项，从而与类似版本保持一致，并将为用于 [Windows 10](/windows/deployment/update/waas-overview) 和 [Microsoft 365 应用版](/DeployOffice/overview-update-channels)的模型提供维护。 半年频道版本为希望进行快节奏转变的客户提供了新功能，并且每年发布两次新版本，分别在春季和秋季。
 
 Windows Server 半年频道注重于可从更快的创新中受益的容器和应用方案，有关更多信息，请参阅[此博客](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update)。 寻求存储空间直通等基础结构角色的客户应该使用长期服务频道版本，例如 Windows Server 2016（现已推出）和 [Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview)（今年晚些时候推出）。 我们正在致力于为超融合基础设施构建最佳平台，并会根据客户的反馈继续开发新的功能和改进现有功能。
 

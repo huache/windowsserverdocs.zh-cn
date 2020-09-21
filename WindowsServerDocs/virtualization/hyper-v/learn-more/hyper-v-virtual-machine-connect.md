@@ -1,18 +1,17 @@
 ---
 title: Hyper-V 虚拟机连接
 description: 介绍虚拟机连接，该连接提供对虚拟机的远程访问。 详细介绍如何执行常见任务，例如向虚拟机发送 Ctrl-Alt-Delete。
-manager: dongill
 ms.topic: article
 ms.assetid: deae35b9-7647-42b8-b6bf-45645a44c9c4
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: 2ffe54a1699fdb23833adc5e0036747d516e3056
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 80e87fcfa38f441491985ba7bb58b25c7e4cc165
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990179"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745962"
 ---
 # <a name="hyper-v-virtual-machine-connection"></a>Hyper-V 虚拟机连接
 

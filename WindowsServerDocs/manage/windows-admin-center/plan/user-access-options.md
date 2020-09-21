@@ -6,12 +6,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c96968f55a06c7ccffd9f7919001f21bff6a75c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 184eca56dc14e91220a7fb7eb196c48706562ff7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996985"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766710"
 ---
 # <a name="user-access-options-with-windows-admin-center"></a>使用 Windows Admin Center 的用户访问选项
 
@@ -58,7 +58,7 @@ Windows Admin Center 定义了两个用于访问网关服务的角色：网关�
 但是，某些用户可能需要拥有对计算机的有限访问权限才能执行其作业。
 你可以在 Windows Admin Center 中使用基于角色的访问控制，为此类用户提供对计算机的有限访问权限，而不是让用户成为具有完全权限的本地管理员  。
 
-Windows Admin Center 中基于角色的访问控制的工作方式是通过使用 PowerShell [Just Enough Administration](https://aka.ms/jeadocs) 终结点配置每个托管服务器。
+Windows Admin Center 中基于角色的访问控制的工作方式是通过使用 PowerShell [Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview) 终结点配置每个托管服务器。
 此终结点定义了角色，包括允许每个角色管理系统的哪些方面以及将哪些用户分配给该角色。
 用户连接到受限制的终结点时，将创建一个临时的本地管理员帐户，以通过用户身份管理系统。
 这样可以确保即使没有自己的委派模型的工具仍可以使用 Windows Admin Center 进行管理。

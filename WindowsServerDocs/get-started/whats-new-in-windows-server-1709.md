@@ -7,12 +7,12 @@ author: eross-msft
 manager: mtillman
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: 2202658da6d89d3a289e0fd1e6df07e9ba4e4544
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0e477a404e7bef9ed1e201393a95e875c308e80f
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621989"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766890"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server 版本 1709 中的新增功能
 
@@ -89,7 +89,7 @@ Project Honolulu 可提供直观的全新管理体验，用于管理电脑、Win
 ## <a name="storage"></a>存储
 
 **存储副本**：由 Windows Server 2016 中的存储副本添加的灾难恢复保护现在进行了扩展，其中包括：
-- **测试故障转移**：现在可以通过测试故障转移功能来选择安装目标存储。 可以在目标节点上临时安装复制的存储的快照以便进行测试或备份。  有关详细信息，请参阅[有关存储副本的常见问题](https://aka.ms/srfaq)。
+- **测试故障转移**：现在可以通过测试故障转移功能来选择安装目标存储。 可以在目标节点上临时安装复制的存储的快照以便进行测试或备份。  有关详细信息，请参阅[有关存储副本的常见问题](../storage/storage-replica/storage-replica-frequently-asked-questions.md)。
 - **Project Honolulu 支持**：Project Honolulu 中现在提供对服务器到服务器复制图形管理的支持。 这不需要使用 PowerShell 来管理常见的灾难保护工作负荷。
 
 **SMB**：

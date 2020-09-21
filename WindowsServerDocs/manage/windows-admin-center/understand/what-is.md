@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 3075c571fb933692745a872df138ef5cbfa6b283
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: affbc610484abc5a4e45534a7f75e4f06efc23e9
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995304"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766960"
 ---
 # <a name="what-is-windows-admin-center"></a>什么是 Windows Admin Center？
 
@@ -25,7 +25,7 @@ Windows Admin Center 是“内部”管理工具（例如服务器管理器和 M
 
 ## <a name="how-does-windows-admin-center-work"></a>Windows Admin Center 如何工作？
 
-Windows Admin Center 在 Web 浏览器中运行，通过在 Windows Server 或已加入域的 Windows 10 上安装的 Windows Admin Center 网关来管理 Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Azure Stack HCI 等。 该网关通过使用远程 PowerShell 管理服务器，并通过 WinRM 管理 WMI。 此网关以你可以[下载](https://aka.ms/windowsadmincenter)的单个轻型 .msi 程序包随附在 Windows Admin Center 中。
+Windows Admin Center 在 Web 浏览器中运行，通过在 Windows Server 或已加入域的 Windows 10 上安装的 Windows Admin Center 网关来管理 Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Azure Stack HCI 等。 该网关通过使用远程 PowerShell 管理服务器，并通过 WinRM 管理 WMI。 此网关以你可以[下载](../overview.md)的单个轻型 .msi 程序包随附在 Windows Admin Center 中。
 
 发布到 DNS 并提供对相应公司防火墙的访问权限后，Windows Admin Center 网关让你可以通过 Microsoft Edge 或 Google Chrome 从任何位置安全地连接和管理你的服务器。
 
@@ -70,4 +70,4 @@ Windows Admin Center 提供[管理超融合群集](../use/manage-hyper-converged
 Windows Admin Center 在构建之初就考虑了可扩展性，它为 Microsoft 和第三方开发人员提供了除当前产品和服务外构建其他工具和解决方案的能力。 Microsoft 提供允许开发人员构建自己的 Windows Admin Center 工具的 [SDK](../extend/extensibility-overview.md)。
 
 > [!Tip]
-> 已准备好安装 Windows Admin Center？ [立即下载](https://aka.ms/windowsadmincenter)
+> 已准备好安装 Windows Admin Center？ [立即下载](../overview.md)

@@ -4,12 +4,12 @@ ms.date: 06/18/2014
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 0a19bdd00000e466f2a2af92116356a9ad2a6428
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 346fa77e1a22626094baa33aaf70ead23f2f0db0
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950782"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766640"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS 复制：常见问题 (FAQ)
 
@@ -282,7 +282,7 @@ Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 
 
 
 > [!IMPORTANT]
-> 若要查看或管理包含只读复制文件夹或故障转移群集成员的复制组，必须使用 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 随附的 DFS 管理版本、<a href="https://go.microsoft.com/fwlink/p/?linkid=238560">适用于 Windows 8 的远程服务器管理工具</a>或<a href="https://technet.microsoft.com/library/ee449475">适用于 Windows 7 的远程服务器管理工具</a>。
+> 若要查看或管理包含只读复制文件夹或故障转移群集成员的复制组，必须使用 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 随附的 DFS 管理版本、<a href="https://go.microsoft.com/fwlink/p/?linkid=238560">适用于 Windows 8 的远程服务器管理工具</a>或<a href="/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10)">适用于 Windows 7 的远程服务器管理工具</a>。
 <br>
 
 

@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: d0ba6860edd40202da3078ee0ad05eb91901e1f2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5dfed9e70e4f0406c59c31201c8d2d1a9b3caafe
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945710"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766860"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 中的新增功能
 
@@ -55,7 +55,7 @@ Windows Server 2016 提供新的基于 Hyper-V 的受防护的虚拟机，以保
 
 - 主机保护者服务支持现有的安全 Active Directory – 可以指示主机保护者服务使用现有的 Active Directory 林作为其 Active Directory，而不是创建自己的 Active Directory 实例
 
-有关使用受防护的虚拟机的详细信息和说明，请参阅 [Shielded VMs and Guarded Fabric Validation Guide for Windows Server 2016 (TPM)](https://aka.ms/shieldedvms)（Windows Server 2016 (TPM) 受防护的 VM 和受保护的构造验证指南）。
+有关使用受防护的虚拟机的详细信息和说明，请参阅 [Shielded VMs and Guarded Fabric Validation Guide for Windows Server 2016 (TPM)](../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md)（Windows Server 2016 (TPM) 受防护的 VM 和受保护的构造验证指南）。
 
 ## <a name="identity-and-access"></a>[身份标识和访问权限](../identity/Identity-and-Access.yml)
 身份标识中的新功能提高了组织保护 Active Directory 环境的能力，并帮助他们迁移到仅限云的部署和混合部署，其中某些应用程序和服务托管在云中，其他的则托管在本地。

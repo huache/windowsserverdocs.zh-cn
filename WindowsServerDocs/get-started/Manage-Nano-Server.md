@@ -8,12 +8,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 78a869f826bd9d13e627f5710cca1b3ef1cdcdc4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cb6ffed04856c1e4fe670893a2af3acedb6da012
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959625"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765948"
 ---
 # <a name="manage-nano-server"></a>管理 Nano Server
 
@@ -212,12 +212,12 @@ Get-WindowsPackage -Online
 
 ## <a name="performance-and-event-monitoring-on-nano-server"></a>在 Nano Server 上进行性能和事件监视
 [comment]: # (从 Venkat Yalla。)
-Nano Server 完全支持 [Windows 事件跟踪](https://aka.ms/u2pa0i) (ETW) 框架，但一些用于管理跟踪的熟悉工具和性能计数器当前在 Nano Server 上不可用。 但是，Nano Server 具有的工具和 cmdlet 可完成最常见的性能分析方案。
+Nano Server 完全支持 [Windows 事件跟踪](/windows/win32/etw/event-tracing-portal) (ETW) 框架，但一些用于管理跟踪的熟悉工具和性能计数器当前在 Nano Server 上不可用。 但是，Nano Server 具有的工具和 cmdlet 可完成最常见的性能分析方案。
 
 高级工作流保持与在任何 Window Server 安装上相同的状态，即在目标 (Nano Server) 计算机上执行低开销水平跟踪，并且生成的跟踪文件和/或日志在单独的计算机上使用 [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))、[消息分析器](https://www.microsoft.com/download/details.aspx?id=44226)等脱机进行后期处理。
 
 > [!NOTE]
-> 请参阅[如何将文件复制到 Nano Server 上以及反向复制](https://aka.ms/nri9c8)，以复习一下如何使用 PowerShell 远程控制传送文件。
+> 请参阅[如何将文件复制到 Nano Server 上以及反向复制](/previous-versions/windows/desktop/legacy/mt708806(v=vs.85))，以复习一下如何使用 PowerShell 远程控制传送文件。
 
 以下部分列出了最常见的性能数据收集活动以及在 Nano Server 上实现这些活动的受支持的方法。
 
@@ -381,7 +381,7 @@ TimeCreated           Message
 9/15/2016 11:31:16 AM The Virtualization Based Security enablement policy check at phase 0 failed with status: {File...
 ```
 
-Nano Server 还支持 ```wevtutil.exe```，后者允许检索有关事件日志和发布程序的信息。 请参阅 [wevtutil.exe 文档](https://aka.ms/qvod7p) 了解更多详细信息。
+Nano Server 还支持 ```wevtutil.exe```，后者允许检索有关事件日志和发布程序的信息。 请参阅 [wevtutil.exe 文档](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) 了解更多详细信息。
 
 ### <a name="graphical-interface-tools"></a>图形界面工具
 [基于 Web 的服务器管理工具](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog) 可以用于远程管理 Nano Server 目标和使用 Web 浏览器显示 Nano Server 事件日志。 最后，MMC 管理单元事件查看器 (eventvwr.msc) 还可以用于查看日志，只需通过桌面在计算机上打开它并使其指向远程 Nano Server。

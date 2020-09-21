@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 05/24/2018
-ms.openlocfilehash: 45d2dbc330c4277de961943cdd7a97fb50215de1
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1d3638b7a05c406293035c7f0a0e8854ed2ecee9
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628541"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766800"
 ---
 # <a name="plan-your-wsus-deployment"></a>规划 WSUS 部署
 
@@ -113,7 +113,7 @@ WSUS 要求以下数据库之一：
 
 -   Windows 内部数据库 (WID)
 
--   任何受支持的 Microsoft SQL Server 版本。 有关详细信息，请参阅 [Microsoft 生命周期策略](https://aka.ms/sqllifecycle)。
+-   任何受支持的 Microsoft SQL Server 版本。 有关详细信息，请参阅 [Microsoft 生命周期策略](/lifecycle/products/?products=sql-server)。
 
 WSUS 支持以下版本的 SQL Server：
 
