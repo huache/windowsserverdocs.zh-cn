@@ -6,14 +6,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/20/2020
+ms.date: 09/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 90a0796818a2beb7e592eae1556999729b2d9ab2
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: 1f59c00e375ab142c4e3dadc480c648cdd8e2396
+ms.sourcegitcommit: 877d6db73d9520e3a23738d6528016235493cff3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702866"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90779241"
 ---
 # <a name="get-started-with-the-android-client"></a>Android 客户端入门
 
@@ -21,37 +21,37 @@ ms.locfileid: "88702866"
 
 可以使用适用于 Android 的远程桌面客户端直接从 Android 设备运行 Windows 应用和桌面，也可以使用支持 Google Play 商店的 Chromebook。
 
-请参考以下信息开始。 如果有任何问题，请查看[常见问题解答](remote-desktop-client-faq.md)。
+本文将介绍如何开始使用客户端。 如果有其他任何问题，请务必查看我们的[常见问题解答](remote-desktop-client-faq.md)。
 
 > [!NOTE]
 > - 想知道 Android 客户端的新版本吗？ 请参阅 [Android 客户端新增功能](android-whatsnew.md)。
-> - Android 客户端支持运行 Android 4.1 及更高版本的设备，以及装有 ChromeOS 53 及更高版本的 Chromebook。 在[此处](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps)了解关于 Chrome 上 Android 应用程序的详细信息。
+> - Android 客户端支持运行 Android 4.1 及更高版本的设备，以及装有 ChromeOS 53 及更高版本的 Chromebook。 请参阅[支持 Android 应用的 Chrome OS 系统](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps)，详细了解 Chrome 上的 Android 应用程序。
 
-## <a name="set-up-the-remote-desktop-client-for-android"></a>设置适用于 Android 的远程桌面客户端
-
-### <a name="download-the-remote-desktop-client-from-the-google-play-store"></a>从 Google Play 商店下载远程桌面客户端
+## <a name="download-the-remote-desktop-client"></a>下载远程桌面客户端
 
 下面介绍如何在 Android 设备上设置远程桌面客户端：
 
-1. 从 [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx) 下载 Microsoft 远程桌面客户端。
+1. 从 Google Play [下载 Microsoft 远程桌面客户端](https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx)。
 2. 从应用列表启动 **RD 客户端**。
-3. 添加[远程桌面连接](#add-a-remote-desktop-connection)或[远程资源](#add-remote-resources)。 可以使用连接直接连接到 Windows 电脑和远程资源，以便访问管理员发布给你的应用和桌面。
+3. 添加[远程桌面连接](#add-a-remote-desktop-connection)或[远程资源](#add-remote-resources)。 通过远程桌面连接，可以直接连接到 Windows 电脑和远程资源，以便访问管理员发布给你的应用和桌面。
 
-> [!NOTE]
-> 若要在新功能发布之前对其进行测试，建议从 Google Play 商店下载我们的 [Microsoft 远程桌面 Beta 版本](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android.beta)客户端。
+## <a name="add-a-remote-desktop-connection"></a>添加远程桌面连接
 
-### <a name="add-a-remote-desktop-connection"></a>添加远程桌面连接
+现在，你已在设备上安装客户端，可以添加远程桌面连接来访问你的远程资源。
 
-如果还未这样做，请[将电脑设置为接受远程连接](remote-desktop-allow-access.md)。
+在添加连接之前，如果还未[将电脑设置为接受远程连接](remote-desktop-allow-access.md)，请执行此操作。
 
-若要创建远程桌面连接：
+添加远程桌面连接：
 
 1. 在“连接中心”点击“+”，然后点击“桌面”。
-2. 在“电脑名称”中输入远程电脑的名称。 可以是 Windows 计算机名、Internet 域名或 IP 地址。 还可以向电脑名称追加端口信息（例如，MyDesktop:3389 或 10.0.0.1:3389）。 这是唯一的必填字段。
+2. 在“电脑名称”中输入远程电脑的名称。 此名称可以是 Windows 计算机名、Internet 域名或 IP 地址。 还可以向电脑名称追加端口信息（例如，MyDesktop:3389 或 10.0.0.1:3389）。 此字段是唯一的必填字段。
 3. 选择用于访问远程电脑的“用户名”。
+
    - 选择“每次都输入”，这样，当你每次连接到远程电脑时，客户端就会请求你提供凭据。
-   - 选择“添加用户帐户”，保存一个频繁使用的帐户，这样就不需每次登录时都输入凭据。 如需更多详细信息，请参阅[管理用户帐户](#manage-your-user-accounts)。
+   - 选择“添加用户帐户”，保存一个频繁使用的帐户，这样就不需每次登录时都输入凭据。 若要了解有关用户帐户的详细信息，请参阅[管理用户帐户](#manage-your-user-accounts)。
+
 4. 还可点击“显示其他选项”，设置以下可选参数：
+
    - 在“易记名称”中，可以为你要连接到的电脑输入一个易记的名称。 如果不指定易记名称，系统会改为显示电脑名称。
    - “网关”是远程桌面网关，用于从外部网络连接到某个计算机。 有关详细信息，请与系统管理员联系。
    - “声音”用于选择远程会话用于音频的设备。 可以选择在本地设备、远程设备上播放声音或完全不播放。
@@ -59,6 +59,7 @@ ms.locfileid: "88702866"
    - 可以通过“切换鼠标按钮”来切换左右鼠标手势发送的命令。 适用于左手用户。
    - 可以通过“连接到管理会话”连接到远程电脑上的管理会话。
    - 可以通过“重定向本地存储”启用本地存储重定向。 默认情况下，此设置处于禁用状态。
+
 5. 完成后，点击“保存”。
 
 需要编辑这些设置？ 点击桌面名称旁边的“更多选项”菜单 ( **...** )，然后点击“编辑”。 
@@ -66,20 +67,22 @@ ms.locfileid: "88702866"
 想要删除连接？ 同样，点击“更多选项”菜单 ( **...** )，然后点击“删除”。 
 
 >[!TIP]
-> 如果收到关于错误密码的 0xf07 错误（我们无法连接到远程电脑，因为与用户帐户关联的密码已过期），请更改密码并重试。
+> 如果收到错误名称“0xf07”，显示“无法连接到远程电脑，因为与用户帐户关联的密码已过期”之类的错误，请用新密码重试。
 
-### <a name="add-remote-resources"></a>添加远程资源
+## <a name="add-remote-resources"></a>添加远程资源
 
-远程资源包括 RemoteApp 程序、基于会话的桌面，以及由管理员发布的虚拟桌面。Android 客户端支持从“远程桌面服务”和“Windows 虚拟桌面”部署发布的资源。 若要添加远程资源，请执行以下操作：
+远程资源包括 RemoteApp 程序、基于会话的桌面，以及由管理员发布的虚拟桌面。Android 客户端支持从“远程桌面服务”和“Windows 虚拟桌面”部署发布的资源。
+
+若要添加远程资源，请执行以下操作：
 
 1. 在“连接中心”点击“+”，然后点击“远程资源源”。
-2. 输入“源 URL”。 该项可以是 URL 或电子邮件地址：
+2. 输入“源 URL”。 此 URL 可以是 URL，也可以是电子邮件地址：
    - 此 **URL** 是 RD Web 访问服务器，由管理员提供给你。如果从 Windows 虚拟桌面访问资源，则可使用下列 URL 之一，具体取决于所用的版本：
      - 如果你使用的是 Windows 虚拟桌面（经典），请使用 `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`。
      - 如果你使用的是 Windows 虚拟桌面，请使用 `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`。
-   - 如何打算使用“电子邮件”，请在此字段中输入你的电子邮件地址。 这将告知客户端搜索与电子邮件地址关联的 RD Web 访问服务器，前提是管理员已进行此配置。
+   - 如何打算使用“电子邮件”，请在此字段中输入你的电子邮件地址。 填写此字段，将告知客户端搜索与电子邮件地址关联的 RD Web 访问服务器，前提是管理员已进行此配置。
 3. 点击“下一步”。
-4. 在系统提示时提供你的登录信息。 这可能因部署而异，其中可能包括：
+4. 在系统提示时提供你的登录信息。 应使用的凭据可能因部署而异，其中可能包括：
    - 有权访问资源的“用户名”。
    - 与用户名关联的“密码”。
    - **其他因素**：如果管理员进行了这样的身份验证配置，系统可能会提示你输入此类信息。
@@ -87,15 +90,19 @@ ms.locfileid: "88702866"
 
 将在“连接中心”显示远程资源。
 
+## <a name="remove-remote-resources"></a>删除远程资源
+
 若要删除远程资源，请执行以下操作：
 
 1. 在“连接中心”中，点击远程资源旁边的溢出菜单 (...)。
 2. 点击“删除”。
-3. 确认删除。
+3. 确认已删除该资源。
 
-### <a name="use-a-widget-to-pin-a-saved-desktop-to-your-home-screen"></a>使用小组件将保存的桌面固定到主屏幕
+## <a name="pin-a-connection-to-your-home-screen"></a>将连接固定到主屏幕
 
-远程桌面客户端支持使用 Android 小组件功能将连接固定到主屏幕。 添加小组件的方式取决于所使用的 Android 设备及其操作系统类型。 下面是添加小组件的最常见方法：
+远程桌面客户端支持使用 Android 小组件功能将连接固定到主屏幕。 小组件添加过程取决于你使用的 Android 设备类型和 Android OS 版本。
+
+添加小组件：
 
 1. 点击“应用”以启动应用菜单。
 2. 点击“小组件”。
@@ -144,7 +151,7 @@ ms.locfileid: "88702866"
 1. 在“连接中心”点击“设置”，然后点击“网关”。
 2. 点击 + 添加新网关。
 3. 输入以下信息：
-   - 将需要用作网关的计算机的名称输入“服务器名称”中。 可以是 Windows 计算机名、Internet 域名或 IP 地址。 此外可以向服务器名称添加端口信息（例如：RDGateway:443 或 10.0.0.1:443）。
+   - 将需要用作网关的计算机的名称输入“服务器名称”中。 此名称可以是 Windows 计算机名、Internet 域名或 IP 地址。 此外可以向服务器名称添加端口信息（例如：RDGateway:443 或 10.0.0.1:443）。
    - 选择将要用来访问 RD 网关的“用户帐户”。
      - 选择“使用桌面用户帐户”，以使用为远程电脑指定的凭据。
      - 选择“添加用户帐户”，保存一个频繁使用的帐户，这样就不需每次登录时都输入凭据。 有关详细信息，请参阅[管理用户帐户](#manage-your-user-accounts)。
@@ -174,16 +181,16 @@ ms.locfileid: "88702866"
 2. 点击并按住列表中的用户帐户以选择它。 可以同时选择多个用户。
 3. 点击垃圾桶删除所选用户。
 
-## <a name="navigate-the-remote-desktop-session"></a>导航远程桌面会话
+## <a name="start-a-remote-desktop-connection"></a>启动远程桌面连接
 
-下面简单介绍了如何打开并导航远程桌面会话。
+现在，你已设置远程桌面 Android 客户端，让我们了解如何启动远程桌面会话。
 
-### <a name="start-a-remote-desktop-connection"></a>启动远程桌面连接
+启动会话：
 
 1. 点击**远程桌面连接的名称**以启动会话。
 2. 如果要求验证远程桌面的证书，请点击“连接”。 还可以选择“不再询问是否连接到此计算机”，以便在默认情况下始终接受证书。
 
-### <a name="connection-bar"></a>连接栏
+## <a name="use-the-connection-bar"></a>使用连接栏
 
 可通过连接栏访问其他导航控件。 默认情况下，连接栏位于屏幕顶部中间。 将该栏向左或向右拖移。
 
@@ -194,7 +201,7 @@ ms.locfileid: "88702866"
 - **其他选项**：点击“其他选项”图标可显示会话选择栏和命令栏。
 - **键盘**：点击键盘图标以显示或隐藏键盘。 显示键盘时，将自动显示平移控件。
 
-### <a name="session-selection-bar"></a>会话选择栏
+## <a name="use-the-session-selection-bar"></a>使用会话选择栏
 
 可以同时在不同的电脑上打开多个连接。 点击连接栏以在屏幕左侧显示会话选择栏。 可以通过会话选择栏查看打开的连接并在它们之间切换。
 
@@ -204,13 +211,13 @@ ms.locfileid: "88702866"
 
 若要断开会话的连接，请点击会话磁贴左侧的“X”。
 
-### <a name="command-bar"></a>命令栏
+## <a name="use-the-command-bar"></a>使用命令栏
 
-点击连接栏，以在屏幕右侧显示命令栏。 在命令栏上，可以在鼠标模式（“直接触控”和“鼠标指针”）之间切换，也可以点击“主页”按钮返回到连接中心。 还可以点击“后退”按钮返回到连接中心。 返回到连接中心不会断开活动会话的连接。
+点击连接栏以在屏幕右侧显示命令栏。 在命令栏上，可以在鼠标模式（“直接触控”和“鼠标指针”）之间切换，也可以点击“主页”按钮返回到连接中心。 还可以点击“后退”按钮返回到连接中心。 返回到连接中心不会断开活动会话的连接。
 
-### <a name="use-touch-gestures-and-mouse-modes-in-a-remote-session"></a>在远程会话中使用触摸手势和鼠标模式
+## <a name="touch-gestures-and-mouse-modes"></a>触摸手势和鼠标模式
 
-客户端使用标准触摸手势。 还可以使用触摸手势在远程桌面上复制鼠标操作。 下表说明了哪些手势与每个鼠标模式下的哪些鼠标操作匹配。
+适用于 Android 的远程桌面客户端使用标准触摸手势。 还可以使用触摸手势在远程桌面上复制鼠标操作。 下表说明了哪些手势与每个鼠标模式下的哪些鼠标操作匹配。
 
 > [!NOTE]
 > Windows 8 或更高版本支持“直接触控”模式下的本机触控手势。
@@ -228,8 +235,6 @@ ms.locfileid: "88702866"
 
 ## <a name="join-the-beta-channel"></a>加入 Beta 通道
 
-如果你想要在任何其他人之前访问最新功能，或想要帮助在新版本发布之前识别问题，则 Beta 通道适用于你！ 使用 Beta 通道也是企业管理员为其环境中的用户验证新版本的 Android 客户端的好方法。
+如果想帮助我们测试新版本或，在即将发布的版本更新发布之前查找其中的问题，请加入我们的 Beta 渠道。 企业管理员可以使用 Beta 渠道来为其用户验证 Android 客户端的新版本。
 
-若要加入 Beta，只需同意访问预览版，然后下载客户端。 你将直接通过 Google Play 商店接收预览版。
-
-[加入 Beta](https://play.google.com/apps/testing/com.microsoft.rdc.androidx)
+若要加入 Beta，请[下载 Beta 客户端](https://play.google.com/apps/testing/com.microsoft.rdc.androidx)，同意访问预览版并下载客户端。 你将直接通过 Google Play 商店接收预览版。

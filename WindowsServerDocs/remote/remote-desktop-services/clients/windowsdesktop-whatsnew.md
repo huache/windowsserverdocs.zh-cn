@@ -5,27 +5,27 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/10/2020
+ms.date: 09/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f0b5453265bc96cdeb7ba02795da8fa0f39ba1c
-ms.sourcegitcommit: 0407bd30eaf06358257cf88c3969a2cd8b77dca4
+ms.openlocfilehash: 5d45bfad559069f9652768ba7f89bbdd3521ab8a
+ms.sourcegitcommit: d04f8fd54fe9aa5703af2f66a7150f4a6fb5bb37
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027162"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90718621"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows 桌面客户端中的新功能
 
 有关 Windows 桌面客户端的更多详细信息，可参阅 [Windows 桌面客户端入门](windowsdesktop.md)。 可在本文找到客户端的最新更新。
 
-## <a name="latest-client-versions"></a>最新客户端版本
+## <a name="supported-client-versions"></a>支持的客户端版本
 
 可以针对不同的[用户组](windowsdesktop-admin.md#configure-user-groups)来配置客户端。 下表列出了适用于每个用户组的当前版本：
 
-|用户组 |版本  |
-|-----------|---------|
-|公用     |1.2.1272 |
-|Insider    |1.2.1357 |
+|用户组 |最新版本  |支持的最低版本 |
+|-----------|----------------|--------------------------|
+|公用     |1.2.1272        |1.2.945                   |
+|Insider    |1.2.1357        |1.2.1357                  |
 
 ## <a name="updates-for-version-121357-insiders"></a>针对版本 1.2.1357（预览体验计划）的更新
 
@@ -33,7 +33,7 @@ ms.locfileid: "90027162"
 
 下载：[Windows 64 位](https://go.microsoft.com/fwlink/?linkid=2139233)、[Windows 32 位](https://go.microsoft.com/fwlink/?linkid=2139144)、[Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
 
-- 修复了 Windows 7 上安全登录 (SSO) 失效的问题。
+- 修复了 Windows 7 上单一登录 (SSO) 失效的问题。
 
 ## <a name="updates-for-version-121275"></a>针对版本 1.2.1275 的更新
 

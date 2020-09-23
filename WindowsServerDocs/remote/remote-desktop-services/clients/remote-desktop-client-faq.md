@@ -8,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 672a9d1b33137d9559d88b8773d3c7ccd2493ddc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 420cedebcfc71a5ba78908d244d1f8ca651bee4c
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955054"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083668"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>有关远程桌面客户端的常见问题
 
@@ -174,7 +174,7 @@ Web 客户端支持 Windows、macOS、Linux 和 ChromeOS。 目前不支持移�
 
 - 标准电脑双按钮 USB 鼠标
 - Apple Magic Mouse：若要启用右键单击，请单击停靠窗口中的“系统偏好设置”，然后单击“鼠标”，接下来启用“辅助单击”    。
-- Apple Magic Trackpad 或 MacBook 触控板：若要启用右键单击，请单击停靠窗口中的“系统偏好设置”，然后单击“鼠标”，接下来启用“辅助单击”    。
+- Apple Magic Trackpad 或 MacBook 触控板：若要启用右键单击，请单击停靠窗口中的“系统偏好设置”，然后单击“触控板”，接下来启用“辅助单击”  。
 
 ### <a name="is-airprint-supported"></a>是否支持 AirPrint？
 否，远程桌面客户端不支持 AirPrint。 （对于 Mac 和 iOS 客户端同样适用。）
