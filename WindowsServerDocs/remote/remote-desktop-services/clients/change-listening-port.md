@@ -21,7 +21,7 @@ ms.locfileid: "88149541"
 
 1. 启动注册表编辑器。 （在“搜索”框中键入 regedit。）
 2. 导航到以下注册表子项：**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp**
-3. 查找端口号
+3. 查找 **PortNumber**
 4. 单击“编辑”>“修改”  ，然后单击“十进制”  。
 5. 键入新端口号，然后单击“确定”  。 
 6. 关闭注册表编辑器，然后重新启动计算机。
